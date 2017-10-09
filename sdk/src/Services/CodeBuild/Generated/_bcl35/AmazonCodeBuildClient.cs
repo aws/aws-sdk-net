@@ -320,7 +320,7 @@ namespace Amazon.CodeBuild
         /// The input value that was provided is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchDeleteBuilds">REST API Reference for BatchDeleteBuilds Operation</seealso>
-        public BatchDeleteBuildsResponse BatchDeleteBuilds(BatchDeleteBuildsRequest request)
+        public virtual BatchDeleteBuildsResponse BatchDeleteBuilds(BatchDeleteBuildsRequest request)
         {
             var marshaller = new BatchDeleteBuildsRequestMarshaller();
             var unmarshaller = BatchDeleteBuildsResponseUnmarshaller.Instance;
@@ -340,7 +340,7 @@ namespace Amazon.CodeBuild
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchDeleteBuilds
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchDeleteBuilds">REST API Reference for BatchDeleteBuilds Operation</seealso>
-        public IAsyncResult BeginBatchDeleteBuilds(BatchDeleteBuildsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginBatchDeleteBuilds(BatchDeleteBuildsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new BatchDeleteBuildsRequestMarshaller();
             var unmarshaller = BatchDeleteBuildsResponseUnmarshaller.Instance;
@@ -357,7 +357,7 @@ namespace Amazon.CodeBuild
         /// 
         /// <returns>Returns a  BatchDeleteBuildsResult from CodeBuild.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchDeleteBuilds">REST API Reference for BatchDeleteBuilds Operation</seealso>
-        public  BatchDeleteBuildsResponse EndBatchDeleteBuilds(IAsyncResult asyncResult)
+        public virtual BatchDeleteBuildsResponse EndBatchDeleteBuilds(IAsyncResult asyncResult)
         {
             return EndInvoke<BatchDeleteBuildsResponse>(asyncResult);
         }
@@ -376,7 +376,7 @@ namespace Amazon.CodeBuild
         /// The input value that was provided is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetBuilds">REST API Reference for BatchGetBuilds Operation</seealso>
-        public BatchGetBuildsResponse BatchGetBuilds(BatchGetBuildsRequest request)
+        public virtual BatchGetBuildsResponse BatchGetBuilds(BatchGetBuildsRequest request)
         {
             var marshaller = new BatchGetBuildsRequestMarshaller();
             var unmarshaller = BatchGetBuildsResponseUnmarshaller.Instance;
@@ -396,7 +396,7 @@ namespace Amazon.CodeBuild
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetBuilds
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetBuilds">REST API Reference for BatchGetBuilds Operation</seealso>
-        public IAsyncResult BeginBatchGetBuilds(BatchGetBuildsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginBatchGetBuilds(BatchGetBuildsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new BatchGetBuildsRequestMarshaller();
             var unmarshaller = BatchGetBuildsResponseUnmarshaller.Instance;
@@ -413,7 +413,7 @@ namespace Amazon.CodeBuild
         /// 
         /// <returns>Returns a  BatchGetBuildsResult from CodeBuild.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetBuilds">REST API Reference for BatchGetBuilds Operation</seealso>
-        public  BatchGetBuildsResponse EndBatchGetBuilds(IAsyncResult asyncResult)
+        public virtual BatchGetBuildsResponse EndBatchGetBuilds(IAsyncResult asyncResult)
         {
             return EndInvoke<BatchGetBuildsResponse>(asyncResult);
         }
@@ -432,7 +432,7 @@ namespace Amazon.CodeBuild
         /// The input value that was provided is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetProjects">REST API Reference for BatchGetProjects Operation</seealso>
-        public BatchGetProjectsResponse BatchGetProjects(BatchGetProjectsRequest request)
+        public virtual BatchGetProjectsResponse BatchGetProjects(BatchGetProjectsRequest request)
         {
             var marshaller = new BatchGetProjectsRequestMarshaller();
             var unmarshaller = BatchGetProjectsResponseUnmarshaller.Instance;
@@ -452,7 +452,7 @@ namespace Amazon.CodeBuild
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetProjects
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetProjects">REST API Reference for BatchGetProjects Operation</seealso>
-        public IAsyncResult BeginBatchGetProjects(BatchGetProjectsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginBatchGetProjects(BatchGetProjectsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new BatchGetProjectsRequestMarshaller();
             var unmarshaller = BatchGetProjectsResponseUnmarshaller.Instance;
@@ -469,7 +469,7 @@ namespace Amazon.CodeBuild
         /// 
         /// <returns>Returns a  BatchGetProjectsResult from CodeBuild.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetProjects">REST API Reference for BatchGetProjects Operation</seealso>
-        public  BatchGetProjectsResponse EndBatchGetProjects(IAsyncResult asyncResult)
+        public virtual BatchGetProjectsResponse EndBatchGetProjects(IAsyncResult asyncResult)
         {
             return EndInvoke<BatchGetProjectsResponse>(asyncResult);
         }
@@ -495,7 +495,7 @@ namespace Amazon.CodeBuild
         /// settings already exists.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateProject">REST API Reference for CreateProject Operation</seealso>
-        public CreateProjectResponse CreateProject(CreateProjectRequest request)
+        public virtual CreateProjectResponse CreateProject(CreateProjectRequest request)
         {
             var marshaller = new CreateProjectRequestMarshaller();
             var unmarshaller = CreateProjectResponseUnmarshaller.Instance;
@@ -515,7 +515,7 @@ namespace Amazon.CodeBuild
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateProject
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateProject">REST API Reference for CreateProject Operation</seealso>
-        public IAsyncResult BeginCreateProject(CreateProjectRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateProject(CreateProjectRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateProjectRequestMarshaller();
             var unmarshaller = CreateProjectResponseUnmarshaller.Instance;
@@ -532,7 +532,7 @@ namespace Amazon.CodeBuild
         /// 
         /// <returns>Returns a  CreateProjectResult from CodeBuild.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateProject">REST API Reference for CreateProject Operation</seealso>
-        public  CreateProjectResponse EndCreateProject(IAsyncResult asyncResult)
+        public virtual CreateProjectResponse EndCreateProject(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateProjectResponse>(asyncResult);
         }
@@ -576,7 +576,7 @@ namespace Amazon.CodeBuild
         /// The specified AWS resource cannot be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateWebhook">REST API Reference for CreateWebhook Operation</seealso>
-        public CreateWebhookResponse CreateWebhook(CreateWebhookRequest request)
+        public virtual CreateWebhookResponse CreateWebhook(CreateWebhookRequest request)
         {
             var marshaller = new CreateWebhookRequestMarshaller();
             var unmarshaller = CreateWebhookResponseUnmarshaller.Instance;
@@ -596,7 +596,7 @@ namespace Amazon.CodeBuild
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateWebhook
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateWebhook">REST API Reference for CreateWebhook Operation</seealso>
-        public IAsyncResult BeginCreateWebhook(CreateWebhookRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateWebhook(CreateWebhookRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateWebhookRequestMarshaller();
             var unmarshaller = CreateWebhookResponseUnmarshaller.Instance;
@@ -613,7 +613,7 @@ namespace Amazon.CodeBuild
         /// 
         /// <returns>Returns a  CreateWebhookResult from CodeBuild.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateWebhook">REST API Reference for CreateWebhook Operation</seealso>
-        public  CreateWebhookResponse EndCreateWebhook(IAsyncResult asyncResult)
+        public virtual CreateWebhookResponse EndCreateWebhook(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateWebhookResponse>(asyncResult);
         }
@@ -632,7 +632,7 @@ namespace Amazon.CodeBuild
         /// The input value that was provided is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
-        public DeleteProjectResponse DeleteProject(DeleteProjectRequest request)
+        public virtual DeleteProjectResponse DeleteProject(DeleteProjectRequest request)
         {
             var marshaller = new DeleteProjectRequestMarshaller();
             var unmarshaller = DeleteProjectResponseUnmarshaller.Instance;
@@ -652,7 +652,7 @@ namespace Amazon.CodeBuild
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteProject
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
-        public IAsyncResult BeginDeleteProject(DeleteProjectRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteProject(DeleteProjectRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteProjectRequestMarshaller();
             var unmarshaller = DeleteProjectResponseUnmarshaller.Instance;
@@ -669,7 +669,7 @@ namespace Amazon.CodeBuild
         /// 
         /// <returns>Returns a  DeleteProjectResult from CodeBuild.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
-        public  DeleteProjectResponse EndDeleteProject(IAsyncResult asyncResult)
+        public virtual DeleteProjectResponse EndDeleteProject(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteProjectResponse>(asyncResult);
         }
@@ -696,7 +696,7 @@ namespace Amazon.CodeBuild
         /// The specified AWS resource cannot be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteWebhook">REST API Reference for DeleteWebhook Operation</seealso>
-        public DeleteWebhookResponse DeleteWebhook(DeleteWebhookRequest request)
+        public virtual DeleteWebhookResponse DeleteWebhook(DeleteWebhookRequest request)
         {
             var marshaller = new DeleteWebhookRequestMarshaller();
             var unmarshaller = DeleteWebhookResponseUnmarshaller.Instance;
@@ -716,7 +716,7 @@ namespace Amazon.CodeBuild
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteWebhook
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteWebhook">REST API Reference for DeleteWebhook Operation</seealso>
-        public IAsyncResult BeginDeleteWebhook(DeleteWebhookRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteWebhook(DeleteWebhookRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteWebhookRequestMarshaller();
             var unmarshaller = DeleteWebhookResponseUnmarshaller.Instance;
@@ -733,7 +733,7 @@ namespace Amazon.CodeBuild
         /// 
         /// <returns>Returns a  DeleteWebhookResult from CodeBuild.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteWebhook">REST API Reference for DeleteWebhook Operation</seealso>
-        public  DeleteWebhookResponse EndDeleteWebhook(IAsyncResult asyncResult)
+        public virtual DeleteWebhookResponse EndDeleteWebhook(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteWebhookResponse>(asyncResult);
         }
@@ -752,7 +752,7 @@ namespace Amazon.CodeBuild
         /// The input value that was provided is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuilds">REST API Reference for ListBuilds Operation</seealso>
-        public ListBuildsResponse ListBuilds(ListBuildsRequest request)
+        public virtual ListBuildsResponse ListBuilds(ListBuildsRequest request)
         {
             var marshaller = new ListBuildsRequestMarshaller();
             var unmarshaller = ListBuildsResponseUnmarshaller.Instance;
@@ -772,7 +772,7 @@ namespace Amazon.CodeBuild
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListBuilds
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuilds">REST API Reference for ListBuilds Operation</seealso>
-        public IAsyncResult BeginListBuilds(ListBuildsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListBuilds(ListBuildsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListBuildsRequestMarshaller();
             var unmarshaller = ListBuildsResponseUnmarshaller.Instance;
@@ -789,7 +789,7 @@ namespace Amazon.CodeBuild
         /// 
         /// <returns>Returns a  ListBuildsResult from CodeBuild.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuilds">REST API Reference for ListBuilds Operation</seealso>
-        public  ListBuildsResponse EndListBuilds(IAsyncResult asyncResult)
+        public virtual ListBuildsResponse EndListBuilds(IAsyncResult asyncResult)
         {
             return EndInvoke<ListBuildsResponse>(asyncResult);
         }
@@ -812,7 +812,7 @@ namespace Amazon.CodeBuild
         /// The specified AWS resource cannot be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuildsForProject">REST API Reference for ListBuildsForProject Operation</seealso>
-        public ListBuildsForProjectResponse ListBuildsForProject(ListBuildsForProjectRequest request)
+        public virtual ListBuildsForProjectResponse ListBuildsForProject(ListBuildsForProjectRequest request)
         {
             var marshaller = new ListBuildsForProjectRequestMarshaller();
             var unmarshaller = ListBuildsForProjectResponseUnmarshaller.Instance;
@@ -832,7 +832,7 @@ namespace Amazon.CodeBuild
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListBuildsForProject
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuildsForProject">REST API Reference for ListBuildsForProject Operation</seealso>
-        public IAsyncResult BeginListBuildsForProject(ListBuildsForProjectRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListBuildsForProject(ListBuildsForProjectRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListBuildsForProjectRequestMarshaller();
             var unmarshaller = ListBuildsForProjectResponseUnmarshaller.Instance;
@@ -849,7 +849,7 @@ namespace Amazon.CodeBuild
         /// 
         /// <returns>Returns a  ListBuildsForProjectResult from CodeBuild.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuildsForProject">REST API Reference for ListBuildsForProject Operation</seealso>
-        public  ListBuildsForProjectResponse EndListBuildsForProject(IAsyncResult asyncResult)
+        public virtual ListBuildsForProjectResponse EndListBuildsForProject(IAsyncResult asyncResult)
         {
             return EndInvoke<ListBuildsForProjectResponse>(asyncResult);
         }
@@ -865,7 +865,7 @@ namespace Amazon.CodeBuild
         /// 
         /// <returns>The response from the ListCuratedEnvironmentImages service method, as returned by CodeBuild.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListCuratedEnvironmentImages">REST API Reference for ListCuratedEnvironmentImages Operation</seealso>
-        public ListCuratedEnvironmentImagesResponse ListCuratedEnvironmentImages(ListCuratedEnvironmentImagesRequest request)
+        public virtual ListCuratedEnvironmentImagesResponse ListCuratedEnvironmentImages(ListCuratedEnvironmentImagesRequest request)
         {
             var marshaller = new ListCuratedEnvironmentImagesRequestMarshaller();
             var unmarshaller = ListCuratedEnvironmentImagesResponseUnmarshaller.Instance;
@@ -885,7 +885,7 @@ namespace Amazon.CodeBuild
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCuratedEnvironmentImages
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListCuratedEnvironmentImages">REST API Reference for ListCuratedEnvironmentImages Operation</seealso>
-        public IAsyncResult BeginListCuratedEnvironmentImages(ListCuratedEnvironmentImagesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListCuratedEnvironmentImages(ListCuratedEnvironmentImagesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListCuratedEnvironmentImagesRequestMarshaller();
             var unmarshaller = ListCuratedEnvironmentImagesResponseUnmarshaller.Instance;
@@ -902,7 +902,7 @@ namespace Amazon.CodeBuild
         /// 
         /// <returns>Returns a  ListCuratedEnvironmentImagesResult from CodeBuild.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListCuratedEnvironmentImages">REST API Reference for ListCuratedEnvironmentImages Operation</seealso>
-        public  ListCuratedEnvironmentImagesResponse EndListCuratedEnvironmentImages(IAsyncResult asyncResult)
+        public virtual ListCuratedEnvironmentImagesResponse EndListCuratedEnvironmentImages(IAsyncResult asyncResult)
         {
             return EndInvoke<ListCuratedEnvironmentImagesResponse>(asyncResult);
         }
@@ -922,7 +922,7 @@ namespace Amazon.CodeBuild
         /// The input value that was provided is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListProjects">REST API Reference for ListProjects Operation</seealso>
-        public ListProjectsResponse ListProjects(ListProjectsRequest request)
+        public virtual ListProjectsResponse ListProjects(ListProjectsRequest request)
         {
             var marshaller = new ListProjectsRequestMarshaller();
             var unmarshaller = ListProjectsResponseUnmarshaller.Instance;
@@ -942,7 +942,7 @@ namespace Amazon.CodeBuild
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListProjects
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListProjects">REST API Reference for ListProjects Operation</seealso>
-        public IAsyncResult BeginListProjects(ListProjectsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListProjects(ListProjectsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListProjectsRequestMarshaller();
             var unmarshaller = ListProjectsResponseUnmarshaller.Instance;
@@ -959,7 +959,7 @@ namespace Amazon.CodeBuild
         /// 
         /// <returns>Returns a  ListProjectsResult from CodeBuild.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListProjects">REST API Reference for ListProjects Operation</seealso>
-        public  ListProjectsResponse EndListProjects(IAsyncResult asyncResult)
+        public virtual ListProjectsResponse EndListProjects(IAsyncResult asyncResult)
         {
             return EndInvoke<ListProjectsResponse>(asyncResult);
         }
@@ -984,7 +984,7 @@ namespace Amazon.CodeBuild
         /// The specified AWS resource cannot be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StartBuild">REST API Reference for StartBuild Operation</seealso>
-        public StartBuildResponse StartBuild(StartBuildRequest request)
+        public virtual StartBuildResponse StartBuild(StartBuildRequest request)
         {
             var marshaller = new StartBuildRequestMarshaller();
             var unmarshaller = StartBuildResponseUnmarshaller.Instance;
@@ -1004,7 +1004,7 @@ namespace Amazon.CodeBuild
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartBuild
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StartBuild">REST API Reference for StartBuild Operation</seealso>
-        public IAsyncResult BeginStartBuild(StartBuildRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginStartBuild(StartBuildRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new StartBuildRequestMarshaller();
             var unmarshaller = StartBuildResponseUnmarshaller.Instance;
@@ -1021,7 +1021,7 @@ namespace Amazon.CodeBuild
         /// 
         /// <returns>Returns a  StartBuildResult from CodeBuild.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StartBuild">REST API Reference for StartBuild Operation</seealso>
-        public  StartBuildResponse EndStartBuild(IAsyncResult asyncResult)
+        public virtual StartBuildResponse EndStartBuild(IAsyncResult asyncResult)
         {
             return EndInvoke<StartBuildResponse>(asyncResult);
         }
@@ -1043,7 +1043,7 @@ namespace Amazon.CodeBuild
         /// The specified AWS resource cannot be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StopBuild">REST API Reference for StopBuild Operation</seealso>
-        public StopBuildResponse StopBuild(StopBuildRequest request)
+        public virtual StopBuildResponse StopBuild(StopBuildRequest request)
         {
             var marshaller = new StopBuildRequestMarshaller();
             var unmarshaller = StopBuildResponseUnmarshaller.Instance;
@@ -1063,7 +1063,7 @@ namespace Amazon.CodeBuild
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopBuild
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StopBuild">REST API Reference for StopBuild Operation</seealso>
-        public IAsyncResult BeginStopBuild(StopBuildRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginStopBuild(StopBuildRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new StopBuildRequestMarshaller();
             var unmarshaller = StopBuildResponseUnmarshaller.Instance;
@@ -1080,7 +1080,7 @@ namespace Amazon.CodeBuild
         /// 
         /// <returns>Returns a  StopBuildResult from CodeBuild.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StopBuild">REST API Reference for StopBuild Operation</seealso>
-        public  StopBuildResponse EndStopBuild(IAsyncResult asyncResult)
+        public virtual StopBuildResponse EndStopBuild(IAsyncResult asyncResult)
         {
             return EndInvoke<StopBuildResponse>(asyncResult);
         }
@@ -1102,7 +1102,7 @@ namespace Amazon.CodeBuild
         /// The specified AWS resource cannot be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
-        public UpdateProjectResponse UpdateProject(UpdateProjectRequest request)
+        public virtual UpdateProjectResponse UpdateProject(UpdateProjectRequest request)
         {
             var marshaller = new UpdateProjectRequestMarshaller();
             var unmarshaller = UpdateProjectResponseUnmarshaller.Instance;
@@ -1122,7 +1122,7 @@ namespace Amazon.CodeBuild
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateProject
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
-        public IAsyncResult BeginUpdateProject(UpdateProjectRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateProject(UpdateProjectRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateProjectRequestMarshaller();
             var unmarshaller = UpdateProjectResponseUnmarshaller.Instance;
@@ -1139,7 +1139,7 @@ namespace Amazon.CodeBuild
         /// 
         /// <returns>Returns a  UpdateProjectResult from CodeBuild.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
-        public  UpdateProjectResponse EndUpdateProject(IAsyncResult asyncResult)
+        public virtual UpdateProjectResponse EndUpdateProject(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateProjectResponse>(asyncResult);
         }

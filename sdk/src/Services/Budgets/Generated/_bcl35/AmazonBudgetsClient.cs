@@ -246,7 +246,7 @@ namespace Amazon.Budgets
         /// This exception is thrown if any request is given an invalid parameter. E.g., if a
         /// required Date field is null.
         /// </exception>
-        public CreateBudgetResponse CreateBudget(CreateBudgetRequest request)
+        public virtual CreateBudgetResponse CreateBudget(CreateBudgetRequest request)
         {
             var marshaller = new CreateBudgetRequestMarshaller();
             var unmarshaller = CreateBudgetResponseUnmarshaller.Instance;
@@ -265,7 +265,7 @@ namespace Amazon.Budgets
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateBudget
         ///         operation.</returns>
-        public IAsyncResult BeginCreateBudget(CreateBudgetRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateBudget(CreateBudgetRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateBudgetRequestMarshaller();
             var unmarshaller = CreateBudgetResponseUnmarshaller.Instance;
@@ -281,7 +281,7 @@ namespace Amazon.Budgets
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateBudget.</param>
         /// 
         /// <returns>Returns a  CreateBudgetResult from Budgets.</returns>
-        public  CreateBudgetResponse EndCreateBudget(IAsyncResult asyncResult)
+        public virtual CreateBudgetResponse EndCreateBudget(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateBudgetResponse>(asyncResult);
         }
@@ -315,7 +315,7 @@ namespace Amazon.Budgets
         /// This exception is thrown if a requested entity is not found. E.g., if a budget id
         /// doesn't exist for an account ID.
         /// </exception>
-        public CreateNotificationResponse CreateNotification(CreateNotificationRequest request)
+        public virtual CreateNotificationResponse CreateNotification(CreateNotificationRequest request)
         {
             var marshaller = new CreateNotificationRequestMarshaller();
             var unmarshaller = CreateNotificationResponseUnmarshaller.Instance;
@@ -334,7 +334,7 @@ namespace Amazon.Budgets
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateNotification
         ///         operation.</returns>
-        public IAsyncResult BeginCreateNotification(CreateNotificationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateNotification(CreateNotificationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateNotificationRequestMarshaller();
             var unmarshaller = CreateNotificationResponseUnmarshaller.Instance;
@@ -350,7 +350,7 @@ namespace Amazon.Budgets
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateNotification.</param>
         /// 
         /// <returns>Returns a  CreateNotificationResult from Budgets.</returns>
-        public  CreateNotificationResponse EndCreateNotification(IAsyncResult asyncResult)
+        public virtual CreateNotificationResponse EndCreateNotification(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateNotificationResponse>(asyncResult);
         }
@@ -384,7 +384,7 @@ namespace Amazon.Budgets
         /// This exception is thrown if a requested entity is not found. E.g., if a budget id
         /// doesn't exist for an account ID.
         /// </exception>
-        public CreateSubscriberResponse CreateSubscriber(CreateSubscriberRequest request)
+        public virtual CreateSubscriberResponse CreateSubscriber(CreateSubscriberRequest request)
         {
             var marshaller = new CreateSubscriberRequestMarshaller();
             var unmarshaller = CreateSubscriberResponseUnmarshaller.Instance;
@@ -403,7 +403,7 @@ namespace Amazon.Budgets
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSubscriber
         ///         operation.</returns>
-        public IAsyncResult BeginCreateSubscriber(CreateSubscriberRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateSubscriber(CreateSubscriberRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateSubscriberRequestMarshaller();
             var unmarshaller = CreateSubscriberResponseUnmarshaller.Instance;
@@ -419,7 +419,7 @@ namespace Amazon.Budgets
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateSubscriber.</param>
         /// 
         /// <returns>Returns a  CreateSubscriberResult from Budgets.</returns>
-        public  CreateSubscriberResponse EndCreateSubscriber(IAsyncResult asyncResult)
+        public virtual CreateSubscriberResponse EndCreateSubscriber(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateSubscriberResponse>(asyncResult);
         }
@@ -445,7 +445,7 @@ namespace Amazon.Budgets
         /// This exception is thrown if a requested entity is not found. E.g., if a budget id
         /// doesn't exist for an account ID.
         /// </exception>
-        public DeleteBudgetResponse DeleteBudget(DeleteBudgetRequest request)
+        public virtual DeleteBudgetResponse DeleteBudget(DeleteBudgetRequest request)
         {
             var marshaller = new DeleteBudgetRequestMarshaller();
             var unmarshaller = DeleteBudgetResponseUnmarshaller.Instance;
@@ -464,7 +464,7 @@ namespace Amazon.Budgets
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBudget
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteBudget(DeleteBudgetRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteBudget(DeleteBudgetRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteBudgetRequestMarshaller();
             var unmarshaller = DeleteBudgetResponseUnmarshaller.Instance;
@@ -480,7 +480,7 @@ namespace Amazon.Budgets
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBudget.</param>
         /// 
         /// <returns>Returns a  DeleteBudgetResult from Budgets.</returns>
-        public  DeleteBudgetResponse EndDeleteBudget(IAsyncResult asyncResult)
+        public virtual DeleteBudgetResponse EndDeleteBudget(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteBudgetResponse>(asyncResult);
         }
@@ -506,7 +506,7 @@ namespace Amazon.Budgets
         /// This exception is thrown if a requested entity is not found. E.g., if a budget id
         /// doesn't exist for an account ID.
         /// </exception>
-        public DeleteNotificationResponse DeleteNotification(DeleteNotificationRequest request)
+        public virtual DeleteNotificationResponse DeleteNotification(DeleteNotificationRequest request)
         {
             var marshaller = new DeleteNotificationRequestMarshaller();
             var unmarshaller = DeleteNotificationResponseUnmarshaller.Instance;
@@ -525,7 +525,7 @@ namespace Amazon.Budgets
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteNotification
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteNotification(DeleteNotificationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteNotification(DeleteNotificationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteNotificationRequestMarshaller();
             var unmarshaller = DeleteNotificationResponseUnmarshaller.Instance;
@@ -541,7 +541,7 @@ namespace Amazon.Budgets
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteNotification.</param>
         /// 
         /// <returns>Returns a  DeleteNotificationResult from Budgets.</returns>
-        public  DeleteNotificationResponse EndDeleteNotification(IAsyncResult asyncResult)
+        public virtual DeleteNotificationResponse EndDeleteNotification(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteNotificationResponse>(asyncResult);
         }
@@ -567,7 +567,7 @@ namespace Amazon.Budgets
         /// This exception is thrown if a requested entity is not found. E.g., if a budget id
         /// doesn't exist for an account ID.
         /// </exception>
-        public DeleteSubscriberResponse DeleteSubscriber(DeleteSubscriberRequest request)
+        public virtual DeleteSubscriberResponse DeleteSubscriber(DeleteSubscriberRequest request)
         {
             var marshaller = new DeleteSubscriberRequestMarshaller();
             var unmarshaller = DeleteSubscriberResponseUnmarshaller.Instance;
@@ -586,7 +586,7 @@ namespace Amazon.Budgets
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSubscriber
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteSubscriber(DeleteSubscriberRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteSubscriber(DeleteSubscriberRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteSubscriberRequestMarshaller();
             var unmarshaller = DeleteSubscriberResponseUnmarshaller.Instance;
@@ -602,7 +602,7 @@ namespace Amazon.Budgets
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSubscriber.</param>
         /// 
         /// <returns>Returns a  DeleteSubscriberResult from Budgets.</returns>
-        public  DeleteSubscriberResponse EndDeleteSubscriber(IAsyncResult asyncResult)
+        public virtual DeleteSubscriberResponse EndDeleteSubscriber(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteSubscriberResponse>(asyncResult);
         }
@@ -628,7 +628,7 @@ namespace Amazon.Budgets
         /// This exception is thrown if a requested entity is not found. E.g., if a budget id
         /// doesn't exist for an account ID.
         /// </exception>
-        public DescribeBudgetResponse DescribeBudget(DescribeBudgetRequest request)
+        public virtual DescribeBudgetResponse DescribeBudget(DescribeBudgetRequest request)
         {
             var marshaller = new DescribeBudgetRequestMarshaller();
             var unmarshaller = DescribeBudgetResponseUnmarshaller.Instance;
@@ -647,7 +647,7 @@ namespace Amazon.Budgets
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeBudget
         ///         operation.</returns>
-        public IAsyncResult BeginDescribeBudget(DescribeBudgetRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeBudget(DescribeBudgetRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeBudgetRequestMarshaller();
             var unmarshaller = DescribeBudgetResponseUnmarshaller.Instance;
@@ -663,7 +663,7 @@ namespace Amazon.Budgets
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeBudget.</param>
         /// 
         /// <returns>Returns a  DescribeBudgetResult from Budgets.</returns>
-        public  DescribeBudgetResponse EndDescribeBudget(IAsyncResult asyncResult)
+        public virtual DescribeBudgetResponse EndDescribeBudget(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeBudgetResponse>(asyncResult);
         }
@@ -696,7 +696,7 @@ namespace Amazon.Budgets
         /// This exception is thrown if a requested entity is not found. E.g., if a budget id
         /// doesn't exist for an account ID.
         /// </exception>
-        public DescribeBudgetsResponse DescribeBudgets(DescribeBudgetsRequest request)
+        public virtual DescribeBudgetsResponse DescribeBudgets(DescribeBudgetsRequest request)
         {
             var marshaller = new DescribeBudgetsRequestMarshaller();
             var unmarshaller = DescribeBudgetsResponseUnmarshaller.Instance;
@@ -715,7 +715,7 @@ namespace Amazon.Budgets
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeBudgets
         ///         operation.</returns>
-        public IAsyncResult BeginDescribeBudgets(DescribeBudgetsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeBudgets(DescribeBudgetsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeBudgetsRequestMarshaller();
             var unmarshaller = DescribeBudgetsResponseUnmarshaller.Instance;
@@ -731,7 +731,7 @@ namespace Amazon.Budgets
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeBudgets.</param>
         /// 
         /// <returns>Returns a  DescribeBudgetsResult from Budgets.</returns>
-        public  DescribeBudgetsResponse EndDescribeBudgets(IAsyncResult asyncResult)
+        public virtual DescribeBudgetsResponse EndDescribeBudgets(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeBudgetsResponse>(asyncResult);
         }
@@ -764,7 +764,7 @@ namespace Amazon.Budgets
         /// This exception is thrown if a requested entity is not found. E.g., if a budget id
         /// doesn't exist for an account ID.
         /// </exception>
-        public DescribeNotificationsForBudgetResponse DescribeNotificationsForBudget(DescribeNotificationsForBudgetRequest request)
+        public virtual DescribeNotificationsForBudgetResponse DescribeNotificationsForBudget(DescribeNotificationsForBudgetRequest request)
         {
             var marshaller = new DescribeNotificationsForBudgetRequestMarshaller();
             var unmarshaller = DescribeNotificationsForBudgetResponseUnmarshaller.Instance;
@@ -783,7 +783,7 @@ namespace Amazon.Budgets
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeNotificationsForBudget
         ///         operation.</returns>
-        public IAsyncResult BeginDescribeNotificationsForBudget(DescribeNotificationsForBudgetRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeNotificationsForBudget(DescribeNotificationsForBudgetRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeNotificationsForBudgetRequestMarshaller();
             var unmarshaller = DescribeNotificationsForBudgetResponseUnmarshaller.Instance;
@@ -799,7 +799,7 @@ namespace Amazon.Budgets
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeNotificationsForBudget.</param>
         /// 
         /// <returns>Returns a  DescribeNotificationsForBudgetResult from Budgets.</returns>
-        public  DescribeNotificationsForBudgetResponse EndDescribeNotificationsForBudget(IAsyncResult asyncResult)
+        public virtual DescribeNotificationsForBudgetResponse EndDescribeNotificationsForBudget(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeNotificationsForBudgetResponse>(asyncResult);
         }
@@ -832,7 +832,7 @@ namespace Amazon.Budgets
         /// This exception is thrown if a requested entity is not found. E.g., if a budget id
         /// doesn't exist for an account ID.
         /// </exception>
-        public DescribeSubscribersForNotificationResponse DescribeSubscribersForNotification(DescribeSubscribersForNotificationRequest request)
+        public virtual DescribeSubscribersForNotificationResponse DescribeSubscribersForNotification(DescribeSubscribersForNotificationRequest request)
         {
             var marshaller = new DescribeSubscribersForNotificationRequestMarshaller();
             var unmarshaller = DescribeSubscribersForNotificationResponseUnmarshaller.Instance;
@@ -851,7 +851,7 @@ namespace Amazon.Budgets
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSubscribersForNotification
         ///         operation.</returns>
-        public IAsyncResult BeginDescribeSubscribersForNotification(DescribeSubscribersForNotificationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeSubscribersForNotification(DescribeSubscribersForNotificationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeSubscribersForNotificationRequestMarshaller();
             var unmarshaller = DescribeSubscribersForNotificationResponseUnmarshaller.Instance;
@@ -867,7 +867,7 @@ namespace Amazon.Budgets
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSubscribersForNotification.</param>
         /// 
         /// <returns>Returns a  DescribeSubscribersForNotificationResult from Budgets.</returns>
-        public  DescribeSubscribersForNotificationResponse EndDescribeSubscribersForNotification(IAsyncResult asyncResult)
+        public virtual DescribeSubscribersForNotificationResponse EndDescribeSubscribersForNotification(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeSubscribersForNotificationResponse>(asyncResult);
         }
@@ -893,7 +893,7 @@ namespace Amazon.Budgets
         /// This exception is thrown if a requested entity is not found. E.g., if a budget id
         /// doesn't exist for an account ID.
         /// </exception>
-        public UpdateBudgetResponse UpdateBudget(UpdateBudgetRequest request)
+        public virtual UpdateBudgetResponse UpdateBudget(UpdateBudgetRequest request)
         {
             var marshaller = new UpdateBudgetRequestMarshaller();
             var unmarshaller = UpdateBudgetResponseUnmarshaller.Instance;
@@ -912,7 +912,7 @@ namespace Amazon.Budgets
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateBudget
         ///         operation.</returns>
-        public IAsyncResult BeginUpdateBudget(UpdateBudgetRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateBudget(UpdateBudgetRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateBudgetRequestMarshaller();
             var unmarshaller = UpdateBudgetResponseUnmarshaller.Instance;
@@ -928,7 +928,7 @@ namespace Amazon.Budgets
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateBudget.</param>
         /// 
         /// <returns>Returns a  UpdateBudgetResult from Budgets.</returns>
-        public  UpdateBudgetResponse EndUpdateBudget(IAsyncResult asyncResult)
+        public virtual UpdateBudgetResponse EndUpdateBudget(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateBudgetResponse>(asyncResult);
         }
@@ -958,7 +958,7 @@ namespace Amazon.Budgets
         /// This exception is thrown if a requested entity is not found. E.g., if a budget id
         /// doesn't exist for an account ID.
         /// </exception>
-        public UpdateNotificationResponse UpdateNotification(UpdateNotificationRequest request)
+        public virtual UpdateNotificationResponse UpdateNotification(UpdateNotificationRequest request)
         {
             var marshaller = new UpdateNotificationRequestMarshaller();
             var unmarshaller = UpdateNotificationResponseUnmarshaller.Instance;
@@ -977,7 +977,7 @@ namespace Amazon.Budgets
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateNotification
         ///         operation.</returns>
-        public IAsyncResult BeginUpdateNotification(UpdateNotificationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateNotification(UpdateNotificationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateNotificationRequestMarshaller();
             var unmarshaller = UpdateNotificationResponseUnmarshaller.Instance;
@@ -993,7 +993,7 @@ namespace Amazon.Budgets
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateNotification.</param>
         /// 
         /// <returns>Returns a  UpdateNotificationResult from Budgets.</returns>
-        public  UpdateNotificationResponse EndUpdateNotification(IAsyncResult asyncResult)
+        public virtual UpdateNotificationResponse EndUpdateNotification(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateNotificationResponse>(asyncResult);
         }
@@ -1023,7 +1023,7 @@ namespace Amazon.Budgets
         /// This exception is thrown if a requested entity is not found. E.g., if a budget id
         /// doesn't exist for an account ID.
         /// </exception>
-        public UpdateSubscriberResponse UpdateSubscriber(UpdateSubscriberRequest request)
+        public virtual UpdateSubscriberResponse UpdateSubscriber(UpdateSubscriberRequest request)
         {
             var marshaller = new UpdateSubscriberRequestMarshaller();
             var unmarshaller = UpdateSubscriberResponseUnmarshaller.Instance;
@@ -1042,7 +1042,7 @@ namespace Amazon.Budgets
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateSubscriber
         ///         operation.</returns>
-        public IAsyncResult BeginUpdateSubscriber(UpdateSubscriberRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateSubscriber(UpdateSubscriberRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateSubscriberRequestMarshaller();
             var unmarshaller = UpdateSubscriberResponseUnmarshaller.Instance;
@@ -1058,7 +1058,7 @@ namespace Amazon.Budgets
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateSubscriber.</param>
         /// 
         /// <returns>Returns a  UpdateSubscriberResult from Budgets.</returns>
-        public  UpdateSubscriberResponse EndUpdateSubscriber(IAsyncResult asyncResult)
+        public virtual UpdateSubscriberResponse EndUpdateSubscriber(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateSubscriberResponse>(asyncResult);
         }

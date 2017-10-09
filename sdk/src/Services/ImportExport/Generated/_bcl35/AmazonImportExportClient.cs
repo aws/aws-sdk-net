@@ -257,7 +257,7 @@ namespace Amazon.ImportExport
         /// <exception cref="Amazon.ImportExport.Model.UnableToCancelJobIdException">
         /// AWS Import/Export cannot cancel the job
         /// </exception>
-        public CancelJobResponse CancelJob(CancelJobRequest request)
+        public virtual CancelJobResponse CancelJob(CancelJobRequest request)
         {
             var marshaller = new CancelJobRequestMarshaller();
             var unmarshaller = CancelJobResponseUnmarshaller.Instance;
@@ -276,7 +276,7 @@ namespace Amazon.ImportExport
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelJob
         ///         operation.</returns>
-        public IAsyncResult BeginCancelJob(CancelJobRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCancelJob(CancelJobRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CancelJobRequestMarshaller();
             var unmarshaller = CancelJobResponseUnmarshaller.Instance;
@@ -292,7 +292,7 @@ namespace Amazon.ImportExport
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelJob.</param>
         /// 
         /// <returns>Returns a  CancelJobResult from ImportExport.</returns>
-        public  CancelJobResponse EndCancelJob(IAsyncResult asyncResult)
+        public virtual CancelJobResponse EndCancelJob(IAsyncResult asyncResult)
         {
             return EndInvoke<CancelJobResponse>(asyncResult);
         }
@@ -367,7 +367,7 @@ namespace Amazon.ImportExport
         /// bucket, exportBucket, or logBucket field to a bucket that the account, as specified
         /// by the manifest's Access Key ID, has write permissions to.
         /// </exception>
-        public CreateJobResponse CreateJob(CreateJobRequest request)
+        public virtual CreateJobResponse CreateJob(CreateJobRequest request)
         {
             var marshaller = new CreateJobRequestMarshaller();
             var unmarshaller = CreateJobResponseUnmarshaller.Instance;
@@ -386,7 +386,7 @@ namespace Amazon.ImportExport
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateJob
         ///         operation.</returns>
-        public IAsyncResult BeginCreateJob(CreateJobRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateJob(CreateJobRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateJobRequestMarshaller();
             var unmarshaller = CreateJobResponseUnmarshaller.Instance;
@@ -402,7 +402,7 @@ namespace Amazon.ImportExport
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateJob.</param>
         /// 
         /// <returns>Returns a  CreateJobResult from ImportExport.</returns>
-        public  CreateJobResponse EndCreateJob(IAsyncResult asyncResult)
+        public virtual CreateJobResponse EndCreateJob(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateJobResponse>(asyncResult);
         }
@@ -441,7 +441,7 @@ namespace Amazon.ImportExport
         /// <exception cref="Amazon.ImportExport.Model.InvalidVersionException">
         /// The client tool version is invalid.
         /// </exception>
-        public GetShippingLabelResponse GetShippingLabel(GetShippingLabelRequest request)
+        public virtual GetShippingLabelResponse GetShippingLabel(GetShippingLabelRequest request)
         {
             var marshaller = new GetShippingLabelRequestMarshaller();
             var unmarshaller = GetShippingLabelResponseUnmarshaller.Instance;
@@ -460,7 +460,7 @@ namespace Amazon.ImportExport
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetShippingLabel
         ///         operation.</returns>
-        public IAsyncResult BeginGetShippingLabel(GetShippingLabelRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetShippingLabel(GetShippingLabelRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetShippingLabelRequestMarshaller();
             var unmarshaller = GetShippingLabelResponseUnmarshaller.Instance;
@@ -476,7 +476,7 @@ namespace Amazon.ImportExport
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetShippingLabel.</param>
         /// 
         /// <returns>Returns a  GetShippingLabelResult from ImportExport.</returns>
-        public  GetShippingLabelResponse EndGetShippingLabel(IAsyncResult asyncResult)
+        public virtual GetShippingLabelResponse EndGetShippingLabel(IAsyncResult asyncResult)
         {
             return EndInvoke<GetShippingLabelResponse>(asyncResult);
         }
@@ -510,7 +510,7 @@ namespace Amazon.ImportExport
         /// <exception cref="Amazon.ImportExport.Model.InvalidVersionException">
         /// The client tool version is invalid.
         /// </exception>
-        public GetStatusResponse GetStatus(GetStatusRequest request)
+        public virtual GetStatusResponse GetStatus(GetStatusRequest request)
         {
             var marshaller = new GetStatusRequestMarshaller();
             var unmarshaller = GetStatusResponseUnmarshaller.Instance;
@@ -529,7 +529,7 @@ namespace Amazon.ImportExport
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetStatus
         ///         operation.</returns>
-        public IAsyncResult BeginGetStatus(GetStatusRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetStatus(GetStatusRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetStatusRequestMarshaller();
             var unmarshaller = GetStatusResponseUnmarshaller.Instance;
@@ -545,7 +545,7 @@ namespace Amazon.ImportExport
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetStatus.</param>
         /// 
         /// <returns>Returns a  GetStatusResult from ImportExport.</returns>
-        public  GetStatusResponse EndGetStatus(IAsyncResult asyncResult)
+        public virtual GetStatusResponse EndGetStatus(IAsyncResult asyncResult)
         {
             return EndInvoke<GetStatusResponse>(asyncResult);
         }
@@ -573,7 +573,7 @@ namespace Amazon.ImportExport
         /// <exception cref="Amazon.ImportExport.Model.InvalidVersionException">
         /// The client tool version is invalid.
         /// </exception>
-        public ListJobsResponse ListJobs()
+        public virtual ListJobsResponse ListJobs()
         {
             return ListJobs(new ListJobsRequest());
         }
@@ -598,7 +598,7 @@ namespace Amazon.ImportExport
         /// <exception cref="Amazon.ImportExport.Model.InvalidVersionException">
         /// The client tool version is invalid.
         /// </exception>
-        public ListJobsResponse ListJobs(ListJobsRequest request)
+        public virtual ListJobsResponse ListJobs(ListJobsRequest request)
         {
             var marshaller = new ListJobsRequestMarshaller();
             var unmarshaller = ListJobsResponseUnmarshaller.Instance;
@@ -617,7 +617,7 @@ namespace Amazon.ImportExport
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListJobs
         ///         operation.</returns>
-        public IAsyncResult BeginListJobs(ListJobsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListJobs(ListJobsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListJobsRequestMarshaller();
             var unmarshaller = ListJobsResponseUnmarshaller.Instance;
@@ -633,7 +633,7 @@ namespace Amazon.ImportExport
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListJobs.</param>
         /// 
         /// <returns>Returns a  ListJobsResult from ImportExport.</returns>
-        public  ListJobsResponse EndListJobs(IAsyncResult asyncResult)
+        public virtual ListJobsResponse EndListJobs(IAsyncResult asyncResult)
         {
             return EndInvoke<ListJobsResponse>(asyncResult);
         }
@@ -711,7 +711,7 @@ namespace Amazon.ImportExport
         /// <exception cref="Amazon.ImportExport.Model.UnableToUpdateJobIdException">
         /// AWS Import/Export cannot update the job
         /// </exception>
-        public UpdateJobResponse UpdateJob(UpdateJobRequest request)
+        public virtual UpdateJobResponse UpdateJob(UpdateJobRequest request)
         {
             var marshaller = new UpdateJobRequestMarshaller();
             var unmarshaller = UpdateJobResponseUnmarshaller.Instance;
@@ -730,7 +730,7 @@ namespace Amazon.ImportExport
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateJob
         ///         operation.</returns>
-        public IAsyncResult BeginUpdateJob(UpdateJobRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateJob(UpdateJobRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateJobRequestMarshaller();
             var unmarshaller = UpdateJobResponseUnmarshaller.Instance;
@@ -746,7 +746,7 @@ namespace Amazon.ImportExport
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateJob.</param>
         /// 
         /// <returns>Returns a  UpdateJobResult from ImportExport.</returns>
-        public  UpdateJobResponse EndUpdateJob(IAsyncResult asyncResult)
+        public virtual UpdateJobResponse EndUpdateJob(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateJobResponse>(asyncResult);
         }

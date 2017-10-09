@@ -245,7 +245,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/AssociateRoleToGroup">REST API Reference for AssociateRoleToGroup Operation</seealso>
-        public AssociateRoleToGroupResponse AssociateRoleToGroup(AssociateRoleToGroupRequest request)
+        public virtual AssociateRoleToGroupResponse AssociateRoleToGroup(AssociateRoleToGroupRequest request)
         {
             var marshaller = new AssociateRoleToGroupRequestMarshaller();
             var unmarshaller = AssociateRoleToGroupResponseUnmarshaller.Instance;
@@ -265,7 +265,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateRoleToGroup
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/AssociateRoleToGroup">REST API Reference for AssociateRoleToGroup Operation</seealso>
-        public IAsyncResult BeginAssociateRoleToGroup(AssociateRoleToGroupRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginAssociateRoleToGroup(AssociateRoleToGroupRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AssociateRoleToGroupRequestMarshaller();
             var unmarshaller = AssociateRoleToGroupResponseUnmarshaller.Instance;
@@ -282,7 +282,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  AssociateRoleToGroupResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/AssociateRoleToGroup">REST API Reference for AssociateRoleToGroup Operation</seealso>
-        public  AssociateRoleToGroupResponse EndAssociateRoleToGroup(IAsyncResult asyncResult)
+        public virtual AssociateRoleToGroupResponse EndAssociateRoleToGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<AssociateRoleToGroupResponse>(asyncResult);
         }
@@ -306,7 +306,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/AssociateServiceRoleToAccount">REST API Reference for AssociateServiceRoleToAccount Operation</seealso>
-        public AssociateServiceRoleToAccountResponse AssociateServiceRoleToAccount(AssociateServiceRoleToAccountRequest request)
+        public virtual AssociateServiceRoleToAccountResponse AssociateServiceRoleToAccount(AssociateServiceRoleToAccountRequest request)
         {
             var marshaller = new AssociateServiceRoleToAccountRequestMarshaller();
             var unmarshaller = AssociateServiceRoleToAccountResponseUnmarshaller.Instance;
@@ -326,7 +326,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateServiceRoleToAccount
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/AssociateServiceRoleToAccount">REST API Reference for AssociateServiceRoleToAccount Operation</seealso>
-        public IAsyncResult BeginAssociateServiceRoleToAccount(AssociateServiceRoleToAccountRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginAssociateServiceRoleToAccount(AssociateServiceRoleToAccountRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AssociateServiceRoleToAccountRequestMarshaller();
             var unmarshaller = AssociateServiceRoleToAccountResponseUnmarshaller.Instance;
@@ -343,7 +343,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  AssociateServiceRoleToAccountResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/AssociateServiceRoleToAccount">REST API Reference for AssociateServiceRoleToAccount Operation</seealso>
-        public  AssociateServiceRoleToAccountResponse EndAssociateServiceRoleToAccount(IAsyncResult asyncResult)
+        public virtual AssociateServiceRoleToAccountResponse EndAssociateServiceRoleToAccount(IAsyncResult asyncResult)
         {
             return EndInvoke<AssociateServiceRoleToAccountResponse>(asyncResult);
         }
@@ -364,7 +364,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateCoreDefinition">REST API Reference for CreateCoreDefinition Operation</seealso>
-        public CreateCoreDefinitionResponse CreateCoreDefinition(CreateCoreDefinitionRequest request)
+        public virtual CreateCoreDefinitionResponse CreateCoreDefinition(CreateCoreDefinitionRequest request)
         {
             var marshaller = new CreateCoreDefinitionRequestMarshaller();
             var unmarshaller = CreateCoreDefinitionResponseUnmarshaller.Instance;
@@ -384,7 +384,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCoreDefinition
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateCoreDefinition">REST API Reference for CreateCoreDefinition Operation</seealso>
-        public IAsyncResult BeginCreateCoreDefinition(CreateCoreDefinitionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateCoreDefinition(CreateCoreDefinitionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateCoreDefinitionRequestMarshaller();
             var unmarshaller = CreateCoreDefinitionResponseUnmarshaller.Instance;
@@ -401,7 +401,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  CreateCoreDefinitionResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateCoreDefinition">REST API Reference for CreateCoreDefinition Operation</seealso>
-        public  CreateCoreDefinitionResponse EndCreateCoreDefinition(IAsyncResult asyncResult)
+        public virtual CreateCoreDefinitionResponse EndCreateCoreDefinition(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateCoreDefinitionResponse>(asyncResult);
         }
@@ -421,7 +421,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateCoreDefinitionVersion">REST API Reference for CreateCoreDefinitionVersion Operation</seealso>
-        public CreateCoreDefinitionVersionResponse CreateCoreDefinitionVersion(CreateCoreDefinitionVersionRequest request)
+        public virtual CreateCoreDefinitionVersionResponse CreateCoreDefinitionVersion(CreateCoreDefinitionVersionRequest request)
         {
             var marshaller = new CreateCoreDefinitionVersionRequestMarshaller();
             var unmarshaller = CreateCoreDefinitionVersionResponseUnmarshaller.Instance;
@@ -441,7 +441,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCoreDefinitionVersion
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateCoreDefinitionVersion">REST API Reference for CreateCoreDefinitionVersion Operation</seealso>
-        public IAsyncResult BeginCreateCoreDefinitionVersion(CreateCoreDefinitionVersionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateCoreDefinitionVersion(CreateCoreDefinitionVersionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateCoreDefinitionVersionRequestMarshaller();
             var unmarshaller = CreateCoreDefinitionVersionResponseUnmarshaller.Instance;
@@ -458,7 +458,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  CreateCoreDefinitionVersionResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateCoreDefinitionVersion">REST API Reference for CreateCoreDefinitionVersion Operation</seealso>
-        public  CreateCoreDefinitionVersionResponse EndCreateCoreDefinitionVersion(IAsyncResult asyncResult)
+        public virtual CreateCoreDefinitionVersionResponse EndCreateCoreDefinitionVersion(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateCoreDefinitionVersionResponse>(asyncResult);
         }
@@ -477,7 +477,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateDeployment">REST API Reference for CreateDeployment Operation</seealso>
-        public CreateDeploymentResponse CreateDeployment(CreateDeploymentRequest request)
+        public virtual CreateDeploymentResponse CreateDeployment(CreateDeploymentRequest request)
         {
             var marshaller = new CreateDeploymentRequestMarshaller();
             var unmarshaller = CreateDeploymentResponseUnmarshaller.Instance;
@@ -497,7 +497,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDeployment
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateDeployment">REST API Reference for CreateDeployment Operation</seealso>
-        public IAsyncResult BeginCreateDeployment(CreateDeploymentRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateDeployment(CreateDeploymentRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateDeploymentRequestMarshaller();
             var unmarshaller = CreateDeploymentResponseUnmarshaller.Instance;
@@ -514,7 +514,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  CreateDeploymentResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateDeployment">REST API Reference for CreateDeployment Operation</seealso>
-        public  CreateDeploymentResponse EndCreateDeployment(IAsyncResult asyncResult)
+        public virtual CreateDeploymentResponse EndCreateDeployment(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateDeploymentResponse>(asyncResult);
         }
@@ -534,7 +534,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateDeviceDefinition">REST API Reference for CreateDeviceDefinition Operation</seealso>
-        public CreateDeviceDefinitionResponse CreateDeviceDefinition(CreateDeviceDefinitionRequest request)
+        public virtual CreateDeviceDefinitionResponse CreateDeviceDefinition(CreateDeviceDefinitionRequest request)
         {
             var marshaller = new CreateDeviceDefinitionRequestMarshaller();
             var unmarshaller = CreateDeviceDefinitionResponseUnmarshaller.Instance;
@@ -554,7 +554,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDeviceDefinition
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateDeviceDefinition">REST API Reference for CreateDeviceDefinition Operation</seealso>
-        public IAsyncResult BeginCreateDeviceDefinition(CreateDeviceDefinitionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateDeviceDefinition(CreateDeviceDefinitionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateDeviceDefinitionRequestMarshaller();
             var unmarshaller = CreateDeviceDefinitionResponseUnmarshaller.Instance;
@@ -571,7 +571,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  CreateDeviceDefinitionResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateDeviceDefinition">REST API Reference for CreateDeviceDefinition Operation</seealso>
-        public  CreateDeviceDefinitionResponse EndCreateDeviceDefinition(IAsyncResult asyncResult)
+        public virtual CreateDeviceDefinitionResponse EndCreateDeviceDefinition(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateDeviceDefinitionResponse>(asyncResult);
         }
@@ -590,7 +590,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateDeviceDefinitionVersion">REST API Reference for CreateDeviceDefinitionVersion Operation</seealso>
-        public CreateDeviceDefinitionVersionResponse CreateDeviceDefinitionVersion(CreateDeviceDefinitionVersionRequest request)
+        public virtual CreateDeviceDefinitionVersionResponse CreateDeviceDefinitionVersion(CreateDeviceDefinitionVersionRequest request)
         {
             var marshaller = new CreateDeviceDefinitionVersionRequestMarshaller();
             var unmarshaller = CreateDeviceDefinitionVersionResponseUnmarshaller.Instance;
@@ -610,7 +610,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDeviceDefinitionVersion
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateDeviceDefinitionVersion">REST API Reference for CreateDeviceDefinitionVersion Operation</seealso>
-        public IAsyncResult BeginCreateDeviceDefinitionVersion(CreateDeviceDefinitionVersionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateDeviceDefinitionVersion(CreateDeviceDefinitionVersionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateDeviceDefinitionVersionRequestMarshaller();
             var unmarshaller = CreateDeviceDefinitionVersionResponseUnmarshaller.Instance;
@@ -627,7 +627,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  CreateDeviceDefinitionVersionResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateDeviceDefinitionVersion">REST API Reference for CreateDeviceDefinitionVersion Operation</seealso>
-        public  CreateDeviceDefinitionVersionResponse EndCreateDeviceDefinitionVersion(IAsyncResult asyncResult)
+        public virtual CreateDeviceDefinitionVersionResponse EndCreateDeviceDefinitionVersion(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateDeviceDefinitionVersionResponse>(asyncResult);
         }
@@ -649,7 +649,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateFunctionDefinition">REST API Reference for CreateFunctionDefinition Operation</seealso>
-        public CreateFunctionDefinitionResponse CreateFunctionDefinition(CreateFunctionDefinitionRequest request)
+        public virtual CreateFunctionDefinitionResponse CreateFunctionDefinition(CreateFunctionDefinitionRequest request)
         {
             var marshaller = new CreateFunctionDefinitionRequestMarshaller();
             var unmarshaller = CreateFunctionDefinitionResponseUnmarshaller.Instance;
@@ -669,7 +669,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateFunctionDefinition
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateFunctionDefinition">REST API Reference for CreateFunctionDefinition Operation</seealso>
-        public IAsyncResult BeginCreateFunctionDefinition(CreateFunctionDefinitionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateFunctionDefinition(CreateFunctionDefinitionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateFunctionDefinitionRequestMarshaller();
             var unmarshaller = CreateFunctionDefinitionResponseUnmarshaller.Instance;
@@ -686,7 +686,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  CreateFunctionDefinitionResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateFunctionDefinition">REST API Reference for CreateFunctionDefinition Operation</seealso>
-        public  CreateFunctionDefinitionResponse EndCreateFunctionDefinition(IAsyncResult asyncResult)
+        public virtual CreateFunctionDefinitionResponse EndCreateFunctionDefinition(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateFunctionDefinitionResponse>(asyncResult);
         }
@@ -705,7 +705,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateFunctionDefinitionVersion">REST API Reference for CreateFunctionDefinitionVersion Operation</seealso>
-        public CreateFunctionDefinitionVersionResponse CreateFunctionDefinitionVersion(CreateFunctionDefinitionVersionRequest request)
+        public virtual CreateFunctionDefinitionVersionResponse CreateFunctionDefinitionVersion(CreateFunctionDefinitionVersionRequest request)
         {
             var marshaller = new CreateFunctionDefinitionVersionRequestMarshaller();
             var unmarshaller = CreateFunctionDefinitionVersionResponseUnmarshaller.Instance;
@@ -725,7 +725,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateFunctionDefinitionVersion
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateFunctionDefinitionVersion">REST API Reference for CreateFunctionDefinitionVersion Operation</seealso>
-        public IAsyncResult BeginCreateFunctionDefinitionVersion(CreateFunctionDefinitionVersionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateFunctionDefinitionVersion(CreateFunctionDefinitionVersionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateFunctionDefinitionVersionRequestMarshaller();
             var unmarshaller = CreateFunctionDefinitionVersionResponseUnmarshaller.Instance;
@@ -742,7 +742,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  CreateFunctionDefinitionVersionResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateFunctionDefinitionVersion">REST API Reference for CreateFunctionDefinitionVersion Operation</seealso>
-        public  CreateFunctionDefinitionVersionResponse EndCreateFunctionDefinitionVersion(IAsyncResult asyncResult)
+        public virtual CreateFunctionDefinitionVersionResponse EndCreateFunctionDefinitionVersion(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateFunctionDefinitionVersionResponse>(asyncResult);
         }
@@ -762,7 +762,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateGroup">REST API Reference for CreateGroup Operation</seealso>
-        public CreateGroupResponse CreateGroup(CreateGroupRequest request)
+        public virtual CreateGroupResponse CreateGroup(CreateGroupRequest request)
         {
             var marshaller = new CreateGroupRequestMarshaller();
             var unmarshaller = CreateGroupResponseUnmarshaller.Instance;
@@ -782,7 +782,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateGroup
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateGroup">REST API Reference for CreateGroup Operation</seealso>
-        public IAsyncResult BeginCreateGroup(CreateGroupRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateGroup(CreateGroupRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateGroupRequestMarshaller();
             var unmarshaller = CreateGroupResponseUnmarshaller.Instance;
@@ -799,7 +799,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  CreateGroupResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateGroup">REST API Reference for CreateGroup Operation</seealso>
-        public  CreateGroupResponse EndCreateGroup(IAsyncResult asyncResult)
+        public virtual CreateGroupResponse EndCreateGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateGroupResponse>(asyncResult);
         }
@@ -821,7 +821,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateGroupCertificateAuthority">REST API Reference for CreateGroupCertificateAuthority Operation</seealso>
-        public CreateGroupCertificateAuthorityResponse CreateGroupCertificateAuthority(CreateGroupCertificateAuthorityRequest request)
+        public virtual CreateGroupCertificateAuthorityResponse CreateGroupCertificateAuthority(CreateGroupCertificateAuthorityRequest request)
         {
             var marshaller = new CreateGroupCertificateAuthorityRequestMarshaller();
             var unmarshaller = CreateGroupCertificateAuthorityResponseUnmarshaller.Instance;
@@ -841,7 +841,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateGroupCertificateAuthority
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateGroupCertificateAuthority">REST API Reference for CreateGroupCertificateAuthority Operation</seealso>
-        public IAsyncResult BeginCreateGroupCertificateAuthority(CreateGroupCertificateAuthorityRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateGroupCertificateAuthority(CreateGroupCertificateAuthorityRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateGroupCertificateAuthorityRequestMarshaller();
             var unmarshaller = CreateGroupCertificateAuthorityResponseUnmarshaller.Instance;
@@ -858,7 +858,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  CreateGroupCertificateAuthorityResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateGroupCertificateAuthority">REST API Reference for CreateGroupCertificateAuthority Operation</seealso>
-        public  CreateGroupCertificateAuthorityResponse EndCreateGroupCertificateAuthority(IAsyncResult asyncResult)
+        public virtual CreateGroupCertificateAuthorityResponse EndCreateGroupCertificateAuthority(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateGroupCertificateAuthorityResponse>(asyncResult);
         }
@@ -877,7 +877,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateGroupVersion">REST API Reference for CreateGroupVersion Operation</seealso>
-        public CreateGroupVersionResponse CreateGroupVersion(CreateGroupVersionRequest request)
+        public virtual CreateGroupVersionResponse CreateGroupVersion(CreateGroupVersionRequest request)
         {
             var marshaller = new CreateGroupVersionRequestMarshaller();
             var unmarshaller = CreateGroupVersionResponseUnmarshaller.Instance;
@@ -897,7 +897,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateGroupVersion
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateGroupVersion">REST API Reference for CreateGroupVersion Operation</seealso>
-        public IAsyncResult BeginCreateGroupVersion(CreateGroupVersionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateGroupVersion(CreateGroupVersionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateGroupVersionRequestMarshaller();
             var unmarshaller = CreateGroupVersionResponseUnmarshaller.Instance;
@@ -914,7 +914,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  CreateGroupVersionResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateGroupVersion">REST API Reference for CreateGroupVersion Operation</seealso>
-        public  CreateGroupVersionResponse EndCreateGroupVersion(IAsyncResult asyncResult)
+        public virtual CreateGroupVersionResponse EndCreateGroupVersion(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateGroupVersionResponse>(asyncResult);
         }
@@ -934,7 +934,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateLoggerDefinition">REST API Reference for CreateLoggerDefinition Operation</seealso>
-        public CreateLoggerDefinitionResponse CreateLoggerDefinition(CreateLoggerDefinitionRequest request)
+        public virtual CreateLoggerDefinitionResponse CreateLoggerDefinition(CreateLoggerDefinitionRequest request)
         {
             var marshaller = new CreateLoggerDefinitionRequestMarshaller();
             var unmarshaller = CreateLoggerDefinitionResponseUnmarshaller.Instance;
@@ -954,7 +954,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateLoggerDefinition
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateLoggerDefinition">REST API Reference for CreateLoggerDefinition Operation</seealso>
-        public IAsyncResult BeginCreateLoggerDefinition(CreateLoggerDefinitionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateLoggerDefinition(CreateLoggerDefinitionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateLoggerDefinitionRequestMarshaller();
             var unmarshaller = CreateLoggerDefinitionResponseUnmarshaller.Instance;
@@ -971,7 +971,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  CreateLoggerDefinitionResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateLoggerDefinition">REST API Reference for CreateLoggerDefinition Operation</seealso>
-        public  CreateLoggerDefinitionResponse EndCreateLoggerDefinition(IAsyncResult asyncResult)
+        public virtual CreateLoggerDefinitionResponse EndCreateLoggerDefinition(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateLoggerDefinitionResponse>(asyncResult);
         }
@@ -990,7 +990,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateLoggerDefinitionVersion">REST API Reference for CreateLoggerDefinitionVersion Operation</seealso>
-        public CreateLoggerDefinitionVersionResponse CreateLoggerDefinitionVersion(CreateLoggerDefinitionVersionRequest request)
+        public virtual CreateLoggerDefinitionVersionResponse CreateLoggerDefinitionVersion(CreateLoggerDefinitionVersionRequest request)
         {
             var marshaller = new CreateLoggerDefinitionVersionRequestMarshaller();
             var unmarshaller = CreateLoggerDefinitionVersionResponseUnmarshaller.Instance;
@@ -1010,7 +1010,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateLoggerDefinitionVersion
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateLoggerDefinitionVersion">REST API Reference for CreateLoggerDefinitionVersion Operation</seealso>
-        public IAsyncResult BeginCreateLoggerDefinitionVersion(CreateLoggerDefinitionVersionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateLoggerDefinitionVersion(CreateLoggerDefinitionVersionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateLoggerDefinitionVersionRequestMarshaller();
             var unmarshaller = CreateLoggerDefinitionVersionResponseUnmarshaller.Instance;
@@ -1027,7 +1027,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  CreateLoggerDefinitionVersionResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateLoggerDefinitionVersion">REST API Reference for CreateLoggerDefinitionVersion Operation</seealso>
-        public  CreateLoggerDefinitionVersionResponse EndCreateLoggerDefinitionVersion(IAsyncResult asyncResult)
+        public virtual CreateLoggerDefinitionVersionResponse EndCreateLoggerDefinitionVersion(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateLoggerDefinitionVersionResponse>(asyncResult);
         }
@@ -1048,7 +1048,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateSubscriptionDefinition">REST API Reference for CreateSubscriptionDefinition Operation</seealso>
-        public CreateSubscriptionDefinitionResponse CreateSubscriptionDefinition(CreateSubscriptionDefinitionRequest request)
+        public virtual CreateSubscriptionDefinitionResponse CreateSubscriptionDefinition(CreateSubscriptionDefinitionRequest request)
         {
             var marshaller = new CreateSubscriptionDefinitionRequestMarshaller();
             var unmarshaller = CreateSubscriptionDefinitionResponseUnmarshaller.Instance;
@@ -1068,7 +1068,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSubscriptionDefinition
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateSubscriptionDefinition">REST API Reference for CreateSubscriptionDefinition Operation</seealso>
-        public IAsyncResult BeginCreateSubscriptionDefinition(CreateSubscriptionDefinitionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateSubscriptionDefinition(CreateSubscriptionDefinitionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateSubscriptionDefinitionRequestMarshaller();
             var unmarshaller = CreateSubscriptionDefinitionResponseUnmarshaller.Instance;
@@ -1085,7 +1085,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  CreateSubscriptionDefinitionResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateSubscriptionDefinition">REST API Reference for CreateSubscriptionDefinition Operation</seealso>
-        public  CreateSubscriptionDefinitionResponse EndCreateSubscriptionDefinition(IAsyncResult asyncResult)
+        public virtual CreateSubscriptionDefinitionResponse EndCreateSubscriptionDefinition(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateSubscriptionDefinitionResponse>(asyncResult);
         }
@@ -1104,7 +1104,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateSubscriptionDefinitionVersion">REST API Reference for CreateSubscriptionDefinitionVersion Operation</seealso>
-        public CreateSubscriptionDefinitionVersionResponse CreateSubscriptionDefinitionVersion(CreateSubscriptionDefinitionVersionRequest request)
+        public virtual CreateSubscriptionDefinitionVersionResponse CreateSubscriptionDefinitionVersion(CreateSubscriptionDefinitionVersionRequest request)
         {
             var marshaller = new CreateSubscriptionDefinitionVersionRequestMarshaller();
             var unmarshaller = CreateSubscriptionDefinitionVersionResponseUnmarshaller.Instance;
@@ -1124,7 +1124,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSubscriptionDefinitionVersion
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateSubscriptionDefinitionVersion">REST API Reference for CreateSubscriptionDefinitionVersion Operation</seealso>
-        public IAsyncResult BeginCreateSubscriptionDefinitionVersion(CreateSubscriptionDefinitionVersionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateSubscriptionDefinitionVersion(CreateSubscriptionDefinitionVersionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateSubscriptionDefinitionVersionRequestMarshaller();
             var unmarshaller = CreateSubscriptionDefinitionVersionResponseUnmarshaller.Instance;
@@ -1141,7 +1141,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  CreateSubscriptionDefinitionVersionResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateSubscriptionDefinitionVersion">REST API Reference for CreateSubscriptionDefinitionVersion Operation</seealso>
-        public  CreateSubscriptionDefinitionVersionResponse EndCreateSubscriptionDefinitionVersion(IAsyncResult asyncResult)
+        public virtual CreateSubscriptionDefinitionVersionResponse EndCreateSubscriptionDefinitionVersion(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateSubscriptionDefinitionVersionResponse>(asyncResult);
         }
@@ -1160,7 +1160,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteCoreDefinition">REST API Reference for DeleteCoreDefinition Operation</seealso>
-        public DeleteCoreDefinitionResponse DeleteCoreDefinition(DeleteCoreDefinitionRequest request)
+        public virtual DeleteCoreDefinitionResponse DeleteCoreDefinition(DeleteCoreDefinitionRequest request)
         {
             var marshaller = new DeleteCoreDefinitionRequestMarshaller();
             var unmarshaller = DeleteCoreDefinitionResponseUnmarshaller.Instance;
@@ -1180,7 +1180,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCoreDefinition
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteCoreDefinition">REST API Reference for DeleteCoreDefinition Operation</seealso>
-        public IAsyncResult BeginDeleteCoreDefinition(DeleteCoreDefinitionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteCoreDefinition(DeleteCoreDefinitionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteCoreDefinitionRequestMarshaller();
             var unmarshaller = DeleteCoreDefinitionResponseUnmarshaller.Instance;
@@ -1197,7 +1197,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  DeleteCoreDefinitionResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteCoreDefinition">REST API Reference for DeleteCoreDefinition Operation</seealso>
-        public  DeleteCoreDefinitionResponse EndDeleteCoreDefinition(IAsyncResult asyncResult)
+        public virtual DeleteCoreDefinitionResponse EndDeleteCoreDefinition(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteCoreDefinitionResponse>(asyncResult);
         }
@@ -1216,7 +1216,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteDeviceDefinition">REST API Reference for DeleteDeviceDefinition Operation</seealso>
-        public DeleteDeviceDefinitionResponse DeleteDeviceDefinition(DeleteDeviceDefinitionRequest request)
+        public virtual DeleteDeviceDefinitionResponse DeleteDeviceDefinition(DeleteDeviceDefinitionRequest request)
         {
             var marshaller = new DeleteDeviceDefinitionRequestMarshaller();
             var unmarshaller = DeleteDeviceDefinitionResponseUnmarshaller.Instance;
@@ -1236,7 +1236,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDeviceDefinition
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteDeviceDefinition">REST API Reference for DeleteDeviceDefinition Operation</seealso>
-        public IAsyncResult BeginDeleteDeviceDefinition(DeleteDeviceDefinitionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteDeviceDefinition(DeleteDeviceDefinitionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteDeviceDefinitionRequestMarshaller();
             var unmarshaller = DeleteDeviceDefinitionResponseUnmarshaller.Instance;
@@ -1253,7 +1253,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  DeleteDeviceDefinitionResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteDeviceDefinition">REST API Reference for DeleteDeviceDefinition Operation</seealso>
-        public  DeleteDeviceDefinitionResponse EndDeleteDeviceDefinition(IAsyncResult asyncResult)
+        public virtual DeleteDeviceDefinitionResponse EndDeleteDeviceDefinition(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteDeviceDefinitionResponse>(asyncResult);
         }
@@ -1273,7 +1273,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteFunctionDefinition">REST API Reference for DeleteFunctionDefinition Operation</seealso>
-        public DeleteFunctionDefinitionResponse DeleteFunctionDefinition(DeleteFunctionDefinitionRequest request)
+        public virtual DeleteFunctionDefinitionResponse DeleteFunctionDefinition(DeleteFunctionDefinitionRequest request)
         {
             var marshaller = new DeleteFunctionDefinitionRequestMarshaller();
             var unmarshaller = DeleteFunctionDefinitionResponseUnmarshaller.Instance;
@@ -1293,7 +1293,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteFunctionDefinition
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteFunctionDefinition">REST API Reference for DeleteFunctionDefinition Operation</seealso>
-        public IAsyncResult BeginDeleteFunctionDefinition(DeleteFunctionDefinitionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteFunctionDefinition(DeleteFunctionDefinitionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteFunctionDefinitionRequestMarshaller();
             var unmarshaller = DeleteFunctionDefinitionResponseUnmarshaller.Instance;
@@ -1310,7 +1310,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  DeleteFunctionDefinitionResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteFunctionDefinition">REST API Reference for DeleteFunctionDefinition Operation</seealso>
-        public  DeleteFunctionDefinitionResponse EndDeleteFunctionDefinition(IAsyncResult asyncResult)
+        public virtual DeleteFunctionDefinitionResponse EndDeleteFunctionDefinition(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteFunctionDefinitionResponse>(asyncResult);
         }
@@ -1329,7 +1329,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteGroup">REST API Reference for DeleteGroup Operation</seealso>
-        public DeleteGroupResponse DeleteGroup(DeleteGroupRequest request)
+        public virtual DeleteGroupResponse DeleteGroup(DeleteGroupRequest request)
         {
             var marshaller = new DeleteGroupRequestMarshaller();
             var unmarshaller = DeleteGroupResponseUnmarshaller.Instance;
@@ -1349,7 +1349,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteGroup
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteGroup">REST API Reference for DeleteGroup Operation</seealso>
-        public IAsyncResult BeginDeleteGroup(DeleteGroupRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteGroup(DeleteGroupRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteGroupRequestMarshaller();
             var unmarshaller = DeleteGroupResponseUnmarshaller.Instance;
@@ -1366,7 +1366,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  DeleteGroupResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteGroup">REST API Reference for DeleteGroup Operation</seealso>
-        public  DeleteGroupResponse EndDeleteGroup(IAsyncResult asyncResult)
+        public virtual DeleteGroupResponse EndDeleteGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteGroupResponse>(asyncResult);
         }
@@ -1385,7 +1385,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteLoggerDefinition">REST API Reference for DeleteLoggerDefinition Operation</seealso>
-        public DeleteLoggerDefinitionResponse DeleteLoggerDefinition(DeleteLoggerDefinitionRequest request)
+        public virtual DeleteLoggerDefinitionResponse DeleteLoggerDefinition(DeleteLoggerDefinitionRequest request)
         {
             var marshaller = new DeleteLoggerDefinitionRequestMarshaller();
             var unmarshaller = DeleteLoggerDefinitionResponseUnmarshaller.Instance;
@@ -1405,7 +1405,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteLoggerDefinition
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteLoggerDefinition">REST API Reference for DeleteLoggerDefinition Operation</seealso>
-        public IAsyncResult BeginDeleteLoggerDefinition(DeleteLoggerDefinitionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteLoggerDefinition(DeleteLoggerDefinitionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteLoggerDefinitionRequestMarshaller();
             var unmarshaller = DeleteLoggerDefinitionResponseUnmarshaller.Instance;
@@ -1422,7 +1422,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  DeleteLoggerDefinitionResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteLoggerDefinition">REST API Reference for DeleteLoggerDefinition Operation</seealso>
-        public  DeleteLoggerDefinitionResponse EndDeleteLoggerDefinition(IAsyncResult asyncResult)
+        public virtual DeleteLoggerDefinitionResponse EndDeleteLoggerDefinition(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteLoggerDefinitionResponse>(asyncResult);
         }
@@ -1442,7 +1442,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteSubscriptionDefinition">REST API Reference for DeleteSubscriptionDefinition Operation</seealso>
-        public DeleteSubscriptionDefinitionResponse DeleteSubscriptionDefinition(DeleteSubscriptionDefinitionRequest request)
+        public virtual DeleteSubscriptionDefinitionResponse DeleteSubscriptionDefinition(DeleteSubscriptionDefinitionRequest request)
         {
             var marshaller = new DeleteSubscriptionDefinitionRequestMarshaller();
             var unmarshaller = DeleteSubscriptionDefinitionResponseUnmarshaller.Instance;
@@ -1462,7 +1462,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSubscriptionDefinition
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteSubscriptionDefinition">REST API Reference for DeleteSubscriptionDefinition Operation</seealso>
-        public IAsyncResult BeginDeleteSubscriptionDefinition(DeleteSubscriptionDefinitionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteSubscriptionDefinition(DeleteSubscriptionDefinitionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteSubscriptionDefinitionRequestMarshaller();
             var unmarshaller = DeleteSubscriptionDefinitionResponseUnmarshaller.Instance;
@@ -1479,7 +1479,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  DeleteSubscriptionDefinitionResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteSubscriptionDefinition">REST API Reference for DeleteSubscriptionDefinition Operation</seealso>
-        public  DeleteSubscriptionDefinitionResponse EndDeleteSubscriptionDefinition(IAsyncResult asyncResult)
+        public virtual DeleteSubscriptionDefinitionResponse EndDeleteSubscriptionDefinition(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteSubscriptionDefinitionResponse>(asyncResult);
         }
@@ -1501,7 +1501,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DisassociateRoleFromGroup">REST API Reference for DisassociateRoleFromGroup Operation</seealso>
-        public DisassociateRoleFromGroupResponse DisassociateRoleFromGroup(DisassociateRoleFromGroupRequest request)
+        public virtual DisassociateRoleFromGroupResponse DisassociateRoleFromGroup(DisassociateRoleFromGroupRequest request)
         {
             var marshaller = new DisassociateRoleFromGroupRequestMarshaller();
             var unmarshaller = DisassociateRoleFromGroupResponseUnmarshaller.Instance;
@@ -1521,7 +1521,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateRoleFromGroup
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DisassociateRoleFromGroup">REST API Reference for DisassociateRoleFromGroup Operation</seealso>
-        public IAsyncResult BeginDisassociateRoleFromGroup(DisassociateRoleFromGroupRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDisassociateRoleFromGroup(DisassociateRoleFromGroupRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DisassociateRoleFromGroupRequestMarshaller();
             var unmarshaller = DisassociateRoleFromGroupResponseUnmarshaller.Instance;
@@ -1538,7 +1538,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  DisassociateRoleFromGroupResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DisassociateRoleFromGroup">REST API Reference for DisassociateRoleFromGroup Operation</seealso>
-        public  DisassociateRoleFromGroupResponse EndDisassociateRoleFromGroup(IAsyncResult asyncResult)
+        public virtual DisassociateRoleFromGroupResponse EndDisassociateRoleFromGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<DisassociateRoleFromGroupResponse>(asyncResult);
         }
@@ -1558,7 +1558,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DisassociateServiceRoleFromAccount">REST API Reference for DisassociateServiceRoleFromAccount Operation</seealso>
-        public DisassociateServiceRoleFromAccountResponse DisassociateServiceRoleFromAccount(DisassociateServiceRoleFromAccountRequest request)
+        public virtual DisassociateServiceRoleFromAccountResponse DisassociateServiceRoleFromAccount(DisassociateServiceRoleFromAccountRequest request)
         {
             var marshaller = new DisassociateServiceRoleFromAccountRequestMarshaller();
             var unmarshaller = DisassociateServiceRoleFromAccountResponseUnmarshaller.Instance;
@@ -1578,7 +1578,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateServiceRoleFromAccount
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DisassociateServiceRoleFromAccount">REST API Reference for DisassociateServiceRoleFromAccount Operation</seealso>
-        public IAsyncResult BeginDisassociateServiceRoleFromAccount(DisassociateServiceRoleFromAccountRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDisassociateServiceRoleFromAccount(DisassociateServiceRoleFromAccountRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DisassociateServiceRoleFromAccountRequestMarshaller();
             var unmarshaller = DisassociateServiceRoleFromAccountResponseUnmarshaller.Instance;
@@ -1595,7 +1595,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  DisassociateServiceRoleFromAccountResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DisassociateServiceRoleFromAccount">REST API Reference for DisassociateServiceRoleFromAccount Operation</seealso>
-        public  DisassociateServiceRoleFromAccountResponse EndDisassociateServiceRoleFromAccount(IAsyncResult asyncResult)
+        public virtual DisassociateServiceRoleFromAccountResponse EndDisassociateServiceRoleFromAccount(IAsyncResult asyncResult)
         {
             return EndInvoke<DisassociateServiceRoleFromAccountResponse>(asyncResult);
         }
@@ -1617,7 +1617,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetAssociatedRole">REST API Reference for GetAssociatedRole Operation</seealso>
-        public GetAssociatedRoleResponse GetAssociatedRole(GetAssociatedRoleRequest request)
+        public virtual GetAssociatedRoleResponse GetAssociatedRole(GetAssociatedRoleRequest request)
         {
             var marshaller = new GetAssociatedRoleRequestMarshaller();
             var unmarshaller = GetAssociatedRoleResponseUnmarshaller.Instance;
@@ -1637,7 +1637,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAssociatedRole
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetAssociatedRole">REST API Reference for GetAssociatedRole Operation</seealso>
-        public IAsyncResult BeginGetAssociatedRole(GetAssociatedRoleRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetAssociatedRole(GetAssociatedRoleRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetAssociatedRoleRequestMarshaller();
             var unmarshaller = GetAssociatedRoleResponseUnmarshaller.Instance;
@@ -1654,7 +1654,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  GetAssociatedRoleResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetAssociatedRole">REST API Reference for GetAssociatedRole Operation</seealso>
-        public  GetAssociatedRoleResponse EndGetAssociatedRole(IAsyncResult asyncResult)
+        public virtual GetAssociatedRoleResponse EndGetAssociatedRole(IAsyncResult asyncResult)
         {
             return EndInvoke<GetAssociatedRoleResponse>(asyncResult);
         }
@@ -1676,7 +1676,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetConnectivityInfo">REST API Reference for GetConnectivityInfo Operation</seealso>
-        public GetConnectivityInfoResponse GetConnectivityInfo(GetConnectivityInfoRequest request)
+        public virtual GetConnectivityInfoResponse GetConnectivityInfo(GetConnectivityInfoRequest request)
         {
             var marshaller = new GetConnectivityInfoRequestMarshaller();
             var unmarshaller = GetConnectivityInfoResponseUnmarshaller.Instance;
@@ -1696,7 +1696,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetConnectivityInfo
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetConnectivityInfo">REST API Reference for GetConnectivityInfo Operation</seealso>
-        public IAsyncResult BeginGetConnectivityInfo(GetConnectivityInfoRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetConnectivityInfo(GetConnectivityInfoRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetConnectivityInfoRequestMarshaller();
             var unmarshaller = GetConnectivityInfoResponseUnmarshaller.Instance;
@@ -1713,7 +1713,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  GetConnectivityInfoResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetConnectivityInfo">REST API Reference for GetConnectivityInfo Operation</seealso>
-        public  GetConnectivityInfoResponse EndGetConnectivityInfo(IAsyncResult asyncResult)
+        public virtual GetConnectivityInfoResponse EndGetConnectivityInfo(IAsyncResult asyncResult)
         {
             return EndInvoke<GetConnectivityInfoResponse>(asyncResult);
         }
@@ -1732,7 +1732,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetCoreDefinition">REST API Reference for GetCoreDefinition Operation</seealso>
-        public GetCoreDefinitionResponse GetCoreDefinition(GetCoreDefinitionRequest request)
+        public virtual GetCoreDefinitionResponse GetCoreDefinition(GetCoreDefinitionRequest request)
         {
             var marshaller = new GetCoreDefinitionRequestMarshaller();
             var unmarshaller = GetCoreDefinitionResponseUnmarshaller.Instance;
@@ -1752,7 +1752,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCoreDefinition
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetCoreDefinition">REST API Reference for GetCoreDefinition Operation</seealso>
-        public IAsyncResult BeginGetCoreDefinition(GetCoreDefinitionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetCoreDefinition(GetCoreDefinitionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetCoreDefinitionRequestMarshaller();
             var unmarshaller = GetCoreDefinitionResponseUnmarshaller.Instance;
@@ -1769,7 +1769,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  GetCoreDefinitionResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetCoreDefinition">REST API Reference for GetCoreDefinition Operation</seealso>
-        public  GetCoreDefinitionResponse EndGetCoreDefinition(IAsyncResult asyncResult)
+        public virtual GetCoreDefinitionResponse EndGetCoreDefinition(IAsyncResult asyncResult)
         {
             return EndInvoke<GetCoreDefinitionResponse>(asyncResult);
         }
@@ -1788,7 +1788,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetCoreDefinitionVersion">REST API Reference for GetCoreDefinitionVersion Operation</seealso>
-        public GetCoreDefinitionVersionResponse GetCoreDefinitionVersion(GetCoreDefinitionVersionRequest request)
+        public virtual GetCoreDefinitionVersionResponse GetCoreDefinitionVersion(GetCoreDefinitionVersionRequest request)
         {
             var marshaller = new GetCoreDefinitionVersionRequestMarshaller();
             var unmarshaller = GetCoreDefinitionVersionResponseUnmarshaller.Instance;
@@ -1808,7 +1808,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCoreDefinitionVersion
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetCoreDefinitionVersion">REST API Reference for GetCoreDefinitionVersion Operation</seealso>
-        public IAsyncResult BeginGetCoreDefinitionVersion(GetCoreDefinitionVersionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetCoreDefinitionVersion(GetCoreDefinitionVersionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetCoreDefinitionVersionRequestMarshaller();
             var unmarshaller = GetCoreDefinitionVersionResponseUnmarshaller.Instance;
@@ -1825,7 +1825,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  GetCoreDefinitionVersionResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetCoreDefinitionVersion">REST API Reference for GetCoreDefinitionVersion Operation</seealso>
-        public  GetCoreDefinitionVersionResponse EndGetCoreDefinitionVersion(IAsyncResult asyncResult)
+        public virtual GetCoreDefinitionVersionResponse EndGetCoreDefinitionVersion(IAsyncResult asyncResult)
         {
             return EndInvoke<GetCoreDefinitionVersionResponse>(asyncResult);
         }
@@ -1844,7 +1844,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetDeploymentStatus">REST API Reference for GetDeploymentStatus Operation</seealso>
-        public GetDeploymentStatusResponse GetDeploymentStatus(GetDeploymentStatusRequest request)
+        public virtual GetDeploymentStatusResponse GetDeploymentStatus(GetDeploymentStatusRequest request)
         {
             var marshaller = new GetDeploymentStatusRequestMarshaller();
             var unmarshaller = GetDeploymentStatusResponseUnmarshaller.Instance;
@@ -1864,7 +1864,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDeploymentStatus
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetDeploymentStatus">REST API Reference for GetDeploymentStatus Operation</seealso>
-        public IAsyncResult BeginGetDeploymentStatus(GetDeploymentStatusRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetDeploymentStatus(GetDeploymentStatusRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetDeploymentStatusRequestMarshaller();
             var unmarshaller = GetDeploymentStatusResponseUnmarshaller.Instance;
@@ -1881,7 +1881,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  GetDeploymentStatusResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetDeploymentStatus">REST API Reference for GetDeploymentStatus Operation</seealso>
-        public  GetDeploymentStatusResponse EndGetDeploymentStatus(IAsyncResult asyncResult)
+        public virtual GetDeploymentStatusResponse EndGetDeploymentStatus(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDeploymentStatusResponse>(asyncResult);
         }
@@ -1900,7 +1900,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetDeviceDefinition">REST API Reference for GetDeviceDefinition Operation</seealso>
-        public GetDeviceDefinitionResponse GetDeviceDefinition(GetDeviceDefinitionRequest request)
+        public virtual GetDeviceDefinitionResponse GetDeviceDefinition(GetDeviceDefinitionRequest request)
         {
             var marshaller = new GetDeviceDefinitionRequestMarshaller();
             var unmarshaller = GetDeviceDefinitionResponseUnmarshaller.Instance;
@@ -1920,7 +1920,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDeviceDefinition
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetDeviceDefinition">REST API Reference for GetDeviceDefinition Operation</seealso>
-        public IAsyncResult BeginGetDeviceDefinition(GetDeviceDefinitionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetDeviceDefinition(GetDeviceDefinitionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetDeviceDefinitionRequestMarshaller();
             var unmarshaller = GetDeviceDefinitionResponseUnmarshaller.Instance;
@@ -1937,7 +1937,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  GetDeviceDefinitionResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetDeviceDefinition">REST API Reference for GetDeviceDefinition Operation</seealso>
-        public  GetDeviceDefinitionResponse EndGetDeviceDefinition(IAsyncResult asyncResult)
+        public virtual GetDeviceDefinitionResponse EndGetDeviceDefinition(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDeviceDefinitionResponse>(asyncResult);
         }
@@ -1956,7 +1956,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetDeviceDefinitionVersion">REST API Reference for GetDeviceDefinitionVersion Operation</seealso>
-        public GetDeviceDefinitionVersionResponse GetDeviceDefinitionVersion(GetDeviceDefinitionVersionRequest request)
+        public virtual GetDeviceDefinitionVersionResponse GetDeviceDefinitionVersion(GetDeviceDefinitionVersionRequest request)
         {
             var marshaller = new GetDeviceDefinitionVersionRequestMarshaller();
             var unmarshaller = GetDeviceDefinitionVersionResponseUnmarshaller.Instance;
@@ -1976,7 +1976,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDeviceDefinitionVersion
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetDeviceDefinitionVersion">REST API Reference for GetDeviceDefinitionVersion Operation</seealso>
-        public IAsyncResult BeginGetDeviceDefinitionVersion(GetDeviceDefinitionVersionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetDeviceDefinitionVersion(GetDeviceDefinitionVersionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetDeviceDefinitionVersionRequestMarshaller();
             var unmarshaller = GetDeviceDefinitionVersionResponseUnmarshaller.Instance;
@@ -1993,7 +1993,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  GetDeviceDefinitionVersionResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetDeviceDefinitionVersion">REST API Reference for GetDeviceDefinitionVersion Operation</seealso>
-        public  GetDeviceDefinitionVersionResponse EndGetDeviceDefinitionVersion(IAsyncResult asyncResult)
+        public virtual GetDeviceDefinitionVersionResponse EndGetDeviceDefinitionVersion(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDeviceDefinitionVersionResponse>(asyncResult);
         }
@@ -2013,7 +2013,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetFunctionDefinition">REST API Reference for GetFunctionDefinition Operation</seealso>
-        public GetFunctionDefinitionResponse GetFunctionDefinition(GetFunctionDefinitionRequest request)
+        public virtual GetFunctionDefinitionResponse GetFunctionDefinition(GetFunctionDefinitionRequest request)
         {
             var marshaller = new GetFunctionDefinitionRequestMarshaller();
             var unmarshaller = GetFunctionDefinitionResponseUnmarshaller.Instance;
@@ -2033,7 +2033,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetFunctionDefinition
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetFunctionDefinition">REST API Reference for GetFunctionDefinition Operation</seealso>
-        public IAsyncResult BeginGetFunctionDefinition(GetFunctionDefinitionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetFunctionDefinition(GetFunctionDefinitionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetFunctionDefinitionRequestMarshaller();
             var unmarshaller = GetFunctionDefinitionResponseUnmarshaller.Instance;
@@ -2050,7 +2050,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  GetFunctionDefinitionResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetFunctionDefinition">REST API Reference for GetFunctionDefinition Operation</seealso>
-        public  GetFunctionDefinitionResponse EndGetFunctionDefinition(IAsyncResult asyncResult)
+        public virtual GetFunctionDefinitionResponse EndGetFunctionDefinition(IAsyncResult asyncResult)
         {
             return EndInvoke<GetFunctionDefinitionResponse>(asyncResult);
         }
@@ -2070,7 +2070,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetFunctionDefinitionVersion">REST API Reference for GetFunctionDefinitionVersion Operation</seealso>
-        public GetFunctionDefinitionVersionResponse GetFunctionDefinitionVersion(GetFunctionDefinitionVersionRequest request)
+        public virtual GetFunctionDefinitionVersionResponse GetFunctionDefinitionVersion(GetFunctionDefinitionVersionRequest request)
         {
             var marshaller = new GetFunctionDefinitionVersionRequestMarshaller();
             var unmarshaller = GetFunctionDefinitionVersionResponseUnmarshaller.Instance;
@@ -2090,7 +2090,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetFunctionDefinitionVersion
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetFunctionDefinitionVersion">REST API Reference for GetFunctionDefinitionVersion Operation</seealso>
-        public IAsyncResult BeginGetFunctionDefinitionVersion(GetFunctionDefinitionVersionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetFunctionDefinitionVersion(GetFunctionDefinitionVersionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetFunctionDefinitionVersionRequestMarshaller();
             var unmarshaller = GetFunctionDefinitionVersionResponseUnmarshaller.Instance;
@@ -2107,7 +2107,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  GetFunctionDefinitionVersionResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetFunctionDefinitionVersion">REST API Reference for GetFunctionDefinitionVersion Operation</seealso>
-        public  GetFunctionDefinitionVersionResponse EndGetFunctionDefinitionVersion(IAsyncResult asyncResult)
+        public virtual GetFunctionDefinitionVersionResponse EndGetFunctionDefinitionVersion(IAsyncResult asyncResult)
         {
             return EndInvoke<GetFunctionDefinitionVersionResponse>(asyncResult);
         }
@@ -2126,7 +2126,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetGroup">REST API Reference for GetGroup Operation</seealso>
-        public GetGroupResponse GetGroup(GetGroupRequest request)
+        public virtual GetGroupResponse GetGroup(GetGroupRequest request)
         {
             var marshaller = new GetGroupRequestMarshaller();
             var unmarshaller = GetGroupResponseUnmarshaller.Instance;
@@ -2146,7 +2146,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetGroup
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetGroup">REST API Reference for GetGroup Operation</seealso>
-        public IAsyncResult BeginGetGroup(GetGroupRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetGroup(GetGroupRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetGroupRequestMarshaller();
             var unmarshaller = GetGroupResponseUnmarshaller.Instance;
@@ -2163,7 +2163,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  GetGroupResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetGroup">REST API Reference for GetGroup Operation</seealso>
-        public  GetGroupResponse EndGetGroup(IAsyncResult asyncResult)
+        public virtual GetGroupResponse EndGetGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<GetGroupResponse>(asyncResult);
         }
@@ -2185,7 +2185,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetGroupCertificateAuthority">REST API Reference for GetGroupCertificateAuthority Operation</seealso>
-        public GetGroupCertificateAuthorityResponse GetGroupCertificateAuthority(GetGroupCertificateAuthorityRequest request)
+        public virtual GetGroupCertificateAuthorityResponse GetGroupCertificateAuthority(GetGroupCertificateAuthorityRequest request)
         {
             var marshaller = new GetGroupCertificateAuthorityRequestMarshaller();
             var unmarshaller = GetGroupCertificateAuthorityResponseUnmarshaller.Instance;
@@ -2205,7 +2205,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetGroupCertificateAuthority
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetGroupCertificateAuthority">REST API Reference for GetGroupCertificateAuthority Operation</seealso>
-        public IAsyncResult BeginGetGroupCertificateAuthority(GetGroupCertificateAuthorityRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetGroupCertificateAuthority(GetGroupCertificateAuthorityRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetGroupCertificateAuthorityRequestMarshaller();
             var unmarshaller = GetGroupCertificateAuthorityResponseUnmarshaller.Instance;
@@ -2222,7 +2222,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  GetGroupCertificateAuthorityResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetGroupCertificateAuthority">REST API Reference for GetGroupCertificateAuthority Operation</seealso>
-        public  GetGroupCertificateAuthorityResponse EndGetGroupCertificateAuthority(IAsyncResult asyncResult)
+        public virtual GetGroupCertificateAuthorityResponse EndGetGroupCertificateAuthority(IAsyncResult asyncResult)
         {
             return EndInvoke<GetGroupCertificateAuthorityResponse>(asyncResult);
         }
@@ -2244,7 +2244,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetGroupCertificateConfiguration">REST API Reference for GetGroupCertificateConfiguration Operation</seealso>
-        public GetGroupCertificateConfigurationResponse GetGroupCertificateConfiguration(GetGroupCertificateConfigurationRequest request)
+        public virtual GetGroupCertificateConfigurationResponse GetGroupCertificateConfiguration(GetGroupCertificateConfigurationRequest request)
         {
             var marshaller = new GetGroupCertificateConfigurationRequestMarshaller();
             var unmarshaller = GetGroupCertificateConfigurationResponseUnmarshaller.Instance;
@@ -2264,7 +2264,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetGroupCertificateConfiguration
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetGroupCertificateConfiguration">REST API Reference for GetGroupCertificateConfiguration Operation</seealso>
-        public IAsyncResult BeginGetGroupCertificateConfiguration(GetGroupCertificateConfigurationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetGroupCertificateConfiguration(GetGroupCertificateConfigurationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetGroupCertificateConfigurationRequestMarshaller();
             var unmarshaller = GetGroupCertificateConfigurationResponseUnmarshaller.Instance;
@@ -2281,7 +2281,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  GetGroupCertificateConfigurationResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetGroupCertificateConfiguration">REST API Reference for GetGroupCertificateConfiguration Operation</seealso>
-        public  GetGroupCertificateConfigurationResponse EndGetGroupCertificateConfiguration(IAsyncResult asyncResult)
+        public virtual GetGroupCertificateConfigurationResponse EndGetGroupCertificateConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<GetGroupCertificateConfigurationResponse>(asyncResult);
         }
@@ -2300,7 +2300,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetGroupVersion">REST API Reference for GetGroupVersion Operation</seealso>
-        public GetGroupVersionResponse GetGroupVersion(GetGroupVersionRequest request)
+        public virtual GetGroupVersionResponse GetGroupVersion(GetGroupVersionRequest request)
         {
             var marshaller = new GetGroupVersionRequestMarshaller();
             var unmarshaller = GetGroupVersionResponseUnmarshaller.Instance;
@@ -2320,7 +2320,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetGroupVersion
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetGroupVersion">REST API Reference for GetGroupVersion Operation</seealso>
-        public IAsyncResult BeginGetGroupVersion(GetGroupVersionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetGroupVersion(GetGroupVersionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetGroupVersionRequestMarshaller();
             var unmarshaller = GetGroupVersionResponseUnmarshaller.Instance;
@@ -2337,7 +2337,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  GetGroupVersionResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetGroupVersion">REST API Reference for GetGroupVersion Operation</seealso>
-        public  GetGroupVersionResponse EndGetGroupVersion(IAsyncResult asyncResult)
+        public virtual GetGroupVersionResponse EndGetGroupVersion(IAsyncResult asyncResult)
         {
             return EndInvoke<GetGroupVersionResponse>(asyncResult);
         }
@@ -2356,7 +2356,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetLoggerDefinition">REST API Reference for GetLoggerDefinition Operation</seealso>
-        public GetLoggerDefinitionResponse GetLoggerDefinition(GetLoggerDefinitionRequest request)
+        public virtual GetLoggerDefinitionResponse GetLoggerDefinition(GetLoggerDefinitionRequest request)
         {
             var marshaller = new GetLoggerDefinitionRequestMarshaller();
             var unmarshaller = GetLoggerDefinitionResponseUnmarshaller.Instance;
@@ -2376,7 +2376,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetLoggerDefinition
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetLoggerDefinition">REST API Reference for GetLoggerDefinition Operation</seealso>
-        public IAsyncResult BeginGetLoggerDefinition(GetLoggerDefinitionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetLoggerDefinition(GetLoggerDefinitionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetLoggerDefinitionRequestMarshaller();
             var unmarshaller = GetLoggerDefinitionResponseUnmarshaller.Instance;
@@ -2393,7 +2393,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  GetLoggerDefinitionResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetLoggerDefinition">REST API Reference for GetLoggerDefinition Operation</seealso>
-        public  GetLoggerDefinitionResponse EndGetLoggerDefinition(IAsyncResult asyncResult)
+        public virtual GetLoggerDefinitionResponse EndGetLoggerDefinition(IAsyncResult asyncResult)
         {
             return EndInvoke<GetLoggerDefinitionResponse>(asyncResult);
         }
@@ -2412,7 +2412,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetLoggerDefinitionVersion">REST API Reference for GetLoggerDefinitionVersion Operation</seealso>
-        public GetLoggerDefinitionVersionResponse GetLoggerDefinitionVersion(GetLoggerDefinitionVersionRequest request)
+        public virtual GetLoggerDefinitionVersionResponse GetLoggerDefinitionVersion(GetLoggerDefinitionVersionRequest request)
         {
             var marshaller = new GetLoggerDefinitionVersionRequestMarshaller();
             var unmarshaller = GetLoggerDefinitionVersionResponseUnmarshaller.Instance;
@@ -2432,7 +2432,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetLoggerDefinitionVersion
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetLoggerDefinitionVersion">REST API Reference for GetLoggerDefinitionVersion Operation</seealso>
-        public IAsyncResult BeginGetLoggerDefinitionVersion(GetLoggerDefinitionVersionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetLoggerDefinitionVersion(GetLoggerDefinitionVersionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetLoggerDefinitionVersionRequestMarshaller();
             var unmarshaller = GetLoggerDefinitionVersionResponseUnmarshaller.Instance;
@@ -2449,7 +2449,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  GetLoggerDefinitionVersionResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetLoggerDefinitionVersion">REST API Reference for GetLoggerDefinitionVersion Operation</seealso>
-        public  GetLoggerDefinitionVersionResponse EndGetLoggerDefinitionVersion(IAsyncResult asyncResult)
+        public virtual GetLoggerDefinitionVersionResponse EndGetLoggerDefinitionVersion(IAsyncResult asyncResult)
         {
             return EndInvoke<GetLoggerDefinitionVersionResponse>(asyncResult);
         }
@@ -2468,7 +2468,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetServiceRoleForAccount">REST API Reference for GetServiceRoleForAccount Operation</seealso>
-        public GetServiceRoleForAccountResponse GetServiceRoleForAccount(GetServiceRoleForAccountRequest request)
+        public virtual GetServiceRoleForAccountResponse GetServiceRoleForAccount(GetServiceRoleForAccountRequest request)
         {
             var marshaller = new GetServiceRoleForAccountRequestMarshaller();
             var unmarshaller = GetServiceRoleForAccountResponseUnmarshaller.Instance;
@@ -2488,7 +2488,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetServiceRoleForAccount
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetServiceRoleForAccount">REST API Reference for GetServiceRoleForAccount Operation</seealso>
-        public IAsyncResult BeginGetServiceRoleForAccount(GetServiceRoleForAccountRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetServiceRoleForAccount(GetServiceRoleForAccountRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetServiceRoleForAccountRequestMarshaller();
             var unmarshaller = GetServiceRoleForAccountResponseUnmarshaller.Instance;
@@ -2505,7 +2505,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  GetServiceRoleForAccountResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetServiceRoleForAccount">REST API Reference for GetServiceRoleForAccount Operation</seealso>
-        public  GetServiceRoleForAccountResponse EndGetServiceRoleForAccount(IAsyncResult asyncResult)
+        public virtual GetServiceRoleForAccountResponse EndGetServiceRoleForAccount(IAsyncResult asyncResult)
         {
             return EndInvoke<GetServiceRoleForAccountResponse>(asyncResult);
         }
@@ -2524,7 +2524,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetSubscriptionDefinition">REST API Reference for GetSubscriptionDefinition Operation</seealso>
-        public GetSubscriptionDefinitionResponse GetSubscriptionDefinition(GetSubscriptionDefinitionRequest request)
+        public virtual GetSubscriptionDefinitionResponse GetSubscriptionDefinition(GetSubscriptionDefinitionRequest request)
         {
             var marshaller = new GetSubscriptionDefinitionRequestMarshaller();
             var unmarshaller = GetSubscriptionDefinitionResponseUnmarshaller.Instance;
@@ -2544,7 +2544,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSubscriptionDefinition
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetSubscriptionDefinition">REST API Reference for GetSubscriptionDefinition Operation</seealso>
-        public IAsyncResult BeginGetSubscriptionDefinition(GetSubscriptionDefinitionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetSubscriptionDefinition(GetSubscriptionDefinitionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetSubscriptionDefinitionRequestMarshaller();
             var unmarshaller = GetSubscriptionDefinitionResponseUnmarshaller.Instance;
@@ -2561,7 +2561,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  GetSubscriptionDefinitionResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetSubscriptionDefinition">REST API Reference for GetSubscriptionDefinition Operation</seealso>
-        public  GetSubscriptionDefinitionResponse EndGetSubscriptionDefinition(IAsyncResult asyncResult)
+        public virtual GetSubscriptionDefinitionResponse EndGetSubscriptionDefinition(IAsyncResult asyncResult)
         {
             return EndInvoke<GetSubscriptionDefinitionResponse>(asyncResult);
         }
@@ -2580,7 +2580,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetSubscriptionDefinitionVersion">REST API Reference for GetSubscriptionDefinitionVersion Operation</seealso>
-        public GetSubscriptionDefinitionVersionResponse GetSubscriptionDefinitionVersion(GetSubscriptionDefinitionVersionRequest request)
+        public virtual GetSubscriptionDefinitionVersionResponse GetSubscriptionDefinitionVersion(GetSubscriptionDefinitionVersionRequest request)
         {
             var marshaller = new GetSubscriptionDefinitionVersionRequestMarshaller();
             var unmarshaller = GetSubscriptionDefinitionVersionResponseUnmarshaller.Instance;
@@ -2600,7 +2600,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSubscriptionDefinitionVersion
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetSubscriptionDefinitionVersion">REST API Reference for GetSubscriptionDefinitionVersion Operation</seealso>
-        public IAsyncResult BeginGetSubscriptionDefinitionVersion(GetSubscriptionDefinitionVersionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetSubscriptionDefinitionVersion(GetSubscriptionDefinitionVersionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetSubscriptionDefinitionVersionRequestMarshaller();
             var unmarshaller = GetSubscriptionDefinitionVersionResponseUnmarshaller.Instance;
@@ -2617,7 +2617,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  GetSubscriptionDefinitionVersionResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetSubscriptionDefinitionVersion">REST API Reference for GetSubscriptionDefinitionVersion Operation</seealso>
-        public  GetSubscriptionDefinitionVersionResponse EndGetSubscriptionDefinitionVersion(IAsyncResult asyncResult)
+        public virtual GetSubscriptionDefinitionVersionResponse EndGetSubscriptionDefinitionVersion(IAsyncResult asyncResult)
         {
             return EndInvoke<GetSubscriptionDefinitionVersionResponse>(asyncResult);
         }
@@ -2633,7 +2633,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>The response from the ListCoreDefinitions service method, as returned by Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListCoreDefinitions">REST API Reference for ListCoreDefinitions Operation</seealso>
-        public ListCoreDefinitionsResponse ListCoreDefinitions(ListCoreDefinitionsRequest request)
+        public virtual ListCoreDefinitionsResponse ListCoreDefinitions(ListCoreDefinitionsRequest request)
         {
             var marshaller = new ListCoreDefinitionsRequestMarshaller();
             var unmarshaller = ListCoreDefinitionsResponseUnmarshaller.Instance;
@@ -2653,7 +2653,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCoreDefinitions
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListCoreDefinitions">REST API Reference for ListCoreDefinitions Operation</seealso>
-        public IAsyncResult BeginListCoreDefinitions(ListCoreDefinitionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListCoreDefinitions(ListCoreDefinitionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListCoreDefinitionsRequestMarshaller();
             var unmarshaller = ListCoreDefinitionsResponseUnmarshaller.Instance;
@@ -2670,7 +2670,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  ListCoreDefinitionsResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListCoreDefinitions">REST API Reference for ListCoreDefinitions Operation</seealso>
-        public  ListCoreDefinitionsResponse EndListCoreDefinitions(IAsyncResult asyncResult)
+        public virtual ListCoreDefinitionsResponse EndListCoreDefinitions(IAsyncResult asyncResult)
         {
             return EndInvoke<ListCoreDefinitionsResponse>(asyncResult);
         }
@@ -2689,7 +2689,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListCoreDefinitionVersions">REST API Reference for ListCoreDefinitionVersions Operation</seealso>
-        public ListCoreDefinitionVersionsResponse ListCoreDefinitionVersions(ListCoreDefinitionVersionsRequest request)
+        public virtual ListCoreDefinitionVersionsResponse ListCoreDefinitionVersions(ListCoreDefinitionVersionsRequest request)
         {
             var marshaller = new ListCoreDefinitionVersionsRequestMarshaller();
             var unmarshaller = ListCoreDefinitionVersionsResponseUnmarshaller.Instance;
@@ -2709,7 +2709,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCoreDefinitionVersions
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListCoreDefinitionVersions">REST API Reference for ListCoreDefinitionVersions Operation</seealso>
-        public IAsyncResult BeginListCoreDefinitionVersions(ListCoreDefinitionVersionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListCoreDefinitionVersions(ListCoreDefinitionVersionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListCoreDefinitionVersionsRequestMarshaller();
             var unmarshaller = ListCoreDefinitionVersionsResponseUnmarshaller.Instance;
@@ -2726,7 +2726,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  ListCoreDefinitionVersionsResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListCoreDefinitionVersions">REST API Reference for ListCoreDefinitionVersions Operation</seealso>
-        public  ListCoreDefinitionVersionsResponse EndListCoreDefinitionVersions(IAsyncResult asyncResult)
+        public virtual ListCoreDefinitionVersionsResponse EndListCoreDefinitionVersions(IAsyncResult asyncResult)
         {
             return EndInvoke<ListCoreDefinitionVersionsResponse>(asyncResult);
         }
@@ -2745,7 +2745,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListDeployments">REST API Reference for ListDeployments Operation</seealso>
-        public ListDeploymentsResponse ListDeployments(ListDeploymentsRequest request)
+        public virtual ListDeploymentsResponse ListDeployments(ListDeploymentsRequest request)
         {
             var marshaller = new ListDeploymentsRequestMarshaller();
             var unmarshaller = ListDeploymentsResponseUnmarshaller.Instance;
@@ -2765,7 +2765,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDeployments
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListDeployments">REST API Reference for ListDeployments Operation</seealso>
-        public IAsyncResult BeginListDeployments(ListDeploymentsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListDeployments(ListDeploymentsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListDeploymentsRequestMarshaller();
             var unmarshaller = ListDeploymentsResponseUnmarshaller.Instance;
@@ -2782,7 +2782,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  ListDeploymentsResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListDeployments">REST API Reference for ListDeployments Operation</seealso>
-        public  ListDeploymentsResponse EndListDeployments(IAsyncResult asyncResult)
+        public virtual ListDeploymentsResponse EndListDeployments(IAsyncResult asyncResult)
         {
             return EndInvoke<ListDeploymentsResponse>(asyncResult);
         }
@@ -2798,7 +2798,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>The response from the ListDeviceDefinitions service method, as returned by Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListDeviceDefinitions">REST API Reference for ListDeviceDefinitions Operation</seealso>
-        public ListDeviceDefinitionsResponse ListDeviceDefinitions(ListDeviceDefinitionsRequest request)
+        public virtual ListDeviceDefinitionsResponse ListDeviceDefinitions(ListDeviceDefinitionsRequest request)
         {
             var marshaller = new ListDeviceDefinitionsRequestMarshaller();
             var unmarshaller = ListDeviceDefinitionsResponseUnmarshaller.Instance;
@@ -2818,7 +2818,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDeviceDefinitions
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListDeviceDefinitions">REST API Reference for ListDeviceDefinitions Operation</seealso>
-        public IAsyncResult BeginListDeviceDefinitions(ListDeviceDefinitionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListDeviceDefinitions(ListDeviceDefinitionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListDeviceDefinitionsRequestMarshaller();
             var unmarshaller = ListDeviceDefinitionsResponseUnmarshaller.Instance;
@@ -2835,7 +2835,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  ListDeviceDefinitionsResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListDeviceDefinitions">REST API Reference for ListDeviceDefinitions Operation</seealso>
-        public  ListDeviceDefinitionsResponse EndListDeviceDefinitions(IAsyncResult asyncResult)
+        public virtual ListDeviceDefinitionsResponse EndListDeviceDefinitions(IAsyncResult asyncResult)
         {
             return EndInvoke<ListDeviceDefinitionsResponse>(asyncResult);
         }
@@ -2854,7 +2854,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListDeviceDefinitionVersions">REST API Reference for ListDeviceDefinitionVersions Operation</seealso>
-        public ListDeviceDefinitionVersionsResponse ListDeviceDefinitionVersions(ListDeviceDefinitionVersionsRequest request)
+        public virtual ListDeviceDefinitionVersionsResponse ListDeviceDefinitionVersions(ListDeviceDefinitionVersionsRequest request)
         {
             var marshaller = new ListDeviceDefinitionVersionsRequestMarshaller();
             var unmarshaller = ListDeviceDefinitionVersionsResponseUnmarshaller.Instance;
@@ -2874,7 +2874,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDeviceDefinitionVersions
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListDeviceDefinitionVersions">REST API Reference for ListDeviceDefinitionVersions Operation</seealso>
-        public IAsyncResult BeginListDeviceDefinitionVersions(ListDeviceDefinitionVersionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListDeviceDefinitionVersions(ListDeviceDefinitionVersionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListDeviceDefinitionVersionsRequestMarshaller();
             var unmarshaller = ListDeviceDefinitionVersionsResponseUnmarshaller.Instance;
@@ -2891,7 +2891,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  ListDeviceDefinitionVersionsResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListDeviceDefinitionVersions">REST API Reference for ListDeviceDefinitionVersions Operation</seealso>
-        public  ListDeviceDefinitionVersionsResponse EndListDeviceDefinitionVersions(IAsyncResult asyncResult)
+        public virtual ListDeviceDefinitionVersionsResponse EndListDeviceDefinitionVersions(IAsyncResult asyncResult)
         {
             return EndInvoke<ListDeviceDefinitionVersionsResponse>(asyncResult);
         }
@@ -2907,7 +2907,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>The response from the ListFunctionDefinitions service method, as returned by Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListFunctionDefinitions">REST API Reference for ListFunctionDefinitions Operation</seealso>
-        public ListFunctionDefinitionsResponse ListFunctionDefinitions(ListFunctionDefinitionsRequest request)
+        public virtual ListFunctionDefinitionsResponse ListFunctionDefinitions(ListFunctionDefinitionsRequest request)
         {
             var marshaller = new ListFunctionDefinitionsRequestMarshaller();
             var unmarshaller = ListFunctionDefinitionsResponseUnmarshaller.Instance;
@@ -2927,7 +2927,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListFunctionDefinitions
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListFunctionDefinitions">REST API Reference for ListFunctionDefinitions Operation</seealso>
-        public IAsyncResult BeginListFunctionDefinitions(ListFunctionDefinitionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListFunctionDefinitions(ListFunctionDefinitionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListFunctionDefinitionsRequestMarshaller();
             var unmarshaller = ListFunctionDefinitionsResponseUnmarshaller.Instance;
@@ -2944,7 +2944,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  ListFunctionDefinitionsResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListFunctionDefinitions">REST API Reference for ListFunctionDefinitions Operation</seealso>
-        public  ListFunctionDefinitionsResponse EndListFunctionDefinitions(IAsyncResult asyncResult)
+        public virtual ListFunctionDefinitionsResponse EndListFunctionDefinitions(IAsyncResult asyncResult)
         {
             return EndInvoke<ListFunctionDefinitionsResponse>(asyncResult);
         }
@@ -2963,7 +2963,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListFunctionDefinitionVersions">REST API Reference for ListFunctionDefinitionVersions Operation</seealso>
-        public ListFunctionDefinitionVersionsResponse ListFunctionDefinitionVersions(ListFunctionDefinitionVersionsRequest request)
+        public virtual ListFunctionDefinitionVersionsResponse ListFunctionDefinitionVersions(ListFunctionDefinitionVersionsRequest request)
         {
             var marshaller = new ListFunctionDefinitionVersionsRequestMarshaller();
             var unmarshaller = ListFunctionDefinitionVersionsResponseUnmarshaller.Instance;
@@ -2983,7 +2983,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListFunctionDefinitionVersions
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListFunctionDefinitionVersions">REST API Reference for ListFunctionDefinitionVersions Operation</seealso>
-        public IAsyncResult BeginListFunctionDefinitionVersions(ListFunctionDefinitionVersionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListFunctionDefinitionVersions(ListFunctionDefinitionVersionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListFunctionDefinitionVersionsRequestMarshaller();
             var unmarshaller = ListFunctionDefinitionVersionsResponseUnmarshaller.Instance;
@@ -3000,7 +3000,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  ListFunctionDefinitionVersionsResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListFunctionDefinitionVersions">REST API Reference for ListFunctionDefinitionVersions Operation</seealso>
-        public  ListFunctionDefinitionVersionsResponse EndListFunctionDefinitionVersions(IAsyncResult asyncResult)
+        public virtual ListFunctionDefinitionVersionsResponse EndListFunctionDefinitionVersions(IAsyncResult asyncResult)
         {
             return EndInvoke<ListFunctionDefinitionVersionsResponse>(asyncResult);
         }
@@ -3022,7 +3022,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListGroupCertificateAuthorities">REST API Reference for ListGroupCertificateAuthorities Operation</seealso>
-        public ListGroupCertificateAuthoritiesResponse ListGroupCertificateAuthorities(ListGroupCertificateAuthoritiesRequest request)
+        public virtual ListGroupCertificateAuthoritiesResponse ListGroupCertificateAuthorities(ListGroupCertificateAuthoritiesRequest request)
         {
             var marshaller = new ListGroupCertificateAuthoritiesRequestMarshaller();
             var unmarshaller = ListGroupCertificateAuthoritiesResponseUnmarshaller.Instance;
@@ -3042,7 +3042,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListGroupCertificateAuthorities
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListGroupCertificateAuthorities">REST API Reference for ListGroupCertificateAuthorities Operation</seealso>
-        public IAsyncResult BeginListGroupCertificateAuthorities(ListGroupCertificateAuthoritiesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListGroupCertificateAuthorities(ListGroupCertificateAuthoritiesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListGroupCertificateAuthoritiesRequestMarshaller();
             var unmarshaller = ListGroupCertificateAuthoritiesResponseUnmarshaller.Instance;
@@ -3059,7 +3059,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  ListGroupCertificateAuthoritiesResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListGroupCertificateAuthorities">REST API Reference for ListGroupCertificateAuthorities Operation</seealso>
-        public  ListGroupCertificateAuthoritiesResponse EndListGroupCertificateAuthorities(IAsyncResult asyncResult)
+        public virtual ListGroupCertificateAuthoritiesResponse EndListGroupCertificateAuthorities(IAsyncResult asyncResult)
         {
             return EndInvoke<ListGroupCertificateAuthoritiesResponse>(asyncResult);
         }
@@ -3075,7 +3075,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>The response from the ListGroups service method, as returned by Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListGroups">REST API Reference for ListGroups Operation</seealso>
-        public ListGroupsResponse ListGroups(ListGroupsRequest request)
+        public virtual ListGroupsResponse ListGroups(ListGroupsRequest request)
         {
             var marshaller = new ListGroupsRequestMarshaller();
             var unmarshaller = ListGroupsResponseUnmarshaller.Instance;
@@ -3095,7 +3095,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListGroups
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListGroups">REST API Reference for ListGroups Operation</seealso>
-        public IAsyncResult BeginListGroups(ListGroupsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListGroups(ListGroupsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListGroupsRequestMarshaller();
             var unmarshaller = ListGroupsResponseUnmarshaller.Instance;
@@ -3112,7 +3112,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  ListGroupsResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListGroups">REST API Reference for ListGroups Operation</seealso>
-        public  ListGroupsResponse EndListGroups(IAsyncResult asyncResult)
+        public virtual ListGroupsResponse EndListGroups(IAsyncResult asyncResult)
         {
             return EndInvoke<ListGroupsResponse>(asyncResult);
         }
@@ -3131,7 +3131,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListGroupVersions">REST API Reference for ListGroupVersions Operation</seealso>
-        public ListGroupVersionsResponse ListGroupVersions(ListGroupVersionsRequest request)
+        public virtual ListGroupVersionsResponse ListGroupVersions(ListGroupVersionsRequest request)
         {
             var marshaller = new ListGroupVersionsRequestMarshaller();
             var unmarshaller = ListGroupVersionsResponseUnmarshaller.Instance;
@@ -3151,7 +3151,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListGroupVersions
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListGroupVersions">REST API Reference for ListGroupVersions Operation</seealso>
-        public IAsyncResult BeginListGroupVersions(ListGroupVersionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListGroupVersions(ListGroupVersionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListGroupVersionsRequestMarshaller();
             var unmarshaller = ListGroupVersionsResponseUnmarshaller.Instance;
@@ -3168,7 +3168,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  ListGroupVersionsResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListGroupVersions">REST API Reference for ListGroupVersions Operation</seealso>
-        public  ListGroupVersionsResponse EndListGroupVersions(IAsyncResult asyncResult)
+        public virtual ListGroupVersionsResponse EndListGroupVersions(IAsyncResult asyncResult)
         {
             return EndInvoke<ListGroupVersionsResponse>(asyncResult);
         }
@@ -3184,7 +3184,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>The response from the ListLoggerDefinitions service method, as returned by Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListLoggerDefinitions">REST API Reference for ListLoggerDefinitions Operation</seealso>
-        public ListLoggerDefinitionsResponse ListLoggerDefinitions(ListLoggerDefinitionsRequest request)
+        public virtual ListLoggerDefinitionsResponse ListLoggerDefinitions(ListLoggerDefinitionsRequest request)
         {
             var marshaller = new ListLoggerDefinitionsRequestMarshaller();
             var unmarshaller = ListLoggerDefinitionsResponseUnmarshaller.Instance;
@@ -3204,7 +3204,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListLoggerDefinitions
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListLoggerDefinitions">REST API Reference for ListLoggerDefinitions Operation</seealso>
-        public IAsyncResult BeginListLoggerDefinitions(ListLoggerDefinitionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListLoggerDefinitions(ListLoggerDefinitionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListLoggerDefinitionsRequestMarshaller();
             var unmarshaller = ListLoggerDefinitionsResponseUnmarshaller.Instance;
@@ -3221,7 +3221,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  ListLoggerDefinitionsResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListLoggerDefinitions">REST API Reference for ListLoggerDefinitions Operation</seealso>
-        public  ListLoggerDefinitionsResponse EndListLoggerDefinitions(IAsyncResult asyncResult)
+        public virtual ListLoggerDefinitionsResponse EndListLoggerDefinitions(IAsyncResult asyncResult)
         {
             return EndInvoke<ListLoggerDefinitionsResponse>(asyncResult);
         }
@@ -3240,7 +3240,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListLoggerDefinitionVersions">REST API Reference for ListLoggerDefinitionVersions Operation</seealso>
-        public ListLoggerDefinitionVersionsResponse ListLoggerDefinitionVersions(ListLoggerDefinitionVersionsRequest request)
+        public virtual ListLoggerDefinitionVersionsResponse ListLoggerDefinitionVersions(ListLoggerDefinitionVersionsRequest request)
         {
             var marshaller = new ListLoggerDefinitionVersionsRequestMarshaller();
             var unmarshaller = ListLoggerDefinitionVersionsResponseUnmarshaller.Instance;
@@ -3260,7 +3260,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListLoggerDefinitionVersions
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListLoggerDefinitionVersions">REST API Reference for ListLoggerDefinitionVersions Operation</seealso>
-        public IAsyncResult BeginListLoggerDefinitionVersions(ListLoggerDefinitionVersionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListLoggerDefinitionVersions(ListLoggerDefinitionVersionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListLoggerDefinitionVersionsRequestMarshaller();
             var unmarshaller = ListLoggerDefinitionVersionsResponseUnmarshaller.Instance;
@@ -3277,7 +3277,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  ListLoggerDefinitionVersionsResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListLoggerDefinitionVersions">REST API Reference for ListLoggerDefinitionVersions Operation</seealso>
-        public  ListLoggerDefinitionVersionsResponse EndListLoggerDefinitionVersions(IAsyncResult asyncResult)
+        public virtual ListLoggerDefinitionVersionsResponse EndListLoggerDefinitionVersions(IAsyncResult asyncResult)
         {
             return EndInvoke<ListLoggerDefinitionVersionsResponse>(asyncResult);
         }
@@ -3293,7 +3293,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>The response from the ListSubscriptionDefinitions service method, as returned by Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListSubscriptionDefinitions">REST API Reference for ListSubscriptionDefinitions Operation</seealso>
-        public ListSubscriptionDefinitionsResponse ListSubscriptionDefinitions(ListSubscriptionDefinitionsRequest request)
+        public virtual ListSubscriptionDefinitionsResponse ListSubscriptionDefinitions(ListSubscriptionDefinitionsRequest request)
         {
             var marshaller = new ListSubscriptionDefinitionsRequestMarshaller();
             var unmarshaller = ListSubscriptionDefinitionsResponseUnmarshaller.Instance;
@@ -3313,7 +3313,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSubscriptionDefinitions
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListSubscriptionDefinitions">REST API Reference for ListSubscriptionDefinitions Operation</seealso>
-        public IAsyncResult BeginListSubscriptionDefinitions(ListSubscriptionDefinitionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListSubscriptionDefinitions(ListSubscriptionDefinitionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListSubscriptionDefinitionsRequestMarshaller();
             var unmarshaller = ListSubscriptionDefinitionsResponseUnmarshaller.Instance;
@@ -3330,7 +3330,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  ListSubscriptionDefinitionsResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListSubscriptionDefinitions">REST API Reference for ListSubscriptionDefinitions Operation</seealso>
-        public  ListSubscriptionDefinitionsResponse EndListSubscriptionDefinitions(IAsyncResult asyncResult)
+        public virtual ListSubscriptionDefinitionsResponse EndListSubscriptionDefinitions(IAsyncResult asyncResult)
         {
             return EndInvoke<ListSubscriptionDefinitionsResponse>(asyncResult);
         }
@@ -3349,7 +3349,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListSubscriptionDefinitionVersions">REST API Reference for ListSubscriptionDefinitionVersions Operation</seealso>
-        public ListSubscriptionDefinitionVersionsResponse ListSubscriptionDefinitionVersions(ListSubscriptionDefinitionVersionsRequest request)
+        public virtual ListSubscriptionDefinitionVersionsResponse ListSubscriptionDefinitionVersions(ListSubscriptionDefinitionVersionsRequest request)
         {
             var marshaller = new ListSubscriptionDefinitionVersionsRequestMarshaller();
             var unmarshaller = ListSubscriptionDefinitionVersionsResponseUnmarshaller.Instance;
@@ -3369,7 +3369,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSubscriptionDefinitionVersions
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListSubscriptionDefinitionVersions">REST API Reference for ListSubscriptionDefinitionVersions Operation</seealso>
-        public IAsyncResult BeginListSubscriptionDefinitionVersions(ListSubscriptionDefinitionVersionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListSubscriptionDefinitionVersions(ListSubscriptionDefinitionVersionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListSubscriptionDefinitionVersionsRequestMarshaller();
             var unmarshaller = ListSubscriptionDefinitionVersionsResponseUnmarshaller.Instance;
@@ -3386,7 +3386,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  ListSubscriptionDefinitionVersionsResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListSubscriptionDefinitionVersions">REST API Reference for ListSubscriptionDefinitionVersions Operation</seealso>
-        public  ListSubscriptionDefinitionVersionsResponse EndListSubscriptionDefinitionVersions(IAsyncResult asyncResult)
+        public virtual ListSubscriptionDefinitionVersionsResponse EndListSubscriptionDefinitionVersions(IAsyncResult asyncResult)
         {
             return EndInvoke<ListSubscriptionDefinitionVersionsResponse>(asyncResult);
         }
@@ -3405,7 +3405,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ResetDeployments">REST API Reference for ResetDeployments Operation</seealso>
-        public ResetDeploymentsResponse ResetDeployments(ResetDeploymentsRequest request)
+        public virtual ResetDeploymentsResponse ResetDeployments(ResetDeploymentsRequest request)
         {
             var marshaller = new ResetDeploymentsRequestMarshaller();
             var unmarshaller = ResetDeploymentsResponseUnmarshaller.Instance;
@@ -3425,7 +3425,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndResetDeployments
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ResetDeployments">REST API Reference for ResetDeployments Operation</seealso>
-        public IAsyncResult BeginResetDeployments(ResetDeploymentsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginResetDeployments(ResetDeploymentsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ResetDeploymentsRequestMarshaller();
             var unmarshaller = ResetDeploymentsResponseUnmarshaller.Instance;
@@ -3442,7 +3442,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  ResetDeploymentsResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ResetDeployments">REST API Reference for ResetDeployments Operation</seealso>
-        public  ResetDeploymentsResponse EndResetDeployments(IAsyncResult asyncResult)
+        public virtual ResetDeploymentsResponse EndResetDeployments(IAsyncResult asyncResult)
         {
             return EndInvoke<ResetDeploymentsResponse>(asyncResult);
         }
@@ -3466,7 +3466,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateConnectivityInfo">REST API Reference for UpdateConnectivityInfo Operation</seealso>
-        public UpdateConnectivityInfoResponse UpdateConnectivityInfo(UpdateConnectivityInfoRequest request)
+        public virtual UpdateConnectivityInfoResponse UpdateConnectivityInfo(UpdateConnectivityInfoRequest request)
         {
             var marshaller = new UpdateConnectivityInfoRequestMarshaller();
             var unmarshaller = UpdateConnectivityInfoResponseUnmarshaller.Instance;
@@ -3486,7 +3486,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateConnectivityInfo
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateConnectivityInfo">REST API Reference for UpdateConnectivityInfo Operation</seealso>
-        public IAsyncResult BeginUpdateConnectivityInfo(UpdateConnectivityInfoRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateConnectivityInfo(UpdateConnectivityInfoRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateConnectivityInfoRequestMarshaller();
             var unmarshaller = UpdateConnectivityInfoResponseUnmarshaller.Instance;
@@ -3503,7 +3503,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  UpdateConnectivityInfoResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateConnectivityInfo">REST API Reference for UpdateConnectivityInfo Operation</seealso>
-        public  UpdateConnectivityInfoResponse EndUpdateConnectivityInfo(IAsyncResult asyncResult)
+        public virtual UpdateConnectivityInfoResponse EndUpdateConnectivityInfo(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateConnectivityInfoResponse>(asyncResult);
         }
@@ -3522,7 +3522,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateCoreDefinition">REST API Reference for UpdateCoreDefinition Operation</seealso>
-        public UpdateCoreDefinitionResponse UpdateCoreDefinition(UpdateCoreDefinitionRequest request)
+        public virtual UpdateCoreDefinitionResponse UpdateCoreDefinition(UpdateCoreDefinitionRequest request)
         {
             var marshaller = new UpdateCoreDefinitionRequestMarshaller();
             var unmarshaller = UpdateCoreDefinitionResponseUnmarshaller.Instance;
@@ -3542,7 +3542,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateCoreDefinition
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateCoreDefinition">REST API Reference for UpdateCoreDefinition Operation</seealso>
-        public IAsyncResult BeginUpdateCoreDefinition(UpdateCoreDefinitionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateCoreDefinition(UpdateCoreDefinitionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateCoreDefinitionRequestMarshaller();
             var unmarshaller = UpdateCoreDefinitionResponseUnmarshaller.Instance;
@@ -3559,7 +3559,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  UpdateCoreDefinitionResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateCoreDefinition">REST API Reference for UpdateCoreDefinition Operation</seealso>
-        public  UpdateCoreDefinitionResponse EndUpdateCoreDefinition(IAsyncResult asyncResult)
+        public virtual UpdateCoreDefinitionResponse EndUpdateCoreDefinition(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateCoreDefinitionResponse>(asyncResult);
         }
@@ -3578,7 +3578,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateDeviceDefinition">REST API Reference for UpdateDeviceDefinition Operation</seealso>
-        public UpdateDeviceDefinitionResponse UpdateDeviceDefinition(UpdateDeviceDefinitionRequest request)
+        public virtual UpdateDeviceDefinitionResponse UpdateDeviceDefinition(UpdateDeviceDefinitionRequest request)
         {
             var marshaller = new UpdateDeviceDefinitionRequestMarshaller();
             var unmarshaller = UpdateDeviceDefinitionResponseUnmarshaller.Instance;
@@ -3598,7 +3598,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDeviceDefinition
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateDeviceDefinition">REST API Reference for UpdateDeviceDefinition Operation</seealso>
-        public IAsyncResult BeginUpdateDeviceDefinition(UpdateDeviceDefinitionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateDeviceDefinition(UpdateDeviceDefinitionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateDeviceDefinitionRequestMarshaller();
             var unmarshaller = UpdateDeviceDefinitionResponseUnmarshaller.Instance;
@@ -3615,7 +3615,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  UpdateDeviceDefinitionResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateDeviceDefinition">REST API Reference for UpdateDeviceDefinition Operation</seealso>
-        public  UpdateDeviceDefinitionResponse EndUpdateDeviceDefinition(IAsyncResult asyncResult)
+        public virtual UpdateDeviceDefinitionResponse EndUpdateDeviceDefinition(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateDeviceDefinitionResponse>(asyncResult);
         }
@@ -3634,7 +3634,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateFunctionDefinition">REST API Reference for UpdateFunctionDefinition Operation</seealso>
-        public UpdateFunctionDefinitionResponse UpdateFunctionDefinition(UpdateFunctionDefinitionRequest request)
+        public virtual UpdateFunctionDefinitionResponse UpdateFunctionDefinition(UpdateFunctionDefinitionRequest request)
         {
             var marshaller = new UpdateFunctionDefinitionRequestMarshaller();
             var unmarshaller = UpdateFunctionDefinitionResponseUnmarshaller.Instance;
@@ -3654,7 +3654,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateFunctionDefinition
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateFunctionDefinition">REST API Reference for UpdateFunctionDefinition Operation</seealso>
-        public IAsyncResult BeginUpdateFunctionDefinition(UpdateFunctionDefinitionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateFunctionDefinition(UpdateFunctionDefinitionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateFunctionDefinitionRequestMarshaller();
             var unmarshaller = UpdateFunctionDefinitionResponseUnmarshaller.Instance;
@@ -3671,7 +3671,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  UpdateFunctionDefinitionResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateFunctionDefinition">REST API Reference for UpdateFunctionDefinition Operation</seealso>
-        public  UpdateFunctionDefinitionResponse EndUpdateFunctionDefinition(IAsyncResult asyncResult)
+        public virtual UpdateFunctionDefinitionResponse EndUpdateFunctionDefinition(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateFunctionDefinitionResponse>(asyncResult);
         }
@@ -3690,7 +3690,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateGroup">REST API Reference for UpdateGroup Operation</seealso>
-        public UpdateGroupResponse UpdateGroup(UpdateGroupRequest request)
+        public virtual UpdateGroupResponse UpdateGroup(UpdateGroupRequest request)
         {
             var marshaller = new UpdateGroupRequestMarshaller();
             var unmarshaller = UpdateGroupResponseUnmarshaller.Instance;
@@ -3710,7 +3710,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateGroup
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateGroup">REST API Reference for UpdateGroup Operation</seealso>
-        public IAsyncResult BeginUpdateGroup(UpdateGroupRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateGroup(UpdateGroupRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateGroupRequestMarshaller();
             var unmarshaller = UpdateGroupResponseUnmarshaller.Instance;
@@ -3727,7 +3727,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  UpdateGroupResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateGroup">REST API Reference for UpdateGroup Operation</seealso>
-        public  UpdateGroupResponse EndUpdateGroup(IAsyncResult asyncResult)
+        public virtual UpdateGroupResponse EndUpdateGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateGroupResponse>(asyncResult);
         }
@@ -3749,7 +3749,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateGroupCertificateConfiguration">REST API Reference for UpdateGroupCertificateConfiguration Operation</seealso>
-        public UpdateGroupCertificateConfigurationResponse UpdateGroupCertificateConfiguration(UpdateGroupCertificateConfigurationRequest request)
+        public virtual UpdateGroupCertificateConfigurationResponse UpdateGroupCertificateConfiguration(UpdateGroupCertificateConfigurationRequest request)
         {
             var marshaller = new UpdateGroupCertificateConfigurationRequestMarshaller();
             var unmarshaller = UpdateGroupCertificateConfigurationResponseUnmarshaller.Instance;
@@ -3769,7 +3769,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateGroupCertificateConfiguration
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateGroupCertificateConfiguration">REST API Reference for UpdateGroupCertificateConfiguration Operation</seealso>
-        public IAsyncResult BeginUpdateGroupCertificateConfiguration(UpdateGroupCertificateConfigurationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateGroupCertificateConfiguration(UpdateGroupCertificateConfigurationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateGroupCertificateConfigurationRequestMarshaller();
             var unmarshaller = UpdateGroupCertificateConfigurationResponseUnmarshaller.Instance;
@@ -3786,7 +3786,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  UpdateGroupCertificateConfigurationResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateGroupCertificateConfiguration">REST API Reference for UpdateGroupCertificateConfiguration Operation</seealso>
-        public  UpdateGroupCertificateConfigurationResponse EndUpdateGroupCertificateConfiguration(IAsyncResult asyncResult)
+        public virtual UpdateGroupCertificateConfigurationResponse EndUpdateGroupCertificateConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateGroupCertificateConfigurationResponse>(asyncResult);
         }
@@ -3805,7 +3805,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateLoggerDefinition">REST API Reference for UpdateLoggerDefinition Operation</seealso>
-        public UpdateLoggerDefinitionResponse UpdateLoggerDefinition(UpdateLoggerDefinitionRequest request)
+        public virtual UpdateLoggerDefinitionResponse UpdateLoggerDefinition(UpdateLoggerDefinitionRequest request)
         {
             var marshaller = new UpdateLoggerDefinitionRequestMarshaller();
             var unmarshaller = UpdateLoggerDefinitionResponseUnmarshaller.Instance;
@@ -3825,7 +3825,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateLoggerDefinition
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateLoggerDefinition">REST API Reference for UpdateLoggerDefinition Operation</seealso>
-        public IAsyncResult BeginUpdateLoggerDefinition(UpdateLoggerDefinitionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateLoggerDefinition(UpdateLoggerDefinitionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateLoggerDefinitionRequestMarshaller();
             var unmarshaller = UpdateLoggerDefinitionResponseUnmarshaller.Instance;
@@ -3842,7 +3842,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  UpdateLoggerDefinitionResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateLoggerDefinition">REST API Reference for UpdateLoggerDefinition Operation</seealso>
-        public  UpdateLoggerDefinitionResponse EndUpdateLoggerDefinition(IAsyncResult asyncResult)
+        public virtual UpdateLoggerDefinitionResponse EndUpdateLoggerDefinition(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateLoggerDefinitionResponse>(asyncResult);
         }
@@ -3861,7 +3861,7 @@ namespace Amazon.Greengrass
         /// General Error
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateSubscriptionDefinition">REST API Reference for UpdateSubscriptionDefinition Operation</seealso>
-        public UpdateSubscriptionDefinitionResponse UpdateSubscriptionDefinition(UpdateSubscriptionDefinitionRequest request)
+        public virtual UpdateSubscriptionDefinitionResponse UpdateSubscriptionDefinition(UpdateSubscriptionDefinitionRequest request)
         {
             var marshaller = new UpdateSubscriptionDefinitionRequestMarshaller();
             var unmarshaller = UpdateSubscriptionDefinitionResponseUnmarshaller.Instance;
@@ -3881,7 +3881,7 @@ namespace Amazon.Greengrass
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateSubscriptionDefinition
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateSubscriptionDefinition">REST API Reference for UpdateSubscriptionDefinition Operation</seealso>
-        public IAsyncResult BeginUpdateSubscriptionDefinition(UpdateSubscriptionDefinitionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateSubscriptionDefinition(UpdateSubscriptionDefinitionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateSubscriptionDefinitionRequestMarshaller();
             var unmarshaller = UpdateSubscriptionDefinitionResponseUnmarshaller.Instance;
@@ -3898,7 +3898,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>Returns a  UpdateSubscriptionDefinitionResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateSubscriptionDefinition">REST API Reference for UpdateSubscriptionDefinition Operation</seealso>
-        public  UpdateSubscriptionDefinitionResponse EndUpdateSubscriptionDefinition(IAsyncResult asyncResult)
+        public virtual UpdateSubscriptionDefinitionResponse EndUpdateSubscriptionDefinition(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateSubscriptionDefinitionResponse>(asyncResult);
         }

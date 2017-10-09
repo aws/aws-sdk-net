@@ -309,7 +309,7 @@ namespace Amazon.SimpleWorkflow
         /// no longer available for this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountClosedWorkflowExecutions">REST API Reference for CountClosedWorkflowExecutions Operation</seealso>
-        public CountClosedWorkflowExecutionsResponse CountClosedWorkflowExecutions(CountClosedWorkflowExecutionsRequest request)
+        public virtual CountClosedWorkflowExecutionsResponse CountClosedWorkflowExecutions(CountClosedWorkflowExecutionsRequest request)
         {
             var marshaller = new CountClosedWorkflowExecutionsRequestMarshaller();
             var unmarshaller = CountClosedWorkflowExecutionsResponseUnmarshaller.Instance;
@@ -329,7 +329,7 @@ namespace Amazon.SimpleWorkflow
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCountClosedWorkflowExecutions
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountClosedWorkflowExecutions">REST API Reference for CountClosedWorkflowExecutions Operation</seealso>
-        public IAsyncResult BeginCountClosedWorkflowExecutions(CountClosedWorkflowExecutionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCountClosedWorkflowExecutions(CountClosedWorkflowExecutionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CountClosedWorkflowExecutionsRequestMarshaller();
             var unmarshaller = CountClosedWorkflowExecutionsResponseUnmarshaller.Instance;
@@ -346,7 +346,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>Returns a  CountClosedWorkflowExecutionsResult from SimpleWorkflow.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountClosedWorkflowExecutions">REST API Reference for CountClosedWorkflowExecutions Operation</seealso>
-        public  CountClosedWorkflowExecutionsResponse EndCountClosedWorkflowExecutions(IAsyncResult asyncResult)
+        public virtual CountClosedWorkflowExecutionsResponse EndCountClosedWorkflowExecutions(IAsyncResult asyncResult)
         {
             return EndInvoke<CountClosedWorkflowExecutionsResponse>(asyncResult);
         }
@@ -420,7 +420,7 @@ namespace Amazon.SimpleWorkflow
         /// no longer available for this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountOpenWorkflowExecutions">REST API Reference for CountOpenWorkflowExecutions Operation</seealso>
-        public CountOpenWorkflowExecutionsResponse CountOpenWorkflowExecutions(CountOpenWorkflowExecutionsRequest request)
+        public virtual CountOpenWorkflowExecutionsResponse CountOpenWorkflowExecutions(CountOpenWorkflowExecutionsRequest request)
         {
             var marshaller = new CountOpenWorkflowExecutionsRequestMarshaller();
             var unmarshaller = CountOpenWorkflowExecutionsResponseUnmarshaller.Instance;
@@ -440,7 +440,7 @@ namespace Amazon.SimpleWorkflow
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCountOpenWorkflowExecutions
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountOpenWorkflowExecutions">REST API Reference for CountOpenWorkflowExecutions Operation</seealso>
-        public IAsyncResult BeginCountOpenWorkflowExecutions(CountOpenWorkflowExecutionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCountOpenWorkflowExecutions(CountOpenWorkflowExecutionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CountOpenWorkflowExecutionsRequestMarshaller();
             var unmarshaller = CountOpenWorkflowExecutionsResponseUnmarshaller.Instance;
@@ -457,7 +457,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>Returns a  CountOpenWorkflowExecutionsResult from SimpleWorkflow.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountOpenWorkflowExecutions">REST API Reference for CountOpenWorkflowExecutions Operation</seealso>
-        public  CountOpenWorkflowExecutionsResponse EndCountOpenWorkflowExecutions(IAsyncResult asyncResult)
+        public virtual CountOpenWorkflowExecutionsResponse EndCountOpenWorkflowExecutions(IAsyncResult asyncResult)
         {
             return EndInvoke<CountOpenWorkflowExecutionsResponse>(asyncResult);
         }
@@ -516,7 +516,7 @@ namespace Amazon.SimpleWorkflow
         /// no longer available for this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountPendingActivityTasks">REST API Reference for CountPendingActivityTasks Operation</seealso>
-        public CountPendingActivityTasksResponse CountPendingActivityTasks(CountPendingActivityTasksRequest request)
+        public virtual CountPendingActivityTasksResponse CountPendingActivityTasks(CountPendingActivityTasksRequest request)
         {
             var marshaller = new CountPendingActivityTasksRequestMarshaller();
             var unmarshaller = CountPendingActivityTasksResponseUnmarshaller.Instance;
@@ -536,7 +536,7 @@ namespace Amazon.SimpleWorkflow
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCountPendingActivityTasks
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountPendingActivityTasks">REST API Reference for CountPendingActivityTasks Operation</seealso>
-        public IAsyncResult BeginCountPendingActivityTasks(CountPendingActivityTasksRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCountPendingActivityTasks(CountPendingActivityTasksRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CountPendingActivityTasksRequestMarshaller();
             var unmarshaller = CountPendingActivityTasksResponseUnmarshaller.Instance;
@@ -553,7 +553,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>Returns a  CountPendingActivityTasksResult from SimpleWorkflow.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountPendingActivityTasks">REST API Reference for CountPendingActivityTasks Operation</seealso>
-        public  CountPendingActivityTasksResponse EndCountPendingActivityTasks(IAsyncResult asyncResult)
+        public virtual CountPendingActivityTasksResponse EndCountPendingActivityTasks(IAsyncResult asyncResult)
         {
             return EndInvoke<CountPendingActivityTasksResponse>(asyncResult);
         }
@@ -612,7 +612,7 @@ namespace Amazon.SimpleWorkflow
         /// no longer available for this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountPendingDecisionTasks">REST API Reference for CountPendingDecisionTasks Operation</seealso>
-        public CountPendingDecisionTasksResponse CountPendingDecisionTasks(CountPendingDecisionTasksRequest request)
+        public virtual CountPendingDecisionTasksResponse CountPendingDecisionTasks(CountPendingDecisionTasksRequest request)
         {
             var marshaller = new CountPendingDecisionTasksRequestMarshaller();
             var unmarshaller = CountPendingDecisionTasksResponseUnmarshaller.Instance;
@@ -632,7 +632,7 @@ namespace Amazon.SimpleWorkflow
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCountPendingDecisionTasks
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountPendingDecisionTasks">REST API Reference for CountPendingDecisionTasks Operation</seealso>
-        public IAsyncResult BeginCountPendingDecisionTasks(CountPendingDecisionTasksRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCountPendingDecisionTasks(CountPendingDecisionTasksRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CountPendingDecisionTasksRequestMarshaller();
             var unmarshaller = CountPendingDecisionTasksResponseUnmarshaller.Instance;
@@ -649,7 +649,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>Returns a  CountPendingDecisionTasksResult from SimpleWorkflow.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountPendingDecisionTasks">REST API Reference for CountPendingDecisionTasks Operation</seealso>
-        public  CountPendingDecisionTasksResponse EndCountPendingDecisionTasks(IAsyncResult asyncResult)
+        public virtual CountPendingDecisionTasksResponse EndCountPendingDecisionTasks(IAsyncResult asyncResult)
         {
             return EndInvoke<CountPendingDecisionTasksResponse>(asyncResult);
         }
@@ -723,7 +723,7 @@ namespace Amazon.SimpleWorkflow
         /// no longer available for this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeprecateActivityType">REST API Reference for DeprecateActivityType Operation</seealso>
-        public DeprecateActivityTypeResponse DeprecateActivityType(DeprecateActivityTypeRequest request)
+        public virtual DeprecateActivityTypeResponse DeprecateActivityType(DeprecateActivityTypeRequest request)
         {
             var marshaller = new DeprecateActivityTypeRequestMarshaller();
             var unmarshaller = DeprecateActivityTypeResponseUnmarshaller.Instance;
@@ -743,7 +743,7 @@ namespace Amazon.SimpleWorkflow
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeprecateActivityType
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeprecateActivityType">REST API Reference for DeprecateActivityType Operation</seealso>
-        public IAsyncResult BeginDeprecateActivityType(DeprecateActivityTypeRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeprecateActivityType(DeprecateActivityTypeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeprecateActivityTypeRequestMarshaller();
             var unmarshaller = DeprecateActivityTypeResponseUnmarshaller.Instance;
@@ -760,7 +760,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>Returns a  DeprecateActivityTypeResult from SimpleWorkflow.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeprecateActivityType">REST API Reference for DeprecateActivityType Operation</seealso>
-        public  DeprecateActivityTypeResponse EndDeprecateActivityType(IAsyncResult asyncResult)
+        public virtual DeprecateActivityTypeResponse EndDeprecateActivityType(IAsyncResult asyncResult)
         {
             return EndInvoke<DeprecateActivityTypeResponse>(asyncResult);
         }
@@ -827,7 +827,7 @@ namespace Amazon.SimpleWorkflow
         /// no longer available for this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeprecateDomain">REST API Reference for DeprecateDomain Operation</seealso>
-        public DeprecateDomainResponse DeprecateDomain(DeprecateDomainRequest request)
+        public virtual DeprecateDomainResponse DeprecateDomain(DeprecateDomainRequest request)
         {
             var marshaller = new DeprecateDomainRequestMarshaller();
             var unmarshaller = DeprecateDomainResponseUnmarshaller.Instance;
@@ -847,7 +847,7 @@ namespace Amazon.SimpleWorkflow
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeprecateDomain
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeprecateDomain">REST API Reference for DeprecateDomain Operation</seealso>
-        public IAsyncResult BeginDeprecateDomain(DeprecateDomainRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeprecateDomain(DeprecateDomainRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeprecateDomainRequestMarshaller();
             var unmarshaller = DeprecateDomainResponseUnmarshaller.Instance;
@@ -864,7 +864,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>Returns a  DeprecateDomainResult from SimpleWorkflow.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeprecateDomain">REST API Reference for DeprecateDomain Operation</seealso>
-        public  DeprecateDomainResponse EndDeprecateDomain(IAsyncResult asyncResult)
+        public virtual DeprecateDomainResponse EndDeprecateDomain(IAsyncResult asyncResult)
         {
             return EndInvoke<DeprecateDomainResponse>(asyncResult);
         }
@@ -939,7 +939,7 @@ namespace Amazon.SimpleWorkflow
         /// no longer available for this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeprecateWorkflowType">REST API Reference for DeprecateWorkflowType Operation</seealso>
-        public DeprecateWorkflowTypeResponse DeprecateWorkflowType(DeprecateWorkflowTypeRequest request)
+        public virtual DeprecateWorkflowTypeResponse DeprecateWorkflowType(DeprecateWorkflowTypeRequest request)
         {
             var marshaller = new DeprecateWorkflowTypeRequestMarshaller();
             var unmarshaller = DeprecateWorkflowTypeResponseUnmarshaller.Instance;
@@ -959,7 +959,7 @@ namespace Amazon.SimpleWorkflow
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeprecateWorkflowType
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeprecateWorkflowType">REST API Reference for DeprecateWorkflowType Operation</seealso>
-        public IAsyncResult BeginDeprecateWorkflowType(DeprecateWorkflowTypeRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeprecateWorkflowType(DeprecateWorkflowTypeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeprecateWorkflowTypeRequestMarshaller();
             var unmarshaller = DeprecateWorkflowTypeResponseUnmarshaller.Instance;
@@ -976,7 +976,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>Returns a  DeprecateWorkflowTypeResult from SimpleWorkflow.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeprecateWorkflowType">REST API Reference for DeprecateWorkflowType Operation</seealso>
-        public  DeprecateWorkflowTypeResponse EndDeprecateWorkflowType(IAsyncResult asyncResult)
+        public virtual DeprecateWorkflowTypeResponse EndDeprecateWorkflowType(IAsyncResult asyncResult)
         {
             return EndInvoke<DeprecateWorkflowTypeResponse>(asyncResult);
         }
@@ -1042,7 +1042,7 @@ namespace Amazon.SimpleWorkflow
         /// no longer available for this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeActivityType">REST API Reference for DescribeActivityType Operation</seealso>
-        public DescribeActivityTypeResponse DescribeActivityType(DescribeActivityTypeRequest request)
+        public virtual DescribeActivityTypeResponse DescribeActivityType(DescribeActivityTypeRequest request)
         {
             var marshaller = new DescribeActivityTypeRequestMarshaller();
             var unmarshaller = DescribeActivityTypeResponseUnmarshaller.Instance;
@@ -1062,7 +1062,7 @@ namespace Amazon.SimpleWorkflow
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeActivityType
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeActivityType">REST API Reference for DescribeActivityType Operation</seealso>
-        public IAsyncResult BeginDescribeActivityType(DescribeActivityTypeRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeActivityType(DescribeActivityTypeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeActivityTypeRequestMarshaller();
             var unmarshaller = DescribeActivityTypeResponseUnmarshaller.Instance;
@@ -1079,7 +1079,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>Returns a  DescribeActivityTypeResult from SimpleWorkflow.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeActivityType">REST API Reference for DescribeActivityType Operation</seealso>
-        public  DescribeActivityTypeResponse EndDescribeActivityType(IAsyncResult asyncResult)
+        public virtual DescribeActivityTypeResponse EndDescribeActivityType(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeActivityTypeResponse>(asyncResult);
         }
@@ -1134,7 +1134,7 @@ namespace Amazon.SimpleWorkflow
         /// no longer available for this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeDomain">REST API Reference for DescribeDomain Operation</seealso>
-        public DescribeDomainResponse DescribeDomain(DescribeDomainRequest request)
+        public virtual DescribeDomainResponse DescribeDomain(DescribeDomainRequest request)
         {
             var marshaller = new DescribeDomainRequestMarshaller();
             var unmarshaller = DescribeDomainResponseUnmarshaller.Instance;
@@ -1154,7 +1154,7 @@ namespace Amazon.SimpleWorkflow
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDomain
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeDomain">REST API Reference for DescribeDomain Operation</seealso>
-        public IAsyncResult BeginDescribeDomain(DescribeDomainRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeDomain(DescribeDomainRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeDomainRequestMarshaller();
             var unmarshaller = DescribeDomainResponseUnmarshaller.Instance;
@@ -1171,7 +1171,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>Returns a  DescribeDomainResult from SimpleWorkflow.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeDomain">REST API Reference for DescribeDomain Operation</seealso>
-        public  DescribeDomainResponse EndDescribeDomain(IAsyncResult asyncResult)
+        public virtual DescribeDomainResponse EndDescribeDomain(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeDomainResponse>(asyncResult);
         }
@@ -1232,7 +1232,7 @@ namespace Amazon.SimpleWorkflow
         /// no longer available for this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeWorkflowExecution">REST API Reference for DescribeWorkflowExecution Operation</seealso>
-        public DescribeWorkflowExecutionResponse DescribeWorkflowExecution(DescribeWorkflowExecutionRequest request)
+        public virtual DescribeWorkflowExecutionResponse DescribeWorkflowExecution(DescribeWorkflowExecutionRequest request)
         {
             var marshaller = new DescribeWorkflowExecutionRequestMarshaller();
             var unmarshaller = DescribeWorkflowExecutionResponseUnmarshaller.Instance;
@@ -1252,7 +1252,7 @@ namespace Amazon.SimpleWorkflow
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeWorkflowExecution
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeWorkflowExecution">REST API Reference for DescribeWorkflowExecution Operation</seealso>
-        public IAsyncResult BeginDescribeWorkflowExecution(DescribeWorkflowExecutionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeWorkflowExecution(DescribeWorkflowExecutionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeWorkflowExecutionRequestMarshaller();
             var unmarshaller = DescribeWorkflowExecutionResponseUnmarshaller.Instance;
@@ -1269,7 +1269,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>Returns a  DescribeWorkflowExecutionResult from SimpleWorkflow.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeWorkflowExecution">REST API Reference for DescribeWorkflowExecution Operation</seealso>
-        public  DescribeWorkflowExecutionResponse EndDescribeWorkflowExecution(IAsyncResult asyncResult)
+        public virtual DescribeWorkflowExecutionResponse EndDescribeWorkflowExecution(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeWorkflowExecutionResponse>(asyncResult);
         }
@@ -1335,7 +1335,7 @@ namespace Amazon.SimpleWorkflow
         /// no longer available for this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeWorkflowType">REST API Reference for DescribeWorkflowType Operation</seealso>
-        public DescribeWorkflowTypeResponse DescribeWorkflowType(DescribeWorkflowTypeRequest request)
+        public virtual DescribeWorkflowTypeResponse DescribeWorkflowType(DescribeWorkflowTypeRequest request)
         {
             var marshaller = new DescribeWorkflowTypeRequestMarshaller();
             var unmarshaller = DescribeWorkflowTypeResponseUnmarshaller.Instance;
@@ -1355,7 +1355,7 @@ namespace Amazon.SimpleWorkflow
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeWorkflowType
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeWorkflowType">REST API Reference for DescribeWorkflowType Operation</seealso>
-        public IAsyncResult BeginDescribeWorkflowType(DescribeWorkflowTypeRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeWorkflowType(DescribeWorkflowTypeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeWorkflowTypeRequestMarshaller();
             var unmarshaller = DescribeWorkflowTypeResponseUnmarshaller.Instance;
@@ -1372,7 +1372,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>Returns a  DescribeWorkflowTypeResult from SimpleWorkflow.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeWorkflowType">REST API Reference for DescribeWorkflowType Operation</seealso>
-        public  DescribeWorkflowTypeResponse EndDescribeWorkflowType(IAsyncResult asyncResult)
+        public virtual DescribeWorkflowTypeResponse EndDescribeWorkflowType(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeWorkflowTypeResponse>(asyncResult);
         }
@@ -1434,7 +1434,7 @@ namespace Amazon.SimpleWorkflow
         /// no longer available for this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/GetWorkflowExecutionHistory">REST API Reference for GetWorkflowExecutionHistory Operation</seealso>
-        public GetWorkflowExecutionHistoryResponse GetWorkflowExecutionHistory(GetWorkflowExecutionHistoryRequest request)
+        public virtual GetWorkflowExecutionHistoryResponse GetWorkflowExecutionHistory(GetWorkflowExecutionHistoryRequest request)
         {
             var marshaller = new GetWorkflowExecutionHistoryRequestMarshaller();
             var unmarshaller = GetWorkflowExecutionHistoryResponseUnmarshaller.Instance;
@@ -1454,7 +1454,7 @@ namespace Amazon.SimpleWorkflow
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetWorkflowExecutionHistory
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/GetWorkflowExecutionHistory">REST API Reference for GetWorkflowExecutionHistory Operation</seealso>
-        public IAsyncResult BeginGetWorkflowExecutionHistory(GetWorkflowExecutionHistoryRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetWorkflowExecutionHistory(GetWorkflowExecutionHistoryRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetWorkflowExecutionHistoryRequestMarshaller();
             var unmarshaller = GetWorkflowExecutionHistoryResponseUnmarshaller.Instance;
@@ -1471,7 +1471,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>Returns a  GetWorkflowExecutionHistoryResult from SimpleWorkflow.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/GetWorkflowExecutionHistory">REST API Reference for GetWorkflowExecutionHistory Operation</seealso>
-        public  GetWorkflowExecutionHistoryResponse EndGetWorkflowExecutionHistory(IAsyncResult asyncResult)
+        public virtual GetWorkflowExecutionHistoryResponse EndGetWorkflowExecutionHistory(IAsyncResult asyncResult)
         {
             return EndInvoke<GetWorkflowExecutionHistoryResponse>(asyncResult);
         }
@@ -1530,7 +1530,7 @@ namespace Amazon.SimpleWorkflow
         /// no longer available for this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListActivityTypes">REST API Reference for ListActivityTypes Operation</seealso>
-        public ListActivityTypesResponse ListActivityTypes(ListActivityTypesRequest request)
+        public virtual ListActivityTypesResponse ListActivityTypes(ListActivityTypesRequest request)
         {
             var marshaller = new ListActivityTypesRequestMarshaller();
             var unmarshaller = ListActivityTypesResponseUnmarshaller.Instance;
@@ -1550,7 +1550,7 @@ namespace Amazon.SimpleWorkflow
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListActivityTypes
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListActivityTypes">REST API Reference for ListActivityTypes Operation</seealso>
-        public IAsyncResult BeginListActivityTypes(ListActivityTypesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListActivityTypes(ListActivityTypesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListActivityTypesRequestMarshaller();
             var unmarshaller = ListActivityTypesResponseUnmarshaller.Instance;
@@ -1567,7 +1567,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>Returns a  ListActivityTypesResult from SimpleWorkflow.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListActivityTypes">REST API Reference for ListActivityTypes Operation</seealso>
-        public  ListActivityTypesResponse EndListActivityTypes(IAsyncResult asyncResult)
+        public virtual ListActivityTypesResponse EndListActivityTypes(IAsyncResult asyncResult)
         {
             return EndInvoke<ListActivityTypesResponse>(asyncResult);
         }
@@ -1642,7 +1642,7 @@ namespace Amazon.SimpleWorkflow
         /// no longer available for this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListClosedWorkflowExecutions">REST API Reference for ListClosedWorkflowExecutions Operation</seealso>
-        public ListClosedWorkflowExecutionsResponse ListClosedWorkflowExecutions(ListClosedWorkflowExecutionsRequest request)
+        public virtual ListClosedWorkflowExecutionsResponse ListClosedWorkflowExecutions(ListClosedWorkflowExecutionsRequest request)
         {
             var marshaller = new ListClosedWorkflowExecutionsRequestMarshaller();
             var unmarshaller = ListClosedWorkflowExecutionsResponseUnmarshaller.Instance;
@@ -1662,7 +1662,7 @@ namespace Amazon.SimpleWorkflow
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListClosedWorkflowExecutions
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListClosedWorkflowExecutions">REST API Reference for ListClosedWorkflowExecutions Operation</seealso>
-        public IAsyncResult BeginListClosedWorkflowExecutions(ListClosedWorkflowExecutionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListClosedWorkflowExecutions(ListClosedWorkflowExecutionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListClosedWorkflowExecutionsRequestMarshaller();
             var unmarshaller = ListClosedWorkflowExecutionsResponseUnmarshaller.Instance;
@@ -1679,7 +1679,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>Returns a  ListClosedWorkflowExecutionsResult from SimpleWorkflow.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListClosedWorkflowExecutions">REST API Reference for ListClosedWorkflowExecutions Operation</seealso>
-        public  ListClosedWorkflowExecutionsResponse EndListClosedWorkflowExecutions(IAsyncResult asyncResult)
+        public virtual ListClosedWorkflowExecutionsResponse EndListClosedWorkflowExecutions(IAsyncResult asyncResult)
         {
             return EndInvoke<ListClosedWorkflowExecutionsResponse>(asyncResult);
         }
@@ -1737,7 +1737,7 @@ namespace Amazon.SimpleWorkflow
         /// Returned when the caller doesn't have sufficient permissions to invoke the action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListDomains">REST API Reference for ListDomains Operation</seealso>
-        public ListDomainsResponse ListDomains(ListDomainsRequest request)
+        public virtual ListDomainsResponse ListDomains(ListDomainsRequest request)
         {
             var marshaller = new ListDomainsRequestMarshaller();
             var unmarshaller = ListDomainsResponseUnmarshaller.Instance;
@@ -1757,7 +1757,7 @@ namespace Amazon.SimpleWorkflow
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDomains
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListDomains">REST API Reference for ListDomains Operation</seealso>
-        public IAsyncResult BeginListDomains(ListDomainsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListDomains(ListDomainsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListDomainsRequestMarshaller();
             var unmarshaller = ListDomainsResponseUnmarshaller.Instance;
@@ -1774,7 +1774,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>Returns a  ListDomainsResult from SimpleWorkflow.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListDomains">REST API Reference for ListDomains Operation</seealso>
-        public  ListDomainsResponse EndListDomains(IAsyncResult asyncResult)
+        public virtual ListDomainsResponse EndListDomains(IAsyncResult asyncResult)
         {
             return EndInvoke<ListDomainsResponse>(asyncResult);
         }
@@ -1849,7 +1849,7 @@ namespace Amazon.SimpleWorkflow
         /// no longer available for this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListOpenWorkflowExecutions">REST API Reference for ListOpenWorkflowExecutions Operation</seealso>
-        public ListOpenWorkflowExecutionsResponse ListOpenWorkflowExecutions(ListOpenWorkflowExecutionsRequest request)
+        public virtual ListOpenWorkflowExecutionsResponse ListOpenWorkflowExecutions(ListOpenWorkflowExecutionsRequest request)
         {
             var marshaller = new ListOpenWorkflowExecutionsRequestMarshaller();
             var unmarshaller = ListOpenWorkflowExecutionsResponseUnmarshaller.Instance;
@@ -1869,7 +1869,7 @@ namespace Amazon.SimpleWorkflow
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListOpenWorkflowExecutions
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListOpenWorkflowExecutions">REST API Reference for ListOpenWorkflowExecutions Operation</seealso>
-        public IAsyncResult BeginListOpenWorkflowExecutions(ListOpenWorkflowExecutionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListOpenWorkflowExecutions(ListOpenWorkflowExecutionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListOpenWorkflowExecutionsRequestMarshaller();
             var unmarshaller = ListOpenWorkflowExecutionsResponseUnmarshaller.Instance;
@@ -1886,7 +1886,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>Returns a  ListOpenWorkflowExecutionsResult from SimpleWorkflow.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListOpenWorkflowExecutions">REST API Reference for ListOpenWorkflowExecutions Operation</seealso>
-        public  ListOpenWorkflowExecutionsResponse EndListOpenWorkflowExecutions(IAsyncResult asyncResult)
+        public virtual ListOpenWorkflowExecutionsResponse EndListOpenWorkflowExecutions(IAsyncResult asyncResult)
         {
             return EndInvoke<ListOpenWorkflowExecutionsResponse>(asyncResult);
         }
@@ -1942,7 +1942,7 @@ namespace Amazon.SimpleWorkflow
         /// no longer available for this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListWorkflowTypes">REST API Reference for ListWorkflowTypes Operation</seealso>
-        public ListWorkflowTypesResponse ListWorkflowTypes(ListWorkflowTypesRequest request)
+        public virtual ListWorkflowTypesResponse ListWorkflowTypes(ListWorkflowTypesRequest request)
         {
             var marshaller = new ListWorkflowTypesRequestMarshaller();
             var unmarshaller = ListWorkflowTypesResponseUnmarshaller.Instance;
@@ -1962,7 +1962,7 @@ namespace Amazon.SimpleWorkflow
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListWorkflowTypes
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListWorkflowTypes">REST API Reference for ListWorkflowTypes Operation</seealso>
-        public IAsyncResult BeginListWorkflowTypes(ListWorkflowTypesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListWorkflowTypes(ListWorkflowTypesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListWorkflowTypesRequestMarshaller();
             var unmarshaller = ListWorkflowTypesResponseUnmarshaller.Instance;
@@ -1979,7 +1979,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>Returns a  ListWorkflowTypesResult from SimpleWorkflow.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListWorkflowTypes">REST API Reference for ListWorkflowTypes Operation</seealso>
-        public  ListWorkflowTypesResponse EndListWorkflowTypes(IAsyncResult asyncResult)
+        public virtual ListWorkflowTypesResponse EndListWorkflowTypes(IAsyncResult asyncResult)
         {
             return EndInvoke<ListWorkflowTypesResponse>(asyncResult);
         }
@@ -2052,7 +2052,7 @@ namespace Amazon.SimpleWorkflow
         /// no longer available for this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/PollForActivityTask">REST API Reference for PollForActivityTask Operation</seealso>
-        public PollForActivityTaskResponse PollForActivityTask(PollForActivityTaskRequest request)
+        public virtual PollForActivityTaskResponse PollForActivityTask(PollForActivityTaskRequest request)
         {
             var marshaller = new PollForActivityTaskRequestMarshaller();
             var unmarshaller = PollForActivityTaskResponseUnmarshaller.Instance;
@@ -2072,7 +2072,7 @@ namespace Amazon.SimpleWorkflow
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPollForActivityTask
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/PollForActivityTask">REST API Reference for PollForActivityTask Operation</seealso>
-        public IAsyncResult BeginPollForActivityTask(PollForActivityTaskRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPollForActivityTask(PollForActivityTaskRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PollForActivityTaskRequestMarshaller();
             var unmarshaller = PollForActivityTaskResponseUnmarshaller.Instance;
@@ -2089,7 +2089,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>Returns a  PollForActivityTaskResult from SimpleWorkflow.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/PollForActivityTask">REST API Reference for PollForActivityTask Operation</seealso>
-        public  PollForActivityTaskResponse EndPollForActivityTask(IAsyncResult asyncResult)
+        public virtual PollForActivityTaskResponse EndPollForActivityTask(IAsyncResult asyncResult)
         {
             return EndInvoke<PollForActivityTaskResponse>(asyncResult);
         }
@@ -2177,7 +2177,7 @@ namespace Amazon.SimpleWorkflow
         /// no longer available for this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/PollForDecisionTask">REST API Reference for PollForDecisionTask Operation</seealso>
-        public PollForDecisionTaskResponse PollForDecisionTask(PollForDecisionTaskRequest request)
+        public virtual PollForDecisionTaskResponse PollForDecisionTask(PollForDecisionTaskRequest request)
         {
             var marshaller = new PollForDecisionTaskRequestMarshaller();
             var unmarshaller = PollForDecisionTaskResponseUnmarshaller.Instance;
@@ -2197,7 +2197,7 @@ namespace Amazon.SimpleWorkflow
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPollForDecisionTask
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/PollForDecisionTask">REST API Reference for PollForDecisionTask Operation</seealso>
-        public IAsyncResult BeginPollForDecisionTask(PollForDecisionTaskRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPollForDecisionTask(PollForDecisionTaskRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PollForDecisionTaskRequestMarshaller();
             var unmarshaller = PollForDecisionTaskResponseUnmarshaller.Instance;
@@ -2214,7 +2214,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>Returns a  PollForDecisionTaskResult from SimpleWorkflow.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/PollForDecisionTask">REST API Reference for PollForDecisionTask Operation</seealso>
-        public  PollForDecisionTaskResponse EndPollForDecisionTask(IAsyncResult asyncResult)
+        public virtual PollForDecisionTaskResponse EndPollForDecisionTask(IAsyncResult asyncResult)
         {
             return EndInvoke<PollForDecisionTaskResponse>(asyncResult);
         }
@@ -2304,7 +2304,7 @@ namespace Amazon.SimpleWorkflow
         /// no longer available for this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RecordActivityTaskHeartbeat">REST API Reference for RecordActivityTaskHeartbeat Operation</seealso>
-        public RecordActivityTaskHeartbeatResponse RecordActivityTaskHeartbeat(RecordActivityTaskHeartbeatRequest request)
+        public virtual RecordActivityTaskHeartbeatResponse RecordActivityTaskHeartbeat(RecordActivityTaskHeartbeatRequest request)
         {
             var marshaller = new RecordActivityTaskHeartbeatRequestMarshaller();
             var unmarshaller = RecordActivityTaskHeartbeatResponseUnmarshaller.Instance;
@@ -2324,7 +2324,7 @@ namespace Amazon.SimpleWorkflow
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRecordActivityTaskHeartbeat
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RecordActivityTaskHeartbeat">REST API Reference for RecordActivityTaskHeartbeat Operation</seealso>
-        public IAsyncResult BeginRecordActivityTaskHeartbeat(RecordActivityTaskHeartbeatRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginRecordActivityTaskHeartbeat(RecordActivityTaskHeartbeatRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RecordActivityTaskHeartbeatRequestMarshaller();
             var unmarshaller = RecordActivityTaskHeartbeatResponseUnmarshaller.Instance;
@@ -2341,7 +2341,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>Returns a  RecordActivityTaskHeartbeatResult from SimpleWorkflow.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RecordActivityTaskHeartbeat">REST API Reference for RecordActivityTaskHeartbeat Operation</seealso>
-        public  RecordActivityTaskHeartbeatResponse EndRecordActivityTaskHeartbeat(IAsyncResult asyncResult)
+        public virtual RecordActivityTaskHeartbeatResponse EndRecordActivityTaskHeartbeat(IAsyncResult asyncResult)
         {
             return EndInvoke<RecordActivityTaskHeartbeatResponse>(asyncResult);
         }
@@ -2426,7 +2426,7 @@ namespace Amazon.SimpleWorkflow
         /// no longer available for this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RegisterActivityType">REST API Reference for RegisterActivityType Operation</seealso>
-        public RegisterActivityTypeResponse RegisterActivityType(RegisterActivityTypeRequest request)
+        public virtual RegisterActivityTypeResponse RegisterActivityType(RegisterActivityTypeRequest request)
         {
             var marshaller = new RegisterActivityTypeRequestMarshaller();
             var unmarshaller = RegisterActivityTypeResponseUnmarshaller.Instance;
@@ -2446,7 +2446,7 @@ namespace Amazon.SimpleWorkflow
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterActivityType
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RegisterActivityType">REST API Reference for RegisterActivityType Operation</seealso>
-        public IAsyncResult BeginRegisterActivityType(RegisterActivityTypeRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginRegisterActivityType(RegisterActivityTypeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RegisterActivityTypeRequestMarshaller();
             var unmarshaller = RegisterActivityTypeResponseUnmarshaller.Instance;
@@ -2463,7 +2463,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>Returns a  RegisterActivityTypeResult from SimpleWorkflow.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RegisterActivityType">REST API Reference for RegisterActivityType Operation</seealso>
-        public  RegisterActivityTypeResponse EndRegisterActivityType(IAsyncResult asyncResult)
+        public virtual RegisterActivityTypeResponse EndRegisterActivityType(IAsyncResult asyncResult)
         {
             return EndInvoke<RegisterActivityTypeResponse>(asyncResult);
         }
@@ -2522,7 +2522,7 @@ namespace Amazon.SimpleWorkflow
         /// Returned when the caller doesn't have sufficient permissions to invoke the action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RegisterDomain">REST API Reference for RegisterDomain Operation</seealso>
-        public RegisterDomainResponse RegisterDomain(RegisterDomainRequest request)
+        public virtual RegisterDomainResponse RegisterDomain(RegisterDomainRequest request)
         {
             var marshaller = new RegisterDomainRequestMarshaller();
             var unmarshaller = RegisterDomainResponseUnmarshaller.Instance;
@@ -2542,7 +2542,7 @@ namespace Amazon.SimpleWorkflow
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterDomain
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RegisterDomain">REST API Reference for RegisterDomain Operation</seealso>
-        public IAsyncResult BeginRegisterDomain(RegisterDomainRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginRegisterDomain(RegisterDomainRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RegisterDomainRequestMarshaller();
             var unmarshaller = RegisterDomainResponseUnmarshaller.Instance;
@@ -2559,7 +2559,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>Returns a  RegisterDomainResult from SimpleWorkflow.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RegisterDomain">REST API Reference for RegisterDomain Operation</seealso>
-        public  RegisterDomainResponse EndRegisterDomain(IAsyncResult asyncResult)
+        public virtual RegisterDomainResponse EndRegisterDomain(IAsyncResult asyncResult)
         {
             return EndInvoke<RegisterDomainResponse>(asyncResult);
         }
@@ -2649,7 +2649,7 @@ namespace Amazon.SimpleWorkflow
         /// no longer available for this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RegisterWorkflowType">REST API Reference for RegisterWorkflowType Operation</seealso>
-        public RegisterWorkflowTypeResponse RegisterWorkflowType(RegisterWorkflowTypeRequest request)
+        public virtual RegisterWorkflowTypeResponse RegisterWorkflowType(RegisterWorkflowTypeRequest request)
         {
             var marshaller = new RegisterWorkflowTypeRequestMarshaller();
             var unmarshaller = RegisterWorkflowTypeResponseUnmarshaller.Instance;
@@ -2669,7 +2669,7 @@ namespace Amazon.SimpleWorkflow
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterWorkflowType
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RegisterWorkflowType">REST API Reference for RegisterWorkflowType Operation</seealso>
-        public IAsyncResult BeginRegisterWorkflowType(RegisterWorkflowTypeRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginRegisterWorkflowType(RegisterWorkflowTypeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RegisterWorkflowTypeRequestMarshaller();
             var unmarshaller = RegisterWorkflowTypeResponseUnmarshaller.Instance;
@@ -2686,7 +2686,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>Returns a  RegisterWorkflowTypeResult from SimpleWorkflow.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RegisterWorkflowType">REST API Reference for RegisterWorkflowType Operation</seealso>
-        public  RegisterWorkflowTypeResponse EndRegisterWorkflowType(IAsyncResult asyncResult)
+        public virtual RegisterWorkflowTypeResponse EndRegisterWorkflowType(IAsyncResult asyncResult)
         {
             return EndInvoke<RegisterWorkflowTypeResponse>(asyncResult);
         }
@@ -2755,7 +2755,7 @@ namespace Amazon.SimpleWorkflow
         /// no longer available for this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RequestCancelWorkflowExecution">REST API Reference for RequestCancelWorkflowExecution Operation</seealso>
-        public RequestCancelWorkflowExecutionResponse RequestCancelWorkflowExecution(RequestCancelWorkflowExecutionRequest request)
+        public virtual RequestCancelWorkflowExecutionResponse RequestCancelWorkflowExecution(RequestCancelWorkflowExecutionRequest request)
         {
             var marshaller = new RequestCancelWorkflowExecutionRequestMarshaller();
             var unmarshaller = RequestCancelWorkflowExecutionResponseUnmarshaller.Instance;
@@ -2775,7 +2775,7 @@ namespace Amazon.SimpleWorkflow
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRequestCancelWorkflowExecution
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RequestCancelWorkflowExecution">REST API Reference for RequestCancelWorkflowExecution Operation</seealso>
-        public IAsyncResult BeginRequestCancelWorkflowExecution(RequestCancelWorkflowExecutionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginRequestCancelWorkflowExecution(RequestCancelWorkflowExecutionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RequestCancelWorkflowExecutionRequestMarshaller();
             var unmarshaller = RequestCancelWorkflowExecutionResponseUnmarshaller.Instance;
@@ -2792,7 +2792,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>Returns a  RequestCancelWorkflowExecutionResult from SimpleWorkflow.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RequestCancelWorkflowExecution">REST API Reference for RequestCancelWorkflowExecution Operation</seealso>
-        public  RequestCancelWorkflowExecutionResponse EndRequestCancelWorkflowExecution(IAsyncResult asyncResult)
+        public virtual RequestCancelWorkflowExecutionResponse EndRequestCancelWorkflowExecution(IAsyncResult asyncResult)
         {
             return EndInvoke<RequestCancelWorkflowExecutionResponse>(asyncResult);
         }
@@ -2867,7 +2867,7 @@ namespace Amazon.SimpleWorkflow
         /// no longer available for this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondActivityTaskCanceled">REST API Reference for RespondActivityTaskCanceled Operation</seealso>
-        public RespondActivityTaskCanceledResponse RespondActivityTaskCanceled(RespondActivityTaskCanceledRequest request)
+        public virtual RespondActivityTaskCanceledResponse RespondActivityTaskCanceled(RespondActivityTaskCanceledRequest request)
         {
             var marshaller = new RespondActivityTaskCanceledRequestMarshaller();
             var unmarshaller = RespondActivityTaskCanceledResponseUnmarshaller.Instance;
@@ -2887,7 +2887,7 @@ namespace Amazon.SimpleWorkflow
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRespondActivityTaskCanceled
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondActivityTaskCanceled">REST API Reference for RespondActivityTaskCanceled Operation</seealso>
-        public IAsyncResult BeginRespondActivityTaskCanceled(RespondActivityTaskCanceledRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginRespondActivityTaskCanceled(RespondActivityTaskCanceledRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RespondActivityTaskCanceledRequestMarshaller();
             var unmarshaller = RespondActivityTaskCanceledResponseUnmarshaller.Instance;
@@ -2904,7 +2904,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>Returns a  RespondActivityTaskCanceledResult from SimpleWorkflow.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondActivityTaskCanceled">REST API Reference for RespondActivityTaskCanceled Operation</seealso>
-        public  RespondActivityTaskCanceledResponse EndRespondActivityTaskCanceled(IAsyncResult asyncResult)
+        public virtual RespondActivityTaskCanceledResponse EndRespondActivityTaskCanceled(IAsyncResult asyncResult)
         {
             return EndInvoke<RespondActivityTaskCanceledResponse>(asyncResult);
         }
@@ -2977,7 +2977,7 @@ namespace Amazon.SimpleWorkflow
         /// no longer available for this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondActivityTaskCompleted">REST API Reference for RespondActivityTaskCompleted Operation</seealso>
-        public RespondActivityTaskCompletedResponse RespondActivityTaskCompleted(RespondActivityTaskCompletedRequest request)
+        public virtual RespondActivityTaskCompletedResponse RespondActivityTaskCompleted(RespondActivityTaskCompletedRequest request)
         {
             var marshaller = new RespondActivityTaskCompletedRequestMarshaller();
             var unmarshaller = RespondActivityTaskCompletedResponseUnmarshaller.Instance;
@@ -2997,7 +2997,7 @@ namespace Amazon.SimpleWorkflow
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRespondActivityTaskCompleted
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondActivityTaskCompleted">REST API Reference for RespondActivityTaskCompleted Operation</seealso>
-        public IAsyncResult BeginRespondActivityTaskCompleted(RespondActivityTaskCompletedRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginRespondActivityTaskCompleted(RespondActivityTaskCompletedRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RespondActivityTaskCompletedRequestMarshaller();
             var unmarshaller = RespondActivityTaskCompletedResponseUnmarshaller.Instance;
@@ -3014,7 +3014,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>Returns a  RespondActivityTaskCompletedResult from SimpleWorkflow.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondActivityTaskCompleted">REST API Reference for RespondActivityTaskCompleted Operation</seealso>
-        public  RespondActivityTaskCompletedResponse EndRespondActivityTaskCompleted(IAsyncResult asyncResult)
+        public virtual RespondActivityTaskCompletedResponse EndRespondActivityTaskCompleted(IAsyncResult asyncResult)
         {
             return EndInvoke<RespondActivityTaskCompletedResponse>(asyncResult);
         }
@@ -3080,7 +3080,7 @@ namespace Amazon.SimpleWorkflow
         /// no longer available for this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondActivityTaskFailed">REST API Reference for RespondActivityTaskFailed Operation</seealso>
-        public RespondActivityTaskFailedResponse RespondActivityTaskFailed(RespondActivityTaskFailedRequest request)
+        public virtual RespondActivityTaskFailedResponse RespondActivityTaskFailed(RespondActivityTaskFailedRequest request)
         {
             var marshaller = new RespondActivityTaskFailedRequestMarshaller();
             var unmarshaller = RespondActivityTaskFailedResponseUnmarshaller.Instance;
@@ -3100,7 +3100,7 @@ namespace Amazon.SimpleWorkflow
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRespondActivityTaskFailed
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondActivityTaskFailed">REST API Reference for RespondActivityTaskFailed Operation</seealso>
-        public IAsyncResult BeginRespondActivityTaskFailed(RespondActivityTaskFailedRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginRespondActivityTaskFailed(RespondActivityTaskFailedRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RespondActivityTaskFailedRequestMarshaller();
             var unmarshaller = RespondActivityTaskFailedResponseUnmarshaller.Instance;
@@ -3117,7 +3117,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>Returns a  RespondActivityTaskFailedResult from SimpleWorkflow.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondActivityTaskFailed">REST API Reference for RespondActivityTaskFailed Operation</seealso>
-        public  RespondActivityTaskFailedResponse EndRespondActivityTaskFailed(IAsyncResult asyncResult)
+        public virtual RespondActivityTaskFailedResponse EndRespondActivityTaskFailed(IAsyncResult asyncResult)
         {
             return EndInvoke<RespondActivityTaskFailedResponse>(asyncResult);
         }
@@ -3163,7 +3163,7 @@ namespace Amazon.SimpleWorkflow
         /// no longer available for this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondDecisionTaskCompleted">REST API Reference for RespondDecisionTaskCompleted Operation</seealso>
-        public RespondDecisionTaskCompletedResponse RespondDecisionTaskCompleted(RespondDecisionTaskCompletedRequest request)
+        public virtual RespondDecisionTaskCompletedResponse RespondDecisionTaskCompleted(RespondDecisionTaskCompletedRequest request)
         {
             var marshaller = new RespondDecisionTaskCompletedRequestMarshaller();
             var unmarshaller = RespondDecisionTaskCompletedResponseUnmarshaller.Instance;
@@ -3183,7 +3183,7 @@ namespace Amazon.SimpleWorkflow
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRespondDecisionTaskCompleted
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondDecisionTaskCompleted">REST API Reference for RespondDecisionTaskCompleted Operation</seealso>
-        public IAsyncResult BeginRespondDecisionTaskCompleted(RespondDecisionTaskCompletedRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginRespondDecisionTaskCompleted(RespondDecisionTaskCompletedRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RespondDecisionTaskCompletedRequestMarshaller();
             var unmarshaller = RespondDecisionTaskCompletedResponseUnmarshaller.Instance;
@@ -3200,7 +3200,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>Returns a  RespondDecisionTaskCompletedResult from SimpleWorkflow.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondDecisionTaskCompleted">REST API Reference for RespondDecisionTaskCompleted Operation</seealso>
-        public  RespondDecisionTaskCompletedResponse EndRespondDecisionTaskCompleted(IAsyncResult asyncResult)
+        public virtual RespondDecisionTaskCompletedResponse EndRespondDecisionTaskCompleted(IAsyncResult asyncResult)
         {
             return EndInvoke<RespondDecisionTaskCompletedResponse>(asyncResult);
         }
@@ -3268,7 +3268,7 @@ namespace Amazon.SimpleWorkflow
         /// no longer available for this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/SignalWorkflowExecution">REST API Reference for SignalWorkflowExecution Operation</seealso>
-        public SignalWorkflowExecutionResponse SignalWorkflowExecution(SignalWorkflowExecutionRequest request)
+        public virtual SignalWorkflowExecutionResponse SignalWorkflowExecution(SignalWorkflowExecutionRequest request)
         {
             var marshaller = new SignalWorkflowExecutionRequestMarshaller();
             var unmarshaller = SignalWorkflowExecutionResponseUnmarshaller.Instance;
@@ -3288,7 +3288,7 @@ namespace Amazon.SimpleWorkflow
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSignalWorkflowExecution
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/SignalWorkflowExecution">REST API Reference for SignalWorkflowExecution Operation</seealso>
-        public IAsyncResult BeginSignalWorkflowExecution(SignalWorkflowExecutionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginSignalWorkflowExecution(SignalWorkflowExecutionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SignalWorkflowExecutionRequestMarshaller();
             var unmarshaller = SignalWorkflowExecutionResponseUnmarshaller.Instance;
@@ -3305,7 +3305,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>Returns a  SignalWorkflowExecutionResult from SimpleWorkflow.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/SignalWorkflowExecution">REST API Reference for SignalWorkflowExecution Operation</seealso>
-        public  SignalWorkflowExecutionResponse EndSignalWorkflowExecution(IAsyncResult asyncResult)
+        public virtual SignalWorkflowExecutionResponse EndSignalWorkflowExecution(IAsyncResult asyncResult)
         {
             return EndInvoke<SignalWorkflowExecutionResponse>(asyncResult);
         }
@@ -3429,7 +3429,7 @@ namespace Amazon.SimpleWorkflow
         /// is already running in the specified domain.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/StartWorkflowExecution">REST API Reference for StartWorkflowExecution Operation</seealso>
-        public StartWorkflowExecutionResponse StartWorkflowExecution(StartWorkflowExecutionRequest request)
+        public virtual StartWorkflowExecutionResponse StartWorkflowExecution(StartWorkflowExecutionRequest request)
         {
             var marshaller = new StartWorkflowExecutionRequestMarshaller();
             var unmarshaller = StartWorkflowExecutionResponseUnmarshaller.Instance;
@@ -3449,7 +3449,7 @@ namespace Amazon.SimpleWorkflow
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartWorkflowExecution
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/StartWorkflowExecution">REST API Reference for StartWorkflowExecution Operation</seealso>
-        public IAsyncResult BeginStartWorkflowExecution(StartWorkflowExecutionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginStartWorkflowExecution(StartWorkflowExecutionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new StartWorkflowExecutionRequestMarshaller();
             var unmarshaller = StartWorkflowExecutionResponseUnmarshaller.Instance;
@@ -3466,7 +3466,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>Returns a  StartWorkflowExecutionResult from SimpleWorkflow.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/StartWorkflowExecution">REST API Reference for StartWorkflowExecution Operation</seealso>
-        public  StartWorkflowExecutionResponse EndStartWorkflowExecution(IAsyncResult asyncResult)
+        public virtual StartWorkflowExecutionResponse EndStartWorkflowExecution(IAsyncResult asyncResult)
         {
             return EndInvoke<StartWorkflowExecutionResponse>(asyncResult);
         }
@@ -3540,7 +3540,7 @@ namespace Amazon.SimpleWorkflow
         /// no longer available for this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/TerminateWorkflowExecution">REST API Reference for TerminateWorkflowExecution Operation</seealso>
-        public TerminateWorkflowExecutionResponse TerminateWorkflowExecution(TerminateWorkflowExecutionRequest request)
+        public virtual TerminateWorkflowExecutionResponse TerminateWorkflowExecution(TerminateWorkflowExecutionRequest request)
         {
             var marshaller = new TerminateWorkflowExecutionRequestMarshaller();
             var unmarshaller = TerminateWorkflowExecutionResponseUnmarshaller.Instance;
@@ -3560,7 +3560,7 @@ namespace Amazon.SimpleWorkflow
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTerminateWorkflowExecution
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/TerminateWorkflowExecution">REST API Reference for TerminateWorkflowExecution Operation</seealso>
-        public IAsyncResult BeginTerminateWorkflowExecution(TerminateWorkflowExecutionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginTerminateWorkflowExecution(TerminateWorkflowExecutionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new TerminateWorkflowExecutionRequestMarshaller();
             var unmarshaller = TerminateWorkflowExecutionResponseUnmarshaller.Instance;
@@ -3577,7 +3577,7 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>Returns a  TerminateWorkflowExecutionResult from SimpleWorkflow.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/TerminateWorkflowExecution">REST API Reference for TerminateWorkflowExecution Operation</seealso>
-        public  TerminateWorkflowExecutionResponse EndTerminateWorkflowExecution(IAsyncResult asyncResult)
+        public virtual TerminateWorkflowExecutionResponse EndTerminateWorkflowExecution(IAsyncResult asyncResult)
         {
             return EndInvoke<TerminateWorkflowExecutionResponse>(asyncResult);
         }

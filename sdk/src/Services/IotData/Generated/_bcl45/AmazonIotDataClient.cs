@@ -113,7 +113,7 @@ namespace Amazon.IotData
         /// <exception cref="Amazon.IotData.Model.UnsupportedDocumentEncodingException">
         /// The document encoding is not supported.
         /// </exception>
-        public DeleteThingShadowResponse DeleteThingShadow(DeleteThingShadowRequest request)
+        public virtual DeleteThingShadowResponse DeleteThingShadow(DeleteThingShadowRequest request)
         {
             var marshaller = new DeleteThingShadowRequestMarshaller();
             var unmarshaller = DeleteThingShadowResponseUnmarshaller.Instance;
@@ -130,7 +130,7 @@ namespace Amazon.IotData
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteThingShadowResponse> DeleteThingShadowAsync(DeleteThingShadowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteThingShadowResponse> DeleteThingShadowAsync(DeleteThingShadowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteThingShadowRequestMarshaller();
             var unmarshaller = DeleteThingShadowResponseUnmarshaller.Instance;
@@ -180,7 +180,7 @@ namespace Amazon.IotData
         /// <exception cref="Amazon.IotData.Model.UnsupportedDocumentEncodingException">
         /// The document encoding is not supported.
         /// </exception>
-        public GetThingShadowResponse GetThingShadow(GetThingShadowRequest request)
+        public virtual GetThingShadowResponse GetThingShadow(GetThingShadowRequest request)
         {
             var marshaller = new GetThingShadowRequestMarshaller();
             var unmarshaller = GetThingShadowResponseUnmarshaller.Instance;
@@ -197,7 +197,7 @@ namespace Amazon.IotData
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetThingShadowResponse> GetThingShadowAsync(GetThingShadowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetThingShadowResponse> GetThingShadowAsync(GetThingShadowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetThingShadowRequestMarshaller();
             var unmarshaller = GetThingShadowResponseUnmarshaller.Instance;
@@ -235,7 +235,7 @@ namespace Amazon.IotData
         /// <exception cref="Amazon.IotData.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
-        public PublishResponse Publish(PublishRequest request)
+        public virtual PublishResponse Publish(PublishRequest request)
         {
             var marshaller = new PublishRequestMarshaller();
             var unmarshaller = PublishResponseUnmarshaller.Instance;
@@ -252,7 +252,7 @@ namespace Amazon.IotData
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<PublishResponse> PublishAsync(PublishRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PublishResponse> PublishAsync(PublishRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PublishRequestMarshaller();
             var unmarshaller = PublishResponseUnmarshaller.Instance;
@@ -305,7 +305,7 @@ namespace Amazon.IotData
         /// <exception cref="Amazon.IotData.Model.UnsupportedDocumentEncodingException">
         /// The document encoding is not supported.
         /// </exception>
-        public UpdateThingShadowResponse UpdateThingShadow(UpdateThingShadowRequest request)
+        public virtual UpdateThingShadowResponse UpdateThingShadow(UpdateThingShadowRequest request)
         {
             var marshaller = new UpdateThingShadowRequestMarshaller();
             var unmarshaller = UpdateThingShadowResponseUnmarshaller.Instance;
@@ -322,7 +322,7 @@ namespace Amazon.IotData
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateThingShadowResponse> UpdateThingShadowAsync(UpdateThingShadowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateThingShadowResponse> UpdateThingShadowAsync(UpdateThingShadowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateThingShadowRequestMarshaller();
             var unmarshaller = UpdateThingShadowResponseUnmarshaller.Instance;

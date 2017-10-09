@@ -266,7 +266,7 @@ namespace Amazon.DirectConnect
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateConnectionOnInterconnect">REST API Reference for AllocateConnectionOnInterconnect Operation</seealso>
         [Obsolete("Deprecated in favor of AllocateHostedConnection.")]
-        public AllocateConnectionOnInterconnectResponse AllocateConnectionOnInterconnect(AllocateConnectionOnInterconnectRequest request)
+        public virtual AllocateConnectionOnInterconnectResponse AllocateConnectionOnInterconnect(AllocateConnectionOnInterconnectRequest request)
         {
             var marshaller = new AllocateConnectionOnInterconnectRequestMarshaller();
             var unmarshaller = AllocateConnectionOnInterconnectResponseUnmarshaller.Instance;
@@ -287,7 +287,7 @@ namespace Amazon.DirectConnect
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateConnectionOnInterconnect">REST API Reference for AllocateConnectionOnInterconnect Operation</seealso>
         [Obsolete("Deprecated in favor of AllocateHostedConnection.")]
-        public IAsyncResult BeginAllocateConnectionOnInterconnect(AllocateConnectionOnInterconnectRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginAllocateConnectionOnInterconnect(AllocateConnectionOnInterconnectRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AllocateConnectionOnInterconnectRequestMarshaller();
             var unmarshaller = AllocateConnectionOnInterconnectResponseUnmarshaller.Instance;
@@ -305,7 +305,7 @@ namespace Amazon.DirectConnect
         /// <returns>Returns a  AllocateConnectionOnInterconnectResult from DirectConnect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateConnectionOnInterconnect">REST API Reference for AllocateConnectionOnInterconnect Operation</seealso>
         [Obsolete("Deprecated in favor of AllocateHostedConnection.")]
-        public  AllocateConnectionOnInterconnectResponse EndAllocateConnectionOnInterconnect(IAsyncResult asyncResult)
+        public virtual AllocateConnectionOnInterconnectResponse EndAllocateConnectionOnInterconnect(IAsyncResult asyncResult)
         {
             return EndInvoke<AllocateConnectionOnInterconnectResponse>(asyncResult);
         }
@@ -340,7 +340,7 @@ namespace Amazon.DirectConnect
         /// details about the cause.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateHostedConnection">REST API Reference for AllocateHostedConnection Operation</seealso>
-        public AllocateHostedConnectionResponse AllocateHostedConnection(AllocateHostedConnectionRequest request)
+        public virtual AllocateHostedConnectionResponse AllocateHostedConnection(AllocateHostedConnectionRequest request)
         {
             var marshaller = new AllocateHostedConnectionRequestMarshaller();
             var unmarshaller = AllocateHostedConnectionResponseUnmarshaller.Instance;
@@ -360,7 +360,7 @@ namespace Amazon.DirectConnect
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAllocateHostedConnection
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateHostedConnection">REST API Reference for AllocateHostedConnection Operation</seealso>
-        public IAsyncResult BeginAllocateHostedConnection(AllocateHostedConnectionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginAllocateHostedConnection(AllocateHostedConnectionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AllocateHostedConnectionRequestMarshaller();
             var unmarshaller = AllocateHostedConnectionResponseUnmarshaller.Instance;
@@ -377,7 +377,7 @@ namespace Amazon.DirectConnect
         /// 
         /// <returns>Returns a  AllocateHostedConnectionResult from DirectConnect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateHostedConnection">REST API Reference for AllocateHostedConnection Operation</seealso>
-        public  AllocateHostedConnectionResponse EndAllocateHostedConnection(IAsyncResult asyncResult)
+        public virtual AllocateHostedConnectionResponse EndAllocateHostedConnection(IAsyncResult asyncResult)
         {
             return EndInvoke<AllocateHostedConnectionResponse>(asyncResult);
         }
@@ -408,7 +408,7 @@ namespace Amazon.DirectConnect
         /// details about the cause.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocatePrivateVirtualInterface">REST API Reference for AllocatePrivateVirtualInterface Operation</seealso>
-        public AllocatePrivateVirtualInterfaceResponse AllocatePrivateVirtualInterface(AllocatePrivateVirtualInterfaceRequest request)
+        public virtual AllocatePrivateVirtualInterfaceResponse AllocatePrivateVirtualInterface(AllocatePrivateVirtualInterfaceRequest request)
         {
             var marshaller = new AllocatePrivateVirtualInterfaceRequestMarshaller();
             var unmarshaller = AllocatePrivateVirtualInterfaceResponseUnmarshaller.Instance;
@@ -428,7 +428,7 @@ namespace Amazon.DirectConnect
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAllocatePrivateVirtualInterface
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocatePrivateVirtualInterface">REST API Reference for AllocatePrivateVirtualInterface Operation</seealso>
-        public IAsyncResult BeginAllocatePrivateVirtualInterface(AllocatePrivateVirtualInterfaceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginAllocatePrivateVirtualInterface(AllocatePrivateVirtualInterfaceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AllocatePrivateVirtualInterfaceRequestMarshaller();
             var unmarshaller = AllocatePrivateVirtualInterfaceResponseUnmarshaller.Instance;
@@ -445,7 +445,7 @@ namespace Amazon.DirectConnect
         /// 
         /// <returns>Returns a  AllocatePrivateVirtualInterfaceResult from DirectConnect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocatePrivateVirtualInterface">REST API Reference for AllocatePrivateVirtualInterface Operation</seealso>
-        public  AllocatePrivateVirtualInterfaceResponse EndAllocatePrivateVirtualInterface(IAsyncResult asyncResult)
+        public virtual AllocatePrivateVirtualInterfaceResponse EndAllocatePrivateVirtualInterface(IAsyncResult asyncResult)
         {
             return EndInvoke<AllocatePrivateVirtualInterfaceResponse>(asyncResult);
         }
@@ -488,7 +488,7 @@ namespace Amazon.DirectConnect
         /// details about the cause.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocatePublicVirtualInterface">REST API Reference for AllocatePublicVirtualInterface Operation</seealso>
-        public AllocatePublicVirtualInterfaceResponse AllocatePublicVirtualInterface(AllocatePublicVirtualInterfaceRequest request)
+        public virtual AllocatePublicVirtualInterfaceResponse AllocatePublicVirtualInterface(AllocatePublicVirtualInterfaceRequest request)
         {
             var marshaller = new AllocatePublicVirtualInterfaceRequestMarshaller();
             var unmarshaller = AllocatePublicVirtualInterfaceResponseUnmarshaller.Instance;
@@ -508,7 +508,7 @@ namespace Amazon.DirectConnect
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAllocatePublicVirtualInterface
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocatePublicVirtualInterface">REST API Reference for AllocatePublicVirtualInterface Operation</seealso>
-        public IAsyncResult BeginAllocatePublicVirtualInterface(AllocatePublicVirtualInterfaceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginAllocatePublicVirtualInterface(AllocatePublicVirtualInterfaceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AllocatePublicVirtualInterfaceRequestMarshaller();
             var unmarshaller = AllocatePublicVirtualInterfaceResponseUnmarshaller.Instance;
@@ -525,7 +525,7 @@ namespace Amazon.DirectConnect
         /// 
         /// <returns>Returns a  AllocatePublicVirtualInterfaceResult from DirectConnect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocatePublicVirtualInterface">REST API Reference for AllocatePublicVirtualInterface Operation</seealso>
-        public  AllocatePublicVirtualInterfaceResponse EndAllocatePublicVirtualInterface(IAsyncResult asyncResult)
+        public virtual AllocatePublicVirtualInterfaceResponse EndAllocatePublicVirtualInterface(IAsyncResult asyncResult)
         {
             return EndInvoke<AllocatePublicVirtualInterfaceResponse>(asyncResult);
         }
@@ -568,7 +568,7 @@ namespace Amazon.DirectConnect
         /// details about the cause.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociateConnectionWithLag">REST API Reference for AssociateConnectionWithLag Operation</seealso>
-        public AssociateConnectionWithLagResponse AssociateConnectionWithLag(AssociateConnectionWithLagRequest request)
+        public virtual AssociateConnectionWithLagResponse AssociateConnectionWithLag(AssociateConnectionWithLagRequest request)
         {
             var marshaller = new AssociateConnectionWithLagRequestMarshaller();
             var unmarshaller = AssociateConnectionWithLagResponseUnmarshaller.Instance;
@@ -588,7 +588,7 @@ namespace Amazon.DirectConnect
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateConnectionWithLag
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociateConnectionWithLag">REST API Reference for AssociateConnectionWithLag Operation</seealso>
-        public IAsyncResult BeginAssociateConnectionWithLag(AssociateConnectionWithLagRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginAssociateConnectionWithLag(AssociateConnectionWithLagRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AssociateConnectionWithLagRequestMarshaller();
             var unmarshaller = AssociateConnectionWithLagResponseUnmarshaller.Instance;
@@ -605,7 +605,7 @@ namespace Amazon.DirectConnect
         /// 
         /// <returns>Returns a  AssociateConnectionWithLagResult from DirectConnect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociateConnectionWithLag">REST API Reference for AssociateConnectionWithLag Operation</seealso>
-        public  AssociateConnectionWithLagResponse EndAssociateConnectionWithLag(IAsyncResult asyncResult)
+        public virtual AssociateConnectionWithLagResponse EndAssociateConnectionWithLag(IAsyncResult asyncResult)
         {
             return EndInvoke<AssociateConnectionWithLagResponse>(asyncResult);
         }
@@ -639,7 +639,7 @@ namespace Amazon.DirectConnect
         /// details about the cause.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociateHostedConnection">REST API Reference for AssociateHostedConnection Operation</seealso>
-        public AssociateHostedConnectionResponse AssociateHostedConnection(AssociateHostedConnectionRequest request)
+        public virtual AssociateHostedConnectionResponse AssociateHostedConnection(AssociateHostedConnectionRequest request)
         {
             var marshaller = new AssociateHostedConnectionRequestMarshaller();
             var unmarshaller = AssociateHostedConnectionResponseUnmarshaller.Instance;
@@ -659,7 +659,7 @@ namespace Amazon.DirectConnect
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateHostedConnection
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociateHostedConnection">REST API Reference for AssociateHostedConnection Operation</seealso>
-        public IAsyncResult BeginAssociateHostedConnection(AssociateHostedConnectionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginAssociateHostedConnection(AssociateHostedConnectionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AssociateHostedConnectionRequestMarshaller();
             var unmarshaller = AssociateHostedConnectionResponseUnmarshaller.Instance;
@@ -676,7 +676,7 @@ namespace Amazon.DirectConnect
         /// 
         /// <returns>Returns a  AssociateHostedConnectionResult from DirectConnect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociateHostedConnection">REST API Reference for AssociateHostedConnection Operation</seealso>
-        public  AssociateHostedConnectionResponse EndAssociateHostedConnection(IAsyncResult asyncResult)
+        public virtual AssociateHostedConnectionResponse EndAssociateHostedConnection(IAsyncResult asyncResult)
         {
             return EndInvoke<AssociateHostedConnectionResponse>(asyncResult);
         }
@@ -716,7 +716,7 @@ namespace Amazon.DirectConnect
         /// details about the cause.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociateVirtualInterface">REST API Reference for AssociateVirtualInterface Operation</seealso>
-        public AssociateVirtualInterfaceResponse AssociateVirtualInterface(AssociateVirtualInterfaceRequest request)
+        public virtual AssociateVirtualInterfaceResponse AssociateVirtualInterface(AssociateVirtualInterfaceRequest request)
         {
             var marshaller = new AssociateVirtualInterfaceRequestMarshaller();
             var unmarshaller = AssociateVirtualInterfaceResponseUnmarshaller.Instance;
@@ -736,7 +736,7 @@ namespace Amazon.DirectConnect
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateVirtualInterface
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociateVirtualInterface">REST API Reference for AssociateVirtualInterface Operation</seealso>
-        public IAsyncResult BeginAssociateVirtualInterface(AssociateVirtualInterfaceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginAssociateVirtualInterface(AssociateVirtualInterfaceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AssociateVirtualInterfaceRequestMarshaller();
             var unmarshaller = AssociateVirtualInterfaceResponseUnmarshaller.Instance;
@@ -753,7 +753,7 @@ namespace Amazon.DirectConnect
         /// 
         /// <returns>Returns a  AssociateVirtualInterfaceResult from DirectConnect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociateVirtualInterface">REST API Reference for AssociateVirtualInterface Operation</seealso>
-        public  AssociateVirtualInterfaceResponse EndAssociateVirtualInterface(IAsyncResult asyncResult)
+        public virtual AssociateVirtualInterfaceResponse EndAssociateVirtualInterface(IAsyncResult asyncResult)
         {
             return EndInvoke<AssociateVirtualInterfaceResponse>(asyncResult);
         }
@@ -784,7 +784,7 @@ namespace Amazon.DirectConnect
         /// details about the cause.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmConnection">REST API Reference for ConfirmConnection Operation</seealso>
-        public ConfirmConnectionResponse ConfirmConnection(ConfirmConnectionRequest request)
+        public virtual ConfirmConnectionResponse ConfirmConnection(ConfirmConnectionRequest request)
         {
             var marshaller = new ConfirmConnectionRequestMarshaller();
             var unmarshaller = ConfirmConnectionResponseUnmarshaller.Instance;
@@ -804,7 +804,7 @@ namespace Amazon.DirectConnect
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndConfirmConnection
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmConnection">REST API Reference for ConfirmConnection Operation</seealso>
-        public IAsyncResult BeginConfirmConnection(ConfirmConnectionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginConfirmConnection(ConfirmConnectionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ConfirmConnectionRequestMarshaller();
             var unmarshaller = ConfirmConnectionResponseUnmarshaller.Instance;
@@ -821,7 +821,7 @@ namespace Amazon.DirectConnect
         /// 
         /// <returns>Returns a  ConfirmConnectionResult from DirectConnect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmConnection">REST API Reference for ConfirmConnection Operation</seealso>
-        public  ConfirmConnectionResponse EndConfirmConnection(IAsyncResult asyncResult)
+        public virtual ConfirmConnectionResponse EndConfirmConnection(IAsyncResult asyncResult)
         {
             return EndInvoke<ConfirmConnectionResponse>(asyncResult);
         }
@@ -852,7 +852,7 @@ namespace Amazon.DirectConnect
         /// details about the cause.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmPrivateVirtualInterface">REST API Reference for ConfirmPrivateVirtualInterface Operation</seealso>
-        public ConfirmPrivateVirtualInterfaceResponse ConfirmPrivateVirtualInterface(ConfirmPrivateVirtualInterfaceRequest request)
+        public virtual ConfirmPrivateVirtualInterfaceResponse ConfirmPrivateVirtualInterface(ConfirmPrivateVirtualInterfaceRequest request)
         {
             var marshaller = new ConfirmPrivateVirtualInterfaceRequestMarshaller();
             var unmarshaller = ConfirmPrivateVirtualInterfaceResponseUnmarshaller.Instance;
@@ -872,7 +872,7 @@ namespace Amazon.DirectConnect
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndConfirmPrivateVirtualInterface
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmPrivateVirtualInterface">REST API Reference for ConfirmPrivateVirtualInterface Operation</seealso>
-        public IAsyncResult BeginConfirmPrivateVirtualInterface(ConfirmPrivateVirtualInterfaceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginConfirmPrivateVirtualInterface(ConfirmPrivateVirtualInterfaceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ConfirmPrivateVirtualInterfaceRequestMarshaller();
             var unmarshaller = ConfirmPrivateVirtualInterfaceResponseUnmarshaller.Instance;
@@ -889,7 +889,7 @@ namespace Amazon.DirectConnect
         /// 
         /// <returns>Returns a  ConfirmPrivateVirtualInterfaceResult from DirectConnect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmPrivateVirtualInterface">REST API Reference for ConfirmPrivateVirtualInterface Operation</seealso>
-        public  ConfirmPrivateVirtualInterfaceResponse EndConfirmPrivateVirtualInterface(IAsyncResult asyncResult)
+        public virtual ConfirmPrivateVirtualInterfaceResponse EndConfirmPrivateVirtualInterface(IAsyncResult asyncResult)
         {
             return EndInvoke<ConfirmPrivateVirtualInterfaceResponse>(asyncResult);
         }
@@ -919,7 +919,7 @@ namespace Amazon.DirectConnect
         /// details about the cause.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmPublicVirtualInterface">REST API Reference for ConfirmPublicVirtualInterface Operation</seealso>
-        public ConfirmPublicVirtualInterfaceResponse ConfirmPublicVirtualInterface(ConfirmPublicVirtualInterfaceRequest request)
+        public virtual ConfirmPublicVirtualInterfaceResponse ConfirmPublicVirtualInterface(ConfirmPublicVirtualInterfaceRequest request)
         {
             var marshaller = new ConfirmPublicVirtualInterfaceRequestMarshaller();
             var unmarshaller = ConfirmPublicVirtualInterfaceResponseUnmarshaller.Instance;
@@ -939,7 +939,7 @@ namespace Amazon.DirectConnect
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndConfirmPublicVirtualInterface
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmPublicVirtualInterface">REST API Reference for ConfirmPublicVirtualInterface Operation</seealso>
-        public IAsyncResult BeginConfirmPublicVirtualInterface(ConfirmPublicVirtualInterfaceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginConfirmPublicVirtualInterface(ConfirmPublicVirtualInterfaceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ConfirmPublicVirtualInterfaceRequestMarshaller();
             var unmarshaller = ConfirmPublicVirtualInterfaceResponseUnmarshaller.Instance;
@@ -956,7 +956,7 @@ namespace Amazon.DirectConnect
         /// 
         /// <returns>Returns a  ConfirmPublicVirtualInterfaceResult from DirectConnect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmPublicVirtualInterface">REST API Reference for ConfirmPublicVirtualInterface Operation</seealso>
-        public  ConfirmPublicVirtualInterfaceResponse EndConfirmPublicVirtualInterface(IAsyncResult asyncResult)
+        public virtual ConfirmPublicVirtualInterfaceResponse EndConfirmPublicVirtualInterface(IAsyncResult asyncResult)
         {
             return EndInvoke<ConfirmPublicVirtualInterfaceResponse>(asyncResult);
         }
@@ -998,7 +998,7 @@ namespace Amazon.DirectConnect
         /// details about the cause.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateBGPPeer">REST API Reference for CreateBGPPeer Operation</seealso>
-        public CreateBGPPeerResponse CreateBGPPeer(CreateBGPPeerRequest request)
+        public virtual CreateBGPPeerResponse CreateBGPPeer(CreateBGPPeerRequest request)
         {
             var marshaller = new CreateBGPPeerRequestMarshaller();
             var unmarshaller = CreateBGPPeerResponseUnmarshaller.Instance;
@@ -1018,7 +1018,7 @@ namespace Amazon.DirectConnect
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateBGPPeer
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateBGPPeer">REST API Reference for CreateBGPPeer Operation</seealso>
-        public IAsyncResult BeginCreateBGPPeer(CreateBGPPeerRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateBGPPeer(CreateBGPPeerRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateBGPPeerRequestMarshaller();
             var unmarshaller = CreateBGPPeerResponseUnmarshaller.Instance;
@@ -1035,7 +1035,7 @@ namespace Amazon.DirectConnect
         /// 
         /// <returns>Returns a  CreateBGPPeerResult from DirectConnect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateBGPPeer">REST API Reference for CreateBGPPeer Operation</seealso>
-        public  CreateBGPPeerResponse EndCreateBGPPeer(IAsyncResult asyncResult)
+        public virtual CreateBGPPeerResponse EndCreateBGPPeer(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateBGPPeerResponse>(asyncResult);
         }
@@ -1077,7 +1077,7 @@ namespace Amazon.DirectConnect
         /// details about the cause.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateConnection">REST API Reference for CreateConnection Operation</seealso>
-        public CreateConnectionResponse CreateConnection(CreateConnectionRequest request)
+        public virtual CreateConnectionResponse CreateConnection(CreateConnectionRequest request)
         {
             var marshaller = new CreateConnectionRequestMarshaller();
             var unmarshaller = CreateConnectionResponseUnmarshaller.Instance;
@@ -1097,7 +1097,7 @@ namespace Amazon.DirectConnect
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateConnection
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateConnection">REST API Reference for CreateConnection Operation</seealso>
-        public IAsyncResult BeginCreateConnection(CreateConnectionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateConnection(CreateConnectionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateConnectionRequestMarshaller();
             var unmarshaller = CreateConnectionResponseUnmarshaller.Instance;
@@ -1114,7 +1114,7 @@ namespace Amazon.DirectConnect
         /// 
         /// <returns>Returns a  CreateConnectionResult from DirectConnect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateConnection">REST API Reference for CreateConnection Operation</seealso>
-        public  CreateConnectionResponse EndCreateConnection(IAsyncResult asyncResult)
+        public virtual CreateConnectionResponse EndCreateConnection(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateConnectionResponse>(asyncResult);
         }
@@ -1170,7 +1170,7 @@ namespace Amazon.DirectConnect
         /// details about the cause.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateInterconnect">REST API Reference for CreateInterconnect Operation</seealso>
-        public CreateInterconnectResponse CreateInterconnect(CreateInterconnectRequest request)
+        public virtual CreateInterconnectResponse CreateInterconnect(CreateInterconnectRequest request)
         {
             var marshaller = new CreateInterconnectRequestMarshaller();
             var unmarshaller = CreateInterconnectResponseUnmarshaller.Instance;
@@ -1190,7 +1190,7 @@ namespace Amazon.DirectConnect
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateInterconnect
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateInterconnect">REST API Reference for CreateInterconnect Operation</seealso>
-        public IAsyncResult BeginCreateInterconnect(CreateInterconnectRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateInterconnect(CreateInterconnectRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateInterconnectRequestMarshaller();
             var unmarshaller = CreateInterconnectResponseUnmarshaller.Instance;
@@ -1207,7 +1207,7 @@ namespace Amazon.DirectConnect
         /// 
         /// <returns>Returns a  CreateInterconnectResult from DirectConnect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateInterconnect">REST API Reference for CreateInterconnect Operation</seealso>
-        public  CreateInterconnectResponse EndCreateInterconnect(IAsyncResult asyncResult)
+        public virtual CreateInterconnectResponse EndCreateInterconnect(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateInterconnectResponse>(asyncResult);
         }
@@ -1263,7 +1263,7 @@ namespace Amazon.DirectConnect
         /// details about the cause.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateLag">REST API Reference for CreateLag Operation</seealso>
-        public CreateLagResponse CreateLag(CreateLagRequest request)
+        public virtual CreateLagResponse CreateLag(CreateLagRequest request)
         {
             var marshaller = new CreateLagRequestMarshaller();
             var unmarshaller = CreateLagResponseUnmarshaller.Instance;
@@ -1283,7 +1283,7 @@ namespace Amazon.DirectConnect
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateLag
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateLag">REST API Reference for CreateLag Operation</seealso>
-        public IAsyncResult BeginCreateLag(CreateLagRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateLag(CreateLagRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateLagRequestMarshaller();
             var unmarshaller = CreateLagResponseUnmarshaller.Instance;
@@ -1300,7 +1300,7 @@ namespace Amazon.DirectConnect
         /// 
         /// <returns>Returns a  CreateLagResult from DirectConnect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateLag">REST API Reference for CreateLag Operation</seealso>
-        public  CreateLagResponse EndCreateLag(IAsyncResult asyncResult)
+        public virtual CreateLagResponse EndCreateLag(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateLagResponse>(asyncResult);
         }
@@ -1326,7 +1326,7 @@ namespace Amazon.DirectConnect
         /// details about the cause.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreatePrivateVirtualInterface">REST API Reference for CreatePrivateVirtualInterface Operation</seealso>
-        public CreatePrivateVirtualInterfaceResponse CreatePrivateVirtualInterface(CreatePrivateVirtualInterfaceRequest request)
+        public virtual CreatePrivateVirtualInterfaceResponse CreatePrivateVirtualInterface(CreatePrivateVirtualInterfaceRequest request)
         {
             var marshaller = new CreatePrivateVirtualInterfaceRequestMarshaller();
             var unmarshaller = CreatePrivateVirtualInterfaceResponseUnmarshaller.Instance;
@@ -1346,7 +1346,7 @@ namespace Amazon.DirectConnect
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePrivateVirtualInterface
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreatePrivateVirtualInterface">REST API Reference for CreatePrivateVirtualInterface Operation</seealso>
-        public IAsyncResult BeginCreatePrivateVirtualInterface(CreatePrivateVirtualInterfaceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreatePrivateVirtualInterface(CreatePrivateVirtualInterfaceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreatePrivateVirtualInterfaceRequestMarshaller();
             var unmarshaller = CreatePrivateVirtualInterfaceResponseUnmarshaller.Instance;
@@ -1363,7 +1363,7 @@ namespace Amazon.DirectConnect
         /// 
         /// <returns>Returns a  CreatePrivateVirtualInterfaceResult from DirectConnect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreatePrivateVirtualInterface">REST API Reference for CreatePrivateVirtualInterface Operation</seealso>
-        public  CreatePrivateVirtualInterfaceResponse EndCreatePrivateVirtualInterface(IAsyncResult asyncResult)
+        public virtual CreatePrivateVirtualInterfaceResponse EndCreatePrivateVirtualInterface(IAsyncResult asyncResult)
         {
             return EndInvoke<CreatePrivateVirtualInterfaceResponse>(asyncResult);
         }
@@ -1396,7 +1396,7 @@ namespace Amazon.DirectConnect
         /// details about the cause.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreatePublicVirtualInterface">REST API Reference for CreatePublicVirtualInterface Operation</seealso>
-        public CreatePublicVirtualInterfaceResponse CreatePublicVirtualInterface(CreatePublicVirtualInterfaceRequest request)
+        public virtual CreatePublicVirtualInterfaceResponse CreatePublicVirtualInterface(CreatePublicVirtualInterfaceRequest request)
         {
             var marshaller = new CreatePublicVirtualInterfaceRequestMarshaller();
             var unmarshaller = CreatePublicVirtualInterfaceResponseUnmarshaller.Instance;
@@ -1416,7 +1416,7 @@ namespace Amazon.DirectConnect
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePublicVirtualInterface
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreatePublicVirtualInterface">REST API Reference for CreatePublicVirtualInterface Operation</seealso>
-        public IAsyncResult BeginCreatePublicVirtualInterface(CreatePublicVirtualInterfaceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreatePublicVirtualInterface(CreatePublicVirtualInterfaceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreatePublicVirtualInterfaceRequestMarshaller();
             var unmarshaller = CreatePublicVirtualInterfaceResponseUnmarshaller.Instance;
@@ -1433,7 +1433,7 @@ namespace Amazon.DirectConnect
         /// 
         /// <returns>Returns a  CreatePublicVirtualInterfaceResult from DirectConnect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreatePublicVirtualInterface">REST API Reference for CreatePublicVirtualInterface Operation</seealso>
-        public  CreatePublicVirtualInterfaceResponse EndCreatePublicVirtualInterface(IAsyncResult asyncResult)
+        public virtual CreatePublicVirtualInterfaceResponse EndCreatePublicVirtualInterface(IAsyncResult asyncResult)
         {
             return EndInvoke<CreatePublicVirtualInterfaceResponse>(asyncResult);
         }
@@ -1458,7 +1458,7 @@ namespace Amazon.DirectConnect
         /// details about the cause.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteBGPPeer">REST API Reference for DeleteBGPPeer Operation</seealso>
-        public DeleteBGPPeerResponse DeleteBGPPeer(DeleteBGPPeerRequest request)
+        public virtual DeleteBGPPeerResponse DeleteBGPPeer(DeleteBGPPeerRequest request)
         {
             var marshaller = new DeleteBGPPeerRequestMarshaller();
             var unmarshaller = DeleteBGPPeerResponseUnmarshaller.Instance;
@@ -1478,7 +1478,7 @@ namespace Amazon.DirectConnect
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBGPPeer
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteBGPPeer">REST API Reference for DeleteBGPPeer Operation</seealso>
-        public IAsyncResult BeginDeleteBGPPeer(DeleteBGPPeerRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteBGPPeer(DeleteBGPPeerRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteBGPPeerRequestMarshaller();
             var unmarshaller = DeleteBGPPeerResponseUnmarshaller.Instance;
@@ -1495,7 +1495,7 @@ namespace Amazon.DirectConnect
         /// 
         /// <returns>Returns a  DeleteBGPPeerResult from DirectConnect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteBGPPeer">REST API Reference for DeleteBGPPeer Operation</seealso>
-        public  DeleteBGPPeerResponse EndDeleteBGPPeer(IAsyncResult asyncResult)
+        public virtual DeleteBGPPeerResponse EndDeleteBGPPeer(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteBGPPeerResponse>(asyncResult);
         }
@@ -1527,7 +1527,7 @@ namespace Amazon.DirectConnect
         /// details about the cause.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteConnection">REST API Reference for DeleteConnection Operation</seealso>
-        public DeleteConnectionResponse DeleteConnection(DeleteConnectionRequest request)
+        public virtual DeleteConnectionResponse DeleteConnection(DeleteConnectionRequest request)
         {
             var marshaller = new DeleteConnectionRequestMarshaller();
             var unmarshaller = DeleteConnectionResponseUnmarshaller.Instance;
@@ -1547,7 +1547,7 @@ namespace Amazon.DirectConnect
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteConnection
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteConnection">REST API Reference for DeleteConnection Operation</seealso>
-        public IAsyncResult BeginDeleteConnection(DeleteConnectionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteConnection(DeleteConnectionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteConnectionRequestMarshaller();
             var unmarshaller = DeleteConnectionResponseUnmarshaller.Instance;
@@ -1564,7 +1564,7 @@ namespace Amazon.DirectConnect
         /// 
         /// <returns>Returns a  DeleteConnectionResult from DirectConnect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteConnection">REST API Reference for DeleteConnection Operation</seealso>
-        public  DeleteConnectionResponse EndDeleteConnection(IAsyncResult asyncResult)
+        public virtual DeleteConnectionResponse EndDeleteConnection(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteConnectionResponse>(asyncResult);
         }
@@ -1594,7 +1594,7 @@ namespace Amazon.DirectConnect
         /// details about the cause.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteInterconnect">REST API Reference for DeleteInterconnect Operation</seealso>
-        public DeleteInterconnectResponse DeleteInterconnect(DeleteInterconnectRequest request)
+        public virtual DeleteInterconnectResponse DeleteInterconnect(DeleteInterconnectRequest request)
         {
             var marshaller = new DeleteInterconnectRequestMarshaller();
             var unmarshaller = DeleteInterconnectResponseUnmarshaller.Instance;
@@ -1614,7 +1614,7 @@ namespace Amazon.DirectConnect
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteInterconnect
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteInterconnect">REST API Reference for DeleteInterconnect Operation</seealso>
-        public IAsyncResult BeginDeleteInterconnect(DeleteInterconnectRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteInterconnect(DeleteInterconnectRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteInterconnectRequestMarshaller();
             var unmarshaller = DeleteInterconnectResponseUnmarshaller.Instance;
@@ -1631,7 +1631,7 @@ namespace Amazon.DirectConnect
         /// 
         /// <returns>Returns a  DeleteInterconnectResult from DirectConnect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteInterconnect">REST API Reference for DeleteInterconnect Operation</seealso>
-        public  DeleteInterconnectResponse EndDeleteInterconnect(IAsyncResult asyncResult)
+        public virtual DeleteInterconnectResponse EndDeleteInterconnect(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteInterconnectResponse>(asyncResult);
         }
@@ -1656,7 +1656,7 @@ namespace Amazon.DirectConnect
         /// details about the cause.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteLag">REST API Reference for DeleteLag Operation</seealso>
-        public DeleteLagResponse DeleteLag(DeleteLagRequest request)
+        public virtual DeleteLagResponse DeleteLag(DeleteLagRequest request)
         {
             var marshaller = new DeleteLagRequestMarshaller();
             var unmarshaller = DeleteLagResponseUnmarshaller.Instance;
@@ -1676,7 +1676,7 @@ namespace Amazon.DirectConnect
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteLag
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteLag">REST API Reference for DeleteLag Operation</seealso>
-        public IAsyncResult BeginDeleteLag(DeleteLagRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteLag(DeleteLagRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteLagRequestMarshaller();
             var unmarshaller = DeleteLagResponseUnmarshaller.Instance;
@@ -1693,7 +1693,7 @@ namespace Amazon.DirectConnect
         /// 
         /// <returns>Returns a  DeleteLagResult from DirectConnect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteLag">REST API Reference for DeleteLag Operation</seealso>
-        public  DeleteLagResponse EndDeleteLag(IAsyncResult asyncResult)
+        public virtual DeleteLagResponse EndDeleteLag(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteLagResponse>(asyncResult);
         }
@@ -1717,7 +1717,7 @@ namespace Amazon.DirectConnect
         /// details about the cause.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteVirtualInterface">REST API Reference for DeleteVirtualInterface Operation</seealso>
-        public DeleteVirtualInterfaceResponse DeleteVirtualInterface(DeleteVirtualInterfaceRequest request)
+        public virtual DeleteVirtualInterfaceResponse DeleteVirtualInterface(DeleteVirtualInterfaceRequest request)
         {
             var marshaller = new DeleteVirtualInterfaceRequestMarshaller();
             var unmarshaller = DeleteVirtualInterfaceResponseUnmarshaller.Instance;
@@ -1737,7 +1737,7 @@ namespace Amazon.DirectConnect
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteVirtualInterface
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteVirtualInterface">REST API Reference for DeleteVirtualInterface Operation</seealso>
-        public IAsyncResult BeginDeleteVirtualInterface(DeleteVirtualInterfaceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteVirtualInterface(DeleteVirtualInterfaceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteVirtualInterfaceRequestMarshaller();
             var unmarshaller = DeleteVirtualInterfaceResponseUnmarshaller.Instance;
@@ -1754,7 +1754,7 @@ namespace Amazon.DirectConnect
         /// 
         /// <returns>Returns a  DeleteVirtualInterfaceResult from DirectConnect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteVirtualInterface">REST API Reference for DeleteVirtualInterface Operation</seealso>
-        public  DeleteVirtualInterfaceResponse EndDeleteVirtualInterface(IAsyncResult asyncResult)
+        public virtual DeleteVirtualInterfaceResponse EndDeleteVirtualInterface(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteVirtualInterfaceResponse>(asyncResult);
         }
@@ -1792,7 +1792,7 @@ namespace Amazon.DirectConnect
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnectionLoa">REST API Reference for DescribeConnectionLoa Operation</seealso>
         [Obsolete("Deprecated in favor of DescribeLoa.")]
-        public DescribeConnectionLoaResponse DescribeConnectionLoa(DescribeConnectionLoaRequest request)
+        public virtual DescribeConnectionLoaResponse DescribeConnectionLoa(DescribeConnectionLoaRequest request)
         {
             var marshaller = new DescribeConnectionLoaRequestMarshaller();
             var unmarshaller = DescribeConnectionLoaResponseUnmarshaller.Instance;
@@ -1813,7 +1813,7 @@ namespace Amazon.DirectConnect
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnectionLoa">REST API Reference for DescribeConnectionLoa Operation</seealso>
         [Obsolete("Deprecated in favor of DescribeLoa.")]
-        public IAsyncResult BeginDescribeConnectionLoa(DescribeConnectionLoaRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeConnectionLoa(DescribeConnectionLoaRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeConnectionLoaRequestMarshaller();
             var unmarshaller = DescribeConnectionLoaResponseUnmarshaller.Instance;
@@ -1831,7 +1831,7 @@ namespace Amazon.DirectConnect
         /// <returns>Returns a  DescribeConnectionLoaResult from DirectConnect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnectionLoa">REST API Reference for DescribeConnectionLoa Operation</seealso>
         [Obsolete("Deprecated in favor of DescribeLoa.")]
-        public  DescribeConnectionLoaResponse EndDescribeConnectionLoa(IAsyncResult asyncResult)
+        public virtual DescribeConnectionLoaResponse EndDescribeConnectionLoa(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeConnectionLoaResponse>(asyncResult);
         }
@@ -1859,7 +1859,7 @@ namespace Amazon.DirectConnect
         /// details about the cause.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnections">REST API Reference for DescribeConnections Operation</seealso>
-        public DescribeConnectionsResponse DescribeConnections()
+        public virtual DescribeConnectionsResponse DescribeConnections()
         {
             return DescribeConnections(new DescribeConnectionsRequest());
         }
@@ -1884,7 +1884,7 @@ namespace Amazon.DirectConnect
         /// details about the cause.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnections">REST API Reference for DescribeConnections Operation</seealso>
-        public DescribeConnectionsResponse DescribeConnections(DescribeConnectionsRequest request)
+        public virtual DescribeConnectionsResponse DescribeConnections(DescribeConnectionsRequest request)
         {
             var marshaller = new DescribeConnectionsRequestMarshaller();
             var unmarshaller = DescribeConnectionsResponseUnmarshaller.Instance;
@@ -1904,7 +1904,7 @@ namespace Amazon.DirectConnect
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeConnections
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnections">REST API Reference for DescribeConnections Operation</seealso>
-        public IAsyncResult BeginDescribeConnections(DescribeConnectionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeConnections(DescribeConnectionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeConnectionsRequestMarshaller();
             var unmarshaller = DescribeConnectionsResponseUnmarshaller.Instance;
@@ -1921,7 +1921,7 @@ namespace Amazon.DirectConnect
         /// 
         /// <returns>Returns a  DescribeConnectionsResult from DirectConnect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnections">REST API Reference for DescribeConnections Operation</seealso>
-        public  DescribeConnectionsResponse EndDescribeConnections(IAsyncResult asyncResult)
+        public virtual DescribeConnectionsResponse EndDescribeConnections(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeConnectionsResponse>(asyncResult);
         }
@@ -1956,7 +1956,7 @@ namespace Amazon.DirectConnect
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnectionsOnInterconnect">REST API Reference for DescribeConnectionsOnInterconnect Operation</seealso>
         [Obsolete("Deprecated in favor of DescribeHostedConnections.")]
-        public DescribeConnectionsOnInterconnectResponse DescribeConnectionsOnInterconnect(DescribeConnectionsOnInterconnectRequest request)
+        public virtual DescribeConnectionsOnInterconnectResponse DescribeConnectionsOnInterconnect(DescribeConnectionsOnInterconnectRequest request)
         {
             var marshaller = new DescribeConnectionsOnInterconnectRequestMarshaller();
             var unmarshaller = DescribeConnectionsOnInterconnectResponseUnmarshaller.Instance;
@@ -1977,7 +1977,7 @@ namespace Amazon.DirectConnect
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnectionsOnInterconnect">REST API Reference for DescribeConnectionsOnInterconnect Operation</seealso>
         [Obsolete("Deprecated in favor of DescribeHostedConnections.")]
-        public IAsyncResult BeginDescribeConnectionsOnInterconnect(DescribeConnectionsOnInterconnectRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeConnectionsOnInterconnect(DescribeConnectionsOnInterconnectRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeConnectionsOnInterconnectRequestMarshaller();
             var unmarshaller = DescribeConnectionsOnInterconnectResponseUnmarshaller.Instance;
@@ -1995,7 +1995,7 @@ namespace Amazon.DirectConnect
         /// <returns>Returns a  DescribeConnectionsOnInterconnectResult from DirectConnect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnectionsOnInterconnect">REST API Reference for DescribeConnectionsOnInterconnect Operation</seealso>
         [Obsolete("Deprecated in favor of DescribeHostedConnections.")]
-        public  DescribeConnectionsOnInterconnectResponse EndDescribeConnectionsOnInterconnect(IAsyncResult asyncResult)
+        public virtual DescribeConnectionsOnInterconnectResponse EndDescribeConnectionsOnInterconnect(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeConnectionsOnInterconnectResponse>(asyncResult);
         }
@@ -2026,7 +2026,7 @@ namespace Amazon.DirectConnect
         /// details about the cause.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeHostedConnections">REST API Reference for DescribeHostedConnections Operation</seealso>
-        public DescribeHostedConnectionsResponse DescribeHostedConnections(DescribeHostedConnectionsRequest request)
+        public virtual DescribeHostedConnectionsResponse DescribeHostedConnections(DescribeHostedConnectionsRequest request)
         {
             var marshaller = new DescribeHostedConnectionsRequestMarshaller();
             var unmarshaller = DescribeHostedConnectionsResponseUnmarshaller.Instance;
@@ -2046,7 +2046,7 @@ namespace Amazon.DirectConnect
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeHostedConnections
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeHostedConnections">REST API Reference for DescribeHostedConnections Operation</seealso>
-        public IAsyncResult BeginDescribeHostedConnections(DescribeHostedConnectionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeHostedConnections(DescribeHostedConnectionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeHostedConnectionsRequestMarshaller();
             var unmarshaller = DescribeHostedConnectionsResponseUnmarshaller.Instance;
@@ -2063,7 +2063,7 @@ namespace Amazon.DirectConnect
         /// 
         /// <returns>Returns a  DescribeHostedConnectionsResult from DirectConnect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeHostedConnections">REST API Reference for DescribeHostedConnections Operation</seealso>
-        public  DescribeHostedConnectionsResponse EndDescribeHostedConnections(IAsyncResult asyncResult)
+        public virtual DescribeHostedConnectionsResponse EndDescribeHostedConnections(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeHostedConnectionsResponse>(asyncResult);
         }
@@ -2101,7 +2101,7 @@ namespace Amazon.DirectConnect
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeInterconnectLoa">REST API Reference for DescribeInterconnectLoa Operation</seealso>
         [Obsolete("Deprecated in favor of DescribeLoa.")]
-        public DescribeInterconnectLoaResponse DescribeInterconnectLoa(DescribeInterconnectLoaRequest request)
+        public virtual DescribeInterconnectLoaResponse DescribeInterconnectLoa(DescribeInterconnectLoaRequest request)
         {
             var marshaller = new DescribeInterconnectLoaRequestMarshaller();
             var unmarshaller = DescribeInterconnectLoaResponseUnmarshaller.Instance;
@@ -2122,7 +2122,7 @@ namespace Amazon.DirectConnect
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeInterconnectLoa">REST API Reference for DescribeInterconnectLoa Operation</seealso>
         [Obsolete("Deprecated in favor of DescribeLoa.")]
-        public IAsyncResult BeginDescribeInterconnectLoa(DescribeInterconnectLoaRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeInterconnectLoa(DescribeInterconnectLoaRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeInterconnectLoaRequestMarshaller();
             var unmarshaller = DescribeInterconnectLoaResponseUnmarshaller.Instance;
@@ -2140,7 +2140,7 @@ namespace Amazon.DirectConnect
         /// <returns>Returns a  DescribeInterconnectLoaResult from DirectConnect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeInterconnectLoa">REST API Reference for DescribeInterconnectLoa Operation</seealso>
         [Obsolete("Deprecated in favor of DescribeLoa.")]
-        public  DescribeInterconnectLoaResponse EndDescribeInterconnectLoa(IAsyncResult asyncResult)
+        public virtual DescribeInterconnectLoaResponse EndDescribeInterconnectLoa(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeInterconnectLoaResponse>(asyncResult);
         }
@@ -2168,7 +2168,7 @@ namespace Amazon.DirectConnect
         /// details about the cause.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeInterconnects">REST API Reference for DescribeInterconnects Operation</seealso>
-        public DescribeInterconnectsResponse DescribeInterconnects()
+        public virtual DescribeInterconnectsResponse DescribeInterconnects()
         {
             return DescribeInterconnects(new DescribeInterconnectsRequest());
         }
@@ -2193,7 +2193,7 @@ namespace Amazon.DirectConnect
         /// details about the cause.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeInterconnects">REST API Reference for DescribeInterconnects Operation</seealso>
-        public DescribeInterconnectsResponse DescribeInterconnects(DescribeInterconnectsRequest request)
+        public virtual DescribeInterconnectsResponse DescribeInterconnects(DescribeInterconnectsRequest request)
         {
             var marshaller = new DescribeInterconnectsRequestMarshaller();
             var unmarshaller = DescribeInterconnectsResponseUnmarshaller.Instance;
@@ -2213,7 +2213,7 @@ namespace Amazon.DirectConnect
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeInterconnects
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeInterconnects">REST API Reference for DescribeInterconnects Operation</seealso>
-        public IAsyncResult BeginDescribeInterconnects(DescribeInterconnectsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeInterconnects(DescribeInterconnectsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeInterconnectsRequestMarshaller();
             var unmarshaller = DescribeInterconnectsResponseUnmarshaller.Instance;
@@ -2230,7 +2230,7 @@ namespace Amazon.DirectConnect
         /// 
         /// <returns>Returns a  DescribeInterconnectsResult from DirectConnect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeInterconnects">REST API Reference for DescribeInterconnects Operation</seealso>
-        public  DescribeInterconnectsResponse EndDescribeInterconnects(IAsyncResult asyncResult)
+        public virtual DescribeInterconnectsResponse EndDescribeInterconnects(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeInterconnectsResponse>(asyncResult);
         }
@@ -2259,7 +2259,7 @@ namespace Amazon.DirectConnect
         /// details about the cause.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeLags">REST API Reference for DescribeLags Operation</seealso>
-        public DescribeLagsResponse DescribeLags(DescribeLagsRequest request)
+        public virtual DescribeLagsResponse DescribeLags(DescribeLagsRequest request)
         {
             var marshaller = new DescribeLagsRequestMarshaller();
             var unmarshaller = DescribeLagsResponseUnmarshaller.Instance;
@@ -2279,7 +2279,7 @@ namespace Amazon.DirectConnect
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeLags
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeLags">REST API Reference for DescribeLags Operation</seealso>
-        public IAsyncResult BeginDescribeLags(DescribeLagsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeLags(DescribeLagsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeLagsRequestMarshaller();
             var unmarshaller = DescribeLagsResponseUnmarshaller.Instance;
@@ -2296,7 +2296,7 @@ namespace Amazon.DirectConnect
         /// 
         /// <returns>Returns a  DescribeLagsResult from DirectConnect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeLags">REST API Reference for DescribeLags Operation</seealso>
-        public  DescribeLagsResponse EndDescribeLags(IAsyncResult asyncResult)
+        public virtual DescribeLagsResponse EndDescribeLags(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeLagsResponse>(asyncResult);
         }
@@ -2329,7 +2329,7 @@ namespace Amazon.DirectConnect
         /// details about the cause.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeLoa">REST API Reference for DescribeLoa Operation</seealso>
-        public DescribeLoaResponse DescribeLoa(DescribeLoaRequest request)
+        public virtual DescribeLoaResponse DescribeLoa(DescribeLoaRequest request)
         {
             var marshaller = new DescribeLoaRequestMarshaller();
             var unmarshaller = DescribeLoaResponseUnmarshaller.Instance;
@@ -2349,7 +2349,7 @@ namespace Amazon.DirectConnect
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeLoa
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeLoa">REST API Reference for DescribeLoa Operation</seealso>
-        public IAsyncResult BeginDescribeLoa(DescribeLoaRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeLoa(DescribeLoaRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeLoaRequestMarshaller();
             var unmarshaller = DescribeLoaResponseUnmarshaller.Instance;
@@ -2366,7 +2366,7 @@ namespace Amazon.DirectConnect
         /// 
         /// <returns>Returns a  DescribeLoaResult from DirectConnect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeLoa">REST API Reference for DescribeLoa Operation</seealso>
-        public  DescribeLoaResponse EndDescribeLoa(IAsyncResult asyncResult)
+        public virtual DescribeLoaResponse EndDescribeLoa(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeLoaResponse>(asyncResult);
         }
@@ -2390,7 +2390,7 @@ namespace Amazon.DirectConnect
         /// details about the cause.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeLocations">REST API Reference for DescribeLocations Operation</seealso>
-        public DescribeLocationsResponse DescribeLocations()
+        public virtual DescribeLocationsResponse DescribeLocations()
         {
             return DescribeLocations(new DescribeLocationsRequest());
         }
@@ -2411,7 +2411,7 @@ namespace Amazon.DirectConnect
         /// details about the cause.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeLocations">REST API Reference for DescribeLocations Operation</seealso>
-        public DescribeLocationsResponse DescribeLocations(DescribeLocationsRequest request)
+        public virtual DescribeLocationsResponse DescribeLocations(DescribeLocationsRequest request)
         {
             var marshaller = new DescribeLocationsRequestMarshaller();
             var unmarshaller = DescribeLocationsResponseUnmarshaller.Instance;
@@ -2431,7 +2431,7 @@ namespace Amazon.DirectConnect
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeLocations
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeLocations">REST API Reference for DescribeLocations Operation</seealso>
-        public IAsyncResult BeginDescribeLocations(DescribeLocationsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeLocations(DescribeLocationsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeLocationsRequestMarshaller();
             var unmarshaller = DescribeLocationsResponseUnmarshaller.Instance;
@@ -2448,7 +2448,7 @@ namespace Amazon.DirectConnect
         /// 
         /// <returns>Returns a  DescribeLocationsResult from DirectConnect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeLocations">REST API Reference for DescribeLocations Operation</seealso>
-        public  DescribeLocationsResponse EndDescribeLocations(IAsyncResult asyncResult)
+        public virtual DescribeLocationsResponse EndDescribeLocations(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeLocationsResponse>(asyncResult);
         }
@@ -2472,7 +2472,7 @@ namespace Amazon.DirectConnect
         /// details about the cause.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
-        public DescribeTagsResponse DescribeTags(DescribeTagsRequest request)
+        public virtual DescribeTagsResponse DescribeTags(DescribeTagsRequest request)
         {
             var marshaller = new DescribeTagsRequestMarshaller();
             var unmarshaller = DescribeTagsResponseUnmarshaller.Instance;
@@ -2492,7 +2492,7 @@ namespace Amazon.DirectConnect
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTags
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
-        public IAsyncResult BeginDescribeTags(DescribeTagsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeTags(DescribeTagsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeTagsRequestMarshaller();
             var unmarshaller = DescribeTagsResponseUnmarshaller.Instance;
@@ -2509,7 +2509,7 @@ namespace Amazon.DirectConnect
         /// 
         /// <returns>Returns a  DescribeTagsResult from DirectConnect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
-        public  DescribeTagsResponse EndDescribeTags(IAsyncResult asyncResult)
+        public virtual DescribeTagsResponse EndDescribeTags(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeTagsResponse>(asyncResult);
         }
@@ -2540,7 +2540,7 @@ namespace Amazon.DirectConnect
         /// details about the cause.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeVirtualGateways">REST API Reference for DescribeVirtualGateways Operation</seealso>
-        public DescribeVirtualGatewaysResponse DescribeVirtualGateways()
+        public virtual DescribeVirtualGatewaysResponse DescribeVirtualGateways()
         {
             return DescribeVirtualGateways(new DescribeVirtualGatewaysRequest());
         }
@@ -2568,7 +2568,7 @@ namespace Amazon.DirectConnect
         /// details about the cause.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeVirtualGateways">REST API Reference for DescribeVirtualGateways Operation</seealso>
-        public DescribeVirtualGatewaysResponse DescribeVirtualGateways(DescribeVirtualGatewaysRequest request)
+        public virtual DescribeVirtualGatewaysResponse DescribeVirtualGateways(DescribeVirtualGatewaysRequest request)
         {
             var marshaller = new DescribeVirtualGatewaysRequestMarshaller();
             var unmarshaller = DescribeVirtualGatewaysResponseUnmarshaller.Instance;
@@ -2588,7 +2588,7 @@ namespace Amazon.DirectConnect
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeVirtualGateways
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeVirtualGateways">REST API Reference for DescribeVirtualGateways Operation</seealso>
-        public IAsyncResult BeginDescribeVirtualGateways(DescribeVirtualGatewaysRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeVirtualGateways(DescribeVirtualGatewaysRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeVirtualGatewaysRequestMarshaller();
             var unmarshaller = DescribeVirtualGatewaysResponseUnmarshaller.Instance;
@@ -2605,7 +2605,7 @@ namespace Amazon.DirectConnect
         /// 
         /// <returns>Returns a  DescribeVirtualGatewaysResult from DirectConnect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeVirtualGateways">REST API Reference for DescribeVirtualGateways Operation</seealso>
-        public  DescribeVirtualGatewaysResponse EndDescribeVirtualGateways(IAsyncResult asyncResult)
+        public virtual DescribeVirtualGatewaysResponse EndDescribeVirtualGateways(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeVirtualGatewaysResponse>(asyncResult);
         }
@@ -2637,7 +2637,7 @@ namespace Amazon.DirectConnect
         /// details about the cause.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeVirtualInterfaces">REST API Reference for DescribeVirtualInterfaces Operation</seealso>
-        public DescribeVirtualInterfacesResponse DescribeVirtualInterfaces()
+        public virtual DescribeVirtualInterfacesResponse DescribeVirtualInterfaces()
         {
             return DescribeVirtualInterfaces(new DescribeVirtualInterfacesRequest());
         }
@@ -2666,7 +2666,7 @@ namespace Amazon.DirectConnect
         /// details about the cause.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeVirtualInterfaces">REST API Reference for DescribeVirtualInterfaces Operation</seealso>
-        public DescribeVirtualInterfacesResponse DescribeVirtualInterfaces(DescribeVirtualInterfacesRequest request)
+        public virtual DescribeVirtualInterfacesResponse DescribeVirtualInterfaces(DescribeVirtualInterfacesRequest request)
         {
             var marshaller = new DescribeVirtualInterfacesRequestMarshaller();
             var unmarshaller = DescribeVirtualInterfacesResponseUnmarshaller.Instance;
@@ -2686,7 +2686,7 @@ namespace Amazon.DirectConnect
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeVirtualInterfaces
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeVirtualInterfaces">REST API Reference for DescribeVirtualInterfaces Operation</seealso>
-        public IAsyncResult BeginDescribeVirtualInterfaces(DescribeVirtualInterfacesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeVirtualInterfaces(DescribeVirtualInterfacesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeVirtualInterfacesRequestMarshaller();
             var unmarshaller = DescribeVirtualInterfacesResponseUnmarshaller.Instance;
@@ -2703,7 +2703,7 @@ namespace Amazon.DirectConnect
         /// 
         /// <returns>Returns a  DescribeVirtualInterfacesResult from DirectConnect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeVirtualInterfaces">REST API Reference for DescribeVirtualInterfaces Operation</seealso>
-        public  DescribeVirtualInterfacesResponse EndDescribeVirtualInterfaces(IAsyncResult asyncResult)
+        public virtual DescribeVirtualInterfacesResponse EndDescribeVirtualInterfaces(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeVirtualInterfacesResponse>(asyncResult);
         }
@@ -2740,7 +2740,7 @@ namespace Amazon.DirectConnect
         /// details about the cause.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DisassociateConnectionFromLag">REST API Reference for DisassociateConnectionFromLag Operation</seealso>
-        public DisassociateConnectionFromLagResponse DisassociateConnectionFromLag(DisassociateConnectionFromLagRequest request)
+        public virtual DisassociateConnectionFromLagResponse DisassociateConnectionFromLag(DisassociateConnectionFromLagRequest request)
         {
             var marshaller = new DisassociateConnectionFromLagRequestMarshaller();
             var unmarshaller = DisassociateConnectionFromLagResponseUnmarshaller.Instance;
@@ -2760,7 +2760,7 @@ namespace Amazon.DirectConnect
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateConnectionFromLag
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DisassociateConnectionFromLag">REST API Reference for DisassociateConnectionFromLag Operation</seealso>
-        public IAsyncResult BeginDisassociateConnectionFromLag(DisassociateConnectionFromLagRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDisassociateConnectionFromLag(DisassociateConnectionFromLagRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DisassociateConnectionFromLagRequestMarshaller();
             var unmarshaller = DisassociateConnectionFromLagResponseUnmarshaller.Instance;
@@ -2777,7 +2777,7 @@ namespace Amazon.DirectConnect
         /// 
         /// <returns>Returns a  DisassociateConnectionFromLagResult from DirectConnect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DisassociateConnectionFromLag">REST API Reference for DisassociateConnectionFromLag Operation</seealso>
-        public  DisassociateConnectionFromLagResponse EndDisassociateConnectionFromLag(IAsyncResult asyncResult)
+        public virtual DisassociateConnectionFromLagResponse EndDisassociateConnectionFromLag(IAsyncResult asyncResult)
         {
             return EndInvoke<DisassociateConnectionFromLagResponse>(asyncResult);
         }
@@ -2815,7 +2815,7 @@ namespace Amazon.DirectConnect
         /// Connect resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/TagResource">REST API Reference for TagResource Operation</seealso>
-        public TagResourceResponse TagResource(TagResourceRequest request)
+        public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
             var marshaller = new TagResourceRequestMarshaller();
             var unmarshaller = TagResourceResponseUnmarshaller.Instance;
@@ -2835,7 +2835,7 @@ namespace Amazon.DirectConnect
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResource
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/TagResource">REST API Reference for TagResource Operation</seealso>
-        public IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new TagResourceRequestMarshaller();
             var unmarshaller = TagResourceResponseUnmarshaller.Instance;
@@ -2852,7 +2852,7 @@ namespace Amazon.DirectConnect
         /// 
         /// <returns>Returns a  TagResourceResult from DirectConnect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/TagResource">REST API Reference for TagResource Operation</seealso>
-        public  TagResourceResponse EndTagResource(IAsyncResult asyncResult)
+        public virtual TagResourceResponse EndTagResource(IAsyncResult asyncResult)
         {
             return EndInvoke<TagResourceResponse>(asyncResult);
         }
@@ -2876,7 +2876,7 @@ namespace Amazon.DirectConnect
         /// details about the cause.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
-        public UntagResourceResponse UntagResource(UntagResourceRequest request)
+        public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
             var marshaller = new UntagResourceRequestMarshaller();
             var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
@@ -2896,7 +2896,7 @@ namespace Amazon.DirectConnect
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResource
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
-        public IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UntagResourceRequestMarshaller();
             var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
@@ -2913,7 +2913,7 @@ namespace Amazon.DirectConnect
         /// 
         /// <returns>Returns a  UntagResourceResult from DirectConnect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
-        public  UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
+        public virtual UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
         {
             return EndInvoke<UntagResourceResponse>(asyncResult);
         }
@@ -2960,7 +2960,7 @@ namespace Amazon.DirectConnect
         /// details about the cause.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateLag">REST API Reference for UpdateLag Operation</seealso>
-        public UpdateLagResponse UpdateLag(UpdateLagRequest request)
+        public virtual UpdateLagResponse UpdateLag(UpdateLagRequest request)
         {
             var marshaller = new UpdateLagRequestMarshaller();
             var unmarshaller = UpdateLagResponseUnmarshaller.Instance;
@@ -2980,7 +2980,7 @@ namespace Amazon.DirectConnect
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateLag
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateLag">REST API Reference for UpdateLag Operation</seealso>
-        public IAsyncResult BeginUpdateLag(UpdateLagRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateLag(UpdateLagRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateLagRequestMarshaller();
             var unmarshaller = UpdateLagResponseUnmarshaller.Instance;
@@ -2997,7 +2997,7 @@ namespace Amazon.DirectConnect
         /// 
         /// <returns>Returns a  UpdateLagResult from DirectConnect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateLag">REST API Reference for UpdateLag Operation</seealso>
-        public  UpdateLagResponse EndUpdateLag(IAsyncResult asyncResult)
+        public virtual UpdateLagResponse EndUpdateLag(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateLagResponse>(asyncResult);
         }

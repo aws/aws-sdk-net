@@ -241,7 +241,7 @@ namespace Amazon.Route53
         
         #region  AssociateVPCWithHostedZone
 
-        internal AssociateVPCWithHostedZoneResponse AssociateVPCWithHostedZone(AssociateVPCWithHostedZoneRequest request)
+        internal virtual AssociateVPCWithHostedZoneResponse AssociateVPCWithHostedZone(AssociateVPCWithHostedZoneRequest request)
         {
             var marshaller = new AssociateVPCWithHostedZoneRequestMarshaller();
             var unmarshaller = AssociateVPCWithHostedZoneResponseUnmarshaller.Instance;
@@ -260,7 +260,7 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/AssociateVPCWithHostedZone">REST API Reference for AssociateVPCWithHostedZone Operation</seealso>
-        public Task<AssociateVPCWithHostedZoneResponse> AssociateVPCWithHostedZoneAsync(AssociateVPCWithHostedZoneRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<AssociateVPCWithHostedZoneResponse> AssociateVPCWithHostedZoneAsync(AssociateVPCWithHostedZoneRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AssociateVPCWithHostedZoneRequestMarshaller();
             var unmarshaller = AssociateVPCWithHostedZoneResponseUnmarshaller.Instance;
@@ -273,7 +273,7 @@ namespace Amazon.Route53
         
         #region  ChangeResourceRecordSets
 
-        internal ChangeResourceRecordSetsResponse ChangeResourceRecordSets(ChangeResourceRecordSetsRequest request)
+        internal virtual ChangeResourceRecordSetsResponse ChangeResourceRecordSets(ChangeResourceRecordSetsRequest request)
         {
             var marshaller = new ChangeResourceRecordSetsRequestMarshaller();
             var unmarshaller = ChangeResourceRecordSetsResponseUnmarshaller.Instance;
@@ -292,7 +292,7 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeResourceRecordSets">REST API Reference for ChangeResourceRecordSets Operation</seealso>
-        public Task<ChangeResourceRecordSetsResponse> ChangeResourceRecordSetsAsync(ChangeResourceRecordSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ChangeResourceRecordSetsResponse> ChangeResourceRecordSetsAsync(ChangeResourceRecordSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ChangeResourceRecordSetsRequestMarshaller();
             var unmarshaller = ChangeResourceRecordSetsResponseUnmarshaller.Instance;
@@ -305,7 +305,7 @@ namespace Amazon.Route53
         
         #region  ChangeTagsForResource
 
-        internal ChangeTagsForResourceResponse ChangeTagsForResource(ChangeTagsForResourceRequest request)
+        internal virtual ChangeTagsForResourceResponse ChangeTagsForResource(ChangeTagsForResourceRequest request)
         {
             var marshaller = new ChangeTagsForResourceRequestMarshaller();
             var unmarshaller = ChangeTagsForResourceResponseUnmarshaller.Instance;
@@ -324,7 +324,7 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeTagsForResource">REST API Reference for ChangeTagsForResource Operation</seealso>
-        public Task<ChangeTagsForResourceResponse> ChangeTagsForResourceAsync(ChangeTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ChangeTagsForResourceResponse> ChangeTagsForResourceAsync(ChangeTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ChangeTagsForResourceRequestMarshaller();
             var unmarshaller = ChangeTagsForResourceResponseUnmarshaller.Instance;
@@ -337,7 +337,7 @@ namespace Amazon.Route53
         
         #region  CreateHealthCheck
 
-        internal CreateHealthCheckResponse CreateHealthCheck(CreateHealthCheckRequest request)
+        internal virtual CreateHealthCheckResponse CreateHealthCheck(CreateHealthCheckRequest request)
         {
             var marshaller = new CreateHealthCheckRequestMarshaller();
             var unmarshaller = CreateHealthCheckResponseUnmarshaller.Instance;
@@ -356,7 +356,7 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateHealthCheck">REST API Reference for CreateHealthCheck Operation</seealso>
-        public Task<CreateHealthCheckResponse> CreateHealthCheckAsync(CreateHealthCheckRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateHealthCheckResponse> CreateHealthCheckAsync(CreateHealthCheckRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateHealthCheckRequestMarshaller();
             var unmarshaller = CreateHealthCheckResponseUnmarshaller.Instance;
@@ -369,7 +369,7 @@ namespace Amazon.Route53
         
         #region  CreateHostedZone
 
-        internal CreateHostedZoneResponse CreateHostedZone(CreateHostedZoneRequest request)
+        internal virtual CreateHostedZoneResponse CreateHostedZone(CreateHostedZoneRequest request)
         {
             var marshaller = new CreateHostedZoneRequestMarshaller();
             var unmarshaller = CreateHostedZoneResponseUnmarshaller.Instance;
@@ -388,7 +388,7 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateHostedZone">REST API Reference for CreateHostedZone Operation</seealso>
-        public Task<CreateHostedZoneResponse> CreateHostedZoneAsync(CreateHostedZoneRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateHostedZoneResponse> CreateHostedZoneAsync(CreateHostedZoneRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateHostedZoneRequestMarshaller();
             var unmarshaller = CreateHostedZoneResponseUnmarshaller.Instance;
@@ -401,7 +401,7 @@ namespace Amazon.Route53
         
         #region  CreateQueryLoggingConfig
 
-        internal CreateQueryLoggingConfigResponse CreateQueryLoggingConfig(CreateQueryLoggingConfigRequest request)
+        internal virtual CreateQueryLoggingConfigResponse CreateQueryLoggingConfig(CreateQueryLoggingConfigRequest request)
         {
             var marshaller = new CreateQueryLoggingConfigRequestMarshaller();
             var unmarshaller = CreateQueryLoggingConfigResponseUnmarshaller.Instance;
@@ -420,7 +420,7 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateQueryLoggingConfig">REST API Reference for CreateQueryLoggingConfig Operation</seealso>
-        public Task<CreateQueryLoggingConfigResponse> CreateQueryLoggingConfigAsync(CreateQueryLoggingConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateQueryLoggingConfigResponse> CreateQueryLoggingConfigAsync(CreateQueryLoggingConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateQueryLoggingConfigRequestMarshaller();
             var unmarshaller = CreateQueryLoggingConfigResponseUnmarshaller.Instance;
@@ -433,7 +433,7 @@ namespace Amazon.Route53
         
         #region  CreateReusableDelegationSet
 
-        internal CreateReusableDelegationSetResponse CreateReusableDelegationSet(CreateReusableDelegationSetRequest request)
+        internal virtual CreateReusableDelegationSetResponse CreateReusableDelegationSet(CreateReusableDelegationSetRequest request)
         {
             var marshaller = new CreateReusableDelegationSetRequestMarshaller();
             var unmarshaller = CreateReusableDelegationSetResponseUnmarshaller.Instance;
@@ -452,7 +452,7 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateReusableDelegationSet">REST API Reference for CreateReusableDelegationSet Operation</seealso>
-        public Task<CreateReusableDelegationSetResponse> CreateReusableDelegationSetAsync(CreateReusableDelegationSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateReusableDelegationSetResponse> CreateReusableDelegationSetAsync(CreateReusableDelegationSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateReusableDelegationSetRequestMarshaller();
             var unmarshaller = CreateReusableDelegationSetResponseUnmarshaller.Instance;
@@ -465,7 +465,7 @@ namespace Amazon.Route53
         
         #region  CreateTrafficPolicy
 
-        internal CreateTrafficPolicyResponse CreateTrafficPolicy(CreateTrafficPolicyRequest request)
+        internal virtual CreateTrafficPolicyResponse CreateTrafficPolicy(CreateTrafficPolicyRequest request)
         {
             var marshaller = new CreateTrafficPolicyRequestMarshaller();
             var unmarshaller = CreateTrafficPolicyResponseUnmarshaller.Instance;
@@ -484,7 +484,7 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicy">REST API Reference for CreateTrafficPolicy Operation</seealso>
-        public Task<CreateTrafficPolicyResponse> CreateTrafficPolicyAsync(CreateTrafficPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateTrafficPolicyResponse> CreateTrafficPolicyAsync(CreateTrafficPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateTrafficPolicyRequestMarshaller();
             var unmarshaller = CreateTrafficPolicyResponseUnmarshaller.Instance;
@@ -497,7 +497,7 @@ namespace Amazon.Route53
         
         #region  CreateTrafficPolicyInstance
 
-        internal CreateTrafficPolicyInstanceResponse CreateTrafficPolicyInstance(CreateTrafficPolicyInstanceRequest request)
+        internal virtual CreateTrafficPolicyInstanceResponse CreateTrafficPolicyInstance(CreateTrafficPolicyInstanceRequest request)
         {
             var marshaller = new CreateTrafficPolicyInstanceRequestMarshaller();
             var unmarshaller = CreateTrafficPolicyInstanceResponseUnmarshaller.Instance;
@@ -516,7 +516,7 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicyInstance">REST API Reference for CreateTrafficPolicyInstance Operation</seealso>
-        public Task<CreateTrafficPolicyInstanceResponse> CreateTrafficPolicyInstanceAsync(CreateTrafficPolicyInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateTrafficPolicyInstanceResponse> CreateTrafficPolicyInstanceAsync(CreateTrafficPolicyInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateTrafficPolicyInstanceRequestMarshaller();
             var unmarshaller = CreateTrafficPolicyInstanceResponseUnmarshaller.Instance;
@@ -529,7 +529,7 @@ namespace Amazon.Route53
         
         #region  CreateTrafficPolicyVersion
 
-        internal CreateTrafficPolicyVersionResponse CreateTrafficPolicyVersion(CreateTrafficPolicyVersionRequest request)
+        internal virtual CreateTrafficPolicyVersionResponse CreateTrafficPolicyVersion(CreateTrafficPolicyVersionRequest request)
         {
             var marshaller = new CreateTrafficPolicyVersionRequestMarshaller();
             var unmarshaller = CreateTrafficPolicyVersionResponseUnmarshaller.Instance;
@@ -548,7 +548,7 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicyVersion">REST API Reference for CreateTrafficPolicyVersion Operation</seealso>
-        public Task<CreateTrafficPolicyVersionResponse> CreateTrafficPolicyVersionAsync(CreateTrafficPolicyVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateTrafficPolicyVersionResponse> CreateTrafficPolicyVersionAsync(CreateTrafficPolicyVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateTrafficPolicyVersionRequestMarshaller();
             var unmarshaller = CreateTrafficPolicyVersionResponseUnmarshaller.Instance;
@@ -561,7 +561,7 @@ namespace Amazon.Route53
         
         #region  CreateVPCAssociationAuthorization
 
-        internal CreateVPCAssociationAuthorizationResponse CreateVPCAssociationAuthorization(CreateVPCAssociationAuthorizationRequest request)
+        internal virtual CreateVPCAssociationAuthorizationResponse CreateVPCAssociationAuthorization(CreateVPCAssociationAuthorizationRequest request)
         {
             var marshaller = new CreateVPCAssociationAuthorizationRequestMarshaller();
             var unmarshaller = CreateVPCAssociationAuthorizationResponseUnmarshaller.Instance;
@@ -580,7 +580,7 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateVPCAssociationAuthorization">REST API Reference for CreateVPCAssociationAuthorization Operation</seealso>
-        public Task<CreateVPCAssociationAuthorizationResponse> CreateVPCAssociationAuthorizationAsync(CreateVPCAssociationAuthorizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateVPCAssociationAuthorizationResponse> CreateVPCAssociationAuthorizationAsync(CreateVPCAssociationAuthorizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateVPCAssociationAuthorizationRequestMarshaller();
             var unmarshaller = CreateVPCAssociationAuthorizationResponseUnmarshaller.Instance;
@@ -593,7 +593,7 @@ namespace Amazon.Route53
         
         #region  DeleteHealthCheck
 
-        internal DeleteHealthCheckResponse DeleteHealthCheck(DeleteHealthCheckRequest request)
+        internal virtual DeleteHealthCheckResponse DeleteHealthCheck(DeleteHealthCheckRequest request)
         {
             var marshaller = new DeleteHealthCheckRequestMarshaller();
             var unmarshaller = DeleteHealthCheckResponseUnmarshaller.Instance;
@@ -612,7 +612,7 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteHealthCheck">REST API Reference for DeleteHealthCheck Operation</seealso>
-        public Task<DeleteHealthCheckResponse> DeleteHealthCheckAsync(DeleteHealthCheckRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteHealthCheckResponse> DeleteHealthCheckAsync(DeleteHealthCheckRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteHealthCheckRequestMarshaller();
             var unmarshaller = DeleteHealthCheckResponseUnmarshaller.Instance;
@@ -625,7 +625,7 @@ namespace Amazon.Route53
         
         #region  DeleteHostedZone
 
-        internal DeleteHostedZoneResponse DeleteHostedZone(DeleteHostedZoneRequest request)
+        internal virtual DeleteHostedZoneResponse DeleteHostedZone(DeleteHostedZoneRequest request)
         {
             var marshaller = new DeleteHostedZoneRequestMarshaller();
             var unmarshaller = DeleteHostedZoneResponseUnmarshaller.Instance;
@@ -644,7 +644,7 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteHostedZone">REST API Reference for DeleteHostedZone Operation</seealso>
-        public Task<DeleteHostedZoneResponse> DeleteHostedZoneAsync(DeleteHostedZoneRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteHostedZoneResponse> DeleteHostedZoneAsync(DeleteHostedZoneRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteHostedZoneRequestMarshaller();
             var unmarshaller = DeleteHostedZoneResponseUnmarshaller.Instance;
@@ -657,7 +657,7 @@ namespace Amazon.Route53
         
         #region  DeleteQueryLoggingConfig
 
-        internal DeleteQueryLoggingConfigResponse DeleteQueryLoggingConfig(DeleteQueryLoggingConfigRequest request)
+        internal virtual DeleteQueryLoggingConfigResponse DeleteQueryLoggingConfig(DeleteQueryLoggingConfigRequest request)
         {
             var marshaller = new DeleteQueryLoggingConfigRequestMarshaller();
             var unmarshaller = DeleteQueryLoggingConfigResponseUnmarshaller.Instance;
@@ -676,7 +676,7 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteQueryLoggingConfig">REST API Reference for DeleteQueryLoggingConfig Operation</seealso>
-        public Task<DeleteQueryLoggingConfigResponse> DeleteQueryLoggingConfigAsync(DeleteQueryLoggingConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteQueryLoggingConfigResponse> DeleteQueryLoggingConfigAsync(DeleteQueryLoggingConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteQueryLoggingConfigRequestMarshaller();
             var unmarshaller = DeleteQueryLoggingConfigResponseUnmarshaller.Instance;
@@ -689,7 +689,7 @@ namespace Amazon.Route53
         
         #region  DeleteReusableDelegationSet
 
-        internal DeleteReusableDelegationSetResponse DeleteReusableDelegationSet(DeleteReusableDelegationSetRequest request)
+        internal virtual DeleteReusableDelegationSetResponse DeleteReusableDelegationSet(DeleteReusableDelegationSetRequest request)
         {
             var marshaller = new DeleteReusableDelegationSetRequestMarshaller();
             var unmarshaller = DeleteReusableDelegationSetResponseUnmarshaller.Instance;
@@ -708,7 +708,7 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteReusableDelegationSet">REST API Reference for DeleteReusableDelegationSet Operation</seealso>
-        public Task<DeleteReusableDelegationSetResponse> DeleteReusableDelegationSetAsync(DeleteReusableDelegationSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteReusableDelegationSetResponse> DeleteReusableDelegationSetAsync(DeleteReusableDelegationSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteReusableDelegationSetRequestMarshaller();
             var unmarshaller = DeleteReusableDelegationSetResponseUnmarshaller.Instance;
@@ -721,7 +721,7 @@ namespace Amazon.Route53
         
         #region  DeleteTrafficPolicy
 
-        internal DeleteTrafficPolicyResponse DeleteTrafficPolicy(DeleteTrafficPolicyRequest request)
+        internal virtual DeleteTrafficPolicyResponse DeleteTrafficPolicy(DeleteTrafficPolicyRequest request)
         {
             var marshaller = new DeleteTrafficPolicyRequestMarshaller();
             var unmarshaller = DeleteTrafficPolicyResponseUnmarshaller.Instance;
@@ -740,7 +740,7 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteTrafficPolicy">REST API Reference for DeleteTrafficPolicy Operation</seealso>
-        public Task<DeleteTrafficPolicyResponse> DeleteTrafficPolicyAsync(DeleteTrafficPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteTrafficPolicyResponse> DeleteTrafficPolicyAsync(DeleteTrafficPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteTrafficPolicyRequestMarshaller();
             var unmarshaller = DeleteTrafficPolicyResponseUnmarshaller.Instance;
@@ -753,7 +753,7 @@ namespace Amazon.Route53
         
         #region  DeleteTrafficPolicyInstance
 
-        internal DeleteTrafficPolicyInstanceResponse DeleteTrafficPolicyInstance(DeleteTrafficPolicyInstanceRequest request)
+        internal virtual DeleteTrafficPolicyInstanceResponse DeleteTrafficPolicyInstance(DeleteTrafficPolicyInstanceRequest request)
         {
             var marshaller = new DeleteTrafficPolicyInstanceRequestMarshaller();
             var unmarshaller = DeleteTrafficPolicyInstanceResponseUnmarshaller.Instance;
@@ -772,7 +772,7 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteTrafficPolicyInstance">REST API Reference for DeleteTrafficPolicyInstance Operation</seealso>
-        public Task<DeleteTrafficPolicyInstanceResponse> DeleteTrafficPolicyInstanceAsync(DeleteTrafficPolicyInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteTrafficPolicyInstanceResponse> DeleteTrafficPolicyInstanceAsync(DeleteTrafficPolicyInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteTrafficPolicyInstanceRequestMarshaller();
             var unmarshaller = DeleteTrafficPolicyInstanceResponseUnmarshaller.Instance;
@@ -785,7 +785,7 @@ namespace Amazon.Route53
         
         #region  DeleteVPCAssociationAuthorization
 
-        internal DeleteVPCAssociationAuthorizationResponse DeleteVPCAssociationAuthorization(DeleteVPCAssociationAuthorizationRequest request)
+        internal virtual DeleteVPCAssociationAuthorizationResponse DeleteVPCAssociationAuthorization(DeleteVPCAssociationAuthorizationRequest request)
         {
             var marshaller = new DeleteVPCAssociationAuthorizationRequestMarshaller();
             var unmarshaller = DeleteVPCAssociationAuthorizationResponseUnmarshaller.Instance;
@@ -804,7 +804,7 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteVPCAssociationAuthorization">REST API Reference for DeleteVPCAssociationAuthorization Operation</seealso>
-        public Task<DeleteVPCAssociationAuthorizationResponse> DeleteVPCAssociationAuthorizationAsync(DeleteVPCAssociationAuthorizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteVPCAssociationAuthorizationResponse> DeleteVPCAssociationAuthorizationAsync(DeleteVPCAssociationAuthorizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteVPCAssociationAuthorizationRequestMarshaller();
             var unmarshaller = DeleteVPCAssociationAuthorizationResponseUnmarshaller.Instance;
@@ -817,7 +817,7 @@ namespace Amazon.Route53
         
         #region  DisassociateVPCFromHostedZone
 
-        internal DisassociateVPCFromHostedZoneResponse DisassociateVPCFromHostedZone(DisassociateVPCFromHostedZoneRequest request)
+        internal virtual DisassociateVPCFromHostedZoneResponse DisassociateVPCFromHostedZone(DisassociateVPCFromHostedZoneRequest request)
         {
             var marshaller = new DisassociateVPCFromHostedZoneRequestMarshaller();
             var unmarshaller = DisassociateVPCFromHostedZoneResponseUnmarshaller.Instance;
@@ -836,7 +836,7 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DisassociateVPCFromHostedZone">REST API Reference for DisassociateVPCFromHostedZone Operation</seealso>
-        public Task<DisassociateVPCFromHostedZoneResponse> DisassociateVPCFromHostedZoneAsync(DisassociateVPCFromHostedZoneRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DisassociateVPCFromHostedZoneResponse> DisassociateVPCFromHostedZoneAsync(DisassociateVPCFromHostedZoneRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DisassociateVPCFromHostedZoneRequestMarshaller();
             var unmarshaller = DisassociateVPCFromHostedZoneResponseUnmarshaller.Instance;
@@ -849,7 +849,7 @@ namespace Amazon.Route53
         
         #region  GetChange
 
-        internal GetChangeResponse GetChange(GetChangeRequest request)
+        internal virtual GetChangeResponse GetChange(GetChangeRequest request)
         {
             var marshaller = new GetChangeRequestMarshaller();
             var unmarshaller = GetChangeResponseUnmarshaller.Instance;
@@ -868,7 +868,7 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetChange">REST API Reference for GetChange Operation</seealso>
-        public Task<GetChangeResponse> GetChangeAsync(GetChangeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetChangeResponse> GetChangeAsync(GetChangeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetChangeRequestMarshaller();
             var unmarshaller = GetChangeResponseUnmarshaller.Instance;
@@ -881,7 +881,7 @@ namespace Amazon.Route53
         
         #region  GetCheckerIpRanges
 
-        internal GetCheckerIpRangesResponse GetCheckerIpRanges(GetCheckerIpRangesRequest request)
+        internal virtual GetCheckerIpRangesResponse GetCheckerIpRanges(GetCheckerIpRangesRequest request)
         {
             var marshaller = new GetCheckerIpRangesRequestMarshaller();
             var unmarshaller = GetCheckerIpRangesResponseUnmarshaller.Instance;
@@ -900,7 +900,7 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetCheckerIpRanges">REST API Reference for GetCheckerIpRanges Operation</seealso>
-        public Task<GetCheckerIpRangesResponse> GetCheckerIpRangesAsync(GetCheckerIpRangesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetCheckerIpRangesResponse> GetCheckerIpRangesAsync(GetCheckerIpRangesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetCheckerIpRangesRequestMarshaller();
             var unmarshaller = GetCheckerIpRangesResponseUnmarshaller.Instance;
@@ -913,7 +913,7 @@ namespace Amazon.Route53
         
         #region  GetGeoLocation
 
-        internal GetGeoLocationResponse GetGeoLocation(GetGeoLocationRequest request)
+        internal virtual GetGeoLocationResponse GetGeoLocation(GetGeoLocationRequest request)
         {
             var marshaller = new GetGeoLocationRequestMarshaller();
             var unmarshaller = GetGeoLocationResponseUnmarshaller.Instance;
@@ -932,7 +932,7 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetGeoLocation">REST API Reference for GetGeoLocation Operation</seealso>
-        public Task<GetGeoLocationResponse> GetGeoLocationAsync(GetGeoLocationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetGeoLocationResponse> GetGeoLocationAsync(GetGeoLocationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetGeoLocationRequestMarshaller();
             var unmarshaller = GetGeoLocationResponseUnmarshaller.Instance;
@@ -945,7 +945,7 @@ namespace Amazon.Route53
         
         #region  GetHealthCheck
 
-        internal GetHealthCheckResponse GetHealthCheck(GetHealthCheckRequest request)
+        internal virtual GetHealthCheckResponse GetHealthCheck(GetHealthCheckRequest request)
         {
             var marshaller = new GetHealthCheckRequestMarshaller();
             var unmarshaller = GetHealthCheckResponseUnmarshaller.Instance;
@@ -964,7 +964,7 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheck">REST API Reference for GetHealthCheck Operation</seealso>
-        public Task<GetHealthCheckResponse> GetHealthCheckAsync(GetHealthCheckRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetHealthCheckResponse> GetHealthCheckAsync(GetHealthCheckRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetHealthCheckRequestMarshaller();
             var unmarshaller = GetHealthCheckResponseUnmarshaller.Instance;
@@ -977,7 +977,7 @@ namespace Amazon.Route53
         
         #region  GetHealthCheckCount
 
-        internal GetHealthCheckCountResponse GetHealthCheckCount(GetHealthCheckCountRequest request)
+        internal virtual GetHealthCheckCountResponse GetHealthCheckCount(GetHealthCheckCountRequest request)
         {
             var marshaller = new GetHealthCheckCountRequestMarshaller();
             var unmarshaller = GetHealthCheckCountResponseUnmarshaller.Instance;
@@ -996,7 +996,7 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckCount">REST API Reference for GetHealthCheckCount Operation</seealso>
-        public Task<GetHealthCheckCountResponse> GetHealthCheckCountAsync(GetHealthCheckCountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetHealthCheckCountResponse> GetHealthCheckCountAsync(GetHealthCheckCountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetHealthCheckCountRequestMarshaller();
             var unmarshaller = GetHealthCheckCountResponseUnmarshaller.Instance;
@@ -1009,7 +1009,7 @@ namespace Amazon.Route53
         
         #region  GetHealthCheckLastFailureReason
 
-        internal GetHealthCheckLastFailureReasonResponse GetHealthCheckLastFailureReason(GetHealthCheckLastFailureReasonRequest request)
+        internal virtual GetHealthCheckLastFailureReasonResponse GetHealthCheckLastFailureReason(GetHealthCheckLastFailureReasonRequest request)
         {
             var marshaller = new GetHealthCheckLastFailureReasonRequestMarshaller();
             var unmarshaller = GetHealthCheckLastFailureReasonResponseUnmarshaller.Instance;
@@ -1028,7 +1028,7 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckLastFailureReason">REST API Reference for GetHealthCheckLastFailureReason Operation</seealso>
-        public Task<GetHealthCheckLastFailureReasonResponse> GetHealthCheckLastFailureReasonAsync(GetHealthCheckLastFailureReasonRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetHealthCheckLastFailureReasonResponse> GetHealthCheckLastFailureReasonAsync(GetHealthCheckLastFailureReasonRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetHealthCheckLastFailureReasonRequestMarshaller();
             var unmarshaller = GetHealthCheckLastFailureReasonResponseUnmarshaller.Instance;
@@ -1041,7 +1041,7 @@ namespace Amazon.Route53
         
         #region  GetHealthCheckStatus
 
-        internal GetHealthCheckStatusResponse GetHealthCheckStatus(GetHealthCheckStatusRequest request)
+        internal virtual GetHealthCheckStatusResponse GetHealthCheckStatus(GetHealthCheckStatusRequest request)
         {
             var marshaller = new GetHealthCheckStatusRequestMarshaller();
             var unmarshaller = GetHealthCheckStatusResponseUnmarshaller.Instance;
@@ -1060,7 +1060,7 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckStatus">REST API Reference for GetHealthCheckStatus Operation</seealso>
-        public Task<GetHealthCheckStatusResponse> GetHealthCheckStatusAsync(GetHealthCheckStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetHealthCheckStatusResponse> GetHealthCheckStatusAsync(GetHealthCheckStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetHealthCheckStatusRequestMarshaller();
             var unmarshaller = GetHealthCheckStatusResponseUnmarshaller.Instance;
@@ -1073,7 +1073,7 @@ namespace Amazon.Route53
         
         #region  GetHostedZone
 
-        internal GetHostedZoneResponse GetHostedZone(GetHostedZoneRequest request)
+        internal virtual GetHostedZoneResponse GetHostedZone(GetHostedZoneRequest request)
         {
             var marshaller = new GetHostedZoneRequestMarshaller();
             var unmarshaller = GetHostedZoneResponseUnmarshaller.Instance;
@@ -1092,7 +1092,7 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZone">REST API Reference for GetHostedZone Operation</seealso>
-        public Task<GetHostedZoneResponse> GetHostedZoneAsync(GetHostedZoneRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetHostedZoneResponse> GetHostedZoneAsync(GetHostedZoneRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetHostedZoneRequestMarshaller();
             var unmarshaller = GetHostedZoneResponseUnmarshaller.Instance;
@@ -1105,11 +1105,11 @@ namespace Amazon.Route53
         
         #region  GetHostedZoneCount
 
-        internal GetHostedZoneCountResponse GetHostedZoneCount()
+        internal virtual GetHostedZoneCountResponse GetHostedZoneCount()
         {
             return GetHostedZoneCount(new GetHostedZoneCountRequest());
         }
-        internal GetHostedZoneCountResponse GetHostedZoneCount(GetHostedZoneCountRequest request)
+        internal virtual GetHostedZoneCountResponse GetHostedZoneCount(GetHostedZoneCountRequest request)
         {
             var marshaller = new GetHostedZoneCountRequestMarshaller();
             var unmarshaller = GetHostedZoneCountResponseUnmarshaller.Instance;
@@ -1130,7 +1130,7 @@ namespace Amazon.Route53
         /// The input is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZoneCount">REST API Reference for GetHostedZoneCount Operation</seealso>
-        public Task<GetHostedZoneCountResponse> GetHostedZoneCountAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetHostedZoneCountResponse> GetHostedZoneCountAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return GetHostedZoneCountAsync(new GetHostedZoneCountRequest(), cancellationToken);
         }
@@ -1146,7 +1146,7 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZoneCount">REST API Reference for GetHostedZoneCount Operation</seealso>
-        public Task<GetHostedZoneCountResponse> GetHostedZoneCountAsync(GetHostedZoneCountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetHostedZoneCountResponse> GetHostedZoneCountAsync(GetHostedZoneCountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetHostedZoneCountRequestMarshaller();
             var unmarshaller = GetHostedZoneCountResponseUnmarshaller.Instance;
@@ -1159,7 +1159,7 @@ namespace Amazon.Route53
         
         #region  GetQueryLoggingConfig
 
-        internal GetQueryLoggingConfigResponse GetQueryLoggingConfig(GetQueryLoggingConfigRequest request)
+        internal virtual GetQueryLoggingConfigResponse GetQueryLoggingConfig(GetQueryLoggingConfigRequest request)
         {
             var marshaller = new GetQueryLoggingConfigRequestMarshaller();
             var unmarshaller = GetQueryLoggingConfigResponseUnmarshaller.Instance;
@@ -1178,7 +1178,7 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetQueryLoggingConfig">REST API Reference for GetQueryLoggingConfig Operation</seealso>
-        public Task<GetQueryLoggingConfigResponse> GetQueryLoggingConfigAsync(GetQueryLoggingConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetQueryLoggingConfigResponse> GetQueryLoggingConfigAsync(GetQueryLoggingConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetQueryLoggingConfigRequestMarshaller();
             var unmarshaller = GetQueryLoggingConfigResponseUnmarshaller.Instance;
@@ -1191,7 +1191,7 @@ namespace Amazon.Route53
         
         #region  GetReusableDelegationSet
 
-        internal GetReusableDelegationSetResponse GetReusableDelegationSet(GetReusableDelegationSetRequest request)
+        internal virtual GetReusableDelegationSetResponse GetReusableDelegationSet(GetReusableDelegationSetRequest request)
         {
             var marshaller = new GetReusableDelegationSetRequestMarshaller();
             var unmarshaller = GetReusableDelegationSetResponseUnmarshaller.Instance;
@@ -1210,7 +1210,7 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetReusableDelegationSet">REST API Reference for GetReusableDelegationSet Operation</seealso>
-        public Task<GetReusableDelegationSetResponse> GetReusableDelegationSetAsync(GetReusableDelegationSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetReusableDelegationSetResponse> GetReusableDelegationSetAsync(GetReusableDelegationSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetReusableDelegationSetRequestMarshaller();
             var unmarshaller = GetReusableDelegationSetResponseUnmarshaller.Instance;
@@ -1223,7 +1223,7 @@ namespace Amazon.Route53
         
         #region  GetTrafficPolicy
 
-        internal GetTrafficPolicyResponse GetTrafficPolicy(GetTrafficPolicyRequest request)
+        internal virtual GetTrafficPolicyResponse GetTrafficPolicy(GetTrafficPolicyRequest request)
         {
             var marshaller = new GetTrafficPolicyRequestMarshaller();
             var unmarshaller = GetTrafficPolicyResponseUnmarshaller.Instance;
@@ -1242,7 +1242,7 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicy">REST API Reference for GetTrafficPolicy Operation</seealso>
-        public Task<GetTrafficPolicyResponse> GetTrafficPolicyAsync(GetTrafficPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetTrafficPolicyResponse> GetTrafficPolicyAsync(GetTrafficPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetTrafficPolicyRequestMarshaller();
             var unmarshaller = GetTrafficPolicyResponseUnmarshaller.Instance;
@@ -1255,7 +1255,7 @@ namespace Amazon.Route53
         
         #region  GetTrafficPolicyInstance
 
-        internal GetTrafficPolicyInstanceResponse GetTrafficPolicyInstance(GetTrafficPolicyInstanceRequest request)
+        internal virtual GetTrafficPolicyInstanceResponse GetTrafficPolicyInstance(GetTrafficPolicyInstanceRequest request)
         {
             var marshaller = new GetTrafficPolicyInstanceRequestMarshaller();
             var unmarshaller = GetTrafficPolicyInstanceResponseUnmarshaller.Instance;
@@ -1274,7 +1274,7 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicyInstance">REST API Reference for GetTrafficPolicyInstance Operation</seealso>
-        public Task<GetTrafficPolicyInstanceResponse> GetTrafficPolicyInstanceAsync(GetTrafficPolicyInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetTrafficPolicyInstanceResponse> GetTrafficPolicyInstanceAsync(GetTrafficPolicyInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetTrafficPolicyInstanceRequestMarshaller();
             var unmarshaller = GetTrafficPolicyInstanceResponseUnmarshaller.Instance;
@@ -1287,7 +1287,7 @@ namespace Amazon.Route53
         
         #region  GetTrafficPolicyInstanceCount
 
-        internal GetTrafficPolicyInstanceCountResponse GetTrafficPolicyInstanceCount(GetTrafficPolicyInstanceCountRequest request)
+        internal virtual GetTrafficPolicyInstanceCountResponse GetTrafficPolicyInstanceCount(GetTrafficPolicyInstanceCountRequest request)
         {
             var marshaller = new GetTrafficPolicyInstanceCountRequestMarshaller();
             var unmarshaller = GetTrafficPolicyInstanceCountResponseUnmarshaller.Instance;
@@ -1306,7 +1306,7 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicyInstanceCount">REST API Reference for GetTrafficPolicyInstanceCount Operation</seealso>
-        public Task<GetTrafficPolicyInstanceCountResponse> GetTrafficPolicyInstanceCountAsync(GetTrafficPolicyInstanceCountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetTrafficPolicyInstanceCountResponse> GetTrafficPolicyInstanceCountAsync(GetTrafficPolicyInstanceCountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetTrafficPolicyInstanceCountRequestMarshaller();
             var unmarshaller = GetTrafficPolicyInstanceCountResponseUnmarshaller.Instance;
@@ -1319,11 +1319,11 @@ namespace Amazon.Route53
         
         #region  ListGeoLocations
 
-        internal ListGeoLocationsResponse ListGeoLocations()
+        internal virtual ListGeoLocationsResponse ListGeoLocations()
         {
             return ListGeoLocations(new ListGeoLocationsRequest());
         }
-        internal ListGeoLocationsResponse ListGeoLocations(ListGeoLocationsRequest request)
+        internal virtual ListGeoLocationsResponse ListGeoLocations(ListGeoLocationsRequest request)
         {
             var marshaller = new ListGeoLocationsRequestMarshaller();
             var unmarshaller = ListGeoLocationsResponseUnmarshaller.Instance;
@@ -1352,7 +1352,7 @@ namespace Amazon.Route53
         /// The input is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListGeoLocations">REST API Reference for ListGeoLocations Operation</seealso>
-        public Task<ListGeoLocationsResponse> ListGeoLocationsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListGeoLocationsResponse> ListGeoLocationsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return ListGeoLocationsAsync(new ListGeoLocationsRequest(), cancellationToken);
         }
@@ -1368,7 +1368,7 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListGeoLocations">REST API Reference for ListGeoLocations Operation</seealso>
-        public Task<ListGeoLocationsResponse> ListGeoLocationsAsync(ListGeoLocationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListGeoLocationsResponse> ListGeoLocationsAsync(ListGeoLocationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListGeoLocationsRequestMarshaller();
             var unmarshaller = ListGeoLocationsResponseUnmarshaller.Instance;
@@ -1381,11 +1381,11 @@ namespace Amazon.Route53
         
         #region  ListHealthChecks
 
-        internal ListHealthChecksResponse ListHealthChecks()
+        internal virtual ListHealthChecksResponse ListHealthChecks()
         {
             return ListHealthChecks(new ListHealthChecksRequest());
         }
-        internal ListHealthChecksResponse ListHealthChecks(ListHealthChecksRequest request)
+        internal virtual ListHealthChecksResponse ListHealthChecks(ListHealthChecksRequest request)
         {
             var marshaller = new ListHealthChecksRequestMarshaller();
             var unmarshaller = ListHealthChecksResponseUnmarshaller.Instance;
@@ -1409,7 +1409,7 @@ namespace Amazon.Route53
         /// The input is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHealthChecks">REST API Reference for ListHealthChecks Operation</seealso>
-        public Task<ListHealthChecksResponse> ListHealthChecksAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListHealthChecksResponse> ListHealthChecksAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return ListHealthChecksAsync(new ListHealthChecksRequest(), cancellationToken);
         }
@@ -1425,7 +1425,7 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHealthChecks">REST API Reference for ListHealthChecks Operation</seealso>
-        public Task<ListHealthChecksResponse> ListHealthChecksAsync(ListHealthChecksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListHealthChecksResponse> ListHealthChecksAsync(ListHealthChecksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListHealthChecksRequestMarshaller();
             var unmarshaller = ListHealthChecksResponseUnmarshaller.Instance;
@@ -1438,11 +1438,11 @@ namespace Amazon.Route53
         
         #region  ListHostedZones
 
-        internal ListHostedZonesResponse ListHostedZones()
+        internal virtual ListHostedZonesResponse ListHostedZones()
         {
             return ListHostedZones(new ListHostedZonesRequest());
         }
-        internal ListHostedZonesResponse ListHostedZones(ListHostedZonesRequest request)
+        internal virtual ListHostedZonesResponse ListHostedZones(ListHostedZonesRequest request)
         {
             var marshaller = new ListHostedZonesRequestMarshaller();
             var unmarshaller = ListHostedZonesResponseUnmarshaller.Instance;
@@ -1478,7 +1478,7 @@ namespace Amazon.Route53
         /// A reusable delegation set with the specified ID does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZones">REST API Reference for ListHostedZones Operation</seealso>
-        public Task<ListHostedZonesResponse> ListHostedZonesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListHostedZonesResponse> ListHostedZonesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return ListHostedZonesAsync(new ListHostedZonesRequest(), cancellationToken);
         }
@@ -1494,7 +1494,7 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZones">REST API Reference for ListHostedZones Operation</seealso>
-        public Task<ListHostedZonesResponse> ListHostedZonesAsync(ListHostedZonesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListHostedZonesResponse> ListHostedZonesAsync(ListHostedZonesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListHostedZonesRequestMarshaller();
             var unmarshaller = ListHostedZonesResponseUnmarshaller.Instance;
@@ -1507,7 +1507,7 @@ namespace Amazon.Route53
         
         #region  ListHostedZonesByName
 
-        internal ListHostedZonesByNameResponse ListHostedZonesByName(ListHostedZonesByNameRequest request)
+        internal virtual ListHostedZonesByNameResponse ListHostedZonesByName(ListHostedZonesByNameRequest request)
         {
             var marshaller = new ListHostedZonesByNameRequestMarshaller();
             var unmarshaller = ListHostedZonesByNameResponseUnmarshaller.Instance;
@@ -1526,7 +1526,7 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZonesByName">REST API Reference for ListHostedZonesByName Operation</seealso>
-        public Task<ListHostedZonesByNameResponse> ListHostedZonesByNameAsync(ListHostedZonesByNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListHostedZonesByNameResponse> ListHostedZonesByNameAsync(ListHostedZonesByNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListHostedZonesByNameRequestMarshaller();
             var unmarshaller = ListHostedZonesByNameResponseUnmarshaller.Instance;
@@ -1539,7 +1539,7 @@ namespace Amazon.Route53
         
         #region  ListQueryLoggingConfigs
 
-        internal ListQueryLoggingConfigsResponse ListQueryLoggingConfigs(ListQueryLoggingConfigsRequest request)
+        internal virtual ListQueryLoggingConfigsResponse ListQueryLoggingConfigs(ListQueryLoggingConfigsRequest request)
         {
             var marshaller = new ListQueryLoggingConfigsRequestMarshaller();
             var unmarshaller = ListQueryLoggingConfigsResponseUnmarshaller.Instance;
@@ -1558,7 +1558,7 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListQueryLoggingConfigs">REST API Reference for ListQueryLoggingConfigs Operation</seealso>
-        public Task<ListQueryLoggingConfigsResponse> ListQueryLoggingConfigsAsync(ListQueryLoggingConfigsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListQueryLoggingConfigsResponse> ListQueryLoggingConfigsAsync(ListQueryLoggingConfigsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListQueryLoggingConfigsRequestMarshaller();
             var unmarshaller = ListQueryLoggingConfigsResponseUnmarshaller.Instance;
@@ -1571,7 +1571,7 @@ namespace Amazon.Route53
         
         #region  ListResourceRecordSets
 
-        internal ListResourceRecordSetsResponse ListResourceRecordSets(ListResourceRecordSetsRequest request)
+        internal virtual ListResourceRecordSetsResponse ListResourceRecordSets(ListResourceRecordSetsRequest request)
         {
             var marshaller = new ListResourceRecordSetsRequestMarshaller();
             var unmarshaller = ListResourceRecordSetsResponseUnmarshaller.Instance;
@@ -1590,7 +1590,7 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListResourceRecordSets">REST API Reference for ListResourceRecordSets Operation</seealso>
-        public Task<ListResourceRecordSetsResponse> ListResourceRecordSetsAsync(ListResourceRecordSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListResourceRecordSetsResponse> ListResourceRecordSetsAsync(ListResourceRecordSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListResourceRecordSetsRequestMarshaller();
             var unmarshaller = ListResourceRecordSetsResponseUnmarshaller.Instance;
@@ -1603,11 +1603,11 @@ namespace Amazon.Route53
         
         #region  ListReusableDelegationSets
 
-        internal ListReusableDelegationSetsResponse ListReusableDelegationSets()
+        internal virtual ListReusableDelegationSetsResponse ListReusableDelegationSets()
         {
             return ListReusableDelegationSets(new ListReusableDelegationSetsRequest());
         }
-        internal ListReusableDelegationSetsResponse ListReusableDelegationSets(ListReusableDelegationSetsRequest request)
+        internal virtual ListReusableDelegationSetsResponse ListReusableDelegationSets(ListReusableDelegationSetsRequest request)
         {
             var marshaller = new ListReusableDelegationSetsRequestMarshaller();
             var unmarshaller = ListReusableDelegationSetsResponseUnmarshaller.Instance;
@@ -1629,7 +1629,7 @@ namespace Amazon.Route53
         /// The input is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListReusableDelegationSets">REST API Reference for ListReusableDelegationSets Operation</seealso>
-        public Task<ListReusableDelegationSetsResponse> ListReusableDelegationSetsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListReusableDelegationSetsResponse> ListReusableDelegationSetsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return ListReusableDelegationSetsAsync(new ListReusableDelegationSetsRequest(), cancellationToken);
         }
@@ -1645,7 +1645,7 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListReusableDelegationSets">REST API Reference for ListReusableDelegationSets Operation</seealso>
-        public Task<ListReusableDelegationSetsResponse> ListReusableDelegationSetsAsync(ListReusableDelegationSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListReusableDelegationSetsResponse> ListReusableDelegationSetsAsync(ListReusableDelegationSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListReusableDelegationSetsRequestMarshaller();
             var unmarshaller = ListReusableDelegationSetsResponseUnmarshaller.Instance;
@@ -1658,7 +1658,7 @@ namespace Amazon.Route53
         
         #region  ListTagsForResource
 
-        internal ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
@@ -1677,7 +1677,7 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
-        public Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
@@ -1690,7 +1690,7 @@ namespace Amazon.Route53
         
         #region  ListTagsForResources
 
-        internal ListTagsForResourcesResponse ListTagsForResources(ListTagsForResourcesRequest request)
+        internal virtual ListTagsForResourcesResponse ListTagsForResources(ListTagsForResourcesRequest request)
         {
             var marshaller = new ListTagsForResourcesRequestMarshaller();
             var unmarshaller = ListTagsForResourcesResponseUnmarshaller.Instance;
@@ -1709,7 +1709,7 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTagsForResources">REST API Reference for ListTagsForResources Operation</seealso>
-        public Task<ListTagsForResourcesResponse> ListTagsForResourcesAsync(ListTagsForResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListTagsForResourcesResponse> ListTagsForResourcesAsync(ListTagsForResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListTagsForResourcesRequestMarshaller();
             var unmarshaller = ListTagsForResourcesResponseUnmarshaller.Instance;
@@ -1722,7 +1722,7 @@ namespace Amazon.Route53
         
         #region  ListTrafficPolicies
 
-        internal ListTrafficPoliciesResponse ListTrafficPolicies(ListTrafficPoliciesRequest request)
+        internal virtual ListTrafficPoliciesResponse ListTrafficPolicies(ListTrafficPoliciesRequest request)
         {
             var marshaller = new ListTrafficPoliciesRequestMarshaller();
             var unmarshaller = ListTrafficPoliciesResponseUnmarshaller.Instance;
@@ -1741,7 +1741,7 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicies">REST API Reference for ListTrafficPolicies Operation</seealso>
-        public Task<ListTrafficPoliciesResponse> ListTrafficPoliciesAsync(ListTrafficPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListTrafficPoliciesResponse> ListTrafficPoliciesAsync(ListTrafficPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListTrafficPoliciesRequestMarshaller();
             var unmarshaller = ListTrafficPoliciesResponseUnmarshaller.Instance;
@@ -1754,7 +1754,7 @@ namespace Amazon.Route53
         
         #region  ListTrafficPolicyInstances
 
-        internal ListTrafficPolicyInstancesResponse ListTrafficPolicyInstances(ListTrafficPolicyInstancesRequest request)
+        internal virtual ListTrafficPolicyInstancesResponse ListTrafficPolicyInstances(ListTrafficPolicyInstancesRequest request)
         {
             var marshaller = new ListTrafficPolicyInstancesRequestMarshaller();
             var unmarshaller = ListTrafficPolicyInstancesResponseUnmarshaller.Instance;
@@ -1773,7 +1773,7 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyInstances">REST API Reference for ListTrafficPolicyInstances Operation</seealso>
-        public Task<ListTrafficPolicyInstancesResponse> ListTrafficPolicyInstancesAsync(ListTrafficPolicyInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListTrafficPolicyInstancesResponse> ListTrafficPolicyInstancesAsync(ListTrafficPolicyInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListTrafficPolicyInstancesRequestMarshaller();
             var unmarshaller = ListTrafficPolicyInstancesResponseUnmarshaller.Instance;
@@ -1786,7 +1786,7 @@ namespace Amazon.Route53
         
         #region  ListTrafficPolicyInstancesByHostedZone
 
-        internal ListTrafficPolicyInstancesByHostedZoneResponse ListTrafficPolicyInstancesByHostedZone(ListTrafficPolicyInstancesByHostedZoneRequest request)
+        internal virtual ListTrafficPolicyInstancesByHostedZoneResponse ListTrafficPolicyInstancesByHostedZone(ListTrafficPolicyInstancesByHostedZoneRequest request)
         {
             var marshaller = new ListTrafficPolicyInstancesByHostedZoneRequestMarshaller();
             var unmarshaller = ListTrafficPolicyInstancesByHostedZoneResponseUnmarshaller.Instance;
@@ -1805,7 +1805,7 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyInstancesByHostedZone">REST API Reference for ListTrafficPolicyInstancesByHostedZone Operation</seealso>
-        public Task<ListTrafficPolicyInstancesByHostedZoneResponse> ListTrafficPolicyInstancesByHostedZoneAsync(ListTrafficPolicyInstancesByHostedZoneRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListTrafficPolicyInstancesByHostedZoneResponse> ListTrafficPolicyInstancesByHostedZoneAsync(ListTrafficPolicyInstancesByHostedZoneRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListTrafficPolicyInstancesByHostedZoneRequestMarshaller();
             var unmarshaller = ListTrafficPolicyInstancesByHostedZoneResponseUnmarshaller.Instance;
@@ -1818,7 +1818,7 @@ namespace Amazon.Route53
         
         #region  ListTrafficPolicyInstancesByPolicy
 
-        internal ListTrafficPolicyInstancesByPolicyResponse ListTrafficPolicyInstancesByPolicy(ListTrafficPolicyInstancesByPolicyRequest request)
+        internal virtual ListTrafficPolicyInstancesByPolicyResponse ListTrafficPolicyInstancesByPolicy(ListTrafficPolicyInstancesByPolicyRequest request)
         {
             var marshaller = new ListTrafficPolicyInstancesByPolicyRequestMarshaller();
             var unmarshaller = ListTrafficPolicyInstancesByPolicyResponseUnmarshaller.Instance;
@@ -1837,7 +1837,7 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyInstancesByPolicy">REST API Reference for ListTrafficPolicyInstancesByPolicy Operation</seealso>
-        public Task<ListTrafficPolicyInstancesByPolicyResponse> ListTrafficPolicyInstancesByPolicyAsync(ListTrafficPolicyInstancesByPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListTrafficPolicyInstancesByPolicyResponse> ListTrafficPolicyInstancesByPolicyAsync(ListTrafficPolicyInstancesByPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListTrafficPolicyInstancesByPolicyRequestMarshaller();
             var unmarshaller = ListTrafficPolicyInstancesByPolicyResponseUnmarshaller.Instance;
@@ -1850,7 +1850,7 @@ namespace Amazon.Route53
         
         #region  ListTrafficPolicyVersions
 
-        internal ListTrafficPolicyVersionsResponse ListTrafficPolicyVersions(ListTrafficPolicyVersionsRequest request)
+        internal virtual ListTrafficPolicyVersionsResponse ListTrafficPolicyVersions(ListTrafficPolicyVersionsRequest request)
         {
             var marshaller = new ListTrafficPolicyVersionsRequestMarshaller();
             var unmarshaller = ListTrafficPolicyVersionsResponseUnmarshaller.Instance;
@@ -1869,7 +1869,7 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyVersions">REST API Reference for ListTrafficPolicyVersions Operation</seealso>
-        public Task<ListTrafficPolicyVersionsResponse> ListTrafficPolicyVersionsAsync(ListTrafficPolicyVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListTrafficPolicyVersionsResponse> ListTrafficPolicyVersionsAsync(ListTrafficPolicyVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListTrafficPolicyVersionsRequestMarshaller();
             var unmarshaller = ListTrafficPolicyVersionsResponseUnmarshaller.Instance;
@@ -1882,7 +1882,7 @@ namespace Amazon.Route53
         
         #region  ListVPCAssociationAuthorizations
 
-        internal ListVPCAssociationAuthorizationsResponse ListVPCAssociationAuthorizations(ListVPCAssociationAuthorizationsRequest request)
+        internal virtual ListVPCAssociationAuthorizationsResponse ListVPCAssociationAuthorizations(ListVPCAssociationAuthorizationsRequest request)
         {
             var marshaller = new ListVPCAssociationAuthorizationsRequestMarshaller();
             var unmarshaller = ListVPCAssociationAuthorizationsResponseUnmarshaller.Instance;
@@ -1901,7 +1901,7 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListVPCAssociationAuthorizations">REST API Reference for ListVPCAssociationAuthorizations Operation</seealso>
-        public Task<ListVPCAssociationAuthorizationsResponse> ListVPCAssociationAuthorizationsAsync(ListVPCAssociationAuthorizationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListVPCAssociationAuthorizationsResponse> ListVPCAssociationAuthorizationsAsync(ListVPCAssociationAuthorizationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListVPCAssociationAuthorizationsRequestMarshaller();
             var unmarshaller = ListVPCAssociationAuthorizationsResponseUnmarshaller.Instance;
@@ -1914,7 +1914,7 @@ namespace Amazon.Route53
         
         #region  TestDNSAnswer
 
-        internal TestDNSAnswerResponse TestDNSAnswer(TestDNSAnswerRequest request)
+        internal virtual TestDNSAnswerResponse TestDNSAnswer(TestDNSAnswerRequest request)
         {
             var marshaller = new TestDNSAnswerRequestMarshaller();
             var unmarshaller = TestDNSAnswerResponseUnmarshaller.Instance;
@@ -1933,7 +1933,7 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/TestDNSAnswer">REST API Reference for TestDNSAnswer Operation</seealso>
-        public Task<TestDNSAnswerResponse> TestDNSAnswerAsync(TestDNSAnswerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<TestDNSAnswerResponse> TestDNSAnswerAsync(TestDNSAnswerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new TestDNSAnswerRequestMarshaller();
             var unmarshaller = TestDNSAnswerResponseUnmarshaller.Instance;
@@ -1946,7 +1946,7 @@ namespace Amazon.Route53
         
         #region  UpdateHealthCheck
 
-        internal UpdateHealthCheckResponse UpdateHealthCheck(UpdateHealthCheckRequest request)
+        internal virtual UpdateHealthCheckResponse UpdateHealthCheck(UpdateHealthCheckRequest request)
         {
             var marshaller = new UpdateHealthCheckRequestMarshaller();
             var unmarshaller = UpdateHealthCheckResponseUnmarshaller.Instance;
@@ -1965,7 +1965,7 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateHealthCheck">REST API Reference for UpdateHealthCheck Operation</seealso>
-        public Task<UpdateHealthCheckResponse> UpdateHealthCheckAsync(UpdateHealthCheckRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateHealthCheckResponse> UpdateHealthCheckAsync(UpdateHealthCheckRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateHealthCheckRequestMarshaller();
             var unmarshaller = UpdateHealthCheckResponseUnmarshaller.Instance;
@@ -1978,7 +1978,7 @@ namespace Amazon.Route53
         
         #region  UpdateHostedZoneComment
 
-        internal UpdateHostedZoneCommentResponse UpdateHostedZoneComment(UpdateHostedZoneCommentRequest request)
+        internal virtual UpdateHostedZoneCommentResponse UpdateHostedZoneComment(UpdateHostedZoneCommentRequest request)
         {
             var marshaller = new UpdateHostedZoneCommentRequestMarshaller();
             var unmarshaller = UpdateHostedZoneCommentResponseUnmarshaller.Instance;
@@ -1997,7 +1997,7 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateHostedZoneComment">REST API Reference for UpdateHostedZoneComment Operation</seealso>
-        public Task<UpdateHostedZoneCommentResponse> UpdateHostedZoneCommentAsync(UpdateHostedZoneCommentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateHostedZoneCommentResponse> UpdateHostedZoneCommentAsync(UpdateHostedZoneCommentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateHostedZoneCommentRequestMarshaller();
             var unmarshaller = UpdateHostedZoneCommentResponseUnmarshaller.Instance;
@@ -2010,7 +2010,7 @@ namespace Amazon.Route53
         
         #region  UpdateTrafficPolicyComment
 
-        internal UpdateTrafficPolicyCommentResponse UpdateTrafficPolicyComment(UpdateTrafficPolicyCommentRequest request)
+        internal virtual UpdateTrafficPolicyCommentResponse UpdateTrafficPolicyComment(UpdateTrafficPolicyCommentRequest request)
         {
             var marshaller = new UpdateTrafficPolicyCommentRequestMarshaller();
             var unmarshaller = UpdateTrafficPolicyCommentResponseUnmarshaller.Instance;
@@ -2029,7 +2029,7 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateTrafficPolicyComment">REST API Reference for UpdateTrafficPolicyComment Operation</seealso>
-        public Task<UpdateTrafficPolicyCommentResponse> UpdateTrafficPolicyCommentAsync(UpdateTrafficPolicyCommentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateTrafficPolicyCommentResponse> UpdateTrafficPolicyCommentAsync(UpdateTrafficPolicyCommentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateTrafficPolicyCommentRequestMarshaller();
             var unmarshaller = UpdateTrafficPolicyCommentResponseUnmarshaller.Instance;
@@ -2042,7 +2042,7 @@ namespace Amazon.Route53
         
         #region  UpdateTrafficPolicyInstance
 
-        internal UpdateTrafficPolicyInstanceResponse UpdateTrafficPolicyInstance(UpdateTrafficPolicyInstanceRequest request)
+        internal virtual UpdateTrafficPolicyInstanceResponse UpdateTrafficPolicyInstance(UpdateTrafficPolicyInstanceRequest request)
         {
             var marshaller = new UpdateTrafficPolicyInstanceRequestMarshaller();
             var unmarshaller = UpdateTrafficPolicyInstanceResponseUnmarshaller.Instance;
@@ -2061,7 +2061,7 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateTrafficPolicyInstance">REST API Reference for UpdateTrafficPolicyInstance Operation</seealso>
-        public Task<UpdateTrafficPolicyInstanceResponse> UpdateTrafficPolicyInstanceAsync(UpdateTrafficPolicyInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateTrafficPolicyInstanceResponse> UpdateTrafficPolicyInstanceAsync(UpdateTrafficPolicyInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateTrafficPolicyInstanceRequestMarshaller();
             var unmarshaller = UpdateTrafficPolicyInstanceResponseUnmarshaller.Instance;

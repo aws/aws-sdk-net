@@ -254,7 +254,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/AcceptQualificationRequest">REST API Reference for AcceptQualificationRequest Operation</seealso>
-        public AcceptQualificationRequestResponse AcceptQualificationRequest(AcceptQualificationRequestRequest request)
+        public virtual AcceptQualificationRequestResponse AcceptQualificationRequest(AcceptQualificationRequestRequest request)
         {
             var marshaller = new AcceptQualificationRequestRequestMarshaller();
             var unmarshaller = AcceptQualificationRequestResponseUnmarshaller.Instance;
@@ -272,7 +272,7 @@ namespace Amazon.MTurk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/AcceptQualificationRequest">REST API Reference for AcceptQualificationRequest Operation</seealso>
-        public Task<AcceptQualificationRequestResponse> AcceptQualificationRequestAsync(AcceptQualificationRequestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<AcceptQualificationRequestResponse> AcceptQualificationRequestAsync(AcceptQualificationRequestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AcceptQualificationRequestRequestMarshaller();
             var unmarshaller = AcceptQualificationRequestResponseUnmarshaller.Instance;
@@ -329,7 +329,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ApproveAssignment">REST API Reference for ApproveAssignment Operation</seealso>
-        public ApproveAssignmentResponse ApproveAssignment(ApproveAssignmentRequest request)
+        public virtual ApproveAssignmentResponse ApproveAssignment(ApproveAssignmentRequest request)
         {
             var marshaller = new ApproveAssignmentRequestMarshaller();
             var unmarshaller = ApproveAssignmentResponseUnmarshaller.Instance;
@@ -347,7 +347,7 @@ namespace Amazon.MTurk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ApproveAssignment">REST API Reference for ApproveAssignment Operation</seealso>
-        public Task<ApproveAssignmentResponse> ApproveAssignmentAsync(ApproveAssignmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ApproveAssignmentResponse> ApproveAssignmentAsync(ApproveAssignmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ApproveAssignmentRequestMarshaller();
             var unmarshaller = ApproveAssignmentResponseUnmarshaller.Instance;
@@ -393,7 +393,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/AssociateQualificationWithWorker">REST API Reference for AssociateQualificationWithWorker Operation</seealso>
-        public AssociateQualificationWithWorkerResponse AssociateQualificationWithWorker(AssociateQualificationWithWorkerRequest request)
+        public virtual AssociateQualificationWithWorkerResponse AssociateQualificationWithWorker(AssociateQualificationWithWorkerRequest request)
         {
             var marshaller = new AssociateQualificationWithWorkerRequestMarshaller();
             var unmarshaller = AssociateQualificationWithWorkerResponseUnmarshaller.Instance;
@@ -411,7 +411,7 @@ namespace Amazon.MTurk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/AssociateQualificationWithWorker">REST API Reference for AssociateQualificationWithWorker Operation</seealso>
-        public Task<AssociateQualificationWithWorkerResponse> AssociateQualificationWithWorkerAsync(AssociateQualificationWithWorkerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<AssociateQualificationWithWorkerResponse> AssociateQualificationWithWorkerAsync(AssociateQualificationWithWorkerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AssociateQualificationWithWorkerRequestMarshaller();
             var unmarshaller = AssociateQualificationWithWorkerResponseUnmarshaller.Instance;
@@ -459,7 +459,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/CreateAdditionalAssignmentsForHIT">REST API Reference for CreateAdditionalAssignmentsForHIT Operation</seealso>
-        public CreateAdditionalAssignmentsForHITResponse CreateAdditionalAssignmentsForHIT(CreateAdditionalAssignmentsForHITRequest request)
+        public virtual CreateAdditionalAssignmentsForHITResponse CreateAdditionalAssignmentsForHIT(CreateAdditionalAssignmentsForHITRequest request)
         {
             var marshaller = new CreateAdditionalAssignmentsForHITRequestMarshaller();
             var unmarshaller = CreateAdditionalAssignmentsForHITResponseUnmarshaller.Instance;
@@ -477,7 +477,7 @@ namespace Amazon.MTurk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/CreateAdditionalAssignmentsForHIT">REST API Reference for CreateAdditionalAssignmentsForHIT Operation</seealso>
-        public Task<CreateAdditionalAssignmentsForHITResponse> CreateAdditionalAssignmentsForHITAsync(CreateAdditionalAssignmentsForHITRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateAdditionalAssignmentsForHITResponse> CreateAdditionalAssignmentsForHITAsync(CreateAdditionalAssignmentsForHITRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateAdditionalAssignmentsForHITRequestMarshaller();
             var unmarshaller = CreateAdditionalAssignmentsForHITResponseUnmarshaller.Instance;
@@ -537,7 +537,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/CreateHIT">REST API Reference for CreateHIT Operation</seealso>
-        public CreateHITResponse CreateHIT(CreateHITRequest request)
+        public virtual CreateHITResponse CreateHIT(CreateHITRequest request)
         {
             var marshaller = new CreateHITRequestMarshaller();
             var unmarshaller = CreateHITResponseUnmarshaller.Instance;
@@ -555,7 +555,7 @@ namespace Amazon.MTurk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/CreateHIT">REST API Reference for CreateHIT Operation</seealso>
-        public Task<CreateHITResponse> CreateHITAsync(CreateHITRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateHITResponse> CreateHITAsync(CreateHITRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateHITRequestMarshaller();
             var unmarshaller = CreateHITResponseUnmarshaller.Instance;
@@ -586,7 +586,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/CreateHITType">REST API Reference for CreateHITType Operation</seealso>
-        public CreateHITTypeResponse CreateHITType(CreateHITTypeRequest request)
+        public virtual CreateHITTypeResponse CreateHITType(CreateHITTypeRequest request)
         {
             var marshaller = new CreateHITTypeRequestMarshaller();
             var unmarshaller = CreateHITTypeResponseUnmarshaller.Instance;
@@ -604,7 +604,7 @@ namespace Amazon.MTurk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/CreateHITType">REST API Reference for CreateHITType Operation</seealso>
-        public Task<CreateHITTypeResponse> CreateHITTypeAsync(CreateHITTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateHITTypeResponse> CreateHITTypeAsync(CreateHITTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateHITTypeRequestMarshaller();
             var unmarshaller = CreateHITTypeResponseUnmarshaller.Instance;
@@ -655,7 +655,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/CreateHITWithHITType">REST API Reference for CreateHITWithHITType Operation</seealso>
-        public CreateHITWithHITTypeResponse CreateHITWithHITType(CreateHITWithHITTypeRequest request)
+        public virtual CreateHITWithHITTypeResponse CreateHITWithHITType(CreateHITWithHITTypeRequest request)
         {
             var marshaller = new CreateHITWithHITTypeRequestMarshaller();
             var unmarshaller = CreateHITWithHITTypeResponseUnmarshaller.Instance;
@@ -673,7 +673,7 @@ namespace Amazon.MTurk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/CreateHITWithHITType">REST API Reference for CreateHITWithHITType Operation</seealso>
-        public Task<CreateHITWithHITTypeResponse> CreateHITWithHITTypeAsync(CreateHITWithHITTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateHITWithHITTypeResponse> CreateHITWithHITTypeAsync(CreateHITWithHITTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateHITWithHITTypeRequestMarshaller();
             var unmarshaller = CreateHITWithHITTypeResponseUnmarshaller.Instance;
@@ -702,7 +702,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/CreateQualificationType">REST API Reference for CreateQualificationType Operation</seealso>
-        public CreateQualificationTypeResponse CreateQualificationType(CreateQualificationTypeRequest request)
+        public virtual CreateQualificationTypeResponse CreateQualificationType(CreateQualificationTypeRequest request)
         {
             var marshaller = new CreateQualificationTypeRequestMarshaller();
             var unmarshaller = CreateQualificationTypeResponseUnmarshaller.Instance;
@@ -720,7 +720,7 @@ namespace Amazon.MTurk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/CreateQualificationType">REST API Reference for CreateQualificationType Operation</seealso>
-        public Task<CreateQualificationTypeResponse> CreateQualificationTypeAsync(CreateQualificationTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateQualificationTypeResponse> CreateQualificationTypeAsync(CreateQualificationTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateQualificationTypeRequestMarshaller();
             var unmarshaller = CreateQualificationTypeResponseUnmarshaller.Instance;
@@ -750,7 +750,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/CreateWorkerBlock">REST API Reference for CreateWorkerBlock Operation</seealso>
-        public CreateWorkerBlockResponse CreateWorkerBlock(CreateWorkerBlockRequest request)
+        public virtual CreateWorkerBlockResponse CreateWorkerBlock(CreateWorkerBlockRequest request)
         {
             var marshaller = new CreateWorkerBlockRequestMarshaller();
             var unmarshaller = CreateWorkerBlockResponseUnmarshaller.Instance;
@@ -768,7 +768,7 @@ namespace Amazon.MTurk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/CreateWorkerBlock">REST API Reference for CreateWorkerBlock Operation</seealso>
-        public Task<CreateWorkerBlockResponse> CreateWorkerBlockAsync(CreateWorkerBlockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateWorkerBlockResponse> CreateWorkerBlockAsync(CreateWorkerBlockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateWorkerBlockRequestMarshaller();
             var unmarshaller = CreateWorkerBlockResponseUnmarshaller.Instance;
@@ -826,7 +826,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/DeleteHIT">REST API Reference for DeleteHIT Operation</seealso>
-        public DeleteHITResponse DeleteHIT(DeleteHITRequest request)
+        public virtual DeleteHITResponse DeleteHIT(DeleteHITRequest request)
         {
             var marshaller = new DeleteHITRequestMarshaller();
             var unmarshaller = DeleteHITResponseUnmarshaller.Instance;
@@ -844,7 +844,7 @@ namespace Amazon.MTurk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/DeleteHIT">REST API Reference for DeleteHIT Operation</seealso>
-        public Task<DeleteHITResponse> DeleteHITAsync(DeleteHITRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteHITResponse> DeleteHITAsync(DeleteHITRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteHITRequestMarshaller();
             var unmarshaller = DeleteHITResponseUnmarshaller.Instance;
@@ -889,7 +889,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/DeleteQualificationType">REST API Reference for DeleteQualificationType Operation</seealso>
-        public DeleteQualificationTypeResponse DeleteQualificationType(DeleteQualificationTypeRequest request)
+        public virtual DeleteQualificationTypeResponse DeleteQualificationType(DeleteQualificationTypeRequest request)
         {
             var marshaller = new DeleteQualificationTypeRequestMarshaller();
             var unmarshaller = DeleteQualificationTypeResponseUnmarshaller.Instance;
@@ -907,7 +907,7 @@ namespace Amazon.MTurk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/DeleteQualificationType">REST API Reference for DeleteQualificationType Operation</seealso>
-        public Task<DeleteQualificationTypeResponse> DeleteQualificationTypeAsync(DeleteQualificationTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteQualificationTypeResponse> DeleteQualificationTypeAsync(DeleteQualificationTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteQualificationTypeRequestMarshaller();
             var unmarshaller = DeleteQualificationTypeResponseUnmarshaller.Instance;
@@ -939,7 +939,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/DeleteWorkerBlock">REST API Reference for DeleteWorkerBlock Operation</seealso>
-        public DeleteWorkerBlockResponse DeleteWorkerBlock(DeleteWorkerBlockRequest request)
+        public virtual DeleteWorkerBlockResponse DeleteWorkerBlock(DeleteWorkerBlockRequest request)
         {
             var marshaller = new DeleteWorkerBlockRequestMarshaller();
             var unmarshaller = DeleteWorkerBlockResponseUnmarshaller.Instance;
@@ -957,7 +957,7 @@ namespace Amazon.MTurk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/DeleteWorkerBlock">REST API Reference for DeleteWorkerBlock Operation</seealso>
-        public Task<DeleteWorkerBlockResponse> DeleteWorkerBlockAsync(DeleteWorkerBlockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteWorkerBlockResponse> DeleteWorkerBlockAsync(DeleteWorkerBlockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteWorkerBlockRequestMarshaller();
             var unmarshaller = DeleteWorkerBlockResponseUnmarshaller.Instance;
@@ -992,7 +992,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/DisassociateQualificationFromWorker">REST API Reference for DisassociateQualificationFromWorker Operation</seealso>
-        public DisassociateQualificationFromWorkerResponse DisassociateQualificationFromWorker(DisassociateQualificationFromWorkerRequest request)
+        public virtual DisassociateQualificationFromWorkerResponse DisassociateQualificationFromWorker(DisassociateQualificationFromWorkerRequest request)
         {
             var marshaller = new DisassociateQualificationFromWorkerRequestMarshaller();
             var unmarshaller = DisassociateQualificationFromWorkerResponseUnmarshaller.Instance;
@@ -1010,7 +1010,7 @@ namespace Amazon.MTurk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/DisassociateQualificationFromWorker">REST API Reference for DisassociateQualificationFromWorker Operation</seealso>
-        public Task<DisassociateQualificationFromWorkerResponse> DisassociateQualificationFromWorkerAsync(DisassociateQualificationFromWorkerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DisassociateQualificationFromWorkerResponse> DisassociateQualificationFromWorkerAsync(DisassociateQualificationFromWorkerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DisassociateQualificationFromWorkerRequestMarshaller();
             var unmarshaller = DisassociateQualificationFromWorkerResponseUnmarshaller.Instance;
@@ -1039,7 +1039,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/GetAccountBalance">REST API Reference for GetAccountBalance Operation</seealso>
-        public GetAccountBalanceResponse GetAccountBalance(GetAccountBalanceRequest request)
+        public virtual GetAccountBalanceResponse GetAccountBalance(GetAccountBalanceRequest request)
         {
             var marshaller = new GetAccountBalanceRequestMarshaller();
             var unmarshaller = GetAccountBalanceResponseUnmarshaller.Instance;
@@ -1057,7 +1057,7 @@ namespace Amazon.MTurk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/GetAccountBalance">REST API Reference for GetAccountBalance Operation</seealso>
-        public Task<GetAccountBalanceResponse> GetAccountBalanceAsync(GetAccountBalanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetAccountBalanceResponse> GetAccountBalanceAsync(GetAccountBalanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetAccountBalanceRequestMarshaller();
             var unmarshaller = GetAccountBalanceResponseUnmarshaller.Instance;
@@ -1085,7 +1085,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/GetAssignment">REST API Reference for GetAssignment Operation</seealso>
-        public GetAssignmentResponse GetAssignment(GetAssignmentRequest request)
+        public virtual GetAssignmentResponse GetAssignment(GetAssignmentRequest request)
         {
             var marshaller = new GetAssignmentRequestMarshaller();
             var unmarshaller = GetAssignmentResponseUnmarshaller.Instance;
@@ -1103,7 +1103,7 @@ namespace Amazon.MTurk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/GetAssignment">REST API Reference for GetAssignment Operation</seealso>
-        public Task<GetAssignmentResponse> GetAssignmentAsync(GetAssignmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetAssignmentResponse> GetAssignmentAsync(GetAssignmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetAssignmentRequestMarshaller();
             var unmarshaller = GetAssignmentResponseUnmarshaller.Instance;
@@ -1136,7 +1136,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/GetFileUploadURL">REST API Reference for GetFileUploadURL Operation</seealso>
-        public GetFileUploadURLResponse GetFileUploadURL(GetFileUploadURLRequest request)
+        public virtual GetFileUploadURLResponse GetFileUploadURL(GetFileUploadURLRequest request)
         {
             var marshaller = new GetFileUploadURLRequestMarshaller();
             var unmarshaller = GetFileUploadURLResponseUnmarshaller.Instance;
@@ -1154,7 +1154,7 @@ namespace Amazon.MTurk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/GetFileUploadURL">REST API Reference for GetFileUploadURL Operation</seealso>
-        public Task<GetFileUploadURLResponse> GetFileUploadURLAsync(GetFileUploadURLRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetFileUploadURLResponse> GetFileUploadURLAsync(GetFileUploadURLRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetFileUploadURLRequestMarshaller();
             var unmarshaller = GetFileUploadURLResponseUnmarshaller.Instance;
@@ -1182,7 +1182,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/GetHIT">REST API Reference for GetHIT Operation</seealso>
-        public GetHITResponse GetHIT(GetHITRequest request)
+        public virtual GetHITResponse GetHIT(GetHITRequest request)
         {
             var marshaller = new GetHITRequestMarshaller();
             var unmarshaller = GetHITResponseUnmarshaller.Instance;
@@ -1200,7 +1200,7 @@ namespace Amazon.MTurk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/GetHIT">REST API Reference for GetHIT Operation</seealso>
-        public Task<GetHITResponse> GetHITAsync(GetHITRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetHITResponse> GetHITAsync(GetHITRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetHITRequestMarshaller();
             var unmarshaller = GetHITResponseUnmarshaller.Instance;
@@ -1241,7 +1241,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/GetQualificationScore">REST API Reference for GetQualificationScore Operation</seealso>
-        public GetQualificationScoreResponse GetQualificationScore(GetQualificationScoreRequest request)
+        public virtual GetQualificationScoreResponse GetQualificationScore(GetQualificationScoreRequest request)
         {
             var marshaller = new GetQualificationScoreRequestMarshaller();
             var unmarshaller = GetQualificationScoreResponseUnmarshaller.Instance;
@@ -1259,7 +1259,7 @@ namespace Amazon.MTurk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/GetQualificationScore">REST API Reference for GetQualificationScore Operation</seealso>
-        public Task<GetQualificationScoreResponse> GetQualificationScoreAsync(GetQualificationScoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetQualificationScoreResponse> GetQualificationScoreAsync(GetQualificationScoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetQualificationScoreRequestMarshaller();
             var unmarshaller = GetQualificationScoreResponseUnmarshaller.Instance;
@@ -1288,7 +1288,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/GetQualificationType">REST API Reference for GetQualificationType Operation</seealso>
-        public GetQualificationTypeResponse GetQualificationType(GetQualificationTypeRequest request)
+        public virtual GetQualificationTypeResponse GetQualificationType(GetQualificationTypeRequest request)
         {
             var marshaller = new GetQualificationTypeRequestMarshaller();
             var unmarshaller = GetQualificationTypeResponseUnmarshaller.Instance;
@@ -1306,7 +1306,7 @@ namespace Amazon.MTurk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/GetQualificationType">REST API Reference for GetQualificationType Operation</seealso>
-        public Task<GetQualificationTypeResponse> GetQualificationTypeAsync(GetQualificationTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetQualificationTypeResponse> GetQualificationTypeAsync(GetQualificationTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetQualificationTypeRequestMarshaller();
             var unmarshaller = GetQualificationTypeResponseUnmarshaller.Instance;
@@ -1362,7 +1362,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ListAssignmentsForHIT">REST API Reference for ListAssignmentsForHIT Operation</seealso>
-        public ListAssignmentsForHITResponse ListAssignmentsForHIT(ListAssignmentsForHITRequest request)
+        public virtual ListAssignmentsForHITResponse ListAssignmentsForHIT(ListAssignmentsForHITRequest request)
         {
             var marshaller = new ListAssignmentsForHITRequestMarshaller();
             var unmarshaller = ListAssignmentsForHITResponseUnmarshaller.Instance;
@@ -1380,7 +1380,7 @@ namespace Amazon.MTurk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ListAssignmentsForHIT">REST API Reference for ListAssignmentsForHIT Operation</seealso>
-        public Task<ListAssignmentsForHITResponse> ListAssignmentsForHITAsync(ListAssignmentsForHITRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListAssignmentsForHITResponse> ListAssignmentsForHITAsync(ListAssignmentsForHITRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListAssignmentsForHITRequestMarshaller();
             var unmarshaller = ListAssignmentsForHITResponseUnmarshaller.Instance;
@@ -1409,7 +1409,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ListBonusPayments">REST API Reference for ListBonusPayments Operation</seealso>
-        public ListBonusPaymentsResponse ListBonusPayments(ListBonusPaymentsRequest request)
+        public virtual ListBonusPaymentsResponse ListBonusPayments(ListBonusPaymentsRequest request)
         {
             var marshaller = new ListBonusPaymentsRequestMarshaller();
             var unmarshaller = ListBonusPaymentsResponseUnmarshaller.Instance;
@@ -1427,7 +1427,7 @@ namespace Amazon.MTurk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ListBonusPayments">REST API Reference for ListBonusPayments Operation</seealso>
-        public Task<ListBonusPaymentsResponse> ListBonusPaymentsAsync(ListBonusPaymentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListBonusPaymentsResponse> ListBonusPaymentsAsync(ListBonusPaymentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListBonusPaymentsRequestMarshaller();
             var unmarshaller = ListBonusPaymentsResponseUnmarshaller.Instance;
@@ -1457,7 +1457,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ListHITs">REST API Reference for ListHITs Operation</seealso>
-        public ListHITsResponse ListHITs(ListHITsRequest request)
+        public virtual ListHITsResponse ListHITs(ListHITsRequest request)
         {
             var marshaller = new ListHITsRequestMarshaller();
             var unmarshaller = ListHITsResponseUnmarshaller.Instance;
@@ -1475,7 +1475,7 @@ namespace Amazon.MTurk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ListHITs">REST API Reference for ListHITs Operation</seealso>
-        public Task<ListHITsResponse> ListHITsAsync(ListHITsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListHITsResponse> ListHITsAsync(ListHITsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListHITsRequestMarshaller();
             var unmarshaller = ListHITsResponseUnmarshaller.Instance;
@@ -1506,7 +1506,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ListHITsForQualificationType">REST API Reference for ListHITsForQualificationType Operation</seealso>
-        public ListHITsForQualificationTypeResponse ListHITsForQualificationType(ListHITsForQualificationTypeRequest request)
+        public virtual ListHITsForQualificationTypeResponse ListHITsForQualificationType(ListHITsForQualificationTypeRequest request)
         {
             var marshaller = new ListHITsForQualificationTypeRequestMarshaller();
             var unmarshaller = ListHITsForQualificationTypeResponseUnmarshaller.Instance;
@@ -1524,7 +1524,7 @@ namespace Amazon.MTurk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ListHITsForQualificationType">REST API Reference for ListHITsForQualificationType Operation</seealso>
-        public Task<ListHITsForQualificationTypeResponse> ListHITsForQualificationTypeAsync(ListHITsForQualificationTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListHITsForQualificationTypeResponse> ListHITsForQualificationTypeAsync(ListHITsForQualificationTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListHITsForQualificationTypeRequestMarshaller();
             var unmarshaller = ListHITsForQualificationTypeResponseUnmarshaller.Instance;
@@ -1555,7 +1555,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ListQualificationRequests">REST API Reference for ListQualificationRequests Operation</seealso>
-        public ListQualificationRequestsResponse ListQualificationRequests(ListQualificationRequestsRequest request)
+        public virtual ListQualificationRequestsResponse ListQualificationRequests(ListQualificationRequestsRequest request)
         {
             var marshaller = new ListQualificationRequestsRequestMarshaller();
             var unmarshaller = ListQualificationRequestsResponseUnmarshaller.Instance;
@@ -1573,7 +1573,7 @@ namespace Amazon.MTurk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ListQualificationRequests">REST API Reference for ListQualificationRequests Operation</seealso>
-        public Task<ListQualificationRequestsResponse> ListQualificationRequestsAsync(ListQualificationRequestsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListQualificationRequestsResponse> ListQualificationRequestsAsync(ListQualificationRequestsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListQualificationRequestsRequestMarshaller();
             var unmarshaller = ListQualificationRequestsResponseUnmarshaller.Instance;
@@ -1604,7 +1604,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ListQualificationTypes">REST API Reference for ListQualificationTypes Operation</seealso>
-        public ListQualificationTypesResponse ListQualificationTypes(ListQualificationTypesRequest request)
+        public virtual ListQualificationTypesResponse ListQualificationTypes(ListQualificationTypesRequest request)
         {
             var marshaller = new ListQualificationTypesRequestMarshaller();
             var unmarshaller = ListQualificationTypesResponseUnmarshaller.Instance;
@@ -1622,7 +1622,7 @@ namespace Amazon.MTurk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ListQualificationTypes">REST API Reference for ListQualificationTypes Operation</seealso>
-        public Task<ListQualificationTypesResponse> ListQualificationTypesAsync(ListQualificationTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListQualificationTypesResponse> ListQualificationTypesAsync(ListQualificationTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListQualificationTypesRequestMarshaller();
             var unmarshaller = ListQualificationTypesResponseUnmarshaller.Instance;
@@ -1652,7 +1652,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ListReviewableHITs">REST API Reference for ListReviewableHITs Operation</seealso>
-        public ListReviewableHITsResponse ListReviewableHITs(ListReviewableHITsRequest request)
+        public virtual ListReviewableHITsResponse ListReviewableHITs(ListReviewableHITsRequest request)
         {
             var marshaller = new ListReviewableHITsRequestMarshaller();
             var unmarshaller = ListReviewableHITsResponseUnmarshaller.Instance;
@@ -1670,7 +1670,7 @@ namespace Amazon.MTurk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ListReviewableHITs">REST API Reference for ListReviewableHITs Operation</seealso>
-        public Task<ListReviewableHITsResponse> ListReviewableHITsAsync(ListReviewableHITsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListReviewableHITsResponse> ListReviewableHITsAsync(ListReviewableHITsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListReviewableHITsRequestMarshaller();
             var unmarshaller = ListReviewableHITsResponseUnmarshaller.Instance;
@@ -1702,7 +1702,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ListReviewPolicyResultsForHIT">REST API Reference for ListReviewPolicyResultsForHIT Operation</seealso>
-        public ListReviewPolicyResultsForHITResponse ListReviewPolicyResultsForHIT(ListReviewPolicyResultsForHITRequest request)
+        public virtual ListReviewPolicyResultsForHITResponse ListReviewPolicyResultsForHIT(ListReviewPolicyResultsForHITRequest request)
         {
             var marshaller = new ListReviewPolicyResultsForHITRequestMarshaller();
             var unmarshaller = ListReviewPolicyResultsForHITResponseUnmarshaller.Instance;
@@ -1720,7 +1720,7 @@ namespace Amazon.MTurk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ListReviewPolicyResultsForHIT">REST API Reference for ListReviewPolicyResultsForHIT Operation</seealso>
-        public Task<ListReviewPolicyResultsForHITResponse> ListReviewPolicyResultsForHITAsync(ListReviewPolicyResultsForHITRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListReviewPolicyResultsForHITResponse> ListReviewPolicyResultsForHITAsync(ListReviewPolicyResultsForHITRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListReviewPolicyResultsForHITRequestMarshaller();
             var unmarshaller = ListReviewPolicyResultsForHITResponseUnmarshaller.Instance;
@@ -1749,7 +1749,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ListWorkerBlocks">REST API Reference for ListWorkerBlocks Operation</seealso>
-        public ListWorkerBlocksResponse ListWorkerBlocks(ListWorkerBlocksRequest request)
+        public virtual ListWorkerBlocksResponse ListWorkerBlocks(ListWorkerBlocksRequest request)
         {
             var marshaller = new ListWorkerBlocksRequestMarshaller();
             var unmarshaller = ListWorkerBlocksResponseUnmarshaller.Instance;
@@ -1767,7 +1767,7 @@ namespace Amazon.MTurk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ListWorkerBlocks">REST API Reference for ListWorkerBlocks Operation</seealso>
-        public Task<ListWorkerBlocksResponse> ListWorkerBlocksAsync(ListWorkerBlocksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListWorkerBlocksResponse> ListWorkerBlocksAsync(ListWorkerBlocksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListWorkerBlocksRequestMarshaller();
             var unmarshaller = ListWorkerBlocksResponseUnmarshaller.Instance;
@@ -1796,7 +1796,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ListWorkersWithQualificationType">REST API Reference for ListWorkersWithQualificationType Operation</seealso>
-        public ListWorkersWithQualificationTypeResponse ListWorkersWithQualificationType(ListWorkersWithQualificationTypeRequest request)
+        public virtual ListWorkersWithQualificationTypeResponse ListWorkersWithQualificationType(ListWorkersWithQualificationTypeRequest request)
         {
             var marshaller = new ListWorkersWithQualificationTypeRequestMarshaller();
             var unmarshaller = ListWorkersWithQualificationTypeResponseUnmarshaller.Instance;
@@ -1814,7 +1814,7 @@ namespace Amazon.MTurk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ListWorkersWithQualificationType">REST API Reference for ListWorkersWithQualificationType Operation</seealso>
-        public Task<ListWorkersWithQualificationTypeResponse> ListWorkersWithQualificationTypeAsync(ListWorkersWithQualificationTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListWorkersWithQualificationTypeResponse> ListWorkersWithQualificationTypeAsync(ListWorkersWithQualificationTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListWorkersWithQualificationTypeRequestMarshaller();
             var unmarshaller = ListWorkersWithQualificationTypeResponseUnmarshaller.Instance;
@@ -1846,7 +1846,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/NotifyWorkers">REST API Reference for NotifyWorkers Operation</seealso>
-        public NotifyWorkersResponse NotifyWorkers(NotifyWorkersRequest request)
+        public virtual NotifyWorkersResponse NotifyWorkers(NotifyWorkersRequest request)
         {
             var marshaller = new NotifyWorkersRequestMarshaller();
             var unmarshaller = NotifyWorkersResponseUnmarshaller.Instance;
@@ -1864,7 +1864,7 @@ namespace Amazon.MTurk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/NotifyWorkers">REST API Reference for NotifyWorkers Operation</seealso>
-        public Task<NotifyWorkersResponse> NotifyWorkersAsync(NotifyWorkersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<NotifyWorkersResponse> NotifyWorkersAsync(NotifyWorkersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new NotifyWorkersRequestMarshaller();
             var unmarshaller = NotifyWorkersResponseUnmarshaller.Instance;
@@ -1905,7 +1905,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/RejectAssignment">REST API Reference for RejectAssignment Operation</seealso>
-        public RejectAssignmentResponse RejectAssignment(RejectAssignmentRequest request)
+        public virtual RejectAssignmentResponse RejectAssignment(RejectAssignmentRequest request)
         {
             var marshaller = new RejectAssignmentRequestMarshaller();
             var unmarshaller = RejectAssignmentResponseUnmarshaller.Instance;
@@ -1923,7 +1923,7 @@ namespace Amazon.MTurk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/RejectAssignment">REST API Reference for RejectAssignment Operation</seealso>
-        public Task<RejectAssignmentResponse> RejectAssignmentAsync(RejectAssignmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<RejectAssignmentResponse> RejectAssignmentAsync(RejectAssignmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RejectAssignmentRequestMarshaller();
             var unmarshaller = RejectAssignmentResponseUnmarshaller.Instance;
@@ -1958,7 +1958,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/RejectQualificationRequest">REST API Reference for RejectQualificationRequest Operation</seealso>
-        public RejectQualificationRequestResponse RejectQualificationRequest(RejectQualificationRequestRequest request)
+        public virtual RejectQualificationRequestResponse RejectQualificationRequest(RejectQualificationRequestRequest request)
         {
             var marshaller = new RejectQualificationRequestRequestMarshaller();
             var unmarshaller = RejectQualificationRequestResponseUnmarshaller.Instance;
@@ -1976,7 +1976,7 @@ namespace Amazon.MTurk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/RejectQualificationRequest">REST API Reference for RejectQualificationRequest Operation</seealso>
-        public Task<RejectQualificationRequestResponse> RejectQualificationRequestAsync(RejectQualificationRequestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<RejectQualificationRequestResponse> RejectQualificationRequestAsync(RejectQualificationRequestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RejectQualificationRequestRequestMarshaller();
             var unmarshaller = RejectQualificationRequestResponseUnmarshaller.Instance;
@@ -2011,7 +2011,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/SendBonus">REST API Reference for SendBonus Operation</seealso>
-        public SendBonusResponse SendBonus(SendBonusRequest request)
+        public virtual SendBonusResponse SendBonus(SendBonusRequest request)
         {
             var marshaller = new SendBonusRequestMarshaller();
             var unmarshaller = SendBonusResponseUnmarshaller.Instance;
@@ -2029,7 +2029,7 @@ namespace Amazon.MTurk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/SendBonus">REST API Reference for SendBonus Operation</seealso>
-        public Task<SendBonusResponse> SendBonusAsync(SendBonusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<SendBonusResponse> SendBonusAsync(SendBonusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SendBonusRequestMarshaller();
             var unmarshaller = SendBonusResponseUnmarshaller.Instance;
@@ -2061,7 +2061,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/SendTestEventNotification">REST API Reference for SendTestEventNotification Operation</seealso>
-        public SendTestEventNotificationResponse SendTestEventNotification(SendTestEventNotificationRequest request)
+        public virtual SendTestEventNotificationResponse SendTestEventNotification(SendTestEventNotificationRequest request)
         {
             var marshaller = new SendTestEventNotificationRequestMarshaller();
             var unmarshaller = SendTestEventNotificationResponseUnmarshaller.Instance;
@@ -2079,7 +2079,7 @@ namespace Amazon.MTurk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/SendTestEventNotification">REST API Reference for SendTestEventNotification Operation</seealso>
-        public Task<SendTestEventNotificationResponse> SendTestEventNotificationAsync(SendTestEventNotificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<SendTestEventNotificationResponse> SendTestEventNotificationAsync(SendTestEventNotificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SendTestEventNotificationRequestMarshaller();
             var unmarshaller = SendTestEventNotificationResponseUnmarshaller.Instance;
@@ -2109,7 +2109,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/UpdateExpirationForHIT">REST API Reference for UpdateExpirationForHIT Operation</seealso>
-        public UpdateExpirationForHITResponse UpdateExpirationForHIT(UpdateExpirationForHITRequest request)
+        public virtual UpdateExpirationForHITResponse UpdateExpirationForHIT(UpdateExpirationForHITRequest request)
         {
             var marshaller = new UpdateExpirationForHITRequestMarshaller();
             var unmarshaller = UpdateExpirationForHITResponseUnmarshaller.Instance;
@@ -2127,7 +2127,7 @@ namespace Amazon.MTurk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/UpdateExpirationForHIT">REST API Reference for UpdateExpirationForHIT Operation</seealso>
-        public Task<UpdateExpirationForHITResponse> UpdateExpirationForHITAsync(UpdateExpirationForHITRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateExpirationForHITResponse> UpdateExpirationForHITAsync(UpdateExpirationForHITRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateExpirationForHITRequestMarshaller();
             var unmarshaller = UpdateExpirationForHITResponseUnmarshaller.Instance;
@@ -2157,7 +2157,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/UpdateHITReviewStatus">REST API Reference for UpdateHITReviewStatus Operation</seealso>
-        public UpdateHITReviewStatusResponse UpdateHITReviewStatus(UpdateHITReviewStatusRequest request)
+        public virtual UpdateHITReviewStatusResponse UpdateHITReviewStatus(UpdateHITReviewStatusRequest request)
         {
             var marshaller = new UpdateHITReviewStatusRequestMarshaller();
             var unmarshaller = UpdateHITReviewStatusResponseUnmarshaller.Instance;
@@ -2175,7 +2175,7 @@ namespace Amazon.MTurk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/UpdateHITReviewStatus">REST API Reference for UpdateHITReviewStatus Operation</seealso>
-        public Task<UpdateHITReviewStatusResponse> UpdateHITReviewStatusAsync(UpdateHITReviewStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateHITReviewStatusResponse> UpdateHITReviewStatusAsync(UpdateHITReviewStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateHITReviewStatusRequestMarshaller();
             var unmarshaller = UpdateHITReviewStatusResponseUnmarshaller.Instance;
@@ -2206,7 +2206,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/UpdateHITTypeOfHIT">REST API Reference for UpdateHITTypeOfHIT Operation</seealso>
-        public UpdateHITTypeOfHITResponse UpdateHITTypeOfHIT(UpdateHITTypeOfHITRequest request)
+        public virtual UpdateHITTypeOfHITResponse UpdateHITTypeOfHIT(UpdateHITTypeOfHITRequest request)
         {
             var marshaller = new UpdateHITTypeOfHITRequestMarshaller();
             var unmarshaller = UpdateHITTypeOfHITResponseUnmarshaller.Instance;
@@ -2224,7 +2224,7 @@ namespace Amazon.MTurk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/UpdateHITTypeOfHIT">REST API Reference for UpdateHITTypeOfHIT Operation</seealso>
-        public Task<UpdateHITTypeOfHITResponse> UpdateHITTypeOfHITAsync(UpdateHITTypeOfHITRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateHITTypeOfHITResponse> UpdateHITTypeOfHITAsync(UpdateHITTypeOfHITRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateHITTypeOfHITRequestMarshaller();
             var unmarshaller = UpdateHITTypeOfHITResponseUnmarshaller.Instance;
@@ -2260,7 +2260,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/UpdateNotificationSettings">REST API Reference for UpdateNotificationSettings Operation</seealso>
-        public UpdateNotificationSettingsResponse UpdateNotificationSettings(UpdateNotificationSettingsRequest request)
+        public virtual UpdateNotificationSettingsResponse UpdateNotificationSettings(UpdateNotificationSettingsRequest request)
         {
             var marshaller = new UpdateNotificationSettingsRequestMarshaller();
             var unmarshaller = UpdateNotificationSettingsResponseUnmarshaller.Instance;
@@ -2278,7 +2278,7 @@ namespace Amazon.MTurk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/UpdateNotificationSettings">REST API Reference for UpdateNotificationSettings Operation</seealso>
-        public Task<UpdateNotificationSettingsResponse> UpdateNotificationSettingsAsync(UpdateNotificationSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateNotificationSettingsResponse> UpdateNotificationSettingsAsync(UpdateNotificationSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateNotificationSettingsRequestMarshaller();
             var unmarshaller = UpdateNotificationSettingsResponseUnmarshaller.Instance;
@@ -2349,7 +2349,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/UpdateQualificationType">REST API Reference for UpdateQualificationType Operation</seealso>
-        public UpdateQualificationTypeResponse UpdateQualificationType(UpdateQualificationTypeRequest request)
+        public virtual UpdateQualificationTypeResponse UpdateQualificationType(UpdateQualificationTypeRequest request)
         {
             var marshaller = new UpdateQualificationTypeRequestMarshaller();
             var unmarshaller = UpdateQualificationTypeResponseUnmarshaller.Instance;
@@ -2367,7 +2367,7 @@ namespace Amazon.MTurk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/UpdateQualificationType">REST API Reference for UpdateQualificationType Operation</seealso>
-        public Task<UpdateQualificationTypeResponse> UpdateQualificationTypeAsync(UpdateQualificationTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateQualificationTypeResponse> UpdateQualificationTypeAsync(UpdateQualificationTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateQualificationTypeRequestMarshaller();
             var unmarshaller = UpdateQualificationTypeResponseUnmarshaller.Instance;

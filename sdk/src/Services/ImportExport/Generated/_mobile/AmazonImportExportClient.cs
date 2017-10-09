@@ -237,7 +237,7 @@ namespace Amazon.ImportExport
         
         #region  CancelJob
 
-        internal CancelJobResponse CancelJob(CancelJobRequest request)
+        internal virtual CancelJobResponse CancelJob(CancelJobRequest request)
         {
             var marshaller = new CancelJobRequestMarshaller();
             var unmarshaller = CancelJobResponseUnmarshaller.Instance;
@@ -255,7 +255,7 @@ namespace Amazon.ImportExport
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CancelJobResponse> CancelJobAsync(CancelJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CancelJobResponse> CancelJobAsync(CancelJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CancelJobRequestMarshaller();
             var unmarshaller = CancelJobResponseUnmarshaller.Instance;
@@ -268,7 +268,7 @@ namespace Amazon.ImportExport
         
         #region  CreateJob
 
-        internal CreateJobResponse CreateJob(CreateJobRequest request)
+        internal virtual CreateJobResponse CreateJob(CreateJobRequest request)
         {
             var marshaller = new CreateJobRequestMarshaller();
             var unmarshaller = CreateJobResponseUnmarshaller.Instance;
@@ -286,7 +286,7 @@ namespace Amazon.ImportExport
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CreateJobResponse> CreateJobAsync(CreateJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateJobResponse> CreateJobAsync(CreateJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateJobRequestMarshaller();
             var unmarshaller = CreateJobResponseUnmarshaller.Instance;
@@ -299,7 +299,7 @@ namespace Amazon.ImportExport
         
         #region  GetShippingLabel
 
-        internal GetShippingLabelResponse GetShippingLabel(GetShippingLabelRequest request)
+        internal virtual GetShippingLabelResponse GetShippingLabel(GetShippingLabelRequest request)
         {
             var marshaller = new GetShippingLabelRequestMarshaller();
             var unmarshaller = GetShippingLabelResponseUnmarshaller.Instance;
@@ -317,7 +317,7 @@ namespace Amazon.ImportExport
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetShippingLabelResponse> GetShippingLabelAsync(GetShippingLabelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetShippingLabelResponse> GetShippingLabelAsync(GetShippingLabelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetShippingLabelRequestMarshaller();
             var unmarshaller = GetShippingLabelResponseUnmarshaller.Instance;
@@ -330,7 +330,7 @@ namespace Amazon.ImportExport
         
         #region  GetStatus
 
-        internal GetStatusResponse GetStatus(GetStatusRequest request)
+        internal virtual GetStatusResponse GetStatus(GetStatusRequest request)
         {
             var marshaller = new GetStatusRequestMarshaller();
             var unmarshaller = GetStatusResponseUnmarshaller.Instance;
@@ -348,7 +348,7 @@ namespace Amazon.ImportExport
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetStatusResponse> GetStatusAsync(GetStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetStatusResponse> GetStatusAsync(GetStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetStatusRequestMarshaller();
             var unmarshaller = GetStatusResponseUnmarshaller.Instance;
@@ -361,11 +361,11 @@ namespace Amazon.ImportExport
         
         #region  ListJobs
 
-        internal ListJobsResponse ListJobs()
+        internal virtual ListJobsResponse ListJobs()
         {
             return ListJobs(new ListJobsRequest());
         }
-        internal ListJobsResponse ListJobs(ListJobsRequest request)
+        internal virtual ListJobsResponse ListJobs(ListJobsRequest request)
         {
             var marshaller = new ListJobsRequestMarshaller();
             var unmarshaller = ListJobsResponseUnmarshaller.Instance;
@@ -396,7 +396,7 @@ namespace Amazon.ImportExport
         /// <exception cref="Amazon.ImportExport.Model.InvalidVersionException">
         /// The client tool version is invalid.
         /// </exception>
-        public Task<ListJobsResponse> ListJobsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListJobsResponse> ListJobsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return ListJobsAsync(new ListJobsRequest(), cancellationToken);
         }
@@ -411,7 +411,7 @@ namespace Amazon.ImportExport
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<ListJobsResponse> ListJobsAsync(ListJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListJobsResponse> ListJobsAsync(ListJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListJobsRequestMarshaller();
             var unmarshaller = ListJobsResponseUnmarshaller.Instance;
@@ -424,7 +424,7 @@ namespace Amazon.ImportExport
         
         #region  UpdateJob
 
-        internal UpdateJobResponse UpdateJob(UpdateJobRequest request)
+        internal virtual UpdateJobResponse UpdateJob(UpdateJobRequest request)
         {
             var marshaller = new UpdateJobRequestMarshaller();
             var unmarshaller = UpdateJobResponseUnmarshaller.Instance;
@@ -442,7 +442,7 @@ namespace Amazon.ImportExport
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateJobResponse> UpdateJobAsync(UpdateJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateJobResponse> UpdateJobAsync(UpdateJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateJobRequestMarshaller();
             var unmarshaller = UpdateJobResponseUnmarshaller.Instance;

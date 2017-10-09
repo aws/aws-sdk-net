@@ -260,7 +260,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
-        public AddTagsToResourceResponse AddTagsToResource(AddTagsToResourceRequest request)
+        public virtual AddTagsToResourceResponse AddTagsToResource(AddTagsToResourceRequest request)
         {
             var marshaller = new AddTagsToResourceRequestMarshaller();
             var unmarshaller = AddTagsToResourceResponseUnmarshaller.Instance;
@@ -278,7 +278,7 @@ namespace Amazon.CloudHSM
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
-        public Task<AddTagsToResourceResponse> AddTagsToResourceAsync(AddTagsToResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<AddTagsToResourceResponse> AddTagsToResourceAsync(AddTagsToResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AddTagsToResourceRequestMarshaller();
             var unmarshaller = AddTagsToResourceResponseUnmarshaller.Instance;
@@ -309,7 +309,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHapg">REST API Reference for CreateHapg Operation</seealso>
-        public CreateHapgResponse CreateHapg(string label)
+        public virtual CreateHapgResponse CreateHapg(string label)
         {
             var request = new CreateHapgRequest();
             request.Label = label;
@@ -334,7 +334,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHapg">REST API Reference for CreateHapg Operation</seealso>
-        public CreateHapgResponse CreateHapg(CreateHapgRequest request)
+        public virtual CreateHapgResponse CreateHapg(CreateHapgRequest request)
         {
             var marshaller = new CreateHapgRequestMarshaller();
             var unmarshaller = CreateHapgResponseUnmarshaller.Instance;
@@ -363,7 +363,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHapg">REST API Reference for CreateHapg Operation</seealso>
-        public Task<CreateHapgResponse> CreateHapgAsync(string label, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateHapgResponse> CreateHapgAsync(string label, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new CreateHapgRequest();
             request.Label = label;
@@ -380,7 +380,7 @@ namespace Amazon.CloudHSM
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHapg">REST API Reference for CreateHapg Operation</seealso>
-        public Task<CreateHapgResponse> CreateHapgAsync(CreateHapgRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateHapgResponse> CreateHapgAsync(CreateHapgRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateHapgRequestMarshaller();
             var unmarshaller = CreateHapgResponseUnmarshaller.Instance;
@@ -425,7 +425,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHsm">REST API Reference for CreateHsm Operation</seealso>
-        public CreateHsmResponse CreateHsm(CreateHsmRequest request)
+        public virtual CreateHsmResponse CreateHsm(CreateHsmRequest request)
         {
             var marshaller = new CreateHsmRequestMarshaller();
             var unmarshaller = CreateHsmResponseUnmarshaller.Instance;
@@ -443,7 +443,7 @@ namespace Amazon.CloudHSM
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHsm">REST API Reference for CreateHsm Operation</seealso>
-        public Task<CreateHsmResponse> CreateHsmAsync(CreateHsmRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateHsmResponse> CreateHsmAsync(CreateHsmRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateHsmRequestMarshaller();
             var unmarshaller = CreateHsmResponseUnmarshaller.Instance;
@@ -473,7 +473,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateLunaClient">REST API Reference for CreateLunaClient Operation</seealso>
-        public CreateLunaClientResponse CreateLunaClient(CreateLunaClientRequest request)
+        public virtual CreateLunaClientResponse CreateLunaClient(CreateLunaClientRequest request)
         {
             var marshaller = new CreateLunaClientRequestMarshaller();
             var unmarshaller = CreateLunaClientResponseUnmarshaller.Instance;
@@ -491,7 +491,7 @@ namespace Amazon.CloudHSM
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateLunaClient">REST API Reference for CreateLunaClient Operation</seealso>
-        public Task<CreateLunaClientResponse> CreateLunaClientAsync(CreateLunaClientRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateLunaClientResponse> CreateLunaClientAsync(CreateLunaClientRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateLunaClientRequestMarshaller();
             var unmarshaller = CreateLunaClientResponseUnmarshaller.Instance;
@@ -521,7 +521,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHapg">REST API Reference for DeleteHapg Operation</seealso>
-        public DeleteHapgResponse DeleteHapg(string hapgArn)
+        public virtual DeleteHapgResponse DeleteHapg(string hapgArn)
         {
             var request = new DeleteHapgRequest();
             request.HapgArn = hapgArn;
@@ -545,7 +545,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHapg">REST API Reference for DeleteHapg Operation</seealso>
-        public DeleteHapgResponse DeleteHapg(DeleteHapgRequest request)
+        public virtual DeleteHapgResponse DeleteHapg(DeleteHapgRequest request)
         {
             var marshaller = new DeleteHapgRequestMarshaller();
             var unmarshaller = DeleteHapgResponseUnmarshaller.Instance;
@@ -573,7 +573,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHapg">REST API Reference for DeleteHapg Operation</seealso>
-        public Task<DeleteHapgResponse> DeleteHapgAsync(string hapgArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteHapgResponse> DeleteHapgAsync(string hapgArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DeleteHapgRequest();
             request.HapgArn = hapgArn;
@@ -590,7 +590,7 @@ namespace Amazon.CloudHSM
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHapg">REST API Reference for DeleteHapg Operation</seealso>
-        public Task<DeleteHapgResponse> DeleteHapgAsync(DeleteHapgRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteHapgResponse> DeleteHapgAsync(DeleteHapgRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteHapgRequestMarshaller();
             var unmarshaller = DeleteHapgResponseUnmarshaller.Instance;
@@ -621,7 +621,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHsm">REST API Reference for DeleteHsm Operation</seealso>
-        public DeleteHsmResponse DeleteHsm(string hsmArn)
+        public virtual DeleteHsmResponse DeleteHsm(string hsmArn)
         {
             var request = new DeleteHsmRequest();
             request.HsmArn = hsmArn;
@@ -646,7 +646,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHsm">REST API Reference for DeleteHsm Operation</seealso>
-        public DeleteHsmResponse DeleteHsm(DeleteHsmRequest request)
+        public virtual DeleteHsmResponse DeleteHsm(DeleteHsmRequest request)
         {
             var marshaller = new DeleteHsmRequestMarshaller();
             var unmarshaller = DeleteHsmResponseUnmarshaller.Instance;
@@ -675,7 +675,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHsm">REST API Reference for DeleteHsm Operation</seealso>
-        public Task<DeleteHsmResponse> DeleteHsmAsync(string hsmArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteHsmResponse> DeleteHsmAsync(string hsmArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DeleteHsmRequest();
             request.HsmArn = hsmArn;
@@ -692,7 +692,7 @@ namespace Amazon.CloudHSM
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHsm">REST API Reference for DeleteHsm Operation</seealso>
-        public Task<DeleteHsmResponse> DeleteHsmAsync(DeleteHsmRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteHsmResponse> DeleteHsmAsync(DeleteHsmRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteHsmRequestMarshaller();
             var unmarshaller = DeleteHsmResponseUnmarshaller.Instance;
@@ -722,7 +722,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteLunaClient">REST API Reference for DeleteLunaClient Operation</seealso>
-        public DeleteLunaClientResponse DeleteLunaClient(string clientArn)
+        public virtual DeleteLunaClientResponse DeleteLunaClient(string clientArn)
         {
             var request = new DeleteLunaClientRequest();
             request.ClientArn = clientArn;
@@ -746,7 +746,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteLunaClient">REST API Reference for DeleteLunaClient Operation</seealso>
-        public DeleteLunaClientResponse DeleteLunaClient(DeleteLunaClientRequest request)
+        public virtual DeleteLunaClientResponse DeleteLunaClient(DeleteLunaClientRequest request)
         {
             var marshaller = new DeleteLunaClientRequestMarshaller();
             var unmarshaller = DeleteLunaClientResponseUnmarshaller.Instance;
@@ -774,7 +774,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteLunaClient">REST API Reference for DeleteLunaClient Operation</seealso>
-        public Task<DeleteLunaClientResponse> DeleteLunaClientAsync(string clientArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteLunaClientResponse> DeleteLunaClientAsync(string clientArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DeleteLunaClientRequest();
             request.ClientArn = clientArn;
@@ -791,7 +791,7 @@ namespace Amazon.CloudHSM
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteLunaClient">REST API Reference for DeleteLunaClient Operation</seealso>
-        public Task<DeleteLunaClientResponse> DeleteLunaClientAsync(DeleteLunaClientRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteLunaClientResponse> DeleteLunaClientAsync(DeleteLunaClientRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteLunaClientRequestMarshaller();
             var unmarshaller = DeleteLunaClientResponseUnmarshaller.Instance;
@@ -821,7 +821,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHapg">REST API Reference for DescribeHapg Operation</seealso>
-        public DescribeHapgResponse DescribeHapg(string hapgArn)
+        public virtual DescribeHapgResponse DescribeHapg(string hapgArn)
         {
             var request = new DescribeHapgRequest();
             request.HapgArn = hapgArn;
@@ -845,7 +845,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHapg">REST API Reference for DescribeHapg Operation</seealso>
-        public DescribeHapgResponse DescribeHapg(DescribeHapgRequest request)
+        public virtual DescribeHapgResponse DescribeHapg(DescribeHapgRequest request)
         {
             var marshaller = new DescribeHapgRequestMarshaller();
             var unmarshaller = DescribeHapgResponseUnmarshaller.Instance;
@@ -873,7 +873,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHapg">REST API Reference for DescribeHapg Operation</seealso>
-        public Task<DescribeHapgResponse> DescribeHapgAsync(string hapgArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeHapgResponse> DescribeHapgAsync(string hapgArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DescribeHapgRequest();
             request.HapgArn = hapgArn;
@@ -890,7 +890,7 @@ namespace Amazon.CloudHSM
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHapg">REST API Reference for DescribeHapg Operation</seealso>
-        public Task<DescribeHapgResponse> DescribeHapgAsync(DescribeHapgRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeHapgResponse> DescribeHapgAsync(DescribeHapgRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeHapgRequestMarshaller();
             var unmarshaller = DescribeHapgResponseUnmarshaller.Instance;
@@ -921,7 +921,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHsm">REST API Reference for DescribeHsm Operation</seealso>
-        public DescribeHsmResponse DescribeHsm(string hsmArn)
+        public virtual DescribeHsmResponse DescribeHsm(string hsmArn)
         {
             var request = new DescribeHsmRequest();
             request.HsmArn = hsmArn;
@@ -946,7 +946,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHsm">REST API Reference for DescribeHsm Operation</seealso>
-        public DescribeHsmResponse DescribeHsm(DescribeHsmRequest request)
+        public virtual DescribeHsmResponse DescribeHsm(DescribeHsmRequest request)
         {
             var marshaller = new DescribeHsmRequestMarshaller();
             var unmarshaller = DescribeHsmResponseUnmarshaller.Instance;
@@ -975,7 +975,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHsm">REST API Reference for DescribeHsm Operation</seealso>
-        public Task<DescribeHsmResponse> DescribeHsmAsync(string hsmArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeHsmResponse> DescribeHsmAsync(string hsmArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DescribeHsmRequest();
             request.HsmArn = hsmArn;
@@ -992,7 +992,7 @@ namespace Amazon.CloudHSM
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHsm">REST API Reference for DescribeHsm Operation</seealso>
-        public Task<DescribeHsmResponse> DescribeHsmAsync(DescribeHsmRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeHsmResponse> DescribeHsmAsync(DescribeHsmRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeHsmRequestMarshaller();
             var unmarshaller = DescribeHsmResponseUnmarshaller.Instance;
@@ -1022,7 +1022,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeLunaClient">REST API Reference for DescribeLunaClient Operation</seealso>
-        public DescribeLunaClientResponse DescribeLunaClient(DescribeLunaClientRequest request)
+        public virtual DescribeLunaClientResponse DescribeLunaClient(DescribeLunaClientRequest request)
         {
             var marshaller = new DescribeLunaClientRequestMarshaller();
             var unmarshaller = DescribeLunaClientResponseUnmarshaller.Instance;
@@ -1040,7 +1040,7 @@ namespace Amazon.CloudHSM
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeLunaClient">REST API Reference for DescribeLunaClient Operation</seealso>
-        public Task<DescribeLunaClientResponse> DescribeLunaClientAsync(DescribeLunaClientRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeLunaClientResponse> DescribeLunaClientAsync(DescribeLunaClientRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeLunaClientRequestMarshaller();
             var unmarshaller = DescribeLunaClientResponseUnmarshaller.Instance;
@@ -1071,7 +1071,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/GetConfig">REST API Reference for GetConfig Operation</seealso>
-        public GetConfigResponse GetConfig(GetConfigRequest request)
+        public virtual GetConfigResponse GetConfig(GetConfigRequest request)
         {
             var marshaller = new GetConfigRequestMarshaller();
             var unmarshaller = GetConfigResponseUnmarshaller.Instance;
@@ -1089,7 +1089,7 @@ namespace Amazon.CloudHSM
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/GetConfig">REST API Reference for GetConfig Operation</seealso>
-        public Task<GetConfigResponse> GetConfigAsync(GetConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetConfigResponse> GetConfigAsync(GetConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetConfigRequestMarshaller();
             var unmarshaller = GetConfigResponseUnmarshaller.Instance;
@@ -1118,7 +1118,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListAvailableZones">REST API Reference for ListAvailableZones Operation</seealso>
-        public ListAvailableZonesResponse ListAvailableZones()
+        public virtual ListAvailableZonesResponse ListAvailableZones()
         {
             var request = new ListAvailableZonesRequest();
             return ListAvailableZones(request);
@@ -1141,7 +1141,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListAvailableZones">REST API Reference for ListAvailableZones Operation</seealso>
-        public ListAvailableZonesResponse ListAvailableZones(ListAvailableZonesRequest request)
+        public virtual ListAvailableZonesResponse ListAvailableZones(ListAvailableZonesRequest request)
         {
             var marshaller = new ListAvailableZonesRequestMarshaller();
             var unmarshaller = ListAvailableZonesResponseUnmarshaller.Instance;
@@ -1168,7 +1168,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListAvailableZones">REST API Reference for ListAvailableZones Operation</seealso>
-        public Task<ListAvailableZonesResponse> ListAvailableZonesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListAvailableZonesResponse> ListAvailableZonesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new ListAvailableZonesRequest();
             return ListAvailableZonesAsync(request, cancellationToken);
@@ -1184,7 +1184,7 @@ namespace Amazon.CloudHSM
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListAvailableZones">REST API Reference for ListAvailableZones Operation</seealso>
-        public Task<ListAvailableZonesResponse> ListAvailableZonesAsync(ListAvailableZonesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListAvailableZonesResponse> ListAvailableZonesAsync(ListAvailableZonesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListAvailableZonesRequestMarshaller();
             var unmarshaller = ListAvailableZonesResponseUnmarshaller.Instance;
@@ -1221,7 +1221,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHapgs">REST API Reference for ListHapgs Operation</seealso>
-        public ListHapgsResponse ListHapgs()
+        public virtual ListHapgsResponse ListHapgs()
         {
             var request = new ListHapgsRequest();
             return ListHapgs(request);
@@ -1252,7 +1252,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHapgs">REST API Reference for ListHapgs Operation</seealso>
-        public ListHapgsResponse ListHapgs(ListHapgsRequest request)
+        public virtual ListHapgsResponse ListHapgs(ListHapgsRequest request)
         {
             var marshaller = new ListHapgsRequestMarshaller();
             var unmarshaller = ListHapgsResponseUnmarshaller.Instance;
@@ -1287,7 +1287,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHapgs">REST API Reference for ListHapgs Operation</seealso>
-        public Task<ListHapgsResponse> ListHapgsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListHapgsResponse> ListHapgsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new ListHapgsRequest();
             return ListHapgsAsync(request, cancellationToken);
@@ -1303,7 +1303,7 @@ namespace Amazon.CloudHSM
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHapgs">REST API Reference for ListHapgs Operation</seealso>
-        public Task<ListHapgsResponse> ListHapgsAsync(ListHapgsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListHapgsResponse> ListHapgsAsync(ListHapgsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListHapgsRequestMarshaller();
             var unmarshaller = ListHapgsResponseUnmarshaller.Instance;
@@ -1340,7 +1340,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHsms">REST API Reference for ListHsms Operation</seealso>
-        public ListHsmsResponse ListHsms()
+        public virtual ListHsmsResponse ListHsms()
         {
             var request = new ListHsmsRequest();
             return ListHsms(request);
@@ -1371,7 +1371,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHsms">REST API Reference for ListHsms Operation</seealso>
-        public ListHsmsResponse ListHsms(ListHsmsRequest request)
+        public virtual ListHsmsResponse ListHsms(ListHsmsRequest request)
         {
             var marshaller = new ListHsmsRequestMarshaller();
             var unmarshaller = ListHsmsResponseUnmarshaller.Instance;
@@ -1406,7 +1406,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHsms">REST API Reference for ListHsms Operation</seealso>
-        public Task<ListHsmsResponse> ListHsmsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListHsmsResponse> ListHsmsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new ListHsmsRequest();
             return ListHsmsAsync(request, cancellationToken);
@@ -1422,7 +1422,7 @@ namespace Amazon.CloudHSM
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHsms">REST API Reference for ListHsms Operation</seealso>
-        public Task<ListHsmsResponse> ListHsmsAsync(ListHsmsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListHsmsResponse> ListHsmsAsync(ListHsmsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListHsmsRequestMarshaller();
             var unmarshaller = ListHsmsResponseUnmarshaller.Instance;
@@ -1459,7 +1459,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListLunaClients">REST API Reference for ListLunaClients Operation</seealso>
-        public ListLunaClientsResponse ListLunaClients()
+        public virtual ListLunaClientsResponse ListLunaClients()
         {
             var request = new ListLunaClientsRequest();
             return ListLunaClients(request);
@@ -1490,7 +1490,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListLunaClients">REST API Reference for ListLunaClients Operation</seealso>
-        public ListLunaClientsResponse ListLunaClients(ListLunaClientsRequest request)
+        public virtual ListLunaClientsResponse ListLunaClients(ListLunaClientsRequest request)
         {
             var marshaller = new ListLunaClientsRequestMarshaller();
             var unmarshaller = ListLunaClientsResponseUnmarshaller.Instance;
@@ -1525,7 +1525,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListLunaClients">REST API Reference for ListLunaClients Operation</seealso>
-        public Task<ListLunaClientsResponse> ListLunaClientsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListLunaClientsResponse> ListLunaClientsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new ListLunaClientsRequest();
             return ListLunaClientsAsync(request, cancellationToken);
@@ -1541,7 +1541,7 @@ namespace Amazon.CloudHSM
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListLunaClients">REST API Reference for ListLunaClients Operation</seealso>
-        public Task<ListLunaClientsResponse> ListLunaClientsAsync(ListLunaClientsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListLunaClientsResponse> ListLunaClientsAsync(ListLunaClientsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListLunaClientsRequestMarshaller();
             var unmarshaller = ListLunaClientsResponseUnmarshaller.Instance;
@@ -1571,7 +1571,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
-        public ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
@@ -1589,7 +1589,7 @@ namespace Amazon.CloudHSM
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
-        public Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
@@ -1619,7 +1619,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHapg">REST API Reference for ModifyHapg Operation</seealso>
-        public ModifyHapgResponse ModifyHapg(ModifyHapgRequest request)
+        public virtual ModifyHapgResponse ModifyHapg(ModifyHapgRequest request)
         {
             var marshaller = new ModifyHapgRequestMarshaller();
             var unmarshaller = ModifyHapgResponseUnmarshaller.Instance;
@@ -1637,7 +1637,7 @@ namespace Amazon.CloudHSM
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHapg">REST API Reference for ModifyHapg Operation</seealso>
-        public Task<ModifyHapgResponse> ModifyHapgAsync(ModifyHapgRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ModifyHapgResponse> ModifyHapgAsync(ModifyHapgRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ModifyHapgRequestMarshaller();
             var unmarshaller = ModifyHapgResponseUnmarshaller.Instance;
@@ -1676,7 +1676,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHsm">REST API Reference for ModifyHsm Operation</seealso>
-        public ModifyHsmResponse ModifyHsm(ModifyHsmRequest request)
+        public virtual ModifyHsmResponse ModifyHsm(ModifyHsmRequest request)
         {
             var marshaller = new ModifyHsmRequestMarshaller();
             var unmarshaller = ModifyHsmResponseUnmarshaller.Instance;
@@ -1694,7 +1694,7 @@ namespace Amazon.CloudHSM
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHsm">REST API Reference for ModifyHsm Operation</seealso>
-        public Task<ModifyHsmResponse> ModifyHsmAsync(ModifyHsmRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ModifyHsmResponse> ModifyHsmAsync(ModifyHsmRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ModifyHsmRequestMarshaller();
             var unmarshaller = ModifyHsmResponseUnmarshaller.Instance;
@@ -1724,7 +1724,7 @@ namespace Amazon.CloudHSM
         /// Indicates that an exception occurred in the AWS CloudHSM service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyLunaClient">REST API Reference for ModifyLunaClient Operation</seealso>
-        public ModifyLunaClientResponse ModifyLunaClient(ModifyLunaClientRequest request)
+        public virtual ModifyLunaClientResponse ModifyLunaClient(ModifyLunaClientRequest request)
         {
             var marshaller = new ModifyLunaClientRequestMarshaller();
             var unmarshaller = ModifyLunaClientResponseUnmarshaller.Instance;
@@ -1742,7 +1742,7 @@ namespace Amazon.CloudHSM
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyLunaClient">REST API Reference for ModifyLunaClient Operation</seealso>
-        public Task<ModifyLunaClientResponse> ModifyLunaClientAsync(ModifyLunaClientRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ModifyLunaClientResponse> ModifyLunaClientAsync(ModifyLunaClientRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ModifyLunaClientRequestMarshaller();
             var unmarshaller = ModifyLunaClientResponseUnmarshaller.Instance;
@@ -1778,7 +1778,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
-        public RemoveTagsFromResourceResponse RemoveTagsFromResource(RemoveTagsFromResourceRequest request)
+        public virtual RemoveTagsFromResourceResponse RemoveTagsFromResource(RemoveTagsFromResourceRequest request)
         {
             var marshaller = new RemoveTagsFromResourceRequestMarshaller();
             var unmarshaller = RemoveTagsFromResourceResponseUnmarshaller.Instance;
@@ -1796,7 +1796,7 @@ namespace Amazon.CloudHSM
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
-        public Task<RemoveTagsFromResourceResponse> RemoveTagsFromResourceAsync(RemoveTagsFromResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<RemoveTagsFromResourceResponse> RemoveTagsFromResourceAsync(RemoveTagsFromResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RemoveTagsFromResourceRequestMarshaller();
             var unmarshaller = RemoveTagsFromResourceResponseUnmarshaller.Instance;

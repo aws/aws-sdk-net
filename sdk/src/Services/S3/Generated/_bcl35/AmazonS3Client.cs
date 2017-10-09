@@ -253,7 +253,7 @@ namespace Amazon.S3
         /// <param name="uploadId">A property of AbortMultipartUploadRequest used to execute the AbortMultipartUpload service method.</param>
         /// 
         /// <returns>The response from the AbortMultipartUpload service method, as returned by S3.</returns>
-        public AbortMultipartUploadResponse AbortMultipartUpload(string bucketName, string key, string uploadId)
+        public virtual AbortMultipartUploadResponse AbortMultipartUpload(string bucketName, string key, string uploadId)
         {
             var request = new AbortMultipartUploadRequest();
             request.BucketName = bucketName;
@@ -275,7 +275,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the AbortMultipartUpload service method.</param>
         /// 
         /// <returns>The response from the AbortMultipartUpload service method, as returned by S3.</returns>
-        public AbortMultipartUploadResponse AbortMultipartUpload(AbortMultipartUploadRequest request)
+        public virtual AbortMultipartUploadResponse AbortMultipartUpload(AbortMultipartUploadRequest request)
         {
             var marshaller = new AbortMultipartUploadRequestMarshaller();
             var unmarshaller = AbortMultipartUploadResponseUnmarshaller.Instance;
@@ -294,7 +294,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAbortMultipartUpload
         ///         operation.</returns>
-        public IAsyncResult BeginAbortMultipartUpload(AbortMultipartUploadRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginAbortMultipartUpload(AbortMultipartUploadRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AbortMultipartUploadRequestMarshaller();
             var unmarshaller = AbortMultipartUploadResponseUnmarshaller.Instance;
@@ -310,7 +310,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAbortMultipartUpload.</param>
         /// 
         /// <returns>Returns a  AbortMultipartUploadResult from S3.</returns>
-        public  AbortMultipartUploadResponse EndAbortMultipartUpload(IAsyncResult asyncResult)
+        public virtual AbortMultipartUploadResponse EndAbortMultipartUpload(IAsyncResult asyncResult)
         {
             return EndInvoke<AbortMultipartUploadResponse>(asyncResult);
         }
@@ -325,7 +325,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the CompleteMultipartUpload service method.</param>
         /// 
         /// <returns>The response from the CompleteMultipartUpload service method, as returned by S3.</returns>
-        public CompleteMultipartUploadResponse CompleteMultipartUpload(CompleteMultipartUploadRequest request)
+        public virtual CompleteMultipartUploadResponse CompleteMultipartUpload(CompleteMultipartUploadRequest request)
         {
             var marshaller = new CompleteMultipartUploadRequestMarshaller();
             var unmarshaller = CompleteMultipartUploadResponseUnmarshaller.Instance;
@@ -344,7 +344,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCompleteMultipartUpload
         ///         operation.</returns>
-        public IAsyncResult BeginCompleteMultipartUpload(CompleteMultipartUploadRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCompleteMultipartUpload(CompleteMultipartUploadRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CompleteMultipartUploadRequestMarshaller();
             var unmarshaller = CompleteMultipartUploadResponseUnmarshaller.Instance;
@@ -360,7 +360,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCompleteMultipartUpload.</param>
         /// 
         /// <returns>Returns a  CompleteMultipartUploadResult from S3.</returns>
-        public  CompleteMultipartUploadResponse EndCompleteMultipartUpload(IAsyncResult asyncResult)
+        public virtual CompleteMultipartUploadResponse EndCompleteMultipartUpload(IAsyncResult asyncResult)
         {
             return EndInvoke<CompleteMultipartUploadResponse>(asyncResult);
         }
@@ -378,7 +378,7 @@ namespace Amazon.S3
         /// <param name="destinationKey">A property of CopyObjectRequest used to execute the CopyObject service method.</param>
         /// 
         /// <returns>The response from the CopyObject service method, as returned by S3.</returns>
-        public CopyObjectResponse CopyObject(string sourceBucket, string sourceKey, string destinationBucket, string destinationKey)
+        public virtual CopyObjectResponse CopyObject(string sourceBucket, string sourceKey, string destinationBucket, string destinationKey)
         {
             var request = new CopyObjectRequest();
             request.SourceBucket = sourceBucket;
@@ -399,7 +399,7 @@ namespace Amazon.S3
         /// <param name="destinationKey">A property of CopyObjectRequest used to execute the CopyObject service method.</param>
         /// 
         /// <returns>The response from the CopyObject service method, as returned by S3.</returns>
-        public CopyObjectResponse CopyObject(string sourceBucket, string sourceKey, string sourceVersionId, string destinationBucket, string destinationKey)
+        public virtual CopyObjectResponse CopyObject(string sourceBucket, string sourceKey, string sourceVersionId, string destinationBucket, string destinationKey)
         {
             var request = new CopyObjectRequest();
             request.SourceBucket = sourceBucket;
@@ -417,7 +417,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the CopyObject service method.</param>
         /// 
         /// <returns>The response from the CopyObject service method, as returned by S3.</returns>
-        public CopyObjectResponse CopyObject(CopyObjectRequest request)
+        public virtual CopyObjectResponse CopyObject(CopyObjectRequest request)
         {
             var marshaller = new CopyObjectRequestMarshaller();
             var unmarshaller = CopyObjectResponseUnmarshaller.Instance;
@@ -436,7 +436,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCopyObject
         ///         operation.</returns>
-        public IAsyncResult BeginCopyObject(CopyObjectRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCopyObject(CopyObjectRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CopyObjectRequestMarshaller();
             var unmarshaller = CopyObjectResponseUnmarshaller.Instance;
@@ -452,7 +452,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCopyObject.</param>
         /// 
         /// <returns>Returns a  CopyObjectResult from S3.</returns>
-        public  CopyObjectResponse EndCopyObject(IAsyncResult asyncResult)
+        public virtual CopyObjectResponse EndCopyObject(IAsyncResult asyncResult)
         {
             return EndInvoke<CopyObjectResponse>(asyncResult);
         }
@@ -471,7 +471,7 @@ namespace Amazon.S3
         /// <param name="uploadId">Upload ID identifying the multipart upload whose part is being copied.</param>
         /// 
         /// <returns>The response from the CopyPart service method, as returned by S3.</returns>
-        public CopyPartResponse CopyPart(string sourceBucket, string sourceKey, string destinationBucket, string destinationKey, string uploadId)
+        public virtual CopyPartResponse CopyPart(string sourceBucket, string sourceKey, string destinationBucket, string destinationKey, string uploadId)
         {
             var request = new CopyPartRequest();
             request.SourceBucket = sourceBucket;
@@ -494,7 +494,7 @@ namespace Amazon.S3
         /// <param name="uploadId">Upload ID identifying the multipart upload whose part is being copied.</param>
         /// 
         /// <returns>The response from the CopyPart service method, as returned by S3.</returns>
-        public CopyPartResponse CopyPart(string sourceBucket, string sourceKey, string sourceVersionId, string destinationBucket, string destinationKey, string uploadId)
+        public virtual CopyPartResponse CopyPart(string sourceBucket, string sourceKey, string sourceVersionId, string destinationBucket, string destinationKey, string uploadId)
         {
             var request = new CopyPartRequest();
             request.SourceBucket = sourceBucket;
@@ -513,7 +513,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the CopyPart service method.</param>
         /// 
         /// <returns>The response from the CopyPart service method, as returned by S3.</returns>
-        public CopyPartResponse CopyPart(CopyPartRequest request)
+        public virtual CopyPartResponse CopyPart(CopyPartRequest request)
         {
             var marshaller = new CopyPartRequestMarshaller();
             var unmarshaller = CopyPartResponseUnmarshaller.Instance;
@@ -532,7 +532,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCopyPart
         ///         operation.</returns>
-        public IAsyncResult BeginCopyPart(CopyPartRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCopyPart(CopyPartRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CopyPartRequestMarshaller();
             var unmarshaller = CopyPartResponseUnmarshaller.Instance;
@@ -548,7 +548,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCopyPart.</param>
         /// 
         /// <returns>Returns a  CopyPartResult from S3.</returns>
-        public  CopyPartResponse EndCopyPart(IAsyncResult asyncResult)
+        public virtual CopyPartResponse EndCopyPart(IAsyncResult asyncResult)
         {
             return EndInvoke<CopyPartResponse>(asyncResult);
         }
@@ -564,7 +564,7 @@ namespace Amazon.S3
         /// <param name="bucketName">A property of DeleteBucketRequest used to execute the DeleteBucket service method.</param>
         /// 
         /// <returns>The response from the DeleteBucket service method, as returned by S3.</returns>
-        public DeleteBucketResponse DeleteBucket(string bucketName)
+        public virtual DeleteBucketResponse DeleteBucket(string bucketName)
         {
             var request = new DeleteBucketRequest();
             request.BucketName = bucketName;
@@ -579,7 +579,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucket service method.</param>
         /// 
         /// <returns>The response from the DeleteBucket service method, as returned by S3.</returns>
-        public DeleteBucketResponse DeleteBucket(DeleteBucketRequest request)
+        public virtual DeleteBucketResponse DeleteBucket(DeleteBucketRequest request)
         {
             var marshaller = new DeleteBucketRequestMarshaller();
             var unmarshaller = DeleteBucketResponseUnmarshaller.Instance;
@@ -598,7 +598,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBucket
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteBucket(DeleteBucketRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteBucket(DeleteBucketRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteBucketRequestMarshaller();
             var unmarshaller = DeleteBucketResponseUnmarshaller.Instance;
@@ -614,7 +614,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBucket.</param>
         /// 
         /// <returns>Returns a  DeleteBucketResult from S3.</returns>
-        public  DeleteBucketResponse EndDeleteBucket(IAsyncResult asyncResult)
+        public virtual DeleteBucketResponse EndDeleteBucket(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteBucketResponse>(asyncResult);
         }
@@ -630,7 +630,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketAnalyticsConfiguration service method.</param>
         /// 
         /// <returns>The response from the DeleteBucketAnalyticsConfiguration service method, as returned by S3.</returns>
-        public DeleteBucketAnalyticsConfigurationResponse DeleteBucketAnalyticsConfiguration(DeleteBucketAnalyticsConfigurationRequest request)
+        public virtual DeleteBucketAnalyticsConfigurationResponse DeleteBucketAnalyticsConfiguration(DeleteBucketAnalyticsConfigurationRequest request)
         {
             var marshaller = new DeleteBucketAnalyticsConfigurationRequestMarshaller();
             var unmarshaller = DeleteBucketAnalyticsConfigurationResponseUnmarshaller.Instance;
@@ -649,7 +649,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBucketAnalyticsConfiguration
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteBucketAnalyticsConfiguration(DeleteBucketAnalyticsConfigurationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteBucketAnalyticsConfiguration(DeleteBucketAnalyticsConfigurationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteBucketAnalyticsConfigurationRequestMarshaller();
             var unmarshaller = DeleteBucketAnalyticsConfigurationResponseUnmarshaller.Instance;
@@ -665,7 +665,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBucketAnalyticsConfiguration.</param>
         /// 
         /// <returns>Returns a  DeleteBucketAnalyticsConfigurationResult from S3.</returns>
-        public  DeleteBucketAnalyticsConfigurationResponse EndDeleteBucketAnalyticsConfiguration(IAsyncResult asyncResult)
+        public virtual DeleteBucketAnalyticsConfigurationResponse EndDeleteBucketAnalyticsConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteBucketAnalyticsConfigurationResponse>(asyncResult);
         }
@@ -680,7 +680,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketInventoryConfiguration service method.</param>
         /// 
         /// <returns>The response from the DeleteBucketInventoryConfiguration service method, as returned by S3.</returns>
-        public DeleteBucketInventoryConfigurationResponse DeleteBucketInventoryConfiguration(DeleteBucketInventoryConfigurationRequest request)
+        public virtual DeleteBucketInventoryConfigurationResponse DeleteBucketInventoryConfiguration(DeleteBucketInventoryConfigurationRequest request)
         {
             var marshaller = new DeleteBucketInventoryConfigurationRequestMarshaller();
             var unmarshaller = DeleteBucketInventoryConfigurationResponseUnmarshaller.Instance;
@@ -699,7 +699,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBucketInventoryConfiguration
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteBucketInventoryConfiguration(DeleteBucketInventoryConfigurationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteBucketInventoryConfiguration(DeleteBucketInventoryConfigurationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteBucketInventoryConfigurationRequestMarshaller();
             var unmarshaller = DeleteBucketInventoryConfigurationResponseUnmarshaller.Instance;
@@ -715,7 +715,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBucketInventoryConfiguration.</param>
         /// 
         /// <returns>Returns a  DeleteBucketInventoryConfigurationResult from S3.</returns>
-        public  DeleteBucketInventoryConfigurationResponse EndDeleteBucketInventoryConfiguration(IAsyncResult asyncResult)
+        public virtual DeleteBucketInventoryConfigurationResponse EndDeleteBucketInventoryConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteBucketInventoryConfigurationResponse>(asyncResult);
         }
@@ -731,7 +731,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketMetricsConfiguration service method.</param>
         /// 
         /// <returns>The response from the DeleteBucketMetricsConfiguration service method, as returned by S3.</returns>
-        public DeleteBucketMetricsConfigurationResponse DeleteBucketMetricsConfiguration(DeleteBucketMetricsConfigurationRequest request)
+        public virtual DeleteBucketMetricsConfigurationResponse DeleteBucketMetricsConfiguration(DeleteBucketMetricsConfigurationRequest request)
         {
             var marshaller = new DeleteBucketMetricsConfigurationRequestMarshaller();
             var unmarshaller = DeleteBucketMetricsConfigurationResponseUnmarshaller.Instance;
@@ -750,7 +750,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBucketMetricsConfiguration
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteBucketMetricsConfiguration(DeleteBucketMetricsConfigurationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteBucketMetricsConfiguration(DeleteBucketMetricsConfigurationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteBucketMetricsConfigurationRequestMarshaller();
             var unmarshaller = DeleteBucketMetricsConfigurationResponseUnmarshaller.Instance;
@@ -766,7 +766,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBucketMetricsConfiguration.</param>
         /// 
         /// <returns>Returns a  DeleteBucketMetricsConfigurationResult from S3.</returns>
-        public  DeleteBucketMetricsConfigurationResponse EndDeleteBucketMetricsConfiguration(IAsyncResult asyncResult)
+        public virtual DeleteBucketMetricsConfigurationResponse EndDeleteBucketMetricsConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteBucketMetricsConfigurationResponse>(asyncResult);
         }
@@ -781,7 +781,7 @@ namespace Amazon.S3
         /// <param name="bucketName">A property of DeleteBucketPolicyRequest used to execute the DeleteBucketPolicy service method.</param>
         /// 
         /// <returns>The response from the DeleteBucketPolicy service method, as returned by S3.</returns>
-        public DeleteBucketPolicyResponse DeleteBucketPolicy(string bucketName)
+        public virtual DeleteBucketPolicyResponse DeleteBucketPolicy(string bucketName)
         {
             var request = new DeleteBucketPolicyRequest();
             request.BucketName = bucketName;
@@ -795,7 +795,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketPolicy service method.</param>
         /// 
         /// <returns>The response from the DeleteBucketPolicy service method, as returned by S3.</returns>
-        public DeleteBucketPolicyResponse DeleteBucketPolicy(DeleteBucketPolicyRequest request)
+        public virtual DeleteBucketPolicyResponse DeleteBucketPolicy(DeleteBucketPolicyRequest request)
         {
             var marshaller = new DeleteBucketPolicyRequestMarshaller();
             var unmarshaller = DeleteBucketPolicyResponseUnmarshaller.Instance;
@@ -814,7 +814,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBucketPolicy
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteBucketPolicy(DeleteBucketPolicyRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteBucketPolicy(DeleteBucketPolicyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteBucketPolicyRequestMarshaller();
             var unmarshaller = DeleteBucketPolicyResponseUnmarshaller.Instance;
@@ -830,7 +830,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBucketPolicy.</param>
         /// 
         /// <returns>Returns a  DeleteBucketPolicyResult from S3.</returns>
-        public  DeleteBucketPolicyResponse EndDeleteBucketPolicy(IAsyncResult asyncResult)
+        public virtual DeleteBucketPolicyResponse EndDeleteBucketPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteBucketPolicyResponse>(asyncResult);
         }
@@ -845,7 +845,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketReplication service method.</param>
         /// 
         /// <returns>The response from the DeleteBucketReplication service method, as returned by S3.</returns>
-        public DeleteBucketReplicationResponse DeleteBucketReplication(DeleteBucketReplicationRequest request)
+        public virtual DeleteBucketReplicationResponse DeleteBucketReplication(DeleteBucketReplicationRequest request)
         {
             var marshaller = new DeleteBucketReplicationRequestMarshaller();
             var unmarshaller = DeleteBucketReplicationResponseUnmarshaller.Instance;
@@ -864,7 +864,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBucketReplication
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteBucketReplication(DeleteBucketReplicationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteBucketReplication(DeleteBucketReplicationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteBucketReplicationRequestMarshaller();
             var unmarshaller = DeleteBucketReplicationResponseUnmarshaller.Instance;
@@ -880,7 +880,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBucketReplication.</param>
         /// 
         /// <returns>Returns a  DeleteBucketReplicationResult from S3.</returns>
-        public  DeleteBucketReplicationResponse EndDeleteBucketReplication(IAsyncResult asyncResult)
+        public virtual DeleteBucketReplicationResponse EndDeleteBucketReplication(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteBucketReplicationResponse>(asyncResult);
         }
@@ -895,7 +895,7 @@ namespace Amazon.S3
         /// <param name="bucketName">A property of DeleteBucketTaggingRequest used to execute the DeleteBucketTagging service method.</param>
         /// 
         /// <returns>The response from the DeleteBucketTagging service method, as returned by S3.</returns>
-        public DeleteBucketTaggingResponse DeleteBucketTagging(string bucketName)
+        public virtual DeleteBucketTaggingResponse DeleteBucketTagging(string bucketName)
         {
             var request = new DeleteBucketTaggingRequest();
             request.BucketName = bucketName;
@@ -909,7 +909,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketTagging service method.</param>
         /// 
         /// <returns>The response from the DeleteBucketTagging service method, as returned by S3.</returns>
-        public DeleteBucketTaggingResponse DeleteBucketTagging(DeleteBucketTaggingRequest request)
+        public virtual DeleteBucketTaggingResponse DeleteBucketTagging(DeleteBucketTaggingRequest request)
         {
             var marshaller = new DeleteBucketTaggingRequestMarshaller();
             var unmarshaller = DeleteBucketTaggingResponseUnmarshaller.Instance;
@@ -928,7 +928,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBucketTagging
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteBucketTagging(DeleteBucketTaggingRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteBucketTagging(DeleteBucketTaggingRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteBucketTaggingRequestMarshaller();
             var unmarshaller = DeleteBucketTaggingResponseUnmarshaller.Instance;
@@ -944,7 +944,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBucketTagging.</param>
         /// 
         /// <returns>Returns a  DeleteBucketTaggingResult from S3.</returns>
-        public  DeleteBucketTaggingResponse EndDeleteBucketTagging(IAsyncResult asyncResult)
+        public virtual DeleteBucketTaggingResponse EndDeleteBucketTagging(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteBucketTaggingResponse>(asyncResult);
         }
@@ -959,7 +959,7 @@ namespace Amazon.S3
         /// <param name="bucketName">A property of DeleteBucketWebsiteRequest used to execute the DeleteBucketWebsite service method.</param>
         /// 
         /// <returns>The response from the DeleteBucketWebsite service method, as returned by S3.</returns>
-        public DeleteBucketWebsiteResponse DeleteBucketWebsite(string bucketName)
+        public virtual DeleteBucketWebsiteResponse DeleteBucketWebsite(string bucketName)
         {
             var request = new DeleteBucketWebsiteRequest();
             request.BucketName = bucketName;
@@ -973,7 +973,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketWebsite service method.</param>
         /// 
         /// <returns>The response from the DeleteBucketWebsite service method, as returned by S3.</returns>
-        public DeleteBucketWebsiteResponse DeleteBucketWebsite(DeleteBucketWebsiteRequest request)
+        public virtual DeleteBucketWebsiteResponse DeleteBucketWebsite(DeleteBucketWebsiteRequest request)
         {
             var marshaller = new DeleteBucketWebsiteRequestMarshaller();
             var unmarshaller = DeleteBucketWebsiteResponseUnmarshaller.Instance;
@@ -992,7 +992,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBucketWebsite
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteBucketWebsite(DeleteBucketWebsiteRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteBucketWebsite(DeleteBucketWebsiteRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteBucketWebsiteRequestMarshaller();
             var unmarshaller = DeleteBucketWebsiteResponseUnmarshaller.Instance;
@@ -1008,7 +1008,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBucketWebsite.</param>
         /// 
         /// <returns>Returns a  DeleteBucketWebsiteResult from S3.</returns>
-        public  DeleteBucketWebsiteResponse EndDeleteBucketWebsite(IAsyncResult asyncResult)
+        public virtual DeleteBucketWebsiteResponse EndDeleteBucketWebsite(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteBucketWebsiteResponse>(asyncResult);
         }
@@ -1023,7 +1023,7 @@ namespace Amazon.S3
         /// <param name="bucketName">A property of DeleteCORSConfigurationRequest used to execute the DeleteCORSConfiguration service method.</param>
         /// 
         /// <returns>The response from the DeleteCORSConfiguration service method, as returned by S3.</returns>
-        public DeleteCORSConfigurationResponse DeleteCORSConfiguration(string bucketName)
+        public virtual DeleteCORSConfigurationResponse DeleteCORSConfiguration(string bucketName)
         {
             var request = new DeleteCORSConfigurationRequest();
             request.BucketName = bucketName;
@@ -1037,7 +1037,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the DeleteCORSConfiguration service method.</param>
         /// 
         /// <returns>The response from the DeleteCORSConfiguration service method, as returned by S3.</returns>
-        public DeleteCORSConfigurationResponse DeleteCORSConfiguration(DeleteCORSConfigurationRequest request)
+        public virtual DeleteCORSConfigurationResponse DeleteCORSConfiguration(DeleteCORSConfigurationRequest request)
         {
             var marshaller = new DeleteCORSConfigurationRequestMarshaller();
             var unmarshaller = DeleteCORSConfigurationResponseUnmarshaller.Instance;
@@ -1056,7 +1056,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCORSConfiguration
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteCORSConfiguration(DeleteCORSConfigurationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteCORSConfiguration(DeleteCORSConfigurationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteCORSConfigurationRequestMarshaller();
             var unmarshaller = DeleteCORSConfigurationResponseUnmarshaller.Instance;
@@ -1072,7 +1072,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteCORSConfiguration.</param>
         /// 
         /// <returns>Returns a  DeleteCORSConfigurationResult from S3.</returns>
-        public  DeleteCORSConfigurationResponse EndDeleteCORSConfiguration(IAsyncResult asyncResult)
+        public virtual DeleteCORSConfigurationResponse EndDeleteCORSConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteCORSConfigurationResponse>(asyncResult);
         }
@@ -1087,7 +1087,7 @@ namespace Amazon.S3
         /// <param name="bucketName">A property of DeleteLifecycleConfigurationRequest used to execute the DeleteLifecycleConfiguration service method.</param>
         /// 
         /// <returns>The response from the DeleteLifecycleConfiguration service method, as returned by S3.</returns>
-        public DeleteLifecycleConfigurationResponse DeleteLifecycleConfiguration(string bucketName)
+        public virtual DeleteLifecycleConfigurationResponse DeleteLifecycleConfiguration(string bucketName)
         {
             var request = new DeleteLifecycleConfigurationRequest();
             request.BucketName = bucketName;
@@ -1101,7 +1101,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the DeleteLifecycleConfiguration service method.</param>
         /// 
         /// <returns>The response from the DeleteLifecycleConfiguration service method, as returned by S3.</returns>
-        public DeleteLifecycleConfigurationResponse DeleteLifecycleConfiguration(DeleteLifecycleConfigurationRequest request)
+        public virtual DeleteLifecycleConfigurationResponse DeleteLifecycleConfiguration(DeleteLifecycleConfigurationRequest request)
         {
             var marshaller = new DeleteLifecycleConfigurationRequestMarshaller();
             var unmarshaller = DeleteLifecycleConfigurationResponseUnmarshaller.Instance;
@@ -1120,7 +1120,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteLifecycleConfiguration
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteLifecycleConfiguration(DeleteLifecycleConfigurationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteLifecycleConfiguration(DeleteLifecycleConfigurationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteLifecycleConfigurationRequestMarshaller();
             var unmarshaller = DeleteLifecycleConfigurationResponseUnmarshaller.Instance;
@@ -1136,7 +1136,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteLifecycleConfiguration.</param>
         /// 
         /// <returns>Returns a  DeleteLifecycleConfigurationResult from S3.</returns>
-        public  DeleteLifecycleConfigurationResponse EndDeleteLifecycleConfiguration(IAsyncResult asyncResult)
+        public virtual DeleteLifecycleConfigurationResponse EndDeleteLifecycleConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteLifecycleConfigurationResponse>(asyncResult);
         }
@@ -1154,7 +1154,7 @@ namespace Amazon.S3
         /// <param name="key">A property of DeleteObjectRequest used to execute the DeleteObject service method.</param>
         /// 
         /// <returns>The response from the DeleteObject service method, as returned by S3.</returns>
-        public DeleteObjectResponse DeleteObject(string bucketName, string key)
+        public virtual DeleteObjectResponse DeleteObject(string bucketName, string key)
         {
             var request = new DeleteObjectRequest();
             request.BucketName = bucketName;
@@ -1173,7 +1173,7 @@ namespace Amazon.S3
         /// <param name="versionId">VersionId used to reference a specific version of the object.</param>
         /// 
         /// <returns>The response from the DeleteObject service method, as returned by S3.</returns>
-        public DeleteObjectResponse DeleteObject(string bucketName, string key, string versionId)
+        public virtual DeleteObjectResponse DeleteObject(string bucketName, string key, string versionId)
         {
             var request = new DeleteObjectRequest();
             request.BucketName = bucketName;
@@ -1191,7 +1191,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the DeleteObject service method.</param>
         /// 
         /// <returns>The response from the DeleteObject service method, as returned by S3.</returns>
-        public DeleteObjectResponse DeleteObject(DeleteObjectRequest request)
+        public virtual DeleteObjectResponse DeleteObject(DeleteObjectRequest request)
         {
             var marshaller = new DeleteObjectRequestMarshaller();
             var unmarshaller = DeleteObjectResponseUnmarshaller.Instance;
@@ -1210,7 +1210,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteObject
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteObject(DeleteObjectRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteObject(DeleteObjectRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteObjectRequestMarshaller();
             var unmarshaller = DeleteObjectResponseUnmarshaller.Instance;
@@ -1226,7 +1226,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteObject.</param>
         /// 
         /// <returns>Returns a  DeleteObjectResult from S3.</returns>
-        public  DeleteObjectResponse EndDeleteObject(IAsyncResult asyncResult)
+        public virtual DeleteObjectResponse EndDeleteObject(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteObjectResponse>(asyncResult);
         }
@@ -1242,7 +1242,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the DeleteObjects service method.</param>
         /// 
         /// <returns>The response from the DeleteObjects service method, as returned by S3.</returns>
-        public DeleteObjectsResponse DeleteObjects(DeleteObjectsRequest request)
+        public virtual DeleteObjectsResponse DeleteObjects(DeleteObjectsRequest request)
         {
             var marshaller = new DeleteObjectsRequestMarshaller();
             var unmarshaller = DeleteObjectsResponseUnmarshaller.Instance;
@@ -1261,7 +1261,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteObjects
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteObjects(DeleteObjectsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteObjects(DeleteObjectsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteObjectsRequestMarshaller();
             var unmarshaller = DeleteObjectsResponseUnmarshaller.Instance;
@@ -1277,7 +1277,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteObjects.</param>
         /// 
         /// <returns>Returns a  DeleteObjectsResult from S3.</returns>
-        public  DeleteObjectsResponse EndDeleteObjects(IAsyncResult asyncResult)
+        public virtual DeleteObjectsResponse EndDeleteObjects(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteObjectsResponse>(asyncResult);
         }
@@ -1292,7 +1292,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the DeleteObjectTagging service method.</param>
         /// 
         /// <returns>The response from the DeleteObjectTagging service method, as returned by S3.</returns>
-        public DeleteObjectTaggingResponse DeleteObjectTagging(DeleteObjectTaggingRequest request)
+        public virtual DeleteObjectTaggingResponse DeleteObjectTagging(DeleteObjectTaggingRequest request)
         {
             var marshaller = new DeleteObjectTaggingRequestMarshaller();
             var unmarshaller = DeleteObjectTaggingResponseUnmarshaller.Instance;
@@ -1311,7 +1311,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteObjectTagging
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteObjectTagging(DeleteObjectTaggingRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteObjectTagging(DeleteObjectTaggingRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteObjectTaggingRequestMarshaller();
             var unmarshaller = DeleteObjectTaggingResponseUnmarshaller.Instance;
@@ -1327,7 +1327,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteObjectTagging.</param>
         /// 
         /// <returns>Returns a  DeleteObjectTaggingResult from S3.</returns>
-        public  DeleteObjectTaggingResponse EndDeleteObjectTagging(IAsyncResult asyncResult)
+        public virtual DeleteObjectTaggingResponse EndDeleteObjectTagging(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteObjectTaggingResponse>(asyncResult);
         }
@@ -1342,7 +1342,7 @@ namespace Amazon.S3
         /// <param name="bucketName">A property of GetACLRequest used to execute the GetACL service method.</param>
         /// 
         /// <returns>The response from the GetACL service method, as returned by S3.</returns>
-        public GetACLResponse GetACL(string bucketName)
+        public virtual GetACLResponse GetACL(string bucketName)
         {
             var request = new GetACLRequest();
             request.BucketName = bucketName;
@@ -1356,7 +1356,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetACL service method.</param>
         /// 
         /// <returns>The response from the GetACL service method, as returned by S3.</returns>
-        public GetACLResponse GetACL(GetACLRequest request)
+        public virtual GetACLResponse GetACL(GetACLRequest request)
         {
             var marshaller = new GetACLRequestMarshaller();
             var unmarshaller = GetACLResponseUnmarshaller.Instance;
@@ -1375,7 +1375,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetACL
         ///         operation.</returns>
-        public IAsyncResult BeginGetACL(GetACLRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetACL(GetACLRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetACLRequestMarshaller();
             var unmarshaller = GetACLResponseUnmarshaller.Instance;
@@ -1391,7 +1391,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetACL.</param>
         /// 
         /// <returns>Returns a  GetACLResult from S3.</returns>
-        public  GetACLResponse EndGetACL(IAsyncResult asyncResult)
+        public virtual GetACLResponse EndGetACL(IAsyncResult asyncResult)
         {
             return EndInvoke<GetACLResponse>(asyncResult);
         }
@@ -1406,7 +1406,7 @@ namespace Amazon.S3
         /// <param name="bucketName">Name of the bucket for which the accelerate configuration is retrieved.</param>
         /// 
         /// <returns>The response from the GetBucketAccelerateConfiguration service method, as returned by S3.</returns>
-        public GetBucketAccelerateConfigurationResponse GetBucketAccelerateConfiguration(string bucketName)
+        public virtual GetBucketAccelerateConfigurationResponse GetBucketAccelerateConfiguration(string bucketName)
         {
             var request = new GetBucketAccelerateConfigurationRequest();
             request.BucketName = bucketName;
@@ -1420,7 +1420,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetBucketAccelerateConfiguration service method.</param>
         /// 
         /// <returns>The response from the GetBucketAccelerateConfiguration service method, as returned by S3.</returns>
-        public GetBucketAccelerateConfigurationResponse GetBucketAccelerateConfiguration(GetBucketAccelerateConfigurationRequest request)
+        public virtual GetBucketAccelerateConfigurationResponse GetBucketAccelerateConfiguration(GetBucketAccelerateConfigurationRequest request)
         {
             var marshaller = new GetBucketAccelerateConfigurationRequestMarshaller();
             var unmarshaller = GetBucketAccelerateConfigurationResponseUnmarshaller.Instance;
@@ -1439,7 +1439,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketAccelerateConfiguration
         ///         operation.</returns>
-        public IAsyncResult BeginGetBucketAccelerateConfiguration(GetBucketAccelerateConfigurationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetBucketAccelerateConfiguration(GetBucketAccelerateConfigurationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetBucketAccelerateConfigurationRequestMarshaller();
             var unmarshaller = GetBucketAccelerateConfigurationResponseUnmarshaller.Instance;
@@ -1455,7 +1455,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketAccelerateConfiguration.</param>
         /// 
         /// <returns>Returns a  GetBucketAccelerateConfigurationResult from S3.</returns>
-        public  GetBucketAccelerateConfigurationResponse EndGetBucketAccelerateConfiguration(IAsyncResult asyncResult)
+        public virtual GetBucketAccelerateConfigurationResponse EndGetBucketAccelerateConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<GetBucketAccelerateConfigurationResponse>(asyncResult);
         }
@@ -1471,7 +1471,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetBucketAnalyticsConfiguration service method.</param>
         /// 
         /// <returns>The response from the GetBucketAnalyticsConfiguration service method, as returned by S3.</returns>
-        public GetBucketAnalyticsConfigurationResponse GetBucketAnalyticsConfiguration(GetBucketAnalyticsConfigurationRequest request)
+        public virtual GetBucketAnalyticsConfigurationResponse GetBucketAnalyticsConfiguration(GetBucketAnalyticsConfigurationRequest request)
         {
             var marshaller = new GetBucketAnalyticsConfigurationRequestMarshaller();
             var unmarshaller = GetBucketAnalyticsConfigurationResponseUnmarshaller.Instance;
@@ -1490,7 +1490,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketAnalyticsConfiguration
         ///         operation.</returns>
-        public IAsyncResult BeginGetBucketAnalyticsConfiguration(GetBucketAnalyticsConfigurationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetBucketAnalyticsConfiguration(GetBucketAnalyticsConfigurationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetBucketAnalyticsConfigurationRequestMarshaller();
             var unmarshaller = GetBucketAnalyticsConfigurationResponseUnmarshaller.Instance;
@@ -1506,7 +1506,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketAnalyticsConfiguration.</param>
         /// 
         /// <returns>Returns a  GetBucketAnalyticsConfigurationResult from S3.</returns>
-        public  GetBucketAnalyticsConfigurationResponse EndGetBucketAnalyticsConfiguration(IAsyncResult asyncResult)
+        public virtual GetBucketAnalyticsConfigurationResponse EndGetBucketAnalyticsConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<GetBucketAnalyticsConfigurationResponse>(asyncResult);
         }
@@ -1521,7 +1521,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetBucketInventoryConfiguration service method.</param>
         /// 
         /// <returns>The response from the GetBucketInventoryConfiguration service method, as returned by S3.</returns>
-        public GetBucketInventoryConfigurationResponse GetBucketInventoryConfiguration(GetBucketInventoryConfigurationRequest request)
+        public virtual GetBucketInventoryConfigurationResponse GetBucketInventoryConfiguration(GetBucketInventoryConfigurationRequest request)
         {
             var marshaller = new GetBucketInventoryConfigurationRequestMarshaller();
             var unmarshaller = GetBucketInventoryConfigurationResponseUnmarshaller.Instance;
@@ -1540,7 +1540,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketInventoryConfiguration
         ///         operation.</returns>
-        public IAsyncResult BeginGetBucketInventoryConfiguration(GetBucketInventoryConfigurationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetBucketInventoryConfiguration(GetBucketInventoryConfigurationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetBucketInventoryConfigurationRequestMarshaller();
             var unmarshaller = GetBucketInventoryConfigurationResponseUnmarshaller.Instance;
@@ -1556,7 +1556,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketInventoryConfiguration.</param>
         /// 
         /// <returns>Returns a  GetBucketInventoryConfigurationResult from S3.</returns>
-        public  GetBucketInventoryConfigurationResponse EndGetBucketInventoryConfiguration(IAsyncResult asyncResult)
+        public virtual GetBucketInventoryConfigurationResponse EndGetBucketInventoryConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<GetBucketInventoryConfigurationResponse>(asyncResult);
         }
@@ -1571,7 +1571,7 @@ namespace Amazon.S3
         /// <param name="bucketName">A property of GetBucketLocationRequest used to execute the GetBucketLocation service method.</param>
         /// 
         /// <returns>The response from the GetBucketLocation service method, as returned by S3.</returns>
-        public GetBucketLocationResponse GetBucketLocation(string bucketName)
+        public virtual GetBucketLocationResponse GetBucketLocation(string bucketName)
         {
             var request = new GetBucketLocationRequest();
             request.BucketName = bucketName;
@@ -1585,7 +1585,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetBucketLocation service method.</param>
         /// 
         /// <returns>The response from the GetBucketLocation service method, as returned by S3.</returns>
-        public GetBucketLocationResponse GetBucketLocation(GetBucketLocationRequest request)
+        public virtual GetBucketLocationResponse GetBucketLocation(GetBucketLocationRequest request)
         {
             var marshaller = new GetBucketLocationRequestMarshaller();
             var unmarshaller = GetBucketLocationResponseUnmarshaller.Instance;
@@ -1604,7 +1604,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketLocation
         ///         operation.</returns>
-        public IAsyncResult BeginGetBucketLocation(GetBucketLocationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetBucketLocation(GetBucketLocationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetBucketLocationRequestMarshaller();
             var unmarshaller = GetBucketLocationResponseUnmarshaller.Instance;
@@ -1620,7 +1620,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketLocation.</param>
         /// 
         /// <returns>Returns a  GetBucketLocationResult from S3.</returns>
-        public  GetBucketLocationResponse EndGetBucketLocation(IAsyncResult asyncResult)
+        public virtual GetBucketLocationResponse EndGetBucketLocation(IAsyncResult asyncResult)
         {
             return EndInvoke<GetBucketLocationResponse>(asyncResult);
         }
@@ -1636,7 +1636,7 @@ namespace Amazon.S3
         /// <param name="bucketName">A property of GetBucketLoggingRequest used to execute the GetBucketLogging service method.</param>
         /// 
         /// <returns>The response from the GetBucketLogging service method, as returned by S3.</returns>
-        public GetBucketLoggingResponse GetBucketLogging(string bucketName)
+        public virtual GetBucketLoggingResponse GetBucketLogging(string bucketName)
         {
             var request = new GetBucketLoggingRequest();
             request.BucketName = bucketName;
@@ -1651,7 +1651,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetBucketLogging service method.</param>
         /// 
         /// <returns>The response from the GetBucketLogging service method, as returned by S3.</returns>
-        public GetBucketLoggingResponse GetBucketLogging(GetBucketLoggingRequest request)
+        public virtual GetBucketLoggingResponse GetBucketLogging(GetBucketLoggingRequest request)
         {
             var marshaller = new GetBucketLoggingRequestMarshaller();
             var unmarshaller = GetBucketLoggingResponseUnmarshaller.Instance;
@@ -1670,7 +1670,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketLogging
         ///         operation.</returns>
-        public IAsyncResult BeginGetBucketLogging(GetBucketLoggingRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetBucketLogging(GetBucketLoggingRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetBucketLoggingRequestMarshaller();
             var unmarshaller = GetBucketLoggingResponseUnmarshaller.Instance;
@@ -1686,7 +1686,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketLogging.</param>
         /// 
         /// <returns>Returns a  GetBucketLoggingResult from S3.</returns>
-        public  GetBucketLoggingResponse EndGetBucketLogging(IAsyncResult asyncResult)
+        public virtual GetBucketLoggingResponse EndGetBucketLogging(IAsyncResult asyncResult)
         {
             return EndInvoke<GetBucketLoggingResponse>(asyncResult);
         }
@@ -1702,7 +1702,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetBucketMetricsConfiguration service method.</param>
         /// 
         /// <returns>The response from the GetBucketMetricsConfiguration service method, as returned by S3.</returns>
-        public GetBucketMetricsConfigurationResponse GetBucketMetricsConfiguration(GetBucketMetricsConfigurationRequest request)
+        public virtual GetBucketMetricsConfigurationResponse GetBucketMetricsConfiguration(GetBucketMetricsConfigurationRequest request)
         {
             var marshaller = new GetBucketMetricsConfigurationRequestMarshaller();
             var unmarshaller = GetBucketMetricsConfigurationResponseUnmarshaller.Instance;
@@ -1721,7 +1721,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketMetricsConfiguration
         ///         operation.</returns>
-        public IAsyncResult BeginGetBucketMetricsConfiguration(GetBucketMetricsConfigurationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetBucketMetricsConfiguration(GetBucketMetricsConfigurationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetBucketMetricsConfigurationRequestMarshaller();
             var unmarshaller = GetBucketMetricsConfigurationResponseUnmarshaller.Instance;
@@ -1737,7 +1737,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketMetricsConfiguration.</param>
         /// 
         /// <returns>Returns a  GetBucketMetricsConfigurationResult from S3.</returns>
-        public  GetBucketMetricsConfigurationResponse EndGetBucketMetricsConfiguration(IAsyncResult asyncResult)
+        public virtual GetBucketMetricsConfigurationResponse EndGetBucketMetricsConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<GetBucketMetricsConfigurationResponse>(asyncResult);
         }
@@ -1752,7 +1752,7 @@ namespace Amazon.S3
         /// <param name="bucketName">Name of the bucket to get the notification configuration for.</param>
         /// 
         /// <returns>The response from the GetBucketNotification service method, as returned by S3.</returns>
-        public GetBucketNotificationResponse GetBucketNotification(string bucketName)
+        public virtual GetBucketNotificationResponse GetBucketNotification(string bucketName)
         {
             var request = new GetBucketNotificationRequest();
             request.BucketName = bucketName;
@@ -1766,7 +1766,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetBucketNotification service method.</param>
         /// 
         /// <returns>The response from the GetBucketNotification service method, as returned by S3.</returns>
-        public GetBucketNotificationResponse GetBucketNotification(GetBucketNotificationRequest request)
+        public virtual GetBucketNotificationResponse GetBucketNotification(GetBucketNotificationRequest request)
         {
             var marshaller = new GetBucketNotificationRequestMarshaller();
             var unmarshaller = GetBucketNotificationResponseUnmarshaller.Instance;
@@ -1785,7 +1785,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketNotification
         ///         operation.</returns>
-        public IAsyncResult BeginGetBucketNotification(GetBucketNotificationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetBucketNotification(GetBucketNotificationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetBucketNotificationRequestMarshaller();
             var unmarshaller = GetBucketNotificationResponseUnmarshaller.Instance;
@@ -1801,7 +1801,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketNotification.</param>
         /// 
         /// <returns>Returns a  GetBucketNotificationResult from S3.</returns>
-        public  GetBucketNotificationResponse EndGetBucketNotification(IAsyncResult asyncResult)
+        public virtual GetBucketNotificationResponse EndGetBucketNotification(IAsyncResult asyncResult)
         {
             return EndInvoke<GetBucketNotificationResponse>(asyncResult);
         }
@@ -1816,7 +1816,7 @@ namespace Amazon.S3
         /// <param name="bucketName">A property of GetBucketPolicyRequest used to execute the GetBucketPolicy service method.</param>
         /// 
         /// <returns>The response from the GetBucketPolicy service method, as returned by S3.</returns>
-        public GetBucketPolicyResponse GetBucketPolicy(string bucketName)
+        public virtual GetBucketPolicyResponse GetBucketPolicy(string bucketName)
         {
             var request = new GetBucketPolicyRequest();
             request.BucketName = bucketName;
@@ -1830,7 +1830,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetBucketPolicy service method.</param>
         /// 
         /// <returns>The response from the GetBucketPolicy service method, as returned by S3.</returns>
-        public GetBucketPolicyResponse GetBucketPolicy(GetBucketPolicyRequest request)
+        public virtual GetBucketPolicyResponse GetBucketPolicy(GetBucketPolicyRequest request)
         {
             var marshaller = new GetBucketPolicyRequestMarshaller();
             var unmarshaller = GetBucketPolicyResponseUnmarshaller.Instance;
@@ -1849,7 +1849,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketPolicy
         ///         operation.</returns>
-        public IAsyncResult BeginGetBucketPolicy(GetBucketPolicyRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetBucketPolicy(GetBucketPolicyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetBucketPolicyRequestMarshaller();
             var unmarshaller = GetBucketPolicyResponseUnmarshaller.Instance;
@@ -1865,7 +1865,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketPolicy.</param>
         /// 
         /// <returns>Returns a  GetBucketPolicyResult from S3.</returns>
-        public  GetBucketPolicyResponse EndGetBucketPolicy(IAsyncResult asyncResult)
+        public virtual GetBucketPolicyResponse EndGetBucketPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<GetBucketPolicyResponse>(asyncResult);
         }
@@ -1880,7 +1880,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetBucketReplication service method.</param>
         /// 
         /// <returns>The response from the GetBucketReplication service method, as returned by S3.</returns>
-        public GetBucketReplicationResponse GetBucketReplication(GetBucketReplicationRequest request)
+        public virtual GetBucketReplicationResponse GetBucketReplication(GetBucketReplicationRequest request)
         {
             var marshaller = new GetBucketReplicationRequestMarshaller();
             var unmarshaller = GetBucketReplicationResponseUnmarshaller.Instance;
@@ -1899,7 +1899,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketReplication
         ///         operation.</returns>
-        public IAsyncResult BeginGetBucketReplication(GetBucketReplicationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetBucketReplication(GetBucketReplicationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetBucketReplicationRequestMarshaller();
             var unmarshaller = GetBucketReplicationResponseUnmarshaller.Instance;
@@ -1915,7 +1915,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketReplication.</param>
         /// 
         /// <returns>Returns a  GetBucketReplicationResult from S3.</returns>
-        public  GetBucketReplicationResponse EndGetBucketReplication(IAsyncResult asyncResult)
+        public virtual GetBucketReplicationResponse EndGetBucketReplication(IAsyncResult asyncResult)
         {
             return EndInvoke<GetBucketReplicationResponse>(asyncResult);
         }
@@ -1930,7 +1930,7 @@ namespace Amazon.S3
         /// <param name="bucketName">A property of GetBucketRequestPaymentRequest used to execute the GetBucketRequestPayment service method.</param>
         /// 
         /// <returns>The response from the GetBucketRequestPayment service method, as returned by S3.</returns>
-        public GetBucketRequestPaymentResponse GetBucketRequestPayment(string bucketName)
+        public virtual GetBucketRequestPaymentResponse GetBucketRequestPayment(string bucketName)
         {
             var request = new GetBucketRequestPaymentRequest();
             request.BucketName = bucketName;
@@ -1944,7 +1944,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetBucketRequestPayment service method.</param>
         /// 
         /// <returns>The response from the GetBucketRequestPayment service method, as returned by S3.</returns>
-        public GetBucketRequestPaymentResponse GetBucketRequestPayment(GetBucketRequestPaymentRequest request)
+        public virtual GetBucketRequestPaymentResponse GetBucketRequestPayment(GetBucketRequestPaymentRequest request)
         {
             var marshaller = new GetBucketRequestPaymentRequestMarshaller();
             var unmarshaller = GetBucketRequestPaymentResponseUnmarshaller.Instance;
@@ -1963,7 +1963,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketRequestPayment
         ///         operation.</returns>
-        public IAsyncResult BeginGetBucketRequestPayment(GetBucketRequestPaymentRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetBucketRequestPayment(GetBucketRequestPaymentRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetBucketRequestPaymentRequestMarshaller();
             var unmarshaller = GetBucketRequestPaymentResponseUnmarshaller.Instance;
@@ -1979,7 +1979,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketRequestPayment.</param>
         /// 
         /// <returns>Returns a  GetBucketRequestPaymentResult from S3.</returns>
-        public  GetBucketRequestPaymentResponse EndGetBucketRequestPayment(IAsyncResult asyncResult)
+        public virtual GetBucketRequestPaymentResponse EndGetBucketRequestPayment(IAsyncResult asyncResult)
         {
             return EndInvoke<GetBucketRequestPaymentResponse>(asyncResult);
         }
@@ -1994,7 +1994,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetBucketTagging service method.</param>
         /// 
         /// <returns>The response from the GetBucketTagging service method, as returned by S3.</returns>
-        public GetBucketTaggingResponse GetBucketTagging(GetBucketTaggingRequest request)
+        public virtual GetBucketTaggingResponse GetBucketTagging(GetBucketTaggingRequest request)
         {
             var marshaller = new GetBucketTaggingRequestMarshaller();
             var unmarshaller = GetBucketTaggingResponseUnmarshaller.Instance;
@@ -2013,7 +2013,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketTagging
         ///         operation.</returns>
-        public IAsyncResult BeginGetBucketTagging(GetBucketTaggingRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetBucketTagging(GetBucketTaggingRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetBucketTaggingRequestMarshaller();
             var unmarshaller = GetBucketTaggingResponseUnmarshaller.Instance;
@@ -2029,7 +2029,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketTagging.</param>
         /// 
         /// <returns>Returns a  GetBucketTaggingResult from S3.</returns>
-        public  GetBucketTaggingResponse EndGetBucketTagging(IAsyncResult asyncResult)
+        public virtual GetBucketTaggingResponse EndGetBucketTagging(IAsyncResult asyncResult)
         {
             return EndInvoke<GetBucketTaggingResponse>(asyncResult);
         }
@@ -2044,7 +2044,7 @@ namespace Amazon.S3
         /// <param name="bucketName">A property of GetBucketVersioningRequest used to execute the GetBucketVersioning service method.</param>
         /// 
         /// <returns>The response from the GetBucketVersioning service method, as returned by S3.</returns>
-        public GetBucketVersioningResponse GetBucketVersioning(string bucketName)
+        public virtual GetBucketVersioningResponse GetBucketVersioning(string bucketName)
         {
             var request = new GetBucketVersioningRequest();
             request.BucketName = bucketName;
@@ -2058,7 +2058,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetBucketVersioning service method.</param>
         /// 
         /// <returns>The response from the GetBucketVersioning service method, as returned by S3.</returns>
-        public GetBucketVersioningResponse GetBucketVersioning(GetBucketVersioningRequest request)
+        public virtual GetBucketVersioningResponse GetBucketVersioning(GetBucketVersioningRequest request)
         {
             var marshaller = new GetBucketVersioningRequestMarshaller();
             var unmarshaller = GetBucketVersioningResponseUnmarshaller.Instance;
@@ -2077,7 +2077,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketVersioning
         ///         operation.</returns>
-        public IAsyncResult BeginGetBucketVersioning(GetBucketVersioningRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetBucketVersioning(GetBucketVersioningRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetBucketVersioningRequestMarshaller();
             var unmarshaller = GetBucketVersioningResponseUnmarshaller.Instance;
@@ -2093,7 +2093,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketVersioning.</param>
         /// 
         /// <returns>Returns a  GetBucketVersioningResult from S3.</returns>
-        public  GetBucketVersioningResponse EndGetBucketVersioning(IAsyncResult asyncResult)
+        public virtual GetBucketVersioningResponse EndGetBucketVersioning(IAsyncResult asyncResult)
         {
             return EndInvoke<GetBucketVersioningResponse>(asyncResult);
         }
@@ -2108,7 +2108,7 @@ namespace Amazon.S3
         /// <param name="bucketName">A property of GetBucketWebsiteRequest used to execute the GetBucketWebsite service method.</param>
         /// 
         /// <returns>The response from the GetBucketWebsite service method, as returned by S3.</returns>
-        public GetBucketWebsiteResponse GetBucketWebsite(string bucketName)
+        public virtual GetBucketWebsiteResponse GetBucketWebsite(string bucketName)
         {
             var request = new GetBucketWebsiteRequest();
             request.BucketName = bucketName;
@@ -2122,7 +2122,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetBucketWebsite service method.</param>
         /// 
         /// <returns>The response from the GetBucketWebsite service method, as returned by S3.</returns>
-        public GetBucketWebsiteResponse GetBucketWebsite(GetBucketWebsiteRequest request)
+        public virtual GetBucketWebsiteResponse GetBucketWebsite(GetBucketWebsiteRequest request)
         {
             var marshaller = new GetBucketWebsiteRequestMarshaller();
             var unmarshaller = GetBucketWebsiteResponseUnmarshaller.Instance;
@@ -2141,7 +2141,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketWebsite
         ///         operation.</returns>
-        public IAsyncResult BeginGetBucketWebsite(GetBucketWebsiteRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetBucketWebsite(GetBucketWebsiteRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetBucketWebsiteRequestMarshaller();
             var unmarshaller = GetBucketWebsiteResponseUnmarshaller.Instance;
@@ -2157,7 +2157,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketWebsite.</param>
         /// 
         /// <returns>Returns a  GetBucketWebsiteResult from S3.</returns>
-        public  GetBucketWebsiteResponse EndGetBucketWebsite(IAsyncResult asyncResult)
+        public virtual GetBucketWebsiteResponse EndGetBucketWebsite(IAsyncResult asyncResult)
         {
             return EndInvoke<GetBucketWebsiteResponse>(asyncResult);
         }
@@ -2172,7 +2172,7 @@ namespace Amazon.S3
         /// <param name="bucketName">A property of GetCORSConfigurationRequest used to execute the GetCORSConfiguration service method.</param>
         /// 
         /// <returns>The response from the GetCORSConfiguration service method, as returned by S3.</returns>
-        public GetCORSConfigurationResponse GetCORSConfiguration(string bucketName)
+        public virtual GetCORSConfigurationResponse GetCORSConfiguration(string bucketName)
         {
             var request = new GetCORSConfigurationRequest();
             request.BucketName = bucketName;
@@ -2186,7 +2186,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetCORSConfiguration service method.</param>
         /// 
         /// <returns>The response from the GetCORSConfiguration service method, as returned by S3.</returns>
-        public GetCORSConfigurationResponse GetCORSConfiguration(GetCORSConfigurationRequest request)
+        public virtual GetCORSConfigurationResponse GetCORSConfiguration(GetCORSConfigurationRequest request)
         {
             var marshaller = new GetCORSConfigurationRequestMarshaller();
             var unmarshaller = GetCORSConfigurationResponseUnmarshaller.Instance;
@@ -2205,7 +2205,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCORSConfiguration
         ///         operation.</returns>
-        public IAsyncResult BeginGetCORSConfiguration(GetCORSConfigurationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetCORSConfiguration(GetCORSConfigurationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetCORSConfigurationRequestMarshaller();
             var unmarshaller = GetCORSConfigurationResponseUnmarshaller.Instance;
@@ -2221,7 +2221,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCORSConfiguration.</param>
         /// 
         /// <returns>Returns a  GetCORSConfigurationResult from S3.</returns>
-        public  GetCORSConfigurationResponse EndGetCORSConfiguration(IAsyncResult asyncResult)
+        public virtual GetCORSConfigurationResponse EndGetCORSConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<GetCORSConfigurationResponse>(asyncResult);
         }
@@ -2236,7 +2236,7 @@ namespace Amazon.S3
         /// <param name="bucketName">A property of GetLifecycleConfigurationRequest used to execute the GetLifecycleConfiguration service method.</param>
         /// 
         /// <returns>The response from the GetLifecycleConfiguration service method, as returned by S3.</returns>
-        public GetLifecycleConfigurationResponse GetLifecycleConfiguration(string bucketName)
+        public virtual GetLifecycleConfigurationResponse GetLifecycleConfiguration(string bucketName)
         {
             var request = new GetLifecycleConfigurationRequest();
             request.BucketName = bucketName;
@@ -2250,7 +2250,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetLifecycleConfiguration service method.</param>
         /// 
         /// <returns>The response from the GetLifecycleConfiguration service method, as returned by S3.</returns>
-        public GetLifecycleConfigurationResponse GetLifecycleConfiguration(GetLifecycleConfigurationRequest request)
+        public virtual GetLifecycleConfigurationResponse GetLifecycleConfiguration(GetLifecycleConfigurationRequest request)
         {
             var marshaller = new GetLifecycleConfigurationRequestMarshaller();
             var unmarshaller = GetLifecycleConfigurationResponseUnmarshaller.Instance;
@@ -2269,7 +2269,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetLifecycleConfiguration
         ///         operation.</returns>
-        public IAsyncResult BeginGetLifecycleConfiguration(GetLifecycleConfigurationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetLifecycleConfiguration(GetLifecycleConfigurationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetLifecycleConfigurationRequestMarshaller();
             var unmarshaller = GetLifecycleConfigurationResponseUnmarshaller.Instance;
@@ -2285,7 +2285,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetLifecycleConfiguration.</param>
         /// 
         /// <returns>Returns a  GetLifecycleConfigurationResult from S3.</returns>
-        public  GetLifecycleConfigurationResponse EndGetLifecycleConfiguration(IAsyncResult asyncResult)
+        public virtual GetLifecycleConfigurationResponse EndGetLifecycleConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<GetLifecycleConfigurationResponse>(asyncResult);
         }
@@ -2301,7 +2301,7 @@ namespace Amazon.S3
         /// <param name="key">A property of GetObjectRequest used to execute the GetObject service method.</param>
         /// 
         /// <returns>The response from the GetObject service method, as returned by S3.</returns>
-        public GetObjectResponse GetObject(string bucketName, string key)
+        public virtual GetObjectResponse GetObject(string bucketName, string key)
         {
             var request = new GetObjectRequest();
             request.BucketName = bucketName;
@@ -2318,7 +2318,7 @@ namespace Amazon.S3
         /// <param name="versionId">VersionId used to reference a specific version of the object.</param>
         /// 
         /// <returns>The response from the GetObject service method, as returned by S3.</returns>
-        public GetObjectResponse GetObject(string bucketName, string key, string versionId)
+        public virtual GetObjectResponse GetObject(string bucketName, string key, string versionId)
         {
             var request = new GetObjectRequest();
             request.BucketName = bucketName;
@@ -2334,7 +2334,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetObject service method.</param>
         /// 
         /// <returns>The response from the GetObject service method, as returned by S3.</returns>
-        public GetObjectResponse GetObject(GetObjectRequest request)
+        public virtual GetObjectResponse GetObject(GetObjectRequest request)
         {
             var marshaller = new GetObjectRequestMarshaller();
             var unmarshaller = GetObjectResponseUnmarshaller.Instance;
@@ -2353,7 +2353,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetObject
         ///         operation.</returns>
-        public IAsyncResult BeginGetObject(GetObjectRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetObject(GetObjectRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetObjectRequestMarshaller();
             var unmarshaller = GetObjectResponseUnmarshaller.Instance;
@@ -2369,7 +2369,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetObject.</param>
         /// 
         /// <returns>Returns a  GetObjectResult from S3.</returns>
-        public  GetObjectResponse EndGetObject(IAsyncResult asyncResult)
+        public virtual GetObjectResponse EndGetObject(IAsyncResult asyncResult)
         {
             return EndInvoke<GetObjectResponse>(asyncResult);
         }
@@ -2387,7 +2387,7 @@ namespace Amazon.S3
         /// <param name="key">A property of GetObjectMetadataRequest used to execute the GetObjectMetadata service method.</param>
         /// 
         /// <returns>The response from the GetObjectMetadata service method, as returned by S3.</returns>
-        public GetObjectMetadataResponse GetObjectMetadata(string bucketName, string key)
+        public virtual GetObjectMetadataResponse GetObjectMetadata(string bucketName, string key)
         {
             var request = new GetObjectMetadataRequest();
             request.BucketName = bucketName;
@@ -2406,7 +2406,7 @@ namespace Amazon.S3
         /// <param name="versionId">VersionId used to reference a specific version of the object.</param>
         /// 
         /// <returns>The response from the GetObjectMetadata service method, as returned by S3.</returns>
-        public GetObjectMetadataResponse GetObjectMetadata(string bucketName, string key, string versionId)
+        public virtual GetObjectMetadataResponse GetObjectMetadata(string bucketName, string key, string versionId)
         {
             var request = new GetObjectMetadataRequest();
             request.BucketName = bucketName;
@@ -2424,7 +2424,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetObjectMetadata service method.</param>
         /// 
         /// <returns>The response from the GetObjectMetadata service method, as returned by S3.</returns>
-        public GetObjectMetadataResponse GetObjectMetadata(GetObjectMetadataRequest request)
+        public virtual GetObjectMetadataResponse GetObjectMetadata(GetObjectMetadataRequest request)
         {
             var marshaller = new GetObjectMetadataRequestMarshaller();
             var unmarshaller = GetObjectMetadataResponseUnmarshaller.Instance;
@@ -2443,7 +2443,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetObjectMetadata
         ///         operation.</returns>
-        public IAsyncResult BeginGetObjectMetadata(GetObjectMetadataRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetObjectMetadata(GetObjectMetadataRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetObjectMetadataRequestMarshaller();
             var unmarshaller = GetObjectMetadataResponseUnmarshaller.Instance;
@@ -2459,7 +2459,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetObjectMetadata.</param>
         /// 
         /// <returns>Returns a  GetObjectMetadataResult from S3.</returns>
-        public  GetObjectMetadataResponse EndGetObjectMetadata(IAsyncResult asyncResult)
+        public virtual GetObjectMetadataResponse EndGetObjectMetadata(IAsyncResult asyncResult)
         {
             return EndInvoke<GetObjectMetadataResponse>(asyncResult);
         }
@@ -2474,7 +2474,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetObjectTagging service method.</param>
         /// 
         /// <returns>The response from the GetObjectTagging service method, as returned by S3.</returns>
-        public GetObjectTaggingResponse GetObjectTagging(GetObjectTaggingRequest request)
+        public virtual GetObjectTaggingResponse GetObjectTagging(GetObjectTaggingRequest request)
         {
             var marshaller = new GetObjectTaggingRequestMarshaller();
             var unmarshaller = GetObjectTaggingResponseUnmarshaller.Instance;
@@ -2493,7 +2493,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetObjectTagging
         ///         operation.</returns>
-        public IAsyncResult BeginGetObjectTagging(GetObjectTaggingRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetObjectTagging(GetObjectTaggingRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetObjectTaggingRequestMarshaller();
             var unmarshaller = GetObjectTaggingResponseUnmarshaller.Instance;
@@ -2509,7 +2509,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetObjectTagging.</param>
         /// 
         /// <returns>Returns a  GetObjectTaggingResult from S3.</returns>
-        public  GetObjectTaggingResponse EndGetObjectTagging(IAsyncResult asyncResult)
+        public virtual GetObjectTaggingResponse EndGetObjectTagging(IAsyncResult asyncResult)
         {
             return EndInvoke<GetObjectTaggingResponse>(asyncResult);
         }
@@ -2525,7 +2525,7 @@ namespace Amazon.S3
         /// <param name="key">A property of GetObjectTorrentRequest used to execute the GetObjectTorrent service method.</param>
         /// 
         /// <returns>The response from the GetObjectTorrent service method, as returned by S3.</returns>
-        public GetObjectTorrentResponse GetObjectTorrent(string bucketName, string key)
+        public virtual GetObjectTorrentResponse GetObjectTorrent(string bucketName, string key)
         {
             var request = new GetObjectTorrentRequest();
             request.BucketName = bucketName;
@@ -2540,7 +2540,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetObjectTorrent service method.</param>
         /// 
         /// <returns>The response from the GetObjectTorrent service method, as returned by S3.</returns>
-        public GetObjectTorrentResponse GetObjectTorrent(GetObjectTorrentRequest request)
+        public virtual GetObjectTorrentResponse GetObjectTorrent(GetObjectTorrentRequest request)
         {
             var marshaller = new GetObjectTorrentRequestMarshaller();
             var unmarshaller = GetObjectTorrentResponseUnmarshaller.Instance;
@@ -2559,7 +2559,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetObjectTorrent
         ///         operation.</returns>
-        public IAsyncResult BeginGetObjectTorrent(GetObjectTorrentRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetObjectTorrent(GetObjectTorrentRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetObjectTorrentRequestMarshaller();
             var unmarshaller = GetObjectTorrentResponseUnmarshaller.Instance;
@@ -2575,7 +2575,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetObjectTorrent.</param>
         /// 
         /// <returns>Returns a  GetObjectTorrentResult from S3.</returns>
-        public  GetObjectTorrentResponse EndGetObjectTorrent(IAsyncResult asyncResult)
+        public virtual GetObjectTorrentResponse EndGetObjectTorrent(IAsyncResult asyncResult)
         {
             return EndInvoke<GetObjectTorrentResponse>(asyncResult);
         }
@@ -2591,7 +2591,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the HeadBucket service method.</param>
         /// 
         /// <returns>The response from the HeadBucket service method, as returned by S3.</returns>
-        internal HeadBucketResponse HeadBucket(HeadBucketRequest request)
+        internal virtual HeadBucketResponse HeadBucket(HeadBucketRequest request)
         {
             var marshaller = new HeadBucketRequestMarshaller();
             var unmarshaller = HeadBucketResponseUnmarshaller.Instance;
@@ -2610,7 +2610,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndHeadBucket
         ///         operation.</returns>
-        internal IAsyncResult BeginHeadBucket(HeadBucketRequest request, AsyncCallback callback, object state)
+        internal virtual IAsyncResult BeginHeadBucket(HeadBucketRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new HeadBucketRequestMarshaller();
             var unmarshaller = HeadBucketResponseUnmarshaller.Instance;
@@ -2626,7 +2626,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginHeadBucket.</param>
         /// 
         /// <returns>Returns a  HeadBucketResult from S3.</returns>
-        internal  HeadBucketResponse EndHeadBucket(IAsyncResult asyncResult)
+        internal virtual HeadBucketResponse EndHeadBucket(IAsyncResult asyncResult)
         {
             return EndInvoke<HeadBucketResponse>(asyncResult);
         }
@@ -2650,7 +2650,7 @@ namespace Amazon.S3
         /// <param name="key">A property of InitiateMultipartUploadRequest used to execute the InitiateMultipartUpload service method.</param>
         /// 
         /// <returns>The response from the InitiateMultipartUpload service method, as returned by S3.</returns>
-        public InitiateMultipartUploadResponse InitiateMultipartUpload(string bucketName, string key)
+        public virtual InitiateMultipartUploadResponse InitiateMultipartUpload(string bucketName, string key)
         {
             var request = new InitiateMultipartUploadRequest();
             request.BucketName = bucketName;
@@ -2673,7 +2673,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the InitiateMultipartUpload service method.</param>
         /// 
         /// <returns>The response from the InitiateMultipartUpload service method, as returned by S3.</returns>
-        public InitiateMultipartUploadResponse InitiateMultipartUpload(InitiateMultipartUploadRequest request)
+        public virtual InitiateMultipartUploadResponse InitiateMultipartUpload(InitiateMultipartUploadRequest request)
         {
             var marshaller = new InitiateMultipartUploadRequestMarshaller();
             var unmarshaller = InitiateMultipartUploadResponseUnmarshaller.Instance;
@@ -2692,7 +2692,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndInitiateMultipartUpload
         ///         operation.</returns>
-        public IAsyncResult BeginInitiateMultipartUpload(InitiateMultipartUploadRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginInitiateMultipartUpload(InitiateMultipartUploadRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new InitiateMultipartUploadRequestMarshaller();
             var unmarshaller = InitiateMultipartUploadResponseUnmarshaller.Instance;
@@ -2708,7 +2708,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginInitiateMultipartUpload.</param>
         /// 
         /// <returns>Returns a  InitiateMultipartUploadResult from S3.</returns>
-        public  InitiateMultipartUploadResponse EndInitiateMultipartUpload(IAsyncResult asyncResult)
+        public virtual InitiateMultipartUploadResponse EndInitiateMultipartUpload(IAsyncResult asyncResult)
         {
             return EndInvoke<InitiateMultipartUploadResponse>(asyncResult);
         }
@@ -2723,7 +2723,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the ListBucketAnalyticsConfigurations service method.</param>
         /// 
         /// <returns>The response from the ListBucketAnalyticsConfigurations service method, as returned by S3.</returns>
-        public ListBucketAnalyticsConfigurationsResponse ListBucketAnalyticsConfigurations(ListBucketAnalyticsConfigurationsRequest request)
+        public virtual ListBucketAnalyticsConfigurationsResponse ListBucketAnalyticsConfigurations(ListBucketAnalyticsConfigurationsRequest request)
         {
             var marshaller = new ListBucketAnalyticsConfigurationsRequestMarshaller();
             var unmarshaller = ListBucketAnalyticsConfigurationsResponseUnmarshaller.Instance;
@@ -2742,7 +2742,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListBucketAnalyticsConfigurations
         ///         operation.</returns>
-        public IAsyncResult BeginListBucketAnalyticsConfigurations(ListBucketAnalyticsConfigurationsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListBucketAnalyticsConfigurations(ListBucketAnalyticsConfigurationsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListBucketAnalyticsConfigurationsRequestMarshaller();
             var unmarshaller = ListBucketAnalyticsConfigurationsResponseUnmarshaller.Instance;
@@ -2758,7 +2758,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListBucketAnalyticsConfigurations.</param>
         /// 
         /// <returns>Returns a  ListBucketAnalyticsConfigurationsResult from S3.</returns>
-        public  ListBucketAnalyticsConfigurationsResponse EndListBucketAnalyticsConfigurations(IAsyncResult asyncResult)
+        public virtual ListBucketAnalyticsConfigurationsResponse EndListBucketAnalyticsConfigurations(IAsyncResult asyncResult)
         {
             return EndInvoke<ListBucketAnalyticsConfigurationsResponse>(asyncResult);
         }
@@ -2773,7 +2773,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the ListBucketInventoryConfigurations service method.</param>
         /// 
         /// <returns>The response from the ListBucketInventoryConfigurations service method, as returned by S3.</returns>
-        public ListBucketInventoryConfigurationsResponse ListBucketInventoryConfigurations(ListBucketInventoryConfigurationsRequest request)
+        public virtual ListBucketInventoryConfigurationsResponse ListBucketInventoryConfigurations(ListBucketInventoryConfigurationsRequest request)
         {
             var marshaller = new ListBucketInventoryConfigurationsRequestMarshaller();
             var unmarshaller = ListBucketInventoryConfigurationsResponseUnmarshaller.Instance;
@@ -2792,7 +2792,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListBucketInventoryConfigurations
         ///         operation.</returns>
-        public IAsyncResult BeginListBucketInventoryConfigurations(ListBucketInventoryConfigurationsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListBucketInventoryConfigurations(ListBucketInventoryConfigurationsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListBucketInventoryConfigurationsRequestMarshaller();
             var unmarshaller = ListBucketInventoryConfigurationsResponseUnmarshaller.Instance;
@@ -2808,7 +2808,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListBucketInventoryConfigurations.</param>
         /// 
         /// <returns>Returns a  ListBucketInventoryConfigurationsResult from S3.</returns>
-        public  ListBucketInventoryConfigurationsResponse EndListBucketInventoryConfigurations(IAsyncResult asyncResult)
+        public virtual ListBucketInventoryConfigurationsResponse EndListBucketInventoryConfigurations(IAsyncResult asyncResult)
         {
             return EndInvoke<ListBucketInventoryConfigurationsResponse>(asyncResult);
         }
@@ -2823,7 +2823,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the ListBucketMetricsConfigurations service method.</param>
         /// 
         /// <returns>The response from the ListBucketMetricsConfigurations service method, as returned by S3.</returns>
-        public ListBucketMetricsConfigurationsResponse ListBucketMetricsConfigurations(ListBucketMetricsConfigurationsRequest request)
+        public virtual ListBucketMetricsConfigurationsResponse ListBucketMetricsConfigurations(ListBucketMetricsConfigurationsRequest request)
         {
             var marshaller = new ListBucketMetricsConfigurationsRequestMarshaller();
             var unmarshaller = ListBucketMetricsConfigurationsResponseUnmarshaller.Instance;
@@ -2842,7 +2842,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListBucketMetricsConfigurations
         ///         operation.</returns>
-        public IAsyncResult BeginListBucketMetricsConfigurations(ListBucketMetricsConfigurationsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListBucketMetricsConfigurations(ListBucketMetricsConfigurationsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListBucketMetricsConfigurationsRequestMarshaller();
             var unmarshaller = ListBucketMetricsConfigurationsResponseUnmarshaller.Instance;
@@ -2858,7 +2858,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListBucketMetricsConfigurations.</param>
         /// 
         /// <returns>Returns a  ListBucketMetricsConfigurationsResult from S3.</returns>
-        public  ListBucketMetricsConfigurationsResponse EndListBucketMetricsConfigurations(IAsyncResult asyncResult)
+        public virtual ListBucketMetricsConfigurationsResponse EndListBucketMetricsConfigurations(IAsyncResult asyncResult)
         {
             return EndInvoke<ListBucketMetricsConfigurationsResponse>(asyncResult);
         }
@@ -2872,7 +2872,7 @@ namespace Amazon.S3
         /// </summary>
         /// 
         /// <returns>The response from the ListBuckets service method, as returned by S3.</returns>
-        public ListBucketsResponse ListBuckets()
+        public virtual ListBucketsResponse ListBuckets()
         {
             return ListBuckets(new ListBucketsRequest());
         }
@@ -2883,7 +2883,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the ListBuckets service method.</param>
         /// 
         /// <returns>The response from the ListBuckets service method, as returned by S3.</returns>
-        public ListBucketsResponse ListBuckets(ListBucketsRequest request)
+        public virtual ListBucketsResponse ListBuckets(ListBucketsRequest request)
         {
             var marshaller = new ListBucketsRequestMarshaller();
             var unmarshaller = ListBucketsResponseUnmarshaller.Instance;
@@ -2902,7 +2902,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListBuckets
         ///         operation.</returns>
-        public IAsyncResult BeginListBuckets(ListBucketsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListBuckets(ListBucketsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListBucketsRequestMarshaller();
             var unmarshaller = ListBucketsResponseUnmarshaller.Instance;
@@ -2918,7 +2918,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListBuckets.</param>
         /// 
         /// <returns>Returns a  ListBucketsResult from S3.</returns>
-        public  ListBucketsResponse EndListBuckets(IAsyncResult asyncResult)
+        public virtual ListBucketsResponse EndListBuckets(IAsyncResult asyncResult)
         {
             return EndInvoke<ListBucketsResponse>(asyncResult);
         }
@@ -2933,7 +2933,7 @@ namespace Amazon.S3
         /// <param name="bucketName">A property of ListMultipartUploadsRequest used to execute the ListMultipartUploads service method.</param>
         /// 
         /// <returns>The response from the ListMultipartUploads service method, as returned by S3.</returns>
-        public ListMultipartUploadsResponse ListMultipartUploads(string bucketName)
+        public virtual ListMultipartUploadsResponse ListMultipartUploads(string bucketName)
         {
             var request = new ListMultipartUploadsRequest();
             request.BucketName = bucketName;
@@ -2948,7 +2948,7 @@ namespace Amazon.S3
         /// <param name="prefix">Lists in-progress uploads only for those keys that begin with the specified prefix.</param>
         /// 
         /// <returns>The response from the ListMultipartUploads service method, as returned by S3.</returns>
-        public ListMultipartUploadsResponse ListMultipartUploads(string bucketName, string prefix)
+        public virtual ListMultipartUploadsResponse ListMultipartUploads(string bucketName, string prefix)
         {
             var request = new ListMultipartUploadsRequest();
             request.BucketName = bucketName;
@@ -2963,7 +2963,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the ListMultipartUploads service method.</param>
         /// 
         /// <returns>The response from the ListMultipartUploads service method, as returned by S3.</returns>
-        public ListMultipartUploadsResponse ListMultipartUploads(ListMultipartUploadsRequest request)
+        public virtual ListMultipartUploadsResponse ListMultipartUploads(ListMultipartUploadsRequest request)
         {
             var marshaller = new ListMultipartUploadsRequestMarshaller();
             var unmarshaller = ListMultipartUploadsResponseUnmarshaller.Instance;
@@ -2982,7 +2982,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListMultipartUploads
         ///         operation.</returns>
-        public IAsyncResult BeginListMultipartUploads(ListMultipartUploadsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListMultipartUploads(ListMultipartUploadsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListMultipartUploadsRequestMarshaller();
             var unmarshaller = ListMultipartUploadsResponseUnmarshaller.Instance;
@@ -2998,7 +2998,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMultipartUploads.</param>
         /// 
         /// <returns>Returns a  ListMultipartUploadsResult from S3.</returns>
-        public  ListMultipartUploadsResponse EndListMultipartUploads(IAsyncResult asyncResult)
+        public virtual ListMultipartUploadsResponse EndListMultipartUploads(IAsyncResult asyncResult)
         {
             return EndInvoke<ListMultipartUploadsResponse>(asyncResult);
         }
@@ -3014,7 +3014,7 @@ namespace Amazon.S3
         /// <param name="bucketName">A property of ListObjectsRequest used to execute the ListObjects service method.</param>
         /// 
         /// <returns>The response from the ListObjects service method, as returned by S3.</returns>
-        public ListObjectsResponse ListObjects(string bucketName)
+        public virtual ListObjectsResponse ListObjects(string bucketName)
         {
             var request = new ListObjectsRequest();
             request.BucketName = bucketName;
@@ -3030,7 +3030,7 @@ namespace Amazon.S3
         /// <param name="prefix">Limits the response to keys that begin with the specified prefix.</param>
         /// 
         /// <returns>The response from the ListObjects service method, as returned by S3.</returns>
-        public ListObjectsResponse ListObjects(string bucketName, string prefix)
+        public virtual ListObjectsResponse ListObjects(string bucketName, string prefix)
         {
             var request = new ListObjectsRequest();
             request.BucketName = bucketName;
@@ -3046,7 +3046,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the ListObjects service method.</param>
         /// 
         /// <returns>The response from the ListObjects service method, as returned by S3.</returns>
-        public ListObjectsResponse ListObjects(ListObjectsRequest request)
+        public virtual ListObjectsResponse ListObjects(ListObjectsRequest request)
         {
             var marshaller = new ListObjectsRequestMarshaller();
             var unmarshaller = ListObjectsResponseUnmarshaller.Instance;
@@ -3065,7 +3065,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListObjects
         ///         operation.</returns>
-        public IAsyncResult BeginListObjects(ListObjectsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListObjects(ListObjectsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListObjectsRequestMarshaller();
             var unmarshaller = ListObjectsResponseUnmarshaller.Instance;
@@ -3081,7 +3081,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListObjects.</param>
         /// 
         /// <returns>Returns a  ListObjectsResult from S3.</returns>
-        public  ListObjectsResponse EndListObjects(IAsyncResult asyncResult)
+        public virtual ListObjectsResponse EndListObjects(IAsyncResult asyncResult)
         {
             return EndInvoke<ListObjectsResponse>(asyncResult);
         }
@@ -3099,7 +3099,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the ListObjectsV2 service method.</param>
         /// 
         /// <returns>The response from the ListObjectsV2 service method, as returned by S3.</returns>
-        public ListObjectsV2Response ListObjectsV2(ListObjectsV2Request request)
+        public virtual ListObjectsV2Response ListObjectsV2(ListObjectsV2Request request)
         {
             var marshaller = new ListObjectsV2RequestMarshaller();
             var unmarshaller = ListObjectsV2ResponseUnmarshaller.Instance;
@@ -3118,7 +3118,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListObjectsV2
         ///         operation.</returns>
-        public IAsyncResult BeginListObjectsV2(ListObjectsV2Request request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListObjectsV2(ListObjectsV2Request request, AsyncCallback callback, object state)
         {
             var marshaller = new ListObjectsV2RequestMarshaller();
             var unmarshaller = ListObjectsV2ResponseUnmarshaller.Instance;
@@ -3134,7 +3134,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListObjectsV2.</param>
         /// 
         /// <returns>Returns a  ListObjectsV2Result from S3.</returns>
-        public  ListObjectsV2Response EndListObjectsV2(IAsyncResult asyncResult)
+        public virtual ListObjectsV2Response EndListObjectsV2(IAsyncResult asyncResult)
         {
             return EndInvoke<ListObjectsV2Response>(asyncResult);
         }
@@ -3151,7 +3151,7 @@ namespace Amazon.S3
         /// <param name="uploadId">Upload ID identifying the multipart upload whose parts are being listed.</param>
         /// 
         /// <returns>The response from the ListParts service method, as returned by S3.</returns>
-        public ListPartsResponse ListParts(string bucketName, string key, string uploadId)
+        public virtual ListPartsResponse ListParts(string bucketName, string key, string uploadId)
         {
             var request = new ListPartsRequest();
             request.BucketName = bucketName;
@@ -3167,7 +3167,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the ListParts service method.</param>
         /// 
         /// <returns>The response from the ListParts service method, as returned by S3.</returns>
-        public ListPartsResponse ListParts(ListPartsRequest request)
+        public virtual ListPartsResponse ListParts(ListPartsRequest request)
         {
             var marshaller = new ListPartsRequestMarshaller();
             var unmarshaller = ListPartsResponseUnmarshaller.Instance;
@@ -3186,7 +3186,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListParts
         ///         operation.</returns>
-        public IAsyncResult BeginListParts(ListPartsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListParts(ListPartsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListPartsRequestMarshaller();
             var unmarshaller = ListPartsResponseUnmarshaller.Instance;
@@ -3202,7 +3202,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListParts.</param>
         /// 
         /// <returns>Returns a  ListPartsResult from S3.</returns>
-        public  ListPartsResponse EndListParts(IAsyncResult asyncResult)
+        public virtual ListPartsResponse EndListParts(IAsyncResult asyncResult)
         {
             return EndInvoke<ListPartsResponse>(asyncResult);
         }
@@ -3217,7 +3217,7 @@ namespace Amazon.S3
         /// <param name="bucketName">A property of ListVersionsRequest used to execute the ListVersions service method.</param>
         /// 
         /// <returns>The response from the ListVersions service method, as returned by S3.</returns>
-        public ListVersionsResponse ListVersions(string bucketName)
+        public virtual ListVersionsResponse ListVersions(string bucketName)
         {
             var request = new ListVersionsRequest();
             request.BucketName = bucketName;
@@ -3232,7 +3232,7 @@ namespace Amazon.S3
         /// <param name="prefix">Limits the response to keys that begin with the specified prefix.</param>
         /// 
         /// <returns>The response from the ListVersions service method, as returned by S3.</returns>
-        public ListVersionsResponse ListVersions(string bucketName, string prefix)
+        public virtual ListVersionsResponse ListVersions(string bucketName, string prefix)
         {
             var request = new ListVersionsRequest();
             request.BucketName = bucketName;
@@ -3247,7 +3247,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the ListVersions service method.</param>
         /// 
         /// <returns>The response from the ListVersions service method, as returned by S3.</returns>
-        public ListVersionsResponse ListVersions(ListVersionsRequest request)
+        public virtual ListVersionsResponse ListVersions(ListVersionsRequest request)
         {
             var marshaller = new ListVersionsRequestMarshaller();
             var unmarshaller = ListVersionsResponseUnmarshaller.Instance;
@@ -3266,7 +3266,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListVersions
         ///         operation.</returns>
-        public IAsyncResult BeginListVersions(ListVersionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListVersions(ListVersionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListVersionsRequestMarshaller();
             var unmarshaller = ListVersionsResponseUnmarshaller.Instance;
@@ -3282,7 +3282,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListVersions.</param>
         /// 
         /// <returns>Returns a  ListVersionsResult from S3.</returns>
-        public  ListVersionsResponse EndListVersions(IAsyncResult asyncResult)
+        public virtual ListVersionsResponse EndListVersions(IAsyncResult asyncResult)
         {
             return EndInvoke<ListVersionsResponse>(asyncResult);
         }
@@ -3297,7 +3297,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutACL service method.</param>
         /// 
         /// <returns>The response from the PutACL service method, as returned by S3.</returns>
-        public PutACLResponse PutACL(PutACLRequest request)
+        public virtual PutACLResponse PutACL(PutACLRequest request)
         {
             var marshaller = new PutACLRequestMarshaller();
             var unmarshaller = PutACLResponseUnmarshaller.Instance;
@@ -3316,7 +3316,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutACL
         ///         operation.</returns>
-        public IAsyncResult BeginPutACL(PutACLRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPutACL(PutACLRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutACLRequestMarshaller();
             var unmarshaller = PutACLResponseUnmarshaller.Instance;
@@ -3332,7 +3332,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutACL.</param>
         /// 
         /// <returns>Returns a  PutACLResult from S3.</returns>
-        public  PutACLResponse EndPutACL(IAsyncResult asyncResult)
+        public virtual PutACLResponse EndPutACL(IAsyncResult asyncResult)
         {
             return EndInvoke<PutACLResponse>(asyncResult);
         }
@@ -3347,7 +3347,7 @@ namespace Amazon.S3
         /// <param name="bucketName">A property of PutBucketRequest used to execute the PutBucket service method.</param>
         /// 
         /// <returns>The response from the PutBucket service method, as returned by S3.</returns>
-        public PutBucketResponse PutBucket(string bucketName)
+        public virtual PutBucketResponse PutBucket(string bucketName)
         {
             var request = new PutBucketRequest();
             request.BucketName = bucketName;
@@ -3361,7 +3361,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutBucket service method.</param>
         /// 
         /// <returns>The response from the PutBucket service method, as returned by S3.</returns>
-        public PutBucketResponse PutBucket(PutBucketRequest request)
+        public virtual PutBucketResponse PutBucket(PutBucketRequest request)
         {
             var marshaller = new PutBucketRequestMarshaller();
             var unmarshaller = PutBucketResponseUnmarshaller.Instance;
@@ -3380,7 +3380,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucket
         ///         operation.</returns>
-        public IAsyncResult BeginPutBucket(PutBucketRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPutBucket(PutBucketRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutBucketRequestMarshaller();
             var unmarshaller = PutBucketResponseUnmarshaller.Instance;
@@ -3396,7 +3396,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucket.</param>
         /// 
         /// <returns>Returns a  PutBucketResult from S3.</returns>
-        public  PutBucketResponse EndPutBucket(IAsyncResult asyncResult)
+        public virtual PutBucketResponse EndPutBucket(IAsyncResult asyncResult)
         {
             return EndInvoke<PutBucketResponse>(asyncResult);
         }
@@ -3411,7 +3411,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutBucketAccelerateConfiguration service method.</param>
         /// 
         /// <returns>The response from the PutBucketAccelerateConfiguration service method, as returned by S3.</returns>
-        public PutBucketAccelerateConfigurationResponse PutBucketAccelerateConfiguration(PutBucketAccelerateConfigurationRequest request)
+        public virtual PutBucketAccelerateConfigurationResponse PutBucketAccelerateConfiguration(PutBucketAccelerateConfigurationRequest request)
         {
             var marshaller = new PutBucketAccelerateConfigurationRequestMarshaller();
             var unmarshaller = PutBucketAccelerateConfigurationResponseUnmarshaller.Instance;
@@ -3430,7 +3430,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucketAccelerateConfiguration
         ///         operation.</returns>
-        public IAsyncResult BeginPutBucketAccelerateConfiguration(PutBucketAccelerateConfigurationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPutBucketAccelerateConfiguration(PutBucketAccelerateConfigurationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutBucketAccelerateConfigurationRequestMarshaller();
             var unmarshaller = PutBucketAccelerateConfigurationResponseUnmarshaller.Instance;
@@ -3446,7 +3446,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketAccelerateConfiguration.</param>
         /// 
         /// <returns>Returns a  PutBucketAccelerateConfigurationResult from S3.</returns>
-        public  PutBucketAccelerateConfigurationResponse EndPutBucketAccelerateConfiguration(IAsyncResult asyncResult)
+        public virtual PutBucketAccelerateConfigurationResponse EndPutBucketAccelerateConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<PutBucketAccelerateConfigurationResponse>(asyncResult);
         }
@@ -3462,7 +3462,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutBucketAnalyticsConfiguration service method.</param>
         /// 
         /// <returns>The response from the PutBucketAnalyticsConfiguration service method, as returned by S3.</returns>
-        public PutBucketAnalyticsConfigurationResponse PutBucketAnalyticsConfiguration(PutBucketAnalyticsConfigurationRequest request)
+        public virtual PutBucketAnalyticsConfigurationResponse PutBucketAnalyticsConfiguration(PutBucketAnalyticsConfigurationRequest request)
         {
             var marshaller = new PutBucketAnalyticsConfigurationRequestMarshaller();
             var unmarshaller = PutBucketAnalyticsConfigurationResponseUnmarshaller.Instance;
@@ -3481,7 +3481,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucketAnalyticsConfiguration
         ///         operation.</returns>
-        public IAsyncResult BeginPutBucketAnalyticsConfiguration(PutBucketAnalyticsConfigurationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPutBucketAnalyticsConfiguration(PutBucketAnalyticsConfigurationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutBucketAnalyticsConfigurationRequestMarshaller();
             var unmarshaller = PutBucketAnalyticsConfigurationResponseUnmarshaller.Instance;
@@ -3497,7 +3497,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketAnalyticsConfiguration.</param>
         /// 
         /// <returns>Returns a  PutBucketAnalyticsConfigurationResult from S3.</returns>
-        public  PutBucketAnalyticsConfigurationResponse EndPutBucketAnalyticsConfiguration(IAsyncResult asyncResult)
+        public virtual PutBucketAnalyticsConfigurationResponse EndPutBucketAnalyticsConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<PutBucketAnalyticsConfigurationResponse>(asyncResult);
         }
@@ -3512,7 +3512,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutBucketInventoryConfiguration service method.</param>
         /// 
         /// <returns>The response from the PutBucketInventoryConfiguration service method, as returned by S3.</returns>
-        public PutBucketInventoryConfigurationResponse PutBucketInventoryConfiguration(PutBucketInventoryConfigurationRequest request)
+        public virtual PutBucketInventoryConfigurationResponse PutBucketInventoryConfiguration(PutBucketInventoryConfigurationRequest request)
         {
             var marshaller = new PutBucketInventoryConfigurationRequestMarshaller();
             var unmarshaller = PutBucketInventoryConfigurationResponseUnmarshaller.Instance;
@@ -3531,7 +3531,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucketInventoryConfiguration
         ///         operation.</returns>
-        public IAsyncResult BeginPutBucketInventoryConfiguration(PutBucketInventoryConfigurationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPutBucketInventoryConfiguration(PutBucketInventoryConfigurationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutBucketInventoryConfigurationRequestMarshaller();
             var unmarshaller = PutBucketInventoryConfigurationResponseUnmarshaller.Instance;
@@ -3547,7 +3547,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketInventoryConfiguration.</param>
         /// 
         /// <returns>Returns a  PutBucketInventoryConfigurationResult from S3.</returns>
-        public  PutBucketInventoryConfigurationResponse EndPutBucketInventoryConfiguration(IAsyncResult asyncResult)
+        public virtual PutBucketInventoryConfigurationResponse EndPutBucketInventoryConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<PutBucketInventoryConfigurationResponse>(asyncResult);
         }
@@ -3564,7 +3564,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutBucketLogging service method.</param>
         /// 
         /// <returns>The response from the PutBucketLogging service method, as returned by S3.</returns>
-        public PutBucketLoggingResponse PutBucketLogging(PutBucketLoggingRequest request)
+        public virtual PutBucketLoggingResponse PutBucketLogging(PutBucketLoggingRequest request)
         {
             var marshaller = new PutBucketLoggingRequestMarshaller();
             var unmarshaller = PutBucketLoggingResponseUnmarshaller.Instance;
@@ -3583,7 +3583,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucketLogging
         ///         operation.</returns>
-        public IAsyncResult BeginPutBucketLogging(PutBucketLoggingRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPutBucketLogging(PutBucketLoggingRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutBucketLoggingRequestMarshaller();
             var unmarshaller = PutBucketLoggingResponseUnmarshaller.Instance;
@@ -3599,7 +3599,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketLogging.</param>
         /// 
         /// <returns>Returns a  PutBucketLoggingResult from S3.</returns>
-        public  PutBucketLoggingResponse EndPutBucketLogging(IAsyncResult asyncResult)
+        public virtual PutBucketLoggingResponse EndPutBucketLogging(IAsyncResult asyncResult)
         {
             return EndInvoke<PutBucketLoggingResponse>(asyncResult);
         }
@@ -3614,7 +3614,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutBucketMetricsConfiguration service method.</param>
         /// 
         /// <returns>The response from the PutBucketMetricsConfiguration service method, as returned by S3.</returns>
-        public PutBucketMetricsConfigurationResponse PutBucketMetricsConfiguration(PutBucketMetricsConfigurationRequest request)
+        public virtual PutBucketMetricsConfigurationResponse PutBucketMetricsConfiguration(PutBucketMetricsConfigurationRequest request)
         {
             var marshaller = new PutBucketMetricsConfigurationRequestMarshaller();
             var unmarshaller = PutBucketMetricsConfigurationResponseUnmarshaller.Instance;
@@ -3633,7 +3633,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucketMetricsConfiguration
         ///         operation.</returns>
-        public IAsyncResult BeginPutBucketMetricsConfiguration(PutBucketMetricsConfigurationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPutBucketMetricsConfiguration(PutBucketMetricsConfigurationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutBucketMetricsConfigurationRequestMarshaller();
             var unmarshaller = PutBucketMetricsConfigurationResponseUnmarshaller.Instance;
@@ -3649,7 +3649,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketMetricsConfiguration.</param>
         /// 
         /// <returns>Returns a  PutBucketMetricsConfigurationResult from S3.</returns>
-        public  PutBucketMetricsConfigurationResponse EndPutBucketMetricsConfiguration(IAsyncResult asyncResult)
+        public virtual PutBucketMetricsConfigurationResponse EndPutBucketMetricsConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<PutBucketMetricsConfigurationResponse>(asyncResult);
         }
@@ -3664,7 +3664,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutBucketNotification service method.</param>
         /// 
         /// <returns>The response from the PutBucketNotification service method, as returned by S3.</returns>
-        public PutBucketNotificationResponse PutBucketNotification(PutBucketNotificationRequest request)
+        public virtual PutBucketNotificationResponse PutBucketNotification(PutBucketNotificationRequest request)
         {
             var marshaller = new PutBucketNotificationRequestMarshaller();
             var unmarshaller = PutBucketNotificationResponseUnmarshaller.Instance;
@@ -3683,7 +3683,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucketNotification
         ///         operation.</returns>
-        public IAsyncResult BeginPutBucketNotification(PutBucketNotificationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPutBucketNotification(PutBucketNotificationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutBucketNotificationRequestMarshaller();
             var unmarshaller = PutBucketNotificationResponseUnmarshaller.Instance;
@@ -3699,7 +3699,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketNotification.</param>
         /// 
         /// <returns>Returns a  PutBucketNotificationResult from S3.</returns>
-        public  PutBucketNotificationResponse EndPutBucketNotification(IAsyncResult asyncResult)
+        public virtual PutBucketNotificationResponse EndPutBucketNotification(IAsyncResult asyncResult)
         {
             return EndInvoke<PutBucketNotificationResponse>(asyncResult);
         }
@@ -3716,7 +3716,7 @@ namespace Amazon.S3
         /// <param name="policy">The bucket policy as a JSON document.</param>
         /// 
         /// <returns>The response from the PutBucketPolicy service method, as returned by S3.</returns>
-        public PutBucketPolicyResponse PutBucketPolicy(string bucketName, string policy)
+        public virtual PutBucketPolicyResponse PutBucketPolicy(string bucketName, string policy)
         {
             var request = new PutBucketPolicyRequest();
             request.BucketName = bucketName;
@@ -3734,7 +3734,7 @@ namespace Amazon.S3
         /// <param name="contentMD5">A property of PutBucketPolicyRequest used to execute the PutBucketPolicy service method.</param>
         /// 
         /// <returns>The response from the PutBucketPolicy service method, as returned by S3.</returns>
-        public PutBucketPolicyResponse PutBucketPolicy(string bucketName, string policy, string contentMD5)
+        public virtual PutBucketPolicyResponse PutBucketPolicy(string bucketName, string policy, string contentMD5)
         {
             var request = new PutBucketPolicyRequest();
             request.BucketName = bucketName;
@@ -3751,7 +3751,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutBucketPolicy service method.</param>
         /// 
         /// <returns>The response from the PutBucketPolicy service method, as returned by S3.</returns>
-        public PutBucketPolicyResponse PutBucketPolicy(PutBucketPolicyRequest request)
+        public virtual PutBucketPolicyResponse PutBucketPolicy(PutBucketPolicyRequest request)
         {
             var marshaller = new PutBucketPolicyRequestMarshaller();
             var unmarshaller = PutBucketPolicyResponseUnmarshaller.Instance;
@@ -3770,7 +3770,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucketPolicy
         ///         operation.</returns>
-        public IAsyncResult BeginPutBucketPolicy(PutBucketPolicyRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPutBucketPolicy(PutBucketPolicyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutBucketPolicyRequestMarshaller();
             var unmarshaller = PutBucketPolicyResponseUnmarshaller.Instance;
@@ -3786,7 +3786,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketPolicy.</param>
         /// 
         /// <returns>Returns a  PutBucketPolicyResult from S3.</returns>
-        public  PutBucketPolicyResponse EndPutBucketPolicy(IAsyncResult asyncResult)
+        public virtual PutBucketPolicyResponse EndPutBucketPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<PutBucketPolicyResponse>(asyncResult);
         }
@@ -3801,7 +3801,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutBucketReplication service method.</param>
         /// 
         /// <returns>The response from the PutBucketReplication service method, as returned by S3.</returns>
-        public PutBucketReplicationResponse PutBucketReplication(PutBucketReplicationRequest request)
+        public virtual PutBucketReplicationResponse PutBucketReplication(PutBucketReplicationRequest request)
         {
             var marshaller = new PutBucketReplicationRequestMarshaller();
             var unmarshaller = PutBucketReplicationResponseUnmarshaller.Instance;
@@ -3820,7 +3820,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucketReplication
         ///         operation.</returns>
-        public IAsyncResult BeginPutBucketReplication(PutBucketReplicationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPutBucketReplication(PutBucketReplicationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutBucketReplicationRequestMarshaller();
             var unmarshaller = PutBucketReplicationResponseUnmarshaller.Instance;
@@ -3836,7 +3836,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketReplication.</param>
         /// 
         /// <returns>Returns a  PutBucketReplicationResult from S3.</returns>
-        public  PutBucketReplicationResponse EndPutBucketReplication(IAsyncResult asyncResult)
+        public virtual PutBucketReplicationResponse EndPutBucketReplication(IAsyncResult asyncResult)
         {
             return EndInvoke<PutBucketReplicationResponse>(asyncResult);
         }
@@ -3855,7 +3855,7 @@ namespace Amazon.S3
         /// <param name="requestPaymentConfiguration">A property of PutBucketRequestPaymentRequest used to execute the PutBucketRequestPayment service method.</param>
         /// 
         /// <returns>The response from the PutBucketRequestPayment service method, as returned by S3.</returns>
-        public PutBucketRequestPaymentResponse PutBucketRequestPayment(string bucketName, RequestPaymentConfiguration requestPaymentConfiguration)
+        public virtual PutBucketRequestPaymentResponse PutBucketRequestPayment(string bucketName, RequestPaymentConfiguration requestPaymentConfiguration)
         {
             var request = new PutBucketRequestPaymentRequest();
             request.BucketName = bucketName;
@@ -3873,7 +3873,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutBucketRequestPayment service method.</param>
         /// 
         /// <returns>The response from the PutBucketRequestPayment service method, as returned by S3.</returns>
-        public PutBucketRequestPaymentResponse PutBucketRequestPayment(PutBucketRequestPaymentRequest request)
+        public virtual PutBucketRequestPaymentResponse PutBucketRequestPayment(PutBucketRequestPaymentRequest request)
         {
             var marshaller = new PutBucketRequestPaymentRequestMarshaller();
             var unmarshaller = PutBucketRequestPaymentResponseUnmarshaller.Instance;
@@ -3892,7 +3892,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucketRequestPayment
         ///         operation.</returns>
-        public IAsyncResult BeginPutBucketRequestPayment(PutBucketRequestPaymentRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPutBucketRequestPayment(PutBucketRequestPaymentRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutBucketRequestPaymentRequestMarshaller();
             var unmarshaller = PutBucketRequestPaymentResponseUnmarshaller.Instance;
@@ -3908,7 +3908,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketRequestPayment.</param>
         /// 
         /// <returns>Returns a  PutBucketRequestPaymentResult from S3.</returns>
-        public  PutBucketRequestPaymentResponse EndPutBucketRequestPayment(IAsyncResult asyncResult)
+        public virtual PutBucketRequestPaymentResponse EndPutBucketRequestPayment(IAsyncResult asyncResult)
         {
             return EndInvoke<PutBucketRequestPaymentResponse>(asyncResult);
         }
@@ -3924,7 +3924,7 @@ namespace Amazon.S3
         /// <param name="tagSet">A property of PutBucketTaggingRequest used to execute the PutBucketTagging service method.</param>
         /// 
         /// <returns>The response from the PutBucketTagging service method, as returned by S3.</returns>
-        public PutBucketTaggingResponse PutBucketTagging(string bucketName, List<Tag> tagSet)
+        public virtual PutBucketTaggingResponse PutBucketTagging(string bucketName, List<Tag> tagSet)
         {
             var request = new PutBucketTaggingRequest();
             request.BucketName = bucketName;
@@ -3939,7 +3939,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutBucketTagging service method.</param>
         /// 
         /// <returns>The response from the PutBucketTagging service method, as returned by S3.</returns>
-        public PutBucketTaggingResponse PutBucketTagging(PutBucketTaggingRequest request)
+        public virtual PutBucketTaggingResponse PutBucketTagging(PutBucketTaggingRequest request)
         {
             var marshaller = new PutBucketTaggingRequestMarshaller();
             var unmarshaller = PutBucketTaggingResponseUnmarshaller.Instance;
@@ -3958,7 +3958,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucketTagging
         ///         operation.</returns>
-        public IAsyncResult BeginPutBucketTagging(PutBucketTaggingRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPutBucketTagging(PutBucketTaggingRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutBucketTaggingRequestMarshaller();
             var unmarshaller = PutBucketTaggingResponseUnmarshaller.Instance;
@@ -3974,7 +3974,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketTagging.</param>
         /// 
         /// <returns>Returns a  PutBucketTaggingResult from S3.</returns>
-        public  PutBucketTaggingResponse EndPutBucketTagging(IAsyncResult asyncResult)
+        public virtual PutBucketTaggingResponse EndPutBucketTagging(IAsyncResult asyncResult)
         {
             return EndInvoke<PutBucketTaggingResponse>(asyncResult);
         }
@@ -3990,7 +3990,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutBucketVersioning service method.</param>
         /// 
         /// <returns>The response from the PutBucketVersioning service method, as returned by S3.</returns>
-        public PutBucketVersioningResponse PutBucketVersioning(PutBucketVersioningRequest request)
+        public virtual PutBucketVersioningResponse PutBucketVersioning(PutBucketVersioningRequest request)
         {
             var marshaller = new PutBucketVersioningRequestMarshaller();
             var unmarshaller = PutBucketVersioningResponseUnmarshaller.Instance;
@@ -4009,7 +4009,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucketVersioning
         ///         operation.</returns>
-        public IAsyncResult BeginPutBucketVersioning(PutBucketVersioningRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPutBucketVersioning(PutBucketVersioningRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutBucketVersioningRequestMarshaller();
             var unmarshaller = PutBucketVersioningResponseUnmarshaller.Instance;
@@ -4025,7 +4025,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketVersioning.</param>
         /// 
         /// <returns>Returns a  PutBucketVersioningResult from S3.</returns>
-        public  PutBucketVersioningResponse EndPutBucketVersioning(IAsyncResult asyncResult)
+        public virtual PutBucketVersioningResponse EndPutBucketVersioning(IAsyncResult asyncResult)
         {
             return EndInvoke<PutBucketVersioningResponse>(asyncResult);
         }
@@ -4041,7 +4041,7 @@ namespace Amazon.S3
         /// <param name="websiteConfiguration">A property of PutBucketWebsiteRequest used to execute the PutBucketWebsite service method.</param>
         /// 
         /// <returns>The response from the PutBucketWebsite service method, as returned by S3.</returns>
-        public PutBucketWebsiteResponse PutBucketWebsite(string bucketName, WebsiteConfiguration websiteConfiguration)
+        public virtual PutBucketWebsiteResponse PutBucketWebsite(string bucketName, WebsiteConfiguration websiteConfiguration)
         {
             var request = new PutBucketWebsiteRequest();
             request.BucketName = bucketName;
@@ -4056,7 +4056,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutBucketWebsite service method.</param>
         /// 
         /// <returns>The response from the PutBucketWebsite service method, as returned by S3.</returns>
-        public PutBucketWebsiteResponse PutBucketWebsite(PutBucketWebsiteRequest request)
+        public virtual PutBucketWebsiteResponse PutBucketWebsite(PutBucketWebsiteRequest request)
         {
             var marshaller = new PutBucketWebsiteRequestMarshaller();
             var unmarshaller = PutBucketWebsiteResponseUnmarshaller.Instance;
@@ -4075,7 +4075,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucketWebsite
         ///         operation.</returns>
-        public IAsyncResult BeginPutBucketWebsite(PutBucketWebsiteRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPutBucketWebsite(PutBucketWebsiteRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutBucketWebsiteRequestMarshaller();
             var unmarshaller = PutBucketWebsiteResponseUnmarshaller.Instance;
@@ -4091,7 +4091,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketWebsite.</param>
         /// 
         /// <returns>Returns a  PutBucketWebsiteResult from S3.</returns>
-        public  PutBucketWebsiteResponse EndPutBucketWebsite(IAsyncResult asyncResult)
+        public virtual PutBucketWebsiteResponse EndPutBucketWebsite(IAsyncResult asyncResult)
         {
             return EndInvoke<PutBucketWebsiteResponse>(asyncResult);
         }
@@ -4107,7 +4107,7 @@ namespace Amazon.S3
         /// <param name="configuration">A property of PutCORSConfigurationRequest used to execute the PutCORSConfiguration service method.</param>
         /// 
         /// <returns>The response from the PutCORSConfiguration service method, as returned by S3.</returns>
-        public PutCORSConfigurationResponse PutCORSConfiguration(string bucketName, CORSConfiguration configuration)
+        public virtual PutCORSConfigurationResponse PutCORSConfiguration(string bucketName, CORSConfiguration configuration)
         {
             var request = new PutCORSConfigurationRequest();
             request.BucketName = bucketName;
@@ -4122,7 +4122,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutCORSConfiguration service method.</param>
         /// 
         /// <returns>The response from the PutCORSConfiguration service method, as returned by S3.</returns>
-        public PutCORSConfigurationResponse PutCORSConfiguration(PutCORSConfigurationRequest request)
+        public virtual PutCORSConfigurationResponse PutCORSConfiguration(PutCORSConfigurationRequest request)
         {
             var marshaller = new PutCORSConfigurationRequestMarshaller();
             var unmarshaller = PutCORSConfigurationResponseUnmarshaller.Instance;
@@ -4141,7 +4141,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutCORSConfiguration
         ///         operation.</returns>
-        public IAsyncResult BeginPutCORSConfiguration(PutCORSConfigurationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPutCORSConfiguration(PutCORSConfigurationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutCORSConfigurationRequestMarshaller();
             var unmarshaller = PutCORSConfigurationResponseUnmarshaller.Instance;
@@ -4157,7 +4157,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutCORSConfiguration.</param>
         /// 
         /// <returns>Returns a  PutCORSConfigurationResult from S3.</returns>
-        public  PutCORSConfigurationResponse EndPutCORSConfiguration(IAsyncResult asyncResult)
+        public virtual PutCORSConfigurationResponse EndPutCORSConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<PutCORSConfigurationResponse>(asyncResult);
         }
@@ -4174,7 +4174,7 @@ namespace Amazon.S3
         /// <param name="configuration">A property of PutLifecycleConfigurationRequest used to execute the PutLifecycleConfiguration service method.</param>
         /// 
         /// <returns>The response from the PutLifecycleConfiguration service method, as returned by S3.</returns>
-        public PutLifecycleConfigurationResponse PutLifecycleConfiguration(string bucketName, LifecycleConfiguration configuration)
+        public virtual PutLifecycleConfigurationResponse PutLifecycleConfiguration(string bucketName, LifecycleConfiguration configuration)
         {
             var request = new PutLifecycleConfigurationRequest();
             request.BucketName = bucketName;
@@ -4190,7 +4190,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutLifecycleConfiguration service method.</param>
         /// 
         /// <returns>The response from the PutLifecycleConfiguration service method, as returned by S3.</returns>
-        public PutLifecycleConfigurationResponse PutLifecycleConfiguration(PutLifecycleConfigurationRequest request)
+        public virtual PutLifecycleConfigurationResponse PutLifecycleConfiguration(PutLifecycleConfigurationRequest request)
         {
             var marshaller = new PutLifecycleConfigurationRequestMarshaller();
             var unmarshaller = PutLifecycleConfigurationResponseUnmarshaller.Instance;
@@ -4209,7 +4209,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutLifecycleConfiguration
         ///         operation.</returns>
-        public IAsyncResult BeginPutLifecycleConfiguration(PutLifecycleConfigurationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPutLifecycleConfiguration(PutLifecycleConfigurationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutLifecycleConfigurationRequestMarshaller();
             var unmarshaller = PutLifecycleConfigurationResponseUnmarshaller.Instance;
@@ -4225,7 +4225,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutLifecycleConfiguration.</param>
         /// 
         /// <returns>Returns a  PutLifecycleConfigurationResult from S3.</returns>
-        public  PutLifecycleConfigurationResponse EndPutLifecycleConfiguration(IAsyncResult asyncResult)
+        public virtual PutLifecycleConfigurationResponse EndPutLifecycleConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<PutLifecycleConfigurationResponse>(asyncResult);
         }
@@ -4240,7 +4240,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutObject service method.</param>
         /// 
         /// <returns>The response from the PutObject service method, as returned by S3.</returns>
-        public PutObjectResponse PutObject(PutObjectRequest request)
+        public virtual PutObjectResponse PutObject(PutObjectRequest request)
         {
             var marshaller = new PutObjectRequestMarshaller();
             var unmarshaller = PutObjectResponseUnmarshaller.Instance;
@@ -4259,7 +4259,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutObject
         ///         operation.</returns>
-        public IAsyncResult BeginPutObject(PutObjectRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPutObject(PutObjectRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutObjectRequestMarshaller();
             var unmarshaller = PutObjectResponseUnmarshaller.Instance;
@@ -4275,7 +4275,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutObject.</param>
         /// 
         /// <returns>Returns a  PutObjectResult from S3.</returns>
-        public  PutObjectResponse EndPutObject(IAsyncResult asyncResult)
+        public virtual PutObjectResponse EndPutObject(IAsyncResult asyncResult)
         {
             return EndInvoke<PutObjectResponse>(asyncResult);
         }
@@ -4290,7 +4290,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutObjectTagging service method.</param>
         /// 
         /// <returns>The response from the PutObjectTagging service method, as returned by S3.</returns>
-        public PutObjectTaggingResponse PutObjectTagging(PutObjectTaggingRequest request)
+        public virtual PutObjectTaggingResponse PutObjectTagging(PutObjectTaggingRequest request)
         {
             var marshaller = new PutObjectTaggingRequestMarshaller();
             var unmarshaller = PutObjectTaggingResponseUnmarshaller.Instance;
@@ -4309,7 +4309,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutObjectTagging
         ///         operation.</returns>
-        public IAsyncResult BeginPutObjectTagging(PutObjectTaggingRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPutObjectTagging(PutObjectTaggingRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutObjectTaggingRequestMarshaller();
             var unmarshaller = PutObjectTaggingResponseUnmarshaller.Instance;
@@ -4325,7 +4325,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutObjectTagging.</param>
         /// 
         /// <returns>Returns a  PutObjectTaggingResult from S3.</returns>
-        public  PutObjectTaggingResponse EndPutObjectTagging(IAsyncResult asyncResult)
+        public virtual PutObjectTaggingResponse EndPutObjectTagging(IAsyncResult asyncResult)
         {
             return EndInvoke<PutObjectTaggingResponse>(asyncResult);
         }
@@ -4341,7 +4341,7 @@ namespace Amazon.S3
         /// <param name="key">A property of RestoreObjectRequest used to execute the RestoreObject service method.</param>
         /// 
         /// <returns>The response from the RestoreObject service method, as returned by S3.</returns>
-        public RestoreObjectResponse RestoreObject(string bucketName, string key)
+        public virtual RestoreObjectResponse RestoreObject(string bucketName, string key)
         {
             var request = new RestoreObjectRequest();
             request.BucketName = bucketName;
@@ -4358,7 +4358,7 @@ namespace Amazon.S3
         /// <param name="days">A property of RestoreObjectRequest used to execute the RestoreObject service method.</param>
         /// 
         /// <returns>The response from the RestoreObject service method, as returned by S3.</returns>
-        public RestoreObjectResponse RestoreObject(string bucketName, string key, int days)
+        public virtual RestoreObjectResponse RestoreObject(string bucketName, string key, int days)
         {
             var request = new RestoreObjectRequest();
             request.BucketName = bucketName;
@@ -4376,7 +4376,7 @@ namespace Amazon.S3
         /// <param name="versionId">A property of RestoreObjectRequest used to execute the RestoreObject service method.</param>
         /// 
         /// <returns>The response from the RestoreObject service method, as returned by S3.</returns>
-        public RestoreObjectResponse RestoreObject(string bucketName, string key, string versionId)
+        public virtual RestoreObjectResponse RestoreObject(string bucketName, string key, string versionId)
         {
             var request = new RestoreObjectRequest();
             request.BucketName = bucketName;
@@ -4395,7 +4395,7 @@ namespace Amazon.S3
         /// <param name="days">A property of RestoreObjectRequest used to execute the RestoreObject service method.</param>
         /// 
         /// <returns>The response from the RestoreObject service method, as returned by S3.</returns>
-        public RestoreObjectResponse RestoreObject(string bucketName, string key, string versionId, int days)
+        public virtual RestoreObjectResponse RestoreObject(string bucketName, string key, string versionId, int days)
         {
             var request = new RestoreObjectRequest();
             request.BucketName = bucketName;
@@ -4412,7 +4412,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the RestoreObject service method.</param>
         /// 
         /// <returns>The response from the RestoreObject service method, as returned by S3.</returns>
-        public RestoreObjectResponse RestoreObject(RestoreObjectRequest request)
+        public virtual RestoreObjectResponse RestoreObject(RestoreObjectRequest request)
         {
             var marshaller = new RestoreObjectRequestMarshaller();
             var unmarshaller = RestoreObjectResponseUnmarshaller.Instance;
@@ -4431,7 +4431,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRestoreObject
         ///         operation.</returns>
-        public IAsyncResult BeginRestoreObject(RestoreObjectRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginRestoreObject(RestoreObjectRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RestoreObjectRequestMarshaller();
             var unmarshaller = RestoreObjectResponseUnmarshaller.Instance;
@@ -4447,7 +4447,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRestoreObject.</param>
         /// 
         /// <returns>Returns a  RestoreObjectResult from S3.</returns>
-        public  RestoreObjectResponse EndRestoreObject(IAsyncResult asyncResult)
+        public virtual RestoreObjectResponse EndRestoreObject(IAsyncResult asyncResult)
         {
             return EndInvoke<RestoreObjectResponse>(asyncResult);
         }
@@ -4470,7 +4470,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the UploadPart service method.</param>
         /// 
         /// <returns>The response from the UploadPart service method, as returned by S3.</returns>
-        public UploadPartResponse UploadPart(UploadPartRequest request)
+        public virtual UploadPartResponse UploadPart(UploadPartRequest request)
         {
             var marshaller = new UploadPartRequestMarshaller();
             var unmarshaller = UploadPartResponseUnmarshaller.Instance;
@@ -4489,7 +4489,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUploadPart
         ///         operation.</returns>
-        public IAsyncResult BeginUploadPart(UploadPartRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUploadPart(UploadPartRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UploadPartRequestMarshaller();
             var unmarshaller = UploadPartResponseUnmarshaller.Instance;
@@ -4505,7 +4505,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUploadPart.</param>
         /// 
         /// <returns>Returns a  UploadPartResult from S3.</returns>
-        public  UploadPartResponse EndUploadPart(IAsyncResult asyncResult)
+        public virtual UploadPartResponse EndUploadPart(IAsyncResult asyncResult)
         {
             return EndInvoke<UploadPartResponse>(asyncResult);
         }

@@ -341,7 +341,7 @@ namespace Amazon.CodeCommit
         
         #region  BatchGetRepositories
 
-        internal BatchGetRepositoriesResponse BatchGetRepositories(BatchGetRepositoriesRequest request)
+        internal virtual BatchGetRepositoriesResponse BatchGetRepositories(BatchGetRepositoriesRequest request)
         {
             var marshaller = new BatchGetRepositoriesRequestMarshaller();
             var unmarshaller = BatchGetRepositoriesResponseUnmarshaller.Instance;
@@ -360,7 +360,7 @@ namespace Amazon.CodeCommit
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchGetRepositories">REST API Reference for BatchGetRepositories Operation</seealso>
-        public Task<BatchGetRepositoriesResponse> BatchGetRepositoriesAsync(BatchGetRepositoriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<BatchGetRepositoriesResponse> BatchGetRepositoriesAsync(BatchGetRepositoriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new BatchGetRepositoriesRequestMarshaller();
             var unmarshaller = BatchGetRepositoriesResponseUnmarshaller.Instance;
@@ -373,7 +373,7 @@ namespace Amazon.CodeCommit
         
         #region  CreateBranch
 
-        internal CreateBranchResponse CreateBranch(CreateBranchRequest request)
+        internal virtual CreateBranchResponse CreateBranch(CreateBranchRequest request)
         {
             var marshaller = new CreateBranchRequestMarshaller();
             var unmarshaller = CreateBranchResponseUnmarshaller.Instance;
@@ -392,7 +392,7 @@ namespace Amazon.CodeCommit
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateBranch">REST API Reference for CreateBranch Operation</seealso>
-        public Task<CreateBranchResponse> CreateBranchAsync(CreateBranchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateBranchResponse> CreateBranchAsync(CreateBranchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateBranchRequestMarshaller();
             var unmarshaller = CreateBranchResponseUnmarshaller.Instance;
@@ -405,7 +405,7 @@ namespace Amazon.CodeCommit
         
         #region  CreateRepository
 
-        internal CreateRepositoryResponse CreateRepository(CreateRepositoryRequest request)
+        internal virtual CreateRepositoryResponse CreateRepository(CreateRepositoryRequest request)
         {
             var marshaller = new CreateRepositoryRequestMarshaller();
             var unmarshaller = CreateRepositoryResponseUnmarshaller.Instance;
@@ -424,7 +424,7 @@ namespace Amazon.CodeCommit
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateRepository">REST API Reference for CreateRepository Operation</seealso>
-        public Task<CreateRepositoryResponse> CreateRepositoryAsync(CreateRepositoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateRepositoryResponse> CreateRepositoryAsync(CreateRepositoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateRepositoryRequestMarshaller();
             var unmarshaller = CreateRepositoryResponseUnmarshaller.Instance;
@@ -437,7 +437,7 @@ namespace Amazon.CodeCommit
         
         #region  DeleteRepository
 
-        internal DeleteRepositoryResponse DeleteRepository(DeleteRepositoryRequest request)
+        internal virtual DeleteRepositoryResponse DeleteRepository(DeleteRepositoryRequest request)
         {
             var marshaller = new DeleteRepositoryRequestMarshaller();
             var unmarshaller = DeleteRepositoryResponseUnmarshaller.Instance;
@@ -456,7 +456,7 @@ namespace Amazon.CodeCommit
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteRepository">REST API Reference for DeleteRepository Operation</seealso>
-        public Task<DeleteRepositoryResponse> DeleteRepositoryAsync(DeleteRepositoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteRepositoryResponse> DeleteRepositoryAsync(DeleteRepositoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteRepositoryRequestMarshaller();
             var unmarshaller = DeleteRepositoryResponseUnmarshaller.Instance;
@@ -469,7 +469,7 @@ namespace Amazon.CodeCommit
         
         #region  GetBlob
 
-        internal GetBlobResponse GetBlob(GetBlobRequest request)
+        internal virtual GetBlobResponse GetBlob(GetBlobRequest request)
         {
             var marshaller = new GetBlobRequestMarshaller();
             var unmarshaller = GetBlobResponseUnmarshaller.Instance;
@@ -488,7 +488,7 @@ namespace Amazon.CodeCommit
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetBlob">REST API Reference for GetBlob Operation</seealso>
-        public Task<GetBlobResponse> GetBlobAsync(GetBlobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetBlobResponse> GetBlobAsync(GetBlobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetBlobRequestMarshaller();
             var unmarshaller = GetBlobResponseUnmarshaller.Instance;
@@ -501,7 +501,7 @@ namespace Amazon.CodeCommit
         
         #region  GetBranch
 
-        internal GetBranchResponse GetBranch(GetBranchRequest request)
+        internal virtual GetBranchResponse GetBranch(GetBranchRequest request)
         {
             var marshaller = new GetBranchRequestMarshaller();
             var unmarshaller = GetBranchResponseUnmarshaller.Instance;
@@ -520,7 +520,7 @@ namespace Amazon.CodeCommit
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetBranch">REST API Reference for GetBranch Operation</seealso>
-        public Task<GetBranchResponse> GetBranchAsync(GetBranchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetBranchResponse> GetBranchAsync(GetBranchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetBranchRequestMarshaller();
             var unmarshaller = GetBranchResponseUnmarshaller.Instance;
@@ -533,7 +533,7 @@ namespace Amazon.CodeCommit
         
         #region  GetCommit
 
-        internal GetCommitResponse GetCommit(GetCommitRequest request)
+        internal virtual GetCommitResponse GetCommit(GetCommitRequest request)
         {
             var marshaller = new GetCommitRequestMarshaller();
             var unmarshaller = GetCommitResponseUnmarshaller.Instance;
@@ -552,7 +552,7 @@ namespace Amazon.CodeCommit
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetCommit">REST API Reference for GetCommit Operation</seealso>
-        public Task<GetCommitResponse> GetCommitAsync(GetCommitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetCommitResponse> GetCommitAsync(GetCommitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetCommitRequestMarshaller();
             var unmarshaller = GetCommitResponseUnmarshaller.Instance;
@@ -565,7 +565,7 @@ namespace Amazon.CodeCommit
         
         #region  GetDifferences
 
-        internal GetDifferencesResponse GetDifferences(GetDifferencesRequest request)
+        internal virtual GetDifferencesResponse GetDifferences(GetDifferencesRequest request)
         {
             var marshaller = new GetDifferencesRequestMarshaller();
             var unmarshaller = GetDifferencesResponseUnmarshaller.Instance;
@@ -584,7 +584,7 @@ namespace Amazon.CodeCommit
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetDifferences">REST API Reference for GetDifferences Operation</seealso>
-        public Task<GetDifferencesResponse> GetDifferencesAsync(GetDifferencesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetDifferencesResponse> GetDifferencesAsync(GetDifferencesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetDifferencesRequestMarshaller();
             var unmarshaller = GetDifferencesResponseUnmarshaller.Instance;
@@ -597,7 +597,7 @@ namespace Amazon.CodeCommit
         
         #region  GetRepository
 
-        internal GetRepositoryResponse GetRepository(GetRepositoryRequest request)
+        internal virtual GetRepositoryResponse GetRepository(GetRepositoryRequest request)
         {
             var marshaller = new GetRepositoryRequestMarshaller();
             var unmarshaller = GetRepositoryResponseUnmarshaller.Instance;
@@ -616,7 +616,7 @@ namespace Amazon.CodeCommit
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetRepository">REST API Reference for GetRepository Operation</seealso>
-        public Task<GetRepositoryResponse> GetRepositoryAsync(GetRepositoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetRepositoryResponse> GetRepositoryAsync(GetRepositoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetRepositoryRequestMarshaller();
             var unmarshaller = GetRepositoryResponseUnmarshaller.Instance;
@@ -629,7 +629,7 @@ namespace Amazon.CodeCommit
         
         #region  GetRepositoryTriggers
 
-        internal GetRepositoryTriggersResponse GetRepositoryTriggers(GetRepositoryTriggersRequest request)
+        internal virtual GetRepositoryTriggersResponse GetRepositoryTriggers(GetRepositoryTriggersRequest request)
         {
             var marshaller = new GetRepositoryTriggersRequestMarshaller();
             var unmarshaller = GetRepositoryTriggersResponseUnmarshaller.Instance;
@@ -648,7 +648,7 @@ namespace Amazon.CodeCommit
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetRepositoryTriggers">REST API Reference for GetRepositoryTriggers Operation</seealso>
-        public Task<GetRepositoryTriggersResponse> GetRepositoryTriggersAsync(GetRepositoryTriggersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetRepositoryTriggersResponse> GetRepositoryTriggersAsync(GetRepositoryTriggersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetRepositoryTriggersRequestMarshaller();
             var unmarshaller = GetRepositoryTriggersResponseUnmarshaller.Instance;
@@ -661,7 +661,7 @@ namespace Amazon.CodeCommit
         
         #region  ListBranches
 
-        internal ListBranchesResponse ListBranches(ListBranchesRequest request)
+        internal virtual ListBranchesResponse ListBranches(ListBranchesRequest request)
         {
             var marshaller = new ListBranchesRequestMarshaller();
             var unmarshaller = ListBranchesResponseUnmarshaller.Instance;
@@ -680,7 +680,7 @@ namespace Amazon.CodeCommit
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListBranches">REST API Reference for ListBranches Operation</seealso>
-        public Task<ListBranchesResponse> ListBranchesAsync(ListBranchesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListBranchesResponse> ListBranchesAsync(ListBranchesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListBranchesRequestMarshaller();
             var unmarshaller = ListBranchesResponseUnmarshaller.Instance;
@@ -693,7 +693,7 @@ namespace Amazon.CodeCommit
         
         #region  ListRepositories
 
-        internal ListRepositoriesResponse ListRepositories(ListRepositoriesRequest request)
+        internal virtual ListRepositoriesResponse ListRepositories(ListRepositoriesRequest request)
         {
             var marshaller = new ListRepositoriesRequestMarshaller();
             var unmarshaller = ListRepositoriesResponseUnmarshaller.Instance;
@@ -712,7 +712,7 @@ namespace Amazon.CodeCommit
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListRepositories">REST API Reference for ListRepositories Operation</seealso>
-        public Task<ListRepositoriesResponse> ListRepositoriesAsync(ListRepositoriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListRepositoriesResponse> ListRepositoriesAsync(ListRepositoriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListRepositoriesRequestMarshaller();
             var unmarshaller = ListRepositoriesResponseUnmarshaller.Instance;
@@ -725,7 +725,7 @@ namespace Amazon.CodeCommit
         
         #region  PutRepositoryTriggers
 
-        internal PutRepositoryTriggersResponse PutRepositoryTriggers(PutRepositoryTriggersRequest request)
+        internal virtual PutRepositoryTriggersResponse PutRepositoryTriggers(PutRepositoryTriggersRequest request)
         {
             var marshaller = new PutRepositoryTriggersRequestMarshaller();
             var unmarshaller = PutRepositoryTriggersResponseUnmarshaller.Instance;
@@ -744,7 +744,7 @@ namespace Amazon.CodeCommit
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PutRepositoryTriggers">REST API Reference for PutRepositoryTriggers Operation</seealso>
-        public Task<PutRepositoryTriggersResponse> PutRepositoryTriggersAsync(PutRepositoryTriggersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PutRepositoryTriggersResponse> PutRepositoryTriggersAsync(PutRepositoryTriggersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutRepositoryTriggersRequestMarshaller();
             var unmarshaller = PutRepositoryTriggersResponseUnmarshaller.Instance;
@@ -757,7 +757,7 @@ namespace Amazon.CodeCommit
         
         #region  TestRepositoryTriggers
 
-        internal TestRepositoryTriggersResponse TestRepositoryTriggers(TestRepositoryTriggersRequest request)
+        internal virtual TestRepositoryTriggersResponse TestRepositoryTriggers(TestRepositoryTriggersRequest request)
         {
             var marshaller = new TestRepositoryTriggersRequestMarshaller();
             var unmarshaller = TestRepositoryTriggersResponseUnmarshaller.Instance;
@@ -776,7 +776,7 @@ namespace Amazon.CodeCommit
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/TestRepositoryTriggers">REST API Reference for TestRepositoryTriggers Operation</seealso>
-        public Task<TestRepositoryTriggersResponse> TestRepositoryTriggersAsync(TestRepositoryTriggersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<TestRepositoryTriggersResponse> TestRepositoryTriggersAsync(TestRepositoryTriggersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new TestRepositoryTriggersRequestMarshaller();
             var unmarshaller = TestRepositoryTriggersResponseUnmarshaller.Instance;
@@ -789,7 +789,7 @@ namespace Amazon.CodeCommit
         
         #region  UpdateDefaultBranch
 
-        internal UpdateDefaultBranchResponse UpdateDefaultBranch(UpdateDefaultBranchRequest request)
+        internal virtual UpdateDefaultBranchResponse UpdateDefaultBranch(UpdateDefaultBranchRequest request)
         {
             var marshaller = new UpdateDefaultBranchRequestMarshaller();
             var unmarshaller = UpdateDefaultBranchResponseUnmarshaller.Instance;
@@ -808,7 +808,7 @@ namespace Amazon.CodeCommit
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateDefaultBranch">REST API Reference for UpdateDefaultBranch Operation</seealso>
-        public Task<UpdateDefaultBranchResponse> UpdateDefaultBranchAsync(UpdateDefaultBranchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateDefaultBranchResponse> UpdateDefaultBranchAsync(UpdateDefaultBranchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateDefaultBranchRequestMarshaller();
             var unmarshaller = UpdateDefaultBranchResponseUnmarshaller.Instance;
@@ -821,7 +821,7 @@ namespace Amazon.CodeCommit
         
         #region  UpdateRepositoryDescription
 
-        internal UpdateRepositoryDescriptionResponse UpdateRepositoryDescription(UpdateRepositoryDescriptionRequest request)
+        internal virtual UpdateRepositoryDescriptionResponse UpdateRepositoryDescription(UpdateRepositoryDescriptionRequest request)
         {
             var marshaller = new UpdateRepositoryDescriptionRequestMarshaller();
             var unmarshaller = UpdateRepositoryDescriptionResponseUnmarshaller.Instance;
@@ -840,7 +840,7 @@ namespace Amazon.CodeCommit
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateRepositoryDescription">REST API Reference for UpdateRepositoryDescription Operation</seealso>
-        public Task<UpdateRepositoryDescriptionResponse> UpdateRepositoryDescriptionAsync(UpdateRepositoryDescriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateRepositoryDescriptionResponse> UpdateRepositoryDescriptionAsync(UpdateRepositoryDescriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateRepositoryDescriptionRequestMarshaller();
             var unmarshaller = UpdateRepositoryDescriptionResponseUnmarshaller.Instance;
@@ -853,7 +853,7 @@ namespace Amazon.CodeCommit
         
         #region  UpdateRepositoryName
 
-        internal UpdateRepositoryNameResponse UpdateRepositoryName(UpdateRepositoryNameRequest request)
+        internal virtual UpdateRepositoryNameResponse UpdateRepositoryName(UpdateRepositoryNameRequest request)
         {
             var marshaller = new UpdateRepositoryNameRequestMarshaller();
             var unmarshaller = UpdateRepositoryNameResponseUnmarshaller.Instance;
@@ -872,7 +872,7 @@ namespace Amazon.CodeCommit
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateRepositoryName">REST API Reference for UpdateRepositoryName Operation</seealso>
-        public Task<UpdateRepositoryNameResponse> UpdateRepositoryNameAsync(UpdateRepositoryNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateRepositoryNameResponse> UpdateRepositoryNameAsync(UpdateRepositoryNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateRepositoryNameRequestMarshaller();
             var unmarshaller = UpdateRepositoryNameResponseUnmarshaller.Instance;

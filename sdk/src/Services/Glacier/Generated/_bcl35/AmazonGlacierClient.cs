@@ -322,7 +322,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public AbortMultipartUploadResponse AbortMultipartUpload(AbortMultipartUploadRequest request)
+        public virtual AbortMultipartUploadResponse AbortMultipartUpload(AbortMultipartUploadRequest request)
         {
             var marshaller = new AbortMultipartUploadRequestMarshaller();
             var unmarshaller = AbortMultipartUploadResponseUnmarshaller.Instance;
@@ -341,7 +341,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAbortMultipartUpload
         ///         operation.</returns>
-        public IAsyncResult BeginAbortMultipartUpload(AbortMultipartUploadRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginAbortMultipartUpload(AbortMultipartUploadRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AbortMultipartUploadRequestMarshaller();
             var unmarshaller = AbortMultipartUploadResponseUnmarshaller.Instance;
@@ -357,7 +357,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAbortMultipartUpload.</param>
         /// 
         /// <returns>Returns a  AbortMultipartUploadResult from Glacier.</returns>
-        public  AbortMultipartUploadResponse EndAbortMultipartUpload(IAsyncResult asyncResult)
+        public virtual AbortMultipartUploadResponse EndAbortMultipartUpload(IAsyncResult asyncResult)
         {
             return EndInvoke<AbortMultipartUploadResponse>(asyncResult);
         }
@@ -405,7 +405,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public AbortVaultLockResponse AbortVaultLock(AbortVaultLockRequest request)
+        public virtual AbortVaultLockResponse AbortVaultLock(AbortVaultLockRequest request)
         {
             var marshaller = new AbortVaultLockRequestMarshaller();
             var unmarshaller = AbortVaultLockResponseUnmarshaller.Instance;
@@ -424,7 +424,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAbortVaultLock
         ///         operation.</returns>
-        public IAsyncResult BeginAbortVaultLock(AbortVaultLockRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginAbortVaultLock(AbortVaultLockRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AbortVaultLockRequestMarshaller();
             var unmarshaller = AbortVaultLockResponseUnmarshaller.Instance;
@@ -440,7 +440,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAbortVaultLock.</param>
         /// 
         /// <returns>Returns a  AbortVaultLockResult from Glacier.</returns>
-        public  AbortVaultLockResponse EndAbortVaultLock(IAsyncResult asyncResult)
+        public virtual AbortVaultLockResponse EndAbortVaultLock(IAsyncResult asyncResult)
         {
             return EndInvoke<AbortVaultLockResponse>(asyncResult);
         }
@@ -476,7 +476,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public AddTagsToVaultResponse AddTagsToVault(AddTagsToVaultRequest request)
+        public virtual AddTagsToVaultResponse AddTagsToVault(AddTagsToVaultRequest request)
         {
             var marshaller = new AddTagsToVaultRequestMarshaller();
             var unmarshaller = AddTagsToVaultResponseUnmarshaller.Instance;
@@ -495,7 +495,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddTagsToVault
         ///         operation.</returns>
-        public IAsyncResult BeginAddTagsToVault(AddTagsToVaultRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginAddTagsToVault(AddTagsToVaultRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AddTagsToVaultRequestMarshaller();
             var unmarshaller = AddTagsToVaultResponseUnmarshaller.Instance;
@@ -511,7 +511,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddTagsToVault.</param>
         /// 
         /// <returns>Returns a  AddTagsToVaultResult from Glacier.</returns>
-        public  AddTagsToVaultResponse EndAddTagsToVault(IAsyncResult asyncResult)
+        public virtual AddTagsToVaultResponse EndAddTagsToVault(IAsyncResult asyncResult)
         {
             return EndInvoke<AddTagsToVaultResponse>(asyncResult);
         }
@@ -589,7 +589,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public CompleteMultipartUploadResponse CompleteMultipartUpload(CompleteMultipartUploadRequest request)
+        public virtual CompleteMultipartUploadResponse CompleteMultipartUpload(CompleteMultipartUploadRequest request)
         {
             var marshaller = new CompleteMultipartUploadRequestMarshaller();
             var unmarshaller = CompleteMultipartUploadResponseUnmarshaller.Instance;
@@ -608,7 +608,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCompleteMultipartUpload
         ///         operation.</returns>
-        public IAsyncResult BeginCompleteMultipartUpload(CompleteMultipartUploadRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCompleteMultipartUpload(CompleteMultipartUploadRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CompleteMultipartUploadRequestMarshaller();
             var unmarshaller = CompleteMultipartUploadResponseUnmarshaller.Instance;
@@ -624,7 +624,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCompleteMultipartUpload.</param>
         /// 
         /// <returns>Returns a  CompleteMultipartUploadResult from Glacier.</returns>
-        public  CompleteMultipartUploadResponse EndCompleteMultipartUpload(IAsyncResult asyncResult)
+        public virtual CompleteMultipartUploadResponse EndCompleteMultipartUpload(IAsyncResult asyncResult)
         {
             return EndInvoke<CompleteMultipartUploadResponse>(asyncResult);
         }
@@ -672,7 +672,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public CompleteVaultLockResponse CompleteVaultLock(CompleteVaultLockRequest request)
+        public virtual CompleteVaultLockResponse CompleteVaultLock(CompleteVaultLockRequest request)
         {
             var marshaller = new CompleteVaultLockRequestMarshaller();
             var unmarshaller = CompleteVaultLockResponseUnmarshaller.Instance;
@@ -691,7 +691,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCompleteVaultLock
         ///         operation.</returns>
-        public IAsyncResult BeginCompleteVaultLock(CompleteVaultLockRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCompleteVaultLock(CompleteVaultLockRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CompleteVaultLockRequestMarshaller();
             var unmarshaller = CompleteVaultLockResponseUnmarshaller.Instance;
@@ -707,7 +707,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCompleteVaultLock.</param>
         /// 
         /// <returns>Returns a  CompleteVaultLockResult from Glacier.</returns>
-        public  CompleteVaultLockResponse EndCompleteVaultLock(IAsyncResult asyncResult)
+        public virtual CompleteVaultLockResponse EndCompleteVaultLock(IAsyncResult asyncResult)
         {
             return EndInvoke<CompleteVaultLockResponse>(asyncResult);
         }
@@ -767,7 +767,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public CreateVaultResponse CreateVault(CreateVaultRequest request)
+        public virtual CreateVaultResponse CreateVault(CreateVaultRequest request)
         {
             var marshaller = new CreateVaultRequestMarshaller();
             var unmarshaller = CreateVaultResponseUnmarshaller.Instance;
@@ -786,7 +786,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateVault
         ///         operation.</returns>
-        public IAsyncResult BeginCreateVault(CreateVaultRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateVault(CreateVaultRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateVaultRequestMarshaller();
             var unmarshaller = CreateVaultResponseUnmarshaller.Instance;
@@ -802,7 +802,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateVault.</param>
         /// 
         /// <returns>Returns a  CreateVaultResult from Glacier.</returns>
-        public  CreateVaultResponse EndCreateVault(IAsyncResult asyncResult)
+        public virtual CreateVaultResponse EndCreateVault(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateVaultResponse>(asyncResult);
         }
@@ -864,7 +864,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public DeleteArchiveResponse DeleteArchive(DeleteArchiveRequest request)
+        public virtual DeleteArchiveResponse DeleteArchive(DeleteArchiveRequest request)
         {
             var marshaller = new DeleteArchiveRequestMarshaller();
             var unmarshaller = DeleteArchiveResponseUnmarshaller.Instance;
@@ -883,7 +883,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteArchive
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteArchive(DeleteArchiveRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteArchive(DeleteArchiveRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteArchiveRequestMarshaller();
             var unmarshaller = DeleteArchiveResponseUnmarshaller.Instance;
@@ -899,7 +899,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteArchive.</param>
         /// 
         /// <returns>Returns a  DeleteArchiveResult from Glacier.</returns>
-        public  DeleteArchiveResponse EndDeleteArchive(IAsyncResult asyncResult)
+        public virtual DeleteArchiveResponse EndDeleteArchive(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteArchiveResponse>(asyncResult);
         }
@@ -954,7 +954,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public DeleteVaultResponse DeleteVault(DeleteVaultRequest request)
+        public virtual DeleteVaultResponse DeleteVault(DeleteVaultRequest request)
         {
             var marshaller = new DeleteVaultRequestMarshaller();
             var unmarshaller = DeleteVaultResponseUnmarshaller.Instance;
@@ -973,7 +973,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteVault
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteVault(DeleteVaultRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteVault(DeleteVaultRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteVaultRequestMarshaller();
             var unmarshaller = DeleteVaultResponseUnmarshaller.Instance;
@@ -989,7 +989,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVault.</param>
         /// 
         /// <returns>Returns a  DeleteVaultResult from Glacier.</returns>
-        public  DeleteVaultResponse EndDeleteVault(IAsyncResult asyncResult)
+        public virtual DeleteVaultResponse EndDeleteVault(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteVaultResponse>(asyncResult);
         }
@@ -1028,7 +1028,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public DeleteVaultAccessPolicyResponse DeleteVaultAccessPolicy(DeleteVaultAccessPolicyRequest request)
+        public virtual DeleteVaultAccessPolicyResponse DeleteVaultAccessPolicy(DeleteVaultAccessPolicyRequest request)
         {
             var marshaller = new DeleteVaultAccessPolicyRequestMarshaller();
             var unmarshaller = DeleteVaultAccessPolicyResponseUnmarshaller.Instance;
@@ -1047,7 +1047,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteVaultAccessPolicy
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteVaultAccessPolicy(DeleteVaultAccessPolicyRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteVaultAccessPolicy(DeleteVaultAccessPolicyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteVaultAccessPolicyRequestMarshaller();
             var unmarshaller = DeleteVaultAccessPolicyResponseUnmarshaller.Instance;
@@ -1063,7 +1063,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVaultAccessPolicy.</param>
         /// 
         /// <returns>Returns a  DeleteVaultAccessPolicyResult from Glacier.</returns>
-        public  DeleteVaultAccessPolicyResponse EndDeleteVaultAccessPolicy(IAsyncResult asyncResult)
+        public virtual DeleteVaultAccessPolicyResponse EndDeleteVaultAccessPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteVaultAccessPolicyResponse>(asyncResult);
         }
@@ -1109,7 +1109,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public DeleteVaultNotificationsResponse DeleteVaultNotifications(DeleteVaultNotificationsRequest request)
+        public virtual DeleteVaultNotificationsResponse DeleteVaultNotifications(DeleteVaultNotificationsRequest request)
         {
             var marshaller = new DeleteVaultNotificationsRequestMarshaller();
             var unmarshaller = DeleteVaultNotificationsResponseUnmarshaller.Instance;
@@ -1128,7 +1128,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteVaultNotifications
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteVaultNotifications(DeleteVaultNotificationsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteVaultNotifications(DeleteVaultNotificationsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteVaultNotificationsRequestMarshaller();
             var unmarshaller = DeleteVaultNotificationsResponseUnmarshaller.Instance;
@@ -1144,7 +1144,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVaultNotifications.</param>
         /// 
         /// <returns>Returns a  DeleteVaultNotificationsResult from Glacier.</returns>
-        public  DeleteVaultNotificationsResponse EndDeleteVaultNotifications(IAsyncResult asyncResult)
+        public virtual DeleteVaultNotificationsResponse EndDeleteVaultNotifications(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteVaultNotificationsResponse>(asyncResult);
         }
@@ -1201,7 +1201,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public DescribeJobResponse DescribeJob(DescribeJobRequest request)
+        public virtual DescribeJobResponse DescribeJob(DescribeJobRequest request)
         {
             var marshaller = new DescribeJobRequestMarshaller();
             var unmarshaller = DescribeJobResponseUnmarshaller.Instance;
@@ -1220,7 +1220,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeJob
         ///         operation.</returns>
-        public IAsyncResult BeginDescribeJob(DescribeJobRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeJob(DescribeJobRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeJobRequestMarshaller();
             var unmarshaller = DescribeJobResponseUnmarshaller.Instance;
@@ -1236,7 +1236,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeJob.</param>
         /// 
         /// <returns>Returns a  DescribeJobResult from Glacier.</returns>
-        public  DescribeJobResponse EndDescribeJob(IAsyncResult asyncResult)
+        public virtual DescribeJobResponse EndDescribeJob(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeJobResponse>(asyncResult);
         }
@@ -1287,7 +1287,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public DescribeVaultResponse DescribeVault(DescribeVaultRequest request)
+        public virtual DescribeVaultResponse DescribeVault(DescribeVaultRequest request)
         {
             var marshaller = new DescribeVaultRequestMarshaller();
             var unmarshaller = DescribeVaultResponseUnmarshaller.Instance;
@@ -1306,7 +1306,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeVault
         ///         operation.</returns>
-        public IAsyncResult BeginDescribeVault(DescribeVaultRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeVault(DescribeVaultRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeVaultRequestMarshaller();
             var unmarshaller = DescribeVaultResponseUnmarshaller.Instance;
@@ -1322,7 +1322,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeVault.</param>
         /// 
         /// <returns>Returns a  DescribeVaultResult from Glacier.</returns>
-        public  DescribeVaultResponse EndDescribeVault(IAsyncResult asyncResult)
+        public virtual DescribeVaultResponse EndDescribeVault(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeVaultResponse>(asyncResult);
         }
@@ -1349,7 +1349,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public GetDataRetrievalPolicyResponse GetDataRetrievalPolicy(GetDataRetrievalPolicyRequest request)
+        public virtual GetDataRetrievalPolicyResponse GetDataRetrievalPolicy(GetDataRetrievalPolicyRequest request)
         {
             var marshaller = new GetDataRetrievalPolicyRequestMarshaller();
             var unmarshaller = GetDataRetrievalPolicyResponseUnmarshaller.Instance;
@@ -1368,7 +1368,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDataRetrievalPolicy
         ///         operation.</returns>
-        public IAsyncResult BeginGetDataRetrievalPolicy(GetDataRetrievalPolicyRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetDataRetrievalPolicy(GetDataRetrievalPolicyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetDataRetrievalPolicyRequestMarshaller();
             var unmarshaller = GetDataRetrievalPolicyResponseUnmarshaller.Instance;
@@ -1384,7 +1384,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDataRetrievalPolicy.</param>
         /// 
         /// <returns>Returns a  GetDataRetrievalPolicyResult from Glacier.</returns>
-        public  GetDataRetrievalPolicyResponse EndGetDataRetrievalPolicy(IAsyncResult asyncResult)
+        public virtual GetDataRetrievalPolicyResponse EndGetDataRetrievalPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDataRetrievalPolicyResponse>(asyncResult);
         }
@@ -1468,7 +1468,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public GetJobOutputResponse GetJobOutput(GetJobOutputRequest request)
+        public virtual GetJobOutputResponse GetJobOutput(GetJobOutputRequest request)
         {
             var marshaller = new GetJobOutputRequestMarshaller();
             var unmarshaller = GetJobOutputResponseUnmarshaller.Instance;
@@ -1487,7 +1487,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetJobOutput
         ///         operation.</returns>
-        public IAsyncResult BeginGetJobOutput(GetJobOutputRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetJobOutput(GetJobOutputRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetJobOutputRequestMarshaller();
             var unmarshaller = GetJobOutputResponseUnmarshaller.Instance;
@@ -1503,7 +1503,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetJobOutput.</param>
         /// 
         /// <returns>Returns a  GetJobOutputResult from Glacier.</returns>
-        public  GetJobOutputResponse EndGetJobOutput(IAsyncResult asyncResult)
+        public virtual GetJobOutputResponse EndGetJobOutput(IAsyncResult asyncResult)
         {
             return EndInvoke<GetJobOutputResponse>(asyncResult);
         }
@@ -1536,7 +1536,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public GetVaultAccessPolicyResponse GetVaultAccessPolicy(GetVaultAccessPolicyRequest request)
+        public virtual GetVaultAccessPolicyResponse GetVaultAccessPolicy(GetVaultAccessPolicyRequest request)
         {
             var marshaller = new GetVaultAccessPolicyRequestMarshaller();
             var unmarshaller = GetVaultAccessPolicyResponseUnmarshaller.Instance;
@@ -1555,7 +1555,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetVaultAccessPolicy
         ///         operation.</returns>
-        public IAsyncResult BeginGetVaultAccessPolicy(GetVaultAccessPolicyRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetVaultAccessPolicy(GetVaultAccessPolicyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetVaultAccessPolicyRequestMarshaller();
             var unmarshaller = GetVaultAccessPolicyResponseUnmarshaller.Instance;
@@ -1571,7 +1571,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetVaultAccessPolicy.</param>
         /// 
         /// <returns>Returns a  GetVaultAccessPolicyResult from Glacier.</returns>
-        public  GetVaultAccessPolicyResponse EndGetVaultAccessPolicy(IAsyncResult asyncResult)
+        public virtual GetVaultAccessPolicyResponse EndGetVaultAccessPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<GetVaultAccessPolicyResponse>(asyncResult);
         }
@@ -1631,7 +1631,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public GetVaultLockResponse GetVaultLock(GetVaultLockRequest request)
+        public virtual GetVaultLockResponse GetVaultLock(GetVaultLockRequest request)
         {
             var marshaller = new GetVaultLockRequestMarshaller();
             var unmarshaller = GetVaultLockResponseUnmarshaller.Instance;
@@ -1650,7 +1650,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetVaultLock
         ///         operation.</returns>
-        public IAsyncResult BeginGetVaultLock(GetVaultLockRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetVaultLock(GetVaultLockRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetVaultLockRequestMarshaller();
             var unmarshaller = GetVaultLockResponseUnmarshaller.Instance;
@@ -1666,7 +1666,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetVaultLock.</param>
         /// 
         /// <returns>Returns a  GetVaultLockResult from Glacier.</returns>
-        public  GetVaultLockResponse EndGetVaultLock(IAsyncResult asyncResult)
+        public virtual GetVaultLockResponse EndGetVaultLock(IAsyncResult asyncResult)
         {
             return EndInvoke<GetVaultLockResponse>(asyncResult);
         }
@@ -1718,7 +1718,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public GetVaultNotificationsResponse GetVaultNotifications(GetVaultNotificationsRequest request)
+        public virtual GetVaultNotificationsResponse GetVaultNotifications(GetVaultNotificationsRequest request)
         {
             var marshaller = new GetVaultNotificationsRequestMarshaller();
             var unmarshaller = GetVaultNotificationsResponseUnmarshaller.Instance;
@@ -1737,7 +1737,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetVaultNotifications
         ///         operation.</returns>
-        public IAsyncResult BeginGetVaultNotifications(GetVaultNotificationsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetVaultNotifications(GetVaultNotificationsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetVaultNotificationsRequestMarshaller();
             var unmarshaller = GetVaultNotificationsResponseUnmarshaller.Instance;
@@ -1753,7 +1753,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetVaultNotifications.</param>
         /// 
         /// <returns>Returns a  GetVaultNotificationsResult from Glacier.</returns>
-        public  GetVaultNotificationsResponse EndGetVaultNotifications(IAsyncResult asyncResult)
+        public virtual GetVaultNotificationsResponse EndGetVaultNotifications(IAsyncResult asyncResult)
         {
             return EndInvoke<GetVaultNotificationsResponse>(asyncResult);
         }
@@ -1980,7 +1980,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public InitiateJobResponse InitiateJob(InitiateJobRequest request)
+        public virtual InitiateJobResponse InitiateJob(InitiateJobRequest request)
         {
             var marshaller = new InitiateJobRequestMarshaller();
             var unmarshaller = InitiateJobResponseUnmarshaller.Instance;
@@ -1999,7 +1999,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndInitiateJob
         ///         operation.</returns>
-        public IAsyncResult BeginInitiateJob(InitiateJobRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginInitiateJob(InitiateJobRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new InitiateJobRequestMarshaller();
             var unmarshaller = InitiateJobResponseUnmarshaller.Instance;
@@ -2015,7 +2015,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginInitiateJob.</param>
         /// 
         /// <returns>Returns a  InitiateJobResult from Glacier.</returns>
-        public  InitiateJobResponse EndInitiateJob(IAsyncResult asyncResult)
+        public virtual InitiateJobResponse EndInitiateJob(IAsyncResult asyncResult)
         {
             return EndInvoke<InitiateJobResponse>(asyncResult);
         }
@@ -2087,7 +2087,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public InitiateMultipartUploadResponse InitiateMultipartUpload(InitiateMultipartUploadRequest request)
+        public virtual InitiateMultipartUploadResponse InitiateMultipartUpload(InitiateMultipartUploadRequest request)
         {
             var marshaller = new InitiateMultipartUploadRequestMarshaller();
             var unmarshaller = InitiateMultipartUploadResponseUnmarshaller.Instance;
@@ -2106,7 +2106,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndInitiateMultipartUpload
         ///         operation.</returns>
-        public IAsyncResult BeginInitiateMultipartUpload(InitiateMultipartUploadRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginInitiateMultipartUpload(InitiateMultipartUploadRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new InitiateMultipartUploadRequestMarshaller();
             var unmarshaller = InitiateMultipartUploadResponseUnmarshaller.Instance;
@@ -2122,7 +2122,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginInitiateMultipartUpload.</param>
         /// 
         /// <returns>Returns a  InitiateMultipartUploadResult from Glacier.</returns>
-        public  InitiateMultipartUploadResponse EndInitiateMultipartUpload(IAsyncResult asyncResult)
+        public virtual InitiateMultipartUploadResponse EndInitiateMultipartUpload(IAsyncResult asyncResult)
         {
             return EndInvoke<InitiateMultipartUploadResponse>(asyncResult);
         }
@@ -2197,7 +2197,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public InitiateVaultLockResponse InitiateVaultLock(InitiateVaultLockRequest request)
+        public virtual InitiateVaultLockResponse InitiateVaultLock(InitiateVaultLockRequest request)
         {
             var marshaller = new InitiateVaultLockRequestMarshaller();
             var unmarshaller = InitiateVaultLockResponseUnmarshaller.Instance;
@@ -2216,7 +2216,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndInitiateVaultLock
         ///         operation.</returns>
-        public IAsyncResult BeginInitiateVaultLock(InitiateVaultLockRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginInitiateVaultLock(InitiateVaultLockRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new InitiateVaultLockRequestMarshaller();
             var unmarshaller = InitiateVaultLockResponseUnmarshaller.Instance;
@@ -2232,7 +2232,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginInitiateVaultLock.</param>
         /// 
         /// <returns>Returns a  InitiateVaultLockResult from Glacier.</returns>
-        public  InitiateVaultLockResponse EndInitiateVaultLock(IAsyncResult asyncResult)
+        public virtual InitiateVaultLockResponse EndInitiateVaultLock(IAsyncResult asyncResult)
         {
             return EndInvoke<InitiateVaultLockResponse>(asyncResult);
         }
@@ -2312,7 +2312,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public ListJobsResponse ListJobs(ListJobsRequest request)
+        public virtual ListJobsResponse ListJobs(ListJobsRequest request)
         {
             var marshaller = new ListJobsRequestMarshaller();
             var unmarshaller = ListJobsResponseUnmarshaller.Instance;
@@ -2331,7 +2331,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListJobs
         ///         operation.</returns>
-        public IAsyncResult BeginListJobs(ListJobsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListJobs(ListJobsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListJobsRequestMarshaller();
             var unmarshaller = ListJobsResponseUnmarshaller.Instance;
@@ -2347,7 +2347,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListJobs.</param>
         /// 
         /// <returns>Returns a  ListJobsResult from Glacier.</returns>
-        public  ListJobsResponse EndListJobs(IAsyncResult asyncResult)
+        public virtual ListJobsResponse EndListJobs(IAsyncResult asyncResult)
         {
             return EndInvoke<ListJobsResponse>(asyncResult);
         }
@@ -2411,7 +2411,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public ListMultipartUploadsResponse ListMultipartUploads(ListMultipartUploadsRequest request)
+        public virtual ListMultipartUploadsResponse ListMultipartUploads(ListMultipartUploadsRequest request)
         {
             var marshaller = new ListMultipartUploadsRequestMarshaller();
             var unmarshaller = ListMultipartUploadsResponseUnmarshaller.Instance;
@@ -2430,7 +2430,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListMultipartUploads
         ///         operation.</returns>
-        public IAsyncResult BeginListMultipartUploads(ListMultipartUploadsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListMultipartUploads(ListMultipartUploadsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListMultipartUploadsRequestMarshaller();
             var unmarshaller = ListMultipartUploadsResponseUnmarshaller.Instance;
@@ -2446,7 +2446,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMultipartUploads.</param>
         /// 
         /// <returns>Returns a  ListMultipartUploadsResult from Glacier.</returns>
-        public  ListMultipartUploadsResponse EndListMultipartUploads(IAsyncResult asyncResult)
+        public virtual ListMultipartUploadsResponse EndListMultipartUploads(IAsyncResult asyncResult)
         {
             return EndInvoke<ListMultipartUploadsResponse>(asyncResult);
         }
@@ -2503,7 +2503,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public ListPartsResponse ListParts(ListPartsRequest request)
+        public virtual ListPartsResponse ListParts(ListPartsRequest request)
         {
             var marshaller = new ListPartsRequestMarshaller();
             var unmarshaller = ListPartsResponseUnmarshaller.Instance;
@@ -2522,7 +2522,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListParts
         ///         operation.</returns>
-        public IAsyncResult BeginListParts(ListPartsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListParts(ListPartsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListPartsRequestMarshaller();
             var unmarshaller = ListPartsResponseUnmarshaller.Instance;
@@ -2538,7 +2538,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListParts.</param>
         /// 
         /// <returns>Returns a  ListPartsResult from Glacier.</returns>
-        public  ListPartsResponse EndListParts(IAsyncResult asyncResult)
+        public virtual ListPartsResponse EndListParts(IAsyncResult asyncResult)
         {
             return EndInvoke<ListPartsResponse>(asyncResult);
         }
@@ -2562,7 +2562,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public ListProvisionedCapacityResponse ListProvisionedCapacity(ListProvisionedCapacityRequest request)
+        public virtual ListProvisionedCapacityResponse ListProvisionedCapacity(ListProvisionedCapacityRequest request)
         {
             var marshaller = new ListProvisionedCapacityRequestMarshaller();
             var unmarshaller = ListProvisionedCapacityResponseUnmarshaller.Instance;
@@ -2581,7 +2581,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListProvisionedCapacity
         ///         operation.</returns>
-        public IAsyncResult BeginListProvisionedCapacity(ListProvisionedCapacityRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListProvisionedCapacity(ListProvisionedCapacityRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListProvisionedCapacityRequestMarshaller();
             var unmarshaller = ListProvisionedCapacityResponseUnmarshaller.Instance;
@@ -2597,7 +2597,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListProvisionedCapacity.</param>
         /// 
         /// <returns>Returns a  ListProvisionedCapacityResult from Glacier.</returns>
-        public  ListProvisionedCapacityResponse EndListProvisionedCapacity(IAsyncResult asyncResult)
+        public virtual ListProvisionedCapacityResponse EndListProvisionedCapacity(IAsyncResult asyncResult)
         {
             return EndInvoke<ListProvisionedCapacityResponse>(asyncResult);
         }
@@ -2627,7 +2627,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public ListTagsForVaultResponse ListTagsForVault(ListTagsForVaultRequest request)
+        public virtual ListTagsForVaultResponse ListTagsForVault(ListTagsForVaultRequest request)
         {
             var marshaller = new ListTagsForVaultRequestMarshaller();
             var unmarshaller = ListTagsForVaultResponseUnmarshaller.Instance;
@@ -2646,7 +2646,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForVault
         ///         operation.</returns>
-        public IAsyncResult BeginListTagsForVault(ListTagsForVaultRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListTagsForVault(ListTagsForVaultRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListTagsForVaultRequestMarshaller();
             var unmarshaller = ListTagsForVaultResponseUnmarshaller.Instance;
@@ -2662,7 +2662,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForVault.</param>
         /// 
         /// <returns>Returns a  ListTagsForVaultResult from Glacier.</returns>
-        public  ListTagsForVaultResponse EndListTagsForVault(IAsyncResult asyncResult)
+        public virtual ListTagsForVaultResponse EndListTagsForVault(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTagsForVaultResponse>(asyncResult);
         }
@@ -2716,7 +2716,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public ListVaultsResponse ListVaults()
+        public virtual ListVaultsResponse ListVaults()
         {
             return ListVaults(new ListVaultsRequest());
         }
@@ -2767,7 +2767,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public ListVaultsResponse ListVaults(ListVaultsRequest request)
+        public virtual ListVaultsResponse ListVaults(ListVaultsRequest request)
         {
             var marshaller = new ListVaultsRequestMarshaller();
             var unmarshaller = ListVaultsResponseUnmarshaller.Instance;
@@ -2786,7 +2786,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListVaults
         ///         operation.</returns>
-        public IAsyncResult BeginListVaults(ListVaultsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListVaults(ListVaultsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListVaultsRequestMarshaller();
             var unmarshaller = ListVaultsResponseUnmarshaller.Instance;
@@ -2802,7 +2802,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListVaults.</param>
         /// 
         /// <returns>Returns a  ListVaultsResult from Glacier.</returns>
-        public  ListVaultsResponse EndListVaults(IAsyncResult asyncResult)
+        public virtual ListVaultsResponse EndListVaults(IAsyncResult asyncResult)
         {
             return EndInvoke<ListVaultsResponse>(asyncResult);
         }
@@ -2829,7 +2829,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public PurchaseProvisionedCapacityResponse PurchaseProvisionedCapacity(PurchaseProvisionedCapacityRequest request)
+        public virtual PurchaseProvisionedCapacityResponse PurchaseProvisionedCapacity(PurchaseProvisionedCapacityRequest request)
         {
             var marshaller = new PurchaseProvisionedCapacityRequestMarshaller();
             var unmarshaller = PurchaseProvisionedCapacityResponseUnmarshaller.Instance;
@@ -2848,7 +2848,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPurchaseProvisionedCapacity
         ///         operation.</returns>
-        public IAsyncResult BeginPurchaseProvisionedCapacity(PurchaseProvisionedCapacityRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPurchaseProvisionedCapacity(PurchaseProvisionedCapacityRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PurchaseProvisionedCapacityRequestMarshaller();
             var unmarshaller = PurchaseProvisionedCapacityResponseUnmarshaller.Instance;
@@ -2864,7 +2864,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPurchaseProvisionedCapacity.</param>
         /// 
         /// <returns>Returns a  PurchaseProvisionedCapacityResult from Glacier.</returns>
-        public  PurchaseProvisionedCapacityResponse EndPurchaseProvisionedCapacity(IAsyncResult asyncResult)
+        public virtual PurchaseProvisionedCapacityResponse EndPurchaseProvisionedCapacity(IAsyncResult asyncResult)
         {
             return EndInvoke<PurchaseProvisionedCapacityResponse>(asyncResult);
         }
@@ -2895,7 +2895,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public RemoveTagsFromVaultResponse RemoveTagsFromVault(RemoveTagsFromVaultRequest request)
+        public virtual RemoveTagsFromVaultResponse RemoveTagsFromVault(RemoveTagsFromVaultRequest request)
         {
             var marshaller = new RemoveTagsFromVaultRequestMarshaller();
             var unmarshaller = RemoveTagsFromVaultResponseUnmarshaller.Instance;
@@ -2914,7 +2914,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveTagsFromVault
         ///         operation.</returns>
-        public IAsyncResult BeginRemoveTagsFromVault(RemoveTagsFromVaultRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginRemoveTagsFromVault(RemoveTagsFromVaultRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RemoveTagsFromVaultRequestMarshaller();
             var unmarshaller = RemoveTagsFromVaultResponseUnmarshaller.Instance;
@@ -2930,7 +2930,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemoveTagsFromVault.</param>
         /// 
         /// <returns>Returns a  RemoveTagsFromVaultResult from Glacier.</returns>
-        public  RemoveTagsFromVaultResponse EndRemoveTagsFromVault(IAsyncResult asyncResult)
+        public virtual RemoveTagsFromVaultResponse EndRemoveTagsFromVault(IAsyncResult asyncResult)
         {
             return EndInvoke<RemoveTagsFromVaultResponse>(asyncResult);
         }
@@ -2964,7 +2964,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public SetDataRetrievalPolicyResponse SetDataRetrievalPolicy(SetDataRetrievalPolicyRequest request)
+        public virtual SetDataRetrievalPolicyResponse SetDataRetrievalPolicy(SetDataRetrievalPolicyRequest request)
         {
             var marshaller = new SetDataRetrievalPolicyRequestMarshaller();
             var unmarshaller = SetDataRetrievalPolicyResponseUnmarshaller.Instance;
@@ -2983,7 +2983,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetDataRetrievalPolicy
         ///         operation.</returns>
-        public IAsyncResult BeginSetDataRetrievalPolicy(SetDataRetrievalPolicyRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginSetDataRetrievalPolicy(SetDataRetrievalPolicyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SetDataRetrievalPolicyRequestMarshaller();
             var unmarshaller = SetDataRetrievalPolicyResponseUnmarshaller.Instance;
@@ -2999,7 +2999,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetDataRetrievalPolicy.</param>
         /// 
         /// <returns>Returns a  SetDataRetrievalPolicyResult from Glacier.</returns>
-        public  SetDataRetrievalPolicyResponse EndSetDataRetrievalPolicy(IAsyncResult asyncResult)
+        public virtual SetDataRetrievalPolicyResponse EndSetDataRetrievalPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<SetDataRetrievalPolicyResponse>(asyncResult);
         }
@@ -3032,7 +3032,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public SetVaultAccessPolicyResponse SetVaultAccessPolicy(SetVaultAccessPolicyRequest request)
+        public virtual SetVaultAccessPolicyResponse SetVaultAccessPolicy(SetVaultAccessPolicyRequest request)
         {
             var marshaller = new SetVaultAccessPolicyRequestMarshaller();
             var unmarshaller = SetVaultAccessPolicyResponseUnmarshaller.Instance;
@@ -3051,7 +3051,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetVaultAccessPolicy
         ///         operation.</returns>
-        public IAsyncResult BeginSetVaultAccessPolicy(SetVaultAccessPolicyRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginSetVaultAccessPolicy(SetVaultAccessPolicyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SetVaultAccessPolicyRequestMarshaller();
             var unmarshaller = SetVaultAccessPolicyResponseUnmarshaller.Instance;
@@ -3067,7 +3067,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetVaultAccessPolicy.</param>
         /// 
         /// <returns>Returns a  SetVaultAccessPolicyResult from Glacier.</returns>
-        public  SetVaultAccessPolicyResponse EndSetVaultAccessPolicy(IAsyncResult asyncResult)
+        public virtual SetVaultAccessPolicyResponse EndSetVaultAccessPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<SetVaultAccessPolicyResponse>(asyncResult);
         }
@@ -3139,7 +3139,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public SetVaultNotificationsResponse SetVaultNotifications(SetVaultNotificationsRequest request)
+        public virtual SetVaultNotificationsResponse SetVaultNotifications(SetVaultNotificationsRequest request)
         {
             var marshaller = new SetVaultNotificationsRequestMarshaller();
             var unmarshaller = SetVaultNotificationsResponseUnmarshaller.Instance;
@@ -3158,7 +3158,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetVaultNotifications
         ///         operation.</returns>
-        public IAsyncResult BeginSetVaultNotifications(SetVaultNotificationsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginSetVaultNotifications(SetVaultNotificationsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SetVaultNotificationsRequestMarshaller();
             var unmarshaller = SetVaultNotificationsResponseUnmarshaller.Instance;
@@ -3174,7 +3174,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetVaultNotifications.</param>
         /// 
         /// <returns>Returns a  SetVaultNotificationsResult from Glacier.</returns>
-        public  SetVaultNotificationsResponse EndSetVaultNotifications(IAsyncResult asyncResult)
+        public virtual SetVaultNotificationsResponse EndSetVaultNotifications(IAsyncResult asyncResult)
         {
             return EndInvoke<SetVaultNotificationsResponse>(asyncResult);
         }
@@ -3253,7 +3253,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public UploadArchiveResponse UploadArchive(UploadArchiveRequest request)
+        public virtual UploadArchiveResponse UploadArchive(UploadArchiveRequest request)
         {
             var marshaller = new UploadArchiveRequestMarshaller();
             var unmarshaller = UploadArchiveResponseUnmarshaller.Instance;
@@ -3272,7 +3272,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUploadArchive
         ///         operation.</returns>
-        public IAsyncResult BeginUploadArchive(UploadArchiveRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUploadArchive(UploadArchiveRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UploadArchiveRequestMarshaller();
             var unmarshaller = UploadArchiveResponseUnmarshaller.Instance;
@@ -3288,7 +3288,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUploadArchive.</param>
         /// 
         /// <returns>Returns a  UploadArchiveResult from Glacier.</returns>
-        public  UploadArchiveResponse EndUploadArchive(IAsyncResult asyncResult)
+        public virtual UploadArchiveResponse EndUploadArchive(IAsyncResult asyncResult)
         {
             return EndInvoke<UploadArchiveResponse>(asyncResult);
         }
@@ -3378,7 +3378,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public UploadMultipartPartResponse UploadMultipartPart(UploadMultipartPartRequest request)
+        public virtual UploadMultipartPartResponse UploadMultipartPart(UploadMultipartPartRequest request)
         {
             var marshaller = new UploadMultipartPartRequestMarshaller();
             var unmarshaller = UploadMultipartPartResponseUnmarshaller.Instance;
@@ -3397,7 +3397,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUploadMultipartPart
         ///         operation.</returns>
-        public IAsyncResult BeginUploadMultipartPart(UploadMultipartPartRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUploadMultipartPart(UploadMultipartPartRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UploadMultipartPartRequestMarshaller();
             var unmarshaller = UploadMultipartPartResponseUnmarshaller.Instance;
@@ -3413,7 +3413,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUploadMultipartPart.</param>
         /// 
         /// <returns>Returns a  UploadMultipartPartResult from Glacier.</returns>
-        public  UploadMultipartPartResponse EndUploadMultipartPart(IAsyncResult asyncResult)
+        public virtual UploadMultipartPartResponse EndUploadMultipartPart(IAsyncResult asyncResult)
         {
             return EndInvoke<UploadMultipartPartResponse>(asyncResult);
         }

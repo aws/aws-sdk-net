@@ -282,7 +282,7 @@ namespace Amazon.DataPipeline
         /// identifiers.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ActivatePipeline">REST API Reference for ActivatePipeline Operation</seealso>
-        public ActivatePipelineResponse ActivatePipeline(ActivatePipelineRequest request)
+        public virtual ActivatePipelineResponse ActivatePipeline(ActivatePipelineRequest request)
         {
             var marshaller = new ActivatePipelineRequestMarshaller();
             var unmarshaller = ActivatePipelineResponseUnmarshaller.Instance;
@@ -302,7 +302,7 @@ namespace Amazon.DataPipeline
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndActivatePipeline
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ActivatePipeline">REST API Reference for ActivatePipeline Operation</seealso>
-        public IAsyncResult BeginActivatePipeline(ActivatePipelineRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginActivatePipeline(ActivatePipelineRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ActivatePipelineRequestMarshaller();
             var unmarshaller = ActivatePipelineResponseUnmarshaller.Instance;
@@ -319,7 +319,7 @@ namespace Amazon.DataPipeline
         /// 
         /// <returns>Returns a  ActivatePipelineResult from DataPipeline.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ActivatePipeline">REST API Reference for ActivatePipeline Operation</seealso>
-        public  ActivatePipelineResponse EndActivatePipeline(IAsyncResult asyncResult)
+        public virtual ActivatePipelineResponse EndActivatePipeline(IAsyncResult asyncResult)
         {
             return EndInvoke<ActivatePipelineResponse>(asyncResult);
         }
@@ -351,7 +351,7 @@ namespace Amazon.DataPipeline
         /// identifiers.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/AddTags">REST API Reference for AddTags Operation</seealso>
-        public AddTagsResponse AddTags(string pipelineId, List<Tag> tags)
+        public virtual AddTagsResponse AddTags(string pipelineId, List<Tag> tags)
         {
             var request = new AddTagsRequest();
             request.PipelineId = pipelineId;
@@ -382,7 +382,7 @@ namespace Amazon.DataPipeline
         /// identifiers.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/AddTags">REST API Reference for AddTags Operation</seealso>
-        public AddTagsResponse AddTags(AddTagsRequest request)
+        public virtual AddTagsResponse AddTags(AddTagsRequest request)
         {
             var marshaller = new AddTagsRequestMarshaller();
             var unmarshaller = AddTagsResponseUnmarshaller.Instance;
@@ -402,7 +402,7 @@ namespace Amazon.DataPipeline
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddTags
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/AddTags">REST API Reference for AddTags Operation</seealso>
-        public IAsyncResult BeginAddTags(AddTagsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginAddTags(AddTagsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AddTagsRequestMarshaller();
             var unmarshaller = AddTagsResponseUnmarshaller.Instance;
@@ -419,7 +419,7 @@ namespace Amazon.DataPipeline
         /// 
         /// <returns>Returns a  AddTagsResult from DataPipeline.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/AddTags">REST API Reference for AddTags Operation</seealso>
-        public  AddTagsResponse EndAddTags(IAsyncResult asyncResult)
+        public virtual AddTagsResponse EndAddTags(IAsyncResult asyncResult)
         {
             return EndInvoke<AddTagsResponse>(asyncResult);
         }
@@ -443,7 +443,7 @@ namespace Amazon.DataPipeline
         /// any of the service limits for your account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/CreatePipeline">REST API Reference for CreatePipeline Operation</seealso>
-        public CreatePipelineResponse CreatePipeline(CreatePipelineRequest request)
+        public virtual CreatePipelineResponse CreatePipeline(CreatePipelineRequest request)
         {
             var marshaller = new CreatePipelineRequestMarshaller();
             var unmarshaller = CreatePipelineResponseUnmarshaller.Instance;
@@ -463,7 +463,7 @@ namespace Amazon.DataPipeline
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePipeline
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/CreatePipeline">REST API Reference for CreatePipeline Operation</seealso>
-        public IAsyncResult BeginCreatePipeline(CreatePipelineRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreatePipeline(CreatePipelineRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreatePipelineRequestMarshaller();
             var unmarshaller = CreatePipelineResponseUnmarshaller.Instance;
@@ -480,7 +480,7 @@ namespace Amazon.DataPipeline
         /// 
         /// <returns>Returns a  CreatePipelineResult from DataPipeline.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/CreatePipeline">REST API Reference for CreatePipeline Operation</seealso>
-        public  CreatePipelineResponse EndCreatePipeline(IAsyncResult asyncResult)
+        public virtual CreatePipelineResponse EndCreatePipeline(IAsyncResult asyncResult)
         {
             return EndInvoke<CreatePipelineResponse>(asyncResult);
         }
@@ -519,7 +519,7 @@ namespace Amazon.DataPipeline
         /// identifiers.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DeactivatePipeline">REST API Reference for DeactivatePipeline Operation</seealso>
-        public DeactivatePipelineResponse DeactivatePipeline(DeactivatePipelineRequest request)
+        public virtual DeactivatePipelineResponse DeactivatePipeline(DeactivatePipelineRequest request)
         {
             var marshaller = new DeactivatePipelineRequestMarshaller();
             var unmarshaller = DeactivatePipelineResponseUnmarshaller.Instance;
@@ -539,7 +539,7 @@ namespace Amazon.DataPipeline
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeactivatePipeline
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DeactivatePipeline">REST API Reference for DeactivatePipeline Operation</seealso>
-        public IAsyncResult BeginDeactivatePipeline(DeactivatePipelineRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeactivatePipeline(DeactivatePipelineRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeactivatePipelineRequestMarshaller();
             var unmarshaller = DeactivatePipelineResponseUnmarshaller.Instance;
@@ -556,7 +556,7 @@ namespace Amazon.DataPipeline
         /// 
         /// <returns>Returns a  DeactivatePipelineResult from DataPipeline.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DeactivatePipeline">REST API Reference for DeactivatePipeline Operation</seealso>
-        public  DeactivatePipelineResponse EndDeactivatePipeline(IAsyncResult asyncResult)
+        public virtual DeactivatePipelineResponse EndDeactivatePipeline(IAsyncResult asyncResult)
         {
             return EndInvoke<DeactivatePipelineResponse>(asyncResult);
         }
@@ -594,7 +594,7 @@ namespace Amazon.DataPipeline
         /// identifiers.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DeletePipeline">REST API Reference for DeletePipeline Operation</seealso>
-        public DeletePipelineResponse DeletePipeline(DeletePipelineRequest request)
+        public virtual DeletePipelineResponse DeletePipeline(DeletePipelineRequest request)
         {
             var marshaller = new DeletePipelineRequestMarshaller();
             var unmarshaller = DeletePipelineResponseUnmarshaller.Instance;
@@ -614,7 +614,7 @@ namespace Amazon.DataPipeline
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePipeline
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DeletePipeline">REST API Reference for DeletePipeline Operation</seealso>
-        public IAsyncResult BeginDeletePipeline(DeletePipelineRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeletePipeline(DeletePipelineRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeletePipelineRequestMarshaller();
             var unmarshaller = DeletePipelineResponseUnmarshaller.Instance;
@@ -631,7 +631,7 @@ namespace Amazon.DataPipeline
         /// 
         /// <returns>Returns a  DeletePipelineResult from DataPipeline.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DeletePipeline">REST API Reference for DeletePipeline Operation</seealso>
-        public  DeletePipelineResponse EndDeletePipeline(IAsyncResult asyncResult)
+        public virtual DeletePipelineResponse EndDeletePipeline(IAsyncResult asyncResult)
         {
             return EndInvoke<DeletePipelineResponse>(asyncResult);
         }
@@ -663,7 +663,7 @@ namespace Amazon.DataPipeline
         /// identifiers.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DescribeObjects">REST API Reference for DescribeObjects Operation</seealso>
-        public DescribeObjectsResponse DescribeObjects(DescribeObjectsRequest request)
+        public virtual DescribeObjectsResponse DescribeObjects(DescribeObjectsRequest request)
         {
             var marshaller = new DescribeObjectsRequestMarshaller();
             var unmarshaller = DescribeObjectsResponseUnmarshaller.Instance;
@@ -683,7 +683,7 @@ namespace Amazon.DataPipeline
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeObjects
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DescribeObjects">REST API Reference for DescribeObjects Operation</seealso>
-        public IAsyncResult BeginDescribeObjects(DescribeObjectsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeObjects(DescribeObjectsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeObjectsRequestMarshaller();
             var unmarshaller = DescribeObjectsResponseUnmarshaller.Instance;
@@ -700,7 +700,7 @@ namespace Amazon.DataPipeline
         /// 
         /// <returns>Returns a  DescribeObjectsResult from DataPipeline.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DescribeObjects">REST API Reference for DescribeObjects Operation</seealso>
-        public  DescribeObjectsResponse EndDescribeObjects(IAsyncResult asyncResult)
+        public virtual DescribeObjectsResponse EndDescribeObjects(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeObjectsResponse>(asyncResult);
         }
@@ -742,7 +742,7 @@ namespace Amazon.DataPipeline
         /// identifiers.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DescribePipelines">REST API Reference for DescribePipelines Operation</seealso>
-        public DescribePipelinesResponse DescribePipelines(List<string> pipelineIds)
+        public virtual DescribePipelinesResponse DescribePipelines(List<string> pipelineIds)
         {
             var request = new DescribePipelinesRequest();
             request.PipelineIds = pipelineIds;
@@ -783,7 +783,7 @@ namespace Amazon.DataPipeline
         /// identifiers.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DescribePipelines">REST API Reference for DescribePipelines Operation</seealso>
-        public DescribePipelinesResponse DescribePipelines(DescribePipelinesRequest request)
+        public virtual DescribePipelinesResponse DescribePipelines(DescribePipelinesRequest request)
         {
             var marshaller = new DescribePipelinesRequestMarshaller();
             var unmarshaller = DescribePipelinesResponseUnmarshaller.Instance;
@@ -803,7 +803,7 @@ namespace Amazon.DataPipeline
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribePipelines
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DescribePipelines">REST API Reference for DescribePipelines Operation</seealso>
-        public IAsyncResult BeginDescribePipelines(DescribePipelinesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribePipelines(DescribePipelinesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribePipelinesRequestMarshaller();
             var unmarshaller = DescribePipelinesResponseUnmarshaller.Instance;
@@ -820,7 +820,7 @@ namespace Amazon.DataPipeline
         /// 
         /// <returns>Returns a  DescribePipelinesResult from DataPipeline.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DescribePipelines">REST API Reference for DescribePipelines Operation</seealso>
-        public  DescribePipelinesResponse EndDescribePipelines(IAsyncResult asyncResult)
+        public virtual DescribePipelinesResponse EndDescribePipelines(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribePipelinesResponse>(asyncResult);
         }
@@ -856,7 +856,7 @@ namespace Amazon.DataPipeline
         /// The specified task was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/EvaluateExpression">REST API Reference for EvaluateExpression Operation</seealso>
-        public EvaluateExpressionResponse EvaluateExpression(EvaluateExpressionRequest request)
+        public virtual EvaluateExpressionResponse EvaluateExpression(EvaluateExpressionRequest request)
         {
             var marshaller = new EvaluateExpressionRequestMarshaller();
             var unmarshaller = EvaluateExpressionResponseUnmarshaller.Instance;
@@ -876,7 +876,7 @@ namespace Amazon.DataPipeline
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEvaluateExpression
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/EvaluateExpression">REST API Reference for EvaluateExpression Operation</seealso>
-        public IAsyncResult BeginEvaluateExpression(EvaluateExpressionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginEvaluateExpression(EvaluateExpressionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new EvaluateExpressionRequestMarshaller();
             var unmarshaller = EvaluateExpressionResponseUnmarshaller.Instance;
@@ -893,7 +893,7 @@ namespace Amazon.DataPipeline
         /// 
         /// <returns>Returns a  EvaluateExpressionResult from DataPipeline.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/EvaluateExpression">REST API Reference for EvaluateExpression Operation</seealso>
-        public  EvaluateExpressionResponse EndEvaluateExpression(IAsyncResult asyncResult)
+        public virtual EvaluateExpressionResponse EndEvaluateExpression(IAsyncResult asyncResult)
         {
             return EndInvoke<EvaluateExpressionResponse>(asyncResult);
         }
@@ -925,7 +925,7 @@ namespace Amazon.DataPipeline
         /// identifiers.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/GetPipelineDefinition">REST API Reference for GetPipelineDefinition Operation</seealso>
-        public GetPipelineDefinitionResponse GetPipelineDefinition(GetPipelineDefinitionRequest request)
+        public virtual GetPipelineDefinitionResponse GetPipelineDefinition(GetPipelineDefinitionRequest request)
         {
             var marshaller = new GetPipelineDefinitionRequestMarshaller();
             var unmarshaller = GetPipelineDefinitionResponseUnmarshaller.Instance;
@@ -945,7 +945,7 @@ namespace Amazon.DataPipeline
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPipelineDefinition
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/GetPipelineDefinition">REST API Reference for GetPipelineDefinition Operation</seealso>
-        public IAsyncResult BeginGetPipelineDefinition(GetPipelineDefinitionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetPipelineDefinition(GetPipelineDefinitionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetPipelineDefinitionRequestMarshaller();
             var unmarshaller = GetPipelineDefinitionResponseUnmarshaller.Instance;
@@ -962,7 +962,7 @@ namespace Amazon.DataPipeline
         /// 
         /// <returns>Returns a  GetPipelineDefinitionResult from DataPipeline.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/GetPipelineDefinition">REST API Reference for GetPipelineDefinition Operation</seealso>
-        public  GetPipelineDefinitionResponse EndGetPipelineDefinition(IAsyncResult asyncResult)
+        public virtual GetPipelineDefinitionResponse EndGetPipelineDefinition(IAsyncResult asyncResult)
         {
             return EndInvoke<GetPipelineDefinitionResponse>(asyncResult);
         }
@@ -986,7 +986,7 @@ namespace Amazon.DataPipeline
         /// any of the service limits for your account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ListPipelines">REST API Reference for ListPipelines Operation</seealso>
-        public ListPipelinesResponse ListPipelines()
+        public virtual ListPipelinesResponse ListPipelines()
         {
             return ListPipelines(new ListPipelinesRequest());
         }
@@ -1007,7 +1007,7 @@ namespace Amazon.DataPipeline
         /// any of the service limits for your account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ListPipelines">REST API Reference for ListPipelines Operation</seealso>
-        public ListPipelinesResponse ListPipelines(ListPipelinesRequest request)
+        public virtual ListPipelinesResponse ListPipelines(ListPipelinesRequest request)
         {
             var marshaller = new ListPipelinesRequestMarshaller();
             var unmarshaller = ListPipelinesResponseUnmarshaller.Instance;
@@ -1027,7 +1027,7 @@ namespace Amazon.DataPipeline
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPipelines
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ListPipelines">REST API Reference for ListPipelines Operation</seealso>
-        public IAsyncResult BeginListPipelines(ListPipelinesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListPipelines(ListPipelinesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListPipelinesRequestMarshaller();
             var unmarshaller = ListPipelinesResponseUnmarshaller.Instance;
@@ -1044,7 +1044,7 @@ namespace Amazon.DataPipeline
         /// 
         /// <returns>Returns a  ListPipelinesResult from DataPipeline.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ListPipelines">REST API Reference for ListPipelines Operation</seealso>
-        public  ListPipelinesResponse EndListPipelines(IAsyncResult asyncResult)
+        public virtual ListPipelinesResponse EndListPipelines(IAsyncResult asyncResult)
         {
             return EndInvoke<ListPipelinesResponse>(asyncResult);
         }
@@ -1087,7 +1087,7 @@ namespace Amazon.DataPipeline
         /// The specified task was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/PollForTask">REST API Reference for PollForTask Operation</seealso>
-        public PollForTaskResponse PollForTask(PollForTaskRequest request)
+        public virtual PollForTaskResponse PollForTask(PollForTaskRequest request)
         {
             var marshaller = new PollForTaskRequestMarshaller();
             var unmarshaller = PollForTaskResponseUnmarshaller.Instance;
@@ -1107,7 +1107,7 @@ namespace Amazon.DataPipeline
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPollForTask
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/PollForTask">REST API Reference for PollForTask Operation</seealso>
-        public IAsyncResult BeginPollForTask(PollForTaskRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPollForTask(PollForTaskRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PollForTaskRequestMarshaller();
             var unmarshaller = PollForTaskResponseUnmarshaller.Instance;
@@ -1124,7 +1124,7 @@ namespace Amazon.DataPipeline
         /// 
         /// <returns>Returns a  PollForTaskResult from DataPipeline.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/PollForTask">REST API Reference for PollForTask Operation</seealso>
-        public  PollForTaskResponse EndPollForTask(IAsyncResult asyncResult)
+        public virtual PollForTaskResponse EndPollForTask(IAsyncResult asyncResult)
         {
             return EndInvoke<PollForTaskResponse>(asyncResult);
         }
@@ -1170,7 +1170,7 @@ namespace Amazon.DataPipeline
         /// identifiers.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/PutPipelineDefinition">REST API Reference for PutPipelineDefinition Operation</seealso>
-        public PutPipelineDefinitionResponse PutPipelineDefinition(PutPipelineDefinitionRequest request)
+        public virtual PutPipelineDefinitionResponse PutPipelineDefinition(PutPipelineDefinitionRequest request)
         {
             var marshaller = new PutPipelineDefinitionRequestMarshaller();
             var unmarshaller = PutPipelineDefinitionResponseUnmarshaller.Instance;
@@ -1190,7 +1190,7 @@ namespace Amazon.DataPipeline
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutPipelineDefinition
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/PutPipelineDefinition">REST API Reference for PutPipelineDefinition Operation</seealso>
-        public IAsyncResult BeginPutPipelineDefinition(PutPipelineDefinitionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPutPipelineDefinition(PutPipelineDefinitionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutPipelineDefinitionRequestMarshaller();
             var unmarshaller = PutPipelineDefinitionResponseUnmarshaller.Instance;
@@ -1207,7 +1207,7 @@ namespace Amazon.DataPipeline
         /// 
         /// <returns>Returns a  PutPipelineDefinitionResult from DataPipeline.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/PutPipelineDefinition">REST API Reference for PutPipelineDefinition Operation</seealso>
-        public  PutPipelineDefinitionResponse EndPutPipelineDefinition(IAsyncResult asyncResult)
+        public virtual PutPipelineDefinitionResponse EndPutPipelineDefinition(IAsyncResult asyncResult)
         {
             return EndInvoke<PutPipelineDefinitionResponse>(asyncResult);
         }
@@ -1239,7 +1239,7 @@ namespace Amazon.DataPipeline
         /// identifiers.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/QueryObjects">REST API Reference for QueryObjects Operation</seealso>
-        public QueryObjectsResponse QueryObjects(QueryObjectsRequest request)
+        public virtual QueryObjectsResponse QueryObjects(QueryObjectsRequest request)
         {
             var marshaller = new QueryObjectsRequestMarshaller();
             var unmarshaller = QueryObjectsResponseUnmarshaller.Instance;
@@ -1259,7 +1259,7 @@ namespace Amazon.DataPipeline
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndQueryObjects
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/QueryObjects">REST API Reference for QueryObjects Operation</seealso>
-        public IAsyncResult BeginQueryObjects(QueryObjectsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginQueryObjects(QueryObjectsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new QueryObjectsRequestMarshaller();
             var unmarshaller = QueryObjectsResponseUnmarshaller.Instance;
@@ -1276,7 +1276,7 @@ namespace Amazon.DataPipeline
         /// 
         /// <returns>Returns a  QueryObjectsResult from DataPipeline.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/QueryObjects">REST API Reference for QueryObjects Operation</seealso>
-        public  QueryObjectsResponse EndQueryObjects(IAsyncResult asyncResult)
+        public virtual QueryObjectsResponse EndQueryObjects(IAsyncResult asyncResult)
         {
             return EndInvoke<QueryObjectsResponse>(asyncResult);
         }
@@ -1308,7 +1308,7 @@ namespace Amazon.DataPipeline
         /// identifiers.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
-        public RemoveTagsResponse RemoveTags(string pipelineId, List<string> tagKeys)
+        public virtual RemoveTagsResponse RemoveTags(string pipelineId, List<string> tagKeys)
         {
             var request = new RemoveTagsRequest();
             request.PipelineId = pipelineId;
@@ -1339,7 +1339,7 @@ namespace Amazon.DataPipeline
         /// identifiers.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
-        public RemoveTagsResponse RemoveTags(RemoveTagsRequest request)
+        public virtual RemoveTagsResponse RemoveTags(RemoveTagsRequest request)
         {
             var marshaller = new RemoveTagsRequestMarshaller();
             var unmarshaller = RemoveTagsResponseUnmarshaller.Instance;
@@ -1359,7 +1359,7 @@ namespace Amazon.DataPipeline
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveTags
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
-        public IAsyncResult BeginRemoveTags(RemoveTagsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginRemoveTags(RemoveTagsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RemoveTagsRequestMarshaller();
             var unmarshaller = RemoveTagsResponseUnmarshaller.Instance;
@@ -1376,7 +1376,7 @@ namespace Amazon.DataPipeline
         /// 
         /// <returns>Returns a  RemoveTagsResult from DataPipeline.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
-        public  RemoveTagsResponse EndRemoveTags(IAsyncResult asyncResult)
+        public virtual RemoveTagsResponse EndRemoveTags(IAsyncResult asyncResult)
         {
             return EndInvoke<RemoveTagsResponse>(asyncResult);
         }
@@ -1423,7 +1423,7 @@ namespace Amazon.DataPipeline
         /// The specified task was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ReportTaskProgress">REST API Reference for ReportTaskProgress Operation</seealso>
-        public ReportTaskProgressResponse ReportTaskProgress(ReportTaskProgressRequest request)
+        public virtual ReportTaskProgressResponse ReportTaskProgress(ReportTaskProgressRequest request)
         {
             var marshaller = new ReportTaskProgressRequestMarshaller();
             var unmarshaller = ReportTaskProgressResponseUnmarshaller.Instance;
@@ -1443,7 +1443,7 @@ namespace Amazon.DataPipeline
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndReportTaskProgress
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ReportTaskProgress">REST API Reference for ReportTaskProgress Operation</seealso>
-        public IAsyncResult BeginReportTaskProgress(ReportTaskProgressRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginReportTaskProgress(ReportTaskProgressRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ReportTaskProgressRequestMarshaller();
             var unmarshaller = ReportTaskProgressResponseUnmarshaller.Instance;
@@ -1460,7 +1460,7 @@ namespace Amazon.DataPipeline
         /// 
         /// <returns>Returns a  ReportTaskProgressResult from DataPipeline.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ReportTaskProgress">REST API Reference for ReportTaskProgress Operation</seealso>
-        public  ReportTaskProgressResponse EndReportTaskProgress(IAsyncResult asyncResult)
+        public virtual ReportTaskProgressResponse EndReportTaskProgress(IAsyncResult asyncResult)
         {
             return EndInvoke<ReportTaskProgressResponse>(asyncResult);
         }
@@ -1487,7 +1487,7 @@ namespace Amazon.DataPipeline
         /// any of the service limits for your account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ReportTaskRunnerHeartbeat">REST API Reference for ReportTaskRunnerHeartbeat Operation</seealso>
-        public ReportTaskRunnerHeartbeatResponse ReportTaskRunnerHeartbeat(ReportTaskRunnerHeartbeatRequest request)
+        public virtual ReportTaskRunnerHeartbeatResponse ReportTaskRunnerHeartbeat(ReportTaskRunnerHeartbeatRequest request)
         {
             var marshaller = new ReportTaskRunnerHeartbeatRequestMarshaller();
             var unmarshaller = ReportTaskRunnerHeartbeatResponseUnmarshaller.Instance;
@@ -1507,7 +1507,7 @@ namespace Amazon.DataPipeline
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndReportTaskRunnerHeartbeat
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ReportTaskRunnerHeartbeat">REST API Reference for ReportTaskRunnerHeartbeat Operation</seealso>
-        public IAsyncResult BeginReportTaskRunnerHeartbeat(ReportTaskRunnerHeartbeatRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginReportTaskRunnerHeartbeat(ReportTaskRunnerHeartbeatRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ReportTaskRunnerHeartbeatRequestMarshaller();
             var unmarshaller = ReportTaskRunnerHeartbeatResponseUnmarshaller.Instance;
@@ -1524,7 +1524,7 @@ namespace Amazon.DataPipeline
         /// 
         /// <returns>Returns a  ReportTaskRunnerHeartbeatResult from DataPipeline.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ReportTaskRunnerHeartbeat">REST API Reference for ReportTaskRunnerHeartbeat Operation</seealso>
-        public  ReportTaskRunnerHeartbeatResponse EndReportTaskRunnerHeartbeat(IAsyncResult asyncResult)
+        public virtual ReportTaskRunnerHeartbeatResponse EndReportTaskRunnerHeartbeat(IAsyncResult asyncResult)
         {
             return EndInvoke<ReportTaskRunnerHeartbeatResponse>(asyncResult);
         }
@@ -1559,7 +1559,7 @@ namespace Amazon.DataPipeline
         /// identifiers.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/SetStatus">REST API Reference for SetStatus Operation</seealso>
-        public SetStatusResponse SetStatus(SetStatusRequest request)
+        public virtual SetStatusResponse SetStatus(SetStatusRequest request)
         {
             var marshaller = new SetStatusRequestMarshaller();
             var unmarshaller = SetStatusResponseUnmarshaller.Instance;
@@ -1579,7 +1579,7 @@ namespace Amazon.DataPipeline
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetStatus
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/SetStatus">REST API Reference for SetStatus Operation</seealso>
-        public IAsyncResult BeginSetStatus(SetStatusRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginSetStatus(SetStatusRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SetStatusRequestMarshaller();
             var unmarshaller = SetStatusResponseUnmarshaller.Instance;
@@ -1596,7 +1596,7 @@ namespace Amazon.DataPipeline
         /// 
         /// <returns>Returns a  SetStatusResult from DataPipeline.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/SetStatus">REST API Reference for SetStatus Operation</seealso>
-        public  SetStatusResponse EndSetStatus(IAsyncResult asyncResult)
+        public virtual SetStatusResponse EndSetStatus(IAsyncResult asyncResult)
         {
             return EndInvoke<SetStatusResponse>(asyncResult);
         }
@@ -1634,7 +1634,7 @@ namespace Amazon.DataPipeline
         /// The specified task was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/SetTaskStatus">REST API Reference for SetTaskStatus Operation</seealso>
-        public SetTaskStatusResponse SetTaskStatus(SetTaskStatusRequest request)
+        public virtual SetTaskStatusResponse SetTaskStatus(SetTaskStatusRequest request)
         {
             var marshaller = new SetTaskStatusRequestMarshaller();
             var unmarshaller = SetTaskStatusResponseUnmarshaller.Instance;
@@ -1654,7 +1654,7 @@ namespace Amazon.DataPipeline
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetTaskStatus
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/SetTaskStatus">REST API Reference for SetTaskStatus Operation</seealso>
-        public IAsyncResult BeginSetTaskStatus(SetTaskStatusRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginSetTaskStatus(SetTaskStatusRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SetTaskStatusRequestMarshaller();
             var unmarshaller = SetTaskStatusResponseUnmarshaller.Instance;
@@ -1671,7 +1671,7 @@ namespace Amazon.DataPipeline
         /// 
         /// <returns>Returns a  SetTaskStatusResult from DataPipeline.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/SetTaskStatus">REST API Reference for SetTaskStatus Operation</seealso>
-        public  SetTaskStatusResponse EndSetTaskStatus(IAsyncResult asyncResult)
+        public virtual SetTaskStatusResponse EndSetTaskStatus(IAsyncResult asyncResult)
         {
             return EndInvoke<SetTaskStatusResponse>(asyncResult);
         }
@@ -1703,7 +1703,7 @@ namespace Amazon.DataPipeline
         /// identifiers.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ValidatePipelineDefinition">REST API Reference for ValidatePipelineDefinition Operation</seealso>
-        public ValidatePipelineDefinitionResponse ValidatePipelineDefinition(ValidatePipelineDefinitionRequest request)
+        public virtual ValidatePipelineDefinitionResponse ValidatePipelineDefinition(ValidatePipelineDefinitionRequest request)
         {
             var marshaller = new ValidatePipelineDefinitionRequestMarshaller();
             var unmarshaller = ValidatePipelineDefinitionResponseUnmarshaller.Instance;
@@ -1723,7 +1723,7 @@ namespace Amazon.DataPipeline
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndValidatePipelineDefinition
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ValidatePipelineDefinition">REST API Reference for ValidatePipelineDefinition Operation</seealso>
-        public IAsyncResult BeginValidatePipelineDefinition(ValidatePipelineDefinitionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginValidatePipelineDefinition(ValidatePipelineDefinitionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ValidatePipelineDefinitionRequestMarshaller();
             var unmarshaller = ValidatePipelineDefinitionResponseUnmarshaller.Instance;
@@ -1740,7 +1740,7 @@ namespace Amazon.DataPipeline
         /// 
         /// <returns>Returns a  ValidatePipelineDefinitionResult from DataPipeline.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ValidatePipelineDefinition">REST API Reference for ValidatePipelineDefinition Operation</seealso>
-        public  ValidatePipelineDefinitionResponse EndValidatePipelineDefinition(IAsyncResult asyncResult)
+        public virtual ValidatePipelineDefinitionResponse EndValidatePipelineDefinition(IAsyncResult asyncResult)
         {
             return EndInvoke<ValidatePipelineDefinitionResponse>(asyncResult);
         }

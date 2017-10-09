@@ -124,7 +124,7 @@ namespace Amazon.CloudSearchDomain
         /// <exception cref="Amazon.CloudSearchDomain.Model.SearchException">
         /// Information about any problems encountered while processing a search request.
         /// </exception>
-        public SearchResponse Search(SearchRequest request)
+        public virtual SearchResponse Search(SearchRequest request)
         {
             var marshaller = new SearchRequestMarshaller();
             var unmarshaller = SearchResponseUnmarshaller.Instance;
@@ -143,7 +143,7 @@ namespace Amazon.CloudSearchDomain
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearch
         ///         operation.</returns>
-        public IAsyncResult BeginSearch(SearchRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginSearch(SearchRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SearchRequestMarshaller();
             var unmarshaller = SearchResponseUnmarshaller.Instance;
@@ -159,7 +159,7 @@ namespace Amazon.CloudSearchDomain
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSearch.</param>
         /// 
         /// <returns>Returns a  SearchResult from CloudSearchDomain.</returns>
-        public  SearchResponse EndSearch(IAsyncResult asyncResult)
+        public virtual SearchResponse EndSearch(IAsyncResult asyncResult)
         {
             return EndInvoke<SearchResponse>(asyncResult);
         }
@@ -197,7 +197,7 @@ namespace Amazon.CloudSearchDomain
         /// <exception cref="Amazon.CloudSearchDomain.Model.SearchException">
         /// Information about any problems encountered while processing a search request.
         /// </exception>
-        public SuggestResponse Suggest(SuggestRequest request)
+        public virtual SuggestResponse Suggest(SuggestRequest request)
         {
             var marshaller = new SuggestRequestMarshaller();
             var unmarshaller = SuggestResponseUnmarshaller.Instance;
@@ -216,7 +216,7 @@ namespace Amazon.CloudSearchDomain
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSuggest
         ///         operation.</returns>
-        public IAsyncResult BeginSuggest(SuggestRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginSuggest(SuggestRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SuggestRequestMarshaller();
             var unmarshaller = SuggestResponseUnmarshaller.Instance;
@@ -232,7 +232,7 @@ namespace Amazon.CloudSearchDomain
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSuggest.</param>
         /// 
         /// <returns>Returns a  SuggestResult from CloudSearchDomain.</returns>
-        public  SuggestResponse EndSuggest(IAsyncResult asyncResult)
+        public virtual SuggestResponse EndSuggest(IAsyncResult asyncResult)
         {
             return EndInvoke<SuggestResponse>(asyncResult);
         }
@@ -274,7 +274,7 @@ namespace Amazon.CloudSearchDomain
         /// <exception cref="Amazon.CloudSearchDomain.Model.DocumentServiceException">
         /// Information about any problems encountered while processing an upload request.
         /// </exception>
-        public UploadDocumentsResponse UploadDocuments(UploadDocumentsRequest request)
+        public virtual UploadDocumentsResponse UploadDocuments(UploadDocumentsRequest request)
         {
             var marshaller = new UploadDocumentsRequestMarshaller();
             var unmarshaller = UploadDocumentsResponseUnmarshaller.Instance;
@@ -293,7 +293,7 @@ namespace Amazon.CloudSearchDomain
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUploadDocuments
         ///         operation.</returns>
-        public IAsyncResult BeginUploadDocuments(UploadDocumentsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUploadDocuments(UploadDocumentsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UploadDocumentsRequestMarshaller();
             var unmarshaller = UploadDocumentsResponseUnmarshaller.Instance;
@@ -309,7 +309,7 @@ namespace Amazon.CloudSearchDomain
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUploadDocuments.</param>
         /// 
         /// <returns>Returns a  UploadDocumentsResult from CloudSearchDomain.</returns>
-        public  UploadDocumentsResponse EndUploadDocuments(IAsyncResult asyncResult)
+        public virtual UploadDocumentsResponse EndUploadDocuments(IAsyncResult asyncResult)
         {
             return EndInvoke<UploadDocumentsResponse>(asyncResult);
         }

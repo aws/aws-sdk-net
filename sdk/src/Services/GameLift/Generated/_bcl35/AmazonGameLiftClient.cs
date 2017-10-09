@@ -764,7 +764,7 @@ namespace Amazon.GameLift
         /// The requested operation is not supported in the region specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/AcceptMatch">REST API Reference for AcceptMatch Operation</seealso>
-        public AcceptMatchResponse AcceptMatch(AcceptMatchRequest request)
+        public virtual AcceptMatchResponse AcceptMatch(AcceptMatchRequest request)
         {
             var marshaller = new AcceptMatchRequestMarshaller();
             var unmarshaller = AcceptMatchResponseUnmarshaller.Instance;
@@ -784,7 +784,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAcceptMatch
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/AcceptMatch">REST API Reference for AcceptMatch Operation</seealso>
-        public IAsyncResult BeginAcceptMatch(AcceptMatchRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginAcceptMatch(AcceptMatchRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AcceptMatchRequestMarshaller();
             var unmarshaller = AcceptMatchResponseUnmarshaller.Instance;
@@ -801,7 +801,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  AcceptMatchResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/AcceptMatch">REST API Reference for AcceptMatch Operation</seealso>
-        public  AcceptMatchResponse EndAcceptMatch(IAsyncResult asyncResult)
+        public virtual AcceptMatchResponse EndAcceptMatch(IAsyncResult asyncResult)
         {
             return EndInvoke<AcceptMatchResponse>(asyncResult);
         }
@@ -886,7 +886,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
-        public CreateAliasResponse CreateAlias(CreateAliasRequest request)
+        public virtual CreateAliasResponse CreateAlias(CreateAliasRequest request)
         {
             var marshaller = new CreateAliasRequestMarshaller();
             var unmarshaller = CreateAliasResponseUnmarshaller.Instance;
@@ -906,7 +906,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAlias
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
-        public IAsyncResult BeginCreateAlias(CreateAliasRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateAlias(CreateAliasRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateAliasRequestMarshaller();
             var unmarshaller = CreateAliasResponseUnmarshaller.Instance;
@@ -923,7 +923,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  CreateAliasResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
-        public  CreateAliasResponse EndCreateAlias(IAsyncResult asyncResult)
+        public virtual CreateAliasResponse EndCreateAlias(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateAliasResponse>(asyncResult);
         }
@@ -1001,7 +1001,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateBuild">REST API Reference for CreateBuild Operation</seealso>
-        public CreateBuildResponse CreateBuild(CreateBuildRequest request)
+        public virtual CreateBuildResponse CreateBuild(CreateBuildRequest request)
         {
             var marshaller = new CreateBuildRequestMarshaller();
             var unmarshaller = CreateBuildResponseUnmarshaller.Instance;
@@ -1021,7 +1021,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateBuild
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateBuild">REST API Reference for CreateBuild Operation</seealso>
-        public IAsyncResult BeginCreateBuild(CreateBuildRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateBuild(CreateBuildRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateBuildRequestMarshaller();
             var unmarshaller = CreateBuildResponseUnmarshaller.Instance;
@@ -1038,7 +1038,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  CreateBuildResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateBuild">REST API Reference for CreateBuild Operation</seealso>
-        public  CreateBuildResponse EndCreateBuild(IAsyncResult asyncResult)
+        public virtual CreateBuildResponse EndCreateBuild(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateBuildResponse>(asyncResult);
         }
@@ -1243,7 +1243,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateFleet">REST API Reference for CreateFleet Operation</seealso>
-        public CreateFleetResponse CreateFleet(CreateFleetRequest request)
+        public virtual CreateFleetResponse CreateFleet(CreateFleetRequest request)
         {
             var marshaller = new CreateFleetRequestMarshaller();
             var unmarshaller = CreateFleetResponseUnmarshaller.Instance;
@@ -1263,7 +1263,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateFleet
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateFleet">REST API Reference for CreateFleet Operation</seealso>
-        public IAsyncResult BeginCreateFleet(CreateFleetRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateFleet(CreateFleetRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateFleetRequestMarshaller();
             var unmarshaller = CreateFleetResponseUnmarshaller.Instance;
@@ -1280,7 +1280,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  CreateFleetResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateFleet">REST API Reference for CreateFleet Operation</seealso>
-        public  CreateFleetResponse EndCreateFleet(IAsyncResult asyncResult)
+        public virtual CreateFleetResponse EndCreateFleet(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateFleetResponse>(asyncResult);
         }
@@ -1423,7 +1423,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateGameSession">REST API Reference for CreateGameSession Operation</seealso>
-        public CreateGameSessionResponse CreateGameSession(CreateGameSessionRequest request)
+        public virtual CreateGameSessionResponse CreateGameSession(CreateGameSessionRequest request)
         {
             var marshaller = new CreateGameSessionRequestMarshaller();
             var unmarshaller = CreateGameSessionResponseUnmarshaller.Instance;
@@ -1443,7 +1443,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateGameSession
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateGameSession">REST API Reference for CreateGameSession Operation</seealso>
-        public IAsyncResult BeginCreateGameSession(CreateGameSessionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateGameSession(CreateGameSessionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateGameSessionRequestMarshaller();
             var unmarshaller = CreateGameSessionResponseUnmarshaller.Instance;
@@ -1460,7 +1460,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  CreateGameSessionResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateGameSession">REST API Reference for CreateGameSession Operation</seealso>
-        public  CreateGameSessionResponse EndCreateGameSession(IAsyncResult asyncResult)
+        public virtual CreateGameSessionResponse EndCreateGameSession(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateGameSessionResponse>(asyncResult);
         }
@@ -1546,7 +1546,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateGameSessionQueue">REST API Reference for CreateGameSessionQueue Operation</seealso>
-        public CreateGameSessionQueueResponse CreateGameSessionQueue(CreateGameSessionQueueRequest request)
+        public virtual CreateGameSessionQueueResponse CreateGameSessionQueue(CreateGameSessionQueueRequest request)
         {
             var marshaller = new CreateGameSessionQueueRequestMarshaller();
             var unmarshaller = CreateGameSessionQueueResponseUnmarshaller.Instance;
@@ -1566,7 +1566,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateGameSessionQueue
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateGameSessionQueue">REST API Reference for CreateGameSessionQueue Operation</seealso>
-        public IAsyncResult BeginCreateGameSessionQueue(CreateGameSessionQueueRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateGameSessionQueue(CreateGameSessionQueueRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateGameSessionQueueRequestMarshaller();
             var unmarshaller = CreateGameSessionQueueResponseUnmarshaller.Instance;
@@ -1583,7 +1583,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  CreateGameSessionQueueResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateGameSessionQueue">REST API Reference for CreateGameSessionQueue Operation</seealso>
-        public  CreateGameSessionQueueResponse EndCreateGameSessionQueue(IAsyncResult asyncResult)
+        public virtual CreateGameSessionQueueResponse EndCreateGameSessionQueue(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateGameSessionQueueResponse>(asyncResult);
         }
@@ -1683,7 +1683,7 @@ namespace Amazon.GameLift
         /// The requested operation is not supported in the region specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateMatchmakingConfiguration">REST API Reference for CreateMatchmakingConfiguration Operation</seealso>
-        public CreateMatchmakingConfigurationResponse CreateMatchmakingConfiguration(CreateMatchmakingConfigurationRequest request)
+        public virtual CreateMatchmakingConfigurationResponse CreateMatchmakingConfiguration(CreateMatchmakingConfigurationRequest request)
         {
             var marshaller = new CreateMatchmakingConfigurationRequestMarshaller();
             var unmarshaller = CreateMatchmakingConfigurationResponseUnmarshaller.Instance;
@@ -1703,7 +1703,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateMatchmakingConfiguration
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateMatchmakingConfiguration">REST API Reference for CreateMatchmakingConfiguration Operation</seealso>
-        public IAsyncResult BeginCreateMatchmakingConfiguration(CreateMatchmakingConfigurationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateMatchmakingConfiguration(CreateMatchmakingConfigurationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateMatchmakingConfigurationRequestMarshaller();
             var unmarshaller = CreateMatchmakingConfigurationResponseUnmarshaller.Instance;
@@ -1720,7 +1720,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  CreateMatchmakingConfigurationResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateMatchmakingConfiguration">REST API Reference for CreateMatchmakingConfiguration Operation</seealso>
-        public  CreateMatchmakingConfigurationResponse EndCreateMatchmakingConfiguration(IAsyncResult asyncResult)
+        public virtual CreateMatchmakingConfigurationResponse EndCreateMatchmakingConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateMatchmakingConfigurationResponse>(asyncResult);
         }
@@ -1804,7 +1804,7 @@ namespace Amazon.GameLift
         /// The requested operation is not supported in the region specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateMatchmakingRuleSet">REST API Reference for CreateMatchmakingRuleSet Operation</seealso>
-        public CreateMatchmakingRuleSetResponse CreateMatchmakingRuleSet(CreateMatchmakingRuleSetRequest request)
+        public virtual CreateMatchmakingRuleSetResponse CreateMatchmakingRuleSet(CreateMatchmakingRuleSetRequest request)
         {
             var marshaller = new CreateMatchmakingRuleSetRequestMarshaller();
             var unmarshaller = CreateMatchmakingRuleSetResponseUnmarshaller.Instance;
@@ -1824,7 +1824,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateMatchmakingRuleSet
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateMatchmakingRuleSet">REST API Reference for CreateMatchmakingRuleSet Operation</seealso>
-        public IAsyncResult BeginCreateMatchmakingRuleSet(CreateMatchmakingRuleSetRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateMatchmakingRuleSet(CreateMatchmakingRuleSetRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateMatchmakingRuleSetRequestMarshaller();
             var unmarshaller = CreateMatchmakingRuleSetResponseUnmarshaller.Instance;
@@ -1841,7 +1841,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  CreateMatchmakingRuleSetResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateMatchmakingRuleSet">REST API Reference for CreateMatchmakingRuleSet Operation</seealso>
-        public  CreateMatchmakingRuleSetResponse EndCreateMatchmakingRuleSet(IAsyncResult asyncResult)
+        public virtual CreateMatchmakingRuleSetResponse EndCreateMatchmakingRuleSet(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateMatchmakingRuleSetResponse>(asyncResult);
         }
@@ -1936,7 +1936,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreatePlayerSession">REST API Reference for CreatePlayerSession Operation</seealso>
-        public CreatePlayerSessionResponse CreatePlayerSession(string gameSessionId, string playerId)
+        public virtual CreatePlayerSessionResponse CreatePlayerSession(string gameSessionId, string playerId)
         {
             var request = new CreatePlayerSessionRequest();
             request.GameSessionId = gameSessionId;
@@ -2030,7 +2030,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreatePlayerSession">REST API Reference for CreatePlayerSession Operation</seealso>
-        public CreatePlayerSessionResponse CreatePlayerSession(CreatePlayerSessionRequest request)
+        public virtual CreatePlayerSessionResponse CreatePlayerSession(CreatePlayerSessionRequest request)
         {
             var marshaller = new CreatePlayerSessionRequestMarshaller();
             var unmarshaller = CreatePlayerSessionResponseUnmarshaller.Instance;
@@ -2050,7 +2050,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePlayerSession
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreatePlayerSession">REST API Reference for CreatePlayerSession Operation</seealso>
-        public IAsyncResult BeginCreatePlayerSession(CreatePlayerSessionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreatePlayerSession(CreatePlayerSessionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreatePlayerSessionRequestMarshaller();
             var unmarshaller = CreatePlayerSessionResponseUnmarshaller.Instance;
@@ -2067,7 +2067,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  CreatePlayerSessionResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreatePlayerSession">REST API Reference for CreatePlayerSession Operation</seealso>
-        public  CreatePlayerSessionResponse EndCreatePlayerSession(IAsyncResult asyncResult)
+        public virtual CreatePlayerSessionResponse EndCreatePlayerSession(IAsyncResult asyncResult)
         {
             return EndInvoke<CreatePlayerSessionResponse>(asyncResult);
         }
@@ -2162,7 +2162,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreatePlayerSessions">REST API Reference for CreatePlayerSessions Operation</seealso>
-        public CreatePlayerSessionsResponse CreatePlayerSessions(string gameSessionId, List<string> playerIds)
+        public virtual CreatePlayerSessionsResponse CreatePlayerSessions(string gameSessionId, List<string> playerIds)
         {
             var request = new CreatePlayerSessionsRequest();
             request.GameSessionId = gameSessionId;
@@ -2256,7 +2256,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreatePlayerSessions">REST API Reference for CreatePlayerSessions Operation</seealso>
-        public CreatePlayerSessionsResponse CreatePlayerSessions(CreatePlayerSessionsRequest request)
+        public virtual CreatePlayerSessionsResponse CreatePlayerSessions(CreatePlayerSessionsRequest request)
         {
             var marshaller = new CreatePlayerSessionsRequestMarshaller();
             var unmarshaller = CreatePlayerSessionsResponseUnmarshaller.Instance;
@@ -2276,7 +2276,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePlayerSessions
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreatePlayerSessions">REST API Reference for CreatePlayerSessions Operation</seealso>
-        public IAsyncResult BeginCreatePlayerSessions(CreatePlayerSessionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreatePlayerSessions(CreatePlayerSessionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreatePlayerSessionsRequestMarshaller();
             var unmarshaller = CreatePlayerSessionsResponseUnmarshaller.Instance;
@@ -2293,7 +2293,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  CreatePlayerSessionsResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreatePlayerSessions">REST API Reference for CreatePlayerSessions Operation</seealso>
-        public  CreatePlayerSessionsResponse EndCreatePlayerSessions(IAsyncResult asyncResult)
+        public virtual CreatePlayerSessionsResponse EndCreatePlayerSessions(IAsyncResult asyncResult)
         {
             return EndInvoke<CreatePlayerSessionsResponse>(asyncResult);
         }
@@ -2388,7 +2388,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateVpcPeeringAuthorization">REST API Reference for CreateVpcPeeringAuthorization Operation</seealso>
-        public CreateVpcPeeringAuthorizationResponse CreateVpcPeeringAuthorization(CreateVpcPeeringAuthorizationRequest request)
+        public virtual CreateVpcPeeringAuthorizationResponse CreateVpcPeeringAuthorization(CreateVpcPeeringAuthorizationRequest request)
         {
             var marshaller = new CreateVpcPeeringAuthorizationRequestMarshaller();
             var unmarshaller = CreateVpcPeeringAuthorizationResponseUnmarshaller.Instance;
@@ -2408,7 +2408,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateVpcPeeringAuthorization
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateVpcPeeringAuthorization">REST API Reference for CreateVpcPeeringAuthorization Operation</seealso>
-        public IAsyncResult BeginCreateVpcPeeringAuthorization(CreateVpcPeeringAuthorizationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateVpcPeeringAuthorization(CreateVpcPeeringAuthorizationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateVpcPeeringAuthorizationRequestMarshaller();
             var unmarshaller = CreateVpcPeeringAuthorizationResponseUnmarshaller.Instance;
@@ -2425,7 +2425,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  CreateVpcPeeringAuthorizationResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateVpcPeeringAuthorization">REST API Reference for CreateVpcPeeringAuthorization Operation</seealso>
-        public  CreateVpcPeeringAuthorizationResponse EndCreateVpcPeeringAuthorization(IAsyncResult asyncResult)
+        public virtual CreateVpcPeeringAuthorizationResponse EndCreateVpcPeeringAuthorization(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateVpcPeeringAuthorizationResponse>(asyncResult);
         }
@@ -2511,7 +2511,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateVpcPeeringConnection">REST API Reference for CreateVpcPeeringConnection Operation</seealso>
-        public CreateVpcPeeringConnectionResponse CreateVpcPeeringConnection(CreateVpcPeeringConnectionRequest request)
+        public virtual CreateVpcPeeringConnectionResponse CreateVpcPeeringConnection(CreateVpcPeeringConnectionRequest request)
         {
             var marshaller = new CreateVpcPeeringConnectionRequestMarshaller();
             var unmarshaller = CreateVpcPeeringConnectionResponseUnmarshaller.Instance;
@@ -2531,7 +2531,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateVpcPeeringConnection
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateVpcPeeringConnection">REST API Reference for CreateVpcPeeringConnection Operation</seealso>
-        public IAsyncResult BeginCreateVpcPeeringConnection(CreateVpcPeeringConnectionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateVpcPeeringConnection(CreateVpcPeeringConnectionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateVpcPeeringConnectionRequestMarshaller();
             var unmarshaller = CreateVpcPeeringConnectionResponseUnmarshaller.Instance;
@@ -2548,7 +2548,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  CreateVpcPeeringConnectionResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateVpcPeeringConnection">REST API Reference for CreateVpcPeeringConnection Operation</seealso>
-        public  CreateVpcPeeringConnectionResponse EndCreateVpcPeeringConnection(IAsyncResult asyncResult)
+        public virtual CreateVpcPeeringConnectionResponse EndCreateVpcPeeringConnection(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateVpcPeeringConnectionResponse>(asyncResult);
         }
@@ -2611,7 +2611,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
-        public DeleteAliasResponse DeleteAlias(string aliasId)
+        public virtual DeleteAliasResponse DeleteAlias(string aliasId)
         {
             var request = new DeleteAliasRequest();
             request.AliasId = aliasId;
@@ -2673,7 +2673,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
-        public DeleteAliasResponse DeleteAlias(DeleteAliasRequest request)
+        public virtual DeleteAliasResponse DeleteAlias(DeleteAliasRequest request)
         {
             var marshaller = new DeleteAliasRequestMarshaller();
             var unmarshaller = DeleteAliasResponseUnmarshaller.Instance;
@@ -2693,7 +2693,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAlias
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
-        public IAsyncResult BeginDeleteAlias(DeleteAliasRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteAlias(DeleteAliasRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteAliasRequestMarshaller();
             var unmarshaller = DeleteAliasResponseUnmarshaller.Instance;
@@ -2710,7 +2710,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  DeleteAliasResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
-        public  DeleteAliasResponse EndDeleteAlias(IAsyncResult asyncResult)
+        public virtual DeleteAliasResponse EndDeleteAlias(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteAliasResponse>(asyncResult);
         }
@@ -2774,7 +2774,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteBuild">REST API Reference for DeleteBuild Operation</seealso>
-        public DeleteBuildResponse DeleteBuild(string buildId)
+        public virtual DeleteBuildResponse DeleteBuild(string buildId)
         {
             var request = new DeleteBuildRequest();
             request.BuildId = buildId;
@@ -2837,7 +2837,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteBuild">REST API Reference for DeleteBuild Operation</seealso>
-        public DeleteBuildResponse DeleteBuild(DeleteBuildRequest request)
+        public virtual DeleteBuildResponse DeleteBuild(DeleteBuildRequest request)
         {
             var marshaller = new DeleteBuildRequestMarshaller();
             var unmarshaller = DeleteBuildResponseUnmarshaller.Instance;
@@ -2857,7 +2857,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBuild
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteBuild">REST API Reference for DeleteBuild Operation</seealso>
-        public IAsyncResult BeginDeleteBuild(DeleteBuildRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteBuild(DeleteBuildRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteBuildRequestMarshaller();
             var unmarshaller = DeleteBuildResponseUnmarshaller.Instance;
@@ -2874,7 +2874,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  DeleteBuildResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteBuild">REST API Reference for DeleteBuild Operation</seealso>
-        public  DeleteBuildResponse EndDeleteBuild(IAsyncResult asyncResult)
+        public virtual DeleteBuildResponse EndDeleteBuild(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteBuildResponse>(asyncResult);
         }
@@ -3005,7 +3005,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteFleet">REST API Reference for DeleteFleet Operation</seealso>
-        public DeleteFleetResponse DeleteFleet(string fleetId)
+        public virtual DeleteFleetResponse DeleteFleet(string fleetId)
         {
             var request = new DeleteFleetRequest();
             request.FleetId = fleetId;
@@ -3135,7 +3135,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteFleet">REST API Reference for DeleteFleet Operation</seealso>
-        public DeleteFleetResponse DeleteFleet(DeleteFleetRequest request)
+        public virtual DeleteFleetResponse DeleteFleet(DeleteFleetRequest request)
         {
             var marshaller = new DeleteFleetRequestMarshaller();
             var unmarshaller = DeleteFleetResponseUnmarshaller.Instance;
@@ -3155,7 +3155,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteFleet
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteFleet">REST API Reference for DeleteFleet Operation</seealso>
-        public IAsyncResult BeginDeleteFleet(DeleteFleetRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteFleet(DeleteFleetRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteFleetRequestMarshaller();
             var unmarshaller = DeleteFleetResponseUnmarshaller.Instance;
@@ -3172,7 +3172,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  DeleteFleetResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteFleet">REST API Reference for DeleteFleet Operation</seealso>
-        public  DeleteFleetResponse EndDeleteFleet(IAsyncResult asyncResult)
+        public virtual DeleteFleetResponse EndDeleteFleet(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteFleetResponse>(asyncResult);
         }
@@ -3227,7 +3227,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteGameSessionQueue">REST API Reference for DeleteGameSessionQueue Operation</seealso>
-        public DeleteGameSessionQueueResponse DeleteGameSessionQueue(DeleteGameSessionQueueRequest request)
+        public virtual DeleteGameSessionQueueResponse DeleteGameSessionQueue(DeleteGameSessionQueueRequest request)
         {
             var marshaller = new DeleteGameSessionQueueRequestMarshaller();
             var unmarshaller = DeleteGameSessionQueueResponseUnmarshaller.Instance;
@@ -3247,7 +3247,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteGameSessionQueue
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteGameSessionQueue">REST API Reference for DeleteGameSessionQueue Operation</seealso>
-        public IAsyncResult BeginDeleteGameSessionQueue(DeleteGameSessionQueueRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteGameSessionQueue(DeleteGameSessionQueueRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteGameSessionQueueRequestMarshaller();
             var unmarshaller = DeleteGameSessionQueueResponseUnmarshaller.Instance;
@@ -3264,7 +3264,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  DeleteGameSessionQueueResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteGameSessionQueue">REST API Reference for DeleteGameSessionQueue Operation</seealso>
-        public  DeleteGameSessionQueueResponse EndDeleteGameSessionQueue(IAsyncResult asyncResult)
+        public virtual DeleteGameSessionQueueResponse EndDeleteGameSessionQueue(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteGameSessionQueueResponse>(asyncResult);
         }
@@ -3331,7 +3331,7 @@ namespace Amazon.GameLift
         /// The requested operation is not supported in the region specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteMatchmakingConfiguration">REST API Reference for DeleteMatchmakingConfiguration Operation</seealso>
-        public DeleteMatchmakingConfigurationResponse DeleteMatchmakingConfiguration(DeleteMatchmakingConfigurationRequest request)
+        public virtual DeleteMatchmakingConfigurationResponse DeleteMatchmakingConfiguration(DeleteMatchmakingConfigurationRequest request)
         {
             var marshaller = new DeleteMatchmakingConfigurationRequestMarshaller();
             var unmarshaller = DeleteMatchmakingConfigurationResponseUnmarshaller.Instance;
@@ -3351,7 +3351,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteMatchmakingConfiguration
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteMatchmakingConfiguration">REST API Reference for DeleteMatchmakingConfiguration Operation</seealso>
-        public IAsyncResult BeginDeleteMatchmakingConfiguration(DeleteMatchmakingConfigurationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteMatchmakingConfiguration(DeleteMatchmakingConfigurationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteMatchmakingConfigurationRequestMarshaller();
             var unmarshaller = DeleteMatchmakingConfigurationResponseUnmarshaller.Instance;
@@ -3368,7 +3368,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  DeleteMatchmakingConfigurationResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteMatchmakingConfiguration">REST API Reference for DeleteMatchmakingConfiguration Operation</seealso>
-        public  DeleteMatchmakingConfigurationResponse EndDeleteMatchmakingConfiguration(IAsyncResult asyncResult)
+        public virtual DeleteMatchmakingConfigurationResponse EndDeleteMatchmakingConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteMatchmakingConfigurationResponse>(asyncResult);
         }
@@ -3491,7 +3491,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteScalingPolicy">REST API Reference for DeleteScalingPolicy Operation</seealso>
-        public DeleteScalingPolicyResponse DeleteScalingPolicy(DeleteScalingPolicyRequest request)
+        public virtual DeleteScalingPolicyResponse DeleteScalingPolicy(DeleteScalingPolicyRequest request)
         {
             var marshaller = new DeleteScalingPolicyRequestMarshaller();
             var unmarshaller = DeleteScalingPolicyResponseUnmarshaller.Instance;
@@ -3511,7 +3511,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteScalingPolicy
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteScalingPolicy">REST API Reference for DeleteScalingPolicy Operation</seealso>
-        public IAsyncResult BeginDeleteScalingPolicy(DeleteScalingPolicyRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteScalingPolicy(DeleteScalingPolicyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteScalingPolicyRequestMarshaller();
             var unmarshaller = DeleteScalingPolicyResponseUnmarshaller.Instance;
@@ -3528,7 +3528,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  DeleteScalingPolicyResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteScalingPolicy">REST API Reference for DeleteScalingPolicy Operation</seealso>
-        public  DeleteScalingPolicyResponse EndDeleteScalingPolicy(IAsyncResult asyncResult)
+        public virtual DeleteScalingPolicyResponse EndDeleteScalingPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteScalingPolicyResponse>(asyncResult);
         }
@@ -3591,7 +3591,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteVpcPeeringAuthorization">REST API Reference for DeleteVpcPeeringAuthorization Operation</seealso>
-        public DeleteVpcPeeringAuthorizationResponse DeleteVpcPeeringAuthorization(DeleteVpcPeeringAuthorizationRequest request)
+        public virtual DeleteVpcPeeringAuthorizationResponse DeleteVpcPeeringAuthorization(DeleteVpcPeeringAuthorizationRequest request)
         {
             var marshaller = new DeleteVpcPeeringAuthorizationRequestMarshaller();
             var unmarshaller = DeleteVpcPeeringAuthorizationResponseUnmarshaller.Instance;
@@ -3611,7 +3611,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteVpcPeeringAuthorization
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteVpcPeeringAuthorization">REST API Reference for DeleteVpcPeeringAuthorization Operation</seealso>
-        public IAsyncResult BeginDeleteVpcPeeringAuthorization(DeleteVpcPeeringAuthorizationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteVpcPeeringAuthorization(DeleteVpcPeeringAuthorizationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteVpcPeeringAuthorizationRequestMarshaller();
             var unmarshaller = DeleteVpcPeeringAuthorizationResponseUnmarshaller.Instance;
@@ -3628,7 +3628,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  DeleteVpcPeeringAuthorizationResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteVpcPeeringAuthorization">REST API Reference for DeleteVpcPeeringAuthorization Operation</seealso>
-        public  DeleteVpcPeeringAuthorizationResponse EndDeleteVpcPeeringAuthorization(IAsyncResult asyncResult)
+        public virtual DeleteVpcPeeringAuthorizationResponse EndDeleteVpcPeeringAuthorization(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteVpcPeeringAuthorizationResponse>(asyncResult);
         }
@@ -3698,7 +3698,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteVpcPeeringConnection">REST API Reference for DeleteVpcPeeringConnection Operation</seealso>
-        public DeleteVpcPeeringConnectionResponse DeleteVpcPeeringConnection(DeleteVpcPeeringConnectionRequest request)
+        public virtual DeleteVpcPeeringConnectionResponse DeleteVpcPeeringConnection(DeleteVpcPeeringConnectionRequest request)
         {
             var marshaller = new DeleteVpcPeeringConnectionRequestMarshaller();
             var unmarshaller = DeleteVpcPeeringConnectionResponseUnmarshaller.Instance;
@@ -3718,7 +3718,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteVpcPeeringConnection
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteVpcPeeringConnection">REST API Reference for DeleteVpcPeeringConnection Operation</seealso>
-        public IAsyncResult BeginDeleteVpcPeeringConnection(DeleteVpcPeeringConnectionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteVpcPeeringConnection(DeleteVpcPeeringConnectionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteVpcPeeringConnectionRequestMarshaller();
             var unmarshaller = DeleteVpcPeeringConnectionResponseUnmarshaller.Instance;
@@ -3735,7 +3735,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  DeleteVpcPeeringConnectionResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteVpcPeeringConnection">REST API Reference for DeleteVpcPeeringConnection Operation</seealso>
-        public  DeleteVpcPeeringConnectionResponse EndDeleteVpcPeeringConnection(IAsyncResult asyncResult)
+        public virtual DeleteVpcPeeringConnectionResponse EndDeleteVpcPeeringConnection(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteVpcPeeringConnectionResponse>(asyncResult);
         }
@@ -3802,7 +3802,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeAlias">REST API Reference for DescribeAlias Operation</seealso>
-        public DescribeAliasResponse DescribeAlias(string aliasId)
+        public virtual DescribeAliasResponse DescribeAlias(string aliasId)
         {
             var request = new DescribeAliasRequest();
             request.AliasId = aliasId;
@@ -3868,7 +3868,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeAlias">REST API Reference for DescribeAlias Operation</seealso>
-        public DescribeAliasResponse DescribeAlias(DescribeAliasRequest request)
+        public virtual DescribeAliasResponse DescribeAlias(DescribeAliasRequest request)
         {
             var marshaller = new DescribeAliasRequestMarshaller();
             var unmarshaller = DescribeAliasResponseUnmarshaller.Instance;
@@ -3888,7 +3888,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAlias
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeAlias">REST API Reference for DescribeAlias Operation</seealso>
-        public IAsyncResult BeginDescribeAlias(DescribeAliasRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeAlias(DescribeAliasRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeAliasRequestMarshaller();
             var unmarshaller = DescribeAliasResponseUnmarshaller.Instance;
@@ -3905,7 +3905,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  DescribeAliasResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeAlias">REST API Reference for DescribeAlias Operation</seealso>
-        public  DescribeAliasResponse EndDescribeAlias(IAsyncResult asyncResult)
+        public virtual DescribeAliasResponse EndDescribeAlias(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeAliasResponse>(asyncResult);
         }
@@ -3963,7 +3963,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeBuild">REST API Reference for DescribeBuild Operation</seealso>
-        public DescribeBuildResponse DescribeBuild(string buildId)
+        public virtual DescribeBuildResponse DescribeBuild(string buildId)
         {
             var request = new DescribeBuildRequest();
             request.BuildId = buildId;
@@ -4020,7 +4020,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeBuild">REST API Reference for DescribeBuild Operation</seealso>
-        public DescribeBuildResponse DescribeBuild(DescribeBuildRequest request)
+        public virtual DescribeBuildResponse DescribeBuild(DescribeBuildRequest request)
         {
             var marshaller = new DescribeBuildRequestMarshaller();
             var unmarshaller = DescribeBuildResponseUnmarshaller.Instance;
@@ -4040,7 +4040,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeBuild
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeBuild">REST API Reference for DescribeBuild Operation</seealso>
-        public IAsyncResult BeginDescribeBuild(DescribeBuildRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeBuild(DescribeBuildRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeBuildRequestMarshaller();
             var unmarshaller = DescribeBuildResponseUnmarshaller.Instance;
@@ -4057,7 +4057,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  DescribeBuildResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeBuild">REST API Reference for DescribeBuild Operation</seealso>
-        public  DescribeBuildResponse EndDescribeBuild(IAsyncResult asyncResult)
+        public virtual DescribeBuildResponse EndDescribeBuild(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeBuildResponse>(asyncResult);
         }
@@ -4188,7 +4188,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeEC2InstanceLimits">REST API Reference for DescribeEC2InstanceLimits Operation</seealso>
-        public DescribeEC2InstanceLimitsResponse DescribeEC2InstanceLimits(EC2InstanceType ec2InstanceType)
+        public virtual DescribeEC2InstanceLimitsResponse DescribeEC2InstanceLimits(EC2InstanceType ec2InstanceType)
         {
             var request = new DescribeEC2InstanceLimitsRequest();
             request.EC2InstanceType = ec2InstanceType;
@@ -4318,7 +4318,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeEC2InstanceLimits">REST API Reference for DescribeEC2InstanceLimits Operation</seealso>
-        public DescribeEC2InstanceLimitsResponse DescribeEC2InstanceLimits(DescribeEC2InstanceLimitsRequest request)
+        public virtual DescribeEC2InstanceLimitsResponse DescribeEC2InstanceLimits(DescribeEC2InstanceLimitsRequest request)
         {
             var marshaller = new DescribeEC2InstanceLimitsRequestMarshaller();
             var unmarshaller = DescribeEC2InstanceLimitsResponseUnmarshaller.Instance;
@@ -4338,7 +4338,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEC2InstanceLimits
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeEC2InstanceLimits">REST API Reference for DescribeEC2InstanceLimits Operation</seealso>
-        public IAsyncResult BeginDescribeEC2InstanceLimits(DescribeEC2InstanceLimitsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeEC2InstanceLimits(DescribeEC2InstanceLimitsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeEC2InstanceLimitsRequestMarshaller();
             var unmarshaller = DescribeEC2InstanceLimitsResponseUnmarshaller.Instance;
@@ -4355,7 +4355,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  DescribeEC2InstanceLimitsResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeEC2InstanceLimits">REST API Reference for DescribeEC2InstanceLimits Operation</seealso>
-        public  DescribeEC2InstanceLimitsResponse EndDescribeEC2InstanceLimits(IAsyncResult asyncResult)
+        public virtual DescribeEC2InstanceLimitsResponse EndDescribeEC2InstanceLimits(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeEC2InstanceLimitsResponse>(asyncResult);
         }
@@ -4486,7 +4486,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetAttributes">REST API Reference for DescribeFleetAttributes Operation</seealso>
-        public DescribeFleetAttributesResponse DescribeFleetAttributes(DescribeFleetAttributesRequest request)
+        public virtual DescribeFleetAttributesResponse DescribeFleetAttributes(DescribeFleetAttributesRequest request)
         {
             var marshaller = new DescribeFleetAttributesRequestMarshaller();
             var unmarshaller = DescribeFleetAttributesResponseUnmarshaller.Instance;
@@ -4506,7 +4506,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeFleetAttributes
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetAttributes">REST API Reference for DescribeFleetAttributes Operation</seealso>
-        public IAsyncResult BeginDescribeFleetAttributes(DescribeFleetAttributesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeFleetAttributes(DescribeFleetAttributesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeFleetAttributesRequestMarshaller();
             var unmarshaller = DescribeFleetAttributesResponseUnmarshaller.Instance;
@@ -4523,7 +4523,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  DescribeFleetAttributesResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetAttributes">REST API Reference for DescribeFleetAttributes Operation</seealso>
-        public  DescribeFleetAttributesResponse EndDescribeFleetAttributes(IAsyncResult asyncResult)
+        public virtual DescribeFleetAttributesResponse EndDescribeFleetAttributes(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeFleetAttributesResponse>(asyncResult);
         }
@@ -4655,7 +4655,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetCapacity">REST API Reference for DescribeFleetCapacity Operation</seealso>
-        public DescribeFleetCapacityResponse DescribeFleetCapacity(DescribeFleetCapacityRequest request)
+        public virtual DescribeFleetCapacityResponse DescribeFleetCapacity(DescribeFleetCapacityRequest request)
         {
             var marshaller = new DescribeFleetCapacityRequestMarshaller();
             var unmarshaller = DescribeFleetCapacityResponseUnmarshaller.Instance;
@@ -4675,7 +4675,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeFleetCapacity
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetCapacity">REST API Reference for DescribeFleetCapacity Operation</seealso>
-        public IAsyncResult BeginDescribeFleetCapacity(DescribeFleetCapacityRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeFleetCapacity(DescribeFleetCapacityRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeFleetCapacityRequestMarshaller();
             var unmarshaller = DescribeFleetCapacityResponseUnmarshaller.Instance;
@@ -4692,7 +4692,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  DescribeFleetCapacityResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetCapacity">REST API Reference for DescribeFleetCapacity Operation</seealso>
-        public  DescribeFleetCapacityResponse EndDescribeFleetCapacity(IAsyncResult asyncResult)
+        public virtual DescribeFleetCapacityResponse EndDescribeFleetCapacity(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeFleetCapacityResponse>(asyncResult);
         }
@@ -4816,7 +4816,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetEvents">REST API Reference for DescribeFleetEvents Operation</seealso>
-        public DescribeFleetEventsResponse DescribeFleetEvents(DescribeFleetEventsRequest request)
+        public virtual DescribeFleetEventsResponse DescribeFleetEvents(DescribeFleetEventsRequest request)
         {
             var marshaller = new DescribeFleetEventsRequestMarshaller();
             var unmarshaller = DescribeFleetEventsResponseUnmarshaller.Instance;
@@ -4836,7 +4836,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeFleetEvents
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetEvents">REST API Reference for DescribeFleetEvents Operation</seealso>
-        public IAsyncResult BeginDescribeFleetEvents(DescribeFleetEventsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeFleetEvents(DescribeFleetEventsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeFleetEventsRequestMarshaller();
             var unmarshaller = DescribeFleetEventsResponseUnmarshaller.Instance;
@@ -4853,7 +4853,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  DescribeFleetEventsResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetEvents">REST API Reference for DescribeFleetEvents Operation</seealso>
-        public  DescribeFleetEventsResponse EndDescribeFleetEvents(IAsyncResult asyncResult)
+        public virtual DescribeFleetEventsResponse EndDescribeFleetEvents(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeFleetEventsResponse>(asyncResult);
         }
@@ -4979,7 +4979,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetPortSettings">REST API Reference for DescribeFleetPortSettings Operation</seealso>
-        public DescribeFleetPortSettingsResponse DescribeFleetPortSettings(string fleetId)
+        public virtual DescribeFleetPortSettingsResponse DescribeFleetPortSettings(string fleetId)
         {
             var request = new DescribeFleetPortSettingsRequest();
             request.FleetId = fleetId;
@@ -5104,7 +5104,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetPortSettings">REST API Reference for DescribeFleetPortSettings Operation</seealso>
-        public DescribeFleetPortSettingsResponse DescribeFleetPortSettings(DescribeFleetPortSettingsRequest request)
+        public virtual DescribeFleetPortSettingsResponse DescribeFleetPortSettings(DescribeFleetPortSettingsRequest request)
         {
             var marshaller = new DescribeFleetPortSettingsRequestMarshaller();
             var unmarshaller = DescribeFleetPortSettingsResponseUnmarshaller.Instance;
@@ -5124,7 +5124,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeFleetPortSettings
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetPortSettings">REST API Reference for DescribeFleetPortSettings Operation</seealso>
-        public IAsyncResult BeginDescribeFleetPortSettings(DescribeFleetPortSettingsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeFleetPortSettings(DescribeFleetPortSettingsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeFleetPortSettingsRequestMarshaller();
             var unmarshaller = DescribeFleetPortSettingsResponseUnmarshaller.Instance;
@@ -5141,7 +5141,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  DescribeFleetPortSettingsResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetPortSettings">REST API Reference for DescribeFleetPortSettings Operation</seealso>
-        public  DescribeFleetPortSettingsResponse EndDescribeFleetPortSettings(IAsyncResult asyncResult)
+        public virtual DescribeFleetPortSettingsResponse EndDescribeFleetPortSettings(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeFleetPortSettingsResponse>(asyncResult);
         }
@@ -5272,7 +5272,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetUtilization">REST API Reference for DescribeFleetUtilization Operation</seealso>
-        public DescribeFleetUtilizationResponse DescribeFleetUtilization(DescribeFleetUtilizationRequest request)
+        public virtual DescribeFleetUtilizationResponse DescribeFleetUtilization(DescribeFleetUtilizationRequest request)
         {
             var marshaller = new DescribeFleetUtilizationRequestMarshaller();
             var unmarshaller = DescribeFleetUtilizationResponseUnmarshaller.Instance;
@@ -5292,7 +5292,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeFleetUtilization
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetUtilization">REST API Reference for DescribeFleetUtilization Operation</seealso>
-        public IAsyncResult BeginDescribeFleetUtilization(DescribeFleetUtilizationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeFleetUtilization(DescribeFleetUtilizationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeFleetUtilizationRequestMarshaller();
             var unmarshaller = DescribeFleetUtilizationResponseUnmarshaller.Instance;
@@ -5309,7 +5309,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  DescribeFleetUtilizationResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetUtilization">REST API Reference for DescribeFleetUtilization Operation</seealso>
-        public  DescribeFleetUtilizationResponse EndDescribeFleetUtilization(IAsyncResult asyncResult)
+        public virtual DescribeFleetUtilizationResponse EndDescribeFleetUtilization(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeFleetUtilizationResponse>(asyncResult);
         }
@@ -5403,7 +5403,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionDetails">REST API Reference for DescribeGameSessionDetails Operation</seealso>
-        public DescribeGameSessionDetailsResponse DescribeGameSessionDetails(DescribeGameSessionDetailsRequest request)
+        public virtual DescribeGameSessionDetailsResponse DescribeGameSessionDetails(DescribeGameSessionDetailsRequest request)
         {
             var marshaller = new DescribeGameSessionDetailsRequestMarshaller();
             var unmarshaller = DescribeGameSessionDetailsResponseUnmarshaller.Instance;
@@ -5423,7 +5423,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeGameSessionDetails
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionDetails">REST API Reference for DescribeGameSessionDetails Operation</seealso>
-        public IAsyncResult BeginDescribeGameSessionDetails(DescribeGameSessionDetailsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeGameSessionDetails(DescribeGameSessionDetailsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeGameSessionDetailsRequestMarshaller();
             var unmarshaller = DescribeGameSessionDetailsResponseUnmarshaller.Instance;
@@ -5440,7 +5440,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  DescribeGameSessionDetailsResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionDetails">REST API Reference for DescribeGameSessionDetails Operation</seealso>
-        public  DescribeGameSessionDetailsResponse EndDescribeGameSessionDetails(IAsyncResult asyncResult)
+        public virtual DescribeGameSessionDetailsResponse EndDescribeGameSessionDetails(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeGameSessionDetailsResponse>(asyncResult);
         }
@@ -5519,7 +5519,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionPlacement">REST API Reference for DescribeGameSessionPlacement Operation</seealso>
-        public DescribeGameSessionPlacementResponse DescribeGameSessionPlacement(DescribeGameSessionPlacementRequest request)
+        public virtual DescribeGameSessionPlacementResponse DescribeGameSessionPlacement(DescribeGameSessionPlacementRequest request)
         {
             var marshaller = new DescribeGameSessionPlacementRequestMarshaller();
             var unmarshaller = DescribeGameSessionPlacementResponseUnmarshaller.Instance;
@@ -5539,7 +5539,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeGameSessionPlacement
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionPlacement">REST API Reference for DescribeGameSessionPlacement Operation</seealso>
-        public IAsyncResult BeginDescribeGameSessionPlacement(DescribeGameSessionPlacementRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeGameSessionPlacement(DescribeGameSessionPlacementRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeGameSessionPlacementRequestMarshaller();
             var unmarshaller = DescribeGameSessionPlacementResponseUnmarshaller.Instance;
@@ -5556,7 +5556,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  DescribeGameSessionPlacementResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionPlacement">REST API Reference for DescribeGameSessionPlacement Operation</seealso>
-        public  DescribeGameSessionPlacementResponse EndDescribeGameSessionPlacement(IAsyncResult asyncResult)
+        public virtual DescribeGameSessionPlacementResponse EndDescribeGameSessionPlacement(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeGameSessionPlacementResponse>(asyncResult);
         }
@@ -5613,7 +5613,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionQueues">REST API Reference for DescribeGameSessionQueues Operation</seealso>
-        public DescribeGameSessionQueuesResponse DescribeGameSessionQueues(DescribeGameSessionQueuesRequest request)
+        public virtual DescribeGameSessionQueuesResponse DescribeGameSessionQueues(DescribeGameSessionQueuesRequest request)
         {
             var marshaller = new DescribeGameSessionQueuesRequestMarshaller();
             var unmarshaller = DescribeGameSessionQueuesResponseUnmarshaller.Instance;
@@ -5633,7 +5633,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeGameSessionQueues
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionQueues">REST API Reference for DescribeGameSessionQueues Operation</seealso>
-        public IAsyncResult BeginDescribeGameSessionQueues(DescribeGameSessionQueuesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeGameSessionQueues(DescribeGameSessionQueuesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeGameSessionQueuesRequestMarshaller();
             var unmarshaller = DescribeGameSessionQueuesResponseUnmarshaller.Instance;
@@ -5650,7 +5650,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  DescribeGameSessionQueuesResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionQueues">REST API Reference for DescribeGameSessionQueues Operation</seealso>
-        public  DescribeGameSessionQueuesResponse EndDescribeGameSessionQueues(IAsyncResult asyncResult)
+        public virtual DescribeGameSessionQueuesResponse EndDescribeGameSessionQueues(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeGameSessionQueuesResponse>(asyncResult);
         }
@@ -5747,7 +5747,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessions">REST API Reference for DescribeGameSessions Operation</seealso>
-        public DescribeGameSessionsResponse DescribeGameSessions(DescribeGameSessionsRequest request)
+        public virtual DescribeGameSessionsResponse DescribeGameSessions(DescribeGameSessionsRequest request)
         {
             var marshaller = new DescribeGameSessionsRequestMarshaller();
             var unmarshaller = DescribeGameSessionsResponseUnmarshaller.Instance;
@@ -5767,7 +5767,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeGameSessions
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessions">REST API Reference for DescribeGameSessions Operation</seealso>
-        public IAsyncResult BeginDescribeGameSessions(DescribeGameSessionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeGameSessions(DescribeGameSessionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeGameSessionsRequestMarshaller();
             var unmarshaller = DescribeGameSessionsResponseUnmarshaller.Instance;
@@ -5784,7 +5784,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  DescribeGameSessionsResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessions">REST API Reference for DescribeGameSessions Operation</seealso>
-        public  DescribeGameSessionsResponse EndDescribeGameSessions(IAsyncResult asyncResult)
+        public virtual DescribeGameSessionsResponse EndDescribeGameSessions(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeGameSessionsResponse>(asyncResult);
         }
@@ -5825,7 +5825,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeInstances">REST API Reference for DescribeInstances Operation</seealso>
-        public DescribeInstancesResponse DescribeInstances(DescribeInstancesRequest request)
+        public virtual DescribeInstancesResponse DescribeInstances(DescribeInstancesRequest request)
         {
             var marshaller = new DescribeInstancesRequestMarshaller();
             var unmarshaller = DescribeInstancesResponseUnmarshaller.Instance;
@@ -5845,7 +5845,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeInstances
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeInstances">REST API Reference for DescribeInstances Operation</seealso>
-        public IAsyncResult BeginDescribeInstances(DescribeInstancesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeInstances(DescribeInstancesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeInstancesRequestMarshaller();
             var unmarshaller = DescribeInstancesResponseUnmarshaller.Instance;
@@ -5862,7 +5862,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  DescribeInstancesResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeInstances">REST API Reference for DescribeInstances Operation</seealso>
-        public  DescribeInstancesResponse EndDescribeInstances(IAsyncResult asyncResult)
+        public virtual DescribeInstancesResponse EndDescribeInstances(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeInstancesResponse>(asyncResult);
         }
@@ -5926,7 +5926,7 @@ namespace Amazon.GameLift
         /// The requested operation is not supported in the region specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmaking">REST API Reference for DescribeMatchmaking Operation</seealso>
-        public DescribeMatchmakingResponse DescribeMatchmaking(DescribeMatchmakingRequest request)
+        public virtual DescribeMatchmakingResponse DescribeMatchmaking(DescribeMatchmakingRequest request)
         {
             var marshaller = new DescribeMatchmakingRequestMarshaller();
             var unmarshaller = DescribeMatchmakingResponseUnmarshaller.Instance;
@@ -5946,7 +5946,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeMatchmaking
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmaking">REST API Reference for DescribeMatchmaking Operation</seealso>
-        public IAsyncResult BeginDescribeMatchmaking(DescribeMatchmakingRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeMatchmaking(DescribeMatchmakingRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeMatchmakingRequestMarshaller();
             var unmarshaller = DescribeMatchmakingResponseUnmarshaller.Instance;
@@ -5963,7 +5963,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  DescribeMatchmakingResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmaking">REST API Reference for DescribeMatchmaking Operation</seealso>
-        public  DescribeMatchmakingResponse EndDescribeMatchmaking(IAsyncResult asyncResult)
+        public virtual DescribeMatchmakingResponse EndDescribeMatchmaking(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeMatchmakingResponse>(asyncResult);
         }
@@ -6030,7 +6030,7 @@ namespace Amazon.GameLift
         /// The requested operation is not supported in the region specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmakingConfigurations">REST API Reference for DescribeMatchmakingConfigurations Operation</seealso>
-        public DescribeMatchmakingConfigurationsResponse DescribeMatchmakingConfigurations(DescribeMatchmakingConfigurationsRequest request)
+        public virtual DescribeMatchmakingConfigurationsResponse DescribeMatchmakingConfigurations(DescribeMatchmakingConfigurationsRequest request)
         {
             var marshaller = new DescribeMatchmakingConfigurationsRequestMarshaller();
             var unmarshaller = DescribeMatchmakingConfigurationsResponseUnmarshaller.Instance;
@@ -6050,7 +6050,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeMatchmakingConfigurations
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmakingConfigurations">REST API Reference for DescribeMatchmakingConfigurations Operation</seealso>
-        public IAsyncResult BeginDescribeMatchmakingConfigurations(DescribeMatchmakingConfigurationsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeMatchmakingConfigurations(DescribeMatchmakingConfigurationsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeMatchmakingConfigurationsRequestMarshaller();
             var unmarshaller = DescribeMatchmakingConfigurationsResponseUnmarshaller.Instance;
@@ -6067,7 +6067,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  DescribeMatchmakingConfigurationsResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmakingConfigurations">REST API Reference for DescribeMatchmakingConfigurations Operation</seealso>
-        public  DescribeMatchmakingConfigurationsResponse EndDescribeMatchmakingConfigurations(IAsyncResult asyncResult)
+        public virtual DescribeMatchmakingConfigurationsResponse EndDescribeMatchmakingConfigurations(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeMatchmakingConfigurationsResponse>(asyncResult);
         }
@@ -6135,7 +6135,7 @@ namespace Amazon.GameLift
         /// The requested operation is not supported in the region specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmakingRuleSets">REST API Reference for DescribeMatchmakingRuleSets Operation</seealso>
-        public DescribeMatchmakingRuleSetsResponse DescribeMatchmakingRuleSets(DescribeMatchmakingRuleSetsRequest request)
+        public virtual DescribeMatchmakingRuleSetsResponse DescribeMatchmakingRuleSets(DescribeMatchmakingRuleSetsRequest request)
         {
             var marshaller = new DescribeMatchmakingRuleSetsRequestMarshaller();
             var unmarshaller = DescribeMatchmakingRuleSetsResponseUnmarshaller.Instance;
@@ -6155,7 +6155,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeMatchmakingRuleSets
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmakingRuleSets">REST API Reference for DescribeMatchmakingRuleSets Operation</seealso>
-        public IAsyncResult BeginDescribeMatchmakingRuleSets(DescribeMatchmakingRuleSetsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeMatchmakingRuleSets(DescribeMatchmakingRuleSetsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeMatchmakingRuleSetsRequestMarshaller();
             var unmarshaller = DescribeMatchmakingRuleSetsResponseUnmarshaller.Instance;
@@ -6172,7 +6172,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  DescribeMatchmakingRuleSetsResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmakingRuleSets">REST API Reference for DescribeMatchmakingRuleSets Operation</seealso>
-        public  DescribeMatchmakingRuleSetsResponse EndDescribeMatchmakingRuleSets(IAsyncResult asyncResult)
+        public virtual DescribeMatchmakingRuleSetsResponse EndDescribeMatchmakingRuleSets(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeMatchmakingRuleSetsResponse>(asyncResult);
         }
@@ -6253,7 +6253,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribePlayerSessions">REST API Reference for DescribePlayerSessions Operation</seealso>
-        public DescribePlayerSessionsResponse DescribePlayerSessions(DescribePlayerSessionsRequest request)
+        public virtual DescribePlayerSessionsResponse DescribePlayerSessions(DescribePlayerSessionsRequest request)
         {
             var marshaller = new DescribePlayerSessionsRequestMarshaller();
             var unmarshaller = DescribePlayerSessionsResponseUnmarshaller.Instance;
@@ -6273,7 +6273,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribePlayerSessions
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribePlayerSessions">REST API Reference for DescribePlayerSessions Operation</seealso>
-        public IAsyncResult BeginDescribePlayerSessions(DescribePlayerSessionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribePlayerSessions(DescribePlayerSessionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribePlayerSessionsRequestMarshaller();
             var unmarshaller = DescribePlayerSessionsResponseUnmarshaller.Instance;
@@ -6290,7 +6290,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  DescribePlayerSessionsResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribePlayerSessions">REST API Reference for DescribePlayerSessions Operation</seealso>
-        public  DescribePlayerSessionsResponse EndDescribePlayerSessions(IAsyncResult asyncResult)
+        public virtual DescribePlayerSessionsResponse EndDescribePlayerSessions(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribePlayerSessionsResponse>(asyncResult);
         }
@@ -6413,7 +6413,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeRuntimeConfiguration">REST API Reference for DescribeRuntimeConfiguration Operation</seealso>
-        public DescribeRuntimeConfigurationResponse DescribeRuntimeConfiguration(DescribeRuntimeConfigurationRequest request)
+        public virtual DescribeRuntimeConfigurationResponse DescribeRuntimeConfiguration(DescribeRuntimeConfigurationRequest request)
         {
             var marshaller = new DescribeRuntimeConfigurationRequestMarshaller();
             var unmarshaller = DescribeRuntimeConfigurationResponseUnmarshaller.Instance;
@@ -6433,7 +6433,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeRuntimeConfiguration
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeRuntimeConfiguration">REST API Reference for DescribeRuntimeConfiguration Operation</seealso>
-        public IAsyncResult BeginDescribeRuntimeConfiguration(DescribeRuntimeConfigurationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeRuntimeConfiguration(DescribeRuntimeConfigurationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeRuntimeConfigurationRequestMarshaller();
             var unmarshaller = DescribeRuntimeConfigurationResponseUnmarshaller.Instance;
@@ -6450,7 +6450,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  DescribeRuntimeConfigurationResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeRuntimeConfiguration">REST API Reference for DescribeRuntimeConfiguration Operation</seealso>
-        public  DescribeRuntimeConfigurationResponse EndDescribeRuntimeConfiguration(IAsyncResult asyncResult)
+        public virtual DescribeRuntimeConfigurationResponse EndDescribeRuntimeConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeRuntimeConfigurationResponse>(asyncResult);
         }
@@ -6578,7 +6578,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeScalingPolicies">REST API Reference for DescribeScalingPolicies Operation</seealso>
-        public DescribeScalingPoliciesResponse DescribeScalingPolicies(DescribeScalingPoliciesRequest request)
+        public virtual DescribeScalingPoliciesResponse DescribeScalingPolicies(DescribeScalingPoliciesRequest request)
         {
             var marshaller = new DescribeScalingPoliciesRequestMarshaller();
             var unmarshaller = DescribeScalingPoliciesResponseUnmarshaller.Instance;
@@ -6598,7 +6598,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeScalingPolicies
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeScalingPolicies">REST API Reference for DescribeScalingPolicies Operation</seealso>
-        public IAsyncResult BeginDescribeScalingPolicies(DescribeScalingPoliciesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeScalingPolicies(DescribeScalingPoliciesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeScalingPoliciesRequestMarshaller();
             var unmarshaller = DescribeScalingPoliciesResponseUnmarshaller.Instance;
@@ -6615,7 +6615,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  DescribeScalingPoliciesResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeScalingPolicies">REST API Reference for DescribeScalingPolicies Operation</seealso>
-        public  DescribeScalingPoliciesResponse EndDescribeScalingPolicies(IAsyncResult asyncResult)
+        public virtual DescribeScalingPoliciesResponse EndDescribeScalingPolicies(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeScalingPoliciesResponse>(asyncResult);
         }
@@ -6674,7 +6674,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeVpcPeeringAuthorizations">REST API Reference for DescribeVpcPeeringAuthorizations Operation</seealso>
-        public DescribeVpcPeeringAuthorizationsResponse DescribeVpcPeeringAuthorizations(DescribeVpcPeeringAuthorizationsRequest request)
+        public virtual DescribeVpcPeeringAuthorizationsResponse DescribeVpcPeeringAuthorizations(DescribeVpcPeeringAuthorizationsRequest request)
         {
             var marshaller = new DescribeVpcPeeringAuthorizationsRequestMarshaller();
             var unmarshaller = DescribeVpcPeeringAuthorizationsResponseUnmarshaller.Instance;
@@ -6694,7 +6694,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeVpcPeeringAuthorizations
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeVpcPeeringAuthorizations">REST API Reference for DescribeVpcPeeringAuthorizations Operation</seealso>
-        public IAsyncResult BeginDescribeVpcPeeringAuthorizations(DescribeVpcPeeringAuthorizationsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeVpcPeeringAuthorizations(DescribeVpcPeeringAuthorizationsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeVpcPeeringAuthorizationsRequestMarshaller();
             var unmarshaller = DescribeVpcPeeringAuthorizationsResponseUnmarshaller.Instance;
@@ -6711,7 +6711,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  DescribeVpcPeeringAuthorizationsResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeVpcPeeringAuthorizations">REST API Reference for DescribeVpcPeeringAuthorizations Operation</seealso>
-        public  DescribeVpcPeeringAuthorizationsResponse EndDescribeVpcPeeringAuthorizations(IAsyncResult asyncResult)
+        public virtual DescribeVpcPeeringAuthorizationsResponse EndDescribeVpcPeeringAuthorizations(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeVpcPeeringAuthorizationsResponse>(asyncResult);
         }
@@ -6781,7 +6781,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeVpcPeeringConnections">REST API Reference for DescribeVpcPeeringConnections Operation</seealso>
-        public DescribeVpcPeeringConnectionsResponse DescribeVpcPeeringConnections(DescribeVpcPeeringConnectionsRequest request)
+        public virtual DescribeVpcPeeringConnectionsResponse DescribeVpcPeeringConnections(DescribeVpcPeeringConnectionsRequest request)
         {
             var marshaller = new DescribeVpcPeeringConnectionsRequestMarshaller();
             var unmarshaller = DescribeVpcPeeringConnectionsResponseUnmarshaller.Instance;
@@ -6801,7 +6801,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeVpcPeeringConnections
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeVpcPeeringConnections">REST API Reference for DescribeVpcPeeringConnections Operation</seealso>
-        public IAsyncResult BeginDescribeVpcPeeringConnections(DescribeVpcPeeringConnectionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeVpcPeeringConnections(DescribeVpcPeeringConnectionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeVpcPeeringConnectionsRequestMarshaller();
             var unmarshaller = DescribeVpcPeeringConnectionsResponseUnmarshaller.Instance;
@@ -6818,7 +6818,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  DescribeVpcPeeringConnectionsResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeVpcPeeringConnections">REST API Reference for DescribeVpcPeeringConnections Operation</seealso>
-        public  DescribeVpcPeeringConnectionsResponse EndDescribeVpcPeeringConnections(IAsyncResult asyncResult)
+        public virtual DescribeVpcPeeringConnectionsResponse EndDescribeVpcPeeringConnections(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeVpcPeeringConnectionsResponse>(asyncResult);
         }
@@ -6903,7 +6903,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetGameSessionLogUrl">REST API Reference for GetGameSessionLogUrl Operation</seealso>
-        public GetGameSessionLogUrlResponse GetGameSessionLogUrl(string gameSessionId)
+        public virtual GetGameSessionLogUrlResponse GetGameSessionLogUrl(string gameSessionId)
         {
             var request = new GetGameSessionLogUrlRequest();
             request.GameSessionId = gameSessionId;
@@ -6987,7 +6987,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetGameSessionLogUrl">REST API Reference for GetGameSessionLogUrl Operation</seealso>
-        public GetGameSessionLogUrlResponse GetGameSessionLogUrl(GetGameSessionLogUrlRequest request)
+        public virtual GetGameSessionLogUrlResponse GetGameSessionLogUrl(GetGameSessionLogUrlRequest request)
         {
             var marshaller = new GetGameSessionLogUrlRequestMarshaller();
             var unmarshaller = GetGameSessionLogUrlResponseUnmarshaller.Instance;
@@ -7007,7 +7007,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetGameSessionLogUrl
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetGameSessionLogUrl">REST API Reference for GetGameSessionLogUrl Operation</seealso>
-        public IAsyncResult BeginGetGameSessionLogUrl(GetGameSessionLogUrlRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetGameSessionLogUrl(GetGameSessionLogUrlRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetGameSessionLogUrlRequestMarshaller();
             var unmarshaller = GetGameSessionLogUrlResponseUnmarshaller.Instance;
@@ -7024,7 +7024,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  GetGameSessionLogUrlResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetGameSessionLogUrl">REST API Reference for GetGameSessionLogUrl Operation</seealso>
-        public  GetGameSessionLogUrlResponse EndGetGameSessionLogUrl(IAsyncResult asyncResult)
+        public virtual GetGameSessionLogUrlResponse EndGetGameSessionLogUrl(IAsyncResult asyncResult)
         {
             return EndInvoke<GetGameSessionLogUrlResponse>(asyncResult);
         }
@@ -7075,7 +7075,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetInstanceAccess">REST API Reference for GetInstanceAccess Operation</seealso>
-        public GetInstanceAccessResponse GetInstanceAccess(GetInstanceAccessRequest request)
+        public virtual GetInstanceAccessResponse GetInstanceAccess(GetInstanceAccessRequest request)
         {
             var marshaller = new GetInstanceAccessRequestMarshaller();
             var unmarshaller = GetInstanceAccessResponseUnmarshaller.Instance;
@@ -7095,7 +7095,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetInstanceAccess
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetInstanceAccess">REST API Reference for GetInstanceAccess Operation</seealso>
-        public IAsyncResult BeginGetInstanceAccess(GetInstanceAccessRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetInstanceAccess(GetInstanceAccessRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetInstanceAccessRequestMarshaller();
             var unmarshaller = GetInstanceAccessResponseUnmarshaller.Instance;
@@ -7112,7 +7112,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  GetInstanceAccessResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetInstanceAccess">REST API Reference for GetInstanceAccess Operation</seealso>
-        public  GetInstanceAccessResponse EndGetInstanceAccess(IAsyncResult asyncResult)
+        public virtual GetInstanceAccessResponse EndGetInstanceAccess(IAsyncResult asyncResult)
         {
             return EndInvoke<GetInstanceAccessResponse>(asyncResult);
         }
@@ -7175,7 +7175,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListAliases">REST API Reference for ListAliases Operation</seealso>
-        public ListAliasesResponse ListAliases(ListAliasesRequest request)
+        public virtual ListAliasesResponse ListAliases(ListAliasesRequest request)
         {
             var marshaller = new ListAliasesRequestMarshaller();
             var unmarshaller = ListAliasesResponseUnmarshaller.Instance;
@@ -7195,7 +7195,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAliases
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListAliases">REST API Reference for ListAliases Operation</seealso>
-        public IAsyncResult BeginListAliases(ListAliasesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListAliases(ListAliasesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListAliasesRequestMarshaller();
             var unmarshaller = ListAliasesResponseUnmarshaller.Instance;
@@ -7212,7 +7212,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  ListAliasesResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListAliases">REST API Reference for ListAliases Operation</seealso>
-        public  ListAliasesResponse EndListAliases(IAsyncResult asyncResult)
+        public virtual ListAliasesResponse EndListAliases(IAsyncResult asyncResult)
         {
             return EndInvoke<ListAliasesResponse>(asyncResult);
         }
@@ -7272,7 +7272,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListBuilds">REST API Reference for ListBuilds Operation</seealso>
-        public ListBuildsResponse ListBuilds(ListBuildsRequest request)
+        public virtual ListBuildsResponse ListBuilds(ListBuildsRequest request)
         {
             var marshaller = new ListBuildsRequestMarshaller();
             var unmarshaller = ListBuildsResponseUnmarshaller.Instance;
@@ -7292,7 +7292,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListBuilds
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListBuilds">REST API Reference for ListBuilds Operation</seealso>
-        public IAsyncResult BeginListBuilds(ListBuildsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListBuilds(ListBuildsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListBuildsRequestMarshaller();
             var unmarshaller = ListBuildsResponseUnmarshaller.Instance;
@@ -7309,7 +7309,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  ListBuildsResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListBuilds">REST API Reference for ListBuilds Operation</seealso>
-        public  ListBuildsResponse EndListBuilds(IAsyncResult asyncResult)
+        public virtual ListBuildsResponse EndListBuilds(IAsyncResult asyncResult)
         {
             return EndInvoke<ListBuildsResponse>(asyncResult);
         }
@@ -7435,7 +7435,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListFleets">REST API Reference for ListFleets Operation</seealso>
-        public ListFleetsResponse ListFleets(ListFleetsRequest request)
+        public virtual ListFleetsResponse ListFleets(ListFleetsRequest request)
         {
             var marshaller = new ListFleetsRequestMarshaller();
             var unmarshaller = ListFleetsResponseUnmarshaller.Instance;
@@ -7455,7 +7455,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListFleets
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListFleets">REST API Reference for ListFleets Operation</seealso>
-        public IAsyncResult BeginListFleets(ListFleetsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListFleets(ListFleetsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListFleetsRequestMarshaller();
             var unmarshaller = ListFleetsResponseUnmarshaller.Instance;
@@ -7472,7 +7472,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  ListFleetsResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListFleets">REST API Reference for ListFleets Operation</seealso>
-        public  ListFleetsResponse EndListFleets(IAsyncResult asyncResult)
+        public virtual ListFleetsResponse EndListFleets(IAsyncResult asyncResult)
         {
             return EndInvoke<ListFleetsResponse>(asyncResult);
         }
@@ -7624,7 +7624,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PutScalingPolicy">REST API Reference for PutScalingPolicy Operation</seealso>
-        public PutScalingPolicyResponse PutScalingPolicy(PutScalingPolicyRequest request)
+        public virtual PutScalingPolicyResponse PutScalingPolicy(PutScalingPolicyRequest request)
         {
             var marshaller = new PutScalingPolicyRequestMarshaller();
             var unmarshaller = PutScalingPolicyResponseUnmarshaller.Instance;
@@ -7644,7 +7644,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutScalingPolicy
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PutScalingPolicy">REST API Reference for PutScalingPolicy Operation</seealso>
-        public IAsyncResult BeginPutScalingPolicy(PutScalingPolicyRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPutScalingPolicy(PutScalingPolicyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutScalingPolicyRequestMarshaller();
             var unmarshaller = PutScalingPolicyResponseUnmarshaller.Instance;
@@ -7661,7 +7661,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  PutScalingPolicyResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PutScalingPolicy">REST API Reference for PutScalingPolicy Operation</seealso>
-        public  PutScalingPolicyResponse EndPutScalingPolicy(IAsyncResult asyncResult)
+        public virtual PutScalingPolicyResponse EndPutScalingPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<PutScalingPolicyResponse>(asyncResult);
         }
@@ -7694,7 +7694,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/RequestUploadCredentials">REST API Reference for RequestUploadCredentials Operation</seealso>
-        public RequestUploadCredentialsResponse RequestUploadCredentials(string buildId)
+        public virtual RequestUploadCredentialsResponse RequestUploadCredentials(string buildId)
         {
             var request = new RequestUploadCredentialsRequest();
             request.BuildId = buildId;
@@ -7726,7 +7726,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/RequestUploadCredentials">REST API Reference for RequestUploadCredentials Operation</seealso>
-        public RequestUploadCredentialsResponse RequestUploadCredentials(RequestUploadCredentialsRequest request)
+        public virtual RequestUploadCredentialsResponse RequestUploadCredentials(RequestUploadCredentialsRequest request)
         {
             var marshaller = new RequestUploadCredentialsRequestMarshaller();
             var unmarshaller = RequestUploadCredentialsResponseUnmarshaller.Instance;
@@ -7746,7 +7746,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRequestUploadCredentials
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/RequestUploadCredentials">REST API Reference for RequestUploadCredentials Operation</seealso>
-        public IAsyncResult BeginRequestUploadCredentials(RequestUploadCredentialsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginRequestUploadCredentials(RequestUploadCredentialsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RequestUploadCredentialsRequestMarshaller();
             var unmarshaller = RequestUploadCredentialsResponseUnmarshaller.Instance;
@@ -7763,7 +7763,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  RequestUploadCredentialsResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/RequestUploadCredentials">REST API Reference for RequestUploadCredentials Operation</seealso>
-        public  RequestUploadCredentialsResponse EndRequestUploadCredentials(IAsyncResult asyncResult)
+        public virtual RequestUploadCredentialsResponse EndRequestUploadCredentials(IAsyncResult asyncResult)
         {
             return EndInvoke<RequestUploadCredentialsResponse>(asyncResult);
         }
@@ -7830,7 +7830,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ResolveAlias">REST API Reference for ResolveAlias Operation</seealso>
-        public ResolveAliasResponse ResolveAlias(string aliasId)
+        public virtual ResolveAliasResponse ResolveAlias(string aliasId)
         {
             var request = new ResolveAliasRequest();
             request.AliasId = aliasId;
@@ -7896,7 +7896,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ResolveAlias">REST API Reference for ResolveAlias Operation</seealso>
-        public ResolveAliasResponse ResolveAlias(ResolveAliasRequest request)
+        public virtual ResolveAliasResponse ResolveAlias(ResolveAliasRequest request)
         {
             var marshaller = new ResolveAliasRequestMarshaller();
             var unmarshaller = ResolveAliasResponseUnmarshaller.Instance;
@@ -7916,7 +7916,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndResolveAlias
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ResolveAlias">REST API Reference for ResolveAlias Operation</seealso>
-        public IAsyncResult BeginResolveAlias(ResolveAliasRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginResolveAlias(ResolveAliasRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ResolveAliasRequestMarshaller();
             var unmarshaller = ResolveAliasResponseUnmarshaller.Instance;
@@ -7933,7 +7933,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  ResolveAliasResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ResolveAlias">REST API Reference for ResolveAlias Operation</seealso>
-        public  ResolveAliasResponse EndResolveAlias(IAsyncResult asyncResult)
+        public virtual ResolveAliasResponse EndResolveAlias(IAsyncResult asyncResult)
         {
             return EndInvoke<ResolveAliasResponse>(asyncResult);
         }
@@ -8073,7 +8073,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/SearchGameSessions">REST API Reference for SearchGameSessions Operation</seealso>
-        public SearchGameSessionsResponse SearchGameSessions(SearchGameSessionsRequest request)
+        public virtual SearchGameSessionsResponse SearchGameSessions(SearchGameSessionsRequest request)
         {
             var marshaller = new SearchGameSessionsRequestMarshaller();
             var unmarshaller = SearchGameSessionsResponseUnmarshaller.Instance;
@@ -8093,7 +8093,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchGameSessions
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/SearchGameSessions">REST API Reference for SearchGameSessions Operation</seealso>
-        public IAsyncResult BeginSearchGameSessions(SearchGameSessionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginSearchGameSessions(SearchGameSessionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SearchGameSessionsRequestMarshaller();
             var unmarshaller = SearchGameSessionsResponseUnmarshaller.Instance;
@@ -8110,7 +8110,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  SearchGameSessionsResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/SearchGameSessions">REST API Reference for SearchGameSessions Operation</seealso>
-        public  SearchGameSessionsResponse EndSearchGameSessions(IAsyncResult asyncResult)
+        public virtual SearchGameSessionsResponse EndSearchGameSessions(IAsyncResult asyncResult)
         {
             return EndInvoke<SearchGameSessionsResponse>(asyncResult);
         }
@@ -8246,7 +8246,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartGameSessionPlacement">REST API Reference for StartGameSessionPlacement Operation</seealso>
-        public StartGameSessionPlacementResponse StartGameSessionPlacement(StartGameSessionPlacementRequest request)
+        public virtual StartGameSessionPlacementResponse StartGameSessionPlacement(StartGameSessionPlacementRequest request)
         {
             var marshaller = new StartGameSessionPlacementRequestMarshaller();
             var unmarshaller = StartGameSessionPlacementResponseUnmarshaller.Instance;
@@ -8266,7 +8266,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartGameSessionPlacement
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartGameSessionPlacement">REST API Reference for StartGameSessionPlacement Operation</seealso>
-        public IAsyncResult BeginStartGameSessionPlacement(StartGameSessionPlacementRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginStartGameSessionPlacement(StartGameSessionPlacementRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new StartGameSessionPlacementRequestMarshaller();
             var unmarshaller = StartGameSessionPlacementResponseUnmarshaller.Instance;
@@ -8283,7 +8283,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  StartGameSessionPlacementResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartGameSessionPlacement">REST API Reference for StartGameSessionPlacement Operation</seealso>
-        public  StartGameSessionPlacementResponse EndStartGameSessionPlacement(IAsyncResult asyncResult)
+        public virtual StartGameSessionPlacementResponse EndStartGameSessionPlacement(IAsyncResult asyncResult)
         {
             return EndInvoke<StartGameSessionPlacementResponse>(asyncResult);
         }
@@ -8413,7 +8413,7 @@ namespace Amazon.GameLift
         /// The requested operation is not supported in the region specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartMatchmaking">REST API Reference for StartMatchmaking Operation</seealso>
-        public StartMatchmakingResponse StartMatchmaking(StartMatchmakingRequest request)
+        public virtual StartMatchmakingResponse StartMatchmaking(StartMatchmakingRequest request)
         {
             var marshaller = new StartMatchmakingRequestMarshaller();
             var unmarshaller = StartMatchmakingResponseUnmarshaller.Instance;
@@ -8433,7 +8433,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartMatchmaking
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartMatchmaking">REST API Reference for StartMatchmaking Operation</seealso>
-        public IAsyncResult BeginStartMatchmaking(StartMatchmakingRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginStartMatchmaking(StartMatchmakingRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new StartMatchmakingRequestMarshaller();
             var unmarshaller = StartMatchmakingResponseUnmarshaller.Instance;
@@ -8450,7 +8450,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  StartMatchmakingResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartMatchmaking">REST API Reference for StartMatchmaking Operation</seealso>
-        public  StartMatchmakingResponse EndStartMatchmaking(IAsyncResult asyncResult)
+        public virtual StartMatchmakingResponse EndStartMatchmaking(IAsyncResult asyncResult)
         {
             return EndInvoke<StartMatchmakingResponse>(asyncResult);
         }
@@ -8529,7 +8529,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopGameSessionPlacement">REST API Reference for StopGameSessionPlacement Operation</seealso>
-        public StopGameSessionPlacementResponse StopGameSessionPlacement(StopGameSessionPlacementRequest request)
+        public virtual StopGameSessionPlacementResponse StopGameSessionPlacement(StopGameSessionPlacementRequest request)
         {
             var marshaller = new StopGameSessionPlacementRequestMarshaller();
             var unmarshaller = StopGameSessionPlacementResponseUnmarshaller.Instance;
@@ -8549,7 +8549,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopGameSessionPlacement
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopGameSessionPlacement">REST API Reference for StopGameSessionPlacement Operation</seealso>
-        public IAsyncResult BeginStopGameSessionPlacement(StopGameSessionPlacementRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginStopGameSessionPlacement(StopGameSessionPlacementRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new StopGameSessionPlacementRequestMarshaller();
             var unmarshaller = StopGameSessionPlacementResponseUnmarshaller.Instance;
@@ -8566,7 +8566,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  StopGameSessionPlacementResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopGameSessionPlacement">REST API Reference for StopGameSessionPlacement Operation</seealso>
-        public  StopGameSessionPlacementResponse EndStopGameSessionPlacement(IAsyncResult asyncResult)
+        public virtual StopGameSessionPlacementResponse EndStopGameSessionPlacement(IAsyncResult asyncResult)
         {
             return EndInvoke<StopGameSessionPlacementResponse>(asyncResult);
         }
@@ -8621,7 +8621,7 @@ namespace Amazon.GameLift
         /// The requested operation is not supported in the region specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopMatchmaking">REST API Reference for StopMatchmaking Operation</seealso>
-        public StopMatchmakingResponse StopMatchmaking(StopMatchmakingRequest request)
+        public virtual StopMatchmakingResponse StopMatchmaking(StopMatchmakingRequest request)
         {
             var marshaller = new StopMatchmakingRequestMarshaller();
             var unmarshaller = StopMatchmakingResponseUnmarshaller.Instance;
@@ -8641,7 +8641,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopMatchmaking
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopMatchmaking">REST API Reference for StopMatchmaking Operation</seealso>
-        public IAsyncResult BeginStopMatchmaking(StopMatchmakingRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginStopMatchmaking(StopMatchmakingRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new StopMatchmakingRequestMarshaller();
             var unmarshaller = StopMatchmakingResponseUnmarshaller.Instance;
@@ -8658,7 +8658,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  StopMatchmakingResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopMatchmaking">REST API Reference for StopMatchmaking Operation</seealso>
-        public  StopMatchmakingResponse EndStopMatchmaking(IAsyncResult asyncResult)
+        public virtual StopMatchmakingResponse EndStopMatchmaking(IAsyncResult asyncResult)
         {
             return EndInvoke<StopMatchmakingResponse>(asyncResult);
         }
@@ -8722,7 +8722,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateAlias">REST API Reference for UpdateAlias Operation</seealso>
-        public UpdateAliasResponse UpdateAlias(UpdateAliasRequest request)
+        public virtual UpdateAliasResponse UpdateAlias(UpdateAliasRequest request)
         {
             var marshaller = new UpdateAliasRequestMarshaller();
             var unmarshaller = UpdateAliasResponseUnmarshaller.Instance;
@@ -8742,7 +8742,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAlias
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateAlias">REST API Reference for UpdateAlias Operation</seealso>
-        public IAsyncResult BeginUpdateAlias(UpdateAliasRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateAlias(UpdateAliasRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateAliasRequestMarshaller();
             var unmarshaller = UpdateAliasResponseUnmarshaller.Instance;
@@ -8759,7 +8759,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  UpdateAliasResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateAlias">REST API Reference for UpdateAlias Operation</seealso>
-        public  UpdateAliasResponse EndUpdateAlias(IAsyncResult asyncResult)
+        public virtual UpdateAliasResponse EndUpdateAlias(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateAliasResponse>(asyncResult);
         }
@@ -8818,7 +8818,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateBuild">REST API Reference for UpdateBuild Operation</seealso>
-        public UpdateBuildResponse UpdateBuild(UpdateBuildRequest request)
+        public virtual UpdateBuildResponse UpdateBuild(UpdateBuildRequest request)
         {
             var marshaller = new UpdateBuildRequestMarshaller();
             var unmarshaller = UpdateBuildResponseUnmarshaller.Instance;
@@ -8838,7 +8838,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateBuild
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateBuild">REST API Reference for UpdateBuild Operation</seealso>
-        public IAsyncResult BeginUpdateBuild(UpdateBuildRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateBuild(UpdateBuildRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateBuildRequestMarshaller();
             var unmarshaller = UpdateBuildResponseUnmarshaller.Instance;
@@ -8855,7 +8855,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  UpdateBuildResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateBuild">REST API Reference for UpdateBuild Operation</seealso>
-        public  UpdateBuildResponse EndUpdateBuild(IAsyncResult asyncResult)
+        public virtual UpdateBuildResponse EndUpdateBuild(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateBuildResponse>(asyncResult);
         }
@@ -8990,7 +8990,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetAttributes">REST API Reference for UpdateFleetAttributes Operation</seealso>
-        public UpdateFleetAttributesResponse UpdateFleetAttributes(UpdateFleetAttributesRequest request)
+        public virtual UpdateFleetAttributesResponse UpdateFleetAttributes(UpdateFleetAttributesRequest request)
         {
             var marshaller = new UpdateFleetAttributesRequestMarshaller();
             var unmarshaller = UpdateFleetAttributesResponseUnmarshaller.Instance;
@@ -9010,7 +9010,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateFleetAttributes
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetAttributes">REST API Reference for UpdateFleetAttributes Operation</seealso>
-        public IAsyncResult BeginUpdateFleetAttributes(UpdateFleetAttributesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateFleetAttributes(UpdateFleetAttributesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateFleetAttributesRequestMarshaller();
             var unmarshaller = UpdateFleetAttributesResponseUnmarshaller.Instance;
@@ -9027,7 +9027,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  UpdateFleetAttributesResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetAttributes">REST API Reference for UpdateFleetAttributes Operation</seealso>
-        public  UpdateFleetAttributesResponse EndUpdateFleetAttributes(IAsyncResult asyncResult)
+        public virtual UpdateFleetAttributesResponse EndUpdateFleetAttributes(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateFleetAttributesResponse>(asyncResult);
         }
@@ -9179,7 +9179,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetCapacity">REST API Reference for UpdateFleetCapacity Operation</seealso>
-        public UpdateFleetCapacityResponse UpdateFleetCapacity(UpdateFleetCapacityRequest request)
+        public virtual UpdateFleetCapacityResponse UpdateFleetCapacity(UpdateFleetCapacityRequest request)
         {
             var marshaller = new UpdateFleetCapacityRequestMarshaller();
             var unmarshaller = UpdateFleetCapacityResponseUnmarshaller.Instance;
@@ -9199,7 +9199,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateFleetCapacity
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetCapacity">REST API Reference for UpdateFleetCapacity Operation</seealso>
-        public IAsyncResult BeginUpdateFleetCapacity(UpdateFleetCapacityRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateFleetCapacity(UpdateFleetCapacityRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateFleetCapacityRequestMarshaller();
             var unmarshaller = UpdateFleetCapacityResponseUnmarshaller.Instance;
@@ -9216,7 +9216,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  UpdateFleetCapacityResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetCapacity">REST API Reference for UpdateFleetCapacity Operation</seealso>
-        public  UpdateFleetCapacityResponse EndUpdateFleetCapacity(IAsyncResult asyncResult)
+        public virtual UpdateFleetCapacityResponse EndUpdateFleetCapacity(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateFleetCapacityResponse>(asyncResult);
         }
@@ -9354,7 +9354,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetPortSettings">REST API Reference for UpdateFleetPortSettings Operation</seealso>
-        public UpdateFleetPortSettingsResponse UpdateFleetPortSettings(UpdateFleetPortSettingsRequest request)
+        public virtual UpdateFleetPortSettingsResponse UpdateFleetPortSettings(UpdateFleetPortSettingsRequest request)
         {
             var marshaller = new UpdateFleetPortSettingsRequestMarshaller();
             var unmarshaller = UpdateFleetPortSettingsResponseUnmarshaller.Instance;
@@ -9374,7 +9374,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateFleetPortSettings
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetPortSettings">REST API Reference for UpdateFleetPortSettings Operation</seealso>
-        public IAsyncResult BeginUpdateFleetPortSettings(UpdateFleetPortSettingsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateFleetPortSettings(UpdateFleetPortSettingsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateFleetPortSettingsRequestMarshaller();
             var unmarshaller = UpdateFleetPortSettingsResponseUnmarshaller.Instance;
@@ -9391,7 +9391,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  UpdateFleetPortSettingsResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetPortSettings">REST API Reference for UpdateFleetPortSettings Operation</seealso>
-        public  UpdateFleetPortSettingsResponse EndUpdateFleetPortSettings(IAsyncResult asyncResult)
+        public virtual UpdateFleetPortSettingsResponse EndUpdateFleetPortSettings(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateFleetPortSettingsResponse>(asyncResult);
         }
@@ -9482,7 +9482,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateGameSession">REST API Reference for UpdateGameSession Operation</seealso>
-        public UpdateGameSessionResponse UpdateGameSession(UpdateGameSessionRequest request)
+        public virtual UpdateGameSessionResponse UpdateGameSession(UpdateGameSessionRequest request)
         {
             var marshaller = new UpdateGameSessionRequestMarshaller();
             var unmarshaller = UpdateGameSessionResponseUnmarshaller.Instance;
@@ -9502,7 +9502,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateGameSession
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateGameSession">REST API Reference for UpdateGameSession Operation</seealso>
-        public IAsyncResult BeginUpdateGameSession(UpdateGameSessionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateGameSession(UpdateGameSessionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateGameSessionRequestMarshaller();
             var unmarshaller = UpdateGameSessionResponseUnmarshaller.Instance;
@@ -9519,7 +9519,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  UpdateGameSessionResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateGameSession">REST API Reference for UpdateGameSession Operation</seealso>
-        public  UpdateGameSessionResponse EndUpdateGameSession(IAsyncResult asyncResult)
+        public virtual UpdateGameSessionResponse EndUpdateGameSession(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateGameSessionResponse>(asyncResult);
         }
@@ -9575,7 +9575,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateGameSessionQueue">REST API Reference for UpdateGameSessionQueue Operation</seealso>
-        public UpdateGameSessionQueueResponse UpdateGameSessionQueue(UpdateGameSessionQueueRequest request)
+        public virtual UpdateGameSessionQueueResponse UpdateGameSessionQueue(UpdateGameSessionQueueRequest request)
         {
             var marshaller = new UpdateGameSessionQueueRequestMarshaller();
             var unmarshaller = UpdateGameSessionQueueResponseUnmarshaller.Instance;
@@ -9595,7 +9595,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateGameSessionQueue
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateGameSessionQueue">REST API Reference for UpdateGameSessionQueue Operation</seealso>
-        public IAsyncResult BeginUpdateGameSessionQueue(UpdateGameSessionQueueRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateGameSessionQueue(UpdateGameSessionQueueRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateGameSessionQueueRequestMarshaller();
             var unmarshaller = UpdateGameSessionQueueResponseUnmarshaller.Instance;
@@ -9612,7 +9612,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  UpdateGameSessionQueueResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateGameSessionQueue">REST API Reference for UpdateGameSessionQueue Operation</seealso>
-        public  UpdateGameSessionQueueResponse EndUpdateGameSessionQueue(IAsyncResult asyncResult)
+        public virtual UpdateGameSessionQueueResponse EndUpdateGameSessionQueue(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateGameSessionQueueResponse>(asyncResult);
         }
@@ -9678,7 +9678,7 @@ namespace Amazon.GameLift
         /// The requested operation is not supported in the region specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateMatchmakingConfiguration">REST API Reference for UpdateMatchmakingConfiguration Operation</seealso>
-        public UpdateMatchmakingConfigurationResponse UpdateMatchmakingConfiguration(UpdateMatchmakingConfigurationRequest request)
+        public virtual UpdateMatchmakingConfigurationResponse UpdateMatchmakingConfiguration(UpdateMatchmakingConfigurationRequest request)
         {
             var marshaller = new UpdateMatchmakingConfigurationRequestMarshaller();
             var unmarshaller = UpdateMatchmakingConfigurationResponseUnmarshaller.Instance;
@@ -9698,7 +9698,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateMatchmakingConfiguration
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateMatchmakingConfiguration">REST API Reference for UpdateMatchmakingConfiguration Operation</seealso>
-        public IAsyncResult BeginUpdateMatchmakingConfiguration(UpdateMatchmakingConfigurationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateMatchmakingConfiguration(UpdateMatchmakingConfigurationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateMatchmakingConfigurationRequestMarshaller();
             var unmarshaller = UpdateMatchmakingConfigurationResponseUnmarshaller.Instance;
@@ -9715,7 +9715,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  UpdateMatchmakingConfigurationResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateMatchmakingConfiguration">REST API Reference for UpdateMatchmakingConfiguration Operation</seealso>
-        public  UpdateMatchmakingConfigurationResponse EndUpdateMatchmakingConfiguration(IAsyncResult asyncResult)
+        public virtual UpdateMatchmakingConfigurationResponse EndUpdateMatchmakingConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateMatchmakingConfigurationResponse>(asyncResult);
         }
@@ -9858,7 +9858,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateRuntimeConfiguration">REST API Reference for UpdateRuntimeConfiguration Operation</seealso>
-        public UpdateRuntimeConfigurationResponse UpdateRuntimeConfiguration(UpdateRuntimeConfigurationRequest request)
+        public virtual UpdateRuntimeConfigurationResponse UpdateRuntimeConfiguration(UpdateRuntimeConfigurationRequest request)
         {
             var marshaller = new UpdateRuntimeConfigurationRequestMarshaller();
             var unmarshaller = UpdateRuntimeConfigurationResponseUnmarshaller.Instance;
@@ -9878,7 +9878,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateRuntimeConfiguration
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateRuntimeConfiguration">REST API Reference for UpdateRuntimeConfiguration Operation</seealso>
-        public IAsyncResult BeginUpdateRuntimeConfiguration(UpdateRuntimeConfigurationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateRuntimeConfiguration(UpdateRuntimeConfigurationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateRuntimeConfigurationRequestMarshaller();
             var unmarshaller = UpdateRuntimeConfigurationResponseUnmarshaller.Instance;
@@ -9895,7 +9895,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  UpdateRuntimeConfigurationResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateRuntimeConfiguration">REST API Reference for UpdateRuntimeConfiguration Operation</seealso>
-        public  UpdateRuntimeConfigurationResponse EndUpdateRuntimeConfiguration(IAsyncResult asyncResult)
+        public virtual UpdateRuntimeConfigurationResponse EndUpdateRuntimeConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateRuntimeConfigurationResponse>(asyncResult);
         }
@@ -9958,7 +9958,7 @@ namespace Amazon.GameLift
         /// The requested operation is not supported in the region specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ValidateMatchmakingRuleSet">REST API Reference for ValidateMatchmakingRuleSet Operation</seealso>
-        public ValidateMatchmakingRuleSetResponse ValidateMatchmakingRuleSet(ValidateMatchmakingRuleSetRequest request)
+        public virtual ValidateMatchmakingRuleSetResponse ValidateMatchmakingRuleSet(ValidateMatchmakingRuleSetRequest request)
         {
             var marshaller = new ValidateMatchmakingRuleSetRequestMarshaller();
             var unmarshaller = ValidateMatchmakingRuleSetResponseUnmarshaller.Instance;
@@ -9978,7 +9978,7 @@ namespace Amazon.GameLift
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndValidateMatchmakingRuleSet
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ValidateMatchmakingRuleSet">REST API Reference for ValidateMatchmakingRuleSet Operation</seealso>
-        public IAsyncResult BeginValidateMatchmakingRuleSet(ValidateMatchmakingRuleSetRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginValidateMatchmakingRuleSet(ValidateMatchmakingRuleSetRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ValidateMatchmakingRuleSetRequestMarshaller();
             var unmarshaller = ValidateMatchmakingRuleSetResponseUnmarshaller.Instance;
@@ -9995,7 +9995,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>Returns a  ValidateMatchmakingRuleSetResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ValidateMatchmakingRuleSet">REST API Reference for ValidateMatchmakingRuleSet Operation</seealso>
-        public  ValidateMatchmakingRuleSetResponse EndValidateMatchmakingRuleSet(IAsyncResult asyncResult)
+        public virtual ValidateMatchmakingRuleSetResponse EndValidateMatchmakingRuleSet(IAsyncResult asyncResult)
         {
             return EndInvoke<ValidateMatchmakingRuleSetResponse>(asyncResult);
         }

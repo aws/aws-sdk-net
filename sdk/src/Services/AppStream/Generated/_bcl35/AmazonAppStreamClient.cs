@@ -251,7 +251,7 @@ namespace Amazon.AppStream
         /// The specified resource was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateFleet">REST API Reference for AssociateFleet Operation</seealso>
-        public AssociateFleetResponse AssociateFleet(AssociateFleetRequest request)
+        public virtual AssociateFleetResponse AssociateFleet(AssociateFleetRequest request)
         {
             var marshaller = new AssociateFleetRequestMarshaller();
             var unmarshaller = AssociateFleetResponseUnmarshaller.Instance;
@@ -271,7 +271,7 @@ namespace Amazon.AppStream
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateFleet
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateFleet">REST API Reference for AssociateFleet Operation</seealso>
-        public IAsyncResult BeginAssociateFleet(AssociateFleetRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginAssociateFleet(AssociateFleetRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AssociateFleetRequestMarshaller();
             var unmarshaller = AssociateFleetResponseUnmarshaller.Instance;
@@ -288,7 +288,7 @@ namespace Amazon.AppStream
         /// 
         /// <returns>Returns a  AssociateFleetResult from AppStream.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateFleet">REST API Reference for AssociateFleet Operation</seealso>
-        public  AssociateFleetResponse EndAssociateFleet(IAsyncResult asyncResult)
+        public virtual AssociateFleetResponse EndAssociateFleet(IAsyncResult asyncResult)
         {
             return EndInvoke<AssociateFleetResponse>(asyncResult);
         }
@@ -310,7 +310,7 @@ namespace Amazon.AppStream
         /// The specified resource already exists.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateDirectoryConfig">REST API Reference for CreateDirectoryConfig Operation</seealso>
-        public CreateDirectoryConfigResponse CreateDirectoryConfig(CreateDirectoryConfigRequest request)
+        public virtual CreateDirectoryConfigResponse CreateDirectoryConfig(CreateDirectoryConfigRequest request)
         {
             var marshaller = new CreateDirectoryConfigRequestMarshaller();
             var unmarshaller = CreateDirectoryConfigResponseUnmarshaller.Instance;
@@ -330,7 +330,7 @@ namespace Amazon.AppStream
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDirectoryConfig
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateDirectoryConfig">REST API Reference for CreateDirectoryConfig Operation</seealso>
-        public IAsyncResult BeginCreateDirectoryConfig(CreateDirectoryConfigRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateDirectoryConfig(CreateDirectoryConfigRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateDirectoryConfigRequestMarshaller();
             var unmarshaller = CreateDirectoryConfigResponseUnmarshaller.Instance;
@@ -347,7 +347,7 @@ namespace Amazon.AppStream
         /// 
         /// <returns>Returns a  CreateDirectoryConfigResult from AppStream.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateDirectoryConfig">REST API Reference for CreateDirectoryConfig Operation</seealso>
-        public  CreateDirectoryConfigResponse EndCreateDirectoryConfig(IAsyncResult asyncResult)
+        public virtual CreateDirectoryConfigResponse EndCreateDirectoryConfig(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateDirectoryConfigResponse>(asyncResult);
         }
@@ -387,7 +387,7 @@ namespace Amazon.AppStream
         /// The specified resource was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateFleet">REST API Reference for CreateFleet Operation</seealso>
-        public CreateFleetResponse CreateFleet(CreateFleetRequest request)
+        public virtual CreateFleetResponse CreateFleet(CreateFleetRequest request)
         {
             var marshaller = new CreateFleetRequestMarshaller();
             var unmarshaller = CreateFleetResponseUnmarshaller.Instance;
@@ -407,7 +407,7 @@ namespace Amazon.AppStream
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateFleet
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateFleet">REST API Reference for CreateFleet Operation</seealso>
-        public IAsyncResult BeginCreateFleet(CreateFleetRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateFleet(CreateFleetRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateFleetRequestMarshaller();
             var unmarshaller = CreateFleetResponseUnmarshaller.Instance;
@@ -424,7 +424,7 @@ namespace Amazon.AppStream
         /// 
         /// <returns>Returns a  CreateFleetResult from AppStream.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateFleet">REST API Reference for CreateFleet Operation</seealso>
-        public  CreateFleetResponse EndCreateFleet(IAsyncResult asyncResult)
+        public virtual CreateFleetResponse EndCreateFleet(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateFleetResponse>(asyncResult);
         }
@@ -464,7 +464,7 @@ namespace Amazon.AppStream
         /// The specified resource was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateImageBuilder">REST API Reference for CreateImageBuilder Operation</seealso>
-        public CreateImageBuilderResponse CreateImageBuilder(CreateImageBuilderRequest request)
+        public virtual CreateImageBuilderResponse CreateImageBuilder(CreateImageBuilderRequest request)
         {
             var marshaller = new CreateImageBuilderRequestMarshaller();
             var unmarshaller = CreateImageBuilderResponseUnmarshaller.Instance;
@@ -484,7 +484,7 @@ namespace Amazon.AppStream
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateImageBuilder
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateImageBuilder">REST API Reference for CreateImageBuilder Operation</seealso>
-        public IAsyncResult BeginCreateImageBuilder(CreateImageBuilderRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateImageBuilder(CreateImageBuilderRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateImageBuilderRequestMarshaller();
             var unmarshaller = CreateImageBuilderResponseUnmarshaller.Instance;
@@ -501,7 +501,7 @@ namespace Amazon.AppStream
         /// 
         /// <returns>Returns a  CreateImageBuilderResult from AppStream.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateImageBuilder">REST API Reference for CreateImageBuilder Operation</seealso>
-        public  CreateImageBuilderResponse EndCreateImageBuilder(IAsyncResult asyncResult)
+        public virtual CreateImageBuilderResponse EndCreateImageBuilder(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateImageBuilderResponse>(asyncResult);
         }
@@ -523,7 +523,7 @@ namespace Amazon.AppStream
         /// The specified resource was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateImageBuilderStreamingURL">REST API Reference for CreateImageBuilderStreamingURL Operation</seealso>
-        public CreateImageBuilderStreamingURLResponse CreateImageBuilderStreamingURL(CreateImageBuilderStreamingURLRequest request)
+        public virtual CreateImageBuilderStreamingURLResponse CreateImageBuilderStreamingURL(CreateImageBuilderStreamingURLRequest request)
         {
             var marshaller = new CreateImageBuilderStreamingURLRequestMarshaller();
             var unmarshaller = CreateImageBuilderStreamingURLResponseUnmarshaller.Instance;
@@ -543,7 +543,7 @@ namespace Amazon.AppStream
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateImageBuilderStreamingURL
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateImageBuilderStreamingURL">REST API Reference for CreateImageBuilderStreamingURL Operation</seealso>
-        public IAsyncResult BeginCreateImageBuilderStreamingURL(CreateImageBuilderStreamingURLRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateImageBuilderStreamingURL(CreateImageBuilderStreamingURLRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateImageBuilderStreamingURLRequestMarshaller();
             var unmarshaller = CreateImageBuilderStreamingURLResponseUnmarshaller.Instance;
@@ -560,7 +560,7 @@ namespace Amazon.AppStream
         /// 
         /// <returns>Returns a  CreateImageBuilderStreamingURLResult from AppStream.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateImageBuilderStreamingURL">REST API Reference for CreateImageBuilderStreamingURL Operation</seealso>
-        public  CreateImageBuilderStreamingURLResponse EndCreateImageBuilderStreamingURL(IAsyncResult asyncResult)
+        public virtual CreateImageBuilderStreamingURLResponse EndCreateImageBuilderStreamingURL(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateImageBuilderStreamingURLResponse>(asyncResult);
         }
@@ -594,7 +594,7 @@ namespace Amazon.AppStream
         /// The specified resource was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStack">REST API Reference for CreateStack Operation</seealso>
-        public CreateStackResponse CreateStack(CreateStackRequest request)
+        public virtual CreateStackResponse CreateStack(CreateStackRequest request)
         {
             var marshaller = new CreateStackRequestMarshaller();
             var unmarshaller = CreateStackResponseUnmarshaller.Instance;
@@ -614,7 +614,7 @@ namespace Amazon.AppStream
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateStack
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStack">REST API Reference for CreateStack Operation</seealso>
-        public IAsyncResult BeginCreateStack(CreateStackRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateStack(CreateStackRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateStackRequestMarshaller();
             var unmarshaller = CreateStackResponseUnmarshaller.Instance;
@@ -631,7 +631,7 @@ namespace Amazon.AppStream
         /// 
         /// <returns>Returns a  CreateStackResult from AppStream.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStack">REST API Reference for CreateStack Operation</seealso>
-        public  CreateStackResponse EndCreateStack(IAsyncResult asyncResult)
+        public virtual CreateStackResponse EndCreateStack(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateStackResponse>(asyncResult);
         }
@@ -664,7 +664,7 @@ namespace Amazon.AppStream
         /// The specified resource was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStreamingURL">REST API Reference for CreateStreamingURL Operation</seealso>
-        public CreateStreamingURLResponse CreateStreamingURL(CreateStreamingURLRequest request)
+        public virtual CreateStreamingURLResponse CreateStreamingURL(CreateStreamingURLRequest request)
         {
             var marshaller = new CreateStreamingURLRequestMarshaller();
             var unmarshaller = CreateStreamingURLResponseUnmarshaller.Instance;
@@ -684,7 +684,7 @@ namespace Amazon.AppStream
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateStreamingURL
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStreamingURL">REST API Reference for CreateStreamingURL Operation</seealso>
-        public IAsyncResult BeginCreateStreamingURL(CreateStreamingURLRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateStreamingURL(CreateStreamingURLRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateStreamingURLRequestMarshaller();
             var unmarshaller = CreateStreamingURLResponseUnmarshaller.Instance;
@@ -701,7 +701,7 @@ namespace Amazon.AppStream
         /// 
         /// <returns>Returns a  CreateStreamingURLResult from AppStream.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStreamingURL">REST API Reference for CreateStreamingURL Operation</seealso>
-        public  CreateStreamingURLResponse EndCreateStreamingURL(IAsyncResult asyncResult)
+        public virtual CreateStreamingURLResponse EndCreateStreamingURL(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateStreamingURLResponse>(asyncResult);
         }
@@ -723,7 +723,7 @@ namespace Amazon.AppStream
         /// The specified resource was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteDirectoryConfig">REST API Reference for DeleteDirectoryConfig Operation</seealso>
-        public DeleteDirectoryConfigResponse DeleteDirectoryConfig(DeleteDirectoryConfigRequest request)
+        public virtual DeleteDirectoryConfigResponse DeleteDirectoryConfig(DeleteDirectoryConfigRequest request)
         {
             var marshaller = new DeleteDirectoryConfigRequestMarshaller();
             var unmarshaller = DeleteDirectoryConfigResponseUnmarshaller.Instance;
@@ -743,7 +743,7 @@ namespace Amazon.AppStream
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDirectoryConfig
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteDirectoryConfig">REST API Reference for DeleteDirectoryConfig Operation</seealso>
-        public IAsyncResult BeginDeleteDirectoryConfig(DeleteDirectoryConfigRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteDirectoryConfig(DeleteDirectoryConfigRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteDirectoryConfigRequestMarshaller();
             var unmarshaller = DeleteDirectoryConfigResponseUnmarshaller.Instance;
@@ -760,7 +760,7 @@ namespace Amazon.AppStream
         /// 
         /// <returns>Returns a  DeleteDirectoryConfigResult from AppStream.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteDirectoryConfig">REST API Reference for DeleteDirectoryConfig Operation</seealso>
-        public  DeleteDirectoryConfigResponse EndDeleteDirectoryConfig(IAsyncResult asyncResult)
+        public virtual DeleteDirectoryConfigResponse EndDeleteDirectoryConfig(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteDirectoryConfigResponse>(asyncResult);
         }
@@ -785,7 +785,7 @@ namespace Amazon.AppStream
         /// The specified resource was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteFleet">REST API Reference for DeleteFleet Operation</seealso>
-        public DeleteFleetResponse DeleteFleet(DeleteFleetRequest request)
+        public virtual DeleteFleetResponse DeleteFleet(DeleteFleetRequest request)
         {
             var marshaller = new DeleteFleetRequestMarshaller();
             var unmarshaller = DeleteFleetResponseUnmarshaller.Instance;
@@ -805,7 +805,7 @@ namespace Amazon.AppStream
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteFleet
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteFleet">REST API Reference for DeleteFleet Operation</seealso>
-        public IAsyncResult BeginDeleteFleet(DeleteFleetRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteFleet(DeleteFleetRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteFleetRequestMarshaller();
             var unmarshaller = DeleteFleetResponseUnmarshaller.Instance;
@@ -822,7 +822,7 @@ namespace Amazon.AppStream
         /// 
         /// <returns>Returns a  DeleteFleetResult from AppStream.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteFleet">REST API Reference for DeleteFleet Operation</seealso>
-        public  DeleteFleetResponse EndDeleteFleet(IAsyncResult asyncResult)
+        public virtual DeleteFleetResponse EndDeleteFleet(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteFleetResponse>(asyncResult);
         }
@@ -850,7 +850,7 @@ namespace Amazon.AppStream
         /// The specified resource was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteImage">REST API Reference for DeleteImage Operation</seealso>
-        public DeleteImageResponse DeleteImage(DeleteImageRequest request)
+        public virtual DeleteImageResponse DeleteImage(DeleteImageRequest request)
         {
             var marshaller = new DeleteImageRequestMarshaller();
             var unmarshaller = DeleteImageResponseUnmarshaller.Instance;
@@ -870,7 +870,7 @@ namespace Amazon.AppStream
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteImage
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteImage">REST API Reference for DeleteImage Operation</seealso>
-        public IAsyncResult BeginDeleteImage(DeleteImageRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteImage(DeleteImageRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteImageRequestMarshaller();
             var unmarshaller = DeleteImageResponseUnmarshaller.Instance;
@@ -887,7 +887,7 @@ namespace Amazon.AppStream
         /// 
         /// <returns>Returns a  DeleteImageResult from AppStream.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteImage">REST API Reference for DeleteImage Operation</seealso>
-        public  DeleteImageResponse EndDeleteImage(IAsyncResult asyncResult)
+        public virtual DeleteImageResponse EndDeleteImage(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteImageResponse>(asyncResult);
         }
@@ -912,7 +912,7 @@ namespace Amazon.AppStream
         /// The specified resource was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteImageBuilder">REST API Reference for DeleteImageBuilder Operation</seealso>
-        public DeleteImageBuilderResponse DeleteImageBuilder(DeleteImageBuilderRequest request)
+        public virtual DeleteImageBuilderResponse DeleteImageBuilder(DeleteImageBuilderRequest request)
         {
             var marshaller = new DeleteImageBuilderRequestMarshaller();
             var unmarshaller = DeleteImageBuilderResponseUnmarshaller.Instance;
@@ -932,7 +932,7 @@ namespace Amazon.AppStream
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteImageBuilder
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteImageBuilder">REST API Reference for DeleteImageBuilder Operation</seealso>
-        public IAsyncResult BeginDeleteImageBuilder(DeleteImageBuilderRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteImageBuilder(DeleteImageBuilderRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteImageBuilderRequestMarshaller();
             var unmarshaller = DeleteImageBuilderResponseUnmarshaller.Instance;
@@ -949,7 +949,7 @@ namespace Amazon.AppStream
         /// 
         /// <returns>Returns a  DeleteImageBuilderResult from AppStream.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteImageBuilder">REST API Reference for DeleteImageBuilder Operation</seealso>
-        public  DeleteImageBuilderResponse EndDeleteImageBuilder(IAsyncResult asyncResult)
+        public virtual DeleteImageBuilderResponse EndDeleteImageBuilder(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteImageBuilderResponse>(asyncResult);
         }
@@ -975,7 +975,7 @@ namespace Amazon.AppStream
         /// The specified resource was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteStack">REST API Reference for DeleteStack Operation</seealso>
-        public DeleteStackResponse DeleteStack(DeleteStackRequest request)
+        public virtual DeleteStackResponse DeleteStack(DeleteStackRequest request)
         {
             var marshaller = new DeleteStackRequestMarshaller();
             var unmarshaller = DeleteStackResponseUnmarshaller.Instance;
@@ -995,7 +995,7 @@ namespace Amazon.AppStream
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteStack
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteStack">REST API Reference for DeleteStack Operation</seealso>
-        public IAsyncResult BeginDeleteStack(DeleteStackRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteStack(DeleteStackRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteStackRequestMarshaller();
             var unmarshaller = DeleteStackResponseUnmarshaller.Instance;
@@ -1012,7 +1012,7 @@ namespace Amazon.AppStream
         /// 
         /// <returns>Returns a  DeleteStackResult from AppStream.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteStack">REST API Reference for DeleteStack Operation</seealso>
-        public  DeleteStackResponse EndDeleteStack(IAsyncResult asyncResult)
+        public virtual DeleteStackResponse EndDeleteStack(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteStackResponse>(asyncResult);
         }
@@ -1031,7 +1031,7 @@ namespace Amazon.AppStream
         /// The specified resource was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeDirectoryConfigs">REST API Reference for DescribeDirectoryConfigs Operation</seealso>
-        public DescribeDirectoryConfigsResponse DescribeDirectoryConfigs(DescribeDirectoryConfigsRequest request)
+        public virtual DescribeDirectoryConfigsResponse DescribeDirectoryConfigs(DescribeDirectoryConfigsRequest request)
         {
             var marshaller = new DescribeDirectoryConfigsRequestMarshaller();
             var unmarshaller = DescribeDirectoryConfigsResponseUnmarshaller.Instance;
@@ -1051,7 +1051,7 @@ namespace Amazon.AppStream
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDirectoryConfigs
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeDirectoryConfigs">REST API Reference for DescribeDirectoryConfigs Operation</seealso>
-        public IAsyncResult BeginDescribeDirectoryConfigs(DescribeDirectoryConfigsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeDirectoryConfigs(DescribeDirectoryConfigsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeDirectoryConfigsRequestMarshaller();
             var unmarshaller = DescribeDirectoryConfigsResponseUnmarshaller.Instance;
@@ -1068,7 +1068,7 @@ namespace Amazon.AppStream
         /// 
         /// <returns>Returns a  DescribeDirectoryConfigsResult from AppStream.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeDirectoryConfigs">REST API Reference for DescribeDirectoryConfigs Operation</seealso>
-        public  DescribeDirectoryConfigsResponse EndDescribeDirectoryConfigs(IAsyncResult asyncResult)
+        public virtual DescribeDirectoryConfigsResponse EndDescribeDirectoryConfigs(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeDirectoryConfigsResponse>(asyncResult);
         }
@@ -1087,7 +1087,7 @@ namespace Amazon.AppStream
         /// The specified resource was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeFleets">REST API Reference for DescribeFleets Operation</seealso>
-        public DescribeFleetsResponse DescribeFleets(DescribeFleetsRequest request)
+        public virtual DescribeFleetsResponse DescribeFleets(DescribeFleetsRequest request)
         {
             var marshaller = new DescribeFleetsRequestMarshaller();
             var unmarshaller = DescribeFleetsResponseUnmarshaller.Instance;
@@ -1107,7 +1107,7 @@ namespace Amazon.AppStream
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeFleets
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeFleets">REST API Reference for DescribeFleets Operation</seealso>
-        public IAsyncResult BeginDescribeFleets(DescribeFleetsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeFleets(DescribeFleetsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeFleetsRequestMarshaller();
             var unmarshaller = DescribeFleetsResponseUnmarshaller.Instance;
@@ -1124,7 +1124,7 @@ namespace Amazon.AppStream
         /// 
         /// <returns>Returns a  DescribeFleetsResult from AppStream.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeFleets">REST API Reference for DescribeFleets Operation</seealso>
-        public  DescribeFleetsResponse EndDescribeFleets(IAsyncResult asyncResult)
+        public virtual DescribeFleetsResponse EndDescribeFleets(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeFleetsResponse>(asyncResult);
         }
@@ -1143,7 +1143,7 @@ namespace Amazon.AppStream
         /// The specified resource was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImageBuilders">REST API Reference for DescribeImageBuilders Operation</seealso>
-        public DescribeImageBuildersResponse DescribeImageBuilders(DescribeImageBuildersRequest request)
+        public virtual DescribeImageBuildersResponse DescribeImageBuilders(DescribeImageBuildersRequest request)
         {
             var marshaller = new DescribeImageBuildersRequestMarshaller();
             var unmarshaller = DescribeImageBuildersResponseUnmarshaller.Instance;
@@ -1163,7 +1163,7 @@ namespace Amazon.AppStream
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeImageBuilders
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImageBuilders">REST API Reference for DescribeImageBuilders Operation</seealso>
-        public IAsyncResult BeginDescribeImageBuilders(DescribeImageBuildersRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeImageBuilders(DescribeImageBuildersRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeImageBuildersRequestMarshaller();
             var unmarshaller = DescribeImageBuildersResponseUnmarshaller.Instance;
@@ -1180,7 +1180,7 @@ namespace Amazon.AppStream
         /// 
         /// <returns>Returns a  DescribeImageBuildersResult from AppStream.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImageBuilders">REST API Reference for DescribeImageBuilders Operation</seealso>
-        public  DescribeImageBuildersResponse EndDescribeImageBuilders(IAsyncResult asyncResult)
+        public virtual DescribeImageBuildersResponse EndDescribeImageBuilders(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeImageBuildersResponse>(asyncResult);
         }
@@ -1199,7 +1199,7 @@ namespace Amazon.AppStream
         /// The specified resource was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImages">REST API Reference for DescribeImages Operation</seealso>
-        public DescribeImagesResponse DescribeImages(DescribeImagesRequest request)
+        public virtual DescribeImagesResponse DescribeImages(DescribeImagesRequest request)
         {
             var marshaller = new DescribeImagesRequestMarshaller();
             var unmarshaller = DescribeImagesResponseUnmarshaller.Instance;
@@ -1219,7 +1219,7 @@ namespace Amazon.AppStream
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeImages
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImages">REST API Reference for DescribeImages Operation</seealso>
-        public IAsyncResult BeginDescribeImages(DescribeImagesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeImages(DescribeImagesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeImagesRequestMarshaller();
             var unmarshaller = DescribeImagesResponseUnmarshaller.Instance;
@@ -1236,7 +1236,7 @@ namespace Amazon.AppStream
         /// 
         /// <returns>Returns a  DescribeImagesResult from AppStream.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImages">REST API Reference for DescribeImages Operation</seealso>
-        public  DescribeImagesResponse EndDescribeImages(IAsyncResult asyncResult)
+        public virtual DescribeImagesResponse EndDescribeImages(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeImagesResponse>(asyncResult);
         }
@@ -1257,7 +1257,7 @@ namespace Amazon.AppStream
         /// Indicates an incorrect combination of parameters, or a missing parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeSessions">REST API Reference for DescribeSessions Operation</seealso>
-        public DescribeSessionsResponse DescribeSessions(DescribeSessionsRequest request)
+        public virtual DescribeSessionsResponse DescribeSessions(DescribeSessionsRequest request)
         {
             var marshaller = new DescribeSessionsRequestMarshaller();
             var unmarshaller = DescribeSessionsResponseUnmarshaller.Instance;
@@ -1277,7 +1277,7 @@ namespace Amazon.AppStream
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSessions
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeSessions">REST API Reference for DescribeSessions Operation</seealso>
-        public IAsyncResult BeginDescribeSessions(DescribeSessionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeSessions(DescribeSessionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeSessionsRequestMarshaller();
             var unmarshaller = DescribeSessionsResponseUnmarshaller.Instance;
@@ -1294,7 +1294,7 @@ namespace Amazon.AppStream
         /// 
         /// <returns>Returns a  DescribeSessionsResult from AppStream.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeSessions">REST API Reference for DescribeSessions Operation</seealso>
-        public  DescribeSessionsResponse EndDescribeSessions(IAsyncResult asyncResult)
+        public virtual DescribeSessionsResponse EndDescribeSessions(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeSessionsResponse>(asyncResult);
         }
@@ -1313,7 +1313,7 @@ namespace Amazon.AppStream
         /// The specified resource was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeStacks">REST API Reference for DescribeStacks Operation</seealso>
-        public DescribeStacksResponse DescribeStacks(DescribeStacksRequest request)
+        public virtual DescribeStacksResponse DescribeStacks(DescribeStacksRequest request)
         {
             var marshaller = new DescribeStacksRequestMarshaller();
             var unmarshaller = DescribeStacksResponseUnmarshaller.Instance;
@@ -1333,7 +1333,7 @@ namespace Amazon.AppStream
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeStacks
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeStacks">REST API Reference for DescribeStacks Operation</seealso>
-        public IAsyncResult BeginDescribeStacks(DescribeStacksRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeStacks(DescribeStacksRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeStacksRequestMarshaller();
             var unmarshaller = DescribeStacksResponseUnmarshaller.Instance;
@@ -1350,7 +1350,7 @@ namespace Amazon.AppStream
         /// 
         /// <returns>Returns a  DescribeStacksResult from AppStream.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeStacks">REST API Reference for DescribeStacks Operation</seealso>
-        public  DescribeStacksResponse EndDescribeStacks(IAsyncResult asyncResult)
+        public virtual DescribeStacksResponse EndDescribeStacks(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeStacksResponse>(asyncResult);
         }
@@ -1375,7 +1375,7 @@ namespace Amazon.AppStream
         /// The specified resource was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateFleet">REST API Reference for DisassociateFleet Operation</seealso>
-        public DisassociateFleetResponse DisassociateFleet(DisassociateFleetRequest request)
+        public virtual DisassociateFleetResponse DisassociateFleet(DisassociateFleetRequest request)
         {
             var marshaller = new DisassociateFleetRequestMarshaller();
             var unmarshaller = DisassociateFleetResponseUnmarshaller.Instance;
@@ -1395,7 +1395,7 @@ namespace Amazon.AppStream
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateFleet
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateFleet">REST API Reference for DisassociateFleet Operation</seealso>
-        public IAsyncResult BeginDisassociateFleet(DisassociateFleetRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDisassociateFleet(DisassociateFleetRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DisassociateFleetRequestMarshaller();
             var unmarshaller = DisassociateFleetResponseUnmarshaller.Instance;
@@ -1412,7 +1412,7 @@ namespace Amazon.AppStream
         /// 
         /// <returns>Returns a  DisassociateFleetResult from AppStream.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateFleet">REST API Reference for DisassociateFleet Operation</seealso>
-        public  DisassociateFleetResponse EndDisassociateFleet(IAsyncResult asyncResult)
+        public virtual DisassociateFleetResponse EndDisassociateFleet(IAsyncResult asyncResult)
         {
             return EndInvoke<DisassociateFleetResponse>(asyncResult);
         }
@@ -1428,7 +1428,7 @@ namespace Amazon.AppStream
         /// 
         /// <returns>The response from the ExpireSession service method, as returned by AppStream.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ExpireSession">REST API Reference for ExpireSession Operation</seealso>
-        public ExpireSessionResponse ExpireSession(ExpireSessionRequest request)
+        public virtual ExpireSessionResponse ExpireSession(ExpireSessionRequest request)
         {
             var marshaller = new ExpireSessionRequestMarshaller();
             var unmarshaller = ExpireSessionResponseUnmarshaller.Instance;
@@ -1448,7 +1448,7 @@ namespace Amazon.AppStream
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndExpireSession
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ExpireSession">REST API Reference for ExpireSession Operation</seealso>
-        public IAsyncResult BeginExpireSession(ExpireSessionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginExpireSession(ExpireSessionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ExpireSessionRequestMarshaller();
             var unmarshaller = ExpireSessionResponseUnmarshaller.Instance;
@@ -1465,7 +1465,7 @@ namespace Amazon.AppStream
         /// 
         /// <returns>Returns a  ExpireSessionResult from AppStream.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ExpireSession">REST API Reference for ExpireSession Operation</seealso>
-        public  ExpireSessionResponse EndExpireSession(IAsyncResult asyncResult)
+        public virtual ExpireSessionResponse EndExpireSession(IAsyncResult asyncResult)
         {
             return EndInvoke<ExpireSessionResponse>(asyncResult);
         }
@@ -1481,7 +1481,7 @@ namespace Amazon.AppStream
         /// 
         /// <returns>The response from the ListAssociatedFleets service method, as returned by AppStream.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedFleets">REST API Reference for ListAssociatedFleets Operation</seealso>
-        public ListAssociatedFleetsResponse ListAssociatedFleets(ListAssociatedFleetsRequest request)
+        public virtual ListAssociatedFleetsResponse ListAssociatedFleets(ListAssociatedFleetsRequest request)
         {
             var marshaller = new ListAssociatedFleetsRequestMarshaller();
             var unmarshaller = ListAssociatedFleetsResponseUnmarshaller.Instance;
@@ -1501,7 +1501,7 @@ namespace Amazon.AppStream
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAssociatedFleets
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedFleets">REST API Reference for ListAssociatedFleets Operation</seealso>
-        public IAsyncResult BeginListAssociatedFleets(ListAssociatedFleetsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListAssociatedFleets(ListAssociatedFleetsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListAssociatedFleetsRequestMarshaller();
             var unmarshaller = ListAssociatedFleetsResponseUnmarshaller.Instance;
@@ -1518,7 +1518,7 @@ namespace Amazon.AppStream
         /// 
         /// <returns>Returns a  ListAssociatedFleetsResult from AppStream.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedFleets">REST API Reference for ListAssociatedFleets Operation</seealso>
-        public  ListAssociatedFleetsResponse EndListAssociatedFleets(IAsyncResult asyncResult)
+        public virtual ListAssociatedFleetsResponse EndListAssociatedFleets(IAsyncResult asyncResult)
         {
             return EndInvoke<ListAssociatedFleetsResponse>(asyncResult);
         }
@@ -1534,7 +1534,7 @@ namespace Amazon.AppStream
         /// 
         /// <returns>The response from the ListAssociatedStacks service method, as returned by AppStream.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedStacks">REST API Reference for ListAssociatedStacks Operation</seealso>
-        public ListAssociatedStacksResponse ListAssociatedStacks(ListAssociatedStacksRequest request)
+        public virtual ListAssociatedStacksResponse ListAssociatedStacks(ListAssociatedStacksRequest request)
         {
             var marshaller = new ListAssociatedStacksRequestMarshaller();
             var unmarshaller = ListAssociatedStacksResponseUnmarshaller.Instance;
@@ -1554,7 +1554,7 @@ namespace Amazon.AppStream
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAssociatedStacks
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedStacks">REST API Reference for ListAssociatedStacks Operation</seealso>
-        public IAsyncResult BeginListAssociatedStacks(ListAssociatedStacksRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListAssociatedStacks(ListAssociatedStacksRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListAssociatedStacksRequestMarshaller();
             var unmarshaller = ListAssociatedStacksResponseUnmarshaller.Instance;
@@ -1571,7 +1571,7 @@ namespace Amazon.AppStream
         /// 
         /// <returns>Returns a  ListAssociatedStacksResult from AppStream.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedStacks">REST API Reference for ListAssociatedStacks Operation</seealso>
-        public  ListAssociatedStacksResponse EndListAssociatedStacks(IAsyncResult asyncResult)
+        public virtual ListAssociatedStacksResponse EndListAssociatedStacks(IAsyncResult asyncResult)
         {
             return EndInvoke<ListAssociatedStacksResponse>(asyncResult);
         }
@@ -1599,7 +1599,7 @@ namespace Amazon.AppStream
         /// The specified resource was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartFleet">REST API Reference for StartFleet Operation</seealso>
-        public StartFleetResponse StartFleet(StartFleetRequest request)
+        public virtual StartFleetResponse StartFleet(StartFleetRequest request)
         {
             var marshaller = new StartFleetRequestMarshaller();
             var unmarshaller = StartFleetResponseUnmarshaller.Instance;
@@ -1619,7 +1619,7 @@ namespace Amazon.AppStream
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartFleet
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartFleet">REST API Reference for StartFleet Operation</seealso>
-        public IAsyncResult BeginStartFleet(StartFleetRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginStartFleet(StartFleetRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new StartFleetRequestMarshaller();
             var unmarshaller = StartFleetResponseUnmarshaller.Instance;
@@ -1636,7 +1636,7 @@ namespace Amazon.AppStream
         /// 
         /// <returns>Returns a  StartFleetResult from AppStream.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartFleet">REST API Reference for StartFleet Operation</seealso>
-        public  StartFleetResponse EndStartFleet(IAsyncResult asyncResult)
+        public virtual StartFleetResponse EndStartFleet(IAsyncResult asyncResult)
         {
             return EndInvoke<StartFleetResponse>(asyncResult);
         }
@@ -1661,7 +1661,7 @@ namespace Amazon.AppStream
         /// The specified resource was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartImageBuilder">REST API Reference for StartImageBuilder Operation</seealso>
-        public StartImageBuilderResponse StartImageBuilder(StartImageBuilderRequest request)
+        public virtual StartImageBuilderResponse StartImageBuilder(StartImageBuilderRequest request)
         {
             var marshaller = new StartImageBuilderRequestMarshaller();
             var unmarshaller = StartImageBuilderResponseUnmarshaller.Instance;
@@ -1681,7 +1681,7 @@ namespace Amazon.AppStream
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartImageBuilder
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartImageBuilder">REST API Reference for StartImageBuilder Operation</seealso>
-        public IAsyncResult BeginStartImageBuilder(StartImageBuilderRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginStartImageBuilder(StartImageBuilderRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new StartImageBuilderRequestMarshaller();
             var unmarshaller = StartImageBuilderResponseUnmarshaller.Instance;
@@ -1698,7 +1698,7 @@ namespace Amazon.AppStream
         /// 
         /// <returns>Returns a  StartImageBuilderResult from AppStream.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartImageBuilder">REST API Reference for StartImageBuilder Operation</seealso>
-        public  StartImageBuilderResponse EndStartImageBuilder(IAsyncResult asyncResult)
+        public virtual StartImageBuilderResponse EndStartImageBuilder(IAsyncResult asyncResult)
         {
             return EndInvoke<StartImageBuilderResponse>(asyncResult);
         }
@@ -1720,7 +1720,7 @@ namespace Amazon.AppStream
         /// The specified resource was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StopFleet">REST API Reference for StopFleet Operation</seealso>
-        public StopFleetResponse StopFleet(StopFleetRequest request)
+        public virtual StopFleetResponse StopFleet(StopFleetRequest request)
         {
             var marshaller = new StopFleetRequestMarshaller();
             var unmarshaller = StopFleetResponseUnmarshaller.Instance;
@@ -1740,7 +1740,7 @@ namespace Amazon.AppStream
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopFleet
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StopFleet">REST API Reference for StopFleet Operation</seealso>
-        public IAsyncResult BeginStopFleet(StopFleetRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginStopFleet(StopFleetRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new StopFleetRequestMarshaller();
             var unmarshaller = StopFleetResponseUnmarshaller.Instance;
@@ -1757,7 +1757,7 @@ namespace Amazon.AppStream
         /// 
         /// <returns>Returns a  StopFleetResult from AppStream.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StopFleet">REST API Reference for StopFleet Operation</seealso>
-        public  StopFleetResponse EndStopFleet(IAsyncResult asyncResult)
+        public virtual StopFleetResponse EndStopFleet(IAsyncResult asyncResult)
         {
             return EndInvoke<StopFleetResponse>(asyncResult);
         }
@@ -1782,7 +1782,7 @@ namespace Amazon.AppStream
         /// The specified resource was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StopImageBuilder">REST API Reference for StopImageBuilder Operation</seealso>
-        public StopImageBuilderResponse StopImageBuilder(StopImageBuilderRequest request)
+        public virtual StopImageBuilderResponse StopImageBuilder(StopImageBuilderRequest request)
         {
             var marshaller = new StopImageBuilderRequestMarshaller();
             var unmarshaller = StopImageBuilderResponseUnmarshaller.Instance;
@@ -1802,7 +1802,7 @@ namespace Amazon.AppStream
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopImageBuilder
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StopImageBuilder">REST API Reference for StopImageBuilder Operation</seealso>
-        public IAsyncResult BeginStopImageBuilder(StopImageBuilderRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginStopImageBuilder(StopImageBuilderRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new StopImageBuilderRequestMarshaller();
             var unmarshaller = StopImageBuilderResponseUnmarshaller.Instance;
@@ -1819,7 +1819,7 @@ namespace Amazon.AppStream
         /// 
         /// <returns>Returns a  StopImageBuilderResult from AppStream.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StopImageBuilder">REST API Reference for StopImageBuilder Operation</seealso>
-        public  StopImageBuilderResponse EndStopImageBuilder(IAsyncResult asyncResult)
+        public virtual StopImageBuilderResponse EndStopImageBuilder(IAsyncResult asyncResult)
         {
             return EndInvoke<StopImageBuilderResponse>(asyncResult);
         }
@@ -1844,7 +1844,7 @@ namespace Amazon.AppStream
         /// The specified resource was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateDirectoryConfig">REST API Reference for UpdateDirectoryConfig Operation</seealso>
-        public UpdateDirectoryConfigResponse UpdateDirectoryConfig(UpdateDirectoryConfigRequest request)
+        public virtual UpdateDirectoryConfigResponse UpdateDirectoryConfig(UpdateDirectoryConfigRequest request)
         {
             var marshaller = new UpdateDirectoryConfigRequestMarshaller();
             var unmarshaller = UpdateDirectoryConfigResponseUnmarshaller.Instance;
@@ -1864,7 +1864,7 @@ namespace Amazon.AppStream
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDirectoryConfig
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateDirectoryConfig">REST API Reference for UpdateDirectoryConfig Operation</seealso>
-        public IAsyncResult BeginUpdateDirectoryConfig(UpdateDirectoryConfigRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateDirectoryConfig(UpdateDirectoryConfigRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateDirectoryConfigRequestMarshaller();
             var unmarshaller = UpdateDirectoryConfigResponseUnmarshaller.Instance;
@@ -1881,7 +1881,7 @@ namespace Amazon.AppStream
         /// 
         /// <returns>Returns a  UpdateDirectoryConfigResult from AppStream.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateDirectoryConfig">REST API Reference for UpdateDirectoryConfig Operation</seealso>
-        public  UpdateDirectoryConfigResponse EndUpdateDirectoryConfig(IAsyncResult asyncResult)
+        public virtual UpdateDirectoryConfigResponse EndUpdateDirectoryConfig(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateDirectoryConfigResponse>(asyncResult);
         }
@@ -1932,7 +1932,7 @@ namespace Amazon.AppStream
         /// The specified resource was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateFleet">REST API Reference for UpdateFleet Operation</seealso>
-        public UpdateFleetResponse UpdateFleet(UpdateFleetRequest request)
+        public virtual UpdateFleetResponse UpdateFleet(UpdateFleetRequest request)
         {
             var marshaller = new UpdateFleetRequestMarshaller();
             var unmarshaller = UpdateFleetResponseUnmarshaller.Instance;
@@ -1952,7 +1952,7 @@ namespace Amazon.AppStream
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateFleet
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateFleet">REST API Reference for UpdateFleet Operation</seealso>
-        public IAsyncResult BeginUpdateFleet(UpdateFleetRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateFleet(UpdateFleetRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateFleetRequestMarshaller();
             var unmarshaller = UpdateFleetResponseUnmarshaller.Instance;
@@ -1969,7 +1969,7 @@ namespace Amazon.AppStream
         /// 
         /// <returns>Returns a  UpdateFleetResult from AppStream.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateFleet">REST API Reference for UpdateFleet Operation</seealso>
-        public  UpdateFleetResponse EndUpdateFleet(IAsyncResult asyncResult)
+        public virtual UpdateFleetResponse EndUpdateFleet(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateFleetResponse>(asyncResult);
         }
@@ -2003,7 +2003,7 @@ namespace Amazon.AppStream
         /// The specified resource was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateStack">REST API Reference for UpdateStack Operation</seealso>
-        public UpdateStackResponse UpdateStack(UpdateStackRequest request)
+        public virtual UpdateStackResponse UpdateStack(UpdateStackRequest request)
         {
             var marshaller = new UpdateStackRequestMarshaller();
             var unmarshaller = UpdateStackResponseUnmarshaller.Instance;
@@ -2023,7 +2023,7 @@ namespace Amazon.AppStream
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateStack
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateStack">REST API Reference for UpdateStack Operation</seealso>
-        public IAsyncResult BeginUpdateStack(UpdateStackRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateStack(UpdateStackRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateStackRequestMarshaller();
             var unmarshaller = UpdateStackResponseUnmarshaller.Instance;
@@ -2040,7 +2040,7 @@ namespace Amazon.AppStream
         /// 
         /// <returns>Returns a  UpdateStackResult from AppStream.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateStack">REST API Reference for UpdateStack Operation</seealso>
-        public  UpdateStackResponse EndUpdateStack(IAsyncResult asyncResult)
+        public virtual UpdateStackResponse EndUpdateStack(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateStackResponse>(asyncResult);
         }

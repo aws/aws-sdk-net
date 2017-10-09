@@ -285,7 +285,7 @@ namespace Amazon.DataPipeline
         /// identifiers.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ActivatePipeline">REST API Reference for ActivatePipeline Operation</seealso>
-        public ActivatePipelineResponse ActivatePipeline(ActivatePipelineRequest request)
+        public virtual ActivatePipelineResponse ActivatePipeline(ActivatePipelineRequest request)
         {
             var marshaller = new ActivatePipelineRequestMarshaller();
             var unmarshaller = ActivatePipelineResponseUnmarshaller.Instance;
@@ -303,7 +303,7 @@ namespace Amazon.DataPipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ActivatePipeline">REST API Reference for ActivatePipeline Operation</seealso>
-        public Task<ActivatePipelineResponse> ActivatePipelineAsync(ActivatePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ActivatePipelineResponse> ActivatePipelineAsync(ActivatePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ActivatePipelineRequestMarshaller();
             var unmarshaller = ActivatePipelineResponseUnmarshaller.Instance;
@@ -340,7 +340,7 @@ namespace Amazon.DataPipeline
         /// identifiers.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/AddTags">REST API Reference for AddTags Operation</seealso>
-        public AddTagsResponse AddTags(string pipelineId, List<Tag> tags)
+        public virtual AddTagsResponse AddTags(string pipelineId, List<Tag> tags)
         {
             var request = new AddTagsRequest();
             request.PipelineId = pipelineId;
@@ -371,7 +371,7 @@ namespace Amazon.DataPipeline
         /// identifiers.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/AddTags">REST API Reference for AddTags Operation</seealso>
-        public AddTagsResponse AddTags(AddTagsRequest request)
+        public virtual AddTagsResponse AddTags(AddTagsRequest request)
         {
             var marshaller = new AddTagsRequestMarshaller();
             var unmarshaller = AddTagsResponseUnmarshaller.Instance;
@@ -406,7 +406,7 @@ namespace Amazon.DataPipeline
         /// identifiers.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/AddTags">REST API Reference for AddTags Operation</seealso>
-        public Task<AddTagsResponse> AddTagsAsync(string pipelineId, List<Tag> tags, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<AddTagsResponse> AddTagsAsync(string pipelineId, List<Tag> tags, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new AddTagsRequest();
             request.PipelineId = pipelineId;
@@ -424,7 +424,7 @@ namespace Amazon.DataPipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/AddTags">REST API Reference for AddTags Operation</seealso>
-        public Task<AddTagsResponse> AddTagsAsync(AddTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<AddTagsResponse> AddTagsAsync(AddTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AddTagsRequestMarshaller();
             var unmarshaller = AddTagsResponseUnmarshaller.Instance;
@@ -453,7 +453,7 @@ namespace Amazon.DataPipeline
         /// any of the service limits for your account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/CreatePipeline">REST API Reference for CreatePipeline Operation</seealso>
-        public CreatePipelineResponse CreatePipeline(CreatePipelineRequest request)
+        public virtual CreatePipelineResponse CreatePipeline(CreatePipelineRequest request)
         {
             var marshaller = new CreatePipelineRequestMarshaller();
             var unmarshaller = CreatePipelineResponseUnmarshaller.Instance;
@@ -471,7 +471,7 @@ namespace Amazon.DataPipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/CreatePipeline">REST API Reference for CreatePipeline Operation</seealso>
-        public Task<CreatePipelineResponse> CreatePipelineAsync(CreatePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreatePipelineResponse> CreatePipelineAsync(CreatePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreatePipelineRequestMarshaller();
             var unmarshaller = CreatePipelineResponseUnmarshaller.Instance;
@@ -515,7 +515,7 @@ namespace Amazon.DataPipeline
         /// identifiers.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DeactivatePipeline">REST API Reference for DeactivatePipeline Operation</seealso>
-        public DeactivatePipelineResponse DeactivatePipeline(DeactivatePipelineRequest request)
+        public virtual DeactivatePipelineResponse DeactivatePipeline(DeactivatePipelineRequest request)
         {
             var marshaller = new DeactivatePipelineRequestMarshaller();
             var unmarshaller = DeactivatePipelineResponseUnmarshaller.Instance;
@@ -533,7 +533,7 @@ namespace Amazon.DataPipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DeactivatePipeline">REST API Reference for DeactivatePipeline Operation</seealso>
-        public Task<DeactivatePipelineResponse> DeactivatePipelineAsync(DeactivatePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeactivatePipelineResponse> DeactivatePipelineAsync(DeactivatePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeactivatePipelineRequestMarshaller();
             var unmarshaller = DeactivatePipelineResponseUnmarshaller.Instance;
@@ -576,7 +576,7 @@ namespace Amazon.DataPipeline
         /// identifiers.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DeletePipeline">REST API Reference for DeletePipeline Operation</seealso>
-        public DeletePipelineResponse DeletePipeline(DeletePipelineRequest request)
+        public virtual DeletePipelineResponse DeletePipeline(DeletePipelineRequest request)
         {
             var marshaller = new DeletePipelineRequestMarshaller();
             var unmarshaller = DeletePipelineResponseUnmarshaller.Instance;
@@ -594,7 +594,7 @@ namespace Amazon.DataPipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DeletePipeline">REST API Reference for DeletePipeline Operation</seealso>
-        public Task<DeletePipelineResponse> DeletePipelineAsync(DeletePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeletePipelineResponse> DeletePipelineAsync(DeletePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeletePipelineRequestMarshaller();
             var unmarshaller = DeletePipelineResponseUnmarshaller.Instance;
@@ -631,7 +631,7 @@ namespace Amazon.DataPipeline
         /// identifiers.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DescribeObjects">REST API Reference for DescribeObjects Operation</seealso>
-        public DescribeObjectsResponse DescribeObjects(DescribeObjectsRequest request)
+        public virtual DescribeObjectsResponse DescribeObjects(DescribeObjectsRequest request)
         {
             var marshaller = new DescribeObjectsRequestMarshaller();
             var unmarshaller = DescribeObjectsResponseUnmarshaller.Instance;
@@ -649,7 +649,7 @@ namespace Amazon.DataPipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DescribeObjects">REST API Reference for DescribeObjects Operation</seealso>
-        public Task<DescribeObjectsResponse> DescribeObjectsAsync(DescribeObjectsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeObjectsResponse> DescribeObjectsAsync(DescribeObjectsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeObjectsRequestMarshaller();
             var unmarshaller = DescribeObjectsResponseUnmarshaller.Instance;
@@ -696,7 +696,7 @@ namespace Amazon.DataPipeline
         /// identifiers.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DescribePipelines">REST API Reference for DescribePipelines Operation</seealso>
-        public DescribePipelinesResponse DescribePipelines(List<string> pipelineIds)
+        public virtual DescribePipelinesResponse DescribePipelines(List<string> pipelineIds)
         {
             var request = new DescribePipelinesRequest();
             request.PipelineIds = pipelineIds;
@@ -737,7 +737,7 @@ namespace Amazon.DataPipeline
         /// identifiers.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DescribePipelines">REST API Reference for DescribePipelines Operation</seealso>
-        public DescribePipelinesResponse DescribePipelines(DescribePipelinesRequest request)
+        public virtual DescribePipelinesResponse DescribePipelines(DescribePipelinesRequest request)
         {
             var marshaller = new DescribePipelinesRequestMarshaller();
             var unmarshaller = DescribePipelinesResponseUnmarshaller.Instance;
@@ -782,7 +782,7 @@ namespace Amazon.DataPipeline
         /// identifiers.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DescribePipelines">REST API Reference for DescribePipelines Operation</seealso>
-        public Task<DescribePipelinesResponse> DescribePipelinesAsync(List<string> pipelineIds, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribePipelinesResponse> DescribePipelinesAsync(List<string> pipelineIds, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DescribePipelinesRequest();
             request.PipelineIds = pipelineIds;
@@ -799,7 +799,7 @@ namespace Amazon.DataPipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DescribePipelines">REST API Reference for DescribePipelines Operation</seealso>
-        public Task<DescribePipelinesResponse> DescribePipelinesAsync(DescribePipelinesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribePipelinesResponse> DescribePipelinesAsync(DescribePipelinesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribePipelinesRequestMarshaller();
             var unmarshaller = DescribePipelinesResponseUnmarshaller.Instance;
@@ -840,7 +840,7 @@ namespace Amazon.DataPipeline
         /// The specified task was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/EvaluateExpression">REST API Reference for EvaluateExpression Operation</seealso>
-        public EvaluateExpressionResponse EvaluateExpression(EvaluateExpressionRequest request)
+        public virtual EvaluateExpressionResponse EvaluateExpression(EvaluateExpressionRequest request)
         {
             var marshaller = new EvaluateExpressionRequestMarshaller();
             var unmarshaller = EvaluateExpressionResponseUnmarshaller.Instance;
@@ -858,7 +858,7 @@ namespace Amazon.DataPipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/EvaluateExpression">REST API Reference for EvaluateExpression Operation</seealso>
-        public Task<EvaluateExpressionResponse> EvaluateExpressionAsync(EvaluateExpressionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<EvaluateExpressionResponse> EvaluateExpressionAsync(EvaluateExpressionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new EvaluateExpressionRequestMarshaller();
             var unmarshaller = EvaluateExpressionResponseUnmarshaller.Instance;
@@ -895,7 +895,7 @@ namespace Amazon.DataPipeline
         /// identifiers.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/GetPipelineDefinition">REST API Reference for GetPipelineDefinition Operation</seealso>
-        public GetPipelineDefinitionResponse GetPipelineDefinition(GetPipelineDefinitionRequest request)
+        public virtual GetPipelineDefinitionResponse GetPipelineDefinition(GetPipelineDefinitionRequest request)
         {
             var marshaller = new GetPipelineDefinitionRequestMarshaller();
             var unmarshaller = GetPipelineDefinitionResponseUnmarshaller.Instance;
@@ -913,7 +913,7 @@ namespace Amazon.DataPipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/GetPipelineDefinition">REST API Reference for GetPipelineDefinition Operation</seealso>
-        public Task<GetPipelineDefinitionResponse> GetPipelineDefinitionAsync(GetPipelineDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetPipelineDefinitionResponse> GetPipelineDefinitionAsync(GetPipelineDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetPipelineDefinitionRequestMarshaller();
             var unmarshaller = GetPipelineDefinitionResponseUnmarshaller.Instance;
@@ -942,7 +942,7 @@ namespace Amazon.DataPipeline
         /// any of the service limits for your account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ListPipelines">REST API Reference for ListPipelines Operation</seealso>
-        public ListPipelinesResponse ListPipelines()
+        public virtual ListPipelinesResponse ListPipelines()
         {
             return ListPipelines(new ListPipelinesRequest());
         }
@@ -964,7 +964,7 @@ namespace Amazon.DataPipeline
         /// any of the service limits for your account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ListPipelines">REST API Reference for ListPipelines Operation</seealso>
-        public ListPipelinesResponse ListPipelines(ListPipelinesRequest request)
+        public virtual ListPipelinesResponse ListPipelines(ListPipelinesRequest request)
         {
             var marshaller = new ListPipelinesRequestMarshaller();
             var unmarshaller = ListPipelinesResponseUnmarshaller.Instance;
@@ -991,7 +991,7 @@ namespace Amazon.DataPipeline
         /// any of the service limits for your account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ListPipelines">REST API Reference for ListPipelines Operation</seealso>
-        public Task<ListPipelinesResponse> ListPipelinesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListPipelinesResponse> ListPipelinesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return ListPipelinesAsync(new ListPipelinesRequest(), cancellationToken);
         }
@@ -1005,7 +1005,7 @@ namespace Amazon.DataPipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ListPipelines">REST API Reference for ListPipelines Operation</seealso>
-        public Task<ListPipelinesResponse> ListPipelinesAsync(ListPipelinesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListPipelinesResponse> ListPipelinesAsync(ListPipelinesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListPipelinesRequestMarshaller();
             var unmarshaller = ListPipelinesResponseUnmarshaller.Instance;
@@ -1053,7 +1053,7 @@ namespace Amazon.DataPipeline
         /// The specified task was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/PollForTask">REST API Reference for PollForTask Operation</seealso>
-        public PollForTaskResponse PollForTask(PollForTaskRequest request)
+        public virtual PollForTaskResponse PollForTask(PollForTaskRequest request)
         {
             var marshaller = new PollForTaskRequestMarshaller();
             var unmarshaller = PollForTaskResponseUnmarshaller.Instance;
@@ -1071,7 +1071,7 @@ namespace Amazon.DataPipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/PollForTask">REST API Reference for PollForTask Operation</seealso>
-        public Task<PollForTaskResponse> PollForTaskAsync(PollForTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PollForTaskResponse> PollForTaskAsync(PollForTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PollForTaskRequestMarshaller();
             var unmarshaller = PollForTaskResponseUnmarshaller.Instance;
@@ -1122,7 +1122,7 @@ namespace Amazon.DataPipeline
         /// identifiers.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/PutPipelineDefinition">REST API Reference for PutPipelineDefinition Operation</seealso>
-        public PutPipelineDefinitionResponse PutPipelineDefinition(PutPipelineDefinitionRequest request)
+        public virtual PutPipelineDefinitionResponse PutPipelineDefinition(PutPipelineDefinitionRequest request)
         {
             var marshaller = new PutPipelineDefinitionRequestMarshaller();
             var unmarshaller = PutPipelineDefinitionResponseUnmarshaller.Instance;
@@ -1140,7 +1140,7 @@ namespace Amazon.DataPipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/PutPipelineDefinition">REST API Reference for PutPipelineDefinition Operation</seealso>
-        public Task<PutPipelineDefinitionResponse> PutPipelineDefinitionAsync(PutPipelineDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PutPipelineDefinitionResponse> PutPipelineDefinitionAsync(PutPipelineDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutPipelineDefinitionRequestMarshaller();
             var unmarshaller = PutPipelineDefinitionResponseUnmarshaller.Instance;
@@ -1177,7 +1177,7 @@ namespace Amazon.DataPipeline
         /// identifiers.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/QueryObjects">REST API Reference for QueryObjects Operation</seealso>
-        public QueryObjectsResponse QueryObjects(QueryObjectsRequest request)
+        public virtual QueryObjectsResponse QueryObjects(QueryObjectsRequest request)
         {
             var marshaller = new QueryObjectsRequestMarshaller();
             var unmarshaller = QueryObjectsResponseUnmarshaller.Instance;
@@ -1195,7 +1195,7 @@ namespace Amazon.DataPipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/QueryObjects">REST API Reference for QueryObjects Operation</seealso>
-        public Task<QueryObjectsResponse> QueryObjectsAsync(QueryObjectsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<QueryObjectsResponse> QueryObjectsAsync(QueryObjectsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new QueryObjectsRequestMarshaller();
             var unmarshaller = QueryObjectsResponseUnmarshaller.Instance;
@@ -1232,7 +1232,7 @@ namespace Amazon.DataPipeline
         /// identifiers.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
-        public RemoveTagsResponse RemoveTags(string pipelineId, List<string> tagKeys)
+        public virtual RemoveTagsResponse RemoveTags(string pipelineId, List<string> tagKeys)
         {
             var request = new RemoveTagsRequest();
             request.PipelineId = pipelineId;
@@ -1263,7 +1263,7 @@ namespace Amazon.DataPipeline
         /// identifiers.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
-        public RemoveTagsResponse RemoveTags(RemoveTagsRequest request)
+        public virtual RemoveTagsResponse RemoveTags(RemoveTagsRequest request)
         {
             var marshaller = new RemoveTagsRequestMarshaller();
             var unmarshaller = RemoveTagsResponseUnmarshaller.Instance;
@@ -1298,7 +1298,7 @@ namespace Amazon.DataPipeline
         /// identifiers.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
-        public Task<RemoveTagsResponse> RemoveTagsAsync(string pipelineId, List<string> tagKeys, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<RemoveTagsResponse> RemoveTagsAsync(string pipelineId, List<string> tagKeys, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new RemoveTagsRequest();
             request.PipelineId = pipelineId;
@@ -1316,7 +1316,7 @@ namespace Amazon.DataPipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
-        public Task<RemoveTagsResponse> RemoveTagsAsync(RemoveTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<RemoveTagsResponse> RemoveTagsAsync(RemoveTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RemoveTagsRequestMarshaller();
             var unmarshaller = RemoveTagsResponseUnmarshaller.Instance;
@@ -1368,7 +1368,7 @@ namespace Amazon.DataPipeline
         /// The specified task was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ReportTaskProgress">REST API Reference for ReportTaskProgress Operation</seealso>
-        public ReportTaskProgressResponse ReportTaskProgress(ReportTaskProgressRequest request)
+        public virtual ReportTaskProgressResponse ReportTaskProgress(ReportTaskProgressRequest request)
         {
             var marshaller = new ReportTaskProgressRequestMarshaller();
             var unmarshaller = ReportTaskProgressResponseUnmarshaller.Instance;
@@ -1386,7 +1386,7 @@ namespace Amazon.DataPipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ReportTaskProgress">REST API Reference for ReportTaskProgress Operation</seealso>
-        public Task<ReportTaskProgressResponse> ReportTaskProgressAsync(ReportTaskProgressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ReportTaskProgressResponse> ReportTaskProgressAsync(ReportTaskProgressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ReportTaskProgressRequestMarshaller();
             var unmarshaller = ReportTaskProgressResponseUnmarshaller.Instance;
@@ -1418,7 +1418,7 @@ namespace Amazon.DataPipeline
         /// any of the service limits for your account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ReportTaskRunnerHeartbeat">REST API Reference for ReportTaskRunnerHeartbeat Operation</seealso>
-        public ReportTaskRunnerHeartbeatResponse ReportTaskRunnerHeartbeat(ReportTaskRunnerHeartbeatRequest request)
+        public virtual ReportTaskRunnerHeartbeatResponse ReportTaskRunnerHeartbeat(ReportTaskRunnerHeartbeatRequest request)
         {
             var marshaller = new ReportTaskRunnerHeartbeatRequestMarshaller();
             var unmarshaller = ReportTaskRunnerHeartbeatResponseUnmarshaller.Instance;
@@ -1436,7 +1436,7 @@ namespace Amazon.DataPipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ReportTaskRunnerHeartbeat">REST API Reference for ReportTaskRunnerHeartbeat Operation</seealso>
-        public Task<ReportTaskRunnerHeartbeatResponse> ReportTaskRunnerHeartbeatAsync(ReportTaskRunnerHeartbeatRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ReportTaskRunnerHeartbeatResponse> ReportTaskRunnerHeartbeatAsync(ReportTaskRunnerHeartbeatRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ReportTaskRunnerHeartbeatRequestMarshaller();
             var unmarshaller = ReportTaskRunnerHeartbeatResponseUnmarshaller.Instance;
@@ -1476,7 +1476,7 @@ namespace Amazon.DataPipeline
         /// identifiers.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/SetStatus">REST API Reference for SetStatus Operation</seealso>
-        public SetStatusResponse SetStatus(SetStatusRequest request)
+        public virtual SetStatusResponse SetStatus(SetStatusRequest request)
         {
             var marshaller = new SetStatusRequestMarshaller();
             var unmarshaller = SetStatusResponseUnmarshaller.Instance;
@@ -1494,7 +1494,7 @@ namespace Amazon.DataPipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/SetStatus">REST API Reference for SetStatus Operation</seealso>
-        public Task<SetStatusResponse> SetStatusAsync(SetStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<SetStatusResponse> SetStatusAsync(SetStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SetStatusRequestMarshaller();
             var unmarshaller = SetStatusResponseUnmarshaller.Instance;
@@ -1537,7 +1537,7 @@ namespace Amazon.DataPipeline
         /// The specified task was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/SetTaskStatus">REST API Reference for SetTaskStatus Operation</seealso>
-        public SetTaskStatusResponse SetTaskStatus(SetTaskStatusRequest request)
+        public virtual SetTaskStatusResponse SetTaskStatus(SetTaskStatusRequest request)
         {
             var marshaller = new SetTaskStatusRequestMarshaller();
             var unmarshaller = SetTaskStatusResponseUnmarshaller.Instance;
@@ -1555,7 +1555,7 @@ namespace Amazon.DataPipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/SetTaskStatus">REST API Reference for SetTaskStatus Operation</seealso>
-        public Task<SetTaskStatusResponse> SetTaskStatusAsync(SetTaskStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<SetTaskStatusResponse> SetTaskStatusAsync(SetTaskStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SetTaskStatusRequestMarshaller();
             var unmarshaller = SetTaskStatusResponseUnmarshaller.Instance;
@@ -1592,7 +1592,7 @@ namespace Amazon.DataPipeline
         /// identifiers.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ValidatePipelineDefinition">REST API Reference for ValidatePipelineDefinition Operation</seealso>
-        public ValidatePipelineDefinitionResponse ValidatePipelineDefinition(ValidatePipelineDefinitionRequest request)
+        public virtual ValidatePipelineDefinitionResponse ValidatePipelineDefinition(ValidatePipelineDefinitionRequest request)
         {
             var marshaller = new ValidatePipelineDefinitionRequestMarshaller();
             var unmarshaller = ValidatePipelineDefinitionResponseUnmarshaller.Instance;
@@ -1610,7 +1610,7 @@ namespace Amazon.DataPipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ValidatePipelineDefinition">REST API Reference for ValidatePipelineDefinition Operation</seealso>
-        public Task<ValidatePipelineDefinitionResponse> ValidatePipelineDefinitionAsync(ValidatePipelineDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ValidatePipelineDefinitionResponse> ValidatePipelineDefinitionAsync(ValidatePipelineDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ValidatePipelineDefinitionRequestMarshaller();
             var unmarshaller = ValidatePipelineDefinitionResponseUnmarshaller.Instance;

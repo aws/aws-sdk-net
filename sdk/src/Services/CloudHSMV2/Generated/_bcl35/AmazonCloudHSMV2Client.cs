@@ -251,7 +251,7 @@ namespace Amazon.CloudHSMV2
         /// The request was rejected because an error occurred.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
-        public CreateClusterResponse CreateCluster(CreateClusterRequest request)
+        public virtual CreateClusterResponse CreateCluster(CreateClusterRequest request)
         {
             var marshaller = new CreateClusterRequestMarshaller();
             var unmarshaller = CreateClusterResponseUnmarshaller.Instance;
@@ -271,7 +271,7 @@ namespace Amazon.CloudHSMV2
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCluster
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
-        public IAsyncResult BeginCreateCluster(CreateClusterRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateCluster(CreateClusterRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateClusterRequestMarshaller();
             var unmarshaller = CreateClusterResponseUnmarshaller.Instance;
@@ -288,7 +288,7 @@ namespace Amazon.CloudHSMV2
         /// 
         /// <returns>Returns a  CreateClusterResult from CloudHSMV2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
-        public  CreateClusterResponse EndCreateCluster(IAsyncResult asyncResult)
+        public virtual CreateClusterResponse EndCreateCluster(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateClusterResponse>(asyncResult);
         }
@@ -321,7 +321,7 @@ namespace Amazon.CloudHSMV2
         /// The request was rejected because an error occurred.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/CreateHsm">REST API Reference for CreateHsm Operation</seealso>
-        public CreateHsmResponse CreateHsm(CreateHsmRequest request)
+        public virtual CreateHsmResponse CreateHsm(CreateHsmRequest request)
         {
             var marshaller = new CreateHsmRequestMarshaller();
             var unmarshaller = CreateHsmResponseUnmarshaller.Instance;
@@ -341,7 +341,7 @@ namespace Amazon.CloudHSMV2
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateHsm
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/CreateHsm">REST API Reference for CreateHsm Operation</seealso>
-        public IAsyncResult BeginCreateHsm(CreateHsmRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateHsm(CreateHsmRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateHsmRequestMarshaller();
             var unmarshaller = CreateHsmResponseUnmarshaller.Instance;
@@ -358,7 +358,7 @@ namespace Amazon.CloudHSMV2
         /// 
         /// <returns>Returns a  CreateHsmResult from CloudHSMV2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/CreateHsm">REST API Reference for CreateHsm Operation</seealso>
-        public  CreateHsmResponse EndCreateHsm(IAsyncResult asyncResult)
+        public virtual CreateHsmResponse EndCreateHsm(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateHsmResponse>(asyncResult);
         }
@@ -393,7 +393,7 @@ namespace Amazon.CloudHSMV2
         /// The request was rejected because an error occurred.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
-        public DeleteClusterResponse DeleteCluster(DeleteClusterRequest request)
+        public virtual DeleteClusterResponse DeleteCluster(DeleteClusterRequest request)
         {
             var marshaller = new DeleteClusterRequestMarshaller();
             var unmarshaller = DeleteClusterResponseUnmarshaller.Instance;
@@ -413,7 +413,7 @@ namespace Amazon.CloudHSMV2
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCluster
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
-        public IAsyncResult BeginDeleteCluster(DeleteClusterRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteCluster(DeleteClusterRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteClusterRequestMarshaller();
             var unmarshaller = DeleteClusterResponseUnmarshaller.Instance;
@@ -430,7 +430,7 @@ namespace Amazon.CloudHSMV2
         /// 
         /// <returns>Returns a  DeleteClusterResult from CloudHSMV2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
-        public  DeleteClusterResponse EndDeleteCluster(IAsyncResult asyncResult)
+        public virtual DeleteClusterResponse EndDeleteCluster(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteClusterResponse>(asyncResult);
         }
@@ -465,7 +465,7 @@ namespace Amazon.CloudHSMV2
         /// The request was rejected because an error occurred.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DeleteHsm">REST API Reference for DeleteHsm Operation</seealso>
-        public DeleteHsmResponse DeleteHsm(DeleteHsmRequest request)
+        public virtual DeleteHsmResponse DeleteHsm(DeleteHsmRequest request)
         {
             var marshaller = new DeleteHsmRequestMarshaller();
             var unmarshaller = DeleteHsmResponseUnmarshaller.Instance;
@@ -485,7 +485,7 @@ namespace Amazon.CloudHSMV2
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteHsm
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DeleteHsm">REST API Reference for DeleteHsm Operation</seealso>
-        public IAsyncResult BeginDeleteHsm(DeleteHsmRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteHsm(DeleteHsmRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteHsmRequestMarshaller();
             var unmarshaller = DeleteHsmResponseUnmarshaller.Instance;
@@ -502,7 +502,7 @@ namespace Amazon.CloudHSMV2
         /// 
         /// <returns>Returns a  DeleteHsmResult from CloudHSMV2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DeleteHsm">REST API Reference for DeleteHsm Operation</seealso>
-        public  DeleteHsmResponse EndDeleteHsm(IAsyncResult asyncResult)
+        public virtual DeleteHsmResponse EndDeleteHsm(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteHsmResponse>(asyncResult);
         }
@@ -544,7 +544,7 @@ namespace Amazon.CloudHSMV2
         /// The request was rejected because an error occurred.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DescribeBackups">REST API Reference for DescribeBackups Operation</seealso>
-        public DescribeBackupsResponse DescribeBackups(DescribeBackupsRequest request)
+        public virtual DescribeBackupsResponse DescribeBackups(DescribeBackupsRequest request)
         {
             var marshaller = new DescribeBackupsRequestMarshaller();
             var unmarshaller = DescribeBackupsResponseUnmarshaller.Instance;
@@ -564,7 +564,7 @@ namespace Amazon.CloudHSMV2
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeBackups
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DescribeBackups">REST API Reference for DescribeBackups Operation</seealso>
-        public IAsyncResult BeginDescribeBackups(DescribeBackupsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeBackups(DescribeBackupsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeBackupsRequestMarshaller();
             var unmarshaller = DescribeBackupsResponseUnmarshaller.Instance;
@@ -581,7 +581,7 @@ namespace Amazon.CloudHSMV2
         /// 
         /// <returns>Returns a  DescribeBackupsResult from CloudHSMV2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DescribeBackups">REST API Reference for DescribeBackups Operation</seealso>
-        public  DescribeBackupsResponse EndDescribeBackups(IAsyncResult asyncResult)
+        public virtual DescribeBackupsResponse EndDescribeBackups(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeBackupsResponse>(asyncResult);
         }
@@ -620,7 +620,7 @@ namespace Amazon.CloudHSMV2
         /// The request was rejected because an error occurred.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DescribeClusters">REST API Reference for DescribeClusters Operation</seealso>
-        public DescribeClustersResponse DescribeClusters(DescribeClustersRequest request)
+        public virtual DescribeClustersResponse DescribeClusters(DescribeClustersRequest request)
         {
             var marshaller = new DescribeClustersRequestMarshaller();
             var unmarshaller = DescribeClustersResponseUnmarshaller.Instance;
@@ -640,7 +640,7 @@ namespace Amazon.CloudHSMV2
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeClusters
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DescribeClusters">REST API Reference for DescribeClusters Operation</seealso>
-        public IAsyncResult BeginDescribeClusters(DescribeClustersRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeClusters(DescribeClustersRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeClustersRequestMarshaller();
             var unmarshaller = DescribeClustersResponseUnmarshaller.Instance;
@@ -657,7 +657,7 @@ namespace Amazon.CloudHSMV2
         /// 
         /// <returns>Returns a  DescribeClustersResult from CloudHSMV2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DescribeClusters">REST API Reference for DescribeClusters Operation</seealso>
-        public  DescribeClustersResponse EndDescribeClusters(IAsyncResult asyncResult)
+        public virtual DescribeClustersResponse EndDescribeClusters(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeClustersResponse>(asyncResult);
         }
@@ -693,7 +693,7 @@ namespace Amazon.CloudHSMV2
         /// The request was rejected because an error occurred.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/InitializeCluster">REST API Reference for InitializeCluster Operation</seealso>
-        public InitializeClusterResponse InitializeCluster(InitializeClusterRequest request)
+        public virtual InitializeClusterResponse InitializeCluster(InitializeClusterRequest request)
         {
             var marshaller = new InitializeClusterRequestMarshaller();
             var unmarshaller = InitializeClusterResponseUnmarshaller.Instance;
@@ -713,7 +713,7 @@ namespace Amazon.CloudHSMV2
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndInitializeCluster
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/InitializeCluster">REST API Reference for InitializeCluster Operation</seealso>
-        public IAsyncResult BeginInitializeCluster(InitializeClusterRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginInitializeCluster(InitializeClusterRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new InitializeClusterRequestMarshaller();
             var unmarshaller = InitializeClusterResponseUnmarshaller.Instance;
@@ -730,7 +730,7 @@ namespace Amazon.CloudHSMV2
         /// 
         /// <returns>Returns a  InitializeClusterResult from CloudHSMV2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/InitializeCluster">REST API Reference for InitializeCluster Operation</seealso>
-        public  InitializeClusterResponse EndInitializeCluster(IAsyncResult asyncResult)
+        public virtual InitializeClusterResponse EndInitializeCluster(IAsyncResult asyncResult)
         {
             return EndInvoke<InitializeClusterResponse>(asyncResult);
         }
@@ -772,7 +772,7 @@ namespace Amazon.CloudHSMV2
         /// The request was rejected because an error occurred.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/ListTags">REST API Reference for ListTags Operation</seealso>
-        public ListTagsResponse ListTags(ListTagsRequest request)
+        public virtual ListTagsResponse ListTags(ListTagsRequest request)
         {
             var marshaller = new ListTagsRequestMarshaller();
             var unmarshaller = ListTagsResponseUnmarshaller.Instance;
@@ -792,7 +792,7 @@ namespace Amazon.CloudHSMV2
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTags
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/ListTags">REST API Reference for ListTags Operation</seealso>
-        public IAsyncResult BeginListTags(ListTagsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListTags(ListTagsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListTagsRequestMarshaller();
             var unmarshaller = ListTagsResponseUnmarshaller.Instance;
@@ -809,7 +809,7 @@ namespace Amazon.CloudHSMV2
         /// 
         /// <returns>Returns a  ListTagsResult from CloudHSMV2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/ListTags">REST API Reference for ListTags Operation</seealso>
-        public  ListTagsResponse EndListTags(IAsyncResult asyncResult)
+        public virtual ListTagsResponse EndListTags(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTagsResponse>(asyncResult);
         }
@@ -842,7 +842,7 @@ namespace Amazon.CloudHSMV2
         /// The request was rejected because an error occurred.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/TagResource">REST API Reference for TagResource Operation</seealso>
-        public TagResourceResponse TagResource(TagResourceRequest request)
+        public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
             var marshaller = new TagResourceRequestMarshaller();
             var unmarshaller = TagResourceResponseUnmarshaller.Instance;
@@ -862,7 +862,7 @@ namespace Amazon.CloudHSMV2
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResource
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/TagResource">REST API Reference for TagResource Operation</seealso>
-        public IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new TagResourceRequestMarshaller();
             var unmarshaller = TagResourceResponseUnmarshaller.Instance;
@@ -879,7 +879,7 @@ namespace Amazon.CloudHSMV2
         /// 
         /// <returns>Returns a  TagResourceResult from CloudHSMV2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/TagResource">REST API Reference for TagResource Operation</seealso>
-        public  TagResourceResponse EndTagResource(IAsyncResult asyncResult)
+        public virtual TagResourceResponse EndTagResource(IAsyncResult asyncResult)
         {
             return EndInvoke<TagResourceResponse>(asyncResult);
         }
@@ -912,7 +912,7 @@ namespace Amazon.CloudHSMV2
         /// The request was rejected because an error occurred.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/UntagResource">REST API Reference for UntagResource Operation</seealso>
-        public UntagResourceResponse UntagResource(UntagResourceRequest request)
+        public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
             var marshaller = new UntagResourceRequestMarshaller();
             var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
@@ -932,7 +932,7 @@ namespace Amazon.CloudHSMV2
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResource
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/UntagResource">REST API Reference for UntagResource Operation</seealso>
-        public IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UntagResourceRequestMarshaller();
             var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
@@ -949,7 +949,7 @@ namespace Amazon.CloudHSMV2
         /// 
         /// <returns>Returns a  UntagResourceResult from CloudHSMV2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/UntagResource">REST API Reference for UntagResource Operation</seealso>
-        public  UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
+        public virtual UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
         {
             return EndInvoke<UntagResourceResponse>(asyncResult);
         }

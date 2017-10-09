@@ -347,7 +347,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchGetItem">REST API Reference for BatchGetItem Operation</seealso>
-        public BatchGetItemResponse BatchGetItem(Dictionary<string, KeysAndAttributes> requestItems, ReturnConsumedCapacity returnConsumedCapacity)
+        public virtual BatchGetItemResponse BatchGetItem(Dictionary<string, KeysAndAttributes> requestItems, ReturnConsumedCapacity returnConsumedCapacity)
         {
             var request = new BatchGetItemRequest();
             request.RequestItems = requestItems;
@@ -447,7 +447,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchGetItem">REST API Reference for BatchGetItem Operation</seealso>
-        public BatchGetItemResponse BatchGetItem(Dictionary<string, KeysAndAttributes> requestItems)
+        public virtual BatchGetItemResponse BatchGetItem(Dictionary<string, KeysAndAttributes> requestItems)
         {
             var request = new BatchGetItemRequest();
             request.RequestItems = requestItems;
@@ -546,7 +546,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchGetItem">REST API Reference for BatchGetItem Operation</seealso>
-        public BatchGetItemResponse BatchGetItem(BatchGetItemRequest request)
+        public virtual BatchGetItemResponse BatchGetItem(BatchGetItemRequest request)
         {
             var marshaller = new BatchGetItemRequestMarshaller();
             var unmarshaller = BatchGetItemResponseUnmarshaller.Instance;
@@ -566,7 +566,7 @@ namespace Amazon.DynamoDBv2
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetItem
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchGetItem">REST API Reference for BatchGetItem Operation</seealso>
-        public IAsyncResult BeginBatchGetItem(BatchGetItemRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginBatchGetItem(BatchGetItemRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new BatchGetItemRequestMarshaller();
             var unmarshaller = BatchGetItemResponseUnmarshaller.Instance;
@@ -583,7 +583,7 @@ namespace Amazon.DynamoDBv2
         /// 
         /// <returns>Returns a  BatchGetItemResult from DynamoDB.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchGetItem">REST API Reference for BatchGetItem Operation</seealso>
-        public  BatchGetItemResponse EndBatchGetItem(IAsyncResult asyncResult)
+        public virtual BatchGetItemResponse EndBatchGetItem(IAsyncResult asyncResult)
         {
             return EndInvoke<BatchGetItemResponse>(asyncResult);
         }
@@ -714,7 +714,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchWriteItem">REST API Reference for BatchWriteItem Operation</seealso>
-        public BatchWriteItemResponse BatchWriteItem(Dictionary<string, List<WriteRequest>> requestItems)
+        public virtual BatchWriteItemResponse BatchWriteItem(Dictionary<string, List<WriteRequest>> requestItems)
         {
             var request = new BatchWriteItemRequest();
             request.RequestItems = requestItems;
@@ -844,7 +844,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchWriteItem">REST API Reference for BatchWriteItem Operation</seealso>
-        public BatchWriteItemResponse BatchWriteItem(BatchWriteItemRequest request)
+        public virtual BatchWriteItemResponse BatchWriteItem(BatchWriteItemRequest request)
         {
             var marshaller = new BatchWriteItemRequestMarshaller();
             var unmarshaller = BatchWriteItemResponseUnmarshaller.Instance;
@@ -864,7 +864,7 @@ namespace Amazon.DynamoDBv2
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchWriteItem
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchWriteItem">REST API Reference for BatchWriteItem Operation</seealso>
-        public IAsyncResult BeginBatchWriteItem(BatchWriteItemRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginBatchWriteItem(BatchWriteItemRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new BatchWriteItemRequestMarshaller();
             var unmarshaller = BatchWriteItemResponseUnmarshaller.Instance;
@@ -881,7 +881,7 @@ namespace Amazon.DynamoDBv2
         /// 
         /// <returns>Returns a  BatchWriteItemResult from DynamoDB.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchWriteItem">REST API Reference for BatchWriteItem Operation</seealso>
-        public  BatchWriteItemResponse EndBatchWriteItem(IAsyncResult asyncResult)
+        public virtual BatchWriteItemResponse EndBatchWriteItem(IAsyncResult asyncResult)
         {
             return EndInvoke<BatchWriteItemResponse>(asyncResult);
         }
@@ -945,7 +945,7 @@ namespace Amazon.DynamoDBv2
         /// state.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateTable">REST API Reference for CreateTable Operation</seealso>
-        public CreateTableResponse CreateTable(string tableName, List<KeySchemaElement> keySchema, List<AttributeDefinition> attributeDefinitions, ProvisionedThroughput provisionedThroughput)
+        public virtual CreateTableResponse CreateTable(string tableName, List<KeySchemaElement> keySchema, List<AttributeDefinition> attributeDefinitions, ProvisionedThroughput provisionedThroughput)
         {
             var request = new CreateTableRequest();
             request.TableName = tableName;
@@ -1008,7 +1008,7 @@ namespace Amazon.DynamoDBv2
         /// state.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateTable">REST API Reference for CreateTable Operation</seealso>
-        public CreateTableResponse CreateTable(CreateTableRequest request)
+        public virtual CreateTableResponse CreateTable(CreateTableRequest request)
         {
             var marshaller = new CreateTableRequestMarshaller();
             var unmarshaller = CreateTableResponseUnmarshaller.Instance;
@@ -1028,7 +1028,7 @@ namespace Amazon.DynamoDBv2
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTable
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateTable">REST API Reference for CreateTable Operation</seealso>
-        public IAsyncResult BeginCreateTable(CreateTableRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateTable(CreateTableRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateTableRequestMarshaller();
             var unmarshaller = CreateTableResponseUnmarshaller.Instance;
@@ -1045,7 +1045,7 @@ namespace Amazon.DynamoDBv2
         /// 
         /// <returns>Returns a  CreateTableResult from DynamoDB.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateTable">REST API Reference for CreateTable Operation</seealso>
-        public  CreateTableResponse EndCreateTable(IAsyncResult asyncResult)
+        public virtual CreateTableResponse EndCreateTable(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateTableResponse>(asyncResult);
         }
@@ -1102,7 +1102,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteItem">REST API Reference for DeleteItem Operation</seealso>
-        public DeleteItemResponse DeleteItem(string tableName, Dictionary<string, AttributeValue> key)
+        public virtual DeleteItemResponse DeleteItem(string tableName, Dictionary<string, AttributeValue> key)
         {
             var request = new DeleteItemRequest();
             request.TableName = tableName;
@@ -1160,7 +1160,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteItem">REST API Reference for DeleteItem Operation</seealso>
-        public DeleteItemResponse DeleteItem(string tableName, Dictionary<string, AttributeValue> key, ReturnValue returnValues)
+        public virtual DeleteItemResponse DeleteItem(string tableName, Dictionary<string, AttributeValue> key, ReturnValue returnValues)
         {
             var request = new DeleteItemRequest();
             request.TableName = tableName;
@@ -1217,7 +1217,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteItem">REST API Reference for DeleteItem Operation</seealso>
-        public DeleteItemResponse DeleteItem(DeleteItemRequest request)
+        public virtual DeleteItemResponse DeleteItem(DeleteItemRequest request)
         {
             var marshaller = new DeleteItemRequestMarshaller();
             var unmarshaller = DeleteItemResponseUnmarshaller.Instance;
@@ -1237,7 +1237,7 @@ namespace Amazon.DynamoDBv2
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteItem
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteItem">REST API Reference for DeleteItem Operation</seealso>
-        public IAsyncResult BeginDeleteItem(DeleteItemRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteItem(DeleteItemRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteItemRequestMarshaller();
             var unmarshaller = DeleteItemResponseUnmarshaller.Instance;
@@ -1254,7 +1254,7 @@ namespace Amazon.DynamoDBv2
         /// 
         /// <returns>Returns a  DeleteItemResult from DynamoDB.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteItem">REST API Reference for DeleteItem Operation</seealso>
-        public  DeleteItemResponse EndDeleteItem(IAsyncResult asyncResult)
+        public virtual DeleteItemResponse EndDeleteItem(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteItemResponse>(asyncResult);
         }
@@ -1324,7 +1324,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteTable">REST API Reference for DeleteTable Operation</seealso>
-        public DeleteTableResponse DeleteTable(string tableName)
+        public virtual DeleteTableResponse DeleteTable(string tableName)
         {
             var request = new DeleteTableRequest();
             request.TableName = tableName;
@@ -1393,7 +1393,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteTable">REST API Reference for DeleteTable Operation</seealso>
-        public DeleteTableResponse DeleteTable(DeleteTableRequest request)
+        public virtual DeleteTableResponse DeleteTable(DeleteTableRequest request)
         {
             var marshaller = new DeleteTableRequestMarshaller();
             var unmarshaller = DeleteTableResponseUnmarshaller.Instance;
@@ -1413,7 +1413,7 @@ namespace Amazon.DynamoDBv2
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTable
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteTable">REST API Reference for DeleteTable Operation</seealso>
-        public IAsyncResult BeginDeleteTable(DeleteTableRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteTable(DeleteTableRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteTableRequestMarshaller();
             var unmarshaller = DeleteTableResponseUnmarshaller.Instance;
@@ -1430,7 +1430,7 @@ namespace Amazon.DynamoDBv2
         /// 
         /// <returns>Returns a  DeleteTableResult from DynamoDB.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteTable">REST API Reference for DeleteTable Operation</seealso>
-        public  DeleteTableResponse EndDeleteTable(IAsyncResult asyncResult)
+        public virtual DeleteTableResponse EndDeleteTable(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteTableResponse>(asyncResult);
         }
@@ -1535,7 +1535,7 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeLimits">REST API Reference for DescribeLimits Operation</seealso>
-        public DescribeLimitsResponse DescribeLimits(DescribeLimitsRequest request)
+        public virtual DescribeLimitsResponse DescribeLimits(DescribeLimitsRequest request)
         {
             var marshaller = new DescribeLimitsRequestMarshaller();
             var unmarshaller = DescribeLimitsResponseUnmarshaller.Instance;
@@ -1555,7 +1555,7 @@ namespace Amazon.DynamoDBv2
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeLimits
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeLimits">REST API Reference for DescribeLimits Operation</seealso>
-        public IAsyncResult BeginDescribeLimits(DescribeLimitsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeLimits(DescribeLimitsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeLimitsRequestMarshaller();
             var unmarshaller = DescribeLimitsResponseUnmarshaller.Instance;
@@ -1572,7 +1572,7 @@ namespace Amazon.DynamoDBv2
         /// 
         /// <returns>Returns a  DescribeLimitsResult from DynamoDB.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeLimits">REST API Reference for DescribeLimits Operation</seealso>
-        public  DescribeLimitsResponse EndDescribeLimits(IAsyncResult asyncResult)
+        public virtual DescribeLimitsResponse EndDescribeLimits(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeLimitsResponse>(asyncResult);
         }
@@ -1606,7 +1606,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTable">REST API Reference for DescribeTable Operation</seealso>
-        public DescribeTableResponse DescribeTable(string tableName)
+        public virtual DescribeTableResponse DescribeTable(string tableName)
         {
             var request = new DescribeTableRequest();
             request.TableName = tableName;
@@ -1639,7 +1639,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTable">REST API Reference for DescribeTable Operation</seealso>
-        public DescribeTableResponse DescribeTable(DescribeTableRequest request)
+        public virtual DescribeTableResponse DescribeTable(DescribeTableRequest request)
         {
             var marshaller = new DescribeTableRequestMarshaller();
             var unmarshaller = DescribeTableResponseUnmarshaller.Instance;
@@ -1659,7 +1659,7 @@ namespace Amazon.DynamoDBv2
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTable
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTable">REST API Reference for DescribeTable Operation</seealso>
-        public IAsyncResult BeginDescribeTable(DescribeTableRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeTable(DescribeTableRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeTableRequestMarshaller();
             var unmarshaller = DescribeTableResponseUnmarshaller.Instance;
@@ -1676,7 +1676,7 @@ namespace Amazon.DynamoDBv2
         /// 
         /// <returns>Returns a  DescribeTableResult from DynamoDB.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTable">REST API Reference for DescribeTable Operation</seealso>
-        public  DescribeTableResponse EndDescribeTable(IAsyncResult asyncResult)
+        public virtual DescribeTableResponse EndDescribeTable(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeTableResponse>(asyncResult);
         }
@@ -1699,7 +1699,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTimeToLive">REST API Reference for DescribeTimeToLive Operation</seealso>
-        public DescribeTimeToLiveResponse DescribeTimeToLive(string tableName)
+        public virtual DescribeTimeToLiveResponse DescribeTimeToLive(string tableName)
         {
             var request = new DescribeTimeToLiveRequest();
             request.TableName = tableName;
@@ -1721,7 +1721,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTimeToLive">REST API Reference for DescribeTimeToLive Operation</seealso>
-        public DescribeTimeToLiveResponse DescribeTimeToLive(DescribeTimeToLiveRequest request)
+        public virtual DescribeTimeToLiveResponse DescribeTimeToLive(DescribeTimeToLiveRequest request)
         {
             var marshaller = new DescribeTimeToLiveRequestMarshaller();
             var unmarshaller = DescribeTimeToLiveResponseUnmarshaller.Instance;
@@ -1741,7 +1741,7 @@ namespace Amazon.DynamoDBv2
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTimeToLive
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTimeToLive">REST API Reference for DescribeTimeToLive Operation</seealso>
-        public IAsyncResult BeginDescribeTimeToLive(DescribeTimeToLiveRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeTimeToLive(DescribeTimeToLiveRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeTimeToLiveRequestMarshaller();
             var unmarshaller = DescribeTimeToLiveResponseUnmarshaller.Instance;
@@ -1758,7 +1758,7 @@ namespace Amazon.DynamoDBv2
         /// 
         /// <returns>Returns a  DescribeTimeToLiveResult from DynamoDB.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTimeToLive">REST API Reference for DescribeTimeToLive Operation</seealso>
-        public  DescribeTimeToLiveResponse EndDescribeTimeToLive(IAsyncResult asyncResult)
+        public virtual DescribeTimeToLiveResponse EndDescribeTimeToLive(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeTimeToLiveResponse>(asyncResult);
         }
@@ -1799,7 +1799,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/GetItem">REST API Reference for GetItem Operation</seealso>
-        public GetItemResponse GetItem(string tableName, Dictionary<string, AttributeValue> key)
+        public virtual GetItemResponse GetItem(string tableName, Dictionary<string, AttributeValue> key)
         {
             var request = new GetItemRequest();
             request.TableName = tableName;
@@ -1841,7 +1841,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/GetItem">REST API Reference for GetItem Operation</seealso>
-        public GetItemResponse GetItem(string tableName, Dictionary<string, AttributeValue> key, bool consistentRead)
+        public virtual GetItemResponse GetItem(string tableName, Dictionary<string, AttributeValue> key, bool consistentRead)
         {
             var request = new GetItemRequest();
             request.TableName = tableName;
@@ -1882,7 +1882,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/GetItem">REST API Reference for GetItem Operation</seealso>
-        public GetItemResponse GetItem(GetItemRequest request)
+        public virtual GetItemResponse GetItem(GetItemRequest request)
         {
             var marshaller = new GetItemRequestMarshaller();
             var unmarshaller = GetItemResponseUnmarshaller.Instance;
@@ -1902,7 +1902,7 @@ namespace Amazon.DynamoDBv2
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetItem
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/GetItem">REST API Reference for GetItem Operation</seealso>
-        public IAsyncResult BeginGetItem(GetItemRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetItem(GetItemRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetItemRequestMarshaller();
             var unmarshaller = GetItemResponseUnmarshaller.Instance;
@@ -1919,7 +1919,7 @@ namespace Amazon.DynamoDBv2
         /// 
         /// <returns>Returns a  GetItemResult from DynamoDB.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/GetItem">REST API Reference for GetItem Operation</seealso>
-        public  GetItemResponse EndGetItem(IAsyncResult asyncResult)
+        public virtual GetItemResponse EndGetItem(IAsyncResult asyncResult)
         {
             return EndInvoke<GetItemResponse>(asyncResult);
         }
@@ -1939,7 +1939,7 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListTables">REST API Reference for ListTables Operation</seealso>
-        public ListTablesResponse ListTables()
+        public virtual ListTablesResponse ListTables()
         {
             return ListTables(new ListTablesRequest());
         }
@@ -1956,7 +1956,7 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListTables">REST API Reference for ListTables Operation</seealso>
-        public ListTablesResponse ListTables(string exclusiveStartTableName)
+        public virtual ListTablesResponse ListTables(string exclusiveStartTableName)
         {
             var request = new ListTablesRequest();
             request.ExclusiveStartTableName = exclusiveStartTableName;
@@ -1977,7 +1977,7 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListTables">REST API Reference for ListTables Operation</seealso>
-        public ListTablesResponse ListTables(string exclusiveStartTableName, int limit)
+        public virtual ListTablesResponse ListTables(string exclusiveStartTableName, int limit)
         {
             var request = new ListTablesRequest();
             request.ExclusiveStartTableName = exclusiveStartTableName;
@@ -1998,7 +1998,7 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListTables">REST API Reference for ListTables Operation</seealso>
-        public ListTablesResponse ListTables(int limit)
+        public virtual ListTablesResponse ListTables(int limit)
         {
             var request = new ListTablesRequest();
             request.Limit = limit;
@@ -2018,7 +2018,7 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListTables">REST API Reference for ListTables Operation</seealso>
-        public ListTablesResponse ListTables(ListTablesRequest request)
+        public virtual ListTablesResponse ListTables(ListTablesRequest request)
         {
             var marshaller = new ListTablesRequestMarshaller();
             var unmarshaller = ListTablesResponseUnmarshaller.Instance;
@@ -2038,7 +2038,7 @@ namespace Amazon.DynamoDBv2
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTables
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListTables">REST API Reference for ListTables Operation</seealso>
-        public IAsyncResult BeginListTables(ListTablesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListTables(ListTablesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListTablesRequestMarshaller();
             var unmarshaller = ListTablesResponseUnmarshaller.Instance;
@@ -2055,7 +2055,7 @@ namespace Amazon.DynamoDBv2
         /// 
         /// <returns>Returns a  ListTablesResult from DynamoDB.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListTables">REST API Reference for ListTables Operation</seealso>
-        public  ListTablesResponse EndListTables(IAsyncResult asyncResult)
+        public virtual ListTablesResponse EndListTables(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTablesResponse>(asyncResult);
         }
@@ -2085,7 +2085,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListTagsOfResource">REST API Reference for ListTagsOfResource Operation</seealso>
-        public ListTagsOfResourceResponse ListTagsOfResource(ListTagsOfResourceRequest request)
+        public virtual ListTagsOfResourceResponse ListTagsOfResource(ListTagsOfResourceRequest request)
         {
             var marshaller = new ListTagsOfResourceRequestMarshaller();
             var unmarshaller = ListTagsOfResourceResponseUnmarshaller.Instance;
@@ -2105,7 +2105,7 @@ namespace Amazon.DynamoDBv2
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsOfResource
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListTagsOfResource">REST API Reference for ListTagsOfResource Operation</seealso>
-        public IAsyncResult BeginListTagsOfResource(ListTagsOfResourceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListTagsOfResource(ListTagsOfResourceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListTagsOfResourceRequestMarshaller();
             var unmarshaller = ListTagsOfResourceResponseUnmarshaller.Instance;
@@ -2122,7 +2122,7 @@ namespace Amazon.DynamoDBv2
         /// 
         /// <returns>Returns a  ListTagsOfResourceResult from DynamoDB.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListTagsOfResource">REST API Reference for ListTagsOfResource Operation</seealso>
-        public  ListTagsOfResourceResponse EndListTagsOfResource(IAsyncResult asyncResult)
+        public virtual ListTagsOfResourceResponse EndListTagsOfResource(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTagsOfResourceResponse>(asyncResult);
         }
@@ -2240,7 +2240,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/PutItem">REST API Reference for PutItem Operation</seealso>
-        public PutItemResponse PutItem(string tableName, Dictionary<string, AttributeValue> item)
+        public virtual PutItemResponse PutItem(string tableName, Dictionary<string, AttributeValue> item)
         {
             var request = new PutItemRequest();
             request.TableName = tableName;
@@ -2359,7 +2359,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/PutItem">REST API Reference for PutItem Operation</seealso>
-        public PutItemResponse PutItem(string tableName, Dictionary<string, AttributeValue> item, ReturnValue returnValues)
+        public virtual PutItemResponse PutItem(string tableName, Dictionary<string, AttributeValue> item, ReturnValue returnValues)
         {
             var request = new PutItemRequest();
             request.TableName = tableName;
@@ -2477,7 +2477,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/PutItem">REST API Reference for PutItem Operation</seealso>
-        public PutItemResponse PutItem(PutItemRequest request)
+        public virtual PutItemResponse PutItem(PutItemRequest request)
         {
             var marshaller = new PutItemRequestMarshaller();
             var unmarshaller = PutItemResponseUnmarshaller.Instance;
@@ -2497,7 +2497,7 @@ namespace Amazon.DynamoDBv2
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutItem
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/PutItem">REST API Reference for PutItem Operation</seealso>
-        public IAsyncResult BeginPutItem(PutItemRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPutItem(PutItemRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutItemRequestMarshaller();
             var unmarshaller = PutItemResponseUnmarshaller.Instance;
@@ -2514,7 +2514,7 @@ namespace Amazon.DynamoDBv2
         /// 
         /// <returns>Returns a  PutItemResult from DynamoDB.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/PutItem">REST API Reference for PutItem Operation</seealso>
-        public  PutItemResponse EndPutItem(IAsyncResult asyncResult)
+        public virtual PutItemResponse EndPutItem(IAsyncResult asyncResult)
         {
             return EndInvoke<PutItemResponse>(asyncResult);
         }
@@ -2608,7 +2608,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Query">REST API Reference for Query Operation</seealso>
-        public QueryResponse Query(QueryRequest request)
+        public virtual QueryResponse Query(QueryRequest request)
         {
             var marshaller = new QueryRequestMarshaller();
             var unmarshaller = QueryResponseUnmarshaller.Instance;
@@ -2628,7 +2628,7 @@ namespace Amazon.DynamoDBv2
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndQuery
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Query">REST API Reference for Query Operation</seealso>
-        public IAsyncResult BeginQuery(QueryRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginQuery(QueryRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new QueryRequestMarshaller();
             var unmarshaller = QueryResponseUnmarshaller.Instance;
@@ -2645,7 +2645,7 @@ namespace Amazon.DynamoDBv2
         /// 
         /// <returns>Returns a  QueryResult from DynamoDB.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Query">REST API Reference for Query Operation</seealso>
-        public  QueryResponse EndQuery(IAsyncResult asyncResult)
+        public virtual QueryResponse EndQuery(IAsyncResult asyncResult)
         {
             return EndInvoke<QueryResponse>(asyncResult);
         }
@@ -2712,7 +2712,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Scan">REST API Reference for Scan Operation</seealso>
-        public ScanResponse Scan(string tableName, List<string> attributesToGet)
+        public virtual ScanResponse Scan(string tableName, List<string> attributesToGet)
         {
             var request = new ScanRequest();
             request.TableName = tableName;
@@ -2779,7 +2779,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Scan">REST API Reference for Scan Operation</seealso>
-        public ScanResponse Scan(string tableName, Dictionary<string, Condition> scanFilter)
+        public virtual ScanResponse Scan(string tableName, Dictionary<string, Condition> scanFilter)
         {
             var request = new ScanRequest();
             request.TableName = tableName;
@@ -2847,7 +2847,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Scan">REST API Reference for Scan Operation</seealso>
-        public ScanResponse Scan(string tableName, List<string> attributesToGet, Dictionary<string, Condition> scanFilter)
+        public virtual ScanResponse Scan(string tableName, List<string> attributesToGet, Dictionary<string, Condition> scanFilter)
         {
             var request = new ScanRequest();
             request.TableName = tableName;
@@ -2914,7 +2914,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Scan">REST API Reference for Scan Operation</seealso>
-        public ScanResponse Scan(ScanRequest request)
+        public virtual ScanResponse Scan(ScanRequest request)
         {
             var marshaller = new ScanRequestMarshaller();
             var unmarshaller = ScanResponseUnmarshaller.Instance;
@@ -2934,7 +2934,7 @@ namespace Amazon.DynamoDBv2
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndScan
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Scan">REST API Reference for Scan Operation</seealso>
-        public IAsyncResult BeginScan(ScanRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginScan(ScanRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ScanRequestMarshaller();
             var unmarshaller = ScanResponseUnmarshaller.Instance;
@@ -2951,7 +2951,7 @@ namespace Amazon.DynamoDBv2
         /// 
         /// <returns>Returns a  ScanResult from DynamoDB.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Scan">REST API Reference for Scan Operation</seealso>
-        public  ScanResponse EndScan(IAsyncResult asyncResult)
+        public virtual ScanResponse EndScan(IAsyncResult asyncResult)
         {
             return EndInvoke<ScanResponse>(asyncResult);
         }
@@ -3003,7 +3003,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/TagResource">REST API Reference for TagResource Operation</seealso>
-        public TagResourceResponse TagResource(TagResourceRequest request)
+        public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
             var marshaller = new TagResourceRequestMarshaller();
             var unmarshaller = TagResourceResponseUnmarshaller.Instance;
@@ -3023,7 +3023,7 @@ namespace Amazon.DynamoDBv2
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResource
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/TagResource">REST API Reference for TagResource Operation</seealso>
-        public IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new TagResourceRequestMarshaller();
             var unmarshaller = TagResourceResponseUnmarshaller.Instance;
@@ -3040,7 +3040,7 @@ namespace Amazon.DynamoDBv2
         /// 
         /// <returns>Returns a  TagResourceResult from DynamoDB.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/TagResource">REST API Reference for TagResource Operation</seealso>
-        public  TagResourceResponse EndTagResource(IAsyncResult asyncResult)
+        public virtual TagResourceResponse EndTagResource(IAsyncResult asyncResult)
         {
             return EndInvoke<TagResourceResponse>(asyncResult);
         }
@@ -3090,7 +3090,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
-        public UntagResourceResponse UntagResource(UntagResourceRequest request)
+        public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
             var marshaller = new UntagResourceRequestMarshaller();
             var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
@@ -3110,7 +3110,7 @@ namespace Amazon.DynamoDBv2
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResource
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
-        public IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UntagResourceRequestMarshaller();
             var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
@@ -3127,7 +3127,7 @@ namespace Amazon.DynamoDBv2
         /// 
         /// <returns>Returns a  UntagResourceResult from DynamoDB.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
-        public  UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
+        public virtual UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
         {
             return EndInvoke<UntagResourceResponse>(asyncResult);
         }
@@ -3176,7 +3176,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateItem">REST API Reference for UpdateItem Operation</seealso>
-        public UpdateItemResponse UpdateItem(string tableName, Dictionary<string, AttributeValue> key, Dictionary<string, AttributeValueUpdate> attributeUpdates)
+        public virtual UpdateItemResponse UpdateItem(string tableName, Dictionary<string, AttributeValue> key, Dictionary<string, AttributeValueUpdate> attributeUpdates)
         {
             var request = new UpdateItemRequest();
             request.TableName = tableName;
@@ -3227,7 +3227,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateItem">REST API Reference for UpdateItem Operation</seealso>
-        public UpdateItemResponse UpdateItem(string tableName, Dictionary<string, AttributeValue> key, Dictionary<string, AttributeValueUpdate> attributeUpdates, ReturnValue returnValues)
+        public virtual UpdateItemResponse UpdateItem(string tableName, Dictionary<string, AttributeValue> key, Dictionary<string, AttributeValueUpdate> attributeUpdates, ReturnValue returnValues)
         {
             var request = new UpdateItemRequest();
             request.TableName = tableName;
@@ -3276,7 +3276,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateItem">REST API Reference for UpdateItem Operation</seealso>
-        public UpdateItemResponse UpdateItem(UpdateItemRequest request)
+        public virtual UpdateItemResponse UpdateItem(UpdateItemRequest request)
         {
             var marshaller = new UpdateItemRequestMarshaller();
             var unmarshaller = UpdateItemResponseUnmarshaller.Instance;
@@ -3296,7 +3296,7 @@ namespace Amazon.DynamoDBv2
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateItem
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateItem">REST API Reference for UpdateItem Operation</seealso>
-        public IAsyncResult BeginUpdateItem(UpdateItemRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateItem(UpdateItemRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateItemRequestMarshaller();
             var unmarshaller = UpdateItemResponseUnmarshaller.Instance;
@@ -3313,7 +3313,7 @@ namespace Amazon.DynamoDBv2
         /// 
         /// <returns>Returns a  UpdateItemResult from DynamoDB.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateItem">REST API Reference for UpdateItem Operation</seealso>
-        public  UpdateItemResponse EndUpdateItem(IAsyncResult asyncResult)
+        public virtual UpdateItemResponse EndUpdateItem(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateItemResponse>(asyncResult);
         }
@@ -3388,7 +3388,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTable">REST API Reference for UpdateTable Operation</seealso>
-        public UpdateTableResponse UpdateTable(string tableName, ProvisionedThroughput provisionedThroughput)
+        public virtual UpdateTableResponse UpdateTable(string tableName, ProvisionedThroughput provisionedThroughput)
         {
             var request = new UpdateTableRequest();
             request.TableName = tableName;
@@ -3462,7 +3462,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTable">REST API Reference for UpdateTable Operation</seealso>
-        public UpdateTableResponse UpdateTable(UpdateTableRequest request)
+        public virtual UpdateTableResponse UpdateTable(UpdateTableRequest request)
         {
             var marshaller = new UpdateTableRequestMarshaller();
             var unmarshaller = UpdateTableResponseUnmarshaller.Instance;
@@ -3482,7 +3482,7 @@ namespace Amazon.DynamoDBv2
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateTable
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTable">REST API Reference for UpdateTable Operation</seealso>
-        public IAsyncResult BeginUpdateTable(UpdateTableRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateTable(UpdateTableRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateTableRequestMarshaller();
             var unmarshaller = UpdateTableResponseUnmarshaller.Instance;
@@ -3499,7 +3499,7 @@ namespace Amazon.DynamoDBv2
         /// 
         /// <returns>Returns a  UpdateTableResult from DynamoDB.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTable">REST API Reference for UpdateTable Operation</seealso>
-        public  UpdateTableResponse EndUpdateTable(IAsyncResult asyncResult)
+        public virtual UpdateTableResponse EndUpdateTable(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateTableResponse>(asyncResult);
         }
@@ -3580,7 +3580,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTimeToLive">REST API Reference for UpdateTimeToLive Operation</seealso>
-        public UpdateTimeToLiveResponse UpdateTimeToLive(UpdateTimeToLiveRequest request)
+        public virtual UpdateTimeToLiveResponse UpdateTimeToLive(UpdateTimeToLiveRequest request)
         {
             var marshaller = new UpdateTimeToLiveRequestMarshaller();
             var unmarshaller = UpdateTimeToLiveResponseUnmarshaller.Instance;
@@ -3600,7 +3600,7 @@ namespace Amazon.DynamoDBv2
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateTimeToLive
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTimeToLive">REST API Reference for UpdateTimeToLive Operation</seealso>
-        public IAsyncResult BeginUpdateTimeToLive(UpdateTimeToLiveRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateTimeToLive(UpdateTimeToLiveRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateTimeToLiveRequestMarshaller();
             var unmarshaller = UpdateTimeToLiveResponseUnmarshaller.Instance;
@@ -3617,7 +3617,7 @@ namespace Amazon.DynamoDBv2
         /// 
         /// <returns>Returns a  UpdateTimeToLiveResult from DynamoDB.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTimeToLive">REST API Reference for UpdateTimeToLive Operation</seealso>
-        public  UpdateTimeToLiveResponse EndUpdateTimeToLive(IAsyncResult asyncResult)
+        public virtual UpdateTimeToLiveResponse EndUpdateTimeToLive(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateTimeToLiveResponse>(asyncResult);
         }

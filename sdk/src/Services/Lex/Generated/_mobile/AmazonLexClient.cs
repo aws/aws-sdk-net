@@ -241,7 +241,7 @@ namespace Amazon.Lex
         
         #region  PostContent
 
-        internal PostContentResponse PostContent(PostContentRequest request)
+        internal virtual PostContentResponse PostContent(PostContentRequest request)
         {
             var marshaller = new PostContentRequestMarshaller();
             var unmarshaller = PostContentResponseUnmarshaller.Instance;
@@ -260,7 +260,7 @@ namespace Amazon.Lex
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/PostContent">REST API Reference for PostContent Operation</seealso>
-        public Task<PostContentResponse> PostContentAsync(PostContentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PostContentResponse> PostContentAsync(PostContentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PostContentRequestMarshaller();
             var unmarshaller = PostContentResponseUnmarshaller.Instance;
@@ -273,7 +273,7 @@ namespace Amazon.Lex
         
         #region  PostText
 
-        internal PostTextResponse PostText(PostTextRequest request)
+        internal virtual PostTextResponse PostText(PostTextRequest request)
         {
             var marshaller = new PostTextRequestMarshaller();
             var unmarshaller = PostTextResponseUnmarshaller.Instance;
@@ -292,7 +292,7 @@ namespace Amazon.Lex
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/PostText">REST API Reference for PostText Operation</seealso>
-        public Task<PostTextResponse> PostTextAsync(PostTextRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PostTextResponse> PostTextAsync(PostTextRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PostTextRequestMarshaller();
             var unmarshaller = PostTextResponseUnmarshaller.Instance;

@@ -243,7 +243,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
-        public BatchGetTracesResponse BatchGetTraces(BatchGetTracesRequest request)
+        public virtual BatchGetTracesResponse BatchGetTraces(BatchGetTracesRequest request)
         {
             var marshaller = new BatchGetTracesRequestMarshaller();
             var unmarshaller = BatchGetTracesResponseUnmarshaller.Instance;
@@ -260,7 +260,7 @@ namespace Amazon.XRay
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<BatchGetTracesResponse> BatchGetTracesAsync(BatchGetTracesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<BatchGetTracesResponse> BatchGetTracesAsync(BatchGetTracesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new BatchGetTracesRequestMarshaller();
             var unmarshaller = BatchGetTracesResponseUnmarshaller.Instance;
@@ -290,7 +290,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
-        public GetServiceGraphResponse GetServiceGraph(GetServiceGraphRequest request)
+        public virtual GetServiceGraphResponse GetServiceGraph(GetServiceGraphRequest request)
         {
             var marshaller = new GetServiceGraphRequestMarshaller();
             var unmarshaller = GetServiceGraphResponseUnmarshaller.Instance;
@@ -307,7 +307,7 @@ namespace Amazon.XRay
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetServiceGraphResponse> GetServiceGraphAsync(GetServiceGraphRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetServiceGraphResponse> GetServiceGraphAsync(GetServiceGraphRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetServiceGraphRequestMarshaller();
             var unmarshaller = GetServiceGraphResponseUnmarshaller.Instance;
@@ -333,7 +333,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
-        public GetTraceGraphResponse GetTraceGraph(GetTraceGraphRequest request)
+        public virtual GetTraceGraphResponse GetTraceGraph(GetTraceGraphRequest request)
         {
             var marshaller = new GetTraceGraphRequestMarshaller();
             var unmarshaller = GetTraceGraphResponseUnmarshaller.Instance;
@@ -350,7 +350,7 @@ namespace Amazon.XRay
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetTraceGraphResponse> GetTraceGraphAsync(GetTraceGraphRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetTraceGraphResponse> GetTraceGraphAsync(GetTraceGraphRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetTraceGraphRequestMarshaller();
             var unmarshaller = GetTraceGraphResponseUnmarshaller.Instance;
@@ -403,7 +403,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
-        public GetTraceSummariesResponse GetTraceSummaries(GetTraceSummariesRequest request)
+        public virtual GetTraceSummariesResponse GetTraceSummaries(GetTraceSummariesRequest request)
         {
             var marshaller = new GetTraceSummariesRequestMarshaller();
             var unmarshaller = GetTraceSummariesResponseUnmarshaller.Instance;
@@ -420,7 +420,7 @@ namespace Amazon.XRay
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetTraceSummariesResponse> GetTraceSummariesAsync(GetTraceSummariesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetTraceSummariesResponse> GetTraceSummariesAsync(GetTraceSummariesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetTraceSummariesRequestMarshaller();
             var unmarshaller = GetTraceSummariesResponseUnmarshaller.Instance;
@@ -446,7 +446,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
-        public PutTelemetryRecordsResponse PutTelemetryRecords(PutTelemetryRecordsRequest request)
+        public virtual PutTelemetryRecordsResponse PutTelemetryRecords(PutTelemetryRecordsRequest request)
         {
             var marshaller = new PutTelemetryRecordsRequestMarshaller();
             var unmarshaller = PutTelemetryRecordsResponseUnmarshaller.Instance;
@@ -463,7 +463,7 @@ namespace Amazon.XRay
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<PutTelemetryRecordsResponse> PutTelemetryRecordsAsync(PutTelemetryRecordsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PutTelemetryRecordsResponse> PutTelemetryRecordsAsync(PutTelemetryRecordsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutTelemetryRecordsRequestMarshaller();
             var unmarshaller = PutTelemetryRecordsResponseUnmarshaller.Instance;
@@ -555,7 +555,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
-        public PutTraceSegmentsResponse PutTraceSegments(PutTraceSegmentsRequest request)
+        public virtual PutTraceSegmentsResponse PutTraceSegments(PutTraceSegmentsRequest request)
         {
             var marshaller = new PutTraceSegmentsRequestMarshaller();
             var unmarshaller = PutTraceSegmentsResponseUnmarshaller.Instance;
@@ -572,7 +572,7 @@ namespace Amazon.XRay
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<PutTraceSegmentsResponse> PutTraceSegmentsAsync(PutTraceSegmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PutTraceSegmentsResponse> PutTraceSegmentsAsync(PutTraceSegmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutTraceSegmentsRequestMarshaller();
             var unmarshaller = PutTraceSegmentsResponseUnmarshaller.Instance;

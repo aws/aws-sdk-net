@@ -233,7 +233,7 @@ namespace Amazon.XRay
         
         #region  BatchGetTraces
 
-        internal BatchGetTracesResponse BatchGetTraces(BatchGetTracesRequest request)
+        internal virtual BatchGetTracesResponse BatchGetTraces(BatchGetTracesRequest request)
         {
             var marshaller = new BatchGetTracesRequestMarshaller();
             var unmarshaller = BatchGetTracesResponseUnmarshaller.Instance;
@@ -251,7 +251,7 @@ namespace Amazon.XRay
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<BatchGetTracesResponse> BatchGetTracesAsync(BatchGetTracesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<BatchGetTracesResponse> BatchGetTracesAsync(BatchGetTracesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new BatchGetTracesRequestMarshaller();
             var unmarshaller = BatchGetTracesResponseUnmarshaller.Instance;
@@ -264,7 +264,7 @@ namespace Amazon.XRay
         
         #region  GetServiceGraph
 
-        internal GetServiceGraphResponse GetServiceGraph(GetServiceGraphRequest request)
+        internal virtual GetServiceGraphResponse GetServiceGraph(GetServiceGraphRequest request)
         {
             var marshaller = new GetServiceGraphRequestMarshaller();
             var unmarshaller = GetServiceGraphResponseUnmarshaller.Instance;
@@ -282,7 +282,7 @@ namespace Amazon.XRay
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetServiceGraphResponse> GetServiceGraphAsync(GetServiceGraphRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetServiceGraphResponse> GetServiceGraphAsync(GetServiceGraphRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetServiceGraphRequestMarshaller();
             var unmarshaller = GetServiceGraphResponseUnmarshaller.Instance;
@@ -295,7 +295,7 @@ namespace Amazon.XRay
         
         #region  GetTraceGraph
 
-        internal GetTraceGraphResponse GetTraceGraph(GetTraceGraphRequest request)
+        internal virtual GetTraceGraphResponse GetTraceGraph(GetTraceGraphRequest request)
         {
             var marshaller = new GetTraceGraphRequestMarshaller();
             var unmarshaller = GetTraceGraphResponseUnmarshaller.Instance;
@@ -313,7 +313,7 @@ namespace Amazon.XRay
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetTraceGraphResponse> GetTraceGraphAsync(GetTraceGraphRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetTraceGraphResponse> GetTraceGraphAsync(GetTraceGraphRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetTraceGraphRequestMarshaller();
             var unmarshaller = GetTraceGraphResponseUnmarshaller.Instance;
@@ -326,7 +326,7 @@ namespace Amazon.XRay
         
         #region  GetTraceSummaries
 
-        internal GetTraceSummariesResponse GetTraceSummaries(GetTraceSummariesRequest request)
+        internal virtual GetTraceSummariesResponse GetTraceSummaries(GetTraceSummariesRequest request)
         {
             var marshaller = new GetTraceSummariesRequestMarshaller();
             var unmarshaller = GetTraceSummariesResponseUnmarshaller.Instance;
@@ -344,7 +344,7 @@ namespace Amazon.XRay
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetTraceSummariesResponse> GetTraceSummariesAsync(GetTraceSummariesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetTraceSummariesResponse> GetTraceSummariesAsync(GetTraceSummariesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetTraceSummariesRequestMarshaller();
             var unmarshaller = GetTraceSummariesResponseUnmarshaller.Instance;
@@ -357,7 +357,7 @@ namespace Amazon.XRay
         
         #region  PutTelemetryRecords
 
-        internal PutTelemetryRecordsResponse PutTelemetryRecords(PutTelemetryRecordsRequest request)
+        internal virtual PutTelemetryRecordsResponse PutTelemetryRecords(PutTelemetryRecordsRequest request)
         {
             var marshaller = new PutTelemetryRecordsRequestMarshaller();
             var unmarshaller = PutTelemetryRecordsResponseUnmarshaller.Instance;
@@ -375,7 +375,7 @@ namespace Amazon.XRay
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<PutTelemetryRecordsResponse> PutTelemetryRecordsAsync(PutTelemetryRecordsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PutTelemetryRecordsResponse> PutTelemetryRecordsAsync(PutTelemetryRecordsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutTelemetryRecordsRequestMarshaller();
             var unmarshaller = PutTelemetryRecordsResponseUnmarshaller.Instance;
@@ -388,7 +388,7 @@ namespace Amazon.XRay
         
         #region  PutTraceSegments
 
-        internal PutTraceSegmentsResponse PutTraceSegments(PutTraceSegmentsRequest request)
+        internal virtual PutTraceSegmentsResponse PutTraceSegments(PutTraceSegmentsRequest request)
         {
             var marshaller = new PutTraceSegmentsRequestMarshaller();
             var unmarshaller = PutTraceSegmentsResponseUnmarshaller.Instance;
@@ -406,7 +406,7 @@ namespace Amazon.XRay
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<PutTraceSegmentsResponse> PutTraceSegmentsAsync(PutTraceSegmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PutTraceSegmentsResponse> PutTraceSegmentsAsync(PutTraceSegmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutTraceSegmentsRequestMarshaller();
             var unmarshaller = PutTraceSegmentsResponseUnmarshaller.Instance;

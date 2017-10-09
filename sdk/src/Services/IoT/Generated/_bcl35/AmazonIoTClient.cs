@@ -272,7 +272,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AcceptCertificateTransfer">REST API Reference for AcceptCertificateTransfer Operation</seealso>
-        public AcceptCertificateTransferResponse AcceptCertificateTransfer(AcceptCertificateTransferRequest request)
+        public virtual AcceptCertificateTransferResponse AcceptCertificateTransfer(AcceptCertificateTransferRequest request)
         {
             var marshaller = new AcceptCertificateTransferRequestMarshaller();
             var unmarshaller = AcceptCertificateTransferResponseUnmarshaller.Instance;
@@ -292,7 +292,7 @@ namespace Amazon.IoT
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAcceptCertificateTransfer
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AcceptCertificateTransfer">REST API Reference for AcceptCertificateTransfer Operation</seealso>
-        public IAsyncResult BeginAcceptCertificateTransfer(AcceptCertificateTransferRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginAcceptCertificateTransfer(AcceptCertificateTransferRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AcceptCertificateTransferRequestMarshaller();
             var unmarshaller = AcceptCertificateTransferResponseUnmarshaller.Instance;
@@ -309,7 +309,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>Returns a  AcceptCertificateTransferResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AcceptCertificateTransfer">REST API Reference for AcceptCertificateTransfer Operation</seealso>
-        public  AcceptCertificateTransferResponse EndAcceptCertificateTransfer(IAsyncResult asyncResult)
+        public virtual AcceptCertificateTransferResponse EndAcceptCertificateTransfer(IAsyncResult asyncResult)
         {
             return EndInvoke<AcceptCertificateTransferResponse>(asyncResult);
         }
@@ -347,7 +347,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AttachPrincipalPolicy">REST API Reference for AttachPrincipalPolicy Operation</seealso>
-        public AttachPrincipalPolicyResponse AttachPrincipalPolicy(string policyName, string principal)
+        public virtual AttachPrincipalPolicyResponse AttachPrincipalPolicy(string policyName, string principal)
         {
             var request = new AttachPrincipalPolicyRequest();
             request.PolicyName = policyName;
@@ -384,7 +384,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AttachPrincipalPolicy">REST API Reference for AttachPrincipalPolicy Operation</seealso>
-        public AttachPrincipalPolicyResponse AttachPrincipalPolicy(AttachPrincipalPolicyRequest request)
+        public virtual AttachPrincipalPolicyResponse AttachPrincipalPolicy(AttachPrincipalPolicyRequest request)
         {
             var marshaller = new AttachPrincipalPolicyRequestMarshaller();
             var unmarshaller = AttachPrincipalPolicyResponseUnmarshaller.Instance;
@@ -404,7 +404,7 @@ namespace Amazon.IoT
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAttachPrincipalPolicy
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AttachPrincipalPolicy">REST API Reference for AttachPrincipalPolicy Operation</seealso>
-        public IAsyncResult BeginAttachPrincipalPolicy(AttachPrincipalPolicyRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginAttachPrincipalPolicy(AttachPrincipalPolicyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AttachPrincipalPolicyRequestMarshaller();
             var unmarshaller = AttachPrincipalPolicyResponseUnmarshaller.Instance;
@@ -421,7 +421,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>Returns a  AttachPrincipalPolicyResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AttachPrincipalPolicy">REST API Reference for AttachPrincipalPolicy Operation</seealso>
-        public  AttachPrincipalPolicyResponse EndAttachPrincipalPolicy(IAsyncResult asyncResult)
+        public virtual AttachPrincipalPolicyResponse EndAttachPrincipalPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<AttachPrincipalPolicyResponse>(asyncResult);
         }
@@ -456,7 +456,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AttachThingPrincipal">REST API Reference for AttachThingPrincipal Operation</seealso>
-        public AttachThingPrincipalResponse AttachThingPrincipal(string thingName, string principal)
+        public virtual AttachThingPrincipalResponse AttachThingPrincipal(string thingName, string principal)
         {
             var request = new AttachThingPrincipalRequest();
             request.ThingName = thingName;
@@ -490,7 +490,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AttachThingPrincipal">REST API Reference for AttachThingPrincipal Operation</seealso>
-        public AttachThingPrincipalResponse AttachThingPrincipal(AttachThingPrincipalRequest request)
+        public virtual AttachThingPrincipalResponse AttachThingPrincipal(AttachThingPrincipalRequest request)
         {
             var marshaller = new AttachThingPrincipalRequestMarshaller();
             var unmarshaller = AttachThingPrincipalResponseUnmarshaller.Instance;
@@ -510,7 +510,7 @@ namespace Amazon.IoT
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAttachThingPrincipal
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AttachThingPrincipal">REST API Reference for AttachThingPrincipal Operation</seealso>
-        public IAsyncResult BeginAttachThingPrincipal(AttachThingPrincipalRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginAttachThingPrincipal(AttachThingPrincipalRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AttachThingPrincipalRequestMarshaller();
             var unmarshaller = AttachThingPrincipalResponseUnmarshaller.Instance;
@@ -527,7 +527,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>Returns a  AttachThingPrincipalResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AttachThingPrincipal">REST API Reference for AttachThingPrincipal Operation</seealso>
-        public  AttachThingPrincipalResponse EndAttachThingPrincipal(IAsyncResult asyncResult)
+        public virtual AttachThingPrincipalResponse EndAttachThingPrincipal(IAsyncResult asyncResult)
         {
             return EndInvoke<AttachThingPrincipalResponse>(asyncResult);
         }
@@ -577,7 +577,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelCertificateTransfer">REST API Reference for CancelCertificateTransfer Operation</seealso>
-        public CancelCertificateTransferResponse CancelCertificateTransfer(string certificateId)
+        public virtual CancelCertificateTransferResponse CancelCertificateTransfer(string certificateId)
         {
             var request = new CancelCertificateTransferRequest();
             request.CertificateId = certificateId;
@@ -626,7 +626,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelCertificateTransfer">REST API Reference for CancelCertificateTransfer Operation</seealso>
-        public CancelCertificateTransferResponse CancelCertificateTransfer(CancelCertificateTransferRequest request)
+        public virtual CancelCertificateTransferResponse CancelCertificateTransfer(CancelCertificateTransferRequest request)
         {
             var marshaller = new CancelCertificateTransferRequestMarshaller();
             var unmarshaller = CancelCertificateTransferResponseUnmarshaller.Instance;
@@ -646,7 +646,7 @@ namespace Amazon.IoT
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelCertificateTransfer
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelCertificateTransfer">REST API Reference for CancelCertificateTransfer Operation</seealso>
-        public IAsyncResult BeginCancelCertificateTransfer(CancelCertificateTransferRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCancelCertificateTransfer(CancelCertificateTransferRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CancelCertificateTransferRequestMarshaller();
             var unmarshaller = CancelCertificateTransferResponseUnmarshaller.Instance;
@@ -663,7 +663,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>Returns a  CancelCertificateTransferResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelCertificateTransfer">REST API Reference for CancelCertificateTransfer Operation</seealso>
-        public  CancelCertificateTransferResponse EndCancelCertificateTransfer(IAsyncResult asyncResult)
+        public virtual CancelCertificateTransferResponse EndCancelCertificateTransfer(IAsyncResult asyncResult)
         {
             return EndInvoke<CancelCertificateTransferResponse>(asyncResult);
         }
@@ -761,7 +761,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateCertificateFromCsr">REST API Reference for CreateCertificateFromCsr Operation</seealso>
-        public CreateCertificateFromCsrResponse CreateCertificateFromCsr(string certificateSigningRequest)
+        public virtual CreateCertificateFromCsrResponse CreateCertificateFromCsr(string certificateSigningRequest)
         {
             var request = new CreateCertificateFromCsrRequest();
             request.CertificateSigningRequest = certificateSigningRequest;
@@ -859,7 +859,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateCertificateFromCsr">REST API Reference for CreateCertificateFromCsr Operation</seealso>
-        public CreateCertificateFromCsrResponse CreateCertificateFromCsr(string certificateSigningRequest, bool setAsActive)
+        public virtual CreateCertificateFromCsrResponse CreateCertificateFromCsr(string certificateSigningRequest, bool setAsActive)
         {
             var request = new CreateCertificateFromCsrRequest();
             request.CertificateSigningRequest = certificateSigningRequest;
@@ -957,7 +957,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateCertificateFromCsr">REST API Reference for CreateCertificateFromCsr Operation</seealso>
-        public CreateCertificateFromCsrResponse CreateCertificateFromCsr(CreateCertificateFromCsrRequest request)
+        public virtual CreateCertificateFromCsrResponse CreateCertificateFromCsr(CreateCertificateFromCsrRequest request)
         {
             var marshaller = new CreateCertificateFromCsrRequestMarshaller();
             var unmarshaller = CreateCertificateFromCsrResponseUnmarshaller.Instance;
@@ -977,7 +977,7 @@ namespace Amazon.IoT
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCertificateFromCsr
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateCertificateFromCsr">REST API Reference for CreateCertificateFromCsr Operation</seealso>
-        public IAsyncResult BeginCreateCertificateFromCsr(CreateCertificateFromCsrRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateCertificateFromCsr(CreateCertificateFromCsrRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateCertificateFromCsrRequestMarshaller();
             var unmarshaller = CreateCertificateFromCsrResponseUnmarshaller.Instance;
@@ -994,7 +994,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>Returns a  CreateCertificateFromCsrResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateCertificateFromCsr">REST API Reference for CreateCertificateFromCsr Operation</seealso>
-        public  CreateCertificateFromCsrResponse EndCreateCertificateFromCsr(IAsyncResult asyncResult)
+        public virtual CreateCertificateFromCsrResponse EndCreateCertificateFromCsr(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateCertificateFromCsrResponse>(asyncResult);
         }
@@ -1031,7 +1031,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateKeysAndCertificate">REST API Reference for CreateKeysAndCertificate Operation</seealso>
-        public CreateKeysAndCertificateResponse CreateKeysAndCertificate()
+        public virtual CreateKeysAndCertificateResponse CreateKeysAndCertificate()
         {
             var request = new CreateKeysAndCertificateRequest();
             return CreateKeysAndCertificate(request);
@@ -1067,7 +1067,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateKeysAndCertificate">REST API Reference for CreateKeysAndCertificate Operation</seealso>
-        public CreateKeysAndCertificateResponse CreateKeysAndCertificate(bool setAsActive)
+        public virtual CreateKeysAndCertificateResponse CreateKeysAndCertificate(bool setAsActive)
         {
             var request = new CreateKeysAndCertificateRequest();
             request.SetAsActive = setAsActive;
@@ -1104,7 +1104,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateKeysAndCertificate">REST API Reference for CreateKeysAndCertificate Operation</seealso>
-        public CreateKeysAndCertificateResponse CreateKeysAndCertificate(CreateKeysAndCertificateRequest request)
+        public virtual CreateKeysAndCertificateResponse CreateKeysAndCertificate(CreateKeysAndCertificateRequest request)
         {
             var marshaller = new CreateKeysAndCertificateRequestMarshaller();
             var unmarshaller = CreateKeysAndCertificateResponseUnmarshaller.Instance;
@@ -1124,7 +1124,7 @@ namespace Amazon.IoT
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateKeysAndCertificate
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateKeysAndCertificate">REST API Reference for CreateKeysAndCertificate Operation</seealso>
-        public IAsyncResult BeginCreateKeysAndCertificate(CreateKeysAndCertificateRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateKeysAndCertificate(CreateKeysAndCertificateRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateKeysAndCertificateRequestMarshaller();
             var unmarshaller = CreateKeysAndCertificateResponseUnmarshaller.Instance;
@@ -1141,7 +1141,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>Returns a  CreateKeysAndCertificateResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateKeysAndCertificate">REST API Reference for CreateKeysAndCertificate Operation</seealso>
-        public  CreateKeysAndCertificateResponse EndCreateKeysAndCertificate(IAsyncResult asyncResult)
+        public virtual CreateKeysAndCertificateResponse EndCreateKeysAndCertificate(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateKeysAndCertificateResponse>(asyncResult);
         }
@@ -1186,7 +1186,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreatePolicy">REST API Reference for CreatePolicy Operation</seealso>
-        public CreatePolicyResponse CreatePolicy(string policyName, string policyDocument)
+        public virtual CreatePolicyResponse CreatePolicy(string policyName, string policyDocument)
         {
             var request = new CreatePolicyRequest();
             request.PolicyName = policyName;
@@ -1230,7 +1230,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreatePolicy">REST API Reference for CreatePolicy Operation</seealso>
-        public CreatePolicyResponse CreatePolicy(CreatePolicyRequest request)
+        public virtual CreatePolicyResponse CreatePolicy(CreatePolicyRequest request)
         {
             var marshaller = new CreatePolicyRequestMarshaller();
             var unmarshaller = CreatePolicyResponseUnmarshaller.Instance;
@@ -1250,7 +1250,7 @@ namespace Amazon.IoT
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePolicy
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreatePolicy">REST API Reference for CreatePolicy Operation</seealso>
-        public IAsyncResult BeginCreatePolicy(CreatePolicyRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreatePolicy(CreatePolicyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreatePolicyRequestMarshaller();
             var unmarshaller = CreatePolicyResponseUnmarshaller.Instance;
@@ -1267,7 +1267,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>Returns a  CreatePolicyResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreatePolicy">REST API Reference for CreatePolicy Operation</seealso>
-        public  CreatePolicyResponse EndCreatePolicy(IAsyncResult asyncResult)
+        public virtual CreatePolicyResponse EndCreatePolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<CreatePolicyResponse>(asyncResult);
         }
@@ -1318,7 +1318,7 @@ namespace Amazon.IoT
         /// The number of policy versions exceeds the limit.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreatePolicyVersion">REST API Reference for CreatePolicyVersion Operation</seealso>
-        public CreatePolicyVersionResponse CreatePolicyVersion(string policyName, string policyDocument)
+        public virtual CreatePolicyVersionResponse CreatePolicyVersion(string policyName, string policyDocument)
         {
             var request = new CreatePolicyVersionRequest();
             request.PolicyName = policyName;
@@ -1370,7 +1370,7 @@ namespace Amazon.IoT
         /// The number of policy versions exceeds the limit.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreatePolicyVersion">REST API Reference for CreatePolicyVersion Operation</seealso>
-        public CreatePolicyVersionResponse CreatePolicyVersion(string policyName, string policyDocument, bool setAsDefault)
+        public virtual CreatePolicyVersionResponse CreatePolicyVersion(string policyName, string policyDocument, bool setAsDefault)
         {
             var request = new CreatePolicyVersionRequest();
             request.PolicyName = policyName;
@@ -1421,7 +1421,7 @@ namespace Amazon.IoT
         /// The number of policy versions exceeds the limit.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreatePolicyVersion">REST API Reference for CreatePolicyVersion Operation</seealso>
-        public CreatePolicyVersionResponse CreatePolicyVersion(CreatePolicyVersionRequest request)
+        public virtual CreatePolicyVersionResponse CreatePolicyVersion(CreatePolicyVersionRequest request)
         {
             var marshaller = new CreatePolicyVersionRequestMarshaller();
             var unmarshaller = CreatePolicyVersionResponseUnmarshaller.Instance;
@@ -1441,7 +1441,7 @@ namespace Amazon.IoT
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePolicyVersion
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreatePolicyVersion">REST API Reference for CreatePolicyVersion Operation</seealso>
-        public IAsyncResult BeginCreatePolicyVersion(CreatePolicyVersionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreatePolicyVersion(CreatePolicyVersionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreatePolicyVersionRequestMarshaller();
             var unmarshaller = CreatePolicyVersionResponseUnmarshaller.Instance;
@@ -1458,7 +1458,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>Returns a  CreatePolicyVersionResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreatePolicyVersion">REST API Reference for CreatePolicyVersion Operation</seealso>
-        public  CreatePolicyVersionResponse EndCreatePolicyVersion(IAsyncResult asyncResult)
+        public virtual CreatePolicyVersionResponse EndCreatePolicyVersion(IAsyncResult asyncResult)
         {
             return EndInvoke<CreatePolicyVersionResponse>(asyncResult);
         }
@@ -1495,7 +1495,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThing">REST API Reference for CreateThing Operation</seealso>
-        public CreateThingResponse CreateThing(CreateThingRequest request)
+        public virtual CreateThingResponse CreateThing(CreateThingRequest request)
         {
             var marshaller = new CreateThingRequestMarshaller();
             var unmarshaller = CreateThingResponseUnmarshaller.Instance;
@@ -1515,7 +1515,7 @@ namespace Amazon.IoT
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateThing
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThing">REST API Reference for CreateThing Operation</seealso>
-        public IAsyncResult BeginCreateThing(CreateThingRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateThing(CreateThingRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateThingRequestMarshaller();
             var unmarshaller = CreateThingResponseUnmarshaller.Instance;
@@ -1532,7 +1532,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>Returns a  CreateThingResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThing">REST API Reference for CreateThing Operation</seealso>
-        public  CreateThingResponse EndCreateThing(IAsyncResult asyncResult)
+        public virtual CreateThingResponse EndCreateThing(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateThingResponse>(asyncResult);
         }
@@ -1566,7 +1566,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThingType">REST API Reference for CreateThingType Operation</seealso>
-        public CreateThingTypeResponse CreateThingType(CreateThingTypeRequest request)
+        public virtual CreateThingTypeResponse CreateThingType(CreateThingTypeRequest request)
         {
             var marshaller = new CreateThingTypeRequestMarshaller();
             var unmarshaller = CreateThingTypeResponseUnmarshaller.Instance;
@@ -1586,7 +1586,7 @@ namespace Amazon.IoT
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateThingType
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThingType">REST API Reference for CreateThingType Operation</seealso>
-        public IAsyncResult BeginCreateThingType(CreateThingTypeRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateThingType(CreateThingTypeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateThingTypeRequestMarshaller();
             var unmarshaller = CreateThingTypeResponseUnmarshaller.Instance;
@@ -1603,7 +1603,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>Returns a  CreateThingTypeResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThingType">REST API Reference for CreateThingType Operation</seealso>
-        public  CreateThingTypeResponse EndCreateThingType(IAsyncResult asyncResult)
+        public virtual CreateThingTypeResponse EndCreateThingType(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateThingTypeResponse>(asyncResult);
         }
@@ -1635,7 +1635,7 @@ namespace Amazon.IoT
         /// The Rule-SQL expression can't be parsed correctly.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateTopicRule">REST API Reference for CreateTopicRule Operation</seealso>
-        public CreateTopicRuleResponse CreateTopicRule(CreateTopicRuleRequest request)
+        public virtual CreateTopicRuleResponse CreateTopicRule(CreateTopicRuleRequest request)
         {
             var marshaller = new CreateTopicRuleRequestMarshaller();
             var unmarshaller = CreateTopicRuleResponseUnmarshaller.Instance;
@@ -1655,7 +1655,7 @@ namespace Amazon.IoT
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTopicRule
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateTopicRule">REST API Reference for CreateTopicRule Operation</seealso>
-        public IAsyncResult BeginCreateTopicRule(CreateTopicRuleRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateTopicRule(CreateTopicRuleRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateTopicRuleRequestMarshaller();
             var unmarshaller = CreateTopicRuleResponseUnmarshaller.Instance;
@@ -1672,7 +1672,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>Returns a  CreateTopicRuleResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateTopicRule">REST API Reference for CreateTopicRule Operation</seealso>
-        public  CreateTopicRuleResponse EndCreateTopicRule(IAsyncResult asyncResult)
+        public virtual CreateTopicRuleResponse EndCreateTopicRule(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateTopicRuleResponse>(asyncResult);
         }
@@ -1709,7 +1709,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteCACertificate">REST API Reference for DeleteCACertificate Operation</seealso>
-        public DeleteCACertificateResponse DeleteCACertificate(DeleteCACertificateRequest request)
+        public virtual DeleteCACertificateResponse DeleteCACertificate(DeleteCACertificateRequest request)
         {
             var marshaller = new DeleteCACertificateRequestMarshaller();
             var unmarshaller = DeleteCACertificateResponseUnmarshaller.Instance;
@@ -1729,7 +1729,7 @@ namespace Amazon.IoT
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCACertificate
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteCACertificate">REST API Reference for DeleteCACertificate Operation</seealso>
-        public IAsyncResult BeginDeleteCACertificate(DeleteCACertificateRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteCACertificate(DeleteCACertificateRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteCACertificateRequestMarshaller();
             var unmarshaller = DeleteCACertificateResponseUnmarshaller.Instance;
@@ -1746,7 +1746,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>Returns a  DeleteCACertificateResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteCACertificate">REST API Reference for DeleteCACertificate Operation</seealso>
-        public  DeleteCACertificateResponse EndDeleteCACertificate(IAsyncResult asyncResult)
+        public virtual DeleteCACertificateResponse EndDeleteCACertificate(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteCACertificateResponse>(asyncResult);
         }
@@ -1794,7 +1794,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteCertificate">REST API Reference for DeleteCertificate Operation</seealso>
-        public DeleteCertificateResponse DeleteCertificate(string certificateId)
+        public virtual DeleteCertificateResponse DeleteCertificate(string certificateId)
         {
             var request = new DeleteCertificateRequest();
             request.CertificateId = certificateId;
@@ -1841,7 +1841,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteCertificate">REST API Reference for DeleteCertificate Operation</seealso>
-        public DeleteCertificateResponse DeleteCertificate(DeleteCertificateRequest request)
+        public virtual DeleteCertificateResponse DeleteCertificate(DeleteCertificateRequest request)
         {
             var marshaller = new DeleteCertificateRequestMarshaller();
             var unmarshaller = DeleteCertificateResponseUnmarshaller.Instance;
@@ -1861,7 +1861,7 @@ namespace Amazon.IoT
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCertificate
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteCertificate">REST API Reference for DeleteCertificate Operation</seealso>
-        public IAsyncResult BeginDeleteCertificate(DeleteCertificateRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteCertificate(DeleteCertificateRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteCertificateRequestMarshaller();
             var unmarshaller = DeleteCertificateResponseUnmarshaller.Instance;
@@ -1878,7 +1878,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>Returns a  DeleteCertificateResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteCertificate">REST API Reference for DeleteCertificate Operation</seealso>
-        public  DeleteCertificateResponse EndDeleteCertificate(IAsyncResult asyncResult)
+        public virtual DeleteCertificateResponse EndDeleteCertificate(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteCertificateResponse>(asyncResult);
         }
@@ -1931,7 +1931,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeletePolicy">REST API Reference for DeletePolicy Operation</seealso>
-        public DeletePolicyResponse DeletePolicy(string policyName)
+        public virtual DeletePolicyResponse DeletePolicy(string policyName)
         {
             var request = new DeletePolicyRequest();
             request.PolicyName = policyName;
@@ -1983,7 +1983,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeletePolicy">REST API Reference for DeletePolicy Operation</seealso>
-        public DeletePolicyResponse DeletePolicy(DeletePolicyRequest request)
+        public virtual DeletePolicyResponse DeletePolicy(DeletePolicyRequest request)
         {
             var marshaller = new DeletePolicyRequestMarshaller();
             var unmarshaller = DeletePolicyResponseUnmarshaller.Instance;
@@ -2003,7 +2003,7 @@ namespace Amazon.IoT
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePolicy
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeletePolicy">REST API Reference for DeletePolicy Operation</seealso>
-        public IAsyncResult BeginDeletePolicy(DeletePolicyRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeletePolicy(DeletePolicyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeletePolicyRequestMarshaller();
             var unmarshaller = DeletePolicyResponseUnmarshaller.Instance;
@@ -2020,7 +2020,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>Returns a  DeletePolicyResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeletePolicy">REST API Reference for DeletePolicy Operation</seealso>
-        public  DeletePolicyResponse EndDeletePolicy(IAsyncResult asyncResult)
+        public virtual DeletePolicyResponse EndDeletePolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<DeletePolicyResponse>(asyncResult);
         }
@@ -2061,7 +2061,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeletePolicyVersion">REST API Reference for DeletePolicyVersion Operation</seealso>
-        public DeletePolicyVersionResponse DeletePolicyVersion(string policyName, string policyVersionId)
+        public virtual DeletePolicyVersionResponse DeletePolicyVersion(string policyName, string policyVersionId)
         {
             var request = new DeletePolicyVersionRequest();
             request.PolicyName = policyName;
@@ -2101,7 +2101,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeletePolicyVersion">REST API Reference for DeletePolicyVersion Operation</seealso>
-        public DeletePolicyVersionResponse DeletePolicyVersion(DeletePolicyVersionRequest request)
+        public virtual DeletePolicyVersionResponse DeletePolicyVersion(DeletePolicyVersionRequest request)
         {
             var marshaller = new DeletePolicyVersionRequestMarshaller();
             var unmarshaller = DeletePolicyVersionResponseUnmarshaller.Instance;
@@ -2121,7 +2121,7 @@ namespace Amazon.IoT
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePolicyVersion
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeletePolicyVersion">REST API Reference for DeletePolicyVersion Operation</seealso>
-        public IAsyncResult BeginDeletePolicyVersion(DeletePolicyVersionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeletePolicyVersion(DeletePolicyVersionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeletePolicyVersionRequestMarshaller();
             var unmarshaller = DeletePolicyVersionResponseUnmarshaller.Instance;
@@ -2138,7 +2138,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>Returns a  DeletePolicyVersionResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeletePolicyVersion">REST API Reference for DeletePolicyVersion Operation</seealso>
-        public  DeletePolicyVersionResponse EndDeletePolicyVersion(IAsyncResult asyncResult)
+        public virtual DeletePolicyVersionResponse EndDeletePolicyVersion(IAsyncResult asyncResult)
         {
             return EndInvoke<DeletePolicyVersionResponse>(asyncResult);
         }
@@ -2169,7 +2169,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteRegistrationCode">REST API Reference for DeleteRegistrationCode Operation</seealso>
-        public DeleteRegistrationCodeResponse DeleteRegistrationCode(DeleteRegistrationCodeRequest request)
+        public virtual DeleteRegistrationCodeResponse DeleteRegistrationCode(DeleteRegistrationCodeRequest request)
         {
             var marshaller = new DeleteRegistrationCodeRequestMarshaller();
             var unmarshaller = DeleteRegistrationCodeResponseUnmarshaller.Instance;
@@ -2189,7 +2189,7 @@ namespace Amazon.IoT
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRegistrationCode
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteRegistrationCode">REST API Reference for DeleteRegistrationCode Operation</seealso>
-        public IAsyncResult BeginDeleteRegistrationCode(DeleteRegistrationCodeRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteRegistrationCode(DeleteRegistrationCodeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteRegistrationCodeRequestMarshaller();
             var unmarshaller = DeleteRegistrationCodeResponseUnmarshaller.Instance;
@@ -2206,7 +2206,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>Returns a  DeleteRegistrationCodeResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteRegistrationCode">REST API Reference for DeleteRegistrationCode Operation</seealso>
-        public  DeleteRegistrationCodeResponse EndDeleteRegistrationCode(IAsyncResult asyncResult)
+        public virtual DeleteRegistrationCodeResponse EndDeleteRegistrationCode(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteRegistrationCodeResponse>(asyncResult);
         }
@@ -2244,7 +2244,7 @@ namespace Amazon.IoT
         /// the version specified with the --version parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteThing">REST API Reference for DeleteThing Operation</seealso>
-        public DeleteThingResponse DeleteThing(string thingName)
+        public virtual DeleteThingResponse DeleteThing(string thingName)
         {
             var request = new DeleteThingRequest();
             request.ThingName = thingName;
@@ -2281,7 +2281,7 @@ namespace Amazon.IoT
         /// the version specified with the --version parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteThing">REST API Reference for DeleteThing Operation</seealso>
-        public DeleteThingResponse DeleteThing(DeleteThingRequest request)
+        public virtual DeleteThingResponse DeleteThing(DeleteThingRequest request)
         {
             var marshaller = new DeleteThingRequestMarshaller();
             var unmarshaller = DeleteThingResponseUnmarshaller.Instance;
@@ -2301,7 +2301,7 @@ namespace Amazon.IoT
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteThing
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteThing">REST API Reference for DeleteThing Operation</seealso>
-        public IAsyncResult BeginDeleteThing(DeleteThingRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteThing(DeleteThingRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteThingRequestMarshaller();
             var unmarshaller = DeleteThingResponseUnmarshaller.Instance;
@@ -2318,7 +2318,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>Returns a  DeleteThingResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteThing">REST API Reference for DeleteThing Operation</seealso>
-        public  DeleteThingResponse EndDeleteThing(IAsyncResult asyncResult)
+        public virtual DeleteThingResponse EndDeleteThing(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteThingResponse>(asyncResult);
         }
@@ -2356,7 +2356,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteThingType">REST API Reference for DeleteThingType Operation</seealso>
-        public DeleteThingTypeResponse DeleteThingType(DeleteThingTypeRequest request)
+        public virtual DeleteThingTypeResponse DeleteThingType(DeleteThingTypeRequest request)
         {
             var marshaller = new DeleteThingTypeRequestMarshaller();
             var unmarshaller = DeleteThingTypeResponseUnmarshaller.Instance;
@@ -2376,7 +2376,7 @@ namespace Amazon.IoT
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteThingType
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteThingType">REST API Reference for DeleteThingType Operation</seealso>
-        public IAsyncResult BeginDeleteThingType(DeleteThingTypeRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteThingType(DeleteThingTypeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteThingTypeRequestMarshaller();
             var unmarshaller = DeleteThingTypeResponseUnmarshaller.Instance;
@@ -2393,7 +2393,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>Returns a  DeleteThingTypeResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteThingType">REST API Reference for DeleteThingType Operation</seealso>
-        public  DeleteThingTypeResponse EndDeleteThingType(IAsyncResult asyncResult)
+        public virtual DeleteThingTypeResponse EndDeleteThingType(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteThingTypeResponse>(asyncResult);
         }
@@ -2421,7 +2421,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteTopicRule">REST API Reference for DeleteTopicRule Operation</seealso>
-        public DeleteTopicRuleResponse DeleteTopicRule(string ruleName)
+        public virtual DeleteTopicRuleResponse DeleteTopicRule(string ruleName)
         {
             var request = new DeleteTopicRuleRequest();
             request.RuleName = ruleName;
@@ -2448,7 +2448,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteTopicRule">REST API Reference for DeleteTopicRule Operation</seealso>
-        public DeleteTopicRuleResponse DeleteTopicRule(DeleteTopicRuleRequest request)
+        public virtual DeleteTopicRuleResponse DeleteTopicRule(DeleteTopicRuleRequest request)
         {
             var marshaller = new DeleteTopicRuleRequestMarshaller();
             var unmarshaller = DeleteTopicRuleResponseUnmarshaller.Instance;
@@ -2468,7 +2468,7 @@ namespace Amazon.IoT
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTopicRule
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteTopicRule">REST API Reference for DeleteTopicRule Operation</seealso>
-        public IAsyncResult BeginDeleteTopicRule(DeleteTopicRuleRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteTopicRule(DeleteTopicRuleRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteTopicRuleRequestMarshaller();
             var unmarshaller = DeleteTopicRuleResponseUnmarshaller.Instance;
@@ -2485,7 +2485,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>Returns a  DeleteTopicRuleResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteTopicRule">REST API Reference for DeleteTopicRule Operation</seealso>
-        public  DeleteTopicRuleResponse EndDeleteTopicRule(IAsyncResult asyncResult)
+        public virtual DeleteTopicRuleResponse EndDeleteTopicRule(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteTopicRuleResponse>(asyncResult);
         }
@@ -2519,7 +2519,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeprecateThingType">REST API Reference for DeprecateThingType Operation</seealso>
-        public DeprecateThingTypeResponse DeprecateThingType(DeprecateThingTypeRequest request)
+        public virtual DeprecateThingTypeResponse DeprecateThingType(DeprecateThingTypeRequest request)
         {
             var marshaller = new DeprecateThingTypeRequestMarshaller();
             var unmarshaller = DeprecateThingTypeResponseUnmarshaller.Instance;
@@ -2539,7 +2539,7 @@ namespace Amazon.IoT
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeprecateThingType
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeprecateThingType">REST API Reference for DeprecateThingType Operation</seealso>
-        public IAsyncResult BeginDeprecateThingType(DeprecateThingTypeRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeprecateThingType(DeprecateThingTypeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeprecateThingTypeRequestMarshaller();
             var unmarshaller = DeprecateThingTypeResponseUnmarshaller.Instance;
@@ -2556,7 +2556,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>Returns a  DeprecateThingTypeResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeprecateThingType">REST API Reference for DeprecateThingType Operation</seealso>
-        public  DeprecateThingTypeResponse EndDeprecateThingType(IAsyncResult asyncResult)
+        public virtual DeprecateThingTypeResponse EndDeprecateThingType(IAsyncResult asyncResult)
         {
             return EndInvoke<DeprecateThingTypeResponse>(asyncResult);
         }
@@ -2590,7 +2590,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeCACertificate">REST API Reference for DescribeCACertificate Operation</seealso>
-        public DescribeCACertificateResponse DescribeCACertificate(DescribeCACertificateRequest request)
+        public virtual DescribeCACertificateResponse DescribeCACertificate(DescribeCACertificateRequest request)
         {
             var marshaller = new DescribeCACertificateRequestMarshaller();
             var unmarshaller = DescribeCACertificateResponseUnmarshaller.Instance;
@@ -2610,7 +2610,7 @@ namespace Amazon.IoT
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeCACertificate
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeCACertificate">REST API Reference for DescribeCACertificate Operation</seealso>
-        public IAsyncResult BeginDescribeCACertificate(DescribeCACertificateRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeCACertificate(DescribeCACertificateRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeCACertificateRequestMarshaller();
             var unmarshaller = DescribeCACertificateResponseUnmarshaller.Instance;
@@ -2627,7 +2627,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>Returns a  DescribeCACertificateResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeCACertificate">REST API Reference for DescribeCACertificate Operation</seealso>
-        public  DescribeCACertificateResponse EndDescribeCACertificate(IAsyncResult asyncResult)
+        public virtual DescribeCACertificateResponse EndDescribeCACertificate(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeCACertificateResponse>(asyncResult);
         }
@@ -2661,7 +2661,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeCertificate">REST API Reference for DescribeCertificate Operation</seealso>
-        public DescribeCertificateResponse DescribeCertificate(string certificateId)
+        public virtual DescribeCertificateResponse DescribeCertificate(string certificateId)
         {
             var request = new DescribeCertificateRequest();
             request.CertificateId = certificateId;
@@ -2694,7 +2694,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeCertificate">REST API Reference for DescribeCertificate Operation</seealso>
-        public DescribeCertificateResponse DescribeCertificate(DescribeCertificateRequest request)
+        public virtual DescribeCertificateResponse DescribeCertificate(DescribeCertificateRequest request)
         {
             var marshaller = new DescribeCertificateRequestMarshaller();
             var unmarshaller = DescribeCertificateResponseUnmarshaller.Instance;
@@ -2714,7 +2714,7 @@ namespace Amazon.IoT
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeCertificate
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeCertificate">REST API Reference for DescribeCertificate Operation</seealso>
-        public IAsyncResult BeginDescribeCertificate(DescribeCertificateRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeCertificate(DescribeCertificateRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeCertificateRequestMarshaller();
             var unmarshaller = DescribeCertificateResponseUnmarshaller.Instance;
@@ -2731,7 +2731,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>Returns a  DescribeCertificateResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeCertificate">REST API Reference for DescribeCertificate Operation</seealso>
-        public  DescribeCertificateResponse EndDescribeCertificate(IAsyncResult asyncResult)
+        public virtual DescribeCertificateResponse EndDescribeCertificate(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeCertificateResponse>(asyncResult);
         }
@@ -2755,7 +2755,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeEndpoint">REST API Reference for DescribeEndpoint Operation</seealso>
-        public DescribeEndpointResponse DescribeEndpoint()
+        public virtual DescribeEndpointResponse DescribeEndpoint()
         {
             var request = new DescribeEndpointRequest();
             return DescribeEndpoint(request);
@@ -2778,7 +2778,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeEndpoint">REST API Reference for DescribeEndpoint Operation</seealso>
-        public DescribeEndpointResponse DescribeEndpoint(DescribeEndpointRequest request)
+        public virtual DescribeEndpointResponse DescribeEndpoint(DescribeEndpointRequest request)
         {
             var marshaller = new DescribeEndpointRequestMarshaller();
             var unmarshaller = DescribeEndpointResponseUnmarshaller.Instance;
@@ -2798,7 +2798,7 @@ namespace Amazon.IoT
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEndpoint
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeEndpoint">REST API Reference for DescribeEndpoint Operation</seealso>
-        public IAsyncResult BeginDescribeEndpoint(DescribeEndpointRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeEndpoint(DescribeEndpointRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeEndpointRequestMarshaller();
             var unmarshaller = DescribeEndpointResponseUnmarshaller.Instance;
@@ -2815,7 +2815,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>Returns a  DescribeEndpointResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeEndpoint">REST API Reference for DescribeEndpoint Operation</seealso>
-        public  DescribeEndpointResponse EndDescribeEndpoint(IAsyncResult asyncResult)
+        public virtual DescribeEndpointResponse EndDescribeEndpoint(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeEndpointResponse>(asyncResult);
         }
@@ -2849,7 +2849,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeThing">REST API Reference for DescribeThing Operation</seealso>
-        public DescribeThingResponse DescribeThing(string thingName)
+        public virtual DescribeThingResponse DescribeThing(string thingName)
         {
             var request = new DescribeThingRequest();
             request.ThingName = thingName;
@@ -2882,7 +2882,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeThing">REST API Reference for DescribeThing Operation</seealso>
-        public DescribeThingResponse DescribeThing(DescribeThingRequest request)
+        public virtual DescribeThingResponse DescribeThing(DescribeThingRequest request)
         {
             var marshaller = new DescribeThingRequestMarshaller();
             var unmarshaller = DescribeThingResponseUnmarshaller.Instance;
@@ -2902,7 +2902,7 @@ namespace Amazon.IoT
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeThing
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeThing">REST API Reference for DescribeThing Operation</seealso>
-        public IAsyncResult BeginDescribeThing(DescribeThingRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeThing(DescribeThingRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeThingRequestMarshaller();
             var unmarshaller = DescribeThingResponseUnmarshaller.Instance;
@@ -2919,7 +2919,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>Returns a  DescribeThingResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeThing">REST API Reference for DescribeThing Operation</seealso>
-        public  DescribeThingResponse EndDescribeThing(IAsyncResult asyncResult)
+        public virtual DescribeThingResponse EndDescribeThing(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeThingResponse>(asyncResult);
         }
@@ -2953,7 +2953,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeThingType">REST API Reference for DescribeThingType Operation</seealso>
-        public DescribeThingTypeResponse DescribeThingType(DescribeThingTypeRequest request)
+        public virtual DescribeThingTypeResponse DescribeThingType(DescribeThingTypeRequest request)
         {
             var marshaller = new DescribeThingTypeRequestMarshaller();
             var unmarshaller = DescribeThingTypeResponseUnmarshaller.Instance;
@@ -2973,7 +2973,7 @@ namespace Amazon.IoT
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeThingType
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeThingType">REST API Reference for DescribeThingType Operation</seealso>
-        public IAsyncResult BeginDescribeThingType(DescribeThingTypeRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeThingType(DescribeThingTypeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeThingTypeRequestMarshaller();
             var unmarshaller = DescribeThingTypeResponseUnmarshaller.Instance;
@@ -2990,7 +2990,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>Returns a  DescribeThingTypeResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeThingType">REST API Reference for DescribeThingType Operation</seealso>
-        public  DescribeThingTypeResponse EndDescribeThingType(IAsyncResult asyncResult)
+        public virtual DescribeThingTypeResponse EndDescribeThingType(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeThingTypeResponse>(asyncResult);
         }
@@ -3025,7 +3025,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DetachPrincipalPolicy">REST API Reference for DetachPrincipalPolicy Operation</seealso>
-        public DetachPrincipalPolicyResponse DetachPrincipalPolicy(string policyName, string principal)
+        public virtual DetachPrincipalPolicyResponse DetachPrincipalPolicy(string policyName, string principal)
         {
             var request = new DetachPrincipalPolicyRequest();
             request.PolicyName = policyName;
@@ -3059,7 +3059,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DetachPrincipalPolicy">REST API Reference for DetachPrincipalPolicy Operation</seealso>
-        public DetachPrincipalPolicyResponse DetachPrincipalPolicy(DetachPrincipalPolicyRequest request)
+        public virtual DetachPrincipalPolicyResponse DetachPrincipalPolicy(DetachPrincipalPolicyRequest request)
         {
             var marshaller = new DetachPrincipalPolicyRequestMarshaller();
             var unmarshaller = DetachPrincipalPolicyResponseUnmarshaller.Instance;
@@ -3079,7 +3079,7 @@ namespace Amazon.IoT
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDetachPrincipalPolicy
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DetachPrincipalPolicy">REST API Reference for DetachPrincipalPolicy Operation</seealso>
-        public IAsyncResult BeginDetachPrincipalPolicy(DetachPrincipalPolicyRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDetachPrincipalPolicy(DetachPrincipalPolicyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DetachPrincipalPolicyRequestMarshaller();
             var unmarshaller = DetachPrincipalPolicyResponseUnmarshaller.Instance;
@@ -3096,7 +3096,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>Returns a  DetachPrincipalPolicyResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DetachPrincipalPolicy">REST API Reference for DetachPrincipalPolicy Operation</seealso>
-        public  DetachPrincipalPolicyResponse EndDetachPrincipalPolicy(IAsyncResult asyncResult)
+        public virtual DetachPrincipalPolicyResponse EndDetachPrincipalPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<DetachPrincipalPolicyResponse>(asyncResult);
         }
@@ -3131,7 +3131,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DetachThingPrincipal">REST API Reference for DetachThingPrincipal Operation</seealso>
-        public DetachThingPrincipalResponse DetachThingPrincipal(string thingName, string principal)
+        public virtual DetachThingPrincipalResponse DetachThingPrincipal(string thingName, string principal)
         {
             var request = new DetachThingPrincipalRequest();
             request.ThingName = thingName;
@@ -3165,7 +3165,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DetachThingPrincipal">REST API Reference for DetachThingPrincipal Operation</seealso>
-        public DetachThingPrincipalResponse DetachThingPrincipal(DetachThingPrincipalRequest request)
+        public virtual DetachThingPrincipalResponse DetachThingPrincipal(DetachThingPrincipalRequest request)
         {
             var marshaller = new DetachThingPrincipalRequestMarshaller();
             var unmarshaller = DetachThingPrincipalResponseUnmarshaller.Instance;
@@ -3185,7 +3185,7 @@ namespace Amazon.IoT
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDetachThingPrincipal
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DetachThingPrincipal">REST API Reference for DetachThingPrincipal Operation</seealso>
-        public IAsyncResult BeginDetachThingPrincipal(DetachThingPrincipalRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDetachThingPrincipal(DetachThingPrincipalRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DetachThingPrincipalRequestMarshaller();
             var unmarshaller = DetachThingPrincipalResponseUnmarshaller.Instance;
@@ -3202,7 +3202,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>Returns a  DetachThingPrincipalResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DetachThingPrincipal">REST API Reference for DetachThingPrincipal Operation</seealso>
-        public  DetachThingPrincipalResponse EndDetachThingPrincipal(IAsyncResult asyncResult)
+        public virtual DetachThingPrincipalResponse EndDetachThingPrincipal(IAsyncResult asyncResult)
         {
             return EndInvoke<DetachThingPrincipalResponse>(asyncResult);
         }
@@ -3230,7 +3230,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DisableTopicRule">REST API Reference for DisableTopicRule Operation</seealso>
-        public DisableTopicRuleResponse DisableTopicRule(DisableTopicRuleRequest request)
+        public virtual DisableTopicRuleResponse DisableTopicRule(DisableTopicRuleRequest request)
         {
             var marshaller = new DisableTopicRuleRequestMarshaller();
             var unmarshaller = DisableTopicRuleResponseUnmarshaller.Instance;
@@ -3250,7 +3250,7 @@ namespace Amazon.IoT
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableTopicRule
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DisableTopicRule">REST API Reference for DisableTopicRule Operation</seealso>
-        public IAsyncResult BeginDisableTopicRule(DisableTopicRuleRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDisableTopicRule(DisableTopicRuleRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DisableTopicRuleRequestMarshaller();
             var unmarshaller = DisableTopicRuleResponseUnmarshaller.Instance;
@@ -3267,7 +3267,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>Returns a  DisableTopicRuleResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DisableTopicRule">REST API Reference for DisableTopicRule Operation</seealso>
-        public  DisableTopicRuleResponse EndDisableTopicRule(IAsyncResult asyncResult)
+        public virtual DisableTopicRuleResponse EndDisableTopicRule(IAsyncResult asyncResult)
         {
             return EndInvoke<DisableTopicRuleResponse>(asyncResult);
         }
@@ -3295,7 +3295,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/EnableTopicRule">REST API Reference for EnableTopicRule Operation</seealso>
-        public EnableTopicRuleResponse EnableTopicRule(EnableTopicRuleRequest request)
+        public virtual EnableTopicRuleResponse EnableTopicRule(EnableTopicRuleRequest request)
         {
             var marshaller = new EnableTopicRuleRequestMarshaller();
             var unmarshaller = EnableTopicRuleResponseUnmarshaller.Instance;
@@ -3315,7 +3315,7 @@ namespace Amazon.IoT
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableTopicRule
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/EnableTopicRule">REST API Reference for EnableTopicRule Operation</seealso>
-        public IAsyncResult BeginEnableTopicRule(EnableTopicRuleRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginEnableTopicRule(EnableTopicRuleRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new EnableTopicRuleRequestMarshaller();
             var unmarshaller = EnableTopicRuleResponseUnmarshaller.Instance;
@@ -3332,7 +3332,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>Returns a  EnableTopicRuleResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/EnableTopicRule">REST API Reference for EnableTopicRule Operation</seealso>
-        public  EnableTopicRuleResponse EndEnableTopicRule(IAsyncResult asyncResult)
+        public virtual EnableTopicRuleResponse EndEnableTopicRule(IAsyncResult asyncResult)
         {
             return EndInvoke<EnableTopicRuleResponse>(asyncResult);
         }
@@ -3357,7 +3357,7 @@ namespace Amazon.IoT
         /// The service is temporarily unavailable.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetLoggingOptions">REST API Reference for GetLoggingOptions Operation</seealso>
-        public GetLoggingOptionsResponse GetLoggingOptions(GetLoggingOptionsRequest request)
+        public virtual GetLoggingOptionsResponse GetLoggingOptions(GetLoggingOptionsRequest request)
         {
             var marshaller = new GetLoggingOptionsRequestMarshaller();
             var unmarshaller = GetLoggingOptionsResponseUnmarshaller.Instance;
@@ -3377,7 +3377,7 @@ namespace Amazon.IoT
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetLoggingOptions
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetLoggingOptions">REST API Reference for GetLoggingOptions Operation</seealso>
-        public IAsyncResult BeginGetLoggingOptions(GetLoggingOptionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetLoggingOptions(GetLoggingOptionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetLoggingOptionsRequestMarshaller();
             var unmarshaller = GetLoggingOptionsResponseUnmarshaller.Instance;
@@ -3394,7 +3394,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>Returns a  GetLoggingOptionsResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetLoggingOptions">REST API Reference for GetLoggingOptions Operation</seealso>
-        public  GetLoggingOptionsResponse EndGetLoggingOptions(IAsyncResult asyncResult)
+        public virtual GetLoggingOptionsResponse EndGetLoggingOptions(IAsyncResult asyncResult)
         {
             return EndInvoke<GetLoggingOptionsResponse>(asyncResult);
         }
@@ -3429,7 +3429,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
-        public GetPolicyResponse GetPolicy(string policyName)
+        public virtual GetPolicyResponse GetPolicy(string policyName)
         {
             var request = new GetPolicyRequest();
             request.PolicyName = policyName;
@@ -3463,7 +3463,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
-        public GetPolicyResponse GetPolicy(GetPolicyRequest request)
+        public virtual GetPolicyResponse GetPolicy(GetPolicyRequest request)
         {
             var marshaller = new GetPolicyRequestMarshaller();
             var unmarshaller = GetPolicyResponseUnmarshaller.Instance;
@@ -3483,7 +3483,7 @@ namespace Amazon.IoT
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPolicy
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
-        public IAsyncResult BeginGetPolicy(GetPolicyRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetPolicy(GetPolicyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetPolicyRequestMarshaller();
             var unmarshaller = GetPolicyResponseUnmarshaller.Instance;
@@ -3500,7 +3500,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>Returns a  GetPolicyResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
-        public  GetPolicyResponse EndGetPolicy(IAsyncResult asyncResult)
+        public virtual GetPolicyResponse EndGetPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<GetPolicyResponse>(asyncResult);
         }
@@ -3535,7 +3535,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPolicyVersion">REST API Reference for GetPolicyVersion Operation</seealso>
-        public GetPolicyVersionResponse GetPolicyVersion(string policyName, string policyVersionId)
+        public virtual GetPolicyVersionResponse GetPolicyVersion(string policyName, string policyVersionId)
         {
             var request = new GetPolicyVersionRequest();
             request.PolicyName = policyName;
@@ -3569,7 +3569,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPolicyVersion">REST API Reference for GetPolicyVersion Operation</seealso>
-        public GetPolicyVersionResponse GetPolicyVersion(GetPolicyVersionRequest request)
+        public virtual GetPolicyVersionResponse GetPolicyVersion(GetPolicyVersionRequest request)
         {
             var marshaller = new GetPolicyVersionRequestMarshaller();
             var unmarshaller = GetPolicyVersionResponseUnmarshaller.Instance;
@@ -3589,7 +3589,7 @@ namespace Amazon.IoT
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPolicyVersion
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPolicyVersion">REST API Reference for GetPolicyVersion Operation</seealso>
-        public IAsyncResult BeginGetPolicyVersion(GetPolicyVersionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetPolicyVersion(GetPolicyVersionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetPolicyVersionRequestMarshaller();
             var unmarshaller = GetPolicyVersionResponseUnmarshaller.Instance;
@@ -3606,7 +3606,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>Returns a  GetPolicyVersionResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPolicyVersion">REST API Reference for GetPolicyVersion Operation</seealso>
-        public  GetPolicyVersionResponse EndGetPolicyVersion(IAsyncResult asyncResult)
+        public virtual GetPolicyVersionResponse EndGetPolicyVersion(IAsyncResult asyncResult)
         {
             return EndInvoke<GetPolicyVersionResponse>(asyncResult);
         }
@@ -3637,7 +3637,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetRegistrationCode">REST API Reference for GetRegistrationCode Operation</seealso>
-        public GetRegistrationCodeResponse GetRegistrationCode(GetRegistrationCodeRequest request)
+        public virtual GetRegistrationCodeResponse GetRegistrationCode(GetRegistrationCodeRequest request)
         {
             var marshaller = new GetRegistrationCodeRequestMarshaller();
             var unmarshaller = GetRegistrationCodeResponseUnmarshaller.Instance;
@@ -3657,7 +3657,7 @@ namespace Amazon.IoT
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRegistrationCode
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetRegistrationCode">REST API Reference for GetRegistrationCode Operation</seealso>
-        public IAsyncResult BeginGetRegistrationCode(GetRegistrationCodeRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetRegistrationCode(GetRegistrationCodeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetRegistrationCodeRequestMarshaller();
             var unmarshaller = GetRegistrationCodeResponseUnmarshaller.Instance;
@@ -3674,7 +3674,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>Returns a  GetRegistrationCodeResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetRegistrationCode">REST API Reference for GetRegistrationCode Operation</seealso>
-        public  GetRegistrationCodeResponse EndGetRegistrationCode(IAsyncResult asyncResult)
+        public virtual GetRegistrationCodeResponse EndGetRegistrationCode(IAsyncResult asyncResult)
         {
             return EndInvoke<GetRegistrationCodeResponse>(asyncResult);
         }
@@ -3702,7 +3702,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetTopicRule">REST API Reference for GetTopicRule Operation</seealso>
-        public GetTopicRuleResponse GetTopicRule(string ruleName)
+        public virtual GetTopicRuleResponse GetTopicRule(string ruleName)
         {
             var request = new GetTopicRuleRequest();
             request.RuleName = ruleName;
@@ -3729,7 +3729,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetTopicRule">REST API Reference for GetTopicRule Operation</seealso>
-        public GetTopicRuleResponse GetTopicRule(GetTopicRuleRequest request)
+        public virtual GetTopicRuleResponse GetTopicRule(GetTopicRuleRequest request)
         {
             var marshaller = new GetTopicRuleRequestMarshaller();
             var unmarshaller = GetTopicRuleResponseUnmarshaller.Instance;
@@ -3749,7 +3749,7 @@ namespace Amazon.IoT
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTopicRule
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetTopicRule">REST API Reference for GetTopicRule Operation</seealso>
-        public IAsyncResult BeginGetTopicRule(GetTopicRuleRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetTopicRule(GetTopicRuleRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetTopicRuleRequestMarshaller();
             var unmarshaller = GetTopicRuleResponseUnmarshaller.Instance;
@@ -3766,7 +3766,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>Returns a  GetTopicRuleResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetTopicRule">REST API Reference for GetTopicRule Operation</seealso>
-        public  GetTopicRuleResponse EndGetTopicRule(IAsyncResult asyncResult)
+        public virtual GetTopicRuleResponse EndGetTopicRule(IAsyncResult asyncResult)
         {
             return EndInvoke<GetTopicRuleResponse>(asyncResult);
         }
@@ -3803,7 +3803,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCACertificates">REST API Reference for ListCACertificates Operation</seealso>
-        public ListCACertificatesResponse ListCACertificates(ListCACertificatesRequest request)
+        public virtual ListCACertificatesResponse ListCACertificates(ListCACertificatesRequest request)
         {
             var marshaller = new ListCACertificatesRequestMarshaller();
             var unmarshaller = ListCACertificatesResponseUnmarshaller.Instance;
@@ -3823,7 +3823,7 @@ namespace Amazon.IoT
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCACertificates
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCACertificates">REST API Reference for ListCACertificates Operation</seealso>
-        public IAsyncResult BeginListCACertificates(ListCACertificatesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListCACertificates(ListCACertificatesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListCACertificatesRequestMarshaller();
             var unmarshaller = ListCACertificatesResponseUnmarshaller.Instance;
@@ -3840,7 +3840,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>Returns a  ListCACertificatesResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCACertificates">REST API Reference for ListCACertificates Operation</seealso>
-        public  ListCACertificatesResponse EndListCACertificates(IAsyncResult asyncResult)
+        public virtual ListCACertificatesResponse EndListCACertificates(IAsyncResult asyncResult)
         {
             return EndInvoke<ListCACertificatesResponse>(asyncResult);
         }
@@ -3876,7 +3876,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCertificates">REST API Reference for ListCertificates Operation</seealso>
-        public ListCertificatesResponse ListCertificates()
+        public virtual ListCertificatesResponse ListCertificates()
         {
             var request = new ListCertificatesRequest();
             return ListCertificates(request);
@@ -3911,7 +3911,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCertificates">REST API Reference for ListCertificates Operation</seealso>
-        public ListCertificatesResponse ListCertificates(ListCertificatesRequest request)
+        public virtual ListCertificatesResponse ListCertificates(ListCertificatesRequest request)
         {
             var marshaller = new ListCertificatesRequestMarshaller();
             var unmarshaller = ListCertificatesResponseUnmarshaller.Instance;
@@ -3931,7 +3931,7 @@ namespace Amazon.IoT
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCertificates
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCertificates">REST API Reference for ListCertificates Operation</seealso>
-        public IAsyncResult BeginListCertificates(ListCertificatesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListCertificates(ListCertificatesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListCertificatesRequestMarshaller();
             var unmarshaller = ListCertificatesResponseUnmarshaller.Instance;
@@ -3948,7 +3948,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>Returns a  ListCertificatesResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCertificates">REST API Reference for ListCertificates Operation</seealso>
-        public  ListCertificatesResponse EndListCertificates(IAsyncResult asyncResult)
+        public virtual ListCertificatesResponse EndListCertificates(IAsyncResult asyncResult)
         {
             return EndInvoke<ListCertificatesResponse>(asyncResult);
         }
@@ -3979,7 +3979,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCertificatesByCA">REST API Reference for ListCertificatesByCA Operation</seealso>
-        public ListCertificatesByCAResponse ListCertificatesByCA(ListCertificatesByCARequest request)
+        public virtual ListCertificatesByCAResponse ListCertificatesByCA(ListCertificatesByCARequest request)
         {
             var marshaller = new ListCertificatesByCARequestMarshaller();
             var unmarshaller = ListCertificatesByCAResponseUnmarshaller.Instance;
@@ -3999,7 +3999,7 @@ namespace Amazon.IoT
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCertificatesByCA
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCertificatesByCA">REST API Reference for ListCertificatesByCA Operation</seealso>
-        public IAsyncResult BeginListCertificatesByCA(ListCertificatesByCARequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListCertificatesByCA(ListCertificatesByCARequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListCertificatesByCARequestMarshaller();
             var unmarshaller = ListCertificatesByCAResponseUnmarshaller.Instance;
@@ -4016,7 +4016,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>Returns a  ListCertificatesByCAResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCertificatesByCA">REST API Reference for ListCertificatesByCA Operation</seealso>
-        public  ListCertificatesByCAResponse EndListCertificatesByCA(IAsyncResult asyncResult)
+        public virtual ListCertificatesByCAResponse EndListCertificatesByCA(IAsyncResult asyncResult)
         {
             return EndInvoke<ListCertificatesByCAResponse>(asyncResult);
         }
@@ -4047,7 +4047,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListOutgoingCertificates">REST API Reference for ListOutgoingCertificates Operation</seealso>
-        public ListOutgoingCertificatesResponse ListOutgoingCertificates(ListOutgoingCertificatesRequest request)
+        public virtual ListOutgoingCertificatesResponse ListOutgoingCertificates(ListOutgoingCertificatesRequest request)
         {
             var marshaller = new ListOutgoingCertificatesRequestMarshaller();
             var unmarshaller = ListOutgoingCertificatesResponseUnmarshaller.Instance;
@@ -4067,7 +4067,7 @@ namespace Amazon.IoT
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListOutgoingCertificates
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListOutgoingCertificates">REST API Reference for ListOutgoingCertificates Operation</seealso>
-        public IAsyncResult BeginListOutgoingCertificates(ListOutgoingCertificatesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListOutgoingCertificates(ListOutgoingCertificatesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListOutgoingCertificatesRequestMarshaller();
             var unmarshaller = ListOutgoingCertificatesResponseUnmarshaller.Instance;
@@ -4084,7 +4084,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>Returns a  ListOutgoingCertificatesResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListOutgoingCertificates">REST API Reference for ListOutgoingCertificates Operation</seealso>
-        public  ListOutgoingCertificatesResponse EndListOutgoingCertificates(IAsyncResult asyncResult)
+        public virtual ListOutgoingCertificatesResponse EndListOutgoingCertificates(IAsyncResult asyncResult)
         {
             return EndInvoke<ListOutgoingCertificatesResponse>(asyncResult);
         }
@@ -4114,7 +4114,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPolicies">REST API Reference for ListPolicies Operation</seealso>
-        public ListPoliciesResponse ListPolicies()
+        public virtual ListPoliciesResponse ListPolicies()
         {
             var request = new ListPoliciesRequest();
             return ListPolicies(request);
@@ -4143,7 +4143,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPolicies">REST API Reference for ListPolicies Operation</seealso>
-        public ListPoliciesResponse ListPolicies(ListPoliciesRequest request)
+        public virtual ListPoliciesResponse ListPolicies(ListPoliciesRequest request)
         {
             var marshaller = new ListPoliciesRequestMarshaller();
             var unmarshaller = ListPoliciesResponseUnmarshaller.Instance;
@@ -4163,7 +4163,7 @@ namespace Amazon.IoT
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPolicies
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPolicies">REST API Reference for ListPolicies Operation</seealso>
-        public IAsyncResult BeginListPolicies(ListPoliciesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListPolicies(ListPoliciesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListPoliciesRequestMarshaller();
             var unmarshaller = ListPoliciesResponseUnmarshaller.Instance;
@@ -4180,7 +4180,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>Returns a  ListPoliciesResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPolicies">REST API Reference for ListPolicies Operation</seealso>
-        public  ListPoliciesResponse EndListPolicies(IAsyncResult asyncResult)
+        public virtual ListPoliciesResponse EndListPolicies(IAsyncResult asyncResult)
         {
             return EndInvoke<ListPoliciesResponse>(asyncResult);
         }
@@ -4214,7 +4214,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPolicyPrincipals">REST API Reference for ListPolicyPrincipals Operation</seealso>
-        public ListPolicyPrincipalsResponse ListPolicyPrincipals(ListPolicyPrincipalsRequest request)
+        public virtual ListPolicyPrincipalsResponse ListPolicyPrincipals(ListPolicyPrincipalsRequest request)
         {
             var marshaller = new ListPolicyPrincipalsRequestMarshaller();
             var unmarshaller = ListPolicyPrincipalsResponseUnmarshaller.Instance;
@@ -4234,7 +4234,7 @@ namespace Amazon.IoT
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPolicyPrincipals
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPolicyPrincipals">REST API Reference for ListPolicyPrincipals Operation</seealso>
-        public IAsyncResult BeginListPolicyPrincipals(ListPolicyPrincipalsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListPolicyPrincipals(ListPolicyPrincipalsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListPolicyPrincipalsRequestMarshaller();
             var unmarshaller = ListPolicyPrincipalsResponseUnmarshaller.Instance;
@@ -4251,7 +4251,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>Returns a  ListPolicyPrincipalsResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPolicyPrincipals">REST API Reference for ListPolicyPrincipals Operation</seealso>
-        public  ListPolicyPrincipalsResponse EndListPolicyPrincipals(IAsyncResult asyncResult)
+        public virtual ListPolicyPrincipalsResponse EndListPolicyPrincipals(IAsyncResult asyncResult)
         {
             return EndInvoke<ListPolicyPrincipalsResponse>(asyncResult);
         }
@@ -4285,7 +4285,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPolicyVersions">REST API Reference for ListPolicyVersions Operation</seealso>
-        public ListPolicyVersionsResponse ListPolicyVersions(string policyName)
+        public virtual ListPolicyVersionsResponse ListPolicyVersions(string policyName)
         {
             var request = new ListPolicyVersionsRequest();
             request.PolicyName = policyName;
@@ -4318,7 +4318,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPolicyVersions">REST API Reference for ListPolicyVersions Operation</seealso>
-        public ListPolicyVersionsResponse ListPolicyVersions(ListPolicyVersionsRequest request)
+        public virtual ListPolicyVersionsResponse ListPolicyVersions(ListPolicyVersionsRequest request)
         {
             var marshaller = new ListPolicyVersionsRequestMarshaller();
             var unmarshaller = ListPolicyVersionsResponseUnmarshaller.Instance;
@@ -4338,7 +4338,7 @@ namespace Amazon.IoT
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPolicyVersions
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPolicyVersions">REST API Reference for ListPolicyVersions Operation</seealso>
-        public IAsyncResult BeginListPolicyVersions(ListPolicyVersionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListPolicyVersions(ListPolicyVersionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListPolicyVersionsRequestMarshaller();
             var unmarshaller = ListPolicyVersionsResponseUnmarshaller.Instance;
@@ -4355,7 +4355,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>Returns a  ListPolicyVersionsResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPolicyVersions">REST API Reference for ListPolicyVersions Operation</seealso>
-        public  ListPolicyVersionsResponse EndListPolicyVersions(IAsyncResult asyncResult)
+        public virtual ListPolicyVersionsResponse EndListPolicyVersions(IAsyncResult asyncResult)
         {
             return EndInvoke<ListPolicyVersionsResponse>(asyncResult);
         }
@@ -4391,7 +4391,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPrincipalPolicies">REST API Reference for ListPrincipalPolicies Operation</seealso>
-        public ListPrincipalPoliciesResponse ListPrincipalPolicies(string principal)
+        public virtual ListPrincipalPoliciesResponse ListPrincipalPolicies(string principal)
         {
             var request = new ListPrincipalPoliciesRequest();
             request.Principal = principal;
@@ -4426,7 +4426,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPrincipalPolicies">REST API Reference for ListPrincipalPolicies Operation</seealso>
-        public ListPrincipalPoliciesResponse ListPrincipalPolicies(ListPrincipalPoliciesRequest request)
+        public virtual ListPrincipalPoliciesResponse ListPrincipalPolicies(ListPrincipalPoliciesRequest request)
         {
             var marshaller = new ListPrincipalPoliciesRequestMarshaller();
             var unmarshaller = ListPrincipalPoliciesResponseUnmarshaller.Instance;
@@ -4446,7 +4446,7 @@ namespace Amazon.IoT
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPrincipalPolicies
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPrincipalPolicies">REST API Reference for ListPrincipalPolicies Operation</seealso>
-        public IAsyncResult BeginListPrincipalPolicies(ListPrincipalPoliciesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListPrincipalPolicies(ListPrincipalPoliciesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListPrincipalPoliciesRequestMarshaller();
             var unmarshaller = ListPrincipalPoliciesResponseUnmarshaller.Instance;
@@ -4463,7 +4463,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>Returns a  ListPrincipalPoliciesResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPrincipalPolicies">REST API Reference for ListPrincipalPolicies Operation</seealso>
-        public  ListPrincipalPoliciesResponse EndListPrincipalPolicies(IAsyncResult asyncResult)
+        public virtual ListPrincipalPoliciesResponse EndListPrincipalPolicies(IAsyncResult asyncResult)
         {
             return EndInvoke<ListPrincipalPoliciesResponse>(asyncResult);
         }
@@ -4497,7 +4497,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPrincipalThings">REST API Reference for ListPrincipalThings Operation</seealso>
-        public ListPrincipalThingsResponse ListPrincipalThings(string principal)
+        public virtual ListPrincipalThingsResponse ListPrincipalThings(string principal)
         {
             var request = new ListPrincipalThingsRequest();
             request.Principal = principal;
@@ -4530,7 +4530,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPrincipalThings">REST API Reference for ListPrincipalThings Operation</seealso>
-        public ListPrincipalThingsResponse ListPrincipalThings(ListPrincipalThingsRequest request)
+        public virtual ListPrincipalThingsResponse ListPrincipalThings(ListPrincipalThingsRequest request)
         {
             var marshaller = new ListPrincipalThingsRequestMarshaller();
             var unmarshaller = ListPrincipalThingsResponseUnmarshaller.Instance;
@@ -4550,7 +4550,7 @@ namespace Amazon.IoT
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPrincipalThings
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPrincipalThings">REST API Reference for ListPrincipalThings Operation</seealso>
-        public IAsyncResult BeginListPrincipalThings(ListPrincipalThingsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListPrincipalThings(ListPrincipalThingsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListPrincipalThingsRequestMarshaller();
             var unmarshaller = ListPrincipalThingsResponseUnmarshaller.Instance;
@@ -4567,7 +4567,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>Returns a  ListPrincipalThingsResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPrincipalThings">REST API Reference for ListPrincipalThings Operation</seealso>
-        public  ListPrincipalThingsResponse EndListPrincipalThings(IAsyncResult asyncResult)
+        public virtual ListPrincipalThingsResponse EndListPrincipalThings(IAsyncResult asyncResult)
         {
             return EndInvoke<ListPrincipalThingsResponse>(asyncResult);
         }
@@ -4601,7 +4601,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingPrincipals">REST API Reference for ListThingPrincipals Operation</seealso>
-        public ListThingPrincipalsResponse ListThingPrincipals(string thingName)
+        public virtual ListThingPrincipalsResponse ListThingPrincipals(string thingName)
         {
             var request = new ListThingPrincipalsRequest();
             request.ThingName = thingName;
@@ -4634,7 +4634,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingPrincipals">REST API Reference for ListThingPrincipals Operation</seealso>
-        public ListThingPrincipalsResponse ListThingPrincipals(ListThingPrincipalsRequest request)
+        public virtual ListThingPrincipalsResponse ListThingPrincipals(ListThingPrincipalsRequest request)
         {
             var marshaller = new ListThingPrincipalsRequestMarshaller();
             var unmarshaller = ListThingPrincipalsResponseUnmarshaller.Instance;
@@ -4654,7 +4654,7 @@ namespace Amazon.IoT
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListThingPrincipals
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingPrincipals">REST API Reference for ListThingPrincipals Operation</seealso>
-        public IAsyncResult BeginListThingPrincipals(ListThingPrincipalsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListThingPrincipals(ListThingPrincipalsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListThingPrincipalsRequestMarshaller();
             var unmarshaller = ListThingPrincipalsResponseUnmarshaller.Instance;
@@ -4671,7 +4671,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>Returns a  ListThingPrincipalsResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingPrincipals">REST API Reference for ListThingPrincipals Operation</seealso>
-        public  ListThingPrincipalsResponse EndListThingPrincipals(IAsyncResult asyncResult)
+        public virtual ListThingPrincipalsResponse EndListThingPrincipals(IAsyncResult asyncResult)
         {
             return EndInvoke<ListThingPrincipalsResponse>(asyncResult);
         }
@@ -4704,7 +4704,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThings">REST API Reference for ListThings Operation</seealso>
-        public ListThingsResponse ListThings()
+        public virtual ListThingsResponse ListThings()
         {
             var request = new ListThingsRequest();
             return ListThings(request);
@@ -4736,7 +4736,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThings">REST API Reference for ListThings Operation</seealso>
-        public ListThingsResponse ListThings(ListThingsRequest request)
+        public virtual ListThingsResponse ListThings(ListThingsRequest request)
         {
             var marshaller = new ListThingsRequestMarshaller();
             var unmarshaller = ListThingsResponseUnmarshaller.Instance;
@@ -4756,7 +4756,7 @@ namespace Amazon.IoT
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListThings
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThings">REST API Reference for ListThings Operation</seealso>
-        public IAsyncResult BeginListThings(ListThingsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListThings(ListThingsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListThingsRequestMarshaller();
             var unmarshaller = ListThingsResponseUnmarshaller.Instance;
@@ -4773,7 +4773,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>Returns a  ListThingsResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThings">REST API Reference for ListThings Operation</seealso>
-        public  ListThingsResponse EndListThings(IAsyncResult asyncResult)
+        public virtual ListThingsResponse EndListThings(IAsyncResult asyncResult)
         {
             return EndInvoke<ListThingsResponse>(asyncResult);
         }
@@ -4804,7 +4804,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingTypes">REST API Reference for ListThingTypes Operation</seealso>
-        public ListThingTypesResponse ListThingTypes(ListThingTypesRequest request)
+        public virtual ListThingTypesResponse ListThingTypes(ListThingTypesRequest request)
         {
             var marshaller = new ListThingTypesRequestMarshaller();
             var unmarshaller = ListThingTypesResponseUnmarshaller.Instance;
@@ -4824,7 +4824,7 @@ namespace Amazon.IoT
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListThingTypes
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingTypes">REST API Reference for ListThingTypes Operation</seealso>
-        public IAsyncResult BeginListThingTypes(ListThingTypesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListThingTypes(ListThingTypesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListThingTypesRequestMarshaller();
             var unmarshaller = ListThingTypesResponseUnmarshaller.Instance;
@@ -4841,7 +4841,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>Returns a  ListThingTypesResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingTypes">REST API Reference for ListThingTypes Operation</seealso>
-        public  ListThingTypesResponse EndListThingTypes(IAsyncResult asyncResult)
+        public virtual ListThingTypesResponse EndListThingTypes(IAsyncResult asyncResult)
         {
             return EndInvoke<ListThingTypesResponse>(asyncResult);
         }
@@ -4866,7 +4866,7 @@ namespace Amazon.IoT
         /// The service is temporarily unavailable.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListTopicRules">REST API Reference for ListTopicRules Operation</seealso>
-        public ListTopicRulesResponse ListTopicRules(string topic)
+        public virtual ListTopicRulesResponse ListTopicRules(string topic)
         {
             var request = new ListTopicRulesRequest();
             request.Topic = topic;
@@ -4890,7 +4890,7 @@ namespace Amazon.IoT
         /// The service is temporarily unavailable.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListTopicRules">REST API Reference for ListTopicRules Operation</seealso>
-        public ListTopicRulesResponse ListTopicRules(ListTopicRulesRequest request)
+        public virtual ListTopicRulesResponse ListTopicRules(ListTopicRulesRequest request)
         {
             var marshaller = new ListTopicRulesRequestMarshaller();
             var unmarshaller = ListTopicRulesResponseUnmarshaller.Instance;
@@ -4910,7 +4910,7 @@ namespace Amazon.IoT
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTopicRules
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListTopicRules">REST API Reference for ListTopicRules Operation</seealso>
-        public IAsyncResult BeginListTopicRules(ListTopicRulesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListTopicRules(ListTopicRulesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListTopicRulesRequestMarshaller();
             var unmarshaller = ListTopicRulesResponseUnmarshaller.Instance;
@@ -4927,7 +4927,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>Returns a  ListTopicRulesResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListTopicRules">REST API Reference for ListTopicRules Operation</seealso>
-        public  ListTopicRulesResponse EndListTopicRules(IAsyncResult asyncResult)
+        public virtual ListTopicRulesResponse EndListTopicRules(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTopicRulesResponse>(asyncResult);
         }
@@ -4975,7 +4975,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RegisterCACertificate">REST API Reference for RegisterCACertificate Operation</seealso>
-        public RegisterCACertificateResponse RegisterCACertificate(RegisterCACertificateRequest request)
+        public virtual RegisterCACertificateResponse RegisterCACertificate(RegisterCACertificateRequest request)
         {
             var marshaller = new RegisterCACertificateRequestMarshaller();
             var unmarshaller = RegisterCACertificateResponseUnmarshaller.Instance;
@@ -4995,7 +4995,7 @@ namespace Amazon.IoT
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterCACertificate
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RegisterCACertificate">REST API Reference for RegisterCACertificate Operation</seealso>
-        public IAsyncResult BeginRegisterCACertificate(RegisterCACertificateRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginRegisterCACertificate(RegisterCACertificateRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RegisterCACertificateRequestMarshaller();
             var unmarshaller = RegisterCACertificateResponseUnmarshaller.Instance;
@@ -5012,7 +5012,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>Returns a  RegisterCACertificateResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RegisterCACertificate">REST API Reference for RegisterCACertificate Operation</seealso>
-        public  RegisterCACertificateResponse EndRegisterCACertificate(IAsyncResult asyncResult)
+        public virtual RegisterCACertificateResponse EndRegisterCACertificate(IAsyncResult asyncResult)
         {
             return EndInvoke<RegisterCACertificateResponse>(asyncResult);
         }
@@ -5059,7 +5059,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RegisterCertificate">REST API Reference for RegisterCertificate Operation</seealso>
-        public RegisterCertificateResponse RegisterCertificate(RegisterCertificateRequest request)
+        public virtual RegisterCertificateResponse RegisterCertificate(RegisterCertificateRequest request)
         {
             var marshaller = new RegisterCertificateRequestMarshaller();
             var unmarshaller = RegisterCertificateResponseUnmarshaller.Instance;
@@ -5079,7 +5079,7 @@ namespace Amazon.IoT
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterCertificate
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RegisterCertificate">REST API Reference for RegisterCertificate Operation</seealso>
-        public IAsyncResult BeginRegisterCertificate(RegisterCertificateRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginRegisterCertificate(RegisterCertificateRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RegisterCertificateRequestMarshaller();
             var unmarshaller = RegisterCertificateResponseUnmarshaller.Instance;
@@ -5096,7 +5096,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>Returns a  RegisterCertificateResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RegisterCertificate">REST API Reference for RegisterCertificate Operation</seealso>
-        public  RegisterCertificateResponse EndRegisterCertificate(IAsyncResult asyncResult)
+        public virtual RegisterCertificateResponse EndRegisterCertificate(IAsyncResult asyncResult)
         {
             return EndInvoke<RegisterCertificateResponse>(asyncResult);
         }
@@ -5145,7 +5145,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RejectCertificateTransfer">REST API Reference for RejectCertificateTransfer Operation</seealso>
-        public RejectCertificateTransferResponse RejectCertificateTransfer(string certificateId)
+        public virtual RejectCertificateTransferResponse RejectCertificateTransfer(string certificateId)
         {
             var request = new RejectCertificateTransferRequest();
             request.CertificateId = certificateId;
@@ -5193,7 +5193,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RejectCertificateTransfer">REST API Reference for RejectCertificateTransfer Operation</seealso>
-        public RejectCertificateTransferResponse RejectCertificateTransfer(RejectCertificateTransferRequest request)
+        public virtual RejectCertificateTransferResponse RejectCertificateTransfer(RejectCertificateTransferRequest request)
         {
             var marshaller = new RejectCertificateTransferRequestMarshaller();
             var unmarshaller = RejectCertificateTransferResponseUnmarshaller.Instance;
@@ -5213,7 +5213,7 @@ namespace Amazon.IoT
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRejectCertificateTransfer
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RejectCertificateTransfer">REST API Reference for RejectCertificateTransfer Operation</seealso>
-        public IAsyncResult BeginRejectCertificateTransfer(RejectCertificateTransferRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginRejectCertificateTransfer(RejectCertificateTransferRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RejectCertificateTransferRequestMarshaller();
             var unmarshaller = RejectCertificateTransferResponseUnmarshaller.Instance;
@@ -5230,7 +5230,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>Returns a  RejectCertificateTransferResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RejectCertificateTransfer">REST API Reference for RejectCertificateTransfer Operation</seealso>
-        public  RejectCertificateTransferResponse EndRejectCertificateTransfer(IAsyncResult asyncResult)
+        public virtual RejectCertificateTransferResponse EndRejectCertificateTransfer(IAsyncResult asyncResult)
         {
             return EndInvoke<RejectCertificateTransferResponse>(asyncResult);
         }
@@ -5263,7 +5263,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ReplaceTopicRule">REST API Reference for ReplaceTopicRule Operation</seealso>
-        public ReplaceTopicRuleResponse ReplaceTopicRule(ReplaceTopicRuleRequest request)
+        public virtual ReplaceTopicRuleResponse ReplaceTopicRule(ReplaceTopicRuleRequest request)
         {
             var marshaller = new ReplaceTopicRuleRequestMarshaller();
             var unmarshaller = ReplaceTopicRuleResponseUnmarshaller.Instance;
@@ -5283,7 +5283,7 @@ namespace Amazon.IoT
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndReplaceTopicRule
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ReplaceTopicRule">REST API Reference for ReplaceTopicRule Operation</seealso>
-        public IAsyncResult BeginReplaceTopicRule(ReplaceTopicRuleRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginReplaceTopicRule(ReplaceTopicRuleRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ReplaceTopicRuleRequestMarshaller();
             var unmarshaller = ReplaceTopicRuleResponseUnmarshaller.Instance;
@@ -5300,7 +5300,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>Returns a  ReplaceTopicRuleResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ReplaceTopicRule">REST API Reference for ReplaceTopicRule Operation</seealso>
-        public  ReplaceTopicRuleResponse EndReplaceTopicRule(IAsyncResult asyncResult)
+        public virtual ReplaceTopicRuleResponse EndReplaceTopicRule(IAsyncResult asyncResult)
         {
             return EndInvoke<ReplaceTopicRuleResponse>(asyncResult);
         }
@@ -5337,7 +5337,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SetDefaultPolicyVersion">REST API Reference for SetDefaultPolicyVersion Operation</seealso>
-        public SetDefaultPolicyVersionResponse SetDefaultPolicyVersion(string policyName, string policyVersionId)
+        public virtual SetDefaultPolicyVersionResponse SetDefaultPolicyVersion(string policyName, string policyVersionId)
         {
             var request = new SetDefaultPolicyVersionRequest();
             request.PolicyName = policyName;
@@ -5373,7 +5373,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SetDefaultPolicyVersion">REST API Reference for SetDefaultPolicyVersion Operation</seealso>
-        public SetDefaultPolicyVersionResponse SetDefaultPolicyVersion(SetDefaultPolicyVersionRequest request)
+        public virtual SetDefaultPolicyVersionResponse SetDefaultPolicyVersion(SetDefaultPolicyVersionRequest request)
         {
             var marshaller = new SetDefaultPolicyVersionRequestMarshaller();
             var unmarshaller = SetDefaultPolicyVersionResponseUnmarshaller.Instance;
@@ -5393,7 +5393,7 @@ namespace Amazon.IoT
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetDefaultPolicyVersion
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SetDefaultPolicyVersion">REST API Reference for SetDefaultPolicyVersion Operation</seealso>
-        public IAsyncResult BeginSetDefaultPolicyVersion(SetDefaultPolicyVersionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginSetDefaultPolicyVersion(SetDefaultPolicyVersionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SetDefaultPolicyVersionRequestMarshaller();
             var unmarshaller = SetDefaultPolicyVersionResponseUnmarshaller.Instance;
@@ -5410,7 +5410,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>Returns a  SetDefaultPolicyVersionResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SetDefaultPolicyVersion">REST API Reference for SetDefaultPolicyVersion Operation</seealso>
-        public  SetDefaultPolicyVersionResponse EndSetDefaultPolicyVersion(IAsyncResult asyncResult)
+        public virtual SetDefaultPolicyVersionResponse EndSetDefaultPolicyVersion(IAsyncResult asyncResult)
         {
             return EndInvoke<SetDefaultPolicyVersionResponse>(asyncResult);
         }
@@ -5435,7 +5435,7 @@ namespace Amazon.IoT
         /// The service is temporarily unavailable.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SetLoggingOptions">REST API Reference for SetLoggingOptions Operation</seealso>
-        public SetLoggingOptionsResponse SetLoggingOptions(SetLoggingOptionsRequest request)
+        public virtual SetLoggingOptionsResponse SetLoggingOptions(SetLoggingOptionsRequest request)
         {
             var marshaller = new SetLoggingOptionsRequestMarshaller();
             var unmarshaller = SetLoggingOptionsResponseUnmarshaller.Instance;
@@ -5455,7 +5455,7 @@ namespace Amazon.IoT
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetLoggingOptions
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SetLoggingOptions">REST API Reference for SetLoggingOptions Operation</seealso>
-        public IAsyncResult BeginSetLoggingOptions(SetLoggingOptionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginSetLoggingOptions(SetLoggingOptionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SetLoggingOptionsRequestMarshaller();
             var unmarshaller = SetLoggingOptionsResponseUnmarshaller.Instance;
@@ -5472,7 +5472,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>Returns a  SetLoggingOptionsResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SetLoggingOptions">REST API Reference for SetLoggingOptions Operation</seealso>
-        public  SetLoggingOptionsResponse EndSetLoggingOptions(IAsyncResult asyncResult)
+        public virtual SetLoggingOptionsResponse EndSetLoggingOptions(IAsyncResult asyncResult)
         {
             return EndInvoke<SetLoggingOptionsResponse>(asyncResult);
         }
@@ -5533,7 +5533,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TransferCertificate">REST API Reference for TransferCertificate Operation</seealso>
-        public TransferCertificateResponse TransferCertificate(string certificateId, string targetAwsAccount)
+        public virtual TransferCertificateResponse TransferCertificate(string certificateId, string targetAwsAccount)
         {
             var request = new TransferCertificateRequest();
             request.CertificateId = certificateId;
@@ -5593,7 +5593,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TransferCertificate">REST API Reference for TransferCertificate Operation</seealso>
-        public TransferCertificateResponse TransferCertificate(TransferCertificateRequest request)
+        public virtual TransferCertificateResponse TransferCertificate(TransferCertificateRequest request)
         {
             var marshaller = new TransferCertificateRequestMarshaller();
             var unmarshaller = TransferCertificateResponseUnmarshaller.Instance;
@@ -5613,7 +5613,7 @@ namespace Amazon.IoT
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTransferCertificate
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TransferCertificate">REST API Reference for TransferCertificate Operation</seealso>
-        public IAsyncResult BeginTransferCertificate(TransferCertificateRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginTransferCertificate(TransferCertificateRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new TransferCertificateRequestMarshaller();
             var unmarshaller = TransferCertificateResponseUnmarshaller.Instance;
@@ -5630,7 +5630,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>Returns a  TransferCertificateResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TransferCertificate">REST API Reference for TransferCertificate Operation</seealso>
-        public  TransferCertificateResponse EndTransferCertificate(IAsyncResult asyncResult)
+        public virtual TransferCertificateResponse EndTransferCertificate(IAsyncResult asyncResult)
         {
             return EndInvoke<TransferCertificateResponse>(asyncResult);
         }
@@ -5664,7 +5664,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateCACertificate">REST API Reference for UpdateCACertificate Operation</seealso>
-        public UpdateCACertificateResponse UpdateCACertificate(UpdateCACertificateRequest request)
+        public virtual UpdateCACertificateResponse UpdateCACertificate(UpdateCACertificateRequest request)
         {
             var marshaller = new UpdateCACertificateRequestMarshaller();
             var unmarshaller = UpdateCACertificateResponseUnmarshaller.Instance;
@@ -5684,7 +5684,7 @@ namespace Amazon.IoT
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateCACertificate
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateCACertificate">REST API Reference for UpdateCACertificate Operation</seealso>
-        public IAsyncResult BeginUpdateCACertificate(UpdateCACertificateRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateCACertificate(UpdateCACertificateRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateCACertificateRequestMarshaller();
             var unmarshaller = UpdateCACertificateResponseUnmarshaller.Instance;
@@ -5701,7 +5701,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>Returns a  UpdateCACertificateResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateCACertificate">REST API Reference for UpdateCACertificate Operation</seealso>
-        public  UpdateCACertificateResponse EndUpdateCACertificate(IAsyncResult asyncResult)
+        public virtual UpdateCACertificateResponse EndUpdateCACertificate(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateCACertificateResponse>(asyncResult);
         }
@@ -5750,7 +5750,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateCertificate">REST API Reference for UpdateCertificate Operation</seealso>
-        public UpdateCertificateResponse UpdateCertificate(string certificateId, CertificateStatus newStatus)
+        public virtual UpdateCertificateResponse UpdateCertificate(string certificateId, CertificateStatus newStatus)
         {
             var request = new UpdateCertificateRequest();
             request.CertificateId = certificateId;
@@ -5798,7 +5798,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateCertificate">REST API Reference for UpdateCertificate Operation</seealso>
-        public UpdateCertificateResponse UpdateCertificate(UpdateCertificateRequest request)
+        public virtual UpdateCertificateResponse UpdateCertificate(UpdateCertificateRequest request)
         {
             var marshaller = new UpdateCertificateRequestMarshaller();
             var unmarshaller = UpdateCertificateResponseUnmarshaller.Instance;
@@ -5818,7 +5818,7 @@ namespace Amazon.IoT
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateCertificate
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateCertificate">REST API Reference for UpdateCertificate Operation</seealso>
-        public IAsyncResult BeginUpdateCertificate(UpdateCertificateRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateCertificate(UpdateCertificateRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateCertificateRequestMarshaller();
             var unmarshaller = UpdateCertificateResponseUnmarshaller.Instance;
@@ -5835,7 +5835,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>Returns a  UpdateCertificateResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateCertificate">REST API Reference for UpdateCertificate Operation</seealso>
-        public  UpdateCertificateResponse EndUpdateCertificate(IAsyncResult asyncResult)
+        public virtual UpdateCertificateResponse EndUpdateCertificate(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateCertificateResponse>(asyncResult);
         }
@@ -5873,7 +5873,7 @@ namespace Amazon.IoT
         /// the version specified with the --version parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateThing">REST API Reference for UpdateThing Operation</seealso>
-        public UpdateThingResponse UpdateThing(UpdateThingRequest request)
+        public virtual UpdateThingResponse UpdateThing(UpdateThingRequest request)
         {
             var marshaller = new UpdateThingRequestMarshaller();
             var unmarshaller = UpdateThingResponseUnmarshaller.Instance;
@@ -5893,7 +5893,7 @@ namespace Amazon.IoT
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateThing
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateThing">REST API Reference for UpdateThing Operation</seealso>
-        public IAsyncResult BeginUpdateThing(UpdateThingRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateThing(UpdateThingRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateThingRequestMarshaller();
             var unmarshaller = UpdateThingResponseUnmarshaller.Instance;
@@ -5910,7 +5910,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>Returns a  UpdateThingResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateThing">REST API Reference for UpdateThing Operation</seealso>
-        public  UpdateThingResponse EndUpdateThing(IAsyncResult asyncResult)
+        public virtual UpdateThingResponse EndUpdateThing(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateThingResponse>(asyncResult);
         }

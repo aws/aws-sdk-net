@@ -331,7 +331,7 @@ namespace Amazon.OpsWorksCM
         /// One or more of the provided request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/AssociateNode">REST API Reference for AssociateNode Operation</seealso>
-        public AssociateNodeResponse AssociateNode(AssociateNodeRequest request)
+        public virtual AssociateNodeResponse AssociateNode(AssociateNodeRequest request)
         {
             var marshaller = new AssociateNodeRequestMarshaller();
             var unmarshaller = AssociateNodeResponseUnmarshaller.Instance;
@@ -351,7 +351,7 @@ namespace Amazon.OpsWorksCM
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateNode
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/AssociateNode">REST API Reference for AssociateNode Operation</seealso>
-        public IAsyncResult BeginAssociateNode(AssociateNodeRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginAssociateNode(AssociateNodeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AssociateNodeRequestMarshaller();
             var unmarshaller = AssociateNodeResponseUnmarshaller.Instance;
@@ -368,7 +368,7 @@ namespace Amazon.OpsWorksCM
         /// 
         /// <returns>Returns a  AssociateNodeResult from OpsWorksCM.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/AssociateNode">REST API Reference for AssociateNode Operation</seealso>
-        public  AssociateNodeResponse EndAssociateNode(IAsyncResult asyncResult)
+        public virtual AssociateNodeResponse EndAssociateNode(IAsyncResult asyncResult)
         {
             return EndInvoke<AssociateNodeResponse>(asyncResult);
         }
@@ -416,7 +416,7 @@ namespace Amazon.OpsWorksCM
         /// One or more of the provided request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/CreateBackup">REST API Reference for CreateBackup Operation</seealso>
-        public CreateBackupResponse CreateBackup(CreateBackupRequest request)
+        public virtual CreateBackupResponse CreateBackup(CreateBackupRequest request)
         {
             var marshaller = new CreateBackupRequestMarshaller();
             var unmarshaller = CreateBackupResponseUnmarshaller.Instance;
@@ -436,7 +436,7 @@ namespace Amazon.OpsWorksCM
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateBackup
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/CreateBackup">REST API Reference for CreateBackup Operation</seealso>
-        public IAsyncResult BeginCreateBackup(CreateBackupRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateBackup(CreateBackupRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateBackupRequestMarshaller();
             var unmarshaller = CreateBackupResponseUnmarshaller.Instance;
@@ -453,7 +453,7 @@ namespace Amazon.OpsWorksCM
         /// 
         /// <returns>Returns a  CreateBackupResult from OpsWorksCM.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/CreateBackup">REST API Reference for CreateBackup Operation</seealso>
-        public  CreateBackupResponse EndCreateBackup(IAsyncResult asyncResult)
+        public virtual CreateBackupResponse EndCreateBackup(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateBackupResponse>(asyncResult);
         }
@@ -511,7 +511,7 @@ namespace Amazon.OpsWorksCM
         /// One or more of the provided request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/CreateServer">REST API Reference for CreateServer Operation</seealso>
-        public CreateServerResponse CreateServer(CreateServerRequest request)
+        public virtual CreateServerResponse CreateServer(CreateServerRequest request)
         {
             var marshaller = new CreateServerRequestMarshaller();
             var unmarshaller = CreateServerResponseUnmarshaller.Instance;
@@ -531,7 +531,7 @@ namespace Amazon.OpsWorksCM
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateServer
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/CreateServer">REST API Reference for CreateServer Operation</seealso>
-        public IAsyncResult BeginCreateServer(CreateServerRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateServer(CreateServerRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateServerRequestMarshaller();
             var unmarshaller = CreateServerResponseUnmarshaller.Instance;
@@ -548,7 +548,7 @@ namespace Amazon.OpsWorksCM
         /// 
         /// <returns>Returns a  CreateServerResult from OpsWorksCM.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/CreateServer">REST API Reference for CreateServer Operation</seealso>
-        public  CreateServerResponse EndCreateServer(IAsyncResult asyncResult)
+        public virtual CreateServerResponse EndCreateServer(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateServerResponse>(asyncResult);
         }
@@ -582,7 +582,7 @@ namespace Amazon.OpsWorksCM
         /// One or more of the provided request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DeleteBackup">REST API Reference for DeleteBackup Operation</seealso>
-        public DeleteBackupResponse DeleteBackup(DeleteBackupRequest request)
+        public virtual DeleteBackupResponse DeleteBackup(DeleteBackupRequest request)
         {
             var marshaller = new DeleteBackupRequestMarshaller();
             var unmarshaller = DeleteBackupResponseUnmarshaller.Instance;
@@ -602,7 +602,7 @@ namespace Amazon.OpsWorksCM
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBackup
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DeleteBackup">REST API Reference for DeleteBackup Operation</seealso>
-        public IAsyncResult BeginDeleteBackup(DeleteBackupRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteBackup(DeleteBackupRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteBackupRequestMarshaller();
             var unmarshaller = DeleteBackupResponseUnmarshaller.Instance;
@@ -619,7 +619,7 @@ namespace Amazon.OpsWorksCM
         /// 
         /// <returns>Returns a  DeleteBackupResult from OpsWorksCM.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DeleteBackup">REST API Reference for DeleteBackup Operation</seealso>
-        public  DeleteBackupResponse EndDeleteBackup(IAsyncResult asyncResult)
+        public virtual DeleteBackupResponse EndDeleteBackup(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteBackupResponse>(asyncResult);
         }
@@ -664,7 +664,7 @@ namespace Amazon.OpsWorksCM
         /// One or more of the provided request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DeleteServer">REST API Reference for DeleteServer Operation</seealso>
-        public DeleteServerResponse DeleteServer(DeleteServerRequest request)
+        public virtual DeleteServerResponse DeleteServer(DeleteServerRequest request)
         {
             var marshaller = new DeleteServerRequestMarshaller();
             var unmarshaller = DeleteServerResponseUnmarshaller.Instance;
@@ -684,7 +684,7 @@ namespace Amazon.OpsWorksCM
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteServer
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DeleteServer">REST API Reference for DeleteServer Operation</seealso>
-        public IAsyncResult BeginDeleteServer(DeleteServerRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteServer(DeleteServerRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteServerRequestMarshaller();
             var unmarshaller = DeleteServerResponseUnmarshaller.Instance;
@@ -701,7 +701,7 @@ namespace Amazon.OpsWorksCM
         /// 
         /// <returns>Returns a  DeleteServerResult from OpsWorksCM.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DeleteServer">REST API Reference for DeleteServer Operation</seealso>
-        public  DeleteServerResponse EndDeleteServer(IAsyncResult asyncResult)
+        public virtual DeleteServerResponse EndDeleteServer(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteServerResponse>(asyncResult);
         }
@@ -723,7 +723,7 @@ namespace Amazon.OpsWorksCM
         /// 
         /// <returns>The response from the DescribeAccountAttributes service method, as returned by OpsWorksCM.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DescribeAccountAttributes">REST API Reference for DescribeAccountAttributes Operation</seealso>
-        public DescribeAccountAttributesResponse DescribeAccountAttributes(DescribeAccountAttributesRequest request)
+        public virtual DescribeAccountAttributesResponse DescribeAccountAttributes(DescribeAccountAttributesRequest request)
         {
             var marshaller = new DescribeAccountAttributesRequestMarshaller();
             var unmarshaller = DescribeAccountAttributesResponseUnmarshaller.Instance;
@@ -743,7 +743,7 @@ namespace Amazon.OpsWorksCM
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAccountAttributes
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DescribeAccountAttributes">REST API Reference for DescribeAccountAttributes Operation</seealso>
-        public IAsyncResult BeginDescribeAccountAttributes(DescribeAccountAttributesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeAccountAttributes(DescribeAccountAttributesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeAccountAttributesRequestMarshaller();
             var unmarshaller = DescribeAccountAttributesResponseUnmarshaller.Instance;
@@ -760,7 +760,7 @@ namespace Amazon.OpsWorksCM
         /// 
         /// <returns>Returns a  DescribeAccountAttributesResult from OpsWorksCM.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DescribeAccountAttributes">REST API Reference for DescribeAccountAttributes Operation</seealso>
-        public  DescribeAccountAttributesResponse EndDescribeAccountAttributes(IAsyncResult asyncResult)
+        public virtual DescribeAccountAttributesResponse EndDescribeAccountAttributes(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeAccountAttributesResponse>(asyncResult);
         }
@@ -797,7 +797,7 @@ namespace Amazon.OpsWorksCM
         /// One or more of the provided request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DescribeBackups">REST API Reference for DescribeBackups Operation</seealso>
-        public DescribeBackupsResponse DescribeBackups(DescribeBackupsRequest request)
+        public virtual DescribeBackupsResponse DescribeBackups(DescribeBackupsRequest request)
         {
             var marshaller = new DescribeBackupsRequestMarshaller();
             var unmarshaller = DescribeBackupsResponseUnmarshaller.Instance;
@@ -817,7 +817,7 @@ namespace Amazon.OpsWorksCM
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeBackups
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DescribeBackups">REST API Reference for DescribeBackups Operation</seealso>
-        public IAsyncResult BeginDescribeBackups(DescribeBackupsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeBackups(DescribeBackupsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeBackupsRequestMarshaller();
             var unmarshaller = DescribeBackupsResponseUnmarshaller.Instance;
@@ -834,7 +834,7 @@ namespace Amazon.OpsWorksCM
         /// 
         /// <returns>Returns a  DescribeBackupsResult from OpsWorksCM.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DescribeBackups">REST API Reference for DescribeBackups Operation</seealso>
-        public  DescribeBackupsResponse EndDescribeBackups(IAsyncResult asyncResult)
+        public virtual DescribeBackupsResponse EndDescribeBackups(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeBackupsResponse>(asyncResult);
         }
@@ -871,7 +871,7 @@ namespace Amazon.OpsWorksCM
         /// One or more of the provided request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
-        public DescribeEventsResponse DescribeEvents(DescribeEventsRequest request)
+        public virtual DescribeEventsResponse DescribeEvents(DescribeEventsRequest request)
         {
             var marshaller = new DescribeEventsRequestMarshaller();
             var unmarshaller = DescribeEventsResponseUnmarshaller.Instance;
@@ -891,7 +891,7 @@ namespace Amazon.OpsWorksCM
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEvents
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
-        public IAsyncResult BeginDescribeEvents(DescribeEventsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeEvents(DescribeEventsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeEventsRequestMarshaller();
             var unmarshaller = DescribeEventsResponseUnmarshaller.Instance;
@@ -908,7 +908,7 @@ namespace Amazon.OpsWorksCM
         /// 
         /// <returns>Returns a  DescribeEventsResult from OpsWorksCM.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
-        public  DescribeEventsResponse EndDescribeEvents(IAsyncResult asyncResult)
+        public virtual DescribeEventsResponse EndDescribeEvents(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeEventsResponse>(asyncResult);
         }
@@ -939,7 +939,7 @@ namespace Amazon.OpsWorksCM
         /// One or more of the provided request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DescribeNodeAssociationStatus">REST API Reference for DescribeNodeAssociationStatus Operation</seealso>
-        public DescribeNodeAssociationStatusResponse DescribeNodeAssociationStatus(DescribeNodeAssociationStatusRequest request)
+        public virtual DescribeNodeAssociationStatusResponse DescribeNodeAssociationStatus(DescribeNodeAssociationStatusRequest request)
         {
             var marshaller = new DescribeNodeAssociationStatusRequestMarshaller();
             var unmarshaller = DescribeNodeAssociationStatusResponseUnmarshaller.Instance;
@@ -959,7 +959,7 @@ namespace Amazon.OpsWorksCM
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeNodeAssociationStatus
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DescribeNodeAssociationStatus">REST API Reference for DescribeNodeAssociationStatus Operation</seealso>
-        public IAsyncResult BeginDescribeNodeAssociationStatus(DescribeNodeAssociationStatusRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeNodeAssociationStatus(DescribeNodeAssociationStatusRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeNodeAssociationStatusRequestMarshaller();
             var unmarshaller = DescribeNodeAssociationStatusResponseUnmarshaller.Instance;
@@ -976,7 +976,7 @@ namespace Amazon.OpsWorksCM
         /// 
         /// <returns>Returns a  DescribeNodeAssociationStatusResult from OpsWorksCM.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DescribeNodeAssociationStatus">REST API Reference for DescribeNodeAssociationStatus Operation</seealso>
-        public  DescribeNodeAssociationStatusResponse EndDescribeNodeAssociationStatus(IAsyncResult asyncResult)
+        public virtual DescribeNodeAssociationStatusResponse EndDescribeNodeAssociationStatus(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeNodeAssociationStatusResponse>(asyncResult);
         }
@@ -1014,7 +1014,7 @@ namespace Amazon.OpsWorksCM
         /// One or more of the provided request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DescribeServers">REST API Reference for DescribeServers Operation</seealso>
-        public DescribeServersResponse DescribeServers(DescribeServersRequest request)
+        public virtual DescribeServersResponse DescribeServers(DescribeServersRequest request)
         {
             var marshaller = new DescribeServersRequestMarshaller();
             var unmarshaller = DescribeServersResponseUnmarshaller.Instance;
@@ -1034,7 +1034,7 @@ namespace Amazon.OpsWorksCM
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeServers
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DescribeServers">REST API Reference for DescribeServers Operation</seealso>
-        public IAsyncResult BeginDescribeServers(DescribeServersRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeServers(DescribeServersRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeServersRequestMarshaller();
             var unmarshaller = DescribeServersResponseUnmarshaller.Instance;
@@ -1051,7 +1051,7 @@ namespace Amazon.OpsWorksCM
         /// 
         /// <returns>Returns a  DescribeServersResult from OpsWorksCM.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DescribeServers">REST API Reference for DescribeServers Operation</seealso>
-        public  DescribeServersResponse EndDescribeServers(IAsyncResult asyncResult)
+        public virtual DescribeServersResponse EndDescribeServers(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeServersResponse>(asyncResult);
         }
@@ -1087,7 +1087,7 @@ namespace Amazon.OpsWorksCM
         /// One or more of the provided request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DisassociateNode">REST API Reference for DisassociateNode Operation</seealso>
-        public DisassociateNodeResponse DisassociateNode(DisassociateNodeRequest request)
+        public virtual DisassociateNodeResponse DisassociateNode(DisassociateNodeRequest request)
         {
             var marshaller = new DisassociateNodeRequestMarshaller();
             var unmarshaller = DisassociateNodeResponseUnmarshaller.Instance;
@@ -1107,7 +1107,7 @@ namespace Amazon.OpsWorksCM
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateNode
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DisassociateNode">REST API Reference for DisassociateNode Operation</seealso>
-        public IAsyncResult BeginDisassociateNode(DisassociateNodeRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDisassociateNode(DisassociateNodeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DisassociateNodeRequestMarshaller();
             var unmarshaller = DisassociateNodeResponseUnmarshaller.Instance;
@@ -1124,7 +1124,7 @@ namespace Amazon.OpsWorksCM
         /// 
         /// <returns>Returns a  DisassociateNodeResult from OpsWorksCM.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DisassociateNode">REST API Reference for DisassociateNode Operation</seealso>
-        public  DisassociateNodeResponse EndDisassociateNode(IAsyncResult asyncResult)
+        public virtual DisassociateNodeResponse EndDisassociateNode(IAsyncResult asyncResult)
         {
             return EndInvoke<DisassociateNodeResponse>(asyncResult);
         }
@@ -1165,7 +1165,7 @@ namespace Amazon.OpsWorksCM
         /// One or more of the provided request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/RestoreServer">REST API Reference for RestoreServer Operation</seealso>
-        public RestoreServerResponse RestoreServer(RestoreServerRequest request)
+        public virtual RestoreServerResponse RestoreServer(RestoreServerRequest request)
         {
             var marshaller = new RestoreServerRequestMarshaller();
             var unmarshaller = RestoreServerResponseUnmarshaller.Instance;
@@ -1185,7 +1185,7 @@ namespace Amazon.OpsWorksCM
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRestoreServer
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/RestoreServer">REST API Reference for RestoreServer Operation</seealso>
-        public IAsyncResult BeginRestoreServer(RestoreServerRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginRestoreServer(RestoreServerRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RestoreServerRequestMarshaller();
             var unmarshaller = RestoreServerResponseUnmarshaller.Instance;
@@ -1202,7 +1202,7 @@ namespace Amazon.OpsWorksCM
         /// 
         /// <returns>Returns a  RestoreServerResult from OpsWorksCM.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/RestoreServer">REST API Reference for RestoreServer Operation</seealso>
-        public  RestoreServerResponse EndRestoreServer(IAsyncResult asyncResult)
+        public virtual RestoreServerResponse EndRestoreServer(IAsyncResult asyncResult)
         {
             return EndInvoke<RestoreServerResponse>(asyncResult);
         }
@@ -1238,7 +1238,7 @@ namespace Amazon.OpsWorksCM
         /// One or more of the provided request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/StartMaintenance">REST API Reference for StartMaintenance Operation</seealso>
-        public StartMaintenanceResponse StartMaintenance(StartMaintenanceRequest request)
+        public virtual StartMaintenanceResponse StartMaintenance(StartMaintenanceRequest request)
         {
             var marshaller = new StartMaintenanceRequestMarshaller();
             var unmarshaller = StartMaintenanceResponseUnmarshaller.Instance;
@@ -1258,7 +1258,7 @@ namespace Amazon.OpsWorksCM
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartMaintenance
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/StartMaintenance">REST API Reference for StartMaintenance Operation</seealso>
-        public IAsyncResult BeginStartMaintenance(StartMaintenanceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginStartMaintenance(StartMaintenanceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new StartMaintenanceRequestMarshaller();
             var unmarshaller = StartMaintenanceResponseUnmarshaller.Instance;
@@ -1275,7 +1275,7 @@ namespace Amazon.OpsWorksCM
         /// 
         /// <returns>Returns a  StartMaintenanceResult from OpsWorksCM.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/StartMaintenance">REST API Reference for StartMaintenance Operation</seealso>
-        public  StartMaintenanceResponse EndStartMaintenance(IAsyncResult asyncResult)
+        public virtual StartMaintenanceResponse EndStartMaintenance(IAsyncResult asyncResult)
         {
             return EndInvoke<StartMaintenanceResponse>(asyncResult);
         }
@@ -1305,7 +1305,7 @@ namespace Amazon.OpsWorksCM
         /// One or more of the provided request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/UpdateServer">REST API Reference for UpdateServer Operation</seealso>
-        public UpdateServerResponse UpdateServer(UpdateServerRequest request)
+        public virtual UpdateServerResponse UpdateServer(UpdateServerRequest request)
         {
             var marshaller = new UpdateServerRequestMarshaller();
             var unmarshaller = UpdateServerResponseUnmarshaller.Instance;
@@ -1325,7 +1325,7 @@ namespace Amazon.OpsWorksCM
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateServer
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/UpdateServer">REST API Reference for UpdateServer Operation</seealso>
-        public IAsyncResult BeginUpdateServer(UpdateServerRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateServer(UpdateServerRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateServerRequestMarshaller();
             var unmarshaller = UpdateServerResponseUnmarshaller.Instance;
@@ -1342,7 +1342,7 @@ namespace Amazon.OpsWorksCM
         /// 
         /// <returns>Returns a  UpdateServerResult from OpsWorksCM.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/UpdateServer">REST API Reference for UpdateServer Operation</seealso>
-        public  UpdateServerResponse EndUpdateServer(IAsyncResult asyncResult)
+        public virtual UpdateServerResponse EndUpdateServer(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateServerResponse>(asyncResult);
         }
@@ -1382,7 +1382,7 @@ namespace Amazon.OpsWorksCM
         /// One or more of the provided request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/UpdateServerEngineAttributes">REST API Reference for UpdateServerEngineAttributes Operation</seealso>
-        public UpdateServerEngineAttributesResponse UpdateServerEngineAttributes(UpdateServerEngineAttributesRequest request)
+        public virtual UpdateServerEngineAttributesResponse UpdateServerEngineAttributes(UpdateServerEngineAttributesRequest request)
         {
             var marshaller = new UpdateServerEngineAttributesRequestMarshaller();
             var unmarshaller = UpdateServerEngineAttributesResponseUnmarshaller.Instance;
@@ -1402,7 +1402,7 @@ namespace Amazon.OpsWorksCM
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateServerEngineAttributes
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/UpdateServerEngineAttributes">REST API Reference for UpdateServerEngineAttributes Operation</seealso>
-        public IAsyncResult BeginUpdateServerEngineAttributes(UpdateServerEngineAttributesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateServerEngineAttributes(UpdateServerEngineAttributesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateServerEngineAttributesRequestMarshaller();
             var unmarshaller = UpdateServerEngineAttributesResponseUnmarshaller.Instance;
@@ -1419,7 +1419,7 @@ namespace Amazon.OpsWorksCM
         /// 
         /// <returns>Returns a  UpdateServerEngineAttributesResult from OpsWorksCM.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/UpdateServerEngineAttributes">REST API Reference for UpdateServerEngineAttributes Operation</seealso>
-        public  UpdateServerEngineAttributesResponse EndUpdateServerEngineAttributes(IAsyncResult asyncResult)
+        public virtual UpdateServerEngineAttributesResponse EndUpdateServerEngineAttributes(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateServerEngineAttributesResponse>(asyncResult);
         }

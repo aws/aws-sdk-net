@@ -279,7 +279,7 @@ namespace Amazon.MigrationHub
         /// flag is set to "true".
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/AssociateCreatedArtifact">REST API Reference for AssociateCreatedArtifact Operation</seealso>
-        public AssociateCreatedArtifactResponse AssociateCreatedArtifact(AssociateCreatedArtifactRequest request)
+        public virtual AssociateCreatedArtifactResponse AssociateCreatedArtifact(AssociateCreatedArtifactRequest request)
         {
             var marshaller = new AssociateCreatedArtifactRequestMarshaller();
             var unmarshaller = AssociateCreatedArtifactResponseUnmarshaller.Instance;
@@ -299,7 +299,7 @@ namespace Amazon.MigrationHub
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateCreatedArtifact
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/AssociateCreatedArtifact">REST API Reference for AssociateCreatedArtifact Operation</seealso>
-        public IAsyncResult BeginAssociateCreatedArtifact(AssociateCreatedArtifactRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginAssociateCreatedArtifact(AssociateCreatedArtifactRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AssociateCreatedArtifactRequestMarshaller();
             var unmarshaller = AssociateCreatedArtifactResponseUnmarshaller.Instance;
@@ -316,7 +316,7 @@ namespace Amazon.MigrationHub
         /// 
         /// <returns>Returns a  AssociateCreatedArtifactResult from MigrationHub.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/AssociateCreatedArtifact">REST API Reference for AssociateCreatedArtifact Operation</seealso>
-        public  AssociateCreatedArtifactResponse EndAssociateCreatedArtifact(IAsyncResult asyncResult)
+        public virtual AssociateCreatedArtifactResponse EndAssociateCreatedArtifact(IAsyncResult asyncResult)
         {
             return EndInvoke<AssociateCreatedArtifactResponse>(asyncResult);
         }
@@ -366,7 +366,7 @@ namespace Amazon.MigrationHub
         /// flag is set to "true".
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/AssociateDiscoveredResource">REST API Reference for AssociateDiscoveredResource Operation</seealso>
-        public AssociateDiscoveredResourceResponse AssociateDiscoveredResource(AssociateDiscoveredResourceRequest request)
+        public virtual AssociateDiscoveredResourceResponse AssociateDiscoveredResource(AssociateDiscoveredResourceRequest request)
         {
             var marshaller = new AssociateDiscoveredResourceRequestMarshaller();
             var unmarshaller = AssociateDiscoveredResourceResponseUnmarshaller.Instance;
@@ -386,7 +386,7 @@ namespace Amazon.MigrationHub
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateDiscoveredResource
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/AssociateDiscoveredResource">REST API Reference for AssociateDiscoveredResource Operation</seealso>
-        public IAsyncResult BeginAssociateDiscoveredResource(AssociateDiscoveredResourceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginAssociateDiscoveredResource(AssociateDiscoveredResourceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AssociateDiscoveredResourceRequestMarshaller();
             var unmarshaller = AssociateDiscoveredResourceResponseUnmarshaller.Instance;
@@ -403,7 +403,7 @@ namespace Amazon.MigrationHub
         /// 
         /// <returns>Returns a  AssociateDiscoveredResourceResult from MigrationHub.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/AssociateDiscoveredResource">REST API Reference for AssociateDiscoveredResource Operation</seealso>
-        public  AssociateDiscoveredResourceResponse EndAssociateDiscoveredResource(IAsyncResult asyncResult)
+        public virtual AssociateDiscoveredResourceResponse EndAssociateDiscoveredResource(IAsyncResult asyncResult)
         {
             return EndInvoke<AssociateDiscoveredResourceResponse>(asyncResult);
         }
@@ -446,7 +446,7 @@ namespace Amazon.MigrationHub
         /// flag is set to "true".
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/CreateProgressUpdateStream">REST API Reference for CreateProgressUpdateStream Operation</seealso>
-        public CreateProgressUpdateStreamResponse CreateProgressUpdateStream(CreateProgressUpdateStreamRequest request)
+        public virtual CreateProgressUpdateStreamResponse CreateProgressUpdateStream(CreateProgressUpdateStreamRequest request)
         {
             var marshaller = new CreateProgressUpdateStreamRequestMarshaller();
             var unmarshaller = CreateProgressUpdateStreamResponseUnmarshaller.Instance;
@@ -466,7 +466,7 @@ namespace Amazon.MigrationHub
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateProgressUpdateStream
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/CreateProgressUpdateStream">REST API Reference for CreateProgressUpdateStream Operation</seealso>
-        public IAsyncResult BeginCreateProgressUpdateStream(CreateProgressUpdateStreamRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateProgressUpdateStream(CreateProgressUpdateStreamRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateProgressUpdateStreamRequestMarshaller();
             var unmarshaller = CreateProgressUpdateStreamResponseUnmarshaller.Instance;
@@ -483,7 +483,7 @@ namespace Amazon.MigrationHub
         /// 
         /// <returns>Returns a  CreateProgressUpdateStreamResult from MigrationHub.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/CreateProgressUpdateStream">REST API Reference for CreateProgressUpdateStream Operation</seealso>
-        public  CreateProgressUpdateStreamResponse EndCreateProgressUpdateStream(IAsyncResult asyncResult)
+        public virtual CreateProgressUpdateStreamResponse EndCreateProgressUpdateStream(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateProgressUpdateStreamResponse>(asyncResult);
         }
@@ -559,7 +559,7 @@ namespace Amazon.MigrationHub
         /// flag is set to "true".
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/DeleteProgressUpdateStream">REST API Reference for DeleteProgressUpdateStream Operation</seealso>
-        public DeleteProgressUpdateStreamResponse DeleteProgressUpdateStream(DeleteProgressUpdateStreamRequest request)
+        public virtual DeleteProgressUpdateStreamResponse DeleteProgressUpdateStream(DeleteProgressUpdateStreamRequest request)
         {
             var marshaller = new DeleteProgressUpdateStreamRequestMarshaller();
             var unmarshaller = DeleteProgressUpdateStreamResponseUnmarshaller.Instance;
@@ -579,7 +579,7 @@ namespace Amazon.MigrationHub
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteProgressUpdateStream
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/DeleteProgressUpdateStream">REST API Reference for DeleteProgressUpdateStream Operation</seealso>
-        public IAsyncResult BeginDeleteProgressUpdateStream(DeleteProgressUpdateStreamRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteProgressUpdateStream(DeleteProgressUpdateStreamRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteProgressUpdateStreamRequestMarshaller();
             var unmarshaller = DeleteProgressUpdateStreamResponseUnmarshaller.Instance;
@@ -596,7 +596,7 @@ namespace Amazon.MigrationHub
         /// 
         /// <returns>Returns a  DeleteProgressUpdateStreamResult from MigrationHub.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/DeleteProgressUpdateStream">REST API Reference for DeleteProgressUpdateStream Operation</seealso>
-        public  DeleteProgressUpdateStreamResponse EndDeleteProgressUpdateStream(IAsyncResult asyncResult)
+        public virtual DeleteProgressUpdateStreamResponse EndDeleteProgressUpdateStream(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteProgressUpdateStreamResponse>(asyncResult);
         }
@@ -637,7 +637,7 @@ namespace Amazon.MigrationHub
         /// dependencies or is overloaded with requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/DescribeApplicationState">REST API Reference for DescribeApplicationState Operation</seealso>
-        public DescribeApplicationStateResponse DescribeApplicationState(DescribeApplicationStateRequest request)
+        public virtual DescribeApplicationStateResponse DescribeApplicationState(DescribeApplicationStateRequest request)
         {
             var marshaller = new DescribeApplicationStateRequestMarshaller();
             var unmarshaller = DescribeApplicationStateResponseUnmarshaller.Instance;
@@ -657,7 +657,7 @@ namespace Amazon.MigrationHub
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeApplicationState
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/DescribeApplicationState">REST API Reference for DescribeApplicationState Operation</seealso>
-        public IAsyncResult BeginDescribeApplicationState(DescribeApplicationStateRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeApplicationState(DescribeApplicationStateRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeApplicationStateRequestMarshaller();
             var unmarshaller = DescribeApplicationStateResponseUnmarshaller.Instance;
@@ -674,7 +674,7 @@ namespace Amazon.MigrationHub
         /// 
         /// <returns>Returns a  DescribeApplicationStateResult from MigrationHub.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/DescribeApplicationState">REST API Reference for DescribeApplicationState Operation</seealso>
-        public  DescribeApplicationStateResponse EndDescribeApplicationState(IAsyncResult asyncResult)
+        public virtual DescribeApplicationStateResponse EndDescribeApplicationState(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeApplicationStateResponse>(asyncResult);
         }
@@ -710,7 +710,7 @@ namespace Amazon.MigrationHub
         /// dependencies or is overloaded with requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/DescribeMigrationTask">REST API Reference for DescribeMigrationTask Operation</seealso>
-        public DescribeMigrationTaskResponse DescribeMigrationTask(DescribeMigrationTaskRequest request)
+        public virtual DescribeMigrationTaskResponse DescribeMigrationTask(DescribeMigrationTaskRequest request)
         {
             var marshaller = new DescribeMigrationTaskRequestMarshaller();
             var unmarshaller = DescribeMigrationTaskResponseUnmarshaller.Instance;
@@ -730,7 +730,7 @@ namespace Amazon.MigrationHub
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeMigrationTask
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/DescribeMigrationTask">REST API Reference for DescribeMigrationTask Operation</seealso>
-        public IAsyncResult BeginDescribeMigrationTask(DescribeMigrationTaskRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeMigrationTask(DescribeMigrationTaskRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeMigrationTaskRequestMarshaller();
             var unmarshaller = DescribeMigrationTaskResponseUnmarshaller.Instance;
@@ -747,7 +747,7 @@ namespace Amazon.MigrationHub
         /// 
         /// <returns>Returns a  DescribeMigrationTaskResult from MigrationHub.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/DescribeMigrationTask">REST API Reference for DescribeMigrationTask Operation</seealso>
-        public  DescribeMigrationTaskResponse EndDescribeMigrationTask(IAsyncResult asyncResult)
+        public virtual DescribeMigrationTaskResponse EndDescribeMigrationTask(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeMigrationTaskResponse>(asyncResult);
         }
@@ -809,7 +809,7 @@ namespace Amazon.MigrationHub
         /// flag is set to "true".
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/DisassociateCreatedArtifact">REST API Reference for DisassociateCreatedArtifact Operation</seealso>
-        public DisassociateCreatedArtifactResponse DisassociateCreatedArtifact(DisassociateCreatedArtifactRequest request)
+        public virtual DisassociateCreatedArtifactResponse DisassociateCreatedArtifact(DisassociateCreatedArtifactRequest request)
         {
             var marshaller = new DisassociateCreatedArtifactRequestMarshaller();
             var unmarshaller = DisassociateCreatedArtifactResponseUnmarshaller.Instance;
@@ -829,7 +829,7 @@ namespace Amazon.MigrationHub
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateCreatedArtifact
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/DisassociateCreatedArtifact">REST API Reference for DisassociateCreatedArtifact Operation</seealso>
-        public IAsyncResult BeginDisassociateCreatedArtifact(DisassociateCreatedArtifactRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDisassociateCreatedArtifact(DisassociateCreatedArtifactRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DisassociateCreatedArtifactRequestMarshaller();
             var unmarshaller = DisassociateCreatedArtifactResponseUnmarshaller.Instance;
@@ -846,7 +846,7 @@ namespace Amazon.MigrationHub
         /// 
         /// <returns>Returns a  DisassociateCreatedArtifactResult from MigrationHub.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/DisassociateCreatedArtifact">REST API Reference for DisassociateCreatedArtifact Operation</seealso>
-        public  DisassociateCreatedArtifactResponse EndDisassociateCreatedArtifact(IAsyncResult asyncResult)
+        public virtual DisassociateCreatedArtifactResponse EndDisassociateCreatedArtifact(IAsyncResult asyncResult)
         {
             return EndInvoke<DisassociateCreatedArtifactResponse>(asyncResult);
         }
@@ -891,7 +891,7 @@ namespace Amazon.MigrationHub
         /// flag is set to "true".
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/DisassociateDiscoveredResource">REST API Reference for DisassociateDiscoveredResource Operation</seealso>
-        public DisassociateDiscoveredResourceResponse DisassociateDiscoveredResource(DisassociateDiscoveredResourceRequest request)
+        public virtual DisassociateDiscoveredResourceResponse DisassociateDiscoveredResource(DisassociateDiscoveredResourceRequest request)
         {
             var marshaller = new DisassociateDiscoveredResourceRequestMarshaller();
             var unmarshaller = DisassociateDiscoveredResourceResponseUnmarshaller.Instance;
@@ -911,7 +911,7 @@ namespace Amazon.MigrationHub
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateDiscoveredResource
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/DisassociateDiscoveredResource">REST API Reference for DisassociateDiscoveredResource Operation</seealso>
-        public IAsyncResult BeginDisassociateDiscoveredResource(DisassociateDiscoveredResourceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDisassociateDiscoveredResource(DisassociateDiscoveredResourceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DisassociateDiscoveredResourceRequestMarshaller();
             var unmarshaller = DisassociateDiscoveredResourceResponseUnmarshaller.Instance;
@@ -928,7 +928,7 @@ namespace Amazon.MigrationHub
         /// 
         /// <returns>Returns a  DisassociateDiscoveredResourceResult from MigrationHub.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/DisassociateDiscoveredResource">REST API Reference for DisassociateDiscoveredResource Operation</seealso>
-        public  DisassociateDiscoveredResourceResponse EndDisassociateDiscoveredResource(IAsyncResult asyncResult)
+        public virtual DisassociateDiscoveredResourceResponse EndDisassociateDiscoveredResource(IAsyncResult asyncResult)
         {
             return EndInvoke<DisassociateDiscoveredResourceResponse>(asyncResult);
         }
@@ -979,7 +979,7 @@ namespace Amazon.MigrationHub
         /// flag is set to "true".
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ImportMigrationTask">REST API Reference for ImportMigrationTask Operation</seealso>
-        public ImportMigrationTaskResponse ImportMigrationTask(ImportMigrationTaskRequest request)
+        public virtual ImportMigrationTaskResponse ImportMigrationTask(ImportMigrationTaskRequest request)
         {
             var marshaller = new ImportMigrationTaskRequestMarshaller();
             var unmarshaller = ImportMigrationTaskResponseUnmarshaller.Instance;
@@ -999,7 +999,7 @@ namespace Amazon.MigrationHub
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndImportMigrationTask
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ImportMigrationTask">REST API Reference for ImportMigrationTask Operation</seealso>
-        public IAsyncResult BeginImportMigrationTask(ImportMigrationTaskRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginImportMigrationTask(ImportMigrationTaskRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ImportMigrationTaskRequestMarshaller();
             var unmarshaller = ImportMigrationTaskResponseUnmarshaller.Instance;
@@ -1016,7 +1016,7 @@ namespace Amazon.MigrationHub
         /// 
         /// <returns>Returns a  ImportMigrationTaskResult from MigrationHub.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ImportMigrationTask">REST API Reference for ImportMigrationTask Operation</seealso>
-        public  ImportMigrationTaskResponse EndImportMigrationTask(IAsyncResult asyncResult)
+        public virtual ImportMigrationTaskResponse EndImportMigrationTask(IAsyncResult asyncResult)
         {
             return EndInvoke<ImportMigrationTaskResponse>(asyncResult);
         }
@@ -1068,7 +1068,7 @@ namespace Amazon.MigrationHub
         /// dependencies or is overloaded with requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListCreatedArtifacts">REST API Reference for ListCreatedArtifacts Operation</seealso>
-        public ListCreatedArtifactsResponse ListCreatedArtifacts(ListCreatedArtifactsRequest request)
+        public virtual ListCreatedArtifactsResponse ListCreatedArtifacts(ListCreatedArtifactsRequest request)
         {
             var marshaller = new ListCreatedArtifactsRequestMarshaller();
             var unmarshaller = ListCreatedArtifactsResponseUnmarshaller.Instance;
@@ -1088,7 +1088,7 @@ namespace Amazon.MigrationHub
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCreatedArtifacts
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListCreatedArtifacts">REST API Reference for ListCreatedArtifacts Operation</seealso>
-        public IAsyncResult BeginListCreatedArtifacts(ListCreatedArtifactsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListCreatedArtifacts(ListCreatedArtifactsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListCreatedArtifactsRequestMarshaller();
             var unmarshaller = ListCreatedArtifactsResponseUnmarshaller.Instance;
@@ -1105,7 +1105,7 @@ namespace Amazon.MigrationHub
         /// 
         /// <returns>Returns a  ListCreatedArtifactsResult from MigrationHub.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListCreatedArtifacts">REST API Reference for ListCreatedArtifacts Operation</seealso>
-        public  ListCreatedArtifactsResponse EndListCreatedArtifacts(IAsyncResult asyncResult)
+        public virtual ListCreatedArtifactsResponse EndListCreatedArtifacts(IAsyncResult asyncResult)
         {
             return EndInvoke<ListCreatedArtifactsResponse>(asyncResult);
         }
@@ -1141,7 +1141,7 @@ namespace Amazon.MigrationHub
         /// dependencies or is overloaded with requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListDiscoveredResources">REST API Reference for ListDiscoveredResources Operation</seealso>
-        public ListDiscoveredResourcesResponse ListDiscoveredResources(ListDiscoveredResourcesRequest request)
+        public virtual ListDiscoveredResourcesResponse ListDiscoveredResources(ListDiscoveredResourcesRequest request)
         {
             var marshaller = new ListDiscoveredResourcesRequestMarshaller();
             var unmarshaller = ListDiscoveredResourcesResponseUnmarshaller.Instance;
@@ -1161,7 +1161,7 @@ namespace Amazon.MigrationHub
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDiscoveredResources
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListDiscoveredResources">REST API Reference for ListDiscoveredResources Operation</seealso>
-        public IAsyncResult BeginListDiscoveredResources(ListDiscoveredResourcesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListDiscoveredResources(ListDiscoveredResourcesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListDiscoveredResourcesRequestMarshaller();
             var unmarshaller = ListDiscoveredResourcesResponseUnmarshaller.Instance;
@@ -1178,7 +1178,7 @@ namespace Amazon.MigrationHub
         /// 
         /// <returns>Returns a  ListDiscoveredResourcesResult from MigrationHub.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListDiscoveredResources">REST API Reference for ListDiscoveredResources Operation</seealso>
-        public  ListDiscoveredResourcesResponse EndListDiscoveredResources(IAsyncResult asyncResult)
+        public virtual ListDiscoveredResourcesResponse EndListDiscoveredResources(IAsyncResult asyncResult)
         {
             return EndInvoke<ListDiscoveredResourcesResponse>(asyncResult);
         }
@@ -1234,7 +1234,7 @@ namespace Amazon.MigrationHub
         /// dependencies or is overloaded with requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListMigrationTasks">REST API Reference for ListMigrationTasks Operation</seealso>
-        public ListMigrationTasksResponse ListMigrationTasks(ListMigrationTasksRequest request)
+        public virtual ListMigrationTasksResponse ListMigrationTasks(ListMigrationTasksRequest request)
         {
             var marshaller = new ListMigrationTasksRequestMarshaller();
             var unmarshaller = ListMigrationTasksResponseUnmarshaller.Instance;
@@ -1254,7 +1254,7 @@ namespace Amazon.MigrationHub
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListMigrationTasks
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListMigrationTasks">REST API Reference for ListMigrationTasks Operation</seealso>
-        public IAsyncResult BeginListMigrationTasks(ListMigrationTasksRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListMigrationTasks(ListMigrationTasksRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListMigrationTasksRequestMarshaller();
             var unmarshaller = ListMigrationTasksResponseUnmarshaller.Instance;
@@ -1271,7 +1271,7 @@ namespace Amazon.MigrationHub
         /// 
         /// <returns>Returns a  ListMigrationTasksResult from MigrationHub.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListMigrationTasks">REST API Reference for ListMigrationTasks Operation</seealso>
-        public  ListMigrationTasksResponse EndListMigrationTasks(IAsyncResult asyncResult)
+        public virtual ListMigrationTasksResponse EndListMigrationTasks(IAsyncResult asyncResult)
         {
             return EndInvoke<ListMigrationTasksResponse>(asyncResult);
         }
@@ -1302,7 +1302,7 @@ namespace Amazon.MigrationHub
         /// dependencies or is overloaded with requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListProgressUpdateStreams">REST API Reference for ListProgressUpdateStreams Operation</seealso>
-        public ListProgressUpdateStreamsResponse ListProgressUpdateStreams(ListProgressUpdateStreamsRequest request)
+        public virtual ListProgressUpdateStreamsResponse ListProgressUpdateStreams(ListProgressUpdateStreamsRequest request)
         {
             var marshaller = new ListProgressUpdateStreamsRequestMarshaller();
             var unmarshaller = ListProgressUpdateStreamsResponseUnmarshaller.Instance;
@@ -1322,7 +1322,7 @@ namespace Amazon.MigrationHub
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListProgressUpdateStreams
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListProgressUpdateStreams">REST API Reference for ListProgressUpdateStreams Operation</seealso>
-        public IAsyncResult BeginListProgressUpdateStreams(ListProgressUpdateStreamsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListProgressUpdateStreams(ListProgressUpdateStreamsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListProgressUpdateStreamsRequestMarshaller();
             var unmarshaller = ListProgressUpdateStreamsResponseUnmarshaller.Instance;
@@ -1339,7 +1339,7 @@ namespace Amazon.MigrationHub
         /// 
         /// <returns>Returns a  ListProgressUpdateStreamsResult from MigrationHub.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListProgressUpdateStreams">REST API Reference for ListProgressUpdateStreams Operation</seealso>
-        public  ListProgressUpdateStreamsResponse EndListProgressUpdateStreams(IAsyncResult asyncResult)
+        public virtual ListProgressUpdateStreamsResponse EndListProgressUpdateStreams(IAsyncResult asyncResult)
         {
             return EndInvoke<ListProgressUpdateStreamsResponse>(asyncResult);
         }
@@ -1390,7 +1390,7 @@ namespace Amazon.MigrationHub
         /// flag is set to "true".
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/NotifyApplicationState">REST API Reference for NotifyApplicationState Operation</seealso>
-        public NotifyApplicationStateResponse NotifyApplicationState(NotifyApplicationStateRequest request)
+        public virtual NotifyApplicationStateResponse NotifyApplicationState(NotifyApplicationStateRequest request)
         {
             var marshaller = new NotifyApplicationStateRequestMarshaller();
             var unmarshaller = NotifyApplicationStateResponseUnmarshaller.Instance;
@@ -1410,7 +1410,7 @@ namespace Amazon.MigrationHub
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndNotifyApplicationState
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/NotifyApplicationState">REST API Reference for NotifyApplicationState Operation</seealso>
-        public IAsyncResult BeginNotifyApplicationState(NotifyApplicationStateRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginNotifyApplicationState(NotifyApplicationStateRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new NotifyApplicationStateRequestMarshaller();
             var unmarshaller = NotifyApplicationStateResponseUnmarshaller.Instance;
@@ -1427,7 +1427,7 @@ namespace Amazon.MigrationHub
         /// 
         /// <returns>Returns a  NotifyApplicationStateResult from MigrationHub.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/NotifyApplicationState">REST API Reference for NotifyApplicationState Operation</seealso>
-        public  NotifyApplicationStateResponse EndNotifyApplicationState(IAsyncResult asyncResult)
+        public virtual NotifyApplicationStateResponse EndNotifyApplicationState(IAsyncResult asyncResult)
         {
             return EndInvoke<NotifyApplicationStateResponse>(asyncResult);
         }
@@ -1488,7 +1488,7 @@ namespace Amazon.MigrationHub
         /// flag is set to "true".
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/NotifyMigrationTaskState">REST API Reference for NotifyMigrationTaskState Operation</seealso>
-        public NotifyMigrationTaskStateResponse NotifyMigrationTaskState(NotifyMigrationTaskStateRequest request)
+        public virtual NotifyMigrationTaskStateResponse NotifyMigrationTaskState(NotifyMigrationTaskStateRequest request)
         {
             var marshaller = new NotifyMigrationTaskStateRequestMarshaller();
             var unmarshaller = NotifyMigrationTaskStateResponseUnmarshaller.Instance;
@@ -1508,7 +1508,7 @@ namespace Amazon.MigrationHub
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndNotifyMigrationTaskState
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/NotifyMigrationTaskState">REST API Reference for NotifyMigrationTaskState Operation</seealso>
-        public IAsyncResult BeginNotifyMigrationTaskState(NotifyMigrationTaskStateRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginNotifyMigrationTaskState(NotifyMigrationTaskStateRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new NotifyMigrationTaskStateRequestMarshaller();
             var unmarshaller = NotifyMigrationTaskStateResponseUnmarshaller.Instance;
@@ -1525,7 +1525,7 @@ namespace Amazon.MigrationHub
         /// 
         /// <returns>Returns a  NotifyMigrationTaskStateResult from MigrationHub.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/NotifyMigrationTaskState">REST API Reference for NotifyMigrationTaskState Operation</seealso>
-        public  NotifyMigrationTaskStateResponse EndNotifyMigrationTaskState(IAsyncResult asyncResult)
+        public virtual NotifyMigrationTaskStateResponse EndNotifyMigrationTaskState(IAsyncResult asyncResult)
         {
             return EndInvoke<NotifyMigrationTaskStateResponse>(asyncResult);
         }
@@ -1586,7 +1586,7 @@ namespace Amazon.MigrationHub
         /// flag is set to "true".
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/PutResourceAttributes">REST API Reference for PutResourceAttributes Operation</seealso>
-        public PutResourceAttributesResponse PutResourceAttributes(PutResourceAttributesRequest request)
+        public virtual PutResourceAttributesResponse PutResourceAttributes(PutResourceAttributesRequest request)
         {
             var marshaller = new PutResourceAttributesRequestMarshaller();
             var unmarshaller = PutResourceAttributesResponseUnmarshaller.Instance;
@@ -1606,7 +1606,7 @@ namespace Amazon.MigrationHub
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutResourceAttributes
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/PutResourceAttributes">REST API Reference for PutResourceAttributes Operation</seealso>
-        public IAsyncResult BeginPutResourceAttributes(PutResourceAttributesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPutResourceAttributes(PutResourceAttributesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutResourceAttributesRequestMarshaller();
             var unmarshaller = PutResourceAttributesResponseUnmarshaller.Instance;
@@ -1623,7 +1623,7 @@ namespace Amazon.MigrationHub
         /// 
         /// <returns>Returns a  PutResourceAttributesResult from MigrationHub.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/PutResourceAttributes">REST API Reference for PutResourceAttributes Operation</seealso>
-        public  PutResourceAttributesResponse EndPutResourceAttributes(IAsyncResult asyncResult)
+        public virtual PutResourceAttributesResponse EndPutResourceAttributes(IAsyncResult asyncResult)
         {
             return EndInvoke<PutResourceAttributesResponse>(asyncResult);
         }

@@ -246,7 +246,7 @@ namespace Amazon.APIGateway
         
         #region  CreateApiKey
 
-        internal CreateApiKeyResponse CreateApiKey(CreateApiKeyRequest request)
+        internal virtual CreateApiKeyResponse CreateApiKey(CreateApiKeyRequest request)
         {
             var marshaller = new CreateApiKeyRequestMarshaller();
             var unmarshaller = CreateApiKeyResponseUnmarshaller.Instance;
@@ -264,7 +264,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CreateApiKeyResponse> CreateApiKeyAsync(CreateApiKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateApiKeyResponse> CreateApiKeyAsync(CreateApiKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateApiKeyRequestMarshaller();
             var unmarshaller = CreateApiKeyResponseUnmarshaller.Instance;
@@ -277,7 +277,7 @@ namespace Amazon.APIGateway
         
         #region  CreateAuthorizer
 
-        internal CreateAuthorizerResponse CreateAuthorizer(CreateAuthorizerRequest request)
+        internal virtual CreateAuthorizerResponse CreateAuthorizer(CreateAuthorizerRequest request)
         {
             var marshaller = new CreateAuthorizerRequestMarshaller();
             var unmarshaller = CreateAuthorizerResponseUnmarshaller.Instance;
@@ -295,7 +295,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CreateAuthorizerResponse> CreateAuthorizerAsync(CreateAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateAuthorizerResponse> CreateAuthorizerAsync(CreateAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateAuthorizerRequestMarshaller();
             var unmarshaller = CreateAuthorizerResponseUnmarshaller.Instance;
@@ -308,7 +308,7 @@ namespace Amazon.APIGateway
         
         #region  CreateBasePathMapping
 
-        internal CreateBasePathMappingResponse CreateBasePathMapping(CreateBasePathMappingRequest request)
+        internal virtual CreateBasePathMappingResponse CreateBasePathMapping(CreateBasePathMappingRequest request)
         {
             var marshaller = new CreateBasePathMappingRequestMarshaller();
             var unmarshaller = CreateBasePathMappingResponseUnmarshaller.Instance;
@@ -326,7 +326,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CreateBasePathMappingResponse> CreateBasePathMappingAsync(CreateBasePathMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateBasePathMappingResponse> CreateBasePathMappingAsync(CreateBasePathMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateBasePathMappingRequestMarshaller();
             var unmarshaller = CreateBasePathMappingResponseUnmarshaller.Instance;
@@ -339,7 +339,7 @@ namespace Amazon.APIGateway
         
         #region  CreateDeployment
 
-        internal CreateDeploymentResponse CreateDeployment(CreateDeploymentRequest request)
+        internal virtual CreateDeploymentResponse CreateDeployment(CreateDeploymentRequest request)
         {
             var marshaller = new CreateDeploymentRequestMarshaller();
             var unmarshaller = CreateDeploymentResponseUnmarshaller.Instance;
@@ -357,7 +357,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CreateDeploymentResponse> CreateDeploymentAsync(CreateDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateDeploymentResponse> CreateDeploymentAsync(CreateDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateDeploymentRequestMarshaller();
             var unmarshaller = CreateDeploymentResponseUnmarshaller.Instance;
@@ -370,7 +370,7 @@ namespace Amazon.APIGateway
         
         #region  CreateDocumentationPart
 
-        internal CreateDocumentationPartResponse CreateDocumentationPart(CreateDocumentationPartRequest request)
+        internal virtual CreateDocumentationPartResponse CreateDocumentationPart(CreateDocumentationPartRequest request)
         {
             var marshaller = new CreateDocumentationPartRequestMarshaller();
             var unmarshaller = CreateDocumentationPartResponseUnmarshaller.Instance;
@@ -388,7 +388,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CreateDocumentationPartResponse> CreateDocumentationPartAsync(CreateDocumentationPartRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateDocumentationPartResponse> CreateDocumentationPartAsync(CreateDocumentationPartRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateDocumentationPartRequestMarshaller();
             var unmarshaller = CreateDocumentationPartResponseUnmarshaller.Instance;
@@ -401,7 +401,7 @@ namespace Amazon.APIGateway
         
         #region  CreateDocumentationVersion
 
-        internal CreateDocumentationVersionResponse CreateDocumentationVersion(CreateDocumentationVersionRequest request)
+        internal virtual CreateDocumentationVersionResponse CreateDocumentationVersion(CreateDocumentationVersionRequest request)
         {
             var marshaller = new CreateDocumentationVersionRequestMarshaller();
             var unmarshaller = CreateDocumentationVersionResponseUnmarshaller.Instance;
@@ -419,7 +419,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CreateDocumentationVersionResponse> CreateDocumentationVersionAsync(CreateDocumentationVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateDocumentationVersionResponse> CreateDocumentationVersionAsync(CreateDocumentationVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateDocumentationVersionRequestMarshaller();
             var unmarshaller = CreateDocumentationVersionResponseUnmarshaller.Instance;
@@ -432,7 +432,7 @@ namespace Amazon.APIGateway
         
         #region  CreateDomainName
 
-        internal CreateDomainNameResponse CreateDomainName(CreateDomainNameRequest request)
+        internal virtual CreateDomainNameResponse CreateDomainName(CreateDomainNameRequest request)
         {
             var marshaller = new CreateDomainNameRequestMarshaller();
             var unmarshaller = CreateDomainNameResponseUnmarshaller.Instance;
@@ -450,7 +450,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CreateDomainNameResponse> CreateDomainNameAsync(CreateDomainNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateDomainNameResponse> CreateDomainNameAsync(CreateDomainNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateDomainNameRequestMarshaller();
             var unmarshaller = CreateDomainNameResponseUnmarshaller.Instance;
@@ -463,7 +463,7 @@ namespace Amazon.APIGateway
         
         #region  CreateModel
 
-        internal CreateModelResponse CreateModel(CreateModelRequest request)
+        internal virtual CreateModelResponse CreateModel(CreateModelRequest request)
         {
             var marshaller = new CreateModelRequestMarshaller();
             var unmarshaller = CreateModelResponseUnmarshaller.Instance;
@@ -481,7 +481,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CreateModelResponse> CreateModelAsync(CreateModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateModelResponse> CreateModelAsync(CreateModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateModelRequestMarshaller();
             var unmarshaller = CreateModelResponseUnmarshaller.Instance;
@@ -494,7 +494,7 @@ namespace Amazon.APIGateway
         
         #region  CreateRequestValidator
 
-        internal CreateRequestValidatorResponse CreateRequestValidator(CreateRequestValidatorRequest request)
+        internal virtual CreateRequestValidatorResponse CreateRequestValidator(CreateRequestValidatorRequest request)
         {
             var marshaller = new CreateRequestValidatorRequestMarshaller();
             var unmarshaller = CreateRequestValidatorResponseUnmarshaller.Instance;
@@ -512,7 +512,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CreateRequestValidatorResponse> CreateRequestValidatorAsync(CreateRequestValidatorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateRequestValidatorResponse> CreateRequestValidatorAsync(CreateRequestValidatorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateRequestValidatorRequestMarshaller();
             var unmarshaller = CreateRequestValidatorResponseUnmarshaller.Instance;
@@ -525,7 +525,7 @@ namespace Amazon.APIGateway
         
         #region  CreateResource
 
-        internal CreateResourceResponse CreateResource(CreateResourceRequest request)
+        internal virtual CreateResourceResponse CreateResource(CreateResourceRequest request)
         {
             var marshaller = new CreateResourceRequestMarshaller();
             var unmarshaller = CreateResourceResponseUnmarshaller.Instance;
@@ -543,7 +543,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CreateResourceResponse> CreateResourceAsync(CreateResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateResourceResponse> CreateResourceAsync(CreateResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateResourceRequestMarshaller();
             var unmarshaller = CreateResourceResponseUnmarshaller.Instance;
@@ -556,7 +556,7 @@ namespace Amazon.APIGateway
         
         #region  CreateRestApi
 
-        internal CreateRestApiResponse CreateRestApi(CreateRestApiRequest request)
+        internal virtual CreateRestApiResponse CreateRestApi(CreateRestApiRequest request)
         {
             var marshaller = new CreateRestApiRequestMarshaller();
             var unmarshaller = CreateRestApiResponseUnmarshaller.Instance;
@@ -574,7 +574,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CreateRestApiResponse> CreateRestApiAsync(CreateRestApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateRestApiResponse> CreateRestApiAsync(CreateRestApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateRestApiRequestMarshaller();
             var unmarshaller = CreateRestApiResponseUnmarshaller.Instance;
@@ -587,7 +587,7 @@ namespace Amazon.APIGateway
         
         #region  CreateStage
 
-        internal CreateStageResponse CreateStage(CreateStageRequest request)
+        internal virtual CreateStageResponse CreateStage(CreateStageRequest request)
         {
             var marshaller = new CreateStageRequestMarshaller();
             var unmarshaller = CreateStageResponseUnmarshaller.Instance;
@@ -605,7 +605,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CreateStageResponse> CreateStageAsync(CreateStageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateStageResponse> CreateStageAsync(CreateStageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateStageRequestMarshaller();
             var unmarshaller = CreateStageResponseUnmarshaller.Instance;
@@ -618,7 +618,7 @@ namespace Amazon.APIGateway
         
         #region  CreateUsagePlan
 
-        internal CreateUsagePlanResponse CreateUsagePlan(CreateUsagePlanRequest request)
+        internal virtual CreateUsagePlanResponse CreateUsagePlan(CreateUsagePlanRequest request)
         {
             var marshaller = new CreateUsagePlanRequestMarshaller();
             var unmarshaller = CreateUsagePlanResponseUnmarshaller.Instance;
@@ -636,7 +636,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CreateUsagePlanResponse> CreateUsagePlanAsync(CreateUsagePlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateUsagePlanResponse> CreateUsagePlanAsync(CreateUsagePlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateUsagePlanRequestMarshaller();
             var unmarshaller = CreateUsagePlanResponseUnmarshaller.Instance;
@@ -649,7 +649,7 @@ namespace Amazon.APIGateway
         
         #region  CreateUsagePlanKey
 
-        internal CreateUsagePlanKeyResponse CreateUsagePlanKey(CreateUsagePlanKeyRequest request)
+        internal virtual CreateUsagePlanKeyResponse CreateUsagePlanKey(CreateUsagePlanKeyRequest request)
         {
             var marshaller = new CreateUsagePlanKeyRequestMarshaller();
             var unmarshaller = CreateUsagePlanKeyResponseUnmarshaller.Instance;
@@ -667,7 +667,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CreateUsagePlanKeyResponse> CreateUsagePlanKeyAsync(CreateUsagePlanKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateUsagePlanKeyResponse> CreateUsagePlanKeyAsync(CreateUsagePlanKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateUsagePlanKeyRequestMarshaller();
             var unmarshaller = CreateUsagePlanKeyResponseUnmarshaller.Instance;
@@ -680,7 +680,7 @@ namespace Amazon.APIGateway
         
         #region  DeleteApiKey
 
-        internal DeleteApiKeyResponse DeleteApiKey(DeleteApiKeyRequest request)
+        internal virtual DeleteApiKeyResponse DeleteApiKey(DeleteApiKeyRequest request)
         {
             var marshaller = new DeleteApiKeyRequestMarshaller();
             var unmarshaller = DeleteApiKeyResponseUnmarshaller.Instance;
@@ -698,7 +698,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteApiKeyResponse> DeleteApiKeyAsync(DeleteApiKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteApiKeyResponse> DeleteApiKeyAsync(DeleteApiKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteApiKeyRequestMarshaller();
             var unmarshaller = DeleteApiKeyResponseUnmarshaller.Instance;
@@ -711,7 +711,7 @@ namespace Amazon.APIGateway
         
         #region  DeleteAuthorizer
 
-        internal DeleteAuthorizerResponse DeleteAuthorizer(DeleteAuthorizerRequest request)
+        internal virtual DeleteAuthorizerResponse DeleteAuthorizer(DeleteAuthorizerRequest request)
         {
             var marshaller = new DeleteAuthorizerRequestMarshaller();
             var unmarshaller = DeleteAuthorizerResponseUnmarshaller.Instance;
@@ -729,7 +729,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteAuthorizerResponse> DeleteAuthorizerAsync(DeleteAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteAuthorizerResponse> DeleteAuthorizerAsync(DeleteAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteAuthorizerRequestMarshaller();
             var unmarshaller = DeleteAuthorizerResponseUnmarshaller.Instance;
@@ -742,7 +742,7 @@ namespace Amazon.APIGateway
         
         #region  DeleteBasePathMapping
 
-        internal DeleteBasePathMappingResponse DeleteBasePathMapping(DeleteBasePathMappingRequest request)
+        internal virtual DeleteBasePathMappingResponse DeleteBasePathMapping(DeleteBasePathMappingRequest request)
         {
             var marshaller = new DeleteBasePathMappingRequestMarshaller();
             var unmarshaller = DeleteBasePathMappingResponseUnmarshaller.Instance;
@@ -760,7 +760,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteBasePathMappingResponse> DeleteBasePathMappingAsync(DeleteBasePathMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteBasePathMappingResponse> DeleteBasePathMappingAsync(DeleteBasePathMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteBasePathMappingRequestMarshaller();
             var unmarshaller = DeleteBasePathMappingResponseUnmarshaller.Instance;
@@ -773,7 +773,7 @@ namespace Amazon.APIGateway
         
         #region  DeleteClientCertificate
 
-        internal DeleteClientCertificateResponse DeleteClientCertificate(DeleteClientCertificateRequest request)
+        internal virtual DeleteClientCertificateResponse DeleteClientCertificate(DeleteClientCertificateRequest request)
         {
             var marshaller = new DeleteClientCertificateRequestMarshaller();
             var unmarshaller = DeleteClientCertificateResponseUnmarshaller.Instance;
@@ -791,7 +791,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteClientCertificateResponse> DeleteClientCertificateAsync(DeleteClientCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteClientCertificateResponse> DeleteClientCertificateAsync(DeleteClientCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteClientCertificateRequestMarshaller();
             var unmarshaller = DeleteClientCertificateResponseUnmarshaller.Instance;
@@ -804,7 +804,7 @@ namespace Amazon.APIGateway
         
         #region  DeleteDeployment
 
-        internal DeleteDeploymentResponse DeleteDeployment(DeleteDeploymentRequest request)
+        internal virtual DeleteDeploymentResponse DeleteDeployment(DeleteDeploymentRequest request)
         {
             var marshaller = new DeleteDeploymentRequestMarshaller();
             var unmarshaller = DeleteDeploymentResponseUnmarshaller.Instance;
@@ -822,7 +822,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteDeploymentResponse> DeleteDeploymentAsync(DeleteDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteDeploymentResponse> DeleteDeploymentAsync(DeleteDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteDeploymentRequestMarshaller();
             var unmarshaller = DeleteDeploymentResponseUnmarshaller.Instance;
@@ -835,7 +835,7 @@ namespace Amazon.APIGateway
         
         #region  DeleteDocumentationPart
 
-        internal DeleteDocumentationPartResponse DeleteDocumentationPart(DeleteDocumentationPartRequest request)
+        internal virtual DeleteDocumentationPartResponse DeleteDocumentationPart(DeleteDocumentationPartRequest request)
         {
             var marshaller = new DeleteDocumentationPartRequestMarshaller();
             var unmarshaller = DeleteDocumentationPartResponseUnmarshaller.Instance;
@@ -853,7 +853,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteDocumentationPartResponse> DeleteDocumentationPartAsync(DeleteDocumentationPartRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteDocumentationPartResponse> DeleteDocumentationPartAsync(DeleteDocumentationPartRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteDocumentationPartRequestMarshaller();
             var unmarshaller = DeleteDocumentationPartResponseUnmarshaller.Instance;
@@ -866,7 +866,7 @@ namespace Amazon.APIGateway
         
         #region  DeleteDocumentationVersion
 
-        internal DeleteDocumentationVersionResponse DeleteDocumentationVersion(DeleteDocumentationVersionRequest request)
+        internal virtual DeleteDocumentationVersionResponse DeleteDocumentationVersion(DeleteDocumentationVersionRequest request)
         {
             var marshaller = new DeleteDocumentationVersionRequestMarshaller();
             var unmarshaller = DeleteDocumentationVersionResponseUnmarshaller.Instance;
@@ -884,7 +884,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteDocumentationVersionResponse> DeleteDocumentationVersionAsync(DeleteDocumentationVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteDocumentationVersionResponse> DeleteDocumentationVersionAsync(DeleteDocumentationVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteDocumentationVersionRequestMarshaller();
             var unmarshaller = DeleteDocumentationVersionResponseUnmarshaller.Instance;
@@ -897,7 +897,7 @@ namespace Amazon.APIGateway
         
         #region  DeleteDomainName
 
-        internal DeleteDomainNameResponse DeleteDomainName(DeleteDomainNameRequest request)
+        internal virtual DeleteDomainNameResponse DeleteDomainName(DeleteDomainNameRequest request)
         {
             var marshaller = new DeleteDomainNameRequestMarshaller();
             var unmarshaller = DeleteDomainNameResponseUnmarshaller.Instance;
@@ -915,7 +915,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteDomainNameResponse> DeleteDomainNameAsync(DeleteDomainNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteDomainNameResponse> DeleteDomainNameAsync(DeleteDomainNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteDomainNameRequestMarshaller();
             var unmarshaller = DeleteDomainNameResponseUnmarshaller.Instance;
@@ -928,7 +928,7 @@ namespace Amazon.APIGateway
         
         #region  DeleteGatewayResponse
 
-        internal DeleteGatewayResponseResponse DeleteGatewayResponse(DeleteGatewayResponseRequest request)
+        internal virtual DeleteGatewayResponseResponse DeleteGatewayResponse(DeleteGatewayResponseRequest request)
         {
             var marshaller = new DeleteGatewayResponseRequestMarshaller();
             var unmarshaller = DeleteGatewayResponseResponseUnmarshaller.Instance;
@@ -946,7 +946,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteGatewayResponseResponse> DeleteGatewayResponseAsync(DeleteGatewayResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteGatewayResponseResponse> DeleteGatewayResponseAsync(DeleteGatewayResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteGatewayResponseRequestMarshaller();
             var unmarshaller = DeleteGatewayResponseResponseUnmarshaller.Instance;
@@ -959,7 +959,7 @@ namespace Amazon.APIGateway
         
         #region  DeleteIntegration
 
-        internal DeleteIntegrationResponse DeleteIntegration(DeleteIntegrationRequest request)
+        internal virtual DeleteIntegrationResponse DeleteIntegration(DeleteIntegrationRequest request)
         {
             var marshaller = new DeleteIntegrationRequestMarshaller();
             var unmarshaller = DeleteIntegrationResponseUnmarshaller.Instance;
@@ -977,7 +977,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteIntegrationResponse> DeleteIntegrationAsync(DeleteIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteIntegrationResponse> DeleteIntegrationAsync(DeleteIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteIntegrationRequestMarshaller();
             var unmarshaller = DeleteIntegrationResponseUnmarshaller.Instance;
@@ -990,7 +990,7 @@ namespace Amazon.APIGateway
         
         #region  DeleteIntegrationResponse
 
-        internal DeleteIntegrationResponseResponse DeleteIntegrationResponse(DeleteIntegrationResponseRequest request)
+        internal virtual DeleteIntegrationResponseResponse DeleteIntegrationResponse(DeleteIntegrationResponseRequest request)
         {
             var marshaller = new DeleteIntegrationResponseRequestMarshaller();
             var unmarshaller = DeleteIntegrationResponseResponseUnmarshaller.Instance;
@@ -1008,7 +1008,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteIntegrationResponseResponse> DeleteIntegrationResponseAsync(DeleteIntegrationResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteIntegrationResponseResponse> DeleteIntegrationResponseAsync(DeleteIntegrationResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteIntegrationResponseRequestMarshaller();
             var unmarshaller = DeleteIntegrationResponseResponseUnmarshaller.Instance;
@@ -1021,7 +1021,7 @@ namespace Amazon.APIGateway
         
         #region  DeleteMethod
 
-        internal DeleteMethodResponse DeleteMethod(DeleteMethodRequest request)
+        internal virtual DeleteMethodResponse DeleteMethod(DeleteMethodRequest request)
         {
             var marshaller = new DeleteMethodRequestMarshaller();
             var unmarshaller = DeleteMethodResponseUnmarshaller.Instance;
@@ -1039,7 +1039,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteMethodResponse> DeleteMethodAsync(DeleteMethodRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteMethodResponse> DeleteMethodAsync(DeleteMethodRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteMethodRequestMarshaller();
             var unmarshaller = DeleteMethodResponseUnmarshaller.Instance;
@@ -1052,7 +1052,7 @@ namespace Amazon.APIGateway
         
         #region  DeleteMethodResponse
 
-        internal DeleteMethodResponseResponse DeleteMethodResponse(DeleteMethodResponseRequest request)
+        internal virtual DeleteMethodResponseResponse DeleteMethodResponse(DeleteMethodResponseRequest request)
         {
             var marshaller = new DeleteMethodResponseRequestMarshaller();
             var unmarshaller = DeleteMethodResponseResponseUnmarshaller.Instance;
@@ -1070,7 +1070,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteMethodResponseResponse> DeleteMethodResponseAsync(DeleteMethodResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteMethodResponseResponse> DeleteMethodResponseAsync(DeleteMethodResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteMethodResponseRequestMarshaller();
             var unmarshaller = DeleteMethodResponseResponseUnmarshaller.Instance;
@@ -1083,7 +1083,7 @@ namespace Amazon.APIGateway
         
         #region  DeleteModel
 
-        internal DeleteModelResponse DeleteModel(DeleteModelRequest request)
+        internal virtual DeleteModelResponse DeleteModel(DeleteModelRequest request)
         {
             var marshaller = new DeleteModelRequestMarshaller();
             var unmarshaller = DeleteModelResponseUnmarshaller.Instance;
@@ -1101,7 +1101,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteModelResponse> DeleteModelAsync(DeleteModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteModelResponse> DeleteModelAsync(DeleteModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteModelRequestMarshaller();
             var unmarshaller = DeleteModelResponseUnmarshaller.Instance;
@@ -1114,7 +1114,7 @@ namespace Amazon.APIGateway
         
         #region  DeleteRequestValidator
 
-        internal DeleteRequestValidatorResponse DeleteRequestValidator(DeleteRequestValidatorRequest request)
+        internal virtual DeleteRequestValidatorResponse DeleteRequestValidator(DeleteRequestValidatorRequest request)
         {
             var marshaller = new DeleteRequestValidatorRequestMarshaller();
             var unmarshaller = DeleteRequestValidatorResponseUnmarshaller.Instance;
@@ -1132,7 +1132,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteRequestValidatorResponse> DeleteRequestValidatorAsync(DeleteRequestValidatorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteRequestValidatorResponse> DeleteRequestValidatorAsync(DeleteRequestValidatorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteRequestValidatorRequestMarshaller();
             var unmarshaller = DeleteRequestValidatorResponseUnmarshaller.Instance;
@@ -1145,7 +1145,7 @@ namespace Amazon.APIGateway
         
         #region  DeleteResource
 
-        internal DeleteResourceResponse DeleteResource(DeleteResourceRequest request)
+        internal virtual DeleteResourceResponse DeleteResource(DeleteResourceRequest request)
         {
             var marshaller = new DeleteResourceRequestMarshaller();
             var unmarshaller = DeleteResourceResponseUnmarshaller.Instance;
@@ -1163,7 +1163,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteResourceResponse> DeleteResourceAsync(DeleteResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteResourceResponse> DeleteResourceAsync(DeleteResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteResourceRequestMarshaller();
             var unmarshaller = DeleteResourceResponseUnmarshaller.Instance;
@@ -1176,7 +1176,7 @@ namespace Amazon.APIGateway
         
         #region  DeleteRestApi
 
-        internal DeleteRestApiResponse DeleteRestApi(DeleteRestApiRequest request)
+        internal virtual DeleteRestApiResponse DeleteRestApi(DeleteRestApiRequest request)
         {
             var marshaller = new DeleteRestApiRequestMarshaller();
             var unmarshaller = DeleteRestApiResponseUnmarshaller.Instance;
@@ -1194,7 +1194,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteRestApiResponse> DeleteRestApiAsync(DeleteRestApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteRestApiResponse> DeleteRestApiAsync(DeleteRestApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteRestApiRequestMarshaller();
             var unmarshaller = DeleteRestApiResponseUnmarshaller.Instance;
@@ -1207,7 +1207,7 @@ namespace Amazon.APIGateway
         
         #region  DeleteStage
 
-        internal DeleteStageResponse DeleteStage(DeleteStageRequest request)
+        internal virtual DeleteStageResponse DeleteStage(DeleteStageRequest request)
         {
             var marshaller = new DeleteStageRequestMarshaller();
             var unmarshaller = DeleteStageResponseUnmarshaller.Instance;
@@ -1225,7 +1225,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteStageResponse> DeleteStageAsync(DeleteStageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteStageResponse> DeleteStageAsync(DeleteStageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteStageRequestMarshaller();
             var unmarshaller = DeleteStageResponseUnmarshaller.Instance;
@@ -1238,7 +1238,7 @@ namespace Amazon.APIGateway
         
         #region  DeleteUsagePlan
 
-        internal DeleteUsagePlanResponse DeleteUsagePlan(DeleteUsagePlanRequest request)
+        internal virtual DeleteUsagePlanResponse DeleteUsagePlan(DeleteUsagePlanRequest request)
         {
             var marshaller = new DeleteUsagePlanRequestMarshaller();
             var unmarshaller = DeleteUsagePlanResponseUnmarshaller.Instance;
@@ -1256,7 +1256,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteUsagePlanResponse> DeleteUsagePlanAsync(DeleteUsagePlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteUsagePlanResponse> DeleteUsagePlanAsync(DeleteUsagePlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteUsagePlanRequestMarshaller();
             var unmarshaller = DeleteUsagePlanResponseUnmarshaller.Instance;
@@ -1269,7 +1269,7 @@ namespace Amazon.APIGateway
         
         #region  DeleteUsagePlanKey
 
-        internal DeleteUsagePlanKeyResponse DeleteUsagePlanKey(DeleteUsagePlanKeyRequest request)
+        internal virtual DeleteUsagePlanKeyResponse DeleteUsagePlanKey(DeleteUsagePlanKeyRequest request)
         {
             var marshaller = new DeleteUsagePlanKeyRequestMarshaller();
             var unmarshaller = DeleteUsagePlanKeyResponseUnmarshaller.Instance;
@@ -1287,7 +1287,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteUsagePlanKeyResponse> DeleteUsagePlanKeyAsync(DeleteUsagePlanKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteUsagePlanKeyResponse> DeleteUsagePlanKeyAsync(DeleteUsagePlanKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteUsagePlanKeyRequestMarshaller();
             var unmarshaller = DeleteUsagePlanKeyResponseUnmarshaller.Instance;
@@ -1300,7 +1300,7 @@ namespace Amazon.APIGateway
         
         #region  FlushStageAuthorizersCache
 
-        internal FlushStageAuthorizersCacheResponse FlushStageAuthorizersCache(FlushStageAuthorizersCacheRequest request)
+        internal virtual FlushStageAuthorizersCacheResponse FlushStageAuthorizersCache(FlushStageAuthorizersCacheRequest request)
         {
             var marshaller = new FlushStageAuthorizersCacheRequestMarshaller();
             var unmarshaller = FlushStageAuthorizersCacheResponseUnmarshaller.Instance;
@@ -1318,7 +1318,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<FlushStageAuthorizersCacheResponse> FlushStageAuthorizersCacheAsync(FlushStageAuthorizersCacheRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<FlushStageAuthorizersCacheResponse> FlushStageAuthorizersCacheAsync(FlushStageAuthorizersCacheRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new FlushStageAuthorizersCacheRequestMarshaller();
             var unmarshaller = FlushStageAuthorizersCacheResponseUnmarshaller.Instance;
@@ -1331,7 +1331,7 @@ namespace Amazon.APIGateway
         
         #region  FlushStageCache
 
-        internal FlushStageCacheResponse FlushStageCache(FlushStageCacheRequest request)
+        internal virtual FlushStageCacheResponse FlushStageCache(FlushStageCacheRequest request)
         {
             var marshaller = new FlushStageCacheRequestMarshaller();
             var unmarshaller = FlushStageCacheResponseUnmarshaller.Instance;
@@ -1349,7 +1349,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<FlushStageCacheResponse> FlushStageCacheAsync(FlushStageCacheRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<FlushStageCacheResponse> FlushStageCacheAsync(FlushStageCacheRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new FlushStageCacheRequestMarshaller();
             var unmarshaller = FlushStageCacheResponseUnmarshaller.Instance;
@@ -1362,7 +1362,7 @@ namespace Amazon.APIGateway
         
         #region  GenerateClientCertificate
 
-        internal GenerateClientCertificateResponse GenerateClientCertificate(GenerateClientCertificateRequest request)
+        internal virtual GenerateClientCertificateResponse GenerateClientCertificate(GenerateClientCertificateRequest request)
         {
             var marshaller = new GenerateClientCertificateRequestMarshaller();
             var unmarshaller = GenerateClientCertificateResponseUnmarshaller.Instance;
@@ -1380,7 +1380,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GenerateClientCertificateResponse> GenerateClientCertificateAsync(GenerateClientCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GenerateClientCertificateResponse> GenerateClientCertificateAsync(GenerateClientCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GenerateClientCertificateRequestMarshaller();
             var unmarshaller = GenerateClientCertificateResponseUnmarshaller.Instance;
@@ -1393,7 +1393,7 @@ namespace Amazon.APIGateway
         
         #region  GetAccount
 
-        internal GetAccountResponse GetAccount(GetAccountRequest request)
+        internal virtual GetAccountResponse GetAccount(GetAccountRequest request)
         {
             var marshaller = new GetAccountRequestMarshaller();
             var unmarshaller = GetAccountResponseUnmarshaller.Instance;
@@ -1411,7 +1411,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetAccountResponse> GetAccountAsync(GetAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetAccountResponse> GetAccountAsync(GetAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetAccountRequestMarshaller();
             var unmarshaller = GetAccountResponseUnmarshaller.Instance;
@@ -1424,7 +1424,7 @@ namespace Amazon.APIGateway
         
         #region  GetApiKey
 
-        internal GetApiKeyResponse GetApiKey(GetApiKeyRequest request)
+        internal virtual GetApiKeyResponse GetApiKey(GetApiKeyRequest request)
         {
             var marshaller = new GetApiKeyRequestMarshaller();
             var unmarshaller = GetApiKeyResponseUnmarshaller.Instance;
@@ -1442,7 +1442,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetApiKeyResponse> GetApiKeyAsync(GetApiKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetApiKeyResponse> GetApiKeyAsync(GetApiKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetApiKeyRequestMarshaller();
             var unmarshaller = GetApiKeyResponseUnmarshaller.Instance;
@@ -1455,7 +1455,7 @@ namespace Amazon.APIGateway
         
         #region  GetApiKeys
 
-        internal GetApiKeysResponse GetApiKeys(GetApiKeysRequest request)
+        internal virtual GetApiKeysResponse GetApiKeys(GetApiKeysRequest request)
         {
             var marshaller = new GetApiKeysRequestMarshaller();
             var unmarshaller = GetApiKeysResponseUnmarshaller.Instance;
@@ -1473,7 +1473,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetApiKeysResponse> GetApiKeysAsync(GetApiKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetApiKeysResponse> GetApiKeysAsync(GetApiKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetApiKeysRequestMarshaller();
             var unmarshaller = GetApiKeysResponseUnmarshaller.Instance;
@@ -1486,7 +1486,7 @@ namespace Amazon.APIGateway
         
         #region  GetAuthorizer
 
-        internal GetAuthorizerResponse GetAuthorizer(GetAuthorizerRequest request)
+        internal virtual GetAuthorizerResponse GetAuthorizer(GetAuthorizerRequest request)
         {
             var marshaller = new GetAuthorizerRequestMarshaller();
             var unmarshaller = GetAuthorizerResponseUnmarshaller.Instance;
@@ -1504,7 +1504,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetAuthorizerResponse> GetAuthorizerAsync(GetAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetAuthorizerResponse> GetAuthorizerAsync(GetAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetAuthorizerRequestMarshaller();
             var unmarshaller = GetAuthorizerResponseUnmarshaller.Instance;
@@ -1517,7 +1517,7 @@ namespace Amazon.APIGateway
         
         #region  GetAuthorizers
 
-        internal GetAuthorizersResponse GetAuthorizers(GetAuthorizersRequest request)
+        internal virtual GetAuthorizersResponse GetAuthorizers(GetAuthorizersRequest request)
         {
             var marshaller = new GetAuthorizersRequestMarshaller();
             var unmarshaller = GetAuthorizersResponseUnmarshaller.Instance;
@@ -1535,7 +1535,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetAuthorizersResponse> GetAuthorizersAsync(GetAuthorizersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetAuthorizersResponse> GetAuthorizersAsync(GetAuthorizersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetAuthorizersRequestMarshaller();
             var unmarshaller = GetAuthorizersResponseUnmarshaller.Instance;
@@ -1548,7 +1548,7 @@ namespace Amazon.APIGateway
         
         #region  GetBasePathMapping
 
-        internal GetBasePathMappingResponse GetBasePathMapping(GetBasePathMappingRequest request)
+        internal virtual GetBasePathMappingResponse GetBasePathMapping(GetBasePathMappingRequest request)
         {
             var marshaller = new GetBasePathMappingRequestMarshaller();
             var unmarshaller = GetBasePathMappingResponseUnmarshaller.Instance;
@@ -1566,7 +1566,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetBasePathMappingResponse> GetBasePathMappingAsync(GetBasePathMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetBasePathMappingResponse> GetBasePathMappingAsync(GetBasePathMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetBasePathMappingRequestMarshaller();
             var unmarshaller = GetBasePathMappingResponseUnmarshaller.Instance;
@@ -1579,7 +1579,7 @@ namespace Amazon.APIGateway
         
         #region  GetBasePathMappings
 
-        internal GetBasePathMappingsResponse GetBasePathMappings(GetBasePathMappingsRequest request)
+        internal virtual GetBasePathMappingsResponse GetBasePathMappings(GetBasePathMappingsRequest request)
         {
             var marshaller = new GetBasePathMappingsRequestMarshaller();
             var unmarshaller = GetBasePathMappingsResponseUnmarshaller.Instance;
@@ -1597,7 +1597,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetBasePathMappingsResponse> GetBasePathMappingsAsync(GetBasePathMappingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetBasePathMappingsResponse> GetBasePathMappingsAsync(GetBasePathMappingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetBasePathMappingsRequestMarshaller();
             var unmarshaller = GetBasePathMappingsResponseUnmarshaller.Instance;
@@ -1610,7 +1610,7 @@ namespace Amazon.APIGateway
         
         #region  GetClientCertificate
 
-        internal GetClientCertificateResponse GetClientCertificate(GetClientCertificateRequest request)
+        internal virtual GetClientCertificateResponse GetClientCertificate(GetClientCertificateRequest request)
         {
             var marshaller = new GetClientCertificateRequestMarshaller();
             var unmarshaller = GetClientCertificateResponseUnmarshaller.Instance;
@@ -1628,7 +1628,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetClientCertificateResponse> GetClientCertificateAsync(GetClientCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetClientCertificateResponse> GetClientCertificateAsync(GetClientCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetClientCertificateRequestMarshaller();
             var unmarshaller = GetClientCertificateResponseUnmarshaller.Instance;
@@ -1641,7 +1641,7 @@ namespace Amazon.APIGateway
         
         #region  GetClientCertificates
 
-        internal GetClientCertificatesResponse GetClientCertificates(GetClientCertificatesRequest request)
+        internal virtual GetClientCertificatesResponse GetClientCertificates(GetClientCertificatesRequest request)
         {
             var marshaller = new GetClientCertificatesRequestMarshaller();
             var unmarshaller = GetClientCertificatesResponseUnmarshaller.Instance;
@@ -1659,7 +1659,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetClientCertificatesResponse> GetClientCertificatesAsync(GetClientCertificatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetClientCertificatesResponse> GetClientCertificatesAsync(GetClientCertificatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetClientCertificatesRequestMarshaller();
             var unmarshaller = GetClientCertificatesResponseUnmarshaller.Instance;
@@ -1672,7 +1672,7 @@ namespace Amazon.APIGateway
         
         #region  GetDeployment
 
-        internal GetDeploymentResponse GetDeployment(GetDeploymentRequest request)
+        internal virtual GetDeploymentResponse GetDeployment(GetDeploymentRequest request)
         {
             var marshaller = new GetDeploymentRequestMarshaller();
             var unmarshaller = GetDeploymentResponseUnmarshaller.Instance;
@@ -1690,7 +1690,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetDeploymentResponse> GetDeploymentAsync(GetDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetDeploymentResponse> GetDeploymentAsync(GetDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetDeploymentRequestMarshaller();
             var unmarshaller = GetDeploymentResponseUnmarshaller.Instance;
@@ -1703,7 +1703,7 @@ namespace Amazon.APIGateway
         
         #region  GetDeployments
 
-        internal GetDeploymentsResponse GetDeployments(GetDeploymentsRequest request)
+        internal virtual GetDeploymentsResponse GetDeployments(GetDeploymentsRequest request)
         {
             var marshaller = new GetDeploymentsRequestMarshaller();
             var unmarshaller = GetDeploymentsResponseUnmarshaller.Instance;
@@ -1721,7 +1721,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetDeploymentsResponse> GetDeploymentsAsync(GetDeploymentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetDeploymentsResponse> GetDeploymentsAsync(GetDeploymentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetDeploymentsRequestMarshaller();
             var unmarshaller = GetDeploymentsResponseUnmarshaller.Instance;
@@ -1734,7 +1734,7 @@ namespace Amazon.APIGateway
         
         #region  GetDocumentationPart
 
-        internal GetDocumentationPartResponse GetDocumentationPart(GetDocumentationPartRequest request)
+        internal virtual GetDocumentationPartResponse GetDocumentationPart(GetDocumentationPartRequest request)
         {
             var marshaller = new GetDocumentationPartRequestMarshaller();
             var unmarshaller = GetDocumentationPartResponseUnmarshaller.Instance;
@@ -1752,7 +1752,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetDocumentationPartResponse> GetDocumentationPartAsync(GetDocumentationPartRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetDocumentationPartResponse> GetDocumentationPartAsync(GetDocumentationPartRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetDocumentationPartRequestMarshaller();
             var unmarshaller = GetDocumentationPartResponseUnmarshaller.Instance;
@@ -1765,7 +1765,7 @@ namespace Amazon.APIGateway
         
         #region  GetDocumentationParts
 
-        internal GetDocumentationPartsResponse GetDocumentationParts(GetDocumentationPartsRequest request)
+        internal virtual GetDocumentationPartsResponse GetDocumentationParts(GetDocumentationPartsRequest request)
         {
             var marshaller = new GetDocumentationPartsRequestMarshaller();
             var unmarshaller = GetDocumentationPartsResponseUnmarshaller.Instance;
@@ -1783,7 +1783,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetDocumentationPartsResponse> GetDocumentationPartsAsync(GetDocumentationPartsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetDocumentationPartsResponse> GetDocumentationPartsAsync(GetDocumentationPartsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetDocumentationPartsRequestMarshaller();
             var unmarshaller = GetDocumentationPartsResponseUnmarshaller.Instance;
@@ -1796,7 +1796,7 @@ namespace Amazon.APIGateway
         
         #region  GetDocumentationVersion
 
-        internal GetDocumentationVersionResponse GetDocumentationVersion(GetDocumentationVersionRequest request)
+        internal virtual GetDocumentationVersionResponse GetDocumentationVersion(GetDocumentationVersionRequest request)
         {
             var marshaller = new GetDocumentationVersionRequestMarshaller();
             var unmarshaller = GetDocumentationVersionResponseUnmarshaller.Instance;
@@ -1814,7 +1814,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetDocumentationVersionResponse> GetDocumentationVersionAsync(GetDocumentationVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetDocumentationVersionResponse> GetDocumentationVersionAsync(GetDocumentationVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetDocumentationVersionRequestMarshaller();
             var unmarshaller = GetDocumentationVersionResponseUnmarshaller.Instance;
@@ -1827,7 +1827,7 @@ namespace Amazon.APIGateway
         
         #region  GetDocumentationVersions
 
-        internal GetDocumentationVersionsResponse GetDocumentationVersions(GetDocumentationVersionsRequest request)
+        internal virtual GetDocumentationVersionsResponse GetDocumentationVersions(GetDocumentationVersionsRequest request)
         {
             var marshaller = new GetDocumentationVersionsRequestMarshaller();
             var unmarshaller = GetDocumentationVersionsResponseUnmarshaller.Instance;
@@ -1845,7 +1845,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetDocumentationVersionsResponse> GetDocumentationVersionsAsync(GetDocumentationVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetDocumentationVersionsResponse> GetDocumentationVersionsAsync(GetDocumentationVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetDocumentationVersionsRequestMarshaller();
             var unmarshaller = GetDocumentationVersionsResponseUnmarshaller.Instance;
@@ -1858,7 +1858,7 @@ namespace Amazon.APIGateway
         
         #region  GetDomainName
 
-        internal GetDomainNameResponse GetDomainName(GetDomainNameRequest request)
+        internal virtual GetDomainNameResponse GetDomainName(GetDomainNameRequest request)
         {
             var marshaller = new GetDomainNameRequestMarshaller();
             var unmarshaller = GetDomainNameResponseUnmarshaller.Instance;
@@ -1876,7 +1876,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetDomainNameResponse> GetDomainNameAsync(GetDomainNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetDomainNameResponse> GetDomainNameAsync(GetDomainNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetDomainNameRequestMarshaller();
             var unmarshaller = GetDomainNameResponseUnmarshaller.Instance;
@@ -1889,7 +1889,7 @@ namespace Amazon.APIGateway
         
         #region  GetDomainNames
 
-        internal GetDomainNamesResponse GetDomainNames(GetDomainNamesRequest request)
+        internal virtual GetDomainNamesResponse GetDomainNames(GetDomainNamesRequest request)
         {
             var marshaller = new GetDomainNamesRequestMarshaller();
             var unmarshaller = GetDomainNamesResponseUnmarshaller.Instance;
@@ -1907,7 +1907,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetDomainNamesResponse> GetDomainNamesAsync(GetDomainNamesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetDomainNamesResponse> GetDomainNamesAsync(GetDomainNamesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetDomainNamesRequestMarshaller();
             var unmarshaller = GetDomainNamesResponseUnmarshaller.Instance;
@@ -1920,7 +1920,7 @@ namespace Amazon.APIGateway
         
         #region  GetExport
 
-        internal GetExportResponse GetExport(GetExportRequest request)
+        internal virtual GetExportResponse GetExport(GetExportRequest request)
         {
             var marshaller = new GetExportRequestMarshaller();
             var unmarshaller = GetExportResponseUnmarshaller.Instance;
@@ -1938,7 +1938,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetExportResponse> GetExportAsync(GetExportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetExportResponse> GetExportAsync(GetExportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetExportRequestMarshaller();
             var unmarshaller = GetExportResponseUnmarshaller.Instance;
@@ -1951,7 +1951,7 @@ namespace Amazon.APIGateway
         
         #region  GetGatewayResponse
 
-        internal GetGatewayResponseResponse GetGatewayResponse(GetGatewayResponseRequest request)
+        internal virtual GetGatewayResponseResponse GetGatewayResponse(GetGatewayResponseRequest request)
         {
             var marshaller = new GetGatewayResponseRequestMarshaller();
             var unmarshaller = GetGatewayResponseResponseUnmarshaller.Instance;
@@ -1969,7 +1969,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetGatewayResponseResponse> GetGatewayResponseAsync(GetGatewayResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetGatewayResponseResponse> GetGatewayResponseAsync(GetGatewayResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetGatewayResponseRequestMarshaller();
             var unmarshaller = GetGatewayResponseResponseUnmarshaller.Instance;
@@ -1982,7 +1982,7 @@ namespace Amazon.APIGateway
         
         #region  GetGatewayResponses
 
-        internal GetGatewayResponsesResponse GetGatewayResponses(GetGatewayResponsesRequest request)
+        internal virtual GetGatewayResponsesResponse GetGatewayResponses(GetGatewayResponsesRequest request)
         {
             var marshaller = new GetGatewayResponsesRequestMarshaller();
             var unmarshaller = GetGatewayResponsesResponseUnmarshaller.Instance;
@@ -2000,7 +2000,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetGatewayResponsesResponse> GetGatewayResponsesAsync(GetGatewayResponsesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetGatewayResponsesResponse> GetGatewayResponsesAsync(GetGatewayResponsesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetGatewayResponsesRequestMarshaller();
             var unmarshaller = GetGatewayResponsesResponseUnmarshaller.Instance;
@@ -2013,7 +2013,7 @@ namespace Amazon.APIGateway
         
         #region  GetIntegration
 
-        internal GetIntegrationResponse GetIntegration(GetIntegrationRequest request)
+        internal virtual GetIntegrationResponse GetIntegration(GetIntegrationRequest request)
         {
             var marshaller = new GetIntegrationRequestMarshaller();
             var unmarshaller = GetIntegrationResponseUnmarshaller.Instance;
@@ -2031,7 +2031,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetIntegrationResponse> GetIntegrationAsync(GetIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetIntegrationResponse> GetIntegrationAsync(GetIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetIntegrationRequestMarshaller();
             var unmarshaller = GetIntegrationResponseUnmarshaller.Instance;
@@ -2044,7 +2044,7 @@ namespace Amazon.APIGateway
         
         #region  GetIntegrationResponse
 
-        internal GetIntegrationResponseResponse GetIntegrationResponse(GetIntegrationResponseRequest request)
+        internal virtual GetIntegrationResponseResponse GetIntegrationResponse(GetIntegrationResponseRequest request)
         {
             var marshaller = new GetIntegrationResponseRequestMarshaller();
             var unmarshaller = GetIntegrationResponseResponseUnmarshaller.Instance;
@@ -2062,7 +2062,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetIntegrationResponseResponse> GetIntegrationResponseAsync(GetIntegrationResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetIntegrationResponseResponse> GetIntegrationResponseAsync(GetIntegrationResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetIntegrationResponseRequestMarshaller();
             var unmarshaller = GetIntegrationResponseResponseUnmarshaller.Instance;
@@ -2075,7 +2075,7 @@ namespace Amazon.APIGateway
         
         #region  GetMethod
 
-        internal GetMethodResponse GetMethod(GetMethodRequest request)
+        internal virtual GetMethodResponse GetMethod(GetMethodRequest request)
         {
             var marshaller = new GetMethodRequestMarshaller();
             var unmarshaller = GetMethodResponseUnmarshaller.Instance;
@@ -2093,7 +2093,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetMethodResponse> GetMethodAsync(GetMethodRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetMethodResponse> GetMethodAsync(GetMethodRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetMethodRequestMarshaller();
             var unmarshaller = GetMethodResponseUnmarshaller.Instance;
@@ -2106,7 +2106,7 @@ namespace Amazon.APIGateway
         
         #region  GetMethodResponse
 
-        internal GetMethodResponseResponse GetMethodResponse(GetMethodResponseRequest request)
+        internal virtual GetMethodResponseResponse GetMethodResponse(GetMethodResponseRequest request)
         {
             var marshaller = new GetMethodResponseRequestMarshaller();
             var unmarshaller = GetMethodResponseResponseUnmarshaller.Instance;
@@ -2124,7 +2124,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetMethodResponseResponse> GetMethodResponseAsync(GetMethodResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetMethodResponseResponse> GetMethodResponseAsync(GetMethodResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetMethodResponseRequestMarshaller();
             var unmarshaller = GetMethodResponseResponseUnmarshaller.Instance;
@@ -2137,7 +2137,7 @@ namespace Amazon.APIGateway
         
         #region  GetModel
 
-        internal GetModelResponse GetModel(GetModelRequest request)
+        internal virtual GetModelResponse GetModel(GetModelRequest request)
         {
             var marshaller = new GetModelRequestMarshaller();
             var unmarshaller = GetModelResponseUnmarshaller.Instance;
@@ -2155,7 +2155,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetModelResponse> GetModelAsync(GetModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetModelResponse> GetModelAsync(GetModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetModelRequestMarshaller();
             var unmarshaller = GetModelResponseUnmarshaller.Instance;
@@ -2168,7 +2168,7 @@ namespace Amazon.APIGateway
         
         #region  GetModels
 
-        internal GetModelsResponse GetModels(GetModelsRequest request)
+        internal virtual GetModelsResponse GetModels(GetModelsRequest request)
         {
             var marshaller = new GetModelsRequestMarshaller();
             var unmarshaller = GetModelsResponseUnmarshaller.Instance;
@@ -2186,7 +2186,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetModelsResponse> GetModelsAsync(GetModelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetModelsResponse> GetModelsAsync(GetModelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetModelsRequestMarshaller();
             var unmarshaller = GetModelsResponseUnmarshaller.Instance;
@@ -2199,7 +2199,7 @@ namespace Amazon.APIGateway
         
         #region  GetModelTemplate
 
-        internal GetModelTemplateResponse GetModelTemplate(GetModelTemplateRequest request)
+        internal virtual GetModelTemplateResponse GetModelTemplate(GetModelTemplateRequest request)
         {
             var marshaller = new GetModelTemplateRequestMarshaller();
             var unmarshaller = GetModelTemplateResponseUnmarshaller.Instance;
@@ -2217,7 +2217,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetModelTemplateResponse> GetModelTemplateAsync(GetModelTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetModelTemplateResponse> GetModelTemplateAsync(GetModelTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetModelTemplateRequestMarshaller();
             var unmarshaller = GetModelTemplateResponseUnmarshaller.Instance;
@@ -2230,7 +2230,7 @@ namespace Amazon.APIGateway
         
         #region  GetRequestValidator
 
-        internal GetRequestValidatorResponse GetRequestValidator(GetRequestValidatorRequest request)
+        internal virtual GetRequestValidatorResponse GetRequestValidator(GetRequestValidatorRequest request)
         {
             var marshaller = new GetRequestValidatorRequestMarshaller();
             var unmarshaller = GetRequestValidatorResponseUnmarshaller.Instance;
@@ -2248,7 +2248,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetRequestValidatorResponse> GetRequestValidatorAsync(GetRequestValidatorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetRequestValidatorResponse> GetRequestValidatorAsync(GetRequestValidatorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetRequestValidatorRequestMarshaller();
             var unmarshaller = GetRequestValidatorResponseUnmarshaller.Instance;
@@ -2261,7 +2261,7 @@ namespace Amazon.APIGateway
         
         #region  GetRequestValidators
 
-        internal GetRequestValidatorsResponse GetRequestValidators(GetRequestValidatorsRequest request)
+        internal virtual GetRequestValidatorsResponse GetRequestValidators(GetRequestValidatorsRequest request)
         {
             var marshaller = new GetRequestValidatorsRequestMarshaller();
             var unmarshaller = GetRequestValidatorsResponseUnmarshaller.Instance;
@@ -2279,7 +2279,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetRequestValidatorsResponse> GetRequestValidatorsAsync(GetRequestValidatorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetRequestValidatorsResponse> GetRequestValidatorsAsync(GetRequestValidatorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetRequestValidatorsRequestMarshaller();
             var unmarshaller = GetRequestValidatorsResponseUnmarshaller.Instance;
@@ -2292,7 +2292,7 @@ namespace Amazon.APIGateway
         
         #region  GetResource
 
-        internal GetResourceResponse GetResource(GetResourceRequest request)
+        internal virtual GetResourceResponse GetResource(GetResourceRequest request)
         {
             var marshaller = new GetResourceRequestMarshaller();
             var unmarshaller = GetResourceResponseUnmarshaller.Instance;
@@ -2310,7 +2310,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetResourceResponse> GetResourceAsync(GetResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetResourceResponse> GetResourceAsync(GetResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetResourceRequestMarshaller();
             var unmarshaller = GetResourceResponseUnmarshaller.Instance;
@@ -2323,7 +2323,7 @@ namespace Amazon.APIGateway
         
         #region  GetResources
 
-        internal GetResourcesResponse GetResources(GetResourcesRequest request)
+        internal virtual GetResourcesResponse GetResources(GetResourcesRequest request)
         {
             var marshaller = new GetResourcesRequestMarshaller();
             var unmarshaller = GetResourcesResponseUnmarshaller.Instance;
@@ -2341,7 +2341,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetResourcesResponse> GetResourcesAsync(GetResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetResourcesResponse> GetResourcesAsync(GetResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetResourcesRequestMarshaller();
             var unmarshaller = GetResourcesResponseUnmarshaller.Instance;
@@ -2354,7 +2354,7 @@ namespace Amazon.APIGateway
         
         #region  GetRestApi
 
-        internal GetRestApiResponse GetRestApi(GetRestApiRequest request)
+        internal virtual GetRestApiResponse GetRestApi(GetRestApiRequest request)
         {
             var marshaller = new GetRestApiRequestMarshaller();
             var unmarshaller = GetRestApiResponseUnmarshaller.Instance;
@@ -2372,7 +2372,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetRestApiResponse> GetRestApiAsync(GetRestApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetRestApiResponse> GetRestApiAsync(GetRestApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetRestApiRequestMarshaller();
             var unmarshaller = GetRestApiResponseUnmarshaller.Instance;
@@ -2385,7 +2385,7 @@ namespace Amazon.APIGateway
         
         #region  GetRestApis
 
-        internal GetRestApisResponse GetRestApis(GetRestApisRequest request)
+        internal virtual GetRestApisResponse GetRestApis(GetRestApisRequest request)
         {
             var marshaller = new GetRestApisRequestMarshaller();
             var unmarshaller = GetRestApisResponseUnmarshaller.Instance;
@@ -2403,7 +2403,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetRestApisResponse> GetRestApisAsync(GetRestApisRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetRestApisResponse> GetRestApisAsync(GetRestApisRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetRestApisRequestMarshaller();
             var unmarshaller = GetRestApisResponseUnmarshaller.Instance;
@@ -2416,7 +2416,7 @@ namespace Amazon.APIGateway
         
         #region  GetSdk
 
-        internal GetSdkResponse GetSdk(GetSdkRequest request)
+        internal virtual GetSdkResponse GetSdk(GetSdkRequest request)
         {
             var marshaller = new GetSdkRequestMarshaller();
             var unmarshaller = GetSdkResponseUnmarshaller.Instance;
@@ -2434,7 +2434,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetSdkResponse> GetSdkAsync(GetSdkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetSdkResponse> GetSdkAsync(GetSdkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetSdkRequestMarshaller();
             var unmarshaller = GetSdkResponseUnmarshaller.Instance;
@@ -2447,7 +2447,7 @@ namespace Amazon.APIGateway
         
         #region  GetSdkType
 
-        internal GetSdkTypeResponse GetSdkType(GetSdkTypeRequest request)
+        internal virtual GetSdkTypeResponse GetSdkType(GetSdkTypeRequest request)
         {
             var marshaller = new GetSdkTypeRequestMarshaller();
             var unmarshaller = GetSdkTypeResponseUnmarshaller.Instance;
@@ -2465,7 +2465,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetSdkTypeResponse> GetSdkTypeAsync(GetSdkTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetSdkTypeResponse> GetSdkTypeAsync(GetSdkTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetSdkTypeRequestMarshaller();
             var unmarshaller = GetSdkTypeResponseUnmarshaller.Instance;
@@ -2478,7 +2478,7 @@ namespace Amazon.APIGateway
         
         #region  GetSdkTypes
 
-        internal GetSdkTypesResponse GetSdkTypes(GetSdkTypesRequest request)
+        internal virtual GetSdkTypesResponse GetSdkTypes(GetSdkTypesRequest request)
         {
             var marshaller = new GetSdkTypesRequestMarshaller();
             var unmarshaller = GetSdkTypesResponseUnmarshaller.Instance;
@@ -2496,7 +2496,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetSdkTypesResponse> GetSdkTypesAsync(GetSdkTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetSdkTypesResponse> GetSdkTypesAsync(GetSdkTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetSdkTypesRequestMarshaller();
             var unmarshaller = GetSdkTypesResponseUnmarshaller.Instance;
@@ -2509,7 +2509,7 @@ namespace Amazon.APIGateway
         
         #region  GetStage
 
-        internal GetStageResponse GetStage(GetStageRequest request)
+        internal virtual GetStageResponse GetStage(GetStageRequest request)
         {
             var marshaller = new GetStageRequestMarshaller();
             var unmarshaller = GetStageResponseUnmarshaller.Instance;
@@ -2527,7 +2527,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetStageResponse> GetStageAsync(GetStageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetStageResponse> GetStageAsync(GetStageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetStageRequestMarshaller();
             var unmarshaller = GetStageResponseUnmarshaller.Instance;
@@ -2540,7 +2540,7 @@ namespace Amazon.APIGateway
         
         #region  GetStages
 
-        internal GetStagesResponse GetStages(GetStagesRequest request)
+        internal virtual GetStagesResponse GetStages(GetStagesRequest request)
         {
             var marshaller = new GetStagesRequestMarshaller();
             var unmarshaller = GetStagesResponseUnmarshaller.Instance;
@@ -2558,7 +2558,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetStagesResponse> GetStagesAsync(GetStagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetStagesResponse> GetStagesAsync(GetStagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetStagesRequestMarshaller();
             var unmarshaller = GetStagesResponseUnmarshaller.Instance;
@@ -2571,7 +2571,7 @@ namespace Amazon.APIGateway
         
         #region  GetUsage
 
-        internal GetUsageResponse GetUsage(GetUsageRequest request)
+        internal virtual GetUsageResponse GetUsage(GetUsageRequest request)
         {
             var marshaller = new GetUsageRequestMarshaller();
             var unmarshaller = GetUsageResponseUnmarshaller.Instance;
@@ -2589,7 +2589,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetUsageResponse> GetUsageAsync(GetUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetUsageResponse> GetUsageAsync(GetUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetUsageRequestMarshaller();
             var unmarshaller = GetUsageResponseUnmarshaller.Instance;
@@ -2602,7 +2602,7 @@ namespace Amazon.APIGateway
         
         #region  GetUsagePlan
 
-        internal GetUsagePlanResponse GetUsagePlan(GetUsagePlanRequest request)
+        internal virtual GetUsagePlanResponse GetUsagePlan(GetUsagePlanRequest request)
         {
             var marshaller = new GetUsagePlanRequestMarshaller();
             var unmarshaller = GetUsagePlanResponseUnmarshaller.Instance;
@@ -2620,7 +2620,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetUsagePlanResponse> GetUsagePlanAsync(GetUsagePlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetUsagePlanResponse> GetUsagePlanAsync(GetUsagePlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetUsagePlanRequestMarshaller();
             var unmarshaller = GetUsagePlanResponseUnmarshaller.Instance;
@@ -2633,7 +2633,7 @@ namespace Amazon.APIGateway
         
         #region  GetUsagePlanKey
 
-        internal GetUsagePlanKeyResponse GetUsagePlanKey(GetUsagePlanKeyRequest request)
+        internal virtual GetUsagePlanKeyResponse GetUsagePlanKey(GetUsagePlanKeyRequest request)
         {
             var marshaller = new GetUsagePlanKeyRequestMarshaller();
             var unmarshaller = GetUsagePlanKeyResponseUnmarshaller.Instance;
@@ -2651,7 +2651,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetUsagePlanKeyResponse> GetUsagePlanKeyAsync(GetUsagePlanKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetUsagePlanKeyResponse> GetUsagePlanKeyAsync(GetUsagePlanKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetUsagePlanKeyRequestMarshaller();
             var unmarshaller = GetUsagePlanKeyResponseUnmarshaller.Instance;
@@ -2664,7 +2664,7 @@ namespace Amazon.APIGateway
         
         #region  GetUsagePlanKeys
 
-        internal GetUsagePlanKeysResponse GetUsagePlanKeys(GetUsagePlanKeysRequest request)
+        internal virtual GetUsagePlanKeysResponse GetUsagePlanKeys(GetUsagePlanKeysRequest request)
         {
             var marshaller = new GetUsagePlanKeysRequestMarshaller();
             var unmarshaller = GetUsagePlanKeysResponseUnmarshaller.Instance;
@@ -2682,7 +2682,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetUsagePlanKeysResponse> GetUsagePlanKeysAsync(GetUsagePlanKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetUsagePlanKeysResponse> GetUsagePlanKeysAsync(GetUsagePlanKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetUsagePlanKeysRequestMarshaller();
             var unmarshaller = GetUsagePlanKeysResponseUnmarshaller.Instance;
@@ -2695,7 +2695,7 @@ namespace Amazon.APIGateway
         
         #region  GetUsagePlans
 
-        internal GetUsagePlansResponse GetUsagePlans(GetUsagePlansRequest request)
+        internal virtual GetUsagePlansResponse GetUsagePlans(GetUsagePlansRequest request)
         {
             var marshaller = new GetUsagePlansRequestMarshaller();
             var unmarshaller = GetUsagePlansResponseUnmarshaller.Instance;
@@ -2713,7 +2713,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetUsagePlansResponse> GetUsagePlansAsync(GetUsagePlansRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetUsagePlansResponse> GetUsagePlansAsync(GetUsagePlansRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetUsagePlansRequestMarshaller();
             var unmarshaller = GetUsagePlansResponseUnmarshaller.Instance;
@@ -2726,7 +2726,7 @@ namespace Amazon.APIGateway
         
         #region  ImportApiKeys
 
-        internal ImportApiKeysResponse ImportApiKeys(ImportApiKeysRequest request)
+        internal virtual ImportApiKeysResponse ImportApiKeys(ImportApiKeysRequest request)
         {
             var marshaller = new ImportApiKeysRequestMarshaller();
             var unmarshaller = ImportApiKeysResponseUnmarshaller.Instance;
@@ -2744,7 +2744,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<ImportApiKeysResponse> ImportApiKeysAsync(ImportApiKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ImportApiKeysResponse> ImportApiKeysAsync(ImportApiKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ImportApiKeysRequestMarshaller();
             var unmarshaller = ImportApiKeysResponseUnmarshaller.Instance;
@@ -2757,7 +2757,7 @@ namespace Amazon.APIGateway
         
         #region  ImportDocumentationParts
 
-        internal ImportDocumentationPartsResponse ImportDocumentationParts(ImportDocumentationPartsRequest request)
+        internal virtual ImportDocumentationPartsResponse ImportDocumentationParts(ImportDocumentationPartsRequest request)
         {
             var marshaller = new ImportDocumentationPartsRequestMarshaller();
             var unmarshaller = ImportDocumentationPartsResponseUnmarshaller.Instance;
@@ -2775,7 +2775,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<ImportDocumentationPartsResponse> ImportDocumentationPartsAsync(ImportDocumentationPartsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ImportDocumentationPartsResponse> ImportDocumentationPartsAsync(ImportDocumentationPartsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ImportDocumentationPartsRequestMarshaller();
             var unmarshaller = ImportDocumentationPartsResponseUnmarshaller.Instance;
@@ -2788,7 +2788,7 @@ namespace Amazon.APIGateway
         
         #region  ImportRestApi
 
-        internal ImportRestApiResponse ImportRestApi(ImportRestApiRequest request)
+        internal virtual ImportRestApiResponse ImportRestApi(ImportRestApiRequest request)
         {
             var marshaller = new ImportRestApiRequestMarshaller();
             var unmarshaller = ImportRestApiResponseUnmarshaller.Instance;
@@ -2806,7 +2806,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<ImportRestApiResponse> ImportRestApiAsync(ImportRestApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ImportRestApiResponse> ImportRestApiAsync(ImportRestApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ImportRestApiRequestMarshaller();
             var unmarshaller = ImportRestApiResponseUnmarshaller.Instance;
@@ -2819,7 +2819,7 @@ namespace Amazon.APIGateway
         
         #region  PutGatewayResponse
 
-        internal PutGatewayResponseResponse PutGatewayResponse(PutGatewayResponseRequest request)
+        internal virtual PutGatewayResponseResponse PutGatewayResponse(PutGatewayResponseRequest request)
         {
             var marshaller = new PutGatewayResponseRequestMarshaller();
             var unmarshaller = PutGatewayResponseResponseUnmarshaller.Instance;
@@ -2837,7 +2837,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<PutGatewayResponseResponse> PutGatewayResponseAsync(PutGatewayResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PutGatewayResponseResponse> PutGatewayResponseAsync(PutGatewayResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutGatewayResponseRequestMarshaller();
             var unmarshaller = PutGatewayResponseResponseUnmarshaller.Instance;
@@ -2850,7 +2850,7 @@ namespace Amazon.APIGateway
         
         #region  PutIntegration
 
-        internal PutIntegrationResponse PutIntegration(PutIntegrationRequest request)
+        internal virtual PutIntegrationResponse PutIntegration(PutIntegrationRequest request)
         {
             var marshaller = new PutIntegrationRequestMarshaller();
             var unmarshaller = PutIntegrationResponseUnmarshaller.Instance;
@@ -2868,7 +2868,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<PutIntegrationResponse> PutIntegrationAsync(PutIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PutIntegrationResponse> PutIntegrationAsync(PutIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutIntegrationRequestMarshaller();
             var unmarshaller = PutIntegrationResponseUnmarshaller.Instance;
@@ -2881,7 +2881,7 @@ namespace Amazon.APIGateway
         
         #region  PutIntegrationResponse
 
-        internal PutIntegrationResponseResponse PutIntegrationResponse(PutIntegrationResponseRequest request)
+        internal virtual PutIntegrationResponseResponse PutIntegrationResponse(PutIntegrationResponseRequest request)
         {
             var marshaller = new PutIntegrationResponseRequestMarshaller();
             var unmarshaller = PutIntegrationResponseResponseUnmarshaller.Instance;
@@ -2899,7 +2899,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<PutIntegrationResponseResponse> PutIntegrationResponseAsync(PutIntegrationResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PutIntegrationResponseResponse> PutIntegrationResponseAsync(PutIntegrationResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutIntegrationResponseRequestMarshaller();
             var unmarshaller = PutIntegrationResponseResponseUnmarshaller.Instance;
@@ -2912,7 +2912,7 @@ namespace Amazon.APIGateway
         
         #region  PutMethod
 
-        internal PutMethodResponse PutMethod(PutMethodRequest request)
+        internal virtual PutMethodResponse PutMethod(PutMethodRequest request)
         {
             var marshaller = new PutMethodRequestMarshaller();
             var unmarshaller = PutMethodResponseUnmarshaller.Instance;
@@ -2930,7 +2930,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<PutMethodResponse> PutMethodAsync(PutMethodRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PutMethodResponse> PutMethodAsync(PutMethodRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutMethodRequestMarshaller();
             var unmarshaller = PutMethodResponseUnmarshaller.Instance;
@@ -2943,7 +2943,7 @@ namespace Amazon.APIGateway
         
         #region  PutMethodResponse
 
-        internal PutMethodResponseResponse PutMethodResponse(PutMethodResponseRequest request)
+        internal virtual PutMethodResponseResponse PutMethodResponse(PutMethodResponseRequest request)
         {
             var marshaller = new PutMethodResponseRequestMarshaller();
             var unmarshaller = PutMethodResponseResponseUnmarshaller.Instance;
@@ -2961,7 +2961,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<PutMethodResponseResponse> PutMethodResponseAsync(PutMethodResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PutMethodResponseResponse> PutMethodResponseAsync(PutMethodResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutMethodResponseRequestMarshaller();
             var unmarshaller = PutMethodResponseResponseUnmarshaller.Instance;
@@ -2974,7 +2974,7 @@ namespace Amazon.APIGateway
         
         #region  PutRestApi
 
-        internal PutRestApiResponse PutRestApi(PutRestApiRequest request)
+        internal virtual PutRestApiResponse PutRestApi(PutRestApiRequest request)
         {
             var marshaller = new PutRestApiRequestMarshaller();
             var unmarshaller = PutRestApiResponseUnmarshaller.Instance;
@@ -2992,7 +2992,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<PutRestApiResponse> PutRestApiAsync(PutRestApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PutRestApiResponse> PutRestApiAsync(PutRestApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutRestApiRequestMarshaller();
             var unmarshaller = PutRestApiResponseUnmarshaller.Instance;
@@ -3005,7 +3005,7 @@ namespace Amazon.APIGateway
         
         #region  TestInvokeAuthorizer
 
-        internal TestInvokeAuthorizerResponse TestInvokeAuthorizer(TestInvokeAuthorizerRequest request)
+        internal virtual TestInvokeAuthorizerResponse TestInvokeAuthorizer(TestInvokeAuthorizerRequest request)
         {
             var marshaller = new TestInvokeAuthorizerRequestMarshaller();
             var unmarshaller = TestInvokeAuthorizerResponseUnmarshaller.Instance;
@@ -3023,7 +3023,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<TestInvokeAuthorizerResponse> TestInvokeAuthorizerAsync(TestInvokeAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<TestInvokeAuthorizerResponse> TestInvokeAuthorizerAsync(TestInvokeAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new TestInvokeAuthorizerRequestMarshaller();
             var unmarshaller = TestInvokeAuthorizerResponseUnmarshaller.Instance;
@@ -3036,7 +3036,7 @@ namespace Amazon.APIGateway
         
         #region  TestInvokeMethod
 
-        internal TestInvokeMethodResponse TestInvokeMethod(TestInvokeMethodRequest request)
+        internal virtual TestInvokeMethodResponse TestInvokeMethod(TestInvokeMethodRequest request)
         {
             var marshaller = new TestInvokeMethodRequestMarshaller();
             var unmarshaller = TestInvokeMethodResponseUnmarshaller.Instance;
@@ -3054,7 +3054,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<TestInvokeMethodResponse> TestInvokeMethodAsync(TestInvokeMethodRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<TestInvokeMethodResponse> TestInvokeMethodAsync(TestInvokeMethodRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new TestInvokeMethodRequestMarshaller();
             var unmarshaller = TestInvokeMethodResponseUnmarshaller.Instance;
@@ -3067,7 +3067,7 @@ namespace Amazon.APIGateway
         
         #region  UpdateAccount
 
-        internal UpdateAccountResponse UpdateAccount(UpdateAccountRequest request)
+        internal virtual UpdateAccountResponse UpdateAccount(UpdateAccountRequest request)
         {
             var marshaller = new UpdateAccountRequestMarshaller();
             var unmarshaller = UpdateAccountResponseUnmarshaller.Instance;
@@ -3085,7 +3085,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateAccountResponse> UpdateAccountAsync(UpdateAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateAccountResponse> UpdateAccountAsync(UpdateAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateAccountRequestMarshaller();
             var unmarshaller = UpdateAccountResponseUnmarshaller.Instance;
@@ -3098,7 +3098,7 @@ namespace Amazon.APIGateway
         
         #region  UpdateApiKey
 
-        internal UpdateApiKeyResponse UpdateApiKey(UpdateApiKeyRequest request)
+        internal virtual UpdateApiKeyResponse UpdateApiKey(UpdateApiKeyRequest request)
         {
             var marshaller = new UpdateApiKeyRequestMarshaller();
             var unmarshaller = UpdateApiKeyResponseUnmarshaller.Instance;
@@ -3116,7 +3116,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateApiKeyResponse> UpdateApiKeyAsync(UpdateApiKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateApiKeyResponse> UpdateApiKeyAsync(UpdateApiKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateApiKeyRequestMarshaller();
             var unmarshaller = UpdateApiKeyResponseUnmarshaller.Instance;
@@ -3129,7 +3129,7 @@ namespace Amazon.APIGateway
         
         #region  UpdateAuthorizer
 
-        internal UpdateAuthorizerResponse UpdateAuthorizer(UpdateAuthorizerRequest request)
+        internal virtual UpdateAuthorizerResponse UpdateAuthorizer(UpdateAuthorizerRequest request)
         {
             var marshaller = new UpdateAuthorizerRequestMarshaller();
             var unmarshaller = UpdateAuthorizerResponseUnmarshaller.Instance;
@@ -3147,7 +3147,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateAuthorizerResponse> UpdateAuthorizerAsync(UpdateAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateAuthorizerResponse> UpdateAuthorizerAsync(UpdateAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateAuthorizerRequestMarshaller();
             var unmarshaller = UpdateAuthorizerResponseUnmarshaller.Instance;
@@ -3160,7 +3160,7 @@ namespace Amazon.APIGateway
         
         #region  UpdateBasePathMapping
 
-        internal UpdateBasePathMappingResponse UpdateBasePathMapping(UpdateBasePathMappingRequest request)
+        internal virtual UpdateBasePathMappingResponse UpdateBasePathMapping(UpdateBasePathMappingRequest request)
         {
             var marshaller = new UpdateBasePathMappingRequestMarshaller();
             var unmarshaller = UpdateBasePathMappingResponseUnmarshaller.Instance;
@@ -3178,7 +3178,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateBasePathMappingResponse> UpdateBasePathMappingAsync(UpdateBasePathMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateBasePathMappingResponse> UpdateBasePathMappingAsync(UpdateBasePathMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateBasePathMappingRequestMarshaller();
             var unmarshaller = UpdateBasePathMappingResponseUnmarshaller.Instance;
@@ -3191,7 +3191,7 @@ namespace Amazon.APIGateway
         
         #region  UpdateClientCertificate
 
-        internal UpdateClientCertificateResponse UpdateClientCertificate(UpdateClientCertificateRequest request)
+        internal virtual UpdateClientCertificateResponse UpdateClientCertificate(UpdateClientCertificateRequest request)
         {
             var marshaller = new UpdateClientCertificateRequestMarshaller();
             var unmarshaller = UpdateClientCertificateResponseUnmarshaller.Instance;
@@ -3209,7 +3209,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateClientCertificateResponse> UpdateClientCertificateAsync(UpdateClientCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateClientCertificateResponse> UpdateClientCertificateAsync(UpdateClientCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateClientCertificateRequestMarshaller();
             var unmarshaller = UpdateClientCertificateResponseUnmarshaller.Instance;
@@ -3222,7 +3222,7 @@ namespace Amazon.APIGateway
         
         #region  UpdateDeployment
 
-        internal UpdateDeploymentResponse UpdateDeployment(UpdateDeploymentRequest request)
+        internal virtual UpdateDeploymentResponse UpdateDeployment(UpdateDeploymentRequest request)
         {
             var marshaller = new UpdateDeploymentRequestMarshaller();
             var unmarshaller = UpdateDeploymentResponseUnmarshaller.Instance;
@@ -3240,7 +3240,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateDeploymentResponse> UpdateDeploymentAsync(UpdateDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateDeploymentResponse> UpdateDeploymentAsync(UpdateDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateDeploymentRequestMarshaller();
             var unmarshaller = UpdateDeploymentResponseUnmarshaller.Instance;
@@ -3253,7 +3253,7 @@ namespace Amazon.APIGateway
         
         #region  UpdateDocumentationPart
 
-        internal UpdateDocumentationPartResponse UpdateDocumentationPart(UpdateDocumentationPartRequest request)
+        internal virtual UpdateDocumentationPartResponse UpdateDocumentationPart(UpdateDocumentationPartRequest request)
         {
             var marshaller = new UpdateDocumentationPartRequestMarshaller();
             var unmarshaller = UpdateDocumentationPartResponseUnmarshaller.Instance;
@@ -3271,7 +3271,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateDocumentationPartResponse> UpdateDocumentationPartAsync(UpdateDocumentationPartRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateDocumentationPartResponse> UpdateDocumentationPartAsync(UpdateDocumentationPartRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateDocumentationPartRequestMarshaller();
             var unmarshaller = UpdateDocumentationPartResponseUnmarshaller.Instance;
@@ -3284,7 +3284,7 @@ namespace Amazon.APIGateway
         
         #region  UpdateDocumentationVersion
 
-        internal UpdateDocumentationVersionResponse UpdateDocumentationVersion(UpdateDocumentationVersionRequest request)
+        internal virtual UpdateDocumentationVersionResponse UpdateDocumentationVersion(UpdateDocumentationVersionRequest request)
         {
             var marshaller = new UpdateDocumentationVersionRequestMarshaller();
             var unmarshaller = UpdateDocumentationVersionResponseUnmarshaller.Instance;
@@ -3302,7 +3302,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateDocumentationVersionResponse> UpdateDocumentationVersionAsync(UpdateDocumentationVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateDocumentationVersionResponse> UpdateDocumentationVersionAsync(UpdateDocumentationVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateDocumentationVersionRequestMarshaller();
             var unmarshaller = UpdateDocumentationVersionResponseUnmarshaller.Instance;
@@ -3315,7 +3315,7 @@ namespace Amazon.APIGateway
         
         #region  UpdateDomainName
 
-        internal UpdateDomainNameResponse UpdateDomainName(UpdateDomainNameRequest request)
+        internal virtual UpdateDomainNameResponse UpdateDomainName(UpdateDomainNameRequest request)
         {
             var marshaller = new UpdateDomainNameRequestMarshaller();
             var unmarshaller = UpdateDomainNameResponseUnmarshaller.Instance;
@@ -3333,7 +3333,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateDomainNameResponse> UpdateDomainNameAsync(UpdateDomainNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateDomainNameResponse> UpdateDomainNameAsync(UpdateDomainNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateDomainNameRequestMarshaller();
             var unmarshaller = UpdateDomainNameResponseUnmarshaller.Instance;
@@ -3346,7 +3346,7 @@ namespace Amazon.APIGateway
         
         #region  UpdateGatewayResponse
 
-        internal UpdateGatewayResponseResponse UpdateGatewayResponse(UpdateGatewayResponseRequest request)
+        internal virtual UpdateGatewayResponseResponse UpdateGatewayResponse(UpdateGatewayResponseRequest request)
         {
             var marshaller = new UpdateGatewayResponseRequestMarshaller();
             var unmarshaller = UpdateGatewayResponseResponseUnmarshaller.Instance;
@@ -3364,7 +3364,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateGatewayResponseResponse> UpdateGatewayResponseAsync(UpdateGatewayResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateGatewayResponseResponse> UpdateGatewayResponseAsync(UpdateGatewayResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateGatewayResponseRequestMarshaller();
             var unmarshaller = UpdateGatewayResponseResponseUnmarshaller.Instance;
@@ -3377,7 +3377,7 @@ namespace Amazon.APIGateway
         
         #region  UpdateIntegration
 
-        internal UpdateIntegrationResponse UpdateIntegration(UpdateIntegrationRequest request)
+        internal virtual UpdateIntegrationResponse UpdateIntegration(UpdateIntegrationRequest request)
         {
             var marshaller = new UpdateIntegrationRequestMarshaller();
             var unmarshaller = UpdateIntegrationResponseUnmarshaller.Instance;
@@ -3395,7 +3395,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateIntegrationResponse> UpdateIntegrationAsync(UpdateIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateIntegrationResponse> UpdateIntegrationAsync(UpdateIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateIntegrationRequestMarshaller();
             var unmarshaller = UpdateIntegrationResponseUnmarshaller.Instance;
@@ -3408,7 +3408,7 @@ namespace Amazon.APIGateway
         
         #region  UpdateIntegrationResponse
 
-        internal UpdateIntegrationResponseResponse UpdateIntegrationResponse(UpdateIntegrationResponseRequest request)
+        internal virtual UpdateIntegrationResponseResponse UpdateIntegrationResponse(UpdateIntegrationResponseRequest request)
         {
             var marshaller = new UpdateIntegrationResponseRequestMarshaller();
             var unmarshaller = UpdateIntegrationResponseResponseUnmarshaller.Instance;
@@ -3426,7 +3426,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateIntegrationResponseResponse> UpdateIntegrationResponseAsync(UpdateIntegrationResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateIntegrationResponseResponse> UpdateIntegrationResponseAsync(UpdateIntegrationResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateIntegrationResponseRequestMarshaller();
             var unmarshaller = UpdateIntegrationResponseResponseUnmarshaller.Instance;
@@ -3439,7 +3439,7 @@ namespace Amazon.APIGateway
         
         #region  UpdateMethod
 
-        internal UpdateMethodResponse UpdateMethod(UpdateMethodRequest request)
+        internal virtual UpdateMethodResponse UpdateMethod(UpdateMethodRequest request)
         {
             var marshaller = new UpdateMethodRequestMarshaller();
             var unmarshaller = UpdateMethodResponseUnmarshaller.Instance;
@@ -3457,7 +3457,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateMethodResponse> UpdateMethodAsync(UpdateMethodRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateMethodResponse> UpdateMethodAsync(UpdateMethodRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateMethodRequestMarshaller();
             var unmarshaller = UpdateMethodResponseUnmarshaller.Instance;
@@ -3470,7 +3470,7 @@ namespace Amazon.APIGateway
         
         #region  UpdateMethodResponse
 
-        internal UpdateMethodResponseResponse UpdateMethodResponse(UpdateMethodResponseRequest request)
+        internal virtual UpdateMethodResponseResponse UpdateMethodResponse(UpdateMethodResponseRequest request)
         {
             var marshaller = new UpdateMethodResponseRequestMarshaller();
             var unmarshaller = UpdateMethodResponseResponseUnmarshaller.Instance;
@@ -3488,7 +3488,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateMethodResponseResponse> UpdateMethodResponseAsync(UpdateMethodResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateMethodResponseResponse> UpdateMethodResponseAsync(UpdateMethodResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateMethodResponseRequestMarshaller();
             var unmarshaller = UpdateMethodResponseResponseUnmarshaller.Instance;
@@ -3501,7 +3501,7 @@ namespace Amazon.APIGateway
         
         #region  UpdateModel
 
-        internal UpdateModelResponse UpdateModel(UpdateModelRequest request)
+        internal virtual UpdateModelResponse UpdateModel(UpdateModelRequest request)
         {
             var marshaller = new UpdateModelRequestMarshaller();
             var unmarshaller = UpdateModelResponseUnmarshaller.Instance;
@@ -3519,7 +3519,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateModelResponse> UpdateModelAsync(UpdateModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateModelResponse> UpdateModelAsync(UpdateModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateModelRequestMarshaller();
             var unmarshaller = UpdateModelResponseUnmarshaller.Instance;
@@ -3532,7 +3532,7 @@ namespace Amazon.APIGateway
         
         #region  UpdateRequestValidator
 
-        internal UpdateRequestValidatorResponse UpdateRequestValidator(UpdateRequestValidatorRequest request)
+        internal virtual UpdateRequestValidatorResponse UpdateRequestValidator(UpdateRequestValidatorRequest request)
         {
             var marshaller = new UpdateRequestValidatorRequestMarshaller();
             var unmarshaller = UpdateRequestValidatorResponseUnmarshaller.Instance;
@@ -3550,7 +3550,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateRequestValidatorResponse> UpdateRequestValidatorAsync(UpdateRequestValidatorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateRequestValidatorResponse> UpdateRequestValidatorAsync(UpdateRequestValidatorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateRequestValidatorRequestMarshaller();
             var unmarshaller = UpdateRequestValidatorResponseUnmarshaller.Instance;
@@ -3563,7 +3563,7 @@ namespace Amazon.APIGateway
         
         #region  UpdateResource
 
-        internal UpdateResourceResponse UpdateResource(UpdateResourceRequest request)
+        internal virtual UpdateResourceResponse UpdateResource(UpdateResourceRequest request)
         {
             var marshaller = new UpdateResourceRequestMarshaller();
             var unmarshaller = UpdateResourceResponseUnmarshaller.Instance;
@@ -3581,7 +3581,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateResourceResponse> UpdateResourceAsync(UpdateResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateResourceResponse> UpdateResourceAsync(UpdateResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateResourceRequestMarshaller();
             var unmarshaller = UpdateResourceResponseUnmarshaller.Instance;
@@ -3594,7 +3594,7 @@ namespace Amazon.APIGateway
         
         #region  UpdateRestApi
 
-        internal UpdateRestApiResponse UpdateRestApi(UpdateRestApiRequest request)
+        internal virtual UpdateRestApiResponse UpdateRestApi(UpdateRestApiRequest request)
         {
             var marshaller = new UpdateRestApiRequestMarshaller();
             var unmarshaller = UpdateRestApiResponseUnmarshaller.Instance;
@@ -3612,7 +3612,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateRestApiResponse> UpdateRestApiAsync(UpdateRestApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateRestApiResponse> UpdateRestApiAsync(UpdateRestApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateRestApiRequestMarshaller();
             var unmarshaller = UpdateRestApiResponseUnmarshaller.Instance;
@@ -3625,7 +3625,7 @@ namespace Amazon.APIGateway
         
         #region  UpdateStage
 
-        internal UpdateStageResponse UpdateStage(UpdateStageRequest request)
+        internal virtual UpdateStageResponse UpdateStage(UpdateStageRequest request)
         {
             var marshaller = new UpdateStageRequestMarshaller();
             var unmarshaller = UpdateStageResponseUnmarshaller.Instance;
@@ -3643,7 +3643,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateStageResponse> UpdateStageAsync(UpdateStageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateStageResponse> UpdateStageAsync(UpdateStageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateStageRequestMarshaller();
             var unmarshaller = UpdateStageResponseUnmarshaller.Instance;
@@ -3656,7 +3656,7 @@ namespace Amazon.APIGateway
         
         #region  UpdateUsage
 
-        internal UpdateUsageResponse UpdateUsage(UpdateUsageRequest request)
+        internal virtual UpdateUsageResponse UpdateUsage(UpdateUsageRequest request)
         {
             var marshaller = new UpdateUsageRequestMarshaller();
             var unmarshaller = UpdateUsageResponseUnmarshaller.Instance;
@@ -3674,7 +3674,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateUsageResponse> UpdateUsageAsync(UpdateUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateUsageResponse> UpdateUsageAsync(UpdateUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateUsageRequestMarshaller();
             var unmarshaller = UpdateUsageResponseUnmarshaller.Instance;
@@ -3687,7 +3687,7 @@ namespace Amazon.APIGateway
         
         #region  UpdateUsagePlan
 
-        internal UpdateUsagePlanResponse UpdateUsagePlan(UpdateUsagePlanRequest request)
+        internal virtual UpdateUsagePlanResponse UpdateUsagePlan(UpdateUsagePlanRequest request)
         {
             var marshaller = new UpdateUsagePlanRequestMarshaller();
             var unmarshaller = UpdateUsagePlanResponseUnmarshaller.Instance;
@@ -3705,7 +3705,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateUsagePlanResponse> UpdateUsagePlanAsync(UpdateUsagePlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateUsagePlanResponse> UpdateUsagePlanAsync(UpdateUsagePlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateUsagePlanRequestMarshaller();
             var unmarshaller = UpdateUsagePlanResponseUnmarshaller.Instance;

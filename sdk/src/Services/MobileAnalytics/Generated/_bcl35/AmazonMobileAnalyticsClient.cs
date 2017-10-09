@@ -237,7 +237,7 @@ namespace Amazon.MobileAnalytics
         /// <exception cref="Amazon.MobileAnalytics.Model.BadRequestException">
         /// An exception object returned when a request fails.
         /// </exception>
-        public PutEventsResponse PutEvents(PutEventsRequest request)
+        public virtual PutEventsResponse PutEvents(PutEventsRequest request)
         {
             var marshaller = new PutEventsRequestMarshaller();
             var unmarshaller = PutEventsResponseUnmarshaller.Instance;
@@ -256,7 +256,7 @@ namespace Amazon.MobileAnalytics
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutEvents
         ///         operation.</returns>
-        public IAsyncResult BeginPutEvents(PutEventsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPutEvents(PutEventsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutEventsRequestMarshaller();
             var unmarshaller = PutEventsResponseUnmarshaller.Instance;
@@ -272,7 +272,7 @@ namespace Amazon.MobileAnalytics
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutEvents.</param>
         /// 
         /// <returns>Returns a  PutEventsResult from MobileAnalytics.</returns>
-        public  PutEventsResponse EndPutEvents(IAsyncResult asyncResult)
+        public virtual PutEventsResponse EndPutEvents(IAsyncResult asyncResult)
         {
             return EndInvoke<PutEventsResponse>(asyncResult);
         }

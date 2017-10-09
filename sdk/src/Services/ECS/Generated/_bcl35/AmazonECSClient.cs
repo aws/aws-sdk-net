@@ -258,7 +258,7 @@ namespace Amazon.ECS
         /// These errors are usually caused by a server issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
-        public CreateClusterResponse CreateCluster(CreateClusterRequest request)
+        public virtual CreateClusterResponse CreateCluster(CreateClusterRequest request)
         {
             var marshaller = new CreateClusterRequestMarshaller();
             var unmarshaller = CreateClusterResponseUnmarshaller.Instance;
@@ -278,7 +278,7 @@ namespace Amazon.ECS
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCluster
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
-        public IAsyncResult BeginCreateCluster(CreateClusterRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateCluster(CreateClusterRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateClusterRequestMarshaller();
             var unmarshaller = CreateClusterResponseUnmarshaller.Instance;
@@ -295,7 +295,7 @@ namespace Amazon.ECS
         /// 
         /// <returns>Returns a  CreateClusterResult from ECS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
-        public  CreateClusterResponse EndCreateCluster(IAsyncResult asyncResult)
+        public virtual CreateClusterResponse EndCreateCluster(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateClusterResponse>(asyncResult);
         }
@@ -401,7 +401,7 @@ namespace Amazon.ECS
         /// These errors are usually caused by a server issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateService">REST API Reference for CreateService Operation</seealso>
-        public CreateServiceResponse CreateService(CreateServiceRequest request)
+        public virtual CreateServiceResponse CreateService(CreateServiceRequest request)
         {
             var marshaller = new CreateServiceRequestMarshaller();
             var unmarshaller = CreateServiceResponseUnmarshaller.Instance;
@@ -421,7 +421,7 @@ namespace Amazon.ECS
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateService
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateService">REST API Reference for CreateService Operation</seealso>
-        public IAsyncResult BeginCreateService(CreateServiceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateService(CreateServiceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateServiceRequestMarshaller();
             var unmarshaller = CreateServiceResponseUnmarshaller.Instance;
@@ -438,7 +438,7 @@ namespace Amazon.ECS
         /// 
         /// <returns>Returns a  CreateServiceResult from ECS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateService">REST API Reference for CreateService Operation</seealso>
-        public  CreateServiceResponse EndCreateService(IAsyncResult asyncResult)
+        public virtual CreateServiceResponse EndCreateService(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateServiceResponse>(asyncResult);
         }
@@ -466,7 +466,7 @@ namespace Amazon.ECS
         /// and region-specific.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteAttributes">REST API Reference for DeleteAttributes Operation</seealso>
-        public DeleteAttributesResponse DeleteAttributes(DeleteAttributesRequest request)
+        public virtual DeleteAttributesResponse DeleteAttributes(DeleteAttributesRequest request)
         {
             var marshaller = new DeleteAttributesRequestMarshaller();
             var unmarshaller = DeleteAttributesResponseUnmarshaller.Instance;
@@ -486,7 +486,7 @@ namespace Amazon.ECS
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAttributes
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteAttributes">REST API Reference for DeleteAttributes Operation</seealso>
-        public IAsyncResult BeginDeleteAttributes(DeleteAttributesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteAttributes(DeleteAttributesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteAttributesRequestMarshaller();
             var unmarshaller = DeleteAttributesResponseUnmarshaller.Instance;
@@ -503,7 +503,7 @@ namespace Amazon.ECS
         /// 
         /// <returns>Returns a  DeleteAttributesResult from ECS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteAttributes">REST API Reference for DeleteAttributes Operation</seealso>
-        public  DeleteAttributesResponse EndDeleteAttributes(IAsyncResult asyncResult)
+        public virtual DeleteAttributesResponse EndDeleteAttributes(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteAttributesResponse>(asyncResult);
         }
@@ -546,7 +546,7 @@ namespace Amazon.ECS
         /// These errors are usually caused by a server issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
-        public DeleteClusterResponse DeleteCluster(DeleteClusterRequest request)
+        public virtual DeleteClusterResponse DeleteCluster(DeleteClusterRequest request)
         {
             var marshaller = new DeleteClusterRequestMarshaller();
             var unmarshaller = DeleteClusterResponseUnmarshaller.Instance;
@@ -566,7 +566,7 @@ namespace Amazon.ECS
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCluster
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
-        public IAsyncResult BeginDeleteCluster(DeleteClusterRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteCluster(DeleteClusterRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteClusterRequestMarshaller();
             var unmarshaller = DeleteClusterResponseUnmarshaller.Instance;
@@ -583,7 +583,7 @@ namespace Amazon.ECS
         /// 
         /// <returns>Returns a  DeleteClusterResult from ECS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
-        public  DeleteClusterResponse EndDeleteCluster(IAsyncResult asyncResult)
+        public virtual DeleteClusterResponse EndDeleteCluster(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteClusterResponse>(asyncResult);
         }
@@ -635,7 +635,7 @@ namespace Amazon.ECS
         /// <a>ListServices</a>. Amazon ECS services are cluster-specific and region-specific.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteService">REST API Reference for DeleteService Operation</seealso>
-        public DeleteServiceResponse DeleteService(DeleteServiceRequest request)
+        public virtual DeleteServiceResponse DeleteService(DeleteServiceRequest request)
         {
             var marshaller = new DeleteServiceRequestMarshaller();
             var unmarshaller = DeleteServiceResponseUnmarshaller.Instance;
@@ -655,7 +655,7 @@ namespace Amazon.ECS
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteService
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteService">REST API Reference for DeleteService Operation</seealso>
-        public IAsyncResult BeginDeleteService(DeleteServiceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteService(DeleteServiceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteServiceRequestMarshaller();
             var unmarshaller = DeleteServiceResponseUnmarshaller.Instance;
@@ -672,7 +672,7 @@ namespace Amazon.ECS
         /// 
         /// <returns>Returns a  DeleteServiceResult from ECS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteService">REST API Reference for DeleteService Operation</seealso>
-        public  DeleteServiceResponse EndDeleteService(IAsyncResult asyncResult)
+        public virtual DeleteServiceResponse EndDeleteService(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteServiceResponse>(asyncResult);
         }
@@ -724,7 +724,7 @@ namespace Amazon.ECS
         /// These errors are usually caused by a server issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterContainerInstance">REST API Reference for DeregisterContainerInstance Operation</seealso>
-        public DeregisterContainerInstanceResponse DeregisterContainerInstance(DeregisterContainerInstanceRequest request)
+        public virtual DeregisterContainerInstanceResponse DeregisterContainerInstance(DeregisterContainerInstanceRequest request)
         {
             var marshaller = new DeregisterContainerInstanceRequestMarshaller();
             var unmarshaller = DeregisterContainerInstanceResponseUnmarshaller.Instance;
@@ -744,7 +744,7 @@ namespace Amazon.ECS
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeregisterContainerInstance
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterContainerInstance">REST API Reference for DeregisterContainerInstance Operation</seealso>
-        public IAsyncResult BeginDeregisterContainerInstance(DeregisterContainerInstanceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeregisterContainerInstance(DeregisterContainerInstanceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeregisterContainerInstanceRequestMarshaller();
             var unmarshaller = DeregisterContainerInstanceResponseUnmarshaller.Instance;
@@ -761,7 +761,7 @@ namespace Amazon.ECS
         /// 
         /// <returns>Returns a  DeregisterContainerInstanceResult from ECS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterContainerInstance">REST API Reference for DeregisterContainerInstance Operation</seealso>
-        public  DeregisterContainerInstanceResponse EndDeregisterContainerInstance(IAsyncResult asyncResult)
+        public virtual DeregisterContainerInstanceResponse EndDeregisterContainerInstance(IAsyncResult asyncResult)
         {
             return EndInvoke<DeregisterContainerInstanceResponse>(asyncResult);
         }
@@ -808,7 +808,7 @@ namespace Amazon.ECS
         /// These errors are usually caused by a server issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterTaskDefinition">REST API Reference for DeregisterTaskDefinition Operation</seealso>
-        public DeregisterTaskDefinitionResponse DeregisterTaskDefinition(DeregisterTaskDefinitionRequest request)
+        public virtual DeregisterTaskDefinitionResponse DeregisterTaskDefinition(DeregisterTaskDefinitionRequest request)
         {
             var marshaller = new DeregisterTaskDefinitionRequestMarshaller();
             var unmarshaller = DeregisterTaskDefinitionResponseUnmarshaller.Instance;
@@ -828,7 +828,7 @@ namespace Amazon.ECS
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeregisterTaskDefinition
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterTaskDefinition">REST API Reference for DeregisterTaskDefinition Operation</seealso>
-        public IAsyncResult BeginDeregisterTaskDefinition(DeregisterTaskDefinitionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeregisterTaskDefinition(DeregisterTaskDefinitionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeregisterTaskDefinitionRequestMarshaller();
             var unmarshaller = DeregisterTaskDefinitionResponseUnmarshaller.Instance;
@@ -845,7 +845,7 @@ namespace Amazon.ECS
         /// 
         /// <returns>Returns a  DeregisterTaskDefinitionResult from ECS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterTaskDefinition">REST API Reference for DeregisterTaskDefinition Operation</seealso>
-        public  DeregisterTaskDefinitionResponse EndDeregisterTaskDefinition(IAsyncResult asyncResult)
+        public virtual DeregisterTaskDefinitionResponse EndDeregisterTaskDefinition(IAsyncResult asyncResult)
         {
             return EndInvoke<DeregisterTaskDefinitionResponse>(asyncResult);
         }
@@ -872,7 +872,7 @@ namespace Amazon.ECS
         /// These errors are usually caused by a server issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeClusters">REST API Reference for DescribeClusters Operation</seealso>
-        public DescribeClustersResponse DescribeClusters(DescribeClustersRequest request)
+        public virtual DescribeClustersResponse DescribeClusters(DescribeClustersRequest request)
         {
             var marshaller = new DescribeClustersRequestMarshaller();
             var unmarshaller = DescribeClustersResponseUnmarshaller.Instance;
@@ -892,7 +892,7 @@ namespace Amazon.ECS
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeClusters
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeClusters">REST API Reference for DescribeClusters Operation</seealso>
-        public IAsyncResult BeginDescribeClusters(DescribeClustersRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeClusters(DescribeClustersRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeClustersRequestMarshaller();
             var unmarshaller = DescribeClustersResponseUnmarshaller.Instance;
@@ -909,7 +909,7 @@ namespace Amazon.ECS
         /// 
         /// <returns>Returns a  DescribeClustersResult from ECS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeClusters">REST API Reference for DescribeClusters Operation</seealso>
-        public  DescribeClustersResponse EndDescribeClusters(IAsyncResult asyncResult)
+        public virtual DescribeClustersResponse EndDescribeClusters(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeClustersResponse>(asyncResult);
         }
@@ -941,7 +941,7 @@ namespace Amazon.ECS
         /// These errors are usually caused by a server issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeContainerInstances">REST API Reference for DescribeContainerInstances Operation</seealso>
-        public DescribeContainerInstancesResponse DescribeContainerInstances(DescribeContainerInstancesRequest request)
+        public virtual DescribeContainerInstancesResponse DescribeContainerInstances(DescribeContainerInstancesRequest request)
         {
             var marshaller = new DescribeContainerInstancesRequestMarshaller();
             var unmarshaller = DescribeContainerInstancesResponseUnmarshaller.Instance;
@@ -961,7 +961,7 @@ namespace Amazon.ECS
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeContainerInstances
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeContainerInstances">REST API Reference for DescribeContainerInstances Operation</seealso>
-        public IAsyncResult BeginDescribeContainerInstances(DescribeContainerInstancesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeContainerInstances(DescribeContainerInstancesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeContainerInstancesRequestMarshaller();
             var unmarshaller = DescribeContainerInstancesResponseUnmarshaller.Instance;
@@ -978,7 +978,7 @@ namespace Amazon.ECS
         /// 
         /// <returns>Returns a  DescribeContainerInstancesResult from ECS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeContainerInstances">REST API Reference for DescribeContainerInstances Operation</seealso>
-        public  DescribeContainerInstancesResponse EndDescribeContainerInstances(IAsyncResult asyncResult)
+        public virtual DescribeContainerInstancesResponse EndDescribeContainerInstances(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeContainerInstancesResponse>(asyncResult);
         }
@@ -1009,7 +1009,7 @@ namespace Amazon.ECS
         /// These errors are usually caused by a server issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeServices">REST API Reference for DescribeServices Operation</seealso>
-        public DescribeServicesResponse DescribeServices(DescribeServicesRequest request)
+        public virtual DescribeServicesResponse DescribeServices(DescribeServicesRequest request)
         {
             var marshaller = new DescribeServicesRequestMarshaller();
             var unmarshaller = DescribeServicesResponseUnmarshaller.Instance;
@@ -1029,7 +1029,7 @@ namespace Amazon.ECS
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeServices
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeServices">REST API Reference for DescribeServices Operation</seealso>
-        public IAsyncResult BeginDescribeServices(DescribeServicesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeServices(DescribeServicesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeServicesRequestMarshaller();
             var unmarshaller = DescribeServicesResponseUnmarshaller.Instance;
@@ -1046,7 +1046,7 @@ namespace Amazon.ECS
         /// 
         /// <returns>Returns a  DescribeServicesResult from ECS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeServices">REST API Reference for DescribeServices Operation</seealso>
-        public  DescribeServicesResponse EndDescribeServices(IAsyncResult asyncResult)
+        public virtual DescribeServicesResponse EndDescribeServices(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeServicesResponse>(asyncResult);
         }
@@ -1082,7 +1082,7 @@ namespace Amazon.ECS
         /// These errors are usually caused by a server issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTaskDefinition">REST API Reference for DescribeTaskDefinition Operation</seealso>
-        public DescribeTaskDefinitionResponse DescribeTaskDefinition(DescribeTaskDefinitionRequest request)
+        public virtual DescribeTaskDefinitionResponse DescribeTaskDefinition(DescribeTaskDefinitionRequest request)
         {
             var marshaller = new DescribeTaskDefinitionRequestMarshaller();
             var unmarshaller = DescribeTaskDefinitionResponseUnmarshaller.Instance;
@@ -1102,7 +1102,7 @@ namespace Amazon.ECS
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTaskDefinition
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTaskDefinition">REST API Reference for DescribeTaskDefinition Operation</seealso>
-        public IAsyncResult BeginDescribeTaskDefinition(DescribeTaskDefinitionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeTaskDefinition(DescribeTaskDefinitionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeTaskDefinitionRequestMarshaller();
             var unmarshaller = DescribeTaskDefinitionResponseUnmarshaller.Instance;
@@ -1119,7 +1119,7 @@ namespace Amazon.ECS
         /// 
         /// <returns>Returns a  DescribeTaskDefinitionResult from ECS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTaskDefinition">REST API Reference for DescribeTaskDefinition Operation</seealso>
-        public  DescribeTaskDefinitionResponse EndDescribeTaskDefinition(IAsyncResult asyncResult)
+        public virtual DescribeTaskDefinitionResponse EndDescribeTaskDefinition(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeTaskDefinitionResponse>(asyncResult);
         }
@@ -1150,7 +1150,7 @@ namespace Amazon.ECS
         /// These errors are usually caused by a server issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTasks">REST API Reference for DescribeTasks Operation</seealso>
-        public DescribeTasksResponse DescribeTasks(DescribeTasksRequest request)
+        public virtual DescribeTasksResponse DescribeTasks(DescribeTasksRequest request)
         {
             var marshaller = new DescribeTasksRequestMarshaller();
             var unmarshaller = DescribeTasksResponseUnmarshaller.Instance;
@@ -1170,7 +1170,7 @@ namespace Amazon.ECS
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTasks
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTasks">REST API Reference for DescribeTasks Operation</seealso>
-        public IAsyncResult BeginDescribeTasks(DescribeTasksRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeTasks(DescribeTasksRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeTasksRequestMarshaller();
             var unmarshaller = DescribeTasksResponseUnmarshaller.Instance;
@@ -1187,7 +1187,7 @@ namespace Amazon.ECS
         /// 
         /// <returns>Returns a  DescribeTasksResult from ECS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTasks">REST API Reference for DescribeTasks Operation</seealso>
-        public  DescribeTasksResponse EndDescribeTasks(IAsyncResult asyncResult)
+        public virtual DescribeTasksResponse EndDescribeTasks(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeTasksResponse>(asyncResult);
         }
@@ -1215,7 +1215,7 @@ namespace Amazon.ECS
         /// The specified parameter is invalid. Review the available parameters for the API request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListAttributes">REST API Reference for ListAttributes Operation</seealso>
-        public ListAttributesResponse ListAttributes(ListAttributesRequest request)
+        public virtual ListAttributesResponse ListAttributes(ListAttributesRequest request)
         {
             var marshaller = new ListAttributesRequestMarshaller();
             var unmarshaller = ListAttributesResponseUnmarshaller.Instance;
@@ -1235,7 +1235,7 @@ namespace Amazon.ECS
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAttributes
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListAttributes">REST API Reference for ListAttributes Operation</seealso>
-        public IAsyncResult BeginListAttributes(ListAttributesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListAttributes(ListAttributesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListAttributesRequestMarshaller();
             var unmarshaller = ListAttributesResponseUnmarshaller.Instance;
@@ -1252,7 +1252,7 @@ namespace Amazon.ECS
         /// 
         /// <returns>Returns a  ListAttributesResult from ECS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListAttributes">REST API Reference for ListAttributes Operation</seealso>
-        public  ListAttributesResponse EndListAttributes(IAsyncResult asyncResult)
+        public virtual ListAttributesResponse EndListAttributes(IAsyncResult asyncResult)
         {
             return EndInvoke<ListAttributesResponse>(asyncResult);
         }
@@ -1279,7 +1279,7 @@ namespace Amazon.ECS
         /// These errors are usually caused by a server issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListClusters">REST API Reference for ListClusters Operation</seealso>
-        public ListClustersResponse ListClusters(ListClustersRequest request)
+        public virtual ListClustersResponse ListClusters(ListClustersRequest request)
         {
             var marshaller = new ListClustersRequestMarshaller();
             var unmarshaller = ListClustersResponseUnmarshaller.Instance;
@@ -1299,7 +1299,7 @@ namespace Amazon.ECS
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListClusters
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListClusters">REST API Reference for ListClusters Operation</seealso>
-        public IAsyncResult BeginListClusters(ListClustersRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListClusters(ListClustersRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListClustersRequestMarshaller();
             var unmarshaller = ListClustersResponseUnmarshaller.Instance;
@@ -1316,7 +1316,7 @@ namespace Amazon.ECS
         /// 
         /// <returns>Returns a  ListClustersResult from ECS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListClusters">REST API Reference for ListClusters Operation</seealso>
-        public  ListClustersResponse EndListClusters(IAsyncResult asyncResult)
+        public virtual ListClustersResponse EndListClusters(IAsyncResult asyncResult)
         {
             return EndInvoke<ListClustersResponse>(asyncResult);
         }
@@ -1350,7 +1350,7 @@ namespace Amazon.ECS
         /// These errors are usually caused by a server issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListContainerInstances">REST API Reference for ListContainerInstances Operation</seealso>
-        public ListContainerInstancesResponse ListContainerInstances(ListContainerInstancesRequest request)
+        public virtual ListContainerInstancesResponse ListContainerInstances(ListContainerInstancesRequest request)
         {
             var marshaller = new ListContainerInstancesRequestMarshaller();
             var unmarshaller = ListContainerInstancesResponseUnmarshaller.Instance;
@@ -1370,7 +1370,7 @@ namespace Amazon.ECS
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListContainerInstances
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListContainerInstances">REST API Reference for ListContainerInstances Operation</seealso>
-        public IAsyncResult BeginListContainerInstances(ListContainerInstancesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListContainerInstances(ListContainerInstancesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListContainerInstancesRequestMarshaller();
             var unmarshaller = ListContainerInstancesResponseUnmarshaller.Instance;
@@ -1387,7 +1387,7 @@ namespace Amazon.ECS
         /// 
         /// <returns>Returns a  ListContainerInstancesResult from ECS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListContainerInstances">REST API Reference for ListContainerInstances Operation</seealso>
-        public  ListContainerInstancesResponse EndListContainerInstances(IAsyncResult asyncResult)
+        public virtual ListContainerInstancesResponse EndListContainerInstances(IAsyncResult asyncResult)
         {
             return EndInvoke<ListContainerInstancesResponse>(asyncResult);
         }
@@ -1418,7 +1418,7 @@ namespace Amazon.ECS
         /// These errors are usually caused by a server issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListServices">REST API Reference for ListServices Operation</seealso>
-        public ListServicesResponse ListServices(ListServicesRequest request)
+        public virtual ListServicesResponse ListServices(ListServicesRequest request)
         {
             var marshaller = new ListServicesRequestMarshaller();
             var unmarshaller = ListServicesResponseUnmarshaller.Instance;
@@ -1438,7 +1438,7 @@ namespace Amazon.ECS
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListServices
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListServices">REST API Reference for ListServices Operation</seealso>
-        public IAsyncResult BeginListServices(ListServicesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListServices(ListServicesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListServicesRequestMarshaller();
             var unmarshaller = ListServicesResponseUnmarshaller.Instance;
@@ -1455,7 +1455,7 @@ namespace Amazon.ECS
         /// 
         /// <returns>Returns a  ListServicesResult from ECS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListServices">REST API Reference for ListServices Operation</seealso>
-        public  ListServicesResponse EndListServices(IAsyncResult asyncResult)
+        public virtual ListServicesResponse EndListServices(IAsyncResult asyncResult)
         {
             return EndInvoke<ListServicesResponse>(asyncResult);
         }
@@ -1491,7 +1491,7 @@ namespace Amazon.ECS
         /// These errors are usually caused by a server issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTaskDefinitionFamilies">REST API Reference for ListTaskDefinitionFamilies Operation</seealso>
-        public ListTaskDefinitionFamiliesResponse ListTaskDefinitionFamilies(ListTaskDefinitionFamiliesRequest request)
+        public virtual ListTaskDefinitionFamiliesResponse ListTaskDefinitionFamilies(ListTaskDefinitionFamiliesRequest request)
         {
             var marshaller = new ListTaskDefinitionFamiliesRequestMarshaller();
             var unmarshaller = ListTaskDefinitionFamiliesResponseUnmarshaller.Instance;
@@ -1511,7 +1511,7 @@ namespace Amazon.ECS
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTaskDefinitionFamilies
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTaskDefinitionFamilies">REST API Reference for ListTaskDefinitionFamilies Operation</seealso>
-        public IAsyncResult BeginListTaskDefinitionFamilies(ListTaskDefinitionFamiliesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListTaskDefinitionFamilies(ListTaskDefinitionFamiliesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListTaskDefinitionFamiliesRequestMarshaller();
             var unmarshaller = ListTaskDefinitionFamiliesResponseUnmarshaller.Instance;
@@ -1528,7 +1528,7 @@ namespace Amazon.ECS
         /// 
         /// <returns>Returns a  ListTaskDefinitionFamiliesResult from ECS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTaskDefinitionFamilies">REST API Reference for ListTaskDefinitionFamilies Operation</seealso>
-        public  ListTaskDefinitionFamiliesResponse EndListTaskDefinitionFamilies(IAsyncResult asyncResult)
+        public virtual ListTaskDefinitionFamiliesResponse EndListTaskDefinitionFamilies(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTaskDefinitionFamiliesResponse>(asyncResult);
         }
@@ -1557,7 +1557,7 @@ namespace Amazon.ECS
         /// These errors are usually caused by a server issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTaskDefinitions">REST API Reference for ListTaskDefinitions Operation</seealso>
-        public ListTaskDefinitionsResponse ListTaskDefinitions(ListTaskDefinitionsRequest request)
+        public virtual ListTaskDefinitionsResponse ListTaskDefinitions(ListTaskDefinitionsRequest request)
         {
             var marshaller = new ListTaskDefinitionsRequestMarshaller();
             var unmarshaller = ListTaskDefinitionsResponseUnmarshaller.Instance;
@@ -1577,7 +1577,7 @@ namespace Amazon.ECS
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTaskDefinitions
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTaskDefinitions">REST API Reference for ListTaskDefinitions Operation</seealso>
-        public IAsyncResult BeginListTaskDefinitions(ListTaskDefinitionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListTaskDefinitions(ListTaskDefinitionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListTaskDefinitionsRequestMarshaller();
             var unmarshaller = ListTaskDefinitionsResponseUnmarshaller.Instance;
@@ -1594,7 +1594,7 @@ namespace Amazon.ECS
         /// 
         /// <returns>Returns a  ListTaskDefinitionsResult from ECS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTaskDefinitions">REST API Reference for ListTaskDefinitions Operation</seealso>
-        public  ListTaskDefinitionsResponse EndListTaskDefinitions(IAsyncResult asyncResult)
+        public virtual ListTaskDefinitionsResponse EndListTaskDefinitions(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTaskDefinitionsResponse>(asyncResult);
         }
@@ -1638,7 +1638,7 @@ namespace Amazon.ECS
         /// <a>ListServices</a>. Amazon ECS services are cluster-specific and region-specific.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTasks">REST API Reference for ListTasks Operation</seealso>
-        public ListTasksResponse ListTasks(ListTasksRequest request)
+        public virtual ListTasksResponse ListTasks(ListTasksRequest request)
         {
             var marshaller = new ListTasksRequestMarshaller();
             var unmarshaller = ListTasksResponseUnmarshaller.Instance;
@@ -1658,7 +1658,7 @@ namespace Amazon.ECS
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTasks
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTasks">REST API Reference for ListTasks Operation</seealso>
-        public IAsyncResult BeginListTasks(ListTasksRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListTasks(ListTasksRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListTasksRequestMarshaller();
             var unmarshaller = ListTasksResponseUnmarshaller.Instance;
@@ -1675,7 +1675,7 @@ namespace Amazon.ECS
         /// 
         /// <returns>Returns a  ListTasksResult from ECS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTasks">REST API Reference for ListTasks Operation</seealso>
-        public  ListTasksResponse EndListTasks(IAsyncResult asyncResult)
+        public virtual ListTasksResponse EndListTasks(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTasksResponse>(asyncResult);
         }
@@ -1712,7 +1712,7 @@ namespace Amazon.ECS
         /// and region-specific.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAttributes">REST API Reference for PutAttributes Operation</seealso>
-        public PutAttributesResponse PutAttributes(PutAttributesRequest request)
+        public virtual PutAttributesResponse PutAttributes(PutAttributesRequest request)
         {
             var marshaller = new PutAttributesRequestMarshaller();
             var unmarshaller = PutAttributesResponseUnmarshaller.Instance;
@@ -1732,7 +1732,7 @@ namespace Amazon.ECS
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutAttributes
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAttributes">REST API Reference for PutAttributes Operation</seealso>
-        public IAsyncResult BeginPutAttributes(PutAttributesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPutAttributes(PutAttributesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutAttributesRequestMarshaller();
             var unmarshaller = PutAttributesResponseUnmarshaller.Instance;
@@ -1749,7 +1749,7 @@ namespace Amazon.ECS
         /// 
         /// <returns>Returns a  PutAttributesResult from ECS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAttributes">REST API Reference for PutAttributes Operation</seealso>
-        public  PutAttributesResponse EndPutAttributes(IAsyncResult asyncResult)
+        public virtual PutAttributesResponse EndPutAttributes(IAsyncResult asyncResult)
         {
             return EndInvoke<PutAttributesResponse>(asyncResult);
         }
@@ -1796,7 +1796,7 @@ namespace Amazon.ECS
         /// These errors are usually caused by a server issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RegisterTaskDefinition">REST API Reference for RegisterTaskDefinition Operation</seealso>
-        public RegisterTaskDefinitionResponse RegisterTaskDefinition(RegisterTaskDefinitionRequest request)
+        public virtual RegisterTaskDefinitionResponse RegisterTaskDefinition(RegisterTaskDefinitionRequest request)
         {
             var marshaller = new RegisterTaskDefinitionRequestMarshaller();
             var unmarshaller = RegisterTaskDefinitionResponseUnmarshaller.Instance;
@@ -1816,7 +1816,7 @@ namespace Amazon.ECS
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterTaskDefinition
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RegisterTaskDefinition">REST API Reference for RegisterTaskDefinition Operation</seealso>
-        public IAsyncResult BeginRegisterTaskDefinition(RegisterTaskDefinitionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginRegisterTaskDefinition(RegisterTaskDefinitionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RegisterTaskDefinitionRequestMarshaller();
             var unmarshaller = RegisterTaskDefinitionResponseUnmarshaller.Instance;
@@ -1833,7 +1833,7 @@ namespace Amazon.ECS
         /// 
         /// <returns>Returns a  RegisterTaskDefinitionResult from ECS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RegisterTaskDefinition">REST API Reference for RegisterTaskDefinition Operation</seealso>
-        public  RegisterTaskDefinitionResponse EndRegisterTaskDefinition(IAsyncResult asyncResult)
+        public virtual RegisterTaskDefinitionResponse EndRegisterTaskDefinition(IAsyncResult asyncResult)
         {
             return EndInvoke<RegisterTaskDefinitionResponse>(asyncResult);
         }
@@ -1877,7 +1877,7 @@ namespace Amazon.ECS
         /// These errors are usually caused by a server issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RunTask">REST API Reference for RunTask Operation</seealso>
-        public RunTaskResponse RunTask(RunTaskRequest request)
+        public virtual RunTaskResponse RunTask(RunTaskRequest request)
         {
             var marshaller = new RunTaskRequestMarshaller();
             var unmarshaller = RunTaskResponseUnmarshaller.Instance;
@@ -1897,7 +1897,7 @@ namespace Amazon.ECS
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRunTask
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RunTask">REST API Reference for RunTask Operation</seealso>
-        public IAsyncResult BeginRunTask(RunTaskRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginRunTask(RunTaskRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RunTaskRequestMarshaller();
             var unmarshaller = RunTaskResponseUnmarshaller.Instance;
@@ -1914,7 +1914,7 @@ namespace Amazon.ECS
         /// 
         /// <returns>Returns a  RunTaskResult from ECS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RunTask">REST API Reference for RunTask Operation</seealso>
-        public  RunTaskResponse EndRunTask(IAsyncResult asyncResult)
+        public virtual RunTaskResponse EndRunTask(IAsyncResult asyncResult)
         {
             return EndInvoke<RunTaskResponse>(asyncResult);
         }
@@ -1953,7 +1953,7 @@ namespace Amazon.ECS
         /// These errors are usually caused by a server issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StartTask">REST API Reference for StartTask Operation</seealso>
-        public StartTaskResponse StartTask(StartTaskRequest request)
+        public virtual StartTaskResponse StartTask(StartTaskRequest request)
         {
             var marshaller = new StartTaskRequestMarshaller();
             var unmarshaller = StartTaskResponseUnmarshaller.Instance;
@@ -1973,7 +1973,7 @@ namespace Amazon.ECS
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartTask
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StartTask">REST API Reference for StartTask Operation</seealso>
-        public IAsyncResult BeginStartTask(StartTaskRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginStartTask(StartTaskRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new StartTaskRequestMarshaller();
             var unmarshaller = StartTaskResponseUnmarshaller.Instance;
@@ -1990,7 +1990,7 @@ namespace Amazon.ECS
         /// 
         /// <returns>Returns a  StartTaskResult from ECS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StartTask">REST API Reference for StartTask Operation</seealso>
-        public  StartTaskResponse EndStartTask(IAsyncResult asyncResult)
+        public virtual StartTaskResponse EndStartTask(IAsyncResult asyncResult)
         {
             return EndInvoke<StartTaskResponse>(asyncResult);
         }
@@ -2040,7 +2040,7 @@ namespace Amazon.ECS
         /// These errors are usually caused by a server issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StopTask">REST API Reference for StopTask Operation</seealso>
-        public StopTaskResponse StopTask(StopTaskRequest request)
+        public virtual StopTaskResponse StopTask(StopTaskRequest request)
         {
             var marshaller = new StopTaskRequestMarshaller();
             var unmarshaller = StopTaskResponseUnmarshaller.Instance;
@@ -2060,7 +2060,7 @@ namespace Amazon.ECS
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopTask
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StopTask">REST API Reference for StopTask Operation</seealso>
-        public IAsyncResult BeginStopTask(StopTaskRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginStopTask(StopTaskRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new StopTaskRequestMarshaller();
             var unmarshaller = StopTaskResponseUnmarshaller.Instance;
@@ -2077,7 +2077,7 @@ namespace Amazon.ECS
         /// 
         /// <returns>Returns a  StopTaskResult from ECS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StopTask">REST API Reference for StopTask Operation</seealso>
-        public  StopTaskResponse EndStopTask(IAsyncResult asyncResult)
+        public virtual StopTaskResponse EndStopTask(IAsyncResult asyncResult)
         {
             return EndInvoke<StopTaskResponse>(asyncResult);
         }
@@ -2139,7 +2139,7 @@ namespace Amazon.ECS
         /// previously.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerAgent">REST API Reference for UpdateContainerAgent Operation</seealso>
-        public UpdateContainerAgentResponse UpdateContainerAgent(UpdateContainerAgentRequest request)
+        public virtual UpdateContainerAgentResponse UpdateContainerAgent(UpdateContainerAgentRequest request)
         {
             var marshaller = new UpdateContainerAgentRequestMarshaller();
             var unmarshaller = UpdateContainerAgentResponseUnmarshaller.Instance;
@@ -2159,7 +2159,7 @@ namespace Amazon.ECS
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateContainerAgent
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerAgent">REST API Reference for UpdateContainerAgent Operation</seealso>
-        public IAsyncResult BeginUpdateContainerAgent(UpdateContainerAgentRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateContainerAgent(UpdateContainerAgentRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateContainerAgentRequestMarshaller();
             var unmarshaller = UpdateContainerAgentResponseUnmarshaller.Instance;
@@ -2176,7 +2176,7 @@ namespace Amazon.ECS
         /// 
         /// <returns>Returns a  UpdateContainerAgentResult from ECS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerAgent">REST API Reference for UpdateContainerAgent Operation</seealso>
-        public  UpdateContainerAgentResponse EndUpdateContainerAgent(IAsyncResult asyncResult)
+        public virtual UpdateContainerAgentResponse EndUpdateContainerAgent(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateContainerAgentResponse>(asyncResult);
         }
@@ -2265,7 +2265,7 @@ namespace Amazon.ECS
         /// These errors are usually caused by a server issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerInstancesState">REST API Reference for UpdateContainerInstancesState Operation</seealso>
-        public UpdateContainerInstancesStateResponse UpdateContainerInstancesState(UpdateContainerInstancesStateRequest request)
+        public virtual UpdateContainerInstancesStateResponse UpdateContainerInstancesState(UpdateContainerInstancesStateRequest request)
         {
             var marshaller = new UpdateContainerInstancesStateRequestMarshaller();
             var unmarshaller = UpdateContainerInstancesStateResponseUnmarshaller.Instance;
@@ -2285,7 +2285,7 @@ namespace Amazon.ECS
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateContainerInstancesState
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerInstancesState">REST API Reference for UpdateContainerInstancesState Operation</seealso>
-        public IAsyncResult BeginUpdateContainerInstancesState(UpdateContainerInstancesStateRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateContainerInstancesState(UpdateContainerInstancesStateRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateContainerInstancesStateRequestMarshaller();
             var unmarshaller = UpdateContainerInstancesStateResponseUnmarshaller.Instance;
@@ -2302,7 +2302,7 @@ namespace Amazon.ECS
         /// 
         /// <returns>Returns a  UpdateContainerInstancesStateResult from ECS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerInstancesState">REST API Reference for UpdateContainerInstancesState Operation</seealso>
-        public  UpdateContainerInstancesStateResponse EndUpdateContainerInstancesState(IAsyncResult asyncResult)
+        public virtual UpdateContainerInstancesStateResponse EndUpdateContainerInstancesState(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateContainerInstancesStateResponse>(asyncResult);
         }
@@ -2435,7 +2435,7 @@ namespace Amazon.ECS
         /// <a>ListServices</a>. Amazon ECS services are cluster-specific and region-specific.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateService">REST API Reference for UpdateService Operation</seealso>
-        public UpdateServiceResponse UpdateService(UpdateServiceRequest request)
+        public virtual UpdateServiceResponse UpdateService(UpdateServiceRequest request)
         {
             var marshaller = new UpdateServiceRequestMarshaller();
             var unmarshaller = UpdateServiceResponseUnmarshaller.Instance;
@@ -2455,7 +2455,7 @@ namespace Amazon.ECS
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateService
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateService">REST API Reference for UpdateService Operation</seealso>
-        public IAsyncResult BeginUpdateService(UpdateServiceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateService(UpdateServiceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateServiceRequestMarshaller();
             var unmarshaller = UpdateServiceResponseUnmarshaller.Instance;
@@ -2472,7 +2472,7 @@ namespace Amazon.ECS
         /// 
         /// <returns>Returns a  UpdateServiceResult from ECS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateService">REST API Reference for UpdateService Operation</seealso>
-        public  UpdateServiceResponse EndUpdateService(IAsyncResult asyncResult)
+        public virtual UpdateServiceResponse EndUpdateService(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateServiceResponse>(asyncResult);
         }

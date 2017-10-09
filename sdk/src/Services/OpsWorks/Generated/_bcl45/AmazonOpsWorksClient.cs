@@ -398,7 +398,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/AssignInstance">REST API Reference for AssignInstance Operation</seealso>
-        public AssignInstanceResponse AssignInstance(AssignInstanceRequest request)
+        public virtual AssignInstanceResponse AssignInstance(AssignInstanceRequest request)
         {
             var marshaller = new AssignInstanceRequestMarshaller();
             var unmarshaller = AssignInstanceResponseUnmarshaller.Instance;
@@ -416,7 +416,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/AssignInstance">REST API Reference for AssignInstance Operation</seealso>
-        public Task<AssignInstanceResponse> AssignInstanceAsync(AssignInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<AssignInstanceResponse> AssignInstanceAsync(AssignInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AssignInstanceRequestMarshaller();
             var unmarshaller = AssignInstanceResponseUnmarshaller.Instance;
@@ -455,7 +455,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/AssignVolume">REST API Reference for AssignVolume Operation</seealso>
-        public AssignVolumeResponse AssignVolume(AssignVolumeRequest request)
+        public virtual AssignVolumeResponse AssignVolume(AssignVolumeRequest request)
         {
             var marshaller = new AssignVolumeRequestMarshaller();
             var unmarshaller = AssignVolumeResponseUnmarshaller.Instance;
@@ -473,7 +473,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/AssignVolume">REST API Reference for AssignVolume Operation</seealso>
-        public Task<AssignVolumeResponse> AssignVolumeAsync(AssignVolumeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<AssignVolumeResponse> AssignVolumeAsync(AssignVolumeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AssignVolumeRequestMarshaller();
             var unmarshaller = AssignVolumeResponseUnmarshaller.Instance;
@@ -511,7 +511,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/AssociateElasticIp">REST API Reference for AssociateElasticIp Operation</seealso>
-        public AssociateElasticIpResponse AssociateElasticIp(AssociateElasticIpRequest request)
+        public virtual AssociateElasticIpResponse AssociateElasticIp(AssociateElasticIpRequest request)
         {
             var marshaller = new AssociateElasticIpRequestMarshaller();
             var unmarshaller = AssociateElasticIpResponseUnmarshaller.Instance;
@@ -529,7 +529,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/AssociateElasticIp">REST API Reference for AssociateElasticIp Operation</seealso>
-        public Task<AssociateElasticIpResponse> AssociateElasticIpAsync(AssociateElasticIpRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<AssociateElasticIpResponse> AssociateElasticIpAsync(AssociateElasticIpRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AssociateElasticIpRequestMarshaller();
             var unmarshaller = AssociateElasticIpResponseUnmarshaller.Instance;
@@ -573,7 +573,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/AttachElasticLoadBalancer">REST API Reference for AttachElasticLoadBalancer Operation</seealso>
-        public AttachElasticLoadBalancerResponse AttachElasticLoadBalancer(AttachElasticLoadBalancerRequest request)
+        public virtual AttachElasticLoadBalancerResponse AttachElasticLoadBalancer(AttachElasticLoadBalancerRequest request)
         {
             var marshaller = new AttachElasticLoadBalancerRequestMarshaller();
             var unmarshaller = AttachElasticLoadBalancerResponseUnmarshaller.Instance;
@@ -591,7 +591,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/AttachElasticLoadBalancer">REST API Reference for AttachElasticLoadBalancer Operation</seealso>
-        public Task<AttachElasticLoadBalancerResponse> AttachElasticLoadBalancerAsync(AttachElasticLoadBalancerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<AttachElasticLoadBalancerResponse> AttachElasticLoadBalancerAsync(AttachElasticLoadBalancerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AttachElasticLoadBalancerRequestMarshaller();
             var unmarshaller = AttachElasticLoadBalancerResponseUnmarshaller.Instance;
@@ -627,7 +627,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CloneStack">REST API Reference for CloneStack Operation</seealso>
-        public CloneStackResponse CloneStack(CloneStackRequest request)
+        public virtual CloneStackResponse CloneStack(CloneStackRequest request)
         {
             var marshaller = new CloneStackRequestMarshaller();
             var unmarshaller = CloneStackResponseUnmarshaller.Instance;
@@ -645,7 +645,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CloneStack">REST API Reference for CloneStack Operation</seealso>
-        public Task<CloneStackResponse> CloneStackAsync(CloneStackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CloneStackResponse> CloneStackAsync(CloneStackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CloneStackRequestMarshaller();
             var unmarshaller = CloneStackResponseUnmarshaller.Instance;
@@ -681,7 +681,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateApp">REST API Reference for CreateApp Operation</seealso>
-        public CreateAppResponse CreateApp(CreateAppRequest request)
+        public virtual CreateAppResponse CreateApp(CreateAppRequest request)
         {
             var marshaller = new CreateAppRequestMarshaller();
             var unmarshaller = CreateAppResponseUnmarshaller.Instance;
@@ -699,7 +699,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateApp">REST API Reference for CreateApp Operation</seealso>
-        public Task<CreateAppResponse> CreateAppAsync(CreateAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateAppResponse> CreateAppAsync(CreateAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateAppRequestMarshaller();
             var unmarshaller = CreateAppResponseUnmarshaller.Instance;
@@ -736,7 +736,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateDeployment">REST API Reference for CreateDeployment Operation</seealso>
-        public CreateDeploymentResponse CreateDeployment(CreateDeploymentRequest request)
+        public virtual CreateDeploymentResponse CreateDeployment(CreateDeploymentRequest request)
         {
             var marshaller = new CreateDeploymentRequestMarshaller();
             var unmarshaller = CreateDeploymentResponseUnmarshaller.Instance;
@@ -754,7 +754,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateDeployment">REST API Reference for CreateDeployment Operation</seealso>
-        public Task<CreateDeploymentResponse> CreateDeploymentAsync(CreateDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateDeploymentResponse> CreateDeploymentAsync(CreateDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateDeploymentRequestMarshaller();
             var unmarshaller = CreateDeploymentResponseUnmarshaller.Instance;
@@ -790,7 +790,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateInstance">REST API Reference for CreateInstance Operation</seealso>
-        public CreateInstanceResponse CreateInstance(CreateInstanceRequest request)
+        public virtual CreateInstanceResponse CreateInstance(CreateInstanceRequest request)
         {
             var marshaller = new CreateInstanceRequestMarshaller();
             var unmarshaller = CreateInstanceResponseUnmarshaller.Instance;
@@ -808,7 +808,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateInstance">REST API Reference for CreateInstance Operation</seealso>
-        public Task<CreateInstanceResponse> CreateInstanceAsync(CreateInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateInstanceResponse> CreateInstanceAsync(CreateInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateInstanceRequestMarshaller();
             var unmarshaller = CreateInstanceResponseUnmarshaller.Instance;
@@ -852,7 +852,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateLayer">REST API Reference for CreateLayer Operation</seealso>
-        public CreateLayerResponse CreateLayer(CreateLayerRequest request)
+        public virtual CreateLayerResponse CreateLayer(CreateLayerRequest request)
         {
             var marshaller = new CreateLayerRequestMarshaller();
             var unmarshaller = CreateLayerResponseUnmarshaller.Instance;
@@ -870,7 +870,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateLayer">REST API Reference for CreateLayer Operation</seealso>
-        public Task<CreateLayerResponse> CreateLayerAsync(CreateLayerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateLayerResponse> CreateLayerAsync(CreateLayerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateLayerRequestMarshaller();
             var unmarshaller = CreateLayerResponseUnmarshaller.Instance;
@@ -903,7 +903,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateStack">REST API Reference for CreateStack Operation</seealso>
-        public CreateStackResponse CreateStack(CreateStackRequest request)
+        public virtual CreateStackResponse CreateStack(CreateStackRequest request)
         {
             var marshaller = new CreateStackRequestMarshaller();
             var unmarshaller = CreateStackResponseUnmarshaller.Instance;
@@ -921,7 +921,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateStack">REST API Reference for CreateStack Operation</seealso>
-        public Task<CreateStackResponse> CreateStackAsync(CreateStackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateStackResponse> CreateStackAsync(CreateStackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateStackRequestMarshaller();
             var unmarshaller = CreateStackResponseUnmarshaller.Instance;
@@ -953,7 +953,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateUserProfile">REST API Reference for CreateUserProfile Operation</seealso>
-        public CreateUserProfileResponse CreateUserProfile(CreateUserProfileRequest request)
+        public virtual CreateUserProfileResponse CreateUserProfile(CreateUserProfileRequest request)
         {
             var marshaller = new CreateUserProfileRequestMarshaller();
             var unmarshaller = CreateUserProfileResponseUnmarshaller.Instance;
@@ -971,7 +971,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateUserProfile">REST API Reference for CreateUserProfile Operation</seealso>
-        public Task<CreateUserProfileResponse> CreateUserProfileAsync(CreateUserProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateUserProfileResponse> CreateUserProfileAsync(CreateUserProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateUserProfileRequestMarshaller();
             var unmarshaller = CreateUserProfileResponseUnmarshaller.Instance;
@@ -1006,7 +1006,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteApp">REST API Reference for DeleteApp Operation</seealso>
-        public DeleteAppResponse DeleteApp(DeleteAppRequest request)
+        public virtual DeleteAppResponse DeleteApp(DeleteAppRequest request)
         {
             var marshaller = new DeleteAppRequestMarshaller();
             var unmarshaller = DeleteAppResponseUnmarshaller.Instance;
@@ -1024,7 +1024,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteApp">REST API Reference for DeleteApp Operation</seealso>
-        public Task<DeleteAppResponse> DeleteAppAsync(DeleteAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteAppResponse> DeleteAppAsync(DeleteAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteAppRequestMarshaller();
             var unmarshaller = DeleteAppResponseUnmarshaller.Instance;
@@ -1065,7 +1065,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteInstance">REST API Reference for DeleteInstance Operation</seealso>
-        public DeleteInstanceResponse DeleteInstance(DeleteInstanceRequest request)
+        public virtual DeleteInstanceResponse DeleteInstance(DeleteInstanceRequest request)
         {
             var marshaller = new DeleteInstanceRequestMarshaller();
             var unmarshaller = DeleteInstanceResponseUnmarshaller.Instance;
@@ -1083,7 +1083,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteInstance">REST API Reference for DeleteInstance Operation</seealso>
-        public Task<DeleteInstanceResponse> DeleteInstanceAsync(DeleteInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteInstanceResponse> DeleteInstanceAsync(DeleteInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteInstanceRequestMarshaller();
             var unmarshaller = DeleteInstanceResponseUnmarshaller.Instance;
@@ -1120,7 +1120,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteLayer">REST API Reference for DeleteLayer Operation</seealso>
-        public DeleteLayerResponse DeleteLayer(DeleteLayerRequest request)
+        public virtual DeleteLayerResponse DeleteLayer(DeleteLayerRequest request)
         {
             var marshaller = new DeleteLayerRequestMarshaller();
             var unmarshaller = DeleteLayerResponseUnmarshaller.Instance;
@@ -1138,7 +1138,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteLayer">REST API Reference for DeleteLayer Operation</seealso>
-        public Task<DeleteLayerResponse> DeleteLayerAsync(DeleteLayerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteLayerResponse> DeleteLayerAsync(DeleteLayerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteLayerRequestMarshaller();
             var unmarshaller = DeleteLayerResponseUnmarshaller.Instance;
@@ -1175,7 +1175,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteStack">REST API Reference for DeleteStack Operation</seealso>
-        public DeleteStackResponse DeleteStack(DeleteStackRequest request)
+        public virtual DeleteStackResponse DeleteStack(DeleteStackRequest request)
         {
             var marshaller = new DeleteStackRequestMarshaller();
             var unmarshaller = DeleteStackResponseUnmarshaller.Instance;
@@ -1193,7 +1193,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteStack">REST API Reference for DeleteStack Operation</seealso>
-        public Task<DeleteStackResponse> DeleteStackAsync(DeleteStackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteStackResponse> DeleteStackAsync(DeleteStackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteStackRequestMarshaller();
             var unmarshaller = DeleteStackResponseUnmarshaller.Instance;
@@ -1228,7 +1228,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteUserProfile">REST API Reference for DeleteUserProfile Operation</seealso>
-        public DeleteUserProfileResponse DeleteUserProfile(DeleteUserProfileRequest request)
+        public virtual DeleteUserProfileResponse DeleteUserProfile(DeleteUserProfileRequest request)
         {
             var marshaller = new DeleteUserProfileRequestMarshaller();
             var unmarshaller = DeleteUserProfileResponseUnmarshaller.Instance;
@@ -1246,7 +1246,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteUserProfile">REST API Reference for DeleteUserProfile Operation</seealso>
-        public Task<DeleteUserProfileResponse> DeleteUserProfileAsync(DeleteUserProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteUserProfileResponse> DeleteUserProfileAsync(DeleteUserProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteUserProfileRequestMarshaller();
             var unmarshaller = DeleteUserProfileResponseUnmarshaller.Instance;
@@ -1282,7 +1282,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterEcsCluster">REST API Reference for DeregisterEcsCluster Operation</seealso>
-        public DeregisterEcsClusterResponse DeregisterEcsCluster(DeregisterEcsClusterRequest request)
+        public virtual DeregisterEcsClusterResponse DeregisterEcsCluster(DeregisterEcsClusterRequest request)
         {
             var marshaller = new DeregisterEcsClusterRequestMarshaller();
             var unmarshaller = DeregisterEcsClusterResponseUnmarshaller.Instance;
@@ -1300,7 +1300,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterEcsCluster">REST API Reference for DeregisterEcsCluster Operation</seealso>
-        public Task<DeregisterEcsClusterResponse> DeregisterEcsClusterAsync(DeregisterEcsClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeregisterEcsClusterResponse> DeregisterEcsClusterAsync(DeregisterEcsClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeregisterEcsClusterRequestMarshaller();
             var unmarshaller = DeregisterEcsClusterResponseUnmarshaller.Instance;
@@ -1337,7 +1337,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterElasticIp">REST API Reference for DeregisterElasticIp Operation</seealso>
-        public DeregisterElasticIpResponse DeregisterElasticIp(DeregisterElasticIpRequest request)
+        public virtual DeregisterElasticIpResponse DeregisterElasticIp(DeregisterElasticIpRequest request)
         {
             var marshaller = new DeregisterElasticIpRequestMarshaller();
             var unmarshaller = DeregisterElasticIpResponseUnmarshaller.Instance;
@@ -1355,7 +1355,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterElasticIp">REST API Reference for DeregisterElasticIp Operation</seealso>
-        public Task<DeregisterElasticIpResponse> DeregisterElasticIpAsync(DeregisterElasticIpRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeregisterElasticIpResponse> DeregisterElasticIpAsync(DeregisterElasticIpRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeregisterElasticIpRequestMarshaller();
             var unmarshaller = DeregisterElasticIpResponseUnmarshaller.Instance;
@@ -1392,7 +1392,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterInstance">REST API Reference for DeregisterInstance Operation</seealso>
-        public DeregisterInstanceResponse DeregisterInstance(DeregisterInstanceRequest request)
+        public virtual DeregisterInstanceResponse DeregisterInstance(DeregisterInstanceRequest request)
         {
             var marshaller = new DeregisterInstanceRequestMarshaller();
             var unmarshaller = DeregisterInstanceResponseUnmarshaller.Instance;
@@ -1410,7 +1410,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterInstance">REST API Reference for DeregisterInstance Operation</seealso>
-        public Task<DeregisterInstanceResponse> DeregisterInstanceAsync(DeregisterInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeregisterInstanceResponse> DeregisterInstanceAsync(DeregisterInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeregisterInstanceRequestMarshaller();
             var unmarshaller = DeregisterInstanceResponseUnmarshaller.Instance;
@@ -1445,7 +1445,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterRdsDbInstance">REST API Reference for DeregisterRdsDbInstance Operation</seealso>
-        public DeregisterRdsDbInstanceResponse DeregisterRdsDbInstance(DeregisterRdsDbInstanceRequest request)
+        public virtual DeregisterRdsDbInstanceResponse DeregisterRdsDbInstance(DeregisterRdsDbInstanceRequest request)
         {
             var marshaller = new DeregisterRdsDbInstanceRequestMarshaller();
             var unmarshaller = DeregisterRdsDbInstanceResponseUnmarshaller.Instance;
@@ -1463,7 +1463,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterRdsDbInstance">REST API Reference for DeregisterRdsDbInstance Operation</seealso>
-        public Task<DeregisterRdsDbInstanceResponse> DeregisterRdsDbInstanceAsync(DeregisterRdsDbInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeregisterRdsDbInstanceResponse> DeregisterRdsDbInstanceAsync(DeregisterRdsDbInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeregisterRdsDbInstanceRequestMarshaller();
             var unmarshaller = DeregisterRdsDbInstanceResponseUnmarshaller.Instance;
@@ -1500,7 +1500,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterVolume">REST API Reference for DeregisterVolume Operation</seealso>
-        public DeregisterVolumeResponse DeregisterVolume(DeregisterVolumeRequest request)
+        public virtual DeregisterVolumeResponse DeregisterVolume(DeregisterVolumeRequest request)
         {
             var marshaller = new DeregisterVolumeRequestMarshaller();
             var unmarshaller = DeregisterVolumeResponseUnmarshaller.Instance;
@@ -1518,7 +1518,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterVolume">REST API Reference for DeregisterVolume Operation</seealso>
-        public Task<DeregisterVolumeResponse> DeregisterVolumeAsync(DeregisterVolumeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeregisterVolumeResponse> DeregisterVolumeAsync(DeregisterVolumeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeregisterVolumeRequestMarshaller();
             var unmarshaller = DeregisterVolumeResponseUnmarshaller.Instance;
@@ -1547,7 +1547,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeAgentVersions">REST API Reference for DescribeAgentVersions Operation</seealso>
-        public DescribeAgentVersionsResponse DescribeAgentVersions(DescribeAgentVersionsRequest request)
+        public virtual DescribeAgentVersionsResponse DescribeAgentVersions(DescribeAgentVersionsRequest request)
         {
             var marshaller = new DescribeAgentVersionsRequestMarshaller();
             var unmarshaller = DescribeAgentVersionsResponseUnmarshaller.Instance;
@@ -1565,7 +1565,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeAgentVersions">REST API Reference for DescribeAgentVersions Operation</seealso>
-        public Task<DescribeAgentVersionsResponse> DescribeAgentVersionsAsync(DescribeAgentVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeAgentVersionsResponse> DescribeAgentVersionsAsync(DescribeAgentVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeAgentVersionsRequestMarshaller();
             var unmarshaller = DescribeAgentVersionsResponseUnmarshaller.Instance;
@@ -1604,7 +1604,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeApps">REST API Reference for DescribeApps Operation</seealso>
-        public DescribeAppsResponse DescribeApps(DescribeAppsRequest request)
+        public virtual DescribeAppsResponse DescribeApps(DescribeAppsRequest request)
         {
             var marshaller = new DescribeAppsRequestMarshaller();
             var unmarshaller = DescribeAppsResponseUnmarshaller.Instance;
@@ -1622,7 +1622,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeApps">REST API Reference for DescribeApps Operation</seealso>
-        public Task<DescribeAppsResponse> DescribeAppsAsync(DescribeAppsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeAppsResponse> DescribeAppsAsync(DescribeAppsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeAppsRequestMarshaller();
             var unmarshaller = DescribeAppsResponseUnmarshaller.Instance;
@@ -1661,7 +1661,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeCommands">REST API Reference for DescribeCommands Operation</seealso>
-        public DescribeCommandsResponse DescribeCommands(DescribeCommandsRequest request)
+        public virtual DescribeCommandsResponse DescribeCommands(DescribeCommandsRequest request)
         {
             var marshaller = new DescribeCommandsRequestMarshaller();
             var unmarshaller = DescribeCommandsResponseUnmarshaller.Instance;
@@ -1679,7 +1679,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeCommands">REST API Reference for DescribeCommands Operation</seealso>
-        public Task<DescribeCommandsResponse> DescribeCommandsAsync(DescribeCommandsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeCommandsResponse> DescribeCommandsAsync(DescribeCommandsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeCommandsRequestMarshaller();
             var unmarshaller = DescribeCommandsResponseUnmarshaller.Instance;
@@ -1718,7 +1718,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeDeployments">REST API Reference for DescribeDeployments Operation</seealso>
-        public DescribeDeploymentsResponse DescribeDeployments(DescribeDeploymentsRequest request)
+        public virtual DescribeDeploymentsResponse DescribeDeployments(DescribeDeploymentsRequest request)
         {
             var marshaller = new DescribeDeploymentsRequestMarshaller();
             var unmarshaller = DescribeDeploymentsResponseUnmarshaller.Instance;
@@ -1736,7 +1736,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeDeployments">REST API Reference for DescribeDeployments Operation</seealso>
-        public Task<DescribeDeploymentsResponse> DescribeDeploymentsAsync(DescribeDeploymentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeDeploymentsResponse> DescribeDeploymentsAsync(DescribeDeploymentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeDeploymentsRequestMarshaller();
             var unmarshaller = DescribeDeploymentsResponseUnmarshaller.Instance;
@@ -1778,7 +1778,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeEcsClusters">REST API Reference for DescribeEcsClusters Operation</seealso>
-        public DescribeEcsClustersResponse DescribeEcsClusters(DescribeEcsClustersRequest request)
+        public virtual DescribeEcsClustersResponse DescribeEcsClusters(DescribeEcsClustersRequest request)
         {
             var marshaller = new DescribeEcsClustersRequestMarshaller();
             var unmarshaller = DescribeEcsClustersResponseUnmarshaller.Instance;
@@ -1796,7 +1796,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeEcsClusters">REST API Reference for DescribeEcsClusters Operation</seealso>
-        public Task<DescribeEcsClustersResponse> DescribeEcsClustersAsync(DescribeEcsClustersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeEcsClustersResponse> DescribeEcsClustersAsync(DescribeEcsClustersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeEcsClustersRequestMarshaller();
             var unmarshaller = DescribeEcsClustersResponseUnmarshaller.Instance;
@@ -1836,7 +1836,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeElasticIps">REST API Reference for DescribeElasticIps Operation</seealso>
-        public DescribeElasticIpsResponse DescribeElasticIps(DescribeElasticIpsRequest request)
+        public virtual DescribeElasticIpsResponse DescribeElasticIps(DescribeElasticIpsRequest request)
         {
             var marshaller = new DescribeElasticIpsRequestMarshaller();
             var unmarshaller = DescribeElasticIpsResponseUnmarshaller.Instance;
@@ -1854,7 +1854,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeElasticIps">REST API Reference for DescribeElasticIps Operation</seealso>
-        public Task<DescribeElasticIpsResponse> DescribeElasticIpsAsync(DescribeElasticIpsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeElasticIpsResponse> DescribeElasticIpsAsync(DescribeElasticIpsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeElasticIpsRequestMarshaller();
             var unmarshaller = DescribeElasticIpsResponseUnmarshaller.Instance;
@@ -1892,7 +1892,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeElasticLoadBalancers">REST API Reference for DescribeElasticLoadBalancers Operation</seealso>
-        public DescribeElasticLoadBalancersResponse DescribeElasticLoadBalancers()
+        public virtual DescribeElasticLoadBalancersResponse DescribeElasticLoadBalancers()
         {
             return DescribeElasticLoadBalancers(new DescribeElasticLoadBalancersRequest());
         }
@@ -1923,7 +1923,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeElasticLoadBalancers">REST API Reference for DescribeElasticLoadBalancers Operation</seealso>
-        public DescribeElasticLoadBalancersResponse DescribeElasticLoadBalancers(DescribeElasticLoadBalancersRequest request)
+        public virtual DescribeElasticLoadBalancersResponse DescribeElasticLoadBalancers(DescribeElasticLoadBalancersRequest request)
         {
             var marshaller = new DescribeElasticLoadBalancersRequestMarshaller();
             var unmarshaller = DescribeElasticLoadBalancersResponseUnmarshaller.Instance;
@@ -1959,7 +1959,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeElasticLoadBalancers">REST API Reference for DescribeElasticLoadBalancers Operation</seealso>
-        public Task<DescribeElasticLoadBalancersResponse> DescribeElasticLoadBalancersAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeElasticLoadBalancersResponse> DescribeElasticLoadBalancersAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeElasticLoadBalancersAsync(new DescribeElasticLoadBalancersRequest(), cancellationToken);
         }
@@ -1973,7 +1973,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeElasticLoadBalancers">REST API Reference for DescribeElasticLoadBalancers Operation</seealso>
-        public Task<DescribeElasticLoadBalancersResponse> DescribeElasticLoadBalancersAsync(DescribeElasticLoadBalancersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeElasticLoadBalancersResponse> DescribeElasticLoadBalancersAsync(DescribeElasticLoadBalancersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeElasticLoadBalancersRequestMarshaller();
             var unmarshaller = DescribeElasticLoadBalancersResponseUnmarshaller.Instance;
@@ -2012,7 +2012,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeInstances">REST API Reference for DescribeInstances Operation</seealso>
-        public DescribeInstancesResponse DescribeInstances(DescribeInstancesRequest request)
+        public virtual DescribeInstancesResponse DescribeInstances(DescribeInstancesRequest request)
         {
             var marshaller = new DescribeInstancesRequestMarshaller();
             var unmarshaller = DescribeInstancesResponseUnmarshaller.Instance;
@@ -2030,7 +2030,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeInstances">REST API Reference for DescribeInstances Operation</seealso>
-        public Task<DescribeInstancesResponse> DescribeInstancesAsync(DescribeInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeInstancesResponse> DescribeInstancesAsync(DescribeInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeInstancesRequestMarshaller();
             var unmarshaller = DescribeInstancesResponseUnmarshaller.Instance;
@@ -2069,7 +2069,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeLayers">REST API Reference for DescribeLayers Operation</seealso>
-        public DescribeLayersResponse DescribeLayers(DescribeLayersRequest request)
+        public virtual DescribeLayersResponse DescribeLayers(DescribeLayersRequest request)
         {
             var marshaller = new DescribeLayersRequestMarshaller();
             var unmarshaller = DescribeLayersResponseUnmarshaller.Instance;
@@ -2087,7 +2087,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeLayers">REST API Reference for DescribeLayers Operation</seealso>
-        public Task<DescribeLayersResponse> DescribeLayersAsync(DescribeLayersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeLayersResponse> DescribeLayersAsync(DescribeLayersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeLayersRequestMarshaller();
             var unmarshaller = DescribeLayersResponseUnmarshaller.Instance;
@@ -2126,7 +2126,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeLoadBasedAutoScaling">REST API Reference for DescribeLoadBasedAutoScaling Operation</seealso>
-        public DescribeLoadBasedAutoScalingResponse DescribeLoadBasedAutoScaling(DescribeLoadBasedAutoScalingRequest request)
+        public virtual DescribeLoadBasedAutoScalingResponse DescribeLoadBasedAutoScaling(DescribeLoadBasedAutoScalingRequest request)
         {
             var marshaller = new DescribeLoadBasedAutoScalingRequestMarshaller();
             var unmarshaller = DescribeLoadBasedAutoScalingResponseUnmarshaller.Instance;
@@ -2144,7 +2144,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeLoadBasedAutoScaling">REST API Reference for DescribeLoadBasedAutoScaling Operation</seealso>
-        public Task<DescribeLoadBasedAutoScalingResponse> DescribeLoadBasedAutoScalingAsync(DescribeLoadBasedAutoScalingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeLoadBasedAutoScalingResponse> DescribeLoadBasedAutoScalingAsync(DescribeLoadBasedAutoScalingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeLoadBasedAutoScalingRequestMarshaller();
             var unmarshaller = DescribeLoadBasedAutoScalingResponseUnmarshaller.Instance;
@@ -2172,7 +2172,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>The response from the DescribeMyUserProfile service method, as returned by OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeMyUserProfile">REST API Reference for DescribeMyUserProfile Operation</seealso>
-        public DescribeMyUserProfileResponse DescribeMyUserProfile()
+        public virtual DescribeMyUserProfileResponse DescribeMyUserProfile()
         {
             return DescribeMyUserProfile(new DescribeMyUserProfileRequest());
         }
@@ -2193,7 +2193,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>The response from the DescribeMyUserProfile service method, as returned by OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeMyUserProfile">REST API Reference for DescribeMyUserProfile Operation</seealso>
-        public DescribeMyUserProfileResponse DescribeMyUserProfile(DescribeMyUserProfileRequest request)
+        public virtual DescribeMyUserProfileResponse DescribeMyUserProfile(DescribeMyUserProfileRequest request)
         {
             var marshaller = new DescribeMyUserProfileRequestMarshaller();
             var unmarshaller = DescribeMyUserProfileResponseUnmarshaller.Instance;
@@ -2219,7 +2219,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>The response from the DescribeMyUserProfile service method, as returned by OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeMyUserProfile">REST API Reference for DescribeMyUserProfile Operation</seealso>
-        public Task<DescribeMyUserProfileResponse> DescribeMyUserProfileAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeMyUserProfileResponse> DescribeMyUserProfileAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeMyUserProfileAsync(new DescribeMyUserProfileRequest(), cancellationToken);
         }
@@ -2233,7 +2233,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeMyUserProfile">REST API Reference for DescribeMyUserProfile Operation</seealso>
-        public Task<DescribeMyUserProfileResponse> DescribeMyUserProfileAsync(DescribeMyUserProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeMyUserProfileResponse> DescribeMyUserProfileAsync(DescribeMyUserProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeMyUserProfileRequestMarshaller();
             var unmarshaller = DescribeMyUserProfileResponseUnmarshaller.Instance;
@@ -2268,7 +2268,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribePermissions">REST API Reference for DescribePermissions Operation</seealso>
-        public DescribePermissionsResponse DescribePermissions(DescribePermissionsRequest request)
+        public virtual DescribePermissionsResponse DescribePermissions(DescribePermissionsRequest request)
         {
             var marshaller = new DescribePermissionsRequestMarshaller();
             var unmarshaller = DescribePermissionsResponseUnmarshaller.Instance;
@@ -2286,7 +2286,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribePermissions">REST API Reference for DescribePermissions Operation</seealso>
-        public Task<DescribePermissionsResponse> DescribePermissionsAsync(DescribePermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribePermissionsResponse> DescribePermissionsAsync(DescribePermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribePermissionsRequestMarshaller();
             var unmarshaller = DescribePermissionsResponseUnmarshaller.Instance;
@@ -2325,7 +2325,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeRaidArrays">REST API Reference for DescribeRaidArrays Operation</seealso>
-        public DescribeRaidArraysResponse DescribeRaidArrays(DescribeRaidArraysRequest request)
+        public virtual DescribeRaidArraysResponse DescribeRaidArrays(DescribeRaidArraysRequest request)
         {
             var marshaller = new DescribeRaidArraysRequestMarshaller();
             var unmarshaller = DescribeRaidArraysResponseUnmarshaller.Instance;
@@ -2343,7 +2343,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeRaidArrays">REST API Reference for DescribeRaidArrays Operation</seealso>
-        public Task<DescribeRaidArraysResponse> DescribeRaidArraysAsync(DescribeRaidArraysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeRaidArraysResponse> DescribeRaidArraysAsync(DescribeRaidArraysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeRaidArraysRequestMarshaller();
             var unmarshaller = DescribeRaidArraysResponseUnmarshaller.Instance;
@@ -2382,7 +2382,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeRdsDbInstances">REST API Reference for DescribeRdsDbInstances Operation</seealso>
-        public DescribeRdsDbInstancesResponse DescribeRdsDbInstances(DescribeRdsDbInstancesRequest request)
+        public virtual DescribeRdsDbInstancesResponse DescribeRdsDbInstances(DescribeRdsDbInstancesRequest request)
         {
             var marshaller = new DescribeRdsDbInstancesRequestMarshaller();
             var unmarshaller = DescribeRdsDbInstancesResponseUnmarshaller.Instance;
@@ -2400,7 +2400,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeRdsDbInstances">REST API Reference for DescribeRdsDbInstances Operation</seealso>
-        public Task<DescribeRdsDbInstancesResponse> DescribeRdsDbInstancesAsync(DescribeRdsDbInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeRdsDbInstancesResponse> DescribeRdsDbInstancesAsync(DescribeRdsDbInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeRdsDbInstancesRequestMarshaller();
             var unmarshaller = DescribeRdsDbInstancesResponseUnmarshaller.Instance;
@@ -2438,7 +2438,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeServiceErrors">REST API Reference for DescribeServiceErrors Operation</seealso>
-        public DescribeServiceErrorsResponse DescribeServiceErrors()
+        public virtual DescribeServiceErrorsResponse DescribeServiceErrors()
         {
             return DescribeServiceErrors(new DescribeServiceErrorsRequest());
         }
@@ -2469,7 +2469,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeServiceErrors">REST API Reference for DescribeServiceErrors Operation</seealso>
-        public DescribeServiceErrorsResponse DescribeServiceErrors(DescribeServiceErrorsRequest request)
+        public virtual DescribeServiceErrorsResponse DescribeServiceErrors(DescribeServiceErrorsRequest request)
         {
             var marshaller = new DescribeServiceErrorsRequestMarshaller();
             var unmarshaller = DescribeServiceErrorsResponseUnmarshaller.Instance;
@@ -2505,7 +2505,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeServiceErrors">REST API Reference for DescribeServiceErrors Operation</seealso>
-        public Task<DescribeServiceErrorsResponse> DescribeServiceErrorsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeServiceErrorsResponse> DescribeServiceErrorsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeServiceErrorsAsync(new DescribeServiceErrorsRequest(), cancellationToken);
         }
@@ -2519,7 +2519,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeServiceErrors">REST API Reference for DescribeServiceErrors Operation</seealso>
-        public Task<DescribeServiceErrorsResponse> DescribeServiceErrorsAsync(DescribeServiceErrorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeServiceErrorsResponse> DescribeServiceErrorsAsync(DescribeServiceErrorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeServiceErrorsRequestMarshaller();
             var unmarshaller = DescribeServiceErrorsResponseUnmarshaller.Instance;
@@ -2554,7 +2554,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeStackProvisioningParameters">REST API Reference for DescribeStackProvisioningParameters Operation</seealso>
-        public DescribeStackProvisioningParametersResponse DescribeStackProvisioningParameters(DescribeStackProvisioningParametersRequest request)
+        public virtual DescribeStackProvisioningParametersResponse DescribeStackProvisioningParameters(DescribeStackProvisioningParametersRequest request)
         {
             var marshaller = new DescribeStackProvisioningParametersRequestMarshaller();
             var unmarshaller = DescribeStackProvisioningParametersResponseUnmarshaller.Instance;
@@ -2572,7 +2572,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeStackProvisioningParameters">REST API Reference for DescribeStackProvisioningParameters Operation</seealso>
-        public Task<DescribeStackProvisioningParametersResponse> DescribeStackProvisioningParametersAsync(DescribeStackProvisioningParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeStackProvisioningParametersResponse> DescribeStackProvisioningParametersAsync(DescribeStackProvisioningParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeStackProvisioningParametersRequestMarshaller();
             var unmarshaller = DescribeStackProvisioningParametersResponseUnmarshaller.Instance;
@@ -2606,7 +2606,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeStacks">REST API Reference for DescribeStacks Operation</seealso>
-        public DescribeStacksResponse DescribeStacks()
+        public virtual DescribeStacksResponse DescribeStacks()
         {
             return DescribeStacks(new DescribeStacksRequest());
         }
@@ -2633,7 +2633,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeStacks">REST API Reference for DescribeStacks Operation</seealso>
-        public DescribeStacksResponse DescribeStacks(DescribeStacksRequest request)
+        public virtual DescribeStacksResponse DescribeStacks(DescribeStacksRequest request)
         {
             var marshaller = new DescribeStacksRequestMarshaller();
             var unmarshaller = DescribeStacksResponseUnmarshaller.Instance;
@@ -2665,7 +2665,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeStacks">REST API Reference for DescribeStacks Operation</seealso>
-        public Task<DescribeStacksResponse> DescribeStacksAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeStacksResponse> DescribeStacksAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeStacksAsync(new DescribeStacksRequest(), cancellationToken);
         }
@@ -2679,7 +2679,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeStacks">REST API Reference for DescribeStacks Operation</seealso>
-        public Task<DescribeStacksResponse> DescribeStacksAsync(DescribeStacksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeStacksResponse> DescribeStacksAsync(DescribeStacksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeStacksRequestMarshaller();
             var unmarshaller = DescribeStacksResponseUnmarshaller.Instance;
@@ -2715,7 +2715,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeStackSummary">REST API Reference for DescribeStackSummary Operation</seealso>
-        public DescribeStackSummaryResponse DescribeStackSummary(DescribeStackSummaryRequest request)
+        public virtual DescribeStackSummaryResponse DescribeStackSummary(DescribeStackSummaryRequest request)
         {
             var marshaller = new DescribeStackSummaryRequestMarshaller();
             var unmarshaller = DescribeStackSummaryResponseUnmarshaller.Instance;
@@ -2733,7 +2733,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeStackSummary">REST API Reference for DescribeStackSummary Operation</seealso>
-        public Task<DescribeStackSummaryResponse> DescribeStackSummaryAsync(DescribeStackSummaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeStackSummaryResponse> DescribeStackSummaryAsync(DescribeStackSummaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeStackSummaryRequestMarshaller();
             var unmarshaller = DescribeStackSummaryResponseUnmarshaller.Instance;
@@ -2772,7 +2772,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeTimeBasedAutoScaling">REST API Reference for DescribeTimeBasedAutoScaling Operation</seealso>
-        public DescribeTimeBasedAutoScalingResponse DescribeTimeBasedAutoScaling(DescribeTimeBasedAutoScalingRequest request)
+        public virtual DescribeTimeBasedAutoScalingResponse DescribeTimeBasedAutoScaling(DescribeTimeBasedAutoScalingRequest request)
         {
             var marshaller = new DescribeTimeBasedAutoScalingRequestMarshaller();
             var unmarshaller = DescribeTimeBasedAutoScalingResponseUnmarshaller.Instance;
@@ -2790,7 +2790,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeTimeBasedAutoScaling">REST API Reference for DescribeTimeBasedAutoScaling Operation</seealso>
-        public Task<DescribeTimeBasedAutoScalingResponse> DescribeTimeBasedAutoScalingAsync(DescribeTimeBasedAutoScalingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeTimeBasedAutoScalingResponse> DescribeTimeBasedAutoScalingAsync(DescribeTimeBasedAutoScalingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeTimeBasedAutoScalingRequestMarshaller();
             var unmarshaller = DescribeTimeBasedAutoScalingResponseUnmarshaller.Instance;
@@ -2824,7 +2824,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeUserProfiles">REST API Reference for DescribeUserProfiles Operation</seealso>
-        public DescribeUserProfilesResponse DescribeUserProfiles()
+        public virtual DescribeUserProfilesResponse DescribeUserProfiles()
         {
             return DescribeUserProfiles(new DescribeUserProfilesRequest());
         }
@@ -2851,7 +2851,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeUserProfiles">REST API Reference for DescribeUserProfiles Operation</seealso>
-        public DescribeUserProfilesResponse DescribeUserProfiles(DescribeUserProfilesRequest request)
+        public virtual DescribeUserProfilesResponse DescribeUserProfiles(DescribeUserProfilesRequest request)
         {
             var marshaller = new DescribeUserProfilesRequestMarshaller();
             var unmarshaller = DescribeUserProfilesResponseUnmarshaller.Instance;
@@ -2883,7 +2883,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeUserProfiles">REST API Reference for DescribeUserProfiles Operation</seealso>
-        public Task<DescribeUserProfilesResponse> DescribeUserProfilesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeUserProfilesResponse> DescribeUserProfilesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeUserProfilesAsync(new DescribeUserProfilesRequest(), cancellationToken);
         }
@@ -2897,7 +2897,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeUserProfiles">REST API Reference for DescribeUserProfiles Operation</seealso>
-        public Task<DescribeUserProfilesResponse> DescribeUserProfilesAsync(DescribeUserProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeUserProfilesResponse> DescribeUserProfilesAsync(DescribeUserProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeUserProfilesRequestMarshaller();
             var unmarshaller = DescribeUserProfilesResponseUnmarshaller.Instance;
@@ -2936,7 +2936,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeVolumes">REST API Reference for DescribeVolumes Operation</seealso>
-        public DescribeVolumesResponse DescribeVolumes(DescribeVolumesRequest request)
+        public virtual DescribeVolumesResponse DescribeVolumes(DescribeVolumesRequest request)
         {
             var marshaller = new DescribeVolumesRequestMarshaller();
             var unmarshaller = DescribeVolumesResponseUnmarshaller.Instance;
@@ -2954,7 +2954,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeVolumes">REST API Reference for DescribeVolumes Operation</seealso>
-        public Task<DescribeVolumesResponse> DescribeVolumesAsync(DescribeVolumesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeVolumesResponse> DescribeVolumesAsync(DescribeVolumesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeVolumesRequestMarshaller();
             var unmarshaller = DescribeVolumesResponseUnmarshaller.Instance;
@@ -2986,7 +2986,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DetachElasticLoadBalancer">REST API Reference for DetachElasticLoadBalancer Operation</seealso>
-        public DetachElasticLoadBalancerResponse DetachElasticLoadBalancer(DetachElasticLoadBalancerRequest request)
+        public virtual DetachElasticLoadBalancerResponse DetachElasticLoadBalancer(DetachElasticLoadBalancerRequest request)
         {
             var marshaller = new DetachElasticLoadBalancerRequestMarshaller();
             var unmarshaller = DetachElasticLoadBalancerResponseUnmarshaller.Instance;
@@ -3004,7 +3004,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DetachElasticLoadBalancer">REST API Reference for DetachElasticLoadBalancer Operation</seealso>
-        public Task<DetachElasticLoadBalancerResponse> DetachElasticLoadBalancerAsync(DetachElasticLoadBalancerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DetachElasticLoadBalancerResponse> DetachElasticLoadBalancerAsync(DetachElasticLoadBalancerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DetachElasticLoadBalancerRequestMarshaller();
             var unmarshaller = DetachElasticLoadBalancerResponseUnmarshaller.Instance;
@@ -3041,7 +3041,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DisassociateElasticIp">REST API Reference for DisassociateElasticIp Operation</seealso>
-        public DisassociateElasticIpResponse DisassociateElasticIp(DisassociateElasticIpRequest request)
+        public virtual DisassociateElasticIpResponse DisassociateElasticIp(DisassociateElasticIpRequest request)
         {
             var marshaller = new DisassociateElasticIpRequestMarshaller();
             var unmarshaller = DisassociateElasticIpResponseUnmarshaller.Instance;
@@ -3059,7 +3059,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DisassociateElasticIp">REST API Reference for DisassociateElasticIp Operation</seealso>
-        public Task<DisassociateElasticIpResponse> DisassociateElasticIpAsync(DisassociateElasticIpRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DisassociateElasticIpResponse> DisassociateElasticIpAsync(DisassociateElasticIpRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DisassociateElasticIpRequestMarshaller();
             var unmarshaller = DisassociateElasticIpResponseUnmarshaller.Instance;
@@ -3095,7 +3095,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/GetHostnameSuggestion">REST API Reference for GetHostnameSuggestion Operation</seealso>
-        public GetHostnameSuggestionResponse GetHostnameSuggestion(GetHostnameSuggestionRequest request)
+        public virtual GetHostnameSuggestionResponse GetHostnameSuggestion(GetHostnameSuggestionRequest request)
         {
             var marshaller = new GetHostnameSuggestionRequestMarshaller();
             var unmarshaller = GetHostnameSuggestionResponseUnmarshaller.Instance;
@@ -3113,7 +3113,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/GetHostnameSuggestion">REST API Reference for GetHostnameSuggestion Operation</seealso>
-        public Task<GetHostnameSuggestionResponse> GetHostnameSuggestionAsync(GetHostnameSuggestionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetHostnameSuggestionResponse> GetHostnameSuggestionAsync(GetHostnameSuggestionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetHostnameSuggestionRequestMarshaller();
             var unmarshaller = GetHostnameSuggestionResponseUnmarshaller.Instance;
@@ -3147,7 +3147,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/GrantAccess">REST API Reference for GrantAccess Operation</seealso>
-        public GrantAccessResponse GrantAccess(GrantAccessRequest request)
+        public virtual GrantAccessResponse GrantAccess(GrantAccessRequest request)
         {
             var marshaller = new GrantAccessRequestMarshaller();
             var unmarshaller = GrantAccessResponseUnmarshaller.Instance;
@@ -3165,7 +3165,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/GrantAccess">REST API Reference for GrantAccess Operation</seealso>
-        public Task<GrantAccessResponse> GrantAccessAsync(GrantAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GrantAccessResponse> GrantAccessAsync(GrantAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GrantAccessRequestMarshaller();
             var unmarshaller = GrantAccessResponseUnmarshaller.Instance;
@@ -3192,7 +3192,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/ListTags">REST API Reference for ListTags Operation</seealso>
-        public ListTagsResponse ListTags(ListTagsRequest request)
+        public virtual ListTagsResponse ListTags(ListTagsRequest request)
         {
             var marshaller = new ListTagsRequestMarshaller();
             var unmarshaller = ListTagsResponseUnmarshaller.Instance;
@@ -3210,7 +3210,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/ListTags">REST API Reference for ListTags Operation</seealso>
-        public Task<ListTagsResponse> ListTagsAsync(ListTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListTagsResponse> ListTagsAsync(ListTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListTagsRequestMarshaller();
             var unmarshaller = ListTagsResponseUnmarshaller.Instance;
@@ -3246,7 +3246,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RebootInstance">REST API Reference for RebootInstance Operation</seealso>
-        public RebootInstanceResponse RebootInstance(RebootInstanceRequest request)
+        public virtual RebootInstanceResponse RebootInstance(RebootInstanceRequest request)
         {
             var marshaller = new RebootInstanceRequestMarshaller();
             var unmarshaller = RebootInstanceResponseUnmarshaller.Instance;
@@ -3264,7 +3264,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RebootInstance">REST API Reference for RebootInstance Operation</seealso>
-        public Task<RebootInstanceResponse> RebootInstanceAsync(RebootInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<RebootInstanceResponse> RebootInstanceAsync(RebootInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RebootInstanceRequestMarshaller();
             var unmarshaller = RebootInstanceResponseUnmarshaller.Instance;
@@ -3302,7 +3302,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterEcsCluster">REST API Reference for RegisterEcsCluster Operation</seealso>
-        public RegisterEcsClusterResponse RegisterEcsCluster(RegisterEcsClusterRequest request)
+        public virtual RegisterEcsClusterResponse RegisterEcsCluster(RegisterEcsClusterRequest request)
         {
             var marshaller = new RegisterEcsClusterRequestMarshaller();
             var unmarshaller = RegisterEcsClusterResponseUnmarshaller.Instance;
@@ -3320,7 +3320,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterEcsCluster">REST API Reference for RegisterEcsCluster Operation</seealso>
-        public Task<RegisterEcsClusterResponse> RegisterEcsClusterAsync(RegisterEcsClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<RegisterEcsClusterResponse> RegisterEcsClusterAsync(RegisterEcsClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RegisterEcsClusterRequestMarshaller();
             var unmarshaller = RegisterEcsClusterResponseUnmarshaller.Instance;
@@ -3359,7 +3359,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterElasticIp">REST API Reference for RegisterElasticIp Operation</seealso>
-        public RegisterElasticIpResponse RegisterElasticIp(RegisterElasticIpRequest request)
+        public virtual RegisterElasticIpResponse RegisterElasticIp(RegisterElasticIpRequest request)
         {
             var marshaller = new RegisterElasticIpRequestMarshaller();
             var unmarshaller = RegisterElasticIpResponseUnmarshaller.Instance;
@@ -3377,7 +3377,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterElasticIp">REST API Reference for RegisterElasticIp Operation</seealso>
-        public Task<RegisterElasticIpResponse> RegisterElasticIpAsync(RegisterElasticIpRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<RegisterElasticIpResponse> RegisterElasticIpAsync(RegisterElasticIpRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RegisterElasticIpRequestMarshaller();
             var unmarshaller = RegisterElasticIpResponseUnmarshaller.Instance;
@@ -3431,7 +3431,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterInstance">REST API Reference for RegisterInstance Operation</seealso>
-        public RegisterInstanceResponse RegisterInstance(RegisterInstanceRequest request)
+        public virtual RegisterInstanceResponse RegisterInstance(RegisterInstanceRequest request)
         {
             var marshaller = new RegisterInstanceRequestMarshaller();
             var unmarshaller = RegisterInstanceResponseUnmarshaller.Instance;
@@ -3449,7 +3449,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterInstance">REST API Reference for RegisterInstance Operation</seealso>
-        public Task<RegisterInstanceResponse> RegisterInstanceAsync(RegisterInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<RegisterInstanceResponse> RegisterInstanceAsync(RegisterInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RegisterInstanceRequestMarshaller();
             var unmarshaller = RegisterInstanceResponseUnmarshaller.Instance;
@@ -3484,7 +3484,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterRdsDbInstance">REST API Reference for RegisterRdsDbInstance Operation</seealso>
-        public RegisterRdsDbInstanceResponse RegisterRdsDbInstance(RegisterRdsDbInstanceRequest request)
+        public virtual RegisterRdsDbInstanceResponse RegisterRdsDbInstance(RegisterRdsDbInstanceRequest request)
         {
             var marshaller = new RegisterRdsDbInstanceRequestMarshaller();
             var unmarshaller = RegisterRdsDbInstanceResponseUnmarshaller.Instance;
@@ -3502,7 +3502,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterRdsDbInstance">REST API Reference for RegisterRdsDbInstance Operation</seealso>
-        public Task<RegisterRdsDbInstanceResponse> RegisterRdsDbInstanceAsync(RegisterRdsDbInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<RegisterRdsDbInstanceResponse> RegisterRdsDbInstanceAsync(RegisterRdsDbInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RegisterRdsDbInstanceRequestMarshaller();
             var unmarshaller = RegisterRdsDbInstanceResponseUnmarshaller.Instance;
@@ -3540,7 +3540,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterVolume">REST API Reference for RegisterVolume Operation</seealso>
-        public RegisterVolumeResponse RegisterVolume(RegisterVolumeRequest request)
+        public virtual RegisterVolumeResponse RegisterVolume(RegisterVolumeRequest request)
         {
             var marshaller = new RegisterVolumeRequestMarshaller();
             var unmarshaller = RegisterVolumeResponseUnmarshaller.Instance;
@@ -3558,7 +3558,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterVolume">REST API Reference for RegisterVolume Operation</seealso>
-        public Task<RegisterVolumeResponse> RegisterVolumeAsync(RegisterVolumeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<RegisterVolumeResponse> RegisterVolumeAsync(RegisterVolumeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RegisterVolumeRequestMarshaller();
             var unmarshaller = RegisterVolumeResponseUnmarshaller.Instance;
@@ -3601,7 +3601,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/SetLoadBasedAutoScaling">REST API Reference for SetLoadBasedAutoScaling Operation</seealso>
-        public SetLoadBasedAutoScalingResponse SetLoadBasedAutoScaling(SetLoadBasedAutoScalingRequest request)
+        public virtual SetLoadBasedAutoScalingResponse SetLoadBasedAutoScaling(SetLoadBasedAutoScalingRequest request)
         {
             var marshaller = new SetLoadBasedAutoScalingRequestMarshaller();
             var unmarshaller = SetLoadBasedAutoScalingResponseUnmarshaller.Instance;
@@ -3619,7 +3619,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/SetLoadBasedAutoScaling">REST API Reference for SetLoadBasedAutoScaling Operation</seealso>
-        public Task<SetLoadBasedAutoScalingResponse> SetLoadBasedAutoScalingAsync(SetLoadBasedAutoScalingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<SetLoadBasedAutoScalingResponse> SetLoadBasedAutoScalingAsync(SetLoadBasedAutoScalingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SetLoadBasedAutoScalingRequestMarshaller();
             var unmarshaller = SetLoadBasedAutoScalingResponseUnmarshaller.Instance;
@@ -3655,7 +3655,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/SetPermission">REST API Reference for SetPermission Operation</seealso>
-        public SetPermissionResponse SetPermission(SetPermissionRequest request)
+        public virtual SetPermissionResponse SetPermission(SetPermissionRequest request)
         {
             var marshaller = new SetPermissionRequestMarshaller();
             var unmarshaller = SetPermissionResponseUnmarshaller.Instance;
@@ -3673,7 +3673,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/SetPermission">REST API Reference for SetPermission Operation</seealso>
-        public Task<SetPermissionResponse> SetPermissionAsync(SetPermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<SetPermissionResponse> SetPermissionAsync(SetPermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SetPermissionRequestMarshaller();
             var unmarshaller = SetPermissionResponseUnmarshaller.Instance;
@@ -3710,7 +3710,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/SetTimeBasedAutoScaling">REST API Reference for SetTimeBasedAutoScaling Operation</seealso>
-        public SetTimeBasedAutoScalingResponse SetTimeBasedAutoScaling(SetTimeBasedAutoScalingRequest request)
+        public virtual SetTimeBasedAutoScalingResponse SetTimeBasedAutoScaling(SetTimeBasedAutoScalingRequest request)
         {
             var marshaller = new SetTimeBasedAutoScalingRequestMarshaller();
             var unmarshaller = SetTimeBasedAutoScalingResponseUnmarshaller.Instance;
@@ -3728,7 +3728,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/SetTimeBasedAutoScaling">REST API Reference for SetTimeBasedAutoScaling Operation</seealso>
-        public Task<SetTimeBasedAutoScalingResponse> SetTimeBasedAutoScalingAsync(SetTimeBasedAutoScalingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<SetTimeBasedAutoScalingResponse> SetTimeBasedAutoScalingAsync(SetTimeBasedAutoScalingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SetTimeBasedAutoScalingRequestMarshaller();
             var unmarshaller = SetTimeBasedAutoScalingResponseUnmarshaller.Instance;
@@ -3764,7 +3764,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/StartInstance">REST API Reference for StartInstance Operation</seealso>
-        public StartInstanceResponse StartInstance(StartInstanceRequest request)
+        public virtual StartInstanceResponse StartInstance(StartInstanceRequest request)
         {
             var marshaller = new StartInstanceRequestMarshaller();
             var unmarshaller = StartInstanceResponseUnmarshaller.Instance;
@@ -3782,7 +3782,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/StartInstance">REST API Reference for StartInstance Operation</seealso>
-        public Task<StartInstanceResponse> StartInstanceAsync(StartInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<StartInstanceResponse> StartInstanceAsync(StartInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new StartInstanceRequestMarshaller();
             var unmarshaller = StartInstanceResponseUnmarshaller.Instance;
@@ -3817,7 +3817,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/StartStack">REST API Reference for StartStack Operation</seealso>
-        public StartStackResponse StartStack(StartStackRequest request)
+        public virtual StartStackResponse StartStack(StartStackRequest request)
         {
             var marshaller = new StartStackRequestMarshaller();
             var unmarshaller = StartStackResponseUnmarshaller.Instance;
@@ -3835,7 +3835,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/StartStack">REST API Reference for StartStack Operation</seealso>
-        public Task<StartStackResponse> StartStackAsync(StartStackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<StartStackResponse> StartStackAsync(StartStackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new StartStackRequestMarshaller();
             var unmarshaller = StartStackResponseUnmarshaller.Instance;
@@ -3873,7 +3873,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/StopInstance">REST API Reference for StopInstance Operation</seealso>
-        public StopInstanceResponse StopInstance(StopInstanceRequest request)
+        public virtual StopInstanceResponse StopInstance(StopInstanceRequest request)
         {
             var marshaller = new StopInstanceRequestMarshaller();
             var unmarshaller = StopInstanceResponseUnmarshaller.Instance;
@@ -3891,7 +3891,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/StopInstance">REST API Reference for StopInstance Operation</seealso>
-        public Task<StopInstanceResponse> StopInstanceAsync(StopInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<StopInstanceResponse> StopInstanceAsync(StopInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new StopInstanceRequestMarshaller();
             var unmarshaller = StopInstanceResponseUnmarshaller.Instance;
@@ -3926,7 +3926,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/StopStack">REST API Reference for StopStack Operation</seealso>
-        public StopStackResponse StopStack(StopStackRequest request)
+        public virtual StopStackResponse StopStack(StopStackRequest request)
         {
             var marshaller = new StopStackRequestMarshaller();
             var unmarshaller = StopStackResponseUnmarshaller.Instance;
@@ -3944,7 +3944,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/StopStack">REST API Reference for StopStack Operation</seealso>
-        public Task<StopStackResponse> StopStackAsync(StopStackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<StopStackResponse> StopStackAsync(StopStackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new StopStackRequestMarshaller();
             var unmarshaller = StopStackResponseUnmarshaller.Instance;
@@ -3973,7 +3973,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/TagResource">REST API Reference for TagResource Operation</seealso>
-        public TagResourceResponse TagResource(TagResourceRequest request)
+        public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
             var marshaller = new TagResourceRequestMarshaller();
             var unmarshaller = TagResourceResponseUnmarshaller.Instance;
@@ -3991,7 +3991,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/TagResource">REST API Reference for TagResource Operation</seealso>
-        public Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new TagResourceRequestMarshaller();
             var unmarshaller = TagResourceResponseUnmarshaller.Instance;
@@ -4028,7 +4028,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UnassignInstance">REST API Reference for UnassignInstance Operation</seealso>
-        public UnassignInstanceResponse UnassignInstance(UnassignInstanceRequest request)
+        public virtual UnassignInstanceResponse UnassignInstance(UnassignInstanceRequest request)
         {
             var marshaller = new UnassignInstanceRequestMarshaller();
             var unmarshaller = UnassignInstanceResponseUnmarshaller.Instance;
@@ -4046,7 +4046,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UnassignInstance">REST API Reference for UnassignInstance Operation</seealso>
-        public Task<UnassignInstanceResponse> UnassignInstanceAsync(UnassignInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UnassignInstanceResponse> UnassignInstanceAsync(UnassignInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UnassignInstanceRequestMarshaller();
             var unmarshaller = UnassignInstanceResponseUnmarshaller.Instance;
@@ -4083,7 +4083,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UnassignVolume">REST API Reference for UnassignVolume Operation</seealso>
-        public UnassignVolumeResponse UnassignVolume(UnassignVolumeRequest request)
+        public virtual UnassignVolumeResponse UnassignVolume(UnassignVolumeRequest request)
         {
             var marshaller = new UnassignVolumeRequestMarshaller();
             var unmarshaller = UnassignVolumeResponseUnmarshaller.Instance;
@@ -4101,7 +4101,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UnassignVolume">REST API Reference for UnassignVolume Operation</seealso>
-        public Task<UnassignVolumeResponse> UnassignVolumeAsync(UnassignVolumeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UnassignVolumeResponse> UnassignVolumeAsync(UnassignVolumeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UnassignVolumeRequestMarshaller();
             var unmarshaller = UnassignVolumeResponseUnmarshaller.Instance;
@@ -4128,7 +4128,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UntagResource">REST API Reference for UntagResource Operation</seealso>
-        public UntagResourceResponse UntagResource(UntagResourceRequest request)
+        public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
             var marshaller = new UntagResourceRequestMarshaller();
             var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
@@ -4146,7 +4146,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UntagResource">REST API Reference for UntagResource Operation</seealso>
-        public Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UntagResourceRequestMarshaller();
             var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
@@ -4181,7 +4181,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateApp">REST API Reference for UpdateApp Operation</seealso>
-        public UpdateAppResponse UpdateApp(UpdateAppRequest request)
+        public virtual UpdateAppResponse UpdateApp(UpdateAppRequest request)
         {
             var marshaller = new UpdateAppRequestMarshaller();
             var unmarshaller = UpdateAppResponseUnmarshaller.Instance;
@@ -4199,7 +4199,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateApp">REST API Reference for UpdateApp Operation</seealso>
-        public Task<UpdateAppResponse> UpdateAppAsync(UpdateAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateAppResponse> UpdateAppAsync(UpdateAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateAppRequestMarshaller();
             var unmarshaller = UpdateAppResponseUnmarshaller.Instance;
@@ -4235,7 +4235,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateElasticIp">REST API Reference for UpdateElasticIp Operation</seealso>
-        public UpdateElasticIpResponse UpdateElasticIp(UpdateElasticIpRequest request)
+        public virtual UpdateElasticIpResponse UpdateElasticIp(UpdateElasticIpRequest request)
         {
             var marshaller = new UpdateElasticIpRequestMarshaller();
             var unmarshaller = UpdateElasticIpResponseUnmarshaller.Instance;
@@ -4253,7 +4253,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateElasticIp">REST API Reference for UpdateElasticIp Operation</seealso>
-        public Task<UpdateElasticIpResponse> UpdateElasticIpAsync(UpdateElasticIpRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateElasticIpResponse> UpdateElasticIpAsync(UpdateElasticIpRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateElasticIpRequestMarshaller();
             var unmarshaller = UpdateElasticIpResponseUnmarshaller.Instance;
@@ -4288,7 +4288,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateInstance">REST API Reference for UpdateInstance Operation</seealso>
-        public UpdateInstanceResponse UpdateInstance(UpdateInstanceRequest request)
+        public virtual UpdateInstanceResponse UpdateInstance(UpdateInstanceRequest request)
         {
             var marshaller = new UpdateInstanceRequestMarshaller();
             var unmarshaller = UpdateInstanceResponseUnmarshaller.Instance;
@@ -4306,7 +4306,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateInstance">REST API Reference for UpdateInstance Operation</seealso>
-        public Task<UpdateInstanceResponse> UpdateInstanceAsync(UpdateInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateInstanceResponse> UpdateInstanceAsync(UpdateInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateInstanceRequestMarshaller();
             var unmarshaller = UpdateInstanceResponseUnmarshaller.Instance;
@@ -4341,7 +4341,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateLayer">REST API Reference for UpdateLayer Operation</seealso>
-        public UpdateLayerResponse UpdateLayer(UpdateLayerRequest request)
+        public virtual UpdateLayerResponse UpdateLayer(UpdateLayerRequest request)
         {
             var marshaller = new UpdateLayerRequestMarshaller();
             var unmarshaller = UpdateLayerResponseUnmarshaller.Instance;
@@ -4359,7 +4359,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateLayer">REST API Reference for UpdateLayer Operation</seealso>
-        public Task<UpdateLayerResponse> UpdateLayerAsync(UpdateLayerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateLayerResponse> UpdateLayerAsync(UpdateLayerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateLayerRequestMarshaller();
             var unmarshaller = UpdateLayerResponseUnmarshaller.Instance;
@@ -4390,7 +4390,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateMyUserProfile">REST API Reference for UpdateMyUserProfile Operation</seealso>
-        public UpdateMyUserProfileResponse UpdateMyUserProfile()
+        public virtual UpdateMyUserProfileResponse UpdateMyUserProfile()
         {
             return UpdateMyUserProfile(new UpdateMyUserProfileRequest());
         }
@@ -4414,7 +4414,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateMyUserProfile">REST API Reference for UpdateMyUserProfile Operation</seealso>
-        public UpdateMyUserProfileResponse UpdateMyUserProfile(UpdateMyUserProfileRequest request)
+        public virtual UpdateMyUserProfileResponse UpdateMyUserProfile(UpdateMyUserProfileRequest request)
         {
             var marshaller = new UpdateMyUserProfileRequestMarshaller();
             var unmarshaller = UpdateMyUserProfileResponseUnmarshaller.Instance;
@@ -4443,7 +4443,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateMyUserProfile">REST API Reference for UpdateMyUserProfile Operation</seealso>
-        public Task<UpdateMyUserProfileResponse> UpdateMyUserProfileAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateMyUserProfileResponse> UpdateMyUserProfileAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return UpdateMyUserProfileAsync(new UpdateMyUserProfileRequest(), cancellationToken);
         }
@@ -4457,7 +4457,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateMyUserProfile">REST API Reference for UpdateMyUserProfile Operation</seealso>
-        public Task<UpdateMyUserProfileResponse> UpdateMyUserProfileAsync(UpdateMyUserProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateMyUserProfileResponse> UpdateMyUserProfileAsync(UpdateMyUserProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateMyUserProfileRequestMarshaller();
             var unmarshaller = UpdateMyUserProfileResponseUnmarshaller.Instance;
@@ -4492,7 +4492,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateRdsDbInstance">REST API Reference for UpdateRdsDbInstance Operation</seealso>
-        public UpdateRdsDbInstanceResponse UpdateRdsDbInstance(UpdateRdsDbInstanceRequest request)
+        public virtual UpdateRdsDbInstanceResponse UpdateRdsDbInstance(UpdateRdsDbInstanceRequest request)
         {
             var marshaller = new UpdateRdsDbInstanceRequestMarshaller();
             var unmarshaller = UpdateRdsDbInstanceResponseUnmarshaller.Instance;
@@ -4510,7 +4510,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateRdsDbInstance">REST API Reference for UpdateRdsDbInstance Operation</seealso>
-        public Task<UpdateRdsDbInstanceResponse> UpdateRdsDbInstanceAsync(UpdateRdsDbInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateRdsDbInstanceResponse> UpdateRdsDbInstanceAsync(UpdateRdsDbInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateRdsDbInstanceRequestMarshaller();
             var unmarshaller = UpdateRdsDbInstanceResponseUnmarshaller.Instance;
@@ -4545,7 +4545,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateStack">REST API Reference for UpdateStack Operation</seealso>
-        public UpdateStackResponse UpdateStack(UpdateStackRequest request)
+        public virtual UpdateStackResponse UpdateStack(UpdateStackRequest request)
         {
             var marshaller = new UpdateStackRequestMarshaller();
             var unmarshaller = UpdateStackResponseUnmarshaller.Instance;
@@ -4563,7 +4563,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateStack">REST API Reference for UpdateStack Operation</seealso>
-        public Task<UpdateStackResponse> UpdateStackAsync(UpdateStackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateStackResponse> UpdateStackAsync(UpdateStackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateStackRequestMarshaller();
             var unmarshaller = UpdateStackResponseUnmarshaller.Instance;
@@ -4598,7 +4598,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateUserProfile">REST API Reference for UpdateUserProfile Operation</seealso>
-        public UpdateUserProfileResponse UpdateUserProfile(UpdateUserProfileRequest request)
+        public virtual UpdateUserProfileResponse UpdateUserProfile(UpdateUserProfileRequest request)
         {
             var marshaller = new UpdateUserProfileRequestMarshaller();
             var unmarshaller = UpdateUserProfileResponseUnmarshaller.Instance;
@@ -4616,7 +4616,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateUserProfile">REST API Reference for UpdateUserProfile Operation</seealso>
-        public Task<UpdateUserProfileResponse> UpdateUserProfileAsync(UpdateUserProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateUserProfileResponse> UpdateUserProfileAsync(UpdateUserProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateUserProfileRequestMarshaller();
             var unmarshaller = UpdateUserProfileResponseUnmarshaller.Instance;
@@ -4652,7 +4652,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateVolume">REST API Reference for UpdateVolume Operation</seealso>
-        public UpdateVolumeResponse UpdateVolume(UpdateVolumeRequest request)
+        public virtual UpdateVolumeResponse UpdateVolume(UpdateVolumeRequest request)
         {
             var marshaller = new UpdateVolumeRequestMarshaller();
             var unmarshaller = UpdateVolumeResponseUnmarshaller.Instance;
@@ -4670,7 +4670,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateVolume">REST API Reference for UpdateVolume Operation</seealso>
-        public Task<UpdateVolumeResponse> UpdateVolumeAsync(UpdateVolumeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateVolumeResponse> UpdateVolumeAsync(UpdateVolumeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateVolumeRequestMarshaller();
             var unmarshaller = UpdateVolumeResponseUnmarshaller.Instance;

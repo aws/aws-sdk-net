@@ -275,7 +275,7 @@ namespace Amazon.ElastiCache
         /// 50.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
-        public AddTagsToResourceResponse AddTagsToResource(AddTagsToResourceRequest request)
+        public virtual AddTagsToResourceResponse AddTagsToResource(AddTagsToResourceRequest request)
         {
             var marshaller = new AddTagsToResourceRequestMarshaller();
             var unmarshaller = AddTagsToResourceResponseUnmarshaller.Instance;
@@ -295,7 +295,7 @@ namespace Amazon.ElastiCache
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddTagsToResource
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
-        public IAsyncResult BeginAddTagsToResource(AddTagsToResourceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginAddTagsToResource(AddTagsToResourceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AddTagsToResourceRequestMarshaller();
             var unmarshaller = AddTagsToResourceResponseUnmarshaller.Instance;
@@ -312,7 +312,7 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>Returns a  AddTagsToResourceResult from ElastiCache.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
-        public  AddTagsToResourceResponse EndAddTagsToResource(IAsyncResult asyncResult)
+        public virtual AddTagsToResourceResponse EndAddTagsToResource(IAsyncResult asyncResult)
         {
             return EndInvoke<AddTagsToResourceResponse>(asyncResult);
         }
@@ -354,7 +354,7 @@ namespace Amazon.ElastiCache
         /// The value for a parameter is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/AuthorizeCacheSecurityGroupIngress">REST API Reference for AuthorizeCacheSecurityGroupIngress Operation</seealso>
-        public AuthorizeCacheSecurityGroupIngressResponse AuthorizeCacheSecurityGroupIngress(AuthorizeCacheSecurityGroupIngressRequest request)
+        public virtual AuthorizeCacheSecurityGroupIngressResponse AuthorizeCacheSecurityGroupIngress(AuthorizeCacheSecurityGroupIngressRequest request)
         {
             var marshaller = new AuthorizeCacheSecurityGroupIngressRequestMarshaller();
             var unmarshaller = AuthorizeCacheSecurityGroupIngressResponseUnmarshaller.Instance;
@@ -374,7 +374,7 @@ namespace Amazon.ElastiCache
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAuthorizeCacheSecurityGroupIngress
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/AuthorizeCacheSecurityGroupIngress">REST API Reference for AuthorizeCacheSecurityGroupIngress Operation</seealso>
-        public IAsyncResult BeginAuthorizeCacheSecurityGroupIngress(AuthorizeCacheSecurityGroupIngressRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginAuthorizeCacheSecurityGroupIngress(AuthorizeCacheSecurityGroupIngressRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AuthorizeCacheSecurityGroupIngressRequestMarshaller();
             var unmarshaller = AuthorizeCacheSecurityGroupIngressResponseUnmarshaller.Instance;
@@ -391,7 +391,7 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>Returns a  AuthorizeCacheSecurityGroupIngressResult from ElastiCache.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/AuthorizeCacheSecurityGroupIngress">REST API Reference for AuthorizeCacheSecurityGroupIngress Operation</seealso>
-        public  AuthorizeCacheSecurityGroupIngressResponse EndAuthorizeCacheSecurityGroupIngress(IAsyncResult asyncResult)
+        public virtual AuthorizeCacheSecurityGroupIngressResponse EndAuthorizeCacheSecurityGroupIngress(IAsyncResult asyncResult)
         {
             return EndInvoke<AuthorizeCacheSecurityGroupIngressResponse>(asyncResult);
         }
@@ -529,7 +529,7 @@ namespace Amazon.ElastiCache
         /// The request cannot be processed because it would exceed the maximum number of snapshots.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CopySnapshot">REST API Reference for CopySnapshot Operation</seealso>
-        public CopySnapshotResponse CopySnapshot(CopySnapshotRequest request)
+        public virtual CopySnapshotResponse CopySnapshot(CopySnapshotRequest request)
         {
             var marshaller = new CopySnapshotRequestMarshaller();
             var unmarshaller = CopySnapshotResponseUnmarshaller.Instance;
@@ -549,7 +549,7 @@ namespace Amazon.ElastiCache
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCopySnapshot
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CopySnapshot">REST API Reference for CopySnapshot Operation</seealso>
-        public IAsyncResult BeginCopySnapshot(CopySnapshotRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCopySnapshot(CopySnapshotRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CopySnapshotRequestMarshaller();
             var unmarshaller = CopySnapshotResponseUnmarshaller.Instance;
@@ -566,7 +566,7 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>Returns a  CopySnapshotResult from ElastiCache.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CopySnapshot">REST API Reference for CopySnapshot Operation</seealso>
-        public  CopySnapshotResponse EndCopySnapshot(IAsyncResult asyncResult)
+        public virtual CopySnapshotResponse EndCopySnapshot(IAsyncResult asyncResult)
         {
             return EndInvoke<CopySnapshotResponse>(asyncResult);
         }
@@ -639,7 +639,7 @@ namespace Amazon.ElastiCache
         /// 50.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheCluster">REST API Reference for CreateCacheCluster Operation</seealso>
-        public CreateCacheClusterResponse CreateCacheCluster(CreateCacheClusterRequest request)
+        public virtual CreateCacheClusterResponse CreateCacheCluster(CreateCacheClusterRequest request)
         {
             var marshaller = new CreateCacheClusterRequestMarshaller();
             var unmarshaller = CreateCacheClusterResponseUnmarshaller.Instance;
@@ -659,7 +659,7 @@ namespace Amazon.ElastiCache
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCacheCluster
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheCluster">REST API Reference for CreateCacheCluster Operation</seealso>
-        public IAsyncResult BeginCreateCacheCluster(CreateCacheClusterRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateCacheCluster(CreateCacheClusterRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateCacheClusterRequestMarshaller();
             var unmarshaller = CreateCacheClusterResponseUnmarshaller.Instance;
@@ -676,7 +676,7 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>Returns a  CreateCacheClusterResult from ElastiCache.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheCluster">REST API Reference for CreateCacheCluster Operation</seealso>
-        public  CreateCacheClusterResponse EndCreateCacheCluster(IAsyncResult asyncResult)
+        public virtual CreateCacheClusterResponse EndCreateCacheCluster(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateCacheClusterResponse>(asyncResult);
         }
@@ -729,7 +729,7 @@ namespace Amazon.ElastiCache
         /// The value for a parameter is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheParameterGroup">REST API Reference for CreateCacheParameterGroup Operation</seealso>
-        public CreateCacheParameterGroupResponse CreateCacheParameterGroup(CreateCacheParameterGroupRequest request)
+        public virtual CreateCacheParameterGroupResponse CreateCacheParameterGroup(CreateCacheParameterGroupRequest request)
         {
             var marshaller = new CreateCacheParameterGroupRequestMarshaller();
             var unmarshaller = CreateCacheParameterGroupResponseUnmarshaller.Instance;
@@ -749,7 +749,7 @@ namespace Amazon.ElastiCache
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCacheParameterGroup
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheParameterGroup">REST API Reference for CreateCacheParameterGroup Operation</seealso>
-        public IAsyncResult BeginCreateCacheParameterGroup(CreateCacheParameterGroupRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateCacheParameterGroup(CreateCacheParameterGroupRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateCacheParameterGroupRequestMarshaller();
             var unmarshaller = CreateCacheParameterGroupResponseUnmarshaller.Instance;
@@ -766,7 +766,7 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>Returns a  CreateCacheParameterGroupResult from ElastiCache.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheParameterGroup">REST API Reference for CreateCacheParameterGroup Operation</seealso>
-        public  CreateCacheParameterGroupResponse EndCreateCacheParameterGroup(IAsyncResult asyncResult)
+        public virtual CreateCacheParameterGroupResponse EndCreateCacheParameterGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateCacheParameterGroupResponse>(asyncResult);
         }
@@ -803,7 +803,7 @@ namespace Amazon.ElastiCache
         /// The value for a parameter is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheSecurityGroup">REST API Reference for CreateCacheSecurityGroup Operation</seealso>
-        public CreateCacheSecurityGroupResponse CreateCacheSecurityGroup(CreateCacheSecurityGroupRequest request)
+        public virtual CreateCacheSecurityGroupResponse CreateCacheSecurityGroup(CreateCacheSecurityGroupRequest request)
         {
             var marshaller = new CreateCacheSecurityGroupRequestMarshaller();
             var unmarshaller = CreateCacheSecurityGroupResponseUnmarshaller.Instance;
@@ -823,7 +823,7 @@ namespace Amazon.ElastiCache
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCacheSecurityGroup
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheSecurityGroup">REST API Reference for CreateCacheSecurityGroup Operation</seealso>
-        public IAsyncResult BeginCreateCacheSecurityGroup(CreateCacheSecurityGroupRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateCacheSecurityGroup(CreateCacheSecurityGroupRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateCacheSecurityGroupRequestMarshaller();
             var unmarshaller = CreateCacheSecurityGroupResponseUnmarshaller.Instance;
@@ -840,7 +840,7 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>Returns a  CreateCacheSecurityGroupResult from ElastiCache.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheSecurityGroup">REST API Reference for CreateCacheSecurityGroup Operation</seealso>
-        public  CreateCacheSecurityGroupResponse EndCreateCacheSecurityGroup(IAsyncResult asyncResult)
+        public virtual CreateCacheSecurityGroupResponse EndCreateCacheSecurityGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateCacheSecurityGroupResponse>(asyncResult);
         }
@@ -877,7 +877,7 @@ namespace Amazon.ElastiCache
         /// An invalid subnet identifier was specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheSubnetGroup">REST API Reference for CreateCacheSubnetGroup Operation</seealso>
-        public CreateCacheSubnetGroupResponse CreateCacheSubnetGroup(CreateCacheSubnetGroupRequest request)
+        public virtual CreateCacheSubnetGroupResponse CreateCacheSubnetGroup(CreateCacheSubnetGroupRequest request)
         {
             var marshaller = new CreateCacheSubnetGroupRequestMarshaller();
             var unmarshaller = CreateCacheSubnetGroupResponseUnmarshaller.Instance;
@@ -897,7 +897,7 @@ namespace Amazon.ElastiCache
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCacheSubnetGroup
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheSubnetGroup">REST API Reference for CreateCacheSubnetGroup Operation</seealso>
-        public IAsyncResult BeginCreateCacheSubnetGroup(CreateCacheSubnetGroupRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateCacheSubnetGroup(CreateCacheSubnetGroupRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateCacheSubnetGroupRequestMarshaller();
             var unmarshaller = CreateCacheSubnetGroupResponseUnmarshaller.Instance;
@@ -914,7 +914,7 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>Returns a  CreateCacheSubnetGroupResult from ElastiCache.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheSubnetGroup">REST API Reference for CreateCacheSubnetGroup Operation</seealso>
-        public  CreateCacheSubnetGroupResponse EndCreateCacheSubnetGroup(IAsyncResult asyncResult)
+        public virtual CreateCacheSubnetGroupResponse EndCreateCacheSubnetGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateCacheSubnetGroupResponse>(asyncResult);
         }
@@ -1014,7 +1014,7 @@ namespace Amazon.ElastiCache
         /// 50.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateReplicationGroup">REST API Reference for CreateReplicationGroup Operation</seealso>
-        public CreateReplicationGroupResponse CreateReplicationGroup(CreateReplicationGroupRequest request)
+        public virtual CreateReplicationGroupResponse CreateReplicationGroup(CreateReplicationGroupRequest request)
         {
             var marshaller = new CreateReplicationGroupRequestMarshaller();
             var unmarshaller = CreateReplicationGroupResponseUnmarshaller.Instance;
@@ -1034,7 +1034,7 @@ namespace Amazon.ElastiCache
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateReplicationGroup
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateReplicationGroup">REST API Reference for CreateReplicationGroup Operation</seealso>
-        public IAsyncResult BeginCreateReplicationGroup(CreateReplicationGroupRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateReplicationGroup(CreateReplicationGroupRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateReplicationGroupRequestMarshaller();
             var unmarshaller = CreateReplicationGroupResponseUnmarshaller.Instance;
@@ -1051,7 +1051,7 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>Returns a  CreateReplicationGroupResult from ElastiCache.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateReplicationGroup">REST API Reference for CreateReplicationGroup Operation</seealso>
-        public  CreateReplicationGroupResponse EndCreateReplicationGroup(IAsyncResult asyncResult)
+        public virtual CreateReplicationGroupResponse EndCreateReplicationGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateReplicationGroupResponse>(asyncResult);
         }
@@ -1115,7 +1115,7 @@ namespace Amazon.ElastiCache
         /// The request cannot be processed because it would exceed the maximum number of snapshots.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateSnapshot">REST API Reference for CreateSnapshot Operation</seealso>
-        public CreateSnapshotResponse CreateSnapshot(CreateSnapshotRequest request)
+        public virtual CreateSnapshotResponse CreateSnapshot(CreateSnapshotRequest request)
         {
             var marshaller = new CreateSnapshotRequestMarshaller();
             var unmarshaller = CreateSnapshotResponseUnmarshaller.Instance;
@@ -1135,7 +1135,7 @@ namespace Amazon.ElastiCache
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSnapshot
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateSnapshot">REST API Reference for CreateSnapshot Operation</seealso>
-        public IAsyncResult BeginCreateSnapshot(CreateSnapshotRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateSnapshot(CreateSnapshotRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateSnapshotRequestMarshaller();
             var unmarshaller = CreateSnapshotResponseUnmarshaller.Instance;
@@ -1152,7 +1152,7 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>Returns a  CreateSnapshotResult from ElastiCache.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateSnapshot">REST API Reference for CreateSnapshot Operation</seealso>
-        public  CreateSnapshotResponse EndCreateSnapshot(IAsyncResult asyncResult)
+        public virtual CreateSnapshotResponse EndCreateSnapshot(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateSnapshotResponse>(asyncResult);
         }
@@ -1219,7 +1219,7 @@ namespace Amazon.ElastiCache
         /// The request cannot be processed because it would exceed the maximum number of snapshots.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheCluster">REST API Reference for DeleteCacheCluster Operation</seealso>
-        public DeleteCacheClusterResponse DeleteCacheCluster(DeleteCacheClusterRequest request)
+        public virtual DeleteCacheClusterResponse DeleteCacheCluster(DeleteCacheClusterRequest request)
         {
             var marshaller = new DeleteCacheClusterRequestMarshaller();
             var unmarshaller = DeleteCacheClusterResponseUnmarshaller.Instance;
@@ -1239,7 +1239,7 @@ namespace Amazon.ElastiCache
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCacheCluster
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheCluster">REST API Reference for DeleteCacheCluster Operation</seealso>
-        public IAsyncResult BeginDeleteCacheCluster(DeleteCacheClusterRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteCacheCluster(DeleteCacheClusterRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteCacheClusterRequestMarshaller();
             var unmarshaller = DeleteCacheClusterResponseUnmarshaller.Instance;
@@ -1256,7 +1256,7 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>Returns a  DeleteCacheClusterResult from ElastiCache.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheCluster">REST API Reference for DeleteCacheCluster Operation</seealso>
-        public  DeleteCacheClusterResponse EndDeleteCacheCluster(IAsyncResult asyncResult)
+        public virtual DeleteCacheClusterResponse EndDeleteCacheCluster(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteCacheClusterResponse>(asyncResult);
         }
@@ -1287,7 +1287,7 @@ namespace Amazon.ElastiCache
         /// The value for a parameter is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheParameterGroup">REST API Reference for DeleteCacheParameterGroup Operation</seealso>
-        public DeleteCacheParameterGroupResponse DeleteCacheParameterGroup(DeleteCacheParameterGroupRequest request)
+        public virtual DeleteCacheParameterGroupResponse DeleteCacheParameterGroup(DeleteCacheParameterGroupRequest request)
         {
             var marshaller = new DeleteCacheParameterGroupRequestMarshaller();
             var unmarshaller = DeleteCacheParameterGroupResponseUnmarshaller.Instance;
@@ -1307,7 +1307,7 @@ namespace Amazon.ElastiCache
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCacheParameterGroup
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheParameterGroup">REST API Reference for DeleteCacheParameterGroup Operation</seealso>
-        public IAsyncResult BeginDeleteCacheParameterGroup(DeleteCacheParameterGroupRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteCacheParameterGroup(DeleteCacheParameterGroupRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteCacheParameterGroupRequestMarshaller();
             var unmarshaller = DeleteCacheParameterGroupResponseUnmarshaller.Instance;
@@ -1324,7 +1324,7 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>Returns a  DeleteCacheParameterGroupResult from ElastiCache.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheParameterGroup">REST API Reference for DeleteCacheParameterGroup Operation</seealso>
-        public  DeleteCacheParameterGroupResponse EndDeleteCacheParameterGroup(IAsyncResult asyncResult)
+        public virtual DeleteCacheParameterGroupResponse EndDeleteCacheParameterGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteCacheParameterGroupResponse>(asyncResult);
         }
@@ -1359,7 +1359,7 @@ namespace Amazon.ElastiCache
         /// The value for a parameter is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheSecurityGroup">REST API Reference for DeleteCacheSecurityGroup Operation</seealso>
-        public DeleteCacheSecurityGroupResponse DeleteCacheSecurityGroup(DeleteCacheSecurityGroupRequest request)
+        public virtual DeleteCacheSecurityGroupResponse DeleteCacheSecurityGroup(DeleteCacheSecurityGroupRequest request)
         {
             var marshaller = new DeleteCacheSecurityGroupRequestMarshaller();
             var unmarshaller = DeleteCacheSecurityGroupResponseUnmarshaller.Instance;
@@ -1379,7 +1379,7 @@ namespace Amazon.ElastiCache
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCacheSecurityGroup
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheSecurityGroup">REST API Reference for DeleteCacheSecurityGroup Operation</seealso>
-        public IAsyncResult BeginDeleteCacheSecurityGroup(DeleteCacheSecurityGroupRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteCacheSecurityGroup(DeleteCacheSecurityGroupRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteCacheSecurityGroupRequestMarshaller();
             var unmarshaller = DeleteCacheSecurityGroupResponseUnmarshaller.Instance;
@@ -1396,7 +1396,7 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>Returns a  DeleteCacheSecurityGroupResult from ElastiCache.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheSecurityGroup">REST API Reference for DeleteCacheSecurityGroup Operation</seealso>
-        public  DeleteCacheSecurityGroupResponse EndDeleteCacheSecurityGroup(IAsyncResult asyncResult)
+        public virtual DeleteCacheSecurityGroupResponse EndDeleteCacheSecurityGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteCacheSecurityGroupResponse>(asyncResult);
         }
@@ -1424,7 +1424,7 @@ namespace Amazon.ElastiCache
         /// The requested cache subnet group name does not refer to an existing cache subnet group.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheSubnetGroup">REST API Reference for DeleteCacheSubnetGroup Operation</seealso>
-        public DeleteCacheSubnetGroupResponse DeleteCacheSubnetGroup(DeleteCacheSubnetGroupRequest request)
+        public virtual DeleteCacheSubnetGroupResponse DeleteCacheSubnetGroup(DeleteCacheSubnetGroupRequest request)
         {
             var marshaller = new DeleteCacheSubnetGroupRequestMarshaller();
             var unmarshaller = DeleteCacheSubnetGroupResponseUnmarshaller.Instance;
@@ -1444,7 +1444,7 @@ namespace Amazon.ElastiCache
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCacheSubnetGroup
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheSubnetGroup">REST API Reference for DeleteCacheSubnetGroup Operation</seealso>
-        public IAsyncResult BeginDeleteCacheSubnetGroup(DeleteCacheSubnetGroupRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteCacheSubnetGroup(DeleteCacheSubnetGroupRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteCacheSubnetGroupRequestMarshaller();
             var unmarshaller = DeleteCacheSubnetGroupResponseUnmarshaller.Instance;
@@ -1461,7 +1461,7 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>Returns a  DeleteCacheSubnetGroupResult from ElastiCache.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheSubnetGroup">REST API Reference for DeleteCacheSubnetGroup Operation</seealso>
-        public  DeleteCacheSubnetGroupResponse EndDeleteCacheSubnetGroup(IAsyncResult asyncResult)
+        public virtual DeleteCacheSubnetGroupResponse EndDeleteCacheSubnetGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteCacheSubnetGroupResponse>(asyncResult);
         }
@@ -1526,7 +1526,7 @@ namespace Amazon.ElastiCache
         /// The request cannot be processed because it would exceed the maximum number of snapshots.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteReplicationGroup">REST API Reference for DeleteReplicationGroup Operation</seealso>
-        public DeleteReplicationGroupResponse DeleteReplicationGroup(DeleteReplicationGroupRequest request)
+        public virtual DeleteReplicationGroupResponse DeleteReplicationGroup(DeleteReplicationGroupRequest request)
         {
             var marshaller = new DeleteReplicationGroupRequestMarshaller();
             var unmarshaller = DeleteReplicationGroupResponseUnmarshaller.Instance;
@@ -1546,7 +1546,7 @@ namespace Amazon.ElastiCache
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteReplicationGroup
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteReplicationGroup">REST API Reference for DeleteReplicationGroup Operation</seealso>
-        public IAsyncResult BeginDeleteReplicationGroup(DeleteReplicationGroupRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteReplicationGroup(DeleteReplicationGroupRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteReplicationGroupRequestMarshaller();
             var unmarshaller = DeleteReplicationGroupResponseUnmarshaller.Instance;
@@ -1563,7 +1563,7 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>Returns a  DeleteReplicationGroupResult from ElastiCache.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteReplicationGroup">REST API Reference for DeleteReplicationGroup Operation</seealso>
-        public  DeleteReplicationGroupResponse EndDeleteReplicationGroup(IAsyncResult asyncResult)
+        public virtual DeleteReplicationGroupResponse EndDeleteReplicationGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteReplicationGroupResponse>(asyncResult);
         }
@@ -1599,7 +1599,7 @@ namespace Amazon.ElastiCache
         /// The requested snapshot name does not refer to an existing snapshot.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteSnapshot">REST API Reference for DeleteSnapshot Operation</seealso>
-        public DeleteSnapshotResponse DeleteSnapshot(DeleteSnapshotRequest request)
+        public virtual DeleteSnapshotResponse DeleteSnapshot(DeleteSnapshotRequest request)
         {
             var marshaller = new DeleteSnapshotRequestMarshaller();
             var unmarshaller = DeleteSnapshotResponseUnmarshaller.Instance;
@@ -1619,7 +1619,7 @@ namespace Amazon.ElastiCache
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSnapshot
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteSnapshot">REST API Reference for DeleteSnapshot Operation</seealso>
-        public IAsyncResult BeginDeleteSnapshot(DeleteSnapshotRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteSnapshot(DeleteSnapshotRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteSnapshotRequestMarshaller();
             var unmarshaller = DeleteSnapshotResponseUnmarshaller.Instance;
@@ -1636,7 +1636,7 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>Returns a  DeleteSnapshotResult from ElastiCache.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteSnapshot">REST API Reference for DeleteSnapshot Operation</seealso>
-        public  DeleteSnapshotResponse EndDeleteSnapshot(IAsyncResult asyncResult)
+        public virtual DeleteSnapshotResponse EndDeleteSnapshot(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteSnapshotResponse>(asyncResult);
         }
@@ -1691,7 +1691,7 @@ namespace Amazon.ElastiCache
         /// The value for a parameter is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheClusters">REST API Reference for DescribeCacheClusters Operation</seealso>
-        public DescribeCacheClustersResponse DescribeCacheClusters()
+        public virtual DescribeCacheClustersResponse DescribeCacheClusters()
         {
             return DescribeCacheClusters(new DescribeCacheClustersRequest());
         }
@@ -1743,7 +1743,7 @@ namespace Amazon.ElastiCache
         /// The value for a parameter is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheClusters">REST API Reference for DescribeCacheClusters Operation</seealso>
-        public DescribeCacheClustersResponse DescribeCacheClusters(DescribeCacheClustersRequest request)
+        public virtual DescribeCacheClustersResponse DescribeCacheClusters(DescribeCacheClustersRequest request)
         {
             var marshaller = new DescribeCacheClustersRequestMarshaller();
             var unmarshaller = DescribeCacheClustersResponseUnmarshaller.Instance;
@@ -1763,7 +1763,7 @@ namespace Amazon.ElastiCache
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeCacheClusters
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheClusters">REST API Reference for DescribeCacheClusters Operation</seealso>
-        public IAsyncResult BeginDescribeCacheClusters(DescribeCacheClustersRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeCacheClusters(DescribeCacheClustersRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeCacheClustersRequestMarshaller();
             var unmarshaller = DescribeCacheClustersResponseUnmarshaller.Instance;
@@ -1780,7 +1780,7 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>Returns a  DescribeCacheClustersResult from ElastiCache.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheClusters">REST API Reference for DescribeCacheClusters Operation</seealso>
-        public  DescribeCacheClustersResponse EndDescribeCacheClusters(IAsyncResult asyncResult)
+        public virtual DescribeCacheClustersResponse EndDescribeCacheClusters(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeCacheClustersResponse>(asyncResult);
         }
@@ -1795,7 +1795,7 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>The response from the DescribeCacheEngineVersions service method, as returned by ElastiCache.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheEngineVersions">REST API Reference for DescribeCacheEngineVersions Operation</seealso>
-        public DescribeCacheEngineVersionsResponse DescribeCacheEngineVersions()
+        public virtual DescribeCacheEngineVersionsResponse DescribeCacheEngineVersions()
         {
             return DescribeCacheEngineVersions(new DescribeCacheEngineVersionsRequest());
         }
@@ -1807,7 +1807,7 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>The response from the DescribeCacheEngineVersions service method, as returned by ElastiCache.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheEngineVersions">REST API Reference for DescribeCacheEngineVersions Operation</seealso>
-        public DescribeCacheEngineVersionsResponse DescribeCacheEngineVersions(DescribeCacheEngineVersionsRequest request)
+        public virtual DescribeCacheEngineVersionsResponse DescribeCacheEngineVersions(DescribeCacheEngineVersionsRequest request)
         {
             var marshaller = new DescribeCacheEngineVersionsRequestMarshaller();
             var unmarshaller = DescribeCacheEngineVersionsResponseUnmarshaller.Instance;
@@ -1827,7 +1827,7 @@ namespace Amazon.ElastiCache
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeCacheEngineVersions
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheEngineVersions">REST API Reference for DescribeCacheEngineVersions Operation</seealso>
-        public IAsyncResult BeginDescribeCacheEngineVersions(DescribeCacheEngineVersionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeCacheEngineVersions(DescribeCacheEngineVersionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeCacheEngineVersionsRequestMarshaller();
             var unmarshaller = DescribeCacheEngineVersionsResponseUnmarshaller.Instance;
@@ -1844,7 +1844,7 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>Returns a  DescribeCacheEngineVersionsResult from ElastiCache.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheEngineVersions">REST API Reference for DescribeCacheEngineVersions Operation</seealso>
-        public  DescribeCacheEngineVersionsResponse EndDescribeCacheEngineVersions(IAsyncResult asyncResult)
+        public virtual DescribeCacheEngineVersionsResponse EndDescribeCacheEngineVersions(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeCacheEngineVersionsResponse>(asyncResult);
         }
@@ -1870,7 +1870,7 @@ namespace Amazon.ElastiCache
         /// The value for a parameter is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheParameterGroups">REST API Reference for DescribeCacheParameterGroups Operation</seealso>
-        public DescribeCacheParameterGroupsResponse DescribeCacheParameterGroups()
+        public virtual DescribeCacheParameterGroupsResponse DescribeCacheParameterGroups()
         {
             return DescribeCacheParameterGroups(new DescribeCacheParameterGroupsRequest());
         }
@@ -1893,7 +1893,7 @@ namespace Amazon.ElastiCache
         /// The value for a parameter is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheParameterGroups">REST API Reference for DescribeCacheParameterGroups Operation</seealso>
-        public DescribeCacheParameterGroupsResponse DescribeCacheParameterGroups(DescribeCacheParameterGroupsRequest request)
+        public virtual DescribeCacheParameterGroupsResponse DescribeCacheParameterGroups(DescribeCacheParameterGroupsRequest request)
         {
             var marshaller = new DescribeCacheParameterGroupsRequestMarshaller();
             var unmarshaller = DescribeCacheParameterGroupsResponseUnmarshaller.Instance;
@@ -1913,7 +1913,7 @@ namespace Amazon.ElastiCache
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeCacheParameterGroups
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheParameterGroups">REST API Reference for DescribeCacheParameterGroups Operation</seealso>
-        public IAsyncResult BeginDescribeCacheParameterGroups(DescribeCacheParameterGroupsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeCacheParameterGroups(DescribeCacheParameterGroupsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeCacheParameterGroupsRequestMarshaller();
             var unmarshaller = DescribeCacheParameterGroupsResponseUnmarshaller.Instance;
@@ -1930,7 +1930,7 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>Returns a  DescribeCacheParameterGroupsResult from ElastiCache.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheParameterGroups">REST API Reference for DescribeCacheParameterGroups Operation</seealso>
-        public  DescribeCacheParameterGroupsResponse EndDescribeCacheParameterGroups(IAsyncResult asyncResult)
+        public virtual DescribeCacheParameterGroupsResponse EndDescribeCacheParameterGroups(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeCacheParameterGroupsResponse>(asyncResult);
         }
@@ -1956,7 +1956,7 @@ namespace Amazon.ElastiCache
         /// The value for a parameter is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheParameters">REST API Reference for DescribeCacheParameters Operation</seealso>
-        public DescribeCacheParametersResponse DescribeCacheParameters(DescribeCacheParametersRequest request)
+        public virtual DescribeCacheParametersResponse DescribeCacheParameters(DescribeCacheParametersRequest request)
         {
             var marshaller = new DescribeCacheParametersRequestMarshaller();
             var unmarshaller = DescribeCacheParametersResponseUnmarshaller.Instance;
@@ -1976,7 +1976,7 @@ namespace Amazon.ElastiCache
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeCacheParameters
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheParameters">REST API Reference for DescribeCacheParameters Operation</seealso>
-        public IAsyncResult BeginDescribeCacheParameters(DescribeCacheParametersRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeCacheParameters(DescribeCacheParametersRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeCacheParametersRequestMarshaller();
             var unmarshaller = DescribeCacheParametersResponseUnmarshaller.Instance;
@@ -1993,7 +1993,7 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>Returns a  DescribeCacheParametersResult from ElastiCache.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheParameters">REST API Reference for DescribeCacheParameters Operation</seealso>
-        public  DescribeCacheParametersResponse EndDescribeCacheParameters(IAsyncResult asyncResult)
+        public virtual DescribeCacheParametersResponse EndDescribeCacheParameters(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeCacheParametersResponse>(asyncResult);
         }
@@ -2019,7 +2019,7 @@ namespace Amazon.ElastiCache
         /// The value for a parameter is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheSecurityGroups">REST API Reference for DescribeCacheSecurityGroups Operation</seealso>
-        public DescribeCacheSecurityGroupsResponse DescribeCacheSecurityGroups()
+        public virtual DescribeCacheSecurityGroupsResponse DescribeCacheSecurityGroups()
         {
             return DescribeCacheSecurityGroups(new DescribeCacheSecurityGroupsRequest());
         }
@@ -2042,7 +2042,7 @@ namespace Amazon.ElastiCache
         /// The value for a parameter is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheSecurityGroups">REST API Reference for DescribeCacheSecurityGroups Operation</seealso>
-        public DescribeCacheSecurityGroupsResponse DescribeCacheSecurityGroups(DescribeCacheSecurityGroupsRequest request)
+        public virtual DescribeCacheSecurityGroupsResponse DescribeCacheSecurityGroups(DescribeCacheSecurityGroupsRequest request)
         {
             var marshaller = new DescribeCacheSecurityGroupsRequestMarshaller();
             var unmarshaller = DescribeCacheSecurityGroupsResponseUnmarshaller.Instance;
@@ -2062,7 +2062,7 @@ namespace Amazon.ElastiCache
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeCacheSecurityGroups
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheSecurityGroups">REST API Reference for DescribeCacheSecurityGroups Operation</seealso>
-        public IAsyncResult BeginDescribeCacheSecurityGroups(DescribeCacheSecurityGroupsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeCacheSecurityGroups(DescribeCacheSecurityGroupsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeCacheSecurityGroupsRequestMarshaller();
             var unmarshaller = DescribeCacheSecurityGroupsResponseUnmarshaller.Instance;
@@ -2079,7 +2079,7 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>Returns a  DescribeCacheSecurityGroupsResult from ElastiCache.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheSecurityGroups">REST API Reference for DescribeCacheSecurityGroups Operation</seealso>
-        public  DescribeCacheSecurityGroupsResponse EndDescribeCacheSecurityGroups(IAsyncResult asyncResult)
+        public virtual DescribeCacheSecurityGroupsResponse EndDescribeCacheSecurityGroups(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeCacheSecurityGroupsResponse>(asyncResult);
         }
@@ -2098,7 +2098,7 @@ namespace Amazon.ElastiCache
         /// The requested cache subnet group name does not refer to an existing cache subnet group.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheSubnetGroups">REST API Reference for DescribeCacheSubnetGroups Operation</seealso>
-        public DescribeCacheSubnetGroupsResponse DescribeCacheSubnetGroups()
+        public virtual DescribeCacheSubnetGroupsResponse DescribeCacheSubnetGroups()
         {
             return DescribeCacheSubnetGroups(new DescribeCacheSubnetGroupsRequest());
         }
@@ -2114,7 +2114,7 @@ namespace Amazon.ElastiCache
         /// The requested cache subnet group name does not refer to an existing cache subnet group.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheSubnetGroups">REST API Reference for DescribeCacheSubnetGroups Operation</seealso>
-        public DescribeCacheSubnetGroupsResponse DescribeCacheSubnetGroups(DescribeCacheSubnetGroupsRequest request)
+        public virtual DescribeCacheSubnetGroupsResponse DescribeCacheSubnetGroups(DescribeCacheSubnetGroupsRequest request)
         {
             var marshaller = new DescribeCacheSubnetGroupsRequestMarshaller();
             var unmarshaller = DescribeCacheSubnetGroupsResponseUnmarshaller.Instance;
@@ -2134,7 +2134,7 @@ namespace Amazon.ElastiCache
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeCacheSubnetGroups
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheSubnetGroups">REST API Reference for DescribeCacheSubnetGroups Operation</seealso>
-        public IAsyncResult BeginDescribeCacheSubnetGroups(DescribeCacheSubnetGroupsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeCacheSubnetGroups(DescribeCacheSubnetGroupsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeCacheSubnetGroupsRequestMarshaller();
             var unmarshaller = DescribeCacheSubnetGroupsResponseUnmarshaller.Instance;
@@ -2151,7 +2151,7 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>Returns a  DescribeCacheSubnetGroupsResult from ElastiCache.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheSubnetGroups">REST API Reference for DescribeCacheSubnetGroups Operation</seealso>
-        public  DescribeCacheSubnetGroupsResponse EndDescribeCacheSubnetGroups(IAsyncResult asyncResult)
+        public virtual DescribeCacheSubnetGroupsResponse EndDescribeCacheSubnetGroups(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeCacheSubnetGroupsResponse>(asyncResult);
         }
@@ -2174,7 +2174,7 @@ namespace Amazon.ElastiCache
         /// The value for a parameter is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeEngineDefaultParameters">REST API Reference for DescribeEngineDefaultParameters Operation</seealso>
-        public DescribeEngineDefaultParametersResponse DescribeEngineDefaultParameters(DescribeEngineDefaultParametersRequest request)
+        public virtual DescribeEngineDefaultParametersResponse DescribeEngineDefaultParameters(DescribeEngineDefaultParametersRequest request)
         {
             var marshaller = new DescribeEngineDefaultParametersRequestMarshaller();
             var unmarshaller = DescribeEngineDefaultParametersResponseUnmarshaller.Instance;
@@ -2194,7 +2194,7 @@ namespace Amazon.ElastiCache
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEngineDefaultParameters
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeEngineDefaultParameters">REST API Reference for DescribeEngineDefaultParameters Operation</seealso>
-        public IAsyncResult BeginDescribeEngineDefaultParameters(DescribeEngineDefaultParametersRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeEngineDefaultParameters(DescribeEngineDefaultParametersRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeEngineDefaultParametersRequestMarshaller();
             var unmarshaller = DescribeEngineDefaultParametersResponseUnmarshaller.Instance;
@@ -2211,7 +2211,7 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>Returns a  DescribeEngineDefaultParametersResult from ElastiCache.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeEngineDefaultParameters">REST API Reference for DescribeEngineDefaultParameters Operation</seealso>
-        public  DescribeEngineDefaultParametersResponse EndDescribeEngineDefaultParameters(IAsyncResult asyncResult)
+        public virtual DescribeEngineDefaultParametersResponse EndDescribeEngineDefaultParameters(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeEngineDefaultParametersResponse>(asyncResult);
         }
@@ -2240,7 +2240,7 @@ namespace Amazon.ElastiCache
         /// The value for a parameter is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
-        public DescribeEventsResponse DescribeEvents()
+        public virtual DescribeEventsResponse DescribeEvents()
         {
             return DescribeEvents(new DescribeEventsRequest());
         }
@@ -2266,7 +2266,7 @@ namespace Amazon.ElastiCache
         /// The value for a parameter is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
-        public DescribeEventsResponse DescribeEvents(DescribeEventsRequest request)
+        public virtual DescribeEventsResponse DescribeEvents(DescribeEventsRequest request)
         {
             var marshaller = new DescribeEventsRequestMarshaller();
             var unmarshaller = DescribeEventsResponseUnmarshaller.Instance;
@@ -2286,7 +2286,7 @@ namespace Amazon.ElastiCache
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEvents
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
-        public IAsyncResult BeginDescribeEvents(DescribeEventsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeEvents(DescribeEventsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeEventsRequestMarshaller();
             var unmarshaller = DescribeEventsResponseUnmarshaller.Instance;
@@ -2303,7 +2303,7 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>Returns a  DescribeEventsResult from ElastiCache.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
-        public  DescribeEventsResponse EndDescribeEvents(IAsyncResult asyncResult)
+        public virtual DescribeEventsResponse EndDescribeEvents(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeEventsResponse>(asyncResult);
         }
@@ -2334,7 +2334,7 @@ namespace Amazon.ElastiCache
         /// The specified replication group does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeReplicationGroups">REST API Reference for DescribeReplicationGroups Operation</seealso>
-        public DescribeReplicationGroupsResponse DescribeReplicationGroups()
+        public virtual DescribeReplicationGroupsResponse DescribeReplicationGroups()
         {
             return DescribeReplicationGroups(new DescribeReplicationGroupsRequest());
         }
@@ -2362,7 +2362,7 @@ namespace Amazon.ElastiCache
         /// The specified replication group does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeReplicationGroups">REST API Reference for DescribeReplicationGroups Operation</seealso>
-        public DescribeReplicationGroupsResponse DescribeReplicationGroups(DescribeReplicationGroupsRequest request)
+        public virtual DescribeReplicationGroupsResponse DescribeReplicationGroups(DescribeReplicationGroupsRequest request)
         {
             var marshaller = new DescribeReplicationGroupsRequestMarshaller();
             var unmarshaller = DescribeReplicationGroupsResponseUnmarshaller.Instance;
@@ -2382,7 +2382,7 @@ namespace Amazon.ElastiCache
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeReplicationGroups
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeReplicationGroups">REST API Reference for DescribeReplicationGroups Operation</seealso>
-        public IAsyncResult BeginDescribeReplicationGroups(DescribeReplicationGroupsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeReplicationGroups(DescribeReplicationGroupsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeReplicationGroupsRequestMarshaller();
             var unmarshaller = DescribeReplicationGroupsResponseUnmarshaller.Instance;
@@ -2399,7 +2399,7 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>Returns a  DescribeReplicationGroupsResult from ElastiCache.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeReplicationGroups">REST API Reference for DescribeReplicationGroups Operation</seealso>
-        public  DescribeReplicationGroupsResponse EndDescribeReplicationGroups(IAsyncResult asyncResult)
+        public virtual DescribeReplicationGroupsResponse EndDescribeReplicationGroups(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeReplicationGroupsResponse>(asyncResult);
         }
@@ -2424,7 +2424,7 @@ namespace Amazon.ElastiCache
         /// The requested reserved cache node was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeReservedCacheNodes">REST API Reference for DescribeReservedCacheNodes Operation</seealso>
-        public DescribeReservedCacheNodesResponse DescribeReservedCacheNodes()
+        public virtual DescribeReservedCacheNodesResponse DescribeReservedCacheNodes()
         {
             return DescribeReservedCacheNodes(new DescribeReservedCacheNodesRequest());
         }
@@ -2446,7 +2446,7 @@ namespace Amazon.ElastiCache
         /// The requested reserved cache node was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeReservedCacheNodes">REST API Reference for DescribeReservedCacheNodes Operation</seealso>
-        public DescribeReservedCacheNodesResponse DescribeReservedCacheNodes(DescribeReservedCacheNodesRequest request)
+        public virtual DescribeReservedCacheNodesResponse DescribeReservedCacheNodes(DescribeReservedCacheNodesRequest request)
         {
             var marshaller = new DescribeReservedCacheNodesRequestMarshaller();
             var unmarshaller = DescribeReservedCacheNodesResponseUnmarshaller.Instance;
@@ -2466,7 +2466,7 @@ namespace Amazon.ElastiCache
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeReservedCacheNodes
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeReservedCacheNodes">REST API Reference for DescribeReservedCacheNodes Operation</seealso>
-        public IAsyncResult BeginDescribeReservedCacheNodes(DescribeReservedCacheNodesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeReservedCacheNodes(DescribeReservedCacheNodesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeReservedCacheNodesRequestMarshaller();
             var unmarshaller = DescribeReservedCacheNodesResponseUnmarshaller.Instance;
@@ -2483,7 +2483,7 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>Returns a  DescribeReservedCacheNodesResult from ElastiCache.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeReservedCacheNodes">REST API Reference for DescribeReservedCacheNodes Operation</seealso>
-        public  DescribeReservedCacheNodesResponse EndDescribeReservedCacheNodes(IAsyncResult asyncResult)
+        public virtual DescribeReservedCacheNodesResponse EndDescribeReservedCacheNodes(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeReservedCacheNodesResponse>(asyncResult);
         }
@@ -2507,7 +2507,7 @@ namespace Amazon.ElastiCache
         /// The requested cache node offering does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeReservedCacheNodesOfferings">REST API Reference for DescribeReservedCacheNodesOfferings Operation</seealso>
-        public DescribeReservedCacheNodesOfferingsResponse DescribeReservedCacheNodesOfferings()
+        public virtual DescribeReservedCacheNodesOfferingsResponse DescribeReservedCacheNodesOfferings()
         {
             return DescribeReservedCacheNodesOfferings(new DescribeReservedCacheNodesOfferingsRequest());
         }
@@ -2528,7 +2528,7 @@ namespace Amazon.ElastiCache
         /// The requested cache node offering does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeReservedCacheNodesOfferings">REST API Reference for DescribeReservedCacheNodesOfferings Operation</seealso>
-        public DescribeReservedCacheNodesOfferingsResponse DescribeReservedCacheNodesOfferings(DescribeReservedCacheNodesOfferingsRequest request)
+        public virtual DescribeReservedCacheNodesOfferingsResponse DescribeReservedCacheNodesOfferings(DescribeReservedCacheNodesOfferingsRequest request)
         {
             var marshaller = new DescribeReservedCacheNodesOfferingsRequestMarshaller();
             var unmarshaller = DescribeReservedCacheNodesOfferingsResponseUnmarshaller.Instance;
@@ -2548,7 +2548,7 @@ namespace Amazon.ElastiCache
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeReservedCacheNodesOfferings
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeReservedCacheNodesOfferings">REST API Reference for DescribeReservedCacheNodesOfferings Operation</seealso>
-        public IAsyncResult BeginDescribeReservedCacheNodesOfferings(DescribeReservedCacheNodesOfferingsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeReservedCacheNodesOfferings(DescribeReservedCacheNodesOfferingsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeReservedCacheNodesOfferingsRequestMarshaller();
             var unmarshaller = DescribeReservedCacheNodesOfferingsResponseUnmarshaller.Instance;
@@ -2565,7 +2565,7 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>Returns a  DescribeReservedCacheNodesOfferingsResult from ElastiCache.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeReservedCacheNodesOfferings">REST API Reference for DescribeReservedCacheNodesOfferings Operation</seealso>
-        public  DescribeReservedCacheNodesOfferingsResponse EndDescribeReservedCacheNodesOfferings(IAsyncResult asyncResult)
+        public virtual DescribeReservedCacheNodesOfferingsResponse EndDescribeReservedCacheNodesOfferings(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeReservedCacheNodesOfferingsResponse>(asyncResult);
         }
@@ -2600,7 +2600,7 @@ namespace Amazon.ElastiCache
         /// The requested snapshot name does not refer to an existing snapshot.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeSnapshots">REST API Reference for DescribeSnapshots Operation</seealso>
-        public DescribeSnapshotsResponse DescribeSnapshots()
+        public virtual DescribeSnapshotsResponse DescribeSnapshots()
         {
             return DescribeSnapshots(new DescribeSnapshotsRequest());
         }
@@ -2632,7 +2632,7 @@ namespace Amazon.ElastiCache
         /// The requested snapshot name does not refer to an existing snapshot.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeSnapshots">REST API Reference for DescribeSnapshots Operation</seealso>
-        public DescribeSnapshotsResponse DescribeSnapshots(DescribeSnapshotsRequest request)
+        public virtual DescribeSnapshotsResponse DescribeSnapshots(DescribeSnapshotsRequest request)
         {
             var marshaller = new DescribeSnapshotsRequestMarshaller();
             var unmarshaller = DescribeSnapshotsResponseUnmarshaller.Instance;
@@ -2652,7 +2652,7 @@ namespace Amazon.ElastiCache
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSnapshots
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeSnapshots">REST API Reference for DescribeSnapshots Operation</seealso>
-        public IAsyncResult BeginDescribeSnapshots(DescribeSnapshotsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeSnapshots(DescribeSnapshotsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeSnapshotsRequestMarshaller();
             var unmarshaller = DescribeSnapshotsResponseUnmarshaller.Instance;
@@ -2669,7 +2669,7 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>Returns a  DescribeSnapshotsResult from ElastiCache.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeSnapshots">REST API Reference for DescribeSnapshots Operation</seealso>
-        public  DescribeSnapshotsResponse EndDescribeSnapshots(IAsyncResult asyncResult)
+        public virtual DescribeSnapshotsResponse EndDescribeSnapshots(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeSnapshotsResponse>(asyncResult);
         }
@@ -2705,7 +2705,7 @@ namespace Amazon.ElastiCache
         /// The specified replication group does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ListAllowedNodeTypeModifications">REST API Reference for ListAllowedNodeTypeModifications Operation</seealso>
-        public ListAllowedNodeTypeModificationsResponse ListAllowedNodeTypeModifications(ListAllowedNodeTypeModificationsRequest request)
+        public virtual ListAllowedNodeTypeModificationsResponse ListAllowedNodeTypeModifications(ListAllowedNodeTypeModificationsRequest request)
         {
             var marshaller = new ListAllowedNodeTypeModificationsRequestMarshaller();
             var unmarshaller = ListAllowedNodeTypeModificationsResponseUnmarshaller.Instance;
@@ -2725,7 +2725,7 @@ namespace Amazon.ElastiCache
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAllowedNodeTypeModifications
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ListAllowedNodeTypeModifications">REST API Reference for ListAllowedNodeTypeModifications Operation</seealso>
-        public IAsyncResult BeginListAllowedNodeTypeModifications(ListAllowedNodeTypeModificationsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListAllowedNodeTypeModifications(ListAllowedNodeTypeModificationsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListAllowedNodeTypeModificationsRequestMarshaller();
             var unmarshaller = ListAllowedNodeTypeModificationsResponseUnmarshaller.Instance;
@@ -2742,7 +2742,7 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>Returns a  ListAllowedNodeTypeModificationsResult from ElastiCache.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ListAllowedNodeTypeModifications">REST API Reference for ListAllowedNodeTypeModifications Operation</seealso>
-        public  ListAllowedNodeTypeModificationsResponse EndListAllowedNodeTypeModifications(IAsyncResult asyncResult)
+        public virtual ListAllowedNodeTypeModificationsResponse EndListAllowedNodeTypeModifications(IAsyncResult asyncResult)
         {
             return EndInvoke<ListAllowedNodeTypeModificationsResponse>(asyncResult);
         }
@@ -2776,7 +2776,7 @@ namespace Amazon.ElastiCache
         /// The requested snapshot name does not refer to an existing snapshot.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
-        public ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
@@ -2796,7 +2796,7 @@ namespace Amazon.ElastiCache
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
-        public IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
@@ -2813,7 +2813,7 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>Returns a  ListTagsForResourceResult from ElastiCache.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
-        public  ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult)
+        public virtual ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTagsForResourceResponse>(asyncResult);
         }
@@ -2868,7 +2868,7 @@ namespace Amazon.ElastiCache
         /// nodes per customer.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyCacheCluster">REST API Reference for ModifyCacheCluster Operation</seealso>
-        public ModifyCacheClusterResponse ModifyCacheCluster(ModifyCacheClusterRequest request)
+        public virtual ModifyCacheClusterResponse ModifyCacheCluster(ModifyCacheClusterRequest request)
         {
             var marshaller = new ModifyCacheClusterRequestMarshaller();
             var unmarshaller = ModifyCacheClusterResponseUnmarshaller.Instance;
@@ -2888,7 +2888,7 @@ namespace Amazon.ElastiCache
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyCacheCluster
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyCacheCluster">REST API Reference for ModifyCacheCluster Operation</seealso>
-        public IAsyncResult BeginModifyCacheCluster(ModifyCacheClusterRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginModifyCacheCluster(ModifyCacheClusterRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ModifyCacheClusterRequestMarshaller();
             var unmarshaller = ModifyCacheClusterResponseUnmarshaller.Instance;
@@ -2905,7 +2905,7 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>Returns a  ModifyCacheClusterResult from ElastiCache.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyCacheCluster">REST API Reference for ModifyCacheCluster Operation</seealso>
-        public  ModifyCacheClusterResponse EndModifyCacheCluster(IAsyncResult asyncResult)
+        public virtual ModifyCacheClusterResponse EndModifyCacheCluster(IAsyncResult asyncResult)
         {
             return EndInvoke<ModifyCacheClusterResponse>(asyncResult);
         }
@@ -2936,7 +2936,7 @@ namespace Amazon.ElastiCache
         /// The value for a parameter is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyCacheParameterGroup">REST API Reference for ModifyCacheParameterGroup Operation</seealso>
-        public ModifyCacheParameterGroupResponse ModifyCacheParameterGroup(ModifyCacheParameterGroupRequest request)
+        public virtual ModifyCacheParameterGroupResponse ModifyCacheParameterGroup(ModifyCacheParameterGroupRequest request)
         {
             var marshaller = new ModifyCacheParameterGroupRequestMarshaller();
             var unmarshaller = ModifyCacheParameterGroupResponseUnmarshaller.Instance;
@@ -2956,7 +2956,7 @@ namespace Amazon.ElastiCache
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyCacheParameterGroup
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyCacheParameterGroup">REST API Reference for ModifyCacheParameterGroup Operation</seealso>
-        public IAsyncResult BeginModifyCacheParameterGroup(ModifyCacheParameterGroupRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginModifyCacheParameterGroup(ModifyCacheParameterGroupRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ModifyCacheParameterGroupRequestMarshaller();
             var unmarshaller = ModifyCacheParameterGroupResponseUnmarshaller.Instance;
@@ -2973,7 +2973,7 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>Returns a  ModifyCacheParameterGroupResult from ElastiCache.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyCacheParameterGroup">REST API Reference for ModifyCacheParameterGroup Operation</seealso>
-        public  ModifyCacheParameterGroupResponse EndModifyCacheParameterGroup(IAsyncResult asyncResult)
+        public virtual ModifyCacheParameterGroupResponse EndModifyCacheParameterGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<ModifyCacheParameterGroupResponse>(asyncResult);
         }
@@ -3002,7 +3002,7 @@ namespace Amazon.ElastiCache
         /// The requested subnet is being used by another cache subnet group.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyCacheSubnetGroup">REST API Reference for ModifyCacheSubnetGroup Operation</seealso>
-        public ModifyCacheSubnetGroupResponse ModifyCacheSubnetGroup(ModifyCacheSubnetGroupRequest request)
+        public virtual ModifyCacheSubnetGroupResponse ModifyCacheSubnetGroup(ModifyCacheSubnetGroupRequest request)
         {
             var marshaller = new ModifyCacheSubnetGroupRequestMarshaller();
             var unmarshaller = ModifyCacheSubnetGroupResponseUnmarshaller.Instance;
@@ -3022,7 +3022,7 @@ namespace Amazon.ElastiCache
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyCacheSubnetGroup
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyCacheSubnetGroup">REST API Reference for ModifyCacheSubnetGroup Operation</seealso>
-        public IAsyncResult BeginModifyCacheSubnetGroup(ModifyCacheSubnetGroupRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginModifyCacheSubnetGroup(ModifyCacheSubnetGroupRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ModifyCacheSubnetGroupRequestMarshaller();
             var unmarshaller = ModifyCacheSubnetGroupResponseUnmarshaller.Instance;
@@ -3039,7 +3039,7 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>Returns a  ModifyCacheSubnetGroupResult from ElastiCache.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyCacheSubnetGroup">REST API Reference for ModifyCacheSubnetGroup Operation</seealso>
-        public  ModifyCacheSubnetGroupResponse EndModifyCacheSubnetGroup(IAsyncResult asyncResult)
+        public virtual ModifyCacheSubnetGroupResponse EndModifyCacheSubnetGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<ModifyCacheSubnetGroupResponse>(asyncResult);
         }
@@ -3109,7 +3109,7 @@ namespace Amazon.ElastiCache
         /// The specified replication group does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyReplicationGroup">REST API Reference for ModifyReplicationGroup Operation</seealso>
-        public ModifyReplicationGroupResponse ModifyReplicationGroup(ModifyReplicationGroupRequest request)
+        public virtual ModifyReplicationGroupResponse ModifyReplicationGroup(ModifyReplicationGroupRequest request)
         {
             var marshaller = new ModifyReplicationGroupRequestMarshaller();
             var unmarshaller = ModifyReplicationGroupResponseUnmarshaller.Instance;
@@ -3129,7 +3129,7 @@ namespace Amazon.ElastiCache
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyReplicationGroup
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyReplicationGroup">REST API Reference for ModifyReplicationGroup Operation</seealso>
-        public IAsyncResult BeginModifyReplicationGroup(ModifyReplicationGroupRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginModifyReplicationGroup(ModifyReplicationGroupRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ModifyReplicationGroupRequestMarshaller();
             var unmarshaller = ModifyReplicationGroupResponseUnmarshaller.Instance;
@@ -3146,7 +3146,7 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>Returns a  ModifyReplicationGroupResult from ElastiCache.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyReplicationGroup">REST API Reference for ModifyReplicationGroup Operation</seealso>
-        public  ModifyReplicationGroupResponse EndModifyReplicationGroup(IAsyncResult asyncResult)
+        public virtual ModifyReplicationGroupResponse EndModifyReplicationGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<ModifyReplicationGroupResponse>(asyncResult);
         }
@@ -3177,7 +3177,7 @@ namespace Amazon.ElastiCache
         /// The requested cache node offering does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/PurchaseReservedCacheNodesOffering">REST API Reference for PurchaseReservedCacheNodesOffering Operation</seealso>
-        public PurchaseReservedCacheNodesOfferingResponse PurchaseReservedCacheNodesOffering(PurchaseReservedCacheNodesOfferingRequest request)
+        public virtual PurchaseReservedCacheNodesOfferingResponse PurchaseReservedCacheNodesOffering(PurchaseReservedCacheNodesOfferingRequest request)
         {
             var marshaller = new PurchaseReservedCacheNodesOfferingRequestMarshaller();
             var unmarshaller = PurchaseReservedCacheNodesOfferingResponseUnmarshaller.Instance;
@@ -3197,7 +3197,7 @@ namespace Amazon.ElastiCache
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPurchaseReservedCacheNodesOffering
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/PurchaseReservedCacheNodesOffering">REST API Reference for PurchaseReservedCacheNodesOffering Operation</seealso>
-        public IAsyncResult BeginPurchaseReservedCacheNodesOffering(PurchaseReservedCacheNodesOfferingRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPurchaseReservedCacheNodesOffering(PurchaseReservedCacheNodesOfferingRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PurchaseReservedCacheNodesOfferingRequestMarshaller();
             var unmarshaller = PurchaseReservedCacheNodesOfferingResponseUnmarshaller.Instance;
@@ -3214,7 +3214,7 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>Returns a  PurchaseReservedCacheNodesOfferingResult from ElastiCache.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/PurchaseReservedCacheNodesOffering">REST API Reference for PurchaseReservedCacheNodesOffering Operation</seealso>
-        public  PurchaseReservedCacheNodesOfferingResponse EndPurchaseReservedCacheNodesOffering(IAsyncResult asyncResult)
+        public virtual PurchaseReservedCacheNodesOfferingResponse EndPurchaseReservedCacheNodesOffering(IAsyncResult asyncResult)
         {
             return EndInvoke<PurchaseReservedCacheNodesOfferingResponse>(asyncResult);
         }
@@ -3249,7 +3249,7 @@ namespace Amazon.ElastiCache
         /// The requested cache cluster is not in the <code>available</code> state.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/RebootCacheCluster">REST API Reference for RebootCacheCluster Operation</seealso>
-        public RebootCacheClusterResponse RebootCacheCluster(RebootCacheClusterRequest request)
+        public virtual RebootCacheClusterResponse RebootCacheCluster(RebootCacheClusterRequest request)
         {
             var marshaller = new RebootCacheClusterRequestMarshaller();
             var unmarshaller = RebootCacheClusterResponseUnmarshaller.Instance;
@@ -3269,7 +3269,7 @@ namespace Amazon.ElastiCache
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRebootCacheCluster
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/RebootCacheCluster">REST API Reference for RebootCacheCluster Operation</seealso>
-        public IAsyncResult BeginRebootCacheCluster(RebootCacheClusterRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginRebootCacheCluster(RebootCacheClusterRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RebootCacheClusterRequestMarshaller();
             var unmarshaller = RebootCacheClusterResponseUnmarshaller.Instance;
@@ -3286,7 +3286,7 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>Returns a  RebootCacheClusterResult from ElastiCache.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/RebootCacheCluster">REST API Reference for RebootCacheCluster Operation</seealso>
-        public  RebootCacheClusterResponse EndRebootCacheCluster(IAsyncResult asyncResult)
+        public virtual RebootCacheClusterResponse EndRebootCacheCluster(IAsyncResult asyncResult)
         {
             return EndInvoke<RebootCacheClusterResponse>(asyncResult);
         }
@@ -3314,7 +3314,7 @@ namespace Amazon.ElastiCache
         /// The requested tag was not found on this resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
-        public RemoveTagsFromResourceResponse RemoveTagsFromResource(RemoveTagsFromResourceRequest request)
+        public virtual RemoveTagsFromResourceResponse RemoveTagsFromResource(RemoveTagsFromResourceRequest request)
         {
             var marshaller = new RemoveTagsFromResourceRequestMarshaller();
             var unmarshaller = RemoveTagsFromResourceResponseUnmarshaller.Instance;
@@ -3334,7 +3334,7 @@ namespace Amazon.ElastiCache
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveTagsFromResource
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
-        public IAsyncResult BeginRemoveTagsFromResource(RemoveTagsFromResourceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginRemoveTagsFromResource(RemoveTagsFromResourceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RemoveTagsFromResourceRequestMarshaller();
             var unmarshaller = RemoveTagsFromResourceResponseUnmarshaller.Instance;
@@ -3351,7 +3351,7 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>Returns a  RemoveTagsFromResourceResult from ElastiCache.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
-        public  RemoveTagsFromResourceResponse EndRemoveTagsFromResource(IAsyncResult asyncResult)
+        public virtual RemoveTagsFromResourceResponse EndRemoveTagsFromResource(IAsyncResult asyncResult)
         {
             return EndInvoke<RemoveTagsFromResourceResponse>(asyncResult);
         }
@@ -3384,7 +3384,7 @@ namespace Amazon.ElastiCache
         /// The value for a parameter is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ResetCacheParameterGroup">REST API Reference for ResetCacheParameterGroup Operation</seealso>
-        public ResetCacheParameterGroupResponse ResetCacheParameterGroup(ResetCacheParameterGroupRequest request)
+        public virtual ResetCacheParameterGroupResponse ResetCacheParameterGroup(ResetCacheParameterGroupRequest request)
         {
             var marshaller = new ResetCacheParameterGroupRequestMarshaller();
             var unmarshaller = ResetCacheParameterGroupResponseUnmarshaller.Instance;
@@ -3404,7 +3404,7 @@ namespace Amazon.ElastiCache
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndResetCacheParameterGroup
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ResetCacheParameterGroup">REST API Reference for ResetCacheParameterGroup Operation</seealso>
-        public IAsyncResult BeginResetCacheParameterGroup(ResetCacheParameterGroupRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginResetCacheParameterGroup(ResetCacheParameterGroupRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ResetCacheParameterGroupRequestMarshaller();
             var unmarshaller = ResetCacheParameterGroupResponseUnmarshaller.Instance;
@@ -3421,7 +3421,7 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>Returns a  ResetCacheParameterGroupResult from ElastiCache.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ResetCacheParameterGroup">REST API Reference for ResetCacheParameterGroup Operation</seealso>
-        public  ResetCacheParameterGroupResponse EndResetCacheParameterGroup(IAsyncResult asyncResult)
+        public virtual ResetCacheParameterGroupResponse EndResetCacheParameterGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<ResetCacheParameterGroupResponse>(asyncResult);
         }
@@ -3455,7 +3455,7 @@ namespace Amazon.ElastiCache
         /// The value for a parameter is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/RevokeCacheSecurityGroupIngress">REST API Reference for RevokeCacheSecurityGroupIngress Operation</seealso>
-        public RevokeCacheSecurityGroupIngressResponse RevokeCacheSecurityGroupIngress(RevokeCacheSecurityGroupIngressRequest request)
+        public virtual RevokeCacheSecurityGroupIngressResponse RevokeCacheSecurityGroupIngress(RevokeCacheSecurityGroupIngressRequest request)
         {
             var marshaller = new RevokeCacheSecurityGroupIngressRequestMarshaller();
             var unmarshaller = RevokeCacheSecurityGroupIngressResponseUnmarshaller.Instance;
@@ -3475,7 +3475,7 @@ namespace Amazon.ElastiCache
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRevokeCacheSecurityGroupIngress
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/RevokeCacheSecurityGroupIngress">REST API Reference for RevokeCacheSecurityGroupIngress Operation</seealso>
-        public IAsyncResult BeginRevokeCacheSecurityGroupIngress(RevokeCacheSecurityGroupIngressRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginRevokeCacheSecurityGroupIngress(RevokeCacheSecurityGroupIngressRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RevokeCacheSecurityGroupIngressRequestMarshaller();
             var unmarshaller = RevokeCacheSecurityGroupIngressResponseUnmarshaller.Instance;
@@ -3492,7 +3492,7 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>Returns a  RevokeCacheSecurityGroupIngressResult from ElastiCache.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/RevokeCacheSecurityGroupIngress">REST API Reference for RevokeCacheSecurityGroupIngress Operation</seealso>
-        public  RevokeCacheSecurityGroupIngressResponse EndRevokeCacheSecurityGroupIngress(IAsyncResult asyncResult)
+        public virtual RevokeCacheSecurityGroupIngressResponse EndRevokeCacheSecurityGroupIngress(IAsyncResult asyncResult)
         {
             return EndInvoke<RevokeCacheSecurityGroupIngressResponse>(asyncResult);
         }
@@ -3608,7 +3608,7 @@ namespace Amazon.ElastiCache
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/TestFailover">REST API Reference for TestFailover Operation</seealso>
-        public TestFailoverResponse TestFailover(TestFailoverRequest request)
+        public virtual TestFailoverResponse TestFailover(TestFailoverRequest request)
         {
             var marshaller = new TestFailoverRequestMarshaller();
             var unmarshaller = TestFailoverResponseUnmarshaller.Instance;
@@ -3628,7 +3628,7 @@ namespace Amazon.ElastiCache
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTestFailover
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/TestFailover">REST API Reference for TestFailover Operation</seealso>
-        public IAsyncResult BeginTestFailover(TestFailoverRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginTestFailover(TestFailoverRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new TestFailoverRequestMarshaller();
             var unmarshaller = TestFailoverResponseUnmarshaller.Instance;
@@ -3645,7 +3645,7 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>Returns a  TestFailoverResult from ElastiCache.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/TestFailover">REST API Reference for TestFailover Operation</seealso>
-        public  TestFailoverResponse EndTestFailover(IAsyncResult asyncResult)
+        public virtual TestFailoverResponse EndTestFailover(IAsyncResult asyncResult)
         {
             return EndInvoke<TestFailoverResponse>(asyncResult);
         }

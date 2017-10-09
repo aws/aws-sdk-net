@@ -110,7 +110,7 @@ namespace Amazon.IotData
         /// <exception cref="Amazon.IotData.Model.UnsupportedDocumentEncodingException">
         /// The document encoding is not supported.
         /// </exception>
-        public DeleteThingShadowResponse DeleteThingShadow(DeleteThingShadowRequest request)
+        public virtual DeleteThingShadowResponse DeleteThingShadow(DeleteThingShadowRequest request)
         {
             var marshaller = new DeleteThingShadowRequestMarshaller();
             var unmarshaller = DeleteThingShadowResponseUnmarshaller.Instance;
@@ -129,7 +129,7 @@ namespace Amazon.IotData
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteThingShadow
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteThingShadow(DeleteThingShadowRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteThingShadow(DeleteThingShadowRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteThingShadowRequestMarshaller();
             var unmarshaller = DeleteThingShadowResponseUnmarshaller.Instance;
@@ -145,7 +145,7 @@ namespace Amazon.IotData
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteThingShadow.</param>
         /// 
         /// <returns>Returns a  DeleteThingShadowResult from IotData.</returns>
-        public  DeleteThingShadowResponse EndDeleteThingShadow(IAsyncResult asyncResult)
+        public virtual DeleteThingShadowResponse EndDeleteThingShadow(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteThingShadowResponse>(asyncResult);
         }
@@ -190,7 +190,7 @@ namespace Amazon.IotData
         /// <exception cref="Amazon.IotData.Model.UnsupportedDocumentEncodingException">
         /// The document encoding is not supported.
         /// </exception>
-        public GetThingShadowResponse GetThingShadow(GetThingShadowRequest request)
+        public virtual GetThingShadowResponse GetThingShadow(GetThingShadowRequest request)
         {
             var marshaller = new GetThingShadowRequestMarshaller();
             var unmarshaller = GetThingShadowResponseUnmarshaller.Instance;
@@ -209,7 +209,7 @@ namespace Amazon.IotData
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetThingShadow
         ///         operation.</returns>
-        public IAsyncResult BeginGetThingShadow(GetThingShadowRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetThingShadow(GetThingShadowRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetThingShadowRequestMarshaller();
             var unmarshaller = GetThingShadowResponseUnmarshaller.Instance;
@@ -225,7 +225,7 @@ namespace Amazon.IotData
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetThingShadow.</param>
         /// 
         /// <returns>Returns a  GetThingShadowResult from IotData.</returns>
-        public  GetThingShadowResponse EndGetThingShadow(IAsyncResult asyncResult)
+        public virtual GetThingShadowResponse EndGetThingShadow(IAsyncResult asyncResult)
         {
             return EndInvoke<GetThingShadowResponse>(asyncResult);
         }
@@ -258,7 +258,7 @@ namespace Amazon.IotData
         /// <exception cref="Amazon.IotData.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
-        public PublishResponse Publish(PublishRequest request)
+        public virtual PublishResponse Publish(PublishRequest request)
         {
             var marshaller = new PublishRequestMarshaller();
             var unmarshaller = PublishResponseUnmarshaller.Instance;
@@ -277,7 +277,7 @@ namespace Amazon.IotData
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPublish
         ///         operation.</returns>
-        public IAsyncResult BeginPublish(PublishRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPublish(PublishRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PublishRequestMarshaller();
             var unmarshaller = PublishResponseUnmarshaller.Instance;
@@ -293,7 +293,7 @@ namespace Amazon.IotData
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPublish.</param>
         /// 
         /// <returns>Returns a  PublishResult from IotData.</returns>
-        public  PublishResponse EndPublish(IAsyncResult asyncResult)
+        public virtual PublishResponse EndPublish(IAsyncResult asyncResult)
         {
             return EndInvoke<PublishResponse>(asyncResult);
         }
@@ -341,7 +341,7 @@ namespace Amazon.IotData
         /// <exception cref="Amazon.IotData.Model.UnsupportedDocumentEncodingException">
         /// The document encoding is not supported.
         /// </exception>
-        public UpdateThingShadowResponse UpdateThingShadow(UpdateThingShadowRequest request)
+        public virtual UpdateThingShadowResponse UpdateThingShadow(UpdateThingShadowRequest request)
         {
             var marshaller = new UpdateThingShadowRequestMarshaller();
             var unmarshaller = UpdateThingShadowResponseUnmarshaller.Instance;
@@ -360,7 +360,7 @@ namespace Amazon.IotData
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateThingShadow
         ///         operation.</returns>
-        public IAsyncResult BeginUpdateThingShadow(UpdateThingShadowRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateThingShadow(UpdateThingShadowRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateThingShadowRequestMarshaller();
             var unmarshaller = UpdateThingShadowResponseUnmarshaller.Instance;
@@ -376,7 +376,7 @@ namespace Amazon.IotData
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateThingShadow.</param>
         /// 
         /// <returns>Returns a  UpdateThingShadowResult from IotData.</returns>
-        public  UpdateThingShadowResponse EndUpdateThingShadow(IAsyncResult asyncResult)
+        public virtual UpdateThingShadowResponse EndUpdateThingShadow(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateThingShadowResponse>(asyncResult);
         }

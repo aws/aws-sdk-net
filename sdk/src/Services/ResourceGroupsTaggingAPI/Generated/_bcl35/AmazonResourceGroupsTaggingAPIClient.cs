@@ -308,7 +308,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// The request was denied to limit the frequency of submitted requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/GetResources">REST API Reference for GetResources Operation</seealso>
-        public GetResourcesResponse GetResources(GetResourcesRequest request)
+        public virtual GetResourcesResponse GetResources(GetResourcesRequest request)
         {
             var marshaller = new GetResourcesRequestMarshaller();
             var unmarshaller = GetResourcesResponseUnmarshaller.Instance;
@@ -328,7 +328,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetResources
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/GetResources">REST API Reference for GetResources Operation</seealso>
-        public IAsyncResult BeginGetResources(GetResourcesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetResources(GetResourcesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetResourcesRequestMarshaller();
             var unmarshaller = GetResourcesResponseUnmarshaller.Instance;
@@ -345,7 +345,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// 
         /// <returns>Returns a  GetResourcesResult from ResourceGroupsTaggingAPI.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/GetResources">REST API Reference for GetResources Operation</seealso>
-        public  GetResourcesResponse EndGetResources(IAsyncResult asyncResult)
+        public virtual GetResourcesResponse EndGetResources(IAsyncResult asyncResult)
         {
             return EndInvoke<GetResourcesResponse>(asyncResult);
         }
@@ -376,7 +376,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// The request was denied to limit the frequency of submitted requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/GetTagKeys">REST API Reference for GetTagKeys Operation</seealso>
-        public GetTagKeysResponse GetTagKeys(GetTagKeysRequest request)
+        public virtual GetTagKeysResponse GetTagKeys(GetTagKeysRequest request)
         {
             var marshaller = new GetTagKeysRequestMarshaller();
             var unmarshaller = GetTagKeysResponseUnmarshaller.Instance;
@@ -396,7 +396,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTagKeys
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/GetTagKeys">REST API Reference for GetTagKeys Operation</seealso>
-        public IAsyncResult BeginGetTagKeys(GetTagKeysRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetTagKeys(GetTagKeysRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetTagKeysRequestMarshaller();
             var unmarshaller = GetTagKeysResponseUnmarshaller.Instance;
@@ -413,7 +413,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// 
         /// <returns>Returns a  GetTagKeysResult from ResourceGroupsTaggingAPI.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/GetTagKeys">REST API Reference for GetTagKeys Operation</seealso>
-        public  GetTagKeysResponse EndGetTagKeys(IAsyncResult asyncResult)
+        public virtual GetTagKeysResponse EndGetTagKeys(IAsyncResult asyncResult)
         {
             return EndInvoke<GetTagKeysResponse>(asyncResult);
         }
@@ -444,7 +444,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// The request was denied to limit the frequency of submitted requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/GetTagValues">REST API Reference for GetTagValues Operation</seealso>
-        public GetTagValuesResponse GetTagValues(GetTagValuesRequest request)
+        public virtual GetTagValuesResponse GetTagValues(GetTagValuesRequest request)
         {
             var marshaller = new GetTagValuesRequestMarshaller();
             var unmarshaller = GetTagValuesResponseUnmarshaller.Instance;
@@ -464,7 +464,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTagValues
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/GetTagValues">REST API Reference for GetTagValues Operation</seealso>
-        public IAsyncResult BeginGetTagValues(GetTagValuesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetTagValues(GetTagValuesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetTagValuesRequestMarshaller();
             var unmarshaller = GetTagValuesResponseUnmarshaller.Instance;
@@ -481,7 +481,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// 
         /// <returns>Returns a  GetTagValuesResult from ResourceGroupsTaggingAPI.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/GetTagValues">REST API Reference for GetTagValues Operation</seealso>
-        public  GetTagValuesResponse EndGetTagValues(IAsyncResult asyncResult)
+        public virtual GetTagValuesResponse EndGetTagValues(IAsyncResult asyncResult)
         {
             return EndInvoke<GetTagValuesResponse>(asyncResult);
         }
@@ -532,7 +532,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// The request was denied to limit the frequency of submitted requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/TagResources">REST API Reference for TagResources Operation</seealso>
-        public TagResourcesResponse TagResources(TagResourcesRequest request)
+        public virtual TagResourcesResponse TagResources(TagResourcesRequest request)
         {
             var marshaller = new TagResourcesRequestMarshaller();
             var unmarshaller = TagResourcesResponseUnmarshaller.Instance;
@@ -552,7 +552,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResources
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/TagResources">REST API Reference for TagResources Operation</seealso>
-        public IAsyncResult BeginTagResources(TagResourcesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginTagResources(TagResourcesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new TagResourcesRequestMarshaller();
             var unmarshaller = TagResourcesResponseUnmarshaller.Instance;
@@ -569,7 +569,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// 
         /// <returns>Returns a  TagResourcesResult from ResourceGroupsTaggingAPI.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/TagResources">REST API Reference for TagResources Operation</seealso>
-        public  TagResourcesResponse EndTagResources(IAsyncResult asyncResult)
+        public virtual TagResourcesResponse EndTagResources(IAsyncResult asyncResult)
         {
             return EndInvoke<TagResourcesResponse>(asyncResult);
         }
@@ -612,7 +612,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// The request was denied to limit the frequency of submitted requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/UntagResources">REST API Reference for UntagResources Operation</seealso>
-        public UntagResourcesResponse UntagResources(UntagResourcesRequest request)
+        public virtual UntagResourcesResponse UntagResources(UntagResourcesRequest request)
         {
             var marshaller = new UntagResourcesRequestMarshaller();
             var unmarshaller = UntagResourcesResponseUnmarshaller.Instance;
@@ -632,7 +632,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResources
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/UntagResources">REST API Reference for UntagResources Operation</seealso>
-        public IAsyncResult BeginUntagResources(UntagResourcesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUntagResources(UntagResourcesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UntagResourcesRequestMarshaller();
             var unmarshaller = UntagResourcesResponseUnmarshaller.Instance;
@@ -649,7 +649,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// 
         /// <returns>Returns a  UntagResourcesResult from ResourceGroupsTaggingAPI.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/UntagResources">REST API Reference for UntagResources Operation</seealso>
-        public  UntagResourcesResponse EndUntagResources(IAsyncResult asyncResult)
+        public virtual UntagResourcesResponse EndUntagResources(IAsyncResult asyncResult)
         {
             return EndInvoke<UntagResourcesResponse>(asyncResult);
         }

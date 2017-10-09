@@ -307,7 +307,7 @@ namespace Amazon.Rekognition
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CompareFaces">REST API Reference for CompareFaces Operation</seealso>
-        public CompareFacesResponse CompareFaces(CompareFacesRequest request)
+        public virtual CompareFacesResponse CompareFaces(CompareFacesRequest request)
         {
             var marshaller = new CompareFacesRequestMarshaller();
             var unmarshaller = CompareFacesResponseUnmarshaller.Instance;
@@ -327,7 +327,7 @@ namespace Amazon.Rekognition
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCompareFaces
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CompareFaces">REST API Reference for CompareFaces Operation</seealso>
-        public IAsyncResult BeginCompareFaces(CompareFacesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCompareFaces(CompareFacesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CompareFacesRequestMarshaller();
             var unmarshaller = CompareFacesResponseUnmarshaller.Instance;
@@ -344,7 +344,7 @@ namespace Amazon.Rekognition
         /// 
         /// <returns>Returns a  CompareFacesResult from Rekognition.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CompareFaces">REST API Reference for CompareFaces Operation</seealso>
-        public  CompareFacesResponse EndCompareFaces(IAsyncResult asyncResult)
+        public virtual CompareFacesResponse EndCompareFaces(IAsyncResult asyncResult)
         {
             return EndInvoke<CompareFacesResponse>(asyncResult);
         }
@@ -402,7 +402,7 @@ namespace Amazon.Rekognition
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateCollection">REST API Reference for CreateCollection Operation</seealso>
-        public CreateCollectionResponse CreateCollection(CreateCollectionRequest request)
+        public virtual CreateCollectionResponse CreateCollection(CreateCollectionRequest request)
         {
             var marshaller = new CreateCollectionRequestMarshaller();
             var unmarshaller = CreateCollectionResponseUnmarshaller.Instance;
@@ -422,7 +422,7 @@ namespace Amazon.Rekognition
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCollection
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateCollection">REST API Reference for CreateCollection Operation</seealso>
-        public IAsyncResult BeginCreateCollection(CreateCollectionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateCollection(CreateCollectionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateCollectionRequestMarshaller();
             var unmarshaller = CreateCollectionResponseUnmarshaller.Instance;
@@ -439,7 +439,7 @@ namespace Amazon.Rekognition
         /// 
         /// <returns>Returns a  CreateCollectionResult from Rekognition.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateCollection">REST API Reference for CreateCollection Operation</seealso>
-        public  CreateCollectionResponse EndCreateCollection(IAsyncResult asyncResult)
+        public virtual CreateCollectionResponse EndCreateCollection(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateCollectionResponse>(asyncResult);
         }
@@ -482,7 +482,7 @@ namespace Amazon.Rekognition
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteCollection">REST API Reference for DeleteCollection Operation</seealso>
-        public DeleteCollectionResponse DeleteCollection(DeleteCollectionRequest request)
+        public virtual DeleteCollectionResponse DeleteCollection(DeleteCollectionRequest request)
         {
             var marshaller = new DeleteCollectionRequestMarshaller();
             var unmarshaller = DeleteCollectionResponseUnmarshaller.Instance;
@@ -502,7 +502,7 @@ namespace Amazon.Rekognition
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCollection
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteCollection">REST API Reference for DeleteCollection Operation</seealso>
-        public IAsyncResult BeginDeleteCollection(DeleteCollectionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteCollection(DeleteCollectionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteCollectionRequestMarshaller();
             var unmarshaller = DeleteCollectionResponseUnmarshaller.Instance;
@@ -519,7 +519,7 @@ namespace Amazon.Rekognition
         /// 
         /// <returns>Returns a  DeleteCollectionResult from Rekognition.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteCollection">REST API Reference for DeleteCollection Operation</seealso>
-        public  DeleteCollectionResponse EndDeleteCollection(IAsyncResult asyncResult)
+        public virtual DeleteCollectionResponse EndDeleteCollection(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteCollectionResponse>(asyncResult);
         }
@@ -562,7 +562,7 @@ namespace Amazon.Rekognition
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteFaces">REST API Reference for DeleteFaces Operation</seealso>
-        public DeleteFacesResponse DeleteFaces(DeleteFacesRequest request)
+        public virtual DeleteFacesResponse DeleteFaces(DeleteFacesRequest request)
         {
             var marshaller = new DeleteFacesRequestMarshaller();
             var unmarshaller = DeleteFacesResponseUnmarshaller.Instance;
@@ -582,7 +582,7 @@ namespace Amazon.Rekognition
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteFaces
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteFaces">REST API Reference for DeleteFaces Operation</seealso>
-        public IAsyncResult BeginDeleteFaces(DeleteFacesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteFaces(DeleteFacesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteFacesRequestMarshaller();
             var unmarshaller = DeleteFacesResponseUnmarshaller.Instance;
@@ -599,7 +599,7 @@ namespace Amazon.Rekognition
         /// 
         /// <returns>Returns a  DeleteFacesResult from Rekognition.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteFaces">REST API Reference for DeleteFaces Operation</seealso>
-        public  DeleteFacesResponse EndDeleteFaces(IAsyncResult asyncResult)
+        public virtual DeleteFacesResponse EndDeleteFaces(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteFacesResponse>(asyncResult);
         }
@@ -668,7 +668,7 @@ namespace Amazon.Rekognition
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectFaces">REST API Reference for DetectFaces Operation</seealso>
-        public DetectFacesResponse DetectFaces(DetectFacesRequest request)
+        public virtual DetectFacesResponse DetectFaces(DetectFacesRequest request)
         {
             var marshaller = new DetectFacesRequestMarshaller();
             var unmarshaller = DetectFacesResponseUnmarshaller.Instance;
@@ -688,7 +688,7 @@ namespace Amazon.Rekognition
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDetectFaces
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectFaces">REST API Reference for DetectFaces Operation</seealso>
-        public IAsyncResult BeginDetectFaces(DetectFacesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDetectFaces(DetectFacesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DetectFacesRequestMarshaller();
             var unmarshaller = DetectFacesResponseUnmarshaller.Instance;
@@ -705,7 +705,7 @@ namespace Amazon.Rekognition
         /// 
         /// <returns>Returns a  DetectFacesResult from Rekognition.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectFaces">REST API Reference for DetectFaces Operation</seealso>
-        public  DetectFacesResponse EndDetectFaces(IAsyncResult asyncResult)
+        public virtual DetectFacesResponse EndDetectFaces(IAsyncResult asyncResult)
         {
             return EndInvoke<DetectFacesResponse>(asyncResult);
         }
@@ -816,7 +816,7 @@ namespace Amazon.Rekognition
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectLabels">REST API Reference for DetectLabels Operation</seealso>
-        public DetectLabelsResponse DetectLabels(DetectLabelsRequest request)
+        public virtual DetectLabelsResponse DetectLabels(DetectLabelsRequest request)
         {
             var marshaller = new DetectLabelsRequestMarshaller();
             var unmarshaller = DetectLabelsResponseUnmarshaller.Instance;
@@ -836,7 +836,7 @@ namespace Amazon.Rekognition
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDetectLabels
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectLabels">REST API Reference for DetectLabels Operation</seealso>
-        public IAsyncResult BeginDetectLabels(DetectLabelsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDetectLabels(DetectLabelsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DetectLabelsRequestMarshaller();
             var unmarshaller = DetectLabelsResponseUnmarshaller.Instance;
@@ -853,7 +853,7 @@ namespace Amazon.Rekognition
         /// 
         /// <returns>Returns a  DetectLabelsResult from Rekognition.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectLabels">REST API Reference for DetectLabels Operation</seealso>
-        public  DetectLabelsResponse EndDetectLabels(IAsyncResult asyncResult)
+        public virtual DetectLabelsResponse EndDetectLabels(IAsyncResult asyncResult)
         {
             return EndInvoke<DetectLabelsResponse>(asyncResult);
         }
@@ -905,7 +905,7 @@ namespace Amazon.Rekognition
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectModerationLabels">REST API Reference for DetectModerationLabels Operation</seealso>
-        public DetectModerationLabelsResponse DetectModerationLabels(DetectModerationLabelsRequest request)
+        public virtual DetectModerationLabelsResponse DetectModerationLabels(DetectModerationLabelsRequest request)
         {
             var marshaller = new DetectModerationLabelsRequestMarshaller();
             var unmarshaller = DetectModerationLabelsResponseUnmarshaller.Instance;
@@ -925,7 +925,7 @@ namespace Amazon.Rekognition
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDetectModerationLabels
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectModerationLabels">REST API Reference for DetectModerationLabels Operation</seealso>
-        public IAsyncResult BeginDetectModerationLabels(DetectModerationLabelsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDetectModerationLabels(DetectModerationLabelsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DetectModerationLabelsRequestMarshaller();
             var unmarshaller = DetectModerationLabelsResponseUnmarshaller.Instance;
@@ -942,7 +942,7 @@ namespace Amazon.Rekognition
         /// 
         /// <returns>Returns a  DetectModerationLabelsResult from Rekognition.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectModerationLabels">REST API Reference for DetectModerationLabels Operation</seealso>
-        public  DetectModerationLabelsResponse EndDetectModerationLabels(IAsyncResult asyncResult)
+        public virtual DetectModerationLabelsResponse EndDetectModerationLabels(IAsyncResult asyncResult)
         {
             return EndInvoke<DetectModerationLabelsResponse>(asyncResult);
         }
@@ -986,7 +986,7 @@ namespace Amazon.Rekognition
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetCelebrityInfo">REST API Reference for GetCelebrityInfo Operation</seealso>
-        public GetCelebrityInfoResponse GetCelebrityInfo(GetCelebrityInfoRequest request)
+        public virtual GetCelebrityInfoResponse GetCelebrityInfo(GetCelebrityInfoRequest request)
         {
             var marshaller = new GetCelebrityInfoRequestMarshaller();
             var unmarshaller = GetCelebrityInfoResponseUnmarshaller.Instance;
@@ -1006,7 +1006,7 @@ namespace Amazon.Rekognition
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCelebrityInfo
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetCelebrityInfo">REST API Reference for GetCelebrityInfo Operation</seealso>
-        public IAsyncResult BeginGetCelebrityInfo(GetCelebrityInfoRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetCelebrityInfo(GetCelebrityInfoRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetCelebrityInfoRequestMarshaller();
             var unmarshaller = GetCelebrityInfoResponseUnmarshaller.Instance;
@@ -1023,7 +1023,7 @@ namespace Amazon.Rekognition
         /// 
         /// <returns>Returns a  GetCelebrityInfoResult from Rekognition.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetCelebrityInfo">REST API Reference for GetCelebrityInfo Operation</seealso>
-        public  GetCelebrityInfoResponse EndGetCelebrityInfo(IAsyncResult asyncResult)
+        public virtual GetCelebrityInfoResponse EndGetCelebrityInfo(IAsyncResult asyncResult)
         {
             return EndInvoke<GetCelebrityInfoResponse>(asyncResult);
         }
@@ -1107,7 +1107,7 @@ namespace Amazon.Rekognition
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/IndexFaces">REST API Reference for IndexFaces Operation</seealso>
-        public IndexFacesResponse IndexFaces(IndexFacesRequest request)
+        public virtual IndexFacesResponse IndexFaces(IndexFacesRequest request)
         {
             var marshaller = new IndexFacesRequestMarshaller();
             var unmarshaller = IndexFacesResponseUnmarshaller.Instance;
@@ -1127,7 +1127,7 @@ namespace Amazon.Rekognition
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndIndexFaces
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/IndexFaces">REST API Reference for IndexFaces Operation</seealso>
-        public IAsyncResult BeginIndexFaces(IndexFacesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginIndexFaces(IndexFacesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new IndexFacesRequestMarshaller();
             var unmarshaller = IndexFacesResponseUnmarshaller.Instance;
@@ -1144,7 +1144,7 @@ namespace Amazon.Rekognition
         /// 
         /// <returns>Returns a  IndexFacesResult from Rekognition.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/IndexFaces">REST API Reference for IndexFaces Operation</seealso>
-        public  IndexFacesResponse EndIndexFaces(IAsyncResult asyncResult)
+        public virtual IndexFacesResponse EndIndexFaces(IAsyncResult asyncResult)
         {
             return EndInvoke<IndexFacesResponse>(asyncResult);
         }
@@ -1195,7 +1195,7 @@ namespace Amazon.Rekognition
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListCollections">REST API Reference for ListCollections Operation</seealso>
-        public ListCollectionsResponse ListCollections(ListCollectionsRequest request)
+        public virtual ListCollectionsResponse ListCollections(ListCollectionsRequest request)
         {
             var marshaller = new ListCollectionsRequestMarshaller();
             var unmarshaller = ListCollectionsResponseUnmarshaller.Instance;
@@ -1215,7 +1215,7 @@ namespace Amazon.Rekognition
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCollections
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListCollections">REST API Reference for ListCollections Operation</seealso>
-        public IAsyncResult BeginListCollections(ListCollectionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListCollections(ListCollectionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListCollectionsRequestMarshaller();
             var unmarshaller = ListCollectionsResponseUnmarshaller.Instance;
@@ -1232,7 +1232,7 @@ namespace Amazon.Rekognition
         /// 
         /// <returns>Returns a  ListCollectionsResult from Rekognition.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListCollections">REST API Reference for ListCollections Operation</seealso>
-        public  ListCollectionsResponse EndListCollections(IAsyncResult asyncResult)
+        public virtual ListCollectionsResponse EndListCollections(IAsyncResult asyncResult)
         {
             return EndInvoke<ListCollectionsResponse>(asyncResult);
         }
@@ -1279,7 +1279,7 @@ namespace Amazon.Rekognition
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListFaces">REST API Reference for ListFaces Operation</seealso>
-        public ListFacesResponse ListFaces(ListFacesRequest request)
+        public virtual ListFacesResponse ListFaces(ListFacesRequest request)
         {
             var marshaller = new ListFacesRequestMarshaller();
             var unmarshaller = ListFacesResponseUnmarshaller.Instance;
@@ -1299,7 +1299,7 @@ namespace Amazon.Rekognition
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListFaces
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListFaces">REST API Reference for ListFaces Operation</seealso>
-        public IAsyncResult BeginListFaces(ListFacesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListFaces(ListFacesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListFacesRequestMarshaller();
             var unmarshaller = ListFacesResponseUnmarshaller.Instance;
@@ -1316,7 +1316,7 @@ namespace Amazon.Rekognition
         /// 
         /// <returns>Returns a  ListFacesResult from Rekognition.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListFaces">REST API Reference for ListFaces Operation</seealso>
-        public  ListFacesResponse EndListFaces(IAsyncResult asyncResult)
+        public virtual ListFacesResponse EndListFaces(IAsyncResult asyncResult)
         {
             return EndInvoke<ListFacesResponse>(asyncResult);
         }
@@ -1396,7 +1396,7 @@ namespace Amazon.Rekognition
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/RecognizeCelebrities">REST API Reference for RecognizeCelebrities Operation</seealso>
-        public RecognizeCelebritiesResponse RecognizeCelebrities(RecognizeCelebritiesRequest request)
+        public virtual RecognizeCelebritiesResponse RecognizeCelebrities(RecognizeCelebritiesRequest request)
         {
             var marshaller = new RecognizeCelebritiesRequestMarshaller();
             var unmarshaller = RecognizeCelebritiesResponseUnmarshaller.Instance;
@@ -1416,7 +1416,7 @@ namespace Amazon.Rekognition
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRecognizeCelebrities
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/RecognizeCelebrities">REST API Reference for RecognizeCelebrities Operation</seealso>
-        public IAsyncResult BeginRecognizeCelebrities(RecognizeCelebritiesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginRecognizeCelebrities(RecognizeCelebritiesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RecognizeCelebritiesRequestMarshaller();
             var unmarshaller = RecognizeCelebritiesResponseUnmarshaller.Instance;
@@ -1433,7 +1433,7 @@ namespace Amazon.Rekognition
         /// 
         /// <returns>Returns a  RecognizeCelebritiesResult from Rekognition.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/RecognizeCelebrities">REST API Reference for RecognizeCelebrities Operation</seealso>
-        public  RecognizeCelebritiesResponse EndRecognizeCelebrities(IAsyncResult asyncResult)
+        public virtual RecognizeCelebritiesResponse EndRecognizeCelebrities(IAsyncResult asyncResult)
         {
             return EndInvoke<RecognizeCelebritiesResponse>(asyncResult);
         }
@@ -1495,7 +1495,7 @@ namespace Amazon.Rekognition
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/SearchFaces">REST API Reference for SearchFaces Operation</seealso>
-        public SearchFacesResponse SearchFaces(SearchFacesRequest request)
+        public virtual SearchFacesResponse SearchFaces(SearchFacesRequest request)
         {
             var marshaller = new SearchFacesRequestMarshaller();
             var unmarshaller = SearchFacesResponseUnmarshaller.Instance;
@@ -1515,7 +1515,7 @@ namespace Amazon.Rekognition
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchFaces
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/SearchFaces">REST API Reference for SearchFaces Operation</seealso>
-        public IAsyncResult BeginSearchFaces(SearchFacesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginSearchFaces(SearchFacesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SearchFacesRequestMarshaller();
             var unmarshaller = SearchFacesResponseUnmarshaller.Instance;
@@ -1532,7 +1532,7 @@ namespace Amazon.Rekognition
         /// 
         /// <returns>Returns a  SearchFacesResult from Rekognition.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/SearchFaces">REST API Reference for SearchFaces Operation</seealso>
-        public  SearchFacesResponse EndSearchFaces(IAsyncResult asyncResult)
+        public virtual SearchFacesResponse EndSearchFaces(IAsyncResult asyncResult)
         {
             return EndInvoke<SearchFacesResponse>(asyncResult);
         }
@@ -1609,7 +1609,7 @@ namespace Amazon.Rekognition
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/SearchFacesByImage">REST API Reference for SearchFacesByImage Operation</seealso>
-        public SearchFacesByImageResponse SearchFacesByImage(SearchFacesByImageRequest request)
+        public virtual SearchFacesByImageResponse SearchFacesByImage(SearchFacesByImageRequest request)
         {
             var marshaller = new SearchFacesByImageRequestMarshaller();
             var unmarshaller = SearchFacesByImageResponseUnmarshaller.Instance;
@@ -1629,7 +1629,7 @@ namespace Amazon.Rekognition
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchFacesByImage
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/SearchFacesByImage">REST API Reference for SearchFacesByImage Operation</seealso>
-        public IAsyncResult BeginSearchFacesByImage(SearchFacesByImageRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginSearchFacesByImage(SearchFacesByImageRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SearchFacesByImageRequestMarshaller();
             var unmarshaller = SearchFacesByImageResponseUnmarshaller.Instance;
@@ -1646,7 +1646,7 @@ namespace Amazon.Rekognition
         /// 
         /// <returns>Returns a  SearchFacesByImageResult from Rekognition.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/SearchFacesByImage">REST API Reference for SearchFacesByImage Operation</seealso>
-        public  SearchFacesByImageResponse EndSearchFacesByImage(IAsyncResult asyncResult)
+        public virtual SearchFacesByImageResponse EndSearchFacesByImage(IAsyncResult asyncResult)
         {
             return EndInvoke<SearchFacesByImageResponse>(asyncResult);
         }

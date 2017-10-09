@@ -285,7 +285,7 @@ namespace Amazon.Lambda
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddPermission">REST API Reference for AddPermission Operation</seealso>
-        public AddPermissionResponse AddPermission(AddPermissionRequest request)
+        public virtual AddPermissionResponse AddPermission(AddPermissionRequest request)
         {
             var marshaller = new AddPermissionRequestMarshaller();
             var unmarshaller = AddPermissionResponseUnmarshaller.Instance;
@@ -305,7 +305,7 @@ namespace Amazon.Lambda
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddPermission
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddPermission">REST API Reference for AddPermission Operation</seealso>
-        public IAsyncResult BeginAddPermission(AddPermissionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginAddPermission(AddPermissionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AddPermissionRequestMarshaller();
             var unmarshaller = AddPermissionResponseUnmarshaller.Instance;
@@ -322,7 +322,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>Returns a  AddPermissionResult from Lambda.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddPermission">REST API Reference for AddPermission Operation</seealso>
-        public  AddPermissionResponse EndAddPermission(IAsyncResult asyncResult)
+        public virtual AddPermissionResponse EndAddPermission(IAsyncResult asyncResult)
         {
             return EndInvoke<AddPermissionResponse>(asyncResult);
         }
@@ -365,7 +365,7 @@ namespace Amazon.Lambda
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
-        public CreateAliasResponse CreateAlias(CreateAliasRequest request)
+        public virtual CreateAliasResponse CreateAlias(CreateAliasRequest request)
         {
             var marshaller = new CreateAliasRequestMarshaller();
             var unmarshaller = CreateAliasResponseUnmarshaller.Instance;
@@ -385,7 +385,7 @@ namespace Amazon.Lambda
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAlias
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
-        public IAsyncResult BeginCreateAlias(CreateAliasRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateAlias(CreateAliasRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateAliasRequestMarshaller();
             var unmarshaller = CreateAliasResponseUnmarshaller.Instance;
@@ -402,7 +402,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>Returns a  CreateAliasResult from Lambda.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
-        public  CreateAliasResponse EndCreateAlias(IAsyncResult asyncResult)
+        public virtual CreateAliasResponse EndCreateAlias(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateAliasResponse>(asyncResult);
         }
@@ -473,7 +473,7 @@ namespace Amazon.Lambda
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateEventSourceMapping">REST API Reference for CreateEventSourceMapping Operation</seealso>
-        public CreateEventSourceMappingResponse CreateEventSourceMapping(CreateEventSourceMappingRequest request)
+        public virtual CreateEventSourceMappingResponse CreateEventSourceMapping(CreateEventSourceMappingRequest request)
         {
             var marshaller = new CreateEventSourceMappingRequestMarshaller();
             var unmarshaller = CreateEventSourceMappingResponseUnmarshaller.Instance;
@@ -493,7 +493,7 @@ namespace Amazon.Lambda
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateEventSourceMapping
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateEventSourceMapping">REST API Reference for CreateEventSourceMapping Operation</seealso>
-        public IAsyncResult BeginCreateEventSourceMapping(CreateEventSourceMappingRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateEventSourceMapping(CreateEventSourceMappingRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateEventSourceMappingRequestMarshaller();
             var unmarshaller = CreateEventSourceMappingResponseUnmarshaller.Instance;
@@ -510,7 +510,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>Returns a  CreateEventSourceMappingResult from Lambda.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateEventSourceMapping">REST API Reference for CreateEventSourceMapping Operation</seealso>
-        public  CreateEventSourceMappingResponse EndCreateEventSourceMapping(IAsyncResult asyncResult)
+        public virtual CreateEventSourceMappingResponse EndCreateEventSourceMapping(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateEventSourceMappingResponse>(asyncResult);
         }
@@ -563,7 +563,7 @@ namespace Amazon.Lambda
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateFunction">REST API Reference for CreateFunction Operation</seealso>
-        public CreateFunctionResponse CreateFunction(CreateFunctionRequest request)
+        public virtual CreateFunctionResponse CreateFunction(CreateFunctionRequest request)
         {
             var marshaller = new CreateFunctionRequestMarshaller();
             var unmarshaller = CreateFunctionResponseUnmarshaller.Instance;
@@ -583,7 +583,7 @@ namespace Amazon.Lambda
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateFunction
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateFunction">REST API Reference for CreateFunction Operation</seealso>
-        public IAsyncResult BeginCreateFunction(CreateFunctionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateFunction(CreateFunctionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateFunctionRequestMarshaller();
             var unmarshaller = CreateFunctionResponseUnmarshaller.Instance;
@@ -600,7 +600,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>Returns a  CreateFunctionResult from Lambda.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateFunction">REST API Reference for CreateFunction Operation</seealso>
-        public  CreateFunctionResponse EndCreateFunction(IAsyncResult asyncResult)
+        public virtual CreateFunctionResponse EndCreateFunction(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateFunctionResponse>(asyncResult);
         }
@@ -634,7 +634,7 @@ namespace Amazon.Lambda
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
-        public DeleteAliasResponse DeleteAlias(DeleteAliasRequest request)
+        public virtual DeleteAliasResponse DeleteAlias(DeleteAliasRequest request)
         {
             var marshaller = new DeleteAliasRequestMarshaller();
             var unmarshaller = DeleteAliasResponseUnmarshaller.Instance;
@@ -654,7 +654,7 @@ namespace Amazon.Lambda
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAlias
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
-        public IAsyncResult BeginDeleteAlias(DeleteAliasRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteAlias(DeleteAliasRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteAliasRequestMarshaller();
             var unmarshaller = DeleteAliasResponseUnmarshaller.Instance;
@@ -671,7 +671,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>Returns a  DeleteAliasResult from Lambda.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
-        public  DeleteAliasResponse EndDeleteAlias(IAsyncResult asyncResult)
+        public virtual DeleteAliasResponse EndDeleteAlias(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteAliasResponse>(asyncResult);
         }
@@ -710,7 +710,7 @@ namespace Amazon.Lambda
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteEventSourceMapping">REST API Reference for DeleteEventSourceMapping Operation</seealso>
-        public DeleteEventSourceMappingResponse DeleteEventSourceMapping(DeleteEventSourceMappingRequest request)
+        public virtual DeleteEventSourceMappingResponse DeleteEventSourceMapping(DeleteEventSourceMappingRequest request)
         {
             var marshaller = new DeleteEventSourceMappingRequestMarshaller();
             var unmarshaller = DeleteEventSourceMappingResponseUnmarshaller.Instance;
@@ -730,7 +730,7 @@ namespace Amazon.Lambda
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteEventSourceMapping
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteEventSourceMapping">REST API Reference for DeleteEventSourceMapping Operation</seealso>
-        public IAsyncResult BeginDeleteEventSourceMapping(DeleteEventSourceMappingRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteEventSourceMapping(DeleteEventSourceMappingRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteEventSourceMappingRequestMarshaller();
             var unmarshaller = DeleteEventSourceMappingResponseUnmarshaller.Instance;
@@ -747,7 +747,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>Returns a  DeleteEventSourceMappingResult from Lambda.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteEventSourceMapping">REST API Reference for DeleteEventSourceMapping Operation</seealso>
-        public  DeleteEventSourceMappingResponse EndDeleteEventSourceMapping(IAsyncResult asyncResult)
+        public virtual DeleteEventSourceMappingResponse EndDeleteEventSourceMapping(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteEventSourceMappingResponse>(asyncResult);
         }
@@ -801,7 +801,7 @@ namespace Amazon.Lambda
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunction">REST API Reference for DeleteFunction Operation</seealso>
-        public DeleteFunctionResponse DeleteFunction(string functionName)
+        public virtual DeleteFunctionResponse DeleteFunction(string functionName)
         {
             var request = new DeleteFunctionRequest();
             request.FunctionName = functionName;
@@ -854,7 +854,7 @@ namespace Amazon.Lambda
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunction">REST API Reference for DeleteFunction Operation</seealso>
-        public DeleteFunctionResponse DeleteFunction(DeleteFunctionRequest request)
+        public virtual DeleteFunctionResponse DeleteFunction(DeleteFunctionRequest request)
         {
             var marshaller = new DeleteFunctionRequestMarshaller();
             var unmarshaller = DeleteFunctionResponseUnmarshaller.Instance;
@@ -874,7 +874,7 @@ namespace Amazon.Lambda
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteFunction
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunction">REST API Reference for DeleteFunction Operation</seealso>
-        public IAsyncResult BeginDeleteFunction(DeleteFunctionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteFunction(DeleteFunctionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteFunctionRequestMarshaller();
             var unmarshaller = DeleteFunctionResponseUnmarshaller.Instance;
@@ -891,7 +891,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>Returns a  DeleteFunctionResult from Lambda.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunction">REST API Reference for DeleteFunction Operation</seealso>
-        public  DeleteFunctionResponse EndDeleteFunction(IAsyncResult asyncResult)
+        public virtual DeleteFunctionResponse EndDeleteFunction(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteFunctionResponse>(asyncResult);
         }
@@ -921,7 +921,7 @@ namespace Amazon.Lambda
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAccountSettings">REST API Reference for GetAccountSettings Operation</seealso>
-        public GetAccountSettingsResponse GetAccountSettings(GetAccountSettingsRequest request)
+        public virtual GetAccountSettingsResponse GetAccountSettings(GetAccountSettingsRequest request)
         {
             var marshaller = new GetAccountSettingsRequestMarshaller();
             var unmarshaller = GetAccountSettingsResponseUnmarshaller.Instance;
@@ -941,7 +941,7 @@ namespace Amazon.Lambda
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAccountSettings
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAccountSettings">REST API Reference for GetAccountSettings Operation</seealso>
-        public IAsyncResult BeginGetAccountSettings(GetAccountSettingsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetAccountSettings(GetAccountSettingsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetAccountSettingsRequestMarshaller();
             var unmarshaller = GetAccountSettingsResponseUnmarshaller.Instance;
@@ -958,7 +958,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>Returns a  GetAccountSettingsResult from Lambda.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAccountSettings">REST API Reference for GetAccountSettings Operation</seealso>
-        public  GetAccountSettingsResponse EndGetAccountSettings(IAsyncResult asyncResult)
+        public virtual GetAccountSettingsResponse EndGetAccountSettings(IAsyncResult asyncResult)
         {
             return EndInvoke<GetAccountSettingsResponse>(asyncResult);
         }
@@ -997,7 +997,7 @@ namespace Amazon.Lambda
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAlias">REST API Reference for GetAlias Operation</seealso>
-        public GetAliasResponse GetAlias(GetAliasRequest request)
+        public virtual GetAliasResponse GetAlias(GetAliasRequest request)
         {
             var marshaller = new GetAliasRequestMarshaller();
             var unmarshaller = GetAliasResponseUnmarshaller.Instance;
@@ -1017,7 +1017,7 @@ namespace Amazon.Lambda
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAlias
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAlias">REST API Reference for GetAlias Operation</seealso>
-        public IAsyncResult BeginGetAlias(GetAliasRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetAlias(GetAliasRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetAliasRequestMarshaller();
             var unmarshaller = GetAliasResponseUnmarshaller.Instance;
@@ -1034,7 +1034,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>Returns a  GetAliasResult from Lambda.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAlias">REST API Reference for GetAlias Operation</seealso>
-        public  GetAliasResponse EndGetAlias(IAsyncResult asyncResult)
+        public virtual GetAliasResponse EndGetAlias(IAsyncResult asyncResult)
         {
             return EndInvoke<GetAliasResponse>(asyncResult);
         }
@@ -1072,7 +1072,7 @@ namespace Amazon.Lambda
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetEventSourceMapping">REST API Reference for GetEventSourceMapping Operation</seealso>
-        public GetEventSourceMappingResponse GetEventSourceMapping(GetEventSourceMappingRequest request)
+        public virtual GetEventSourceMappingResponse GetEventSourceMapping(GetEventSourceMappingRequest request)
         {
             var marshaller = new GetEventSourceMappingRequestMarshaller();
             var unmarshaller = GetEventSourceMappingResponseUnmarshaller.Instance;
@@ -1092,7 +1092,7 @@ namespace Amazon.Lambda
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetEventSourceMapping
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetEventSourceMapping">REST API Reference for GetEventSourceMapping Operation</seealso>
-        public IAsyncResult BeginGetEventSourceMapping(GetEventSourceMappingRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetEventSourceMapping(GetEventSourceMappingRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetEventSourceMappingRequestMarshaller();
             var unmarshaller = GetEventSourceMappingResponseUnmarshaller.Instance;
@@ -1109,7 +1109,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>Returns a  GetEventSourceMappingResult from Lambda.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetEventSourceMapping">REST API Reference for GetEventSourceMapping Operation</seealso>
-        public  GetEventSourceMappingResponse EndGetEventSourceMapping(IAsyncResult asyncResult)
+        public virtual GetEventSourceMappingResponse EndGetEventSourceMapping(IAsyncResult asyncResult)
         {
             return EndInvoke<GetEventSourceMappingResponse>(asyncResult);
         }
@@ -1157,7 +1157,7 @@ namespace Amazon.Lambda
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunction">REST API Reference for GetFunction Operation</seealso>
-        public GetFunctionResponse GetFunction(string functionName)
+        public virtual GetFunctionResponse GetFunction(string functionName)
         {
             var request = new GetFunctionRequest();
             request.FunctionName = functionName;
@@ -1204,7 +1204,7 @@ namespace Amazon.Lambda
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunction">REST API Reference for GetFunction Operation</seealso>
-        public GetFunctionResponse GetFunction(GetFunctionRequest request)
+        public virtual GetFunctionResponse GetFunction(GetFunctionRequest request)
         {
             var marshaller = new GetFunctionRequestMarshaller();
             var unmarshaller = GetFunctionResponseUnmarshaller.Instance;
@@ -1224,7 +1224,7 @@ namespace Amazon.Lambda
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetFunction
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunction">REST API Reference for GetFunction Operation</seealso>
-        public IAsyncResult BeginGetFunction(GetFunctionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetFunction(GetFunctionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetFunctionRequestMarshaller();
             var unmarshaller = GetFunctionResponseUnmarshaller.Instance;
@@ -1241,7 +1241,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>Returns a  GetFunctionResult from Lambda.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunction">REST API Reference for GetFunction Operation</seealso>
-        public  GetFunctionResponse EndGetFunction(IAsyncResult asyncResult)
+        public virtual GetFunctionResponse EndGetFunction(IAsyncResult asyncResult)
         {
             return EndInvoke<GetFunctionResponse>(asyncResult);
         }
@@ -1289,7 +1289,7 @@ namespace Amazon.Lambda
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConfiguration">REST API Reference for GetFunctionConfiguration Operation</seealso>
-        public GetFunctionConfigurationResponse GetFunctionConfiguration(string functionName)
+        public virtual GetFunctionConfigurationResponse GetFunctionConfiguration(string functionName)
         {
             var request = new GetFunctionConfigurationRequest();
             request.FunctionName = functionName;
@@ -1336,7 +1336,7 @@ namespace Amazon.Lambda
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConfiguration">REST API Reference for GetFunctionConfiguration Operation</seealso>
-        public GetFunctionConfigurationResponse GetFunctionConfiguration(GetFunctionConfigurationRequest request)
+        public virtual GetFunctionConfigurationResponse GetFunctionConfiguration(GetFunctionConfigurationRequest request)
         {
             var marshaller = new GetFunctionConfigurationRequestMarshaller();
             var unmarshaller = GetFunctionConfigurationResponseUnmarshaller.Instance;
@@ -1356,7 +1356,7 @@ namespace Amazon.Lambda
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetFunctionConfiguration
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConfiguration">REST API Reference for GetFunctionConfiguration Operation</seealso>
-        public IAsyncResult BeginGetFunctionConfiguration(GetFunctionConfigurationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetFunctionConfiguration(GetFunctionConfigurationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetFunctionConfigurationRequestMarshaller();
             var unmarshaller = GetFunctionConfigurationResponseUnmarshaller.Instance;
@@ -1373,7 +1373,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>Returns a  GetFunctionConfigurationResult from Lambda.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConfiguration">REST API Reference for GetFunctionConfiguration Operation</seealso>
-        public  GetFunctionConfigurationResponse EndGetFunctionConfiguration(IAsyncResult asyncResult)
+        public virtual GetFunctionConfigurationResponse EndGetFunctionConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<GetFunctionConfigurationResponse>(asyncResult);
         }
@@ -1418,7 +1418,7 @@ namespace Amazon.Lambda
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
-        public GetPolicyResponse GetPolicy(GetPolicyRequest request)
+        public virtual GetPolicyResponse GetPolicy(GetPolicyRequest request)
         {
             var marshaller = new GetPolicyRequestMarshaller();
             var unmarshaller = GetPolicyResponseUnmarshaller.Instance;
@@ -1438,7 +1438,7 @@ namespace Amazon.Lambda
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPolicy
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
-        public IAsyncResult BeginGetPolicy(GetPolicyRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetPolicy(GetPolicyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetPolicyRequestMarshaller();
             var unmarshaller = GetPolicyResponseUnmarshaller.Instance;
@@ -1455,7 +1455,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>Returns a  GetPolicyResult from Lambda.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
-        public  GetPolicyResponse EndGetPolicy(IAsyncResult asyncResult)
+        public virtual GetPolicyResponse EndGetPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<GetPolicyResponse>(asyncResult);
         }
@@ -1562,7 +1562,7 @@ namespace Amazon.Lambda
         /// The content type of the <code>Invoke</code> request body is not JSON.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/Invoke">REST API Reference for Invoke Operation</seealso>
-        public InvokeResponse Invoke(InvokeRequest request)
+        public virtual InvokeResponse Invoke(InvokeRequest request)
         {
             var marshaller = new InvokeRequestMarshaller();
             var unmarshaller = InvokeResponseUnmarshaller.Instance;
@@ -1582,7 +1582,7 @@ namespace Amazon.Lambda
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndInvoke
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/Invoke">REST API Reference for Invoke Operation</seealso>
-        public IAsyncResult BeginInvoke(InvokeRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginInvoke(InvokeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new InvokeRequestMarshaller();
             var unmarshaller = InvokeResponseUnmarshaller.Instance;
@@ -1599,7 +1599,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>Returns a  InvokeResult from Lambda.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/Invoke">REST API Reference for Invoke Operation</seealso>
-        public  InvokeResponse EndInvoke(IAsyncResult asyncResult)
+        public virtual InvokeResponse EndInvoke(IAsyncResult asyncResult)
         {
             return EndInvoke<InvokeResponse>(asyncResult);
         }
@@ -1642,7 +1642,7 @@ namespace Amazon.Lambda
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/InvokeAsync">REST API Reference for InvokeAsync Operation</seealso>
         [Obsolete("This API is deprecated. We recommend that you use Invoke API instead.")]
-        public InvokeAsyncResponse InvokeAsync(InvokeAsyncRequest request)
+        public virtual InvokeAsyncResponse InvokeAsync(InvokeAsyncRequest request)
         {
             var marshaller = new InvokeAsyncRequestMarshaller();
             var unmarshaller = InvokeAsyncResponseUnmarshaller.Instance;
@@ -1663,7 +1663,7 @@ namespace Amazon.Lambda
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/InvokeAsync">REST API Reference for InvokeAsync Operation</seealso>
         [Obsolete("This API is deprecated. We recommend that you use Invoke API instead.")]
-        public IAsyncResult BeginInvokeAsync(InvokeAsyncRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginInvokeAsync(InvokeAsyncRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new InvokeAsyncRequestMarshaller();
             var unmarshaller = InvokeAsyncResponseUnmarshaller.Instance;
@@ -1681,7 +1681,7 @@ namespace Amazon.Lambda
         /// <returns>Returns a  InvokeAsyncResult from Lambda.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/InvokeAsync">REST API Reference for InvokeAsync Operation</seealso>
         [Obsolete("This API is deprecated. We recommend that you use Invoke API instead.")]
-        public  InvokeAsyncResponse EndInvokeAsync(IAsyncResult asyncResult)
+        public virtual InvokeAsyncResponse EndInvokeAsync(IAsyncResult asyncResult)
         {
             return EndInvoke<InvokeAsyncResponse>(asyncResult);
         }
@@ -1721,7 +1721,7 @@ namespace Amazon.Lambda
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListAliases">REST API Reference for ListAliases Operation</seealso>
-        public ListAliasesResponse ListAliases(ListAliasesRequest request)
+        public virtual ListAliasesResponse ListAliases(ListAliasesRequest request)
         {
             var marshaller = new ListAliasesRequestMarshaller();
             var unmarshaller = ListAliasesResponseUnmarshaller.Instance;
@@ -1741,7 +1741,7 @@ namespace Amazon.Lambda
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAliases
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListAliases">REST API Reference for ListAliases Operation</seealso>
-        public IAsyncResult BeginListAliases(ListAliasesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListAliases(ListAliasesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListAliasesRequestMarshaller();
             var unmarshaller = ListAliasesResponseUnmarshaller.Instance;
@@ -1758,7 +1758,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>Returns a  ListAliasesResult from Lambda.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListAliases">REST API Reference for ListAliases Operation</seealso>
-        public  ListAliasesResponse EndListAliases(IAsyncResult asyncResult)
+        public virtual ListAliasesResponse EndListAliases(IAsyncResult asyncResult)
         {
             return EndInvoke<ListAliasesResponse>(asyncResult);
         }
@@ -1809,7 +1809,7 @@ namespace Amazon.Lambda
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListEventSourceMappings">REST API Reference for ListEventSourceMappings Operation</seealso>
-        public ListEventSourceMappingsResponse ListEventSourceMappings(ListEventSourceMappingsRequest request)
+        public virtual ListEventSourceMappingsResponse ListEventSourceMappings(ListEventSourceMappingsRequest request)
         {
             var marshaller = new ListEventSourceMappingsRequestMarshaller();
             var unmarshaller = ListEventSourceMappingsResponseUnmarshaller.Instance;
@@ -1829,7 +1829,7 @@ namespace Amazon.Lambda
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListEventSourceMappings
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListEventSourceMappings">REST API Reference for ListEventSourceMappings Operation</seealso>
-        public IAsyncResult BeginListEventSourceMappings(ListEventSourceMappingsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListEventSourceMappings(ListEventSourceMappingsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListEventSourceMappingsRequestMarshaller();
             var unmarshaller = ListEventSourceMappingsResponseUnmarshaller.Instance;
@@ -1846,7 +1846,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>Returns a  ListEventSourceMappingsResult from Lambda.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListEventSourceMappings">REST API Reference for ListEventSourceMappings Operation</seealso>
-        public  ListEventSourceMappingsResponse EndListEventSourceMappings(IAsyncResult asyncResult)
+        public virtual ListEventSourceMappingsResponse EndListEventSourceMappings(IAsyncResult asyncResult)
         {
             return EndInvoke<ListEventSourceMappingsResponse>(asyncResult);
         }
@@ -1887,7 +1887,7 @@ namespace Amazon.Lambda
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctions">REST API Reference for ListFunctions Operation</seealso>
-        public ListFunctionsResponse ListFunctions()
+        public virtual ListFunctionsResponse ListFunctions()
         {
             var request = new ListFunctionsRequest();
             return ListFunctions(request);
@@ -1927,7 +1927,7 @@ namespace Amazon.Lambda
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctions">REST API Reference for ListFunctions Operation</seealso>
-        public ListFunctionsResponse ListFunctions(ListFunctionsRequest request)
+        public virtual ListFunctionsResponse ListFunctions(ListFunctionsRequest request)
         {
             var marshaller = new ListFunctionsRequestMarshaller();
             var unmarshaller = ListFunctionsResponseUnmarshaller.Instance;
@@ -1947,7 +1947,7 @@ namespace Amazon.Lambda
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListFunctions
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctions">REST API Reference for ListFunctions Operation</seealso>
-        public IAsyncResult BeginListFunctions(ListFunctionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListFunctions(ListFunctionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListFunctionsRequestMarshaller();
             var unmarshaller = ListFunctionsResponseUnmarshaller.Instance;
@@ -1964,7 +1964,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>Returns a  ListFunctionsResult from Lambda.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctions">REST API Reference for ListFunctions Operation</seealso>
-        public  ListFunctionsResponse EndListFunctions(IAsyncResult asyncResult)
+        public virtual ListFunctionsResponse EndListFunctions(IAsyncResult asyncResult)
         {
             return EndInvoke<ListFunctionsResponse>(asyncResult);
         }
@@ -1997,7 +1997,7 @@ namespace Amazon.Lambda
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListTags">REST API Reference for ListTags Operation</seealso>
-        public ListTagsResponse ListTags(ListTagsRequest request)
+        public virtual ListTagsResponse ListTags(ListTagsRequest request)
         {
             var marshaller = new ListTagsRequestMarshaller();
             var unmarshaller = ListTagsResponseUnmarshaller.Instance;
@@ -2017,7 +2017,7 @@ namespace Amazon.Lambda
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTags
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListTags">REST API Reference for ListTags Operation</seealso>
-        public IAsyncResult BeginListTags(ListTagsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListTags(ListTagsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListTagsRequestMarshaller();
             var unmarshaller = ListTagsResponseUnmarshaller.Instance;
@@ -2034,7 +2034,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>Returns a  ListTagsResult from Lambda.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListTags">REST API Reference for ListTags Operation</seealso>
-        public  ListTagsResponse EndListTags(IAsyncResult asyncResult)
+        public virtual ListTagsResponse EndListTags(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTagsResponse>(asyncResult);
         }
@@ -2068,7 +2068,7 @@ namespace Amazon.Lambda
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListVersionsByFunction">REST API Reference for ListVersionsByFunction Operation</seealso>
-        public ListVersionsByFunctionResponse ListVersionsByFunction(ListVersionsByFunctionRequest request)
+        public virtual ListVersionsByFunctionResponse ListVersionsByFunction(ListVersionsByFunctionRequest request)
         {
             var marshaller = new ListVersionsByFunctionRequestMarshaller();
             var unmarshaller = ListVersionsByFunctionResponseUnmarshaller.Instance;
@@ -2088,7 +2088,7 @@ namespace Amazon.Lambda
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListVersionsByFunction
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListVersionsByFunction">REST API Reference for ListVersionsByFunction Operation</seealso>
-        public IAsyncResult BeginListVersionsByFunction(ListVersionsByFunctionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListVersionsByFunction(ListVersionsByFunctionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListVersionsByFunctionRequestMarshaller();
             var unmarshaller = ListVersionsByFunctionResponseUnmarshaller.Instance;
@@ -2105,7 +2105,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>Returns a  ListVersionsByFunctionResult from Lambda.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListVersionsByFunction">REST API Reference for ListVersionsByFunction Operation</seealso>
-        public  ListVersionsByFunctionResponse EndListVersionsByFunction(IAsyncResult asyncResult)
+        public virtual ListVersionsByFunctionResponse EndListVersionsByFunction(IAsyncResult asyncResult)
         {
             return EndInvoke<ListVersionsByFunctionResponse>(asyncResult);
         }
@@ -2144,7 +2144,7 @@ namespace Amazon.Lambda
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PublishVersion">REST API Reference for PublishVersion Operation</seealso>
-        public PublishVersionResponse PublishVersion(PublishVersionRequest request)
+        public virtual PublishVersionResponse PublishVersion(PublishVersionRequest request)
         {
             var marshaller = new PublishVersionRequestMarshaller();
             var unmarshaller = PublishVersionResponseUnmarshaller.Instance;
@@ -2164,7 +2164,7 @@ namespace Amazon.Lambda
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPublishVersion
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PublishVersion">REST API Reference for PublishVersion Operation</seealso>
-        public IAsyncResult BeginPublishVersion(PublishVersionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPublishVersion(PublishVersionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PublishVersionRequestMarshaller();
             var unmarshaller = PublishVersionResponseUnmarshaller.Instance;
@@ -2181,7 +2181,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>Returns a  PublishVersionResult from Lambda.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PublishVersion">REST API Reference for PublishVersion Operation</seealso>
-        public  PublishVersionResponse EndPublishVersion(IAsyncResult asyncResult)
+        public virtual PublishVersionResponse EndPublishVersion(IAsyncResult asyncResult)
         {
             return EndInvoke<PublishVersionResponse>(asyncResult);
         }
@@ -2232,7 +2232,7 @@ namespace Amazon.Lambda
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
-        public RemovePermissionResponse RemovePermission(RemovePermissionRequest request)
+        public virtual RemovePermissionResponse RemovePermission(RemovePermissionRequest request)
         {
             var marshaller = new RemovePermissionRequestMarshaller();
             var unmarshaller = RemovePermissionResponseUnmarshaller.Instance;
@@ -2252,7 +2252,7 @@ namespace Amazon.Lambda
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemovePermission
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
-        public IAsyncResult BeginRemovePermission(RemovePermissionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginRemovePermission(RemovePermissionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RemovePermissionRequestMarshaller();
             var unmarshaller = RemovePermissionResponseUnmarshaller.Instance;
@@ -2269,7 +2269,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>Returns a  RemovePermissionResult from Lambda.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
-        public  RemovePermissionResponse EndRemovePermission(IAsyncResult asyncResult)
+        public virtual RemovePermissionResponse EndRemovePermission(IAsyncResult asyncResult)
         {
             return EndInvoke<RemovePermissionResponse>(asyncResult);
         }
@@ -2303,7 +2303,7 @@ namespace Amazon.Lambda
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/TagResource">REST API Reference for TagResource Operation</seealso>
-        public TagResourceResponse TagResource(TagResourceRequest request)
+        public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
             var marshaller = new TagResourceRequestMarshaller();
             var unmarshaller = TagResourceResponseUnmarshaller.Instance;
@@ -2323,7 +2323,7 @@ namespace Amazon.Lambda
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResource
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/TagResource">REST API Reference for TagResource Operation</seealso>
-        public IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new TagResourceRequestMarshaller();
             var unmarshaller = TagResourceResponseUnmarshaller.Instance;
@@ -2340,7 +2340,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>Returns a  TagResourceResult from Lambda.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/TagResource">REST API Reference for TagResource Operation</seealso>
-        public  TagResourceResponse EndTagResource(IAsyncResult asyncResult)
+        public virtual TagResourceResponse EndTagResource(IAsyncResult asyncResult)
         {
             return EndInvoke<TagResourceResponse>(asyncResult);
         }
@@ -2372,7 +2372,7 @@ namespace Amazon.Lambda
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UntagResource">REST API Reference for UntagResource Operation</seealso>
-        public UntagResourceResponse UntagResource(UntagResourceRequest request)
+        public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
             var marshaller = new UntagResourceRequestMarshaller();
             var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
@@ -2392,7 +2392,7 @@ namespace Amazon.Lambda
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResource
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UntagResource">REST API Reference for UntagResource Operation</seealso>
-        public IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UntagResourceRequestMarshaller();
             var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
@@ -2409,7 +2409,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>Returns a  UntagResourceResult from Lambda.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UntagResource">REST API Reference for UntagResource Operation</seealso>
-        public  UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
+        public virtual UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
         {
             return EndInvoke<UntagResourceResponse>(asyncResult);
         }
@@ -2448,7 +2448,7 @@ namespace Amazon.Lambda
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateAlias">REST API Reference for UpdateAlias Operation</seealso>
-        public UpdateAliasResponse UpdateAlias(UpdateAliasRequest request)
+        public virtual UpdateAliasResponse UpdateAlias(UpdateAliasRequest request)
         {
             var marshaller = new UpdateAliasRequestMarshaller();
             var unmarshaller = UpdateAliasResponseUnmarshaller.Instance;
@@ -2468,7 +2468,7 @@ namespace Amazon.Lambda
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAlias
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateAlias">REST API Reference for UpdateAlias Operation</seealso>
-        public IAsyncResult BeginUpdateAlias(UpdateAliasRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateAlias(UpdateAliasRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateAliasRequestMarshaller();
             var unmarshaller = UpdateAliasResponseUnmarshaller.Instance;
@@ -2485,7 +2485,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>Returns a  UpdateAliasResult from Lambda.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateAlias">REST API Reference for UpdateAlias Operation</seealso>
-        public  UpdateAliasResponse EndUpdateAlias(IAsyncResult asyncResult)
+        public virtual UpdateAliasResponse EndUpdateAlias(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateAliasResponse>(asyncResult);
         }
@@ -2543,7 +2543,7 @@ namespace Amazon.Lambda
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateEventSourceMapping">REST API Reference for UpdateEventSourceMapping Operation</seealso>
-        public UpdateEventSourceMappingResponse UpdateEventSourceMapping(UpdateEventSourceMappingRequest request)
+        public virtual UpdateEventSourceMappingResponse UpdateEventSourceMapping(UpdateEventSourceMappingRequest request)
         {
             var marshaller = new UpdateEventSourceMappingRequestMarshaller();
             var unmarshaller = UpdateEventSourceMappingResponseUnmarshaller.Instance;
@@ -2563,7 +2563,7 @@ namespace Amazon.Lambda
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateEventSourceMapping
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateEventSourceMapping">REST API Reference for UpdateEventSourceMapping Operation</seealso>
-        public IAsyncResult BeginUpdateEventSourceMapping(UpdateEventSourceMappingRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateEventSourceMapping(UpdateEventSourceMappingRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateEventSourceMappingRequestMarshaller();
             var unmarshaller = UpdateEventSourceMappingResponseUnmarshaller.Instance;
@@ -2580,7 +2580,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>Returns a  UpdateEventSourceMappingResult from Lambda.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateEventSourceMapping">REST API Reference for UpdateEventSourceMapping Operation</seealso>
-        public  UpdateEventSourceMappingResponse EndUpdateEventSourceMapping(IAsyncResult asyncResult)
+        public virtual UpdateEventSourceMappingResponse EndUpdateEventSourceMapping(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateEventSourceMappingResponse>(asyncResult);
         }
@@ -2629,7 +2629,7 @@ namespace Amazon.Lambda
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionCode">REST API Reference for UpdateFunctionCode Operation</seealso>
-        public UpdateFunctionCodeResponse UpdateFunctionCode(UpdateFunctionCodeRequest request)
+        public virtual UpdateFunctionCodeResponse UpdateFunctionCode(UpdateFunctionCodeRequest request)
         {
             var marshaller = new UpdateFunctionCodeRequestMarshaller();
             var unmarshaller = UpdateFunctionCodeResponseUnmarshaller.Instance;
@@ -2649,7 +2649,7 @@ namespace Amazon.Lambda
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateFunctionCode
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionCode">REST API Reference for UpdateFunctionCode Operation</seealso>
-        public IAsyncResult BeginUpdateFunctionCode(UpdateFunctionCodeRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateFunctionCode(UpdateFunctionCodeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateFunctionCodeRequestMarshaller();
             var unmarshaller = UpdateFunctionCodeResponseUnmarshaller.Instance;
@@ -2666,7 +2666,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>Returns a  UpdateFunctionCodeResult from Lambda.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionCode">REST API Reference for UpdateFunctionCode Operation</seealso>
-        public  UpdateFunctionCodeResponse EndUpdateFunctionCode(IAsyncResult asyncResult)
+        public virtual UpdateFunctionCodeResponse EndUpdateFunctionCode(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateFunctionCodeResponse>(asyncResult);
         }
@@ -2717,7 +2717,7 @@ namespace Amazon.Lambda
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionConfiguration">REST API Reference for UpdateFunctionConfiguration Operation</seealso>
-        public UpdateFunctionConfigurationResponse UpdateFunctionConfiguration(UpdateFunctionConfigurationRequest request)
+        public virtual UpdateFunctionConfigurationResponse UpdateFunctionConfiguration(UpdateFunctionConfigurationRequest request)
         {
             var marshaller = new UpdateFunctionConfigurationRequestMarshaller();
             var unmarshaller = UpdateFunctionConfigurationResponseUnmarshaller.Instance;
@@ -2737,7 +2737,7 @@ namespace Amazon.Lambda
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateFunctionConfiguration
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionConfiguration">REST API Reference for UpdateFunctionConfiguration Operation</seealso>
-        public IAsyncResult BeginUpdateFunctionConfiguration(UpdateFunctionConfigurationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateFunctionConfiguration(UpdateFunctionConfigurationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateFunctionConfigurationRequestMarshaller();
             var unmarshaller = UpdateFunctionConfigurationResponseUnmarshaller.Instance;
@@ -2754,7 +2754,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>Returns a  UpdateFunctionConfigurationResult from Lambda.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionConfiguration">REST API Reference for UpdateFunctionConfiguration Operation</seealso>
-        public  UpdateFunctionConfigurationResponse EndUpdateFunctionConfiguration(IAsyncResult asyncResult)
+        public virtual UpdateFunctionConfigurationResponse EndUpdateFunctionConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateFunctionConfigurationResponse>(asyncResult);
         }

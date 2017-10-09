@@ -282,7 +282,7 @@ namespace Amazon.MigrationHub
         /// flag is set to "true".
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/AssociateCreatedArtifact">REST API Reference for AssociateCreatedArtifact Operation</seealso>
-        public AssociateCreatedArtifactResponse AssociateCreatedArtifact(AssociateCreatedArtifactRequest request)
+        public virtual AssociateCreatedArtifactResponse AssociateCreatedArtifact(AssociateCreatedArtifactRequest request)
         {
             var marshaller = new AssociateCreatedArtifactRequestMarshaller();
             var unmarshaller = AssociateCreatedArtifactResponseUnmarshaller.Instance;
@@ -300,7 +300,7 @@ namespace Amazon.MigrationHub
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/AssociateCreatedArtifact">REST API Reference for AssociateCreatedArtifact Operation</seealso>
-        public Task<AssociateCreatedArtifactResponse> AssociateCreatedArtifactAsync(AssociateCreatedArtifactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<AssociateCreatedArtifactResponse> AssociateCreatedArtifactAsync(AssociateCreatedArtifactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AssociateCreatedArtifactRequestMarshaller();
             var unmarshaller = AssociateCreatedArtifactResponseUnmarshaller.Instance;
@@ -355,7 +355,7 @@ namespace Amazon.MigrationHub
         /// flag is set to "true".
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/AssociateDiscoveredResource">REST API Reference for AssociateDiscoveredResource Operation</seealso>
-        public AssociateDiscoveredResourceResponse AssociateDiscoveredResource(AssociateDiscoveredResourceRequest request)
+        public virtual AssociateDiscoveredResourceResponse AssociateDiscoveredResource(AssociateDiscoveredResourceRequest request)
         {
             var marshaller = new AssociateDiscoveredResourceRequestMarshaller();
             var unmarshaller = AssociateDiscoveredResourceResponseUnmarshaller.Instance;
@@ -373,7 +373,7 @@ namespace Amazon.MigrationHub
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/AssociateDiscoveredResource">REST API Reference for AssociateDiscoveredResource Operation</seealso>
-        public Task<AssociateDiscoveredResourceResponse> AssociateDiscoveredResourceAsync(AssociateDiscoveredResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<AssociateDiscoveredResourceResponse> AssociateDiscoveredResourceAsync(AssociateDiscoveredResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AssociateDiscoveredResourceRequestMarshaller();
             var unmarshaller = AssociateDiscoveredResourceResponseUnmarshaller.Instance;
@@ -421,7 +421,7 @@ namespace Amazon.MigrationHub
         /// flag is set to "true".
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/CreateProgressUpdateStream">REST API Reference for CreateProgressUpdateStream Operation</seealso>
-        public CreateProgressUpdateStreamResponse CreateProgressUpdateStream(CreateProgressUpdateStreamRequest request)
+        public virtual CreateProgressUpdateStreamResponse CreateProgressUpdateStream(CreateProgressUpdateStreamRequest request)
         {
             var marshaller = new CreateProgressUpdateStreamRequestMarshaller();
             var unmarshaller = CreateProgressUpdateStreamResponseUnmarshaller.Instance;
@@ -439,7 +439,7 @@ namespace Amazon.MigrationHub
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/CreateProgressUpdateStream">REST API Reference for CreateProgressUpdateStream Operation</seealso>
-        public Task<CreateProgressUpdateStreamResponse> CreateProgressUpdateStreamAsync(CreateProgressUpdateStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateProgressUpdateStreamResponse> CreateProgressUpdateStreamAsync(CreateProgressUpdateStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateProgressUpdateStreamRequestMarshaller();
             var unmarshaller = CreateProgressUpdateStreamResponseUnmarshaller.Instance;
@@ -520,7 +520,7 @@ namespace Amazon.MigrationHub
         /// flag is set to "true".
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/DeleteProgressUpdateStream">REST API Reference for DeleteProgressUpdateStream Operation</seealso>
-        public DeleteProgressUpdateStreamResponse DeleteProgressUpdateStream(DeleteProgressUpdateStreamRequest request)
+        public virtual DeleteProgressUpdateStreamResponse DeleteProgressUpdateStream(DeleteProgressUpdateStreamRequest request)
         {
             var marshaller = new DeleteProgressUpdateStreamRequestMarshaller();
             var unmarshaller = DeleteProgressUpdateStreamResponseUnmarshaller.Instance;
@@ -538,7 +538,7 @@ namespace Amazon.MigrationHub
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/DeleteProgressUpdateStream">REST API Reference for DeleteProgressUpdateStream Operation</seealso>
-        public Task<DeleteProgressUpdateStreamResponse> DeleteProgressUpdateStreamAsync(DeleteProgressUpdateStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteProgressUpdateStreamResponse> DeleteProgressUpdateStreamAsync(DeleteProgressUpdateStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteProgressUpdateStreamRequestMarshaller();
             var unmarshaller = DeleteProgressUpdateStreamResponseUnmarshaller.Instance;
@@ -584,7 +584,7 @@ namespace Amazon.MigrationHub
         /// dependencies or is overloaded with requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/DescribeApplicationState">REST API Reference for DescribeApplicationState Operation</seealso>
-        public DescribeApplicationStateResponse DescribeApplicationState(DescribeApplicationStateRequest request)
+        public virtual DescribeApplicationStateResponse DescribeApplicationState(DescribeApplicationStateRequest request)
         {
             var marshaller = new DescribeApplicationStateRequestMarshaller();
             var unmarshaller = DescribeApplicationStateResponseUnmarshaller.Instance;
@@ -602,7 +602,7 @@ namespace Amazon.MigrationHub
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/DescribeApplicationState">REST API Reference for DescribeApplicationState Operation</seealso>
-        public Task<DescribeApplicationStateResponse> DescribeApplicationStateAsync(DescribeApplicationStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeApplicationStateResponse> DescribeApplicationStateAsync(DescribeApplicationStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeApplicationStateRequestMarshaller();
             var unmarshaller = DescribeApplicationStateResponseUnmarshaller.Instance;
@@ -643,7 +643,7 @@ namespace Amazon.MigrationHub
         /// dependencies or is overloaded with requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/DescribeMigrationTask">REST API Reference for DescribeMigrationTask Operation</seealso>
-        public DescribeMigrationTaskResponse DescribeMigrationTask(DescribeMigrationTaskRequest request)
+        public virtual DescribeMigrationTaskResponse DescribeMigrationTask(DescribeMigrationTaskRequest request)
         {
             var marshaller = new DescribeMigrationTaskRequestMarshaller();
             var unmarshaller = DescribeMigrationTaskResponseUnmarshaller.Instance;
@@ -661,7 +661,7 @@ namespace Amazon.MigrationHub
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/DescribeMigrationTask">REST API Reference for DescribeMigrationTask Operation</seealso>
-        public Task<DescribeMigrationTaskResponse> DescribeMigrationTaskAsync(DescribeMigrationTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeMigrationTaskResponse> DescribeMigrationTaskAsync(DescribeMigrationTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeMigrationTaskRequestMarshaller();
             var unmarshaller = DescribeMigrationTaskResponseUnmarshaller.Instance;
@@ -728,7 +728,7 @@ namespace Amazon.MigrationHub
         /// flag is set to "true".
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/DisassociateCreatedArtifact">REST API Reference for DisassociateCreatedArtifact Operation</seealso>
-        public DisassociateCreatedArtifactResponse DisassociateCreatedArtifact(DisassociateCreatedArtifactRequest request)
+        public virtual DisassociateCreatedArtifactResponse DisassociateCreatedArtifact(DisassociateCreatedArtifactRequest request)
         {
             var marshaller = new DisassociateCreatedArtifactRequestMarshaller();
             var unmarshaller = DisassociateCreatedArtifactResponseUnmarshaller.Instance;
@@ -746,7 +746,7 @@ namespace Amazon.MigrationHub
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/DisassociateCreatedArtifact">REST API Reference for DisassociateCreatedArtifact Operation</seealso>
-        public Task<DisassociateCreatedArtifactResponse> DisassociateCreatedArtifactAsync(DisassociateCreatedArtifactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DisassociateCreatedArtifactResponse> DisassociateCreatedArtifactAsync(DisassociateCreatedArtifactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DisassociateCreatedArtifactRequestMarshaller();
             var unmarshaller = DisassociateCreatedArtifactResponseUnmarshaller.Instance;
@@ -796,7 +796,7 @@ namespace Amazon.MigrationHub
         /// flag is set to "true".
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/DisassociateDiscoveredResource">REST API Reference for DisassociateDiscoveredResource Operation</seealso>
-        public DisassociateDiscoveredResourceResponse DisassociateDiscoveredResource(DisassociateDiscoveredResourceRequest request)
+        public virtual DisassociateDiscoveredResourceResponse DisassociateDiscoveredResource(DisassociateDiscoveredResourceRequest request)
         {
             var marshaller = new DisassociateDiscoveredResourceRequestMarshaller();
             var unmarshaller = DisassociateDiscoveredResourceResponseUnmarshaller.Instance;
@@ -814,7 +814,7 @@ namespace Amazon.MigrationHub
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/DisassociateDiscoveredResource">REST API Reference for DisassociateDiscoveredResource Operation</seealso>
-        public Task<DisassociateDiscoveredResourceResponse> DisassociateDiscoveredResourceAsync(DisassociateDiscoveredResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DisassociateDiscoveredResourceResponse> DisassociateDiscoveredResourceAsync(DisassociateDiscoveredResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DisassociateDiscoveredResourceRequestMarshaller();
             var unmarshaller = DisassociateDiscoveredResourceResponseUnmarshaller.Instance;
@@ -870,7 +870,7 @@ namespace Amazon.MigrationHub
         /// flag is set to "true".
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ImportMigrationTask">REST API Reference for ImportMigrationTask Operation</seealso>
-        public ImportMigrationTaskResponse ImportMigrationTask(ImportMigrationTaskRequest request)
+        public virtual ImportMigrationTaskResponse ImportMigrationTask(ImportMigrationTaskRequest request)
         {
             var marshaller = new ImportMigrationTaskRequestMarshaller();
             var unmarshaller = ImportMigrationTaskResponseUnmarshaller.Instance;
@@ -888,7 +888,7 @@ namespace Amazon.MigrationHub
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ImportMigrationTask">REST API Reference for ImportMigrationTask Operation</seealso>
-        public Task<ImportMigrationTaskResponse> ImportMigrationTaskAsync(ImportMigrationTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ImportMigrationTaskResponse> ImportMigrationTaskAsync(ImportMigrationTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ImportMigrationTaskRequestMarshaller();
             var unmarshaller = ImportMigrationTaskResponseUnmarshaller.Instance;
@@ -945,7 +945,7 @@ namespace Amazon.MigrationHub
         /// dependencies or is overloaded with requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListCreatedArtifacts">REST API Reference for ListCreatedArtifacts Operation</seealso>
-        public ListCreatedArtifactsResponse ListCreatedArtifacts(ListCreatedArtifactsRequest request)
+        public virtual ListCreatedArtifactsResponse ListCreatedArtifacts(ListCreatedArtifactsRequest request)
         {
             var marshaller = new ListCreatedArtifactsRequestMarshaller();
             var unmarshaller = ListCreatedArtifactsResponseUnmarshaller.Instance;
@@ -963,7 +963,7 @@ namespace Amazon.MigrationHub
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListCreatedArtifacts">REST API Reference for ListCreatedArtifacts Operation</seealso>
-        public Task<ListCreatedArtifactsResponse> ListCreatedArtifactsAsync(ListCreatedArtifactsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListCreatedArtifactsResponse> ListCreatedArtifactsAsync(ListCreatedArtifactsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListCreatedArtifactsRequestMarshaller();
             var unmarshaller = ListCreatedArtifactsResponseUnmarshaller.Instance;
@@ -1004,7 +1004,7 @@ namespace Amazon.MigrationHub
         /// dependencies or is overloaded with requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListDiscoveredResources">REST API Reference for ListDiscoveredResources Operation</seealso>
-        public ListDiscoveredResourcesResponse ListDiscoveredResources(ListDiscoveredResourcesRequest request)
+        public virtual ListDiscoveredResourcesResponse ListDiscoveredResources(ListDiscoveredResourcesRequest request)
         {
             var marshaller = new ListDiscoveredResourcesRequestMarshaller();
             var unmarshaller = ListDiscoveredResourcesResponseUnmarshaller.Instance;
@@ -1022,7 +1022,7 @@ namespace Amazon.MigrationHub
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListDiscoveredResources">REST API Reference for ListDiscoveredResources Operation</seealso>
-        public Task<ListDiscoveredResourcesResponse> ListDiscoveredResourcesAsync(ListDiscoveredResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListDiscoveredResourcesResponse> ListDiscoveredResourcesAsync(ListDiscoveredResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListDiscoveredResourcesRequestMarshaller();
             var unmarshaller = ListDiscoveredResourcesResponseUnmarshaller.Instance;
@@ -1083,7 +1083,7 @@ namespace Amazon.MigrationHub
         /// dependencies or is overloaded with requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListMigrationTasks">REST API Reference for ListMigrationTasks Operation</seealso>
-        public ListMigrationTasksResponse ListMigrationTasks(ListMigrationTasksRequest request)
+        public virtual ListMigrationTasksResponse ListMigrationTasks(ListMigrationTasksRequest request)
         {
             var marshaller = new ListMigrationTasksRequestMarshaller();
             var unmarshaller = ListMigrationTasksResponseUnmarshaller.Instance;
@@ -1101,7 +1101,7 @@ namespace Amazon.MigrationHub
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListMigrationTasks">REST API Reference for ListMigrationTasks Operation</seealso>
-        public Task<ListMigrationTasksResponse> ListMigrationTasksAsync(ListMigrationTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListMigrationTasksResponse> ListMigrationTasksAsync(ListMigrationTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListMigrationTasksRequestMarshaller();
             var unmarshaller = ListMigrationTasksResponseUnmarshaller.Instance;
@@ -1137,7 +1137,7 @@ namespace Amazon.MigrationHub
         /// dependencies or is overloaded with requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListProgressUpdateStreams">REST API Reference for ListProgressUpdateStreams Operation</seealso>
-        public ListProgressUpdateStreamsResponse ListProgressUpdateStreams(ListProgressUpdateStreamsRequest request)
+        public virtual ListProgressUpdateStreamsResponse ListProgressUpdateStreams(ListProgressUpdateStreamsRequest request)
         {
             var marshaller = new ListProgressUpdateStreamsRequestMarshaller();
             var unmarshaller = ListProgressUpdateStreamsResponseUnmarshaller.Instance;
@@ -1155,7 +1155,7 @@ namespace Amazon.MigrationHub
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListProgressUpdateStreams">REST API Reference for ListProgressUpdateStreams Operation</seealso>
-        public Task<ListProgressUpdateStreamsResponse> ListProgressUpdateStreamsAsync(ListProgressUpdateStreamsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListProgressUpdateStreamsResponse> ListProgressUpdateStreamsAsync(ListProgressUpdateStreamsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListProgressUpdateStreamsRequestMarshaller();
             var unmarshaller = ListProgressUpdateStreamsResponseUnmarshaller.Instance;
@@ -1211,7 +1211,7 @@ namespace Amazon.MigrationHub
         /// flag is set to "true".
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/NotifyApplicationState">REST API Reference for NotifyApplicationState Operation</seealso>
-        public NotifyApplicationStateResponse NotifyApplicationState(NotifyApplicationStateRequest request)
+        public virtual NotifyApplicationStateResponse NotifyApplicationState(NotifyApplicationStateRequest request)
         {
             var marshaller = new NotifyApplicationStateRequestMarshaller();
             var unmarshaller = NotifyApplicationStateResponseUnmarshaller.Instance;
@@ -1229,7 +1229,7 @@ namespace Amazon.MigrationHub
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/NotifyApplicationState">REST API Reference for NotifyApplicationState Operation</seealso>
-        public Task<NotifyApplicationStateResponse> NotifyApplicationStateAsync(NotifyApplicationStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<NotifyApplicationStateResponse> NotifyApplicationStateAsync(NotifyApplicationStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new NotifyApplicationStateRequestMarshaller();
             var unmarshaller = NotifyApplicationStateResponseUnmarshaller.Instance;
@@ -1295,7 +1295,7 @@ namespace Amazon.MigrationHub
         /// flag is set to "true".
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/NotifyMigrationTaskState">REST API Reference for NotifyMigrationTaskState Operation</seealso>
-        public NotifyMigrationTaskStateResponse NotifyMigrationTaskState(NotifyMigrationTaskStateRequest request)
+        public virtual NotifyMigrationTaskStateResponse NotifyMigrationTaskState(NotifyMigrationTaskStateRequest request)
         {
             var marshaller = new NotifyMigrationTaskStateRequestMarshaller();
             var unmarshaller = NotifyMigrationTaskStateResponseUnmarshaller.Instance;
@@ -1313,7 +1313,7 @@ namespace Amazon.MigrationHub
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/NotifyMigrationTaskState">REST API Reference for NotifyMigrationTaskState Operation</seealso>
-        public Task<NotifyMigrationTaskStateResponse> NotifyMigrationTaskStateAsync(NotifyMigrationTaskStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<NotifyMigrationTaskStateResponse> NotifyMigrationTaskStateAsync(NotifyMigrationTaskStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new NotifyMigrationTaskStateRequestMarshaller();
             var unmarshaller = NotifyMigrationTaskStateResponseUnmarshaller.Instance;
@@ -1379,7 +1379,7 @@ namespace Amazon.MigrationHub
         /// flag is set to "true".
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/PutResourceAttributes">REST API Reference for PutResourceAttributes Operation</seealso>
-        public PutResourceAttributesResponse PutResourceAttributes(PutResourceAttributesRequest request)
+        public virtual PutResourceAttributesResponse PutResourceAttributes(PutResourceAttributesRequest request)
         {
             var marshaller = new PutResourceAttributesRequestMarshaller();
             var unmarshaller = PutResourceAttributesResponseUnmarshaller.Instance;
@@ -1397,7 +1397,7 @@ namespace Amazon.MigrationHub
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/PutResourceAttributes">REST API Reference for PutResourceAttributes Operation</seealso>
-        public Task<PutResourceAttributesResponse> PutResourceAttributesAsync(PutResourceAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PutResourceAttributesResponse> PutResourceAttributesAsync(PutResourceAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutResourceAttributesRequestMarshaller();
             var unmarshaller = PutResourceAttributesResponseUnmarshaller.Instance;

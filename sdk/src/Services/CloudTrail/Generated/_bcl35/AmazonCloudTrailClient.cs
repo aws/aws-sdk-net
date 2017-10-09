@@ -320,7 +320,7 @@ namespace Amazon.CloudTrail
         /// This exception is thrown when the requested operation is not supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/AddTags">REST API Reference for AddTags Operation</seealso>
-        public AddTagsResponse AddTags(AddTagsRequest request)
+        public virtual AddTagsResponse AddTags(AddTagsRequest request)
         {
             var marshaller = new AddTagsRequestMarshaller();
             var unmarshaller = AddTagsResponseUnmarshaller.Instance;
@@ -340,7 +340,7 @@ namespace Amazon.CloudTrail
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddTags
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/AddTags">REST API Reference for AddTags Operation</seealso>
-        public IAsyncResult BeginAddTags(AddTagsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginAddTags(AddTagsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AddTagsRequestMarshaller();
             var unmarshaller = AddTagsResponseUnmarshaller.Instance;
@@ -357,7 +357,7 @@ namespace Amazon.CloudTrail
         /// 
         /// <returns>Returns a  AddTagsResult from CloudTrail.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/AddTags">REST API Reference for AddTags Operation</seealso>
-        public  AddTagsResponse EndAddTags(IAsyncResult asyncResult)
+        public virtual AddTagsResponse EndAddTags(IAsyncResult asyncResult)
         {
             return EndInvoke<AddTagsResponse>(asyncResult);
         }
@@ -465,7 +465,7 @@ namespace Amazon.CloudTrail
         /// This exception is thrown when the requested operation is not supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/CreateTrail">REST API Reference for CreateTrail Operation</seealso>
-        public CreateTrailResponse CreateTrail(CreateTrailRequest request)
+        public virtual CreateTrailResponse CreateTrail(CreateTrailRequest request)
         {
             var marshaller = new CreateTrailRequestMarshaller();
             var unmarshaller = CreateTrailResponseUnmarshaller.Instance;
@@ -485,7 +485,7 @@ namespace Amazon.CloudTrail
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTrail
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/CreateTrail">REST API Reference for CreateTrail Operation</seealso>
-        public IAsyncResult BeginCreateTrail(CreateTrailRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateTrail(CreateTrailRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateTrailRequestMarshaller();
             var unmarshaller = CreateTrailResponseUnmarshaller.Instance;
@@ -502,7 +502,7 @@ namespace Amazon.CloudTrail
         /// 
         /// <returns>Returns a  CreateTrailResult from CloudTrail.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/CreateTrail">REST API Reference for CreateTrail Operation</seealso>
-        public  CreateTrailResponse EndCreateTrail(IAsyncResult asyncResult)
+        public virtual CreateTrailResponse EndCreateTrail(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateTrailResponse>(asyncResult);
         }
@@ -555,7 +555,7 @@ namespace Amazon.CloudTrail
         /// This exception is thrown when the trail with the given name is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeleteTrail">REST API Reference for DeleteTrail Operation</seealso>
-        public DeleteTrailResponse DeleteTrail(DeleteTrailRequest request)
+        public virtual DeleteTrailResponse DeleteTrail(DeleteTrailRequest request)
         {
             var marshaller = new DeleteTrailRequestMarshaller();
             var unmarshaller = DeleteTrailResponseUnmarshaller.Instance;
@@ -575,7 +575,7 @@ namespace Amazon.CloudTrail
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTrail
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeleteTrail">REST API Reference for DeleteTrail Operation</seealso>
-        public IAsyncResult BeginDeleteTrail(DeleteTrailRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteTrail(DeleteTrailRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteTrailRequestMarshaller();
             var unmarshaller = DeleteTrailResponseUnmarshaller.Instance;
@@ -592,7 +592,7 @@ namespace Amazon.CloudTrail
         /// 
         /// <returns>Returns a  DeleteTrailResult from CloudTrail.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeleteTrail">REST API Reference for DeleteTrail Operation</seealso>
-        public  DeleteTrailResponse EndDeleteTrail(IAsyncResult asyncResult)
+        public virtual DeleteTrailResponse EndDeleteTrail(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteTrailResponse>(asyncResult);
         }
@@ -613,7 +613,7 @@ namespace Amazon.CloudTrail
         /// This exception is thrown when the requested operation is not supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DescribeTrails">REST API Reference for DescribeTrails Operation</seealso>
-        public DescribeTrailsResponse DescribeTrails()
+        public virtual DescribeTrailsResponse DescribeTrails()
         {
             return DescribeTrails(new DescribeTrailsRequest());
         }
@@ -631,7 +631,7 @@ namespace Amazon.CloudTrail
         /// This exception is thrown when the requested operation is not supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DescribeTrails">REST API Reference for DescribeTrails Operation</seealso>
-        public DescribeTrailsResponse DescribeTrails(DescribeTrailsRequest request)
+        public virtual DescribeTrailsResponse DescribeTrails(DescribeTrailsRequest request)
         {
             var marshaller = new DescribeTrailsRequestMarshaller();
             var unmarshaller = DescribeTrailsResponseUnmarshaller.Instance;
@@ -651,7 +651,7 @@ namespace Amazon.CloudTrail
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTrails
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DescribeTrails">REST API Reference for DescribeTrails Operation</seealso>
-        public IAsyncResult BeginDescribeTrails(DescribeTrailsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeTrails(DescribeTrailsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeTrailsRequestMarshaller();
             var unmarshaller = DescribeTrailsResponseUnmarshaller.Instance;
@@ -668,7 +668,7 @@ namespace Amazon.CloudTrail
         /// 
         /// <returns>Returns a  DescribeTrailsResult from CloudTrail.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DescribeTrails">REST API Reference for DescribeTrails Operation</seealso>
-        public  DescribeTrailsResponse EndDescribeTrails(IAsyncResult asyncResult)
+        public virtual DescribeTrailsResponse EndDescribeTrails(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeTrailsResponse>(asyncResult);
         }
@@ -740,7 +740,7 @@ namespace Amazon.CloudTrail
         /// This exception is thrown when the requested operation is not supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetEventSelectors">REST API Reference for GetEventSelectors Operation</seealso>
-        public GetEventSelectorsResponse GetEventSelectors(GetEventSelectorsRequest request)
+        public virtual GetEventSelectorsResponse GetEventSelectors(GetEventSelectorsRequest request)
         {
             var marshaller = new GetEventSelectorsRequestMarshaller();
             var unmarshaller = GetEventSelectorsResponseUnmarshaller.Instance;
@@ -760,7 +760,7 @@ namespace Amazon.CloudTrail
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetEventSelectors
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetEventSelectors">REST API Reference for GetEventSelectors Operation</seealso>
-        public IAsyncResult BeginGetEventSelectors(GetEventSelectorsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetEventSelectors(GetEventSelectorsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetEventSelectorsRequestMarshaller();
             var unmarshaller = GetEventSelectorsResponseUnmarshaller.Instance;
@@ -777,7 +777,7 @@ namespace Amazon.CloudTrail
         /// 
         /// <returns>Returns a  GetEventSelectorsResult from CloudTrail.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetEventSelectors">REST API Reference for GetEventSelectors Operation</seealso>
-        public  GetEventSelectorsResponse EndGetEventSelectors(IAsyncResult asyncResult)
+        public virtual GetEventSelectorsResponse EndGetEventSelectors(IAsyncResult asyncResult)
         {
             return EndInvoke<GetEventSelectorsResponse>(asyncResult);
         }
@@ -827,7 +827,7 @@ namespace Amazon.CloudTrail
         /// This exception is thrown when the trail with the given name is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetTrailStatus">REST API Reference for GetTrailStatus Operation</seealso>
-        public GetTrailStatusResponse GetTrailStatus(GetTrailStatusRequest request)
+        public virtual GetTrailStatusResponse GetTrailStatus(GetTrailStatusRequest request)
         {
             var marshaller = new GetTrailStatusRequestMarshaller();
             var unmarshaller = GetTrailStatusResponseUnmarshaller.Instance;
@@ -847,7 +847,7 @@ namespace Amazon.CloudTrail
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTrailStatus
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetTrailStatus">REST API Reference for GetTrailStatus Operation</seealso>
-        public IAsyncResult BeginGetTrailStatus(GetTrailStatusRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetTrailStatus(GetTrailStatusRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetTrailStatusRequestMarshaller();
             var unmarshaller = GetTrailStatusResponseUnmarshaller.Instance;
@@ -864,7 +864,7 @@ namespace Amazon.CloudTrail
         /// 
         /// <returns>Returns a  GetTrailStatusResult from CloudTrail.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetTrailStatus">REST API Reference for GetTrailStatus Operation</seealso>
-        public  GetTrailStatusResponse EndGetTrailStatus(IAsyncResult asyncResult)
+        public virtual GetTrailStatusResponse EndGetTrailStatus(IAsyncResult asyncResult)
         {
             return EndInvoke<GetTrailStatusResponse>(asyncResult);
         }
@@ -904,7 +904,7 @@ namespace Amazon.CloudTrail
         /// This exception is thrown when the requested operation is not supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListPublicKeys">REST API Reference for ListPublicKeys Operation</seealso>
-        public ListPublicKeysResponse ListPublicKeys(ListPublicKeysRequest request)
+        public virtual ListPublicKeysResponse ListPublicKeys(ListPublicKeysRequest request)
         {
             var marshaller = new ListPublicKeysRequestMarshaller();
             var unmarshaller = ListPublicKeysResponseUnmarshaller.Instance;
@@ -924,7 +924,7 @@ namespace Amazon.CloudTrail
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPublicKeys
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListPublicKeys">REST API Reference for ListPublicKeys Operation</seealso>
-        public IAsyncResult BeginListPublicKeys(ListPublicKeysRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListPublicKeys(ListPublicKeysRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListPublicKeysRequestMarshaller();
             var unmarshaller = ListPublicKeysResponseUnmarshaller.Instance;
@@ -941,7 +941,7 @@ namespace Amazon.CloudTrail
         /// 
         /// <returns>Returns a  ListPublicKeysResult from CloudTrail.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListPublicKeys">REST API Reference for ListPublicKeys Operation</seealso>
-        public  ListPublicKeysResponse EndListPublicKeys(IAsyncResult asyncResult)
+        public virtual ListPublicKeysResponse EndListPublicKeys(IAsyncResult asyncResult)
         {
             return EndInvoke<ListPublicKeysResponse>(asyncResult);
         }
@@ -1009,7 +1009,7 @@ namespace Amazon.CloudTrail
         /// This exception is thrown when the requested operation is not supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListTags">REST API Reference for ListTags Operation</seealso>
-        public ListTagsResponse ListTags(ListTagsRequest request)
+        public virtual ListTagsResponse ListTags(ListTagsRequest request)
         {
             var marshaller = new ListTagsRequestMarshaller();
             var unmarshaller = ListTagsResponseUnmarshaller.Instance;
@@ -1029,7 +1029,7 @@ namespace Amazon.CloudTrail
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTags
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListTags">REST API Reference for ListTags Operation</seealso>
-        public IAsyncResult BeginListTags(ListTagsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListTags(ListTagsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListTagsRequestMarshaller();
             var unmarshaller = ListTagsResponseUnmarshaller.Instance;
@@ -1046,7 +1046,7 @@ namespace Amazon.CloudTrail
         /// 
         /// <returns>Returns a  ListTagsResult from CloudTrail.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListTags">REST API Reference for ListTags Operation</seealso>
-        public  ListTagsResponse EndListTags(IAsyncResult asyncResult)
+        public virtual ListTagsResponse EndListTags(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTagsResponse>(asyncResult);
         }
@@ -1121,7 +1121,7 @@ namespace Amazon.CloudTrail
         /// end time or the time range is outside the range of possible values.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/LookupEvents">REST API Reference for LookupEvents Operation</seealso>
-        public LookupEventsResponse LookupEvents(LookupEventsRequest request)
+        public virtual LookupEventsResponse LookupEvents(LookupEventsRequest request)
         {
             var marshaller = new LookupEventsRequestMarshaller();
             var unmarshaller = LookupEventsResponseUnmarshaller.Instance;
@@ -1141,7 +1141,7 @@ namespace Amazon.CloudTrail
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndLookupEvents
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/LookupEvents">REST API Reference for LookupEvents Operation</seealso>
-        public IAsyncResult BeginLookupEvents(LookupEventsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginLookupEvents(LookupEventsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new LookupEventsRequestMarshaller();
             var unmarshaller = LookupEventsResponseUnmarshaller.Instance;
@@ -1158,7 +1158,7 @@ namespace Amazon.CloudTrail
         /// 
         /// <returns>Returns a  LookupEventsResult from CloudTrail.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/LookupEvents">REST API Reference for LookupEvents Operation</seealso>
-        public  LookupEventsResponse EndLookupEvents(IAsyncResult asyncResult)
+        public virtual LookupEventsResponse EndLookupEvents(IAsyncResult asyncResult)
         {
             return EndInvoke<LookupEventsResponse>(asyncResult);
         }
@@ -1278,7 +1278,7 @@ namespace Amazon.CloudTrail
         /// This exception is thrown when the requested operation is not supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutEventSelectors">REST API Reference for PutEventSelectors Operation</seealso>
-        public PutEventSelectorsResponse PutEventSelectors(PutEventSelectorsRequest request)
+        public virtual PutEventSelectorsResponse PutEventSelectors(PutEventSelectorsRequest request)
         {
             var marshaller = new PutEventSelectorsRequestMarshaller();
             var unmarshaller = PutEventSelectorsResponseUnmarshaller.Instance;
@@ -1298,7 +1298,7 @@ namespace Amazon.CloudTrail
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutEventSelectors
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutEventSelectors">REST API Reference for PutEventSelectors Operation</seealso>
-        public IAsyncResult BeginPutEventSelectors(PutEventSelectorsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPutEventSelectors(PutEventSelectorsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutEventSelectorsRequestMarshaller();
             var unmarshaller = PutEventSelectorsResponseUnmarshaller.Instance;
@@ -1315,7 +1315,7 @@ namespace Amazon.CloudTrail
         /// 
         /// <returns>Returns a  PutEventSelectorsResult from CloudTrail.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutEventSelectors">REST API Reference for PutEventSelectors Operation</seealso>
-        public  PutEventSelectorsResponse EndPutEventSelectors(IAsyncResult asyncResult)
+        public virtual PutEventSelectorsResponse EndPutEventSelectors(IAsyncResult asyncResult)
         {
             return EndInvoke<PutEventSelectorsResponse>(asyncResult);
         }
@@ -1384,7 +1384,7 @@ namespace Amazon.CloudTrail
         /// This exception is thrown when the requested operation is not supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
-        public RemoveTagsResponse RemoveTags(RemoveTagsRequest request)
+        public virtual RemoveTagsResponse RemoveTags(RemoveTagsRequest request)
         {
             var marshaller = new RemoveTagsRequestMarshaller();
             var unmarshaller = RemoveTagsResponseUnmarshaller.Instance;
@@ -1404,7 +1404,7 @@ namespace Amazon.CloudTrail
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveTags
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
-        public IAsyncResult BeginRemoveTags(RemoveTagsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginRemoveTags(RemoveTagsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RemoveTagsRequestMarshaller();
             var unmarshaller = RemoveTagsResponseUnmarshaller.Instance;
@@ -1421,7 +1421,7 @@ namespace Amazon.CloudTrail
         /// 
         /// <returns>Returns a  RemoveTagsResult from CloudTrail.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
-        public  RemoveTagsResponse EndRemoveTags(IAsyncResult asyncResult)
+        public virtual RemoveTagsResponse EndRemoveTags(IAsyncResult asyncResult)
         {
             return EndInvoke<RemoveTagsResponse>(asyncResult);
         }
@@ -1475,7 +1475,7 @@ namespace Amazon.CloudTrail
         /// This exception is thrown when the trail with the given name is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartLogging">REST API Reference for StartLogging Operation</seealso>
-        public StartLoggingResponse StartLogging(StartLoggingRequest request)
+        public virtual StartLoggingResponse StartLogging(StartLoggingRequest request)
         {
             var marshaller = new StartLoggingRequestMarshaller();
             var unmarshaller = StartLoggingResponseUnmarshaller.Instance;
@@ -1495,7 +1495,7 @@ namespace Amazon.CloudTrail
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartLogging
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartLogging">REST API Reference for StartLogging Operation</seealso>
-        public IAsyncResult BeginStartLogging(StartLoggingRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginStartLogging(StartLoggingRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new StartLoggingRequestMarshaller();
             var unmarshaller = StartLoggingResponseUnmarshaller.Instance;
@@ -1512,7 +1512,7 @@ namespace Amazon.CloudTrail
         /// 
         /// <returns>Returns a  StartLoggingResult from CloudTrail.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartLogging">REST API Reference for StartLogging Operation</seealso>
-        public  StartLoggingResponse EndStartLogging(IAsyncResult asyncResult)
+        public virtual StartLoggingResponse EndStartLogging(IAsyncResult asyncResult)
         {
             return EndInvoke<StartLoggingResponse>(asyncResult);
         }
@@ -1569,7 +1569,7 @@ namespace Amazon.CloudTrail
         /// This exception is thrown when the trail with the given name is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StopLogging">REST API Reference for StopLogging Operation</seealso>
-        public StopLoggingResponse StopLogging(StopLoggingRequest request)
+        public virtual StopLoggingResponse StopLogging(StopLoggingRequest request)
         {
             var marshaller = new StopLoggingRequestMarshaller();
             var unmarshaller = StopLoggingResponseUnmarshaller.Instance;
@@ -1589,7 +1589,7 @@ namespace Amazon.CloudTrail
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopLogging
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StopLogging">REST API Reference for StopLogging Operation</seealso>
-        public IAsyncResult BeginStopLogging(StopLoggingRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginStopLogging(StopLoggingRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new StopLoggingRequestMarshaller();
             var unmarshaller = StopLoggingResponseUnmarshaller.Instance;
@@ -1606,7 +1606,7 @@ namespace Amazon.CloudTrail
         /// 
         /// <returns>Returns a  StopLoggingResult from CloudTrail.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StopLogging">REST API Reference for StopLogging Operation</seealso>
-        public  StopLoggingResponse EndStopLogging(IAsyncResult asyncResult)
+        public virtual StopLoggingResponse EndStopLogging(IAsyncResult asyncResult)
         {
             return EndInvoke<StopLoggingResponse>(asyncResult);
         }
@@ -1718,7 +1718,7 @@ namespace Amazon.CloudTrail
         /// This exception is thrown when the requested operation is not supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/UpdateTrail">REST API Reference for UpdateTrail Operation</seealso>
-        public UpdateTrailResponse UpdateTrail(UpdateTrailRequest request)
+        public virtual UpdateTrailResponse UpdateTrail(UpdateTrailRequest request)
         {
             var marshaller = new UpdateTrailRequestMarshaller();
             var unmarshaller = UpdateTrailResponseUnmarshaller.Instance;
@@ -1738,7 +1738,7 @@ namespace Amazon.CloudTrail
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateTrail
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/UpdateTrail">REST API Reference for UpdateTrail Operation</seealso>
-        public IAsyncResult BeginUpdateTrail(UpdateTrailRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateTrail(UpdateTrailRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateTrailRequestMarshaller();
             var unmarshaller = UpdateTrailResponseUnmarshaller.Instance;
@@ -1755,7 +1755,7 @@ namespace Amazon.CloudTrail
         /// 
         /// <returns>Returns a  UpdateTrailResult from CloudTrail.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/UpdateTrail">REST API Reference for UpdateTrail Operation</seealso>
-        public  UpdateTrailResponse EndUpdateTrail(IAsyncResult asyncResult)
+        public virtual UpdateTrailResponse EndUpdateTrail(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateTrailResponse>(asyncResult);
         }

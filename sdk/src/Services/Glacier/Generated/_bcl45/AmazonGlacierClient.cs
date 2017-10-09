@@ -325,7 +325,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public AbortMultipartUploadResponse AbortMultipartUpload(AbortMultipartUploadRequest request)
+        public virtual AbortMultipartUploadResponse AbortMultipartUpload(AbortMultipartUploadRequest request)
         {
             var marshaller = new AbortMultipartUploadRequestMarshaller();
             var unmarshaller = AbortMultipartUploadResponseUnmarshaller.Instance;
@@ -342,7 +342,7 @@ namespace Amazon.Glacier
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<AbortMultipartUploadResponse> AbortMultipartUploadAsync(AbortMultipartUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<AbortMultipartUploadResponse> AbortMultipartUploadAsync(AbortMultipartUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AbortMultipartUploadRequestMarshaller();
             var unmarshaller = AbortMultipartUploadResponseUnmarshaller.Instance;
@@ -395,7 +395,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public AbortVaultLockResponse AbortVaultLock(AbortVaultLockRequest request)
+        public virtual AbortVaultLockResponse AbortVaultLock(AbortVaultLockRequest request)
         {
             var marshaller = new AbortVaultLockRequestMarshaller();
             var unmarshaller = AbortVaultLockResponseUnmarshaller.Instance;
@@ -412,7 +412,7 @@ namespace Amazon.Glacier
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<AbortVaultLockResponse> AbortVaultLockAsync(AbortVaultLockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<AbortVaultLockResponse> AbortVaultLockAsync(AbortVaultLockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AbortVaultLockRequestMarshaller();
             var unmarshaller = AbortVaultLockResponseUnmarshaller.Instance;
@@ -453,7 +453,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public AddTagsToVaultResponse AddTagsToVault(AddTagsToVaultRequest request)
+        public virtual AddTagsToVaultResponse AddTagsToVault(AddTagsToVaultRequest request)
         {
             var marshaller = new AddTagsToVaultRequestMarshaller();
             var unmarshaller = AddTagsToVaultResponseUnmarshaller.Instance;
@@ -470,7 +470,7 @@ namespace Amazon.Glacier
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<AddTagsToVaultResponse> AddTagsToVaultAsync(AddTagsToVaultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<AddTagsToVaultResponse> AddTagsToVaultAsync(AddTagsToVaultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AddTagsToVaultRequestMarshaller();
             var unmarshaller = AddTagsToVaultResponseUnmarshaller.Instance;
@@ -553,7 +553,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public CompleteMultipartUploadResponse CompleteMultipartUpload(CompleteMultipartUploadRequest request)
+        public virtual CompleteMultipartUploadResponse CompleteMultipartUpload(CompleteMultipartUploadRequest request)
         {
             var marshaller = new CompleteMultipartUploadRequestMarshaller();
             var unmarshaller = CompleteMultipartUploadResponseUnmarshaller.Instance;
@@ -570,7 +570,7 @@ namespace Amazon.Glacier
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CompleteMultipartUploadResponse> CompleteMultipartUploadAsync(CompleteMultipartUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CompleteMultipartUploadResponse> CompleteMultipartUploadAsync(CompleteMultipartUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CompleteMultipartUploadRequestMarshaller();
             var unmarshaller = CompleteMultipartUploadResponseUnmarshaller.Instance;
@@ -623,7 +623,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public CompleteVaultLockResponse CompleteVaultLock(CompleteVaultLockRequest request)
+        public virtual CompleteVaultLockResponse CompleteVaultLock(CompleteVaultLockRequest request)
         {
             var marshaller = new CompleteVaultLockRequestMarshaller();
             var unmarshaller = CompleteVaultLockResponseUnmarshaller.Instance;
@@ -640,7 +640,7 @@ namespace Amazon.Glacier
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CompleteVaultLockResponse> CompleteVaultLockAsync(CompleteVaultLockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CompleteVaultLockResponse> CompleteVaultLockAsync(CompleteVaultLockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CompleteVaultLockRequestMarshaller();
             var unmarshaller = CompleteVaultLockResponseUnmarshaller.Instance;
@@ -705,7 +705,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public CreateVaultResponse CreateVault(CreateVaultRequest request)
+        public virtual CreateVaultResponse CreateVault(CreateVaultRequest request)
         {
             var marshaller = new CreateVaultRequestMarshaller();
             var unmarshaller = CreateVaultResponseUnmarshaller.Instance;
@@ -722,7 +722,7 @@ namespace Amazon.Glacier
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CreateVaultResponse> CreateVaultAsync(CreateVaultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateVaultResponse> CreateVaultAsync(CreateVaultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateVaultRequestMarshaller();
             var unmarshaller = CreateVaultResponseUnmarshaller.Instance;
@@ -789,7 +789,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public DeleteArchiveResponse DeleteArchive(DeleteArchiveRequest request)
+        public virtual DeleteArchiveResponse DeleteArchive(DeleteArchiveRequest request)
         {
             var marshaller = new DeleteArchiveRequestMarshaller();
             var unmarshaller = DeleteArchiveResponseUnmarshaller.Instance;
@@ -806,7 +806,7 @@ namespace Amazon.Glacier
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteArchiveResponse> DeleteArchiveAsync(DeleteArchiveRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteArchiveResponse> DeleteArchiveAsync(DeleteArchiveRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteArchiveRequestMarshaller();
             var unmarshaller = DeleteArchiveResponseUnmarshaller.Instance;
@@ -866,7 +866,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public DeleteVaultResponse DeleteVault(DeleteVaultRequest request)
+        public virtual DeleteVaultResponse DeleteVault(DeleteVaultRequest request)
         {
             var marshaller = new DeleteVaultRequestMarshaller();
             var unmarshaller = DeleteVaultResponseUnmarshaller.Instance;
@@ -883,7 +883,7 @@ namespace Amazon.Glacier
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteVaultResponse> DeleteVaultAsync(DeleteVaultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteVaultResponse> DeleteVaultAsync(DeleteVaultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteVaultRequestMarshaller();
             var unmarshaller = DeleteVaultResponseUnmarshaller.Instance;
@@ -927,7 +927,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public DeleteVaultAccessPolicyResponse DeleteVaultAccessPolicy(DeleteVaultAccessPolicyRequest request)
+        public virtual DeleteVaultAccessPolicyResponse DeleteVaultAccessPolicy(DeleteVaultAccessPolicyRequest request)
         {
             var marshaller = new DeleteVaultAccessPolicyRequestMarshaller();
             var unmarshaller = DeleteVaultAccessPolicyResponseUnmarshaller.Instance;
@@ -944,7 +944,7 @@ namespace Amazon.Glacier
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteVaultAccessPolicyResponse> DeleteVaultAccessPolicyAsync(DeleteVaultAccessPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteVaultAccessPolicyResponse> DeleteVaultAccessPolicyAsync(DeleteVaultAccessPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteVaultAccessPolicyRequestMarshaller();
             var unmarshaller = DeleteVaultAccessPolicyResponseUnmarshaller.Instance;
@@ -995,7 +995,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public DeleteVaultNotificationsResponse DeleteVaultNotifications(DeleteVaultNotificationsRequest request)
+        public virtual DeleteVaultNotificationsResponse DeleteVaultNotifications(DeleteVaultNotificationsRequest request)
         {
             var marshaller = new DeleteVaultNotificationsRequestMarshaller();
             var unmarshaller = DeleteVaultNotificationsResponseUnmarshaller.Instance;
@@ -1012,7 +1012,7 @@ namespace Amazon.Glacier
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteVaultNotificationsResponse> DeleteVaultNotificationsAsync(DeleteVaultNotificationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteVaultNotificationsResponse> DeleteVaultNotificationsAsync(DeleteVaultNotificationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteVaultNotificationsRequestMarshaller();
             var unmarshaller = DeleteVaultNotificationsResponseUnmarshaller.Instance;
@@ -1074,7 +1074,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public DescribeJobResponse DescribeJob(DescribeJobRequest request)
+        public virtual DescribeJobResponse DescribeJob(DescribeJobRequest request)
         {
             var marshaller = new DescribeJobRequestMarshaller();
             var unmarshaller = DescribeJobResponseUnmarshaller.Instance;
@@ -1091,7 +1091,7 @@ namespace Amazon.Glacier
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DescribeJobResponse> DescribeJobAsync(DescribeJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeJobResponse> DescribeJobAsync(DescribeJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeJobRequestMarshaller();
             var unmarshaller = DescribeJobResponseUnmarshaller.Instance;
@@ -1147,7 +1147,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public DescribeVaultResponse DescribeVault(DescribeVaultRequest request)
+        public virtual DescribeVaultResponse DescribeVault(DescribeVaultRequest request)
         {
             var marshaller = new DescribeVaultRequestMarshaller();
             var unmarshaller = DescribeVaultResponseUnmarshaller.Instance;
@@ -1164,7 +1164,7 @@ namespace Amazon.Glacier
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DescribeVaultResponse> DescribeVaultAsync(DescribeVaultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeVaultResponse> DescribeVaultAsync(DescribeVaultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeVaultRequestMarshaller();
             var unmarshaller = DescribeVaultResponseUnmarshaller.Instance;
@@ -1196,7 +1196,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public GetDataRetrievalPolicyResponse GetDataRetrievalPolicy(GetDataRetrievalPolicyRequest request)
+        public virtual GetDataRetrievalPolicyResponse GetDataRetrievalPolicy(GetDataRetrievalPolicyRequest request)
         {
             var marshaller = new GetDataRetrievalPolicyRequestMarshaller();
             var unmarshaller = GetDataRetrievalPolicyResponseUnmarshaller.Instance;
@@ -1213,7 +1213,7 @@ namespace Amazon.Glacier
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetDataRetrievalPolicyResponse> GetDataRetrievalPolicyAsync(GetDataRetrievalPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetDataRetrievalPolicyResponse> GetDataRetrievalPolicyAsync(GetDataRetrievalPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetDataRetrievalPolicyRequestMarshaller();
             var unmarshaller = GetDataRetrievalPolicyResponseUnmarshaller.Instance;
@@ -1302,7 +1302,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public GetJobOutputResponse GetJobOutput(GetJobOutputRequest request)
+        public virtual GetJobOutputResponse GetJobOutput(GetJobOutputRequest request)
         {
             var marshaller = new GetJobOutputRequestMarshaller();
             var unmarshaller = GetJobOutputResponseUnmarshaller.Instance;
@@ -1319,7 +1319,7 @@ namespace Amazon.Glacier
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetJobOutputResponse> GetJobOutputAsync(GetJobOutputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetJobOutputResponse> GetJobOutputAsync(GetJobOutputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetJobOutputRequestMarshaller();
             var unmarshaller = GetJobOutputResponseUnmarshaller.Instance;
@@ -1357,7 +1357,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public GetVaultAccessPolicyResponse GetVaultAccessPolicy(GetVaultAccessPolicyRequest request)
+        public virtual GetVaultAccessPolicyResponse GetVaultAccessPolicy(GetVaultAccessPolicyRequest request)
         {
             var marshaller = new GetVaultAccessPolicyRequestMarshaller();
             var unmarshaller = GetVaultAccessPolicyResponseUnmarshaller.Instance;
@@ -1374,7 +1374,7 @@ namespace Amazon.Glacier
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetVaultAccessPolicyResponse> GetVaultAccessPolicyAsync(GetVaultAccessPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetVaultAccessPolicyResponse> GetVaultAccessPolicyAsync(GetVaultAccessPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetVaultAccessPolicyRequestMarshaller();
             var unmarshaller = GetVaultAccessPolicyResponseUnmarshaller.Instance;
@@ -1439,7 +1439,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public GetVaultLockResponse GetVaultLock(GetVaultLockRequest request)
+        public virtual GetVaultLockResponse GetVaultLock(GetVaultLockRequest request)
         {
             var marshaller = new GetVaultLockRequestMarshaller();
             var unmarshaller = GetVaultLockResponseUnmarshaller.Instance;
@@ -1456,7 +1456,7 @@ namespace Amazon.Glacier
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetVaultLockResponse> GetVaultLockAsync(GetVaultLockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetVaultLockResponse> GetVaultLockAsync(GetVaultLockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetVaultLockRequestMarshaller();
             var unmarshaller = GetVaultLockResponseUnmarshaller.Instance;
@@ -1513,7 +1513,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public GetVaultNotificationsResponse GetVaultNotifications(GetVaultNotificationsRequest request)
+        public virtual GetVaultNotificationsResponse GetVaultNotifications(GetVaultNotificationsRequest request)
         {
             var marshaller = new GetVaultNotificationsRequestMarshaller();
             var unmarshaller = GetVaultNotificationsResponseUnmarshaller.Instance;
@@ -1530,7 +1530,7 @@ namespace Amazon.Glacier
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetVaultNotificationsResponse> GetVaultNotificationsAsync(GetVaultNotificationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetVaultNotificationsResponse> GetVaultNotificationsAsync(GetVaultNotificationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetVaultNotificationsRequestMarshaller();
             var unmarshaller = GetVaultNotificationsResponseUnmarshaller.Instance;
@@ -1762,7 +1762,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public InitiateJobResponse InitiateJob(InitiateJobRequest request)
+        public virtual InitiateJobResponse InitiateJob(InitiateJobRequest request)
         {
             var marshaller = new InitiateJobRequestMarshaller();
             var unmarshaller = InitiateJobResponseUnmarshaller.Instance;
@@ -1779,7 +1779,7 @@ namespace Amazon.Glacier
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<InitiateJobResponse> InitiateJobAsync(InitiateJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<InitiateJobResponse> InitiateJobAsync(InitiateJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new InitiateJobRequestMarshaller();
             var unmarshaller = InitiateJobResponseUnmarshaller.Instance;
@@ -1856,7 +1856,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public InitiateMultipartUploadResponse InitiateMultipartUpload(InitiateMultipartUploadRequest request)
+        public virtual InitiateMultipartUploadResponse InitiateMultipartUpload(InitiateMultipartUploadRequest request)
         {
             var marshaller = new InitiateMultipartUploadRequestMarshaller();
             var unmarshaller = InitiateMultipartUploadResponseUnmarshaller.Instance;
@@ -1873,7 +1873,7 @@ namespace Amazon.Glacier
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<InitiateMultipartUploadResponse> InitiateMultipartUploadAsync(InitiateMultipartUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<InitiateMultipartUploadResponse> InitiateMultipartUploadAsync(InitiateMultipartUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new InitiateMultipartUploadRequestMarshaller();
             var unmarshaller = InitiateMultipartUploadResponseUnmarshaller.Instance;
@@ -1953,7 +1953,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public InitiateVaultLockResponse InitiateVaultLock(InitiateVaultLockRequest request)
+        public virtual InitiateVaultLockResponse InitiateVaultLock(InitiateVaultLockRequest request)
         {
             var marshaller = new InitiateVaultLockRequestMarshaller();
             var unmarshaller = InitiateVaultLockResponseUnmarshaller.Instance;
@@ -1970,7 +1970,7 @@ namespace Amazon.Glacier
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<InitiateVaultLockResponse> InitiateVaultLockAsync(InitiateVaultLockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<InitiateVaultLockResponse> InitiateVaultLockAsync(InitiateVaultLockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new InitiateVaultLockRequestMarshaller();
             var unmarshaller = InitiateVaultLockResponseUnmarshaller.Instance;
@@ -2055,7 +2055,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public ListJobsResponse ListJobs(ListJobsRequest request)
+        public virtual ListJobsResponse ListJobs(ListJobsRequest request)
         {
             var marshaller = new ListJobsRequestMarshaller();
             var unmarshaller = ListJobsResponseUnmarshaller.Instance;
@@ -2072,7 +2072,7 @@ namespace Amazon.Glacier
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<ListJobsResponse> ListJobsAsync(ListJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListJobsResponse> ListJobsAsync(ListJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListJobsRequestMarshaller();
             var unmarshaller = ListJobsResponseUnmarshaller.Instance;
@@ -2141,7 +2141,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public ListMultipartUploadsResponse ListMultipartUploads(ListMultipartUploadsRequest request)
+        public virtual ListMultipartUploadsResponse ListMultipartUploads(ListMultipartUploadsRequest request)
         {
             var marshaller = new ListMultipartUploadsRequestMarshaller();
             var unmarshaller = ListMultipartUploadsResponseUnmarshaller.Instance;
@@ -2158,7 +2158,7 @@ namespace Amazon.Glacier
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<ListMultipartUploadsResponse> ListMultipartUploadsAsync(ListMultipartUploadsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListMultipartUploadsResponse> ListMultipartUploadsAsync(ListMultipartUploadsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListMultipartUploadsRequestMarshaller();
             var unmarshaller = ListMultipartUploadsResponseUnmarshaller.Instance;
@@ -2220,7 +2220,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public ListPartsResponse ListParts(ListPartsRequest request)
+        public virtual ListPartsResponse ListParts(ListPartsRequest request)
         {
             var marshaller = new ListPartsRequestMarshaller();
             var unmarshaller = ListPartsResponseUnmarshaller.Instance;
@@ -2237,7 +2237,7 @@ namespace Amazon.Glacier
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<ListPartsResponse> ListPartsAsync(ListPartsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListPartsResponse> ListPartsAsync(ListPartsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListPartsRequestMarshaller();
             var unmarshaller = ListPartsResponseUnmarshaller.Instance;
@@ -2266,7 +2266,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public ListProvisionedCapacityResponse ListProvisionedCapacity(ListProvisionedCapacityRequest request)
+        public virtual ListProvisionedCapacityResponse ListProvisionedCapacity(ListProvisionedCapacityRequest request)
         {
             var marshaller = new ListProvisionedCapacityRequestMarshaller();
             var unmarshaller = ListProvisionedCapacityResponseUnmarshaller.Instance;
@@ -2283,7 +2283,7 @@ namespace Amazon.Glacier
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<ListProvisionedCapacityResponse> ListProvisionedCapacityAsync(ListProvisionedCapacityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListProvisionedCapacityResponse> ListProvisionedCapacityAsync(ListProvisionedCapacityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListProvisionedCapacityRequestMarshaller();
             var unmarshaller = ListProvisionedCapacityResponseUnmarshaller.Instance;
@@ -2318,7 +2318,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public ListTagsForVaultResponse ListTagsForVault(ListTagsForVaultRequest request)
+        public virtual ListTagsForVaultResponse ListTagsForVault(ListTagsForVaultRequest request)
         {
             var marshaller = new ListTagsForVaultRequestMarshaller();
             var unmarshaller = ListTagsForVaultResponseUnmarshaller.Instance;
@@ -2335,7 +2335,7 @@ namespace Amazon.Glacier
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<ListTagsForVaultResponse> ListTagsForVaultAsync(ListTagsForVaultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListTagsForVaultResponse> ListTagsForVaultAsync(ListTagsForVaultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListTagsForVaultRequestMarshaller();
             var unmarshaller = ListTagsForVaultResponseUnmarshaller.Instance;
@@ -2394,7 +2394,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public ListVaultsResponse ListVaults()
+        public virtual ListVaultsResponse ListVaults()
         {
             return ListVaults(new ListVaultsRequest());
         }
@@ -2446,7 +2446,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public ListVaultsResponse ListVaults(ListVaultsRequest request)
+        public virtual ListVaultsResponse ListVaults(ListVaultsRequest request)
         {
             var marshaller = new ListVaultsRequestMarshaller();
             var unmarshaller = ListVaultsResponseUnmarshaller.Instance;
@@ -2503,7 +2503,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public Task<ListVaultsResponse> ListVaultsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListVaultsResponse> ListVaultsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return ListVaultsAsync(new ListVaultsRequest(), cancellationToken);
         }
@@ -2516,7 +2516,7 @@ namespace Amazon.Glacier
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<ListVaultsResponse> ListVaultsAsync(ListVaultsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListVaultsResponse> ListVaultsAsync(ListVaultsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListVaultsRequestMarshaller();
             var unmarshaller = ListVaultsResponseUnmarshaller.Instance;
@@ -2548,7 +2548,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public PurchaseProvisionedCapacityResponse PurchaseProvisionedCapacity(PurchaseProvisionedCapacityRequest request)
+        public virtual PurchaseProvisionedCapacityResponse PurchaseProvisionedCapacity(PurchaseProvisionedCapacityRequest request)
         {
             var marshaller = new PurchaseProvisionedCapacityRequestMarshaller();
             var unmarshaller = PurchaseProvisionedCapacityResponseUnmarshaller.Instance;
@@ -2565,7 +2565,7 @@ namespace Amazon.Glacier
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<PurchaseProvisionedCapacityResponse> PurchaseProvisionedCapacityAsync(PurchaseProvisionedCapacityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PurchaseProvisionedCapacityResponse> PurchaseProvisionedCapacityAsync(PurchaseProvisionedCapacityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PurchaseProvisionedCapacityRequestMarshaller();
             var unmarshaller = PurchaseProvisionedCapacityResponseUnmarshaller.Instance;
@@ -2601,7 +2601,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public RemoveTagsFromVaultResponse RemoveTagsFromVault(RemoveTagsFromVaultRequest request)
+        public virtual RemoveTagsFromVaultResponse RemoveTagsFromVault(RemoveTagsFromVaultRequest request)
         {
             var marshaller = new RemoveTagsFromVaultRequestMarshaller();
             var unmarshaller = RemoveTagsFromVaultResponseUnmarshaller.Instance;
@@ -2618,7 +2618,7 @@ namespace Amazon.Glacier
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<RemoveTagsFromVaultResponse> RemoveTagsFromVaultAsync(RemoveTagsFromVaultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<RemoveTagsFromVaultResponse> RemoveTagsFromVaultAsync(RemoveTagsFromVaultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RemoveTagsFromVaultRequestMarshaller();
             var unmarshaller = RemoveTagsFromVaultResponseUnmarshaller.Instance;
@@ -2657,7 +2657,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public SetDataRetrievalPolicyResponse SetDataRetrievalPolicy(SetDataRetrievalPolicyRequest request)
+        public virtual SetDataRetrievalPolicyResponse SetDataRetrievalPolicy(SetDataRetrievalPolicyRequest request)
         {
             var marshaller = new SetDataRetrievalPolicyRequestMarshaller();
             var unmarshaller = SetDataRetrievalPolicyResponseUnmarshaller.Instance;
@@ -2674,7 +2674,7 @@ namespace Amazon.Glacier
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<SetDataRetrievalPolicyResponse> SetDataRetrievalPolicyAsync(SetDataRetrievalPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<SetDataRetrievalPolicyResponse> SetDataRetrievalPolicyAsync(SetDataRetrievalPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SetDataRetrievalPolicyRequestMarshaller();
             var unmarshaller = SetDataRetrievalPolicyResponseUnmarshaller.Instance;
@@ -2712,7 +2712,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public SetVaultAccessPolicyResponse SetVaultAccessPolicy(SetVaultAccessPolicyRequest request)
+        public virtual SetVaultAccessPolicyResponse SetVaultAccessPolicy(SetVaultAccessPolicyRequest request)
         {
             var marshaller = new SetVaultAccessPolicyRequestMarshaller();
             var unmarshaller = SetVaultAccessPolicyResponseUnmarshaller.Instance;
@@ -2729,7 +2729,7 @@ namespace Amazon.Glacier
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<SetVaultAccessPolicyResponse> SetVaultAccessPolicyAsync(SetVaultAccessPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<SetVaultAccessPolicyResponse> SetVaultAccessPolicyAsync(SetVaultAccessPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SetVaultAccessPolicyRequestMarshaller();
             var unmarshaller = SetVaultAccessPolicyResponseUnmarshaller.Instance;
@@ -2806,7 +2806,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public SetVaultNotificationsResponse SetVaultNotifications(SetVaultNotificationsRequest request)
+        public virtual SetVaultNotificationsResponse SetVaultNotifications(SetVaultNotificationsRequest request)
         {
             var marshaller = new SetVaultNotificationsRequestMarshaller();
             var unmarshaller = SetVaultNotificationsResponseUnmarshaller.Instance;
@@ -2823,7 +2823,7 @@ namespace Amazon.Glacier
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<SetVaultNotificationsResponse> SetVaultNotificationsAsync(SetVaultNotificationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<SetVaultNotificationsResponse> SetVaultNotificationsAsync(SetVaultNotificationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SetVaultNotificationsRequestMarshaller();
             var unmarshaller = SetVaultNotificationsResponseUnmarshaller.Instance;
@@ -2907,7 +2907,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public UploadArchiveResponse UploadArchive(UploadArchiveRequest request)
+        public virtual UploadArchiveResponse UploadArchive(UploadArchiveRequest request)
         {
             var marshaller = new UploadArchiveRequestMarshaller();
             var unmarshaller = UploadArchiveResponseUnmarshaller.Instance;
@@ -2924,7 +2924,7 @@ namespace Amazon.Glacier
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UploadArchiveResponse> UploadArchiveAsync(UploadArchiveRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UploadArchiveResponse> UploadArchiveAsync(UploadArchiveRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UploadArchiveRequestMarshaller();
             var unmarshaller = UploadArchiveResponseUnmarshaller.Instance;
@@ -3019,7 +3019,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
-        public UploadMultipartPartResponse UploadMultipartPart(UploadMultipartPartRequest request)
+        public virtual UploadMultipartPartResponse UploadMultipartPart(UploadMultipartPartRequest request)
         {
             var marshaller = new UploadMultipartPartRequestMarshaller();
             var unmarshaller = UploadMultipartPartResponseUnmarshaller.Instance;
@@ -3036,7 +3036,7 @@ namespace Amazon.Glacier
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UploadMultipartPartResponse> UploadMultipartPartAsync(UploadMultipartPartRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UploadMultipartPartResponse> UploadMultipartPartAsync(UploadMultipartPartRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UploadMultipartPartRequestMarshaller();
             var unmarshaller = UploadMultipartPartResponseUnmarshaller.Instance;

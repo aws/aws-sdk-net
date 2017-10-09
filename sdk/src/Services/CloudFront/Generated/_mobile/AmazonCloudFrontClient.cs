@@ -238,7 +238,7 @@ namespace Amazon.CloudFront
         
         #region  CreateCloudFrontOriginAccessIdentity
 
-        internal CreateCloudFrontOriginAccessIdentityResponse CreateCloudFrontOriginAccessIdentity(CreateCloudFrontOriginAccessIdentityRequest request)
+        internal virtual CreateCloudFrontOriginAccessIdentityResponse CreateCloudFrontOriginAccessIdentity(CreateCloudFrontOriginAccessIdentityRequest request)
         {
             var marshaller = new CreateCloudFrontOriginAccessIdentityRequestMarshaller();
             var unmarshaller = CreateCloudFrontOriginAccessIdentityResponseUnmarshaller.Instance;
@@ -257,7 +257,7 @@ namespace Amazon.CloudFront
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateCloudFrontOriginAccessIdentity">REST API Reference for CreateCloudFrontOriginAccessIdentity Operation</seealso>
-        public Task<CreateCloudFrontOriginAccessIdentityResponse> CreateCloudFrontOriginAccessIdentityAsync(CreateCloudFrontOriginAccessIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateCloudFrontOriginAccessIdentityResponse> CreateCloudFrontOriginAccessIdentityAsync(CreateCloudFrontOriginAccessIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateCloudFrontOriginAccessIdentityRequestMarshaller();
             var unmarshaller = CreateCloudFrontOriginAccessIdentityResponseUnmarshaller.Instance;
@@ -270,7 +270,7 @@ namespace Amazon.CloudFront
         
         #region  CreateDistribution
 
-        internal CreateDistributionResponse CreateDistribution(CreateDistributionRequest request)
+        internal virtual CreateDistributionResponse CreateDistribution(CreateDistributionRequest request)
         {
             var marshaller = new CreateDistributionRequestMarshaller();
             var unmarshaller = CreateDistributionResponseUnmarshaller.Instance;
@@ -289,7 +289,7 @@ namespace Amazon.CloudFront
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateDistribution">REST API Reference for CreateDistribution Operation</seealso>
-        public Task<CreateDistributionResponse> CreateDistributionAsync(CreateDistributionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateDistributionResponse> CreateDistributionAsync(CreateDistributionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateDistributionRequestMarshaller();
             var unmarshaller = CreateDistributionResponseUnmarshaller.Instance;
@@ -302,7 +302,7 @@ namespace Amazon.CloudFront
         
         #region  CreateDistributionWithTags
 
-        internal CreateDistributionWithTagsResponse CreateDistributionWithTags(CreateDistributionWithTagsRequest request)
+        internal virtual CreateDistributionWithTagsResponse CreateDistributionWithTags(CreateDistributionWithTagsRequest request)
         {
             var marshaller = new CreateDistributionWithTagsRequestMarshaller();
             var unmarshaller = CreateDistributionWithTagsResponseUnmarshaller.Instance;
@@ -321,7 +321,7 @@ namespace Amazon.CloudFront
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateDistributionWithTags">REST API Reference for CreateDistributionWithTags Operation</seealso>
-        public Task<CreateDistributionWithTagsResponse> CreateDistributionWithTagsAsync(CreateDistributionWithTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateDistributionWithTagsResponse> CreateDistributionWithTagsAsync(CreateDistributionWithTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateDistributionWithTagsRequestMarshaller();
             var unmarshaller = CreateDistributionWithTagsResponseUnmarshaller.Instance;
@@ -334,7 +334,7 @@ namespace Amazon.CloudFront
         
         #region  CreateInvalidation
 
-        internal CreateInvalidationResponse CreateInvalidation(CreateInvalidationRequest request)
+        internal virtual CreateInvalidationResponse CreateInvalidation(CreateInvalidationRequest request)
         {
             var marshaller = new CreateInvalidationRequestMarshaller();
             var unmarshaller = CreateInvalidationResponseUnmarshaller.Instance;
@@ -353,7 +353,7 @@ namespace Amazon.CloudFront
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateInvalidation">REST API Reference for CreateInvalidation Operation</seealso>
-        public Task<CreateInvalidationResponse> CreateInvalidationAsync(CreateInvalidationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateInvalidationResponse> CreateInvalidationAsync(CreateInvalidationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateInvalidationRequestMarshaller();
             var unmarshaller = CreateInvalidationResponseUnmarshaller.Instance;
@@ -366,7 +366,7 @@ namespace Amazon.CloudFront
         
         #region  CreateStreamingDistribution
 
-        internal CreateStreamingDistributionResponse CreateStreamingDistribution(CreateStreamingDistributionRequest request)
+        internal virtual CreateStreamingDistributionResponse CreateStreamingDistribution(CreateStreamingDistributionRequest request)
         {
             var marshaller = new CreateStreamingDistributionRequestMarshaller();
             var unmarshaller = CreateStreamingDistributionResponseUnmarshaller.Instance;
@@ -385,7 +385,7 @@ namespace Amazon.CloudFront
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateStreamingDistribution">REST API Reference for CreateStreamingDistribution Operation</seealso>
-        public Task<CreateStreamingDistributionResponse> CreateStreamingDistributionAsync(CreateStreamingDistributionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateStreamingDistributionResponse> CreateStreamingDistributionAsync(CreateStreamingDistributionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateStreamingDistributionRequestMarshaller();
             var unmarshaller = CreateStreamingDistributionResponseUnmarshaller.Instance;
@@ -398,7 +398,7 @@ namespace Amazon.CloudFront
         
         #region  CreateStreamingDistributionWithTags
 
-        internal CreateStreamingDistributionWithTagsResponse CreateStreamingDistributionWithTags(CreateStreamingDistributionWithTagsRequest request)
+        internal virtual CreateStreamingDistributionWithTagsResponse CreateStreamingDistributionWithTags(CreateStreamingDistributionWithTagsRequest request)
         {
             var marshaller = new CreateStreamingDistributionWithTagsRequestMarshaller();
             var unmarshaller = CreateStreamingDistributionWithTagsResponseUnmarshaller.Instance;
@@ -417,7 +417,7 @@ namespace Amazon.CloudFront
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateStreamingDistributionWithTags">REST API Reference for CreateStreamingDistributionWithTags Operation</seealso>
-        public Task<CreateStreamingDistributionWithTagsResponse> CreateStreamingDistributionWithTagsAsync(CreateStreamingDistributionWithTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateStreamingDistributionWithTagsResponse> CreateStreamingDistributionWithTagsAsync(CreateStreamingDistributionWithTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateStreamingDistributionWithTagsRequestMarshaller();
             var unmarshaller = CreateStreamingDistributionWithTagsResponseUnmarshaller.Instance;
@@ -430,11 +430,11 @@ namespace Amazon.CloudFront
         
         #region  DeleteCloudFrontOriginAccessIdentity
 
-        internal DeleteCloudFrontOriginAccessIdentityResponse DeleteCloudFrontOriginAccessIdentity()
+        internal virtual DeleteCloudFrontOriginAccessIdentityResponse DeleteCloudFrontOriginAccessIdentity()
         {
             return DeleteCloudFrontOriginAccessIdentity(new DeleteCloudFrontOriginAccessIdentityRequest());
         }
-        internal DeleteCloudFrontOriginAccessIdentityResponse DeleteCloudFrontOriginAccessIdentity(DeleteCloudFrontOriginAccessIdentityRequest request)
+        internal virtual DeleteCloudFrontOriginAccessIdentityResponse DeleteCloudFrontOriginAccessIdentity(DeleteCloudFrontOriginAccessIdentityRequest request)
         {
             var marshaller = new DeleteCloudFrontOriginAccessIdentityRequestMarshaller();
             var unmarshaller = DeleteCloudFrontOriginAccessIdentityResponseUnmarshaller.Instance;
@@ -467,7 +467,7 @@ namespace Amazon.CloudFront
         /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteCloudFrontOriginAccessIdentity">REST API Reference for DeleteCloudFrontOriginAccessIdentity Operation</seealso>
-        public Task<DeleteCloudFrontOriginAccessIdentityResponse> DeleteCloudFrontOriginAccessIdentityAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteCloudFrontOriginAccessIdentityResponse> DeleteCloudFrontOriginAccessIdentityAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DeleteCloudFrontOriginAccessIdentityAsync(new DeleteCloudFrontOriginAccessIdentityRequest(), cancellationToken);
         }
@@ -483,7 +483,7 @@ namespace Amazon.CloudFront
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteCloudFrontOriginAccessIdentity">REST API Reference for DeleteCloudFrontOriginAccessIdentity Operation</seealso>
-        public Task<DeleteCloudFrontOriginAccessIdentityResponse> DeleteCloudFrontOriginAccessIdentityAsync(DeleteCloudFrontOriginAccessIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteCloudFrontOriginAccessIdentityResponse> DeleteCloudFrontOriginAccessIdentityAsync(DeleteCloudFrontOriginAccessIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteCloudFrontOriginAccessIdentityRequestMarshaller();
             var unmarshaller = DeleteCloudFrontOriginAccessIdentityResponseUnmarshaller.Instance;
@@ -496,11 +496,11 @@ namespace Amazon.CloudFront
         
         #region  DeleteDistribution
 
-        internal DeleteDistributionResponse DeleteDistribution()
+        internal virtual DeleteDistributionResponse DeleteDistribution()
         {
             return DeleteDistribution(new DeleteDistributionRequest());
         }
-        internal DeleteDistributionResponse DeleteDistribution(DeleteDistributionRequest request)
+        internal virtual DeleteDistributionResponse DeleteDistribution(DeleteDistributionRequest request)
         {
             var marshaller = new DeleteDistributionRequestMarshaller();
             var unmarshaller = DeleteDistributionResponseUnmarshaller.Instance;
@@ -533,7 +533,7 @@ namespace Amazon.CloudFront
         /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
-        public Task<DeleteDistributionResponse> DeleteDistributionAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteDistributionResponse> DeleteDistributionAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DeleteDistributionAsync(new DeleteDistributionRequest(), cancellationToken);
         }
@@ -549,7 +549,7 @@ namespace Amazon.CloudFront
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
-        public Task<DeleteDistributionResponse> DeleteDistributionAsync(DeleteDistributionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteDistributionResponse> DeleteDistributionAsync(DeleteDistributionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteDistributionRequestMarshaller();
             var unmarshaller = DeleteDistributionResponseUnmarshaller.Instance;
@@ -562,11 +562,11 @@ namespace Amazon.CloudFront
         
         #region  DeleteStreamingDistribution
 
-        internal DeleteStreamingDistributionResponse DeleteStreamingDistribution()
+        internal virtual DeleteStreamingDistributionResponse DeleteStreamingDistribution()
         {
             return DeleteStreamingDistribution(new DeleteStreamingDistributionRequest());
         }
-        internal DeleteStreamingDistributionResponse DeleteStreamingDistribution(DeleteStreamingDistributionRequest request)
+        internal virtual DeleteStreamingDistributionResponse DeleteStreamingDistribution(DeleteStreamingDistributionRequest request)
         {
             var marshaller = new DeleteStreamingDistributionRequestMarshaller();
             var unmarshaller = DeleteStreamingDistributionResponseUnmarshaller.Instance;
@@ -657,7 +657,7 @@ namespace Amazon.CloudFront
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteStreamingDistribution">REST API Reference for DeleteStreamingDistribution Operation</seealso>
-        public Task<DeleteStreamingDistributionResponse> DeleteStreamingDistributionAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteStreamingDistributionResponse> DeleteStreamingDistributionAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DeleteStreamingDistributionAsync(new DeleteStreamingDistributionRequest(), cancellationToken);
         }
@@ -673,7 +673,7 @@ namespace Amazon.CloudFront
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteStreamingDistribution">REST API Reference for DeleteStreamingDistribution Operation</seealso>
-        public Task<DeleteStreamingDistributionResponse> DeleteStreamingDistributionAsync(DeleteStreamingDistributionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteStreamingDistributionResponse> DeleteStreamingDistributionAsync(DeleteStreamingDistributionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteStreamingDistributionRequestMarshaller();
             var unmarshaller = DeleteStreamingDistributionResponseUnmarshaller.Instance;
@@ -686,11 +686,11 @@ namespace Amazon.CloudFront
         
         #region  GetCloudFrontOriginAccessIdentity
 
-        internal GetCloudFrontOriginAccessIdentityResponse GetCloudFrontOriginAccessIdentity()
+        internal virtual GetCloudFrontOriginAccessIdentityResponse GetCloudFrontOriginAccessIdentity()
         {
             return GetCloudFrontOriginAccessIdentity(new GetCloudFrontOriginAccessIdentityRequest());
         }
-        internal GetCloudFrontOriginAccessIdentityResponse GetCloudFrontOriginAccessIdentity(GetCloudFrontOriginAccessIdentityRequest request)
+        internal virtual GetCloudFrontOriginAccessIdentityResponse GetCloudFrontOriginAccessIdentity(GetCloudFrontOriginAccessIdentityRequest request)
         {
             var marshaller = new GetCloudFrontOriginAccessIdentityRequestMarshaller();
             var unmarshaller = GetCloudFrontOriginAccessIdentityResponseUnmarshaller.Instance;
@@ -714,7 +714,7 @@ namespace Amazon.CloudFront
         /// The specified origin access identity does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetCloudFrontOriginAccessIdentity">REST API Reference for GetCloudFrontOriginAccessIdentity Operation</seealso>
-        public Task<GetCloudFrontOriginAccessIdentityResponse> GetCloudFrontOriginAccessIdentityAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetCloudFrontOriginAccessIdentityResponse> GetCloudFrontOriginAccessIdentityAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return GetCloudFrontOriginAccessIdentityAsync(new GetCloudFrontOriginAccessIdentityRequest(), cancellationToken);
         }
@@ -730,7 +730,7 @@ namespace Amazon.CloudFront
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetCloudFrontOriginAccessIdentity">REST API Reference for GetCloudFrontOriginAccessIdentity Operation</seealso>
-        public Task<GetCloudFrontOriginAccessIdentityResponse> GetCloudFrontOriginAccessIdentityAsync(GetCloudFrontOriginAccessIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetCloudFrontOriginAccessIdentityResponse> GetCloudFrontOriginAccessIdentityAsync(GetCloudFrontOriginAccessIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetCloudFrontOriginAccessIdentityRequestMarshaller();
             var unmarshaller = GetCloudFrontOriginAccessIdentityResponseUnmarshaller.Instance;
@@ -743,11 +743,11 @@ namespace Amazon.CloudFront
         
         #region  GetCloudFrontOriginAccessIdentityConfig
 
-        internal GetCloudFrontOriginAccessIdentityConfigResponse GetCloudFrontOriginAccessIdentityConfig()
+        internal virtual GetCloudFrontOriginAccessIdentityConfigResponse GetCloudFrontOriginAccessIdentityConfig()
         {
             return GetCloudFrontOriginAccessIdentityConfig(new GetCloudFrontOriginAccessIdentityConfigRequest());
         }
-        internal GetCloudFrontOriginAccessIdentityConfigResponse GetCloudFrontOriginAccessIdentityConfig(GetCloudFrontOriginAccessIdentityConfigRequest request)
+        internal virtual GetCloudFrontOriginAccessIdentityConfigResponse GetCloudFrontOriginAccessIdentityConfig(GetCloudFrontOriginAccessIdentityConfigRequest request)
         {
             var marshaller = new GetCloudFrontOriginAccessIdentityConfigRequestMarshaller();
             var unmarshaller = GetCloudFrontOriginAccessIdentityConfigResponseUnmarshaller.Instance;
@@ -771,7 +771,7 @@ namespace Amazon.CloudFront
         /// The specified origin access identity does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetCloudFrontOriginAccessIdentityConfig">REST API Reference for GetCloudFrontOriginAccessIdentityConfig Operation</seealso>
-        public Task<GetCloudFrontOriginAccessIdentityConfigResponse> GetCloudFrontOriginAccessIdentityConfigAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetCloudFrontOriginAccessIdentityConfigResponse> GetCloudFrontOriginAccessIdentityConfigAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return GetCloudFrontOriginAccessIdentityConfigAsync(new GetCloudFrontOriginAccessIdentityConfigRequest(), cancellationToken);
         }
@@ -787,7 +787,7 @@ namespace Amazon.CloudFront
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetCloudFrontOriginAccessIdentityConfig">REST API Reference for GetCloudFrontOriginAccessIdentityConfig Operation</seealso>
-        public Task<GetCloudFrontOriginAccessIdentityConfigResponse> GetCloudFrontOriginAccessIdentityConfigAsync(GetCloudFrontOriginAccessIdentityConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetCloudFrontOriginAccessIdentityConfigResponse> GetCloudFrontOriginAccessIdentityConfigAsync(GetCloudFrontOriginAccessIdentityConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetCloudFrontOriginAccessIdentityConfigRequestMarshaller();
             var unmarshaller = GetCloudFrontOriginAccessIdentityConfigResponseUnmarshaller.Instance;
@@ -800,11 +800,11 @@ namespace Amazon.CloudFront
         
         #region  GetDistribution
 
-        internal GetDistributionResponse GetDistribution()
+        internal virtual GetDistributionResponse GetDistribution()
         {
             return GetDistribution(new GetDistributionRequest());
         }
-        internal GetDistributionResponse GetDistribution(GetDistributionRequest request)
+        internal virtual GetDistributionResponse GetDistribution(GetDistributionRequest request)
         {
             var marshaller = new GetDistributionRequestMarshaller();
             var unmarshaller = GetDistributionResponseUnmarshaller.Instance;
@@ -828,7 +828,7 @@ namespace Amazon.CloudFront
         /// The specified distribution does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetDistribution">REST API Reference for GetDistribution Operation</seealso>
-        public Task<GetDistributionResponse> GetDistributionAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetDistributionResponse> GetDistributionAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return GetDistributionAsync(new GetDistributionRequest(), cancellationToken);
         }
@@ -844,7 +844,7 @@ namespace Amazon.CloudFront
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetDistribution">REST API Reference for GetDistribution Operation</seealso>
-        public Task<GetDistributionResponse> GetDistributionAsync(GetDistributionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetDistributionResponse> GetDistributionAsync(GetDistributionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetDistributionRequestMarshaller();
             var unmarshaller = GetDistributionResponseUnmarshaller.Instance;
@@ -857,11 +857,11 @@ namespace Amazon.CloudFront
         
         #region  GetDistributionConfig
 
-        internal GetDistributionConfigResponse GetDistributionConfig()
+        internal virtual GetDistributionConfigResponse GetDistributionConfig()
         {
             return GetDistributionConfig(new GetDistributionConfigRequest());
         }
-        internal GetDistributionConfigResponse GetDistributionConfig(GetDistributionConfigRequest request)
+        internal virtual GetDistributionConfigResponse GetDistributionConfig(GetDistributionConfigRequest request)
         {
             var marshaller = new GetDistributionConfigRequestMarshaller();
             var unmarshaller = GetDistributionConfigResponseUnmarshaller.Instance;
@@ -885,7 +885,7 @@ namespace Amazon.CloudFront
         /// The specified distribution does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetDistributionConfig">REST API Reference for GetDistributionConfig Operation</seealso>
-        public Task<GetDistributionConfigResponse> GetDistributionConfigAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetDistributionConfigResponse> GetDistributionConfigAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return GetDistributionConfigAsync(new GetDistributionConfigRequest(), cancellationToken);
         }
@@ -901,7 +901,7 @@ namespace Amazon.CloudFront
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetDistributionConfig">REST API Reference for GetDistributionConfig Operation</seealso>
-        public Task<GetDistributionConfigResponse> GetDistributionConfigAsync(GetDistributionConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetDistributionConfigResponse> GetDistributionConfigAsync(GetDistributionConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetDistributionConfigRequestMarshaller();
             var unmarshaller = GetDistributionConfigResponseUnmarshaller.Instance;
@@ -914,7 +914,7 @@ namespace Amazon.CloudFront
         
         #region  GetInvalidation
 
-        internal GetInvalidationResponse GetInvalidation(GetInvalidationRequest request)
+        internal virtual GetInvalidationResponse GetInvalidation(GetInvalidationRequest request)
         {
             var marshaller = new GetInvalidationRequestMarshaller();
             var unmarshaller = GetInvalidationResponseUnmarshaller.Instance;
@@ -933,7 +933,7 @@ namespace Amazon.CloudFront
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetInvalidation">REST API Reference for GetInvalidation Operation</seealso>
-        public Task<GetInvalidationResponse> GetInvalidationAsync(GetInvalidationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetInvalidationResponse> GetInvalidationAsync(GetInvalidationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetInvalidationRequestMarshaller();
             var unmarshaller = GetInvalidationResponseUnmarshaller.Instance;
@@ -946,11 +946,11 @@ namespace Amazon.CloudFront
         
         #region  GetStreamingDistribution
 
-        internal GetStreamingDistributionResponse GetStreamingDistribution()
+        internal virtual GetStreamingDistributionResponse GetStreamingDistribution()
         {
             return GetStreamingDistribution(new GetStreamingDistributionRequest());
         }
-        internal GetStreamingDistributionResponse GetStreamingDistribution(GetStreamingDistributionRequest request)
+        internal virtual GetStreamingDistributionResponse GetStreamingDistribution(GetStreamingDistributionRequest request)
         {
             var marshaller = new GetStreamingDistributionRequestMarshaller();
             var unmarshaller = GetStreamingDistributionResponseUnmarshaller.Instance;
@@ -974,7 +974,7 @@ namespace Amazon.CloudFront
         /// The specified streaming distribution does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetStreamingDistribution">REST API Reference for GetStreamingDistribution Operation</seealso>
-        public Task<GetStreamingDistributionResponse> GetStreamingDistributionAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetStreamingDistributionResponse> GetStreamingDistributionAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return GetStreamingDistributionAsync(new GetStreamingDistributionRequest(), cancellationToken);
         }
@@ -990,7 +990,7 @@ namespace Amazon.CloudFront
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetStreamingDistribution">REST API Reference for GetStreamingDistribution Operation</seealso>
-        public Task<GetStreamingDistributionResponse> GetStreamingDistributionAsync(GetStreamingDistributionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetStreamingDistributionResponse> GetStreamingDistributionAsync(GetStreamingDistributionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetStreamingDistributionRequestMarshaller();
             var unmarshaller = GetStreamingDistributionResponseUnmarshaller.Instance;
@@ -1003,11 +1003,11 @@ namespace Amazon.CloudFront
         
         #region  GetStreamingDistributionConfig
 
-        internal GetStreamingDistributionConfigResponse GetStreamingDistributionConfig()
+        internal virtual GetStreamingDistributionConfigResponse GetStreamingDistributionConfig()
         {
             return GetStreamingDistributionConfig(new GetStreamingDistributionConfigRequest());
         }
-        internal GetStreamingDistributionConfigResponse GetStreamingDistributionConfig(GetStreamingDistributionConfigRequest request)
+        internal virtual GetStreamingDistributionConfigResponse GetStreamingDistributionConfig(GetStreamingDistributionConfigRequest request)
         {
             var marshaller = new GetStreamingDistributionConfigRequestMarshaller();
             var unmarshaller = GetStreamingDistributionConfigResponseUnmarshaller.Instance;
@@ -1031,7 +1031,7 @@ namespace Amazon.CloudFront
         /// The specified streaming distribution does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetStreamingDistributionConfig">REST API Reference for GetStreamingDistributionConfig Operation</seealso>
-        public Task<GetStreamingDistributionConfigResponse> GetStreamingDistributionConfigAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetStreamingDistributionConfigResponse> GetStreamingDistributionConfigAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return GetStreamingDistributionConfigAsync(new GetStreamingDistributionConfigRequest(), cancellationToken);
         }
@@ -1047,7 +1047,7 @@ namespace Amazon.CloudFront
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetStreamingDistributionConfig">REST API Reference for GetStreamingDistributionConfig Operation</seealso>
-        public Task<GetStreamingDistributionConfigResponse> GetStreamingDistributionConfigAsync(GetStreamingDistributionConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetStreamingDistributionConfigResponse> GetStreamingDistributionConfigAsync(GetStreamingDistributionConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetStreamingDistributionConfigRequestMarshaller();
             var unmarshaller = GetStreamingDistributionConfigResponseUnmarshaller.Instance;
@@ -1060,11 +1060,11 @@ namespace Amazon.CloudFront
         
         #region  ListCloudFrontOriginAccessIdentities
 
-        internal ListCloudFrontOriginAccessIdentitiesResponse ListCloudFrontOriginAccessIdentities()
+        internal virtual ListCloudFrontOriginAccessIdentitiesResponse ListCloudFrontOriginAccessIdentities()
         {
             return ListCloudFrontOriginAccessIdentities(new ListCloudFrontOriginAccessIdentitiesRequest());
         }
-        internal ListCloudFrontOriginAccessIdentitiesResponse ListCloudFrontOriginAccessIdentities(ListCloudFrontOriginAccessIdentitiesRequest request)
+        internal virtual ListCloudFrontOriginAccessIdentitiesResponse ListCloudFrontOriginAccessIdentities(ListCloudFrontOriginAccessIdentitiesRequest request)
         {
             var marshaller = new ListCloudFrontOriginAccessIdentitiesRequestMarshaller();
             var unmarshaller = ListCloudFrontOriginAccessIdentitiesResponseUnmarshaller.Instance;
@@ -1085,7 +1085,7 @@ namespace Amazon.CloudFront
         /// The argument is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListCloudFrontOriginAccessIdentities">REST API Reference for ListCloudFrontOriginAccessIdentities Operation</seealso>
-        public Task<ListCloudFrontOriginAccessIdentitiesResponse> ListCloudFrontOriginAccessIdentitiesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListCloudFrontOriginAccessIdentitiesResponse> ListCloudFrontOriginAccessIdentitiesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return ListCloudFrontOriginAccessIdentitiesAsync(new ListCloudFrontOriginAccessIdentitiesRequest(), cancellationToken);
         }
@@ -1101,7 +1101,7 @@ namespace Amazon.CloudFront
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListCloudFrontOriginAccessIdentities">REST API Reference for ListCloudFrontOriginAccessIdentities Operation</seealso>
-        public Task<ListCloudFrontOriginAccessIdentitiesResponse> ListCloudFrontOriginAccessIdentitiesAsync(ListCloudFrontOriginAccessIdentitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListCloudFrontOriginAccessIdentitiesResponse> ListCloudFrontOriginAccessIdentitiesAsync(ListCloudFrontOriginAccessIdentitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListCloudFrontOriginAccessIdentitiesRequestMarshaller();
             var unmarshaller = ListCloudFrontOriginAccessIdentitiesResponseUnmarshaller.Instance;
@@ -1114,11 +1114,11 @@ namespace Amazon.CloudFront
         
         #region  ListDistributions
 
-        internal ListDistributionsResponse ListDistributions()
+        internal virtual ListDistributionsResponse ListDistributions()
         {
             return ListDistributions(new ListDistributionsRequest());
         }
-        internal ListDistributionsResponse ListDistributions(ListDistributionsRequest request)
+        internal virtual ListDistributionsResponse ListDistributions(ListDistributionsRequest request)
         {
             var marshaller = new ListDistributionsRequestMarshaller();
             var unmarshaller = ListDistributionsResponseUnmarshaller.Instance;
@@ -1139,7 +1139,7 @@ namespace Amazon.CloudFront
         /// The argument is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListDistributions">REST API Reference for ListDistributions Operation</seealso>
-        public Task<ListDistributionsResponse> ListDistributionsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListDistributionsResponse> ListDistributionsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return ListDistributionsAsync(new ListDistributionsRequest(), cancellationToken);
         }
@@ -1155,7 +1155,7 @@ namespace Amazon.CloudFront
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListDistributions">REST API Reference for ListDistributions Operation</seealso>
-        public Task<ListDistributionsResponse> ListDistributionsAsync(ListDistributionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListDistributionsResponse> ListDistributionsAsync(ListDistributionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListDistributionsRequestMarshaller();
             var unmarshaller = ListDistributionsResponseUnmarshaller.Instance;
@@ -1168,7 +1168,7 @@ namespace Amazon.CloudFront
         
         #region  ListDistributionsByWebACLId
 
-        internal ListDistributionsByWebACLIdResponse ListDistributionsByWebACLId(ListDistributionsByWebACLIdRequest request)
+        internal virtual ListDistributionsByWebACLIdResponse ListDistributionsByWebACLId(ListDistributionsByWebACLIdRequest request)
         {
             var marshaller = new ListDistributionsByWebACLIdRequestMarshaller();
             var unmarshaller = ListDistributionsByWebACLIdResponseUnmarshaller.Instance;
@@ -1187,7 +1187,7 @@ namespace Amazon.CloudFront
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListDistributionsByWebACLId">REST API Reference for ListDistributionsByWebACLId Operation</seealso>
-        public Task<ListDistributionsByWebACLIdResponse> ListDistributionsByWebACLIdAsync(ListDistributionsByWebACLIdRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListDistributionsByWebACLIdResponse> ListDistributionsByWebACLIdAsync(ListDistributionsByWebACLIdRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListDistributionsByWebACLIdRequestMarshaller();
             var unmarshaller = ListDistributionsByWebACLIdResponseUnmarshaller.Instance;
@@ -1200,7 +1200,7 @@ namespace Amazon.CloudFront
         
         #region  ListInvalidations
 
-        internal ListInvalidationsResponse ListInvalidations(ListInvalidationsRequest request)
+        internal virtual ListInvalidationsResponse ListInvalidations(ListInvalidationsRequest request)
         {
             var marshaller = new ListInvalidationsRequestMarshaller();
             var unmarshaller = ListInvalidationsResponseUnmarshaller.Instance;
@@ -1219,7 +1219,7 @@ namespace Amazon.CloudFront
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListInvalidations">REST API Reference for ListInvalidations Operation</seealso>
-        public Task<ListInvalidationsResponse> ListInvalidationsAsync(ListInvalidationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListInvalidationsResponse> ListInvalidationsAsync(ListInvalidationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListInvalidationsRequestMarshaller();
             var unmarshaller = ListInvalidationsResponseUnmarshaller.Instance;
@@ -1232,11 +1232,11 @@ namespace Amazon.CloudFront
         
         #region  ListStreamingDistributions
 
-        internal ListStreamingDistributionsResponse ListStreamingDistributions()
+        internal virtual ListStreamingDistributionsResponse ListStreamingDistributions()
         {
             return ListStreamingDistributions(new ListStreamingDistributionsRequest());
         }
-        internal ListStreamingDistributionsResponse ListStreamingDistributions(ListStreamingDistributionsRequest request)
+        internal virtual ListStreamingDistributionsResponse ListStreamingDistributions(ListStreamingDistributionsRequest request)
         {
             var marshaller = new ListStreamingDistributionsRequestMarshaller();
             var unmarshaller = ListStreamingDistributionsResponseUnmarshaller.Instance;
@@ -1257,7 +1257,7 @@ namespace Amazon.CloudFront
         /// The argument is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListStreamingDistributions">REST API Reference for ListStreamingDistributions Operation</seealso>
-        public Task<ListStreamingDistributionsResponse> ListStreamingDistributionsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListStreamingDistributionsResponse> ListStreamingDistributionsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return ListStreamingDistributionsAsync(new ListStreamingDistributionsRequest(), cancellationToken);
         }
@@ -1273,7 +1273,7 @@ namespace Amazon.CloudFront
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListStreamingDistributions">REST API Reference for ListStreamingDistributions Operation</seealso>
-        public Task<ListStreamingDistributionsResponse> ListStreamingDistributionsAsync(ListStreamingDistributionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListStreamingDistributionsResponse> ListStreamingDistributionsAsync(ListStreamingDistributionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListStreamingDistributionsRequestMarshaller();
             var unmarshaller = ListStreamingDistributionsResponseUnmarshaller.Instance;
@@ -1286,7 +1286,7 @@ namespace Amazon.CloudFront
         
         #region  ListTagsForResource
 
-        internal ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
@@ -1305,7 +1305,7 @@ namespace Amazon.CloudFront
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
-        public Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
@@ -1318,7 +1318,7 @@ namespace Amazon.CloudFront
         
         #region  TagResource
 
-        internal TagResourceResponse TagResource(TagResourceRequest request)
+        internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
             var marshaller = new TagResourceRequestMarshaller();
             var unmarshaller = TagResourceResponseUnmarshaller.Instance;
@@ -1337,7 +1337,7 @@ namespace Amazon.CloudFront
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/TagResource">REST API Reference for TagResource Operation</seealso>
-        public Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new TagResourceRequestMarshaller();
             var unmarshaller = TagResourceResponseUnmarshaller.Instance;
@@ -1350,7 +1350,7 @@ namespace Amazon.CloudFront
         
         #region  UntagResource
 
-        internal UntagResourceResponse UntagResource(UntagResourceRequest request)
+        internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
             var marshaller = new UntagResourceRequestMarshaller();
             var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
@@ -1369,7 +1369,7 @@ namespace Amazon.CloudFront
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
-        public Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UntagResourceRequestMarshaller();
             var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
@@ -1382,7 +1382,7 @@ namespace Amazon.CloudFront
         
         #region  UpdateCloudFrontOriginAccessIdentity
 
-        internal UpdateCloudFrontOriginAccessIdentityResponse UpdateCloudFrontOriginAccessIdentity(UpdateCloudFrontOriginAccessIdentityRequest request)
+        internal virtual UpdateCloudFrontOriginAccessIdentityResponse UpdateCloudFrontOriginAccessIdentity(UpdateCloudFrontOriginAccessIdentityRequest request)
         {
             var marshaller = new UpdateCloudFrontOriginAccessIdentityRequestMarshaller();
             var unmarshaller = UpdateCloudFrontOriginAccessIdentityResponseUnmarshaller.Instance;
@@ -1401,7 +1401,7 @@ namespace Amazon.CloudFront
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UpdateCloudFrontOriginAccessIdentity">REST API Reference for UpdateCloudFrontOriginAccessIdentity Operation</seealso>
-        public Task<UpdateCloudFrontOriginAccessIdentityResponse> UpdateCloudFrontOriginAccessIdentityAsync(UpdateCloudFrontOriginAccessIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateCloudFrontOriginAccessIdentityResponse> UpdateCloudFrontOriginAccessIdentityAsync(UpdateCloudFrontOriginAccessIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateCloudFrontOriginAccessIdentityRequestMarshaller();
             var unmarshaller = UpdateCloudFrontOriginAccessIdentityResponseUnmarshaller.Instance;
@@ -1414,7 +1414,7 @@ namespace Amazon.CloudFront
         
         #region  UpdateDistribution
 
-        internal UpdateDistributionResponse UpdateDistribution(UpdateDistributionRequest request)
+        internal virtual UpdateDistributionResponse UpdateDistribution(UpdateDistributionRequest request)
         {
             var marshaller = new UpdateDistributionRequestMarshaller();
             var unmarshaller = UpdateDistributionResponseUnmarshaller.Instance;
@@ -1433,7 +1433,7 @@ namespace Amazon.CloudFront
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UpdateDistribution">REST API Reference for UpdateDistribution Operation</seealso>
-        public Task<UpdateDistributionResponse> UpdateDistributionAsync(UpdateDistributionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateDistributionResponse> UpdateDistributionAsync(UpdateDistributionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateDistributionRequestMarshaller();
             var unmarshaller = UpdateDistributionResponseUnmarshaller.Instance;
@@ -1446,7 +1446,7 @@ namespace Amazon.CloudFront
         
         #region  UpdateStreamingDistribution
 
-        internal UpdateStreamingDistributionResponse UpdateStreamingDistribution(UpdateStreamingDistributionRequest request)
+        internal virtual UpdateStreamingDistributionResponse UpdateStreamingDistribution(UpdateStreamingDistributionRequest request)
         {
             var marshaller = new UpdateStreamingDistributionRequestMarshaller();
             var unmarshaller = UpdateStreamingDistributionResponseUnmarshaller.Instance;
@@ -1465,7 +1465,7 @@ namespace Amazon.CloudFront
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UpdateStreamingDistribution">REST API Reference for UpdateStreamingDistribution Operation</seealso>
-        public Task<UpdateStreamingDistributionResponse> UpdateStreamingDistributionAsync(UpdateStreamingDistributionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateStreamingDistributionResponse> UpdateStreamingDistributionAsync(UpdateStreamingDistributionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateStreamingDistributionRequestMarshaller();
             var unmarshaller = UpdateStreamingDistributionResponseUnmarshaller.Instance;

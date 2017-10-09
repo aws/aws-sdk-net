@@ -268,7 +268,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the requested resource does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/AddPermission">REST API Reference for AddPermission Operation</seealso>
-        public AddPermissionResponse AddPermission(string topicArn, string label, List<string> awsAccountId, List<string> actionName)
+        public virtual AddPermissionResponse AddPermission(string topicArn, string label, List<string> awsAccountId, List<string> actionName)
         {
             var request = new AddPermissionRequest();
             request.TopicArn = topicArn;
@@ -299,7 +299,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the requested resource does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/AddPermission">REST API Reference for AddPermission Operation</seealso>
-        public AddPermissionResponse AddPermission(AddPermissionRequest request)
+        public virtual AddPermissionResponse AddPermission(AddPermissionRequest request)
         {
             var marshaller = new AddPermissionRequestMarshaller();
             var unmarshaller = AddPermissionResponseUnmarshaller.Instance;
@@ -334,7 +334,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the requested resource does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/AddPermission">REST API Reference for AddPermission Operation</seealso>
-        public Task<AddPermissionResponse> AddPermissionAsync(string topicArn, string label, List<string> awsAccountId, List<string> actionName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<AddPermissionResponse> AddPermissionAsync(string topicArn, string label, List<string> awsAccountId, List<string> actionName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new AddPermissionRequest();
             request.TopicArn = topicArn;
@@ -354,7 +354,7 @@ namespace Amazon.SimpleNotificationService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/AddPermission">REST API Reference for AddPermission Operation</seealso>
-        public Task<AddPermissionResponse> AddPermissionAsync(AddPermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<AddPermissionResponse> AddPermissionAsync(AddPermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AddPermissionRequestMarshaller();
             var unmarshaller = AddPermissionResponseUnmarshaller.Instance;
@@ -396,7 +396,7 @@ namespace Amazon.SimpleNotificationService
         /// the limit for your account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CheckIfPhoneNumberIsOptedOut">REST API Reference for CheckIfPhoneNumberIsOptedOut Operation</seealso>
-        public CheckIfPhoneNumberIsOptedOutResponse CheckIfPhoneNumberIsOptedOut(CheckIfPhoneNumberIsOptedOutRequest request)
+        public virtual CheckIfPhoneNumberIsOptedOutResponse CheckIfPhoneNumberIsOptedOut(CheckIfPhoneNumberIsOptedOutRequest request)
         {
             var marshaller = new CheckIfPhoneNumberIsOptedOutRequestMarshaller();
             var unmarshaller = CheckIfPhoneNumberIsOptedOutResponseUnmarshaller.Instance;
@@ -414,7 +414,7 @@ namespace Amazon.SimpleNotificationService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CheckIfPhoneNumberIsOptedOut">REST API Reference for CheckIfPhoneNumberIsOptedOut Operation</seealso>
-        public Task<CheckIfPhoneNumberIsOptedOutResponse> CheckIfPhoneNumberIsOptedOutAsync(CheckIfPhoneNumberIsOptedOutRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CheckIfPhoneNumberIsOptedOutResponse> CheckIfPhoneNumberIsOptedOutAsync(CheckIfPhoneNumberIsOptedOutRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CheckIfPhoneNumberIsOptedOutRequestMarshaller();
             var unmarshaller = CheckIfPhoneNumberIsOptedOutResponseUnmarshaller.Instance;
@@ -456,7 +456,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the customer already owns the maximum allowed number of subscriptions.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ConfirmSubscription">REST API Reference for ConfirmSubscription Operation</seealso>
-        public ConfirmSubscriptionResponse ConfirmSubscription(string topicArn, string token, string authenticateOnUnsubscribe)
+        public virtual ConfirmSubscriptionResponse ConfirmSubscription(string topicArn, string token, string authenticateOnUnsubscribe)
         {
             var request = new ConfirmSubscriptionRequest();
             request.TopicArn = topicArn;
@@ -493,7 +493,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the customer already owns the maximum allowed number of subscriptions.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ConfirmSubscription">REST API Reference for ConfirmSubscription Operation</seealso>
-        public ConfirmSubscriptionResponse ConfirmSubscription(string topicArn, string token)
+        public virtual ConfirmSubscriptionResponse ConfirmSubscription(string topicArn, string token)
         {
             var request = new ConfirmSubscriptionRequest();
             request.TopicArn = topicArn;
@@ -528,7 +528,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the customer already owns the maximum allowed number of subscriptions.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ConfirmSubscription">REST API Reference for ConfirmSubscription Operation</seealso>
-        public ConfirmSubscriptionResponse ConfirmSubscription(ConfirmSubscriptionRequest request)
+        public virtual ConfirmSubscriptionResponse ConfirmSubscription(ConfirmSubscriptionRequest request)
         {
             var marshaller = new ConfirmSubscriptionRequestMarshaller();
             var unmarshaller = ConfirmSubscriptionResponseUnmarshaller.Instance;
@@ -568,7 +568,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the customer already owns the maximum allowed number of subscriptions.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ConfirmSubscription">REST API Reference for ConfirmSubscription Operation</seealso>
-        public Task<ConfirmSubscriptionResponse> ConfirmSubscriptionAsync(string topicArn, string token, string authenticateOnUnsubscribe, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ConfirmSubscriptionResponse> ConfirmSubscriptionAsync(string topicArn, string token, string authenticateOnUnsubscribe, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new ConfirmSubscriptionRequest();
             request.TopicArn = topicArn;
@@ -608,7 +608,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the customer already owns the maximum allowed number of subscriptions.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ConfirmSubscription">REST API Reference for ConfirmSubscription Operation</seealso>
-        public Task<ConfirmSubscriptionResponse> ConfirmSubscriptionAsync(string topicArn, string token, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ConfirmSubscriptionResponse> ConfirmSubscriptionAsync(string topicArn, string token, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new ConfirmSubscriptionRequest();
             request.TopicArn = topicArn;
@@ -626,7 +626,7 @@ namespace Amazon.SimpleNotificationService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ConfirmSubscription">REST API Reference for ConfirmSubscription Operation</seealso>
-        public Task<ConfirmSubscriptionResponse> ConfirmSubscriptionAsync(ConfirmSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ConfirmSubscriptionResponse> ConfirmSubscriptionAsync(ConfirmSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ConfirmSubscriptionRequestMarshaller();
             var unmarshaller = ConfirmSubscriptionResponseUnmarshaller.Instance;
@@ -683,7 +683,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreatePlatformApplication">REST API Reference for CreatePlatformApplication Operation</seealso>
-        public CreatePlatformApplicationResponse CreatePlatformApplication(CreatePlatformApplicationRequest request)
+        public virtual CreatePlatformApplicationResponse CreatePlatformApplication(CreatePlatformApplicationRequest request)
         {
             var marshaller = new CreatePlatformApplicationRequestMarshaller();
             var unmarshaller = CreatePlatformApplicationResponseUnmarshaller.Instance;
@@ -701,7 +701,7 @@ namespace Amazon.SimpleNotificationService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreatePlatformApplication">REST API Reference for CreatePlatformApplication Operation</seealso>
-        public Task<CreatePlatformApplicationResponse> CreatePlatformApplicationAsync(CreatePlatformApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreatePlatformApplicationResponse> CreatePlatformApplicationAsync(CreatePlatformApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreatePlatformApplicationRequestMarshaller();
             var unmarshaller = CreatePlatformApplicationResponseUnmarshaller.Instance;
@@ -751,7 +751,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the requested resource does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreatePlatformEndpoint">REST API Reference for CreatePlatformEndpoint Operation</seealso>
-        public CreatePlatformEndpointResponse CreatePlatformEndpoint(CreatePlatformEndpointRequest request)
+        public virtual CreatePlatformEndpointResponse CreatePlatformEndpoint(CreatePlatformEndpointRequest request)
         {
             var marshaller = new CreatePlatformEndpointRequestMarshaller();
             var unmarshaller = CreatePlatformEndpointResponseUnmarshaller.Instance;
@@ -769,7 +769,7 @@ namespace Amazon.SimpleNotificationService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreatePlatformEndpoint">REST API Reference for CreatePlatformEndpoint Operation</seealso>
-        public Task<CreatePlatformEndpointResponse> CreatePlatformEndpointAsync(CreatePlatformEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreatePlatformEndpointResponse> CreatePlatformEndpointAsync(CreatePlatformEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreatePlatformEndpointRequestMarshaller();
             var unmarshaller = CreatePlatformEndpointResponseUnmarshaller.Instance;
@@ -805,7 +805,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the customer already owns the maximum allowed number of topics.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreateTopic">REST API Reference for CreateTopic Operation</seealso>
-        public CreateTopicResponse CreateTopic(string name)
+        public virtual CreateTopicResponse CreateTopic(string name)
         {
             var request = new CreateTopicRequest();
             request.Name = name;
@@ -835,7 +835,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the customer already owns the maximum allowed number of topics.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreateTopic">REST API Reference for CreateTopic Operation</seealso>
-        public CreateTopicResponse CreateTopic(CreateTopicRequest request)
+        public virtual CreateTopicResponse CreateTopic(CreateTopicRequest request)
         {
             var marshaller = new CreateTopicRequestMarshaller();
             var unmarshaller = CreateTopicResponseUnmarshaller.Instance;
@@ -869,7 +869,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the customer already owns the maximum allowed number of topics.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreateTopic">REST API Reference for CreateTopic Operation</seealso>
-        public Task<CreateTopicResponse> CreateTopicAsync(string name, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateTopicResponse> CreateTopicAsync(string name, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new CreateTopicRequest();
             request.Name = name;
@@ -886,7 +886,7 @@ namespace Amazon.SimpleNotificationService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreateTopic">REST API Reference for CreateTopic Operation</seealso>
-        public Task<CreateTopicResponse> CreateTopicAsync(CreateTopicRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateTopicResponse> CreateTopicAsync(CreateTopicRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateTopicRequestMarshaller();
             var unmarshaller = CreateTopicResponseUnmarshaller.Instance;
@@ -924,7 +924,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeleteEndpoint">REST API Reference for DeleteEndpoint Operation</seealso>
-        public DeleteEndpointResponse DeleteEndpoint(DeleteEndpointRequest request)
+        public virtual DeleteEndpointResponse DeleteEndpoint(DeleteEndpointRequest request)
         {
             var marshaller = new DeleteEndpointRequestMarshaller();
             var unmarshaller = DeleteEndpointResponseUnmarshaller.Instance;
@@ -942,7 +942,7 @@ namespace Amazon.SimpleNotificationService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeleteEndpoint">REST API Reference for DeleteEndpoint Operation</seealso>
-        public Task<DeleteEndpointResponse> DeleteEndpointAsync(DeleteEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteEndpointResponse> DeleteEndpointAsync(DeleteEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteEndpointRequestMarshaller();
             var unmarshaller = DeleteEndpointResponseUnmarshaller.Instance;
@@ -974,7 +974,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeletePlatformApplication">REST API Reference for DeletePlatformApplication Operation</seealso>
-        public DeletePlatformApplicationResponse DeletePlatformApplication(DeletePlatformApplicationRequest request)
+        public virtual DeletePlatformApplicationResponse DeletePlatformApplication(DeletePlatformApplicationRequest request)
         {
             var marshaller = new DeletePlatformApplicationRequestMarshaller();
             var unmarshaller = DeletePlatformApplicationResponseUnmarshaller.Instance;
@@ -992,7 +992,7 @@ namespace Amazon.SimpleNotificationService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeletePlatformApplication">REST API Reference for DeletePlatformApplication Operation</seealso>
-        public Task<DeletePlatformApplicationResponse> DeletePlatformApplicationAsync(DeletePlatformApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeletePlatformApplicationResponse> DeletePlatformApplicationAsync(DeletePlatformApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeletePlatformApplicationRequestMarshaller();
             var unmarshaller = DeletePlatformApplicationResponseUnmarshaller.Instance;
@@ -1027,7 +1027,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the requested resource does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeleteTopic">REST API Reference for DeleteTopic Operation</seealso>
-        public DeleteTopicResponse DeleteTopic(string topicArn)
+        public virtual DeleteTopicResponse DeleteTopic(string topicArn)
         {
             var request = new DeleteTopicRequest();
             request.TopicArn = topicArn;
@@ -1056,7 +1056,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the requested resource does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeleteTopic">REST API Reference for DeleteTopic Operation</seealso>
-        public DeleteTopicResponse DeleteTopic(DeleteTopicRequest request)
+        public virtual DeleteTopicResponse DeleteTopic(DeleteTopicRequest request)
         {
             var marshaller = new DeleteTopicRequestMarshaller();
             var unmarshaller = DeleteTopicResponseUnmarshaller.Instance;
@@ -1089,7 +1089,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the requested resource does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeleteTopic">REST API Reference for DeleteTopic Operation</seealso>
-        public Task<DeleteTopicResponse> DeleteTopicAsync(string topicArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteTopicResponse> DeleteTopicAsync(string topicArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DeleteTopicRequest();
             request.TopicArn = topicArn;
@@ -1106,7 +1106,7 @@ namespace Amazon.SimpleNotificationService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeleteTopic">REST API Reference for DeleteTopic Operation</seealso>
-        public Task<DeleteTopicResponse> DeleteTopicAsync(DeleteTopicRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteTopicResponse> DeleteTopicAsync(DeleteTopicRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteTopicRequestMarshaller();
             var unmarshaller = DeleteTopicResponseUnmarshaller.Instance;
@@ -1141,7 +1141,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the requested resource does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetEndpointAttributes">REST API Reference for GetEndpointAttributes Operation</seealso>
-        public GetEndpointAttributesResponse GetEndpointAttributes(GetEndpointAttributesRequest request)
+        public virtual GetEndpointAttributesResponse GetEndpointAttributes(GetEndpointAttributesRequest request)
         {
             var marshaller = new GetEndpointAttributesRequestMarshaller();
             var unmarshaller = GetEndpointAttributesResponseUnmarshaller.Instance;
@@ -1159,7 +1159,7 @@ namespace Amazon.SimpleNotificationService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetEndpointAttributes">REST API Reference for GetEndpointAttributes Operation</seealso>
-        public Task<GetEndpointAttributesResponse> GetEndpointAttributesAsync(GetEndpointAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetEndpointAttributesResponse> GetEndpointAttributesAsync(GetEndpointAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetEndpointAttributesRequestMarshaller();
             var unmarshaller = GetEndpointAttributesResponseUnmarshaller.Instance;
@@ -1194,7 +1194,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the requested resource does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetPlatformApplicationAttributes">REST API Reference for GetPlatformApplicationAttributes Operation</seealso>
-        public GetPlatformApplicationAttributesResponse GetPlatformApplicationAttributes(GetPlatformApplicationAttributesRequest request)
+        public virtual GetPlatformApplicationAttributesResponse GetPlatformApplicationAttributes(GetPlatformApplicationAttributesRequest request)
         {
             var marshaller = new GetPlatformApplicationAttributesRequestMarshaller();
             var unmarshaller = GetPlatformApplicationAttributesResponseUnmarshaller.Instance;
@@ -1212,7 +1212,7 @@ namespace Amazon.SimpleNotificationService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetPlatformApplicationAttributes">REST API Reference for GetPlatformApplicationAttributes Operation</seealso>
-        public Task<GetPlatformApplicationAttributesResponse> GetPlatformApplicationAttributesAsync(GetPlatformApplicationAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetPlatformApplicationAttributesResponse> GetPlatformApplicationAttributesAsync(GetPlatformApplicationAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetPlatformApplicationAttributesRequestMarshaller();
             var unmarshaller = GetPlatformApplicationAttributesResponseUnmarshaller.Instance;
@@ -1251,7 +1251,7 @@ namespace Amazon.SimpleNotificationService
         /// the limit for your account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSMSAttributes">REST API Reference for GetSMSAttributes Operation</seealso>
-        public GetSMSAttributesResponse GetSMSAttributes(GetSMSAttributesRequest request)
+        public virtual GetSMSAttributesResponse GetSMSAttributes(GetSMSAttributesRequest request)
         {
             var marshaller = new GetSMSAttributesRequestMarshaller();
             var unmarshaller = GetSMSAttributesResponseUnmarshaller.Instance;
@@ -1269,7 +1269,7 @@ namespace Amazon.SimpleNotificationService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSMSAttributes">REST API Reference for GetSMSAttributes Operation</seealso>
-        public Task<GetSMSAttributesResponse> GetSMSAttributesAsync(GetSMSAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetSMSAttributesResponse> GetSMSAttributesAsync(GetSMSAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetSMSAttributesRequestMarshaller();
             var unmarshaller = GetSMSAttributesResponseUnmarshaller.Instance;
@@ -1302,7 +1302,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the requested resource does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSubscriptionAttributes">REST API Reference for GetSubscriptionAttributes Operation</seealso>
-        public GetSubscriptionAttributesResponse GetSubscriptionAttributes(string subscriptionArn)
+        public virtual GetSubscriptionAttributesResponse GetSubscriptionAttributes(string subscriptionArn)
         {
             var request = new GetSubscriptionAttributesRequest();
             request.SubscriptionArn = subscriptionArn;
@@ -1329,7 +1329,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the requested resource does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSubscriptionAttributes">REST API Reference for GetSubscriptionAttributes Operation</seealso>
-        public GetSubscriptionAttributesResponse GetSubscriptionAttributes(GetSubscriptionAttributesRequest request)
+        public virtual GetSubscriptionAttributesResponse GetSubscriptionAttributes(GetSubscriptionAttributesRequest request)
         {
             var marshaller = new GetSubscriptionAttributesRequestMarshaller();
             var unmarshaller = GetSubscriptionAttributesResponseUnmarshaller.Instance;
@@ -1360,7 +1360,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the requested resource does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSubscriptionAttributes">REST API Reference for GetSubscriptionAttributes Operation</seealso>
-        public Task<GetSubscriptionAttributesResponse> GetSubscriptionAttributesAsync(string subscriptionArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetSubscriptionAttributesResponse> GetSubscriptionAttributesAsync(string subscriptionArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new GetSubscriptionAttributesRequest();
             request.SubscriptionArn = subscriptionArn;
@@ -1377,7 +1377,7 @@ namespace Amazon.SimpleNotificationService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSubscriptionAttributes">REST API Reference for GetSubscriptionAttributes Operation</seealso>
-        public Task<GetSubscriptionAttributesResponse> GetSubscriptionAttributesAsync(GetSubscriptionAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetSubscriptionAttributesResponse> GetSubscriptionAttributesAsync(GetSubscriptionAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetSubscriptionAttributesRequestMarshaller();
             var unmarshaller = GetSubscriptionAttributesResponseUnmarshaller.Instance;
@@ -1411,7 +1411,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the requested resource does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetTopicAttributes">REST API Reference for GetTopicAttributes Operation</seealso>
-        public GetTopicAttributesResponse GetTopicAttributes(string topicArn)
+        public virtual GetTopicAttributesResponse GetTopicAttributes(string topicArn)
         {
             var request = new GetTopicAttributesRequest();
             request.TopicArn = topicArn;
@@ -1439,7 +1439,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the requested resource does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetTopicAttributes">REST API Reference for GetTopicAttributes Operation</seealso>
-        public GetTopicAttributesResponse GetTopicAttributes(GetTopicAttributesRequest request)
+        public virtual GetTopicAttributesResponse GetTopicAttributes(GetTopicAttributesRequest request)
         {
             var marshaller = new GetTopicAttributesRequestMarshaller();
             var unmarshaller = GetTopicAttributesResponseUnmarshaller.Instance;
@@ -1471,7 +1471,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the requested resource does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetTopicAttributes">REST API Reference for GetTopicAttributes Operation</seealso>
-        public Task<GetTopicAttributesResponse> GetTopicAttributesAsync(string topicArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetTopicAttributesResponse> GetTopicAttributesAsync(string topicArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new GetTopicAttributesRequest();
             request.TopicArn = topicArn;
@@ -1488,7 +1488,7 @@ namespace Amazon.SimpleNotificationService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetTopicAttributes">REST API Reference for GetTopicAttributes Operation</seealso>
-        public Task<GetTopicAttributesResponse> GetTopicAttributesAsync(GetTopicAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetTopicAttributesResponse> GetTopicAttributesAsync(GetTopicAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetTopicAttributesRequestMarshaller();
             var unmarshaller = GetTopicAttributesResponseUnmarshaller.Instance;
@@ -1528,7 +1528,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the requested resource does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListEndpointsByPlatformApplication">REST API Reference for ListEndpointsByPlatformApplication Operation</seealso>
-        public ListEndpointsByPlatformApplicationResponse ListEndpointsByPlatformApplication(ListEndpointsByPlatformApplicationRequest request)
+        public virtual ListEndpointsByPlatformApplicationResponse ListEndpointsByPlatformApplication(ListEndpointsByPlatformApplicationRequest request)
         {
             var marshaller = new ListEndpointsByPlatformApplicationRequestMarshaller();
             var unmarshaller = ListEndpointsByPlatformApplicationResponseUnmarshaller.Instance;
@@ -1546,7 +1546,7 @@ namespace Amazon.SimpleNotificationService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListEndpointsByPlatformApplication">REST API Reference for ListEndpointsByPlatformApplication Operation</seealso>
-        public Task<ListEndpointsByPlatformApplicationResponse> ListEndpointsByPlatformApplicationAsync(ListEndpointsByPlatformApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListEndpointsByPlatformApplicationResponse> ListEndpointsByPlatformApplicationAsync(ListEndpointsByPlatformApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListEndpointsByPlatformApplicationRequestMarshaller();
             var unmarshaller = ListEndpointsByPlatformApplicationResponseUnmarshaller.Instance;
@@ -1591,7 +1591,7 @@ namespace Amazon.SimpleNotificationService
         /// the limit for your account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPhoneNumbersOptedOut">REST API Reference for ListPhoneNumbersOptedOut Operation</seealso>
-        public ListPhoneNumbersOptedOutResponse ListPhoneNumbersOptedOut(ListPhoneNumbersOptedOutRequest request)
+        public virtual ListPhoneNumbersOptedOutResponse ListPhoneNumbersOptedOut(ListPhoneNumbersOptedOutRequest request)
         {
             var marshaller = new ListPhoneNumbersOptedOutRequestMarshaller();
             var unmarshaller = ListPhoneNumbersOptedOutResponseUnmarshaller.Instance;
@@ -1609,7 +1609,7 @@ namespace Amazon.SimpleNotificationService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPhoneNumbersOptedOut">REST API Reference for ListPhoneNumbersOptedOut Operation</seealso>
-        public Task<ListPhoneNumbersOptedOutResponse> ListPhoneNumbersOptedOutAsync(ListPhoneNumbersOptedOutRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListPhoneNumbersOptedOutResponse> ListPhoneNumbersOptedOutAsync(ListPhoneNumbersOptedOutRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListPhoneNumbersOptedOutRequestMarshaller();
             var unmarshaller = ListPhoneNumbersOptedOutResponseUnmarshaller.Instance;
@@ -1645,7 +1645,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPlatformApplications">REST API Reference for ListPlatformApplications Operation</seealso>
-        public ListPlatformApplicationsResponse ListPlatformApplications()
+        public virtual ListPlatformApplicationsResponse ListPlatformApplications()
         {
             return ListPlatformApplications(new ListPlatformApplicationsRequest());
         }
@@ -1674,7 +1674,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPlatformApplications">REST API Reference for ListPlatformApplications Operation</seealso>
-        public ListPlatformApplicationsResponse ListPlatformApplications(ListPlatformApplicationsRequest request)
+        public virtual ListPlatformApplicationsResponse ListPlatformApplications(ListPlatformApplicationsRequest request)
         {
             var marshaller = new ListPlatformApplicationsRequestMarshaller();
             var unmarshaller = ListPlatformApplicationsResponseUnmarshaller.Instance;
@@ -1708,7 +1708,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPlatformApplications">REST API Reference for ListPlatformApplications Operation</seealso>
-        public Task<ListPlatformApplicationsResponse> ListPlatformApplicationsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListPlatformApplicationsResponse> ListPlatformApplicationsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return ListPlatformApplicationsAsync(new ListPlatformApplicationsRequest(), cancellationToken);
         }
@@ -1722,7 +1722,7 @@ namespace Amazon.SimpleNotificationService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPlatformApplications">REST API Reference for ListPlatformApplications Operation</seealso>
-        public Task<ListPlatformApplicationsResponse> ListPlatformApplicationsAsync(ListPlatformApplicationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListPlatformApplicationsResponse> ListPlatformApplicationsAsync(ListPlatformApplicationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListPlatformApplicationsRequestMarshaller();
             var unmarshaller = ListPlatformApplicationsResponseUnmarshaller.Instance;
@@ -1754,7 +1754,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptions">REST API Reference for ListSubscriptions Operation</seealso>
-        public ListSubscriptionsResponse ListSubscriptions()
+        public virtual ListSubscriptionsResponse ListSubscriptions()
         {
             return ListSubscriptions(new ListSubscriptionsRequest());
         }
@@ -1779,7 +1779,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptions">REST API Reference for ListSubscriptions Operation</seealso>
-        public ListSubscriptionsResponse ListSubscriptions(string nextToken)
+        public virtual ListSubscriptionsResponse ListSubscriptions(string nextToken)
         {
             var request = new ListSubscriptionsRequest();
             request.NextToken = nextToken;
@@ -1806,7 +1806,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptions">REST API Reference for ListSubscriptions Operation</seealso>
-        public ListSubscriptionsResponse ListSubscriptions(ListSubscriptionsRequest request)
+        public virtual ListSubscriptionsResponse ListSubscriptions(ListSubscriptionsRequest request)
         {
             var marshaller = new ListSubscriptionsRequestMarshaller();
             var unmarshaller = ListSubscriptionsResponseUnmarshaller.Instance;
@@ -1836,7 +1836,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptions">REST API Reference for ListSubscriptions Operation</seealso>
-        public Task<ListSubscriptionsResponse> ListSubscriptionsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListSubscriptionsResponse> ListSubscriptionsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return ListSubscriptionsAsync(new ListSubscriptionsRequest(), cancellationToken);
         }
@@ -1863,7 +1863,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptions">REST API Reference for ListSubscriptions Operation</seealso>
-        public Task<ListSubscriptionsResponse> ListSubscriptionsAsync(string nextToken, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListSubscriptionsResponse> ListSubscriptionsAsync(string nextToken, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new ListSubscriptionsRequest();
             request.NextToken = nextToken;
@@ -1880,7 +1880,7 @@ namespace Amazon.SimpleNotificationService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptions">REST API Reference for ListSubscriptions Operation</seealso>
-        public Task<ListSubscriptionsResponse> ListSubscriptionsAsync(ListSubscriptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListSubscriptionsResponse> ListSubscriptionsAsync(ListSubscriptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListSubscriptionsRequestMarshaller();
             var unmarshaller = ListSubscriptionsResponseUnmarshaller.Instance;
@@ -1917,7 +1917,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the requested resource does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptionsByTopic">REST API Reference for ListSubscriptionsByTopic Operation</seealso>
-        public ListSubscriptionsByTopicResponse ListSubscriptionsByTopic(string topicArn, string nextToken)
+        public virtual ListSubscriptionsByTopicResponse ListSubscriptionsByTopic(string topicArn, string nextToken)
         {
             var request = new ListSubscriptionsByTopicRequest();
             request.TopicArn = topicArn;
@@ -1948,7 +1948,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the requested resource does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptionsByTopic">REST API Reference for ListSubscriptionsByTopic Operation</seealso>
-        public ListSubscriptionsByTopicResponse ListSubscriptionsByTopic(string topicArn)
+        public virtual ListSubscriptionsByTopicResponse ListSubscriptionsByTopic(string topicArn)
         {
             var request = new ListSubscriptionsByTopicRequest();
             request.TopicArn = topicArn;
@@ -1978,7 +1978,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the requested resource does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptionsByTopic">REST API Reference for ListSubscriptionsByTopic Operation</seealso>
-        public ListSubscriptionsByTopicResponse ListSubscriptionsByTopic(ListSubscriptionsByTopicRequest request)
+        public virtual ListSubscriptionsByTopicResponse ListSubscriptionsByTopic(ListSubscriptionsByTopicRequest request)
         {
             var marshaller = new ListSubscriptionsByTopicRequestMarshaller();
             var unmarshaller = ListSubscriptionsByTopicResponseUnmarshaller.Instance;
@@ -2013,7 +2013,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the requested resource does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptionsByTopic">REST API Reference for ListSubscriptionsByTopic Operation</seealso>
-        public Task<ListSubscriptionsByTopicResponse> ListSubscriptionsByTopicAsync(string topicArn, string nextToken, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListSubscriptionsByTopicResponse> ListSubscriptionsByTopicAsync(string topicArn, string nextToken, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new ListSubscriptionsByTopicRequest();
             request.TopicArn = topicArn;
@@ -2047,7 +2047,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the requested resource does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptionsByTopic">REST API Reference for ListSubscriptionsByTopic Operation</seealso>
-        public Task<ListSubscriptionsByTopicResponse> ListSubscriptionsByTopicAsync(string topicArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListSubscriptionsByTopicResponse> ListSubscriptionsByTopicAsync(string topicArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new ListSubscriptionsByTopicRequest();
             request.TopicArn = topicArn;
@@ -2064,7 +2064,7 @@ namespace Amazon.SimpleNotificationService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptionsByTopic">REST API Reference for ListSubscriptionsByTopic Operation</seealso>
-        public Task<ListSubscriptionsByTopicResponse> ListSubscriptionsByTopicAsync(ListSubscriptionsByTopicRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListSubscriptionsByTopicResponse> ListSubscriptionsByTopicAsync(ListSubscriptionsByTopicRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListSubscriptionsByTopicRequestMarshaller();
             var unmarshaller = ListSubscriptionsByTopicResponseUnmarshaller.Instance;
@@ -2096,7 +2096,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListTopics">REST API Reference for ListTopics Operation</seealso>
-        public ListTopicsResponse ListTopics()
+        public virtual ListTopicsResponse ListTopics()
         {
             return ListTopics(new ListTopicsRequest());
         }
@@ -2121,7 +2121,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListTopics">REST API Reference for ListTopics Operation</seealso>
-        public ListTopicsResponse ListTopics(string nextToken)
+        public virtual ListTopicsResponse ListTopics(string nextToken)
         {
             var request = new ListTopicsRequest();
             request.NextToken = nextToken;
@@ -2148,7 +2148,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListTopics">REST API Reference for ListTopics Operation</seealso>
-        public ListTopicsResponse ListTopics(ListTopicsRequest request)
+        public virtual ListTopicsResponse ListTopics(ListTopicsRequest request)
         {
             var marshaller = new ListTopicsRequestMarshaller();
             var unmarshaller = ListTopicsResponseUnmarshaller.Instance;
@@ -2178,7 +2178,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListTopics">REST API Reference for ListTopics Operation</seealso>
-        public Task<ListTopicsResponse> ListTopicsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListTopicsResponse> ListTopicsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return ListTopicsAsync(new ListTopicsRequest(), cancellationToken);
         }
@@ -2205,7 +2205,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListTopics">REST API Reference for ListTopics Operation</seealso>
-        public Task<ListTopicsResponse> ListTopicsAsync(string nextToken, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListTopicsResponse> ListTopicsAsync(string nextToken, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new ListTopicsRequest();
             request.NextToken = nextToken;
@@ -2222,7 +2222,7 @@ namespace Amazon.SimpleNotificationService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListTopics">REST API Reference for ListTopics Operation</seealso>
-        public Task<ListTopicsResponse> ListTopicsAsync(ListTopicsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListTopicsResponse> ListTopicsAsync(ListTopicsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListTopicsRequestMarshaller();
             var unmarshaller = ListTopicsResponseUnmarshaller.Instance;
@@ -2262,7 +2262,7 @@ namespace Amazon.SimpleNotificationService
         /// the limit for your account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/OptInPhoneNumber">REST API Reference for OptInPhoneNumber Operation</seealso>
-        public OptInPhoneNumberResponse OptInPhoneNumber(OptInPhoneNumberRequest request)
+        public virtual OptInPhoneNumberResponse OptInPhoneNumber(OptInPhoneNumberRequest request)
         {
             var marshaller = new OptInPhoneNumberRequestMarshaller();
             var unmarshaller = OptInPhoneNumberResponseUnmarshaller.Instance;
@@ -2280,7 +2280,7 @@ namespace Amazon.SimpleNotificationService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/OptInPhoneNumber">REST API Reference for OptInPhoneNumber Operation</seealso>
-        public Task<OptInPhoneNumberResponse> OptInPhoneNumberAsync(OptInPhoneNumberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<OptInPhoneNumberResponse> OptInPhoneNumberAsync(OptInPhoneNumberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new OptInPhoneNumberRequestMarshaller();
             var unmarshaller = OptInPhoneNumberResponseUnmarshaller.Instance;
@@ -2339,7 +2339,7 @@ namespace Amazon.SimpleNotificationService
         /// Exception error indicating platform application disabled.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Publish">REST API Reference for Publish Operation</seealso>
-        public PublishResponse Publish(string topicArn, string message)
+        public virtual PublishResponse Publish(string topicArn, string message)
         {
             var request = new PublishRequest();
             request.TopicArn = topicArn;
@@ -2394,7 +2394,7 @@ namespace Amazon.SimpleNotificationService
         /// Exception error indicating platform application disabled.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Publish">REST API Reference for Publish Operation</seealso>
-        public PublishResponse Publish(string topicArn, string message, string subject)
+        public virtual PublishResponse Publish(string topicArn, string message, string subject)
         {
             var request = new PublishRequest();
             request.TopicArn = topicArn;
@@ -2448,7 +2448,7 @@ namespace Amazon.SimpleNotificationService
         /// Exception error indicating platform application disabled.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Publish">REST API Reference for Publish Operation</seealso>
-        public PublishResponse Publish(PublishRequest request)
+        public virtual PublishResponse Publish(PublishRequest request)
         {
             var marshaller = new PublishRequestMarshaller();
             var unmarshaller = PublishResponseUnmarshaller.Instance;
@@ -2505,7 +2505,7 @@ namespace Amazon.SimpleNotificationService
         /// Exception error indicating platform application disabled.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Publish">REST API Reference for Publish Operation</seealso>
-        public Task<PublishResponse> PublishAsync(string topicArn, string message, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PublishResponse> PublishAsync(string topicArn, string message, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new PublishRequest();
             request.TopicArn = topicArn;
@@ -2563,7 +2563,7 @@ namespace Amazon.SimpleNotificationService
         /// Exception error indicating platform application disabled.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Publish">REST API Reference for Publish Operation</seealso>
-        public Task<PublishResponse> PublishAsync(string topicArn, string message, string subject, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PublishResponse> PublishAsync(string topicArn, string message, string subject, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new PublishRequest();
             request.TopicArn = topicArn;
@@ -2582,7 +2582,7 @@ namespace Amazon.SimpleNotificationService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Publish">REST API Reference for Publish Operation</seealso>
-        public Task<PublishResponse> PublishAsync(PublishRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PublishResponse> PublishAsync(PublishRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PublishRequestMarshaller();
             var unmarshaller = PublishResponseUnmarshaller.Instance;
@@ -2616,7 +2616,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the requested resource does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
-        public RemovePermissionResponse RemovePermission(string topicArn, string label)
+        public virtual RemovePermissionResponse RemovePermission(string topicArn, string label)
         {
             var request = new RemovePermissionRequest();
             request.TopicArn = topicArn;
@@ -2644,7 +2644,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the requested resource does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
-        public RemovePermissionResponse RemovePermission(RemovePermissionRequest request)
+        public virtual RemovePermissionResponse RemovePermission(RemovePermissionRequest request)
         {
             var marshaller = new RemovePermissionRequestMarshaller();
             var unmarshaller = RemovePermissionResponseUnmarshaller.Instance;
@@ -2676,7 +2676,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the requested resource does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
-        public Task<RemovePermissionResponse> RemovePermissionAsync(string topicArn, string label, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<RemovePermissionResponse> RemovePermissionAsync(string topicArn, string label, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new RemovePermissionRequest();
             request.TopicArn = topicArn;
@@ -2694,7 +2694,7 @@ namespace Amazon.SimpleNotificationService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
-        public Task<RemovePermissionResponse> RemovePermissionAsync(RemovePermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<RemovePermissionResponse> RemovePermissionAsync(RemovePermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RemovePermissionRequestMarshaller();
             var unmarshaller = RemovePermissionResponseUnmarshaller.Instance;
@@ -2729,7 +2729,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the requested resource does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetEndpointAttributes">REST API Reference for SetEndpointAttributes Operation</seealso>
-        public SetEndpointAttributesResponse SetEndpointAttributes(SetEndpointAttributesRequest request)
+        public virtual SetEndpointAttributesResponse SetEndpointAttributes(SetEndpointAttributesRequest request)
         {
             var marshaller = new SetEndpointAttributesRequestMarshaller();
             var unmarshaller = SetEndpointAttributesResponseUnmarshaller.Instance;
@@ -2747,7 +2747,7 @@ namespace Amazon.SimpleNotificationService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetEndpointAttributes">REST API Reference for SetEndpointAttributes Operation</seealso>
-        public Task<SetEndpointAttributesResponse> SetEndpointAttributesAsync(SetEndpointAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<SetEndpointAttributesResponse> SetEndpointAttributesAsync(SetEndpointAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SetEndpointAttributesRequestMarshaller();
             var unmarshaller = SetEndpointAttributesResponseUnmarshaller.Instance;
@@ -2784,7 +2784,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the requested resource does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetPlatformApplicationAttributes">REST API Reference for SetPlatformApplicationAttributes Operation</seealso>
-        public SetPlatformApplicationAttributesResponse SetPlatformApplicationAttributes(SetPlatformApplicationAttributesRequest request)
+        public virtual SetPlatformApplicationAttributesResponse SetPlatformApplicationAttributes(SetPlatformApplicationAttributesRequest request)
         {
             var marshaller = new SetPlatformApplicationAttributesRequestMarshaller();
             var unmarshaller = SetPlatformApplicationAttributesResponseUnmarshaller.Instance;
@@ -2802,7 +2802,7 @@ namespace Amazon.SimpleNotificationService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetPlatformApplicationAttributes">REST API Reference for SetPlatformApplicationAttributes Operation</seealso>
-        public Task<SetPlatformApplicationAttributesResponse> SetPlatformApplicationAttributesAsync(SetPlatformApplicationAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<SetPlatformApplicationAttributesResponse> SetPlatformApplicationAttributesAsync(SetPlatformApplicationAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SetPlatformApplicationAttributesRequestMarshaller();
             var unmarshaller = SetPlatformApplicationAttributesResponseUnmarshaller.Instance;
@@ -2845,7 +2845,7 @@ namespace Amazon.SimpleNotificationService
         /// the limit for your account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSMSAttributes">REST API Reference for SetSMSAttributes Operation</seealso>
-        public SetSMSAttributesResponse SetSMSAttributes(SetSMSAttributesRequest request)
+        public virtual SetSMSAttributesResponse SetSMSAttributes(SetSMSAttributesRequest request)
         {
             var marshaller = new SetSMSAttributesRequestMarshaller();
             var unmarshaller = SetSMSAttributesResponseUnmarshaller.Instance;
@@ -2863,7 +2863,7 @@ namespace Amazon.SimpleNotificationService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSMSAttributes">REST API Reference for SetSMSAttributes Operation</seealso>
-        public Task<SetSMSAttributesResponse> SetSMSAttributesAsync(SetSMSAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<SetSMSAttributesResponse> SetSMSAttributesAsync(SetSMSAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SetSMSAttributesRequestMarshaller();
             var unmarshaller = SetSMSAttributesResponseUnmarshaller.Instance;
@@ -2898,7 +2898,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the requested resource does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSubscriptionAttributes">REST API Reference for SetSubscriptionAttributes Operation</seealso>
-        public SetSubscriptionAttributesResponse SetSubscriptionAttributes(string subscriptionArn, string attributeName, string attributeValue)
+        public virtual SetSubscriptionAttributesResponse SetSubscriptionAttributes(string subscriptionArn, string attributeName, string attributeValue)
         {
             var request = new SetSubscriptionAttributesRequest();
             request.SubscriptionArn = subscriptionArn;
@@ -2927,7 +2927,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the requested resource does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSubscriptionAttributes">REST API Reference for SetSubscriptionAttributes Operation</seealso>
-        public SetSubscriptionAttributesResponse SetSubscriptionAttributes(SetSubscriptionAttributesRequest request)
+        public virtual SetSubscriptionAttributesResponse SetSubscriptionAttributes(SetSubscriptionAttributesRequest request)
         {
             var marshaller = new SetSubscriptionAttributesRequestMarshaller();
             var unmarshaller = SetSubscriptionAttributesResponseUnmarshaller.Instance;
@@ -2960,7 +2960,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the requested resource does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSubscriptionAttributes">REST API Reference for SetSubscriptionAttributes Operation</seealso>
-        public Task<SetSubscriptionAttributesResponse> SetSubscriptionAttributesAsync(string subscriptionArn, string attributeName, string attributeValue, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<SetSubscriptionAttributesResponse> SetSubscriptionAttributesAsync(string subscriptionArn, string attributeName, string attributeValue, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new SetSubscriptionAttributesRequest();
             request.SubscriptionArn = subscriptionArn;
@@ -2979,7 +2979,7 @@ namespace Amazon.SimpleNotificationService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSubscriptionAttributes">REST API Reference for SetSubscriptionAttributes Operation</seealso>
-        public Task<SetSubscriptionAttributesResponse> SetSubscriptionAttributesAsync(SetSubscriptionAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<SetSubscriptionAttributesResponse> SetSubscriptionAttributesAsync(SetSubscriptionAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SetSubscriptionAttributesRequestMarshaller();
             var unmarshaller = SetSubscriptionAttributesResponseUnmarshaller.Instance;
@@ -3014,7 +3014,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the requested resource does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetTopicAttributes">REST API Reference for SetTopicAttributes Operation</seealso>
-        public SetTopicAttributesResponse SetTopicAttributes(string topicArn, string attributeName, string attributeValue)
+        public virtual SetTopicAttributesResponse SetTopicAttributes(string topicArn, string attributeName, string attributeValue)
         {
             var request = new SetTopicAttributesRequest();
             request.TopicArn = topicArn;
@@ -3043,7 +3043,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the requested resource does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetTopicAttributes">REST API Reference for SetTopicAttributes Operation</seealso>
-        public SetTopicAttributesResponse SetTopicAttributes(SetTopicAttributesRequest request)
+        public virtual SetTopicAttributesResponse SetTopicAttributes(SetTopicAttributesRequest request)
         {
             var marshaller = new SetTopicAttributesRequestMarshaller();
             var unmarshaller = SetTopicAttributesResponseUnmarshaller.Instance;
@@ -3076,7 +3076,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the requested resource does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetTopicAttributes">REST API Reference for SetTopicAttributes Operation</seealso>
-        public Task<SetTopicAttributesResponse> SetTopicAttributesAsync(string topicArn, string attributeName, string attributeValue, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<SetTopicAttributesResponse> SetTopicAttributesAsync(string topicArn, string attributeName, string attributeValue, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new SetTopicAttributesRequest();
             request.TopicArn = topicArn;
@@ -3095,7 +3095,7 @@ namespace Amazon.SimpleNotificationService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetTopicAttributes">REST API Reference for SetTopicAttributes Operation</seealso>
-        public Task<SetTopicAttributesResponse> SetTopicAttributesAsync(SetTopicAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<SetTopicAttributesResponse> SetTopicAttributesAsync(SetTopicAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SetTopicAttributesRequestMarshaller();
             var unmarshaller = SetTopicAttributesResponseUnmarshaller.Instance;
@@ -3136,7 +3136,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the customer already owns the maximum allowed number of subscriptions.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Subscribe">REST API Reference for Subscribe Operation</seealso>
-        public SubscribeResponse Subscribe(string topicArn, string protocol, string endpoint)
+        public virtual SubscribeResponse Subscribe(string topicArn, string protocol, string endpoint)
         {
             var request = new SubscribeRequest();
             request.TopicArn = topicArn;
@@ -3171,7 +3171,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the customer already owns the maximum allowed number of subscriptions.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Subscribe">REST API Reference for Subscribe Operation</seealso>
-        public SubscribeResponse Subscribe(SubscribeRequest request)
+        public virtual SubscribeResponse Subscribe(SubscribeRequest request)
         {
             var marshaller = new SubscribeRequestMarshaller();
             var unmarshaller = SubscribeResponseUnmarshaller.Instance;
@@ -3210,7 +3210,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the customer already owns the maximum allowed number of subscriptions.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Subscribe">REST API Reference for Subscribe Operation</seealso>
-        public Task<SubscribeResponse> SubscribeAsync(string topicArn, string protocol, string endpoint, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<SubscribeResponse> SubscribeAsync(string topicArn, string protocol, string endpoint, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new SubscribeRequest();
             request.TopicArn = topicArn;
@@ -3229,7 +3229,7 @@ namespace Amazon.SimpleNotificationService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Subscribe">REST API Reference for Subscribe Operation</seealso>
-        public Task<SubscribeResponse> SubscribeAsync(SubscribeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<SubscribeResponse> SubscribeAsync(SubscribeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SubscribeRequestMarshaller();
             var unmarshaller = SubscribeResponseUnmarshaller.Instance;
@@ -3267,7 +3267,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the requested resource does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Unsubscribe">REST API Reference for Unsubscribe Operation</seealso>
-        public UnsubscribeResponse Unsubscribe(string subscriptionArn)
+        public virtual UnsubscribeResponse Unsubscribe(string subscriptionArn)
         {
             var request = new UnsubscribeRequest();
             request.SubscriptionArn = subscriptionArn;
@@ -3299,7 +3299,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the requested resource does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Unsubscribe">REST API Reference for Unsubscribe Operation</seealso>
-        public UnsubscribeResponse Unsubscribe(UnsubscribeRequest request)
+        public virtual UnsubscribeResponse Unsubscribe(UnsubscribeRequest request)
         {
             var marshaller = new UnsubscribeRequestMarshaller();
             var unmarshaller = UnsubscribeResponseUnmarshaller.Instance;
@@ -3335,7 +3335,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the requested resource does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Unsubscribe">REST API Reference for Unsubscribe Operation</seealso>
-        public Task<UnsubscribeResponse> UnsubscribeAsync(string subscriptionArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UnsubscribeResponse> UnsubscribeAsync(string subscriptionArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new UnsubscribeRequest();
             request.SubscriptionArn = subscriptionArn;
@@ -3352,7 +3352,7 @@ namespace Amazon.SimpleNotificationService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Unsubscribe">REST API Reference for Unsubscribe Operation</seealso>
-        public Task<UnsubscribeResponse> UnsubscribeAsync(UnsubscribeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UnsubscribeResponse> UnsubscribeAsync(UnsubscribeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UnsubscribeRequestMarshaller();
             var unmarshaller = UnsubscribeResponseUnmarshaller.Instance;

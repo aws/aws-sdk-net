@@ -321,7 +321,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// The server experienced an internal error. Try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/AssociateConfigurationItemsToApplication">REST API Reference for AssociateConfigurationItemsToApplication Operation</seealso>
-        public AssociateConfigurationItemsToApplicationResponse AssociateConfigurationItemsToApplication(AssociateConfigurationItemsToApplicationRequest request)
+        public virtual AssociateConfigurationItemsToApplicationResponse AssociateConfigurationItemsToApplication(AssociateConfigurationItemsToApplicationRequest request)
         {
             var marshaller = new AssociateConfigurationItemsToApplicationRequestMarshaller();
             var unmarshaller = AssociateConfigurationItemsToApplicationResponseUnmarshaller.Instance;
@@ -341,7 +341,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateConfigurationItemsToApplication
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/AssociateConfigurationItemsToApplication">REST API Reference for AssociateConfigurationItemsToApplication Operation</seealso>
-        public IAsyncResult BeginAssociateConfigurationItemsToApplication(AssociateConfigurationItemsToApplicationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginAssociateConfigurationItemsToApplication(AssociateConfigurationItemsToApplicationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AssociateConfigurationItemsToApplicationRequestMarshaller();
             var unmarshaller = AssociateConfigurationItemsToApplicationResponseUnmarshaller.Instance;
@@ -358,7 +358,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>Returns a  AssociateConfigurationItemsToApplicationResult from ApplicationDiscoveryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/AssociateConfigurationItemsToApplication">REST API Reference for AssociateConfigurationItemsToApplication Operation</seealso>
-        public  AssociateConfigurationItemsToApplicationResponse EndAssociateConfigurationItemsToApplication(IAsyncResult asyncResult)
+        public virtual AssociateConfigurationItemsToApplicationResponse EndAssociateConfigurationItemsToApplication(IAsyncResult asyncResult)
         {
             return EndInvoke<AssociateConfigurationItemsToApplicationResponse>(asyncResult);
         }
@@ -388,7 +388,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// The server experienced an internal error. Try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
-        public CreateApplicationResponse CreateApplication(CreateApplicationRequest request)
+        public virtual CreateApplicationResponse CreateApplication(CreateApplicationRequest request)
         {
             var marshaller = new CreateApplicationRequestMarshaller();
             var unmarshaller = CreateApplicationResponseUnmarshaller.Instance;
@@ -408,7 +408,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateApplication
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
-        public IAsyncResult BeginCreateApplication(CreateApplicationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateApplication(CreateApplicationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateApplicationRequestMarshaller();
             var unmarshaller = CreateApplicationResponseUnmarshaller.Instance;
@@ -425,7 +425,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>Returns a  CreateApplicationResult from ApplicationDiscoveryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
-        public  CreateApplicationResponse EndCreateApplication(IAsyncResult asyncResult)
+        public virtual CreateApplicationResponse EndCreateApplication(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateApplicationResponse>(asyncResult);
         }
@@ -460,7 +460,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// The server experienced an internal error. Try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/CreateTags">REST API Reference for CreateTags Operation</seealso>
-        public CreateTagsResponse CreateTags(CreateTagsRequest request)
+        public virtual CreateTagsResponse CreateTags(CreateTagsRequest request)
         {
             var marshaller = new CreateTagsRequestMarshaller();
             var unmarshaller = CreateTagsResponseUnmarshaller.Instance;
@@ -480,7 +480,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTags
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/CreateTags">REST API Reference for CreateTags Operation</seealso>
-        public IAsyncResult BeginCreateTags(CreateTagsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateTags(CreateTagsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateTagsRequestMarshaller();
             var unmarshaller = CreateTagsResponseUnmarshaller.Instance;
@@ -497,7 +497,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>Returns a  CreateTagsResult from ApplicationDiscoveryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/CreateTags">REST API Reference for CreateTags Operation</seealso>
-        public  CreateTagsResponse EndCreateTags(IAsyncResult asyncResult)
+        public virtual CreateTagsResponse EndCreateTags(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateTagsResponse>(asyncResult);
         }
@@ -527,7 +527,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// The server experienced an internal error. Try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DeleteApplications">REST API Reference for DeleteApplications Operation</seealso>
-        public DeleteApplicationsResponse DeleteApplications(DeleteApplicationsRequest request)
+        public virtual DeleteApplicationsResponse DeleteApplications(DeleteApplicationsRequest request)
         {
             var marshaller = new DeleteApplicationsRequestMarshaller();
             var unmarshaller = DeleteApplicationsResponseUnmarshaller.Instance;
@@ -547,7 +547,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteApplications
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DeleteApplications">REST API Reference for DeleteApplications Operation</seealso>
-        public IAsyncResult BeginDeleteApplications(DeleteApplicationsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteApplications(DeleteApplicationsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteApplicationsRequestMarshaller();
             var unmarshaller = DeleteApplicationsResponseUnmarshaller.Instance;
@@ -564,7 +564,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>Returns a  DeleteApplicationsResult from ApplicationDiscoveryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DeleteApplications">REST API Reference for DeleteApplications Operation</seealso>
-        public  DeleteApplicationsResponse EndDeleteApplications(IAsyncResult asyncResult)
+        public virtual DeleteApplicationsResponse EndDeleteApplications(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteApplicationsResponse>(asyncResult);
         }
@@ -599,7 +599,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// The server experienced an internal error. Try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
-        public DeleteTagsResponse DeleteTags(DeleteTagsRequest request)
+        public virtual DeleteTagsResponse DeleteTags(DeleteTagsRequest request)
         {
             var marshaller = new DeleteTagsRequestMarshaller();
             var unmarshaller = DeleteTagsResponseUnmarshaller.Instance;
@@ -619,7 +619,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTags
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
-        public IAsyncResult BeginDeleteTags(DeleteTagsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteTags(DeleteTagsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteTagsRequestMarshaller();
             var unmarshaller = DeleteTagsResponseUnmarshaller.Instance;
@@ -636,7 +636,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>Returns a  DeleteTagsResult from ApplicationDiscoveryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
-        public  DeleteTagsResponse EndDeleteTags(IAsyncResult asyncResult)
+        public virtual DeleteTagsResponse EndDeleteTags(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteTagsResponse>(asyncResult);
         }
@@ -667,7 +667,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// The server experienced an internal error. Try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeAgents">REST API Reference for DescribeAgents Operation</seealso>
-        public DescribeAgentsResponse DescribeAgents(DescribeAgentsRequest request)
+        public virtual DescribeAgentsResponse DescribeAgents(DescribeAgentsRequest request)
         {
             var marshaller = new DescribeAgentsRequestMarshaller();
             var unmarshaller = DescribeAgentsResponseUnmarshaller.Instance;
@@ -687,7 +687,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAgents
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeAgents">REST API Reference for DescribeAgents Operation</seealso>
-        public IAsyncResult BeginDescribeAgents(DescribeAgentsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeAgents(DescribeAgentsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeAgentsRequestMarshaller();
             var unmarshaller = DescribeAgentsResponseUnmarshaller.Instance;
@@ -704,7 +704,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>Returns a  DescribeAgentsResult from ApplicationDiscoveryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeAgents">REST API Reference for DescribeAgents Operation</seealso>
-        public  DescribeAgentsResponse EndDescribeAgents(IAsyncResult asyncResult)
+        public virtual DescribeAgentsResponse EndDescribeAgents(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeAgentsResponse>(asyncResult);
         }
@@ -744,7 +744,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// The server experienced an internal error. Try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeConfigurations">REST API Reference for DescribeConfigurations Operation</seealso>
-        public DescribeConfigurationsResponse DescribeConfigurations(DescribeConfigurationsRequest request)
+        public virtual DescribeConfigurationsResponse DescribeConfigurations(DescribeConfigurationsRequest request)
         {
             var marshaller = new DescribeConfigurationsRequestMarshaller();
             var unmarshaller = DescribeConfigurationsResponseUnmarshaller.Instance;
@@ -764,7 +764,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeConfigurations
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeConfigurations">REST API Reference for DescribeConfigurations Operation</seealso>
-        public IAsyncResult BeginDescribeConfigurations(DescribeConfigurationsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeConfigurations(DescribeConfigurationsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeConfigurationsRequestMarshaller();
             var unmarshaller = DescribeConfigurationsResponseUnmarshaller.Instance;
@@ -781,7 +781,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>Returns a  DescribeConfigurationsResult from ApplicationDiscoveryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeConfigurations">REST API Reference for DescribeConfigurations Operation</seealso>
-        public  DescribeConfigurationsResponse EndDescribeConfigurations(IAsyncResult asyncResult)
+        public virtual DescribeConfigurationsResponse EndDescribeConfigurations(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeConfigurationsResponse>(asyncResult);
         }
@@ -822,7 +822,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeExportConfigurations">REST API Reference for DescribeExportConfigurations Operation</seealso>
         [Obsolete("Deprecated in favor of DescribeExportTasks.")]
-        public DescribeExportConfigurationsResponse DescribeExportConfigurations(DescribeExportConfigurationsRequest request)
+        public virtual DescribeExportConfigurationsResponse DescribeExportConfigurations(DescribeExportConfigurationsRequest request)
         {
             var marshaller = new DescribeExportConfigurationsRequestMarshaller();
             var unmarshaller = DescribeExportConfigurationsResponseUnmarshaller.Instance;
@@ -843,7 +843,7 @@ namespace Amazon.ApplicationDiscoveryService
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeExportConfigurations">REST API Reference for DescribeExportConfigurations Operation</seealso>
         [Obsolete("Deprecated in favor of DescribeExportTasks.")]
-        public IAsyncResult BeginDescribeExportConfigurations(DescribeExportConfigurationsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeExportConfigurations(DescribeExportConfigurationsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeExportConfigurationsRequestMarshaller();
             var unmarshaller = DescribeExportConfigurationsResponseUnmarshaller.Instance;
@@ -861,7 +861,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <returns>Returns a  DescribeExportConfigurationsResult from ApplicationDiscoveryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeExportConfigurations">REST API Reference for DescribeExportConfigurations Operation</seealso>
         [Obsolete("Deprecated in favor of DescribeExportTasks.")]
-        public  DescribeExportConfigurationsResponse EndDescribeExportConfigurations(IAsyncResult asyncResult)
+        public virtual DescribeExportConfigurationsResponse EndDescribeExportConfigurations(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeExportConfigurationsResponse>(asyncResult);
         }
@@ -892,7 +892,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// The server experienced an internal error. Try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeExportTasks">REST API Reference for DescribeExportTasks Operation</seealso>
-        public DescribeExportTasksResponse DescribeExportTasks(DescribeExportTasksRequest request)
+        public virtual DescribeExportTasksResponse DescribeExportTasks(DescribeExportTasksRequest request)
         {
             var marshaller = new DescribeExportTasksRequestMarshaller();
             var unmarshaller = DescribeExportTasksResponseUnmarshaller.Instance;
@@ -912,7 +912,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeExportTasks
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeExportTasks">REST API Reference for DescribeExportTasks Operation</seealso>
-        public IAsyncResult BeginDescribeExportTasks(DescribeExportTasksRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeExportTasks(DescribeExportTasksRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeExportTasksRequestMarshaller();
             var unmarshaller = DescribeExportTasksResponseUnmarshaller.Instance;
@@ -929,7 +929,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>Returns a  DescribeExportTasksResult from ApplicationDiscoveryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeExportTasks">REST API Reference for DescribeExportTasks Operation</seealso>
-        public  DescribeExportTasksResponse EndDescribeExportTasks(IAsyncResult asyncResult)
+        public virtual DescribeExportTasksResponse EndDescribeExportTasks(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeExportTasksResponse>(asyncResult);
         }
@@ -964,7 +964,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// The server experienced an internal error. Try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
-        public DescribeTagsResponse DescribeTags(DescribeTagsRequest request)
+        public virtual DescribeTagsResponse DescribeTags(DescribeTagsRequest request)
         {
             var marshaller = new DescribeTagsRequestMarshaller();
             var unmarshaller = DescribeTagsResponseUnmarshaller.Instance;
@@ -984,7 +984,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTags
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
-        public IAsyncResult BeginDescribeTags(DescribeTagsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeTags(DescribeTagsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeTagsRequestMarshaller();
             var unmarshaller = DescribeTagsResponseUnmarshaller.Instance;
@@ -1001,7 +1001,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>Returns a  DescribeTagsResult from ApplicationDiscoveryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
-        public  DescribeTagsResponse EndDescribeTags(IAsyncResult asyncResult)
+        public virtual DescribeTagsResponse EndDescribeTags(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeTagsResponse>(asyncResult);
         }
@@ -1031,7 +1031,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// The server experienced an internal error. Try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DisassociateConfigurationItemsFromApplication">REST API Reference for DisassociateConfigurationItemsFromApplication Operation</seealso>
-        public DisassociateConfigurationItemsFromApplicationResponse DisassociateConfigurationItemsFromApplication(DisassociateConfigurationItemsFromApplicationRequest request)
+        public virtual DisassociateConfigurationItemsFromApplicationResponse DisassociateConfigurationItemsFromApplication(DisassociateConfigurationItemsFromApplicationRequest request)
         {
             var marshaller = new DisassociateConfigurationItemsFromApplicationRequestMarshaller();
             var unmarshaller = DisassociateConfigurationItemsFromApplicationResponseUnmarshaller.Instance;
@@ -1051,7 +1051,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateConfigurationItemsFromApplication
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DisassociateConfigurationItemsFromApplication">REST API Reference for DisassociateConfigurationItemsFromApplication Operation</seealso>
-        public IAsyncResult BeginDisassociateConfigurationItemsFromApplication(DisassociateConfigurationItemsFromApplicationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDisassociateConfigurationItemsFromApplication(DisassociateConfigurationItemsFromApplicationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DisassociateConfigurationItemsFromApplicationRequestMarshaller();
             var unmarshaller = DisassociateConfigurationItemsFromApplicationResponseUnmarshaller.Instance;
@@ -1068,7 +1068,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>Returns a  DisassociateConfigurationItemsFromApplicationResult from ApplicationDiscoveryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DisassociateConfigurationItemsFromApplication">REST API Reference for DisassociateConfigurationItemsFromApplication Operation</seealso>
-        public  DisassociateConfigurationItemsFromApplicationResponse EndDisassociateConfigurationItemsFromApplication(IAsyncResult asyncResult)
+        public virtual DisassociateConfigurationItemsFromApplicationResponse EndDisassociateConfigurationItemsFromApplication(IAsyncResult asyncResult)
         {
             return EndInvoke<DisassociateConfigurationItemsFromApplicationResponse>(asyncResult);
         }
@@ -1111,7 +1111,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/ExportConfigurations">REST API Reference for ExportConfigurations Operation</seealso>
         [Obsolete("Deprecated in favor of StartExportTask.")]
-        public ExportConfigurationsResponse ExportConfigurations(ExportConfigurationsRequest request)
+        public virtual ExportConfigurationsResponse ExportConfigurations(ExportConfigurationsRequest request)
         {
             var marshaller = new ExportConfigurationsRequestMarshaller();
             var unmarshaller = ExportConfigurationsResponseUnmarshaller.Instance;
@@ -1132,7 +1132,7 @@ namespace Amazon.ApplicationDiscoveryService
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/ExportConfigurations">REST API Reference for ExportConfigurations Operation</seealso>
         [Obsolete("Deprecated in favor of StartExportTask.")]
-        public IAsyncResult BeginExportConfigurations(ExportConfigurationsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginExportConfigurations(ExportConfigurationsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ExportConfigurationsRequestMarshaller();
             var unmarshaller = ExportConfigurationsResponseUnmarshaller.Instance;
@@ -1150,7 +1150,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <returns>Returns a  ExportConfigurationsResult from ApplicationDiscoveryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/ExportConfigurations">REST API Reference for ExportConfigurations Operation</seealso>
         [Obsolete("Deprecated in favor of StartExportTask.")]
-        public  ExportConfigurationsResponse EndExportConfigurations(IAsyncResult asyncResult)
+        public virtual ExportConfigurationsResponse EndExportConfigurations(IAsyncResult asyncResult)
         {
             return EndInvoke<ExportConfigurationsResponse>(asyncResult);
         }
@@ -1180,7 +1180,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// The server experienced an internal error. Try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/GetDiscoverySummary">REST API Reference for GetDiscoverySummary Operation</seealso>
-        public GetDiscoverySummaryResponse GetDiscoverySummary(GetDiscoverySummaryRequest request)
+        public virtual GetDiscoverySummaryResponse GetDiscoverySummary(GetDiscoverySummaryRequest request)
         {
             var marshaller = new GetDiscoverySummaryRequestMarshaller();
             var unmarshaller = GetDiscoverySummaryResponseUnmarshaller.Instance;
@@ -1200,7 +1200,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDiscoverySummary
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/GetDiscoverySummary">REST API Reference for GetDiscoverySummary Operation</seealso>
-        public IAsyncResult BeginGetDiscoverySummary(GetDiscoverySummaryRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetDiscoverySummary(GetDiscoverySummaryRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetDiscoverySummaryRequestMarshaller();
             var unmarshaller = GetDiscoverySummaryResponseUnmarshaller.Instance;
@@ -1217,7 +1217,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>Returns a  GetDiscoverySummaryResult from ApplicationDiscoveryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/GetDiscoverySummary">REST API Reference for GetDiscoverySummary Operation</seealso>
-        public  GetDiscoverySummaryResponse EndGetDiscoverySummary(IAsyncResult asyncResult)
+        public virtual GetDiscoverySummaryResponse EndGetDiscoverySummary(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDiscoverySummaryResponse>(asyncResult);
         }
@@ -1252,7 +1252,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// The server experienced an internal error. Try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/ListConfigurations">REST API Reference for ListConfigurations Operation</seealso>
-        public ListConfigurationsResponse ListConfigurations(ListConfigurationsRequest request)
+        public virtual ListConfigurationsResponse ListConfigurations(ListConfigurationsRequest request)
         {
             var marshaller = new ListConfigurationsRequestMarshaller();
             var unmarshaller = ListConfigurationsResponseUnmarshaller.Instance;
@@ -1272,7 +1272,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListConfigurations
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/ListConfigurations">REST API Reference for ListConfigurations Operation</seealso>
-        public IAsyncResult BeginListConfigurations(ListConfigurationsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListConfigurations(ListConfigurationsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListConfigurationsRequestMarshaller();
             var unmarshaller = ListConfigurationsResponseUnmarshaller.Instance;
@@ -1289,7 +1289,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>Returns a  ListConfigurationsResult from ApplicationDiscoveryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/ListConfigurations">REST API Reference for ListConfigurations Operation</seealso>
-        public  ListConfigurationsResponse EndListConfigurations(IAsyncResult asyncResult)
+        public virtual ListConfigurationsResponse EndListConfigurations(IAsyncResult asyncResult)
         {
             return EndInvoke<ListConfigurationsResponse>(asyncResult);
         }
@@ -1319,7 +1319,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// The server experienced an internal error. Try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/ListServerNeighbors">REST API Reference for ListServerNeighbors Operation</seealso>
-        public ListServerNeighborsResponse ListServerNeighbors(ListServerNeighborsRequest request)
+        public virtual ListServerNeighborsResponse ListServerNeighbors(ListServerNeighborsRequest request)
         {
             var marshaller = new ListServerNeighborsRequestMarshaller();
             var unmarshaller = ListServerNeighborsResponseUnmarshaller.Instance;
@@ -1339,7 +1339,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListServerNeighbors
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/ListServerNeighbors">REST API Reference for ListServerNeighbors Operation</seealso>
-        public IAsyncResult BeginListServerNeighbors(ListServerNeighborsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListServerNeighbors(ListServerNeighborsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListServerNeighborsRequestMarshaller();
             var unmarshaller = ListServerNeighborsResponseUnmarshaller.Instance;
@@ -1356,7 +1356,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>Returns a  ListServerNeighborsResult from ApplicationDiscoveryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/ListServerNeighbors">REST API Reference for ListServerNeighbors Operation</seealso>
-        public  ListServerNeighborsResponse EndListServerNeighbors(IAsyncResult asyncResult)
+        public virtual ListServerNeighborsResponse EndListServerNeighbors(IAsyncResult asyncResult)
         {
             return EndInvoke<ListServerNeighborsResponse>(asyncResult);
         }
@@ -1386,7 +1386,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// The server experienced an internal error. Try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StartDataCollectionByAgentIds">REST API Reference for StartDataCollectionByAgentIds Operation</seealso>
-        public StartDataCollectionByAgentIdsResponse StartDataCollectionByAgentIds(StartDataCollectionByAgentIdsRequest request)
+        public virtual StartDataCollectionByAgentIdsResponse StartDataCollectionByAgentIds(StartDataCollectionByAgentIdsRequest request)
         {
             var marshaller = new StartDataCollectionByAgentIdsRequestMarshaller();
             var unmarshaller = StartDataCollectionByAgentIdsResponseUnmarshaller.Instance;
@@ -1406,7 +1406,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartDataCollectionByAgentIds
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StartDataCollectionByAgentIds">REST API Reference for StartDataCollectionByAgentIds Operation</seealso>
-        public IAsyncResult BeginStartDataCollectionByAgentIds(StartDataCollectionByAgentIdsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginStartDataCollectionByAgentIds(StartDataCollectionByAgentIdsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new StartDataCollectionByAgentIdsRequestMarshaller();
             var unmarshaller = StartDataCollectionByAgentIdsResponseUnmarshaller.Instance;
@@ -1423,7 +1423,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>Returns a  StartDataCollectionByAgentIdsResult from ApplicationDiscoveryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StartDataCollectionByAgentIds">REST API Reference for StartDataCollectionByAgentIds Operation</seealso>
-        public  StartDataCollectionByAgentIdsResponse EndStartDataCollectionByAgentIds(IAsyncResult asyncResult)
+        public virtual StartDataCollectionByAgentIdsResponse EndStartDataCollectionByAgentIds(IAsyncResult asyncResult)
         {
             return EndInvoke<StartDataCollectionByAgentIdsResponse>(asyncResult);
         }
@@ -1471,7 +1471,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// The server experienced an internal error. Try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StartExportTask">REST API Reference for StartExportTask Operation</seealso>
-        public StartExportTaskResponse StartExportTask(StartExportTaskRequest request)
+        public virtual StartExportTaskResponse StartExportTask(StartExportTaskRequest request)
         {
             var marshaller = new StartExportTaskRequestMarshaller();
             var unmarshaller = StartExportTaskResponseUnmarshaller.Instance;
@@ -1491,7 +1491,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartExportTask
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StartExportTask">REST API Reference for StartExportTask Operation</seealso>
-        public IAsyncResult BeginStartExportTask(StartExportTaskRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginStartExportTask(StartExportTaskRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new StartExportTaskRequestMarshaller();
             var unmarshaller = StartExportTaskResponseUnmarshaller.Instance;
@@ -1508,7 +1508,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>Returns a  StartExportTaskResult from ApplicationDiscoveryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StartExportTask">REST API Reference for StartExportTask Operation</seealso>
-        public  StartExportTaskResponse EndStartExportTask(IAsyncResult asyncResult)
+        public virtual StartExportTaskResponse EndStartExportTask(IAsyncResult asyncResult)
         {
             return EndInvoke<StartExportTaskResponse>(asyncResult);
         }
@@ -1538,7 +1538,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// The server experienced an internal error. Try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StopDataCollectionByAgentIds">REST API Reference for StopDataCollectionByAgentIds Operation</seealso>
-        public StopDataCollectionByAgentIdsResponse StopDataCollectionByAgentIds(StopDataCollectionByAgentIdsRequest request)
+        public virtual StopDataCollectionByAgentIdsResponse StopDataCollectionByAgentIds(StopDataCollectionByAgentIdsRequest request)
         {
             var marshaller = new StopDataCollectionByAgentIdsRequestMarshaller();
             var unmarshaller = StopDataCollectionByAgentIdsResponseUnmarshaller.Instance;
@@ -1558,7 +1558,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopDataCollectionByAgentIds
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StopDataCollectionByAgentIds">REST API Reference for StopDataCollectionByAgentIds Operation</seealso>
-        public IAsyncResult BeginStopDataCollectionByAgentIds(StopDataCollectionByAgentIdsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginStopDataCollectionByAgentIds(StopDataCollectionByAgentIdsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new StopDataCollectionByAgentIdsRequestMarshaller();
             var unmarshaller = StopDataCollectionByAgentIdsResponseUnmarshaller.Instance;
@@ -1575,7 +1575,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>Returns a  StopDataCollectionByAgentIdsResult from ApplicationDiscoveryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StopDataCollectionByAgentIds">REST API Reference for StopDataCollectionByAgentIds Operation</seealso>
-        public  StopDataCollectionByAgentIdsResponse EndStopDataCollectionByAgentIds(IAsyncResult asyncResult)
+        public virtual StopDataCollectionByAgentIdsResponse EndStopDataCollectionByAgentIds(IAsyncResult asyncResult)
         {
             return EndInvoke<StopDataCollectionByAgentIdsResponse>(asyncResult);
         }
@@ -1605,7 +1605,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// The server experienced an internal error. Try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
-        public UpdateApplicationResponse UpdateApplication(UpdateApplicationRequest request)
+        public virtual UpdateApplicationResponse UpdateApplication(UpdateApplicationRequest request)
         {
             var marshaller = new UpdateApplicationRequestMarshaller();
             var unmarshaller = UpdateApplicationResponseUnmarshaller.Instance;
@@ -1625,7 +1625,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateApplication
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
-        public IAsyncResult BeginUpdateApplication(UpdateApplicationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateApplication(UpdateApplicationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateApplicationRequestMarshaller();
             var unmarshaller = UpdateApplicationResponseUnmarshaller.Instance;
@@ -1642,7 +1642,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>Returns a  UpdateApplicationResult from ApplicationDiscoveryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
-        public  UpdateApplicationResponse EndUpdateApplication(IAsyncResult asyncResult)
+        public virtual UpdateApplicationResponse EndUpdateApplication(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateApplicationResponse>(asyncResult);
         }

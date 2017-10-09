@@ -373,7 +373,7 @@ namespace Amazon.Lex
         /// The Content-Type header (<code>PostContent</code> API) has an invalid value.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/PostContent">REST API Reference for PostContent Operation</seealso>
-        public PostContentResponse PostContent(PostContentRequest request)
+        public virtual PostContentResponse PostContent(PostContentRequest request)
         {
             var marshaller = new PostContentRequestMarshaller();
             var unmarshaller = PostContentResponseUnmarshaller.Instance;
@@ -393,7 +393,7 @@ namespace Amazon.Lex
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPostContent
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/PostContent">REST API Reference for PostContent Operation</seealso>
-        public IAsyncResult BeginPostContent(PostContentRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPostContent(PostContentRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PostContentRequestMarshaller();
             var unmarshaller = PostContentResponseUnmarshaller.Instance;
@@ -410,7 +410,7 @@ namespace Amazon.Lex
         /// 
         /// <returns>Returns a  PostContentResult from Lex.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/PostContent">REST API Reference for PostContent Operation</seealso>
-        public  PostContentResponse EndPostContent(IAsyncResult asyncResult)
+        public virtual PostContentResponse EndPostContent(IAsyncResult asyncResult)
         {
             return EndInvoke<PostContentResponse>(asyncResult);
         }
@@ -543,7 +543,7 @@ namespace Amazon.Lex
         /// The resource (such as the Amazon Lex bot or an alias) that is referred to is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/PostText">REST API Reference for PostText Operation</seealso>
-        public PostTextResponse PostText(PostTextRequest request)
+        public virtual PostTextResponse PostText(PostTextRequest request)
         {
             var marshaller = new PostTextRequestMarshaller();
             var unmarshaller = PostTextResponseUnmarshaller.Instance;
@@ -563,7 +563,7 @@ namespace Amazon.Lex
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPostText
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/PostText">REST API Reference for PostText Operation</seealso>
-        public IAsyncResult BeginPostText(PostTextRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPostText(PostTextRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PostTextRequestMarshaller();
             var unmarshaller = PostTextResponseUnmarshaller.Instance;
@@ -580,7 +580,7 @@ namespace Amazon.Lex
         /// 
         /// <returns>Returns a  PostTextResult from Lex.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/PostText">REST API Reference for PostText Operation</seealso>
-        public  PostTextResponse EndPostText(IAsyncResult asyncResult)
+        public virtual PostTextResponse EndPostText(IAsyncResult asyncResult)
         {
             return EndInvoke<PostTextResponse>(asyncResult);
         }

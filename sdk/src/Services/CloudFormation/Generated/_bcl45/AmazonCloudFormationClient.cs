@@ -279,7 +279,7 @@ namespace Amazon.CloudFormation
         /// A client request token already exists.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CancelUpdateStack">REST API Reference for CancelUpdateStack Operation</seealso>
-        public CancelUpdateStackResponse CancelUpdateStack(CancelUpdateStackRequest request)
+        public virtual CancelUpdateStackResponse CancelUpdateStack(CancelUpdateStackRequest request)
         {
             var marshaller = new CancelUpdateStackRequestMarshaller();
             var unmarshaller = CancelUpdateStackResponseUnmarshaller.Instance;
@@ -297,7 +297,7 @@ namespace Amazon.CloudFormation
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CancelUpdateStack">REST API Reference for CancelUpdateStack Operation</seealso>
-        public Task<CancelUpdateStackResponse> CancelUpdateStackAsync(CancelUpdateStackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CancelUpdateStackResponse> CancelUpdateStackAsync(CancelUpdateStackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CancelUpdateStackRequestMarshaller();
             var unmarshaller = CancelUpdateStackResponseUnmarshaller.Instance;
@@ -336,7 +336,7 @@ namespace Amazon.CloudFormation
         /// A client request token already exists.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ContinueUpdateRollback">REST API Reference for ContinueUpdateRollback Operation</seealso>
-        public ContinueUpdateRollbackResponse ContinueUpdateRollback(ContinueUpdateRollbackRequest request)
+        public virtual ContinueUpdateRollbackResponse ContinueUpdateRollback(ContinueUpdateRollbackRequest request)
         {
             var marshaller = new ContinueUpdateRollbackRequestMarshaller();
             var unmarshaller = ContinueUpdateRollbackResponseUnmarshaller.Instance;
@@ -354,7 +354,7 @@ namespace Amazon.CloudFormation
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ContinueUpdateRollback">REST API Reference for ContinueUpdateRollback Operation</seealso>
-        public Task<ContinueUpdateRollbackResponse> ContinueUpdateRollbackAsync(ContinueUpdateRollbackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ContinueUpdateRollbackResponse> ContinueUpdateRollbackAsync(ContinueUpdateRollbackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ContinueUpdateRollbackRequestMarshaller();
             var unmarshaller = ContinueUpdateRollbackResponseUnmarshaller.Instance;
@@ -415,7 +415,7 @@ namespace Amazon.CloudFormation
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">REST API Reference for CreateChangeSet Operation</seealso>
-        public CreateChangeSetResponse CreateChangeSet(CreateChangeSetRequest request)
+        public virtual CreateChangeSetResponse CreateChangeSet(CreateChangeSetRequest request)
         {
             var marshaller = new CreateChangeSetRequestMarshaller();
             var unmarshaller = CreateChangeSetResponseUnmarshaller.Instance;
@@ -433,7 +433,7 @@ namespace Amazon.CloudFormation
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">REST API Reference for CreateChangeSet Operation</seealso>
-        public Task<CreateChangeSetResponse> CreateChangeSetAsync(CreateChangeSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateChangeSetResponse> CreateChangeSetAsync(CreateChangeSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateChangeSetRequestMarshaller();
             var unmarshaller = CreateChangeSetResponseUnmarshaller.Instance;
@@ -475,7 +475,7 @@ namespace Amazon.CloudFormation
         /// A client request token already exists.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateStack">REST API Reference for CreateStack Operation</seealso>
-        public CreateStackResponse CreateStack(CreateStackRequest request)
+        public virtual CreateStackResponse CreateStack(CreateStackRequest request)
         {
             var marshaller = new CreateStackRequestMarshaller();
             var unmarshaller = CreateStackResponseUnmarshaller.Instance;
@@ -493,7 +493,7 @@ namespace Amazon.CloudFormation
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateStack">REST API Reference for CreateStack Operation</seealso>
-        public Task<CreateStackResponse> CreateStackAsync(CreateStackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateStackResponse> CreateStackAsync(CreateStackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateStackRequestMarshaller();
             var unmarshaller = CreateStackResponseUnmarshaller.Instance;
@@ -543,7 +543,7 @@ namespace Amazon.CloudFormation
         /// was performed.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateStackInstances">REST API Reference for CreateStackInstances Operation</seealso>
-        public CreateStackInstancesResponse CreateStackInstances(CreateStackInstancesRequest request)
+        public virtual CreateStackInstancesResponse CreateStackInstances(CreateStackInstancesRequest request)
         {
             var marshaller = new CreateStackInstancesRequestMarshaller();
             var unmarshaller = CreateStackInstancesResponseUnmarshaller.Instance;
@@ -561,7 +561,7 @@ namespace Amazon.CloudFormation
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateStackInstances">REST API Reference for CreateStackInstances Operation</seealso>
-        public Task<CreateStackInstancesResponse> CreateStackInstancesAsync(CreateStackInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateStackInstancesResponse> CreateStackInstancesAsync(CreateStackInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateStackInstancesRequestMarshaller();
             var unmarshaller = CreateStackInstancesResponseUnmarshaller.Instance;
@@ -597,7 +597,7 @@ namespace Amazon.CloudFormation
         /// The specified name is already in use.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateStackSet">REST API Reference for CreateStackSet Operation</seealso>
-        public CreateStackSetResponse CreateStackSet(CreateStackSetRequest request)
+        public virtual CreateStackSetResponse CreateStackSet(CreateStackSetRequest request)
         {
             var marshaller = new CreateStackSetRequestMarshaller();
             var unmarshaller = CreateStackSetResponseUnmarshaller.Instance;
@@ -615,7 +615,7 @@ namespace Amazon.CloudFormation
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateStackSet">REST API Reference for CreateStackSet Operation</seealso>
-        public Task<CreateStackSetResponse> CreateStackSetAsync(CreateStackSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateStackSetResponse> CreateStackSetAsync(CreateStackSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateStackSetRequestMarshaller();
             var unmarshaller = CreateStackSetResponseUnmarshaller.Instance;
@@ -648,7 +648,7 @@ namespace Amazon.CloudFormation
         /// <code>UPDATE_IN_PROGRESS</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteChangeSet">REST API Reference for DeleteChangeSet Operation</seealso>
-        public DeleteChangeSetResponse DeleteChangeSet(DeleteChangeSetRequest request)
+        public virtual DeleteChangeSetResponse DeleteChangeSet(DeleteChangeSetRequest request)
         {
             var marshaller = new DeleteChangeSetRequestMarshaller();
             var unmarshaller = DeleteChangeSetResponseUnmarshaller.Instance;
@@ -666,7 +666,7 @@ namespace Amazon.CloudFormation
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteChangeSet">REST API Reference for DeleteChangeSet Operation</seealso>
-        public Task<DeleteChangeSetResponse> DeleteChangeSetAsync(DeleteChangeSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteChangeSetResponse> DeleteChangeSetAsync(DeleteChangeSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteChangeSetRequestMarshaller();
             var unmarshaller = DeleteChangeSetResponseUnmarshaller.Instance;
@@ -692,7 +692,7 @@ namespace Amazon.CloudFormation
         /// A client request token already exists.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteStack">REST API Reference for DeleteStack Operation</seealso>
-        public DeleteStackResponse DeleteStack(DeleteStackRequest request)
+        public virtual DeleteStackResponse DeleteStack(DeleteStackRequest request)
         {
             var marshaller = new DeleteStackRequestMarshaller();
             var unmarshaller = DeleteStackResponseUnmarshaller.Instance;
@@ -710,7 +710,7 @@ namespace Amazon.CloudFormation
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteStack">REST API Reference for DeleteStack Operation</seealso>
-        public Task<DeleteStackResponse> DeleteStackAsync(DeleteStackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteStackResponse> DeleteStackAsync(DeleteStackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteStackRequestMarshaller();
             var unmarshaller = DeleteStackResponseUnmarshaller.Instance;
@@ -748,7 +748,7 @@ namespace Amazon.CloudFormation
         /// was performed.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteStackInstances">REST API Reference for DeleteStackInstances Operation</seealso>
-        public DeleteStackInstancesResponse DeleteStackInstances(DeleteStackInstancesRequest request)
+        public virtual DeleteStackInstancesResponse DeleteStackInstances(DeleteStackInstancesRequest request)
         {
             var marshaller = new DeleteStackInstancesRequestMarshaller();
             var unmarshaller = DeleteStackInstancesResponseUnmarshaller.Instance;
@@ -766,7 +766,7 @@ namespace Amazon.CloudFormation
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteStackInstances">REST API Reference for DeleteStackInstances Operation</seealso>
-        public Task<DeleteStackInstancesResponse> DeleteStackInstancesAsync(DeleteStackInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteStackInstancesResponse> DeleteStackInstancesAsync(DeleteStackInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteStackInstancesRequestMarshaller();
             var unmarshaller = DeleteStackInstancesResponseUnmarshaller.Instance;
@@ -796,7 +796,7 @@ namespace Amazon.CloudFormation
         /// Delete all stack instances from the stack set before deleting the stack set.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteStackSet">REST API Reference for DeleteStackSet Operation</seealso>
-        public DeleteStackSetResponse DeleteStackSet(DeleteStackSetRequest request)
+        public virtual DeleteStackSetResponse DeleteStackSet(DeleteStackSetRequest request)
         {
             var marshaller = new DeleteStackSetRequestMarshaller();
             var unmarshaller = DeleteStackSetResponseUnmarshaller.Instance;
@@ -814,7 +814,7 @@ namespace Amazon.CloudFormation
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteStackSet">REST API Reference for DeleteStackSet Operation</seealso>
-        public Task<DeleteStackSetResponse> DeleteStackSetAsync(DeleteStackSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteStackSetResponse> DeleteStackSetAsync(DeleteStackSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteStackSetRequestMarshaller();
             var unmarshaller = DeleteStackSetResponseUnmarshaller.Instance;
@@ -836,7 +836,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the DescribeAccountLimits service method, as returned by CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeAccountLimits">REST API Reference for DescribeAccountLimits Operation</seealso>
-        public DescribeAccountLimitsResponse DescribeAccountLimits(DescribeAccountLimitsRequest request)
+        public virtual DescribeAccountLimitsResponse DescribeAccountLimits(DescribeAccountLimitsRequest request)
         {
             var marshaller = new DescribeAccountLimitsRequestMarshaller();
             var unmarshaller = DescribeAccountLimitsResponseUnmarshaller.Instance;
@@ -854,7 +854,7 @@ namespace Amazon.CloudFormation
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeAccountLimits">REST API Reference for DescribeAccountLimits Operation</seealso>
-        public Task<DescribeAccountLimitsResponse> DescribeAccountLimitsAsync(DescribeAccountLimitsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeAccountLimitsResponse> DescribeAccountLimitsAsync(DescribeAccountLimitsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeAccountLimitsRequestMarshaller();
             var unmarshaller = DescribeAccountLimitsResponseUnmarshaller.Instance;
@@ -881,7 +881,7 @@ namespace Amazon.CloudFormation
         /// stack, use the <code>ListChangeSets</code> action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeChangeSet">REST API Reference for DescribeChangeSet Operation</seealso>
-        public DescribeChangeSetResponse DescribeChangeSet(DescribeChangeSetRequest request)
+        public virtual DescribeChangeSetResponse DescribeChangeSet(DescribeChangeSetRequest request)
         {
             var marshaller = new DescribeChangeSetRequestMarshaller();
             var unmarshaller = DescribeChangeSetResponseUnmarshaller.Instance;
@@ -899,7 +899,7 @@ namespace Amazon.CloudFormation
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeChangeSet">REST API Reference for DescribeChangeSet Operation</seealso>
-        public Task<DescribeChangeSetResponse> DescribeChangeSetAsync(DescribeChangeSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeChangeSetResponse> DescribeChangeSetAsync(DescribeChangeSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeChangeSetRequestMarshaller();
             var unmarshaller = DescribeChangeSetResponseUnmarshaller.Instance;
@@ -929,7 +929,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the DescribeStackEvents service method, as returned by CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackEvents">REST API Reference for DescribeStackEvents Operation</seealso>
-        public DescribeStackEventsResponse DescribeStackEvents(DescribeStackEventsRequest request)
+        public virtual DescribeStackEventsResponse DescribeStackEvents(DescribeStackEventsRequest request)
         {
             var marshaller = new DescribeStackEventsRequestMarshaller();
             var unmarshaller = DescribeStackEventsResponseUnmarshaller.Instance;
@@ -947,7 +947,7 @@ namespace Amazon.CloudFormation
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackEvents">REST API Reference for DescribeStackEvents Operation</seealso>
-        public Task<DescribeStackEventsResponse> DescribeStackEventsAsync(DescribeStackEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeStackEventsResponse> DescribeStackEventsAsync(DescribeStackEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeStackEventsRequestMarshaller();
             var unmarshaller = DescribeStackEventsResponseUnmarshaller.Instance;
@@ -980,7 +980,7 @@ namespace Amazon.CloudFormation
         /// The specified stack set doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackInstance">REST API Reference for DescribeStackInstance Operation</seealso>
-        public DescribeStackInstanceResponse DescribeStackInstance(DescribeStackInstanceRequest request)
+        public virtual DescribeStackInstanceResponse DescribeStackInstance(DescribeStackInstanceRequest request)
         {
             var marshaller = new DescribeStackInstanceRequestMarshaller();
             var unmarshaller = DescribeStackInstanceResponseUnmarshaller.Instance;
@@ -998,7 +998,7 @@ namespace Amazon.CloudFormation
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackInstance">REST API Reference for DescribeStackInstance Operation</seealso>
-        public Task<DescribeStackInstanceResponse> DescribeStackInstanceAsync(DescribeStackInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeStackInstanceResponse> DescribeStackInstanceAsync(DescribeStackInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeStackInstanceRequestMarshaller();
             var unmarshaller = DescribeStackInstanceResponseUnmarshaller.Instance;
@@ -1025,7 +1025,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the DescribeStackResource service method, as returned by CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackResource">REST API Reference for DescribeStackResource Operation</seealso>
-        public DescribeStackResourceResponse DescribeStackResource(DescribeStackResourceRequest request)
+        public virtual DescribeStackResourceResponse DescribeStackResource(DescribeStackResourceRequest request)
         {
             var marshaller = new DescribeStackResourceRequestMarshaller();
             var unmarshaller = DescribeStackResourceResponseUnmarshaller.Instance;
@@ -1043,7 +1043,7 @@ namespace Amazon.CloudFormation
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackResource">REST API Reference for DescribeStackResource Operation</seealso>
-        public Task<DescribeStackResourceResponse> DescribeStackResourceAsync(DescribeStackResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeStackResourceResponse> DescribeStackResourceAsync(DescribeStackResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeStackResourceRequestMarshaller();
             var unmarshaller = DescribeStackResourceResponseUnmarshaller.Instance;
@@ -1092,7 +1092,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the DescribeStackResources service method, as returned by CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackResources">REST API Reference for DescribeStackResources Operation</seealso>
-        public DescribeStackResourcesResponse DescribeStackResources(DescribeStackResourcesRequest request)
+        public virtual DescribeStackResourcesResponse DescribeStackResources(DescribeStackResourcesRequest request)
         {
             var marshaller = new DescribeStackResourcesRequestMarshaller();
             var unmarshaller = DescribeStackResourcesResponseUnmarshaller.Instance;
@@ -1110,7 +1110,7 @@ namespace Amazon.CloudFormation
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackResources">REST API Reference for DescribeStackResources Operation</seealso>
-        public Task<DescribeStackResourcesResponse> DescribeStackResourcesAsync(DescribeStackResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeStackResourcesResponse> DescribeStackResourcesAsync(DescribeStackResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeStackResourcesRequestMarshaller();
             var unmarshaller = DescribeStackResourcesResponseUnmarshaller.Instance;
@@ -1137,7 +1137,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the DescribeStacks service method, as returned by CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStacks">REST API Reference for DescribeStacks Operation</seealso>
-        public DescribeStacksResponse DescribeStacks()
+        public virtual DescribeStacksResponse DescribeStacks()
         {
             return DescribeStacks(new DescribeStacksRequest());
         }
@@ -1157,7 +1157,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the DescribeStacks service method, as returned by CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStacks">REST API Reference for DescribeStacks Operation</seealso>
-        public DescribeStacksResponse DescribeStacks(DescribeStacksRequest request)
+        public virtual DescribeStacksResponse DescribeStacks(DescribeStacksRequest request)
         {
             var marshaller = new DescribeStacksRequestMarshaller();
             var unmarshaller = DescribeStacksResponseUnmarshaller.Instance;
@@ -1182,7 +1182,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the DescribeStacks service method, as returned by CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStacks">REST API Reference for DescribeStacks Operation</seealso>
-        public Task<DescribeStacksResponse> DescribeStacksAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeStacksResponse> DescribeStacksAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeStacksAsync(new DescribeStacksRequest(), cancellationToken);
         }
@@ -1196,7 +1196,7 @@ namespace Amazon.CloudFormation
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStacks">REST API Reference for DescribeStacks Operation</seealso>
-        public Task<DescribeStacksResponse> DescribeStacksAsync(DescribeStacksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeStacksResponse> DescribeStacksAsync(DescribeStacksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeStacksRequestMarshaller();
             var unmarshaller = DescribeStacksResponseUnmarshaller.Instance;
@@ -1220,7 +1220,7 @@ namespace Amazon.CloudFormation
         /// The specified stack set doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackSet">REST API Reference for DescribeStackSet Operation</seealso>
-        public DescribeStackSetResponse DescribeStackSet(DescribeStackSetRequest request)
+        public virtual DescribeStackSetResponse DescribeStackSet(DescribeStackSetRequest request)
         {
             var marshaller = new DescribeStackSetRequestMarshaller();
             var unmarshaller = DescribeStackSetResponseUnmarshaller.Instance;
@@ -1238,7 +1238,7 @@ namespace Amazon.CloudFormation
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackSet">REST API Reference for DescribeStackSet Operation</seealso>
-        public Task<DescribeStackSetResponse> DescribeStackSetAsync(DescribeStackSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeStackSetResponse> DescribeStackSetAsync(DescribeStackSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeStackSetRequestMarshaller();
             var unmarshaller = DescribeStackSetResponseUnmarshaller.Instance;
@@ -1265,7 +1265,7 @@ namespace Amazon.CloudFormation
         /// The specified stack set doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackSetOperation">REST API Reference for DescribeStackSetOperation Operation</seealso>
-        public DescribeStackSetOperationResponse DescribeStackSetOperation(DescribeStackSetOperationRequest request)
+        public virtual DescribeStackSetOperationResponse DescribeStackSetOperation(DescribeStackSetOperationRequest request)
         {
             var marshaller = new DescribeStackSetOperationRequestMarshaller();
             var unmarshaller = DescribeStackSetOperationResponseUnmarshaller.Instance;
@@ -1283,7 +1283,7 @@ namespace Amazon.CloudFormation
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackSetOperation">REST API Reference for DescribeStackSetOperation Operation</seealso>
-        public Task<DescribeStackSetOperationResponse> DescribeStackSetOperationAsync(DescribeStackSetOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeStackSetOperationResponse> DescribeStackSetOperationAsync(DescribeStackSetOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeStackSetOperationRequestMarshaller();
             var unmarshaller = DescribeStackSetOperationResponseUnmarshaller.Instance;
@@ -1306,7 +1306,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the EstimateTemplateCost service method, as returned by CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/EstimateTemplateCost">REST API Reference for EstimateTemplateCost Operation</seealso>
-        public EstimateTemplateCostResponse EstimateTemplateCost(EstimateTemplateCostRequest request)
+        public virtual EstimateTemplateCostResponse EstimateTemplateCost(EstimateTemplateCostRequest request)
         {
             var marshaller = new EstimateTemplateCostRequestMarshaller();
             var unmarshaller = EstimateTemplateCostResponseUnmarshaller.Instance;
@@ -1324,7 +1324,7 @@ namespace Amazon.CloudFormation
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/EstimateTemplateCost">REST API Reference for EstimateTemplateCost Operation</seealso>
-        public Task<EstimateTemplateCostResponse> EstimateTemplateCostAsync(EstimateTemplateCostRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<EstimateTemplateCostResponse> EstimateTemplateCostAsync(EstimateTemplateCostRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new EstimateTemplateCostRequestMarshaller();
             var unmarshaller = EstimateTemplateCostResponseUnmarshaller.Instance;
@@ -1376,7 +1376,7 @@ namespace Amazon.CloudFormation
         /// A client request token already exists.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ExecuteChangeSet">REST API Reference for ExecuteChangeSet Operation</seealso>
-        public ExecuteChangeSetResponse ExecuteChangeSet(ExecuteChangeSetRequest request)
+        public virtual ExecuteChangeSetResponse ExecuteChangeSet(ExecuteChangeSetRequest request)
         {
             var marshaller = new ExecuteChangeSetRequestMarshaller();
             var unmarshaller = ExecuteChangeSetResponseUnmarshaller.Instance;
@@ -1394,7 +1394,7 @@ namespace Amazon.CloudFormation
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ExecuteChangeSet">REST API Reference for ExecuteChangeSet Operation</seealso>
-        public Task<ExecuteChangeSetResponse> ExecuteChangeSetAsync(ExecuteChangeSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ExecuteChangeSetResponse> ExecuteChangeSetAsync(ExecuteChangeSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ExecuteChangeSetRequestMarshaller();
             var unmarshaller = ExecuteChangeSetResponseUnmarshaller.Instance;
@@ -1416,7 +1416,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the GetStackPolicy service method, as returned by CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetStackPolicy">REST API Reference for GetStackPolicy Operation</seealso>
-        public GetStackPolicyResponse GetStackPolicy(GetStackPolicyRequest request)
+        public virtual GetStackPolicyResponse GetStackPolicy(GetStackPolicyRequest request)
         {
             var marshaller = new GetStackPolicyRequestMarshaller();
             var unmarshaller = GetStackPolicyResponseUnmarshaller.Instance;
@@ -1434,7 +1434,7 @@ namespace Amazon.CloudFormation
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetStackPolicy">REST API Reference for GetStackPolicy Operation</seealso>
-        public Task<GetStackPolicyResponse> GetStackPolicyAsync(GetStackPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetStackPolicyResponse> GetStackPolicyAsync(GetStackPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetStackPolicyRequestMarshaller();
             var unmarshaller = GetStackPolicyResponseUnmarshaller.Instance;
@@ -1471,7 +1471,7 @@ namespace Amazon.CloudFormation
         /// stack, use the <code>ListChangeSets</code> action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetTemplate">REST API Reference for GetTemplate Operation</seealso>
-        public GetTemplateResponse GetTemplate(GetTemplateRequest request)
+        public virtual GetTemplateResponse GetTemplate(GetTemplateRequest request)
         {
             var marshaller = new GetTemplateRequestMarshaller();
             var unmarshaller = GetTemplateResponseUnmarshaller.Instance;
@@ -1489,7 +1489,7 @@ namespace Amazon.CloudFormation
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetTemplate">REST API Reference for GetTemplate Operation</seealso>
-        public Task<GetTemplateResponse> GetTemplateAsync(GetTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetTemplateResponse> GetTemplateAsync(GetTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetTemplateRequestMarshaller();
             var unmarshaller = GetTemplateResponseUnmarshaller.Instance;
@@ -1527,7 +1527,7 @@ namespace Amazon.CloudFormation
         /// The specified stack set doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetTemplateSummary">REST API Reference for GetTemplateSummary Operation</seealso>
-        public GetTemplateSummaryResponse GetTemplateSummary(GetTemplateSummaryRequest request)
+        public virtual GetTemplateSummaryResponse GetTemplateSummary(GetTemplateSummaryRequest request)
         {
             var marshaller = new GetTemplateSummaryRequestMarshaller();
             var unmarshaller = GetTemplateSummaryResponseUnmarshaller.Instance;
@@ -1545,7 +1545,7 @@ namespace Amazon.CloudFormation
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetTemplateSummary">REST API Reference for GetTemplateSummary Operation</seealso>
-        public Task<GetTemplateSummaryResponse> GetTemplateSummaryAsync(GetTemplateSummaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetTemplateSummaryResponse> GetTemplateSummaryAsync(GetTemplateSummaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetTemplateSummaryRequestMarshaller();
             var unmarshaller = GetTemplateSummaryResponseUnmarshaller.Instance;
@@ -1568,7 +1568,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the ListChangeSets service method, as returned by CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListChangeSets">REST API Reference for ListChangeSets Operation</seealso>
-        public ListChangeSetsResponse ListChangeSets(ListChangeSetsRequest request)
+        public virtual ListChangeSetsResponse ListChangeSets(ListChangeSetsRequest request)
         {
             var marshaller = new ListChangeSetsRequestMarshaller();
             var unmarshaller = ListChangeSetsResponseUnmarshaller.Instance;
@@ -1586,7 +1586,7 @@ namespace Amazon.CloudFormation
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListChangeSets">REST API Reference for ListChangeSets Operation</seealso>
-        public Task<ListChangeSetsResponse> ListChangeSetsAsync(ListChangeSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListChangeSetsResponse> ListChangeSetsAsync(ListChangeSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListChangeSetsRequestMarshaller();
             var unmarshaller = ListChangeSetsResponseUnmarshaller.Instance;
@@ -1616,7 +1616,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the ListExports service method, as returned by CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListExports">REST API Reference for ListExports Operation</seealso>
-        public ListExportsResponse ListExports(ListExportsRequest request)
+        public virtual ListExportsResponse ListExports(ListExportsRequest request)
         {
             var marshaller = new ListExportsRequestMarshaller();
             var unmarshaller = ListExportsResponseUnmarshaller.Instance;
@@ -1634,7 +1634,7 @@ namespace Amazon.CloudFormation
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListExports">REST API Reference for ListExports Operation</seealso>
-        public Task<ListExportsResponse> ListExportsAsync(ListExportsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListExportsResponse> ListExportsAsync(ListExportsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListExportsRequestMarshaller();
             var unmarshaller = ListExportsResponseUnmarshaller.Instance;
@@ -1663,7 +1663,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the ListImports service method, as returned by CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListImports">REST API Reference for ListImports Operation</seealso>
-        public ListImportsResponse ListImports(ListImportsRequest request)
+        public virtual ListImportsResponse ListImports(ListImportsRequest request)
         {
             var marshaller = new ListImportsRequestMarshaller();
             var unmarshaller = ListImportsResponseUnmarshaller.Instance;
@@ -1681,7 +1681,7 @@ namespace Amazon.CloudFormation
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListImports">REST API Reference for ListImports Operation</seealso>
-        public Task<ListImportsResponse> ListImportsAsync(ListImportsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListImportsResponse> ListImportsAsync(ListImportsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListImportsRequestMarshaller();
             var unmarshaller = ListImportsResponseUnmarshaller.Instance;
@@ -1707,7 +1707,7 @@ namespace Amazon.CloudFormation
         /// The specified stack set doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackInstances">REST API Reference for ListStackInstances Operation</seealso>
-        public ListStackInstancesResponse ListStackInstances(ListStackInstancesRequest request)
+        public virtual ListStackInstancesResponse ListStackInstances(ListStackInstancesRequest request)
         {
             var marshaller = new ListStackInstancesRequestMarshaller();
             var unmarshaller = ListStackInstancesResponseUnmarshaller.Instance;
@@ -1725,7 +1725,7 @@ namespace Amazon.CloudFormation
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackInstances">REST API Reference for ListStackInstances Operation</seealso>
-        public Task<ListStackInstancesResponse> ListStackInstancesAsync(ListStackInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListStackInstancesResponse> ListStackInstancesAsync(ListStackInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListStackInstancesRequestMarshaller();
             var unmarshaller = ListStackInstancesResponseUnmarshaller.Instance;
@@ -1752,7 +1752,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the ListStackResources service method, as returned by CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackResources">REST API Reference for ListStackResources Operation</seealso>
-        public ListStackResourcesResponse ListStackResources(ListStackResourcesRequest request)
+        public virtual ListStackResourcesResponse ListStackResources(ListStackResourcesRequest request)
         {
             var marshaller = new ListStackResourcesRequestMarshaller();
             var unmarshaller = ListStackResourcesResponseUnmarshaller.Instance;
@@ -1770,7 +1770,7 @@ namespace Amazon.CloudFormation
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackResources">REST API Reference for ListStackResources Operation</seealso>
-        public Task<ListStackResourcesResponse> ListStackResourcesAsync(ListStackResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListStackResourcesResponse> ListStackResourcesAsync(ListStackResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListStackResourcesRequestMarshaller();
             var unmarshaller = ListStackResourcesResponseUnmarshaller.Instance;
@@ -1793,7 +1793,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the ListStacks service method, as returned by CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStacks">REST API Reference for ListStacks Operation</seealso>
-        public ListStacksResponse ListStacks()
+        public virtual ListStacksResponse ListStacks()
         {
             return ListStacks(new ListStacksRequest());
         }
@@ -1809,7 +1809,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the ListStacks service method, as returned by CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStacks">REST API Reference for ListStacks Operation</seealso>
-        public ListStacksResponse ListStacks(ListStacksRequest request)
+        public virtual ListStacksResponse ListStacks(ListStacksRequest request)
         {
             var marshaller = new ListStacksRequestMarshaller();
             var unmarshaller = ListStacksResponseUnmarshaller.Instance;
@@ -1830,7 +1830,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the ListStacks service method, as returned by CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStacks">REST API Reference for ListStacks Operation</seealso>
-        public Task<ListStacksResponse> ListStacksAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListStacksResponse> ListStacksAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return ListStacksAsync(new ListStacksRequest(), cancellationToken);
         }
@@ -1844,7 +1844,7 @@ namespace Amazon.CloudFormation
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStacks">REST API Reference for ListStacks Operation</seealso>
-        public Task<ListStacksResponse> ListStacksAsync(ListStacksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListStacksResponse> ListStacksAsync(ListStacksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListStacksRequestMarshaller();
             var unmarshaller = ListStacksResponseUnmarshaller.Instance;
@@ -1871,7 +1871,7 @@ namespace Amazon.CloudFormation
         /// The specified stack set doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSetOperationResults">REST API Reference for ListStackSetOperationResults Operation</seealso>
-        public ListStackSetOperationResultsResponse ListStackSetOperationResults(ListStackSetOperationResultsRequest request)
+        public virtual ListStackSetOperationResultsResponse ListStackSetOperationResults(ListStackSetOperationResultsRequest request)
         {
             var marshaller = new ListStackSetOperationResultsRequestMarshaller();
             var unmarshaller = ListStackSetOperationResultsResponseUnmarshaller.Instance;
@@ -1889,7 +1889,7 @@ namespace Amazon.CloudFormation
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSetOperationResults">REST API Reference for ListStackSetOperationResults Operation</seealso>
-        public Task<ListStackSetOperationResultsResponse> ListStackSetOperationResultsAsync(ListStackSetOperationResultsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListStackSetOperationResultsResponse> ListStackSetOperationResultsAsync(ListStackSetOperationResultsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListStackSetOperationResultsRequestMarshaller();
             var unmarshaller = ListStackSetOperationResultsResponseUnmarshaller.Instance;
@@ -1913,7 +1913,7 @@ namespace Amazon.CloudFormation
         /// The specified stack set doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSetOperations">REST API Reference for ListStackSetOperations Operation</seealso>
-        public ListStackSetOperationsResponse ListStackSetOperations(ListStackSetOperationsRequest request)
+        public virtual ListStackSetOperationsResponse ListStackSetOperations(ListStackSetOperationsRequest request)
         {
             var marshaller = new ListStackSetOperationsRequestMarshaller();
             var unmarshaller = ListStackSetOperationsResponseUnmarshaller.Instance;
@@ -1931,7 +1931,7 @@ namespace Amazon.CloudFormation
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSetOperations">REST API Reference for ListStackSetOperations Operation</seealso>
-        public Task<ListStackSetOperationsResponse> ListStackSetOperationsAsync(ListStackSetOperationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListStackSetOperationsResponse> ListStackSetOperationsAsync(ListStackSetOperationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListStackSetOperationsRequestMarshaller();
             var unmarshaller = ListStackSetOperationsResponseUnmarshaller.Instance;
@@ -1952,7 +1952,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the ListStackSets service method, as returned by CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSets">REST API Reference for ListStackSets Operation</seealso>
-        public ListStackSetsResponse ListStackSets(ListStackSetsRequest request)
+        public virtual ListStackSetsResponse ListStackSets(ListStackSetsRequest request)
         {
             var marshaller = new ListStackSetsRequestMarshaller();
             var unmarshaller = ListStackSetsResponseUnmarshaller.Instance;
@@ -1970,7 +1970,7 @@ namespace Amazon.CloudFormation
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSets">REST API Reference for ListStackSets Operation</seealso>
-        public Task<ListStackSetsResponse> ListStackSetsAsync(ListStackSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListStackSetsResponse> ListStackSetsAsync(ListStackSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListStackSetsRequestMarshaller();
             var unmarshaller = ListStackSetsResponseUnmarshaller.Instance;
@@ -1991,7 +1991,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the SetStackPolicy service method, as returned by CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/SetStackPolicy">REST API Reference for SetStackPolicy Operation</seealso>
-        public SetStackPolicyResponse SetStackPolicy(SetStackPolicyRequest request)
+        public virtual SetStackPolicyResponse SetStackPolicy(SetStackPolicyRequest request)
         {
             var marshaller = new SetStackPolicyRequestMarshaller();
             var unmarshaller = SetStackPolicyResponseUnmarshaller.Instance;
@@ -2009,7 +2009,7 @@ namespace Amazon.CloudFormation
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/SetStackPolicy">REST API Reference for SetStackPolicy Operation</seealso>
-        public Task<SetStackPolicyResponse> SetStackPolicyAsync(SetStackPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<SetStackPolicyResponse> SetStackPolicyAsync(SetStackPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SetStackPolicyRequestMarshaller();
             var unmarshaller = SetStackPolicyResponseUnmarshaller.Instance;
@@ -2035,7 +2035,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the SignalResource service method, as returned by CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/SignalResource">REST API Reference for SignalResource Operation</seealso>
-        public SignalResourceResponse SignalResource(SignalResourceRequest request)
+        public virtual SignalResourceResponse SignalResource(SignalResourceRequest request)
         {
             var marshaller = new SignalResourceRequestMarshaller();
             var unmarshaller = SignalResourceResponseUnmarshaller.Instance;
@@ -2053,7 +2053,7 @@ namespace Amazon.CloudFormation
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/SignalResource">REST API Reference for SignalResource Operation</seealso>
-        public Task<SignalResourceResponse> SignalResourceAsync(SignalResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<SignalResourceResponse> SignalResourceAsync(SignalResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SignalResourceRequestMarshaller();
             var unmarshaller = SignalResourceResponseUnmarshaller.Instance;
@@ -2083,7 +2083,7 @@ namespace Amazon.CloudFormation
         /// The specified stack set doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StopStackSetOperation">REST API Reference for StopStackSetOperation Operation</seealso>
-        public StopStackSetOperationResponse StopStackSetOperation(StopStackSetOperationRequest request)
+        public virtual StopStackSetOperationResponse StopStackSetOperation(StopStackSetOperationRequest request)
         {
             var marshaller = new StopStackSetOperationRequestMarshaller();
             var unmarshaller = StopStackSetOperationResponseUnmarshaller.Instance;
@@ -2101,7 +2101,7 @@ namespace Amazon.CloudFormation
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StopStackSetOperation">REST API Reference for StopStackSetOperation Operation</seealso>
-        public Task<StopStackSetOperationResponse> StopStackSetOperationAsync(StopStackSetOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<StopStackSetOperationResponse> StopStackSetOperationAsync(StopStackSetOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new StopStackSetOperationRequestMarshaller();
             var unmarshaller = StopStackSetOperationResponseUnmarshaller.Instance;
@@ -2143,7 +2143,7 @@ namespace Amazon.CloudFormation
         /// A client request token already exists.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateStack">REST API Reference for UpdateStack Operation</seealso>
-        public UpdateStackResponse UpdateStack(UpdateStackRequest request)
+        public virtual UpdateStackResponse UpdateStack(UpdateStackRequest request)
         {
             var marshaller = new UpdateStackRequestMarshaller();
             var unmarshaller = UpdateStackResponseUnmarshaller.Instance;
@@ -2161,7 +2161,7 @@ namespace Amazon.CloudFormation
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateStack">REST API Reference for UpdateStack Operation</seealso>
-        public Task<UpdateStackResponse> UpdateStackAsync(UpdateStackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateStackResponse> UpdateStackAsync(UpdateStackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateStackRequestMarshaller();
             var unmarshaller = UpdateStackResponseUnmarshaller.Instance;
@@ -2207,7 +2207,7 @@ namespace Amazon.CloudFormation
         /// was performed.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateStackSet">REST API Reference for UpdateStackSet Operation</seealso>
-        public UpdateStackSetResponse UpdateStackSet(UpdateStackSetRequest request)
+        public virtual UpdateStackSetResponse UpdateStackSet(UpdateStackSetRequest request)
         {
             var marshaller = new UpdateStackSetRequestMarshaller();
             var unmarshaller = UpdateStackSetResponseUnmarshaller.Instance;
@@ -2225,7 +2225,7 @@ namespace Amazon.CloudFormation
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateStackSet">REST API Reference for UpdateStackSet Operation</seealso>
-        public Task<UpdateStackSetResponse> UpdateStackSetAsync(UpdateStackSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateStackSetResponse> UpdateStackSetAsync(UpdateStackSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateStackSetRequestMarshaller();
             var unmarshaller = UpdateStackSetResponseUnmarshaller.Instance;
@@ -2256,7 +2256,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the UpdateTerminationProtection service method, as returned by CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateTerminationProtection">REST API Reference for UpdateTerminationProtection Operation</seealso>
-        public UpdateTerminationProtectionResponse UpdateTerminationProtection(UpdateTerminationProtectionRequest request)
+        public virtual UpdateTerminationProtectionResponse UpdateTerminationProtection(UpdateTerminationProtectionRequest request)
         {
             var marshaller = new UpdateTerminationProtectionRequestMarshaller();
             var unmarshaller = UpdateTerminationProtectionResponseUnmarshaller.Instance;
@@ -2274,7 +2274,7 @@ namespace Amazon.CloudFormation
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateTerminationProtection">REST API Reference for UpdateTerminationProtection Operation</seealso>
-        public Task<UpdateTerminationProtectionResponse> UpdateTerminationProtectionAsync(UpdateTerminationProtectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateTerminationProtectionResponse> UpdateTerminationProtectionAsync(UpdateTerminationProtectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateTerminationProtectionRequestMarshaller();
             var unmarshaller = UpdateTerminationProtectionResponseUnmarshaller.Instance;
@@ -2296,7 +2296,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the ValidateTemplate service method, as returned by CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ValidateTemplate">REST API Reference for ValidateTemplate Operation</seealso>
-        public ValidateTemplateResponse ValidateTemplate()
+        public virtual ValidateTemplateResponse ValidateTemplate()
         {
             return ValidateTemplate(new ValidateTemplateRequest());
         }
@@ -2311,7 +2311,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the ValidateTemplate service method, as returned by CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ValidateTemplate">REST API Reference for ValidateTemplate Operation</seealso>
-        public ValidateTemplateResponse ValidateTemplate(ValidateTemplateRequest request)
+        public virtual ValidateTemplateResponse ValidateTemplate(ValidateTemplateRequest request)
         {
             var marshaller = new ValidateTemplateRequestMarshaller();
             var unmarshaller = ValidateTemplateResponseUnmarshaller.Instance;
@@ -2331,7 +2331,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the ValidateTemplate service method, as returned by CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ValidateTemplate">REST API Reference for ValidateTemplate Operation</seealso>
-        public Task<ValidateTemplateResponse> ValidateTemplateAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ValidateTemplateResponse> ValidateTemplateAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return ValidateTemplateAsync(new ValidateTemplateRequest(), cancellationToken);
         }
@@ -2345,7 +2345,7 @@ namespace Amazon.CloudFormation
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ValidateTemplate">REST API Reference for ValidateTemplate Operation</seealso>
-        public Task<ValidateTemplateResponse> ValidateTemplateAsync(ValidateTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ValidateTemplateResponse> ValidateTemplateAsync(ValidateTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ValidateTemplateRequestMarshaller();
             var unmarshaller = ValidateTemplateResponseUnmarshaller.Instance;

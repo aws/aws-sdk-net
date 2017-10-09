@@ -767,7 +767,7 @@ namespace Amazon.GameLift
         /// The requested operation is not supported in the region specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/AcceptMatch">REST API Reference for AcceptMatch Operation</seealso>
-        public AcceptMatchResponse AcceptMatch(AcceptMatchRequest request)
+        public virtual AcceptMatchResponse AcceptMatch(AcceptMatchRequest request)
         {
             var marshaller = new AcceptMatchRequestMarshaller();
             var unmarshaller = AcceptMatchResponseUnmarshaller.Instance;
@@ -785,7 +785,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/AcceptMatch">REST API Reference for AcceptMatch Operation</seealso>
-        public Task<AcceptMatchResponse> AcceptMatchAsync(AcceptMatchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<AcceptMatchResponse> AcceptMatchAsync(AcceptMatchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AcceptMatchRequestMarshaller();
             var unmarshaller = AcceptMatchResponseUnmarshaller.Instance;
@@ -875,7 +875,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
-        public CreateAliasResponse CreateAlias(CreateAliasRequest request)
+        public virtual CreateAliasResponse CreateAlias(CreateAliasRequest request)
         {
             var marshaller = new CreateAliasRequestMarshaller();
             var unmarshaller = CreateAliasResponseUnmarshaller.Instance;
@@ -893,7 +893,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
-        public Task<CreateAliasResponse> CreateAliasAsync(CreateAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateAliasResponse> CreateAliasAsync(CreateAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateAliasRequestMarshaller();
             var unmarshaller = CreateAliasResponseUnmarshaller.Instance;
@@ -976,7 +976,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateBuild">REST API Reference for CreateBuild Operation</seealso>
-        public CreateBuildResponse CreateBuild(CreateBuildRequest request)
+        public virtual CreateBuildResponse CreateBuild(CreateBuildRequest request)
         {
             var marshaller = new CreateBuildRequestMarshaller();
             var unmarshaller = CreateBuildResponseUnmarshaller.Instance;
@@ -994,7 +994,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateBuild">REST API Reference for CreateBuild Operation</seealso>
-        public Task<CreateBuildResponse> CreateBuildAsync(CreateBuildRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateBuildResponse> CreateBuildAsync(CreateBuildRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateBuildRequestMarshaller();
             var unmarshaller = CreateBuildResponseUnmarshaller.Instance;
@@ -1204,7 +1204,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateFleet">REST API Reference for CreateFleet Operation</seealso>
-        public CreateFleetResponse CreateFleet(CreateFleetRequest request)
+        public virtual CreateFleetResponse CreateFleet(CreateFleetRequest request)
         {
             var marshaller = new CreateFleetRequestMarshaller();
             var unmarshaller = CreateFleetResponseUnmarshaller.Instance;
@@ -1222,7 +1222,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateFleet">REST API Reference for CreateFleet Operation</seealso>
-        public Task<CreateFleetResponse> CreateFleetAsync(CreateFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateFleetResponse> CreateFleetAsync(CreateFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateFleetRequestMarshaller();
             var unmarshaller = CreateFleetResponseUnmarshaller.Instance;
@@ -1370,7 +1370,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateGameSession">REST API Reference for CreateGameSession Operation</seealso>
-        public CreateGameSessionResponse CreateGameSession(CreateGameSessionRequest request)
+        public virtual CreateGameSessionResponse CreateGameSession(CreateGameSessionRequest request)
         {
             var marshaller = new CreateGameSessionRequestMarshaller();
             var unmarshaller = CreateGameSessionResponseUnmarshaller.Instance;
@@ -1388,7 +1388,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateGameSession">REST API Reference for CreateGameSession Operation</seealso>
-        public Task<CreateGameSessionResponse> CreateGameSessionAsync(CreateGameSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateGameSessionResponse> CreateGameSessionAsync(CreateGameSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateGameSessionRequestMarshaller();
             var unmarshaller = CreateGameSessionResponseUnmarshaller.Instance;
@@ -1479,7 +1479,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateGameSessionQueue">REST API Reference for CreateGameSessionQueue Operation</seealso>
-        public CreateGameSessionQueueResponse CreateGameSessionQueue(CreateGameSessionQueueRequest request)
+        public virtual CreateGameSessionQueueResponse CreateGameSessionQueue(CreateGameSessionQueueRequest request)
         {
             var marshaller = new CreateGameSessionQueueRequestMarshaller();
             var unmarshaller = CreateGameSessionQueueResponseUnmarshaller.Instance;
@@ -1497,7 +1497,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateGameSessionQueue">REST API Reference for CreateGameSessionQueue Operation</seealso>
-        public Task<CreateGameSessionQueueResponse> CreateGameSessionQueueAsync(CreateGameSessionQueueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateGameSessionQueueResponse> CreateGameSessionQueueAsync(CreateGameSessionQueueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateGameSessionQueueRequestMarshaller();
             var unmarshaller = CreateGameSessionQueueResponseUnmarshaller.Instance;
@@ -1602,7 +1602,7 @@ namespace Amazon.GameLift
         /// The requested operation is not supported in the region specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateMatchmakingConfiguration">REST API Reference for CreateMatchmakingConfiguration Operation</seealso>
-        public CreateMatchmakingConfigurationResponse CreateMatchmakingConfiguration(CreateMatchmakingConfigurationRequest request)
+        public virtual CreateMatchmakingConfigurationResponse CreateMatchmakingConfiguration(CreateMatchmakingConfigurationRequest request)
         {
             var marshaller = new CreateMatchmakingConfigurationRequestMarshaller();
             var unmarshaller = CreateMatchmakingConfigurationResponseUnmarshaller.Instance;
@@ -1620,7 +1620,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateMatchmakingConfiguration">REST API Reference for CreateMatchmakingConfiguration Operation</seealso>
-        public Task<CreateMatchmakingConfigurationResponse> CreateMatchmakingConfigurationAsync(CreateMatchmakingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateMatchmakingConfigurationResponse> CreateMatchmakingConfigurationAsync(CreateMatchmakingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateMatchmakingConfigurationRequestMarshaller();
             var unmarshaller = CreateMatchmakingConfigurationResponseUnmarshaller.Instance;
@@ -1709,7 +1709,7 @@ namespace Amazon.GameLift
         /// The requested operation is not supported in the region specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateMatchmakingRuleSet">REST API Reference for CreateMatchmakingRuleSet Operation</seealso>
-        public CreateMatchmakingRuleSetResponse CreateMatchmakingRuleSet(CreateMatchmakingRuleSetRequest request)
+        public virtual CreateMatchmakingRuleSetResponse CreateMatchmakingRuleSet(CreateMatchmakingRuleSetRequest request)
         {
             var marshaller = new CreateMatchmakingRuleSetRequestMarshaller();
             var unmarshaller = CreateMatchmakingRuleSetResponseUnmarshaller.Instance;
@@ -1727,7 +1727,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateMatchmakingRuleSet">REST API Reference for CreateMatchmakingRuleSet Operation</seealso>
-        public Task<CreateMatchmakingRuleSetResponse> CreateMatchmakingRuleSetAsync(CreateMatchmakingRuleSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateMatchmakingRuleSetResponse> CreateMatchmakingRuleSetAsync(CreateMatchmakingRuleSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateMatchmakingRuleSetRequestMarshaller();
             var unmarshaller = CreateMatchmakingRuleSetResponseUnmarshaller.Instance;
@@ -1827,7 +1827,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreatePlayerSession">REST API Reference for CreatePlayerSession Operation</seealso>
-        public CreatePlayerSessionResponse CreatePlayerSession(string gameSessionId, string playerId)
+        public virtual CreatePlayerSessionResponse CreatePlayerSession(string gameSessionId, string playerId)
         {
             var request = new CreatePlayerSessionRequest();
             request.GameSessionId = gameSessionId;
@@ -1921,7 +1921,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreatePlayerSession">REST API Reference for CreatePlayerSession Operation</seealso>
-        public CreatePlayerSessionResponse CreatePlayerSession(CreatePlayerSessionRequest request)
+        public virtual CreatePlayerSessionResponse CreatePlayerSession(CreatePlayerSessionRequest request)
         {
             var marshaller = new CreatePlayerSessionRequestMarshaller();
             var unmarshaller = CreatePlayerSessionResponseUnmarshaller.Instance;
@@ -2019,7 +2019,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreatePlayerSession">REST API Reference for CreatePlayerSession Operation</seealso>
-        public Task<CreatePlayerSessionResponse> CreatePlayerSessionAsync(string gameSessionId, string playerId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreatePlayerSessionResponse> CreatePlayerSessionAsync(string gameSessionId, string playerId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new CreatePlayerSessionRequest();
             request.GameSessionId = gameSessionId;
@@ -2037,7 +2037,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreatePlayerSession">REST API Reference for CreatePlayerSession Operation</seealso>
-        public Task<CreatePlayerSessionResponse> CreatePlayerSessionAsync(CreatePlayerSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreatePlayerSessionResponse> CreatePlayerSessionAsync(CreatePlayerSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreatePlayerSessionRequestMarshaller();
             var unmarshaller = CreatePlayerSessionResponseUnmarshaller.Instance;
@@ -2137,7 +2137,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreatePlayerSessions">REST API Reference for CreatePlayerSessions Operation</seealso>
-        public CreatePlayerSessionsResponse CreatePlayerSessions(string gameSessionId, List<string> playerIds)
+        public virtual CreatePlayerSessionsResponse CreatePlayerSessions(string gameSessionId, List<string> playerIds)
         {
             var request = new CreatePlayerSessionsRequest();
             request.GameSessionId = gameSessionId;
@@ -2231,7 +2231,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreatePlayerSessions">REST API Reference for CreatePlayerSessions Operation</seealso>
-        public CreatePlayerSessionsResponse CreatePlayerSessions(CreatePlayerSessionsRequest request)
+        public virtual CreatePlayerSessionsResponse CreatePlayerSessions(CreatePlayerSessionsRequest request)
         {
             var marshaller = new CreatePlayerSessionsRequestMarshaller();
             var unmarshaller = CreatePlayerSessionsResponseUnmarshaller.Instance;
@@ -2329,7 +2329,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreatePlayerSessions">REST API Reference for CreatePlayerSessions Operation</seealso>
-        public Task<CreatePlayerSessionsResponse> CreatePlayerSessionsAsync(string gameSessionId, List<string> playerIds, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreatePlayerSessionsResponse> CreatePlayerSessionsAsync(string gameSessionId, List<string> playerIds, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new CreatePlayerSessionsRequest();
             request.GameSessionId = gameSessionId;
@@ -2347,7 +2347,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreatePlayerSessions">REST API Reference for CreatePlayerSessions Operation</seealso>
-        public Task<CreatePlayerSessionsResponse> CreatePlayerSessionsAsync(CreatePlayerSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreatePlayerSessionsResponse> CreatePlayerSessionsAsync(CreatePlayerSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreatePlayerSessionsRequestMarshaller();
             var unmarshaller = CreatePlayerSessionsResponseUnmarshaller.Instance;
@@ -2447,7 +2447,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateVpcPeeringAuthorization">REST API Reference for CreateVpcPeeringAuthorization Operation</seealso>
-        public CreateVpcPeeringAuthorizationResponse CreateVpcPeeringAuthorization(CreateVpcPeeringAuthorizationRequest request)
+        public virtual CreateVpcPeeringAuthorizationResponse CreateVpcPeeringAuthorization(CreateVpcPeeringAuthorizationRequest request)
         {
             var marshaller = new CreateVpcPeeringAuthorizationRequestMarshaller();
             var unmarshaller = CreateVpcPeeringAuthorizationResponseUnmarshaller.Instance;
@@ -2465,7 +2465,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateVpcPeeringAuthorization">REST API Reference for CreateVpcPeeringAuthorization Operation</seealso>
-        public Task<CreateVpcPeeringAuthorizationResponse> CreateVpcPeeringAuthorizationAsync(CreateVpcPeeringAuthorizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateVpcPeeringAuthorizationResponse> CreateVpcPeeringAuthorizationAsync(CreateVpcPeeringAuthorizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateVpcPeeringAuthorizationRequestMarshaller();
             var unmarshaller = CreateVpcPeeringAuthorizationResponseUnmarshaller.Instance;
@@ -2556,7 +2556,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateVpcPeeringConnection">REST API Reference for CreateVpcPeeringConnection Operation</seealso>
-        public CreateVpcPeeringConnectionResponse CreateVpcPeeringConnection(CreateVpcPeeringConnectionRequest request)
+        public virtual CreateVpcPeeringConnectionResponse CreateVpcPeeringConnection(CreateVpcPeeringConnectionRequest request)
         {
             var marshaller = new CreateVpcPeeringConnectionRequestMarshaller();
             var unmarshaller = CreateVpcPeeringConnectionResponseUnmarshaller.Instance;
@@ -2574,7 +2574,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateVpcPeeringConnection">REST API Reference for CreateVpcPeeringConnection Operation</seealso>
-        public Task<CreateVpcPeeringConnectionResponse> CreateVpcPeeringConnectionAsync(CreateVpcPeeringConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateVpcPeeringConnectionResponse> CreateVpcPeeringConnectionAsync(CreateVpcPeeringConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateVpcPeeringConnectionRequestMarshaller();
             var unmarshaller = CreateVpcPeeringConnectionResponseUnmarshaller.Instance;
@@ -2642,7 +2642,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
-        public DeleteAliasResponse DeleteAlias(string aliasId)
+        public virtual DeleteAliasResponse DeleteAlias(string aliasId)
         {
             var request = new DeleteAliasRequest();
             request.AliasId = aliasId;
@@ -2704,7 +2704,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
-        public DeleteAliasResponse DeleteAlias(DeleteAliasRequest request)
+        public virtual DeleteAliasResponse DeleteAlias(DeleteAliasRequest request)
         {
             var marshaller = new DeleteAliasRequestMarshaller();
             var unmarshaller = DeleteAliasResponseUnmarshaller.Instance;
@@ -2770,7 +2770,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
-        public Task<DeleteAliasResponse> DeleteAliasAsync(string aliasId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteAliasResponse> DeleteAliasAsync(string aliasId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DeleteAliasRequest();
             request.AliasId = aliasId;
@@ -2787,7 +2787,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
-        public Task<DeleteAliasResponse> DeleteAliasAsync(DeleteAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteAliasResponse> DeleteAliasAsync(DeleteAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteAliasRequestMarshaller();
             var unmarshaller = DeleteAliasResponseUnmarshaller.Instance;
@@ -2856,7 +2856,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteBuild">REST API Reference for DeleteBuild Operation</seealso>
-        public DeleteBuildResponse DeleteBuild(string buildId)
+        public virtual DeleteBuildResponse DeleteBuild(string buildId)
         {
             var request = new DeleteBuildRequest();
             request.BuildId = buildId;
@@ -2919,7 +2919,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteBuild">REST API Reference for DeleteBuild Operation</seealso>
-        public DeleteBuildResponse DeleteBuild(DeleteBuildRequest request)
+        public virtual DeleteBuildResponse DeleteBuild(DeleteBuildRequest request)
         {
             var marshaller = new DeleteBuildRequestMarshaller();
             var unmarshaller = DeleteBuildResponseUnmarshaller.Instance;
@@ -2986,7 +2986,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteBuild">REST API Reference for DeleteBuild Operation</seealso>
-        public Task<DeleteBuildResponse> DeleteBuildAsync(string buildId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteBuildResponse> DeleteBuildAsync(string buildId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DeleteBuildRequest();
             request.BuildId = buildId;
@@ -3003,7 +3003,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteBuild">REST API Reference for DeleteBuild Operation</seealso>
-        public Task<DeleteBuildResponse> DeleteBuildAsync(DeleteBuildRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteBuildResponse> DeleteBuildAsync(DeleteBuildRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteBuildRequestMarshaller();
             var unmarshaller = DeleteBuildResponseUnmarshaller.Instance;
@@ -3139,7 +3139,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteFleet">REST API Reference for DeleteFleet Operation</seealso>
-        public DeleteFleetResponse DeleteFleet(string fleetId)
+        public virtual DeleteFleetResponse DeleteFleet(string fleetId)
         {
             var request = new DeleteFleetRequest();
             request.FleetId = fleetId;
@@ -3269,7 +3269,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteFleet">REST API Reference for DeleteFleet Operation</seealso>
-        public DeleteFleetResponse DeleteFleet(DeleteFleetRequest request)
+        public virtual DeleteFleetResponse DeleteFleet(DeleteFleetRequest request)
         {
             var marshaller = new DeleteFleetRequestMarshaller();
             var unmarshaller = DeleteFleetResponseUnmarshaller.Instance;
@@ -3403,7 +3403,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteFleet">REST API Reference for DeleteFleet Operation</seealso>
-        public Task<DeleteFleetResponse> DeleteFleetAsync(string fleetId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteFleetResponse> DeleteFleetAsync(string fleetId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DeleteFleetRequest();
             request.FleetId = fleetId;
@@ -3420,7 +3420,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteFleet">REST API Reference for DeleteFleet Operation</seealso>
-        public Task<DeleteFleetResponse> DeleteFleetAsync(DeleteFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteFleetResponse> DeleteFleetAsync(DeleteFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteFleetRequestMarshaller();
             var unmarshaller = DeleteFleetResponseUnmarshaller.Instance;
@@ -3480,7 +3480,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteGameSessionQueue">REST API Reference for DeleteGameSessionQueue Operation</seealso>
-        public DeleteGameSessionQueueResponse DeleteGameSessionQueue(DeleteGameSessionQueueRequest request)
+        public virtual DeleteGameSessionQueueResponse DeleteGameSessionQueue(DeleteGameSessionQueueRequest request)
         {
             var marshaller = new DeleteGameSessionQueueRequestMarshaller();
             var unmarshaller = DeleteGameSessionQueueResponseUnmarshaller.Instance;
@@ -3498,7 +3498,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteGameSessionQueue">REST API Reference for DeleteGameSessionQueue Operation</seealso>
-        public Task<DeleteGameSessionQueueResponse> DeleteGameSessionQueueAsync(DeleteGameSessionQueueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteGameSessionQueueResponse> DeleteGameSessionQueueAsync(DeleteGameSessionQueueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteGameSessionQueueRequestMarshaller();
             var unmarshaller = DeleteGameSessionQueueResponseUnmarshaller.Instance;
@@ -3570,7 +3570,7 @@ namespace Amazon.GameLift
         /// The requested operation is not supported in the region specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteMatchmakingConfiguration">REST API Reference for DeleteMatchmakingConfiguration Operation</seealso>
-        public DeleteMatchmakingConfigurationResponse DeleteMatchmakingConfiguration(DeleteMatchmakingConfigurationRequest request)
+        public virtual DeleteMatchmakingConfigurationResponse DeleteMatchmakingConfiguration(DeleteMatchmakingConfigurationRequest request)
         {
             var marshaller = new DeleteMatchmakingConfigurationRequestMarshaller();
             var unmarshaller = DeleteMatchmakingConfigurationResponseUnmarshaller.Instance;
@@ -3588,7 +3588,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteMatchmakingConfiguration">REST API Reference for DeleteMatchmakingConfiguration Operation</seealso>
-        public Task<DeleteMatchmakingConfigurationResponse> DeleteMatchmakingConfigurationAsync(DeleteMatchmakingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteMatchmakingConfigurationResponse> DeleteMatchmakingConfigurationAsync(DeleteMatchmakingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteMatchmakingConfigurationRequestMarshaller();
             var unmarshaller = DeleteMatchmakingConfigurationResponseUnmarshaller.Instance;
@@ -3716,7 +3716,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteScalingPolicy">REST API Reference for DeleteScalingPolicy Operation</seealso>
-        public DeleteScalingPolicyResponse DeleteScalingPolicy(DeleteScalingPolicyRequest request)
+        public virtual DeleteScalingPolicyResponse DeleteScalingPolicy(DeleteScalingPolicyRequest request)
         {
             var marshaller = new DeleteScalingPolicyRequestMarshaller();
             var unmarshaller = DeleteScalingPolicyResponseUnmarshaller.Instance;
@@ -3734,7 +3734,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteScalingPolicy">REST API Reference for DeleteScalingPolicy Operation</seealso>
-        public Task<DeleteScalingPolicyResponse> DeleteScalingPolicyAsync(DeleteScalingPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteScalingPolicyResponse> DeleteScalingPolicyAsync(DeleteScalingPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteScalingPolicyRequestMarshaller();
             var unmarshaller = DeleteScalingPolicyResponseUnmarshaller.Instance;
@@ -3802,7 +3802,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteVpcPeeringAuthorization">REST API Reference for DeleteVpcPeeringAuthorization Operation</seealso>
-        public DeleteVpcPeeringAuthorizationResponse DeleteVpcPeeringAuthorization(DeleteVpcPeeringAuthorizationRequest request)
+        public virtual DeleteVpcPeeringAuthorizationResponse DeleteVpcPeeringAuthorization(DeleteVpcPeeringAuthorizationRequest request)
         {
             var marshaller = new DeleteVpcPeeringAuthorizationRequestMarshaller();
             var unmarshaller = DeleteVpcPeeringAuthorizationResponseUnmarshaller.Instance;
@@ -3820,7 +3820,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteVpcPeeringAuthorization">REST API Reference for DeleteVpcPeeringAuthorization Operation</seealso>
-        public Task<DeleteVpcPeeringAuthorizationResponse> DeleteVpcPeeringAuthorizationAsync(DeleteVpcPeeringAuthorizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteVpcPeeringAuthorizationResponse> DeleteVpcPeeringAuthorizationAsync(DeleteVpcPeeringAuthorizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteVpcPeeringAuthorizationRequestMarshaller();
             var unmarshaller = DeleteVpcPeeringAuthorizationResponseUnmarshaller.Instance;
@@ -3895,7 +3895,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteVpcPeeringConnection">REST API Reference for DeleteVpcPeeringConnection Operation</seealso>
-        public DeleteVpcPeeringConnectionResponse DeleteVpcPeeringConnection(DeleteVpcPeeringConnectionRequest request)
+        public virtual DeleteVpcPeeringConnectionResponse DeleteVpcPeeringConnection(DeleteVpcPeeringConnectionRequest request)
         {
             var marshaller = new DeleteVpcPeeringConnectionRequestMarshaller();
             var unmarshaller = DeleteVpcPeeringConnectionResponseUnmarshaller.Instance;
@@ -3913,7 +3913,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteVpcPeeringConnection">REST API Reference for DeleteVpcPeeringConnection Operation</seealso>
-        public Task<DeleteVpcPeeringConnectionResponse> DeleteVpcPeeringConnectionAsync(DeleteVpcPeeringConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteVpcPeeringConnectionResponse> DeleteVpcPeeringConnectionAsync(DeleteVpcPeeringConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteVpcPeeringConnectionRequestMarshaller();
             var unmarshaller = DeleteVpcPeeringConnectionResponseUnmarshaller.Instance;
@@ -3985,7 +3985,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeAlias">REST API Reference for DescribeAlias Operation</seealso>
-        public DescribeAliasResponse DescribeAlias(string aliasId)
+        public virtual DescribeAliasResponse DescribeAlias(string aliasId)
         {
             var request = new DescribeAliasRequest();
             request.AliasId = aliasId;
@@ -4051,7 +4051,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeAlias">REST API Reference for DescribeAlias Operation</seealso>
-        public DescribeAliasResponse DescribeAlias(DescribeAliasRequest request)
+        public virtual DescribeAliasResponse DescribeAlias(DescribeAliasRequest request)
         {
             var marshaller = new DescribeAliasRequestMarshaller();
             var unmarshaller = DescribeAliasResponseUnmarshaller.Instance;
@@ -4121,7 +4121,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeAlias">REST API Reference for DescribeAlias Operation</seealso>
-        public Task<DescribeAliasResponse> DescribeAliasAsync(string aliasId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeAliasResponse> DescribeAliasAsync(string aliasId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DescribeAliasRequest();
             request.AliasId = aliasId;
@@ -4138,7 +4138,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeAlias">REST API Reference for DescribeAlias Operation</seealso>
-        public Task<DescribeAliasResponse> DescribeAliasAsync(DescribeAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeAliasResponse> DescribeAliasAsync(DescribeAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeAliasRequestMarshaller();
             var unmarshaller = DescribeAliasResponseUnmarshaller.Instance;
@@ -4201,7 +4201,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeBuild">REST API Reference for DescribeBuild Operation</seealso>
-        public DescribeBuildResponse DescribeBuild(string buildId)
+        public virtual DescribeBuildResponse DescribeBuild(string buildId)
         {
             var request = new DescribeBuildRequest();
             request.BuildId = buildId;
@@ -4258,7 +4258,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeBuild">REST API Reference for DescribeBuild Operation</seealso>
-        public DescribeBuildResponse DescribeBuild(DescribeBuildRequest request)
+        public virtual DescribeBuildResponse DescribeBuild(DescribeBuildRequest request)
         {
             var marshaller = new DescribeBuildRequestMarshaller();
             var unmarshaller = DescribeBuildResponseUnmarshaller.Instance;
@@ -4319,7 +4319,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeBuild">REST API Reference for DescribeBuild Operation</seealso>
-        public Task<DescribeBuildResponse> DescribeBuildAsync(string buildId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeBuildResponse> DescribeBuildAsync(string buildId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DescribeBuildRequest();
             request.BuildId = buildId;
@@ -4336,7 +4336,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeBuild">REST API Reference for DescribeBuild Operation</seealso>
-        public Task<DescribeBuildResponse> DescribeBuildAsync(DescribeBuildRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeBuildResponse> DescribeBuildAsync(DescribeBuildRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeBuildRequestMarshaller();
             var unmarshaller = DescribeBuildResponseUnmarshaller.Instance;
@@ -4472,7 +4472,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeEC2InstanceLimits">REST API Reference for DescribeEC2InstanceLimits Operation</seealso>
-        public DescribeEC2InstanceLimitsResponse DescribeEC2InstanceLimits(EC2InstanceType ec2InstanceType)
+        public virtual DescribeEC2InstanceLimitsResponse DescribeEC2InstanceLimits(EC2InstanceType ec2InstanceType)
         {
             var request = new DescribeEC2InstanceLimitsRequest();
             request.EC2InstanceType = ec2InstanceType;
@@ -4602,7 +4602,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeEC2InstanceLimits">REST API Reference for DescribeEC2InstanceLimits Operation</seealso>
-        public DescribeEC2InstanceLimitsResponse DescribeEC2InstanceLimits(DescribeEC2InstanceLimitsRequest request)
+        public virtual DescribeEC2InstanceLimitsResponse DescribeEC2InstanceLimits(DescribeEC2InstanceLimitsRequest request)
         {
             var marshaller = new DescribeEC2InstanceLimitsRequestMarshaller();
             var unmarshaller = DescribeEC2InstanceLimitsResponseUnmarshaller.Instance;
@@ -4736,7 +4736,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeEC2InstanceLimits">REST API Reference for DescribeEC2InstanceLimits Operation</seealso>
-        public Task<DescribeEC2InstanceLimitsResponse> DescribeEC2InstanceLimitsAsync(EC2InstanceType ec2InstanceType, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeEC2InstanceLimitsResponse> DescribeEC2InstanceLimitsAsync(EC2InstanceType ec2InstanceType, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DescribeEC2InstanceLimitsRequest();
             request.EC2InstanceType = ec2InstanceType;
@@ -4753,7 +4753,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeEC2InstanceLimits">REST API Reference for DescribeEC2InstanceLimits Operation</seealso>
-        public Task<DescribeEC2InstanceLimitsResponse> DescribeEC2InstanceLimitsAsync(DescribeEC2InstanceLimitsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeEC2InstanceLimitsResponse> DescribeEC2InstanceLimitsAsync(DescribeEC2InstanceLimitsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeEC2InstanceLimitsRequestMarshaller();
             var unmarshaller = DescribeEC2InstanceLimitsResponseUnmarshaller.Instance;
@@ -4889,7 +4889,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetAttributes">REST API Reference for DescribeFleetAttributes Operation</seealso>
-        public DescribeFleetAttributesResponse DescribeFleetAttributes(DescribeFleetAttributesRequest request)
+        public virtual DescribeFleetAttributesResponse DescribeFleetAttributes(DescribeFleetAttributesRequest request)
         {
             var marshaller = new DescribeFleetAttributesRequestMarshaller();
             var unmarshaller = DescribeFleetAttributesResponseUnmarshaller.Instance;
@@ -4907,7 +4907,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetAttributes">REST API Reference for DescribeFleetAttributes Operation</seealso>
-        public Task<DescribeFleetAttributesResponse> DescribeFleetAttributesAsync(DescribeFleetAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeFleetAttributesResponse> DescribeFleetAttributesAsync(DescribeFleetAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeFleetAttributesRequestMarshaller();
             var unmarshaller = DescribeFleetAttributesResponseUnmarshaller.Instance;
@@ -5044,7 +5044,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetCapacity">REST API Reference for DescribeFleetCapacity Operation</seealso>
-        public DescribeFleetCapacityResponse DescribeFleetCapacity(DescribeFleetCapacityRequest request)
+        public virtual DescribeFleetCapacityResponse DescribeFleetCapacity(DescribeFleetCapacityRequest request)
         {
             var marshaller = new DescribeFleetCapacityRequestMarshaller();
             var unmarshaller = DescribeFleetCapacityResponseUnmarshaller.Instance;
@@ -5062,7 +5062,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetCapacity">REST API Reference for DescribeFleetCapacity Operation</seealso>
-        public Task<DescribeFleetCapacityResponse> DescribeFleetCapacityAsync(DescribeFleetCapacityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeFleetCapacityResponse> DescribeFleetCapacityAsync(DescribeFleetCapacityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeFleetCapacityRequestMarshaller();
             var unmarshaller = DescribeFleetCapacityResponseUnmarshaller.Instance;
@@ -5191,7 +5191,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetEvents">REST API Reference for DescribeFleetEvents Operation</seealso>
-        public DescribeFleetEventsResponse DescribeFleetEvents(DescribeFleetEventsRequest request)
+        public virtual DescribeFleetEventsResponse DescribeFleetEvents(DescribeFleetEventsRequest request)
         {
             var marshaller = new DescribeFleetEventsRequestMarshaller();
             var unmarshaller = DescribeFleetEventsResponseUnmarshaller.Instance;
@@ -5209,7 +5209,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetEvents">REST API Reference for DescribeFleetEvents Operation</seealso>
-        public Task<DescribeFleetEventsResponse> DescribeFleetEventsAsync(DescribeFleetEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeFleetEventsResponse> DescribeFleetEventsAsync(DescribeFleetEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeFleetEventsRequestMarshaller();
             var unmarshaller = DescribeFleetEventsResponseUnmarshaller.Instance;
@@ -5340,7 +5340,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetPortSettings">REST API Reference for DescribeFleetPortSettings Operation</seealso>
-        public DescribeFleetPortSettingsResponse DescribeFleetPortSettings(string fleetId)
+        public virtual DescribeFleetPortSettingsResponse DescribeFleetPortSettings(string fleetId)
         {
             var request = new DescribeFleetPortSettingsRequest();
             request.FleetId = fleetId;
@@ -5465,7 +5465,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetPortSettings">REST API Reference for DescribeFleetPortSettings Operation</seealso>
-        public DescribeFleetPortSettingsResponse DescribeFleetPortSettings(DescribeFleetPortSettingsRequest request)
+        public virtual DescribeFleetPortSettingsResponse DescribeFleetPortSettings(DescribeFleetPortSettingsRequest request)
         {
             var marshaller = new DescribeFleetPortSettingsRequestMarshaller();
             var unmarshaller = DescribeFleetPortSettingsResponseUnmarshaller.Instance;
@@ -5594,7 +5594,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetPortSettings">REST API Reference for DescribeFleetPortSettings Operation</seealso>
-        public Task<DescribeFleetPortSettingsResponse> DescribeFleetPortSettingsAsync(string fleetId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeFleetPortSettingsResponse> DescribeFleetPortSettingsAsync(string fleetId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DescribeFleetPortSettingsRequest();
             request.FleetId = fleetId;
@@ -5611,7 +5611,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetPortSettings">REST API Reference for DescribeFleetPortSettings Operation</seealso>
-        public Task<DescribeFleetPortSettingsResponse> DescribeFleetPortSettingsAsync(DescribeFleetPortSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeFleetPortSettingsResponse> DescribeFleetPortSettingsAsync(DescribeFleetPortSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeFleetPortSettingsRequestMarshaller();
             var unmarshaller = DescribeFleetPortSettingsResponseUnmarshaller.Instance;
@@ -5747,7 +5747,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetUtilization">REST API Reference for DescribeFleetUtilization Operation</seealso>
-        public DescribeFleetUtilizationResponse DescribeFleetUtilization(DescribeFleetUtilizationRequest request)
+        public virtual DescribeFleetUtilizationResponse DescribeFleetUtilization(DescribeFleetUtilizationRequest request)
         {
             var marshaller = new DescribeFleetUtilizationRequestMarshaller();
             var unmarshaller = DescribeFleetUtilizationResponseUnmarshaller.Instance;
@@ -5765,7 +5765,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetUtilization">REST API Reference for DescribeFleetUtilization Operation</seealso>
-        public Task<DescribeFleetUtilizationResponse> DescribeFleetUtilizationAsync(DescribeFleetUtilizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeFleetUtilizationResponse> DescribeFleetUtilizationAsync(DescribeFleetUtilizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeFleetUtilizationRequestMarshaller();
             var unmarshaller = DescribeFleetUtilizationResponseUnmarshaller.Instance;
@@ -5864,7 +5864,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionDetails">REST API Reference for DescribeGameSessionDetails Operation</seealso>
-        public DescribeGameSessionDetailsResponse DescribeGameSessionDetails(DescribeGameSessionDetailsRequest request)
+        public virtual DescribeGameSessionDetailsResponse DescribeGameSessionDetails(DescribeGameSessionDetailsRequest request)
         {
             var marshaller = new DescribeGameSessionDetailsRequestMarshaller();
             var unmarshaller = DescribeGameSessionDetailsResponseUnmarshaller.Instance;
@@ -5882,7 +5882,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionDetails">REST API Reference for DescribeGameSessionDetails Operation</seealso>
-        public Task<DescribeGameSessionDetailsResponse> DescribeGameSessionDetailsAsync(DescribeGameSessionDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeGameSessionDetailsResponse> DescribeGameSessionDetailsAsync(DescribeGameSessionDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeGameSessionDetailsRequestMarshaller();
             var unmarshaller = DescribeGameSessionDetailsResponseUnmarshaller.Instance;
@@ -5966,7 +5966,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionPlacement">REST API Reference for DescribeGameSessionPlacement Operation</seealso>
-        public DescribeGameSessionPlacementResponse DescribeGameSessionPlacement(DescribeGameSessionPlacementRequest request)
+        public virtual DescribeGameSessionPlacementResponse DescribeGameSessionPlacement(DescribeGameSessionPlacementRequest request)
         {
             var marshaller = new DescribeGameSessionPlacementRequestMarshaller();
             var unmarshaller = DescribeGameSessionPlacementResponseUnmarshaller.Instance;
@@ -5984,7 +5984,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionPlacement">REST API Reference for DescribeGameSessionPlacement Operation</seealso>
-        public Task<DescribeGameSessionPlacementResponse> DescribeGameSessionPlacementAsync(DescribeGameSessionPlacementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeGameSessionPlacementResponse> DescribeGameSessionPlacementAsync(DescribeGameSessionPlacementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeGameSessionPlacementRequestMarshaller();
             var unmarshaller = DescribeGameSessionPlacementResponseUnmarshaller.Instance;
@@ -6046,7 +6046,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionQueues">REST API Reference for DescribeGameSessionQueues Operation</seealso>
-        public DescribeGameSessionQueuesResponse DescribeGameSessionQueues(DescribeGameSessionQueuesRequest request)
+        public virtual DescribeGameSessionQueuesResponse DescribeGameSessionQueues(DescribeGameSessionQueuesRequest request)
         {
             var marshaller = new DescribeGameSessionQueuesRequestMarshaller();
             var unmarshaller = DescribeGameSessionQueuesResponseUnmarshaller.Instance;
@@ -6064,7 +6064,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionQueues">REST API Reference for DescribeGameSessionQueues Operation</seealso>
-        public Task<DescribeGameSessionQueuesResponse> DescribeGameSessionQueuesAsync(DescribeGameSessionQueuesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeGameSessionQueuesResponse> DescribeGameSessionQueuesAsync(DescribeGameSessionQueuesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeGameSessionQueuesRequestMarshaller();
             var unmarshaller = DescribeGameSessionQueuesResponseUnmarshaller.Instance;
@@ -6166,7 +6166,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessions">REST API Reference for DescribeGameSessions Operation</seealso>
-        public DescribeGameSessionsResponse DescribeGameSessions(DescribeGameSessionsRequest request)
+        public virtual DescribeGameSessionsResponse DescribeGameSessions(DescribeGameSessionsRequest request)
         {
             var marshaller = new DescribeGameSessionsRequestMarshaller();
             var unmarshaller = DescribeGameSessionsResponseUnmarshaller.Instance;
@@ -6184,7 +6184,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessions">REST API Reference for DescribeGameSessions Operation</seealso>
-        public Task<DescribeGameSessionsResponse> DescribeGameSessionsAsync(DescribeGameSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeGameSessionsResponse> DescribeGameSessionsAsync(DescribeGameSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeGameSessionsRequestMarshaller();
             var unmarshaller = DescribeGameSessionsResponseUnmarshaller.Instance;
@@ -6230,7 +6230,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeInstances">REST API Reference for DescribeInstances Operation</seealso>
-        public DescribeInstancesResponse DescribeInstances(DescribeInstancesRequest request)
+        public virtual DescribeInstancesResponse DescribeInstances(DescribeInstancesRequest request)
         {
             var marshaller = new DescribeInstancesRequestMarshaller();
             var unmarshaller = DescribeInstancesResponseUnmarshaller.Instance;
@@ -6248,7 +6248,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeInstances">REST API Reference for DescribeInstances Operation</seealso>
-        public Task<DescribeInstancesResponse> DescribeInstancesAsync(DescribeInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeInstancesResponse> DescribeInstancesAsync(DescribeInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeInstancesRequestMarshaller();
             var unmarshaller = DescribeInstancesResponseUnmarshaller.Instance;
@@ -6317,7 +6317,7 @@ namespace Amazon.GameLift
         /// The requested operation is not supported in the region specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmaking">REST API Reference for DescribeMatchmaking Operation</seealso>
-        public DescribeMatchmakingResponse DescribeMatchmaking(DescribeMatchmakingRequest request)
+        public virtual DescribeMatchmakingResponse DescribeMatchmaking(DescribeMatchmakingRequest request)
         {
             var marshaller = new DescribeMatchmakingRequestMarshaller();
             var unmarshaller = DescribeMatchmakingResponseUnmarshaller.Instance;
@@ -6335,7 +6335,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmaking">REST API Reference for DescribeMatchmaking Operation</seealso>
-        public Task<DescribeMatchmakingResponse> DescribeMatchmakingAsync(DescribeMatchmakingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeMatchmakingResponse> DescribeMatchmakingAsync(DescribeMatchmakingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeMatchmakingRequestMarshaller();
             var unmarshaller = DescribeMatchmakingResponseUnmarshaller.Instance;
@@ -6407,7 +6407,7 @@ namespace Amazon.GameLift
         /// The requested operation is not supported in the region specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmakingConfigurations">REST API Reference for DescribeMatchmakingConfigurations Operation</seealso>
-        public DescribeMatchmakingConfigurationsResponse DescribeMatchmakingConfigurations(DescribeMatchmakingConfigurationsRequest request)
+        public virtual DescribeMatchmakingConfigurationsResponse DescribeMatchmakingConfigurations(DescribeMatchmakingConfigurationsRequest request)
         {
             var marshaller = new DescribeMatchmakingConfigurationsRequestMarshaller();
             var unmarshaller = DescribeMatchmakingConfigurationsResponseUnmarshaller.Instance;
@@ -6425,7 +6425,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmakingConfigurations">REST API Reference for DescribeMatchmakingConfigurations Operation</seealso>
-        public Task<DescribeMatchmakingConfigurationsResponse> DescribeMatchmakingConfigurationsAsync(DescribeMatchmakingConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeMatchmakingConfigurationsResponse> DescribeMatchmakingConfigurationsAsync(DescribeMatchmakingConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeMatchmakingConfigurationsRequestMarshaller();
             var unmarshaller = DescribeMatchmakingConfigurationsResponseUnmarshaller.Instance;
@@ -6498,7 +6498,7 @@ namespace Amazon.GameLift
         /// The requested operation is not supported in the region specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmakingRuleSets">REST API Reference for DescribeMatchmakingRuleSets Operation</seealso>
-        public DescribeMatchmakingRuleSetsResponse DescribeMatchmakingRuleSets(DescribeMatchmakingRuleSetsRequest request)
+        public virtual DescribeMatchmakingRuleSetsResponse DescribeMatchmakingRuleSets(DescribeMatchmakingRuleSetsRequest request)
         {
             var marshaller = new DescribeMatchmakingRuleSetsRequestMarshaller();
             var unmarshaller = DescribeMatchmakingRuleSetsResponseUnmarshaller.Instance;
@@ -6516,7 +6516,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmakingRuleSets">REST API Reference for DescribeMatchmakingRuleSets Operation</seealso>
-        public Task<DescribeMatchmakingRuleSetsResponse> DescribeMatchmakingRuleSetsAsync(DescribeMatchmakingRuleSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeMatchmakingRuleSetsResponse> DescribeMatchmakingRuleSetsAsync(DescribeMatchmakingRuleSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeMatchmakingRuleSetsRequestMarshaller();
             var unmarshaller = DescribeMatchmakingRuleSetsResponseUnmarshaller.Instance;
@@ -6602,7 +6602,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribePlayerSessions">REST API Reference for DescribePlayerSessions Operation</seealso>
-        public DescribePlayerSessionsResponse DescribePlayerSessions(DescribePlayerSessionsRequest request)
+        public virtual DescribePlayerSessionsResponse DescribePlayerSessions(DescribePlayerSessionsRequest request)
         {
             var marshaller = new DescribePlayerSessionsRequestMarshaller();
             var unmarshaller = DescribePlayerSessionsResponseUnmarshaller.Instance;
@@ -6620,7 +6620,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribePlayerSessions">REST API Reference for DescribePlayerSessions Operation</seealso>
-        public Task<DescribePlayerSessionsResponse> DescribePlayerSessionsAsync(DescribePlayerSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribePlayerSessionsResponse> DescribePlayerSessionsAsync(DescribePlayerSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribePlayerSessionsRequestMarshaller();
             var unmarshaller = DescribePlayerSessionsResponseUnmarshaller.Instance;
@@ -6748,7 +6748,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeRuntimeConfiguration">REST API Reference for DescribeRuntimeConfiguration Operation</seealso>
-        public DescribeRuntimeConfigurationResponse DescribeRuntimeConfiguration(DescribeRuntimeConfigurationRequest request)
+        public virtual DescribeRuntimeConfigurationResponse DescribeRuntimeConfiguration(DescribeRuntimeConfigurationRequest request)
         {
             var marshaller = new DescribeRuntimeConfigurationRequestMarshaller();
             var unmarshaller = DescribeRuntimeConfigurationResponseUnmarshaller.Instance;
@@ -6766,7 +6766,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeRuntimeConfiguration">REST API Reference for DescribeRuntimeConfiguration Operation</seealso>
-        public Task<DescribeRuntimeConfigurationResponse> DescribeRuntimeConfigurationAsync(DescribeRuntimeConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeRuntimeConfigurationResponse> DescribeRuntimeConfigurationAsync(DescribeRuntimeConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeRuntimeConfigurationRequestMarshaller();
             var unmarshaller = DescribeRuntimeConfigurationResponseUnmarshaller.Instance;
@@ -6899,7 +6899,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeScalingPolicies">REST API Reference for DescribeScalingPolicies Operation</seealso>
-        public DescribeScalingPoliciesResponse DescribeScalingPolicies(DescribeScalingPoliciesRequest request)
+        public virtual DescribeScalingPoliciesResponse DescribeScalingPolicies(DescribeScalingPoliciesRequest request)
         {
             var marshaller = new DescribeScalingPoliciesRequestMarshaller();
             var unmarshaller = DescribeScalingPoliciesResponseUnmarshaller.Instance;
@@ -6917,7 +6917,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeScalingPolicies">REST API Reference for DescribeScalingPolicies Operation</seealso>
-        public Task<DescribeScalingPoliciesResponse> DescribeScalingPoliciesAsync(DescribeScalingPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeScalingPoliciesResponse> DescribeScalingPoliciesAsync(DescribeScalingPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeScalingPoliciesRequestMarshaller();
             var unmarshaller = DescribeScalingPoliciesResponseUnmarshaller.Instance;
@@ -6981,7 +6981,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeVpcPeeringAuthorizations">REST API Reference for DescribeVpcPeeringAuthorizations Operation</seealso>
-        public DescribeVpcPeeringAuthorizationsResponse DescribeVpcPeeringAuthorizations(DescribeVpcPeeringAuthorizationsRequest request)
+        public virtual DescribeVpcPeeringAuthorizationsResponse DescribeVpcPeeringAuthorizations(DescribeVpcPeeringAuthorizationsRequest request)
         {
             var marshaller = new DescribeVpcPeeringAuthorizationsRequestMarshaller();
             var unmarshaller = DescribeVpcPeeringAuthorizationsResponseUnmarshaller.Instance;
@@ -6999,7 +6999,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeVpcPeeringAuthorizations">REST API Reference for DescribeVpcPeeringAuthorizations Operation</seealso>
-        public Task<DescribeVpcPeeringAuthorizationsResponse> DescribeVpcPeeringAuthorizationsAsync(DescribeVpcPeeringAuthorizationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeVpcPeeringAuthorizationsResponse> DescribeVpcPeeringAuthorizationsAsync(DescribeVpcPeeringAuthorizationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeVpcPeeringAuthorizationsRequestMarshaller();
             var unmarshaller = DescribeVpcPeeringAuthorizationsResponseUnmarshaller.Instance;
@@ -7074,7 +7074,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeVpcPeeringConnections">REST API Reference for DescribeVpcPeeringConnections Operation</seealso>
-        public DescribeVpcPeeringConnectionsResponse DescribeVpcPeeringConnections(DescribeVpcPeeringConnectionsRequest request)
+        public virtual DescribeVpcPeeringConnectionsResponse DescribeVpcPeeringConnections(DescribeVpcPeeringConnectionsRequest request)
         {
             var marshaller = new DescribeVpcPeeringConnectionsRequestMarshaller();
             var unmarshaller = DescribeVpcPeeringConnectionsResponseUnmarshaller.Instance;
@@ -7092,7 +7092,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeVpcPeeringConnections">REST API Reference for DescribeVpcPeeringConnections Operation</seealso>
-        public Task<DescribeVpcPeeringConnectionsResponse> DescribeVpcPeeringConnectionsAsync(DescribeVpcPeeringConnectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeVpcPeeringConnectionsResponse> DescribeVpcPeeringConnectionsAsync(DescribeVpcPeeringConnectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeVpcPeeringConnectionsRequestMarshaller();
             var unmarshaller = DescribeVpcPeeringConnectionsResponseUnmarshaller.Instance;
@@ -7182,7 +7182,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetGameSessionLogUrl">REST API Reference for GetGameSessionLogUrl Operation</seealso>
-        public GetGameSessionLogUrlResponse GetGameSessionLogUrl(string gameSessionId)
+        public virtual GetGameSessionLogUrlResponse GetGameSessionLogUrl(string gameSessionId)
         {
             var request = new GetGameSessionLogUrlRequest();
             request.GameSessionId = gameSessionId;
@@ -7266,7 +7266,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetGameSessionLogUrl">REST API Reference for GetGameSessionLogUrl Operation</seealso>
-        public GetGameSessionLogUrlResponse GetGameSessionLogUrl(GetGameSessionLogUrlRequest request)
+        public virtual GetGameSessionLogUrlResponse GetGameSessionLogUrl(GetGameSessionLogUrlRequest request)
         {
             var marshaller = new GetGameSessionLogUrlRequestMarshaller();
             var unmarshaller = GetGameSessionLogUrlResponseUnmarshaller.Instance;
@@ -7354,7 +7354,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetGameSessionLogUrl">REST API Reference for GetGameSessionLogUrl Operation</seealso>
-        public Task<GetGameSessionLogUrlResponse> GetGameSessionLogUrlAsync(string gameSessionId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetGameSessionLogUrlResponse> GetGameSessionLogUrlAsync(string gameSessionId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new GetGameSessionLogUrlRequest();
             request.GameSessionId = gameSessionId;
@@ -7371,7 +7371,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetGameSessionLogUrl">REST API Reference for GetGameSessionLogUrl Operation</seealso>
-        public Task<GetGameSessionLogUrlResponse> GetGameSessionLogUrlAsync(GetGameSessionLogUrlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetGameSessionLogUrlResponse> GetGameSessionLogUrlAsync(GetGameSessionLogUrlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetGameSessionLogUrlRequestMarshaller();
             var unmarshaller = GetGameSessionLogUrlResponseUnmarshaller.Instance;
@@ -7427,7 +7427,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetInstanceAccess">REST API Reference for GetInstanceAccess Operation</seealso>
-        public GetInstanceAccessResponse GetInstanceAccess(GetInstanceAccessRequest request)
+        public virtual GetInstanceAccessResponse GetInstanceAccess(GetInstanceAccessRequest request)
         {
             var marshaller = new GetInstanceAccessRequestMarshaller();
             var unmarshaller = GetInstanceAccessResponseUnmarshaller.Instance;
@@ -7445,7 +7445,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetInstanceAccess">REST API Reference for GetInstanceAccess Operation</seealso>
-        public Task<GetInstanceAccessResponse> GetInstanceAccessAsync(GetInstanceAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetInstanceAccessResponse> GetInstanceAccessAsync(GetInstanceAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetInstanceAccessRequestMarshaller();
             var unmarshaller = GetInstanceAccessResponseUnmarshaller.Instance;
@@ -7513,7 +7513,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListAliases">REST API Reference for ListAliases Operation</seealso>
-        public ListAliasesResponse ListAliases(ListAliasesRequest request)
+        public virtual ListAliasesResponse ListAliases(ListAliasesRequest request)
         {
             var marshaller = new ListAliasesRequestMarshaller();
             var unmarshaller = ListAliasesResponseUnmarshaller.Instance;
@@ -7531,7 +7531,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListAliases">REST API Reference for ListAliases Operation</seealso>
-        public Task<ListAliasesResponse> ListAliasesAsync(ListAliasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListAliasesResponse> ListAliasesAsync(ListAliasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListAliasesRequestMarshaller();
             var unmarshaller = ListAliasesResponseUnmarshaller.Instance;
@@ -7596,7 +7596,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListBuilds">REST API Reference for ListBuilds Operation</seealso>
-        public ListBuildsResponse ListBuilds(ListBuildsRequest request)
+        public virtual ListBuildsResponse ListBuilds(ListBuildsRequest request)
         {
             var marshaller = new ListBuildsRequestMarshaller();
             var unmarshaller = ListBuildsResponseUnmarshaller.Instance;
@@ -7614,7 +7614,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListBuilds">REST API Reference for ListBuilds Operation</seealso>
-        public Task<ListBuildsResponse> ListBuildsAsync(ListBuildsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListBuildsResponse> ListBuildsAsync(ListBuildsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListBuildsRequestMarshaller();
             var unmarshaller = ListBuildsResponseUnmarshaller.Instance;
@@ -7745,7 +7745,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListFleets">REST API Reference for ListFleets Operation</seealso>
-        public ListFleetsResponse ListFleets(ListFleetsRequest request)
+        public virtual ListFleetsResponse ListFleets(ListFleetsRequest request)
         {
             var marshaller = new ListFleetsRequestMarshaller();
             var unmarshaller = ListFleetsResponseUnmarshaller.Instance;
@@ -7763,7 +7763,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListFleets">REST API Reference for ListFleets Operation</seealso>
-        public Task<ListFleetsResponse> ListFleetsAsync(ListFleetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListFleetsResponse> ListFleetsAsync(ListFleetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListFleetsRequestMarshaller();
             var unmarshaller = ListFleetsResponseUnmarshaller.Instance;
@@ -7920,7 +7920,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PutScalingPolicy">REST API Reference for PutScalingPolicy Operation</seealso>
-        public PutScalingPolicyResponse PutScalingPolicy(PutScalingPolicyRequest request)
+        public virtual PutScalingPolicyResponse PutScalingPolicy(PutScalingPolicyRequest request)
         {
             var marshaller = new PutScalingPolicyRequestMarshaller();
             var unmarshaller = PutScalingPolicyResponseUnmarshaller.Instance;
@@ -7938,7 +7938,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PutScalingPolicy">REST API Reference for PutScalingPolicy Operation</seealso>
-        public Task<PutScalingPolicyResponse> PutScalingPolicyAsync(PutScalingPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PutScalingPolicyResponse> PutScalingPolicyAsync(PutScalingPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutScalingPolicyRequestMarshaller();
             var unmarshaller = PutScalingPolicyResponseUnmarshaller.Instance;
@@ -7976,7 +7976,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/RequestUploadCredentials">REST API Reference for RequestUploadCredentials Operation</seealso>
-        public RequestUploadCredentialsResponse RequestUploadCredentials(string buildId)
+        public virtual RequestUploadCredentialsResponse RequestUploadCredentials(string buildId)
         {
             var request = new RequestUploadCredentialsRequest();
             request.BuildId = buildId;
@@ -8008,7 +8008,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/RequestUploadCredentials">REST API Reference for RequestUploadCredentials Operation</seealso>
-        public RequestUploadCredentialsResponse RequestUploadCredentials(RequestUploadCredentialsRequest request)
+        public virtual RequestUploadCredentialsResponse RequestUploadCredentials(RequestUploadCredentialsRequest request)
         {
             var marshaller = new RequestUploadCredentialsRequestMarshaller();
             var unmarshaller = RequestUploadCredentialsResponseUnmarshaller.Instance;
@@ -8044,7 +8044,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/RequestUploadCredentials">REST API Reference for RequestUploadCredentials Operation</seealso>
-        public Task<RequestUploadCredentialsResponse> RequestUploadCredentialsAsync(string buildId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<RequestUploadCredentialsResponse> RequestUploadCredentialsAsync(string buildId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new RequestUploadCredentialsRequest();
             request.BuildId = buildId;
@@ -8061,7 +8061,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/RequestUploadCredentials">REST API Reference for RequestUploadCredentials Operation</seealso>
-        public Task<RequestUploadCredentialsResponse> RequestUploadCredentialsAsync(RequestUploadCredentialsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<RequestUploadCredentialsResponse> RequestUploadCredentialsAsync(RequestUploadCredentialsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RequestUploadCredentialsRequestMarshaller();
             var unmarshaller = RequestUploadCredentialsResponseUnmarshaller.Instance;
@@ -8133,7 +8133,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ResolveAlias">REST API Reference for ResolveAlias Operation</seealso>
-        public ResolveAliasResponse ResolveAlias(string aliasId)
+        public virtual ResolveAliasResponse ResolveAlias(string aliasId)
         {
             var request = new ResolveAliasRequest();
             request.AliasId = aliasId;
@@ -8199,7 +8199,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ResolveAlias">REST API Reference for ResolveAlias Operation</seealso>
-        public ResolveAliasResponse ResolveAlias(ResolveAliasRequest request)
+        public virtual ResolveAliasResponse ResolveAlias(ResolveAliasRequest request)
         {
             var marshaller = new ResolveAliasRequestMarshaller();
             var unmarshaller = ResolveAliasResponseUnmarshaller.Instance;
@@ -8269,7 +8269,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ResolveAlias">REST API Reference for ResolveAlias Operation</seealso>
-        public Task<ResolveAliasResponse> ResolveAliasAsync(string aliasId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ResolveAliasResponse> ResolveAliasAsync(string aliasId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new ResolveAliasRequest();
             request.AliasId = aliasId;
@@ -8286,7 +8286,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ResolveAlias">REST API Reference for ResolveAlias Operation</seealso>
-        public Task<ResolveAliasResponse> ResolveAliasAsync(ResolveAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ResolveAliasResponse> ResolveAliasAsync(ResolveAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ResolveAliasRequestMarshaller();
             var unmarshaller = ResolveAliasResponseUnmarshaller.Instance;
@@ -8431,7 +8431,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/SearchGameSessions">REST API Reference for SearchGameSessions Operation</seealso>
-        public SearchGameSessionsResponse SearchGameSessions(SearchGameSessionsRequest request)
+        public virtual SearchGameSessionsResponse SearchGameSessions(SearchGameSessionsRequest request)
         {
             var marshaller = new SearchGameSessionsRequestMarshaller();
             var unmarshaller = SearchGameSessionsResponseUnmarshaller.Instance;
@@ -8449,7 +8449,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/SearchGameSessions">REST API Reference for SearchGameSessions Operation</seealso>
-        public Task<SearchGameSessionsResponse> SearchGameSessionsAsync(SearchGameSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<SearchGameSessionsResponse> SearchGameSessionsAsync(SearchGameSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SearchGameSessionsRequestMarshaller();
             var unmarshaller = SearchGameSessionsResponseUnmarshaller.Instance;
@@ -8590,7 +8590,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartGameSessionPlacement">REST API Reference for StartGameSessionPlacement Operation</seealso>
-        public StartGameSessionPlacementResponse StartGameSessionPlacement(StartGameSessionPlacementRequest request)
+        public virtual StartGameSessionPlacementResponse StartGameSessionPlacement(StartGameSessionPlacementRequest request)
         {
             var marshaller = new StartGameSessionPlacementRequestMarshaller();
             var unmarshaller = StartGameSessionPlacementResponseUnmarshaller.Instance;
@@ -8608,7 +8608,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartGameSessionPlacement">REST API Reference for StartGameSessionPlacement Operation</seealso>
-        public Task<StartGameSessionPlacementResponse> StartGameSessionPlacementAsync(StartGameSessionPlacementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<StartGameSessionPlacementResponse> StartGameSessionPlacementAsync(StartGameSessionPlacementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new StartGameSessionPlacementRequestMarshaller();
             var unmarshaller = StartGameSessionPlacementResponseUnmarshaller.Instance;
@@ -8743,7 +8743,7 @@ namespace Amazon.GameLift
         /// The requested operation is not supported in the region specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartMatchmaking">REST API Reference for StartMatchmaking Operation</seealso>
-        public StartMatchmakingResponse StartMatchmaking(StartMatchmakingRequest request)
+        public virtual StartMatchmakingResponse StartMatchmaking(StartMatchmakingRequest request)
         {
             var marshaller = new StartMatchmakingRequestMarshaller();
             var unmarshaller = StartMatchmakingResponseUnmarshaller.Instance;
@@ -8761,7 +8761,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartMatchmaking">REST API Reference for StartMatchmaking Operation</seealso>
-        public Task<StartMatchmakingResponse> StartMatchmakingAsync(StartMatchmakingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<StartMatchmakingResponse> StartMatchmakingAsync(StartMatchmakingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new StartMatchmakingRequestMarshaller();
             var unmarshaller = StartMatchmakingResponseUnmarshaller.Instance;
@@ -8845,7 +8845,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopGameSessionPlacement">REST API Reference for StopGameSessionPlacement Operation</seealso>
-        public StopGameSessionPlacementResponse StopGameSessionPlacement(StopGameSessionPlacementRequest request)
+        public virtual StopGameSessionPlacementResponse StopGameSessionPlacement(StopGameSessionPlacementRequest request)
         {
             var marshaller = new StopGameSessionPlacementRequestMarshaller();
             var unmarshaller = StopGameSessionPlacementResponseUnmarshaller.Instance;
@@ -8863,7 +8863,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopGameSessionPlacement">REST API Reference for StopGameSessionPlacement Operation</seealso>
-        public Task<StopGameSessionPlacementResponse> StopGameSessionPlacementAsync(StopGameSessionPlacementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<StopGameSessionPlacementResponse> StopGameSessionPlacementAsync(StopGameSessionPlacementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new StopGameSessionPlacementRequestMarshaller();
             var unmarshaller = StopGameSessionPlacementResponseUnmarshaller.Instance;
@@ -8923,7 +8923,7 @@ namespace Amazon.GameLift
         /// The requested operation is not supported in the region specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopMatchmaking">REST API Reference for StopMatchmaking Operation</seealso>
-        public StopMatchmakingResponse StopMatchmaking(StopMatchmakingRequest request)
+        public virtual StopMatchmakingResponse StopMatchmaking(StopMatchmakingRequest request)
         {
             var marshaller = new StopMatchmakingRequestMarshaller();
             var unmarshaller = StopMatchmakingResponseUnmarshaller.Instance;
@@ -8941,7 +8941,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopMatchmaking">REST API Reference for StopMatchmaking Operation</seealso>
-        public Task<StopMatchmakingResponse> StopMatchmakingAsync(StopMatchmakingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<StopMatchmakingResponse> StopMatchmakingAsync(StopMatchmakingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new StopMatchmakingRequestMarshaller();
             var unmarshaller = StopMatchmakingResponseUnmarshaller.Instance;
@@ -9010,7 +9010,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateAlias">REST API Reference for UpdateAlias Operation</seealso>
-        public UpdateAliasResponse UpdateAlias(UpdateAliasRequest request)
+        public virtual UpdateAliasResponse UpdateAlias(UpdateAliasRequest request)
         {
             var marshaller = new UpdateAliasRequestMarshaller();
             var unmarshaller = UpdateAliasResponseUnmarshaller.Instance;
@@ -9028,7 +9028,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateAlias">REST API Reference for UpdateAlias Operation</seealso>
-        public Task<UpdateAliasResponse> UpdateAliasAsync(UpdateAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateAliasResponse> UpdateAliasAsync(UpdateAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateAliasRequestMarshaller();
             var unmarshaller = UpdateAliasResponseUnmarshaller.Instance;
@@ -9092,7 +9092,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateBuild">REST API Reference for UpdateBuild Operation</seealso>
-        public UpdateBuildResponse UpdateBuild(UpdateBuildRequest request)
+        public virtual UpdateBuildResponse UpdateBuild(UpdateBuildRequest request)
         {
             var marshaller = new UpdateBuildRequestMarshaller();
             var unmarshaller = UpdateBuildResponseUnmarshaller.Instance;
@@ -9110,7 +9110,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateBuild">REST API Reference for UpdateBuild Operation</seealso>
-        public Task<UpdateBuildResponse> UpdateBuildAsync(UpdateBuildRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateBuildResponse> UpdateBuildAsync(UpdateBuildRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateBuildRequestMarshaller();
             var unmarshaller = UpdateBuildResponseUnmarshaller.Instance;
@@ -9250,7 +9250,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetAttributes">REST API Reference for UpdateFleetAttributes Operation</seealso>
-        public UpdateFleetAttributesResponse UpdateFleetAttributes(UpdateFleetAttributesRequest request)
+        public virtual UpdateFleetAttributesResponse UpdateFleetAttributes(UpdateFleetAttributesRequest request)
         {
             var marshaller = new UpdateFleetAttributesRequestMarshaller();
             var unmarshaller = UpdateFleetAttributesResponseUnmarshaller.Instance;
@@ -9268,7 +9268,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetAttributes">REST API Reference for UpdateFleetAttributes Operation</seealso>
-        public Task<UpdateFleetAttributesResponse> UpdateFleetAttributesAsync(UpdateFleetAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateFleetAttributesResponse> UpdateFleetAttributesAsync(UpdateFleetAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateFleetAttributesRequestMarshaller();
             var unmarshaller = UpdateFleetAttributesResponseUnmarshaller.Instance;
@@ -9425,7 +9425,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetCapacity">REST API Reference for UpdateFleetCapacity Operation</seealso>
-        public UpdateFleetCapacityResponse UpdateFleetCapacity(UpdateFleetCapacityRequest request)
+        public virtual UpdateFleetCapacityResponse UpdateFleetCapacity(UpdateFleetCapacityRequest request)
         {
             var marshaller = new UpdateFleetCapacityRequestMarshaller();
             var unmarshaller = UpdateFleetCapacityResponseUnmarshaller.Instance;
@@ -9443,7 +9443,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetCapacity">REST API Reference for UpdateFleetCapacity Operation</seealso>
-        public Task<UpdateFleetCapacityResponse> UpdateFleetCapacityAsync(UpdateFleetCapacityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateFleetCapacityResponse> UpdateFleetCapacityAsync(UpdateFleetCapacityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateFleetCapacityRequestMarshaller();
             var unmarshaller = UpdateFleetCapacityResponseUnmarshaller.Instance;
@@ -9586,7 +9586,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetPortSettings">REST API Reference for UpdateFleetPortSettings Operation</seealso>
-        public UpdateFleetPortSettingsResponse UpdateFleetPortSettings(UpdateFleetPortSettingsRequest request)
+        public virtual UpdateFleetPortSettingsResponse UpdateFleetPortSettings(UpdateFleetPortSettingsRequest request)
         {
             var marshaller = new UpdateFleetPortSettingsRequestMarshaller();
             var unmarshaller = UpdateFleetPortSettingsResponseUnmarshaller.Instance;
@@ -9604,7 +9604,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetPortSettings">REST API Reference for UpdateFleetPortSettings Operation</seealso>
-        public Task<UpdateFleetPortSettingsResponse> UpdateFleetPortSettingsAsync(UpdateFleetPortSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateFleetPortSettingsResponse> UpdateFleetPortSettingsAsync(UpdateFleetPortSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateFleetPortSettingsRequestMarshaller();
             var unmarshaller = UpdateFleetPortSettingsResponseUnmarshaller.Instance;
@@ -9700,7 +9700,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateGameSession">REST API Reference for UpdateGameSession Operation</seealso>
-        public UpdateGameSessionResponse UpdateGameSession(UpdateGameSessionRequest request)
+        public virtual UpdateGameSessionResponse UpdateGameSession(UpdateGameSessionRequest request)
         {
             var marshaller = new UpdateGameSessionRequestMarshaller();
             var unmarshaller = UpdateGameSessionResponseUnmarshaller.Instance;
@@ -9718,7 +9718,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateGameSession">REST API Reference for UpdateGameSession Operation</seealso>
-        public Task<UpdateGameSessionResponse> UpdateGameSessionAsync(UpdateGameSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateGameSessionResponse> UpdateGameSessionAsync(UpdateGameSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateGameSessionRequestMarshaller();
             var unmarshaller = UpdateGameSessionResponseUnmarshaller.Instance;
@@ -9779,7 +9779,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateGameSessionQueue">REST API Reference for UpdateGameSessionQueue Operation</seealso>
-        public UpdateGameSessionQueueResponse UpdateGameSessionQueue(UpdateGameSessionQueueRequest request)
+        public virtual UpdateGameSessionQueueResponse UpdateGameSessionQueue(UpdateGameSessionQueueRequest request)
         {
             var marshaller = new UpdateGameSessionQueueRequestMarshaller();
             var unmarshaller = UpdateGameSessionQueueResponseUnmarshaller.Instance;
@@ -9797,7 +9797,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateGameSessionQueue">REST API Reference for UpdateGameSessionQueue Operation</seealso>
-        public Task<UpdateGameSessionQueueResponse> UpdateGameSessionQueueAsync(UpdateGameSessionQueueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateGameSessionQueueResponse> UpdateGameSessionQueueAsync(UpdateGameSessionQueueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateGameSessionQueueRequestMarshaller();
             var unmarshaller = UpdateGameSessionQueueResponseUnmarshaller.Instance;
@@ -9868,7 +9868,7 @@ namespace Amazon.GameLift
         /// The requested operation is not supported in the region specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateMatchmakingConfiguration">REST API Reference for UpdateMatchmakingConfiguration Operation</seealso>
-        public UpdateMatchmakingConfigurationResponse UpdateMatchmakingConfiguration(UpdateMatchmakingConfigurationRequest request)
+        public virtual UpdateMatchmakingConfigurationResponse UpdateMatchmakingConfiguration(UpdateMatchmakingConfigurationRequest request)
         {
             var marshaller = new UpdateMatchmakingConfigurationRequestMarshaller();
             var unmarshaller = UpdateMatchmakingConfigurationResponseUnmarshaller.Instance;
@@ -9886,7 +9886,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateMatchmakingConfiguration">REST API Reference for UpdateMatchmakingConfiguration Operation</seealso>
-        public Task<UpdateMatchmakingConfigurationResponse> UpdateMatchmakingConfigurationAsync(UpdateMatchmakingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateMatchmakingConfigurationResponse> UpdateMatchmakingConfigurationAsync(UpdateMatchmakingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateMatchmakingConfigurationRequestMarshaller();
             var unmarshaller = UpdateMatchmakingConfigurationResponseUnmarshaller.Instance;
@@ -10034,7 +10034,7 @@ namespace Amazon.GameLift
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateRuntimeConfiguration">REST API Reference for UpdateRuntimeConfiguration Operation</seealso>
-        public UpdateRuntimeConfigurationResponse UpdateRuntimeConfiguration(UpdateRuntimeConfigurationRequest request)
+        public virtual UpdateRuntimeConfigurationResponse UpdateRuntimeConfiguration(UpdateRuntimeConfigurationRequest request)
         {
             var marshaller = new UpdateRuntimeConfigurationRequestMarshaller();
             var unmarshaller = UpdateRuntimeConfigurationResponseUnmarshaller.Instance;
@@ -10052,7 +10052,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateRuntimeConfiguration">REST API Reference for UpdateRuntimeConfiguration Operation</seealso>
-        public Task<UpdateRuntimeConfigurationResponse> UpdateRuntimeConfigurationAsync(UpdateRuntimeConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateRuntimeConfigurationResponse> UpdateRuntimeConfigurationAsync(UpdateRuntimeConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateRuntimeConfigurationRequestMarshaller();
             var unmarshaller = UpdateRuntimeConfigurationResponseUnmarshaller.Instance;
@@ -10120,7 +10120,7 @@ namespace Amazon.GameLift
         /// The requested operation is not supported in the region specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ValidateMatchmakingRuleSet">REST API Reference for ValidateMatchmakingRuleSet Operation</seealso>
-        public ValidateMatchmakingRuleSetResponse ValidateMatchmakingRuleSet(ValidateMatchmakingRuleSetRequest request)
+        public virtual ValidateMatchmakingRuleSetResponse ValidateMatchmakingRuleSet(ValidateMatchmakingRuleSetRequest request)
         {
             var marshaller = new ValidateMatchmakingRuleSetRequestMarshaller();
             var unmarshaller = ValidateMatchmakingRuleSetResponseUnmarshaller.Instance;
@@ -10138,7 +10138,7 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ValidateMatchmakingRuleSet">REST API Reference for ValidateMatchmakingRuleSet Operation</seealso>
-        public Task<ValidateMatchmakingRuleSetResponse> ValidateMatchmakingRuleSetAsync(ValidateMatchmakingRuleSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ValidateMatchmakingRuleSetResponse> ValidateMatchmakingRuleSetAsync(ValidateMatchmakingRuleSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ValidateMatchmakingRuleSetRequestMarshaller();
             var unmarshaller = ValidateMatchmakingRuleSetResponseUnmarshaller.Instance;

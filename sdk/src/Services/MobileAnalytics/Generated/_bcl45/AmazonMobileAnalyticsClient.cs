@@ -240,7 +240,7 @@ namespace Amazon.MobileAnalytics
         /// <exception cref="Amazon.MobileAnalytics.Model.BadRequestException">
         /// An exception object returned when a request fails.
         /// </exception>
-        public PutEventsResponse PutEvents(PutEventsRequest request)
+        public virtual PutEventsResponse PutEvents(PutEventsRequest request)
         {
             var marshaller = new PutEventsRequestMarshaller();
             var unmarshaller = PutEventsResponseUnmarshaller.Instance;
@@ -257,7 +257,7 @@ namespace Amazon.MobileAnalytics
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<PutEventsResponse> PutEventsAsync(PutEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PutEventsResponse> PutEventsAsync(PutEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutEventsRequestMarshaller();
             var unmarshaller = PutEventsResponseUnmarshaller.Instance;

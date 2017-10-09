@@ -260,7 +260,7 @@ namespace Amazon.ImportExport
         /// <exception cref="Amazon.ImportExport.Model.UnableToCancelJobIdException">
         /// AWS Import/Export cannot cancel the job
         /// </exception>
-        public CancelJobResponse CancelJob(CancelJobRequest request)
+        public virtual CancelJobResponse CancelJob(CancelJobRequest request)
         {
             var marshaller = new CancelJobRequestMarshaller();
             var unmarshaller = CancelJobResponseUnmarshaller.Instance;
@@ -277,7 +277,7 @@ namespace Amazon.ImportExport
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CancelJobResponse> CancelJobAsync(CancelJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CancelJobResponse> CancelJobAsync(CancelJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CancelJobRequestMarshaller();
             var unmarshaller = CancelJobResponseUnmarshaller.Instance;
@@ -357,7 +357,7 @@ namespace Amazon.ImportExport
         /// bucket, exportBucket, or logBucket field to a bucket that the account, as specified
         /// by the manifest's Access Key ID, has write permissions to.
         /// </exception>
-        public CreateJobResponse CreateJob(CreateJobRequest request)
+        public virtual CreateJobResponse CreateJob(CreateJobRequest request)
         {
             var marshaller = new CreateJobRequestMarshaller();
             var unmarshaller = CreateJobResponseUnmarshaller.Instance;
@@ -374,7 +374,7 @@ namespace Amazon.ImportExport
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CreateJobResponse> CreateJobAsync(CreateJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateJobResponse> CreateJobAsync(CreateJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateJobRequestMarshaller();
             var unmarshaller = CreateJobResponseUnmarshaller.Instance;
@@ -418,7 +418,7 @@ namespace Amazon.ImportExport
         /// <exception cref="Amazon.ImportExport.Model.InvalidVersionException">
         /// The client tool version is invalid.
         /// </exception>
-        public GetShippingLabelResponse GetShippingLabel(GetShippingLabelRequest request)
+        public virtual GetShippingLabelResponse GetShippingLabel(GetShippingLabelRequest request)
         {
             var marshaller = new GetShippingLabelRequestMarshaller();
             var unmarshaller = GetShippingLabelResponseUnmarshaller.Instance;
@@ -435,7 +435,7 @@ namespace Amazon.ImportExport
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetShippingLabelResponse> GetShippingLabelAsync(GetShippingLabelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetShippingLabelResponse> GetShippingLabelAsync(GetShippingLabelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetShippingLabelRequestMarshaller();
             var unmarshaller = GetShippingLabelResponseUnmarshaller.Instance;
@@ -474,7 +474,7 @@ namespace Amazon.ImportExport
         /// <exception cref="Amazon.ImportExport.Model.InvalidVersionException">
         /// The client tool version is invalid.
         /// </exception>
-        public GetStatusResponse GetStatus(GetStatusRequest request)
+        public virtual GetStatusResponse GetStatus(GetStatusRequest request)
         {
             var marshaller = new GetStatusRequestMarshaller();
             var unmarshaller = GetStatusResponseUnmarshaller.Instance;
@@ -491,7 +491,7 @@ namespace Amazon.ImportExport
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetStatusResponse> GetStatusAsync(GetStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetStatusResponse> GetStatusAsync(GetStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetStatusRequestMarshaller();
             var unmarshaller = GetStatusResponseUnmarshaller.Instance;
@@ -524,7 +524,7 @@ namespace Amazon.ImportExport
         /// <exception cref="Amazon.ImportExport.Model.InvalidVersionException">
         /// The client tool version is invalid.
         /// </exception>
-        public ListJobsResponse ListJobs()
+        public virtual ListJobsResponse ListJobs()
         {
             return ListJobs(new ListJobsRequest());
         }
@@ -550,7 +550,7 @@ namespace Amazon.ImportExport
         /// <exception cref="Amazon.ImportExport.Model.InvalidVersionException">
         /// The client tool version is invalid.
         /// </exception>
-        public ListJobsResponse ListJobs(ListJobsRequest request)
+        public virtual ListJobsResponse ListJobs(ListJobsRequest request)
         {
             var marshaller = new ListJobsRequestMarshaller();
             var unmarshaller = ListJobsResponseUnmarshaller.Instance;
@@ -581,7 +581,7 @@ namespace Amazon.ImportExport
         /// <exception cref="Amazon.ImportExport.Model.InvalidVersionException">
         /// The client tool version is invalid.
         /// </exception>
-        public Task<ListJobsResponse> ListJobsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListJobsResponse> ListJobsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return ListJobsAsync(new ListJobsRequest(), cancellationToken);
         }
@@ -594,7 +594,7 @@ namespace Amazon.ImportExport
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<ListJobsResponse> ListJobsAsync(ListJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListJobsResponse> ListJobsAsync(ListJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListJobsRequestMarshaller();
             var unmarshaller = ListJobsResponseUnmarshaller.Instance;
@@ -677,7 +677,7 @@ namespace Amazon.ImportExport
         /// <exception cref="Amazon.ImportExport.Model.UnableToUpdateJobIdException">
         /// AWS Import/Export cannot update the job
         /// </exception>
-        public UpdateJobResponse UpdateJob(UpdateJobRequest request)
+        public virtual UpdateJobResponse UpdateJob(UpdateJobRequest request)
         {
             var marshaller = new UpdateJobRequestMarshaller();
             var unmarshaller = UpdateJobResponseUnmarshaller.Instance;
@@ -694,7 +694,7 @@ namespace Amazon.ImportExport
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateJobResponse> UpdateJobAsync(UpdateJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateJobResponse> UpdateJobAsync(UpdateJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateJobRequestMarshaller();
             var unmarshaller = UpdateJobResponseUnmarshaller.Instance;

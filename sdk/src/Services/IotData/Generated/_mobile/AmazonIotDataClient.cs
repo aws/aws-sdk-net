@@ -77,7 +77,7 @@ namespace Amazon.IotData
         
         #region  DeleteThingShadow
 
-        internal DeleteThingShadowResponse DeleteThingShadow(DeleteThingShadowRequest request)
+        internal virtual DeleteThingShadowResponse DeleteThingShadow(DeleteThingShadowRequest request)
         {
             var marshaller = new DeleteThingShadowRequestMarshaller();
             var unmarshaller = DeleteThingShadowResponseUnmarshaller.Instance;
@@ -95,7 +95,7 @@ namespace Amazon.IotData
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteThingShadowResponse> DeleteThingShadowAsync(DeleteThingShadowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteThingShadowResponse> DeleteThingShadowAsync(DeleteThingShadowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteThingShadowRequestMarshaller();
             var unmarshaller = DeleteThingShadowResponseUnmarshaller.Instance;
@@ -108,7 +108,7 @@ namespace Amazon.IotData
         
         #region  GetThingShadow
 
-        internal GetThingShadowResponse GetThingShadow(GetThingShadowRequest request)
+        internal virtual GetThingShadowResponse GetThingShadow(GetThingShadowRequest request)
         {
             var marshaller = new GetThingShadowRequestMarshaller();
             var unmarshaller = GetThingShadowResponseUnmarshaller.Instance;
@@ -126,7 +126,7 @@ namespace Amazon.IotData
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetThingShadowResponse> GetThingShadowAsync(GetThingShadowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetThingShadowResponse> GetThingShadowAsync(GetThingShadowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetThingShadowRequestMarshaller();
             var unmarshaller = GetThingShadowResponseUnmarshaller.Instance;
@@ -139,7 +139,7 @@ namespace Amazon.IotData
         
         #region  Publish
 
-        internal PublishResponse Publish(PublishRequest request)
+        internal virtual PublishResponse Publish(PublishRequest request)
         {
             var marshaller = new PublishRequestMarshaller();
             var unmarshaller = PublishResponseUnmarshaller.Instance;
@@ -157,7 +157,7 @@ namespace Amazon.IotData
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<PublishResponse> PublishAsync(PublishRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PublishResponse> PublishAsync(PublishRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PublishRequestMarshaller();
             var unmarshaller = PublishResponseUnmarshaller.Instance;
@@ -170,7 +170,7 @@ namespace Amazon.IotData
         
         #region  UpdateThingShadow
 
-        internal UpdateThingShadowResponse UpdateThingShadow(UpdateThingShadowRequest request)
+        internal virtual UpdateThingShadowResponse UpdateThingShadow(UpdateThingShadowRequest request)
         {
             var marshaller = new UpdateThingShadowRequestMarshaller();
             var unmarshaller = UpdateThingShadowResponseUnmarshaller.Instance;
@@ -188,7 +188,7 @@ namespace Amazon.IotData
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateThingShadowResponse> UpdateThingShadowAsync(UpdateThingShadowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateThingShadowResponse> UpdateThingShadowAsync(UpdateThingShadowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateThingShadowRequestMarshaller();
             var unmarshaller = UpdateThingShadowResponseUnmarshaller.Instance;

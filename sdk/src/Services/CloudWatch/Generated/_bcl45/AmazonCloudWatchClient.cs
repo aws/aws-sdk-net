@@ -255,7 +255,7 @@ namespace Amazon.CloudWatch
         /// The named resource does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteAlarms">REST API Reference for DeleteAlarms Operation</seealso>
-        public DeleteAlarmsResponse DeleteAlarms(DeleteAlarmsRequest request)
+        public virtual DeleteAlarmsResponse DeleteAlarms(DeleteAlarmsRequest request)
         {
             var marshaller = new DeleteAlarmsRequestMarshaller();
             var unmarshaller = DeleteAlarmsResponseUnmarshaller.Instance;
@@ -273,7 +273,7 @@ namespace Amazon.CloudWatch
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteAlarms">REST API Reference for DeleteAlarms Operation</seealso>
-        public Task<DeleteAlarmsResponse> DeleteAlarmsAsync(DeleteAlarmsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteAlarmsResponse> DeleteAlarmsAsync(DeleteAlarmsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteAlarmsRequestMarshaller();
             var unmarshaller = DeleteAlarmsResponseUnmarshaller.Instance;
@@ -304,7 +304,7 @@ namespace Amazon.CloudWatch
         /// The value of an input parameter is bad or out-of-range.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteDashboards">REST API Reference for DeleteDashboards Operation</seealso>
-        public DeleteDashboardsResponse DeleteDashboards(DeleteDashboardsRequest request)
+        public virtual DeleteDashboardsResponse DeleteDashboards(DeleteDashboardsRequest request)
         {
             var marshaller = new DeleteDashboardsRequestMarshaller();
             var unmarshaller = DeleteDashboardsResponseUnmarshaller.Instance;
@@ -322,7 +322,7 @@ namespace Amazon.CloudWatch
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteDashboards">REST API Reference for DeleteDashboards Operation</seealso>
-        public Task<DeleteDashboardsResponse> DeleteDashboardsAsync(DeleteDashboardsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteDashboardsResponse> DeleteDashboardsAsync(DeleteDashboardsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteDashboardsRequestMarshaller();
             var unmarshaller = DeleteDashboardsResponseUnmarshaller.Instance;
@@ -352,7 +352,7 @@ namespace Amazon.CloudWatch
         /// The next token specified is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmHistory">REST API Reference for DescribeAlarmHistory Operation</seealso>
-        public DescribeAlarmHistoryResponse DescribeAlarmHistory()
+        public virtual DescribeAlarmHistoryResponse DescribeAlarmHistory()
         {
             return DescribeAlarmHistory(new DescribeAlarmHistoryRequest());
         }
@@ -375,7 +375,7 @@ namespace Amazon.CloudWatch
         /// The next token specified is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmHistory">REST API Reference for DescribeAlarmHistory Operation</seealso>
-        public DescribeAlarmHistoryResponse DescribeAlarmHistory(DescribeAlarmHistoryRequest request)
+        public virtual DescribeAlarmHistoryResponse DescribeAlarmHistory(DescribeAlarmHistoryRequest request)
         {
             var marshaller = new DescribeAlarmHistoryRequestMarshaller();
             var unmarshaller = DescribeAlarmHistoryResponseUnmarshaller.Instance;
@@ -403,7 +403,7 @@ namespace Amazon.CloudWatch
         /// The next token specified is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmHistory">REST API Reference for DescribeAlarmHistory Operation</seealso>
-        public Task<DescribeAlarmHistoryResponse> DescribeAlarmHistoryAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeAlarmHistoryResponse> DescribeAlarmHistoryAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeAlarmHistoryAsync(new DescribeAlarmHistoryRequest(), cancellationToken);
         }
@@ -417,7 +417,7 @@ namespace Amazon.CloudWatch
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmHistory">REST API Reference for DescribeAlarmHistory Operation</seealso>
-        public Task<DescribeAlarmHistoryResponse> DescribeAlarmHistoryAsync(DescribeAlarmHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeAlarmHistoryResponse> DescribeAlarmHistoryAsync(DescribeAlarmHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeAlarmHistoryRequestMarshaller();
             var unmarshaller = DescribeAlarmHistoryResponseUnmarshaller.Instance;
@@ -442,7 +442,7 @@ namespace Amazon.CloudWatch
         /// The next token specified is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarms">REST API Reference for DescribeAlarms Operation</seealso>
-        public DescribeAlarmsResponse DescribeAlarms()
+        public virtual DescribeAlarmsResponse DescribeAlarms()
         {
             return DescribeAlarms(new DescribeAlarmsRequest());
         }
@@ -460,7 +460,7 @@ namespace Amazon.CloudWatch
         /// The next token specified is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarms">REST API Reference for DescribeAlarms Operation</seealso>
-        public DescribeAlarmsResponse DescribeAlarms(DescribeAlarmsRequest request)
+        public virtual DescribeAlarmsResponse DescribeAlarms(DescribeAlarmsRequest request)
         {
             var marshaller = new DescribeAlarmsRequestMarshaller();
             var unmarshaller = DescribeAlarmsResponseUnmarshaller.Instance;
@@ -483,7 +483,7 @@ namespace Amazon.CloudWatch
         /// The next token specified is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarms">REST API Reference for DescribeAlarms Operation</seealso>
-        public Task<DescribeAlarmsResponse> DescribeAlarmsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeAlarmsResponse> DescribeAlarmsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeAlarmsAsync(new DescribeAlarmsRequest(), cancellationToken);
         }
@@ -497,7 +497,7 @@ namespace Amazon.CloudWatch
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarms">REST API Reference for DescribeAlarms Operation</seealso>
-        public Task<DescribeAlarmsResponse> DescribeAlarmsAsync(DescribeAlarmsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeAlarmsResponse> DescribeAlarmsAsync(DescribeAlarmsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeAlarmsRequestMarshaller();
             var unmarshaller = DescribeAlarmsResponseUnmarshaller.Instance;
@@ -519,7 +519,7 @@ namespace Amazon.CloudWatch
         /// 
         /// <returns>The response from the DescribeAlarmsForMetric service method, as returned by CloudWatch.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmsForMetric">REST API Reference for DescribeAlarmsForMetric Operation</seealso>
-        public DescribeAlarmsForMetricResponse DescribeAlarmsForMetric(DescribeAlarmsForMetricRequest request)
+        public virtual DescribeAlarmsForMetricResponse DescribeAlarmsForMetric(DescribeAlarmsForMetricRequest request)
         {
             var marshaller = new DescribeAlarmsForMetricRequestMarshaller();
             var unmarshaller = DescribeAlarmsForMetricResponseUnmarshaller.Instance;
@@ -537,7 +537,7 @@ namespace Amazon.CloudWatch
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmsForMetric">REST API Reference for DescribeAlarmsForMetric Operation</seealso>
-        public Task<DescribeAlarmsForMetricResponse> DescribeAlarmsForMetricAsync(DescribeAlarmsForMetricRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeAlarmsForMetricResponse> DescribeAlarmsForMetricAsync(DescribeAlarmsForMetricRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeAlarmsForMetricRequestMarshaller();
             var unmarshaller = DescribeAlarmsForMetricResponseUnmarshaller.Instance;
@@ -559,7 +559,7 @@ namespace Amazon.CloudWatch
         /// 
         /// <returns>The response from the DisableAlarmActions service method, as returned by CloudWatch.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DisableAlarmActions">REST API Reference for DisableAlarmActions Operation</seealso>
-        public DisableAlarmActionsResponse DisableAlarmActions(DisableAlarmActionsRequest request)
+        public virtual DisableAlarmActionsResponse DisableAlarmActions(DisableAlarmActionsRequest request)
         {
             var marshaller = new DisableAlarmActionsRequestMarshaller();
             var unmarshaller = DisableAlarmActionsResponseUnmarshaller.Instance;
@@ -577,7 +577,7 @@ namespace Amazon.CloudWatch
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DisableAlarmActions">REST API Reference for DisableAlarmActions Operation</seealso>
-        public Task<DisableAlarmActionsResponse> DisableAlarmActionsAsync(DisableAlarmActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DisableAlarmActionsResponse> DisableAlarmActionsAsync(DisableAlarmActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DisableAlarmActionsRequestMarshaller();
             var unmarshaller = DisableAlarmActionsResponseUnmarshaller.Instance;
@@ -598,7 +598,7 @@ namespace Amazon.CloudWatch
         /// 
         /// <returns>The response from the EnableAlarmActions service method, as returned by CloudWatch.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/EnableAlarmActions">REST API Reference for EnableAlarmActions Operation</seealso>
-        public EnableAlarmActionsResponse EnableAlarmActions(EnableAlarmActionsRequest request)
+        public virtual EnableAlarmActionsResponse EnableAlarmActions(EnableAlarmActionsRequest request)
         {
             var marshaller = new EnableAlarmActionsRequestMarshaller();
             var unmarshaller = EnableAlarmActionsResponseUnmarshaller.Instance;
@@ -616,7 +616,7 @@ namespace Amazon.CloudWatch
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/EnableAlarmActions">REST API Reference for EnableAlarmActions Operation</seealso>
-        public Task<EnableAlarmActionsResponse> EnableAlarmActionsAsync(EnableAlarmActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<EnableAlarmActionsResponse> EnableAlarmActionsAsync(EnableAlarmActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new EnableAlarmActionsRequestMarshaller();
             var unmarshaller = EnableAlarmActionsResponseUnmarshaller.Instance;
@@ -653,7 +653,7 @@ namespace Amazon.CloudWatch
         /// The value of an input parameter is bad or out-of-range.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetDashboard">REST API Reference for GetDashboard Operation</seealso>
-        public GetDashboardResponse GetDashboard(GetDashboardRequest request)
+        public virtual GetDashboardResponse GetDashboard(GetDashboardRequest request)
         {
             var marshaller = new GetDashboardRequestMarshaller();
             var unmarshaller = GetDashboardResponseUnmarshaller.Instance;
@@ -671,7 +671,7 @@ namespace Amazon.CloudWatch
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetDashboard">REST API Reference for GetDashboard Operation</seealso>
-        public Task<GetDashboardResponse> GetDashboardAsync(GetDashboardRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetDashboardResponse> GetDashboardAsync(GetDashboardRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetDashboardRequestMarshaller();
             var unmarshaller = GetDashboardResponseUnmarshaller.Instance;
@@ -777,7 +777,7 @@ namespace Amazon.CloudWatch
         /// An input parameter that is required is missing.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricStatistics">REST API Reference for GetMetricStatistics Operation</seealso>
-        public GetMetricStatisticsResponse GetMetricStatistics(GetMetricStatisticsRequest request)
+        public virtual GetMetricStatisticsResponse GetMetricStatistics(GetMetricStatisticsRequest request)
         {
             var marshaller = new GetMetricStatisticsRequestMarshaller();
             var unmarshaller = GetMetricStatisticsResponseUnmarshaller.Instance;
@@ -795,7 +795,7 @@ namespace Amazon.CloudWatch
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricStatistics">REST API Reference for GetMetricStatistics Operation</seealso>
-        public Task<GetMetricStatisticsResponse> GetMetricStatisticsAsync(GetMetricStatisticsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetMetricStatisticsResponse> GetMetricStatisticsAsync(GetMetricStatisticsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetMetricStatisticsRequestMarshaller();
             var unmarshaller = GetMetricStatisticsResponseUnmarshaller.Instance;
@@ -824,7 +824,7 @@ namespace Amazon.CloudWatch
         /// The value of an input parameter is bad or out-of-range.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListDashboards">REST API Reference for ListDashboards Operation</seealso>
-        public ListDashboardsResponse ListDashboards(ListDashboardsRequest request)
+        public virtual ListDashboardsResponse ListDashboards(ListDashboardsRequest request)
         {
             var marshaller = new ListDashboardsRequestMarshaller();
             var unmarshaller = ListDashboardsResponseUnmarshaller.Instance;
@@ -842,7 +842,7 @@ namespace Amazon.CloudWatch
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListDashboards">REST API Reference for ListDashboards Operation</seealso>
-        public Task<ListDashboardsResponse> ListDashboardsAsync(ListDashboardsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListDashboardsResponse> ListDashboardsAsync(ListDashboardsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListDashboardsRequestMarshaller();
             var unmarshaller = ListDashboardsResponseUnmarshaller.Instance;
@@ -880,7 +880,7 @@ namespace Amazon.CloudWatch
         /// The value of an input parameter is bad or out-of-range.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListMetrics">REST API Reference for ListMetrics Operation</seealso>
-        public ListMetricsResponse ListMetrics()
+        public virtual ListMetricsResponse ListMetrics()
         {
             return ListMetrics(new ListMetricsRequest());
         }
@@ -911,7 +911,7 @@ namespace Amazon.CloudWatch
         /// The value of an input parameter is bad or out-of-range.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListMetrics">REST API Reference for ListMetrics Operation</seealso>
-        public ListMetricsResponse ListMetrics(ListMetricsRequest request)
+        public virtual ListMetricsResponse ListMetrics(ListMetricsRequest request)
         {
             var marshaller = new ListMetricsRequestMarshaller();
             var unmarshaller = ListMetricsResponseUnmarshaller.Instance;
@@ -947,7 +947,7 @@ namespace Amazon.CloudWatch
         /// The value of an input parameter is bad or out-of-range.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListMetrics">REST API Reference for ListMetrics Operation</seealso>
-        public Task<ListMetricsResponse> ListMetricsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListMetricsResponse> ListMetricsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return ListMetricsAsync(new ListMetricsRequest(), cancellationToken);
         }
@@ -961,7 +961,7 @@ namespace Amazon.CloudWatch
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListMetrics">REST API Reference for ListMetrics Operation</seealso>
-        public Task<ListMetricsResponse> ListMetricsAsync(ListMetricsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListMetricsResponse> ListMetricsAsync(ListMetricsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListMetricsRequestMarshaller();
             var unmarshaller = ListMetricsResponseUnmarshaller.Instance;
@@ -1013,7 +1013,7 @@ namespace Amazon.CloudWatch
         /// Request processing has failed due to some unknown error, exception, or failure.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutDashboard">REST API Reference for PutDashboard Operation</seealso>
-        public PutDashboardResponse PutDashboard(PutDashboardRequest request)
+        public virtual PutDashboardResponse PutDashboard(PutDashboardRequest request)
         {
             var marshaller = new PutDashboardRequestMarshaller();
             var unmarshaller = PutDashboardResponseUnmarshaller.Instance;
@@ -1031,7 +1031,7 @@ namespace Amazon.CloudWatch
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutDashboard">REST API Reference for PutDashboard Operation</seealso>
-        public Task<PutDashboardResponse> PutDashboardAsync(PutDashboardRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PutDashboardResponse> PutDashboardAsync(PutDashboardRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutDashboardRequestMarshaller();
             var unmarshaller = PutDashboardResponseUnmarshaller.Instance;
@@ -1116,7 +1116,7 @@ namespace Amazon.CloudWatch
         /// The quota for alarms for this customer has already been reached.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricAlarm">REST API Reference for PutMetricAlarm Operation</seealso>
-        public PutMetricAlarmResponse PutMetricAlarm(PutMetricAlarmRequest request)
+        public virtual PutMetricAlarmResponse PutMetricAlarm(PutMetricAlarmRequest request)
         {
             var marshaller = new PutMetricAlarmRequestMarshaller();
             var unmarshaller = PutMetricAlarmResponseUnmarshaller.Instance;
@@ -1134,7 +1134,7 @@ namespace Amazon.CloudWatch
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricAlarm">REST API Reference for PutMetricAlarm Operation</seealso>
-        public Task<PutMetricAlarmResponse> PutMetricAlarmAsync(PutMetricAlarmRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PutMetricAlarmResponse> PutMetricAlarmAsync(PutMetricAlarmRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutMetricAlarmRequestMarshaller();
             var unmarshaller = PutMetricAlarmResponseUnmarshaller.Instance;
@@ -1209,7 +1209,7 @@ namespace Amazon.CloudWatch
         /// An input parameter that is required is missing.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricData">REST API Reference for PutMetricData Operation</seealso>
-        public PutMetricDataResponse PutMetricData(PutMetricDataRequest request)
+        public virtual PutMetricDataResponse PutMetricData(PutMetricDataRequest request)
         {
             var marshaller = new PutMetricDataRequestMarshaller();
             var unmarshaller = PutMetricDataResponseUnmarshaller.Instance;
@@ -1227,7 +1227,7 @@ namespace Amazon.CloudWatch
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricData">REST API Reference for PutMetricData Operation</seealso>
-        public Task<PutMetricDataResponse> PutMetricDataAsync(PutMetricDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PutMetricDataResponse> PutMetricDataAsync(PutMetricDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutMetricDataRequestMarshaller();
             var unmarshaller = PutMetricDataResponseUnmarshaller.Instance;
@@ -1260,7 +1260,7 @@ namespace Amazon.CloudWatch
         /// The named resource does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/SetAlarmState">REST API Reference for SetAlarmState Operation</seealso>
-        public SetAlarmStateResponse SetAlarmState(SetAlarmStateRequest request)
+        public virtual SetAlarmStateResponse SetAlarmState(SetAlarmStateRequest request)
         {
             var marshaller = new SetAlarmStateRequestMarshaller();
             var unmarshaller = SetAlarmStateResponseUnmarshaller.Instance;
@@ -1278,7 +1278,7 @@ namespace Amazon.CloudWatch
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/SetAlarmState">REST API Reference for SetAlarmState Operation</seealso>
-        public Task<SetAlarmStateResponse> SetAlarmStateAsync(SetAlarmStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<SetAlarmStateResponse> SetAlarmStateAsync(SetAlarmStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SetAlarmStateRequestMarshaller();
             var unmarshaller = SetAlarmStateResponseUnmarshaller.Instance;

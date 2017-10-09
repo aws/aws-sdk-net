@@ -274,7 +274,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
-        public CancelJobResponse CancelJob(CancelJobRequest request)
+        public virtual CancelJobResponse CancelJob(CancelJobRequest request)
         {
             var marshaller = new CancelJobRequestMarshaller();
             var unmarshaller = CancelJobResponseUnmarshaller.Instance;
@@ -291,7 +291,7 @@ namespace Amazon.ElasticTranscoder
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CancelJobResponse> CancelJobAsync(CancelJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CancelJobResponse> CancelJobAsync(CancelJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CancelJobRequestMarshaller();
             var unmarshaller = CancelJobResponseUnmarshaller.Instance;
@@ -340,7 +340,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
-        public CreateJobResponse CreateJob(CreateJobRequest request)
+        public virtual CreateJobResponse CreateJob(CreateJobRequest request)
         {
             var marshaller = new CreateJobRequestMarshaller();
             var unmarshaller = CreateJobResponseUnmarshaller.Instance;
@@ -357,7 +357,7 @@ namespace Amazon.ElasticTranscoder
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CreateJobResponse> CreateJobAsync(CreateJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateJobResponse> CreateJobAsync(CreateJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateJobRequestMarshaller();
             var unmarshaller = CreateJobResponseUnmarshaller.Instance;
@@ -398,7 +398,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
-        public CreatePipelineResponse CreatePipeline(CreatePipelineRequest request)
+        public virtual CreatePipelineResponse CreatePipeline(CreatePipelineRequest request)
         {
             var marshaller = new CreatePipelineRequestMarshaller();
             var unmarshaller = CreatePipelineResponseUnmarshaller.Instance;
@@ -415,7 +415,7 @@ namespace Amazon.ElasticTranscoder
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CreatePipelineResponse> CreatePipelineAsync(CreatePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreatePipelineResponse> CreatePipelineAsync(CreatePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreatePipelineRequestMarshaller();
             var unmarshaller = CreatePipelineResponseUnmarshaller.Instance;
@@ -471,7 +471,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
-        public CreatePresetResponse CreatePreset(CreatePresetRequest request)
+        public virtual CreatePresetResponse CreatePreset(CreatePresetRequest request)
         {
             var marshaller = new CreatePresetRequestMarshaller();
             var unmarshaller = CreatePresetResponseUnmarshaller.Instance;
@@ -488,7 +488,7 @@ namespace Amazon.ElasticTranscoder
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CreatePresetResponse> CreatePresetAsync(CreatePresetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreatePresetResponse> CreatePresetAsync(CreatePresetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreatePresetRequestMarshaller();
             var unmarshaller = CreatePresetResponseUnmarshaller.Instance;
@@ -536,7 +536,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
-        public DeletePipelineResponse DeletePipeline(DeletePipelineRequest request)
+        public virtual DeletePipelineResponse DeletePipeline(DeletePipelineRequest request)
         {
             var marshaller = new DeletePipelineRequestMarshaller();
             var unmarshaller = DeletePipelineResponseUnmarshaller.Instance;
@@ -553,7 +553,7 @@ namespace Amazon.ElasticTranscoder
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeletePipelineResponse> DeletePipelineAsync(DeletePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeletePipelineResponse> DeletePipelineAsync(DeletePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeletePipelineRequestMarshaller();
             var unmarshaller = DeletePipelineResponseUnmarshaller.Instance;
@@ -596,7 +596,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
-        public DeletePresetResponse DeletePreset(DeletePresetRequest request)
+        public virtual DeletePresetResponse DeletePreset(DeletePresetRequest request)
         {
             var marshaller = new DeletePresetRequestMarshaller();
             var unmarshaller = DeletePresetResponseUnmarshaller.Instance;
@@ -613,7 +613,7 @@ namespace Amazon.ElasticTranscoder
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeletePresetResponse> DeletePresetAsync(DeletePresetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeletePresetResponse> DeletePresetAsync(DeletePresetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeletePresetRequestMarshaller();
             var unmarshaller = DeletePresetResponseUnmarshaller.Instance;
@@ -656,7 +656,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
-        public ListJobsByPipelineResponse ListJobsByPipeline(ListJobsByPipelineRequest request)
+        public virtual ListJobsByPipelineResponse ListJobsByPipeline(ListJobsByPipelineRequest request)
         {
             var marshaller = new ListJobsByPipelineRequestMarshaller();
             var unmarshaller = ListJobsByPipelineResponseUnmarshaller.Instance;
@@ -673,7 +673,7 @@ namespace Amazon.ElasticTranscoder
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<ListJobsByPipelineResponse> ListJobsByPipelineAsync(ListJobsByPipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListJobsByPipelineResponse> ListJobsByPipelineAsync(ListJobsByPipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListJobsByPipelineRequestMarshaller();
             var unmarshaller = ListJobsByPipelineResponseUnmarshaller.Instance;
@@ -711,7 +711,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
-        public ListJobsByStatusResponse ListJobsByStatus(ListJobsByStatusRequest request)
+        public virtual ListJobsByStatusResponse ListJobsByStatus(ListJobsByStatusRequest request)
         {
             var marshaller = new ListJobsByStatusRequestMarshaller();
             var unmarshaller = ListJobsByStatusResponseUnmarshaller.Instance;
@@ -728,7 +728,7 @@ namespace Amazon.ElasticTranscoder
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<ListJobsByStatusResponse> ListJobsByStatusAsync(ListJobsByStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListJobsByStatusResponse> ListJobsByStatusAsync(ListJobsByStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListJobsByStatusRequestMarshaller();
             var unmarshaller = ListJobsByStatusResponseUnmarshaller.Instance;
@@ -761,7 +761,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
-        public ListPipelinesResponse ListPipelines()
+        public virtual ListPipelinesResponse ListPipelines()
         {
             return ListPipelines(new ListPipelinesRequest());
         }
@@ -787,7 +787,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
-        public ListPipelinesResponse ListPipelines(ListPipelinesRequest request)
+        public virtual ListPipelinesResponse ListPipelines(ListPipelinesRequest request)
         {
             var marshaller = new ListPipelinesRequestMarshaller();
             var unmarshaller = ListPipelinesResponseUnmarshaller.Instance;
@@ -818,7 +818,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
-        public Task<ListPipelinesResponse> ListPipelinesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListPipelinesResponse> ListPipelinesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return ListPipelinesAsync(new ListPipelinesRequest(), cancellationToken);
         }
@@ -831,7 +831,7 @@ namespace Amazon.ElasticTranscoder
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<ListPipelinesResponse> ListPipelinesAsync(ListPipelinesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListPipelinesResponse> ListPipelinesAsync(ListPipelinesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListPipelinesRequestMarshaller();
             var unmarshaller = ListPipelinesResponseUnmarshaller.Instance;
@@ -864,7 +864,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
-        public ListPresetsResponse ListPresets()
+        public virtual ListPresetsResponse ListPresets()
         {
             return ListPresets(new ListPresetsRequest());
         }
@@ -890,7 +890,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
-        public ListPresetsResponse ListPresets(ListPresetsRequest request)
+        public virtual ListPresetsResponse ListPresets(ListPresetsRequest request)
         {
             var marshaller = new ListPresetsRequestMarshaller();
             var unmarshaller = ListPresetsResponseUnmarshaller.Instance;
@@ -921,7 +921,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
-        public Task<ListPresetsResponse> ListPresetsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListPresetsResponse> ListPresetsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return ListPresetsAsync(new ListPresetsRequest(), cancellationToken);
         }
@@ -934,7 +934,7 @@ namespace Amazon.ElasticTranscoder
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<ListPresetsResponse> ListPresetsAsync(ListPresetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListPresetsResponse> ListPresetsAsync(ListPresetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListPresetsRequestMarshaller();
             var unmarshaller = ListPresetsResponseUnmarshaller.Instance;
@@ -971,7 +971,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
-        public ReadJobResponse ReadJob(ReadJobRequest request)
+        public virtual ReadJobResponse ReadJob(ReadJobRequest request)
         {
             var marshaller = new ReadJobRequestMarshaller();
             var unmarshaller = ReadJobResponseUnmarshaller.Instance;
@@ -988,7 +988,7 @@ namespace Amazon.ElasticTranscoder
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<ReadJobResponse> ReadJobAsync(ReadJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ReadJobResponse> ReadJobAsync(ReadJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ReadJobRequestMarshaller();
             var unmarshaller = ReadJobResponseUnmarshaller.Instance;
@@ -1025,7 +1025,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
-        public ReadPipelineResponse ReadPipeline(ReadPipelineRequest request)
+        public virtual ReadPipelineResponse ReadPipeline(ReadPipelineRequest request)
         {
             var marshaller = new ReadPipelineRequestMarshaller();
             var unmarshaller = ReadPipelineResponseUnmarshaller.Instance;
@@ -1042,7 +1042,7 @@ namespace Amazon.ElasticTranscoder
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<ReadPipelineResponse> ReadPipelineAsync(ReadPipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ReadPipelineResponse> ReadPipelineAsync(ReadPipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ReadPipelineRequestMarshaller();
             var unmarshaller = ReadPipelineResponseUnmarshaller.Instance;
@@ -1079,7 +1079,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
-        public ReadPresetResponse ReadPreset(ReadPresetRequest request)
+        public virtual ReadPresetResponse ReadPreset(ReadPresetRequest request)
         {
             var marshaller = new ReadPresetRequestMarshaller();
             var unmarshaller = ReadPresetResponseUnmarshaller.Instance;
@@ -1096,7 +1096,7 @@ namespace Amazon.ElasticTranscoder
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<ReadPresetResponse> ReadPresetAsync(ReadPresetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ReadPresetResponse> ReadPresetAsync(ReadPresetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ReadPresetRequestMarshaller();
             var unmarshaller = ReadPresetResponseUnmarshaller.Instance;
@@ -1143,7 +1143,7 @@ namespace Amazon.ElasticTranscoder
         /// One or more required parameter values were not provided in the request.
         /// </exception>
         [Obsolete("This API is deprecated and will be removed in a future release.")]
-        public TestRoleResponse TestRole(TestRoleRequest request)
+        public virtual TestRoleResponse TestRole(TestRoleRequest request)
         {
             var marshaller = new TestRoleRequestMarshaller();
             var unmarshaller = TestRoleResponseUnmarshaller.Instance;
@@ -1161,7 +1161,7 @@ namespace Amazon.ElasticTranscoder
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         [Obsolete("This API is deprecated and will be removed in a future release.")]
-        public Task<TestRoleResponse> TestRoleAsync(TestRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<TestRoleResponse> TestRoleAsync(TestRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new TestRoleRequestMarshaller();
             var unmarshaller = TestRoleResponseUnmarshaller.Instance;
@@ -1210,7 +1210,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
-        public UpdatePipelineResponse UpdatePipeline(UpdatePipelineRequest request)
+        public virtual UpdatePipelineResponse UpdatePipeline(UpdatePipelineRequest request)
         {
             var marshaller = new UpdatePipelineRequestMarshaller();
             var unmarshaller = UpdatePipelineResponseUnmarshaller.Instance;
@@ -1227,7 +1227,7 @@ namespace Amazon.ElasticTranscoder
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdatePipelineResponse> UpdatePipelineAsync(UpdatePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdatePipelineResponse> UpdatePipelineAsync(UpdatePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdatePipelineRequestMarshaller();
             var unmarshaller = UpdatePipelineResponseUnmarshaller.Instance;
@@ -1275,7 +1275,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
-        public UpdatePipelineNotificationsResponse UpdatePipelineNotifications(UpdatePipelineNotificationsRequest request)
+        public virtual UpdatePipelineNotificationsResponse UpdatePipelineNotifications(UpdatePipelineNotificationsRequest request)
         {
             var marshaller = new UpdatePipelineNotificationsRequestMarshaller();
             var unmarshaller = UpdatePipelineNotificationsResponseUnmarshaller.Instance;
@@ -1292,7 +1292,7 @@ namespace Amazon.ElasticTranscoder
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdatePipelineNotificationsResponse> UpdatePipelineNotificationsAsync(UpdatePipelineNotificationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdatePipelineNotificationsResponse> UpdatePipelineNotificationsAsync(UpdatePipelineNotificationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdatePipelineNotificationsRequestMarshaller();
             var unmarshaller = UpdatePipelineNotificationsResponseUnmarshaller.Instance;
@@ -1342,7 +1342,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
-        public UpdatePipelineStatusResponse UpdatePipelineStatus(UpdatePipelineStatusRequest request)
+        public virtual UpdatePipelineStatusResponse UpdatePipelineStatus(UpdatePipelineStatusRequest request)
         {
             var marshaller = new UpdatePipelineStatusRequestMarshaller();
             var unmarshaller = UpdatePipelineStatusResponseUnmarshaller.Instance;
@@ -1359,7 +1359,7 @@ namespace Amazon.ElasticTranscoder
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdatePipelineStatusResponse> UpdatePipelineStatusAsync(UpdatePipelineStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdatePipelineStatusResponse> UpdatePipelineStatusAsync(UpdatePipelineStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdatePipelineStatusRequestMarshaller();
             var unmarshaller = UpdatePipelineStatusResponseUnmarshaller.Instance;

@@ -212,7 +212,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the requested resource does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/AddPermission">REST API Reference for AddPermission Operation</seealso>
-        public void AddPermissionAsync(string topicArn, string label, List<string> awsAccountId, List<string> actionName,  AmazonServiceCallback<AddPermissionRequest, AddPermissionResponse> callback, AsyncOptions options = null)
+        public virtual void AddPermissionAsync(string topicArn, string label, List<string> awsAccountId, List<string> actionName,  AmazonServiceCallback<AddPermissionRequest, AddPermissionResponse> callback, AsyncOptions options = null)
         {
             var request = new AddPermissionRequest();
             request.TopicArn = topicArn;
@@ -232,7 +232,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/AddPermission">REST API Reference for AddPermission Operation</seealso>
-        public void AddPermissionAsync(AddPermissionRequest request, AmazonServiceCallback<AddPermissionRequest, AddPermissionResponse> callback, AsyncOptions options = null)
+        public virtual void AddPermissionAsync(AddPermissionRequest request, AmazonServiceCallback<AddPermissionRequest, AddPermissionResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new AddPermissionRequestMarshaller();
@@ -260,7 +260,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CheckIfPhoneNumberIsOptedOut">REST API Reference for CheckIfPhoneNumberIsOptedOut Operation</seealso>
-        public void CheckIfPhoneNumberIsOptedOutAsync(CheckIfPhoneNumberIsOptedOutRequest request, AmazonServiceCallback<CheckIfPhoneNumberIsOptedOutRequest, CheckIfPhoneNumberIsOptedOutResponse> callback, AsyncOptions options = null)
+        public virtual void CheckIfPhoneNumberIsOptedOutAsync(CheckIfPhoneNumberIsOptedOutRequest request, AmazonServiceCallback<CheckIfPhoneNumberIsOptedOutRequest, CheckIfPhoneNumberIsOptedOutResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new CheckIfPhoneNumberIsOptedOutRequestMarshaller();
@@ -312,7 +312,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the customer already owns the maximum allowed number of subscriptions.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ConfirmSubscription">REST API Reference for ConfirmSubscription Operation</seealso>
-        public void ConfirmSubscriptionAsync(string topicArn, string token, string authenticateOnUnsubscribe,  AmazonServiceCallback<ConfirmSubscriptionRequest, ConfirmSubscriptionResponse> callback, AsyncOptions options = null)
+        public virtual void ConfirmSubscriptionAsync(string topicArn, string token, string authenticateOnUnsubscribe,  AmazonServiceCallback<ConfirmSubscriptionRequest, ConfirmSubscriptionResponse> callback, AsyncOptions options = null)
         {
             var request = new ConfirmSubscriptionRequest();
             request.TopicArn = topicArn;
@@ -354,7 +354,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the customer already owns the maximum allowed number of subscriptions.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ConfirmSubscription">REST API Reference for ConfirmSubscription Operation</seealso>
-        public void ConfirmSubscriptionAsync(string topicArn, string token,  AmazonServiceCallback<ConfirmSubscriptionRequest, ConfirmSubscriptionResponse> callback, AsyncOptions options = null)
+        public virtual void ConfirmSubscriptionAsync(string topicArn, string token,  AmazonServiceCallback<ConfirmSubscriptionRequest, ConfirmSubscriptionResponse> callback, AsyncOptions options = null)
         {
             var request = new ConfirmSubscriptionRequest();
             request.TopicArn = topicArn;
@@ -372,7 +372,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ConfirmSubscription">REST API Reference for ConfirmSubscription Operation</seealso>
-        public void ConfirmSubscriptionAsync(ConfirmSubscriptionRequest request, AmazonServiceCallback<ConfirmSubscriptionRequest, ConfirmSubscriptionResponse> callback, AsyncOptions options = null)
+        public virtual void ConfirmSubscriptionAsync(ConfirmSubscriptionRequest request, AmazonServiceCallback<ConfirmSubscriptionRequest, ConfirmSubscriptionResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new ConfirmSubscriptionRequestMarshaller();
@@ -400,7 +400,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreatePlatformApplication">REST API Reference for CreatePlatformApplication Operation</seealso>
-        public void CreatePlatformApplicationAsync(CreatePlatformApplicationRequest request, AmazonServiceCallback<CreatePlatformApplicationRequest, CreatePlatformApplicationResponse> callback, AsyncOptions options = null)
+        public virtual void CreatePlatformApplicationAsync(CreatePlatformApplicationRequest request, AmazonServiceCallback<CreatePlatformApplicationRequest, CreatePlatformApplicationResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new CreatePlatformApplicationRequestMarshaller();
@@ -428,7 +428,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreatePlatformEndpoint">REST API Reference for CreatePlatformEndpoint Operation</seealso>
-        public void CreatePlatformEndpointAsync(CreatePlatformEndpointRequest request, AmazonServiceCallback<CreatePlatformEndpointRequest, CreatePlatformEndpointResponse> callback, AsyncOptions options = null)
+        public virtual void CreatePlatformEndpointAsync(CreatePlatformEndpointRequest request, AmazonServiceCallback<CreatePlatformEndpointRequest, CreatePlatformEndpointResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new CreatePlatformEndpointRequestMarshaller();
@@ -474,7 +474,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the customer already owns the maximum allowed number of topics.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreateTopic">REST API Reference for CreateTopic Operation</seealso>
-        public void CreateTopicAsync(string name,  AmazonServiceCallback<CreateTopicRequest, CreateTopicResponse> callback, AsyncOptions options = null)
+        public virtual void CreateTopicAsync(string name,  AmazonServiceCallback<CreateTopicRequest, CreateTopicResponse> callback, AsyncOptions options = null)
         {
             var request = new CreateTopicRequest();
             request.Name = name;
@@ -491,7 +491,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreateTopic">REST API Reference for CreateTopic Operation</seealso>
-        public void CreateTopicAsync(CreateTopicRequest request, AmazonServiceCallback<CreateTopicRequest, CreateTopicResponse> callback, AsyncOptions options = null)
+        public virtual void CreateTopicAsync(CreateTopicRequest request, AmazonServiceCallback<CreateTopicRequest, CreateTopicResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new CreateTopicRequestMarshaller();
@@ -519,7 +519,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeleteEndpoint">REST API Reference for DeleteEndpoint Operation</seealso>
-        public void DeleteEndpointAsync(DeleteEndpointRequest request, AmazonServiceCallback<DeleteEndpointRequest, DeleteEndpointResponse> callback, AsyncOptions options = null)
+        public virtual void DeleteEndpointAsync(DeleteEndpointRequest request, AmazonServiceCallback<DeleteEndpointRequest, DeleteEndpointResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new DeleteEndpointRequestMarshaller();
@@ -547,7 +547,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeletePlatformApplication">REST API Reference for DeletePlatformApplication Operation</seealso>
-        public void DeletePlatformApplicationAsync(DeletePlatformApplicationRequest request, AmazonServiceCallback<DeletePlatformApplicationRequest, DeletePlatformApplicationResponse> callback, AsyncOptions options = null)
+        public virtual void DeletePlatformApplicationAsync(DeletePlatformApplicationRequest request, AmazonServiceCallback<DeletePlatformApplicationRequest, DeletePlatformApplicationResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new DeletePlatformApplicationRequestMarshaller();
@@ -592,7 +592,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the requested resource does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeleteTopic">REST API Reference for DeleteTopic Operation</seealso>
-        public void DeleteTopicAsync(string topicArn,  AmazonServiceCallback<DeleteTopicRequest, DeleteTopicResponse> callback, AsyncOptions options = null)
+        public virtual void DeleteTopicAsync(string topicArn,  AmazonServiceCallback<DeleteTopicRequest, DeleteTopicResponse> callback, AsyncOptions options = null)
         {
             var request = new DeleteTopicRequest();
             request.TopicArn = topicArn;
@@ -609,7 +609,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeleteTopic">REST API Reference for DeleteTopic Operation</seealso>
-        public void DeleteTopicAsync(DeleteTopicRequest request, AmazonServiceCallback<DeleteTopicRequest, DeleteTopicResponse> callback, AsyncOptions options = null)
+        public virtual void DeleteTopicAsync(DeleteTopicRequest request, AmazonServiceCallback<DeleteTopicRequest, DeleteTopicResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new DeleteTopicRequestMarshaller();
@@ -637,7 +637,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetEndpointAttributes">REST API Reference for GetEndpointAttributes Operation</seealso>
-        public void GetEndpointAttributesAsync(GetEndpointAttributesRequest request, AmazonServiceCallback<GetEndpointAttributesRequest, GetEndpointAttributesResponse> callback, AsyncOptions options = null)
+        public virtual void GetEndpointAttributesAsync(GetEndpointAttributesRequest request, AmazonServiceCallback<GetEndpointAttributesRequest, GetEndpointAttributesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new GetEndpointAttributesRequestMarshaller();
@@ -665,7 +665,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetPlatformApplicationAttributes">REST API Reference for GetPlatformApplicationAttributes Operation</seealso>
-        public void GetPlatformApplicationAttributesAsync(GetPlatformApplicationAttributesRequest request, AmazonServiceCallback<GetPlatformApplicationAttributesRequest, GetPlatformApplicationAttributesResponse> callback, AsyncOptions options = null)
+        public virtual void GetPlatformApplicationAttributesAsync(GetPlatformApplicationAttributesRequest request, AmazonServiceCallback<GetPlatformApplicationAttributesRequest, GetPlatformApplicationAttributesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new GetPlatformApplicationAttributesRequestMarshaller();
@@ -693,7 +693,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSMSAttributes">REST API Reference for GetSMSAttributes Operation</seealso>
-        public void GetSMSAttributesAsync(GetSMSAttributesRequest request, AmazonServiceCallback<GetSMSAttributesRequest, GetSMSAttributesResponse> callback, AsyncOptions options = null)
+        public virtual void GetSMSAttributesAsync(GetSMSAttributesRequest request, AmazonServiceCallback<GetSMSAttributesRequest, GetSMSAttributesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new GetSMSAttributesRequestMarshaller();
@@ -736,7 +736,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the requested resource does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSubscriptionAttributes">REST API Reference for GetSubscriptionAttributes Operation</seealso>
-        public void GetSubscriptionAttributesAsync(string subscriptionArn,  AmazonServiceCallback<GetSubscriptionAttributesRequest, GetSubscriptionAttributesResponse> callback, AsyncOptions options = null)
+        public virtual void GetSubscriptionAttributesAsync(string subscriptionArn,  AmazonServiceCallback<GetSubscriptionAttributesRequest, GetSubscriptionAttributesResponse> callback, AsyncOptions options = null)
         {
             var request = new GetSubscriptionAttributesRequest();
             request.SubscriptionArn = subscriptionArn;
@@ -753,7 +753,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSubscriptionAttributes">REST API Reference for GetSubscriptionAttributes Operation</seealso>
-        public void GetSubscriptionAttributesAsync(GetSubscriptionAttributesRequest request, AmazonServiceCallback<GetSubscriptionAttributesRequest, GetSubscriptionAttributesResponse> callback, AsyncOptions options = null)
+        public virtual void GetSubscriptionAttributesAsync(GetSubscriptionAttributesRequest request, AmazonServiceCallback<GetSubscriptionAttributesRequest, GetSubscriptionAttributesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new GetSubscriptionAttributesRequestMarshaller();
@@ -797,7 +797,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the requested resource does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetTopicAttributes">REST API Reference for GetTopicAttributes Operation</seealso>
-        public void GetTopicAttributesAsync(string topicArn,  AmazonServiceCallback<GetTopicAttributesRequest, GetTopicAttributesResponse> callback, AsyncOptions options = null)
+        public virtual void GetTopicAttributesAsync(string topicArn,  AmazonServiceCallback<GetTopicAttributesRequest, GetTopicAttributesResponse> callback, AsyncOptions options = null)
         {
             var request = new GetTopicAttributesRequest();
             request.TopicArn = topicArn;
@@ -814,7 +814,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetTopicAttributes">REST API Reference for GetTopicAttributes Operation</seealso>
-        public void GetTopicAttributesAsync(GetTopicAttributesRequest request, AmazonServiceCallback<GetTopicAttributesRequest, GetTopicAttributesResponse> callback, AsyncOptions options = null)
+        public virtual void GetTopicAttributesAsync(GetTopicAttributesRequest request, AmazonServiceCallback<GetTopicAttributesRequest, GetTopicAttributesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new GetTopicAttributesRequestMarshaller();
@@ -842,7 +842,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListEndpointsByPlatformApplication">REST API Reference for ListEndpointsByPlatformApplication Operation</seealso>
-        public void ListEndpointsByPlatformApplicationAsync(ListEndpointsByPlatformApplicationRequest request, AmazonServiceCallback<ListEndpointsByPlatformApplicationRequest, ListEndpointsByPlatformApplicationResponse> callback, AsyncOptions options = null)
+        public virtual void ListEndpointsByPlatformApplicationAsync(ListEndpointsByPlatformApplicationRequest request, AmazonServiceCallback<ListEndpointsByPlatformApplicationRequest, ListEndpointsByPlatformApplicationResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new ListEndpointsByPlatformApplicationRequestMarshaller();
@@ -870,7 +870,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPhoneNumbersOptedOut">REST API Reference for ListPhoneNumbersOptedOut Operation</seealso>
-        public void ListPhoneNumbersOptedOutAsync(ListPhoneNumbersOptedOutRequest request, AmazonServiceCallback<ListPhoneNumbersOptedOutRequest, ListPhoneNumbersOptedOutResponse> callback, AsyncOptions options = null)
+        public virtual void ListPhoneNumbersOptedOutAsync(ListPhoneNumbersOptedOutRequest request, AmazonServiceCallback<ListPhoneNumbersOptedOutRequest, ListPhoneNumbersOptedOutResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new ListPhoneNumbersOptedOutRequestMarshaller();
@@ -917,7 +917,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPlatformApplications">REST API Reference for ListPlatformApplications Operation</seealso>
-        public void ListPlatformApplicationsAsync(AmazonServiceCallback<ListPlatformApplicationsRequest, ListPlatformApplicationsResponse> callback, AsyncOptions options = null)
+        public virtual void ListPlatformApplicationsAsync(AmazonServiceCallback<ListPlatformApplicationsRequest, ListPlatformApplicationsResponse> callback, AsyncOptions options = null)
         {
             ListPlatformApplicationsAsync(new ListPlatformApplicationsRequest(), callback, options);
         }
@@ -932,7 +932,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPlatformApplications">REST API Reference for ListPlatformApplications Operation</seealso>
-        public void ListPlatformApplicationsAsync(ListPlatformApplicationsRequest request, AmazonServiceCallback<ListPlatformApplicationsRequest, ListPlatformApplicationsResponse> callback, AsyncOptions options = null)
+        public virtual void ListPlatformApplicationsAsync(ListPlatformApplicationsRequest request, AmazonServiceCallback<ListPlatformApplicationsRequest, ListPlatformApplicationsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new ListPlatformApplicationsRequestMarshaller();
@@ -975,7 +975,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptions">REST API Reference for ListSubscriptions Operation</seealso>
-        public void ListSubscriptionsAsync(AmazonServiceCallback<ListSubscriptionsRequest, ListSubscriptionsResponse> callback, AsyncOptions options = null)
+        public virtual void ListSubscriptionsAsync(AmazonServiceCallback<ListSubscriptionsRequest, ListSubscriptionsResponse> callback, AsyncOptions options = null)
         {
             ListSubscriptionsAsync(new ListSubscriptionsRequest(), callback, options);
         }
@@ -1005,7 +1005,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptions">REST API Reference for ListSubscriptions Operation</seealso>
-        public void ListSubscriptionsAsync(string nextToken,  AmazonServiceCallback<ListSubscriptionsRequest, ListSubscriptionsResponse> callback, AsyncOptions options = null)
+        public virtual void ListSubscriptionsAsync(string nextToken,  AmazonServiceCallback<ListSubscriptionsRequest, ListSubscriptionsResponse> callback, AsyncOptions options = null)
         {
             var request = new ListSubscriptionsRequest();
             request.NextToken = nextToken;
@@ -1022,7 +1022,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptions">REST API Reference for ListSubscriptions Operation</seealso>
-        public void ListSubscriptionsAsync(ListSubscriptionsRequest request, AmazonServiceCallback<ListSubscriptionsRequest, ListSubscriptionsResponse> callback, AsyncOptions options = null)
+        public virtual void ListSubscriptionsAsync(ListSubscriptionsRequest request, AmazonServiceCallback<ListSubscriptionsRequest, ListSubscriptionsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new ListSubscriptionsRequestMarshaller();
@@ -1069,7 +1069,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the requested resource does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptionsByTopic">REST API Reference for ListSubscriptionsByTopic Operation</seealso>
-        public void ListSubscriptionsByTopicAsync(string topicArn, string nextToken,  AmazonServiceCallback<ListSubscriptionsByTopicRequest, ListSubscriptionsByTopicResponse> callback, AsyncOptions options = null)
+        public virtual void ListSubscriptionsByTopicAsync(string topicArn, string nextToken,  AmazonServiceCallback<ListSubscriptionsByTopicRequest, ListSubscriptionsByTopicResponse> callback, AsyncOptions options = null)
         {
             var request = new ListSubscriptionsByTopicRequest();
             request.TopicArn = topicArn;
@@ -1105,7 +1105,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the requested resource does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptionsByTopic">REST API Reference for ListSubscriptionsByTopic Operation</seealso>
-        public void ListSubscriptionsByTopicAsync(string topicArn,  AmazonServiceCallback<ListSubscriptionsByTopicRequest, ListSubscriptionsByTopicResponse> callback, AsyncOptions options = null)
+        public virtual void ListSubscriptionsByTopicAsync(string topicArn,  AmazonServiceCallback<ListSubscriptionsByTopicRequest, ListSubscriptionsByTopicResponse> callback, AsyncOptions options = null)
         {
             var request = new ListSubscriptionsByTopicRequest();
             request.TopicArn = topicArn;
@@ -1122,7 +1122,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptionsByTopic">REST API Reference for ListSubscriptionsByTopic Operation</seealso>
-        public void ListSubscriptionsByTopicAsync(ListSubscriptionsByTopicRequest request, AmazonServiceCallback<ListSubscriptionsByTopicRequest, ListSubscriptionsByTopicResponse> callback, AsyncOptions options = null)
+        public virtual void ListSubscriptionsByTopicAsync(ListSubscriptionsByTopicRequest request, AmazonServiceCallback<ListSubscriptionsByTopicRequest, ListSubscriptionsByTopicResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new ListSubscriptionsByTopicRequestMarshaller();
@@ -1165,7 +1165,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListTopics">REST API Reference for ListTopics Operation</seealso>
-        public void ListTopicsAsync(AmazonServiceCallback<ListTopicsRequest, ListTopicsResponse> callback, AsyncOptions options = null)
+        public virtual void ListTopicsAsync(AmazonServiceCallback<ListTopicsRequest, ListTopicsResponse> callback, AsyncOptions options = null)
         {
             ListTopicsAsync(new ListTopicsRequest(), callback, options);
         }
@@ -1195,7 +1195,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListTopics">REST API Reference for ListTopics Operation</seealso>
-        public void ListTopicsAsync(string nextToken,  AmazonServiceCallback<ListTopicsRequest, ListTopicsResponse> callback, AsyncOptions options = null)
+        public virtual void ListTopicsAsync(string nextToken,  AmazonServiceCallback<ListTopicsRequest, ListTopicsResponse> callback, AsyncOptions options = null)
         {
             var request = new ListTopicsRequest();
             request.NextToken = nextToken;
@@ -1212,7 +1212,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListTopics">REST API Reference for ListTopics Operation</seealso>
-        public void ListTopicsAsync(ListTopicsRequest request, AmazonServiceCallback<ListTopicsRequest, ListTopicsResponse> callback, AsyncOptions options = null)
+        public virtual void ListTopicsAsync(ListTopicsRequest request, AmazonServiceCallback<ListTopicsRequest, ListTopicsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new ListTopicsRequestMarshaller();
@@ -1240,7 +1240,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/OptInPhoneNumber">REST API Reference for OptInPhoneNumber Operation</seealso>
-        public void OptInPhoneNumberAsync(OptInPhoneNumberRequest request, AmazonServiceCallback<OptInPhoneNumberRequest, OptInPhoneNumberResponse> callback, AsyncOptions options = null)
+        public virtual void OptInPhoneNumberAsync(OptInPhoneNumberRequest request, AmazonServiceCallback<OptInPhoneNumberRequest, OptInPhoneNumberResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new OptInPhoneNumberRequestMarshaller();
@@ -1309,7 +1309,7 @@ namespace Amazon.SimpleNotificationService
         /// Exception error indicating platform application disabled.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Publish">REST API Reference for Publish Operation</seealso>
-        public void PublishAsync(string topicArn, string message,  AmazonServiceCallback<PublishRequest, PublishResponse> callback, AsyncOptions options = null)
+        public virtual void PublishAsync(string topicArn, string message,  AmazonServiceCallback<PublishRequest, PublishResponse> callback, AsyncOptions options = null)
         {
             var request = new PublishRequest();
             request.TopicArn = topicArn;
@@ -1369,7 +1369,7 @@ namespace Amazon.SimpleNotificationService
         /// Exception error indicating platform application disabled.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Publish">REST API Reference for Publish Operation</seealso>
-        public void PublishAsync(string topicArn, string message, string subject,  AmazonServiceCallback<PublishRequest, PublishResponse> callback, AsyncOptions options = null)
+        public virtual void PublishAsync(string topicArn, string message, string subject,  AmazonServiceCallback<PublishRequest, PublishResponse> callback, AsyncOptions options = null)
         {
             var request = new PublishRequest();
             request.TopicArn = topicArn;
@@ -1388,7 +1388,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Publish">REST API Reference for Publish Operation</seealso>
-        public void PublishAsync(PublishRequest request, AmazonServiceCallback<PublishRequest, PublishResponse> callback, AsyncOptions options = null)
+        public virtual void PublishAsync(PublishRequest request, AmazonServiceCallback<PublishRequest, PublishResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new PublishRequestMarshaller();
@@ -1432,7 +1432,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the requested resource does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
-        public void RemovePermissionAsync(string topicArn, string label,  AmazonServiceCallback<RemovePermissionRequest, RemovePermissionResponse> callback, AsyncOptions options = null)
+        public virtual void RemovePermissionAsync(string topicArn, string label,  AmazonServiceCallback<RemovePermissionRequest, RemovePermissionResponse> callback, AsyncOptions options = null)
         {
             var request = new RemovePermissionRequest();
             request.TopicArn = topicArn;
@@ -1450,7 +1450,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
-        public void RemovePermissionAsync(RemovePermissionRequest request, AmazonServiceCallback<RemovePermissionRequest, RemovePermissionResponse> callback, AsyncOptions options = null)
+        public virtual void RemovePermissionAsync(RemovePermissionRequest request, AmazonServiceCallback<RemovePermissionRequest, RemovePermissionResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new RemovePermissionRequestMarshaller();
@@ -1478,7 +1478,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetEndpointAttributes">REST API Reference for SetEndpointAttributes Operation</seealso>
-        public void SetEndpointAttributesAsync(SetEndpointAttributesRequest request, AmazonServiceCallback<SetEndpointAttributesRequest, SetEndpointAttributesResponse> callback, AsyncOptions options = null)
+        public virtual void SetEndpointAttributesAsync(SetEndpointAttributesRequest request, AmazonServiceCallback<SetEndpointAttributesRequest, SetEndpointAttributesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new SetEndpointAttributesRequestMarshaller();
@@ -1506,7 +1506,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetPlatformApplicationAttributes">REST API Reference for SetPlatformApplicationAttributes Operation</seealso>
-        public void SetPlatformApplicationAttributesAsync(SetPlatformApplicationAttributesRequest request, AmazonServiceCallback<SetPlatformApplicationAttributesRequest, SetPlatformApplicationAttributesResponse> callback, AsyncOptions options = null)
+        public virtual void SetPlatformApplicationAttributesAsync(SetPlatformApplicationAttributesRequest request, AmazonServiceCallback<SetPlatformApplicationAttributesRequest, SetPlatformApplicationAttributesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new SetPlatformApplicationAttributesRequestMarshaller();
@@ -1534,7 +1534,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSMSAttributes">REST API Reference for SetSMSAttributes Operation</seealso>
-        public void SetSMSAttributesAsync(SetSMSAttributesRequest request, AmazonServiceCallback<SetSMSAttributesRequest, SetSMSAttributesResponse> callback, AsyncOptions options = null)
+        public virtual void SetSMSAttributesAsync(SetSMSAttributesRequest request, AmazonServiceCallback<SetSMSAttributesRequest, SetSMSAttributesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new SetSMSAttributesRequestMarshaller();
@@ -1579,7 +1579,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the requested resource does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSubscriptionAttributes">REST API Reference for SetSubscriptionAttributes Operation</seealso>
-        public void SetSubscriptionAttributesAsync(string subscriptionArn, string attributeName, string attributeValue,  AmazonServiceCallback<SetSubscriptionAttributesRequest, SetSubscriptionAttributesResponse> callback, AsyncOptions options = null)
+        public virtual void SetSubscriptionAttributesAsync(string subscriptionArn, string attributeName, string attributeValue,  AmazonServiceCallback<SetSubscriptionAttributesRequest, SetSubscriptionAttributesResponse> callback, AsyncOptions options = null)
         {
             var request = new SetSubscriptionAttributesRequest();
             request.SubscriptionArn = subscriptionArn;
@@ -1598,7 +1598,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSubscriptionAttributes">REST API Reference for SetSubscriptionAttributes Operation</seealso>
-        public void SetSubscriptionAttributesAsync(SetSubscriptionAttributesRequest request, AmazonServiceCallback<SetSubscriptionAttributesRequest, SetSubscriptionAttributesResponse> callback, AsyncOptions options = null)
+        public virtual void SetSubscriptionAttributesAsync(SetSubscriptionAttributesRequest request, AmazonServiceCallback<SetSubscriptionAttributesRequest, SetSubscriptionAttributesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new SetSubscriptionAttributesRequestMarshaller();
@@ -1643,7 +1643,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the requested resource does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetTopicAttributes">REST API Reference for SetTopicAttributes Operation</seealso>
-        public void SetTopicAttributesAsync(string topicArn, string attributeName, string attributeValue,  AmazonServiceCallback<SetTopicAttributesRequest, SetTopicAttributesResponse> callback, AsyncOptions options = null)
+        public virtual void SetTopicAttributesAsync(string topicArn, string attributeName, string attributeValue,  AmazonServiceCallback<SetTopicAttributesRequest, SetTopicAttributesResponse> callback, AsyncOptions options = null)
         {
             var request = new SetTopicAttributesRequest();
             request.TopicArn = topicArn;
@@ -1662,7 +1662,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetTopicAttributes">REST API Reference for SetTopicAttributes Operation</seealso>
-        public void SetTopicAttributesAsync(SetTopicAttributesRequest request, AmazonServiceCallback<SetTopicAttributesRequest, SetTopicAttributesResponse> callback, AsyncOptions options = null)
+        public virtual void SetTopicAttributesAsync(SetTopicAttributesRequest request, AmazonServiceCallback<SetTopicAttributesRequest, SetTopicAttributesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new SetTopicAttributesRequestMarshaller();
@@ -1713,7 +1713,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the customer already owns the maximum allowed number of subscriptions.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Subscribe">REST API Reference for Subscribe Operation</seealso>
-        public void SubscribeAsync(string topicArn, string protocol, string endpoint,  AmazonServiceCallback<SubscribeRequest, SubscribeResponse> callback, AsyncOptions options = null)
+        public virtual void SubscribeAsync(string topicArn, string protocol, string endpoint,  AmazonServiceCallback<SubscribeRequest, SubscribeResponse> callback, AsyncOptions options = null)
         {
             var request = new SubscribeRequest();
             request.TopicArn = topicArn;
@@ -1732,7 +1732,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Subscribe">REST API Reference for Subscribe Operation</seealso>
-        public void SubscribeAsync(SubscribeRequest request, AmazonServiceCallback<SubscribeRequest, SubscribeResponse> callback, AsyncOptions options = null)
+        public virtual void SubscribeAsync(SubscribeRequest request, AmazonServiceCallback<SubscribeRequest, SubscribeResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new SubscribeRequestMarshaller();
@@ -1780,7 +1780,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the requested resource does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Unsubscribe">REST API Reference for Unsubscribe Operation</seealso>
-        public void UnsubscribeAsync(string subscriptionArn,  AmazonServiceCallback<UnsubscribeRequest, UnsubscribeResponse> callback, AsyncOptions options = null)
+        public virtual void UnsubscribeAsync(string subscriptionArn,  AmazonServiceCallback<UnsubscribeRequest, UnsubscribeResponse> callback, AsyncOptions options = null)
         {
             var request = new UnsubscribeRequest();
             request.SubscriptionArn = subscriptionArn;
@@ -1797,7 +1797,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Unsubscribe">REST API Reference for Unsubscribe Operation</seealso>
-        public void UnsubscribeAsync(UnsubscribeRequest request, AmazonServiceCallback<UnsubscribeRequest, UnsubscribeResponse> callback, AsyncOptions options = null)
+        public virtual void UnsubscribeAsync(UnsubscribeRequest request, AmazonServiceCallback<UnsubscribeRequest, UnsubscribeResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new UnsubscribeRequestMarshaller();

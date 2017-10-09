@@ -249,7 +249,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Simple message object.
         /// </exception>
-        public CreateAppResponse CreateApp(CreateAppRequest request)
+        public virtual CreateAppResponse CreateApp(CreateAppRequest request)
         {
             var marshaller = new CreateAppRequestMarshaller();
             var unmarshaller = CreateAppResponseUnmarshaller.Instance;
@@ -268,7 +268,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateApp
         ///         operation.</returns>
-        public IAsyncResult BeginCreateApp(CreateAppRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateApp(CreateAppRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateAppRequestMarshaller();
             var unmarshaller = CreateAppResponseUnmarshaller.Instance;
@@ -284,7 +284,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateApp.</param>
         /// 
         /// <returns>Returns a  CreateAppResult from Pinpoint.</returns>
-        public  CreateAppResponse EndCreateApp(IAsyncResult asyncResult)
+        public virtual CreateAppResponse EndCreateApp(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateAppResponse>(asyncResult);
         }
@@ -317,7 +317,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Simple message object.
         /// </exception>
-        public CreateCampaignResponse CreateCampaign(CreateCampaignRequest request)
+        public virtual CreateCampaignResponse CreateCampaign(CreateCampaignRequest request)
         {
             var marshaller = new CreateCampaignRequestMarshaller();
             var unmarshaller = CreateCampaignResponseUnmarshaller.Instance;
@@ -336,7 +336,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCampaign
         ///         operation.</returns>
-        public IAsyncResult BeginCreateCampaign(CreateCampaignRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateCampaign(CreateCampaignRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateCampaignRequestMarshaller();
             var unmarshaller = CreateCampaignResponseUnmarshaller.Instance;
@@ -352,7 +352,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateCampaign.</param>
         /// 
         /// <returns>Returns a  CreateCampaignResult from Pinpoint.</returns>
-        public  CreateCampaignResponse EndCreateCampaign(IAsyncResult asyncResult)
+        public virtual CreateCampaignResponse EndCreateCampaign(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateCampaignResponse>(asyncResult);
         }
@@ -385,7 +385,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Simple message object.
         /// </exception>
-        public CreateImportJobResponse CreateImportJob(CreateImportJobRequest request)
+        public virtual CreateImportJobResponse CreateImportJob(CreateImportJobRequest request)
         {
             var marshaller = new CreateImportJobRequestMarshaller();
             var unmarshaller = CreateImportJobResponseUnmarshaller.Instance;
@@ -404,7 +404,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateImportJob
         ///         operation.</returns>
-        public IAsyncResult BeginCreateImportJob(CreateImportJobRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateImportJob(CreateImportJobRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateImportJobRequestMarshaller();
             var unmarshaller = CreateImportJobResponseUnmarshaller.Instance;
@@ -420,7 +420,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateImportJob.</param>
         /// 
         /// <returns>Returns a  CreateImportJobResult from Pinpoint.</returns>
-        public  CreateImportJobResponse EndCreateImportJob(IAsyncResult asyncResult)
+        public virtual CreateImportJobResponse EndCreateImportJob(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateImportJobResponse>(asyncResult);
         }
@@ -453,7 +453,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Simple message object.
         /// </exception>
-        public CreateSegmentResponse CreateSegment(CreateSegmentRequest request)
+        public virtual CreateSegmentResponse CreateSegment(CreateSegmentRequest request)
         {
             var marshaller = new CreateSegmentRequestMarshaller();
             var unmarshaller = CreateSegmentResponseUnmarshaller.Instance;
@@ -472,7 +472,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSegment
         ///         operation.</returns>
-        public IAsyncResult BeginCreateSegment(CreateSegmentRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateSegment(CreateSegmentRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateSegmentRequestMarshaller();
             var unmarshaller = CreateSegmentResponseUnmarshaller.Instance;
@@ -488,7 +488,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateSegment.</param>
         /// 
         /// <returns>Returns a  CreateSegmentResult from Pinpoint.</returns>
-        public  CreateSegmentResponse EndCreateSegment(IAsyncResult asyncResult)
+        public virtual CreateSegmentResponse EndCreateSegment(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateSegmentResponse>(asyncResult);
         }
@@ -521,7 +521,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Simple message object.
         /// </exception>
-        public DeleteAdmChannelResponse DeleteAdmChannel(DeleteAdmChannelRequest request)
+        public virtual DeleteAdmChannelResponse DeleteAdmChannel(DeleteAdmChannelRequest request)
         {
             var marshaller = new DeleteAdmChannelRequestMarshaller();
             var unmarshaller = DeleteAdmChannelResponseUnmarshaller.Instance;
@@ -540,7 +540,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAdmChannel
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteAdmChannel(DeleteAdmChannelRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteAdmChannel(DeleteAdmChannelRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteAdmChannelRequestMarshaller();
             var unmarshaller = DeleteAdmChannelResponseUnmarshaller.Instance;
@@ -556,7 +556,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAdmChannel.</param>
         /// 
         /// <returns>Returns a  DeleteAdmChannelResult from Pinpoint.</returns>
-        public  DeleteAdmChannelResponse EndDeleteAdmChannel(IAsyncResult asyncResult)
+        public virtual DeleteAdmChannelResponse EndDeleteAdmChannel(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteAdmChannelResponse>(asyncResult);
         }
@@ -589,7 +589,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Simple message object.
         /// </exception>
-        public DeleteApnsChannelResponse DeleteApnsChannel(DeleteApnsChannelRequest request)
+        public virtual DeleteApnsChannelResponse DeleteApnsChannel(DeleteApnsChannelRequest request)
         {
             var marshaller = new DeleteApnsChannelRequestMarshaller();
             var unmarshaller = DeleteApnsChannelResponseUnmarshaller.Instance;
@@ -608,7 +608,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteApnsChannel
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteApnsChannel(DeleteApnsChannelRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteApnsChannel(DeleteApnsChannelRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteApnsChannelRequestMarshaller();
             var unmarshaller = DeleteApnsChannelResponseUnmarshaller.Instance;
@@ -624,7 +624,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteApnsChannel.</param>
         /// 
         /// <returns>Returns a  DeleteApnsChannelResult from Pinpoint.</returns>
-        public  DeleteApnsChannelResponse EndDeleteApnsChannel(IAsyncResult asyncResult)
+        public virtual DeleteApnsChannelResponse EndDeleteApnsChannel(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteApnsChannelResponse>(asyncResult);
         }
@@ -657,7 +657,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Simple message object.
         /// </exception>
-        public DeleteApnsSandboxChannelResponse DeleteApnsSandboxChannel(DeleteApnsSandboxChannelRequest request)
+        public virtual DeleteApnsSandboxChannelResponse DeleteApnsSandboxChannel(DeleteApnsSandboxChannelRequest request)
         {
             var marshaller = new DeleteApnsSandboxChannelRequestMarshaller();
             var unmarshaller = DeleteApnsSandboxChannelResponseUnmarshaller.Instance;
@@ -676,7 +676,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteApnsSandboxChannel
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteApnsSandboxChannel(DeleteApnsSandboxChannelRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteApnsSandboxChannel(DeleteApnsSandboxChannelRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteApnsSandboxChannelRequestMarshaller();
             var unmarshaller = DeleteApnsSandboxChannelResponseUnmarshaller.Instance;
@@ -692,7 +692,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteApnsSandboxChannel.</param>
         /// 
         /// <returns>Returns a  DeleteApnsSandboxChannelResult from Pinpoint.</returns>
-        public  DeleteApnsSandboxChannelResponse EndDeleteApnsSandboxChannel(IAsyncResult asyncResult)
+        public virtual DeleteApnsSandboxChannelResponse EndDeleteApnsSandboxChannel(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteApnsSandboxChannelResponse>(asyncResult);
         }
@@ -725,7 +725,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Simple message object.
         /// </exception>
-        public DeleteAppResponse DeleteApp(DeleteAppRequest request)
+        public virtual DeleteAppResponse DeleteApp(DeleteAppRequest request)
         {
             var marshaller = new DeleteAppRequestMarshaller();
             var unmarshaller = DeleteAppResponseUnmarshaller.Instance;
@@ -744,7 +744,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteApp
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteApp(DeleteAppRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteApp(DeleteAppRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteAppRequestMarshaller();
             var unmarshaller = DeleteAppResponseUnmarshaller.Instance;
@@ -760,7 +760,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteApp.</param>
         /// 
         /// <returns>Returns a  DeleteAppResult from Pinpoint.</returns>
-        public  DeleteAppResponse EndDeleteApp(IAsyncResult asyncResult)
+        public virtual DeleteAppResponse EndDeleteApp(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteAppResponse>(asyncResult);
         }
@@ -793,7 +793,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Simple message object.
         /// </exception>
-        public DeleteBaiduChannelResponse DeleteBaiduChannel(DeleteBaiduChannelRequest request)
+        public virtual DeleteBaiduChannelResponse DeleteBaiduChannel(DeleteBaiduChannelRequest request)
         {
             var marshaller = new DeleteBaiduChannelRequestMarshaller();
             var unmarshaller = DeleteBaiduChannelResponseUnmarshaller.Instance;
@@ -812,7 +812,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBaiduChannel
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteBaiduChannel(DeleteBaiduChannelRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteBaiduChannel(DeleteBaiduChannelRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteBaiduChannelRequestMarshaller();
             var unmarshaller = DeleteBaiduChannelResponseUnmarshaller.Instance;
@@ -828,7 +828,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBaiduChannel.</param>
         /// 
         /// <returns>Returns a  DeleteBaiduChannelResult from Pinpoint.</returns>
-        public  DeleteBaiduChannelResponse EndDeleteBaiduChannel(IAsyncResult asyncResult)
+        public virtual DeleteBaiduChannelResponse EndDeleteBaiduChannel(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteBaiduChannelResponse>(asyncResult);
         }
@@ -861,7 +861,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Simple message object.
         /// </exception>
-        public DeleteCampaignResponse DeleteCampaign(DeleteCampaignRequest request)
+        public virtual DeleteCampaignResponse DeleteCampaign(DeleteCampaignRequest request)
         {
             var marshaller = new DeleteCampaignRequestMarshaller();
             var unmarshaller = DeleteCampaignResponseUnmarshaller.Instance;
@@ -880,7 +880,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCampaign
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteCampaign(DeleteCampaignRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteCampaign(DeleteCampaignRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteCampaignRequestMarshaller();
             var unmarshaller = DeleteCampaignResponseUnmarshaller.Instance;
@@ -896,7 +896,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteCampaign.</param>
         /// 
         /// <returns>Returns a  DeleteCampaignResult from Pinpoint.</returns>
-        public  DeleteCampaignResponse EndDeleteCampaign(IAsyncResult asyncResult)
+        public virtual DeleteCampaignResponse EndDeleteCampaign(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteCampaignResponse>(asyncResult);
         }
@@ -929,7 +929,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Simple message object.
         /// </exception>
-        public DeleteEmailChannelResponse DeleteEmailChannel(DeleteEmailChannelRequest request)
+        public virtual DeleteEmailChannelResponse DeleteEmailChannel(DeleteEmailChannelRequest request)
         {
             var marshaller = new DeleteEmailChannelRequestMarshaller();
             var unmarshaller = DeleteEmailChannelResponseUnmarshaller.Instance;
@@ -948,7 +948,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteEmailChannel
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteEmailChannel(DeleteEmailChannelRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteEmailChannel(DeleteEmailChannelRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteEmailChannelRequestMarshaller();
             var unmarshaller = DeleteEmailChannelResponseUnmarshaller.Instance;
@@ -964,7 +964,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteEmailChannel.</param>
         /// 
         /// <returns>Returns a  DeleteEmailChannelResult from Pinpoint.</returns>
-        public  DeleteEmailChannelResponse EndDeleteEmailChannel(IAsyncResult asyncResult)
+        public virtual DeleteEmailChannelResponse EndDeleteEmailChannel(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteEmailChannelResponse>(asyncResult);
         }
@@ -997,7 +997,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Simple message object.
         /// </exception>
-        public DeleteEventStreamResponse DeleteEventStream(DeleteEventStreamRequest request)
+        public virtual DeleteEventStreamResponse DeleteEventStream(DeleteEventStreamRequest request)
         {
             var marshaller = new DeleteEventStreamRequestMarshaller();
             var unmarshaller = DeleteEventStreamResponseUnmarshaller.Instance;
@@ -1016,7 +1016,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteEventStream
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteEventStream(DeleteEventStreamRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteEventStream(DeleteEventStreamRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteEventStreamRequestMarshaller();
             var unmarshaller = DeleteEventStreamResponseUnmarshaller.Instance;
@@ -1032,7 +1032,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteEventStream.</param>
         /// 
         /// <returns>Returns a  DeleteEventStreamResult from Pinpoint.</returns>
-        public  DeleteEventStreamResponse EndDeleteEventStream(IAsyncResult asyncResult)
+        public virtual DeleteEventStreamResponse EndDeleteEventStream(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteEventStreamResponse>(asyncResult);
         }
@@ -1065,7 +1065,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Simple message object.
         /// </exception>
-        public DeleteGcmChannelResponse DeleteGcmChannel(DeleteGcmChannelRequest request)
+        public virtual DeleteGcmChannelResponse DeleteGcmChannel(DeleteGcmChannelRequest request)
         {
             var marshaller = new DeleteGcmChannelRequestMarshaller();
             var unmarshaller = DeleteGcmChannelResponseUnmarshaller.Instance;
@@ -1084,7 +1084,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteGcmChannel
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteGcmChannel(DeleteGcmChannelRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteGcmChannel(DeleteGcmChannelRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteGcmChannelRequestMarshaller();
             var unmarshaller = DeleteGcmChannelResponseUnmarshaller.Instance;
@@ -1100,7 +1100,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteGcmChannel.</param>
         /// 
         /// <returns>Returns a  DeleteGcmChannelResult from Pinpoint.</returns>
-        public  DeleteGcmChannelResponse EndDeleteGcmChannel(IAsyncResult asyncResult)
+        public virtual DeleteGcmChannelResponse EndDeleteGcmChannel(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteGcmChannelResponse>(asyncResult);
         }
@@ -1133,7 +1133,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Simple message object.
         /// </exception>
-        public DeleteSegmentResponse DeleteSegment(DeleteSegmentRequest request)
+        public virtual DeleteSegmentResponse DeleteSegment(DeleteSegmentRequest request)
         {
             var marshaller = new DeleteSegmentRequestMarshaller();
             var unmarshaller = DeleteSegmentResponseUnmarshaller.Instance;
@@ -1152,7 +1152,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSegment
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteSegment(DeleteSegmentRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteSegment(DeleteSegmentRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteSegmentRequestMarshaller();
             var unmarshaller = DeleteSegmentResponseUnmarshaller.Instance;
@@ -1168,7 +1168,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSegment.</param>
         /// 
         /// <returns>Returns a  DeleteSegmentResult from Pinpoint.</returns>
-        public  DeleteSegmentResponse EndDeleteSegment(IAsyncResult asyncResult)
+        public virtual DeleteSegmentResponse EndDeleteSegment(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteSegmentResponse>(asyncResult);
         }
@@ -1201,7 +1201,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Simple message object.
         /// </exception>
-        public DeleteSmsChannelResponse DeleteSmsChannel(DeleteSmsChannelRequest request)
+        public virtual DeleteSmsChannelResponse DeleteSmsChannel(DeleteSmsChannelRequest request)
         {
             var marshaller = new DeleteSmsChannelRequestMarshaller();
             var unmarshaller = DeleteSmsChannelResponseUnmarshaller.Instance;
@@ -1220,7 +1220,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSmsChannel
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteSmsChannel(DeleteSmsChannelRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteSmsChannel(DeleteSmsChannelRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteSmsChannelRequestMarshaller();
             var unmarshaller = DeleteSmsChannelResponseUnmarshaller.Instance;
@@ -1236,7 +1236,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSmsChannel.</param>
         /// 
         /// <returns>Returns a  DeleteSmsChannelResult from Pinpoint.</returns>
-        public  DeleteSmsChannelResponse EndDeleteSmsChannel(IAsyncResult asyncResult)
+        public virtual DeleteSmsChannelResponse EndDeleteSmsChannel(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteSmsChannelResponse>(asyncResult);
         }
@@ -1269,7 +1269,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Simple message object.
         /// </exception>
-        public GetAdmChannelResponse GetAdmChannel(GetAdmChannelRequest request)
+        public virtual GetAdmChannelResponse GetAdmChannel(GetAdmChannelRequest request)
         {
             var marshaller = new GetAdmChannelRequestMarshaller();
             var unmarshaller = GetAdmChannelResponseUnmarshaller.Instance;
@@ -1288,7 +1288,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAdmChannel
         ///         operation.</returns>
-        public IAsyncResult BeginGetAdmChannel(GetAdmChannelRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetAdmChannel(GetAdmChannelRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetAdmChannelRequestMarshaller();
             var unmarshaller = GetAdmChannelResponseUnmarshaller.Instance;
@@ -1304,7 +1304,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAdmChannel.</param>
         /// 
         /// <returns>Returns a  GetAdmChannelResult from Pinpoint.</returns>
-        public  GetAdmChannelResponse EndGetAdmChannel(IAsyncResult asyncResult)
+        public virtual GetAdmChannelResponse EndGetAdmChannel(IAsyncResult asyncResult)
         {
             return EndInvoke<GetAdmChannelResponse>(asyncResult);
         }
@@ -1337,7 +1337,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Simple message object.
         /// </exception>
-        public GetApnsChannelResponse GetApnsChannel(GetApnsChannelRequest request)
+        public virtual GetApnsChannelResponse GetApnsChannel(GetApnsChannelRequest request)
         {
             var marshaller = new GetApnsChannelRequestMarshaller();
             var unmarshaller = GetApnsChannelResponseUnmarshaller.Instance;
@@ -1356,7 +1356,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetApnsChannel
         ///         operation.</returns>
-        public IAsyncResult BeginGetApnsChannel(GetApnsChannelRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetApnsChannel(GetApnsChannelRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetApnsChannelRequestMarshaller();
             var unmarshaller = GetApnsChannelResponseUnmarshaller.Instance;
@@ -1372,7 +1372,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetApnsChannel.</param>
         /// 
         /// <returns>Returns a  GetApnsChannelResult from Pinpoint.</returns>
-        public  GetApnsChannelResponse EndGetApnsChannel(IAsyncResult asyncResult)
+        public virtual GetApnsChannelResponse EndGetApnsChannel(IAsyncResult asyncResult)
         {
             return EndInvoke<GetApnsChannelResponse>(asyncResult);
         }
@@ -1405,7 +1405,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Simple message object.
         /// </exception>
-        public GetApnsSandboxChannelResponse GetApnsSandboxChannel(GetApnsSandboxChannelRequest request)
+        public virtual GetApnsSandboxChannelResponse GetApnsSandboxChannel(GetApnsSandboxChannelRequest request)
         {
             var marshaller = new GetApnsSandboxChannelRequestMarshaller();
             var unmarshaller = GetApnsSandboxChannelResponseUnmarshaller.Instance;
@@ -1424,7 +1424,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetApnsSandboxChannel
         ///         operation.</returns>
-        public IAsyncResult BeginGetApnsSandboxChannel(GetApnsSandboxChannelRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetApnsSandboxChannel(GetApnsSandboxChannelRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetApnsSandboxChannelRequestMarshaller();
             var unmarshaller = GetApnsSandboxChannelResponseUnmarshaller.Instance;
@@ -1440,7 +1440,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetApnsSandboxChannel.</param>
         /// 
         /// <returns>Returns a  GetApnsSandboxChannelResult from Pinpoint.</returns>
-        public  GetApnsSandboxChannelResponse EndGetApnsSandboxChannel(IAsyncResult asyncResult)
+        public virtual GetApnsSandboxChannelResponse EndGetApnsSandboxChannel(IAsyncResult asyncResult)
         {
             return EndInvoke<GetApnsSandboxChannelResponse>(asyncResult);
         }
@@ -1473,7 +1473,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Simple message object.
         /// </exception>
-        public GetAppResponse GetApp(GetAppRequest request)
+        public virtual GetAppResponse GetApp(GetAppRequest request)
         {
             var marshaller = new GetAppRequestMarshaller();
             var unmarshaller = GetAppResponseUnmarshaller.Instance;
@@ -1492,7 +1492,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetApp
         ///         operation.</returns>
-        public IAsyncResult BeginGetApp(GetAppRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetApp(GetAppRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetAppRequestMarshaller();
             var unmarshaller = GetAppResponseUnmarshaller.Instance;
@@ -1508,7 +1508,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetApp.</param>
         /// 
         /// <returns>Returns a  GetAppResult from Pinpoint.</returns>
-        public  GetAppResponse EndGetApp(IAsyncResult asyncResult)
+        public virtual GetAppResponse EndGetApp(IAsyncResult asyncResult)
         {
             return EndInvoke<GetAppResponse>(asyncResult);
         }
@@ -1541,7 +1541,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Simple message object.
         /// </exception>
-        public GetApplicationSettingsResponse GetApplicationSettings(GetApplicationSettingsRequest request)
+        public virtual GetApplicationSettingsResponse GetApplicationSettings(GetApplicationSettingsRequest request)
         {
             var marshaller = new GetApplicationSettingsRequestMarshaller();
             var unmarshaller = GetApplicationSettingsResponseUnmarshaller.Instance;
@@ -1560,7 +1560,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetApplicationSettings
         ///         operation.</returns>
-        public IAsyncResult BeginGetApplicationSettings(GetApplicationSettingsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetApplicationSettings(GetApplicationSettingsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetApplicationSettingsRequestMarshaller();
             var unmarshaller = GetApplicationSettingsResponseUnmarshaller.Instance;
@@ -1576,7 +1576,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetApplicationSettings.</param>
         /// 
         /// <returns>Returns a  GetApplicationSettingsResult from Pinpoint.</returns>
-        public  GetApplicationSettingsResponse EndGetApplicationSettings(IAsyncResult asyncResult)
+        public virtual GetApplicationSettingsResponse EndGetApplicationSettings(IAsyncResult asyncResult)
         {
             return EndInvoke<GetApplicationSettingsResponse>(asyncResult);
         }
@@ -1609,7 +1609,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Simple message object.
         /// </exception>
-        public GetAppsResponse GetApps(GetAppsRequest request)
+        public virtual GetAppsResponse GetApps(GetAppsRequest request)
         {
             var marshaller = new GetAppsRequestMarshaller();
             var unmarshaller = GetAppsResponseUnmarshaller.Instance;
@@ -1628,7 +1628,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetApps
         ///         operation.</returns>
-        public IAsyncResult BeginGetApps(GetAppsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetApps(GetAppsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetAppsRequestMarshaller();
             var unmarshaller = GetAppsResponseUnmarshaller.Instance;
@@ -1644,7 +1644,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetApps.</param>
         /// 
         /// <returns>Returns a  GetAppsResult from Pinpoint.</returns>
-        public  GetAppsResponse EndGetApps(IAsyncResult asyncResult)
+        public virtual GetAppsResponse EndGetApps(IAsyncResult asyncResult)
         {
             return EndInvoke<GetAppsResponse>(asyncResult);
         }
@@ -1677,7 +1677,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Simple message object.
         /// </exception>
-        public GetBaiduChannelResponse GetBaiduChannel(GetBaiduChannelRequest request)
+        public virtual GetBaiduChannelResponse GetBaiduChannel(GetBaiduChannelRequest request)
         {
             var marshaller = new GetBaiduChannelRequestMarshaller();
             var unmarshaller = GetBaiduChannelResponseUnmarshaller.Instance;
@@ -1696,7 +1696,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBaiduChannel
         ///         operation.</returns>
-        public IAsyncResult BeginGetBaiduChannel(GetBaiduChannelRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetBaiduChannel(GetBaiduChannelRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetBaiduChannelRequestMarshaller();
             var unmarshaller = GetBaiduChannelResponseUnmarshaller.Instance;
@@ -1712,7 +1712,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBaiduChannel.</param>
         /// 
         /// <returns>Returns a  GetBaiduChannelResult from Pinpoint.</returns>
-        public  GetBaiduChannelResponse EndGetBaiduChannel(IAsyncResult asyncResult)
+        public virtual GetBaiduChannelResponse EndGetBaiduChannel(IAsyncResult asyncResult)
         {
             return EndInvoke<GetBaiduChannelResponse>(asyncResult);
         }
@@ -1745,7 +1745,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Simple message object.
         /// </exception>
-        public GetCampaignResponse GetCampaign(GetCampaignRequest request)
+        public virtual GetCampaignResponse GetCampaign(GetCampaignRequest request)
         {
             var marshaller = new GetCampaignRequestMarshaller();
             var unmarshaller = GetCampaignResponseUnmarshaller.Instance;
@@ -1764,7 +1764,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCampaign
         ///         operation.</returns>
-        public IAsyncResult BeginGetCampaign(GetCampaignRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetCampaign(GetCampaignRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetCampaignRequestMarshaller();
             var unmarshaller = GetCampaignResponseUnmarshaller.Instance;
@@ -1780,7 +1780,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCampaign.</param>
         /// 
         /// <returns>Returns a  GetCampaignResult from Pinpoint.</returns>
-        public  GetCampaignResponse EndGetCampaign(IAsyncResult asyncResult)
+        public virtual GetCampaignResponse EndGetCampaign(IAsyncResult asyncResult)
         {
             return EndInvoke<GetCampaignResponse>(asyncResult);
         }
@@ -1813,7 +1813,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Simple message object.
         /// </exception>
-        public GetCampaignActivitiesResponse GetCampaignActivities(GetCampaignActivitiesRequest request)
+        public virtual GetCampaignActivitiesResponse GetCampaignActivities(GetCampaignActivitiesRequest request)
         {
             var marshaller = new GetCampaignActivitiesRequestMarshaller();
             var unmarshaller = GetCampaignActivitiesResponseUnmarshaller.Instance;
@@ -1832,7 +1832,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCampaignActivities
         ///         operation.</returns>
-        public IAsyncResult BeginGetCampaignActivities(GetCampaignActivitiesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetCampaignActivities(GetCampaignActivitiesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetCampaignActivitiesRequestMarshaller();
             var unmarshaller = GetCampaignActivitiesResponseUnmarshaller.Instance;
@@ -1848,7 +1848,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCampaignActivities.</param>
         /// 
         /// <returns>Returns a  GetCampaignActivitiesResult from Pinpoint.</returns>
-        public  GetCampaignActivitiesResponse EndGetCampaignActivities(IAsyncResult asyncResult)
+        public virtual GetCampaignActivitiesResponse EndGetCampaignActivities(IAsyncResult asyncResult)
         {
             return EndInvoke<GetCampaignActivitiesResponse>(asyncResult);
         }
@@ -1881,7 +1881,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Simple message object.
         /// </exception>
-        public GetCampaignsResponse GetCampaigns(GetCampaignsRequest request)
+        public virtual GetCampaignsResponse GetCampaigns(GetCampaignsRequest request)
         {
             var marshaller = new GetCampaignsRequestMarshaller();
             var unmarshaller = GetCampaignsResponseUnmarshaller.Instance;
@@ -1900,7 +1900,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCampaigns
         ///         operation.</returns>
-        public IAsyncResult BeginGetCampaigns(GetCampaignsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetCampaigns(GetCampaignsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetCampaignsRequestMarshaller();
             var unmarshaller = GetCampaignsResponseUnmarshaller.Instance;
@@ -1916,7 +1916,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCampaigns.</param>
         /// 
         /// <returns>Returns a  GetCampaignsResult from Pinpoint.</returns>
-        public  GetCampaignsResponse EndGetCampaigns(IAsyncResult asyncResult)
+        public virtual GetCampaignsResponse EndGetCampaigns(IAsyncResult asyncResult)
         {
             return EndInvoke<GetCampaignsResponse>(asyncResult);
         }
@@ -1949,7 +1949,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Simple message object.
         /// </exception>
-        public GetCampaignVersionResponse GetCampaignVersion(GetCampaignVersionRequest request)
+        public virtual GetCampaignVersionResponse GetCampaignVersion(GetCampaignVersionRequest request)
         {
             var marshaller = new GetCampaignVersionRequestMarshaller();
             var unmarshaller = GetCampaignVersionResponseUnmarshaller.Instance;
@@ -1968,7 +1968,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCampaignVersion
         ///         operation.</returns>
-        public IAsyncResult BeginGetCampaignVersion(GetCampaignVersionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetCampaignVersion(GetCampaignVersionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetCampaignVersionRequestMarshaller();
             var unmarshaller = GetCampaignVersionResponseUnmarshaller.Instance;
@@ -1984,7 +1984,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCampaignVersion.</param>
         /// 
         /// <returns>Returns a  GetCampaignVersionResult from Pinpoint.</returns>
-        public  GetCampaignVersionResponse EndGetCampaignVersion(IAsyncResult asyncResult)
+        public virtual GetCampaignVersionResponse EndGetCampaignVersion(IAsyncResult asyncResult)
         {
             return EndInvoke<GetCampaignVersionResponse>(asyncResult);
         }
@@ -2017,7 +2017,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Simple message object.
         /// </exception>
-        public GetCampaignVersionsResponse GetCampaignVersions(GetCampaignVersionsRequest request)
+        public virtual GetCampaignVersionsResponse GetCampaignVersions(GetCampaignVersionsRequest request)
         {
             var marshaller = new GetCampaignVersionsRequestMarshaller();
             var unmarshaller = GetCampaignVersionsResponseUnmarshaller.Instance;
@@ -2036,7 +2036,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCampaignVersions
         ///         operation.</returns>
-        public IAsyncResult BeginGetCampaignVersions(GetCampaignVersionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetCampaignVersions(GetCampaignVersionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetCampaignVersionsRequestMarshaller();
             var unmarshaller = GetCampaignVersionsResponseUnmarshaller.Instance;
@@ -2052,7 +2052,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCampaignVersions.</param>
         /// 
         /// <returns>Returns a  GetCampaignVersionsResult from Pinpoint.</returns>
-        public  GetCampaignVersionsResponse EndGetCampaignVersions(IAsyncResult asyncResult)
+        public virtual GetCampaignVersionsResponse EndGetCampaignVersions(IAsyncResult asyncResult)
         {
             return EndInvoke<GetCampaignVersionsResponse>(asyncResult);
         }
@@ -2085,7 +2085,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Simple message object.
         /// </exception>
-        public GetEmailChannelResponse GetEmailChannel(GetEmailChannelRequest request)
+        public virtual GetEmailChannelResponse GetEmailChannel(GetEmailChannelRequest request)
         {
             var marshaller = new GetEmailChannelRequestMarshaller();
             var unmarshaller = GetEmailChannelResponseUnmarshaller.Instance;
@@ -2104,7 +2104,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetEmailChannel
         ///         operation.</returns>
-        public IAsyncResult BeginGetEmailChannel(GetEmailChannelRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetEmailChannel(GetEmailChannelRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetEmailChannelRequestMarshaller();
             var unmarshaller = GetEmailChannelResponseUnmarshaller.Instance;
@@ -2120,7 +2120,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetEmailChannel.</param>
         /// 
         /// <returns>Returns a  GetEmailChannelResult from Pinpoint.</returns>
-        public  GetEmailChannelResponse EndGetEmailChannel(IAsyncResult asyncResult)
+        public virtual GetEmailChannelResponse EndGetEmailChannel(IAsyncResult asyncResult)
         {
             return EndInvoke<GetEmailChannelResponse>(asyncResult);
         }
@@ -2153,7 +2153,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Simple message object.
         /// </exception>
-        public GetEndpointResponse GetEndpoint(GetEndpointRequest request)
+        public virtual GetEndpointResponse GetEndpoint(GetEndpointRequest request)
         {
             var marshaller = new GetEndpointRequestMarshaller();
             var unmarshaller = GetEndpointResponseUnmarshaller.Instance;
@@ -2172,7 +2172,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetEndpoint
         ///         operation.</returns>
-        public IAsyncResult BeginGetEndpoint(GetEndpointRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetEndpoint(GetEndpointRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetEndpointRequestMarshaller();
             var unmarshaller = GetEndpointResponseUnmarshaller.Instance;
@@ -2188,7 +2188,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetEndpoint.</param>
         /// 
         /// <returns>Returns a  GetEndpointResult from Pinpoint.</returns>
-        public  GetEndpointResponse EndGetEndpoint(IAsyncResult asyncResult)
+        public virtual GetEndpointResponse EndGetEndpoint(IAsyncResult asyncResult)
         {
             return EndInvoke<GetEndpointResponse>(asyncResult);
         }
@@ -2221,7 +2221,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Simple message object.
         /// </exception>
-        public GetEventStreamResponse GetEventStream(GetEventStreamRequest request)
+        public virtual GetEventStreamResponse GetEventStream(GetEventStreamRequest request)
         {
             var marshaller = new GetEventStreamRequestMarshaller();
             var unmarshaller = GetEventStreamResponseUnmarshaller.Instance;
@@ -2240,7 +2240,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetEventStream
         ///         operation.</returns>
-        public IAsyncResult BeginGetEventStream(GetEventStreamRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetEventStream(GetEventStreamRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetEventStreamRequestMarshaller();
             var unmarshaller = GetEventStreamResponseUnmarshaller.Instance;
@@ -2256,7 +2256,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetEventStream.</param>
         /// 
         /// <returns>Returns a  GetEventStreamResult from Pinpoint.</returns>
-        public  GetEventStreamResponse EndGetEventStream(IAsyncResult asyncResult)
+        public virtual GetEventStreamResponse EndGetEventStream(IAsyncResult asyncResult)
         {
             return EndInvoke<GetEventStreamResponse>(asyncResult);
         }
@@ -2289,7 +2289,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Simple message object.
         /// </exception>
-        public GetGcmChannelResponse GetGcmChannel(GetGcmChannelRequest request)
+        public virtual GetGcmChannelResponse GetGcmChannel(GetGcmChannelRequest request)
         {
             var marshaller = new GetGcmChannelRequestMarshaller();
             var unmarshaller = GetGcmChannelResponseUnmarshaller.Instance;
@@ -2308,7 +2308,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetGcmChannel
         ///         operation.</returns>
-        public IAsyncResult BeginGetGcmChannel(GetGcmChannelRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetGcmChannel(GetGcmChannelRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetGcmChannelRequestMarshaller();
             var unmarshaller = GetGcmChannelResponseUnmarshaller.Instance;
@@ -2324,7 +2324,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetGcmChannel.</param>
         /// 
         /// <returns>Returns a  GetGcmChannelResult from Pinpoint.</returns>
-        public  GetGcmChannelResponse EndGetGcmChannel(IAsyncResult asyncResult)
+        public virtual GetGcmChannelResponse EndGetGcmChannel(IAsyncResult asyncResult)
         {
             return EndInvoke<GetGcmChannelResponse>(asyncResult);
         }
@@ -2357,7 +2357,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Simple message object.
         /// </exception>
-        public GetImportJobResponse GetImportJob(GetImportJobRequest request)
+        public virtual GetImportJobResponse GetImportJob(GetImportJobRequest request)
         {
             var marshaller = new GetImportJobRequestMarshaller();
             var unmarshaller = GetImportJobResponseUnmarshaller.Instance;
@@ -2376,7 +2376,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetImportJob
         ///         operation.</returns>
-        public IAsyncResult BeginGetImportJob(GetImportJobRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetImportJob(GetImportJobRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetImportJobRequestMarshaller();
             var unmarshaller = GetImportJobResponseUnmarshaller.Instance;
@@ -2392,7 +2392,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetImportJob.</param>
         /// 
         /// <returns>Returns a  GetImportJobResult from Pinpoint.</returns>
-        public  GetImportJobResponse EndGetImportJob(IAsyncResult asyncResult)
+        public virtual GetImportJobResponse EndGetImportJob(IAsyncResult asyncResult)
         {
             return EndInvoke<GetImportJobResponse>(asyncResult);
         }
@@ -2425,7 +2425,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Simple message object.
         /// </exception>
-        public GetImportJobsResponse GetImportJobs(GetImportJobsRequest request)
+        public virtual GetImportJobsResponse GetImportJobs(GetImportJobsRequest request)
         {
             var marshaller = new GetImportJobsRequestMarshaller();
             var unmarshaller = GetImportJobsResponseUnmarshaller.Instance;
@@ -2444,7 +2444,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetImportJobs
         ///         operation.</returns>
-        public IAsyncResult BeginGetImportJobs(GetImportJobsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetImportJobs(GetImportJobsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetImportJobsRequestMarshaller();
             var unmarshaller = GetImportJobsResponseUnmarshaller.Instance;
@@ -2460,7 +2460,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetImportJobs.</param>
         /// 
         /// <returns>Returns a  GetImportJobsResult from Pinpoint.</returns>
-        public  GetImportJobsResponse EndGetImportJobs(IAsyncResult asyncResult)
+        public virtual GetImportJobsResponse EndGetImportJobs(IAsyncResult asyncResult)
         {
             return EndInvoke<GetImportJobsResponse>(asyncResult);
         }
@@ -2493,7 +2493,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Simple message object.
         /// </exception>
-        public GetSegmentResponse GetSegment(GetSegmentRequest request)
+        public virtual GetSegmentResponse GetSegment(GetSegmentRequest request)
         {
             var marshaller = new GetSegmentRequestMarshaller();
             var unmarshaller = GetSegmentResponseUnmarshaller.Instance;
@@ -2512,7 +2512,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSegment
         ///         operation.</returns>
-        public IAsyncResult BeginGetSegment(GetSegmentRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetSegment(GetSegmentRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetSegmentRequestMarshaller();
             var unmarshaller = GetSegmentResponseUnmarshaller.Instance;
@@ -2528,7 +2528,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSegment.</param>
         /// 
         /// <returns>Returns a  GetSegmentResult from Pinpoint.</returns>
-        public  GetSegmentResponse EndGetSegment(IAsyncResult asyncResult)
+        public virtual GetSegmentResponse EndGetSegment(IAsyncResult asyncResult)
         {
             return EndInvoke<GetSegmentResponse>(asyncResult);
         }
@@ -2561,7 +2561,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Simple message object.
         /// </exception>
-        public GetSegmentImportJobsResponse GetSegmentImportJobs(GetSegmentImportJobsRequest request)
+        public virtual GetSegmentImportJobsResponse GetSegmentImportJobs(GetSegmentImportJobsRequest request)
         {
             var marshaller = new GetSegmentImportJobsRequestMarshaller();
             var unmarshaller = GetSegmentImportJobsResponseUnmarshaller.Instance;
@@ -2580,7 +2580,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSegmentImportJobs
         ///         operation.</returns>
-        public IAsyncResult BeginGetSegmentImportJobs(GetSegmentImportJobsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetSegmentImportJobs(GetSegmentImportJobsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetSegmentImportJobsRequestMarshaller();
             var unmarshaller = GetSegmentImportJobsResponseUnmarshaller.Instance;
@@ -2596,7 +2596,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSegmentImportJobs.</param>
         /// 
         /// <returns>Returns a  GetSegmentImportJobsResult from Pinpoint.</returns>
-        public  GetSegmentImportJobsResponse EndGetSegmentImportJobs(IAsyncResult asyncResult)
+        public virtual GetSegmentImportJobsResponse EndGetSegmentImportJobs(IAsyncResult asyncResult)
         {
             return EndInvoke<GetSegmentImportJobsResponse>(asyncResult);
         }
@@ -2629,7 +2629,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Simple message object.
         /// </exception>
-        public GetSegmentsResponse GetSegments(GetSegmentsRequest request)
+        public virtual GetSegmentsResponse GetSegments(GetSegmentsRequest request)
         {
             var marshaller = new GetSegmentsRequestMarshaller();
             var unmarshaller = GetSegmentsResponseUnmarshaller.Instance;
@@ -2648,7 +2648,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSegments
         ///         operation.</returns>
-        public IAsyncResult BeginGetSegments(GetSegmentsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetSegments(GetSegmentsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetSegmentsRequestMarshaller();
             var unmarshaller = GetSegmentsResponseUnmarshaller.Instance;
@@ -2664,7 +2664,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSegments.</param>
         /// 
         /// <returns>Returns a  GetSegmentsResult from Pinpoint.</returns>
-        public  GetSegmentsResponse EndGetSegments(IAsyncResult asyncResult)
+        public virtual GetSegmentsResponse EndGetSegments(IAsyncResult asyncResult)
         {
             return EndInvoke<GetSegmentsResponse>(asyncResult);
         }
@@ -2697,7 +2697,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Simple message object.
         /// </exception>
-        public GetSegmentVersionResponse GetSegmentVersion(GetSegmentVersionRequest request)
+        public virtual GetSegmentVersionResponse GetSegmentVersion(GetSegmentVersionRequest request)
         {
             var marshaller = new GetSegmentVersionRequestMarshaller();
             var unmarshaller = GetSegmentVersionResponseUnmarshaller.Instance;
@@ -2716,7 +2716,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSegmentVersion
         ///         operation.</returns>
-        public IAsyncResult BeginGetSegmentVersion(GetSegmentVersionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetSegmentVersion(GetSegmentVersionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetSegmentVersionRequestMarshaller();
             var unmarshaller = GetSegmentVersionResponseUnmarshaller.Instance;
@@ -2732,7 +2732,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSegmentVersion.</param>
         /// 
         /// <returns>Returns a  GetSegmentVersionResult from Pinpoint.</returns>
-        public  GetSegmentVersionResponse EndGetSegmentVersion(IAsyncResult asyncResult)
+        public virtual GetSegmentVersionResponse EndGetSegmentVersion(IAsyncResult asyncResult)
         {
             return EndInvoke<GetSegmentVersionResponse>(asyncResult);
         }
@@ -2765,7 +2765,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Simple message object.
         /// </exception>
-        public GetSegmentVersionsResponse GetSegmentVersions(GetSegmentVersionsRequest request)
+        public virtual GetSegmentVersionsResponse GetSegmentVersions(GetSegmentVersionsRequest request)
         {
             var marshaller = new GetSegmentVersionsRequestMarshaller();
             var unmarshaller = GetSegmentVersionsResponseUnmarshaller.Instance;
@@ -2784,7 +2784,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSegmentVersions
         ///         operation.</returns>
-        public IAsyncResult BeginGetSegmentVersions(GetSegmentVersionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetSegmentVersions(GetSegmentVersionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetSegmentVersionsRequestMarshaller();
             var unmarshaller = GetSegmentVersionsResponseUnmarshaller.Instance;
@@ -2800,7 +2800,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSegmentVersions.</param>
         /// 
         /// <returns>Returns a  GetSegmentVersionsResult from Pinpoint.</returns>
-        public  GetSegmentVersionsResponse EndGetSegmentVersions(IAsyncResult asyncResult)
+        public virtual GetSegmentVersionsResponse EndGetSegmentVersions(IAsyncResult asyncResult)
         {
             return EndInvoke<GetSegmentVersionsResponse>(asyncResult);
         }
@@ -2833,7 +2833,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Simple message object.
         /// </exception>
-        public GetSmsChannelResponse GetSmsChannel(GetSmsChannelRequest request)
+        public virtual GetSmsChannelResponse GetSmsChannel(GetSmsChannelRequest request)
         {
             var marshaller = new GetSmsChannelRequestMarshaller();
             var unmarshaller = GetSmsChannelResponseUnmarshaller.Instance;
@@ -2852,7 +2852,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSmsChannel
         ///         operation.</returns>
-        public IAsyncResult BeginGetSmsChannel(GetSmsChannelRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetSmsChannel(GetSmsChannelRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetSmsChannelRequestMarshaller();
             var unmarshaller = GetSmsChannelResponseUnmarshaller.Instance;
@@ -2868,7 +2868,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSmsChannel.</param>
         /// 
         /// <returns>Returns a  GetSmsChannelResult from Pinpoint.</returns>
-        public  GetSmsChannelResponse EndGetSmsChannel(IAsyncResult asyncResult)
+        public virtual GetSmsChannelResponse EndGetSmsChannel(IAsyncResult asyncResult)
         {
             return EndInvoke<GetSmsChannelResponse>(asyncResult);
         }
@@ -2901,7 +2901,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Simple message object.
         /// </exception>
-        public PutEventStreamResponse PutEventStream(PutEventStreamRequest request)
+        public virtual PutEventStreamResponse PutEventStream(PutEventStreamRequest request)
         {
             var marshaller = new PutEventStreamRequestMarshaller();
             var unmarshaller = PutEventStreamResponseUnmarshaller.Instance;
@@ -2920,7 +2920,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutEventStream
         ///         operation.</returns>
-        public IAsyncResult BeginPutEventStream(PutEventStreamRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPutEventStream(PutEventStreamRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutEventStreamRequestMarshaller();
             var unmarshaller = PutEventStreamResponseUnmarshaller.Instance;
@@ -2936,7 +2936,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutEventStream.</param>
         /// 
         /// <returns>Returns a  PutEventStreamResult from Pinpoint.</returns>
-        public  PutEventStreamResponse EndPutEventStream(IAsyncResult asyncResult)
+        public virtual PutEventStreamResponse EndPutEventStream(IAsyncResult asyncResult)
         {
             return EndInvoke<PutEventStreamResponse>(asyncResult);
         }
@@ -2969,7 +2969,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Simple message object.
         /// </exception>
-        public SendMessagesResponse SendMessages(SendMessagesRequest request)
+        public virtual SendMessagesResponse SendMessages(SendMessagesRequest request)
         {
             var marshaller = new SendMessagesRequestMarshaller();
             var unmarshaller = SendMessagesResponseUnmarshaller.Instance;
@@ -2988,7 +2988,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSendMessages
         ///         operation.</returns>
-        public IAsyncResult BeginSendMessages(SendMessagesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginSendMessages(SendMessagesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SendMessagesRequestMarshaller();
             var unmarshaller = SendMessagesResponseUnmarshaller.Instance;
@@ -3004,7 +3004,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSendMessages.</param>
         /// 
         /// <returns>Returns a  SendMessagesResult from Pinpoint.</returns>
-        public  SendMessagesResponse EndSendMessages(IAsyncResult asyncResult)
+        public virtual SendMessagesResponse EndSendMessages(IAsyncResult asyncResult)
         {
             return EndInvoke<SendMessagesResponse>(asyncResult);
         }
@@ -3037,7 +3037,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Simple message object.
         /// </exception>
-        public SendUsersMessagesResponse SendUsersMessages(SendUsersMessagesRequest request)
+        public virtual SendUsersMessagesResponse SendUsersMessages(SendUsersMessagesRequest request)
         {
             var marshaller = new SendUsersMessagesRequestMarshaller();
             var unmarshaller = SendUsersMessagesResponseUnmarshaller.Instance;
@@ -3056,7 +3056,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSendUsersMessages
         ///         operation.</returns>
-        public IAsyncResult BeginSendUsersMessages(SendUsersMessagesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginSendUsersMessages(SendUsersMessagesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SendUsersMessagesRequestMarshaller();
             var unmarshaller = SendUsersMessagesResponseUnmarshaller.Instance;
@@ -3072,7 +3072,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSendUsersMessages.</param>
         /// 
         /// <returns>Returns a  SendUsersMessagesResult from Pinpoint.</returns>
-        public  SendUsersMessagesResponse EndSendUsersMessages(IAsyncResult asyncResult)
+        public virtual SendUsersMessagesResponse EndSendUsersMessages(IAsyncResult asyncResult)
         {
             return EndInvoke<SendUsersMessagesResponse>(asyncResult);
         }
@@ -3105,7 +3105,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Simple message object.
         /// </exception>
-        public UpdateAdmChannelResponse UpdateAdmChannel(UpdateAdmChannelRequest request)
+        public virtual UpdateAdmChannelResponse UpdateAdmChannel(UpdateAdmChannelRequest request)
         {
             var marshaller = new UpdateAdmChannelRequestMarshaller();
             var unmarshaller = UpdateAdmChannelResponseUnmarshaller.Instance;
@@ -3124,7 +3124,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAdmChannel
         ///         operation.</returns>
-        public IAsyncResult BeginUpdateAdmChannel(UpdateAdmChannelRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateAdmChannel(UpdateAdmChannelRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateAdmChannelRequestMarshaller();
             var unmarshaller = UpdateAdmChannelResponseUnmarshaller.Instance;
@@ -3140,7 +3140,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAdmChannel.</param>
         /// 
         /// <returns>Returns a  UpdateAdmChannelResult from Pinpoint.</returns>
-        public  UpdateAdmChannelResponse EndUpdateAdmChannel(IAsyncResult asyncResult)
+        public virtual UpdateAdmChannelResponse EndUpdateAdmChannel(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateAdmChannelResponse>(asyncResult);
         }
@@ -3173,7 +3173,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Simple message object.
         /// </exception>
-        public UpdateApnsChannelResponse UpdateApnsChannel(UpdateApnsChannelRequest request)
+        public virtual UpdateApnsChannelResponse UpdateApnsChannel(UpdateApnsChannelRequest request)
         {
             var marshaller = new UpdateApnsChannelRequestMarshaller();
             var unmarshaller = UpdateApnsChannelResponseUnmarshaller.Instance;
@@ -3192,7 +3192,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateApnsChannel
         ///         operation.</returns>
-        public IAsyncResult BeginUpdateApnsChannel(UpdateApnsChannelRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateApnsChannel(UpdateApnsChannelRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateApnsChannelRequestMarshaller();
             var unmarshaller = UpdateApnsChannelResponseUnmarshaller.Instance;
@@ -3208,7 +3208,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateApnsChannel.</param>
         /// 
         /// <returns>Returns a  UpdateApnsChannelResult from Pinpoint.</returns>
-        public  UpdateApnsChannelResponse EndUpdateApnsChannel(IAsyncResult asyncResult)
+        public virtual UpdateApnsChannelResponse EndUpdateApnsChannel(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateApnsChannelResponse>(asyncResult);
         }
@@ -3241,7 +3241,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Simple message object.
         /// </exception>
-        public UpdateApnsSandboxChannelResponse UpdateApnsSandboxChannel(UpdateApnsSandboxChannelRequest request)
+        public virtual UpdateApnsSandboxChannelResponse UpdateApnsSandboxChannel(UpdateApnsSandboxChannelRequest request)
         {
             var marshaller = new UpdateApnsSandboxChannelRequestMarshaller();
             var unmarshaller = UpdateApnsSandboxChannelResponseUnmarshaller.Instance;
@@ -3260,7 +3260,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateApnsSandboxChannel
         ///         operation.</returns>
-        public IAsyncResult BeginUpdateApnsSandboxChannel(UpdateApnsSandboxChannelRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateApnsSandboxChannel(UpdateApnsSandboxChannelRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateApnsSandboxChannelRequestMarshaller();
             var unmarshaller = UpdateApnsSandboxChannelResponseUnmarshaller.Instance;
@@ -3276,7 +3276,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateApnsSandboxChannel.</param>
         /// 
         /// <returns>Returns a  UpdateApnsSandboxChannelResult from Pinpoint.</returns>
-        public  UpdateApnsSandboxChannelResponse EndUpdateApnsSandboxChannel(IAsyncResult asyncResult)
+        public virtual UpdateApnsSandboxChannelResponse EndUpdateApnsSandboxChannel(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateApnsSandboxChannelResponse>(asyncResult);
         }
@@ -3309,7 +3309,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Simple message object.
         /// </exception>
-        public UpdateApplicationSettingsResponse UpdateApplicationSettings(UpdateApplicationSettingsRequest request)
+        public virtual UpdateApplicationSettingsResponse UpdateApplicationSettings(UpdateApplicationSettingsRequest request)
         {
             var marshaller = new UpdateApplicationSettingsRequestMarshaller();
             var unmarshaller = UpdateApplicationSettingsResponseUnmarshaller.Instance;
@@ -3328,7 +3328,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateApplicationSettings
         ///         operation.</returns>
-        public IAsyncResult BeginUpdateApplicationSettings(UpdateApplicationSettingsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateApplicationSettings(UpdateApplicationSettingsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateApplicationSettingsRequestMarshaller();
             var unmarshaller = UpdateApplicationSettingsResponseUnmarshaller.Instance;
@@ -3344,7 +3344,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateApplicationSettings.</param>
         /// 
         /// <returns>Returns a  UpdateApplicationSettingsResult from Pinpoint.</returns>
-        public  UpdateApplicationSettingsResponse EndUpdateApplicationSettings(IAsyncResult asyncResult)
+        public virtual UpdateApplicationSettingsResponse EndUpdateApplicationSettings(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateApplicationSettingsResponse>(asyncResult);
         }
@@ -3377,7 +3377,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Simple message object.
         /// </exception>
-        public UpdateBaiduChannelResponse UpdateBaiduChannel(UpdateBaiduChannelRequest request)
+        public virtual UpdateBaiduChannelResponse UpdateBaiduChannel(UpdateBaiduChannelRequest request)
         {
             var marshaller = new UpdateBaiduChannelRequestMarshaller();
             var unmarshaller = UpdateBaiduChannelResponseUnmarshaller.Instance;
@@ -3396,7 +3396,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateBaiduChannel
         ///         operation.</returns>
-        public IAsyncResult BeginUpdateBaiduChannel(UpdateBaiduChannelRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateBaiduChannel(UpdateBaiduChannelRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateBaiduChannelRequestMarshaller();
             var unmarshaller = UpdateBaiduChannelResponseUnmarshaller.Instance;
@@ -3412,7 +3412,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateBaiduChannel.</param>
         /// 
         /// <returns>Returns a  UpdateBaiduChannelResult from Pinpoint.</returns>
-        public  UpdateBaiduChannelResponse EndUpdateBaiduChannel(IAsyncResult asyncResult)
+        public virtual UpdateBaiduChannelResponse EndUpdateBaiduChannel(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateBaiduChannelResponse>(asyncResult);
         }
@@ -3445,7 +3445,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Simple message object.
         /// </exception>
-        public UpdateCampaignResponse UpdateCampaign(UpdateCampaignRequest request)
+        public virtual UpdateCampaignResponse UpdateCampaign(UpdateCampaignRequest request)
         {
             var marshaller = new UpdateCampaignRequestMarshaller();
             var unmarshaller = UpdateCampaignResponseUnmarshaller.Instance;
@@ -3464,7 +3464,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateCampaign
         ///         operation.</returns>
-        public IAsyncResult BeginUpdateCampaign(UpdateCampaignRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateCampaign(UpdateCampaignRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateCampaignRequestMarshaller();
             var unmarshaller = UpdateCampaignResponseUnmarshaller.Instance;
@@ -3480,7 +3480,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateCampaign.</param>
         /// 
         /// <returns>Returns a  UpdateCampaignResult from Pinpoint.</returns>
-        public  UpdateCampaignResponse EndUpdateCampaign(IAsyncResult asyncResult)
+        public virtual UpdateCampaignResponse EndUpdateCampaign(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateCampaignResponse>(asyncResult);
         }
@@ -3513,7 +3513,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Simple message object.
         /// </exception>
-        public UpdateEmailChannelResponse UpdateEmailChannel(UpdateEmailChannelRequest request)
+        public virtual UpdateEmailChannelResponse UpdateEmailChannel(UpdateEmailChannelRequest request)
         {
             var marshaller = new UpdateEmailChannelRequestMarshaller();
             var unmarshaller = UpdateEmailChannelResponseUnmarshaller.Instance;
@@ -3532,7 +3532,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateEmailChannel
         ///         operation.</returns>
-        public IAsyncResult BeginUpdateEmailChannel(UpdateEmailChannelRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateEmailChannel(UpdateEmailChannelRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateEmailChannelRequestMarshaller();
             var unmarshaller = UpdateEmailChannelResponseUnmarshaller.Instance;
@@ -3548,7 +3548,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateEmailChannel.</param>
         /// 
         /// <returns>Returns a  UpdateEmailChannelResult from Pinpoint.</returns>
-        public  UpdateEmailChannelResponse EndUpdateEmailChannel(IAsyncResult asyncResult)
+        public virtual UpdateEmailChannelResponse EndUpdateEmailChannel(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateEmailChannelResponse>(asyncResult);
         }
@@ -3581,7 +3581,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Simple message object.
         /// </exception>
-        public UpdateEndpointResponse UpdateEndpoint(UpdateEndpointRequest request)
+        public virtual UpdateEndpointResponse UpdateEndpoint(UpdateEndpointRequest request)
         {
             var marshaller = new UpdateEndpointRequestMarshaller();
             var unmarshaller = UpdateEndpointResponseUnmarshaller.Instance;
@@ -3600,7 +3600,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateEndpoint
         ///         operation.</returns>
-        public IAsyncResult BeginUpdateEndpoint(UpdateEndpointRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateEndpoint(UpdateEndpointRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateEndpointRequestMarshaller();
             var unmarshaller = UpdateEndpointResponseUnmarshaller.Instance;
@@ -3616,7 +3616,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateEndpoint.</param>
         /// 
         /// <returns>Returns a  UpdateEndpointResult from Pinpoint.</returns>
-        public  UpdateEndpointResponse EndUpdateEndpoint(IAsyncResult asyncResult)
+        public virtual UpdateEndpointResponse EndUpdateEndpoint(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateEndpointResponse>(asyncResult);
         }
@@ -3649,7 +3649,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Simple message object.
         /// </exception>
-        public UpdateEndpointsBatchResponse UpdateEndpointsBatch(UpdateEndpointsBatchRequest request)
+        public virtual UpdateEndpointsBatchResponse UpdateEndpointsBatch(UpdateEndpointsBatchRequest request)
         {
             var marshaller = new UpdateEndpointsBatchRequestMarshaller();
             var unmarshaller = UpdateEndpointsBatchResponseUnmarshaller.Instance;
@@ -3668,7 +3668,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateEndpointsBatch
         ///         operation.</returns>
-        public IAsyncResult BeginUpdateEndpointsBatch(UpdateEndpointsBatchRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateEndpointsBatch(UpdateEndpointsBatchRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateEndpointsBatchRequestMarshaller();
             var unmarshaller = UpdateEndpointsBatchResponseUnmarshaller.Instance;
@@ -3684,7 +3684,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateEndpointsBatch.</param>
         /// 
         /// <returns>Returns a  UpdateEndpointsBatchResult from Pinpoint.</returns>
-        public  UpdateEndpointsBatchResponse EndUpdateEndpointsBatch(IAsyncResult asyncResult)
+        public virtual UpdateEndpointsBatchResponse EndUpdateEndpointsBatch(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateEndpointsBatchResponse>(asyncResult);
         }
@@ -3717,7 +3717,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Simple message object.
         /// </exception>
-        public UpdateGcmChannelResponse UpdateGcmChannel(UpdateGcmChannelRequest request)
+        public virtual UpdateGcmChannelResponse UpdateGcmChannel(UpdateGcmChannelRequest request)
         {
             var marshaller = new UpdateGcmChannelRequestMarshaller();
             var unmarshaller = UpdateGcmChannelResponseUnmarshaller.Instance;
@@ -3736,7 +3736,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateGcmChannel
         ///         operation.</returns>
-        public IAsyncResult BeginUpdateGcmChannel(UpdateGcmChannelRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateGcmChannel(UpdateGcmChannelRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateGcmChannelRequestMarshaller();
             var unmarshaller = UpdateGcmChannelResponseUnmarshaller.Instance;
@@ -3752,7 +3752,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateGcmChannel.</param>
         /// 
         /// <returns>Returns a  UpdateGcmChannelResult from Pinpoint.</returns>
-        public  UpdateGcmChannelResponse EndUpdateGcmChannel(IAsyncResult asyncResult)
+        public virtual UpdateGcmChannelResponse EndUpdateGcmChannel(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateGcmChannelResponse>(asyncResult);
         }
@@ -3785,7 +3785,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Simple message object.
         /// </exception>
-        public UpdateSegmentResponse UpdateSegment(UpdateSegmentRequest request)
+        public virtual UpdateSegmentResponse UpdateSegment(UpdateSegmentRequest request)
         {
             var marshaller = new UpdateSegmentRequestMarshaller();
             var unmarshaller = UpdateSegmentResponseUnmarshaller.Instance;
@@ -3804,7 +3804,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateSegment
         ///         operation.</returns>
-        public IAsyncResult BeginUpdateSegment(UpdateSegmentRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateSegment(UpdateSegmentRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateSegmentRequestMarshaller();
             var unmarshaller = UpdateSegmentResponseUnmarshaller.Instance;
@@ -3820,7 +3820,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateSegment.</param>
         /// 
         /// <returns>Returns a  UpdateSegmentResult from Pinpoint.</returns>
-        public  UpdateSegmentResponse EndUpdateSegment(IAsyncResult asyncResult)
+        public virtual UpdateSegmentResponse EndUpdateSegment(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateSegmentResponse>(asyncResult);
         }
@@ -3853,7 +3853,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Simple message object.
         /// </exception>
-        public UpdateSmsChannelResponse UpdateSmsChannel(UpdateSmsChannelRequest request)
+        public virtual UpdateSmsChannelResponse UpdateSmsChannel(UpdateSmsChannelRequest request)
         {
             var marshaller = new UpdateSmsChannelRequestMarshaller();
             var unmarshaller = UpdateSmsChannelResponseUnmarshaller.Instance;
@@ -3872,7 +3872,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateSmsChannel
         ///         operation.</returns>
-        public IAsyncResult BeginUpdateSmsChannel(UpdateSmsChannelRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateSmsChannel(UpdateSmsChannelRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateSmsChannelRequestMarshaller();
             var unmarshaller = UpdateSmsChannelResponseUnmarshaller.Instance;
@@ -3888,7 +3888,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateSmsChannel.</param>
         /// 
         /// <returns>Returns a  UpdateSmsChannelResult from Pinpoint.</returns>
-        public  UpdateSmsChannelResponse EndUpdateSmsChannel(IAsyncResult asyncResult)
+        public virtual UpdateSmsChannelResponse EndUpdateSmsChannel(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateSmsChannelResponse>(asyncResult);
         }

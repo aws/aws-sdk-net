@@ -207,7 +207,7 @@ namespace Amazon.CognitoIdentity
 
         
         #region  CreateIdentityPool
-        internal CreateIdentityPoolResponse CreateIdentityPool(CreateIdentityPoolRequest request)
+        internal virtual CreateIdentityPoolResponse CreateIdentityPool(CreateIdentityPoolRequest request)
         {
             var marshaller = new CreateIdentityPoolRequestMarshaller();
             var unmarshaller = CreateIdentityPoolResponseUnmarshaller.Instance;
@@ -224,7 +224,7 @@ namespace Amazon.CognitoIdentity
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/CreateIdentityPool">REST API Reference for CreateIdentityPool Operation</seealso>
-        public void CreateIdentityPoolAsync(CreateIdentityPoolRequest request, AmazonServiceCallback<CreateIdentityPoolRequest, CreateIdentityPoolResponse> callback, AsyncOptions options = null)
+        public virtual void CreateIdentityPoolAsync(CreateIdentityPoolRequest request, AmazonServiceCallback<CreateIdentityPoolRequest, CreateIdentityPoolResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new CreateIdentityPoolRequestMarshaller();
@@ -242,7 +242,7 @@ namespace Amazon.CognitoIdentity
         #endregion
         
         #region  DeleteIdentities
-        internal DeleteIdentitiesResponse DeleteIdentities(DeleteIdentitiesRequest request)
+        internal virtual DeleteIdentitiesResponse DeleteIdentities(DeleteIdentitiesRequest request)
         {
             var marshaller = new DeleteIdentitiesRequestMarshaller();
             var unmarshaller = DeleteIdentitiesResponseUnmarshaller.Instance;
@@ -259,7 +259,7 @@ namespace Amazon.CognitoIdentity
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DeleteIdentities">REST API Reference for DeleteIdentities Operation</seealso>
-        public void DeleteIdentitiesAsync(DeleteIdentitiesRequest request, AmazonServiceCallback<DeleteIdentitiesRequest, DeleteIdentitiesResponse> callback, AsyncOptions options = null)
+        public virtual void DeleteIdentitiesAsync(DeleteIdentitiesRequest request, AmazonServiceCallback<DeleteIdentitiesRequest, DeleteIdentitiesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new DeleteIdentitiesRequestMarshaller();
@@ -277,7 +277,7 @@ namespace Amazon.CognitoIdentity
         #endregion
         
         #region  DeleteIdentityPool
-        internal DeleteIdentityPoolResponse DeleteIdentityPool(DeleteIdentityPoolRequest request)
+        internal virtual DeleteIdentityPoolResponse DeleteIdentityPool(DeleteIdentityPoolRequest request)
         {
             var marshaller = new DeleteIdentityPoolRequestMarshaller();
             var unmarshaller = DeleteIdentityPoolResponseUnmarshaller.Instance;
@@ -318,7 +318,7 @@ namespace Amazon.CognitoIdentity
         /// Thrown when a request is throttled.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DeleteIdentityPool">REST API Reference for DeleteIdentityPool Operation</seealso>
-        public void DeleteIdentityPoolAsync(string identityPoolId,  AmazonServiceCallback<DeleteIdentityPoolRequest, DeleteIdentityPoolResponse> callback, AsyncOptions options = null)
+        public virtual void DeleteIdentityPoolAsync(string identityPoolId,  AmazonServiceCallback<DeleteIdentityPoolRequest, DeleteIdentityPoolResponse> callback, AsyncOptions options = null)
         {
             var request = new DeleteIdentityPoolRequest();
             request.IdentityPoolId = identityPoolId;
@@ -335,7 +335,7 @@ namespace Amazon.CognitoIdentity
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DeleteIdentityPool">REST API Reference for DeleteIdentityPool Operation</seealso>
-        public void DeleteIdentityPoolAsync(DeleteIdentityPoolRequest request, AmazonServiceCallback<DeleteIdentityPoolRequest, DeleteIdentityPoolResponse> callback, AsyncOptions options = null)
+        public virtual void DeleteIdentityPoolAsync(DeleteIdentityPoolRequest request, AmazonServiceCallback<DeleteIdentityPoolRequest, DeleteIdentityPoolResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new DeleteIdentityPoolRequestMarshaller();
@@ -353,7 +353,7 @@ namespace Amazon.CognitoIdentity
         #endregion
         
         #region  DescribeIdentity
-        internal DescribeIdentityResponse DescribeIdentity(DescribeIdentityRequest request)
+        internal virtual DescribeIdentityResponse DescribeIdentity(DescribeIdentityRequest request)
         {
             var marshaller = new DescribeIdentityRequestMarshaller();
             var unmarshaller = DescribeIdentityResponseUnmarshaller.Instance;
@@ -394,7 +394,7 @@ namespace Amazon.CognitoIdentity
         /// Thrown when a request is throttled.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DescribeIdentity">REST API Reference for DescribeIdentity Operation</seealso>
-        public void DescribeIdentityAsync(string identityId,  AmazonServiceCallback<DescribeIdentityRequest, DescribeIdentityResponse> callback, AsyncOptions options = null)
+        public virtual void DescribeIdentityAsync(string identityId,  AmazonServiceCallback<DescribeIdentityRequest, DescribeIdentityResponse> callback, AsyncOptions options = null)
         {
             var request = new DescribeIdentityRequest();
             request.IdentityId = identityId;
@@ -411,7 +411,7 @@ namespace Amazon.CognitoIdentity
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DescribeIdentity">REST API Reference for DescribeIdentity Operation</seealso>
-        public void DescribeIdentityAsync(DescribeIdentityRequest request, AmazonServiceCallback<DescribeIdentityRequest, DescribeIdentityResponse> callback, AsyncOptions options = null)
+        public virtual void DescribeIdentityAsync(DescribeIdentityRequest request, AmazonServiceCallback<DescribeIdentityRequest, DescribeIdentityResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new DescribeIdentityRequestMarshaller();
@@ -429,7 +429,7 @@ namespace Amazon.CognitoIdentity
         #endregion
         
         #region  DescribeIdentityPool
-        internal DescribeIdentityPoolResponse DescribeIdentityPool(DescribeIdentityPoolRequest request)
+        internal virtual DescribeIdentityPoolResponse DescribeIdentityPool(DescribeIdentityPoolRequest request)
         {
             var marshaller = new DescribeIdentityPoolRequestMarshaller();
             var unmarshaller = DescribeIdentityPoolResponseUnmarshaller.Instance;
@@ -470,7 +470,7 @@ namespace Amazon.CognitoIdentity
         /// Thrown when a request is throttled.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DescribeIdentityPool">REST API Reference for DescribeIdentityPool Operation</seealso>
-        public void DescribeIdentityPoolAsync(string identityPoolId,  AmazonServiceCallback<DescribeIdentityPoolRequest, DescribeIdentityPoolResponse> callback, AsyncOptions options = null)
+        public virtual void DescribeIdentityPoolAsync(string identityPoolId,  AmazonServiceCallback<DescribeIdentityPoolRequest, DescribeIdentityPoolResponse> callback, AsyncOptions options = null)
         {
             var request = new DescribeIdentityPoolRequest();
             request.IdentityPoolId = identityPoolId;
@@ -487,7 +487,7 @@ namespace Amazon.CognitoIdentity
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DescribeIdentityPool">REST API Reference for DescribeIdentityPool Operation</seealso>
-        public void DescribeIdentityPoolAsync(DescribeIdentityPoolRequest request, AmazonServiceCallback<DescribeIdentityPoolRequest, DescribeIdentityPoolResponse> callback, AsyncOptions options = null)
+        public virtual void DescribeIdentityPoolAsync(DescribeIdentityPoolRequest request, AmazonServiceCallback<DescribeIdentityPoolRequest, DescribeIdentityPoolResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new DescribeIdentityPoolRequestMarshaller();
@@ -505,7 +505,7 @@ namespace Amazon.CognitoIdentity
         #endregion
         
         #region  GetCredentialsForIdentity
-        internal GetCredentialsForIdentityResponse GetCredentialsForIdentity(GetCredentialsForIdentityRequest request)
+        internal virtual GetCredentialsForIdentityResponse GetCredentialsForIdentity(GetCredentialsForIdentityRequest request)
         {
             var marshaller = new GetCredentialsForIdentityRequestMarshaller();
             var unmarshaller = GetCredentialsForIdentityResponseUnmarshaller.Instance;
@@ -558,7 +558,7 @@ namespace Amazon.CognitoIdentity
         /// Thrown when a request is throttled.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetCredentialsForIdentity">REST API Reference for GetCredentialsForIdentity Operation</seealso>
-        public void GetCredentialsForIdentityAsync(string identityId,  AmazonServiceCallback<GetCredentialsForIdentityRequest, GetCredentialsForIdentityResponse> callback, AsyncOptions options = null)
+        public virtual void GetCredentialsForIdentityAsync(string identityId,  AmazonServiceCallback<GetCredentialsForIdentityRequest, GetCredentialsForIdentityResponse> callback, AsyncOptions options = null)
         {
             var request = new GetCredentialsForIdentityRequest();
             request.IdentityId = identityId;
@@ -612,7 +612,7 @@ namespace Amazon.CognitoIdentity
         /// Thrown when a request is throttled.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetCredentialsForIdentity">REST API Reference for GetCredentialsForIdentity Operation</seealso>
-        public void GetCredentialsForIdentityAsync(string identityId, Dictionary<string, string> logins,  AmazonServiceCallback<GetCredentialsForIdentityRequest, GetCredentialsForIdentityResponse> callback, AsyncOptions options = null)
+        public virtual void GetCredentialsForIdentityAsync(string identityId, Dictionary<string, string> logins,  AmazonServiceCallback<GetCredentialsForIdentityRequest, GetCredentialsForIdentityResponse> callback, AsyncOptions options = null)
         {
             var request = new GetCredentialsForIdentityRequest();
             request.IdentityId = identityId;
@@ -630,7 +630,7 @@ namespace Amazon.CognitoIdentity
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetCredentialsForIdentity">REST API Reference for GetCredentialsForIdentity Operation</seealso>
-        public void GetCredentialsForIdentityAsync(GetCredentialsForIdentityRequest request, AmazonServiceCallback<GetCredentialsForIdentityRequest, GetCredentialsForIdentityResponse> callback, AsyncOptions options = null)
+        public virtual void GetCredentialsForIdentityAsync(GetCredentialsForIdentityRequest request, AmazonServiceCallback<GetCredentialsForIdentityRequest, GetCredentialsForIdentityResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new GetCredentialsForIdentityRequestMarshaller();
@@ -648,7 +648,7 @@ namespace Amazon.CognitoIdentity
         #endregion
         
         #region  GetId
-        internal GetIdResponse GetId(GetIdRequest request)
+        internal virtual GetIdResponse GetId(GetIdRequest request)
         {
             var marshaller = new GetIdRequestMarshaller();
             var unmarshaller = GetIdResponseUnmarshaller.Instance;
@@ -665,7 +665,7 @@ namespace Amazon.CognitoIdentity
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetId">REST API Reference for GetId Operation</seealso>
-        public void GetIdAsync(GetIdRequest request, AmazonServiceCallback<GetIdRequest, GetIdResponse> callback, AsyncOptions options = null)
+        public virtual void GetIdAsync(GetIdRequest request, AmazonServiceCallback<GetIdRequest, GetIdResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new GetIdRequestMarshaller();
@@ -683,7 +683,7 @@ namespace Amazon.CognitoIdentity
         #endregion
         
         #region  GetIdentityPoolRoles
-        internal GetIdentityPoolRolesResponse GetIdentityPoolRoles(GetIdentityPoolRolesRequest request)
+        internal virtual GetIdentityPoolRolesResponse GetIdentityPoolRoles(GetIdentityPoolRolesRequest request)
         {
             var marshaller = new GetIdentityPoolRolesRequestMarshaller();
             var unmarshaller = GetIdentityPoolRolesResponseUnmarshaller.Instance;
@@ -726,7 +726,7 @@ namespace Amazon.CognitoIdentity
         /// Thrown when a request is throttled.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetIdentityPoolRoles">REST API Reference for GetIdentityPoolRoles Operation</seealso>
-        public void GetIdentityPoolRolesAsync(string identityPoolId,  AmazonServiceCallback<GetIdentityPoolRolesRequest, GetIdentityPoolRolesResponse> callback, AsyncOptions options = null)
+        public virtual void GetIdentityPoolRolesAsync(string identityPoolId,  AmazonServiceCallback<GetIdentityPoolRolesRequest, GetIdentityPoolRolesResponse> callback, AsyncOptions options = null)
         {
             var request = new GetIdentityPoolRolesRequest();
             request.IdentityPoolId = identityPoolId;
@@ -743,7 +743,7 @@ namespace Amazon.CognitoIdentity
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetIdentityPoolRoles">REST API Reference for GetIdentityPoolRoles Operation</seealso>
-        public void GetIdentityPoolRolesAsync(GetIdentityPoolRolesRequest request, AmazonServiceCallback<GetIdentityPoolRolesRequest, GetIdentityPoolRolesResponse> callback, AsyncOptions options = null)
+        public virtual void GetIdentityPoolRolesAsync(GetIdentityPoolRolesRequest request, AmazonServiceCallback<GetIdentityPoolRolesRequest, GetIdentityPoolRolesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new GetIdentityPoolRolesRequestMarshaller();
@@ -761,7 +761,7 @@ namespace Amazon.CognitoIdentity
         #endregion
         
         #region  GetOpenIdToken
-        internal GetOpenIdTokenResponse GetOpenIdToken(GetOpenIdTokenRequest request)
+        internal virtual GetOpenIdTokenResponse GetOpenIdToken(GetOpenIdTokenRequest request)
         {
             var marshaller = new GetOpenIdTokenRequestMarshaller();
             var unmarshaller = GetOpenIdTokenResponseUnmarshaller.Instance;
@@ -813,7 +813,7 @@ namespace Amazon.CognitoIdentity
         /// Thrown when a request is throttled.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetOpenIdToken">REST API Reference for GetOpenIdToken Operation</seealso>
-        public void GetOpenIdTokenAsync(string identityId,  AmazonServiceCallback<GetOpenIdTokenRequest, GetOpenIdTokenResponse> callback, AsyncOptions options = null)
+        public virtual void GetOpenIdTokenAsync(string identityId,  AmazonServiceCallback<GetOpenIdTokenRequest, GetOpenIdTokenResponse> callback, AsyncOptions options = null)
         {
             var request = new GetOpenIdTokenRequest();
             request.IdentityId = identityId;
@@ -830,7 +830,7 @@ namespace Amazon.CognitoIdentity
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetOpenIdToken">REST API Reference for GetOpenIdToken Operation</seealso>
-        public void GetOpenIdTokenAsync(GetOpenIdTokenRequest request, AmazonServiceCallback<GetOpenIdTokenRequest, GetOpenIdTokenResponse> callback, AsyncOptions options = null)
+        public virtual void GetOpenIdTokenAsync(GetOpenIdTokenRequest request, AmazonServiceCallback<GetOpenIdTokenRequest, GetOpenIdTokenResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new GetOpenIdTokenRequestMarshaller();
@@ -848,7 +848,7 @@ namespace Amazon.CognitoIdentity
         #endregion
         
         #region  GetOpenIdTokenForDeveloperIdentity
-        internal GetOpenIdTokenForDeveloperIdentityResponse GetOpenIdTokenForDeveloperIdentity(GetOpenIdTokenForDeveloperIdentityRequest request)
+        internal virtual GetOpenIdTokenForDeveloperIdentityResponse GetOpenIdTokenForDeveloperIdentity(GetOpenIdTokenForDeveloperIdentityRequest request)
         {
             var marshaller = new GetOpenIdTokenForDeveloperIdentityRequestMarshaller();
             var unmarshaller = GetOpenIdTokenForDeveloperIdentityResponseUnmarshaller.Instance;
@@ -865,7 +865,7 @@ namespace Amazon.CognitoIdentity
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetOpenIdTokenForDeveloperIdentity">REST API Reference for GetOpenIdTokenForDeveloperIdentity Operation</seealso>
-        public void GetOpenIdTokenForDeveloperIdentityAsync(GetOpenIdTokenForDeveloperIdentityRequest request, AmazonServiceCallback<GetOpenIdTokenForDeveloperIdentityRequest, GetOpenIdTokenForDeveloperIdentityResponse> callback, AsyncOptions options = null)
+        public virtual void GetOpenIdTokenForDeveloperIdentityAsync(GetOpenIdTokenForDeveloperIdentityRequest request, AmazonServiceCallback<GetOpenIdTokenForDeveloperIdentityRequest, GetOpenIdTokenForDeveloperIdentityResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new GetOpenIdTokenForDeveloperIdentityRequestMarshaller();
@@ -883,7 +883,7 @@ namespace Amazon.CognitoIdentity
         #endregion
         
         #region  ListIdentities
-        internal ListIdentitiesResponse ListIdentities(ListIdentitiesRequest request)
+        internal virtual ListIdentitiesResponse ListIdentities(ListIdentitiesRequest request)
         {
             var marshaller = new ListIdentitiesRequestMarshaller();
             var unmarshaller = ListIdentitiesResponseUnmarshaller.Instance;
@@ -900,7 +900,7 @@ namespace Amazon.CognitoIdentity
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/ListIdentities">REST API Reference for ListIdentities Operation</seealso>
-        public void ListIdentitiesAsync(ListIdentitiesRequest request, AmazonServiceCallback<ListIdentitiesRequest, ListIdentitiesResponse> callback, AsyncOptions options = null)
+        public virtual void ListIdentitiesAsync(ListIdentitiesRequest request, AmazonServiceCallback<ListIdentitiesRequest, ListIdentitiesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new ListIdentitiesRequestMarshaller();
@@ -918,7 +918,7 @@ namespace Amazon.CognitoIdentity
         #endregion
         
         #region  ListIdentityPools
-        internal ListIdentityPoolsResponse ListIdentityPools(ListIdentityPoolsRequest request)
+        internal virtual ListIdentityPoolsResponse ListIdentityPools(ListIdentityPoolsRequest request)
         {
             var marshaller = new ListIdentityPoolsRequestMarshaller();
             var unmarshaller = ListIdentityPoolsResponseUnmarshaller.Instance;
@@ -935,7 +935,7 @@ namespace Amazon.CognitoIdentity
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/ListIdentityPools">REST API Reference for ListIdentityPools Operation</seealso>
-        public void ListIdentityPoolsAsync(ListIdentityPoolsRequest request, AmazonServiceCallback<ListIdentityPoolsRequest, ListIdentityPoolsResponse> callback, AsyncOptions options = null)
+        public virtual void ListIdentityPoolsAsync(ListIdentityPoolsRequest request, AmazonServiceCallback<ListIdentityPoolsRequest, ListIdentityPoolsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new ListIdentityPoolsRequestMarshaller();
@@ -953,7 +953,7 @@ namespace Amazon.CognitoIdentity
         #endregion
         
         #region  LookupDeveloperIdentity
-        internal LookupDeveloperIdentityResponse LookupDeveloperIdentity(LookupDeveloperIdentityRequest request)
+        internal virtual LookupDeveloperIdentityResponse LookupDeveloperIdentity(LookupDeveloperIdentityRequest request)
         {
             var marshaller = new LookupDeveloperIdentityRequestMarshaller();
             var unmarshaller = LookupDeveloperIdentityResponseUnmarshaller.Instance;
@@ -970,7 +970,7 @@ namespace Amazon.CognitoIdentity
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/LookupDeveloperIdentity">REST API Reference for LookupDeveloperIdentity Operation</seealso>
-        public void LookupDeveloperIdentityAsync(LookupDeveloperIdentityRequest request, AmazonServiceCallback<LookupDeveloperIdentityRequest, LookupDeveloperIdentityResponse> callback, AsyncOptions options = null)
+        public virtual void LookupDeveloperIdentityAsync(LookupDeveloperIdentityRequest request, AmazonServiceCallback<LookupDeveloperIdentityRequest, LookupDeveloperIdentityResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new LookupDeveloperIdentityRequestMarshaller();
@@ -988,7 +988,7 @@ namespace Amazon.CognitoIdentity
         #endregion
         
         #region  MergeDeveloperIdentities
-        internal MergeDeveloperIdentitiesResponse MergeDeveloperIdentities(MergeDeveloperIdentitiesRequest request)
+        internal virtual MergeDeveloperIdentitiesResponse MergeDeveloperIdentities(MergeDeveloperIdentitiesRequest request)
         {
             var marshaller = new MergeDeveloperIdentitiesRequestMarshaller();
             var unmarshaller = MergeDeveloperIdentitiesResponseUnmarshaller.Instance;
@@ -1005,7 +1005,7 @@ namespace Amazon.CognitoIdentity
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/MergeDeveloperIdentities">REST API Reference for MergeDeveloperIdentities Operation</seealso>
-        public void MergeDeveloperIdentitiesAsync(MergeDeveloperIdentitiesRequest request, AmazonServiceCallback<MergeDeveloperIdentitiesRequest, MergeDeveloperIdentitiesResponse> callback, AsyncOptions options = null)
+        public virtual void MergeDeveloperIdentitiesAsync(MergeDeveloperIdentitiesRequest request, AmazonServiceCallback<MergeDeveloperIdentitiesRequest, MergeDeveloperIdentitiesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new MergeDeveloperIdentitiesRequestMarshaller();
@@ -1023,7 +1023,7 @@ namespace Amazon.CognitoIdentity
         #endregion
         
         #region  SetIdentityPoolRoles
-        internal SetIdentityPoolRolesResponse SetIdentityPoolRoles(SetIdentityPoolRolesRequest request)
+        internal virtual SetIdentityPoolRolesResponse SetIdentityPoolRoles(SetIdentityPoolRolesRequest request)
         {
             var marshaller = new SetIdentityPoolRolesRequestMarshaller();
             var unmarshaller = SetIdentityPoolRolesResponseUnmarshaller.Instance;
@@ -1071,7 +1071,7 @@ namespace Amazon.CognitoIdentity
         /// Thrown when a request is throttled.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/SetIdentityPoolRoles">REST API Reference for SetIdentityPoolRoles Operation</seealso>
-        public void SetIdentityPoolRolesAsync(string identityPoolId, Dictionary<string, string> roles,  AmazonServiceCallback<SetIdentityPoolRolesRequest, SetIdentityPoolRolesResponse> callback, AsyncOptions options = null)
+        public virtual void SetIdentityPoolRolesAsync(string identityPoolId, Dictionary<string, string> roles,  AmazonServiceCallback<SetIdentityPoolRolesRequest, SetIdentityPoolRolesResponse> callback, AsyncOptions options = null)
         {
             var request = new SetIdentityPoolRolesRequest();
             request.IdentityPoolId = identityPoolId;
@@ -1089,7 +1089,7 @@ namespace Amazon.CognitoIdentity
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/SetIdentityPoolRoles">REST API Reference for SetIdentityPoolRoles Operation</seealso>
-        public void SetIdentityPoolRolesAsync(SetIdentityPoolRolesRequest request, AmazonServiceCallback<SetIdentityPoolRolesRequest, SetIdentityPoolRolesResponse> callback, AsyncOptions options = null)
+        public virtual void SetIdentityPoolRolesAsync(SetIdentityPoolRolesRequest request, AmazonServiceCallback<SetIdentityPoolRolesRequest, SetIdentityPoolRolesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new SetIdentityPoolRolesRequestMarshaller();
@@ -1107,7 +1107,7 @@ namespace Amazon.CognitoIdentity
         #endregion
         
         #region  UnlinkDeveloperIdentity
-        internal UnlinkDeveloperIdentityResponse UnlinkDeveloperIdentity(UnlinkDeveloperIdentityRequest request)
+        internal virtual UnlinkDeveloperIdentityResponse UnlinkDeveloperIdentity(UnlinkDeveloperIdentityRequest request)
         {
             var marshaller = new UnlinkDeveloperIdentityRequestMarshaller();
             var unmarshaller = UnlinkDeveloperIdentityResponseUnmarshaller.Instance;
@@ -1124,7 +1124,7 @@ namespace Amazon.CognitoIdentity
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UnlinkDeveloperIdentity">REST API Reference for UnlinkDeveloperIdentity Operation</seealso>
-        public void UnlinkDeveloperIdentityAsync(UnlinkDeveloperIdentityRequest request, AmazonServiceCallback<UnlinkDeveloperIdentityRequest, UnlinkDeveloperIdentityResponse> callback, AsyncOptions options = null)
+        public virtual void UnlinkDeveloperIdentityAsync(UnlinkDeveloperIdentityRequest request, AmazonServiceCallback<UnlinkDeveloperIdentityRequest, UnlinkDeveloperIdentityResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new UnlinkDeveloperIdentityRequestMarshaller();
@@ -1142,7 +1142,7 @@ namespace Amazon.CognitoIdentity
         #endregion
         
         #region  UnlinkIdentity
-        internal UnlinkIdentityResponse UnlinkIdentity(UnlinkIdentityRequest request)
+        internal virtual UnlinkIdentityResponse UnlinkIdentity(UnlinkIdentityRequest request)
         {
             var marshaller = new UnlinkIdentityRequestMarshaller();
             var unmarshaller = UnlinkIdentityResponseUnmarshaller.Instance;
@@ -1159,7 +1159,7 @@ namespace Amazon.CognitoIdentity
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UnlinkIdentity">REST API Reference for UnlinkIdentity Operation</seealso>
-        public void UnlinkIdentityAsync(UnlinkIdentityRequest request, AmazonServiceCallback<UnlinkIdentityRequest, UnlinkIdentityResponse> callback, AsyncOptions options = null)
+        public virtual void UnlinkIdentityAsync(UnlinkIdentityRequest request, AmazonServiceCallback<UnlinkIdentityRequest, UnlinkIdentityResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new UnlinkIdentityRequestMarshaller();
@@ -1177,7 +1177,7 @@ namespace Amazon.CognitoIdentity
         #endregion
         
         #region  UpdateIdentityPool
-        internal UpdateIdentityPoolResponse UpdateIdentityPool(UpdateIdentityPoolRequest request)
+        internal virtual UpdateIdentityPoolResponse UpdateIdentityPool(UpdateIdentityPoolRequest request)
         {
             var marshaller = new UpdateIdentityPoolRequestMarshaller();
             var unmarshaller = UpdateIdentityPoolResponseUnmarshaller.Instance;
@@ -1194,7 +1194,7 @@ namespace Amazon.CognitoIdentity
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UpdateIdentityPool">REST API Reference for UpdateIdentityPool Operation</seealso>
-        public void UpdateIdentityPoolAsync(UpdateIdentityPoolRequest request, AmazonServiceCallback<UpdateIdentityPoolRequest, UpdateIdentityPoolResponse> callback, AsyncOptions options = null)
+        public virtual void UpdateIdentityPoolAsync(UpdateIdentityPoolRequest request, AmazonServiceCallback<UpdateIdentityPoolRequest, UpdateIdentityPoolResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new UpdateIdentityPoolRequestMarshaller();

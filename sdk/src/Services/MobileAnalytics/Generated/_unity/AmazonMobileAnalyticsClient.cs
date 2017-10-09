@@ -167,7 +167,7 @@ namespace Amazon.MobileAnalytics
 
         
         #region  PutEvents
-        internal PutEventsResponse PutEvents(PutEventsRequest request)
+        internal virtual PutEventsResponse PutEvents(PutEventsRequest request)
         {
             var marshaller = new PutEventsRequestMarshaller();
             var unmarshaller = PutEventsResponseUnmarshaller.Instance;
@@ -183,7 +183,7 @@ namespace Amazon.MobileAnalytics
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
-        public void PutEventsAsync(PutEventsRequest request, AmazonServiceCallback<PutEventsRequest, PutEventsResponse> callback, AsyncOptions options = null)
+        public virtual void PutEventsAsync(PutEventsRequest request, AmazonServiceCallback<PutEventsRequest, PutEventsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new PutEventsRequestMarshaller();

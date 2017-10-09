@@ -242,7 +242,7 @@ namespace Amazon.CostAndUsageReport
         /// with an invalid report name, or Delete a report preference with an empty report name.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/DeleteReportDefinition">REST API Reference for DeleteReportDefinition Operation</seealso>
-        public DeleteReportDefinitionResponse DeleteReportDefinition(DeleteReportDefinitionRequest request)
+        public virtual DeleteReportDefinitionResponse DeleteReportDefinition(DeleteReportDefinitionRequest request)
         {
             var marshaller = new DeleteReportDefinitionRequestMarshaller();
             var unmarshaller = DeleteReportDefinitionResponseUnmarshaller.Instance;
@@ -260,7 +260,7 @@ namespace Amazon.CostAndUsageReport
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/DeleteReportDefinition">REST API Reference for DeleteReportDefinition Operation</seealso>
-        public Task<DeleteReportDefinitionResponse> DeleteReportDefinitionAsync(DeleteReportDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteReportDefinitionResponse> DeleteReportDefinitionAsync(DeleteReportDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteReportDefinitionRequestMarshaller();
             var unmarshaller = DeleteReportDefinitionResponseUnmarshaller.Instance;
@@ -284,7 +284,7 @@ namespace Amazon.CostAndUsageReport
         /// This exception is thrown on a known dependency failure.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/DescribeReportDefinitions">REST API Reference for DescribeReportDefinitions Operation</seealso>
-        public DescribeReportDefinitionsResponse DescribeReportDefinitions(DescribeReportDefinitionsRequest request)
+        public virtual DescribeReportDefinitionsResponse DescribeReportDefinitions(DescribeReportDefinitionsRequest request)
         {
             var marshaller = new DescribeReportDefinitionsRequestMarshaller();
             var unmarshaller = DescribeReportDefinitionsResponseUnmarshaller.Instance;
@@ -302,7 +302,7 @@ namespace Amazon.CostAndUsageReport
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/DescribeReportDefinitions">REST API Reference for DescribeReportDefinitions Operation</seealso>
-        public Task<DescribeReportDefinitionsResponse> DescribeReportDefinitionsAsync(DescribeReportDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeReportDefinitionsResponse> DescribeReportDefinitionsAsync(DescribeReportDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeReportDefinitionsRequestMarshaller();
             var unmarshaller = DescribeReportDefinitionsResponseUnmarshaller.Instance;
@@ -338,7 +338,7 @@ namespace Amazon.CostAndUsageReport
         /// with an invalid report name, or Delete a report preference with an empty report name.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/PutReportDefinition">REST API Reference for PutReportDefinition Operation</seealso>
-        public PutReportDefinitionResponse PutReportDefinition(PutReportDefinitionRequest request)
+        public virtual PutReportDefinitionResponse PutReportDefinition(PutReportDefinitionRequest request)
         {
             var marshaller = new PutReportDefinitionRequestMarshaller();
             var unmarshaller = PutReportDefinitionResponseUnmarshaller.Instance;
@@ -356,7 +356,7 @@ namespace Amazon.CostAndUsageReport
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/PutReportDefinition">REST API Reference for PutReportDefinition Operation</seealso>
-        public Task<PutReportDefinitionResponse> PutReportDefinitionAsync(PutReportDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PutReportDefinitionResponse> PutReportDefinitionAsync(PutReportDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutReportDefinitionRequestMarshaller();
             var unmarshaller = PutReportDefinitionResponseUnmarshaller.Instance;

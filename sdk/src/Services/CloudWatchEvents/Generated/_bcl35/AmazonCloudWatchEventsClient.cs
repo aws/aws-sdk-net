@@ -273,7 +273,7 @@ namespace Amazon.CloudWatchEvents
         /// This exception occurs due to unexpected causes.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteRule">REST API Reference for DeleteRule Operation</seealso>
-        public DeleteRuleResponse DeleteRule(DeleteRuleRequest request)
+        public virtual DeleteRuleResponse DeleteRule(DeleteRuleRequest request)
         {
             var marshaller = new DeleteRuleRequestMarshaller();
             var unmarshaller = DeleteRuleResponseUnmarshaller.Instance;
@@ -293,7 +293,7 @@ namespace Amazon.CloudWatchEvents
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRule
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteRule">REST API Reference for DeleteRule Operation</seealso>
-        public IAsyncResult BeginDeleteRule(DeleteRuleRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteRule(DeleteRuleRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteRuleRequestMarshaller();
             var unmarshaller = DeleteRuleResponseUnmarshaller.Instance;
@@ -310,7 +310,7 @@ namespace Amazon.CloudWatchEvents
         /// 
         /// <returns>Returns a  DeleteRuleResult from CloudWatchEvents.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteRule">REST API Reference for DeleteRule Operation</seealso>
-        public  DeleteRuleResponse EndDeleteRule(IAsyncResult asyncResult)
+        public virtual DeleteRuleResponse EndDeleteRule(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteRuleResponse>(asyncResult);
         }
@@ -334,7 +334,7 @@ namespace Amazon.CloudWatchEvents
         /// An entity that you specified does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeEventBus">REST API Reference for DescribeEventBus Operation</seealso>
-        public DescribeEventBusResponse DescribeEventBus(DescribeEventBusRequest request)
+        public virtual DescribeEventBusResponse DescribeEventBus(DescribeEventBusRequest request)
         {
             var marshaller = new DescribeEventBusRequestMarshaller();
             var unmarshaller = DescribeEventBusResponseUnmarshaller.Instance;
@@ -354,7 +354,7 @@ namespace Amazon.CloudWatchEvents
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEventBus
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeEventBus">REST API Reference for DescribeEventBus Operation</seealso>
-        public IAsyncResult BeginDescribeEventBus(DescribeEventBusRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeEventBus(DescribeEventBusRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeEventBusRequestMarshaller();
             var unmarshaller = DescribeEventBusResponseUnmarshaller.Instance;
@@ -371,7 +371,7 @@ namespace Amazon.CloudWatchEvents
         /// 
         /// <returns>Returns a  DescribeEventBusResult from CloudWatchEvents.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeEventBus">REST API Reference for DescribeEventBus Operation</seealso>
-        public  DescribeEventBusResponse EndDescribeEventBus(IAsyncResult asyncResult)
+        public virtual DescribeEventBusResponse EndDescribeEventBus(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeEventBusResponse>(asyncResult);
         }
@@ -393,7 +393,7 @@ namespace Amazon.CloudWatchEvents
         /// An entity that you specified does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeRule">REST API Reference for DescribeRule Operation</seealso>
-        public DescribeRuleResponse DescribeRule(DescribeRuleRequest request)
+        public virtual DescribeRuleResponse DescribeRule(DescribeRuleRequest request)
         {
             var marshaller = new DescribeRuleRequestMarshaller();
             var unmarshaller = DescribeRuleResponseUnmarshaller.Instance;
@@ -413,7 +413,7 @@ namespace Amazon.CloudWatchEvents
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeRule
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeRule">REST API Reference for DescribeRule Operation</seealso>
-        public IAsyncResult BeginDescribeRule(DescribeRuleRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeRule(DescribeRuleRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeRuleRequestMarshaller();
             var unmarshaller = DescribeRuleResponseUnmarshaller.Instance;
@@ -430,7 +430,7 @@ namespace Amazon.CloudWatchEvents
         /// 
         /// <returns>Returns a  DescribeRuleResult from CloudWatchEvents.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeRule">REST API Reference for DescribeRule Operation</seealso>
-        public  DescribeRuleResponse EndDescribeRule(IAsyncResult asyncResult)
+        public virtual DescribeRuleResponse EndDescribeRule(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeRuleResponse>(asyncResult);
         }
@@ -462,7 +462,7 @@ namespace Amazon.CloudWatchEvents
         /// An entity that you specified does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DisableRule">REST API Reference for DisableRule Operation</seealso>
-        public DisableRuleResponse DisableRule(DisableRuleRequest request)
+        public virtual DisableRuleResponse DisableRule(DisableRuleRequest request)
         {
             var marshaller = new DisableRuleRequestMarshaller();
             var unmarshaller = DisableRuleResponseUnmarshaller.Instance;
@@ -482,7 +482,7 @@ namespace Amazon.CloudWatchEvents
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableRule
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DisableRule">REST API Reference for DisableRule Operation</seealso>
-        public IAsyncResult BeginDisableRule(DisableRuleRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDisableRule(DisableRuleRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DisableRuleRequestMarshaller();
             var unmarshaller = DisableRuleResponseUnmarshaller.Instance;
@@ -499,7 +499,7 @@ namespace Amazon.CloudWatchEvents
         /// 
         /// <returns>Returns a  DisableRuleResult from CloudWatchEvents.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DisableRule">REST API Reference for DisableRule Operation</seealso>
-        public  DisableRuleResponse EndDisableRule(IAsyncResult asyncResult)
+        public virtual DisableRuleResponse EndDisableRule(IAsyncResult asyncResult)
         {
             return EndInvoke<DisableRuleResponse>(asyncResult);
         }
@@ -530,7 +530,7 @@ namespace Amazon.CloudWatchEvents
         /// An entity that you specified does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/EnableRule">REST API Reference for EnableRule Operation</seealso>
-        public EnableRuleResponse EnableRule(EnableRuleRequest request)
+        public virtual EnableRuleResponse EnableRule(EnableRuleRequest request)
         {
             var marshaller = new EnableRuleRequestMarshaller();
             var unmarshaller = EnableRuleResponseUnmarshaller.Instance;
@@ -550,7 +550,7 @@ namespace Amazon.CloudWatchEvents
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableRule
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/EnableRule">REST API Reference for EnableRule Operation</seealso>
-        public IAsyncResult BeginEnableRule(EnableRuleRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginEnableRule(EnableRuleRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new EnableRuleRequestMarshaller();
             var unmarshaller = EnableRuleResponseUnmarshaller.Instance;
@@ -567,7 +567,7 @@ namespace Amazon.CloudWatchEvents
         /// 
         /// <returns>Returns a  EnableRuleResult from CloudWatchEvents.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/EnableRule">REST API Reference for EnableRule Operation</seealso>
-        public  EnableRuleResponse EndEnableRule(IAsyncResult asyncResult)
+        public virtual EnableRuleResponse EndEnableRule(IAsyncResult asyncResult)
         {
             return EndInvoke<EnableRuleResponse>(asyncResult);
         }
@@ -587,7 +587,7 @@ namespace Amazon.CloudWatchEvents
         /// This exception occurs due to unexpected causes.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListRuleNamesByTarget">REST API Reference for ListRuleNamesByTarget Operation</seealso>
-        public ListRuleNamesByTargetResponse ListRuleNamesByTarget(ListRuleNamesByTargetRequest request)
+        public virtual ListRuleNamesByTargetResponse ListRuleNamesByTarget(ListRuleNamesByTargetRequest request)
         {
             var marshaller = new ListRuleNamesByTargetRequestMarshaller();
             var unmarshaller = ListRuleNamesByTargetResponseUnmarshaller.Instance;
@@ -607,7 +607,7 @@ namespace Amazon.CloudWatchEvents
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListRuleNamesByTarget
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListRuleNamesByTarget">REST API Reference for ListRuleNamesByTarget Operation</seealso>
-        public IAsyncResult BeginListRuleNamesByTarget(ListRuleNamesByTargetRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListRuleNamesByTarget(ListRuleNamesByTargetRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListRuleNamesByTargetRequestMarshaller();
             var unmarshaller = ListRuleNamesByTargetResponseUnmarshaller.Instance;
@@ -624,7 +624,7 @@ namespace Amazon.CloudWatchEvents
         /// 
         /// <returns>Returns a  ListRuleNamesByTargetResult from CloudWatchEvents.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListRuleNamesByTarget">REST API Reference for ListRuleNamesByTarget Operation</seealso>
-        public  ListRuleNamesByTargetResponse EndListRuleNamesByTarget(IAsyncResult asyncResult)
+        public virtual ListRuleNamesByTargetResponse EndListRuleNamesByTarget(IAsyncResult asyncResult)
         {
             return EndInvoke<ListRuleNamesByTargetResponse>(asyncResult);
         }
@@ -643,7 +643,7 @@ namespace Amazon.CloudWatchEvents
         /// This exception occurs due to unexpected causes.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListRules">REST API Reference for ListRules Operation</seealso>
-        public ListRulesResponse ListRules()
+        public virtual ListRulesResponse ListRules()
         {
             return ListRules(new ListRulesRequest());
         }
@@ -659,7 +659,7 @@ namespace Amazon.CloudWatchEvents
         /// This exception occurs due to unexpected causes.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListRules">REST API Reference for ListRules Operation</seealso>
-        public ListRulesResponse ListRules(ListRulesRequest request)
+        public virtual ListRulesResponse ListRules(ListRulesRequest request)
         {
             var marshaller = new ListRulesRequestMarshaller();
             var unmarshaller = ListRulesResponseUnmarshaller.Instance;
@@ -679,7 +679,7 @@ namespace Amazon.CloudWatchEvents
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListRules
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListRules">REST API Reference for ListRules Operation</seealso>
-        public IAsyncResult BeginListRules(ListRulesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListRules(ListRulesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListRulesRequestMarshaller();
             var unmarshaller = ListRulesResponseUnmarshaller.Instance;
@@ -696,7 +696,7 @@ namespace Amazon.CloudWatchEvents
         /// 
         /// <returns>Returns a  ListRulesResult from CloudWatchEvents.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListRules">REST API Reference for ListRules Operation</seealso>
-        public  ListRulesResponse EndListRules(IAsyncResult asyncResult)
+        public virtual ListRulesResponse EndListRules(IAsyncResult asyncResult)
         {
             return EndInvoke<ListRulesResponse>(asyncResult);
         }
@@ -718,7 +718,7 @@ namespace Amazon.CloudWatchEvents
         /// An entity that you specified does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListTargetsByRule">REST API Reference for ListTargetsByRule Operation</seealso>
-        public ListTargetsByRuleResponse ListTargetsByRule(ListTargetsByRuleRequest request)
+        public virtual ListTargetsByRuleResponse ListTargetsByRule(ListTargetsByRuleRequest request)
         {
             var marshaller = new ListTargetsByRuleRequestMarshaller();
             var unmarshaller = ListTargetsByRuleResponseUnmarshaller.Instance;
@@ -738,7 +738,7 @@ namespace Amazon.CloudWatchEvents
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTargetsByRule
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListTargetsByRule">REST API Reference for ListTargetsByRule Operation</seealso>
-        public IAsyncResult BeginListTargetsByRule(ListTargetsByRuleRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListTargetsByRule(ListTargetsByRuleRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListTargetsByRuleRequestMarshaller();
             var unmarshaller = ListTargetsByRuleResponseUnmarshaller.Instance;
@@ -755,7 +755,7 @@ namespace Amazon.CloudWatchEvents
         /// 
         /// <returns>Returns a  ListTargetsByRuleResult from CloudWatchEvents.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListTargetsByRule">REST API Reference for ListTargetsByRule Operation</seealso>
-        public  ListTargetsByRuleResponse EndListTargetsByRule(IAsyncResult asyncResult)
+        public virtual ListTargetsByRuleResponse EndListTargetsByRule(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTargetsByRuleResponse>(asyncResult);
         }
@@ -774,7 +774,7 @@ namespace Amazon.CloudWatchEvents
         /// This exception occurs due to unexpected causes.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutEvents">REST API Reference for PutEvents Operation</seealso>
-        public PutEventsResponse PutEvents(PutEventsRequest request)
+        public virtual PutEventsResponse PutEvents(PutEventsRequest request)
         {
             var marshaller = new PutEventsRequestMarshaller();
             var unmarshaller = PutEventsResponseUnmarshaller.Instance;
@@ -794,7 +794,7 @@ namespace Amazon.CloudWatchEvents
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutEvents
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutEvents">REST API Reference for PutEvents Operation</seealso>
-        public IAsyncResult BeginPutEvents(PutEventsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPutEvents(PutEventsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutEventsRequestMarshaller();
             var unmarshaller = PutEventsResponseUnmarshaller.Instance;
@@ -811,7 +811,7 @@ namespace Amazon.CloudWatchEvents
         /// 
         /// <returns>Returns a  PutEventsResult from CloudWatchEvents.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutEvents">REST API Reference for PutEvents Operation</seealso>
-        public  PutEventsResponse EndPutEvents(IAsyncResult asyncResult)
+        public virtual PutEventsResponse EndPutEvents(IAsyncResult asyncResult)
         {
             return EndInvoke<PutEventsResponse>(asyncResult);
         }
@@ -856,7 +856,7 @@ namespace Amazon.CloudWatchEvents
         /// An entity that you specified does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutPermission">REST API Reference for PutPermission Operation</seealso>
-        public PutPermissionResponse PutPermission(PutPermissionRequest request)
+        public virtual PutPermissionResponse PutPermission(PutPermissionRequest request)
         {
             var marshaller = new PutPermissionRequestMarshaller();
             var unmarshaller = PutPermissionResponseUnmarshaller.Instance;
@@ -876,7 +876,7 @@ namespace Amazon.CloudWatchEvents
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutPermission
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutPermission">REST API Reference for PutPermission Operation</seealso>
-        public IAsyncResult BeginPutPermission(PutPermissionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPutPermission(PutPermissionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutPermissionRequestMarshaller();
             var unmarshaller = PutPermissionResponseUnmarshaller.Instance;
@@ -893,7 +893,7 @@ namespace Amazon.CloudWatchEvents
         /// 
         /// <returns>Returns a  PutPermissionResult from CloudWatchEvents.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutPermission">REST API Reference for PutPermission Operation</seealso>
-        public  PutPermissionResponse EndPutPermission(IAsyncResult asyncResult)
+        public virtual PutPermissionResponse EndPutPermission(IAsyncResult asyncResult)
         {
             return EndInvoke<PutPermissionResponse>(asyncResult);
         }
@@ -942,7 +942,7 @@ namespace Amazon.CloudWatchEvents
         /// You tried to create more rules or add more targets to a rule than is allowed.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutRule">REST API Reference for PutRule Operation</seealso>
-        public PutRuleResponse PutRule(PutRuleRequest request)
+        public virtual PutRuleResponse PutRule(PutRuleRequest request)
         {
             var marshaller = new PutRuleRequestMarshaller();
             var unmarshaller = PutRuleResponseUnmarshaller.Instance;
@@ -962,7 +962,7 @@ namespace Amazon.CloudWatchEvents
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutRule
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutRule">REST API Reference for PutRule Operation</seealso>
-        public IAsyncResult BeginPutRule(PutRuleRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPutRule(PutRuleRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutRuleRequestMarshaller();
             var unmarshaller = PutRuleResponseUnmarshaller.Instance;
@@ -979,7 +979,7 @@ namespace Amazon.CloudWatchEvents
         /// 
         /// <returns>Returns a  PutRuleResult from CloudWatchEvents.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutRule">REST API Reference for PutRule Operation</seealso>
-        public  PutRuleResponse EndPutRule(IAsyncResult asyncResult)
+        public virtual PutRuleResponse EndPutRule(IAsyncResult asyncResult)
         {
             return EndInvoke<PutRuleResponse>(asyncResult);
         }
@@ -1145,7 +1145,7 @@ namespace Amazon.CloudWatchEvents
         /// An entity that you specified does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutTargets">REST API Reference for PutTargets Operation</seealso>
-        public PutTargetsResponse PutTargets(PutTargetsRequest request)
+        public virtual PutTargetsResponse PutTargets(PutTargetsRequest request)
         {
             var marshaller = new PutTargetsRequestMarshaller();
             var unmarshaller = PutTargetsResponseUnmarshaller.Instance;
@@ -1165,7 +1165,7 @@ namespace Amazon.CloudWatchEvents
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutTargets
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutTargets">REST API Reference for PutTargets Operation</seealso>
-        public IAsyncResult BeginPutTargets(PutTargetsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPutTargets(PutTargetsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutTargetsRequestMarshaller();
             var unmarshaller = PutTargetsResponseUnmarshaller.Instance;
@@ -1182,7 +1182,7 @@ namespace Amazon.CloudWatchEvents
         /// 
         /// <returns>Returns a  PutTargetsResult from CloudWatchEvents.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutTargets">REST API Reference for PutTargets Operation</seealso>
-        public  PutTargetsResponse EndPutTargets(IAsyncResult asyncResult)
+        public virtual PutTargetsResponse EndPutTargets(IAsyncResult asyncResult)
         {
             return EndInvoke<PutTargetsResponse>(asyncResult);
         }
@@ -1210,7 +1210,7 @@ namespace Amazon.CloudWatchEvents
         /// An entity that you specified does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
-        public RemovePermissionResponse RemovePermission(RemovePermissionRequest request)
+        public virtual RemovePermissionResponse RemovePermission(RemovePermissionRequest request)
         {
             var marshaller = new RemovePermissionRequestMarshaller();
             var unmarshaller = RemovePermissionResponseUnmarshaller.Instance;
@@ -1230,7 +1230,7 @@ namespace Amazon.CloudWatchEvents
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemovePermission
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
-        public IAsyncResult BeginRemovePermission(RemovePermissionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginRemovePermission(RemovePermissionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RemovePermissionRequestMarshaller();
             var unmarshaller = RemovePermissionResponseUnmarshaller.Instance;
@@ -1247,7 +1247,7 @@ namespace Amazon.CloudWatchEvents
         /// 
         /// <returns>Returns a  RemovePermissionResult from CloudWatchEvents.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
-        public  RemovePermissionResponse EndRemovePermission(IAsyncResult asyncResult)
+        public virtual RemovePermissionResponse EndRemovePermission(IAsyncResult asyncResult)
         {
             return EndInvoke<RemovePermissionResponse>(asyncResult);
         }
@@ -1285,7 +1285,7 @@ namespace Amazon.CloudWatchEvents
         /// An entity that you specified does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/RemoveTargets">REST API Reference for RemoveTargets Operation</seealso>
-        public RemoveTargetsResponse RemoveTargets(RemoveTargetsRequest request)
+        public virtual RemoveTargetsResponse RemoveTargets(RemoveTargetsRequest request)
         {
             var marshaller = new RemoveTargetsRequestMarshaller();
             var unmarshaller = RemoveTargetsResponseUnmarshaller.Instance;
@@ -1305,7 +1305,7 @@ namespace Amazon.CloudWatchEvents
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveTargets
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/RemoveTargets">REST API Reference for RemoveTargets Operation</seealso>
-        public IAsyncResult BeginRemoveTargets(RemoveTargetsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginRemoveTargets(RemoveTargetsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RemoveTargetsRequestMarshaller();
             var unmarshaller = RemoveTargetsResponseUnmarshaller.Instance;
@@ -1322,7 +1322,7 @@ namespace Amazon.CloudWatchEvents
         /// 
         /// <returns>Returns a  RemoveTargetsResult from CloudWatchEvents.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/RemoveTargets">REST API Reference for RemoveTargets Operation</seealso>
-        public  RemoveTargetsResponse EndRemoveTargets(IAsyncResult asyncResult)
+        public virtual RemoveTargetsResponse EndRemoveTargets(IAsyncResult asyncResult)
         {
             return EndInvoke<RemoveTargetsResponse>(asyncResult);
         }
@@ -1352,7 +1352,7 @@ namespace Amazon.CloudWatchEvents
         /// The event pattern is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/TestEventPattern">REST API Reference for TestEventPattern Operation</seealso>
-        public TestEventPatternResponse TestEventPattern(TestEventPatternRequest request)
+        public virtual TestEventPatternResponse TestEventPattern(TestEventPatternRequest request)
         {
             var marshaller = new TestEventPatternRequestMarshaller();
             var unmarshaller = TestEventPatternResponseUnmarshaller.Instance;
@@ -1372,7 +1372,7 @@ namespace Amazon.CloudWatchEvents
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTestEventPattern
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/TestEventPattern">REST API Reference for TestEventPattern Operation</seealso>
-        public IAsyncResult BeginTestEventPattern(TestEventPatternRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginTestEventPattern(TestEventPatternRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new TestEventPatternRequestMarshaller();
             var unmarshaller = TestEventPatternResponseUnmarshaller.Instance;
@@ -1389,7 +1389,7 @@ namespace Amazon.CloudWatchEvents
         /// 
         /// <returns>Returns a  TestEventPatternResult from CloudWatchEvents.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/TestEventPattern">REST API Reference for TestEventPattern Operation</seealso>
-        public  TestEventPatternResponse EndTestEventPattern(IAsyncResult asyncResult)
+        public virtual TestEventPatternResponse EndTestEventPattern(IAsyncResult asyncResult)
         {
             return EndInvoke<TestEventPatternResponse>(asyncResult);
         }

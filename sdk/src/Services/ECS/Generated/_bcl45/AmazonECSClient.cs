@@ -261,7 +261,7 @@ namespace Amazon.ECS
         /// These errors are usually caused by a server issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
-        public CreateClusterResponse CreateCluster(CreateClusterRequest request)
+        public virtual CreateClusterResponse CreateCluster(CreateClusterRequest request)
         {
             var marshaller = new CreateClusterRequestMarshaller();
             var unmarshaller = CreateClusterResponseUnmarshaller.Instance;
@@ -279,7 +279,7 @@ namespace Amazon.ECS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
-        public Task<CreateClusterResponse> CreateClusterAsync(CreateClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateClusterResponse> CreateClusterAsync(CreateClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateClusterRequestMarshaller();
             var unmarshaller = CreateClusterResponseUnmarshaller.Instance;
@@ -390,7 +390,7 @@ namespace Amazon.ECS
         /// These errors are usually caused by a server issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateService">REST API Reference for CreateService Operation</seealso>
-        public CreateServiceResponse CreateService(CreateServiceRequest request)
+        public virtual CreateServiceResponse CreateService(CreateServiceRequest request)
         {
             var marshaller = new CreateServiceRequestMarshaller();
             var unmarshaller = CreateServiceResponseUnmarshaller.Instance;
@@ -408,7 +408,7 @@ namespace Amazon.ECS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateService">REST API Reference for CreateService Operation</seealso>
-        public Task<CreateServiceResponse> CreateServiceAsync(CreateServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateServiceResponse> CreateServiceAsync(CreateServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateServiceRequestMarshaller();
             var unmarshaller = CreateServiceResponseUnmarshaller.Instance;
@@ -441,7 +441,7 @@ namespace Amazon.ECS
         /// and region-specific.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteAttributes">REST API Reference for DeleteAttributes Operation</seealso>
-        public DeleteAttributesResponse DeleteAttributes(DeleteAttributesRequest request)
+        public virtual DeleteAttributesResponse DeleteAttributes(DeleteAttributesRequest request)
         {
             var marshaller = new DeleteAttributesRequestMarshaller();
             var unmarshaller = DeleteAttributesResponseUnmarshaller.Instance;
@@ -459,7 +459,7 @@ namespace Amazon.ECS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteAttributes">REST API Reference for DeleteAttributes Operation</seealso>
-        public Task<DeleteAttributesResponse> DeleteAttributesAsync(DeleteAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteAttributesResponse> DeleteAttributesAsync(DeleteAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteAttributesRequestMarshaller();
             var unmarshaller = DeleteAttributesResponseUnmarshaller.Instance;
@@ -507,7 +507,7 @@ namespace Amazon.ECS
         /// These errors are usually caused by a server issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
-        public DeleteClusterResponse DeleteCluster(DeleteClusterRequest request)
+        public virtual DeleteClusterResponse DeleteCluster(DeleteClusterRequest request)
         {
             var marshaller = new DeleteClusterRequestMarshaller();
             var unmarshaller = DeleteClusterResponseUnmarshaller.Instance;
@@ -525,7 +525,7 @@ namespace Amazon.ECS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
-        public Task<DeleteClusterResponse> DeleteClusterAsync(DeleteClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteClusterResponse> DeleteClusterAsync(DeleteClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteClusterRequestMarshaller();
             var unmarshaller = DeleteClusterResponseUnmarshaller.Instance;
@@ -582,7 +582,7 @@ namespace Amazon.ECS
         /// <a>ListServices</a>. Amazon ECS services are cluster-specific and region-specific.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteService">REST API Reference for DeleteService Operation</seealso>
-        public DeleteServiceResponse DeleteService(DeleteServiceRequest request)
+        public virtual DeleteServiceResponse DeleteService(DeleteServiceRequest request)
         {
             var marshaller = new DeleteServiceRequestMarshaller();
             var unmarshaller = DeleteServiceResponseUnmarshaller.Instance;
@@ -600,7 +600,7 @@ namespace Amazon.ECS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteService">REST API Reference for DeleteService Operation</seealso>
-        public Task<DeleteServiceResponse> DeleteServiceAsync(DeleteServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteServiceResponse> DeleteServiceAsync(DeleteServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteServiceRequestMarshaller();
             var unmarshaller = DeleteServiceResponseUnmarshaller.Instance;
@@ -657,7 +657,7 @@ namespace Amazon.ECS
         /// These errors are usually caused by a server issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterContainerInstance">REST API Reference for DeregisterContainerInstance Operation</seealso>
-        public DeregisterContainerInstanceResponse DeregisterContainerInstance(DeregisterContainerInstanceRequest request)
+        public virtual DeregisterContainerInstanceResponse DeregisterContainerInstance(DeregisterContainerInstanceRequest request)
         {
             var marshaller = new DeregisterContainerInstanceRequestMarshaller();
             var unmarshaller = DeregisterContainerInstanceResponseUnmarshaller.Instance;
@@ -675,7 +675,7 @@ namespace Amazon.ECS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterContainerInstance">REST API Reference for DeregisterContainerInstance Operation</seealso>
-        public Task<DeregisterContainerInstanceResponse> DeregisterContainerInstanceAsync(DeregisterContainerInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeregisterContainerInstanceResponse> DeregisterContainerInstanceAsync(DeregisterContainerInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeregisterContainerInstanceRequestMarshaller();
             var unmarshaller = DeregisterContainerInstanceResponseUnmarshaller.Instance;
@@ -727,7 +727,7 @@ namespace Amazon.ECS
         /// These errors are usually caused by a server issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterTaskDefinition">REST API Reference for DeregisterTaskDefinition Operation</seealso>
-        public DeregisterTaskDefinitionResponse DeregisterTaskDefinition(DeregisterTaskDefinitionRequest request)
+        public virtual DeregisterTaskDefinitionResponse DeregisterTaskDefinition(DeregisterTaskDefinitionRequest request)
         {
             var marshaller = new DeregisterTaskDefinitionRequestMarshaller();
             var unmarshaller = DeregisterTaskDefinitionResponseUnmarshaller.Instance;
@@ -745,7 +745,7 @@ namespace Amazon.ECS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterTaskDefinition">REST API Reference for DeregisterTaskDefinition Operation</seealso>
-        public Task<DeregisterTaskDefinitionResponse> DeregisterTaskDefinitionAsync(DeregisterTaskDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeregisterTaskDefinitionResponse> DeregisterTaskDefinitionAsync(DeregisterTaskDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeregisterTaskDefinitionRequestMarshaller();
             var unmarshaller = DeregisterTaskDefinitionResponseUnmarshaller.Instance;
@@ -777,7 +777,7 @@ namespace Amazon.ECS
         /// These errors are usually caused by a server issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeClusters">REST API Reference for DescribeClusters Operation</seealso>
-        public DescribeClustersResponse DescribeClusters(DescribeClustersRequest request)
+        public virtual DescribeClustersResponse DescribeClusters(DescribeClustersRequest request)
         {
             var marshaller = new DescribeClustersRequestMarshaller();
             var unmarshaller = DescribeClustersResponseUnmarshaller.Instance;
@@ -795,7 +795,7 @@ namespace Amazon.ECS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeClusters">REST API Reference for DescribeClusters Operation</seealso>
-        public Task<DescribeClustersResponse> DescribeClustersAsync(DescribeClustersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeClustersResponse> DescribeClustersAsync(DescribeClustersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeClustersRequestMarshaller();
             var unmarshaller = DescribeClustersResponseUnmarshaller.Instance;
@@ -832,7 +832,7 @@ namespace Amazon.ECS
         /// These errors are usually caused by a server issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeContainerInstances">REST API Reference for DescribeContainerInstances Operation</seealso>
-        public DescribeContainerInstancesResponse DescribeContainerInstances(DescribeContainerInstancesRequest request)
+        public virtual DescribeContainerInstancesResponse DescribeContainerInstances(DescribeContainerInstancesRequest request)
         {
             var marshaller = new DescribeContainerInstancesRequestMarshaller();
             var unmarshaller = DescribeContainerInstancesResponseUnmarshaller.Instance;
@@ -850,7 +850,7 @@ namespace Amazon.ECS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeContainerInstances">REST API Reference for DescribeContainerInstances Operation</seealso>
-        public Task<DescribeContainerInstancesResponse> DescribeContainerInstancesAsync(DescribeContainerInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeContainerInstancesResponse> DescribeContainerInstancesAsync(DescribeContainerInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeContainerInstancesRequestMarshaller();
             var unmarshaller = DescribeContainerInstancesResponseUnmarshaller.Instance;
@@ -886,7 +886,7 @@ namespace Amazon.ECS
         /// These errors are usually caused by a server issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeServices">REST API Reference for DescribeServices Operation</seealso>
-        public DescribeServicesResponse DescribeServices(DescribeServicesRequest request)
+        public virtual DescribeServicesResponse DescribeServices(DescribeServicesRequest request)
         {
             var marshaller = new DescribeServicesRequestMarshaller();
             var unmarshaller = DescribeServicesResponseUnmarshaller.Instance;
@@ -904,7 +904,7 @@ namespace Amazon.ECS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeServices">REST API Reference for DescribeServices Operation</seealso>
-        public Task<DescribeServicesResponse> DescribeServicesAsync(DescribeServicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeServicesResponse> DescribeServicesAsync(DescribeServicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeServicesRequestMarshaller();
             var unmarshaller = DescribeServicesResponseUnmarshaller.Instance;
@@ -945,7 +945,7 @@ namespace Amazon.ECS
         /// These errors are usually caused by a server issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTaskDefinition">REST API Reference for DescribeTaskDefinition Operation</seealso>
-        public DescribeTaskDefinitionResponse DescribeTaskDefinition(DescribeTaskDefinitionRequest request)
+        public virtual DescribeTaskDefinitionResponse DescribeTaskDefinition(DescribeTaskDefinitionRequest request)
         {
             var marshaller = new DescribeTaskDefinitionRequestMarshaller();
             var unmarshaller = DescribeTaskDefinitionResponseUnmarshaller.Instance;
@@ -963,7 +963,7 @@ namespace Amazon.ECS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTaskDefinition">REST API Reference for DescribeTaskDefinition Operation</seealso>
-        public Task<DescribeTaskDefinitionResponse> DescribeTaskDefinitionAsync(DescribeTaskDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeTaskDefinitionResponse> DescribeTaskDefinitionAsync(DescribeTaskDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeTaskDefinitionRequestMarshaller();
             var unmarshaller = DescribeTaskDefinitionResponseUnmarshaller.Instance;
@@ -999,7 +999,7 @@ namespace Amazon.ECS
         /// These errors are usually caused by a server issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTasks">REST API Reference for DescribeTasks Operation</seealso>
-        public DescribeTasksResponse DescribeTasks(DescribeTasksRequest request)
+        public virtual DescribeTasksResponse DescribeTasks(DescribeTasksRequest request)
         {
             var marshaller = new DescribeTasksRequestMarshaller();
             var unmarshaller = DescribeTasksResponseUnmarshaller.Instance;
@@ -1017,7 +1017,7 @@ namespace Amazon.ECS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTasks">REST API Reference for DescribeTasks Operation</seealso>
-        public Task<DescribeTasksResponse> DescribeTasksAsync(DescribeTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeTasksResponse> DescribeTasksAsync(DescribeTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeTasksRequestMarshaller();
             var unmarshaller = DescribeTasksResponseUnmarshaller.Instance;
@@ -1050,7 +1050,7 @@ namespace Amazon.ECS
         /// The specified parameter is invalid. Review the available parameters for the API request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListAttributes">REST API Reference for ListAttributes Operation</seealso>
-        public ListAttributesResponse ListAttributes(ListAttributesRequest request)
+        public virtual ListAttributesResponse ListAttributes(ListAttributesRequest request)
         {
             var marshaller = new ListAttributesRequestMarshaller();
             var unmarshaller = ListAttributesResponseUnmarshaller.Instance;
@@ -1068,7 +1068,7 @@ namespace Amazon.ECS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListAttributes">REST API Reference for ListAttributes Operation</seealso>
-        public Task<ListAttributesResponse> ListAttributesAsync(ListAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListAttributesResponse> ListAttributesAsync(ListAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListAttributesRequestMarshaller();
             var unmarshaller = ListAttributesResponseUnmarshaller.Instance;
@@ -1100,7 +1100,7 @@ namespace Amazon.ECS
         /// These errors are usually caused by a server issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListClusters">REST API Reference for ListClusters Operation</seealso>
-        public ListClustersResponse ListClusters(ListClustersRequest request)
+        public virtual ListClustersResponse ListClusters(ListClustersRequest request)
         {
             var marshaller = new ListClustersRequestMarshaller();
             var unmarshaller = ListClustersResponseUnmarshaller.Instance;
@@ -1118,7 +1118,7 @@ namespace Amazon.ECS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListClusters">REST API Reference for ListClusters Operation</seealso>
-        public Task<ListClustersResponse> ListClustersAsync(ListClustersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListClustersResponse> ListClustersAsync(ListClustersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListClustersRequestMarshaller();
             var unmarshaller = ListClustersResponseUnmarshaller.Instance;
@@ -1157,7 +1157,7 @@ namespace Amazon.ECS
         /// These errors are usually caused by a server issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListContainerInstances">REST API Reference for ListContainerInstances Operation</seealso>
-        public ListContainerInstancesResponse ListContainerInstances(ListContainerInstancesRequest request)
+        public virtual ListContainerInstancesResponse ListContainerInstances(ListContainerInstancesRequest request)
         {
             var marshaller = new ListContainerInstancesRequestMarshaller();
             var unmarshaller = ListContainerInstancesResponseUnmarshaller.Instance;
@@ -1175,7 +1175,7 @@ namespace Amazon.ECS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListContainerInstances">REST API Reference for ListContainerInstances Operation</seealso>
-        public Task<ListContainerInstancesResponse> ListContainerInstancesAsync(ListContainerInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListContainerInstancesResponse> ListContainerInstancesAsync(ListContainerInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListContainerInstancesRequestMarshaller();
             var unmarshaller = ListContainerInstancesResponseUnmarshaller.Instance;
@@ -1211,7 +1211,7 @@ namespace Amazon.ECS
         /// These errors are usually caused by a server issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListServices">REST API Reference for ListServices Operation</seealso>
-        public ListServicesResponse ListServices(ListServicesRequest request)
+        public virtual ListServicesResponse ListServices(ListServicesRequest request)
         {
             var marshaller = new ListServicesRequestMarshaller();
             var unmarshaller = ListServicesResponseUnmarshaller.Instance;
@@ -1229,7 +1229,7 @@ namespace Amazon.ECS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListServices">REST API Reference for ListServices Operation</seealso>
-        public Task<ListServicesResponse> ListServicesAsync(ListServicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListServicesResponse> ListServicesAsync(ListServicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListServicesRequestMarshaller();
             var unmarshaller = ListServicesResponseUnmarshaller.Instance;
@@ -1270,7 +1270,7 @@ namespace Amazon.ECS
         /// These errors are usually caused by a server issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTaskDefinitionFamilies">REST API Reference for ListTaskDefinitionFamilies Operation</seealso>
-        public ListTaskDefinitionFamiliesResponse ListTaskDefinitionFamilies(ListTaskDefinitionFamiliesRequest request)
+        public virtual ListTaskDefinitionFamiliesResponse ListTaskDefinitionFamilies(ListTaskDefinitionFamiliesRequest request)
         {
             var marshaller = new ListTaskDefinitionFamiliesRequestMarshaller();
             var unmarshaller = ListTaskDefinitionFamiliesResponseUnmarshaller.Instance;
@@ -1288,7 +1288,7 @@ namespace Amazon.ECS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTaskDefinitionFamilies">REST API Reference for ListTaskDefinitionFamilies Operation</seealso>
-        public Task<ListTaskDefinitionFamiliesResponse> ListTaskDefinitionFamiliesAsync(ListTaskDefinitionFamiliesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListTaskDefinitionFamiliesResponse> ListTaskDefinitionFamiliesAsync(ListTaskDefinitionFamiliesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListTaskDefinitionFamiliesRequestMarshaller();
             var unmarshaller = ListTaskDefinitionFamiliesResponseUnmarshaller.Instance;
@@ -1322,7 +1322,7 @@ namespace Amazon.ECS
         /// These errors are usually caused by a server issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTaskDefinitions">REST API Reference for ListTaskDefinitions Operation</seealso>
-        public ListTaskDefinitionsResponse ListTaskDefinitions(ListTaskDefinitionsRequest request)
+        public virtual ListTaskDefinitionsResponse ListTaskDefinitions(ListTaskDefinitionsRequest request)
         {
             var marshaller = new ListTaskDefinitionsRequestMarshaller();
             var unmarshaller = ListTaskDefinitionsResponseUnmarshaller.Instance;
@@ -1340,7 +1340,7 @@ namespace Amazon.ECS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTaskDefinitions">REST API Reference for ListTaskDefinitions Operation</seealso>
-        public Task<ListTaskDefinitionsResponse> ListTaskDefinitionsAsync(ListTaskDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListTaskDefinitionsResponse> ListTaskDefinitionsAsync(ListTaskDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListTaskDefinitionsRequestMarshaller();
             var unmarshaller = ListTaskDefinitionsResponseUnmarshaller.Instance;
@@ -1389,7 +1389,7 @@ namespace Amazon.ECS
         /// <a>ListServices</a>. Amazon ECS services are cluster-specific and region-specific.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTasks">REST API Reference for ListTasks Operation</seealso>
-        public ListTasksResponse ListTasks(ListTasksRequest request)
+        public virtual ListTasksResponse ListTasks(ListTasksRequest request)
         {
             var marshaller = new ListTasksRequestMarshaller();
             var unmarshaller = ListTasksResponseUnmarshaller.Instance;
@@ -1407,7 +1407,7 @@ namespace Amazon.ECS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTasks">REST API Reference for ListTasks Operation</seealso>
-        public Task<ListTasksResponse> ListTasksAsync(ListTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListTasksResponse> ListTasksAsync(ListTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListTasksRequestMarshaller();
             var unmarshaller = ListTasksResponseUnmarshaller.Instance;
@@ -1449,7 +1449,7 @@ namespace Amazon.ECS
         /// and region-specific.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAttributes">REST API Reference for PutAttributes Operation</seealso>
-        public PutAttributesResponse PutAttributes(PutAttributesRequest request)
+        public virtual PutAttributesResponse PutAttributes(PutAttributesRequest request)
         {
             var marshaller = new PutAttributesRequestMarshaller();
             var unmarshaller = PutAttributesResponseUnmarshaller.Instance;
@@ -1467,7 +1467,7 @@ namespace Amazon.ECS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAttributes">REST API Reference for PutAttributes Operation</seealso>
-        public Task<PutAttributesResponse> PutAttributesAsync(PutAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PutAttributesResponse> PutAttributesAsync(PutAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutAttributesRequestMarshaller();
             var unmarshaller = PutAttributesResponseUnmarshaller.Instance;
@@ -1519,7 +1519,7 @@ namespace Amazon.ECS
         /// These errors are usually caused by a server issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RegisterTaskDefinition">REST API Reference for RegisterTaskDefinition Operation</seealso>
-        public RegisterTaskDefinitionResponse RegisterTaskDefinition(RegisterTaskDefinitionRequest request)
+        public virtual RegisterTaskDefinitionResponse RegisterTaskDefinition(RegisterTaskDefinitionRequest request)
         {
             var marshaller = new RegisterTaskDefinitionRequestMarshaller();
             var unmarshaller = RegisterTaskDefinitionResponseUnmarshaller.Instance;
@@ -1537,7 +1537,7 @@ namespace Amazon.ECS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RegisterTaskDefinition">REST API Reference for RegisterTaskDefinition Operation</seealso>
-        public Task<RegisterTaskDefinitionResponse> RegisterTaskDefinitionAsync(RegisterTaskDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<RegisterTaskDefinitionResponse> RegisterTaskDefinitionAsync(RegisterTaskDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RegisterTaskDefinitionRequestMarshaller();
             var unmarshaller = RegisterTaskDefinitionResponseUnmarshaller.Instance;
@@ -1586,7 +1586,7 @@ namespace Amazon.ECS
         /// These errors are usually caused by a server issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RunTask">REST API Reference for RunTask Operation</seealso>
-        public RunTaskResponse RunTask(RunTaskRequest request)
+        public virtual RunTaskResponse RunTask(RunTaskRequest request)
         {
             var marshaller = new RunTaskRequestMarshaller();
             var unmarshaller = RunTaskResponseUnmarshaller.Instance;
@@ -1604,7 +1604,7 @@ namespace Amazon.ECS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RunTask">REST API Reference for RunTask Operation</seealso>
-        public Task<RunTaskResponse> RunTaskAsync(RunTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<RunTaskResponse> RunTaskAsync(RunTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RunTaskRequestMarshaller();
             var unmarshaller = RunTaskResponseUnmarshaller.Instance;
@@ -1648,7 +1648,7 @@ namespace Amazon.ECS
         /// These errors are usually caused by a server issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StartTask">REST API Reference for StartTask Operation</seealso>
-        public StartTaskResponse StartTask(StartTaskRequest request)
+        public virtual StartTaskResponse StartTask(StartTaskRequest request)
         {
             var marshaller = new StartTaskRequestMarshaller();
             var unmarshaller = StartTaskResponseUnmarshaller.Instance;
@@ -1666,7 +1666,7 @@ namespace Amazon.ECS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StartTask">REST API Reference for StartTask Operation</seealso>
-        public Task<StartTaskResponse> StartTaskAsync(StartTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<StartTaskResponse> StartTaskAsync(StartTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new StartTaskRequestMarshaller();
             var unmarshaller = StartTaskResponseUnmarshaller.Instance;
@@ -1721,7 +1721,7 @@ namespace Amazon.ECS
         /// These errors are usually caused by a server issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StopTask">REST API Reference for StopTask Operation</seealso>
-        public StopTaskResponse StopTask(StopTaskRequest request)
+        public virtual StopTaskResponse StopTask(StopTaskRequest request)
         {
             var marshaller = new StopTaskRequestMarshaller();
             var unmarshaller = StopTaskResponseUnmarshaller.Instance;
@@ -1739,7 +1739,7 @@ namespace Amazon.ECS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StopTask">REST API Reference for StopTask Operation</seealso>
-        public Task<StopTaskResponse> StopTaskAsync(StopTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<StopTaskResponse> StopTaskAsync(StopTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new StopTaskRequestMarshaller();
             var unmarshaller = StopTaskResponseUnmarshaller.Instance;
@@ -1806,7 +1806,7 @@ namespace Amazon.ECS
         /// previously.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerAgent">REST API Reference for UpdateContainerAgent Operation</seealso>
-        public UpdateContainerAgentResponse UpdateContainerAgent(UpdateContainerAgentRequest request)
+        public virtual UpdateContainerAgentResponse UpdateContainerAgent(UpdateContainerAgentRequest request)
         {
             var marshaller = new UpdateContainerAgentRequestMarshaller();
             var unmarshaller = UpdateContainerAgentResponseUnmarshaller.Instance;
@@ -1824,7 +1824,7 @@ namespace Amazon.ECS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerAgent">REST API Reference for UpdateContainerAgent Operation</seealso>
-        public Task<UpdateContainerAgentResponse> UpdateContainerAgentAsync(UpdateContainerAgentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateContainerAgentResponse> UpdateContainerAgentAsync(UpdateContainerAgentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateContainerAgentRequestMarshaller();
             var unmarshaller = UpdateContainerAgentResponseUnmarshaller.Instance;
@@ -1918,7 +1918,7 @@ namespace Amazon.ECS
         /// These errors are usually caused by a server issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerInstancesState">REST API Reference for UpdateContainerInstancesState Operation</seealso>
-        public UpdateContainerInstancesStateResponse UpdateContainerInstancesState(UpdateContainerInstancesStateRequest request)
+        public virtual UpdateContainerInstancesStateResponse UpdateContainerInstancesState(UpdateContainerInstancesStateRequest request)
         {
             var marshaller = new UpdateContainerInstancesStateRequestMarshaller();
             var unmarshaller = UpdateContainerInstancesStateResponseUnmarshaller.Instance;
@@ -1936,7 +1936,7 @@ namespace Amazon.ECS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerInstancesState">REST API Reference for UpdateContainerInstancesState Operation</seealso>
-        public Task<UpdateContainerInstancesStateResponse> UpdateContainerInstancesStateAsync(UpdateContainerInstancesStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateContainerInstancesStateResponse> UpdateContainerInstancesStateAsync(UpdateContainerInstancesStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateContainerInstancesStateRequestMarshaller();
             var unmarshaller = UpdateContainerInstancesStateResponseUnmarshaller.Instance;
@@ -2074,7 +2074,7 @@ namespace Amazon.ECS
         /// <a>ListServices</a>. Amazon ECS services are cluster-specific and region-specific.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateService">REST API Reference for UpdateService Operation</seealso>
-        public UpdateServiceResponse UpdateService(UpdateServiceRequest request)
+        public virtual UpdateServiceResponse UpdateService(UpdateServiceRequest request)
         {
             var marshaller = new UpdateServiceRequestMarshaller();
             var unmarshaller = UpdateServiceResponseUnmarshaller.Instance;
@@ -2092,7 +2092,7 @@ namespace Amazon.ECS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateService">REST API Reference for UpdateService Operation</seealso>
-        public Task<UpdateServiceResponse> UpdateServiceAsync(UpdateServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateServiceResponse> UpdateServiceAsync(UpdateServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateServiceRequestMarshaller();
             var unmarshaller = UpdateServiceResponseUnmarshaller.Instance;

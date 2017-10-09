@@ -267,7 +267,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public CreateApiKeyResponse CreateApiKey(CreateApiKeyRequest request)
+        public virtual CreateApiKeyResponse CreateApiKey(CreateApiKeyRequest request)
         {
             var marshaller = new CreateApiKeyRequestMarshaller();
             var unmarshaller = CreateApiKeyResponseUnmarshaller.Instance;
@@ -286,7 +286,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateApiKey
         ///         operation.</returns>
-        public IAsyncResult BeginCreateApiKey(CreateApiKeyRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateApiKey(CreateApiKeyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateApiKeyRequestMarshaller();
             var unmarshaller = CreateApiKeyResponseUnmarshaller.Instance;
@@ -302,7 +302,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateApiKey.</param>
         /// 
         /// <returns>Returns a  CreateApiKeyResult from APIGateway.</returns>
-        public  CreateApiKeyResponse EndCreateApiKey(IAsyncResult asyncResult)
+        public virtual CreateApiKeyResponse EndCreateApiKey(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateApiKeyResponse>(asyncResult);
         }
@@ -336,7 +336,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public CreateAuthorizerResponse CreateAuthorizer(CreateAuthorizerRequest request)
+        public virtual CreateAuthorizerResponse CreateAuthorizer(CreateAuthorizerRequest request)
         {
             var marshaller = new CreateAuthorizerRequestMarshaller();
             var unmarshaller = CreateAuthorizerResponseUnmarshaller.Instance;
@@ -355,7 +355,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAuthorizer
         ///         operation.</returns>
-        public IAsyncResult BeginCreateAuthorizer(CreateAuthorizerRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateAuthorizer(CreateAuthorizerRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateAuthorizerRequestMarshaller();
             var unmarshaller = CreateAuthorizerResponseUnmarshaller.Instance;
@@ -371,7 +371,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAuthorizer.</param>
         /// 
         /// <returns>Returns a  CreateAuthorizerResult from APIGateway.</returns>
-        public  CreateAuthorizerResponse EndCreateAuthorizer(IAsyncResult asyncResult)
+        public virtual CreateAuthorizerResponse EndCreateAuthorizer(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateAuthorizerResponse>(asyncResult);
         }
@@ -402,7 +402,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public CreateBasePathMappingResponse CreateBasePathMapping(CreateBasePathMappingRequest request)
+        public virtual CreateBasePathMappingResponse CreateBasePathMapping(CreateBasePathMappingRequest request)
         {
             var marshaller = new CreateBasePathMappingRequestMarshaller();
             var unmarshaller = CreateBasePathMappingResponseUnmarshaller.Instance;
@@ -421,7 +421,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateBasePathMapping
         ///         operation.</returns>
-        public IAsyncResult BeginCreateBasePathMapping(CreateBasePathMappingRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateBasePathMapping(CreateBasePathMappingRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateBasePathMappingRequestMarshaller();
             var unmarshaller = CreateBasePathMappingResponseUnmarshaller.Instance;
@@ -437,7 +437,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateBasePathMapping.</param>
         /// 
         /// <returns>Returns a  CreateBasePathMappingResult from APIGateway.</returns>
-        public  CreateBasePathMappingResponse EndCreateBasePathMapping(IAsyncResult asyncResult)
+        public virtual CreateBasePathMappingResponse EndCreateBasePathMapping(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateBasePathMappingResponse>(asyncResult);
         }
@@ -476,7 +476,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public CreateDeploymentResponse CreateDeployment(CreateDeploymentRequest request)
+        public virtual CreateDeploymentResponse CreateDeployment(CreateDeploymentRequest request)
         {
             var marshaller = new CreateDeploymentRequestMarshaller();
             var unmarshaller = CreateDeploymentResponseUnmarshaller.Instance;
@@ -495,7 +495,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDeployment
         ///         operation.</returns>
-        public IAsyncResult BeginCreateDeployment(CreateDeploymentRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateDeployment(CreateDeploymentRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateDeploymentRequestMarshaller();
             var unmarshaller = CreateDeploymentResponseUnmarshaller.Instance;
@@ -511,7 +511,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDeployment.</param>
         /// 
         /// <returns>Returns a  CreateDeploymentResult from APIGateway.</returns>
-        public  CreateDeploymentResponse EndCreateDeployment(IAsyncResult asyncResult)
+        public virtual CreateDeploymentResponse EndCreateDeployment(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateDeploymentResponse>(asyncResult);
         }
@@ -545,7 +545,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public CreateDocumentationPartResponse CreateDocumentationPart(CreateDocumentationPartRequest request)
+        public virtual CreateDocumentationPartResponse CreateDocumentationPart(CreateDocumentationPartRequest request)
         {
             var marshaller = new CreateDocumentationPartRequestMarshaller();
             var unmarshaller = CreateDocumentationPartResponseUnmarshaller.Instance;
@@ -564,7 +564,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDocumentationPart
         ///         operation.</returns>
-        public IAsyncResult BeginCreateDocumentationPart(CreateDocumentationPartRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateDocumentationPart(CreateDocumentationPartRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateDocumentationPartRequestMarshaller();
             var unmarshaller = CreateDocumentationPartResponseUnmarshaller.Instance;
@@ -580,7 +580,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDocumentationPart.</param>
         /// 
         /// <returns>Returns a  CreateDocumentationPartResult from APIGateway.</returns>
-        public  CreateDocumentationPartResponse EndCreateDocumentationPart(IAsyncResult asyncResult)
+        public virtual CreateDocumentationPartResponse EndCreateDocumentationPart(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateDocumentationPartResponse>(asyncResult);
         }
@@ -614,7 +614,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public CreateDocumentationVersionResponse CreateDocumentationVersion(CreateDocumentationVersionRequest request)
+        public virtual CreateDocumentationVersionResponse CreateDocumentationVersion(CreateDocumentationVersionRequest request)
         {
             var marshaller = new CreateDocumentationVersionRequestMarshaller();
             var unmarshaller = CreateDocumentationVersionResponseUnmarshaller.Instance;
@@ -633,7 +633,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDocumentationVersion
         ///         operation.</returns>
-        public IAsyncResult BeginCreateDocumentationVersion(CreateDocumentationVersionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateDocumentationVersion(CreateDocumentationVersionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateDocumentationVersionRequestMarshaller();
             var unmarshaller = CreateDocumentationVersionResponseUnmarshaller.Instance;
@@ -649,7 +649,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDocumentationVersion.</param>
         /// 
         /// <returns>Returns a  CreateDocumentationVersionResult from APIGateway.</returns>
-        public  CreateDocumentationVersionResponse EndCreateDocumentationVersion(IAsyncResult asyncResult)
+        public virtual CreateDocumentationVersionResponse EndCreateDocumentationVersion(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateDocumentationVersionResponse>(asyncResult);
         }
@@ -677,7 +677,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public CreateDomainNameResponse CreateDomainName(CreateDomainNameRequest request)
+        public virtual CreateDomainNameResponse CreateDomainName(CreateDomainNameRequest request)
         {
             var marshaller = new CreateDomainNameRequestMarshaller();
             var unmarshaller = CreateDomainNameResponseUnmarshaller.Instance;
@@ -696,7 +696,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDomainName
         ///         operation.</returns>
-        public IAsyncResult BeginCreateDomainName(CreateDomainNameRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateDomainName(CreateDomainNameRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateDomainNameRequestMarshaller();
             var unmarshaller = CreateDomainNameResponseUnmarshaller.Instance;
@@ -712,7 +712,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDomainName.</param>
         /// 
         /// <returns>Returns a  CreateDomainNameResult from APIGateway.</returns>
-        public  CreateDomainNameResponse EndCreateDomainName(IAsyncResult asyncResult)
+        public virtual CreateDomainNameResponse EndCreateDomainName(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateDomainNameResponse>(asyncResult);
         }
@@ -746,7 +746,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public CreateModelResponse CreateModel(CreateModelRequest request)
+        public virtual CreateModelResponse CreateModel(CreateModelRequest request)
         {
             var marshaller = new CreateModelRequestMarshaller();
             var unmarshaller = CreateModelResponseUnmarshaller.Instance;
@@ -765,7 +765,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateModel
         ///         operation.</returns>
-        public IAsyncResult BeginCreateModel(CreateModelRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateModel(CreateModelRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateModelRequestMarshaller();
             var unmarshaller = CreateModelResponseUnmarshaller.Instance;
@@ -781,7 +781,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateModel.</param>
         /// 
         /// <returns>Returns a  CreateModelResult from APIGateway.</returns>
-        public  CreateModelResponse EndCreateModel(IAsyncResult asyncResult)
+        public virtual CreateModelResponse EndCreateModel(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateModelResponse>(asyncResult);
         }
@@ -812,7 +812,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public CreateRequestValidatorResponse CreateRequestValidator(CreateRequestValidatorRequest request)
+        public virtual CreateRequestValidatorResponse CreateRequestValidator(CreateRequestValidatorRequest request)
         {
             var marshaller = new CreateRequestValidatorRequestMarshaller();
             var unmarshaller = CreateRequestValidatorResponseUnmarshaller.Instance;
@@ -831,7 +831,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateRequestValidator
         ///         operation.</returns>
-        public IAsyncResult BeginCreateRequestValidator(CreateRequestValidatorRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateRequestValidator(CreateRequestValidatorRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateRequestValidatorRequestMarshaller();
             var unmarshaller = CreateRequestValidatorResponseUnmarshaller.Instance;
@@ -847,7 +847,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateRequestValidator.</param>
         /// 
         /// <returns>Returns a  CreateRequestValidatorResult from APIGateway.</returns>
-        public  CreateRequestValidatorResponse EndCreateRequestValidator(IAsyncResult asyncResult)
+        public virtual CreateRequestValidatorResponse EndCreateRequestValidator(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateRequestValidatorResponse>(asyncResult);
         }
@@ -881,7 +881,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public CreateResourceResponse CreateResource(CreateResourceRequest request)
+        public virtual CreateResourceResponse CreateResource(CreateResourceRequest request)
         {
             var marshaller = new CreateResourceRequestMarshaller();
             var unmarshaller = CreateResourceResponseUnmarshaller.Instance;
@@ -900,7 +900,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateResource
         ///         operation.</returns>
-        public IAsyncResult BeginCreateResource(CreateResourceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateResource(CreateResourceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateResourceRequestMarshaller();
             var unmarshaller = CreateResourceResponseUnmarshaller.Instance;
@@ -916,7 +916,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateResource.</param>
         /// 
         /// <returns>Returns a  CreateResourceResult from APIGateway.</returns>
-        public  CreateResourceResponse EndCreateResource(IAsyncResult asyncResult)
+        public virtual CreateResourceResponse EndCreateResource(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateResourceResponse>(asyncResult);
         }
@@ -944,7 +944,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public CreateRestApiResponse CreateRestApi(CreateRestApiRequest request)
+        public virtual CreateRestApiResponse CreateRestApi(CreateRestApiRequest request)
         {
             var marshaller = new CreateRestApiRequestMarshaller();
             var unmarshaller = CreateRestApiResponseUnmarshaller.Instance;
@@ -963,7 +963,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateRestApi
         ///         operation.</returns>
-        public IAsyncResult BeginCreateRestApi(CreateRestApiRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateRestApi(CreateRestApiRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateRestApiRequestMarshaller();
             var unmarshaller = CreateRestApiResponseUnmarshaller.Instance;
@@ -979,7 +979,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateRestApi.</param>
         /// 
         /// <returns>Returns a  CreateRestApiResult from APIGateway.</returns>
-        public  CreateRestApiResponse EndCreateRestApi(IAsyncResult asyncResult)
+        public virtual CreateRestApiResponse EndCreateRestApi(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateRestApiResponse>(asyncResult);
         }
@@ -1014,7 +1014,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public CreateStageResponse CreateStage(CreateStageRequest request)
+        public virtual CreateStageResponse CreateStage(CreateStageRequest request)
         {
             var marshaller = new CreateStageRequestMarshaller();
             var unmarshaller = CreateStageResponseUnmarshaller.Instance;
@@ -1033,7 +1033,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateStage
         ///         operation.</returns>
-        public IAsyncResult BeginCreateStage(CreateStageRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateStage(CreateStageRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateStageRequestMarshaller();
             var unmarshaller = CreateStageResponseUnmarshaller.Instance;
@@ -1049,7 +1049,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateStage.</param>
         /// 
         /// <returns>Returns a  CreateStageResult from APIGateway.</returns>
-        public  CreateStageResponse EndCreateStage(IAsyncResult asyncResult)
+        public virtual CreateStageResponse EndCreateStage(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateStageResponse>(asyncResult);
         }
@@ -1084,7 +1084,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public CreateUsagePlanResponse CreateUsagePlan(CreateUsagePlanRequest request)
+        public virtual CreateUsagePlanResponse CreateUsagePlan(CreateUsagePlanRequest request)
         {
             var marshaller = new CreateUsagePlanRequestMarshaller();
             var unmarshaller = CreateUsagePlanResponseUnmarshaller.Instance;
@@ -1103,7 +1103,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateUsagePlan
         ///         operation.</returns>
-        public IAsyncResult BeginCreateUsagePlan(CreateUsagePlanRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateUsagePlan(CreateUsagePlanRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateUsagePlanRequestMarshaller();
             var unmarshaller = CreateUsagePlanResponseUnmarshaller.Instance;
@@ -1119,7 +1119,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateUsagePlan.</param>
         /// 
         /// <returns>Returns a  CreateUsagePlanResult from APIGateway.</returns>
-        public  CreateUsagePlanResponse EndCreateUsagePlan(IAsyncResult asyncResult)
+        public virtual CreateUsagePlanResponse EndCreateUsagePlan(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateUsagePlanResponse>(asyncResult);
         }
@@ -1150,7 +1150,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public CreateUsagePlanKeyResponse CreateUsagePlanKey(CreateUsagePlanKeyRequest request)
+        public virtual CreateUsagePlanKeyResponse CreateUsagePlanKey(CreateUsagePlanKeyRequest request)
         {
             var marshaller = new CreateUsagePlanKeyRequestMarshaller();
             var unmarshaller = CreateUsagePlanKeyResponseUnmarshaller.Instance;
@@ -1169,7 +1169,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateUsagePlanKey
         ///         operation.</returns>
-        public IAsyncResult BeginCreateUsagePlanKey(CreateUsagePlanKeyRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateUsagePlanKey(CreateUsagePlanKeyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateUsagePlanKeyRequestMarshaller();
             var unmarshaller = CreateUsagePlanKeyResponseUnmarshaller.Instance;
@@ -1185,7 +1185,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateUsagePlanKey.</param>
         /// 
         /// <returns>Returns a  CreateUsagePlanKeyResult from APIGateway.</returns>
-        public  CreateUsagePlanKeyResponse EndCreateUsagePlanKey(IAsyncResult asyncResult)
+        public virtual CreateUsagePlanKeyResponse EndCreateUsagePlanKey(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateUsagePlanKeyResponse>(asyncResult);
         }
@@ -1209,7 +1209,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public DeleteApiKeyResponse DeleteApiKey(DeleteApiKeyRequest request)
+        public virtual DeleteApiKeyResponse DeleteApiKey(DeleteApiKeyRequest request)
         {
             var marshaller = new DeleteApiKeyRequestMarshaller();
             var unmarshaller = DeleteApiKeyResponseUnmarshaller.Instance;
@@ -1228,7 +1228,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteApiKey
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteApiKey(DeleteApiKeyRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteApiKey(DeleteApiKeyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteApiKeyRequestMarshaller();
             var unmarshaller = DeleteApiKeyResponseUnmarshaller.Instance;
@@ -1244,7 +1244,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteApiKey.</param>
         /// 
         /// <returns>Returns a  DeleteApiKeyResult from APIGateway.</returns>
-        public  DeleteApiKeyResponse EndDeleteApiKey(IAsyncResult asyncResult)
+        public virtual DeleteApiKeyResponse EndDeleteApiKey(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteApiKeyResponse>(asyncResult);
         }
@@ -1278,7 +1278,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public DeleteAuthorizerResponse DeleteAuthorizer(DeleteAuthorizerRequest request)
+        public virtual DeleteAuthorizerResponse DeleteAuthorizer(DeleteAuthorizerRequest request)
         {
             var marshaller = new DeleteAuthorizerRequestMarshaller();
             var unmarshaller = DeleteAuthorizerResponseUnmarshaller.Instance;
@@ -1297,7 +1297,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAuthorizer
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteAuthorizer(DeleteAuthorizerRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteAuthorizer(DeleteAuthorizerRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteAuthorizerRequestMarshaller();
             var unmarshaller = DeleteAuthorizerResponseUnmarshaller.Instance;
@@ -1313,7 +1313,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAuthorizer.</param>
         /// 
         /// <returns>Returns a  DeleteAuthorizerResult from APIGateway.</returns>
-        public  DeleteAuthorizerResponse EndDeleteAuthorizer(IAsyncResult asyncResult)
+        public virtual DeleteAuthorizerResponse EndDeleteAuthorizer(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteAuthorizerResponse>(asyncResult);
         }
@@ -1344,7 +1344,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public DeleteBasePathMappingResponse DeleteBasePathMapping(DeleteBasePathMappingRequest request)
+        public virtual DeleteBasePathMappingResponse DeleteBasePathMapping(DeleteBasePathMappingRequest request)
         {
             var marshaller = new DeleteBasePathMappingRequestMarshaller();
             var unmarshaller = DeleteBasePathMappingResponseUnmarshaller.Instance;
@@ -1363,7 +1363,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBasePathMapping
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteBasePathMapping(DeleteBasePathMappingRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteBasePathMapping(DeleteBasePathMappingRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteBasePathMappingRequestMarshaller();
             var unmarshaller = DeleteBasePathMappingResponseUnmarshaller.Instance;
@@ -1379,7 +1379,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBasePathMapping.</param>
         /// 
         /// <returns>Returns a  DeleteBasePathMappingResult from APIGateway.</returns>
-        public  DeleteBasePathMappingResponse EndDeleteBasePathMapping(IAsyncResult asyncResult)
+        public virtual DeleteBasePathMappingResponse EndDeleteBasePathMapping(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteBasePathMappingResponse>(asyncResult);
         }
@@ -1407,7 +1407,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public DeleteClientCertificateResponse DeleteClientCertificate(DeleteClientCertificateRequest request)
+        public virtual DeleteClientCertificateResponse DeleteClientCertificate(DeleteClientCertificateRequest request)
         {
             var marshaller = new DeleteClientCertificateRequestMarshaller();
             var unmarshaller = DeleteClientCertificateResponseUnmarshaller.Instance;
@@ -1426,7 +1426,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteClientCertificate
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteClientCertificate(DeleteClientCertificateRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteClientCertificate(DeleteClientCertificateRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteClientCertificateRequestMarshaller();
             var unmarshaller = DeleteClientCertificateResponseUnmarshaller.Instance;
@@ -1442,7 +1442,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteClientCertificate.</param>
         /// 
         /// <returns>Returns a  DeleteClientCertificateResult from APIGateway.</returns>
-        public  DeleteClientCertificateResponse EndDeleteClientCertificate(IAsyncResult asyncResult)
+        public virtual DeleteClientCertificateResponse EndDeleteClientCertificate(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteClientCertificateResponse>(asyncResult);
         }
@@ -1471,7 +1471,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public DeleteDeploymentResponse DeleteDeployment(DeleteDeploymentRequest request)
+        public virtual DeleteDeploymentResponse DeleteDeployment(DeleteDeploymentRequest request)
         {
             var marshaller = new DeleteDeploymentRequestMarshaller();
             var unmarshaller = DeleteDeploymentResponseUnmarshaller.Instance;
@@ -1490,7 +1490,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDeployment
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteDeployment(DeleteDeploymentRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteDeployment(DeleteDeploymentRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteDeploymentRequestMarshaller();
             var unmarshaller = DeleteDeploymentResponseUnmarshaller.Instance;
@@ -1506,7 +1506,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDeployment.</param>
         /// 
         /// <returns>Returns a  DeleteDeploymentResult from APIGateway.</returns>
-        public  DeleteDeploymentResponse EndDeleteDeployment(IAsyncResult asyncResult)
+        public virtual DeleteDeploymentResponse EndDeleteDeployment(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteDeploymentResponse>(asyncResult);
         }
@@ -1537,7 +1537,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public DeleteDocumentationPartResponse DeleteDocumentationPart(DeleteDocumentationPartRequest request)
+        public virtual DeleteDocumentationPartResponse DeleteDocumentationPart(DeleteDocumentationPartRequest request)
         {
             var marshaller = new DeleteDocumentationPartRequestMarshaller();
             var unmarshaller = DeleteDocumentationPartResponseUnmarshaller.Instance;
@@ -1556,7 +1556,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDocumentationPart
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteDocumentationPart(DeleteDocumentationPartRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteDocumentationPart(DeleteDocumentationPartRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteDocumentationPartRequestMarshaller();
             var unmarshaller = DeleteDocumentationPartResponseUnmarshaller.Instance;
@@ -1572,7 +1572,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDocumentationPart.</param>
         /// 
         /// <returns>Returns a  DeleteDocumentationPartResult from APIGateway.</returns>
-        public  DeleteDocumentationPartResponse EndDeleteDocumentationPart(IAsyncResult asyncResult)
+        public virtual DeleteDocumentationPartResponse EndDeleteDocumentationPart(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteDocumentationPartResponse>(asyncResult);
         }
@@ -1603,7 +1603,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public DeleteDocumentationVersionResponse DeleteDocumentationVersion(DeleteDocumentationVersionRequest request)
+        public virtual DeleteDocumentationVersionResponse DeleteDocumentationVersion(DeleteDocumentationVersionRequest request)
         {
             var marshaller = new DeleteDocumentationVersionRequestMarshaller();
             var unmarshaller = DeleteDocumentationVersionResponseUnmarshaller.Instance;
@@ -1622,7 +1622,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDocumentationVersion
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteDocumentationVersion(DeleteDocumentationVersionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteDocumentationVersion(DeleteDocumentationVersionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteDocumentationVersionRequestMarshaller();
             var unmarshaller = DeleteDocumentationVersionResponseUnmarshaller.Instance;
@@ -1638,7 +1638,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDocumentationVersion.</param>
         /// 
         /// <returns>Returns a  DeleteDocumentationVersionResult from APIGateway.</returns>
-        public  DeleteDocumentationVersionResponse EndDeleteDocumentationVersion(IAsyncResult asyncResult)
+        public virtual DeleteDocumentationVersionResponse EndDeleteDocumentationVersion(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteDocumentationVersionResponse>(asyncResult);
         }
@@ -1662,7 +1662,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public DeleteDomainNameResponse DeleteDomainName(DeleteDomainNameRequest request)
+        public virtual DeleteDomainNameResponse DeleteDomainName(DeleteDomainNameRequest request)
         {
             var marshaller = new DeleteDomainNameRequestMarshaller();
             var unmarshaller = DeleteDomainNameResponseUnmarshaller.Instance;
@@ -1681,7 +1681,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDomainName
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteDomainName(DeleteDomainNameRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteDomainName(DeleteDomainNameRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteDomainNameRequestMarshaller();
             var unmarshaller = DeleteDomainNameResponseUnmarshaller.Instance;
@@ -1697,7 +1697,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDomainName.</param>
         /// 
         /// <returns>Returns a  DeleteDomainNameResult from APIGateway.</returns>
-        public  DeleteDomainNameResponse EndDeleteDomainName(IAsyncResult asyncResult)
+        public virtual DeleteDomainNameResponse EndDeleteDomainName(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteDomainNameResponse>(asyncResult);
         }
@@ -1729,7 +1729,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public DeleteGatewayResponseResponse DeleteGatewayResponse(DeleteGatewayResponseRequest request)
+        public virtual DeleteGatewayResponseResponse DeleteGatewayResponse(DeleteGatewayResponseRequest request)
         {
             var marshaller = new DeleteGatewayResponseRequestMarshaller();
             var unmarshaller = DeleteGatewayResponseResponseUnmarshaller.Instance;
@@ -1748,7 +1748,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteGatewayResponse
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteGatewayResponse(DeleteGatewayResponseRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteGatewayResponse(DeleteGatewayResponseRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteGatewayResponseRequestMarshaller();
             var unmarshaller = DeleteGatewayResponseResponseUnmarshaller.Instance;
@@ -1764,7 +1764,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteGatewayResponse.</param>
         /// 
         /// <returns>Returns a  DeleteGatewayResponseResult from APIGateway.</returns>
-        public  DeleteGatewayResponseResponse EndDeleteGatewayResponse(IAsyncResult asyncResult)
+        public virtual DeleteGatewayResponseResponse EndDeleteGatewayResponse(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteGatewayResponseResponse>(asyncResult);
         }
@@ -1791,7 +1791,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public DeleteIntegrationResponse DeleteIntegration(DeleteIntegrationRequest request)
+        public virtual DeleteIntegrationResponse DeleteIntegration(DeleteIntegrationRequest request)
         {
             var marshaller = new DeleteIntegrationRequestMarshaller();
             var unmarshaller = DeleteIntegrationResponseUnmarshaller.Instance;
@@ -1810,7 +1810,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteIntegration
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteIntegration(DeleteIntegrationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteIntegration(DeleteIntegrationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteIntegrationRequestMarshaller();
             var unmarshaller = DeleteIntegrationResponseUnmarshaller.Instance;
@@ -1826,7 +1826,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteIntegration.</param>
         /// 
         /// <returns>Returns a  DeleteIntegrationResult from APIGateway.</returns>
-        public  DeleteIntegrationResponse EndDeleteIntegration(IAsyncResult asyncResult)
+        public virtual DeleteIntegrationResponse EndDeleteIntegration(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteIntegrationResponse>(asyncResult);
         }
@@ -1857,7 +1857,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public DeleteIntegrationResponseResponse DeleteIntegrationResponse(DeleteIntegrationResponseRequest request)
+        public virtual DeleteIntegrationResponseResponse DeleteIntegrationResponse(DeleteIntegrationResponseRequest request)
         {
             var marshaller = new DeleteIntegrationResponseRequestMarshaller();
             var unmarshaller = DeleteIntegrationResponseResponseUnmarshaller.Instance;
@@ -1876,7 +1876,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteIntegrationResponse
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteIntegrationResponse(DeleteIntegrationResponseRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteIntegrationResponse(DeleteIntegrationResponseRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteIntegrationResponseRequestMarshaller();
             var unmarshaller = DeleteIntegrationResponseResponseUnmarshaller.Instance;
@@ -1892,7 +1892,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteIntegrationResponse.</param>
         /// 
         /// <returns>Returns a  DeleteIntegrationResponseResult from APIGateway.</returns>
-        public  DeleteIntegrationResponseResponse EndDeleteIntegrationResponse(IAsyncResult asyncResult)
+        public virtual DeleteIntegrationResponseResponse EndDeleteIntegrationResponse(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteIntegrationResponseResponse>(asyncResult);
         }
@@ -1919,7 +1919,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public DeleteMethodResponse DeleteMethod(DeleteMethodRequest request)
+        public virtual DeleteMethodResponse DeleteMethod(DeleteMethodRequest request)
         {
             var marshaller = new DeleteMethodRequestMarshaller();
             var unmarshaller = DeleteMethodResponseUnmarshaller.Instance;
@@ -1938,7 +1938,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteMethod
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteMethod(DeleteMethodRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteMethod(DeleteMethodRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteMethodRequestMarshaller();
             var unmarshaller = DeleteMethodResponseUnmarshaller.Instance;
@@ -1954,7 +1954,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteMethod.</param>
         /// 
         /// <returns>Returns a  DeleteMethodResult from APIGateway.</returns>
-        public  DeleteMethodResponse EndDeleteMethod(IAsyncResult asyncResult)
+        public virtual DeleteMethodResponse EndDeleteMethod(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteMethodResponse>(asyncResult);
         }
@@ -1985,7 +1985,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public DeleteMethodResponseResponse DeleteMethodResponse(DeleteMethodResponseRequest request)
+        public virtual DeleteMethodResponseResponse DeleteMethodResponse(DeleteMethodResponseRequest request)
         {
             var marshaller = new DeleteMethodResponseRequestMarshaller();
             var unmarshaller = DeleteMethodResponseResponseUnmarshaller.Instance;
@@ -2004,7 +2004,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteMethodResponse
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteMethodResponse(DeleteMethodResponseRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteMethodResponse(DeleteMethodResponseRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteMethodResponseRequestMarshaller();
             var unmarshaller = DeleteMethodResponseResponseUnmarshaller.Instance;
@@ -2020,7 +2020,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteMethodResponse.</param>
         /// 
         /// <returns>Returns a  DeleteMethodResponseResult from APIGateway.</returns>
-        public  DeleteMethodResponseResponse EndDeleteMethodResponse(IAsyncResult asyncResult)
+        public virtual DeleteMethodResponseResponse EndDeleteMethodResponse(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteMethodResponseResponse>(asyncResult);
         }
@@ -2051,7 +2051,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public DeleteModelResponse DeleteModel(DeleteModelRequest request)
+        public virtual DeleteModelResponse DeleteModel(DeleteModelRequest request)
         {
             var marshaller = new DeleteModelRequestMarshaller();
             var unmarshaller = DeleteModelResponseUnmarshaller.Instance;
@@ -2070,7 +2070,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteModel
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteModel(DeleteModelRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteModel(DeleteModelRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteModelRequestMarshaller();
             var unmarshaller = DeleteModelResponseUnmarshaller.Instance;
@@ -2086,7 +2086,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteModel.</param>
         /// 
         /// <returns>Returns a  DeleteModelResult from APIGateway.</returns>
-        public  DeleteModelResponse EndDeleteModel(IAsyncResult asyncResult)
+        public virtual DeleteModelResponse EndDeleteModel(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteModelResponse>(asyncResult);
         }
@@ -2117,7 +2117,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public DeleteRequestValidatorResponse DeleteRequestValidator(DeleteRequestValidatorRequest request)
+        public virtual DeleteRequestValidatorResponse DeleteRequestValidator(DeleteRequestValidatorRequest request)
         {
             var marshaller = new DeleteRequestValidatorRequestMarshaller();
             var unmarshaller = DeleteRequestValidatorResponseUnmarshaller.Instance;
@@ -2136,7 +2136,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRequestValidator
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteRequestValidator(DeleteRequestValidatorRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteRequestValidator(DeleteRequestValidatorRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteRequestValidatorRequestMarshaller();
             var unmarshaller = DeleteRequestValidatorResponseUnmarshaller.Instance;
@@ -2152,7 +2152,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRequestValidator.</param>
         /// 
         /// <returns>Returns a  DeleteRequestValidatorResult from APIGateway.</returns>
-        public  DeleteRequestValidatorResponse EndDeleteRequestValidator(IAsyncResult asyncResult)
+        public virtual DeleteRequestValidatorResponse EndDeleteRequestValidator(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteRequestValidatorResponse>(asyncResult);
         }
@@ -2183,7 +2183,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public DeleteResourceResponse DeleteResource(DeleteResourceRequest request)
+        public virtual DeleteResourceResponse DeleteResource(DeleteResourceRequest request)
         {
             var marshaller = new DeleteResourceRequestMarshaller();
             var unmarshaller = DeleteResourceResponseUnmarshaller.Instance;
@@ -2202,7 +2202,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteResource
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteResource(DeleteResourceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteResource(DeleteResourceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteResourceRequestMarshaller();
             var unmarshaller = DeleteResourceResponseUnmarshaller.Instance;
@@ -2218,7 +2218,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteResource.</param>
         /// 
         /// <returns>Returns a  DeleteResourceResult from APIGateway.</returns>
-        public  DeleteResourceResponse EndDeleteResource(IAsyncResult asyncResult)
+        public virtual DeleteResourceResponse EndDeleteResource(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteResourceResponse>(asyncResult);
         }
@@ -2246,7 +2246,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public DeleteRestApiResponse DeleteRestApi(DeleteRestApiRequest request)
+        public virtual DeleteRestApiResponse DeleteRestApi(DeleteRestApiRequest request)
         {
             var marshaller = new DeleteRestApiRequestMarshaller();
             var unmarshaller = DeleteRestApiResponseUnmarshaller.Instance;
@@ -2265,7 +2265,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRestApi
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteRestApi(DeleteRestApiRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteRestApi(DeleteRestApiRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteRestApiRequestMarshaller();
             var unmarshaller = DeleteRestApiResponseUnmarshaller.Instance;
@@ -2281,7 +2281,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRestApi.</param>
         /// 
         /// <returns>Returns a  DeleteRestApiResult from APIGateway.</returns>
-        public  DeleteRestApiResponse EndDeleteRestApi(IAsyncResult asyncResult)
+        public virtual DeleteRestApiResponse EndDeleteRestApi(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteRestApiResponse>(asyncResult);
         }
@@ -2309,7 +2309,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public DeleteStageResponse DeleteStage(DeleteStageRequest request)
+        public virtual DeleteStageResponse DeleteStage(DeleteStageRequest request)
         {
             var marshaller = new DeleteStageRequestMarshaller();
             var unmarshaller = DeleteStageResponseUnmarshaller.Instance;
@@ -2328,7 +2328,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteStage
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteStage(DeleteStageRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteStage(DeleteStageRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteStageRequestMarshaller();
             var unmarshaller = DeleteStageResponseUnmarshaller.Instance;
@@ -2344,7 +2344,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteStage.</param>
         /// 
         /// <returns>Returns a  DeleteStageResult from APIGateway.</returns>
-        public  DeleteStageResponse EndDeleteStage(IAsyncResult asyncResult)
+        public virtual DeleteStageResponse EndDeleteStage(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteStageResponse>(asyncResult);
         }
@@ -2372,7 +2372,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public DeleteUsagePlanResponse DeleteUsagePlan(DeleteUsagePlanRequest request)
+        public virtual DeleteUsagePlanResponse DeleteUsagePlan(DeleteUsagePlanRequest request)
         {
             var marshaller = new DeleteUsagePlanRequestMarshaller();
             var unmarshaller = DeleteUsagePlanResponseUnmarshaller.Instance;
@@ -2391,7 +2391,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteUsagePlan
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteUsagePlan(DeleteUsagePlanRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteUsagePlan(DeleteUsagePlanRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteUsagePlanRequestMarshaller();
             var unmarshaller = DeleteUsagePlanResponseUnmarshaller.Instance;
@@ -2407,7 +2407,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteUsagePlan.</param>
         /// 
         /// <returns>Returns a  DeleteUsagePlanResult from APIGateway.</returns>
-        public  DeleteUsagePlanResponse EndDeleteUsagePlan(IAsyncResult asyncResult)
+        public virtual DeleteUsagePlanResponse EndDeleteUsagePlan(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteUsagePlanResponse>(asyncResult);
         }
@@ -2439,7 +2439,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public DeleteUsagePlanKeyResponse DeleteUsagePlanKey(DeleteUsagePlanKeyRequest request)
+        public virtual DeleteUsagePlanKeyResponse DeleteUsagePlanKey(DeleteUsagePlanKeyRequest request)
         {
             var marshaller = new DeleteUsagePlanKeyRequestMarshaller();
             var unmarshaller = DeleteUsagePlanKeyResponseUnmarshaller.Instance;
@@ -2458,7 +2458,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteUsagePlanKey
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteUsagePlanKey(DeleteUsagePlanKeyRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteUsagePlanKey(DeleteUsagePlanKeyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteUsagePlanKeyRequestMarshaller();
             var unmarshaller = DeleteUsagePlanKeyResponseUnmarshaller.Instance;
@@ -2474,7 +2474,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteUsagePlanKey.</param>
         /// 
         /// <returns>Returns a  DeleteUsagePlanKeyResult from APIGateway.</returns>
-        public  DeleteUsagePlanKeyResponse EndDeleteUsagePlanKey(IAsyncResult asyncResult)
+        public virtual DeleteUsagePlanKeyResponse EndDeleteUsagePlanKey(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteUsagePlanKeyResponse>(asyncResult);
         }
@@ -2502,7 +2502,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public FlushStageAuthorizersCacheResponse FlushStageAuthorizersCache(FlushStageAuthorizersCacheRequest request)
+        public virtual FlushStageAuthorizersCacheResponse FlushStageAuthorizersCache(FlushStageAuthorizersCacheRequest request)
         {
             var marshaller = new FlushStageAuthorizersCacheRequestMarshaller();
             var unmarshaller = FlushStageAuthorizersCacheResponseUnmarshaller.Instance;
@@ -2521,7 +2521,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndFlushStageAuthorizersCache
         ///         operation.</returns>
-        public IAsyncResult BeginFlushStageAuthorizersCache(FlushStageAuthorizersCacheRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginFlushStageAuthorizersCache(FlushStageAuthorizersCacheRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new FlushStageAuthorizersCacheRequestMarshaller();
             var unmarshaller = FlushStageAuthorizersCacheResponseUnmarshaller.Instance;
@@ -2537,7 +2537,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginFlushStageAuthorizersCache.</param>
         /// 
         /// <returns>Returns a  FlushStageAuthorizersCacheResult from APIGateway.</returns>
-        public  FlushStageAuthorizersCacheResponse EndFlushStageAuthorizersCache(IAsyncResult asyncResult)
+        public virtual FlushStageAuthorizersCacheResponse EndFlushStageAuthorizersCache(IAsyncResult asyncResult)
         {
             return EndInvoke<FlushStageAuthorizersCacheResponse>(asyncResult);
         }
@@ -2565,7 +2565,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public FlushStageCacheResponse FlushStageCache(FlushStageCacheRequest request)
+        public virtual FlushStageCacheResponse FlushStageCache(FlushStageCacheRequest request)
         {
             var marshaller = new FlushStageCacheRequestMarshaller();
             var unmarshaller = FlushStageCacheResponseUnmarshaller.Instance;
@@ -2584,7 +2584,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndFlushStageCache
         ///         operation.</returns>
-        public IAsyncResult BeginFlushStageCache(FlushStageCacheRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginFlushStageCache(FlushStageCacheRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new FlushStageCacheRequestMarshaller();
             var unmarshaller = FlushStageCacheResponseUnmarshaller.Instance;
@@ -2600,7 +2600,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginFlushStageCache.</param>
         /// 
         /// <returns>Returns a  FlushStageCacheResult from APIGateway.</returns>
-        public  FlushStageCacheResponse EndFlushStageCache(IAsyncResult asyncResult)
+        public virtual FlushStageCacheResponse EndFlushStageCache(IAsyncResult asyncResult)
         {
             return EndInvoke<FlushStageCacheResponse>(asyncResult);
         }
@@ -2624,7 +2624,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GenerateClientCertificateResponse GenerateClientCertificate(GenerateClientCertificateRequest request)
+        public virtual GenerateClientCertificateResponse GenerateClientCertificate(GenerateClientCertificateRequest request)
         {
             var marshaller = new GenerateClientCertificateRequestMarshaller();
             var unmarshaller = GenerateClientCertificateResponseUnmarshaller.Instance;
@@ -2643,7 +2643,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGenerateClientCertificate
         ///         operation.</returns>
-        public IAsyncResult BeginGenerateClientCertificate(GenerateClientCertificateRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGenerateClientCertificate(GenerateClientCertificateRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GenerateClientCertificateRequestMarshaller();
             var unmarshaller = GenerateClientCertificateResponseUnmarshaller.Instance;
@@ -2659,7 +2659,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGenerateClientCertificate.</param>
         /// 
         /// <returns>Returns a  GenerateClientCertificateResult from APIGateway.</returns>
-        public  GenerateClientCertificateResponse EndGenerateClientCertificate(IAsyncResult asyncResult)
+        public virtual GenerateClientCertificateResponse EndGenerateClientCertificate(IAsyncResult asyncResult)
         {
             return EndInvoke<GenerateClientCertificateResponse>(asyncResult);
         }
@@ -2683,7 +2683,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetAccountResponse GetAccount(GetAccountRequest request)
+        public virtual GetAccountResponse GetAccount(GetAccountRequest request)
         {
             var marshaller = new GetAccountRequestMarshaller();
             var unmarshaller = GetAccountResponseUnmarshaller.Instance;
@@ -2702,7 +2702,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAccount
         ///         operation.</returns>
-        public IAsyncResult BeginGetAccount(GetAccountRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetAccount(GetAccountRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetAccountRequestMarshaller();
             var unmarshaller = GetAccountResponseUnmarshaller.Instance;
@@ -2718,7 +2718,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAccount.</param>
         /// 
         /// <returns>Returns a  GetAccountResult from APIGateway.</returns>
-        public  GetAccountResponse EndGetAccount(IAsyncResult asyncResult)
+        public virtual GetAccountResponse EndGetAccount(IAsyncResult asyncResult)
         {
             return EndInvoke<GetAccountResponse>(asyncResult);
         }
@@ -2742,7 +2742,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetApiKeyResponse GetApiKey(GetApiKeyRequest request)
+        public virtual GetApiKeyResponse GetApiKey(GetApiKeyRequest request)
         {
             var marshaller = new GetApiKeyRequestMarshaller();
             var unmarshaller = GetApiKeyResponseUnmarshaller.Instance;
@@ -2761,7 +2761,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetApiKey
         ///         operation.</returns>
-        public IAsyncResult BeginGetApiKey(GetApiKeyRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetApiKey(GetApiKeyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetApiKeyRequestMarshaller();
             var unmarshaller = GetApiKeyResponseUnmarshaller.Instance;
@@ -2777,7 +2777,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetApiKey.</param>
         /// 
         /// <returns>Returns a  GetApiKeyResult from APIGateway.</returns>
-        public  GetApiKeyResponse EndGetApiKey(IAsyncResult asyncResult)
+        public virtual GetApiKeyResponse EndGetApiKey(IAsyncResult asyncResult)
         {
             return EndInvoke<GetApiKeyResponse>(asyncResult);
         }
@@ -2802,7 +2802,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetApiKeysResponse GetApiKeys(GetApiKeysRequest request)
+        public virtual GetApiKeysResponse GetApiKeys(GetApiKeysRequest request)
         {
             var marshaller = new GetApiKeysRequestMarshaller();
             var unmarshaller = GetApiKeysResponseUnmarshaller.Instance;
@@ -2821,7 +2821,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetApiKeys
         ///         operation.</returns>
-        public IAsyncResult BeginGetApiKeys(GetApiKeysRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetApiKeys(GetApiKeysRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetApiKeysRequestMarshaller();
             var unmarshaller = GetApiKeysResponseUnmarshaller.Instance;
@@ -2837,7 +2837,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetApiKeys.</param>
         /// 
         /// <returns>Returns a  GetApiKeysResult from APIGateway.</returns>
-        public  GetApiKeysResponse EndGetApiKeys(IAsyncResult asyncResult)
+        public virtual GetApiKeysResponse EndGetApiKeys(IAsyncResult asyncResult)
         {
             return EndInvoke<GetApiKeysResponse>(asyncResult);
         }
@@ -2864,7 +2864,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetAuthorizerResponse GetAuthorizer(GetAuthorizerRequest request)
+        public virtual GetAuthorizerResponse GetAuthorizer(GetAuthorizerRequest request)
         {
             var marshaller = new GetAuthorizerRequestMarshaller();
             var unmarshaller = GetAuthorizerResponseUnmarshaller.Instance;
@@ -2883,7 +2883,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAuthorizer
         ///         operation.</returns>
-        public IAsyncResult BeginGetAuthorizer(GetAuthorizerRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetAuthorizer(GetAuthorizerRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetAuthorizerRequestMarshaller();
             var unmarshaller = GetAuthorizerResponseUnmarshaller.Instance;
@@ -2899,7 +2899,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAuthorizer.</param>
         /// 
         /// <returns>Returns a  GetAuthorizerResult from APIGateway.</returns>
-        public  GetAuthorizerResponse EndGetAuthorizer(IAsyncResult asyncResult)
+        public virtual GetAuthorizerResponse EndGetAuthorizer(IAsyncResult asyncResult)
         {
             return EndInvoke<GetAuthorizerResponse>(asyncResult);
         }
@@ -2930,7 +2930,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetAuthorizersResponse GetAuthorizers(GetAuthorizersRequest request)
+        public virtual GetAuthorizersResponse GetAuthorizers(GetAuthorizersRequest request)
         {
             var marshaller = new GetAuthorizersRequestMarshaller();
             var unmarshaller = GetAuthorizersResponseUnmarshaller.Instance;
@@ -2949,7 +2949,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAuthorizers
         ///         operation.</returns>
-        public IAsyncResult BeginGetAuthorizers(GetAuthorizersRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetAuthorizers(GetAuthorizersRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetAuthorizersRequestMarshaller();
             var unmarshaller = GetAuthorizersResponseUnmarshaller.Instance;
@@ -2965,7 +2965,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAuthorizers.</param>
         /// 
         /// <returns>Returns a  GetAuthorizersResult from APIGateway.</returns>
-        public  GetAuthorizersResponse EndGetAuthorizers(IAsyncResult asyncResult)
+        public virtual GetAuthorizersResponse EndGetAuthorizers(IAsyncResult asyncResult)
         {
             return EndInvoke<GetAuthorizersResponse>(asyncResult);
         }
@@ -2989,7 +2989,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetBasePathMappingResponse GetBasePathMapping(GetBasePathMappingRequest request)
+        public virtual GetBasePathMappingResponse GetBasePathMapping(GetBasePathMappingRequest request)
         {
             var marshaller = new GetBasePathMappingRequestMarshaller();
             var unmarshaller = GetBasePathMappingResponseUnmarshaller.Instance;
@@ -3008,7 +3008,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBasePathMapping
         ///         operation.</returns>
-        public IAsyncResult BeginGetBasePathMapping(GetBasePathMappingRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetBasePathMapping(GetBasePathMappingRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetBasePathMappingRequestMarshaller();
             var unmarshaller = GetBasePathMappingResponseUnmarshaller.Instance;
@@ -3024,7 +3024,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBasePathMapping.</param>
         /// 
         /// <returns>Returns a  GetBasePathMappingResult from APIGateway.</returns>
-        public  GetBasePathMappingResponse EndGetBasePathMapping(IAsyncResult asyncResult)
+        public virtual GetBasePathMappingResponse EndGetBasePathMapping(IAsyncResult asyncResult)
         {
             return EndInvoke<GetBasePathMappingResponse>(asyncResult);
         }
@@ -3048,7 +3048,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetBasePathMappingsResponse GetBasePathMappings(GetBasePathMappingsRequest request)
+        public virtual GetBasePathMappingsResponse GetBasePathMappings(GetBasePathMappingsRequest request)
         {
             var marshaller = new GetBasePathMappingsRequestMarshaller();
             var unmarshaller = GetBasePathMappingsResponseUnmarshaller.Instance;
@@ -3067,7 +3067,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBasePathMappings
         ///         operation.</returns>
-        public IAsyncResult BeginGetBasePathMappings(GetBasePathMappingsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetBasePathMappings(GetBasePathMappingsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetBasePathMappingsRequestMarshaller();
             var unmarshaller = GetBasePathMappingsResponseUnmarshaller.Instance;
@@ -3083,7 +3083,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBasePathMappings.</param>
         /// 
         /// <returns>Returns a  GetBasePathMappingsResult from APIGateway.</returns>
-        public  GetBasePathMappingsResponse EndGetBasePathMappings(IAsyncResult asyncResult)
+        public virtual GetBasePathMappingsResponse EndGetBasePathMappings(IAsyncResult asyncResult)
         {
             return EndInvoke<GetBasePathMappingsResponse>(asyncResult);
         }
@@ -3107,7 +3107,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetClientCertificateResponse GetClientCertificate(GetClientCertificateRequest request)
+        public virtual GetClientCertificateResponse GetClientCertificate(GetClientCertificateRequest request)
         {
             var marshaller = new GetClientCertificateRequestMarshaller();
             var unmarshaller = GetClientCertificateResponseUnmarshaller.Instance;
@@ -3126,7 +3126,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetClientCertificate
         ///         operation.</returns>
-        public IAsyncResult BeginGetClientCertificate(GetClientCertificateRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetClientCertificate(GetClientCertificateRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetClientCertificateRequestMarshaller();
             var unmarshaller = GetClientCertificateResponseUnmarshaller.Instance;
@@ -3142,7 +3142,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetClientCertificate.</param>
         /// 
         /// <returns>Returns a  GetClientCertificateResult from APIGateway.</returns>
-        public  GetClientCertificateResponse EndGetClientCertificate(IAsyncResult asyncResult)
+        public virtual GetClientCertificateResponse EndGetClientCertificate(IAsyncResult asyncResult)
         {
             return EndInvoke<GetClientCertificateResponse>(asyncResult);
         }
@@ -3167,7 +3167,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetClientCertificatesResponse GetClientCertificates(GetClientCertificatesRequest request)
+        public virtual GetClientCertificatesResponse GetClientCertificates(GetClientCertificatesRequest request)
         {
             var marshaller = new GetClientCertificatesRequestMarshaller();
             var unmarshaller = GetClientCertificatesResponseUnmarshaller.Instance;
@@ -3186,7 +3186,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetClientCertificates
         ///         operation.</returns>
-        public IAsyncResult BeginGetClientCertificates(GetClientCertificatesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetClientCertificates(GetClientCertificatesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetClientCertificatesRequestMarshaller();
             var unmarshaller = GetClientCertificatesResponseUnmarshaller.Instance;
@@ -3202,7 +3202,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetClientCertificates.</param>
         /// 
         /// <returns>Returns a  GetClientCertificatesResult from APIGateway.</returns>
-        public  GetClientCertificatesResponse EndGetClientCertificates(IAsyncResult asyncResult)
+        public virtual GetClientCertificatesResponse EndGetClientCertificates(IAsyncResult asyncResult)
         {
             return EndInvoke<GetClientCertificatesResponse>(asyncResult);
         }
@@ -3230,7 +3230,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetDeploymentResponse GetDeployment(GetDeploymentRequest request)
+        public virtual GetDeploymentResponse GetDeployment(GetDeploymentRequest request)
         {
             var marshaller = new GetDeploymentRequestMarshaller();
             var unmarshaller = GetDeploymentResponseUnmarshaller.Instance;
@@ -3249,7 +3249,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDeployment
         ///         operation.</returns>
-        public IAsyncResult BeginGetDeployment(GetDeploymentRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetDeployment(GetDeploymentRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetDeploymentRequestMarshaller();
             var unmarshaller = GetDeploymentResponseUnmarshaller.Instance;
@@ -3265,7 +3265,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDeployment.</param>
         /// 
         /// <returns>Returns a  GetDeploymentResult from APIGateway.</returns>
-        public  GetDeploymentResponse EndGetDeployment(IAsyncResult asyncResult)
+        public virtual GetDeploymentResponse EndGetDeployment(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDeploymentResponse>(asyncResult);
         }
@@ -3294,7 +3294,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetDeploymentsResponse GetDeployments(GetDeploymentsRequest request)
+        public virtual GetDeploymentsResponse GetDeployments(GetDeploymentsRequest request)
         {
             var marshaller = new GetDeploymentsRequestMarshaller();
             var unmarshaller = GetDeploymentsResponseUnmarshaller.Instance;
@@ -3313,7 +3313,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDeployments
         ///         operation.</returns>
-        public IAsyncResult BeginGetDeployments(GetDeploymentsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetDeployments(GetDeploymentsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetDeploymentsRequestMarshaller();
             var unmarshaller = GetDeploymentsResponseUnmarshaller.Instance;
@@ -3329,7 +3329,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDeployments.</param>
         /// 
         /// <returns>Returns a  GetDeploymentsResult from APIGateway.</returns>
-        public  GetDeploymentsResponse EndGetDeployments(IAsyncResult asyncResult)
+        public virtual GetDeploymentsResponse EndGetDeployments(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDeploymentsResponse>(asyncResult);
         }
@@ -3353,7 +3353,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetDocumentationPartResponse GetDocumentationPart(GetDocumentationPartRequest request)
+        public virtual GetDocumentationPartResponse GetDocumentationPart(GetDocumentationPartRequest request)
         {
             var marshaller = new GetDocumentationPartRequestMarshaller();
             var unmarshaller = GetDocumentationPartResponseUnmarshaller.Instance;
@@ -3372,7 +3372,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDocumentationPart
         ///         operation.</returns>
-        public IAsyncResult BeginGetDocumentationPart(GetDocumentationPartRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetDocumentationPart(GetDocumentationPartRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetDocumentationPartRequestMarshaller();
             var unmarshaller = GetDocumentationPartResponseUnmarshaller.Instance;
@@ -3388,7 +3388,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDocumentationPart.</param>
         /// 
         /// <returns>Returns a  GetDocumentationPartResult from APIGateway.</returns>
-        public  GetDocumentationPartResponse EndGetDocumentationPart(IAsyncResult asyncResult)
+        public virtual GetDocumentationPartResponse EndGetDocumentationPart(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDocumentationPartResponse>(asyncResult);
         }
@@ -3416,7 +3416,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetDocumentationPartsResponse GetDocumentationParts(GetDocumentationPartsRequest request)
+        public virtual GetDocumentationPartsResponse GetDocumentationParts(GetDocumentationPartsRequest request)
         {
             var marshaller = new GetDocumentationPartsRequestMarshaller();
             var unmarshaller = GetDocumentationPartsResponseUnmarshaller.Instance;
@@ -3435,7 +3435,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDocumentationParts
         ///         operation.</returns>
-        public IAsyncResult BeginGetDocumentationParts(GetDocumentationPartsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetDocumentationParts(GetDocumentationPartsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetDocumentationPartsRequestMarshaller();
             var unmarshaller = GetDocumentationPartsResponseUnmarshaller.Instance;
@@ -3451,7 +3451,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDocumentationParts.</param>
         /// 
         /// <returns>Returns a  GetDocumentationPartsResult from APIGateway.</returns>
-        public  GetDocumentationPartsResponse EndGetDocumentationParts(IAsyncResult asyncResult)
+        public virtual GetDocumentationPartsResponse EndGetDocumentationParts(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDocumentationPartsResponse>(asyncResult);
         }
@@ -3475,7 +3475,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetDocumentationVersionResponse GetDocumentationVersion(GetDocumentationVersionRequest request)
+        public virtual GetDocumentationVersionResponse GetDocumentationVersion(GetDocumentationVersionRequest request)
         {
             var marshaller = new GetDocumentationVersionRequestMarshaller();
             var unmarshaller = GetDocumentationVersionResponseUnmarshaller.Instance;
@@ -3494,7 +3494,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDocumentationVersion
         ///         operation.</returns>
-        public IAsyncResult BeginGetDocumentationVersion(GetDocumentationVersionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetDocumentationVersion(GetDocumentationVersionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetDocumentationVersionRequestMarshaller();
             var unmarshaller = GetDocumentationVersionResponseUnmarshaller.Instance;
@@ -3510,7 +3510,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDocumentationVersion.</param>
         /// 
         /// <returns>Returns a  GetDocumentationVersionResult from APIGateway.</returns>
-        public  GetDocumentationVersionResponse EndGetDocumentationVersion(IAsyncResult asyncResult)
+        public virtual GetDocumentationVersionResponse EndGetDocumentationVersion(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDocumentationVersionResponse>(asyncResult);
         }
@@ -3538,7 +3538,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetDocumentationVersionsResponse GetDocumentationVersions(GetDocumentationVersionsRequest request)
+        public virtual GetDocumentationVersionsResponse GetDocumentationVersions(GetDocumentationVersionsRequest request)
         {
             var marshaller = new GetDocumentationVersionsRequestMarshaller();
             var unmarshaller = GetDocumentationVersionsResponseUnmarshaller.Instance;
@@ -3557,7 +3557,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDocumentationVersions
         ///         operation.</returns>
-        public IAsyncResult BeginGetDocumentationVersions(GetDocumentationVersionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetDocumentationVersions(GetDocumentationVersionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetDocumentationVersionsRequestMarshaller();
             var unmarshaller = GetDocumentationVersionsResponseUnmarshaller.Instance;
@@ -3573,7 +3573,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDocumentationVersions.</param>
         /// 
         /// <returns>Returns a  GetDocumentationVersionsResult from APIGateway.</returns>
-        public  GetDocumentationVersionsResponse EndGetDocumentationVersions(IAsyncResult asyncResult)
+        public virtual GetDocumentationVersionsResponse EndGetDocumentationVersions(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDocumentationVersionsResponse>(asyncResult);
         }
@@ -3602,7 +3602,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetDomainNameResponse GetDomainName(GetDomainNameRequest request)
+        public virtual GetDomainNameResponse GetDomainName(GetDomainNameRequest request)
         {
             var marshaller = new GetDomainNameRequestMarshaller();
             var unmarshaller = GetDomainNameResponseUnmarshaller.Instance;
@@ -3621,7 +3621,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDomainName
         ///         operation.</returns>
-        public IAsyncResult BeginGetDomainName(GetDomainNameRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetDomainName(GetDomainNameRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetDomainNameRequestMarshaller();
             var unmarshaller = GetDomainNameResponseUnmarshaller.Instance;
@@ -3637,7 +3637,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDomainName.</param>
         /// 
         /// <returns>Returns a  GetDomainNameResult from APIGateway.</returns>
-        public  GetDomainNameResponse EndGetDomainName(IAsyncResult asyncResult)
+        public virtual GetDomainNameResponse EndGetDomainName(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDomainNameResponse>(asyncResult);
         }
@@ -3662,7 +3662,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetDomainNamesResponse GetDomainNames(GetDomainNamesRequest request)
+        public virtual GetDomainNamesResponse GetDomainNames(GetDomainNamesRequest request)
         {
             var marshaller = new GetDomainNamesRequestMarshaller();
             var unmarshaller = GetDomainNamesResponseUnmarshaller.Instance;
@@ -3681,7 +3681,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDomainNames
         ///         operation.</returns>
-        public IAsyncResult BeginGetDomainNames(GetDomainNamesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetDomainNames(GetDomainNamesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetDomainNamesRequestMarshaller();
             var unmarshaller = GetDomainNamesResponseUnmarshaller.Instance;
@@ -3697,7 +3697,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDomainNames.</param>
         /// 
         /// <returns>Returns a  GetDomainNamesResult from APIGateway.</returns>
-        public  GetDomainNamesResponse EndGetDomainNames(IAsyncResult asyncResult)
+        public virtual GetDomainNamesResponse EndGetDomainNames(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDomainNamesResponse>(asyncResult);
         }
@@ -3728,7 +3728,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetExportResponse GetExport(GetExportRequest request)
+        public virtual GetExportResponse GetExport(GetExportRequest request)
         {
             var marshaller = new GetExportRequestMarshaller();
             var unmarshaller = GetExportResponseUnmarshaller.Instance;
@@ -3747,7 +3747,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetExport
         ///         operation.</returns>
-        public IAsyncResult BeginGetExport(GetExportRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetExport(GetExportRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetExportRequestMarshaller();
             var unmarshaller = GetExportResponseUnmarshaller.Instance;
@@ -3763,7 +3763,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetExport.</param>
         /// 
         /// <returns>Returns a  GetExportResult from APIGateway.</returns>
-        public  GetExportResponse EndGetExport(IAsyncResult asyncResult)
+        public virtual GetExportResponse EndGetExport(IAsyncResult asyncResult)
         {
             return EndInvoke<GetExportResponse>(asyncResult);
         }
@@ -3787,7 +3787,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetGatewayResponseResponse GetGatewayResponse(GetGatewayResponseRequest request)
+        public virtual GetGatewayResponseResponse GetGatewayResponse(GetGatewayResponseRequest request)
         {
             var marshaller = new GetGatewayResponseRequestMarshaller();
             var unmarshaller = GetGatewayResponseResponseUnmarshaller.Instance;
@@ -3806,7 +3806,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetGatewayResponse
         ///         operation.</returns>
-        public IAsyncResult BeginGetGatewayResponse(GetGatewayResponseRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetGatewayResponse(GetGatewayResponseRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetGatewayResponseRequestMarshaller();
             var unmarshaller = GetGatewayResponseResponseUnmarshaller.Instance;
@@ -3822,7 +3822,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetGatewayResponse.</param>
         /// 
         /// <returns>Returns a  GetGatewayResponseResult from APIGateway.</returns>
-        public  GetGatewayResponseResponse EndGetGatewayResponse(IAsyncResult asyncResult)
+        public virtual GetGatewayResponseResponse EndGetGatewayResponse(IAsyncResult asyncResult)
         {
             return EndInvoke<GetGatewayResponseResponse>(asyncResult);
         }
@@ -3853,7 +3853,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetGatewayResponsesResponse GetGatewayResponses(GetGatewayResponsesRequest request)
+        public virtual GetGatewayResponsesResponse GetGatewayResponses(GetGatewayResponsesRequest request)
         {
             var marshaller = new GetGatewayResponsesRequestMarshaller();
             var unmarshaller = GetGatewayResponsesResponseUnmarshaller.Instance;
@@ -3872,7 +3872,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetGatewayResponses
         ///         operation.</returns>
-        public IAsyncResult BeginGetGatewayResponses(GetGatewayResponsesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetGatewayResponses(GetGatewayResponsesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetGatewayResponsesRequestMarshaller();
             var unmarshaller = GetGatewayResponsesResponseUnmarshaller.Instance;
@@ -3888,7 +3888,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetGatewayResponses.</param>
         /// 
         /// <returns>Returns a  GetGatewayResponsesResult from APIGateway.</returns>
-        public  GetGatewayResponsesResponse EndGetGatewayResponses(IAsyncResult asyncResult)
+        public virtual GetGatewayResponsesResponse EndGetGatewayResponses(IAsyncResult asyncResult)
         {
             return EndInvoke<GetGatewayResponsesResponse>(asyncResult);
         }
@@ -3912,7 +3912,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetIntegrationResponse GetIntegration(GetIntegrationRequest request)
+        public virtual GetIntegrationResponse GetIntegration(GetIntegrationRequest request)
         {
             var marshaller = new GetIntegrationRequestMarshaller();
             var unmarshaller = GetIntegrationResponseUnmarshaller.Instance;
@@ -3931,7 +3931,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetIntegration
         ///         operation.</returns>
-        public IAsyncResult BeginGetIntegration(GetIntegrationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetIntegration(GetIntegrationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetIntegrationRequestMarshaller();
             var unmarshaller = GetIntegrationResponseUnmarshaller.Instance;
@@ -3947,7 +3947,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetIntegration.</param>
         /// 
         /// <returns>Returns a  GetIntegrationResult from APIGateway.</returns>
-        public  GetIntegrationResponse EndGetIntegration(IAsyncResult asyncResult)
+        public virtual GetIntegrationResponse EndGetIntegration(IAsyncResult asyncResult)
         {
             return EndInvoke<GetIntegrationResponse>(asyncResult);
         }
@@ -3971,7 +3971,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetIntegrationResponseResponse GetIntegrationResponse(GetIntegrationResponseRequest request)
+        public virtual GetIntegrationResponseResponse GetIntegrationResponse(GetIntegrationResponseRequest request)
         {
             var marshaller = new GetIntegrationResponseRequestMarshaller();
             var unmarshaller = GetIntegrationResponseResponseUnmarshaller.Instance;
@@ -3990,7 +3990,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetIntegrationResponse
         ///         operation.</returns>
-        public IAsyncResult BeginGetIntegrationResponse(GetIntegrationResponseRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetIntegrationResponse(GetIntegrationResponseRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetIntegrationResponseRequestMarshaller();
             var unmarshaller = GetIntegrationResponseResponseUnmarshaller.Instance;
@@ -4006,7 +4006,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetIntegrationResponse.</param>
         /// 
         /// <returns>Returns a  GetIntegrationResponseResult from APIGateway.</returns>
-        public  GetIntegrationResponseResponse EndGetIntegrationResponse(IAsyncResult asyncResult)
+        public virtual GetIntegrationResponseResponse EndGetIntegrationResponse(IAsyncResult asyncResult)
         {
             return EndInvoke<GetIntegrationResponseResponse>(asyncResult);
         }
@@ -4030,7 +4030,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetMethodResponse GetMethod(GetMethodRequest request)
+        public virtual GetMethodResponse GetMethod(GetMethodRequest request)
         {
             var marshaller = new GetMethodRequestMarshaller();
             var unmarshaller = GetMethodResponseUnmarshaller.Instance;
@@ -4049,7 +4049,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMethod
         ///         operation.</returns>
-        public IAsyncResult BeginGetMethod(GetMethodRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetMethod(GetMethodRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetMethodRequestMarshaller();
             var unmarshaller = GetMethodResponseUnmarshaller.Instance;
@@ -4065,7 +4065,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMethod.</param>
         /// 
         /// <returns>Returns a  GetMethodResult from APIGateway.</returns>
-        public  GetMethodResponse EndGetMethod(IAsyncResult asyncResult)
+        public virtual GetMethodResponse EndGetMethod(IAsyncResult asyncResult)
         {
             return EndInvoke<GetMethodResponse>(asyncResult);
         }
@@ -4089,7 +4089,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetMethodResponseResponse GetMethodResponse(GetMethodResponseRequest request)
+        public virtual GetMethodResponseResponse GetMethodResponse(GetMethodResponseRequest request)
         {
             var marshaller = new GetMethodResponseRequestMarshaller();
             var unmarshaller = GetMethodResponseResponseUnmarshaller.Instance;
@@ -4108,7 +4108,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMethodResponse
         ///         operation.</returns>
-        public IAsyncResult BeginGetMethodResponse(GetMethodResponseRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetMethodResponse(GetMethodResponseRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetMethodResponseRequestMarshaller();
             var unmarshaller = GetMethodResponseResponseUnmarshaller.Instance;
@@ -4124,7 +4124,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMethodResponse.</param>
         /// 
         /// <returns>Returns a  GetMethodResponseResult from APIGateway.</returns>
-        public  GetMethodResponseResponse EndGetMethodResponse(IAsyncResult asyncResult)
+        public virtual GetMethodResponseResponse EndGetMethodResponse(IAsyncResult asyncResult)
         {
             return EndInvoke<GetMethodResponseResponse>(asyncResult);
         }
@@ -4148,7 +4148,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetModelResponse GetModel(GetModelRequest request)
+        public virtual GetModelResponse GetModel(GetModelRequest request)
         {
             var marshaller = new GetModelRequestMarshaller();
             var unmarshaller = GetModelResponseUnmarshaller.Instance;
@@ -4167,7 +4167,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetModel
         ///         operation.</returns>
-        public IAsyncResult BeginGetModel(GetModelRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetModel(GetModelRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetModelRequestMarshaller();
             var unmarshaller = GetModelResponseUnmarshaller.Instance;
@@ -4183,7 +4183,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetModel.</param>
         /// 
         /// <returns>Returns a  GetModelResult from APIGateway.</returns>
-        public  GetModelResponse EndGetModel(IAsyncResult asyncResult)
+        public virtual GetModelResponse EndGetModel(IAsyncResult asyncResult)
         {
             return EndInvoke<GetModelResponse>(asyncResult);
         }
@@ -4211,7 +4211,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetModelsResponse GetModels(GetModelsRequest request)
+        public virtual GetModelsResponse GetModels(GetModelsRequest request)
         {
             var marshaller = new GetModelsRequestMarshaller();
             var unmarshaller = GetModelsResponseUnmarshaller.Instance;
@@ -4230,7 +4230,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetModels
         ///         operation.</returns>
-        public IAsyncResult BeginGetModels(GetModelsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetModels(GetModelsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetModelsRequestMarshaller();
             var unmarshaller = GetModelsResponseUnmarshaller.Instance;
@@ -4246,7 +4246,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetModels.</param>
         /// 
         /// <returns>Returns a  GetModelsResult from APIGateway.</returns>
-        public  GetModelsResponse EndGetModels(IAsyncResult asyncResult)
+        public virtual GetModelsResponse EndGetModels(IAsyncResult asyncResult)
         {
             return EndInvoke<GetModelsResponse>(asyncResult);
         }
@@ -4275,7 +4275,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetModelTemplateResponse GetModelTemplate(GetModelTemplateRequest request)
+        public virtual GetModelTemplateResponse GetModelTemplate(GetModelTemplateRequest request)
         {
             var marshaller = new GetModelTemplateRequestMarshaller();
             var unmarshaller = GetModelTemplateResponseUnmarshaller.Instance;
@@ -4294,7 +4294,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetModelTemplate
         ///         operation.</returns>
-        public IAsyncResult BeginGetModelTemplate(GetModelTemplateRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetModelTemplate(GetModelTemplateRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetModelTemplateRequestMarshaller();
             var unmarshaller = GetModelTemplateResponseUnmarshaller.Instance;
@@ -4310,7 +4310,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetModelTemplate.</param>
         /// 
         /// <returns>Returns a  GetModelTemplateResult from APIGateway.</returns>
-        public  GetModelTemplateResponse EndGetModelTemplate(IAsyncResult asyncResult)
+        public virtual GetModelTemplateResponse EndGetModelTemplate(IAsyncResult asyncResult)
         {
             return EndInvoke<GetModelTemplateResponse>(asyncResult);
         }
@@ -4334,7 +4334,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetRequestValidatorResponse GetRequestValidator(GetRequestValidatorRequest request)
+        public virtual GetRequestValidatorResponse GetRequestValidator(GetRequestValidatorRequest request)
         {
             var marshaller = new GetRequestValidatorRequestMarshaller();
             var unmarshaller = GetRequestValidatorResponseUnmarshaller.Instance;
@@ -4353,7 +4353,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRequestValidator
         ///         operation.</returns>
-        public IAsyncResult BeginGetRequestValidator(GetRequestValidatorRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetRequestValidator(GetRequestValidatorRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetRequestValidatorRequestMarshaller();
             var unmarshaller = GetRequestValidatorResponseUnmarshaller.Instance;
@@ -4369,7 +4369,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRequestValidator.</param>
         /// 
         /// <returns>Returns a  GetRequestValidatorResult from APIGateway.</returns>
-        public  GetRequestValidatorResponse EndGetRequestValidator(IAsyncResult asyncResult)
+        public virtual GetRequestValidatorResponse EndGetRequestValidator(IAsyncResult asyncResult)
         {
             return EndInvoke<GetRequestValidatorResponse>(asyncResult);
         }
@@ -4397,7 +4397,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetRequestValidatorsResponse GetRequestValidators(GetRequestValidatorsRequest request)
+        public virtual GetRequestValidatorsResponse GetRequestValidators(GetRequestValidatorsRequest request)
         {
             var marshaller = new GetRequestValidatorsRequestMarshaller();
             var unmarshaller = GetRequestValidatorsResponseUnmarshaller.Instance;
@@ -4416,7 +4416,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRequestValidators
         ///         operation.</returns>
-        public IAsyncResult BeginGetRequestValidators(GetRequestValidatorsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetRequestValidators(GetRequestValidatorsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetRequestValidatorsRequestMarshaller();
             var unmarshaller = GetRequestValidatorsResponseUnmarshaller.Instance;
@@ -4432,7 +4432,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRequestValidators.</param>
         /// 
         /// <returns>Returns a  GetRequestValidatorsResult from APIGateway.</returns>
-        public  GetRequestValidatorsResponse EndGetRequestValidators(IAsyncResult asyncResult)
+        public virtual GetRequestValidatorsResponse EndGetRequestValidators(IAsyncResult asyncResult)
         {
             return EndInvoke<GetRequestValidatorsResponse>(asyncResult);
         }
@@ -4456,7 +4456,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetResourceResponse GetResource(GetResourceRequest request)
+        public virtual GetResourceResponse GetResource(GetResourceRequest request)
         {
             var marshaller = new GetResourceRequestMarshaller();
             var unmarshaller = GetResourceResponseUnmarshaller.Instance;
@@ -4475,7 +4475,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetResource
         ///         operation.</returns>
-        public IAsyncResult BeginGetResource(GetResourceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetResource(GetResourceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetResourceRequestMarshaller();
             var unmarshaller = GetResourceResponseUnmarshaller.Instance;
@@ -4491,7 +4491,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetResource.</param>
         /// 
         /// <returns>Returns a  GetResourceResult from APIGateway.</returns>
-        public  GetResourceResponse EndGetResource(IAsyncResult asyncResult)
+        public virtual GetResourceResponse EndGetResource(IAsyncResult asyncResult)
         {
             return EndInvoke<GetResourceResponse>(asyncResult);
         }
@@ -4519,7 +4519,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetResourcesResponse GetResources(GetResourcesRequest request)
+        public virtual GetResourcesResponse GetResources(GetResourcesRequest request)
         {
             var marshaller = new GetResourcesRequestMarshaller();
             var unmarshaller = GetResourcesResponseUnmarshaller.Instance;
@@ -4538,7 +4538,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetResources
         ///         operation.</returns>
-        public IAsyncResult BeginGetResources(GetResourcesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetResources(GetResourcesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetResourcesRequestMarshaller();
             var unmarshaller = GetResourcesResponseUnmarshaller.Instance;
@@ -4554,7 +4554,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetResources.</param>
         /// 
         /// <returns>Returns a  GetResourcesResult from APIGateway.</returns>
-        public  GetResourcesResponse EndGetResources(IAsyncResult asyncResult)
+        public virtual GetResourcesResponse EndGetResources(IAsyncResult asyncResult)
         {
             return EndInvoke<GetResourcesResponse>(asyncResult);
         }
@@ -4578,7 +4578,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetRestApiResponse GetRestApi(GetRestApiRequest request)
+        public virtual GetRestApiResponse GetRestApi(GetRestApiRequest request)
         {
             var marshaller = new GetRestApiRequestMarshaller();
             var unmarshaller = GetRestApiResponseUnmarshaller.Instance;
@@ -4597,7 +4597,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRestApi
         ///         operation.</returns>
-        public IAsyncResult BeginGetRestApi(GetRestApiRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetRestApi(GetRestApiRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetRestApiRequestMarshaller();
             var unmarshaller = GetRestApiResponseUnmarshaller.Instance;
@@ -4613,7 +4613,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRestApi.</param>
         /// 
         /// <returns>Returns a  GetRestApiResult from APIGateway.</returns>
-        public  GetRestApiResponse EndGetRestApi(IAsyncResult asyncResult)
+        public virtual GetRestApiResponse EndGetRestApi(IAsyncResult asyncResult)
         {
             return EndInvoke<GetRestApiResponse>(asyncResult);
         }
@@ -4638,7 +4638,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetRestApisResponse GetRestApis(GetRestApisRequest request)
+        public virtual GetRestApisResponse GetRestApis(GetRestApisRequest request)
         {
             var marshaller = new GetRestApisRequestMarshaller();
             var unmarshaller = GetRestApisResponseUnmarshaller.Instance;
@@ -4657,7 +4657,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRestApis
         ///         operation.</returns>
-        public IAsyncResult BeginGetRestApis(GetRestApisRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetRestApis(GetRestApisRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetRestApisRequestMarshaller();
             var unmarshaller = GetRestApisResponseUnmarshaller.Instance;
@@ -4673,7 +4673,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRestApis.</param>
         /// 
         /// <returns>Returns a  GetRestApisResult from APIGateway.</returns>
-        public  GetRestApisResponse EndGetRestApis(IAsyncResult asyncResult)
+        public virtual GetRestApisResponse EndGetRestApis(IAsyncResult asyncResult)
         {
             return EndInvoke<GetRestApisResponse>(asyncResult);
         }
@@ -4704,7 +4704,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetSdkResponse GetSdk(GetSdkRequest request)
+        public virtual GetSdkResponse GetSdk(GetSdkRequest request)
         {
             var marshaller = new GetSdkRequestMarshaller();
             var unmarshaller = GetSdkResponseUnmarshaller.Instance;
@@ -4723,7 +4723,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSdk
         ///         operation.</returns>
-        public IAsyncResult BeginGetSdk(GetSdkRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetSdk(GetSdkRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetSdkRequestMarshaller();
             var unmarshaller = GetSdkResponseUnmarshaller.Instance;
@@ -4739,7 +4739,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSdk.</param>
         /// 
         /// <returns>Returns a  GetSdkResult from APIGateway.</returns>
-        public  GetSdkResponse EndGetSdk(IAsyncResult asyncResult)
+        public virtual GetSdkResponse EndGetSdk(IAsyncResult asyncResult)
         {
             return EndInvoke<GetSdkResponse>(asyncResult);
         }
@@ -4763,7 +4763,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetSdkTypeResponse GetSdkType(GetSdkTypeRequest request)
+        public virtual GetSdkTypeResponse GetSdkType(GetSdkTypeRequest request)
         {
             var marshaller = new GetSdkTypeRequestMarshaller();
             var unmarshaller = GetSdkTypeResponseUnmarshaller.Instance;
@@ -4782,7 +4782,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSdkType
         ///         operation.</returns>
-        public IAsyncResult BeginGetSdkType(GetSdkTypeRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetSdkType(GetSdkTypeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetSdkTypeRequestMarshaller();
             var unmarshaller = GetSdkTypeResponseUnmarshaller.Instance;
@@ -4798,7 +4798,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSdkType.</param>
         /// 
         /// <returns>Returns a  GetSdkTypeResult from APIGateway.</returns>
-        public  GetSdkTypeResponse EndGetSdkType(IAsyncResult asyncResult)
+        public virtual GetSdkTypeResponse EndGetSdkType(IAsyncResult asyncResult)
         {
             return EndInvoke<GetSdkTypeResponse>(asyncResult);
         }
@@ -4819,7 +4819,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetSdkTypesResponse GetSdkTypes(GetSdkTypesRequest request)
+        public virtual GetSdkTypesResponse GetSdkTypes(GetSdkTypesRequest request)
         {
             var marshaller = new GetSdkTypesRequestMarshaller();
             var unmarshaller = GetSdkTypesResponseUnmarshaller.Instance;
@@ -4838,7 +4838,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSdkTypes
         ///         operation.</returns>
-        public IAsyncResult BeginGetSdkTypes(GetSdkTypesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetSdkTypes(GetSdkTypesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetSdkTypesRequestMarshaller();
             var unmarshaller = GetSdkTypesResponseUnmarshaller.Instance;
@@ -4854,7 +4854,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSdkTypes.</param>
         /// 
         /// <returns>Returns a  GetSdkTypesResult from APIGateway.</returns>
-        public  GetSdkTypesResponse EndGetSdkTypes(IAsyncResult asyncResult)
+        public virtual GetSdkTypesResponse EndGetSdkTypes(IAsyncResult asyncResult)
         {
             return EndInvoke<GetSdkTypesResponse>(asyncResult);
         }
@@ -4878,7 +4878,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetStageResponse GetStage(GetStageRequest request)
+        public virtual GetStageResponse GetStage(GetStageRequest request)
         {
             var marshaller = new GetStageRequestMarshaller();
             var unmarshaller = GetStageResponseUnmarshaller.Instance;
@@ -4897,7 +4897,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetStage
         ///         operation.</returns>
-        public IAsyncResult BeginGetStage(GetStageRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetStage(GetStageRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetStageRequestMarshaller();
             var unmarshaller = GetStageResponseUnmarshaller.Instance;
@@ -4913,7 +4913,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetStage.</param>
         /// 
         /// <returns>Returns a  GetStageResult from APIGateway.</returns>
-        public  GetStageResponse EndGetStage(IAsyncResult asyncResult)
+        public virtual GetStageResponse EndGetStage(IAsyncResult asyncResult)
         {
             return EndInvoke<GetStageResponse>(asyncResult);
         }
@@ -4937,7 +4937,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetStagesResponse GetStages(GetStagesRequest request)
+        public virtual GetStagesResponse GetStages(GetStagesRequest request)
         {
             var marshaller = new GetStagesRequestMarshaller();
             var unmarshaller = GetStagesResponseUnmarshaller.Instance;
@@ -4956,7 +4956,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetStages
         ///         operation.</returns>
-        public IAsyncResult BeginGetStages(GetStagesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetStages(GetStagesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetStagesRequestMarshaller();
             var unmarshaller = GetStagesResponseUnmarshaller.Instance;
@@ -4972,7 +4972,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetStages.</param>
         /// 
         /// <returns>Returns a  GetStagesResult from APIGateway.</returns>
-        public  GetStagesResponse EndGetStages(IAsyncResult asyncResult)
+        public virtual GetStagesResponse EndGetStages(IAsyncResult asyncResult)
         {
             return EndInvoke<GetStagesResponse>(asyncResult);
         }
@@ -5000,7 +5000,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetUsageResponse GetUsage(GetUsageRequest request)
+        public virtual GetUsageResponse GetUsage(GetUsageRequest request)
         {
             var marshaller = new GetUsageRequestMarshaller();
             var unmarshaller = GetUsageResponseUnmarshaller.Instance;
@@ -5019,7 +5019,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetUsage
         ///         operation.</returns>
-        public IAsyncResult BeginGetUsage(GetUsageRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetUsage(GetUsageRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetUsageRequestMarshaller();
             var unmarshaller = GetUsageResponseUnmarshaller.Instance;
@@ -5035,7 +5035,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetUsage.</param>
         /// 
         /// <returns>Returns a  GetUsageResult from APIGateway.</returns>
-        public  GetUsageResponse EndGetUsage(IAsyncResult asyncResult)
+        public virtual GetUsageResponse EndGetUsage(IAsyncResult asyncResult)
         {
             return EndInvoke<GetUsageResponse>(asyncResult);
         }
@@ -5063,7 +5063,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetUsagePlanResponse GetUsagePlan(GetUsagePlanRequest request)
+        public virtual GetUsagePlanResponse GetUsagePlan(GetUsagePlanRequest request)
         {
             var marshaller = new GetUsagePlanRequestMarshaller();
             var unmarshaller = GetUsagePlanResponseUnmarshaller.Instance;
@@ -5082,7 +5082,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetUsagePlan
         ///         operation.</returns>
-        public IAsyncResult BeginGetUsagePlan(GetUsagePlanRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetUsagePlan(GetUsagePlanRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetUsagePlanRequestMarshaller();
             var unmarshaller = GetUsagePlanResponseUnmarshaller.Instance;
@@ -5098,7 +5098,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetUsagePlan.</param>
         /// 
         /// <returns>Returns a  GetUsagePlanResult from APIGateway.</returns>
-        public  GetUsagePlanResponse EndGetUsagePlan(IAsyncResult asyncResult)
+        public virtual GetUsagePlanResponse EndGetUsagePlan(IAsyncResult asyncResult)
         {
             return EndInvoke<GetUsagePlanResponse>(asyncResult);
         }
@@ -5126,7 +5126,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetUsagePlanKeyResponse GetUsagePlanKey(GetUsagePlanKeyRequest request)
+        public virtual GetUsagePlanKeyResponse GetUsagePlanKey(GetUsagePlanKeyRequest request)
         {
             var marshaller = new GetUsagePlanKeyRequestMarshaller();
             var unmarshaller = GetUsagePlanKeyResponseUnmarshaller.Instance;
@@ -5145,7 +5145,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetUsagePlanKey
         ///         operation.</returns>
-        public IAsyncResult BeginGetUsagePlanKey(GetUsagePlanKeyRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetUsagePlanKey(GetUsagePlanKeyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetUsagePlanKeyRequestMarshaller();
             var unmarshaller = GetUsagePlanKeyResponseUnmarshaller.Instance;
@@ -5161,7 +5161,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetUsagePlanKey.</param>
         /// 
         /// <returns>Returns a  GetUsagePlanKeyResult from APIGateway.</returns>
-        public  GetUsagePlanKeyResponse EndGetUsagePlanKey(IAsyncResult asyncResult)
+        public virtual GetUsagePlanKeyResponse EndGetUsagePlanKey(IAsyncResult asyncResult)
         {
             return EndInvoke<GetUsagePlanKeyResponse>(asyncResult);
         }
@@ -5190,7 +5190,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetUsagePlanKeysResponse GetUsagePlanKeys(GetUsagePlanKeysRequest request)
+        public virtual GetUsagePlanKeysResponse GetUsagePlanKeys(GetUsagePlanKeysRequest request)
         {
             var marshaller = new GetUsagePlanKeysRequestMarshaller();
             var unmarshaller = GetUsagePlanKeysResponseUnmarshaller.Instance;
@@ -5209,7 +5209,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetUsagePlanKeys
         ///         operation.</returns>
-        public IAsyncResult BeginGetUsagePlanKeys(GetUsagePlanKeysRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetUsagePlanKeys(GetUsagePlanKeysRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetUsagePlanKeysRequestMarshaller();
             var unmarshaller = GetUsagePlanKeysResponseUnmarshaller.Instance;
@@ -5225,7 +5225,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetUsagePlanKeys.</param>
         /// 
         /// <returns>Returns a  GetUsagePlanKeysResult from APIGateway.</returns>
-        public  GetUsagePlanKeysResponse EndGetUsagePlanKeys(IAsyncResult asyncResult)
+        public virtual GetUsagePlanKeysResponse EndGetUsagePlanKeys(IAsyncResult asyncResult)
         {
             return EndInvoke<GetUsagePlanKeysResponse>(asyncResult);
         }
@@ -5256,7 +5256,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetUsagePlansResponse GetUsagePlans(GetUsagePlansRequest request)
+        public virtual GetUsagePlansResponse GetUsagePlans(GetUsagePlansRequest request)
         {
             var marshaller = new GetUsagePlansRequestMarshaller();
             var unmarshaller = GetUsagePlansResponseUnmarshaller.Instance;
@@ -5275,7 +5275,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetUsagePlans
         ///         operation.</returns>
-        public IAsyncResult BeginGetUsagePlans(GetUsagePlansRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetUsagePlans(GetUsagePlansRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetUsagePlansRequestMarshaller();
             var unmarshaller = GetUsagePlansResponseUnmarshaller.Instance;
@@ -5291,7 +5291,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetUsagePlans.</param>
         /// 
         /// <returns>Returns a  GetUsagePlansResult from APIGateway.</returns>
-        public  GetUsagePlansResponse EndGetUsagePlans(IAsyncResult asyncResult)
+        public virtual GetUsagePlansResponse EndGetUsagePlans(IAsyncResult asyncResult)
         {
             return EndInvoke<GetUsagePlansResponse>(asyncResult);
         }
@@ -5325,7 +5325,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public ImportApiKeysResponse ImportApiKeys(ImportApiKeysRequest request)
+        public virtual ImportApiKeysResponse ImportApiKeys(ImportApiKeysRequest request)
         {
             var marshaller = new ImportApiKeysRequestMarshaller();
             var unmarshaller = ImportApiKeysResponseUnmarshaller.Instance;
@@ -5344,7 +5344,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndImportApiKeys
         ///         operation.</returns>
-        public IAsyncResult BeginImportApiKeys(ImportApiKeysRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginImportApiKeys(ImportApiKeysRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ImportApiKeysRequestMarshaller();
             var unmarshaller = ImportApiKeysResponseUnmarshaller.Instance;
@@ -5360,7 +5360,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginImportApiKeys.</param>
         /// 
         /// <returns>Returns a  ImportApiKeysResult from APIGateway.</returns>
-        public  ImportApiKeysResponse EndImportApiKeys(IAsyncResult asyncResult)
+        public virtual ImportApiKeysResponse EndImportApiKeys(IAsyncResult asyncResult)
         {
             return EndInvoke<ImportApiKeysResponse>(asyncResult);
         }
@@ -5391,7 +5391,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public ImportDocumentationPartsResponse ImportDocumentationParts(ImportDocumentationPartsRequest request)
+        public virtual ImportDocumentationPartsResponse ImportDocumentationParts(ImportDocumentationPartsRequest request)
         {
             var marshaller = new ImportDocumentationPartsRequestMarshaller();
             var unmarshaller = ImportDocumentationPartsResponseUnmarshaller.Instance;
@@ -5410,7 +5410,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndImportDocumentationParts
         ///         operation.</returns>
-        public IAsyncResult BeginImportDocumentationParts(ImportDocumentationPartsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginImportDocumentationParts(ImportDocumentationPartsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ImportDocumentationPartsRequestMarshaller();
             var unmarshaller = ImportDocumentationPartsResponseUnmarshaller.Instance;
@@ -5426,7 +5426,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginImportDocumentationParts.</param>
         /// 
         /// <returns>Returns a  ImportDocumentationPartsResult from APIGateway.</returns>
-        public  ImportDocumentationPartsResponse EndImportDocumentationParts(IAsyncResult asyncResult)
+        public virtual ImportDocumentationPartsResponse EndImportDocumentationParts(IAsyncResult asyncResult)
         {
             return EndInvoke<ImportDocumentationPartsResponse>(asyncResult);
         }
@@ -5458,7 +5458,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public ImportRestApiResponse ImportRestApi(ImportRestApiRequest request)
+        public virtual ImportRestApiResponse ImportRestApi(ImportRestApiRequest request)
         {
             var marshaller = new ImportRestApiRequestMarshaller();
             var unmarshaller = ImportRestApiResponseUnmarshaller.Instance;
@@ -5477,7 +5477,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndImportRestApi
         ///         operation.</returns>
-        public IAsyncResult BeginImportRestApi(ImportRestApiRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginImportRestApi(ImportRestApiRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ImportRestApiRequestMarshaller();
             var unmarshaller = ImportRestApiResponseUnmarshaller.Instance;
@@ -5493,7 +5493,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginImportRestApi.</param>
         /// 
         /// <returns>Returns a  ImportRestApiResult from APIGateway.</returns>
-        public  ImportRestApiResponse EndImportRestApi(IAsyncResult asyncResult)
+        public virtual ImportRestApiResponse EndImportRestApi(IAsyncResult asyncResult)
         {
             return EndInvoke<ImportRestApiResponse>(asyncResult);
         }
@@ -5525,7 +5525,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public PutGatewayResponseResponse PutGatewayResponse(PutGatewayResponseRequest request)
+        public virtual PutGatewayResponseResponse PutGatewayResponse(PutGatewayResponseRequest request)
         {
             var marshaller = new PutGatewayResponseRequestMarshaller();
             var unmarshaller = PutGatewayResponseResponseUnmarshaller.Instance;
@@ -5544,7 +5544,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutGatewayResponse
         ///         operation.</returns>
-        public IAsyncResult BeginPutGatewayResponse(PutGatewayResponseRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPutGatewayResponse(PutGatewayResponseRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutGatewayResponseRequestMarshaller();
             var unmarshaller = PutGatewayResponseResponseUnmarshaller.Instance;
@@ -5560,7 +5560,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutGatewayResponse.</param>
         /// 
         /// <returns>Returns a  PutGatewayResponseResult from APIGateway.</returns>
-        public  PutGatewayResponseResponse EndPutGatewayResponse(IAsyncResult asyncResult)
+        public virtual PutGatewayResponseResponse EndPutGatewayResponse(IAsyncResult asyncResult)
         {
             return EndInvoke<PutGatewayResponseResponse>(asyncResult);
         }
@@ -5591,7 +5591,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public PutIntegrationResponse PutIntegration(PutIntegrationRequest request)
+        public virtual PutIntegrationResponse PutIntegration(PutIntegrationRequest request)
         {
             var marshaller = new PutIntegrationRequestMarshaller();
             var unmarshaller = PutIntegrationResponseUnmarshaller.Instance;
@@ -5610,7 +5610,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutIntegration
         ///         operation.</returns>
-        public IAsyncResult BeginPutIntegration(PutIntegrationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPutIntegration(PutIntegrationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutIntegrationRequestMarshaller();
             var unmarshaller = PutIntegrationResponseUnmarshaller.Instance;
@@ -5626,7 +5626,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutIntegration.</param>
         /// 
         /// <returns>Returns a  PutIntegrationResult from APIGateway.</returns>
-        public  PutIntegrationResponse EndPutIntegration(IAsyncResult asyncResult)
+        public virtual PutIntegrationResponse EndPutIntegration(IAsyncResult asyncResult)
         {
             return EndInvoke<PutIntegrationResponse>(asyncResult);
         }
@@ -5660,7 +5660,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public PutIntegrationResponseResponse PutIntegrationResponse(PutIntegrationResponseRequest request)
+        public virtual PutIntegrationResponseResponse PutIntegrationResponse(PutIntegrationResponseRequest request)
         {
             var marshaller = new PutIntegrationResponseRequestMarshaller();
             var unmarshaller = PutIntegrationResponseResponseUnmarshaller.Instance;
@@ -5679,7 +5679,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutIntegrationResponse
         ///         operation.</returns>
-        public IAsyncResult BeginPutIntegrationResponse(PutIntegrationResponseRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPutIntegrationResponse(PutIntegrationResponseRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutIntegrationResponseRequestMarshaller();
             var unmarshaller = PutIntegrationResponseResponseUnmarshaller.Instance;
@@ -5695,7 +5695,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutIntegrationResponse.</param>
         /// 
         /// <returns>Returns a  PutIntegrationResponseResult from APIGateway.</returns>
-        public  PutIntegrationResponseResponse EndPutIntegrationResponse(IAsyncResult asyncResult)
+        public virtual PutIntegrationResponseResponse EndPutIntegrationResponse(IAsyncResult asyncResult)
         {
             return EndInvoke<PutIntegrationResponseResponse>(asyncResult);
         }
@@ -5729,7 +5729,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public PutMethodResponse PutMethod(PutMethodRequest request)
+        public virtual PutMethodResponse PutMethod(PutMethodRequest request)
         {
             var marshaller = new PutMethodRequestMarshaller();
             var unmarshaller = PutMethodResponseUnmarshaller.Instance;
@@ -5748,7 +5748,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutMethod
         ///         operation.</returns>
-        public IAsyncResult BeginPutMethod(PutMethodRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPutMethod(PutMethodRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutMethodRequestMarshaller();
             var unmarshaller = PutMethodResponseUnmarshaller.Instance;
@@ -5764,7 +5764,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutMethod.</param>
         /// 
         /// <returns>Returns a  PutMethodResult from APIGateway.</returns>
-        public  PutMethodResponse EndPutMethod(IAsyncResult asyncResult)
+        public virtual PutMethodResponse EndPutMethod(IAsyncResult asyncResult)
         {
             return EndInvoke<PutMethodResponse>(asyncResult);
         }
@@ -5798,7 +5798,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public PutMethodResponseResponse PutMethodResponse(PutMethodResponseRequest request)
+        public virtual PutMethodResponseResponse PutMethodResponse(PutMethodResponseRequest request)
         {
             var marshaller = new PutMethodResponseRequestMarshaller();
             var unmarshaller = PutMethodResponseResponseUnmarshaller.Instance;
@@ -5817,7 +5817,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutMethodResponse
         ///         operation.</returns>
-        public IAsyncResult BeginPutMethodResponse(PutMethodResponseRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPutMethodResponse(PutMethodResponseRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutMethodResponseRequestMarshaller();
             var unmarshaller = PutMethodResponseResponseUnmarshaller.Instance;
@@ -5833,7 +5833,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutMethodResponse.</param>
         /// 
         /// <returns>Returns a  PutMethodResponseResult from APIGateway.</returns>
-        public  PutMethodResponseResponse EndPutMethodResponse(IAsyncResult asyncResult)
+        public virtual PutMethodResponseResponse EndPutMethodResponse(IAsyncResult asyncResult)
         {
             return EndInvoke<PutMethodResponseResponse>(asyncResult);
         }
@@ -5869,7 +5869,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public PutRestApiResponse PutRestApi(PutRestApiRequest request)
+        public virtual PutRestApiResponse PutRestApi(PutRestApiRequest request)
         {
             var marshaller = new PutRestApiRequestMarshaller();
             var unmarshaller = PutRestApiResponseUnmarshaller.Instance;
@@ -5888,7 +5888,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutRestApi
         ///         operation.</returns>
-        public IAsyncResult BeginPutRestApi(PutRestApiRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPutRestApi(PutRestApiRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutRestApiRequestMarshaller();
             var unmarshaller = PutRestApiResponseUnmarshaller.Instance;
@@ -5904,7 +5904,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutRestApi.</param>
         /// 
         /// <returns>Returns a  PutRestApiResult from APIGateway.</returns>
-        public  PutRestApiResponse EndPutRestApi(IAsyncResult asyncResult)
+        public virtual PutRestApiResponse EndPutRestApi(IAsyncResult asyncResult)
         {
             return EndInvoke<PutRestApiResponse>(asyncResult);
         }
@@ -5936,7 +5936,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public TestInvokeAuthorizerResponse TestInvokeAuthorizer(TestInvokeAuthorizerRequest request)
+        public virtual TestInvokeAuthorizerResponse TestInvokeAuthorizer(TestInvokeAuthorizerRequest request)
         {
             var marshaller = new TestInvokeAuthorizerRequestMarshaller();
             var unmarshaller = TestInvokeAuthorizerResponseUnmarshaller.Instance;
@@ -5955,7 +5955,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTestInvokeAuthorizer
         ///         operation.</returns>
-        public IAsyncResult BeginTestInvokeAuthorizer(TestInvokeAuthorizerRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginTestInvokeAuthorizer(TestInvokeAuthorizerRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new TestInvokeAuthorizerRequestMarshaller();
             var unmarshaller = TestInvokeAuthorizerResponseUnmarshaller.Instance;
@@ -5971,7 +5971,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTestInvokeAuthorizer.</param>
         /// 
         /// <returns>Returns a  TestInvokeAuthorizerResult from APIGateway.</returns>
-        public  TestInvokeAuthorizerResponse EndTestInvokeAuthorizer(IAsyncResult asyncResult)
+        public virtual TestInvokeAuthorizerResponse EndTestInvokeAuthorizer(IAsyncResult asyncResult)
         {
             return EndInvoke<TestInvokeAuthorizerResponse>(asyncResult);
         }
@@ -6000,7 +6000,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public TestInvokeMethodResponse TestInvokeMethod(TestInvokeMethodRequest request)
+        public virtual TestInvokeMethodResponse TestInvokeMethod(TestInvokeMethodRequest request)
         {
             var marshaller = new TestInvokeMethodRequestMarshaller();
             var unmarshaller = TestInvokeMethodResponseUnmarshaller.Instance;
@@ -6019,7 +6019,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTestInvokeMethod
         ///         operation.</returns>
-        public IAsyncResult BeginTestInvokeMethod(TestInvokeMethodRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginTestInvokeMethod(TestInvokeMethodRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new TestInvokeMethodRequestMarshaller();
             var unmarshaller = TestInvokeMethodResponseUnmarshaller.Instance;
@@ -6035,7 +6035,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTestInvokeMethod.</param>
         /// 
         /// <returns>Returns a  TestInvokeMethodResult from APIGateway.</returns>
-        public  TestInvokeMethodResponse EndTestInvokeMethod(IAsyncResult asyncResult)
+        public virtual TestInvokeMethodResponse EndTestInvokeMethod(IAsyncResult asyncResult)
         {
             return EndInvoke<TestInvokeMethodResponse>(asyncResult);
         }
@@ -6063,7 +6063,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public UpdateAccountResponse UpdateAccount(UpdateAccountRequest request)
+        public virtual UpdateAccountResponse UpdateAccount(UpdateAccountRequest request)
         {
             var marshaller = new UpdateAccountRequestMarshaller();
             var unmarshaller = UpdateAccountResponseUnmarshaller.Instance;
@@ -6082,7 +6082,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAccount
         ///         operation.</returns>
-        public IAsyncResult BeginUpdateAccount(UpdateAccountRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateAccount(UpdateAccountRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateAccountRequestMarshaller();
             var unmarshaller = UpdateAccountResponseUnmarshaller.Instance;
@@ -6098,7 +6098,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAccount.</param>
         /// 
         /// <returns>Returns a  UpdateAccountResult from APIGateway.</returns>
-        public  UpdateAccountResponse EndUpdateAccount(IAsyncResult asyncResult)
+        public virtual UpdateAccountResponse EndUpdateAccount(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateAccountResponse>(asyncResult);
         }
@@ -6129,7 +6129,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public UpdateApiKeyResponse UpdateApiKey(UpdateApiKeyRequest request)
+        public virtual UpdateApiKeyResponse UpdateApiKey(UpdateApiKeyRequest request)
         {
             var marshaller = new UpdateApiKeyRequestMarshaller();
             var unmarshaller = UpdateApiKeyResponseUnmarshaller.Instance;
@@ -6148,7 +6148,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateApiKey
         ///         operation.</returns>
-        public IAsyncResult BeginUpdateApiKey(UpdateApiKeyRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateApiKey(UpdateApiKeyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateApiKeyRequestMarshaller();
             var unmarshaller = UpdateApiKeyResponseUnmarshaller.Instance;
@@ -6164,7 +6164,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateApiKey.</param>
         /// 
         /// <returns>Returns a  UpdateApiKeyResult from APIGateway.</returns>
-        public  UpdateApiKeyResponse EndUpdateApiKey(IAsyncResult asyncResult)
+        public virtual UpdateApiKeyResponse EndUpdateApiKey(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateApiKeyResponse>(asyncResult);
         }
@@ -6195,7 +6195,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public UpdateAuthorizerResponse UpdateAuthorizer(UpdateAuthorizerRequest request)
+        public virtual UpdateAuthorizerResponse UpdateAuthorizer(UpdateAuthorizerRequest request)
         {
             var marshaller = new UpdateAuthorizerRequestMarshaller();
             var unmarshaller = UpdateAuthorizerResponseUnmarshaller.Instance;
@@ -6214,7 +6214,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAuthorizer
         ///         operation.</returns>
-        public IAsyncResult BeginUpdateAuthorizer(UpdateAuthorizerRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateAuthorizer(UpdateAuthorizerRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateAuthorizerRequestMarshaller();
             var unmarshaller = UpdateAuthorizerResponseUnmarshaller.Instance;
@@ -6230,7 +6230,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAuthorizer.</param>
         /// 
         /// <returns>Returns a  UpdateAuthorizerResult from APIGateway.</returns>
-        public  UpdateAuthorizerResponse EndUpdateAuthorizer(IAsyncResult asyncResult)
+        public virtual UpdateAuthorizerResponse EndUpdateAuthorizer(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateAuthorizerResponse>(asyncResult);
         }
@@ -6261,7 +6261,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public UpdateBasePathMappingResponse UpdateBasePathMapping(UpdateBasePathMappingRequest request)
+        public virtual UpdateBasePathMappingResponse UpdateBasePathMapping(UpdateBasePathMappingRequest request)
         {
             var marshaller = new UpdateBasePathMappingRequestMarshaller();
             var unmarshaller = UpdateBasePathMappingResponseUnmarshaller.Instance;
@@ -6280,7 +6280,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateBasePathMapping
         ///         operation.</returns>
-        public IAsyncResult BeginUpdateBasePathMapping(UpdateBasePathMappingRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateBasePathMapping(UpdateBasePathMappingRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateBasePathMappingRequestMarshaller();
             var unmarshaller = UpdateBasePathMappingResponseUnmarshaller.Instance;
@@ -6296,7 +6296,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateBasePathMapping.</param>
         /// 
         /// <returns>Returns a  UpdateBasePathMappingResult from APIGateway.</returns>
-        public  UpdateBasePathMappingResponse EndUpdateBasePathMapping(IAsyncResult asyncResult)
+        public virtual UpdateBasePathMappingResponse EndUpdateBasePathMapping(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateBasePathMappingResponse>(asyncResult);
         }
@@ -6324,7 +6324,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public UpdateClientCertificateResponse UpdateClientCertificate(UpdateClientCertificateRequest request)
+        public virtual UpdateClientCertificateResponse UpdateClientCertificate(UpdateClientCertificateRequest request)
         {
             var marshaller = new UpdateClientCertificateRequestMarshaller();
             var unmarshaller = UpdateClientCertificateResponseUnmarshaller.Instance;
@@ -6343,7 +6343,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateClientCertificate
         ///         operation.</returns>
-        public IAsyncResult BeginUpdateClientCertificate(UpdateClientCertificateRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateClientCertificate(UpdateClientCertificateRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateClientCertificateRequestMarshaller();
             var unmarshaller = UpdateClientCertificateResponseUnmarshaller.Instance;
@@ -6359,7 +6359,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateClientCertificate.</param>
         /// 
         /// <returns>Returns a  UpdateClientCertificateResult from APIGateway.</returns>
-        public  UpdateClientCertificateResponse EndUpdateClientCertificate(IAsyncResult asyncResult)
+        public virtual UpdateClientCertificateResponse EndUpdateClientCertificate(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateClientCertificateResponse>(asyncResult);
         }
@@ -6391,7 +6391,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public UpdateDeploymentResponse UpdateDeployment(UpdateDeploymentRequest request)
+        public virtual UpdateDeploymentResponse UpdateDeployment(UpdateDeploymentRequest request)
         {
             var marshaller = new UpdateDeploymentRequestMarshaller();
             var unmarshaller = UpdateDeploymentResponseUnmarshaller.Instance;
@@ -6410,7 +6410,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDeployment
         ///         operation.</returns>
-        public IAsyncResult BeginUpdateDeployment(UpdateDeploymentRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateDeployment(UpdateDeploymentRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateDeploymentRequestMarshaller();
             var unmarshaller = UpdateDeploymentResponseUnmarshaller.Instance;
@@ -6426,7 +6426,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDeployment.</param>
         /// 
         /// <returns>Returns a  UpdateDeploymentResult from APIGateway.</returns>
-        public  UpdateDeploymentResponse EndUpdateDeployment(IAsyncResult asyncResult)
+        public virtual UpdateDeploymentResponse EndUpdateDeployment(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateDeploymentResponse>(asyncResult);
         }
@@ -6460,7 +6460,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public UpdateDocumentationPartResponse UpdateDocumentationPart(UpdateDocumentationPartRequest request)
+        public virtual UpdateDocumentationPartResponse UpdateDocumentationPart(UpdateDocumentationPartRequest request)
         {
             var marshaller = new UpdateDocumentationPartRequestMarshaller();
             var unmarshaller = UpdateDocumentationPartResponseUnmarshaller.Instance;
@@ -6479,7 +6479,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDocumentationPart
         ///         operation.</returns>
-        public IAsyncResult BeginUpdateDocumentationPart(UpdateDocumentationPartRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateDocumentationPart(UpdateDocumentationPartRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateDocumentationPartRequestMarshaller();
             var unmarshaller = UpdateDocumentationPartResponseUnmarshaller.Instance;
@@ -6495,7 +6495,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDocumentationPart.</param>
         /// 
         /// <returns>Returns a  UpdateDocumentationPartResult from APIGateway.</returns>
-        public  UpdateDocumentationPartResponse EndUpdateDocumentationPart(IAsyncResult asyncResult)
+        public virtual UpdateDocumentationPartResponse EndUpdateDocumentationPart(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateDocumentationPartResponse>(asyncResult);
         }
@@ -6526,7 +6526,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public UpdateDocumentationVersionResponse UpdateDocumentationVersion(UpdateDocumentationVersionRequest request)
+        public virtual UpdateDocumentationVersionResponse UpdateDocumentationVersion(UpdateDocumentationVersionRequest request)
         {
             var marshaller = new UpdateDocumentationVersionRequestMarshaller();
             var unmarshaller = UpdateDocumentationVersionResponseUnmarshaller.Instance;
@@ -6545,7 +6545,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDocumentationVersion
         ///         operation.</returns>
-        public IAsyncResult BeginUpdateDocumentationVersion(UpdateDocumentationVersionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateDocumentationVersion(UpdateDocumentationVersionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateDocumentationVersionRequestMarshaller();
             var unmarshaller = UpdateDocumentationVersionResponseUnmarshaller.Instance;
@@ -6561,7 +6561,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDocumentationVersion.</param>
         /// 
         /// <returns>Returns a  UpdateDocumentationVersionResult from APIGateway.</returns>
-        public  UpdateDocumentationVersionResponse EndUpdateDocumentationVersion(IAsyncResult asyncResult)
+        public virtual UpdateDocumentationVersionResponse EndUpdateDocumentationVersion(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateDocumentationVersionResponse>(asyncResult);
         }
@@ -6592,7 +6592,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public UpdateDomainNameResponse UpdateDomainName(UpdateDomainNameRequest request)
+        public virtual UpdateDomainNameResponse UpdateDomainName(UpdateDomainNameRequest request)
         {
             var marshaller = new UpdateDomainNameRequestMarshaller();
             var unmarshaller = UpdateDomainNameResponseUnmarshaller.Instance;
@@ -6611,7 +6611,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDomainName
         ///         operation.</returns>
-        public IAsyncResult BeginUpdateDomainName(UpdateDomainNameRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateDomainName(UpdateDomainNameRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateDomainNameRequestMarshaller();
             var unmarshaller = UpdateDomainNameResponseUnmarshaller.Instance;
@@ -6627,7 +6627,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDomainName.</param>
         /// 
         /// <returns>Returns a  UpdateDomainNameResult from APIGateway.</returns>
-        public  UpdateDomainNameResponse EndUpdateDomainName(IAsyncResult asyncResult)
+        public virtual UpdateDomainNameResponse EndUpdateDomainName(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateDomainNameResponse>(asyncResult);
         }
@@ -6655,7 +6655,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public UpdateGatewayResponseResponse UpdateGatewayResponse(UpdateGatewayResponseRequest request)
+        public virtual UpdateGatewayResponseResponse UpdateGatewayResponse(UpdateGatewayResponseRequest request)
         {
             var marshaller = new UpdateGatewayResponseRequestMarshaller();
             var unmarshaller = UpdateGatewayResponseResponseUnmarshaller.Instance;
@@ -6674,7 +6674,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateGatewayResponse
         ///         operation.</returns>
-        public IAsyncResult BeginUpdateGatewayResponse(UpdateGatewayResponseRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateGatewayResponse(UpdateGatewayResponseRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateGatewayResponseRequestMarshaller();
             var unmarshaller = UpdateGatewayResponseResponseUnmarshaller.Instance;
@@ -6690,7 +6690,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateGatewayResponse.</param>
         /// 
         /// <returns>Returns a  UpdateGatewayResponseResult from APIGateway.</returns>
-        public  UpdateGatewayResponseResponse EndUpdateGatewayResponse(IAsyncResult asyncResult)
+        public virtual UpdateGatewayResponseResponse EndUpdateGatewayResponse(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateGatewayResponseResponse>(asyncResult);
         }
@@ -6721,7 +6721,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public UpdateIntegrationResponse UpdateIntegration(UpdateIntegrationRequest request)
+        public virtual UpdateIntegrationResponse UpdateIntegration(UpdateIntegrationRequest request)
         {
             var marshaller = new UpdateIntegrationRequestMarshaller();
             var unmarshaller = UpdateIntegrationResponseUnmarshaller.Instance;
@@ -6740,7 +6740,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateIntegration
         ///         operation.</returns>
-        public IAsyncResult BeginUpdateIntegration(UpdateIntegrationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateIntegration(UpdateIntegrationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateIntegrationRequestMarshaller();
             var unmarshaller = UpdateIntegrationResponseUnmarshaller.Instance;
@@ -6756,7 +6756,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateIntegration.</param>
         /// 
         /// <returns>Returns a  UpdateIntegrationResult from APIGateway.</returns>
-        public  UpdateIntegrationResponse EndUpdateIntegration(IAsyncResult asyncResult)
+        public virtual UpdateIntegrationResponse EndUpdateIntegration(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateIntegrationResponse>(asyncResult);
         }
@@ -6787,7 +6787,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public UpdateIntegrationResponseResponse UpdateIntegrationResponse(UpdateIntegrationResponseRequest request)
+        public virtual UpdateIntegrationResponseResponse UpdateIntegrationResponse(UpdateIntegrationResponseRequest request)
         {
             var marshaller = new UpdateIntegrationResponseRequestMarshaller();
             var unmarshaller = UpdateIntegrationResponseResponseUnmarshaller.Instance;
@@ -6806,7 +6806,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateIntegrationResponse
         ///         operation.</returns>
-        public IAsyncResult BeginUpdateIntegrationResponse(UpdateIntegrationResponseRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateIntegrationResponse(UpdateIntegrationResponseRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateIntegrationResponseRequestMarshaller();
             var unmarshaller = UpdateIntegrationResponseResponseUnmarshaller.Instance;
@@ -6822,7 +6822,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateIntegrationResponse.</param>
         /// 
         /// <returns>Returns a  UpdateIntegrationResponseResult from APIGateway.</returns>
-        public  UpdateIntegrationResponseResponse EndUpdateIntegrationResponse(IAsyncResult asyncResult)
+        public virtual UpdateIntegrationResponseResponse EndUpdateIntegrationResponse(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateIntegrationResponseResponse>(asyncResult);
         }
@@ -6853,7 +6853,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public UpdateMethodResponse UpdateMethod(UpdateMethodRequest request)
+        public virtual UpdateMethodResponse UpdateMethod(UpdateMethodRequest request)
         {
             var marshaller = new UpdateMethodRequestMarshaller();
             var unmarshaller = UpdateMethodResponseUnmarshaller.Instance;
@@ -6872,7 +6872,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateMethod
         ///         operation.</returns>
-        public IAsyncResult BeginUpdateMethod(UpdateMethodRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateMethod(UpdateMethodRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateMethodRequestMarshaller();
             var unmarshaller = UpdateMethodResponseUnmarshaller.Instance;
@@ -6888,7 +6888,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateMethod.</param>
         /// 
         /// <returns>Returns a  UpdateMethodResult from APIGateway.</returns>
-        public  UpdateMethodResponse EndUpdateMethod(IAsyncResult asyncResult)
+        public virtual UpdateMethodResponse EndUpdateMethod(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateMethodResponse>(asyncResult);
         }
@@ -6922,7 +6922,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public UpdateMethodResponseResponse UpdateMethodResponse(UpdateMethodResponseRequest request)
+        public virtual UpdateMethodResponseResponse UpdateMethodResponse(UpdateMethodResponseRequest request)
         {
             var marshaller = new UpdateMethodResponseRequestMarshaller();
             var unmarshaller = UpdateMethodResponseResponseUnmarshaller.Instance;
@@ -6941,7 +6941,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateMethodResponse
         ///         operation.</returns>
-        public IAsyncResult BeginUpdateMethodResponse(UpdateMethodResponseRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateMethodResponse(UpdateMethodResponseRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateMethodResponseRequestMarshaller();
             var unmarshaller = UpdateMethodResponseResponseUnmarshaller.Instance;
@@ -6957,7 +6957,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateMethodResponse.</param>
         /// 
         /// <returns>Returns a  UpdateMethodResponseResult from APIGateway.</returns>
-        public  UpdateMethodResponseResponse EndUpdateMethodResponse(IAsyncResult asyncResult)
+        public virtual UpdateMethodResponseResponse EndUpdateMethodResponse(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateMethodResponseResponse>(asyncResult);
         }
@@ -6988,7 +6988,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public UpdateModelResponse UpdateModel(UpdateModelRequest request)
+        public virtual UpdateModelResponse UpdateModel(UpdateModelRequest request)
         {
             var marshaller = new UpdateModelRequestMarshaller();
             var unmarshaller = UpdateModelResponseUnmarshaller.Instance;
@@ -7007,7 +7007,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateModel
         ///         operation.</returns>
-        public IAsyncResult BeginUpdateModel(UpdateModelRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateModel(UpdateModelRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateModelRequestMarshaller();
             var unmarshaller = UpdateModelResponseUnmarshaller.Instance;
@@ -7023,7 +7023,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateModel.</param>
         /// 
         /// <returns>Returns a  UpdateModelResult from APIGateway.</returns>
-        public  UpdateModelResponse EndUpdateModel(IAsyncResult asyncResult)
+        public virtual UpdateModelResponse EndUpdateModel(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateModelResponse>(asyncResult);
         }
@@ -7051,7 +7051,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public UpdateRequestValidatorResponse UpdateRequestValidator(UpdateRequestValidatorRequest request)
+        public virtual UpdateRequestValidatorResponse UpdateRequestValidator(UpdateRequestValidatorRequest request)
         {
             var marshaller = new UpdateRequestValidatorRequestMarshaller();
             var unmarshaller = UpdateRequestValidatorResponseUnmarshaller.Instance;
@@ -7070,7 +7070,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateRequestValidator
         ///         operation.</returns>
-        public IAsyncResult BeginUpdateRequestValidator(UpdateRequestValidatorRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateRequestValidator(UpdateRequestValidatorRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateRequestValidatorRequestMarshaller();
             var unmarshaller = UpdateRequestValidatorResponseUnmarshaller.Instance;
@@ -7086,7 +7086,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateRequestValidator.</param>
         /// 
         /// <returns>Returns a  UpdateRequestValidatorResult from APIGateway.</returns>
-        public  UpdateRequestValidatorResponse EndUpdateRequestValidator(IAsyncResult asyncResult)
+        public virtual UpdateRequestValidatorResponse EndUpdateRequestValidator(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateRequestValidatorResponse>(asyncResult);
         }
@@ -7117,7 +7117,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public UpdateResourceResponse UpdateResource(UpdateResourceRequest request)
+        public virtual UpdateResourceResponse UpdateResource(UpdateResourceRequest request)
         {
             var marshaller = new UpdateResourceRequestMarshaller();
             var unmarshaller = UpdateResourceResponseUnmarshaller.Instance;
@@ -7136,7 +7136,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateResource
         ///         operation.</returns>
-        public IAsyncResult BeginUpdateResource(UpdateResourceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateResource(UpdateResourceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateResourceRequestMarshaller();
             var unmarshaller = UpdateResourceResponseUnmarshaller.Instance;
@@ -7152,7 +7152,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateResource.</param>
         /// 
         /// <returns>Returns a  UpdateResourceResult from APIGateway.</returns>
-        public  UpdateResourceResponse EndUpdateResource(IAsyncResult asyncResult)
+        public virtual UpdateResourceResponse EndUpdateResource(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateResourceResponse>(asyncResult);
         }
@@ -7183,7 +7183,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public UpdateRestApiResponse UpdateRestApi(UpdateRestApiRequest request)
+        public virtual UpdateRestApiResponse UpdateRestApi(UpdateRestApiRequest request)
         {
             var marshaller = new UpdateRestApiRequestMarshaller();
             var unmarshaller = UpdateRestApiResponseUnmarshaller.Instance;
@@ -7202,7 +7202,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateRestApi
         ///         operation.</returns>
-        public IAsyncResult BeginUpdateRestApi(UpdateRestApiRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateRestApi(UpdateRestApiRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateRestApiRequestMarshaller();
             var unmarshaller = UpdateRestApiResponseUnmarshaller.Instance;
@@ -7218,7 +7218,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateRestApi.</param>
         /// 
         /// <returns>Returns a  UpdateRestApiResult from APIGateway.</returns>
-        public  UpdateRestApiResponse EndUpdateRestApi(IAsyncResult asyncResult)
+        public virtual UpdateRestApiResponse EndUpdateRestApi(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateRestApiResponse>(asyncResult);
         }
@@ -7249,7 +7249,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public UpdateStageResponse UpdateStage(UpdateStageRequest request)
+        public virtual UpdateStageResponse UpdateStage(UpdateStageRequest request)
         {
             var marshaller = new UpdateStageRequestMarshaller();
             var unmarshaller = UpdateStageResponseUnmarshaller.Instance;
@@ -7268,7 +7268,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateStage
         ///         operation.</returns>
-        public IAsyncResult BeginUpdateStage(UpdateStageRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateStage(UpdateStageRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateStageRequestMarshaller();
             var unmarshaller = UpdateStageResponseUnmarshaller.Instance;
@@ -7284,7 +7284,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateStage.</param>
         /// 
         /// <returns>Returns a  UpdateStageResult from APIGateway.</returns>
-        public  UpdateStageResponse EndUpdateStage(IAsyncResult asyncResult)
+        public virtual UpdateStageResponse EndUpdateStage(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateStageResponse>(asyncResult);
         }
@@ -7313,7 +7313,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public UpdateUsageResponse UpdateUsage(UpdateUsageRequest request)
+        public virtual UpdateUsageResponse UpdateUsage(UpdateUsageRequest request)
         {
             var marshaller = new UpdateUsageRequestMarshaller();
             var unmarshaller = UpdateUsageResponseUnmarshaller.Instance;
@@ -7332,7 +7332,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateUsage
         ///         operation.</returns>
-        public IAsyncResult BeginUpdateUsage(UpdateUsageRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateUsage(UpdateUsageRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateUsageRequestMarshaller();
             var unmarshaller = UpdateUsageResponseUnmarshaller.Instance;
@@ -7348,7 +7348,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateUsage.</param>
         /// 
         /// <returns>Returns a  UpdateUsageResult from APIGateway.</returns>
-        public  UpdateUsageResponse EndUpdateUsage(IAsyncResult asyncResult)
+        public virtual UpdateUsageResponse EndUpdateUsage(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateUsageResponse>(asyncResult);
         }
@@ -7379,7 +7379,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public UpdateUsagePlanResponse UpdateUsagePlan(UpdateUsagePlanRequest request)
+        public virtual UpdateUsagePlanResponse UpdateUsagePlan(UpdateUsagePlanRequest request)
         {
             var marshaller = new UpdateUsagePlanRequestMarshaller();
             var unmarshaller = UpdateUsagePlanResponseUnmarshaller.Instance;
@@ -7398,7 +7398,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateUsagePlan
         ///         operation.</returns>
-        public IAsyncResult BeginUpdateUsagePlan(UpdateUsagePlanRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateUsagePlan(UpdateUsagePlanRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateUsagePlanRequestMarshaller();
             var unmarshaller = UpdateUsagePlanResponseUnmarshaller.Instance;
@@ -7414,7 +7414,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateUsagePlan.</param>
         /// 
         /// <returns>Returns a  UpdateUsagePlanResult from APIGateway.</returns>
-        public  UpdateUsagePlanResponse EndUpdateUsagePlan(IAsyncResult asyncResult)
+        public virtual UpdateUsagePlanResponse EndUpdateUsagePlan(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateUsagePlanResponse>(asyncResult);
         }

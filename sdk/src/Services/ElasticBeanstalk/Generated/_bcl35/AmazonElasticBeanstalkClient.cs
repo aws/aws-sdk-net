@@ -258,7 +258,7 @@ namespace Amazon.ElasticBeanstalk
         /// The specified account does not have sufficient privileges for one of more AWS services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/AbortEnvironmentUpdate">REST API Reference for AbortEnvironmentUpdate Operation</seealso>
-        public AbortEnvironmentUpdateResponse AbortEnvironmentUpdate(AbortEnvironmentUpdateRequest request)
+        public virtual AbortEnvironmentUpdateResponse AbortEnvironmentUpdate(AbortEnvironmentUpdateRequest request)
         {
             var marshaller = new AbortEnvironmentUpdateRequestMarshaller();
             var unmarshaller = AbortEnvironmentUpdateResponseUnmarshaller.Instance;
@@ -278,7 +278,7 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAbortEnvironmentUpdate
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/AbortEnvironmentUpdate">REST API Reference for AbortEnvironmentUpdate Operation</seealso>
-        public IAsyncResult BeginAbortEnvironmentUpdate(AbortEnvironmentUpdateRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginAbortEnvironmentUpdate(AbortEnvironmentUpdateRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AbortEnvironmentUpdateRequestMarshaller();
             var unmarshaller = AbortEnvironmentUpdateResponseUnmarshaller.Instance;
@@ -295,7 +295,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>Returns a  AbortEnvironmentUpdateResult from ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/AbortEnvironmentUpdate">REST API Reference for AbortEnvironmentUpdate Operation</seealso>
-        public  AbortEnvironmentUpdateResponse EndAbortEnvironmentUpdate(IAsyncResult asyncResult)
+        public virtual AbortEnvironmentUpdateResponse EndAbortEnvironmentUpdate(IAsyncResult asyncResult)
         {
             return EndInvoke<AbortEnvironmentUpdateResponse>(asyncResult);
         }
@@ -319,7 +319,7 @@ namespace Amazon.ElasticBeanstalk
         /// Cannot modify the managed action in its current state.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ApplyEnvironmentManagedAction">REST API Reference for ApplyEnvironmentManagedAction Operation</seealso>
-        public ApplyEnvironmentManagedActionResponse ApplyEnvironmentManagedAction(ApplyEnvironmentManagedActionRequest request)
+        public virtual ApplyEnvironmentManagedActionResponse ApplyEnvironmentManagedAction(ApplyEnvironmentManagedActionRequest request)
         {
             var marshaller = new ApplyEnvironmentManagedActionRequestMarshaller();
             var unmarshaller = ApplyEnvironmentManagedActionResponseUnmarshaller.Instance;
@@ -339,7 +339,7 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndApplyEnvironmentManagedAction
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ApplyEnvironmentManagedAction">REST API Reference for ApplyEnvironmentManagedAction Operation</seealso>
-        public IAsyncResult BeginApplyEnvironmentManagedAction(ApplyEnvironmentManagedActionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginApplyEnvironmentManagedAction(ApplyEnvironmentManagedActionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ApplyEnvironmentManagedActionRequestMarshaller();
             var unmarshaller = ApplyEnvironmentManagedActionResponseUnmarshaller.Instance;
@@ -356,7 +356,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>Returns a  ApplyEnvironmentManagedActionResult from ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ApplyEnvironmentManagedAction">REST API Reference for ApplyEnvironmentManagedAction Operation</seealso>
-        public  ApplyEnvironmentManagedActionResponse EndApplyEnvironmentManagedAction(IAsyncResult asyncResult)
+        public virtual ApplyEnvironmentManagedActionResponse EndApplyEnvironmentManagedAction(IAsyncResult asyncResult)
         {
             return EndInvoke<ApplyEnvironmentManagedActionResponse>(asyncResult);
         }
@@ -372,7 +372,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the CheckDNSAvailability service method, as returned by ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CheckDNSAvailability">REST API Reference for CheckDNSAvailability Operation</seealso>
-        public CheckDNSAvailabilityResponse CheckDNSAvailability(CheckDNSAvailabilityRequest request)
+        public virtual CheckDNSAvailabilityResponse CheckDNSAvailability(CheckDNSAvailabilityRequest request)
         {
             var marshaller = new CheckDNSAvailabilityRequestMarshaller();
             var unmarshaller = CheckDNSAvailabilityResponseUnmarshaller.Instance;
@@ -392,7 +392,7 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCheckDNSAvailability
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CheckDNSAvailability">REST API Reference for CheckDNSAvailability Operation</seealso>
-        public IAsyncResult BeginCheckDNSAvailability(CheckDNSAvailabilityRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCheckDNSAvailability(CheckDNSAvailabilityRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CheckDNSAvailabilityRequestMarshaller();
             var unmarshaller = CheckDNSAvailabilityResponseUnmarshaller.Instance;
@@ -409,7 +409,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>Returns a  CheckDNSAvailabilityResult from ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CheckDNSAvailability">REST API Reference for CheckDNSAvailability Operation</seealso>
-        public  CheckDNSAvailabilityResponse EndCheckDNSAvailability(IAsyncResult asyncResult)
+        public virtual CheckDNSAvailabilityResponse EndCheckDNSAvailability(IAsyncResult asyncResult)
         {
             return EndInvoke<CheckDNSAvailabilityResponse>(asyncResult);
         }
@@ -436,7 +436,7 @@ namespace Amazon.ElasticBeanstalk
         /// The specified account has reached its limit of environments.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ComposeEnvironments">REST API Reference for ComposeEnvironments Operation</seealso>
-        public ComposeEnvironmentsResponse ComposeEnvironments(ComposeEnvironmentsRequest request)
+        public virtual ComposeEnvironmentsResponse ComposeEnvironments(ComposeEnvironmentsRequest request)
         {
             var marshaller = new ComposeEnvironmentsRequestMarshaller();
             var unmarshaller = ComposeEnvironmentsResponseUnmarshaller.Instance;
@@ -456,7 +456,7 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndComposeEnvironments
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ComposeEnvironments">REST API Reference for ComposeEnvironments Operation</seealso>
-        public IAsyncResult BeginComposeEnvironments(ComposeEnvironmentsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginComposeEnvironments(ComposeEnvironmentsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ComposeEnvironmentsRequestMarshaller();
             var unmarshaller = ComposeEnvironmentsResponseUnmarshaller.Instance;
@@ -473,7 +473,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>Returns a  ComposeEnvironmentsResult from ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ComposeEnvironments">REST API Reference for ComposeEnvironments Operation</seealso>
-        public  ComposeEnvironmentsResponse EndComposeEnvironments(IAsyncResult asyncResult)
+        public virtual ComposeEnvironmentsResponse EndComposeEnvironments(IAsyncResult asyncResult)
         {
             return EndInvoke<ComposeEnvironmentsResponse>(asyncResult);
         }
@@ -493,7 +493,7 @@ namespace Amazon.ElasticBeanstalk
         /// The specified account has reached its limit of applications.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
-        public CreateApplicationResponse CreateApplication(CreateApplicationRequest request)
+        public virtual CreateApplicationResponse CreateApplication(CreateApplicationRequest request)
         {
             var marshaller = new CreateApplicationRequestMarshaller();
             var unmarshaller = CreateApplicationResponseUnmarshaller.Instance;
@@ -513,7 +513,7 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateApplication
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
-        public IAsyncResult BeginCreateApplication(CreateApplicationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateApplication(CreateApplicationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateApplicationRequestMarshaller();
             var unmarshaller = CreateApplicationResponseUnmarshaller.Instance;
@@ -530,7 +530,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>Returns a  CreateApplicationResult from ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
-        public  CreateApplicationResponse EndCreateApplication(IAsyncResult asyncResult)
+        public virtual CreateApplicationResponse EndCreateApplication(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateApplicationResponse>(asyncResult);
         }
@@ -604,7 +604,7 @@ namespace Amazon.ElasticBeanstalk
         /// The specified account has reached its limit of application versions.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateApplicationVersion">REST API Reference for CreateApplicationVersion Operation</seealso>
-        public CreateApplicationVersionResponse CreateApplicationVersion(CreateApplicationVersionRequest request)
+        public virtual CreateApplicationVersionResponse CreateApplicationVersion(CreateApplicationVersionRequest request)
         {
             var marshaller = new CreateApplicationVersionRequestMarshaller();
             var unmarshaller = CreateApplicationVersionResponseUnmarshaller.Instance;
@@ -624,7 +624,7 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateApplicationVersion
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateApplicationVersion">REST API Reference for CreateApplicationVersion Operation</seealso>
-        public IAsyncResult BeginCreateApplicationVersion(CreateApplicationVersionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateApplicationVersion(CreateApplicationVersionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateApplicationVersionRequestMarshaller();
             var unmarshaller = CreateApplicationVersionResponseUnmarshaller.Instance;
@@ -641,7 +641,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>Returns a  CreateApplicationVersionResult from ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateApplicationVersion">REST API Reference for CreateApplicationVersion Operation</seealso>
-        public  CreateApplicationVersionResponse EndCreateApplicationVersion(IAsyncResult asyncResult)
+        public virtual CreateApplicationVersionResponse EndCreateApplicationVersion(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateApplicationVersionResponse>(asyncResult);
         }
@@ -686,7 +686,7 @@ namespace Amazon.ElasticBeanstalk
         /// The specified account has reached its limit of configuration templates.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateConfigurationTemplate">REST API Reference for CreateConfigurationTemplate Operation</seealso>
-        public CreateConfigurationTemplateResponse CreateConfigurationTemplate(CreateConfigurationTemplateRequest request)
+        public virtual CreateConfigurationTemplateResponse CreateConfigurationTemplate(CreateConfigurationTemplateRequest request)
         {
             var marshaller = new CreateConfigurationTemplateRequestMarshaller();
             var unmarshaller = CreateConfigurationTemplateResponseUnmarshaller.Instance;
@@ -706,7 +706,7 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateConfigurationTemplate
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateConfigurationTemplate">REST API Reference for CreateConfigurationTemplate Operation</seealso>
-        public IAsyncResult BeginCreateConfigurationTemplate(CreateConfigurationTemplateRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateConfigurationTemplate(CreateConfigurationTemplateRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateConfigurationTemplateRequestMarshaller();
             var unmarshaller = CreateConfigurationTemplateResponseUnmarshaller.Instance;
@@ -723,7 +723,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>Returns a  CreateConfigurationTemplateResult from ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateConfigurationTemplate">REST API Reference for CreateConfigurationTemplate Operation</seealso>
-        public  CreateConfigurationTemplateResponse EndCreateConfigurationTemplate(IAsyncResult asyncResult)
+        public virtual CreateConfigurationTemplateResponse EndCreateConfigurationTemplate(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateConfigurationTemplateResponse>(asyncResult);
         }
@@ -745,7 +745,7 @@ namespace Amazon.ElasticBeanstalk
         /// The specified account has reached its limit of environments.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateEnvironment">REST API Reference for CreateEnvironment Operation</seealso>
-        public CreateEnvironmentResponse CreateEnvironment(CreateEnvironmentRequest request)
+        public virtual CreateEnvironmentResponse CreateEnvironment(CreateEnvironmentRequest request)
         {
             var marshaller = new CreateEnvironmentRequestMarshaller();
             var unmarshaller = CreateEnvironmentResponseUnmarshaller.Instance;
@@ -765,7 +765,7 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateEnvironment
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateEnvironment">REST API Reference for CreateEnvironment Operation</seealso>
-        public IAsyncResult BeginCreateEnvironment(CreateEnvironmentRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateEnvironment(CreateEnvironmentRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateEnvironmentRequestMarshaller();
             var unmarshaller = CreateEnvironmentResponseUnmarshaller.Instance;
@@ -782,7 +782,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>Returns a  CreateEnvironmentResult from ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateEnvironment">REST API Reference for CreateEnvironment Operation</seealso>
-        public  CreateEnvironmentResponse EndCreateEnvironment(IAsyncResult asyncResult)
+        public virtual CreateEnvironmentResponse EndCreateEnvironment(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateEnvironmentResponse>(asyncResult);
         }
@@ -807,7 +807,7 @@ namespace Amazon.ElasticBeanstalk
         /// You have exceeded the maximum number of allowed platforms associated with the account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreatePlatformVersion">REST API Reference for CreatePlatformVersion Operation</seealso>
-        public CreatePlatformVersionResponse CreatePlatformVersion(CreatePlatformVersionRequest request)
+        public virtual CreatePlatformVersionResponse CreatePlatformVersion(CreatePlatformVersionRequest request)
         {
             var marshaller = new CreatePlatformVersionRequestMarshaller();
             var unmarshaller = CreatePlatformVersionResponseUnmarshaller.Instance;
@@ -827,7 +827,7 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePlatformVersion
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreatePlatformVersion">REST API Reference for CreatePlatformVersion Operation</seealso>
-        public IAsyncResult BeginCreatePlatformVersion(CreatePlatformVersionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreatePlatformVersion(CreatePlatformVersionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreatePlatformVersionRequestMarshaller();
             var unmarshaller = CreatePlatformVersionResponseUnmarshaller.Instance;
@@ -844,7 +844,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>Returns a  CreatePlatformVersionResult from ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreatePlatformVersion">REST API Reference for CreatePlatformVersion Operation</seealso>
-        public  CreatePlatformVersionResponse EndCreatePlatformVersion(IAsyncResult asyncResult)
+        public virtual CreatePlatformVersionResponse EndCreatePlatformVersion(IAsyncResult asyncResult)
         {
             return EndInvoke<CreatePlatformVersionResponse>(asyncResult);
         }
@@ -873,7 +873,7 @@ namespace Amazon.ElasticBeanstalk
         /// The specified account has reached its limit of Amazon S3 buckets.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateStorageLocation">REST API Reference for CreateStorageLocation Operation</seealso>
-        public CreateStorageLocationResponse CreateStorageLocation()
+        public virtual CreateStorageLocationResponse CreateStorageLocation()
         {
             return CreateStorageLocation(new CreateStorageLocationRequest());
         }
@@ -899,7 +899,7 @@ namespace Amazon.ElasticBeanstalk
         /// The specified account has reached its limit of Amazon S3 buckets.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateStorageLocation">REST API Reference for CreateStorageLocation Operation</seealso>
-        public CreateStorageLocationResponse CreateStorageLocation(CreateStorageLocationRequest request)
+        public virtual CreateStorageLocationResponse CreateStorageLocation(CreateStorageLocationRequest request)
         {
             var marshaller = new CreateStorageLocationRequestMarshaller();
             var unmarshaller = CreateStorageLocationResponseUnmarshaller.Instance;
@@ -919,7 +919,7 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateStorageLocation
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateStorageLocation">REST API Reference for CreateStorageLocation Operation</seealso>
-        public IAsyncResult BeginCreateStorageLocation(CreateStorageLocationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateStorageLocation(CreateStorageLocationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateStorageLocationRequestMarshaller();
             var unmarshaller = CreateStorageLocationResponseUnmarshaller.Instance;
@@ -936,7 +936,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>Returns a  CreateStorageLocationResult from ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateStorageLocation">REST API Reference for CreateStorageLocation Operation</seealso>
-        public  CreateStorageLocationResponse EndCreateStorageLocation(IAsyncResult asyncResult)
+        public virtual CreateStorageLocationResponse EndCreateStorageLocation(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateStorageLocationResponse>(asyncResult);
         }
@@ -963,7 +963,7 @@ namespace Amazon.ElasticBeanstalk
         /// element in this activity is already in progress.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
-        public DeleteApplicationResponse DeleteApplication(DeleteApplicationRequest request)
+        public virtual DeleteApplicationResponse DeleteApplication(DeleteApplicationRequest request)
         {
             var marshaller = new DeleteApplicationRequestMarshaller();
             var unmarshaller = DeleteApplicationResponseUnmarshaller.Instance;
@@ -983,7 +983,7 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteApplication
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
-        public IAsyncResult BeginDeleteApplication(DeleteApplicationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteApplication(DeleteApplicationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteApplicationRequestMarshaller();
             var unmarshaller = DeleteApplicationResponseUnmarshaller.Instance;
@@ -1000,7 +1000,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>Returns a  DeleteApplicationResult from ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
-        public  DeleteApplicationResponse EndDeleteApplication(IAsyncResult asyncResult)
+        public virtual DeleteApplicationResponse EndDeleteApplication(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteApplicationResponse>(asyncResult);
         }
@@ -1051,7 +1051,7 @@ namespace Amazon.ElasticBeanstalk
         /// The application version was deleted successfully.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteApplicationVersion">REST API Reference for DeleteApplicationVersion Operation</seealso>
-        public DeleteApplicationVersionResponse DeleteApplicationVersion(DeleteApplicationVersionRequest request)
+        public virtual DeleteApplicationVersionResponse DeleteApplicationVersion(DeleteApplicationVersionRequest request)
         {
             var marshaller = new DeleteApplicationVersionRequestMarshaller();
             var unmarshaller = DeleteApplicationVersionResponseUnmarshaller.Instance;
@@ -1071,7 +1071,7 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteApplicationVersion
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteApplicationVersion">REST API Reference for DeleteApplicationVersion Operation</seealso>
-        public IAsyncResult BeginDeleteApplicationVersion(DeleteApplicationVersionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteApplicationVersion(DeleteApplicationVersionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteApplicationVersionRequestMarshaller();
             var unmarshaller = DeleteApplicationVersionResponseUnmarshaller.Instance;
@@ -1088,7 +1088,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>Returns a  DeleteApplicationVersionResult from ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteApplicationVersion">REST API Reference for DeleteApplicationVersion Operation</seealso>
-        public  DeleteApplicationVersionResponse EndDeleteApplicationVersion(IAsyncResult asyncResult)
+        public virtual DeleteApplicationVersionResponse EndDeleteApplicationVersion(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteApplicationVersionResponse>(asyncResult);
         }
@@ -1116,7 +1116,7 @@ namespace Amazon.ElasticBeanstalk
         /// element in this activity is already in progress.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteConfigurationTemplate">REST API Reference for DeleteConfigurationTemplate Operation</seealso>
-        public DeleteConfigurationTemplateResponse DeleteConfigurationTemplate(DeleteConfigurationTemplateRequest request)
+        public virtual DeleteConfigurationTemplateResponse DeleteConfigurationTemplate(DeleteConfigurationTemplateRequest request)
         {
             var marshaller = new DeleteConfigurationTemplateRequestMarshaller();
             var unmarshaller = DeleteConfigurationTemplateResponseUnmarshaller.Instance;
@@ -1136,7 +1136,7 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteConfigurationTemplate
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteConfigurationTemplate">REST API Reference for DeleteConfigurationTemplate Operation</seealso>
-        public IAsyncResult BeginDeleteConfigurationTemplate(DeleteConfigurationTemplateRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteConfigurationTemplate(DeleteConfigurationTemplateRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteConfigurationTemplateRequestMarshaller();
             var unmarshaller = DeleteConfigurationTemplateResponseUnmarshaller.Instance;
@@ -1153,7 +1153,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>Returns a  DeleteConfigurationTemplateResult from ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteConfigurationTemplate">REST API Reference for DeleteConfigurationTemplate Operation</seealso>
-        public  DeleteConfigurationTemplateResponse EndDeleteConfigurationTemplate(IAsyncResult asyncResult)
+        public virtual DeleteConfigurationTemplateResponse EndDeleteConfigurationTemplate(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteConfigurationTemplateResponse>(asyncResult);
         }
@@ -1179,7 +1179,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the DeleteEnvironmentConfiguration service method, as returned by ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteEnvironmentConfiguration">REST API Reference for DeleteEnvironmentConfiguration Operation</seealso>
-        public DeleteEnvironmentConfigurationResponse DeleteEnvironmentConfiguration(DeleteEnvironmentConfigurationRequest request)
+        public virtual DeleteEnvironmentConfigurationResponse DeleteEnvironmentConfiguration(DeleteEnvironmentConfigurationRequest request)
         {
             var marshaller = new DeleteEnvironmentConfigurationRequestMarshaller();
             var unmarshaller = DeleteEnvironmentConfigurationResponseUnmarshaller.Instance;
@@ -1199,7 +1199,7 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteEnvironmentConfiguration
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteEnvironmentConfiguration">REST API Reference for DeleteEnvironmentConfiguration Operation</seealso>
-        public IAsyncResult BeginDeleteEnvironmentConfiguration(DeleteEnvironmentConfigurationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteEnvironmentConfiguration(DeleteEnvironmentConfigurationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteEnvironmentConfigurationRequestMarshaller();
             var unmarshaller = DeleteEnvironmentConfigurationResponseUnmarshaller.Instance;
@@ -1216,7 +1216,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>Returns a  DeleteEnvironmentConfigurationResult from ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteEnvironmentConfiguration">REST API Reference for DeleteEnvironmentConfiguration Operation</seealso>
-        public  DeleteEnvironmentConfigurationResponse EndDeleteEnvironmentConfiguration(IAsyncResult asyncResult)
+        public virtual DeleteEnvironmentConfigurationResponse EndDeleteEnvironmentConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteEnvironmentConfigurationResponse>(asyncResult);
         }
@@ -1246,7 +1246,7 @@ namespace Amazon.ElasticBeanstalk
         /// on it.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeletePlatformVersion">REST API Reference for DeletePlatformVersion Operation</seealso>
-        public DeletePlatformVersionResponse DeletePlatformVersion(DeletePlatformVersionRequest request)
+        public virtual DeletePlatformVersionResponse DeletePlatformVersion(DeletePlatformVersionRequest request)
         {
             var marshaller = new DeletePlatformVersionRequestMarshaller();
             var unmarshaller = DeletePlatformVersionResponseUnmarshaller.Instance;
@@ -1266,7 +1266,7 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePlatformVersion
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeletePlatformVersion">REST API Reference for DeletePlatformVersion Operation</seealso>
-        public IAsyncResult BeginDeletePlatformVersion(DeletePlatformVersionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeletePlatformVersion(DeletePlatformVersionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeletePlatformVersionRequestMarshaller();
             var unmarshaller = DeletePlatformVersionResponseUnmarshaller.Instance;
@@ -1283,7 +1283,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>Returns a  DeletePlatformVersionResult from ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeletePlatformVersion">REST API Reference for DeletePlatformVersion Operation</seealso>
-        public  DeletePlatformVersionResponse EndDeletePlatformVersion(IAsyncResult asyncResult)
+        public virtual DeletePlatformVersionResponse EndDeletePlatformVersion(IAsyncResult asyncResult)
         {
             return EndInvoke<DeletePlatformVersionResponse>(asyncResult);
         }
@@ -1298,7 +1298,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the DescribeApplications service method, as returned by ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeApplications">REST API Reference for DescribeApplications Operation</seealso>
-        public DescribeApplicationsResponse DescribeApplications()
+        public virtual DescribeApplicationsResponse DescribeApplications()
         {
             return DescribeApplications(new DescribeApplicationsRequest());
         }
@@ -1310,7 +1310,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the DescribeApplications service method, as returned by ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeApplications">REST API Reference for DescribeApplications Operation</seealso>
-        public DescribeApplicationsResponse DescribeApplications(DescribeApplicationsRequest request)
+        public virtual DescribeApplicationsResponse DescribeApplications(DescribeApplicationsRequest request)
         {
             var marshaller = new DescribeApplicationsRequestMarshaller();
             var unmarshaller = DescribeApplicationsResponseUnmarshaller.Instance;
@@ -1330,7 +1330,7 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeApplications
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeApplications">REST API Reference for DescribeApplications Operation</seealso>
-        public IAsyncResult BeginDescribeApplications(DescribeApplicationsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeApplications(DescribeApplicationsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeApplicationsRequestMarshaller();
             var unmarshaller = DescribeApplicationsResponseUnmarshaller.Instance;
@@ -1347,7 +1347,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>Returns a  DescribeApplicationsResult from ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeApplications">REST API Reference for DescribeApplications Operation</seealso>
-        public  DescribeApplicationsResponse EndDescribeApplications(IAsyncResult asyncResult)
+        public virtual DescribeApplicationsResponse EndDescribeApplications(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeApplicationsResponse>(asyncResult);
         }
@@ -1362,7 +1362,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the DescribeApplicationVersions service method, as returned by ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeApplicationVersions">REST API Reference for DescribeApplicationVersions Operation</seealso>
-        public DescribeApplicationVersionsResponse DescribeApplicationVersions()
+        public virtual DescribeApplicationVersionsResponse DescribeApplicationVersions()
         {
             return DescribeApplicationVersions(new DescribeApplicationVersionsRequest());
         }
@@ -1374,7 +1374,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the DescribeApplicationVersions service method, as returned by ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeApplicationVersions">REST API Reference for DescribeApplicationVersions Operation</seealso>
-        public DescribeApplicationVersionsResponse DescribeApplicationVersions(DescribeApplicationVersionsRequest request)
+        public virtual DescribeApplicationVersionsResponse DescribeApplicationVersions(DescribeApplicationVersionsRequest request)
         {
             var marshaller = new DescribeApplicationVersionsRequestMarshaller();
             var unmarshaller = DescribeApplicationVersionsResponseUnmarshaller.Instance;
@@ -1394,7 +1394,7 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeApplicationVersions
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeApplicationVersions">REST API Reference for DescribeApplicationVersions Operation</seealso>
-        public IAsyncResult BeginDescribeApplicationVersions(DescribeApplicationVersionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeApplicationVersions(DescribeApplicationVersionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeApplicationVersionsRequestMarshaller();
             var unmarshaller = DescribeApplicationVersionsResponseUnmarshaller.Instance;
@@ -1411,7 +1411,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>Returns a  DescribeApplicationVersionsResult from ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeApplicationVersions">REST API Reference for DescribeApplicationVersions Operation</seealso>
-        public  DescribeApplicationVersionsResponse EndDescribeApplicationVersions(IAsyncResult asyncResult)
+        public virtual DescribeApplicationVersionsResponse EndDescribeApplicationVersions(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeApplicationVersionsResponse>(asyncResult);
         }
@@ -1432,7 +1432,7 @@ namespace Amazon.ElasticBeanstalk
         /// The specified account has reached its limit of Amazon S3 buckets.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeConfigurationOptions">REST API Reference for DescribeConfigurationOptions Operation</seealso>
-        public DescribeConfigurationOptionsResponse DescribeConfigurationOptions()
+        public virtual DescribeConfigurationOptionsResponse DescribeConfigurationOptions()
         {
             return DescribeConfigurationOptions(new DescribeConfigurationOptionsRequest());
         }
@@ -1450,7 +1450,7 @@ namespace Amazon.ElasticBeanstalk
         /// The specified account has reached its limit of Amazon S3 buckets.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeConfigurationOptions">REST API Reference for DescribeConfigurationOptions Operation</seealso>
-        public DescribeConfigurationOptionsResponse DescribeConfigurationOptions(DescribeConfigurationOptionsRequest request)
+        public virtual DescribeConfigurationOptionsResponse DescribeConfigurationOptions(DescribeConfigurationOptionsRequest request)
         {
             var marshaller = new DescribeConfigurationOptionsRequestMarshaller();
             var unmarshaller = DescribeConfigurationOptionsResponseUnmarshaller.Instance;
@@ -1470,7 +1470,7 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeConfigurationOptions
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeConfigurationOptions">REST API Reference for DescribeConfigurationOptions Operation</seealso>
-        public IAsyncResult BeginDescribeConfigurationOptions(DescribeConfigurationOptionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeConfigurationOptions(DescribeConfigurationOptionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeConfigurationOptionsRequestMarshaller();
             var unmarshaller = DescribeConfigurationOptionsResponseUnmarshaller.Instance;
@@ -1487,7 +1487,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>Returns a  DescribeConfigurationOptionsResult from ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeConfigurationOptions">REST API Reference for DescribeConfigurationOptions Operation</seealso>
-        public  DescribeConfigurationOptionsResponse EndDescribeConfigurationOptions(IAsyncResult asyncResult)
+        public virtual DescribeConfigurationOptionsResponse EndDescribeConfigurationOptions(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeConfigurationOptionsResponse>(asyncResult);
         }
@@ -1525,7 +1525,7 @@ namespace Amazon.ElasticBeanstalk
         /// The specified account has reached its limit of Amazon S3 buckets.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeConfigurationSettings">REST API Reference for DescribeConfigurationSettings Operation</seealso>
-        public DescribeConfigurationSettingsResponse DescribeConfigurationSettings(DescribeConfigurationSettingsRequest request)
+        public virtual DescribeConfigurationSettingsResponse DescribeConfigurationSettings(DescribeConfigurationSettingsRequest request)
         {
             var marshaller = new DescribeConfigurationSettingsRequestMarshaller();
             var unmarshaller = DescribeConfigurationSettingsResponseUnmarshaller.Instance;
@@ -1545,7 +1545,7 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeConfigurationSettings
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeConfigurationSettings">REST API Reference for DescribeConfigurationSettings Operation</seealso>
-        public IAsyncResult BeginDescribeConfigurationSettings(DescribeConfigurationSettingsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeConfigurationSettings(DescribeConfigurationSettingsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeConfigurationSettingsRequestMarshaller();
             var unmarshaller = DescribeConfigurationSettingsResponseUnmarshaller.Instance;
@@ -1562,7 +1562,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>Returns a  DescribeConfigurationSettingsResult from ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeConfigurationSettings">REST API Reference for DescribeConfigurationSettings Operation</seealso>
-        public  DescribeConfigurationSettingsResponse EndDescribeConfigurationSettings(IAsyncResult asyncResult)
+        public virtual DescribeConfigurationSettingsResponse EndDescribeConfigurationSettings(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeConfigurationSettingsResponse>(asyncResult);
         }
@@ -1586,7 +1586,7 @@ namespace Amazon.ElasticBeanstalk
         /// try the operation again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentHealth">REST API Reference for DescribeEnvironmentHealth Operation</seealso>
-        public DescribeEnvironmentHealthResponse DescribeEnvironmentHealth(DescribeEnvironmentHealthRequest request)
+        public virtual DescribeEnvironmentHealthResponse DescribeEnvironmentHealth(DescribeEnvironmentHealthRequest request)
         {
             var marshaller = new DescribeEnvironmentHealthRequestMarshaller();
             var unmarshaller = DescribeEnvironmentHealthResponseUnmarshaller.Instance;
@@ -1606,7 +1606,7 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEnvironmentHealth
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentHealth">REST API Reference for DescribeEnvironmentHealth Operation</seealso>
-        public IAsyncResult BeginDescribeEnvironmentHealth(DescribeEnvironmentHealthRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeEnvironmentHealth(DescribeEnvironmentHealthRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeEnvironmentHealthRequestMarshaller();
             var unmarshaller = DescribeEnvironmentHealthResponseUnmarshaller.Instance;
@@ -1623,7 +1623,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>Returns a  DescribeEnvironmentHealthResult from ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentHealth">REST API Reference for DescribeEnvironmentHealth Operation</seealso>
-        public  DescribeEnvironmentHealthResponse EndDescribeEnvironmentHealth(IAsyncResult asyncResult)
+        public virtual DescribeEnvironmentHealthResponse EndDescribeEnvironmentHealth(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeEnvironmentHealthResponse>(asyncResult);
         }
@@ -1642,7 +1642,7 @@ namespace Amazon.ElasticBeanstalk
         /// A generic service exception has occurred.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentManagedActionHistory">REST API Reference for DescribeEnvironmentManagedActionHistory Operation</seealso>
-        public DescribeEnvironmentManagedActionHistoryResponse DescribeEnvironmentManagedActionHistory(DescribeEnvironmentManagedActionHistoryRequest request)
+        public virtual DescribeEnvironmentManagedActionHistoryResponse DescribeEnvironmentManagedActionHistory(DescribeEnvironmentManagedActionHistoryRequest request)
         {
             var marshaller = new DescribeEnvironmentManagedActionHistoryRequestMarshaller();
             var unmarshaller = DescribeEnvironmentManagedActionHistoryResponseUnmarshaller.Instance;
@@ -1662,7 +1662,7 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEnvironmentManagedActionHistory
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentManagedActionHistory">REST API Reference for DescribeEnvironmentManagedActionHistory Operation</seealso>
-        public IAsyncResult BeginDescribeEnvironmentManagedActionHistory(DescribeEnvironmentManagedActionHistoryRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeEnvironmentManagedActionHistory(DescribeEnvironmentManagedActionHistoryRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeEnvironmentManagedActionHistoryRequestMarshaller();
             var unmarshaller = DescribeEnvironmentManagedActionHistoryResponseUnmarshaller.Instance;
@@ -1679,7 +1679,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>Returns a  DescribeEnvironmentManagedActionHistoryResult from ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentManagedActionHistory">REST API Reference for DescribeEnvironmentManagedActionHistory Operation</seealso>
-        public  DescribeEnvironmentManagedActionHistoryResponse EndDescribeEnvironmentManagedActionHistory(IAsyncResult asyncResult)
+        public virtual DescribeEnvironmentManagedActionHistoryResponse EndDescribeEnvironmentManagedActionHistory(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeEnvironmentManagedActionHistoryResponse>(asyncResult);
         }
@@ -1698,7 +1698,7 @@ namespace Amazon.ElasticBeanstalk
         /// A generic service exception has occurred.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentManagedActions">REST API Reference for DescribeEnvironmentManagedActions Operation</seealso>
-        public DescribeEnvironmentManagedActionsResponse DescribeEnvironmentManagedActions(DescribeEnvironmentManagedActionsRequest request)
+        public virtual DescribeEnvironmentManagedActionsResponse DescribeEnvironmentManagedActions(DescribeEnvironmentManagedActionsRequest request)
         {
             var marshaller = new DescribeEnvironmentManagedActionsRequestMarshaller();
             var unmarshaller = DescribeEnvironmentManagedActionsResponseUnmarshaller.Instance;
@@ -1718,7 +1718,7 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEnvironmentManagedActions
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentManagedActions">REST API Reference for DescribeEnvironmentManagedActions Operation</seealso>
-        public IAsyncResult BeginDescribeEnvironmentManagedActions(DescribeEnvironmentManagedActionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeEnvironmentManagedActions(DescribeEnvironmentManagedActionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeEnvironmentManagedActionsRequestMarshaller();
             var unmarshaller = DescribeEnvironmentManagedActionsResponseUnmarshaller.Instance;
@@ -1735,7 +1735,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>Returns a  DescribeEnvironmentManagedActionsResult from ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentManagedActions">REST API Reference for DescribeEnvironmentManagedActions Operation</seealso>
-        public  DescribeEnvironmentManagedActionsResponse EndDescribeEnvironmentManagedActions(IAsyncResult asyncResult)
+        public virtual DescribeEnvironmentManagedActionsResponse EndDescribeEnvironmentManagedActions(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeEnvironmentManagedActionsResponse>(asyncResult);
         }
@@ -1754,7 +1754,7 @@ namespace Amazon.ElasticBeanstalk
         /// The specified account does not have sufficient privileges for one of more AWS services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentResources">REST API Reference for DescribeEnvironmentResources Operation</seealso>
-        public DescribeEnvironmentResourcesResponse DescribeEnvironmentResources(DescribeEnvironmentResourcesRequest request)
+        public virtual DescribeEnvironmentResourcesResponse DescribeEnvironmentResources(DescribeEnvironmentResourcesRequest request)
         {
             var marshaller = new DescribeEnvironmentResourcesRequestMarshaller();
             var unmarshaller = DescribeEnvironmentResourcesResponseUnmarshaller.Instance;
@@ -1774,7 +1774,7 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEnvironmentResources
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentResources">REST API Reference for DescribeEnvironmentResources Operation</seealso>
-        public IAsyncResult BeginDescribeEnvironmentResources(DescribeEnvironmentResourcesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeEnvironmentResources(DescribeEnvironmentResourcesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeEnvironmentResourcesRequestMarshaller();
             var unmarshaller = DescribeEnvironmentResourcesResponseUnmarshaller.Instance;
@@ -1791,7 +1791,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>Returns a  DescribeEnvironmentResourcesResult from ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentResources">REST API Reference for DescribeEnvironmentResources Operation</seealso>
-        public  DescribeEnvironmentResourcesResponse EndDescribeEnvironmentResources(IAsyncResult asyncResult)
+        public virtual DescribeEnvironmentResourcesResponse EndDescribeEnvironmentResources(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeEnvironmentResourcesResponse>(asyncResult);
         }
@@ -1806,7 +1806,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the DescribeEnvironments service method, as returned by ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironments">REST API Reference for DescribeEnvironments Operation</seealso>
-        public DescribeEnvironmentsResponse DescribeEnvironments()
+        public virtual DescribeEnvironmentsResponse DescribeEnvironments()
         {
             return DescribeEnvironments(new DescribeEnvironmentsRequest());
         }
@@ -1818,7 +1818,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the DescribeEnvironments service method, as returned by ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironments">REST API Reference for DescribeEnvironments Operation</seealso>
-        public DescribeEnvironmentsResponse DescribeEnvironments(DescribeEnvironmentsRequest request)
+        public virtual DescribeEnvironmentsResponse DescribeEnvironments(DescribeEnvironmentsRequest request)
         {
             var marshaller = new DescribeEnvironmentsRequestMarshaller();
             var unmarshaller = DescribeEnvironmentsResponseUnmarshaller.Instance;
@@ -1838,7 +1838,7 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEnvironments
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironments">REST API Reference for DescribeEnvironments Operation</seealso>
-        public IAsyncResult BeginDescribeEnvironments(DescribeEnvironmentsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeEnvironments(DescribeEnvironmentsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeEnvironmentsRequestMarshaller();
             var unmarshaller = DescribeEnvironmentsResponseUnmarshaller.Instance;
@@ -1855,7 +1855,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>Returns a  DescribeEnvironmentsResult from ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironments">REST API Reference for DescribeEnvironments Operation</seealso>
-        public  DescribeEnvironmentsResponse EndDescribeEnvironments(IAsyncResult asyncResult)
+        public virtual DescribeEnvironmentsResponse EndDescribeEnvironments(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeEnvironmentsResponse>(asyncResult);
         }
@@ -1876,7 +1876,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the DescribeEvents service method, as returned by ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
-        public DescribeEventsResponse DescribeEvents()
+        public virtual DescribeEventsResponse DescribeEvents()
         {
             return DescribeEvents(new DescribeEventsRequest());
         }
@@ -1894,7 +1894,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the DescribeEvents service method, as returned by ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
-        public DescribeEventsResponse DescribeEvents(DescribeEventsRequest request)
+        public virtual DescribeEventsResponse DescribeEvents(DescribeEventsRequest request)
         {
             var marshaller = new DescribeEventsRequestMarshaller();
             var unmarshaller = DescribeEventsResponseUnmarshaller.Instance;
@@ -1914,7 +1914,7 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEvents
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
-        public IAsyncResult BeginDescribeEvents(DescribeEventsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeEvents(DescribeEventsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeEventsRequestMarshaller();
             var unmarshaller = DescribeEventsResponseUnmarshaller.Instance;
@@ -1931,7 +1931,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>Returns a  DescribeEventsResult from ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
-        public  DescribeEventsResponse EndDescribeEvents(IAsyncResult asyncResult)
+        public virtual DescribeEventsResponse EndDescribeEvents(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeEventsResponse>(asyncResult);
         }
@@ -1956,7 +1956,7 @@ namespace Amazon.ElasticBeanstalk
         /// try the operation again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeInstancesHealth">REST API Reference for DescribeInstancesHealth Operation</seealso>
-        public DescribeInstancesHealthResponse DescribeInstancesHealth(DescribeInstancesHealthRequest request)
+        public virtual DescribeInstancesHealthResponse DescribeInstancesHealth(DescribeInstancesHealthRequest request)
         {
             var marshaller = new DescribeInstancesHealthRequestMarshaller();
             var unmarshaller = DescribeInstancesHealthResponseUnmarshaller.Instance;
@@ -1976,7 +1976,7 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeInstancesHealth
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeInstancesHealth">REST API Reference for DescribeInstancesHealth Operation</seealso>
-        public IAsyncResult BeginDescribeInstancesHealth(DescribeInstancesHealthRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeInstancesHealth(DescribeInstancesHealthRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeInstancesHealthRequestMarshaller();
             var unmarshaller = DescribeInstancesHealthResponseUnmarshaller.Instance;
@@ -1993,7 +1993,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>Returns a  DescribeInstancesHealthResult from ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeInstancesHealth">REST API Reference for DescribeInstancesHealth Operation</seealso>
-        public  DescribeInstancesHealthResponse EndDescribeInstancesHealth(IAsyncResult asyncResult)
+        public virtual DescribeInstancesHealthResponse EndDescribeInstancesHealth(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeInstancesHealthResponse>(asyncResult);
         }
@@ -2015,7 +2015,7 @@ namespace Amazon.ElasticBeanstalk
         /// The specified account does not have sufficient privileges for one of more AWS services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribePlatformVersion">REST API Reference for DescribePlatformVersion Operation</seealso>
-        public DescribePlatformVersionResponse DescribePlatformVersion(DescribePlatformVersionRequest request)
+        public virtual DescribePlatformVersionResponse DescribePlatformVersion(DescribePlatformVersionRequest request)
         {
             var marshaller = new DescribePlatformVersionRequestMarshaller();
             var unmarshaller = DescribePlatformVersionResponseUnmarshaller.Instance;
@@ -2035,7 +2035,7 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribePlatformVersion
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribePlatformVersion">REST API Reference for DescribePlatformVersion Operation</seealso>
-        public IAsyncResult BeginDescribePlatformVersion(DescribePlatformVersionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribePlatformVersion(DescribePlatformVersionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribePlatformVersionRequestMarshaller();
             var unmarshaller = DescribePlatformVersionResponseUnmarshaller.Instance;
@@ -2052,7 +2052,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>Returns a  DescribePlatformVersionResult from ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribePlatformVersion">REST API Reference for DescribePlatformVersion Operation</seealso>
-        public  DescribePlatformVersionResponse EndDescribePlatformVersion(IAsyncResult asyncResult)
+        public virtual DescribePlatformVersionResponse EndDescribePlatformVersion(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribePlatformVersionResponse>(asyncResult);
         }
@@ -2068,7 +2068,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the ListAvailableSolutionStacks service method, as returned by ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListAvailableSolutionStacks">REST API Reference for ListAvailableSolutionStacks Operation</seealso>
-        public ListAvailableSolutionStacksResponse ListAvailableSolutionStacks()
+        public virtual ListAvailableSolutionStacksResponse ListAvailableSolutionStacks()
         {
             return ListAvailableSolutionStacks(new ListAvailableSolutionStacksRequest());
         }
@@ -2081,7 +2081,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the ListAvailableSolutionStacks service method, as returned by ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListAvailableSolutionStacks">REST API Reference for ListAvailableSolutionStacks Operation</seealso>
-        public ListAvailableSolutionStacksResponse ListAvailableSolutionStacks(ListAvailableSolutionStacksRequest request)
+        public virtual ListAvailableSolutionStacksResponse ListAvailableSolutionStacks(ListAvailableSolutionStacksRequest request)
         {
             var marshaller = new ListAvailableSolutionStacksRequestMarshaller();
             var unmarshaller = ListAvailableSolutionStacksResponseUnmarshaller.Instance;
@@ -2101,7 +2101,7 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAvailableSolutionStacks
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListAvailableSolutionStacks">REST API Reference for ListAvailableSolutionStacks Operation</seealso>
-        public IAsyncResult BeginListAvailableSolutionStacks(ListAvailableSolutionStacksRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListAvailableSolutionStacks(ListAvailableSolutionStacksRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListAvailableSolutionStacksRequestMarshaller();
             var unmarshaller = ListAvailableSolutionStacksResponseUnmarshaller.Instance;
@@ -2118,7 +2118,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>Returns a  ListAvailableSolutionStacksResult from ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListAvailableSolutionStacks">REST API Reference for ListAvailableSolutionStacks Operation</seealso>
-        public  ListAvailableSolutionStacksResponse EndListAvailableSolutionStacks(IAsyncResult asyncResult)
+        public virtual ListAvailableSolutionStacksResponse EndListAvailableSolutionStacks(IAsyncResult asyncResult)
         {
             return EndInvoke<ListAvailableSolutionStacksResponse>(asyncResult);
         }
@@ -2140,7 +2140,7 @@ namespace Amazon.ElasticBeanstalk
         /// The specified account does not have sufficient privileges for one of more AWS services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListPlatformVersions">REST API Reference for ListPlatformVersions Operation</seealso>
-        public ListPlatformVersionsResponse ListPlatformVersions(ListPlatformVersionsRequest request)
+        public virtual ListPlatformVersionsResponse ListPlatformVersions(ListPlatformVersionsRequest request)
         {
             var marshaller = new ListPlatformVersionsRequestMarshaller();
             var unmarshaller = ListPlatformVersionsResponseUnmarshaller.Instance;
@@ -2160,7 +2160,7 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPlatformVersions
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListPlatformVersions">REST API Reference for ListPlatformVersions Operation</seealso>
-        public IAsyncResult BeginListPlatformVersions(ListPlatformVersionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListPlatformVersions(ListPlatformVersionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListPlatformVersionsRequestMarshaller();
             var unmarshaller = ListPlatformVersionsResponseUnmarshaller.Instance;
@@ -2177,7 +2177,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>Returns a  ListPlatformVersionsResult from ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListPlatformVersions">REST API Reference for ListPlatformVersions Operation</seealso>
-        public  ListPlatformVersionsResponse EndListPlatformVersions(IAsyncResult asyncResult)
+        public virtual ListPlatformVersionsResponse EndListPlatformVersions(IAsyncResult asyncResult)
         {
             return EndInvoke<ListPlatformVersionsResponse>(asyncResult);
         }
@@ -2197,7 +2197,7 @@ namespace Amazon.ElasticBeanstalk
         /// The specified account does not have sufficient privileges for one of more AWS services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RebuildEnvironment">REST API Reference for RebuildEnvironment Operation</seealso>
-        public RebuildEnvironmentResponse RebuildEnvironment(RebuildEnvironmentRequest request)
+        public virtual RebuildEnvironmentResponse RebuildEnvironment(RebuildEnvironmentRequest request)
         {
             var marshaller = new RebuildEnvironmentRequestMarshaller();
             var unmarshaller = RebuildEnvironmentResponseUnmarshaller.Instance;
@@ -2217,7 +2217,7 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRebuildEnvironment
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RebuildEnvironment">REST API Reference for RebuildEnvironment Operation</seealso>
-        public IAsyncResult BeginRebuildEnvironment(RebuildEnvironmentRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginRebuildEnvironment(RebuildEnvironmentRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RebuildEnvironmentRequestMarshaller();
             var unmarshaller = RebuildEnvironmentResponseUnmarshaller.Instance;
@@ -2234,7 +2234,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>Returns a  RebuildEnvironmentResult from ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RebuildEnvironment">REST API Reference for RebuildEnvironment Operation</seealso>
-        public  RebuildEnvironmentResponse EndRebuildEnvironment(IAsyncResult asyncResult)
+        public virtual RebuildEnvironmentResponse EndRebuildEnvironment(IAsyncResult asyncResult)
         {
             return EndInvoke<RebuildEnvironmentResponse>(asyncResult);
         }
@@ -2276,7 +2276,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the RequestEnvironmentInfo service method, as returned by ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RequestEnvironmentInfo">REST API Reference for RequestEnvironmentInfo Operation</seealso>
-        public RequestEnvironmentInfoResponse RequestEnvironmentInfo(RequestEnvironmentInfoRequest request)
+        public virtual RequestEnvironmentInfoResponse RequestEnvironmentInfo(RequestEnvironmentInfoRequest request)
         {
             var marshaller = new RequestEnvironmentInfoRequestMarshaller();
             var unmarshaller = RequestEnvironmentInfoResponseUnmarshaller.Instance;
@@ -2296,7 +2296,7 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRequestEnvironmentInfo
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RequestEnvironmentInfo">REST API Reference for RequestEnvironmentInfo Operation</seealso>
-        public IAsyncResult BeginRequestEnvironmentInfo(RequestEnvironmentInfoRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginRequestEnvironmentInfo(RequestEnvironmentInfoRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RequestEnvironmentInfoRequestMarshaller();
             var unmarshaller = RequestEnvironmentInfoResponseUnmarshaller.Instance;
@@ -2313,7 +2313,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>Returns a  RequestEnvironmentInfoResult from ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RequestEnvironmentInfo">REST API Reference for RequestEnvironmentInfo Operation</seealso>
-        public  RequestEnvironmentInfoResponse EndRequestEnvironmentInfo(IAsyncResult asyncResult)
+        public virtual RequestEnvironmentInfoResponse EndRequestEnvironmentInfo(IAsyncResult asyncResult)
         {
             return EndInvoke<RequestEnvironmentInfoResponse>(asyncResult);
         }
@@ -2330,7 +2330,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the RestartAppServer service method, as returned by ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RestartAppServer">REST API Reference for RestartAppServer Operation</seealso>
-        public RestartAppServerResponse RestartAppServer(RestartAppServerRequest request)
+        public virtual RestartAppServerResponse RestartAppServer(RestartAppServerRequest request)
         {
             var marshaller = new RestartAppServerRequestMarshaller();
             var unmarshaller = RestartAppServerResponseUnmarshaller.Instance;
@@ -2350,7 +2350,7 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRestartAppServer
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RestartAppServer">REST API Reference for RestartAppServer Operation</seealso>
-        public IAsyncResult BeginRestartAppServer(RestartAppServerRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginRestartAppServer(RestartAppServerRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RestartAppServerRequestMarshaller();
             var unmarshaller = RestartAppServerResponseUnmarshaller.Instance;
@@ -2367,7 +2367,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>Returns a  RestartAppServerResult from ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RestartAppServer">REST API Reference for RestartAppServer Operation</seealso>
-        public  RestartAppServerResponse EndRestartAppServer(IAsyncResult asyncResult)
+        public virtual RestartAppServerResponse EndRestartAppServer(IAsyncResult asyncResult)
         {
             return EndInvoke<RestartAppServerResponse>(asyncResult);
         }
@@ -2393,7 +2393,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the RetrieveEnvironmentInfo service method, as returned by ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RetrieveEnvironmentInfo">REST API Reference for RetrieveEnvironmentInfo Operation</seealso>
-        public RetrieveEnvironmentInfoResponse RetrieveEnvironmentInfo(RetrieveEnvironmentInfoRequest request)
+        public virtual RetrieveEnvironmentInfoResponse RetrieveEnvironmentInfo(RetrieveEnvironmentInfoRequest request)
         {
             var marshaller = new RetrieveEnvironmentInfoRequestMarshaller();
             var unmarshaller = RetrieveEnvironmentInfoResponseUnmarshaller.Instance;
@@ -2413,7 +2413,7 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRetrieveEnvironmentInfo
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RetrieveEnvironmentInfo">REST API Reference for RetrieveEnvironmentInfo Operation</seealso>
-        public IAsyncResult BeginRetrieveEnvironmentInfo(RetrieveEnvironmentInfoRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginRetrieveEnvironmentInfo(RetrieveEnvironmentInfoRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RetrieveEnvironmentInfoRequestMarshaller();
             var unmarshaller = RetrieveEnvironmentInfoResponseUnmarshaller.Instance;
@@ -2430,7 +2430,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>Returns a  RetrieveEnvironmentInfoResult from ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RetrieveEnvironmentInfo">REST API Reference for RetrieveEnvironmentInfo Operation</seealso>
-        public  RetrieveEnvironmentInfoResponse EndRetrieveEnvironmentInfo(IAsyncResult asyncResult)
+        public virtual RetrieveEnvironmentInfoResponse EndRetrieveEnvironmentInfo(IAsyncResult asyncResult)
         {
             return EndInvoke<RetrieveEnvironmentInfoResponse>(asyncResult);
         }
@@ -2446,7 +2446,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the SwapEnvironmentCNAMEs service method, as returned by ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/SwapEnvironmentCNAMEs">REST API Reference for SwapEnvironmentCNAMEs Operation</seealso>
-        public SwapEnvironmentCNAMEsResponse SwapEnvironmentCNAMEs(SwapEnvironmentCNAMEsRequest request)
+        public virtual SwapEnvironmentCNAMEsResponse SwapEnvironmentCNAMEs(SwapEnvironmentCNAMEsRequest request)
         {
             var marshaller = new SwapEnvironmentCNAMEsRequestMarshaller();
             var unmarshaller = SwapEnvironmentCNAMEsResponseUnmarshaller.Instance;
@@ -2466,7 +2466,7 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSwapEnvironmentCNAMEs
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/SwapEnvironmentCNAMEs">REST API Reference for SwapEnvironmentCNAMEs Operation</seealso>
-        public IAsyncResult BeginSwapEnvironmentCNAMEs(SwapEnvironmentCNAMEsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginSwapEnvironmentCNAMEs(SwapEnvironmentCNAMEsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SwapEnvironmentCNAMEsRequestMarshaller();
             var unmarshaller = SwapEnvironmentCNAMEsResponseUnmarshaller.Instance;
@@ -2483,7 +2483,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>Returns a  SwapEnvironmentCNAMEsResult from ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/SwapEnvironmentCNAMEs">REST API Reference for SwapEnvironmentCNAMEs Operation</seealso>
-        public  SwapEnvironmentCNAMEsResponse EndSwapEnvironmentCNAMEs(IAsyncResult asyncResult)
+        public virtual SwapEnvironmentCNAMEsResponse EndSwapEnvironmentCNAMEs(IAsyncResult asyncResult)
         {
             return EndInvoke<SwapEnvironmentCNAMEsResponse>(asyncResult);
         }
@@ -2502,7 +2502,7 @@ namespace Amazon.ElasticBeanstalk
         /// The specified account does not have sufficient privileges for one of more AWS services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/TerminateEnvironment">REST API Reference for TerminateEnvironment Operation</seealso>
-        public TerminateEnvironmentResponse TerminateEnvironment(TerminateEnvironmentRequest request)
+        public virtual TerminateEnvironmentResponse TerminateEnvironment(TerminateEnvironmentRequest request)
         {
             var marshaller = new TerminateEnvironmentRequestMarshaller();
             var unmarshaller = TerminateEnvironmentResponseUnmarshaller.Instance;
@@ -2522,7 +2522,7 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTerminateEnvironment
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/TerminateEnvironment">REST API Reference for TerminateEnvironment Operation</seealso>
-        public IAsyncResult BeginTerminateEnvironment(TerminateEnvironmentRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginTerminateEnvironment(TerminateEnvironmentRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new TerminateEnvironmentRequestMarshaller();
             var unmarshaller = TerminateEnvironmentResponseUnmarshaller.Instance;
@@ -2539,7 +2539,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>Returns a  TerminateEnvironmentResult from ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/TerminateEnvironment">REST API Reference for TerminateEnvironment Operation</seealso>
-        public  TerminateEnvironmentResponse EndTerminateEnvironment(IAsyncResult asyncResult)
+        public virtual TerminateEnvironmentResponse EndTerminateEnvironment(IAsyncResult asyncResult)
         {
             return EndInvoke<TerminateEnvironmentResponse>(asyncResult);
         }
@@ -2562,7 +2562,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the UpdateApplication service method, as returned by ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
-        public UpdateApplicationResponse UpdateApplication(UpdateApplicationRequest request)
+        public virtual UpdateApplicationResponse UpdateApplication(UpdateApplicationRequest request)
         {
             var marshaller = new UpdateApplicationRequestMarshaller();
             var unmarshaller = UpdateApplicationResponseUnmarshaller.Instance;
@@ -2582,7 +2582,7 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateApplication
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
-        public IAsyncResult BeginUpdateApplication(UpdateApplicationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateApplication(UpdateApplicationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateApplicationRequestMarshaller();
             var unmarshaller = UpdateApplicationResponseUnmarshaller.Instance;
@@ -2599,7 +2599,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>Returns a  UpdateApplicationResult from ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
-        public  UpdateApplicationResponse EndUpdateApplication(IAsyncResult asyncResult)
+        public virtual UpdateApplicationResponse EndUpdateApplication(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateApplicationResponse>(asyncResult);
         }
@@ -2618,7 +2618,7 @@ namespace Amazon.ElasticBeanstalk
         /// The specified account does not have sufficient privileges for one of more AWS services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplicationResourceLifecycle">REST API Reference for UpdateApplicationResourceLifecycle Operation</seealso>
-        public UpdateApplicationResourceLifecycleResponse UpdateApplicationResourceLifecycle(UpdateApplicationResourceLifecycleRequest request)
+        public virtual UpdateApplicationResourceLifecycleResponse UpdateApplicationResourceLifecycle(UpdateApplicationResourceLifecycleRequest request)
         {
             var marshaller = new UpdateApplicationResourceLifecycleRequestMarshaller();
             var unmarshaller = UpdateApplicationResourceLifecycleResponseUnmarshaller.Instance;
@@ -2638,7 +2638,7 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateApplicationResourceLifecycle
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplicationResourceLifecycle">REST API Reference for UpdateApplicationResourceLifecycle Operation</seealso>
-        public IAsyncResult BeginUpdateApplicationResourceLifecycle(UpdateApplicationResourceLifecycleRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateApplicationResourceLifecycle(UpdateApplicationResourceLifecycleRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateApplicationResourceLifecycleRequestMarshaller();
             var unmarshaller = UpdateApplicationResourceLifecycleResponseUnmarshaller.Instance;
@@ -2655,7 +2655,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>Returns a  UpdateApplicationResourceLifecycleResult from ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplicationResourceLifecycle">REST API Reference for UpdateApplicationResourceLifecycle Operation</seealso>
-        public  UpdateApplicationResourceLifecycleResponse EndUpdateApplicationResourceLifecycle(IAsyncResult asyncResult)
+        public virtual UpdateApplicationResourceLifecycleResponse EndUpdateApplicationResourceLifecycle(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateApplicationResourceLifecycleResponse>(asyncResult);
         }
@@ -2678,7 +2678,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the UpdateApplicationVersion service method, as returned by ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplicationVersion">REST API Reference for UpdateApplicationVersion Operation</seealso>
-        public UpdateApplicationVersionResponse UpdateApplicationVersion(UpdateApplicationVersionRequest request)
+        public virtual UpdateApplicationVersionResponse UpdateApplicationVersion(UpdateApplicationVersionRequest request)
         {
             var marshaller = new UpdateApplicationVersionRequestMarshaller();
             var unmarshaller = UpdateApplicationVersionResponseUnmarshaller.Instance;
@@ -2698,7 +2698,7 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateApplicationVersion
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplicationVersion">REST API Reference for UpdateApplicationVersion Operation</seealso>
-        public IAsyncResult BeginUpdateApplicationVersion(UpdateApplicationVersionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateApplicationVersion(UpdateApplicationVersionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateApplicationVersionRequestMarshaller();
             var unmarshaller = UpdateApplicationVersionResponseUnmarshaller.Instance;
@@ -2715,7 +2715,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>Returns a  UpdateApplicationVersionResult from ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplicationVersion">REST API Reference for UpdateApplicationVersion Operation</seealso>
-        public  UpdateApplicationVersionResponse EndUpdateApplicationVersion(IAsyncResult asyncResult)
+        public virtual UpdateApplicationVersionResponse EndUpdateApplicationVersion(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateApplicationVersionResponse>(asyncResult);
         }
@@ -2753,7 +2753,7 @@ namespace Amazon.ElasticBeanstalk
         /// The specified account has reached its limit of Amazon S3 buckets.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateConfigurationTemplate">REST API Reference for UpdateConfigurationTemplate Operation</seealso>
-        public UpdateConfigurationTemplateResponse UpdateConfigurationTemplate(UpdateConfigurationTemplateRequest request)
+        public virtual UpdateConfigurationTemplateResponse UpdateConfigurationTemplate(UpdateConfigurationTemplateRequest request)
         {
             var marshaller = new UpdateConfigurationTemplateRequestMarshaller();
             var unmarshaller = UpdateConfigurationTemplateResponseUnmarshaller.Instance;
@@ -2773,7 +2773,7 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateConfigurationTemplate
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateConfigurationTemplate">REST API Reference for UpdateConfigurationTemplate Operation</seealso>
-        public IAsyncResult BeginUpdateConfigurationTemplate(UpdateConfigurationTemplateRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateConfigurationTemplate(UpdateConfigurationTemplateRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateConfigurationTemplateRequestMarshaller();
             var unmarshaller = UpdateConfigurationTemplateResponseUnmarshaller.Instance;
@@ -2790,7 +2790,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>Returns a  UpdateConfigurationTemplateResult from ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateConfigurationTemplate">REST API Reference for UpdateConfigurationTemplate Operation</seealso>
-        public  UpdateConfigurationTemplateResponse EndUpdateConfigurationTemplate(IAsyncResult asyncResult)
+        public virtual UpdateConfigurationTemplateResponse EndUpdateConfigurationTemplate(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateConfigurationTemplateResponse>(asyncResult);
         }
@@ -2827,7 +2827,7 @@ namespace Amazon.ElasticBeanstalk
         /// The specified account has reached its limit of Amazon S3 buckets.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateEnvironment">REST API Reference for UpdateEnvironment Operation</seealso>
-        public UpdateEnvironmentResponse UpdateEnvironment(UpdateEnvironmentRequest request)
+        public virtual UpdateEnvironmentResponse UpdateEnvironment(UpdateEnvironmentRequest request)
         {
             var marshaller = new UpdateEnvironmentRequestMarshaller();
             var unmarshaller = UpdateEnvironmentResponseUnmarshaller.Instance;
@@ -2847,7 +2847,7 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateEnvironment
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateEnvironment">REST API Reference for UpdateEnvironment Operation</seealso>
-        public IAsyncResult BeginUpdateEnvironment(UpdateEnvironmentRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateEnvironment(UpdateEnvironmentRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateEnvironmentRequestMarshaller();
             var unmarshaller = UpdateEnvironmentResponseUnmarshaller.Instance;
@@ -2864,7 +2864,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>Returns a  UpdateEnvironmentResult from ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateEnvironment">REST API Reference for UpdateEnvironment Operation</seealso>
-        public  UpdateEnvironmentResponse EndUpdateEnvironment(IAsyncResult asyncResult)
+        public virtual UpdateEnvironmentResponse EndUpdateEnvironment(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateEnvironmentResponse>(asyncResult);
         }
@@ -2893,7 +2893,7 @@ namespace Amazon.ElasticBeanstalk
         /// The specified account has reached its limit of Amazon S3 buckets.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ValidateConfigurationSettings">REST API Reference for ValidateConfigurationSettings Operation</seealso>
-        public ValidateConfigurationSettingsResponse ValidateConfigurationSettings(ValidateConfigurationSettingsRequest request)
+        public virtual ValidateConfigurationSettingsResponse ValidateConfigurationSettings(ValidateConfigurationSettingsRequest request)
         {
             var marshaller = new ValidateConfigurationSettingsRequestMarshaller();
             var unmarshaller = ValidateConfigurationSettingsResponseUnmarshaller.Instance;
@@ -2913,7 +2913,7 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndValidateConfigurationSettings
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ValidateConfigurationSettings">REST API Reference for ValidateConfigurationSettings Operation</seealso>
-        public IAsyncResult BeginValidateConfigurationSettings(ValidateConfigurationSettingsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginValidateConfigurationSettings(ValidateConfigurationSettingsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ValidateConfigurationSettingsRequestMarshaller();
             var unmarshaller = ValidateConfigurationSettingsResponseUnmarshaller.Instance;
@@ -2930,7 +2930,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>Returns a  ValidateConfigurationSettingsResult from ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ValidateConfigurationSettings">REST API Reference for ValidateConfigurationSettings Operation</seealso>
-        public  ValidateConfigurationSettingsResponse EndValidateConfigurationSettings(IAsyncResult asyncResult)
+        public virtual ValidateConfigurationSettingsResponse EndValidateConfigurationSettings(IAsyncResult asyncResult)
         {
             return EndInvoke<ValidateConfigurationSettingsResponse>(asyncResult);
         }

@@ -284,7 +284,7 @@ namespace Amazon.DirectoryService
         /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AddIpRoutes">REST API Reference for AddIpRoutes Operation</seealso>
-        public AddIpRoutesResponse AddIpRoutes(AddIpRoutesRequest request)
+        public virtual AddIpRoutesResponse AddIpRoutes(AddIpRoutesRequest request)
         {
             var marshaller = new AddIpRoutesRequestMarshaller();
             var unmarshaller = AddIpRoutesResponseUnmarshaller.Instance;
@@ -304,7 +304,7 @@ namespace Amazon.DirectoryService
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddIpRoutes
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AddIpRoutes">REST API Reference for AddIpRoutes Operation</seealso>
-        public IAsyncResult BeginAddIpRoutes(AddIpRoutesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginAddIpRoutes(AddIpRoutesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AddIpRoutesRequestMarshaller();
             var unmarshaller = AddIpRoutesResponseUnmarshaller.Instance;
@@ -321,7 +321,7 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>Returns a  AddIpRoutesResult from DirectoryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AddIpRoutes">REST API Reference for AddIpRoutes Operation</seealso>
-        public  AddIpRoutesResponse EndAddIpRoutes(IAsyncResult asyncResult)
+        public virtual AddIpRoutesResponse EndAddIpRoutes(IAsyncResult asyncResult)
         {
             return EndInvoke<AddIpRoutesResponse>(asyncResult);
         }
@@ -354,7 +354,7 @@ namespace Amazon.DirectoryService
         /// The maximum allowed number of tags was exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
-        public AddTagsToResourceResponse AddTagsToResource(AddTagsToResourceRequest request)
+        public virtual AddTagsToResourceResponse AddTagsToResource(AddTagsToResourceRequest request)
         {
             var marshaller = new AddTagsToResourceRequestMarshaller();
             var unmarshaller = AddTagsToResourceResponseUnmarshaller.Instance;
@@ -374,7 +374,7 @@ namespace Amazon.DirectoryService
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddTagsToResource
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
-        public IAsyncResult BeginAddTagsToResource(AddTagsToResourceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginAddTagsToResource(AddTagsToResourceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AddTagsToResourceRequestMarshaller();
             var unmarshaller = AddTagsToResourceResponseUnmarshaller.Instance;
@@ -391,7 +391,7 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>Returns a  AddTagsToResourceResult from DirectoryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
-        public  AddTagsToResourceResponse EndAddTagsToResource(IAsyncResult asyncResult)
+        public virtual AddTagsToResourceResponse EndAddTagsToResource(IAsyncResult asyncResult)
         {
             return EndInvoke<AddTagsToResourceResponse>(asyncResult);
         }
@@ -419,7 +419,7 @@ namespace Amazon.DirectoryService
         /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CancelSchemaExtension">REST API Reference for CancelSchemaExtension Operation</seealso>
-        public CancelSchemaExtensionResponse CancelSchemaExtension(CancelSchemaExtensionRequest request)
+        public virtual CancelSchemaExtensionResponse CancelSchemaExtension(CancelSchemaExtensionRequest request)
         {
             var marshaller = new CancelSchemaExtensionRequestMarshaller();
             var unmarshaller = CancelSchemaExtensionResponseUnmarshaller.Instance;
@@ -439,7 +439,7 @@ namespace Amazon.DirectoryService
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelSchemaExtension
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CancelSchemaExtension">REST API Reference for CancelSchemaExtension Operation</seealso>
-        public IAsyncResult BeginCancelSchemaExtension(CancelSchemaExtensionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCancelSchemaExtension(CancelSchemaExtensionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CancelSchemaExtensionRequestMarshaller();
             var unmarshaller = CancelSchemaExtensionResponseUnmarshaller.Instance;
@@ -456,7 +456,7 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>Returns a  CancelSchemaExtensionResult from DirectoryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CancelSchemaExtension">REST API Reference for CancelSchemaExtension Operation</seealso>
-        public  CancelSchemaExtensionResponse EndCancelSchemaExtension(IAsyncResult asyncResult)
+        public virtual CancelSchemaExtensionResponse EndCancelSchemaExtension(IAsyncResult asyncResult)
         {
             return EndInvoke<CancelSchemaExtensionResponse>(asyncResult);
         }
@@ -493,7 +493,7 @@ namespace Amazon.DirectoryService
         /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ConnectDirectory">REST API Reference for ConnectDirectory Operation</seealso>
-        public ConnectDirectoryResponse ConnectDirectory(ConnectDirectoryRequest request)
+        public virtual ConnectDirectoryResponse ConnectDirectory(ConnectDirectoryRequest request)
         {
             var marshaller = new ConnectDirectoryRequestMarshaller();
             var unmarshaller = ConnectDirectoryResponseUnmarshaller.Instance;
@@ -513,7 +513,7 @@ namespace Amazon.DirectoryService
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndConnectDirectory
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ConnectDirectory">REST API Reference for ConnectDirectory Operation</seealso>
-        public IAsyncResult BeginConnectDirectory(ConnectDirectoryRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginConnectDirectory(ConnectDirectoryRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ConnectDirectoryRequestMarshaller();
             var unmarshaller = ConnectDirectoryResponseUnmarshaller.Instance;
@@ -530,7 +530,7 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>Returns a  ConnectDirectoryResult from DirectoryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ConnectDirectory">REST API Reference for ConnectDirectory Operation</seealso>
-        public  ConnectDirectoryResponse EndConnectDirectory(IAsyncResult asyncResult)
+        public virtual ConnectDirectoryResponse EndConnectDirectory(IAsyncResult asyncResult)
         {
             return EndInvoke<ConnectDirectoryResponse>(asyncResult);
         }
@@ -569,7 +569,7 @@ namespace Amazon.DirectoryService
         /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
-        public CreateAliasResponse CreateAlias(CreateAliasRequest request)
+        public virtual CreateAliasResponse CreateAlias(CreateAliasRequest request)
         {
             var marshaller = new CreateAliasRequestMarshaller();
             var unmarshaller = CreateAliasResponseUnmarshaller.Instance;
@@ -589,7 +589,7 @@ namespace Amazon.DirectoryService
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAlias
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
-        public IAsyncResult BeginCreateAlias(CreateAliasRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateAlias(CreateAliasRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateAliasRequestMarshaller();
             var unmarshaller = CreateAliasResponseUnmarshaller.Instance;
@@ -606,7 +606,7 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>Returns a  CreateAliasResult from DirectoryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
-        public  CreateAliasResponse EndCreateAlias(IAsyncResult asyncResult)
+        public virtual CreateAliasResponse EndCreateAlias(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateAliasResponse>(asyncResult);
         }
@@ -647,7 +647,7 @@ namespace Amazon.DirectoryService
         /// The operation is not supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateComputer">REST API Reference for CreateComputer Operation</seealso>
-        public CreateComputerResponse CreateComputer(CreateComputerRequest request)
+        public virtual CreateComputerResponse CreateComputer(CreateComputerRequest request)
         {
             var marshaller = new CreateComputerRequestMarshaller();
             var unmarshaller = CreateComputerResponseUnmarshaller.Instance;
@@ -667,7 +667,7 @@ namespace Amazon.DirectoryService
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateComputer
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateComputer">REST API Reference for CreateComputer Operation</seealso>
-        public IAsyncResult BeginCreateComputer(CreateComputerRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateComputer(CreateComputerRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateComputerRequestMarshaller();
             var unmarshaller = CreateComputerResponseUnmarshaller.Instance;
@@ -684,7 +684,7 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>Returns a  CreateComputerResult from DirectoryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateComputer">REST API Reference for CreateComputer Operation</seealso>
-        public  CreateComputerResponse EndCreateComputer(IAsyncResult asyncResult)
+        public virtual CreateComputerResponse EndCreateComputer(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateComputerResponse>(asyncResult);
         }
@@ -723,7 +723,7 @@ namespace Amazon.DirectoryService
         /// The operation is not supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateConditionalForwarder">REST API Reference for CreateConditionalForwarder Operation</seealso>
-        public CreateConditionalForwarderResponse CreateConditionalForwarder(CreateConditionalForwarderRequest request)
+        public virtual CreateConditionalForwarderResponse CreateConditionalForwarder(CreateConditionalForwarderRequest request)
         {
             var marshaller = new CreateConditionalForwarderRequestMarshaller();
             var unmarshaller = CreateConditionalForwarderResponseUnmarshaller.Instance;
@@ -743,7 +743,7 @@ namespace Amazon.DirectoryService
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateConditionalForwarder
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateConditionalForwarder">REST API Reference for CreateConditionalForwarder Operation</seealso>
-        public IAsyncResult BeginCreateConditionalForwarder(CreateConditionalForwarderRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateConditionalForwarder(CreateConditionalForwarderRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateConditionalForwarderRequestMarshaller();
             var unmarshaller = CreateConditionalForwarderResponseUnmarshaller.Instance;
@@ -760,7 +760,7 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>Returns a  CreateConditionalForwarderResult from DirectoryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateConditionalForwarder">REST API Reference for CreateConditionalForwarder Operation</seealso>
-        public  CreateConditionalForwarderResponse EndCreateConditionalForwarder(IAsyncResult asyncResult)
+        public virtual CreateConditionalForwarderResponse EndCreateConditionalForwarder(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateConditionalForwarderResponse>(asyncResult);
         }
@@ -797,7 +797,7 @@ namespace Amazon.DirectoryService
         /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateDirectory">REST API Reference for CreateDirectory Operation</seealso>
-        public CreateDirectoryResponse CreateDirectory(CreateDirectoryRequest request)
+        public virtual CreateDirectoryResponse CreateDirectory(CreateDirectoryRequest request)
         {
             var marshaller = new CreateDirectoryRequestMarshaller();
             var unmarshaller = CreateDirectoryResponseUnmarshaller.Instance;
@@ -817,7 +817,7 @@ namespace Amazon.DirectoryService
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDirectory
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateDirectory">REST API Reference for CreateDirectory Operation</seealso>
-        public IAsyncResult BeginCreateDirectory(CreateDirectoryRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateDirectory(CreateDirectoryRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateDirectoryRequestMarshaller();
             var unmarshaller = CreateDirectoryResponseUnmarshaller.Instance;
@@ -834,7 +834,7 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>Returns a  CreateDirectoryResult from DirectoryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateDirectory">REST API Reference for CreateDirectory Operation</seealso>
-        public  CreateDirectoryResponse EndCreateDirectory(IAsyncResult asyncResult)
+        public virtual CreateDirectoryResponse EndCreateDirectory(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateDirectoryResponse>(asyncResult);
         }
@@ -874,7 +874,7 @@ namespace Amazon.DirectoryService
         /// The operation is not supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateMicrosoftAD">REST API Reference for CreateMicrosoftAD Operation</seealso>
-        public CreateMicrosoftADResponse CreateMicrosoftAD(CreateMicrosoftADRequest request)
+        public virtual CreateMicrosoftADResponse CreateMicrosoftAD(CreateMicrosoftADRequest request)
         {
             var marshaller = new CreateMicrosoftADRequestMarshaller();
             var unmarshaller = CreateMicrosoftADResponseUnmarshaller.Instance;
@@ -894,7 +894,7 @@ namespace Amazon.DirectoryService
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateMicrosoftAD
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateMicrosoftAD">REST API Reference for CreateMicrosoftAD Operation</seealso>
-        public IAsyncResult BeginCreateMicrosoftAD(CreateMicrosoftADRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateMicrosoftAD(CreateMicrosoftADRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateMicrosoftADRequestMarshaller();
             var unmarshaller = CreateMicrosoftADResponseUnmarshaller.Instance;
@@ -911,7 +911,7 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>Returns a  CreateMicrosoftADResult from DirectoryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateMicrosoftAD">REST API Reference for CreateMicrosoftAD Operation</seealso>
-        public  CreateMicrosoftADResponse EndCreateMicrosoftAD(IAsyncResult asyncResult)
+        public virtual CreateMicrosoftADResponse EndCreateMicrosoftAD(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateMicrosoftADResponse>(asyncResult);
         }
@@ -950,7 +950,7 @@ namespace Amazon.DirectoryService
         /// directory.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateSnapshot">REST API Reference for CreateSnapshot Operation</seealso>
-        public CreateSnapshotResponse CreateSnapshot(CreateSnapshotRequest request)
+        public virtual CreateSnapshotResponse CreateSnapshot(CreateSnapshotRequest request)
         {
             var marshaller = new CreateSnapshotRequestMarshaller();
             var unmarshaller = CreateSnapshotResponseUnmarshaller.Instance;
@@ -970,7 +970,7 @@ namespace Amazon.DirectoryService
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSnapshot
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateSnapshot">REST API Reference for CreateSnapshot Operation</seealso>
-        public IAsyncResult BeginCreateSnapshot(CreateSnapshotRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateSnapshot(CreateSnapshotRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateSnapshotRequestMarshaller();
             var unmarshaller = CreateSnapshotResponseUnmarshaller.Instance;
@@ -987,7 +987,7 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>Returns a  CreateSnapshotResult from DirectoryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateSnapshot">REST API Reference for CreateSnapshot Operation</seealso>
-        public  CreateSnapshotResponse EndCreateSnapshot(IAsyncResult asyncResult)
+        public virtual CreateSnapshotResponse EndCreateSnapshot(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateSnapshotResponse>(asyncResult);
         }
@@ -1031,7 +1031,7 @@ namespace Amazon.DirectoryService
         /// The operation is not supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateTrust">REST API Reference for CreateTrust Operation</seealso>
-        public CreateTrustResponse CreateTrust(CreateTrustRequest request)
+        public virtual CreateTrustResponse CreateTrust(CreateTrustRequest request)
         {
             var marshaller = new CreateTrustRequestMarshaller();
             var unmarshaller = CreateTrustResponseUnmarshaller.Instance;
@@ -1051,7 +1051,7 @@ namespace Amazon.DirectoryService
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTrust
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateTrust">REST API Reference for CreateTrust Operation</seealso>
-        public IAsyncResult BeginCreateTrust(CreateTrustRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateTrust(CreateTrustRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateTrustRequestMarshaller();
             var unmarshaller = CreateTrustResponseUnmarshaller.Instance;
@@ -1068,7 +1068,7 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>Returns a  CreateTrustResult from DirectoryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateTrust">REST API Reference for CreateTrust Operation</seealso>
-        public  CreateTrustResponse EndCreateTrust(IAsyncResult asyncResult)
+        public virtual CreateTrustResponse EndCreateTrust(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateTrustResponse>(asyncResult);
         }
@@ -1102,7 +1102,7 @@ namespace Amazon.DirectoryService
         /// The operation is not supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteConditionalForwarder">REST API Reference for DeleteConditionalForwarder Operation</seealso>
-        public DeleteConditionalForwarderResponse DeleteConditionalForwarder(DeleteConditionalForwarderRequest request)
+        public virtual DeleteConditionalForwarderResponse DeleteConditionalForwarder(DeleteConditionalForwarderRequest request)
         {
             var marshaller = new DeleteConditionalForwarderRequestMarshaller();
             var unmarshaller = DeleteConditionalForwarderResponseUnmarshaller.Instance;
@@ -1122,7 +1122,7 @@ namespace Amazon.DirectoryService
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteConditionalForwarder
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteConditionalForwarder">REST API Reference for DeleteConditionalForwarder Operation</seealso>
-        public IAsyncResult BeginDeleteConditionalForwarder(DeleteConditionalForwarderRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteConditionalForwarder(DeleteConditionalForwarderRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteConditionalForwarderRequestMarshaller();
             var unmarshaller = DeleteConditionalForwarderResponseUnmarshaller.Instance;
@@ -1139,7 +1139,7 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>Returns a  DeleteConditionalForwarderResult from DirectoryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteConditionalForwarder">REST API Reference for DeleteConditionalForwarder Operation</seealso>
-        public  DeleteConditionalForwarderResponse EndDeleteConditionalForwarder(IAsyncResult asyncResult)
+        public virtual DeleteConditionalForwarderResponse EndDeleteConditionalForwarder(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteConditionalForwarderResponse>(asyncResult);
         }
@@ -1172,7 +1172,7 @@ namespace Amazon.DirectoryService
         /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteDirectory">REST API Reference for DeleteDirectory Operation</seealso>
-        public DeleteDirectoryResponse DeleteDirectory(DeleteDirectoryRequest request)
+        public virtual DeleteDirectoryResponse DeleteDirectory(DeleteDirectoryRequest request)
         {
             var marshaller = new DeleteDirectoryRequestMarshaller();
             var unmarshaller = DeleteDirectoryResponseUnmarshaller.Instance;
@@ -1192,7 +1192,7 @@ namespace Amazon.DirectoryService
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDirectory
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteDirectory">REST API Reference for DeleteDirectory Operation</seealso>
-        public IAsyncResult BeginDeleteDirectory(DeleteDirectoryRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteDirectory(DeleteDirectoryRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteDirectoryRequestMarshaller();
             var unmarshaller = DeleteDirectoryResponseUnmarshaller.Instance;
@@ -1209,7 +1209,7 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>Returns a  DeleteDirectoryResult from DirectoryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteDirectory">REST API Reference for DeleteDirectory Operation</seealso>
-        public  DeleteDirectoryResponse EndDeleteDirectory(IAsyncResult asyncResult)
+        public virtual DeleteDirectoryResponse EndDeleteDirectory(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteDirectoryResponse>(asyncResult);
         }
@@ -1237,7 +1237,7 @@ namespace Amazon.DirectoryService
         /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteSnapshot">REST API Reference for DeleteSnapshot Operation</seealso>
-        public DeleteSnapshotResponse DeleteSnapshot(DeleteSnapshotRequest request)
+        public virtual DeleteSnapshotResponse DeleteSnapshot(DeleteSnapshotRequest request)
         {
             var marshaller = new DeleteSnapshotRequestMarshaller();
             var unmarshaller = DeleteSnapshotResponseUnmarshaller.Instance;
@@ -1257,7 +1257,7 @@ namespace Amazon.DirectoryService
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSnapshot
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteSnapshot">REST API Reference for DeleteSnapshot Operation</seealso>
-        public IAsyncResult BeginDeleteSnapshot(DeleteSnapshotRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteSnapshot(DeleteSnapshotRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteSnapshotRequestMarshaller();
             var unmarshaller = DeleteSnapshotResponseUnmarshaller.Instance;
@@ -1274,7 +1274,7 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>Returns a  DeleteSnapshotResult from DirectoryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteSnapshot">REST API Reference for DeleteSnapshot Operation</seealso>
-        public  DeleteSnapshotResponse EndDeleteSnapshot(IAsyncResult asyncResult)
+        public virtual DeleteSnapshotResponse EndDeleteSnapshot(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteSnapshotResponse>(asyncResult);
         }
@@ -1306,7 +1306,7 @@ namespace Amazon.DirectoryService
         /// The operation is not supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteTrust">REST API Reference for DeleteTrust Operation</seealso>
-        public DeleteTrustResponse DeleteTrust(DeleteTrustRequest request)
+        public virtual DeleteTrustResponse DeleteTrust(DeleteTrustRequest request)
         {
             var marshaller = new DeleteTrustRequestMarshaller();
             var unmarshaller = DeleteTrustResponseUnmarshaller.Instance;
@@ -1326,7 +1326,7 @@ namespace Amazon.DirectoryService
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTrust
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteTrust">REST API Reference for DeleteTrust Operation</seealso>
-        public IAsyncResult BeginDeleteTrust(DeleteTrustRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteTrust(DeleteTrustRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteTrustRequestMarshaller();
             var unmarshaller = DeleteTrustResponseUnmarshaller.Instance;
@@ -1343,7 +1343,7 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>Returns a  DeleteTrustResult from DirectoryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteTrust">REST API Reference for DeleteTrust Operation</seealso>
-        public  DeleteTrustResponse EndDeleteTrust(IAsyncResult asyncResult)
+        public virtual DeleteTrustResponse EndDeleteTrust(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteTrustResponse>(asyncResult);
         }
@@ -1371,7 +1371,7 @@ namespace Amazon.DirectoryService
         /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeregisterEventTopic">REST API Reference for DeregisterEventTopic Operation</seealso>
-        public DeregisterEventTopicResponse DeregisterEventTopic(DeregisterEventTopicRequest request)
+        public virtual DeregisterEventTopicResponse DeregisterEventTopic(DeregisterEventTopicRequest request)
         {
             var marshaller = new DeregisterEventTopicRequestMarshaller();
             var unmarshaller = DeregisterEventTopicResponseUnmarshaller.Instance;
@@ -1391,7 +1391,7 @@ namespace Amazon.DirectoryService
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeregisterEventTopic
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeregisterEventTopic">REST API Reference for DeregisterEventTopic Operation</seealso>
-        public IAsyncResult BeginDeregisterEventTopic(DeregisterEventTopicRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeregisterEventTopic(DeregisterEventTopicRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeregisterEventTopicRequestMarshaller();
             var unmarshaller = DeregisterEventTopicResponseUnmarshaller.Instance;
@@ -1408,7 +1408,7 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>Returns a  DeregisterEventTopicResult from DirectoryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeregisterEventTopic">REST API Reference for DeregisterEventTopic Operation</seealso>
-        public  DeregisterEventTopicResponse EndDeregisterEventTopic(IAsyncResult asyncResult)
+        public virtual DeregisterEventTopicResponse EndDeregisterEventTopic(IAsyncResult asyncResult)
         {
             return EndInvoke<DeregisterEventTopicResponse>(asyncResult);
         }
@@ -1448,7 +1448,7 @@ namespace Amazon.DirectoryService
         /// The operation is not supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeConditionalForwarders">REST API Reference for DescribeConditionalForwarders Operation</seealso>
-        public DescribeConditionalForwardersResponse DescribeConditionalForwarders(DescribeConditionalForwardersRequest request)
+        public virtual DescribeConditionalForwardersResponse DescribeConditionalForwarders(DescribeConditionalForwardersRequest request)
         {
             var marshaller = new DescribeConditionalForwardersRequestMarshaller();
             var unmarshaller = DescribeConditionalForwardersResponseUnmarshaller.Instance;
@@ -1468,7 +1468,7 @@ namespace Amazon.DirectoryService
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeConditionalForwarders
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeConditionalForwarders">REST API Reference for DescribeConditionalForwarders Operation</seealso>
-        public IAsyncResult BeginDescribeConditionalForwarders(DescribeConditionalForwardersRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeConditionalForwarders(DescribeConditionalForwardersRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeConditionalForwardersRequestMarshaller();
             var unmarshaller = DescribeConditionalForwardersResponseUnmarshaller.Instance;
@@ -1485,7 +1485,7 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>Returns a  DescribeConditionalForwardersResult from DirectoryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeConditionalForwarders">REST API Reference for DescribeConditionalForwarders Operation</seealso>
-        public  DescribeConditionalForwardersResponse EndDescribeConditionalForwarders(IAsyncResult asyncResult)
+        public virtual DescribeConditionalForwardersResponse EndDescribeConditionalForwarders(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeConditionalForwardersResponse>(asyncResult);
         }
@@ -1533,7 +1533,7 @@ namespace Amazon.DirectoryService
         /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeDirectories">REST API Reference for DescribeDirectories Operation</seealso>
-        public DescribeDirectoriesResponse DescribeDirectories()
+        public virtual DescribeDirectoriesResponse DescribeDirectories()
         {
             return DescribeDirectories(new DescribeDirectoriesRequest());
         }
@@ -1578,7 +1578,7 @@ namespace Amazon.DirectoryService
         /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeDirectories">REST API Reference for DescribeDirectories Operation</seealso>
-        public DescribeDirectoriesResponse DescribeDirectories(DescribeDirectoriesRequest request)
+        public virtual DescribeDirectoriesResponse DescribeDirectories(DescribeDirectoriesRequest request)
         {
             var marshaller = new DescribeDirectoriesRequestMarshaller();
             var unmarshaller = DescribeDirectoriesResponseUnmarshaller.Instance;
@@ -1598,7 +1598,7 @@ namespace Amazon.DirectoryService
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDirectories
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeDirectories">REST API Reference for DescribeDirectories Operation</seealso>
-        public IAsyncResult BeginDescribeDirectories(DescribeDirectoriesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeDirectories(DescribeDirectoriesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeDirectoriesRequestMarshaller();
             var unmarshaller = DescribeDirectoriesResponseUnmarshaller.Instance;
@@ -1615,7 +1615,7 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>Returns a  DescribeDirectoriesResult from DirectoryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeDirectories">REST API Reference for DescribeDirectories Operation</seealso>
-        public  DescribeDirectoriesResponse EndDescribeDirectories(IAsyncResult asyncResult)
+        public virtual DescribeDirectoriesResponse EndDescribeDirectories(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeDirectoriesResponse>(asyncResult);
         }
@@ -1649,7 +1649,7 @@ namespace Amazon.DirectoryService
         /// The operation is not supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeDomainControllers">REST API Reference for DescribeDomainControllers Operation</seealso>
-        public DescribeDomainControllersResponse DescribeDomainControllers(DescribeDomainControllersRequest request)
+        public virtual DescribeDomainControllersResponse DescribeDomainControllers(DescribeDomainControllersRequest request)
         {
             var marshaller = new DescribeDomainControllersRequestMarshaller();
             var unmarshaller = DescribeDomainControllersResponseUnmarshaller.Instance;
@@ -1669,7 +1669,7 @@ namespace Amazon.DirectoryService
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDomainControllers
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeDomainControllers">REST API Reference for DescribeDomainControllers Operation</seealso>
-        public IAsyncResult BeginDescribeDomainControllers(DescribeDomainControllersRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeDomainControllers(DescribeDomainControllersRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeDomainControllersRequestMarshaller();
             var unmarshaller = DescribeDomainControllersResponseUnmarshaller.Instance;
@@ -1686,7 +1686,7 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>Returns a  DescribeDomainControllersResult from DirectoryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeDomainControllers">REST API Reference for DescribeDomainControllers Operation</seealso>
-        public  DescribeDomainControllersResponse EndDescribeDomainControllers(IAsyncResult asyncResult)
+        public virtual DescribeDomainControllersResponse EndDescribeDomainControllers(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeDomainControllersResponse>(asyncResult);
         }
@@ -1721,7 +1721,7 @@ namespace Amazon.DirectoryService
         /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeEventTopics">REST API Reference for DescribeEventTopics Operation</seealso>
-        public DescribeEventTopicsResponse DescribeEventTopics(DescribeEventTopicsRequest request)
+        public virtual DescribeEventTopicsResponse DescribeEventTopics(DescribeEventTopicsRequest request)
         {
             var marshaller = new DescribeEventTopicsRequestMarshaller();
             var unmarshaller = DescribeEventTopicsResponseUnmarshaller.Instance;
@@ -1741,7 +1741,7 @@ namespace Amazon.DirectoryService
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEventTopics
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeEventTopics">REST API Reference for DescribeEventTopics Operation</seealso>
-        public IAsyncResult BeginDescribeEventTopics(DescribeEventTopicsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeEventTopics(DescribeEventTopicsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeEventTopicsRequestMarshaller();
             var unmarshaller = DescribeEventTopicsResponseUnmarshaller.Instance;
@@ -1758,7 +1758,7 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>Returns a  DescribeEventTopicsResult from DirectoryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeEventTopics">REST API Reference for DescribeEventTopics Operation</seealso>
-        public  DescribeEventTopicsResponse EndDescribeEventTopics(IAsyncResult asyncResult)
+        public virtual DescribeEventTopicsResponse EndDescribeEventTopics(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeEventTopicsResponse>(asyncResult);
         }
@@ -1801,7 +1801,7 @@ namespace Amazon.DirectoryService
         /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeSnapshots">REST API Reference for DescribeSnapshots Operation</seealso>
-        public DescribeSnapshotsResponse DescribeSnapshots(DescribeSnapshotsRequest request)
+        public virtual DescribeSnapshotsResponse DescribeSnapshots(DescribeSnapshotsRequest request)
         {
             var marshaller = new DescribeSnapshotsRequestMarshaller();
             var unmarshaller = DescribeSnapshotsResponseUnmarshaller.Instance;
@@ -1821,7 +1821,7 @@ namespace Amazon.DirectoryService
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSnapshots
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeSnapshots">REST API Reference for DescribeSnapshots Operation</seealso>
-        public IAsyncResult BeginDescribeSnapshots(DescribeSnapshotsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeSnapshots(DescribeSnapshotsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeSnapshotsRequestMarshaller();
             var unmarshaller = DescribeSnapshotsResponseUnmarshaller.Instance;
@@ -1838,7 +1838,7 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>Returns a  DescribeSnapshotsResult from DirectoryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeSnapshots">REST API Reference for DescribeSnapshots Operation</seealso>
-        public  DescribeSnapshotsResponse EndDescribeSnapshots(IAsyncResult asyncResult)
+        public virtual DescribeSnapshotsResponse EndDescribeSnapshots(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeSnapshotsResponse>(asyncResult);
         }
@@ -1878,7 +1878,7 @@ namespace Amazon.DirectoryService
         /// The operation is not supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeTrusts">REST API Reference for DescribeTrusts Operation</seealso>
-        public DescribeTrustsResponse DescribeTrusts(DescribeTrustsRequest request)
+        public virtual DescribeTrustsResponse DescribeTrusts(DescribeTrustsRequest request)
         {
             var marshaller = new DescribeTrustsRequestMarshaller();
             var unmarshaller = DescribeTrustsResponseUnmarshaller.Instance;
@@ -1898,7 +1898,7 @@ namespace Amazon.DirectoryService
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTrusts
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeTrusts">REST API Reference for DescribeTrusts Operation</seealso>
-        public IAsyncResult BeginDescribeTrusts(DescribeTrustsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeTrusts(DescribeTrustsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeTrustsRequestMarshaller();
             var unmarshaller = DescribeTrustsResponseUnmarshaller.Instance;
@@ -1915,7 +1915,7 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>Returns a  DescribeTrustsResult from DirectoryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeTrusts">REST API Reference for DescribeTrusts Operation</seealso>
-        public  DescribeTrustsResponse EndDescribeTrusts(IAsyncResult asyncResult)
+        public virtual DescribeTrustsResponse EndDescribeTrusts(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeTrustsResponse>(asyncResult);
         }
@@ -1941,7 +1941,7 @@ namespace Amazon.DirectoryService
         /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableRadius">REST API Reference for DisableRadius Operation</seealso>
-        public DisableRadiusResponse DisableRadius(DisableRadiusRequest request)
+        public virtual DisableRadiusResponse DisableRadius(DisableRadiusRequest request)
         {
             var marshaller = new DisableRadiusRequestMarshaller();
             var unmarshaller = DisableRadiusResponseUnmarshaller.Instance;
@@ -1961,7 +1961,7 @@ namespace Amazon.DirectoryService
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableRadius
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableRadius">REST API Reference for DisableRadius Operation</seealso>
-        public IAsyncResult BeginDisableRadius(DisableRadiusRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDisableRadius(DisableRadiusRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DisableRadiusRequestMarshaller();
             var unmarshaller = DisableRadiusResponseUnmarshaller.Instance;
@@ -1978,7 +1978,7 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>Returns a  DisableRadiusResult from DirectoryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableRadius">REST API Reference for DisableRadius Operation</seealso>
-        public  DisableRadiusResponse EndDisableRadius(IAsyncResult asyncResult)
+        public virtual DisableRadiusResponse EndDisableRadius(IAsyncResult asyncResult)
         {
             return EndInvoke<DisableRadiusResponse>(asyncResult);
         }
@@ -2009,7 +2009,7 @@ namespace Amazon.DirectoryService
         /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableSso">REST API Reference for DisableSso Operation</seealso>
-        public DisableSsoResponse DisableSso(DisableSsoRequest request)
+        public virtual DisableSsoResponse DisableSso(DisableSsoRequest request)
         {
             var marshaller = new DisableSsoRequestMarshaller();
             var unmarshaller = DisableSsoResponseUnmarshaller.Instance;
@@ -2029,7 +2029,7 @@ namespace Amazon.DirectoryService
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableSso
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableSso">REST API Reference for DisableSso Operation</seealso>
-        public IAsyncResult BeginDisableSso(DisableSsoRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDisableSso(DisableSsoRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DisableSsoRequestMarshaller();
             var unmarshaller = DisableSsoResponseUnmarshaller.Instance;
@@ -2046,7 +2046,7 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>Returns a  DisableSsoResult from DirectoryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableSso">REST API Reference for DisableSso Operation</seealso>
-        public  DisableSsoResponse EndDisableSso(IAsyncResult asyncResult)
+        public virtual DisableSsoResponse EndDisableSso(IAsyncResult asyncResult)
         {
             return EndInvoke<DisableSsoResponse>(asyncResult);
         }
@@ -2078,7 +2078,7 @@ namespace Amazon.DirectoryService
         /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableRadius">REST API Reference for EnableRadius Operation</seealso>
-        public EnableRadiusResponse EnableRadius(EnableRadiusRequest request)
+        public virtual EnableRadiusResponse EnableRadius(EnableRadiusRequest request)
         {
             var marshaller = new EnableRadiusRequestMarshaller();
             var unmarshaller = EnableRadiusResponseUnmarshaller.Instance;
@@ -2098,7 +2098,7 @@ namespace Amazon.DirectoryService
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableRadius
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableRadius">REST API Reference for EnableRadius Operation</seealso>
-        public IAsyncResult BeginEnableRadius(EnableRadiusRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginEnableRadius(EnableRadiusRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new EnableRadiusRequestMarshaller();
             var unmarshaller = EnableRadiusResponseUnmarshaller.Instance;
@@ -2115,7 +2115,7 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>Returns a  EnableRadiusResult from DirectoryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableRadius">REST API Reference for EnableRadius Operation</seealso>
-        public  EnableRadiusResponse EndEnableRadius(IAsyncResult asyncResult)
+        public virtual EnableRadiusResponse EndEnableRadius(IAsyncResult asyncResult)
         {
             return EndInvoke<EnableRadiusResponse>(asyncResult);
         }
@@ -2146,7 +2146,7 @@ namespace Amazon.DirectoryService
         /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableSso">REST API Reference for EnableSso Operation</seealso>
-        public EnableSsoResponse EnableSso(EnableSsoRequest request)
+        public virtual EnableSsoResponse EnableSso(EnableSsoRequest request)
         {
             var marshaller = new EnableSsoRequestMarshaller();
             var unmarshaller = EnableSsoResponseUnmarshaller.Instance;
@@ -2166,7 +2166,7 @@ namespace Amazon.DirectoryService
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableSso
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableSso">REST API Reference for EnableSso Operation</seealso>
-        public IAsyncResult BeginEnableSso(EnableSsoRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginEnableSso(EnableSsoRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new EnableSsoRequestMarshaller();
             var unmarshaller = EnableSsoResponseUnmarshaller.Instance;
@@ -2183,7 +2183,7 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>Returns a  EnableSsoResult from DirectoryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableSso">REST API Reference for EnableSso Operation</seealso>
-        public  EnableSsoResponse EndEnableSso(IAsyncResult asyncResult)
+        public virtual EnableSsoResponse EndEnableSso(IAsyncResult asyncResult)
         {
             return EndInvoke<EnableSsoResponse>(asyncResult);
         }
@@ -2207,7 +2207,7 @@ namespace Amazon.DirectoryService
         /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/GetDirectoryLimits">REST API Reference for GetDirectoryLimits Operation</seealso>
-        public GetDirectoryLimitsResponse GetDirectoryLimits()
+        public virtual GetDirectoryLimitsResponse GetDirectoryLimits()
         {
             return GetDirectoryLimits(new GetDirectoryLimitsRequest());
         }
@@ -2228,7 +2228,7 @@ namespace Amazon.DirectoryService
         /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/GetDirectoryLimits">REST API Reference for GetDirectoryLimits Operation</seealso>
-        public GetDirectoryLimitsResponse GetDirectoryLimits(GetDirectoryLimitsRequest request)
+        public virtual GetDirectoryLimitsResponse GetDirectoryLimits(GetDirectoryLimitsRequest request)
         {
             var marshaller = new GetDirectoryLimitsRequestMarshaller();
             var unmarshaller = GetDirectoryLimitsResponseUnmarshaller.Instance;
@@ -2248,7 +2248,7 @@ namespace Amazon.DirectoryService
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDirectoryLimits
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/GetDirectoryLimits">REST API Reference for GetDirectoryLimits Operation</seealso>
-        public IAsyncResult BeginGetDirectoryLimits(GetDirectoryLimitsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetDirectoryLimits(GetDirectoryLimitsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetDirectoryLimitsRequestMarshaller();
             var unmarshaller = GetDirectoryLimitsResponseUnmarshaller.Instance;
@@ -2265,7 +2265,7 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>Returns a  GetDirectoryLimitsResult from DirectoryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/GetDirectoryLimits">REST API Reference for GetDirectoryLimits Operation</seealso>
-        public  GetDirectoryLimitsResponse EndGetDirectoryLimits(IAsyncResult asyncResult)
+        public virtual GetDirectoryLimitsResponse EndGetDirectoryLimits(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDirectoryLimitsResponse>(asyncResult);
         }
@@ -2290,7 +2290,7 @@ namespace Amazon.DirectoryService
         /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/GetSnapshotLimits">REST API Reference for GetSnapshotLimits Operation</seealso>
-        public GetSnapshotLimitsResponse GetSnapshotLimits(GetSnapshotLimitsRequest request)
+        public virtual GetSnapshotLimitsResponse GetSnapshotLimits(GetSnapshotLimitsRequest request)
         {
             var marshaller = new GetSnapshotLimitsRequestMarshaller();
             var unmarshaller = GetSnapshotLimitsResponseUnmarshaller.Instance;
@@ -2310,7 +2310,7 @@ namespace Amazon.DirectoryService
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSnapshotLimits
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/GetSnapshotLimits">REST API Reference for GetSnapshotLimits Operation</seealso>
-        public IAsyncResult BeginGetSnapshotLimits(GetSnapshotLimitsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetSnapshotLimits(GetSnapshotLimitsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetSnapshotLimitsRequestMarshaller();
             var unmarshaller = GetSnapshotLimitsResponseUnmarshaller.Instance;
@@ -2327,7 +2327,7 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>Returns a  GetSnapshotLimitsResult from DirectoryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/GetSnapshotLimits">REST API Reference for GetSnapshotLimits Operation</seealso>
-        public  GetSnapshotLimitsResponse EndGetSnapshotLimits(IAsyncResult asyncResult)
+        public virtual GetSnapshotLimitsResponse EndGetSnapshotLimits(IAsyncResult asyncResult)
         {
             return EndInvoke<GetSnapshotLimitsResponse>(asyncResult);
         }
@@ -2358,7 +2358,7 @@ namespace Amazon.DirectoryService
         /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListIpRoutes">REST API Reference for ListIpRoutes Operation</seealso>
-        public ListIpRoutesResponse ListIpRoutes(ListIpRoutesRequest request)
+        public virtual ListIpRoutesResponse ListIpRoutes(ListIpRoutesRequest request)
         {
             var marshaller = new ListIpRoutesRequestMarshaller();
             var unmarshaller = ListIpRoutesResponseUnmarshaller.Instance;
@@ -2378,7 +2378,7 @@ namespace Amazon.DirectoryService
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListIpRoutes
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListIpRoutes">REST API Reference for ListIpRoutes Operation</seealso>
-        public IAsyncResult BeginListIpRoutes(ListIpRoutesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListIpRoutes(ListIpRoutesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListIpRoutesRequestMarshaller();
             var unmarshaller = ListIpRoutesResponseUnmarshaller.Instance;
@@ -2395,7 +2395,7 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>Returns a  ListIpRoutesResult from DirectoryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListIpRoutes">REST API Reference for ListIpRoutes Operation</seealso>
-        public  ListIpRoutesResponse EndListIpRoutes(IAsyncResult asyncResult)
+        public virtual ListIpRoutesResponse EndListIpRoutes(IAsyncResult asyncResult)
         {
             return EndInvoke<ListIpRoutesResponse>(asyncResult);
         }
@@ -2423,7 +2423,7 @@ namespace Amazon.DirectoryService
         /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListSchemaExtensions">REST API Reference for ListSchemaExtensions Operation</seealso>
-        public ListSchemaExtensionsResponse ListSchemaExtensions(ListSchemaExtensionsRequest request)
+        public virtual ListSchemaExtensionsResponse ListSchemaExtensions(ListSchemaExtensionsRequest request)
         {
             var marshaller = new ListSchemaExtensionsRequestMarshaller();
             var unmarshaller = ListSchemaExtensionsResponseUnmarshaller.Instance;
@@ -2443,7 +2443,7 @@ namespace Amazon.DirectoryService
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSchemaExtensions
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListSchemaExtensions">REST API Reference for ListSchemaExtensions Operation</seealso>
-        public IAsyncResult BeginListSchemaExtensions(ListSchemaExtensionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListSchemaExtensions(ListSchemaExtensionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListSchemaExtensionsRequestMarshaller();
             var unmarshaller = ListSchemaExtensionsResponseUnmarshaller.Instance;
@@ -2460,7 +2460,7 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>Returns a  ListSchemaExtensionsResult from DirectoryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListSchemaExtensions">REST API Reference for ListSchemaExtensions Operation</seealso>
-        public  ListSchemaExtensionsResponse EndListSchemaExtensions(IAsyncResult asyncResult)
+        public virtual ListSchemaExtensionsResponse EndListSchemaExtensions(IAsyncResult asyncResult)
         {
             return EndInvoke<ListSchemaExtensionsResponse>(asyncResult);
         }
@@ -2491,7 +2491,7 @@ namespace Amazon.DirectoryService
         /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
-        public ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
@@ -2511,7 +2511,7 @@ namespace Amazon.DirectoryService
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
-        public IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
@@ -2528,7 +2528,7 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>Returns a  ListTagsForResourceResult from DirectoryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
-        public  ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult)
+        public virtual ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTagsForResourceResponse>(asyncResult);
         }
@@ -2560,7 +2560,7 @@ namespace Amazon.DirectoryService
         /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RegisterEventTopic">REST API Reference for RegisterEventTopic Operation</seealso>
-        public RegisterEventTopicResponse RegisterEventTopic(RegisterEventTopicRequest request)
+        public virtual RegisterEventTopicResponse RegisterEventTopic(RegisterEventTopicRequest request)
         {
             var marshaller = new RegisterEventTopicRequestMarshaller();
             var unmarshaller = RegisterEventTopicResponseUnmarshaller.Instance;
@@ -2580,7 +2580,7 @@ namespace Amazon.DirectoryService
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterEventTopic
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RegisterEventTopic">REST API Reference for RegisterEventTopic Operation</seealso>
-        public IAsyncResult BeginRegisterEventTopic(RegisterEventTopicRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginRegisterEventTopic(RegisterEventTopicRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RegisterEventTopicRequestMarshaller();
             var unmarshaller = RegisterEventTopicResponseUnmarshaller.Instance;
@@ -2597,7 +2597,7 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>Returns a  RegisterEventTopicResult from DirectoryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RegisterEventTopic">REST API Reference for RegisterEventTopic Operation</seealso>
-        public  RegisterEventTopicResponse EndRegisterEventTopic(IAsyncResult asyncResult)
+        public virtual RegisterEventTopicResponse EndRegisterEventTopic(IAsyncResult asyncResult)
         {
             return EndInvoke<RegisterEventTopicResponse>(asyncResult);
         }
@@ -2628,7 +2628,7 @@ namespace Amazon.DirectoryService
         /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RemoveIpRoutes">REST API Reference for RemoveIpRoutes Operation</seealso>
-        public RemoveIpRoutesResponse RemoveIpRoutes(RemoveIpRoutesRequest request)
+        public virtual RemoveIpRoutesResponse RemoveIpRoutes(RemoveIpRoutesRequest request)
         {
             var marshaller = new RemoveIpRoutesRequestMarshaller();
             var unmarshaller = RemoveIpRoutesResponseUnmarshaller.Instance;
@@ -2648,7 +2648,7 @@ namespace Amazon.DirectoryService
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveIpRoutes
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RemoveIpRoutes">REST API Reference for RemoveIpRoutes Operation</seealso>
-        public IAsyncResult BeginRemoveIpRoutes(RemoveIpRoutesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginRemoveIpRoutes(RemoveIpRoutesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RemoveIpRoutesRequestMarshaller();
             var unmarshaller = RemoveIpRoutesResponseUnmarshaller.Instance;
@@ -2665,7 +2665,7 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>Returns a  RemoveIpRoutesResult from DirectoryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RemoveIpRoutes">REST API Reference for RemoveIpRoutes Operation</seealso>
-        public  RemoveIpRoutesResponse EndRemoveIpRoutes(IAsyncResult asyncResult)
+        public virtual RemoveIpRoutesResponse EndRemoveIpRoutes(IAsyncResult asyncResult)
         {
             return EndInvoke<RemoveIpRoutesResponse>(asyncResult);
         }
@@ -2693,7 +2693,7 @@ namespace Amazon.DirectoryService
         /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
-        public RemoveTagsFromResourceResponse RemoveTagsFromResource(RemoveTagsFromResourceRequest request)
+        public virtual RemoveTagsFromResourceResponse RemoveTagsFromResource(RemoveTagsFromResourceRequest request)
         {
             var marshaller = new RemoveTagsFromResourceRequestMarshaller();
             var unmarshaller = RemoveTagsFromResourceResponseUnmarshaller.Instance;
@@ -2713,7 +2713,7 @@ namespace Amazon.DirectoryService
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveTagsFromResource
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
-        public IAsyncResult BeginRemoveTagsFromResource(RemoveTagsFromResourceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginRemoveTagsFromResource(RemoveTagsFromResourceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RemoveTagsFromResourceRequestMarshaller();
             var unmarshaller = RemoveTagsFromResourceResponseUnmarshaller.Instance;
@@ -2730,7 +2730,7 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>Returns a  RemoveTagsFromResourceResult from DirectoryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
-        public  RemoveTagsFromResourceResponse EndRemoveTagsFromResource(IAsyncResult asyncResult)
+        public virtual RemoveTagsFromResourceResponse EndRemoveTagsFromResource(IAsyncResult asyncResult)
         {
             return EndInvoke<RemoveTagsFromResourceResponse>(asyncResult);
         }
@@ -2771,7 +2771,7 @@ namespace Amazon.DirectoryService
         /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RestoreFromSnapshot">REST API Reference for RestoreFromSnapshot Operation</seealso>
-        public RestoreFromSnapshotResponse RestoreFromSnapshot(RestoreFromSnapshotRequest request)
+        public virtual RestoreFromSnapshotResponse RestoreFromSnapshot(RestoreFromSnapshotRequest request)
         {
             var marshaller = new RestoreFromSnapshotRequestMarshaller();
             var unmarshaller = RestoreFromSnapshotResponseUnmarshaller.Instance;
@@ -2791,7 +2791,7 @@ namespace Amazon.DirectoryService
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRestoreFromSnapshot
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RestoreFromSnapshot">REST API Reference for RestoreFromSnapshot Operation</seealso>
-        public IAsyncResult BeginRestoreFromSnapshot(RestoreFromSnapshotRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginRestoreFromSnapshot(RestoreFromSnapshotRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RestoreFromSnapshotRequestMarshaller();
             var unmarshaller = RestoreFromSnapshotResponseUnmarshaller.Instance;
@@ -2808,7 +2808,7 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>Returns a  RestoreFromSnapshotResult from DirectoryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RestoreFromSnapshot">REST API Reference for RestoreFromSnapshot Operation</seealso>
-        public  RestoreFromSnapshotResponse EndRestoreFromSnapshot(IAsyncResult asyncResult)
+        public virtual RestoreFromSnapshotResponse EndRestoreFromSnapshot(IAsyncResult asyncResult)
         {
             return EndInvoke<RestoreFromSnapshotResponse>(asyncResult);
         }
@@ -2844,7 +2844,7 @@ namespace Amazon.DirectoryService
         /// directory.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/StartSchemaExtension">REST API Reference for StartSchemaExtension Operation</seealso>
-        public StartSchemaExtensionResponse StartSchemaExtension(StartSchemaExtensionRequest request)
+        public virtual StartSchemaExtensionResponse StartSchemaExtension(StartSchemaExtensionRequest request)
         {
             var marshaller = new StartSchemaExtensionRequestMarshaller();
             var unmarshaller = StartSchemaExtensionResponseUnmarshaller.Instance;
@@ -2864,7 +2864,7 @@ namespace Amazon.DirectoryService
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartSchemaExtension
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/StartSchemaExtension">REST API Reference for StartSchemaExtension Operation</seealso>
-        public IAsyncResult BeginStartSchemaExtension(StartSchemaExtensionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginStartSchemaExtension(StartSchemaExtensionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new StartSchemaExtensionRequestMarshaller();
             var unmarshaller = StartSchemaExtensionResponseUnmarshaller.Instance;
@@ -2881,7 +2881,7 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>Returns a  StartSchemaExtensionResult from DirectoryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/StartSchemaExtension">REST API Reference for StartSchemaExtension Operation</seealso>
-        public  StartSchemaExtensionResponse EndStartSchemaExtension(IAsyncResult asyncResult)
+        public virtual StartSchemaExtensionResponse EndStartSchemaExtension(IAsyncResult asyncResult)
         {
             return EndInvoke<StartSchemaExtensionResponse>(asyncResult);
         }
@@ -2915,7 +2915,7 @@ namespace Amazon.DirectoryService
         /// The operation is not supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateConditionalForwarder">REST API Reference for UpdateConditionalForwarder Operation</seealso>
-        public UpdateConditionalForwarderResponse UpdateConditionalForwarder(UpdateConditionalForwarderRequest request)
+        public virtual UpdateConditionalForwarderResponse UpdateConditionalForwarder(UpdateConditionalForwarderRequest request)
         {
             var marshaller = new UpdateConditionalForwarderRequestMarshaller();
             var unmarshaller = UpdateConditionalForwarderResponseUnmarshaller.Instance;
@@ -2935,7 +2935,7 @@ namespace Amazon.DirectoryService
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateConditionalForwarder
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateConditionalForwarder">REST API Reference for UpdateConditionalForwarder Operation</seealso>
-        public IAsyncResult BeginUpdateConditionalForwarder(UpdateConditionalForwarderRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateConditionalForwarder(UpdateConditionalForwarderRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateConditionalForwarderRequestMarshaller();
             var unmarshaller = UpdateConditionalForwarderResponseUnmarshaller.Instance;
@@ -2952,7 +2952,7 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>Returns a  UpdateConditionalForwarderResult from DirectoryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateConditionalForwarder">REST API Reference for UpdateConditionalForwarder Operation</seealso>
-        public  UpdateConditionalForwarderResponse EndUpdateConditionalForwarder(IAsyncResult asyncResult)
+        public virtual UpdateConditionalForwarderResponse EndUpdateConditionalForwarder(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateConditionalForwarderResponse>(asyncResult);
         }
@@ -2994,7 +2994,7 @@ namespace Amazon.DirectoryService
         /// The operation is not supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateNumberOfDomainControllers">REST API Reference for UpdateNumberOfDomainControllers Operation</seealso>
-        public UpdateNumberOfDomainControllersResponse UpdateNumberOfDomainControllers(UpdateNumberOfDomainControllersRequest request)
+        public virtual UpdateNumberOfDomainControllersResponse UpdateNumberOfDomainControllers(UpdateNumberOfDomainControllersRequest request)
         {
             var marshaller = new UpdateNumberOfDomainControllersRequestMarshaller();
             var unmarshaller = UpdateNumberOfDomainControllersResponseUnmarshaller.Instance;
@@ -3014,7 +3014,7 @@ namespace Amazon.DirectoryService
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateNumberOfDomainControllers
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateNumberOfDomainControllers">REST API Reference for UpdateNumberOfDomainControllers Operation</seealso>
-        public IAsyncResult BeginUpdateNumberOfDomainControllers(UpdateNumberOfDomainControllersRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateNumberOfDomainControllers(UpdateNumberOfDomainControllersRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateNumberOfDomainControllersRequestMarshaller();
             var unmarshaller = UpdateNumberOfDomainControllersResponseUnmarshaller.Instance;
@@ -3031,7 +3031,7 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>Returns a  UpdateNumberOfDomainControllersResult from DirectoryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateNumberOfDomainControllers">REST API Reference for UpdateNumberOfDomainControllers Operation</seealso>
-        public  UpdateNumberOfDomainControllersResponse EndUpdateNumberOfDomainControllers(IAsyncResult asyncResult)
+        public virtual UpdateNumberOfDomainControllersResponse EndUpdateNumberOfDomainControllers(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateNumberOfDomainControllersResponse>(asyncResult);
         }
@@ -3060,7 +3060,7 @@ namespace Amazon.DirectoryService
         /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateRadius">REST API Reference for UpdateRadius Operation</seealso>
-        public UpdateRadiusResponse UpdateRadius(UpdateRadiusRequest request)
+        public virtual UpdateRadiusResponse UpdateRadius(UpdateRadiusRequest request)
         {
             var marshaller = new UpdateRadiusRequestMarshaller();
             var unmarshaller = UpdateRadiusResponseUnmarshaller.Instance;
@@ -3080,7 +3080,7 @@ namespace Amazon.DirectoryService
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateRadius
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateRadius">REST API Reference for UpdateRadius Operation</seealso>
-        public IAsyncResult BeginUpdateRadius(UpdateRadiusRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateRadius(UpdateRadiusRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateRadiusRequestMarshaller();
             var unmarshaller = UpdateRadiusResponseUnmarshaller.Instance;
@@ -3097,7 +3097,7 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>Returns a  UpdateRadiusResult from DirectoryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateRadius">REST API Reference for UpdateRadius Operation</seealso>
-        public  UpdateRadiusResponse EndUpdateRadius(IAsyncResult asyncResult)
+        public virtual UpdateRadiusResponse EndUpdateRadius(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateRadiusResponse>(asyncResult);
         }
@@ -3135,7 +3135,7 @@ namespace Amazon.DirectoryService
         /// The operation is not supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/VerifyTrust">REST API Reference for VerifyTrust Operation</seealso>
-        public VerifyTrustResponse VerifyTrust(VerifyTrustRequest request)
+        public virtual VerifyTrustResponse VerifyTrust(VerifyTrustRequest request)
         {
             var marshaller = new VerifyTrustRequestMarshaller();
             var unmarshaller = VerifyTrustResponseUnmarshaller.Instance;
@@ -3155,7 +3155,7 @@ namespace Amazon.DirectoryService
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndVerifyTrust
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/VerifyTrust">REST API Reference for VerifyTrust Operation</seealso>
-        public IAsyncResult BeginVerifyTrust(VerifyTrustRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginVerifyTrust(VerifyTrustRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new VerifyTrustRequestMarshaller();
             var unmarshaller = VerifyTrustResponseUnmarshaller.Instance;
@@ -3172,7 +3172,7 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>Returns a  VerifyTrustResult from DirectoryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/VerifyTrust">REST API Reference for VerifyTrust Operation</seealso>
-        public  VerifyTrustResponse EndVerifyTrust(IAsyncResult asyncResult)
+        public virtual VerifyTrustResponse EndVerifyTrust(IAsyncResult asyncResult)
         {
             return EndInvoke<VerifyTrustResponse>(asyncResult);
         }

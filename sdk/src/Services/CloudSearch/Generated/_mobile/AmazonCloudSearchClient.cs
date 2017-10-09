@@ -245,7 +245,7 @@ namespace Amazon.CloudSearch
         
         #region  BuildSuggesters
 
-        internal BuildSuggestersResponse BuildSuggesters(BuildSuggestersRequest request)
+        internal virtual BuildSuggestersResponse BuildSuggesters(BuildSuggestersRequest request)
         {
             var marshaller = new BuildSuggestersRequestMarshaller();
             var unmarshaller = BuildSuggestersResponseUnmarshaller.Instance;
@@ -263,7 +263,7 @@ namespace Amazon.CloudSearch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<BuildSuggestersResponse> BuildSuggestersAsync(BuildSuggestersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<BuildSuggestersResponse> BuildSuggestersAsync(BuildSuggestersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new BuildSuggestersRequestMarshaller();
             var unmarshaller = BuildSuggestersResponseUnmarshaller.Instance;
@@ -276,7 +276,7 @@ namespace Amazon.CloudSearch
         
         #region  CreateDomain
 
-        internal CreateDomainResponse CreateDomain(CreateDomainRequest request)
+        internal virtual CreateDomainResponse CreateDomain(CreateDomainRequest request)
         {
             var marshaller = new CreateDomainRequestMarshaller();
             var unmarshaller = CreateDomainResponseUnmarshaller.Instance;
@@ -294,7 +294,7 @@ namespace Amazon.CloudSearch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CreateDomainResponse> CreateDomainAsync(CreateDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateDomainResponse> CreateDomainAsync(CreateDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateDomainRequestMarshaller();
             var unmarshaller = CreateDomainResponseUnmarshaller.Instance;
@@ -307,7 +307,7 @@ namespace Amazon.CloudSearch
         
         #region  DefineAnalysisScheme
 
-        internal DefineAnalysisSchemeResponse DefineAnalysisScheme(DefineAnalysisSchemeRequest request)
+        internal virtual DefineAnalysisSchemeResponse DefineAnalysisScheme(DefineAnalysisSchemeRequest request)
         {
             var marshaller = new DefineAnalysisSchemeRequestMarshaller();
             var unmarshaller = DefineAnalysisSchemeResponseUnmarshaller.Instance;
@@ -325,7 +325,7 @@ namespace Amazon.CloudSearch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DefineAnalysisSchemeResponse> DefineAnalysisSchemeAsync(DefineAnalysisSchemeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DefineAnalysisSchemeResponse> DefineAnalysisSchemeAsync(DefineAnalysisSchemeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DefineAnalysisSchemeRequestMarshaller();
             var unmarshaller = DefineAnalysisSchemeResponseUnmarshaller.Instance;
@@ -338,7 +338,7 @@ namespace Amazon.CloudSearch
         
         #region  DefineExpression
 
-        internal DefineExpressionResponse DefineExpression(DefineExpressionRequest request)
+        internal virtual DefineExpressionResponse DefineExpression(DefineExpressionRequest request)
         {
             var marshaller = new DefineExpressionRequestMarshaller();
             var unmarshaller = DefineExpressionResponseUnmarshaller.Instance;
@@ -356,7 +356,7 @@ namespace Amazon.CloudSearch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DefineExpressionResponse> DefineExpressionAsync(DefineExpressionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DefineExpressionResponse> DefineExpressionAsync(DefineExpressionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DefineExpressionRequestMarshaller();
             var unmarshaller = DefineExpressionResponseUnmarshaller.Instance;
@@ -369,7 +369,7 @@ namespace Amazon.CloudSearch
         
         #region  DefineIndexField
 
-        internal DefineIndexFieldResponse DefineIndexField(DefineIndexFieldRequest request)
+        internal virtual DefineIndexFieldResponse DefineIndexField(DefineIndexFieldRequest request)
         {
             var marshaller = new DefineIndexFieldRequestMarshaller();
             var unmarshaller = DefineIndexFieldResponseUnmarshaller.Instance;
@@ -387,7 +387,7 @@ namespace Amazon.CloudSearch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DefineIndexFieldResponse> DefineIndexFieldAsync(DefineIndexFieldRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DefineIndexFieldResponse> DefineIndexFieldAsync(DefineIndexFieldRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DefineIndexFieldRequestMarshaller();
             var unmarshaller = DefineIndexFieldResponseUnmarshaller.Instance;
@@ -400,7 +400,7 @@ namespace Amazon.CloudSearch
         
         #region  DefineSuggester
 
-        internal DefineSuggesterResponse DefineSuggester(DefineSuggesterRequest request)
+        internal virtual DefineSuggesterResponse DefineSuggester(DefineSuggesterRequest request)
         {
             var marshaller = new DefineSuggesterRequestMarshaller();
             var unmarshaller = DefineSuggesterResponseUnmarshaller.Instance;
@@ -418,7 +418,7 @@ namespace Amazon.CloudSearch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DefineSuggesterResponse> DefineSuggesterAsync(DefineSuggesterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DefineSuggesterResponse> DefineSuggesterAsync(DefineSuggesterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DefineSuggesterRequestMarshaller();
             var unmarshaller = DefineSuggesterResponseUnmarshaller.Instance;
@@ -431,7 +431,7 @@ namespace Amazon.CloudSearch
         
         #region  DeleteAnalysisScheme
 
-        internal DeleteAnalysisSchemeResponse DeleteAnalysisScheme(DeleteAnalysisSchemeRequest request)
+        internal virtual DeleteAnalysisSchemeResponse DeleteAnalysisScheme(DeleteAnalysisSchemeRequest request)
         {
             var marshaller = new DeleteAnalysisSchemeRequestMarshaller();
             var unmarshaller = DeleteAnalysisSchemeResponseUnmarshaller.Instance;
@@ -449,7 +449,7 @@ namespace Amazon.CloudSearch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteAnalysisSchemeResponse> DeleteAnalysisSchemeAsync(DeleteAnalysisSchemeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteAnalysisSchemeResponse> DeleteAnalysisSchemeAsync(DeleteAnalysisSchemeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteAnalysisSchemeRequestMarshaller();
             var unmarshaller = DeleteAnalysisSchemeResponseUnmarshaller.Instance;
@@ -462,7 +462,7 @@ namespace Amazon.CloudSearch
         
         #region  DeleteDomain
 
-        internal DeleteDomainResponse DeleteDomain(DeleteDomainRequest request)
+        internal virtual DeleteDomainResponse DeleteDomain(DeleteDomainRequest request)
         {
             var marshaller = new DeleteDomainRequestMarshaller();
             var unmarshaller = DeleteDomainResponseUnmarshaller.Instance;
@@ -480,7 +480,7 @@ namespace Amazon.CloudSearch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteDomainResponse> DeleteDomainAsync(DeleteDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteDomainResponse> DeleteDomainAsync(DeleteDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteDomainRequestMarshaller();
             var unmarshaller = DeleteDomainResponseUnmarshaller.Instance;
@@ -493,7 +493,7 @@ namespace Amazon.CloudSearch
         
         #region  DeleteExpression
 
-        internal DeleteExpressionResponse DeleteExpression(DeleteExpressionRequest request)
+        internal virtual DeleteExpressionResponse DeleteExpression(DeleteExpressionRequest request)
         {
             var marshaller = new DeleteExpressionRequestMarshaller();
             var unmarshaller = DeleteExpressionResponseUnmarshaller.Instance;
@@ -511,7 +511,7 @@ namespace Amazon.CloudSearch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteExpressionResponse> DeleteExpressionAsync(DeleteExpressionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteExpressionResponse> DeleteExpressionAsync(DeleteExpressionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteExpressionRequestMarshaller();
             var unmarshaller = DeleteExpressionResponseUnmarshaller.Instance;
@@ -524,7 +524,7 @@ namespace Amazon.CloudSearch
         
         #region  DeleteIndexField
 
-        internal DeleteIndexFieldResponse DeleteIndexField(DeleteIndexFieldRequest request)
+        internal virtual DeleteIndexFieldResponse DeleteIndexField(DeleteIndexFieldRequest request)
         {
             var marshaller = new DeleteIndexFieldRequestMarshaller();
             var unmarshaller = DeleteIndexFieldResponseUnmarshaller.Instance;
@@ -542,7 +542,7 @@ namespace Amazon.CloudSearch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteIndexFieldResponse> DeleteIndexFieldAsync(DeleteIndexFieldRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteIndexFieldResponse> DeleteIndexFieldAsync(DeleteIndexFieldRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteIndexFieldRequestMarshaller();
             var unmarshaller = DeleteIndexFieldResponseUnmarshaller.Instance;
@@ -555,7 +555,7 @@ namespace Amazon.CloudSearch
         
         #region  DeleteSuggester
 
-        internal DeleteSuggesterResponse DeleteSuggester(DeleteSuggesterRequest request)
+        internal virtual DeleteSuggesterResponse DeleteSuggester(DeleteSuggesterRequest request)
         {
             var marshaller = new DeleteSuggesterRequestMarshaller();
             var unmarshaller = DeleteSuggesterResponseUnmarshaller.Instance;
@@ -573,7 +573,7 @@ namespace Amazon.CloudSearch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteSuggesterResponse> DeleteSuggesterAsync(DeleteSuggesterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteSuggesterResponse> DeleteSuggesterAsync(DeleteSuggesterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteSuggesterRequestMarshaller();
             var unmarshaller = DeleteSuggesterResponseUnmarshaller.Instance;
@@ -586,7 +586,7 @@ namespace Amazon.CloudSearch
         
         #region  DescribeAnalysisSchemes
 
-        internal DescribeAnalysisSchemesResponse DescribeAnalysisSchemes(DescribeAnalysisSchemesRequest request)
+        internal virtual DescribeAnalysisSchemesResponse DescribeAnalysisSchemes(DescribeAnalysisSchemesRequest request)
         {
             var marshaller = new DescribeAnalysisSchemesRequestMarshaller();
             var unmarshaller = DescribeAnalysisSchemesResponseUnmarshaller.Instance;
@@ -604,7 +604,7 @@ namespace Amazon.CloudSearch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DescribeAnalysisSchemesResponse> DescribeAnalysisSchemesAsync(DescribeAnalysisSchemesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeAnalysisSchemesResponse> DescribeAnalysisSchemesAsync(DescribeAnalysisSchemesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeAnalysisSchemesRequestMarshaller();
             var unmarshaller = DescribeAnalysisSchemesResponseUnmarshaller.Instance;
@@ -617,7 +617,7 @@ namespace Amazon.CloudSearch
         
         #region  DescribeAvailabilityOptions
 
-        internal DescribeAvailabilityOptionsResponse DescribeAvailabilityOptions(DescribeAvailabilityOptionsRequest request)
+        internal virtual DescribeAvailabilityOptionsResponse DescribeAvailabilityOptions(DescribeAvailabilityOptionsRequest request)
         {
             var marshaller = new DescribeAvailabilityOptionsRequestMarshaller();
             var unmarshaller = DescribeAvailabilityOptionsResponseUnmarshaller.Instance;
@@ -635,7 +635,7 @@ namespace Amazon.CloudSearch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DescribeAvailabilityOptionsResponse> DescribeAvailabilityOptionsAsync(DescribeAvailabilityOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeAvailabilityOptionsResponse> DescribeAvailabilityOptionsAsync(DescribeAvailabilityOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeAvailabilityOptionsRequestMarshaller();
             var unmarshaller = DescribeAvailabilityOptionsResponseUnmarshaller.Instance;
@@ -648,11 +648,11 @@ namespace Amazon.CloudSearch
         
         #region  DescribeDomains
 
-        internal DescribeDomainsResponse DescribeDomains()
+        internal virtual DescribeDomainsResponse DescribeDomains()
         {
             return DescribeDomains(new DescribeDomainsRequest());
         }
-        internal DescribeDomainsResponse DescribeDomains(DescribeDomainsRequest request)
+        internal virtual DescribeDomainsResponse DescribeDomains(DescribeDomainsRequest request)
         {
             var marshaller = new DescribeDomainsRequestMarshaller();
             var unmarshaller = DescribeDomainsResponseUnmarshaller.Instance;
@@ -683,7 +683,7 @@ namespace Amazon.CloudSearch
         /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
         /// Health Dashboard</a>.
         /// </exception>
-        public Task<DescribeDomainsResponse> DescribeDomainsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeDomainsResponse> DescribeDomainsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeDomainsAsync(new DescribeDomainsRequest(), cancellationToken);
         }
@@ -698,7 +698,7 @@ namespace Amazon.CloudSearch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DescribeDomainsResponse> DescribeDomainsAsync(DescribeDomainsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeDomainsResponse> DescribeDomainsAsync(DescribeDomainsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeDomainsRequestMarshaller();
             var unmarshaller = DescribeDomainsResponseUnmarshaller.Instance;
@@ -711,7 +711,7 @@ namespace Amazon.CloudSearch
         
         #region  DescribeExpressions
 
-        internal DescribeExpressionsResponse DescribeExpressions(DescribeExpressionsRequest request)
+        internal virtual DescribeExpressionsResponse DescribeExpressions(DescribeExpressionsRequest request)
         {
             var marshaller = new DescribeExpressionsRequestMarshaller();
             var unmarshaller = DescribeExpressionsResponseUnmarshaller.Instance;
@@ -729,7 +729,7 @@ namespace Amazon.CloudSearch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DescribeExpressionsResponse> DescribeExpressionsAsync(DescribeExpressionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeExpressionsResponse> DescribeExpressionsAsync(DescribeExpressionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeExpressionsRequestMarshaller();
             var unmarshaller = DescribeExpressionsResponseUnmarshaller.Instance;
@@ -742,7 +742,7 @@ namespace Amazon.CloudSearch
         
         #region  DescribeIndexFields
 
-        internal DescribeIndexFieldsResponse DescribeIndexFields(DescribeIndexFieldsRequest request)
+        internal virtual DescribeIndexFieldsResponse DescribeIndexFields(DescribeIndexFieldsRequest request)
         {
             var marshaller = new DescribeIndexFieldsRequestMarshaller();
             var unmarshaller = DescribeIndexFieldsResponseUnmarshaller.Instance;
@@ -760,7 +760,7 @@ namespace Amazon.CloudSearch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DescribeIndexFieldsResponse> DescribeIndexFieldsAsync(DescribeIndexFieldsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeIndexFieldsResponse> DescribeIndexFieldsAsync(DescribeIndexFieldsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeIndexFieldsRequestMarshaller();
             var unmarshaller = DescribeIndexFieldsResponseUnmarshaller.Instance;
@@ -773,7 +773,7 @@ namespace Amazon.CloudSearch
         
         #region  DescribeScalingParameters
 
-        internal DescribeScalingParametersResponse DescribeScalingParameters(DescribeScalingParametersRequest request)
+        internal virtual DescribeScalingParametersResponse DescribeScalingParameters(DescribeScalingParametersRequest request)
         {
             var marshaller = new DescribeScalingParametersRequestMarshaller();
             var unmarshaller = DescribeScalingParametersResponseUnmarshaller.Instance;
@@ -791,7 +791,7 @@ namespace Amazon.CloudSearch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DescribeScalingParametersResponse> DescribeScalingParametersAsync(DescribeScalingParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeScalingParametersResponse> DescribeScalingParametersAsync(DescribeScalingParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeScalingParametersRequestMarshaller();
             var unmarshaller = DescribeScalingParametersResponseUnmarshaller.Instance;
@@ -804,7 +804,7 @@ namespace Amazon.CloudSearch
         
         #region  DescribeServiceAccessPolicies
 
-        internal DescribeServiceAccessPoliciesResponse DescribeServiceAccessPolicies(DescribeServiceAccessPoliciesRequest request)
+        internal virtual DescribeServiceAccessPoliciesResponse DescribeServiceAccessPolicies(DescribeServiceAccessPoliciesRequest request)
         {
             var marshaller = new DescribeServiceAccessPoliciesRequestMarshaller();
             var unmarshaller = DescribeServiceAccessPoliciesResponseUnmarshaller.Instance;
@@ -822,7 +822,7 @@ namespace Amazon.CloudSearch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DescribeServiceAccessPoliciesResponse> DescribeServiceAccessPoliciesAsync(DescribeServiceAccessPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeServiceAccessPoliciesResponse> DescribeServiceAccessPoliciesAsync(DescribeServiceAccessPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeServiceAccessPoliciesRequestMarshaller();
             var unmarshaller = DescribeServiceAccessPoliciesResponseUnmarshaller.Instance;
@@ -835,7 +835,7 @@ namespace Amazon.CloudSearch
         
         #region  DescribeSuggesters
 
-        internal DescribeSuggestersResponse DescribeSuggesters(DescribeSuggestersRequest request)
+        internal virtual DescribeSuggestersResponse DescribeSuggesters(DescribeSuggestersRequest request)
         {
             var marshaller = new DescribeSuggestersRequestMarshaller();
             var unmarshaller = DescribeSuggestersResponseUnmarshaller.Instance;
@@ -853,7 +853,7 @@ namespace Amazon.CloudSearch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DescribeSuggestersResponse> DescribeSuggestersAsync(DescribeSuggestersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeSuggestersResponse> DescribeSuggestersAsync(DescribeSuggestersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeSuggestersRequestMarshaller();
             var unmarshaller = DescribeSuggestersResponseUnmarshaller.Instance;
@@ -866,7 +866,7 @@ namespace Amazon.CloudSearch
         
         #region  IndexDocuments
 
-        internal IndexDocumentsResponse IndexDocuments(IndexDocumentsRequest request)
+        internal virtual IndexDocumentsResponse IndexDocuments(IndexDocumentsRequest request)
         {
             var marshaller = new IndexDocumentsRequestMarshaller();
             var unmarshaller = IndexDocumentsResponseUnmarshaller.Instance;
@@ -884,7 +884,7 @@ namespace Amazon.CloudSearch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<IndexDocumentsResponse> IndexDocumentsAsync(IndexDocumentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<IndexDocumentsResponse> IndexDocumentsAsync(IndexDocumentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new IndexDocumentsRequestMarshaller();
             var unmarshaller = IndexDocumentsResponseUnmarshaller.Instance;
@@ -897,11 +897,11 @@ namespace Amazon.CloudSearch
         
         #region  ListDomainNames
 
-        internal ListDomainNamesResponse ListDomainNames()
+        internal virtual ListDomainNamesResponse ListDomainNames()
         {
             return ListDomainNames(new ListDomainNamesRequest());
         }
-        internal ListDomainNamesResponse ListDomainNames(ListDomainNamesRequest request)
+        internal virtual ListDomainNamesResponse ListDomainNames(ListDomainNamesRequest request)
         {
             var marshaller = new ListDomainNamesRequestMarshaller();
             var unmarshaller = ListDomainNamesResponseUnmarshaller.Instance;
@@ -921,7 +921,7 @@ namespace Amazon.CloudSearch
         /// <exception cref="Amazon.CloudSearch.Model.BaseException">
         /// An error occurred while processing the request.
         /// </exception>
-        public Task<ListDomainNamesResponse> ListDomainNamesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListDomainNamesResponse> ListDomainNamesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return ListDomainNamesAsync(new ListDomainNamesRequest(), cancellationToken);
         }
@@ -936,7 +936,7 @@ namespace Amazon.CloudSearch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<ListDomainNamesResponse> ListDomainNamesAsync(ListDomainNamesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListDomainNamesResponse> ListDomainNamesAsync(ListDomainNamesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListDomainNamesRequestMarshaller();
             var unmarshaller = ListDomainNamesResponseUnmarshaller.Instance;
@@ -949,7 +949,7 @@ namespace Amazon.CloudSearch
         
         #region  UpdateAvailabilityOptions
 
-        internal UpdateAvailabilityOptionsResponse UpdateAvailabilityOptions(UpdateAvailabilityOptionsRequest request)
+        internal virtual UpdateAvailabilityOptionsResponse UpdateAvailabilityOptions(UpdateAvailabilityOptionsRequest request)
         {
             var marshaller = new UpdateAvailabilityOptionsRequestMarshaller();
             var unmarshaller = UpdateAvailabilityOptionsResponseUnmarshaller.Instance;
@@ -967,7 +967,7 @@ namespace Amazon.CloudSearch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateAvailabilityOptionsResponse> UpdateAvailabilityOptionsAsync(UpdateAvailabilityOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateAvailabilityOptionsResponse> UpdateAvailabilityOptionsAsync(UpdateAvailabilityOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateAvailabilityOptionsRequestMarshaller();
             var unmarshaller = UpdateAvailabilityOptionsResponseUnmarshaller.Instance;
@@ -980,7 +980,7 @@ namespace Amazon.CloudSearch
         
         #region  UpdateScalingParameters
 
-        internal UpdateScalingParametersResponse UpdateScalingParameters(UpdateScalingParametersRequest request)
+        internal virtual UpdateScalingParametersResponse UpdateScalingParameters(UpdateScalingParametersRequest request)
         {
             var marshaller = new UpdateScalingParametersRequestMarshaller();
             var unmarshaller = UpdateScalingParametersResponseUnmarshaller.Instance;
@@ -998,7 +998,7 @@ namespace Amazon.CloudSearch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateScalingParametersResponse> UpdateScalingParametersAsync(UpdateScalingParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateScalingParametersResponse> UpdateScalingParametersAsync(UpdateScalingParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateScalingParametersRequestMarshaller();
             var unmarshaller = UpdateScalingParametersResponseUnmarshaller.Instance;
@@ -1011,7 +1011,7 @@ namespace Amazon.CloudSearch
         
         #region  UpdateServiceAccessPolicies
 
-        internal UpdateServiceAccessPoliciesResponse UpdateServiceAccessPolicies(UpdateServiceAccessPoliciesRequest request)
+        internal virtual UpdateServiceAccessPoliciesResponse UpdateServiceAccessPolicies(UpdateServiceAccessPoliciesRequest request)
         {
             var marshaller = new UpdateServiceAccessPoliciesRequestMarshaller();
             var unmarshaller = UpdateServiceAccessPoliciesResponseUnmarshaller.Instance;
@@ -1029,7 +1029,7 @@ namespace Amazon.CloudSearch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateServiceAccessPoliciesResponse> UpdateServiceAccessPoliciesAsync(UpdateServiceAccessPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateServiceAccessPoliciesResponse> UpdateServiceAccessPoliciesAsync(UpdateServiceAccessPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateServiceAccessPoliciesRequestMarshaller();
             var unmarshaller = UpdateServiceAccessPoliciesResponseUnmarshaller.Instance;

@@ -235,7 +235,7 @@ namespace Amazon.WorkSpaces
         
         #region  CreateTags
 
-        internal CreateTagsResponse CreateTags(CreateTagsRequest request)
+        internal virtual CreateTagsResponse CreateTags(CreateTagsRequest request)
         {
             var marshaller = new CreateTagsRequestMarshaller();
             var unmarshaller = CreateTagsResponseUnmarshaller.Instance;
@@ -254,7 +254,7 @@ namespace Amazon.WorkSpaces
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateTags">REST API Reference for CreateTags Operation</seealso>
-        public Task<CreateTagsResponse> CreateTagsAsync(CreateTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateTagsResponse> CreateTagsAsync(CreateTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateTagsRequestMarshaller();
             var unmarshaller = CreateTagsResponseUnmarshaller.Instance;
@@ -267,7 +267,7 @@ namespace Amazon.WorkSpaces
         
         #region  CreateWorkspaces
 
-        internal CreateWorkspacesResponse CreateWorkspaces(CreateWorkspacesRequest request)
+        internal virtual CreateWorkspacesResponse CreateWorkspaces(CreateWorkspacesRequest request)
         {
             var marshaller = new CreateWorkspacesRequestMarshaller();
             var unmarshaller = CreateWorkspacesResponseUnmarshaller.Instance;
@@ -286,7 +286,7 @@ namespace Amazon.WorkSpaces
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateWorkspaces">REST API Reference for CreateWorkspaces Operation</seealso>
-        public Task<CreateWorkspacesResponse> CreateWorkspacesAsync(CreateWorkspacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateWorkspacesResponse> CreateWorkspacesAsync(CreateWorkspacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateWorkspacesRequestMarshaller();
             var unmarshaller = CreateWorkspacesResponseUnmarshaller.Instance;
@@ -299,7 +299,7 @@ namespace Amazon.WorkSpaces
         
         #region  DeleteTags
 
-        internal DeleteTagsResponse DeleteTags(DeleteTagsRequest request)
+        internal virtual DeleteTagsResponse DeleteTags(DeleteTagsRequest request)
         {
             var marshaller = new DeleteTagsRequestMarshaller();
             var unmarshaller = DeleteTagsResponseUnmarshaller.Instance;
@@ -318,7 +318,7 @@ namespace Amazon.WorkSpaces
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
-        public Task<DeleteTagsResponse> DeleteTagsAsync(DeleteTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteTagsResponse> DeleteTagsAsync(DeleteTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteTagsRequestMarshaller();
             var unmarshaller = DeleteTagsResponseUnmarshaller.Instance;
@@ -331,7 +331,7 @@ namespace Amazon.WorkSpaces
         
         #region  DescribeTags
 
-        internal DescribeTagsResponse DescribeTags(DescribeTagsRequest request)
+        internal virtual DescribeTagsResponse DescribeTags(DescribeTagsRequest request)
         {
             var marshaller = new DescribeTagsRequestMarshaller();
             var unmarshaller = DescribeTagsResponseUnmarshaller.Instance;
@@ -350,7 +350,7 @@ namespace Amazon.WorkSpaces
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
-        public Task<DescribeTagsResponse> DescribeTagsAsync(DescribeTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeTagsResponse> DescribeTagsAsync(DescribeTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeTagsRequestMarshaller();
             var unmarshaller = DescribeTagsResponseUnmarshaller.Instance;
@@ -363,7 +363,7 @@ namespace Amazon.WorkSpaces
         
         #region  DescribeWorkspaceBundles
 
-        internal DescribeWorkspaceBundlesResponse DescribeWorkspaceBundles(DescribeWorkspaceBundlesRequest request)
+        internal virtual DescribeWorkspaceBundlesResponse DescribeWorkspaceBundles(DescribeWorkspaceBundlesRequest request)
         {
             var marshaller = new DescribeWorkspaceBundlesRequestMarshaller();
             var unmarshaller = DescribeWorkspaceBundlesResponseUnmarshaller.Instance;
@@ -398,7 +398,7 @@ namespace Amazon.WorkSpaces
         /// One or more parameter values are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceBundles">REST API Reference for DescribeWorkspaceBundles Operation</seealso>
-        public Task<DescribeWorkspaceBundlesResponse> DescribeWorkspaceBundlesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeWorkspaceBundlesResponse> DescribeWorkspaceBundlesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DescribeWorkspaceBundlesRequest();
             return DescribeWorkspaceBundlesAsync(request, cancellationToken);
@@ -415,7 +415,7 @@ namespace Amazon.WorkSpaces
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceBundles">REST API Reference for DescribeWorkspaceBundles Operation</seealso>
-        public Task<DescribeWorkspaceBundlesResponse> DescribeWorkspaceBundlesAsync(DescribeWorkspaceBundlesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeWorkspaceBundlesResponse> DescribeWorkspaceBundlesAsync(DescribeWorkspaceBundlesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeWorkspaceBundlesRequestMarshaller();
             var unmarshaller = DescribeWorkspaceBundlesResponseUnmarshaller.Instance;
@@ -428,7 +428,7 @@ namespace Amazon.WorkSpaces
         
         #region  DescribeWorkspaceDirectories
 
-        internal DescribeWorkspaceDirectoriesResponse DescribeWorkspaceDirectories(DescribeWorkspaceDirectoriesRequest request)
+        internal virtual DescribeWorkspaceDirectoriesResponse DescribeWorkspaceDirectories(DescribeWorkspaceDirectoriesRequest request)
         {
             var marshaller = new DescribeWorkspaceDirectoriesRequestMarshaller();
             var unmarshaller = DescribeWorkspaceDirectoriesResponseUnmarshaller.Instance;
@@ -458,7 +458,7 @@ namespace Amazon.WorkSpaces
         /// One or more parameter values are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceDirectories">REST API Reference for DescribeWorkspaceDirectories Operation</seealso>
-        public Task<DescribeWorkspaceDirectoriesResponse> DescribeWorkspaceDirectoriesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeWorkspaceDirectoriesResponse> DescribeWorkspaceDirectoriesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DescribeWorkspaceDirectoriesRequest();
             return DescribeWorkspaceDirectoriesAsync(request, cancellationToken);
@@ -475,7 +475,7 @@ namespace Amazon.WorkSpaces
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceDirectories">REST API Reference for DescribeWorkspaceDirectories Operation</seealso>
-        public Task<DescribeWorkspaceDirectoriesResponse> DescribeWorkspaceDirectoriesAsync(DescribeWorkspaceDirectoriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeWorkspaceDirectoriesResponse> DescribeWorkspaceDirectoriesAsync(DescribeWorkspaceDirectoriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeWorkspaceDirectoriesRequestMarshaller();
             var unmarshaller = DescribeWorkspaceDirectoriesResponseUnmarshaller.Instance;
@@ -488,7 +488,7 @@ namespace Amazon.WorkSpaces
         
         #region  DescribeWorkspaces
 
-        internal DescribeWorkspacesResponse DescribeWorkspaces(DescribeWorkspacesRequest request)
+        internal virtual DescribeWorkspacesResponse DescribeWorkspaces(DescribeWorkspacesRequest request)
         {
             var marshaller = new DescribeWorkspacesRequestMarshaller();
             var unmarshaller = DescribeWorkspacesResponseUnmarshaller.Instance;
@@ -525,7 +525,7 @@ namespace Amazon.WorkSpaces
         /// The specified resource is not available.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaces">REST API Reference for DescribeWorkspaces Operation</seealso>
-        public Task<DescribeWorkspacesResponse> DescribeWorkspacesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeWorkspacesResponse> DescribeWorkspacesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DescribeWorkspacesRequest();
             return DescribeWorkspacesAsync(request, cancellationToken);
@@ -542,7 +542,7 @@ namespace Amazon.WorkSpaces
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaces">REST API Reference for DescribeWorkspaces Operation</seealso>
-        public Task<DescribeWorkspacesResponse> DescribeWorkspacesAsync(DescribeWorkspacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeWorkspacesResponse> DescribeWorkspacesAsync(DescribeWorkspacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeWorkspacesRequestMarshaller();
             var unmarshaller = DescribeWorkspacesResponseUnmarshaller.Instance;
@@ -555,7 +555,7 @@ namespace Amazon.WorkSpaces
         
         #region  DescribeWorkspacesConnectionStatus
 
-        internal DescribeWorkspacesConnectionStatusResponse DescribeWorkspacesConnectionStatus(DescribeWorkspacesConnectionStatusRequest request)
+        internal virtual DescribeWorkspacesConnectionStatusResponse DescribeWorkspacesConnectionStatus(DescribeWorkspacesConnectionStatusRequest request)
         {
             var marshaller = new DescribeWorkspacesConnectionStatusRequestMarshaller();
             var unmarshaller = DescribeWorkspacesConnectionStatusResponseUnmarshaller.Instance;
@@ -574,7 +574,7 @@ namespace Amazon.WorkSpaces
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspacesConnectionStatus">REST API Reference for DescribeWorkspacesConnectionStatus Operation</seealso>
-        public Task<DescribeWorkspacesConnectionStatusResponse> DescribeWorkspacesConnectionStatusAsync(DescribeWorkspacesConnectionStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeWorkspacesConnectionStatusResponse> DescribeWorkspacesConnectionStatusAsync(DescribeWorkspacesConnectionStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeWorkspacesConnectionStatusRequestMarshaller();
             var unmarshaller = DescribeWorkspacesConnectionStatusResponseUnmarshaller.Instance;
@@ -587,7 +587,7 @@ namespace Amazon.WorkSpaces
         
         #region  ModifyWorkspaceProperties
 
-        internal ModifyWorkspacePropertiesResponse ModifyWorkspaceProperties(ModifyWorkspacePropertiesRequest request)
+        internal virtual ModifyWorkspacePropertiesResponse ModifyWorkspaceProperties(ModifyWorkspacePropertiesRequest request)
         {
             var marshaller = new ModifyWorkspacePropertiesRequestMarshaller();
             var unmarshaller = ModifyWorkspacePropertiesResponseUnmarshaller.Instance;
@@ -606,7 +606,7 @@ namespace Amazon.WorkSpaces
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceProperties">REST API Reference for ModifyWorkspaceProperties Operation</seealso>
-        public Task<ModifyWorkspacePropertiesResponse> ModifyWorkspacePropertiesAsync(ModifyWorkspacePropertiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ModifyWorkspacePropertiesResponse> ModifyWorkspacePropertiesAsync(ModifyWorkspacePropertiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ModifyWorkspacePropertiesRequestMarshaller();
             var unmarshaller = ModifyWorkspacePropertiesResponseUnmarshaller.Instance;
@@ -619,7 +619,7 @@ namespace Amazon.WorkSpaces
         
         #region  RebootWorkspaces
 
-        internal RebootWorkspacesResponse RebootWorkspaces(RebootWorkspacesRequest request)
+        internal virtual RebootWorkspacesResponse RebootWorkspaces(RebootWorkspacesRequest request)
         {
             var marshaller = new RebootWorkspacesRequestMarshaller();
             var unmarshaller = RebootWorkspacesResponseUnmarshaller.Instance;
@@ -638,7 +638,7 @@ namespace Amazon.WorkSpaces
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RebootWorkspaces">REST API Reference for RebootWorkspaces Operation</seealso>
-        public Task<RebootWorkspacesResponse> RebootWorkspacesAsync(RebootWorkspacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<RebootWorkspacesResponse> RebootWorkspacesAsync(RebootWorkspacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RebootWorkspacesRequestMarshaller();
             var unmarshaller = RebootWorkspacesResponseUnmarshaller.Instance;
@@ -651,7 +651,7 @@ namespace Amazon.WorkSpaces
         
         #region  RebuildWorkspaces
 
-        internal RebuildWorkspacesResponse RebuildWorkspaces(RebuildWorkspacesRequest request)
+        internal virtual RebuildWorkspacesResponse RebuildWorkspaces(RebuildWorkspacesRequest request)
         {
             var marshaller = new RebuildWorkspacesRequestMarshaller();
             var unmarshaller = RebuildWorkspacesResponseUnmarshaller.Instance;
@@ -670,7 +670,7 @@ namespace Amazon.WorkSpaces
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RebuildWorkspaces">REST API Reference for RebuildWorkspaces Operation</seealso>
-        public Task<RebuildWorkspacesResponse> RebuildWorkspacesAsync(RebuildWorkspacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<RebuildWorkspacesResponse> RebuildWorkspacesAsync(RebuildWorkspacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RebuildWorkspacesRequestMarshaller();
             var unmarshaller = RebuildWorkspacesResponseUnmarshaller.Instance;
@@ -683,7 +683,7 @@ namespace Amazon.WorkSpaces
         
         #region  StartWorkspaces
 
-        internal StartWorkspacesResponse StartWorkspaces(StartWorkspacesRequest request)
+        internal virtual StartWorkspacesResponse StartWorkspaces(StartWorkspacesRequest request)
         {
             var marshaller = new StartWorkspacesRequestMarshaller();
             var unmarshaller = StartWorkspacesResponseUnmarshaller.Instance;
@@ -702,7 +702,7 @@ namespace Amazon.WorkSpaces
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/StartWorkspaces">REST API Reference for StartWorkspaces Operation</seealso>
-        public Task<StartWorkspacesResponse> StartWorkspacesAsync(StartWorkspacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<StartWorkspacesResponse> StartWorkspacesAsync(StartWorkspacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new StartWorkspacesRequestMarshaller();
             var unmarshaller = StartWorkspacesResponseUnmarshaller.Instance;
@@ -715,7 +715,7 @@ namespace Amazon.WorkSpaces
         
         #region  StopWorkspaces
 
-        internal StopWorkspacesResponse StopWorkspaces(StopWorkspacesRequest request)
+        internal virtual StopWorkspacesResponse StopWorkspaces(StopWorkspacesRequest request)
         {
             var marshaller = new StopWorkspacesRequestMarshaller();
             var unmarshaller = StopWorkspacesResponseUnmarshaller.Instance;
@@ -734,7 +734,7 @@ namespace Amazon.WorkSpaces
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/StopWorkspaces">REST API Reference for StopWorkspaces Operation</seealso>
-        public Task<StopWorkspacesResponse> StopWorkspacesAsync(StopWorkspacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<StopWorkspacesResponse> StopWorkspacesAsync(StopWorkspacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new StopWorkspacesRequestMarshaller();
             var unmarshaller = StopWorkspacesResponseUnmarshaller.Instance;
@@ -747,7 +747,7 @@ namespace Amazon.WorkSpaces
         
         #region  TerminateWorkspaces
 
-        internal TerminateWorkspacesResponse TerminateWorkspaces(TerminateWorkspacesRequest request)
+        internal virtual TerminateWorkspacesResponse TerminateWorkspaces(TerminateWorkspacesRequest request)
         {
             var marshaller = new TerminateWorkspacesRequestMarshaller();
             var unmarshaller = TerminateWorkspacesResponseUnmarshaller.Instance;
@@ -766,7 +766,7 @@ namespace Amazon.WorkSpaces
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/TerminateWorkspaces">REST API Reference for TerminateWorkspaces Operation</seealso>
-        public Task<TerminateWorkspacesResponse> TerminateWorkspacesAsync(TerminateWorkspacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<TerminateWorkspacesResponse> TerminateWorkspacesAsync(TerminateWorkspacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new TerminateWorkspacesRequestMarshaller();
             var unmarshaller = TerminateWorkspacesResponseUnmarshaller.Instance;

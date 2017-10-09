@@ -273,7 +273,7 @@ namespace Amazon.CognitoIdentity
         
         #region  CreateIdentityPool
 
-        internal CreateIdentityPoolResponse CreateIdentityPool(CreateIdentityPoolRequest request)
+        internal virtual CreateIdentityPoolResponse CreateIdentityPool(CreateIdentityPoolRequest request)
         {
             var marshaller = new CreateIdentityPoolRequestMarshaller();
             var unmarshaller = CreateIdentityPoolResponseUnmarshaller.Instance;
@@ -292,7 +292,7 @@ namespace Amazon.CognitoIdentity
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/CreateIdentityPool">REST API Reference for CreateIdentityPool Operation</seealso>
-        public Task<CreateIdentityPoolResponse> CreateIdentityPoolAsync(CreateIdentityPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateIdentityPoolResponse> CreateIdentityPoolAsync(CreateIdentityPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateIdentityPoolRequestMarshaller();
             var unmarshaller = CreateIdentityPoolResponseUnmarshaller.Instance;
@@ -305,7 +305,7 @@ namespace Amazon.CognitoIdentity
         
         #region  DeleteIdentities
 
-        internal DeleteIdentitiesResponse DeleteIdentities(DeleteIdentitiesRequest request)
+        internal virtual DeleteIdentitiesResponse DeleteIdentities(DeleteIdentitiesRequest request)
         {
             var marshaller = new DeleteIdentitiesRequestMarshaller();
             var unmarshaller = DeleteIdentitiesResponseUnmarshaller.Instance;
@@ -324,7 +324,7 @@ namespace Amazon.CognitoIdentity
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DeleteIdentities">REST API Reference for DeleteIdentities Operation</seealso>
-        public Task<DeleteIdentitiesResponse> DeleteIdentitiesAsync(DeleteIdentitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteIdentitiesResponse> DeleteIdentitiesAsync(DeleteIdentitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteIdentitiesRequestMarshaller();
             var unmarshaller = DeleteIdentitiesResponseUnmarshaller.Instance;
@@ -337,7 +337,7 @@ namespace Amazon.CognitoIdentity
         
         #region  DeleteIdentityPool
 
-        internal DeleteIdentityPoolResponse DeleteIdentityPool(DeleteIdentityPoolRequest request)
+        internal virtual DeleteIdentityPoolResponse DeleteIdentityPool(DeleteIdentityPoolRequest request)
         {
             var marshaller = new DeleteIdentityPoolRequestMarshaller();
             var unmarshaller = DeleteIdentityPoolResponseUnmarshaller.Instance;
@@ -377,7 +377,7 @@ namespace Amazon.CognitoIdentity
         /// Thrown when a request is throttled.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DeleteIdentityPool">REST API Reference for DeleteIdentityPool Operation</seealso>
-        public Task<DeleteIdentityPoolResponse> DeleteIdentityPoolAsync(string identityPoolId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteIdentityPoolResponse> DeleteIdentityPoolAsync(string identityPoolId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DeleteIdentityPoolRequest();
             request.IdentityPoolId = identityPoolId;
@@ -395,7 +395,7 @@ namespace Amazon.CognitoIdentity
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DeleteIdentityPool">REST API Reference for DeleteIdentityPool Operation</seealso>
-        public Task<DeleteIdentityPoolResponse> DeleteIdentityPoolAsync(DeleteIdentityPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteIdentityPoolResponse> DeleteIdentityPoolAsync(DeleteIdentityPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteIdentityPoolRequestMarshaller();
             var unmarshaller = DeleteIdentityPoolResponseUnmarshaller.Instance;
@@ -408,7 +408,7 @@ namespace Amazon.CognitoIdentity
         
         #region  DescribeIdentity
 
-        internal DescribeIdentityResponse DescribeIdentity(DescribeIdentityRequest request)
+        internal virtual DescribeIdentityResponse DescribeIdentity(DescribeIdentityRequest request)
         {
             var marshaller = new DescribeIdentityRequestMarshaller();
             var unmarshaller = DescribeIdentityResponseUnmarshaller.Instance;
@@ -448,7 +448,7 @@ namespace Amazon.CognitoIdentity
         /// Thrown when a request is throttled.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DescribeIdentity">REST API Reference for DescribeIdentity Operation</seealso>
-        public Task<DescribeIdentityResponse> DescribeIdentityAsync(string identityId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeIdentityResponse> DescribeIdentityAsync(string identityId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DescribeIdentityRequest();
             request.IdentityId = identityId;
@@ -466,7 +466,7 @@ namespace Amazon.CognitoIdentity
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DescribeIdentity">REST API Reference for DescribeIdentity Operation</seealso>
-        public Task<DescribeIdentityResponse> DescribeIdentityAsync(DescribeIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeIdentityResponse> DescribeIdentityAsync(DescribeIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeIdentityRequestMarshaller();
             var unmarshaller = DescribeIdentityResponseUnmarshaller.Instance;
@@ -479,7 +479,7 @@ namespace Amazon.CognitoIdentity
         
         #region  DescribeIdentityPool
 
-        internal DescribeIdentityPoolResponse DescribeIdentityPool(DescribeIdentityPoolRequest request)
+        internal virtual DescribeIdentityPoolResponse DescribeIdentityPool(DescribeIdentityPoolRequest request)
         {
             var marshaller = new DescribeIdentityPoolRequestMarshaller();
             var unmarshaller = DescribeIdentityPoolResponseUnmarshaller.Instance;
@@ -519,7 +519,7 @@ namespace Amazon.CognitoIdentity
         /// Thrown when a request is throttled.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DescribeIdentityPool">REST API Reference for DescribeIdentityPool Operation</seealso>
-        public Task<DescribeIdentityPoolResponse> DescribeIdentityPoolAsync(string identityPoolId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeIdentityPoolResponse> DescribeIdentityPoolAsync(string identityPoolId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DescribeIdentityPoolRequest();
             request.IdentityPoolId = identityPoolId;
@@ -537,7 +537,7 @@ namespace Amazon.CognitoIdentity
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DescribeIdentityPool">REST API Reference for DescribeIdentityPool Operation</seealso>
-        public Task<DescribeIdentityPoolResponse> DescribeIdentityPoolAsync(DescribeIdentityPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeIdentityPoolResponse> DescribeIdentityPoolAsync(DescribeIdentityPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeIdentityPoolRequestMarshaller();
             var unmarshaller = DescribeIdentityPoolResponseUnmarshaller.Instance;
@@ -550,7 +550,7 @@ namespace Amazon.CognitoIdentity
         
         #region  GetCredentialsForIdentity
 
-        internal GetCredentialsForIdentityResponse GetCredentialsForIdentity(GetCredentialsForIdentityRequest request)
+        internal virtual GetCredentialsForIdentityResponse GetCredentialsForIdentity(GetCredentialsForIdentityRequest request)
         {
             var marshaller = new GetCredentialsForIdentityRequestMarshaller();
             var unmarshaller = GetCredentialsForIdentityResponseUnmarshaller.Instance;
@@ -602,7 +602,7 @@ namespace Amazon.CognitoIdentity
         /// Thrown when a request is throttled.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetCredentialsForIdentity">REST API Reference for GetCredentialsForIdentity Operation</seealso>
-        public Task<GetCredentialsForIdentityResponse> GetCredentialsForIdentityAsync(string identityId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetCredentialsForIdentityResponse> GetCredentialsForIdentityAsync(string identityId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new GetCredentialsForIdentityRequest();
             request.IdentityId = identityId;
@@ -654,7 +654,7 @@ namespace Amazon.CognitoIdentity
         /// Thrown when a request is throttled.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetCredentialsForIdentity">REST API Reference for GetCredentialsForIdentity Operation</seealso>
-        public Task<GetCredentialsForIdentityResponse> GetCredentialsForIdentityAsync(string identityId, Dictionary<string, string> logins, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetCredentialsForIdentityResponse> GetCredentialsForIdentityAsync(string identityId, Dictionary<string, string> logins, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new GetCredentialsForIdentityRequest();
             request.IdentityId = identityId;
@@ -673,7 +673,7 @@ namespace Amazon.CognitoIdentity
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetCredentialsForIdentity">REST API Reference for GetCredentialsForIdentity Operation</seealso>
-        public Task<GetCredentialsForIdentityResponse> GetCredentialsForIdentityAsync(GetCredentialsForIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetCredentialsForIdentityResponse> GetCredentialsForIdentityAsync(GetCredentialsForIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetCredentialsForIdentityRequestMarshaller();
             var unmarshaller = GetCredentialsForIdentityResponseUnmarshaller.Instance;
@@ -686,7 +686,7 @@ namespace Amazon.CognitoIdentity
         
         #region  GetId
 
-        internal GetIdResponse GetId(GetIdRequest request)
+        internal virtual GetIdResponse GetId(GetIdRequest request)
         {
             var marshaller = new GetIdRequestMarshaller();
             var unmarshaller = GetIdResponseUnmarshaller.Instance;
@@ -705,7 +705,7 @@ namespace Amazon.CognitoIdentity
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetId">REST API Reference for GetId Operation</seealso>
-        public Task<GetIdResponse> GetIdAsync(GetIdRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetIdResponse> GetIdAsync(GetIdRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetIdRequestMarshaller();
             var unmarshaller = GetIdResponseUnmarshaller.Instance;
@@ -718,7 +718,7 @@ namespace Amazon.CognitoIdentity
         
         #region  GetIdentityPoolRoles
 
-        internal GetIdentityPoolRolesResponse GetIdentityPoolRoles(GetIdentityPoolRolesRequest request)
+        internal virtual GetIdentityPoolRolesResponse GetIdentityPoolRoles(GetIdentityPoolRolesRequest request)
         {
             var marshaller = new GetIdentityPoolRolesRequestMarshaller();
             var unmarshaller = GetIdentityPoolRolesResponseUnmarshaller.Instance;
@@ -760,7 +760,7 @@ namespace Amazon.CognitoIdentity
         /// Thrown when a request is throttled.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetIdentityPoolRoles">REST API Reference for GetIdentityPoolRoles Operation</seealso>
-        public Task<GetIdentityPoolRolesResponse> GetIdentityPoolRolesAsync(string identityPoolId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetIdentityPoolRolesResponse> GetIdentityPoolRolesAsync(string identityPoolId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new GetIdentityPoolRolesRequest();
             request.IdentityPoolId = identityPoolId;
@@ -778,7 +778,7 @@ namespace Amazon.CognitoIdentity
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetIdentityPoolRoles">REST API Reference for GetIdentityPoolRoles Operation</seealso>
-        public Task<GetIdentityPoolRolesResponse> GetIdentityPoolRolesAsync(GetIdentityPoolRolesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetIdentityPoolRolesResponse> GetIdentityPoolRolesAsync(GetIdentityPoolRolesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetIdentityPoolRolesRequestMarshaller();
             var unmarshaller = GetIdentityPoolRolesResponseUnmarshaller.Instance;
@@ -791,7 +791,7 @@ namespace Amazon.CognitoIdentity
         
         #region  GetOpenIdToken
 
-        internal GetOpenIdTokenResponse GetOpenIdToken(GetOpenIdTokenRequest request)
+        internal virtual GetOpenIdTokenResponse GetOpenIdToken(GetOpenIdTokenRequest request)
         {
             var marshaller = new GetOpenIdTokenRequestMarshaller();
             var unmarshaller = GetOpenIdTokenResponseUnmarshaller.Instance;
@@ -842,7 +842,7 @@ namespace Amazon.CognitoIdentity
         /// Thrown when a request is throttled.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetOpenIdToken">REST API Reference for GetOpenIdToken Operation</seealso>
-        public Task<GetOpenIdTokenResponse> GetOpenIdTokenAsync(string identityId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetOpenIdTokenResponse> GetOpenIdTokenAsync(string identityId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new GetOpenIdTokenRequest();
             request.IdentityId = identityId;
@@ -860,7 +860,7 @@ namespace Amazon.CognitoIdentity
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetOpenIdToken">REST API Reference for GetOpenIdToken Operation</seealso>
-        public Task<GetOpenIdTokenResponse> GetOpenIdTokenAsync(GetOpenIdTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetOpenIdTokenResponse> GetOpenIdTokenAsync(GetOpenIdTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetOpenIdTokenRequestMarshaller();
             var unmarshaller = GetOpenIdTokenResponseUnmarshaller.Instance;
@@ -873,7 +873,7 @@ namespace Amazon.CognitoIdentity
         
         #region  GetOpenIdTokenForDeveloperIdentity
 
-        internal GetOpenIdTokenForDeveloperIdentityResponse GetOpenIdTokenForDeveloperIdentity(GetOpenIdTokenForDeveloperIdentityRequest request)
+        internal virtual GetOpenIdTokenForDeveloperIdentityResponse GetOpenIdTokenForDeveloperIdentity(GetOpenIdTokenForDeveloperIdentityRequest request)
         {
             var marshaller = new GetOpenIdTokenForDeveloperIdentityRequestMarshaller();
             var unmarshaller = GetOpenIdTokenForDeveloperIdentityResponseUnmarshaller.Instance;
@@ -892,7 +892,7 @@ namespace Amazon.CognitoIdentity
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetOpenIdTokenForDeveloperIdentity">REST API Reference for GetOpenIdTokenForDeveloperIdentity Operation</seealso>
-        public Task<GetOpenIdTokenForDeveloperIdentityResponse> GetOpenIdTokenForDeveloperIdentityAsync(GetOpenIdTokenForDeveloperIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetOpenIdTokenForDeveloperIdentityResponse> GetOpenIdTokenForDeveloperIdentityAsync(GetOpenIdTokenForDeveloperIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetOpenIdTokenForDeveloperIdentityRequestMarshaller();
             var unmarshaller = GetOpenIdTokenForDeveloperIdentityResponseUnmarshaller.Instance;
@@ -905,7 +905,7 @@ namespace Amazon.CognitoIdentity
         
         #region  ListIdentities
 
-        internal ListIdentitiesResponse ListIdentities(ListIdentitiesRequest request)
+        internal virtual ListIdentitiesResponse ListIdentities(ListIdentitiesRequest request)
         {
             var marshaller = new ListIdentitiesRequestMarshaller();
             var unmarshaller = ListIdentitiesResponseUnmarshaller.Instance;
@@ -924,7 +924,7 @@ namespace Amazon.CognitoIdentity
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/ListIdentities">REST API Reference for ListIdentities Operation</seealso>
-        public Task<ListIdentitiesResponse> ListIdentitiesAsync(ListIdentitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListIdentitiesResponse> ListIdentitiesAsync(ListIdentitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListIdentitiesRequestMarshaller();
             var unmarshaller = ListIdentitiesResponseUnmarshaller.Instance;
@@ -937,7 +937,7 @@ namespace Amazon.CognitoIdentity
         
         #region  ListIdentityPools
 
-        internal ListIdentityPoolsResponse ListIdentityPools(ListIdentityPoolsRequest request)
+        internal virtual ListIdentityPoolsResponse ListIdentityPools(ListIdentityPoolsRequest request)
         {
             var marshaller = new ListIdentityPoolsRequestMarshaller();
             var unmarshaller = ListIdentityPoolsResponseUnmarshaller.Instance;
@@ -956,7 +956,7 @@ namespace Amazon.CognitoIdentity
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/ListIdentityPools">REST API Reference for ListIdentityPools Operation</seealso>
-        public Task<ListIdentityPoolsResponse> ListIdentityPoolsAsync(ListIdentityPoolsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListIdentityPoolsResponse> ListIdentityPoolsAsync(ListIdentityPoolsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListIdentityPoolsRequestMarshaller();
             var unmarshaller = ListIdentityPoolsResponseUnmarshaller.Instance;
@@ -969,7 +969,7 @@ namespace Amazon.CognitoIdentity
         
         #region  LookupDeveloperIdentity
 
-        internal LookupDeveloperIdentityResponse LookupDeveloperIdentity(LookupDeveloperIdentityRequest request)
+        internal virtual LookupDeveloperIdentityResponse LookupDeveloperIdentity(LookupDeveloperIdentityRequest request)
         {
             var marshaller = new LookupDeveloperIdentityRequestMarshaller();
             var unmarshaller = LookupDeveloperIdentityResponseUnmarshaller.Instance;
@@ -988,7 +988,7 @@ namespace Amazon.CognitoIdentity
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/LookupDeveloperIdentity">REST API Reference for LookupDeveloperIdentity Operation</seealso>
-        public Task<LookupDeveloperIdentityResponse> LookupDeveloperIdentityAsync(LookupDeveloperIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<LookupDeveloperIdentityResponse> LookupDeveloperIdentityAsync(LookupDeveloperIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new LookupDeveloperIdentityRequestMarshaller();
             var unmarshaller = LookupDeveloperIdentityResponseUnmarshaller.Instance;
@@ -1001,7 +1001,7 @@ namespace Amazon.CognitoIdentity
         
         #region  MergeDeveloperIdentities
 
-        internal MergeDeveloperIdentitiesResponse MergeDeveloperIdentities(MergeDeveloperIdentitiesRequest request)
+        internal virtual MergeDeveloperIdentitiesResponse MergeDeveloperIdentities(MergeDeveloperIdentitiesRequest request)
         {
             var marshaller = new MergeDeveloperIdentitiesRequestMarshaller();
             var unmarshaller = MergeDeveloperIdentitiesResponseUnmarshaller.Instance;
@@ -1020,7 +1020,7 @@ namespace Amazon.CognitoIdentity
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/MergeDeveloperIdentities">REST API Reference for MergeDeveloperIdentities Operation</seealso>
-        public Task<MergeDeveloperIdentitiesResponse> MergeDeveloperIdentitiesAsync(MergeDeveloperIdentitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<MergeDeveloperIdentitiesResponse> MergeDeveloperIdentitiesAsync(MergeDeveloperIdentitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new MergeDeveloperIdentitiesRequestMarshaller();
             var unmarshaller = MergeDeveloperIdentitiesResponseUnmarshaller.Instance;
@@ -1033,7 +1033,7 @@ namespace Amazon.CognitoIdentity
         
         #region  SetIdentityPoolRoles
 
-        internal SetIdentityPoolRolesResponse SetIdentityPoolRoles(SetIdentityPoolRolesRequest request)
+        internal virtual SetIdentityPoolRolesResponse SetIdentityPoolRoles(SetIdentityPoolRolesRequest request)
         {
             var marshaller = new SetIdentityPoolRolesRequestMarshaller();
             var unmarshaller = SetIdentityPoolRolesResponseUnmarshaller.Instance;
@@ -1080,7 +1080,7 @@ namespace Amazon.CognitoIdentity
         /// Thrown when a request is throttled.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/SetIdentityPoolRoles">REST API Reference for SetIdentityPoolRoles Operation</seealso>
-        public Task<SetIdentityPoolRolesResponse> SetIdentityPoolRolesAsync(string identityPoolId, Dictionary<string, string> roles, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<SetIdentityPoolRolesResponse> SetIdentityPoolRolesAsync(string identityPoolId, Dictionary<string, string> roles, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new SetIdentityPoolRolesRequest();
             request.IdentityPoolId = identityPoolId;
@@ -1099,7 +1099,7 @@ namespace Amazon.CognitoIdentity
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/SetIdentityPoolRoles">REST API Reference for SetIdentityPoolRoles Operation</seealso>
-        public Task<SetIdentityPoolRolesResponse> SetIdentityPoolRolesAsync(SetIdentityPoolRolesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<SetIdentityPoolRolesResponse> SetIdentityPoolRolesAsync(SetIdentityPoolRolesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SetIdentityPoolRolesRequestMarshaller();
             var unmarshaller = SetIdentityPoolRolesResponseUnmarshaller.Instance;
@@ -1112,7 +1112,7 @@ namespace Amazon.CognitoIdentity
         
         #region  UnlinkDeveloperIdentity
 
-        internal UnlinkDeveloperIdentityResponse UnlinkDeveloperIdentity(UnlinkDeveloperIdentityRequest request)
+        internal virtual UnlinkDeveloperIdentityResponse UnlinkDeveloperIdentity(UnlinkDeveloperIdentityRequest request)
         {
             var marshaller = new UnlinkDeveloperIdentityRequestMarshaller();
             var unmarshaller = UnlinkDeveloperIdentityResponseUnmarshaller.Instance;
@@ -1131,7 +1131,7 @@ namespace Amazon.CognitoIdentity
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UnlinkDeveloperIdentity">REST API Reference for UnlinkDeveloperIdentity Operation</seealso>
-        public Task<UnlinkDeveloperIdentityResponse> UnlinkDeveloperIdentityAsync(UnlinkDeveloperIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UnlinkDeveloperIdentityResponse> UnlinkDeveloperIdentityAsync(UnlinkDeveloperIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UnlinkDeveloperIdentityRequestMarshaller();
             var unmarshaller = UnlinkDeveloperIdentityResponseUnmarshaller.Instance;
@@ -1144,7 +1144,7 @@ namespace Amazon.CognitoIdentity
         
         #region  UnlinkIdentity
 
-        internal UnlinkIdentityResponse UnlinkIdentity(UnlinkIdentityRequest request)
+        internal virtual UnlinkIdentityResponse UnlinkIdentity(UnlinkIdentityRequest request)
         {
             var marshaller = new UnlinkIdentityRequestMarshaller();
             var unmarshaller = UnlinkIdentityResponseUnmarshaller.Instance;
@@ -1163,7 +1163,7 @@ namespace Amazon.CognitoIdentity
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UnlinkIdentity">REST API Reference for UnlinkIdentity Operation</seealso>
-        public Task<UnlinkIdentityResponse> UnlinkIdentityAsync(UnlinkIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UnlinkIdentityResponse> UnlinkIdentityAsync(UnlinkIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UnlinkIdentityRequestMarshaller();
             var unmarshaller = UnlinkIdentityResponseUnmarshaller.Instance;
@@ -1176,7 +1176,7 @@ namespace Amazon.CognitoIdentity
         
         #region  UpdateIdentityPool
 
-        internal UpdateIdentityPoolResponse UpdateIdentityPool(UpdateIdentityPoolRequest request)
+        internal virtual UpdateIdentityPoolResponse UpdateIdentityPool(UpdateIdentityPoolRequest request)
         {
             var marshaller = new UpdateIdentityPoolRequestMarshaller();
             var unmarshaller = UpdateIdentityPoolResponseUnmarshaller.Instance;
@@ -1195,7 +1195,7 @@ namespace Amazon.CognitoIdentity
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UpdateIdentityPool">REST API Reference for UpdateIdentityPool Operation</seealso>
-        public Task<UpdateIdentityPoolResponse> UpdateIdentityPoolAsync(UpdateIdentityPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateIdentityPoolResponse> UpdateIdentityPoolAsync(UpdateIdentityPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateIdentityPoolRequestMarshaller();
             var unmarshaller = UpdateIdentityPoolResponseUnmarshaller.Instance;

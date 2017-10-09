@@ -304,7 +304,7 @@ namespace Amazon.AWSMarketplaceMetering
         /// The timestamp value passed in the meterUsage() is out of allowed range.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/BatchMeterUsage">REST API Reference for BatchMeterUsage Operation</seealso>
-        public BatchMeterUsageResponse BatchMeterUsage(BatchMeterUsageRequest request)
+        public virtual BatchMeterUsageResponse BatchMeterUsage(BatchMeterUsageRequest request)
         {
             var marshaller = new BatchMeterUsageRequestMarshaller();
             var unmarshaller = BatchMeterUsageResponseUnmarshaller.Instance;
@@ -322,7 +322,7 @@ namespace Amazon.AWSMarketplaceMetering
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/BatchMeterUsage">REST API Reference for BatchMeterUsage Operation</seealso>
-        public Task<BatchMeterUsageResponse> BatchMeterUsageAsync(BatchMeterUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<BatchMeterUsageResponse> BatchMeterUsageAsync(BatchMeterUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new BatchMeterUsageRequestMarshaller();
             var unmarshaller = BatchMeterUsageResponseUnmarshaller.Instance;
@@ -374,7 +374,7 @@ namespace Amazon.AWSMarketplaceMetering
         /// The timestamp value passed in the meterUsage() is out of allowed range.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/MeterUsage">REST API Reference for MeterUsage Operation</seealso>
-        public MeterUsageResponse MeterUsage(MeterUsageRequest request)
+        public virtual MeterUsageResponse MeterUsage(MeterUsageRequest request)
         {
             var marshaller = new MeterUsageRequestMarshaller();
             var unmarshaller = MeterUsageResponseUnmarshaller.Instance;
@@ -392,7 +392,7 @@ namespace Amazon.AWSMarketplaceMetering
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/MeterUsage">REST API Reference for MeterUsage Operation</seealso>
-        public Task<MeterUsageResponse> MeterUsageAsync(MeterUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<MeterUsageResponse> MeterUsageAsync(MeterUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new MeterUsageRequestMarshaller();
             var unmarshaller = MeterUsageResponseUnmarshaller.Instance;
@@ -433,7 +433,7 @@ namespace Amazon.AWSMarketplaceMetering
         /// The calls to the MeterUsage API are throttled.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/ResolveCustomer">REST API Reference for ResolveCustomer Operation</seealso>
-        public ResolveCustomerResponse ResolveCustomer(ResolveCustomerRequest request)
+        public virtual ResolveCustomerResponse ResolveCustomer(ResolveCustomerRequest request)
         {
             var marshaller = new ResolveCustomerRequestMarshaller();
             var unmarshaller = ResolveCustomerResponseUnmarshaller.Instance;
@@ -451,7 +451,7 @@ namespace Amazon.AWSMarketplaceMetering
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/ResolveCustomer">REST API Reference for ResolveCustomer Operation</seealso>
-        public Task<ResolveCustomerResponse> ResolveCustomerAsync(ResolveCustomerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ResolveCustomerResponse> ResolveCustomerAsync(ResolveCustomerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ResolveCustomerRequestMarshaller();
             var unmarshaller = ResolveCustomerResponseUnmarshaller.Instance;

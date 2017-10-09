@@ -347,7 +347,7 @@ namespace Amazon.WAF
         /// a change token that has already been used.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateByteMatchSet">REST API Reference for CreateByteMatchSet Operation</seealso>
-        public CreateByteMatchSetResponse CreateByteMatchSet(string name, string changeToken)
+        public virtual CreateByteMatchSetResponse CreateByteMatchSet(string name, string changeToken)
         {
             var request = new CreateByteMatchSetRequest();
             request.Name = name;
@@ -468,7 +468,7 @@ namespace Amazon.WAF
         /// a change token that has already been used.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateByteMatchSet">REST API Reference for CreateByteMatchSet Operation</seealso>
-        public CreateByteMatchSetResponse CreateByteMatchSet(CreateByteMatchSetRequest request)
+        public virtual CreateByteMatchSetResponse CreateByteMatchSet(CreateByteMatchSetRequest request)
         {
             var marshaller = new CreateByteMatchSetRequestMarshaller();
             var unmarshaller = CreateByteMatchSetResponseUnmarshaller.Instance;
@@ -593,7 +593,7 @@ namespace Amazon.WAF
         /// a change token that has already been used.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateByteMatchSet">REST API Reference for CreateByteMatchSet Operation</seealso>
-        public Task<CreateByteMatchSetResponse> CreateByteMatchSetAsync(string name, string changeToken, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateByteMatchSetResponse> CreateByteMatchSetAsync(string name, string changeToken, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new CreateByteMatchSetRequest();
             request.Name = name;
@@ -611,7 +611,7 @@ namespace Amazon.WAF
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateByteMatchSet">REST API Reference for CreateByteMatchSet Operation</seealso>
-        public Task<CreateByteMatchSetResponse> CreateByteMatchSetAsync(CreateByteMatchSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateByteMatchSetResponse> CreateByteMatchSetAsync(CreateByteMatchSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateByteMatchSetRequestMarshaller();
             var unmarshaller = CreateByteMatchSetResponseUnmarshaller.Instance;
@@ -737,7 +737,7 @@ namespace Amazon.WAF
         /// a change token that has already been used.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateIPSet">REST API Reference for CreateIPSet Operation</seealso>
-        public CreateIPSetResponse CreateIPSet(string name, string changeToken)
+        public virtual CreateIPSetResponse CreateIPSet(string name, string changeToken)
         {
             var request = new CreateIPSetRequest();
             request.Name = name;
@@ -857,7 +857,7 @@ namespace Amazon.WAF
         /// a change token that has already been used.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateIPSet">REST API Reference for CreateIPSet Operation</seealso>
-        public CreateIPSetResponse CreateIPSet(CreateIPSetRequest request)
+        public virtual CreateIPSetResponse CreateIPSet(CreateIPSetRequest request)
         {
             var marshaller = new CreateIPSetRequestMarshaller();
             var unmarshaller = CreateIPSetResponseUnmarshaller.Instance;
@@ -981,7 +981,7 @@ namespace Amazon.WAF
         /// a change token that has already been used.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateIPSet">REST API Reference for CreateIPSet Operation</seealso>
-        public Task<CreateIPSetResponse> CreateIPSetAsync(string name, string changeToken, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateIPSetResponse> CreateIPSetAsync(string name, string changeToken, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new CreateIPSetRequest();
             request.Name = name;
@@ -999,7 +999,7 @@ namespace Amazon.WAF
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateIPSet">REST API Reference for CreateIPSet Operation</seealso>
-        public Task<CreateIPSetResponse> CreateIPSetAsync(CreateIPSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateIPSetResponse> CreateIPSetAsync(CreateIPSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateIPSetRequestMarshaller();
             var unmarshaller = CreateIPSetResponseUnmarshaller.Instance;
@@ -1186,7 +1186,7 @@ namespace Amazon.WAF
         /// a change token that has already been used.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRateBasedRule">REST API Reference for CreateRateBasedRule Operation</seealso>
-        public CreateRateBasedRuleResponse CreateRateBasedRule(CreateRateBasedRuleRequest request)
+        public virtual CreateRateBasedRuleResponse CreateRateBasedRule(CreateRateBasedRuleRequest request)
         {
             var marshaller = new CreateRateBasedRuleRequestMarshaller();
             var unmarshaller = CreateRateBasedRuleResponseUnmarshaller.Instance;
@@ -1204,7 +1204,7 @@ namespace Amazon.WAF
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRateBasedRule">REST API Reference for CreateRateBasedRule Operation</seealso>
-        public Task<CreateRateBasedRuleResponse> CreateRateBasedRuleAsync(CreateRateBasedRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateRateBasedRuleResponse> CreateRateBasedRuleAsync(CreateRateBasedRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateRateBasedRuleRequestMarshaller();
             var unmarshaller = CreateRateBasedRuleResponseUnmarshaller.Instance;
@@ -1352,7 +1352,7 @@ namespace Amazon.WAF
         /// a change token that has already been used.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRule">REST API Reference for CreateRule Operation</seealso>
-        public CreateRuleResponse CreateRule(string name, string changeToken, string metricName)
+        public virtual CreateRuleResponse CreateRule(string name, string changeToken, string metricName)
         {
             var request = new CreateRuleRequest();
             request.Name = name;
@@ -1494,7 +1494,7 @@ namespace Amazon.WAF
         /// a change token that has already been used.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRule">REST API Reference for CreateRule Operation</seealso>
-        public CreateRuleResponse CreateRule(CreateRuleRequest request)
+        public virtual CreateRuleResponse CreateRule(CreateRuleRequest request)
         {
             var marshaller = new CreateRuleRequestMarshaller();
             var unmarshaller = CreateRuleResponseUnmarshaller.Instance;
@@ -1640,7 +1640,7 @@ namespace Amazon.WAF
         /// a change token that has already been used.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRule">REST API Reference for CreateRule Operation</seealso>
-        public Task<CreateRuleResponse> CreateRuleAsync(string name, string changeToken, string metricName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateRuleResponse> CreateRuleAsync(string name, string changeToken, string metricName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new CreateRuleRequest();
             request.Name = name;
@@ -1659,7 +1659,7 @@ namespace Amazon.WAF
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRule">REST API Reference for CreateRule Operation</seealso>
-        public Task<CreateRuleResponse> CreateRuleAsync(CreateRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateRuleResponse> CreateRuleAsync(CreateRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateRuleRequestMarshaller();
             var unmarshaller = CreateRuleResponseUnmarshaller.Instance;
@@ -1785,7 +1785,7 @@ namespace Amazon.WAF
         /// a change token that has already been used.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateSizeConstraintSet">REST API Reference for CreateSizeConstraintSet Operation</seealso>
-        public CreateSizeConstraintSetResponse CreateSizeConstraintSet(CreateSizeConstraintSetRequest request)
+        public virtual CreateSizeConstraintSetResponse CreateSizeConstraintSet(CreateSizeConstraintSetRequest request)
         {
             var marshaller = new CreateSizeConstraintSetRequestMarshaller();
             var unmarshaller = CreateSizeConstraintSetResponseUnmarshaller.Instance;
@@ -1803,7 +1803,7 @@ namespace Amazon.WAF
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateSizeConstraintSet">REST API Reference for CreateSizeConstraintSet Operation</seealso>
-        public Task<CreateSizeConstraintSetResponse> CreateSizeConstraintSetAsync(CreateSizeConstraintSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateSizeConstraintSetResponse> CreateSizeConstraintSetAsync(CreateSizeConstraintSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateSizeConstraintSetRequestMarshaller();
             var unmarshaller = CreateSizeConstraintSetResponseUnmarshaller.Instance;
@@ -1927,7 +1927,7 @@ namespace Amazon.WAF
         /// a change token that has already been used.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateSqlInjectionMatchSet">REST API Reference for CreateSqlInjectionMatchSet Operation</seealso>
-        public CreateSqlInjectionMatchSetResponse CreateSqlInjectionMatchSet(string name, string changeToken)
+        public virtual CreateSqlInjectionMatchSetResponse CreateSqlInjectionMatchSet(string name, string changeToken)
         {
             var request = new CreateSqlInjectionMatchSetRequest();
             request.Name = name;
@@ -2045,7 +2045,7 @@ namespace Amazon.WAF
         /// a change token that has already been used.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateSqlInjectionMatchSet">REST API Reference for CreateSqlInjectionMatchSet Operation</seealso>
-        public CreateSqlInjectionMatchSetResponse CreateSqlInjectionMatchSet(CreateSqlInjectionMatchSetRequest request)
+        public virtual CreateSqlInjectionMatchSetResponse CreateSqlInjectionMatchSet(CreateSqlInjectionMatchSetRequest request)
         {
             var marshaller = new CreateSqlInjectionMatchSetRequestMarshaller();
             var unmarshaller = CreateSqlInjectionMatchSetResponseUnmarshaller.Instance;
@@ -2167,7 +2167,7 @@ namespace Amazon.WAF
         /// a change token that has already been used.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateSqlInjectionMatchSet">REST API Reference for CreateSqlInjectionMatchSet Operation</seealso>
-        public Task<CreateSqlInjectionMatchSetResponse> CreateSqlInjectionMatchSetAsync(string name, string changeToken, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateSqlInjectionMatchSetResponse> CreateSqlInjectionMatchSetAsync(string name, string changeToken, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new CreateSqlInjectionMatchSetRequest();
             request.Name = name;
@@ -2185,7 +2185,7 @@ namespace Amazon.WAF
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateSqlInjectionMatchSet">REST API Reference for CreateSqlInjectionMatchSet Operation</seealso>
-        public Task<CreateSqlInjectionMatchSetResponse> CreateSqlInjectionMatchSetAsync(CreateSqlInjectionMatchSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateSqlInjectionMatchSetResponse> CreateSqlInjectionMatchSetAsync(CreateSqlInjectionMatchSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateSqlInjectionMatchSetRequestMarshaller();
             var unmarshaller = CreateSqlInjectionMatchSetResponseUnmarshaller.Instance;
@@ -2325,7 +2325,7 @@ namespace Amazon.WAF
         /// a change token that has already been used.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateWebACL">REST API Reference for CreateWebACL Operation</seealso>
-        public CreateWebACLResponse CreateWebACL(CreateWebACLRequest request)
+        public virtual CreateWebACLResponse CreateWebACL(CreateWebACLRequest request)
         {
             var marshaller = new CreateWebACLRequestMarshaller();
             var unmarshaller = CreateWebACLResponseUnmarshaller.Instance;
@@ -2343,7 +2343,7 @@ namespace Amazon.WAF
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateWebACL">REST API Reference for CreateWebACL Operation</seealso>
-        public Task<CreateWebACLResponse> CreateWebACLAsync(CreateWebACLRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateWebACLResponse> CreateWebACLAsync(CreateWebACLRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateWebACLRequestMarshaller();
             var unmarshaller = CreateWebACLResponseUnmarshaller.Instance;
@@ -2465,7 +2465,7 @@ namespace Amazon.WAF
         /// a change token that has already been used.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateXssMatchSet">REST API Reference for CreateXssMatchSet Operation</seealso>
-        public CreateXssMatchSetResponse CreateXssMatchSet(CreateXssMatchSetRequest request)
+        public virtual CreateXssMatchSetResponse CreateXssMatchSet(CreateXssMatchSetRequest request)
         {
             var marshaller = new CreateXssMatchSetRequestMarshaller();
             var unmarshaller = CreateXssMatchSetResponseUnmarshaller.Instance;
@@ -2483,7 +2483,7 @@ namespace Amazon.WAF
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateXssMatchSet">REST API Reference for CreateXssMatchSet Operation</seealso>
-        public Task<CreateXssMatchSetResponse> CreateXssMatchSetAsync(CreateXssMatchSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateXssMatchSetResponse> CreateXssMatchSetAsync(CreateXssMatchSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateXssMatchSetRequestMarshaller();
             var unmarshaller = CreateXssMatchSetResponseUnmarshaller.Instance;
@@ -2585,7 +2585,7 @@ namespace Amazon.WAF
         /// a change token that has already been used.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteByteMatchSet">REST API Reference for DeleteByteMatchSet Operation</seealso>
-        public DeleteByteMatchSetResponse DeleteByteMatchSet(string byteMatchSetId, string changeToken)
+        public virtual DeleteByteMatchSetResponse DeleteByteMatchSet(string byteMatchSetId, string changeToken)
         {
             var request = new DeleteByteMatchSetRequest();
             request.ByteMatchSetId = byteMatchSetId;
@@ -2681,7 +2681,7 @@ namespace Amazon.WAF
         /// a change token that has already been used.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteByteMatchSet">REST API Reference for DeleteByteMatchSet Operation</seealso>
-        public DeleteByteMatchSetResponse DeleteByteMatchSet(DeleteByteMatchSetRequest request)
+        public virtual DeleteByteMatchSetResponse DeleteByteMatchSet(DeleteByteMatchSetRequest request)
         {
             var marshaller = new DeleteByteMatchSetRequestMarshaller();
             var unmarshaller = DeleteByteMatchSetResponseUnmarshaller.Instance;
@@ -2781,7 +2781,7 @@ namespace Amazon.WAF
         /// a change token that has already been used.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteByteMatchSet">REST API Reference for DeleteByteMatchSet Operation</seealso>
-        public Task<DeleteByteMatchSetResponse> DeleteByteMatchSetAsync(string byteMatchSetId, string changeToken, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteByteMatchSetResponse> DeleteByteMatchSetAsync(string byteMatchSetId, string changeToken, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DeleteByteMatchSetRequest();
             request.ByteMatchSetId = byteMatchSetId;
@@ -2799,7 +2799,7 @@ namespace Amazon.WAF
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteByteMatchSet">REST API Reference for DeleteByteMatchSet Operation</seealso>
-        public Task<DeleteByteMatchSetResponse> DeleteByteMatchSetAsync(DeleteByteMatchSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteByteMatchSetResponse> DeleteByteMatchSetAsync(DeleteByteMatchSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteByteMatchSetRequestMarshaller();
             var unmarshaller = DeleteByteMatchSetResponseUnmarshaller.Instance;
@@ -2899,7 +2899,7 @@ namespace Amazon.WAF
         /// a change token that has already been used.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteIPSet">REST API Reference for DeleteIPSet Operation</seealso>
-        public DeleteIPSetResponse DeleteIPSet(string ipSetId, string changeToken)
+        public virtual DeleteIPSetResponse DeleteIPSet(string ipSetId, string changeToken)
         {
             var request = new DeleteIPSetRequest();
             request.IPSetId = ipSetId;
@@ -2993,7 +2993,7 @@ namespace Amazon.WAF
         /// a change token that has already been used.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteIPSet">REST API Reference for DeleteIPSet Operation</seealso>
-        public DeleteIPSetResponse DeleteIPSet(DeleteIPSetRequest request)
+        public virtual DeleteIPSetResponse DeleteIPSet(DeleteIPSetRequest request)
         {
             var marshaller = new DeleteIPSetRequestMarshaller();
             var unmarshaller = DeleteIPSetResponseUnmarshaller.Instance;
@@ -3091,7 +3091,7 @@ namespace Amazon.WAF
         /// a change token that has already been used.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteIPSet">REST API Reference for DeleteIPSet Operation</seealso>
-        public Task<DeleteIPSetResponse> DeleteIPSetAsync(string ipSetId, string changeToken, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteIPSetResponse> DeleteIPSetAsync(string ipSetId, string changeToken, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DeleteIPSetRequest();
             request.IPSetId = ipSetId;
@@ -3109,7 +3109,7 @@ namespace Amazon.WAF
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteIPSet">REST API Reference for DeleteIPSet Operation</seealso>
-        public Task<DeleteIPSetResponse> DeleteIPSetAsync(DeleteIPSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteIPSetResponse> DeleteIPSetAsync(DeleteIPSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteIPSetRequestMarshaller();
             var unmarshaller = DeleteIPSetResponseUnmarshaller.Instance;
@@ -3210,7 +3210,7 @@ namespace Amazon.WAF
         /// a change token that has already been used.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteRateBasedRule">REST API Reference for DeleteRateBasedRule Operation</seealso>
-        public DeleteRateBasedRuleResponse DeleteRateBasedRule(DeleteRateBasedRuleRequest request)
+        public virtual DeleteRateBasedRuleResponse DeleteRateBasedRule(DeleteRateBasedRuleRequest request)
         {
             var marshaller = new DeleteRateBasedRuleRequestMarshaller();
             var unmarshaller = DeleteRateBasedRuleResponseUnmarshaller.Instance;
@@ -3228,7 +3228,7 @@ namespace Amazon.WAF
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteRateBasedRule">REST API Reference for DeleteRateBasedRule Operation</seealso>
-        public Task<DeleteRateBasedRuleResponse> DeleteRateBasedRuleAsync(DeleteRateBasedRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteRateBasedRuleResponse> DeleteRateBasedRuleAsync(DeleteRateBasedRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteRateBasedRuleRequestMarshaller();
             var unmarshaller = DeleteRateBasedRuleResponseUnmarshaller.Instance;
@@ -3329,7 +3329,7 @@ namespace Amazon.WAF
         /// a change token that has already been used.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteRule">REST API Reference for DeleteRule Operation</seealso>
-        public DeleteRuleResponse DeleteRule(string ruleId, string changeToken)
+        public virtual DeleteRuleResponse DeleteRule(string ruleId, string changeToken)
         {
             var request = new DeleteRuleRequest();
             request.RuleId = ruleId;
@@ -3424,7 +3424,7 @@ namespace Amazon.WAF
         /// a change token that has already been used.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteRule">REST API Reference for DeleteRule Operation</seealso>
-        public DeleteRuleResponse DeleteRule(DeleteRuleRequest request)
+        public virtual DeleteRuleResponse DeleteRule(DeleteRuleRequest request)
         {
             var marshaller = new DeleteRuleRequestMarshaller();
             var unmarshaller = DeleteRuleResponseUnmarshaller.Instance;
@@ -3523,7 +3523,7 @@ namespace Amazon.WAF
         /// a change token that has already been used.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteRule">REST API Reference for DeleteRule Operation</seealso>
-        public Task<DeleteRuleResponse> DeleteRuleAsync(string ruleId, string changeToken, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteRuleResponse> DeleteRuleAsync(string ruleId, string changeToken, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DeleteRuleRequest();
             request.RuleId = ruleId;
@@ -3541,7 +3541,7 @@ namespace Amazon.WAF
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteRule">REST API Reference for DeleteRule Operation</seealso>
-        public Task<DeleteRuleResponse> DeleteRuleAsync(DeleteRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteRuleResponse> DeleteRuleAsync(DeleteRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteRuleRequestMarshaller();
             var unmarshaller = DeleteRuleResponseUnmarshaller.Instance;
@@ -3642,7 +3642,7 @@ namespace Amazon.WAF
         /// a change token that has already been used.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteSizeConstraintSet">REST API Reference for DeleteSizeConstraintSet Operation</seealso>
-        public DeleteSizeConstraintSetResponse DeleteSizeConstraintSet(DeleteSizeConstraintSetRequest request)
+        public virtual DeleteSizeConstraintSetResponse DeleteSizeConstraintSet(DeleteSizeConstraintSetRequest request)
         {
             var marshaller = new DeleteSizeConstraintSetRequestMarshaller();
             var unmarshaller = DeleteSizeConstraintSetResponseUnmarshaller.Instance;
@@ -3660,7 +3660,7 @@ namespace Amazon.WAF
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteSizeConstraintSet">REST API Reference for DeleteSizeConstraintSet Operation</seealso>
-        public Task<DeleteSizeConstraintSetResponse> DeleteSizeConstraintSetAsync(DeleteSizeConstraintSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteSizeConstraintSetResponse> DeleteSizeConstraintSetAsync(DeleteSizeConstraintSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteSizeConstraintSetRequestMarshaller();
             var unmarshaller = DeleteSizeConstraintSetResponseUnmarshaller.Instance;
@@ -3763,7 +3763,7 @@ namespace Amazon.WAF
         /// a change token that has already been used.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteSqlInjectionMatchSet">REST API Reference for DeleteSqlInjectionMatchSet Operation</seealso>
-        public DeleteSqlInjectionMatchSetResponse DeleteSqlInjectionMatchSet(string sqlInjectionMatchSetId, string changeToken)
+        public virtual DeleteSqlInjectionMatchSetResponse DeleteSqlInjectionMatchSet(string sqlInjectionMatchSetId, string changeToken)
         {
             var request = new DeleteSqlInjectionMatchSetRequest();
             request.SqlInjectionMatchSetId = sqlInjectionMatchSetId;
@@ -3860,7 +3860,7 @@ namespace Amazon.WAF
         /// a change token that has already been used.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteSqlInjectionMatchSet">REST API Reference for DeleteSqlInjectionMatchSet Operation</seealso>
-        public DeleteSqlInjectionMatchSetResponse DeleteSqlInjectionMatchSet(DeleteSqlInjectionMatchSetRequest request)
+        public virtual DeleteSqlInjectionMatchSetResponse DeleteSqlInjectionMatchSet(DeleteSqlInjectionMatchSetRequest request)
         {
             var marshaller = new DeleteSqlInjectionMatchSetRequestMarshaller();
             var unmarshaller = DeleteSqlInjectionMatchSetResponseUnmarshaller.Instance;
@@ -3961,7 +3961,7 @@ namespace Amazon.WAF
         /// a change token that has already been used.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteSqlInjectionMatchSet">REST API Reference for DeleteSqlInjectionMatchSet Operation</seealso>
-        public Task<DeleteSqlInjectionMatchSetResponse> DeleteSqlInjectionMatchSetAsync(string sqlInjectionMatchSetId, string changeToken, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteSqlInjectionMatchSetResponse> DeleteSqlInjectionMatchSetAsync(string sqlInjectionMatchSetId, string changeToken, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DeleteSqlInjectionMatchSetRequest();
             request.SqlInjectionMatchSetId = sqlInjectionMatchSetId;
@@ -3979,7 +3979,7 @@ namespace Amazon.WAF
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteSqlInjectionMatchSet">REST API Reference for DeleteSqlInjectionMatchSet Operation</seealso>
-        public Task<DeleteSqlInjectionMatchSetResponse> DeleteSqlInjectionMatchSetAsync(DeleteSqlInjectionMatchSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteSqlInjectionMatchSetResponse> DeleteSqlInjectionMatchSetAsync(DeleteSqlInjectionMatchSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteSqlInjectionMatchSetRequestMarshaller();
             var unmarshaller = DeleteSqlInjectionMatchSetResponseUnmarshaller.Instance;
@@ -4075,7 +4075,7 @@ namespace Amazon.WAF
         /// a change token that has already been used.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteWebACL">REST API Reference for DeleteWebACL Operation</seealso>
-        public DeleteWebACLResponse DeleteWebACL(string webACLId, string changeToken)
+        public virtual DeleteWebACLResponse DeleteWebACL(string webACLId, string changeToken)
         {
             var request = new DeleteWebACLRequest();
             request.WebACLId = webACLId;
@@ -4165,7 +4165,7 @@ namespace Amazon.WAF
         /// a change token that has already been used.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteWebACL">REST API Reference for DeleteWebACL Operation</seealso>
-        public DeleteWebACLResponse DeleteWebACL(DeleteWebACLRequest request)
+        public virtual DeleteWebACLResponse DeleteWebACL(DeleteWebACLRequest request)
         {
             var marshaller = new DeleteWebACLRequestMarshaller();
             var unmarshaller = DeleteWebACLResponseUnmarshaller.Instance;
@@ -4259,7 +4259,7 @@ namespace Amazon.WAF
         /// a change token that has already been used.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteWebACL">REST API Reference for DeleteWebACL Operation</seealso>
-        public Task<DeleteWebACLResponse> DeleteWebACLAsync(string webACLId, string changeToken, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteWebACLResponse> DeleteWebACLAsync(string webACLId, string changeToken, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DeleteWebACLRequest();
             request.WebACLId = webACLId;
@@ -4277,7 +4277,7 @@ namespace Amazon.WAF
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteWebACL">REST API Reference for DeleteWebACL Operation</seealso>
-        public Task<DeleteWebACLResponse> DeleteWebACLAsync(DeleteWebACLRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteWebACLResponse> DeleteWebACLAsync(DeleteWebACLRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteWebACLRequestMarshaller();
             var unmarshaller = DeleteWebACLResponseUnmarshaller.Instance;
@@ -4379,7 +4379,7 @@ namespace Amazon.WAF
         /// a change token that has already been used.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteXssMatchSet">REST API Reference for DeleteXssMatchSet Operation</seealso>
-        public DeleteXssMatchSetResponse DeleteXssMatchSet(DeleteXssMatchSetRequest request)
+        public virtual DeleteXssMatchSetResponse DeleteXssMatchSet(DeleteXssMatchSetRequest request)
         {
             var marshaller = new DeleteXssMatchSetRequestMarshaller();
             var unmarshaller = DeleteXssMatchSetResponseUnmarshaller.Instance;
@@ -4397,7 +4397,7 @@ namespace Amazon.WAF
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteXssMatchSet">REST API Reference for DeleteXssMatchSet Operation</seealso>
-        public Task<DeleteXssMatchSetResponse> DeleteXssMatchSetAsync(DeleteXssMatchSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteXssMatchSetResponse> DeleteXssMatchSetAsync(DeleteXssMatchSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteXssMatchSetRequestMarshaller();
             var unmarshaller = DeleteXssMatchSetResponseUnmarshaller.Instance;
@@ -4429,7 +4429,7 @@ namespace Amazon.WAF
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetByteMatchSet">REST API Reference for GetByteMatchSet Operation</seealso>
-        public GetByteMatchSetResponse GetByteMatchSet(string byteMatchSetId)
+        public virtual GetByteMatchSetResponse GetByteMatchSet(string byteMatchSetId)
         {
             var request = new GetByteMatchSetRequest();
             request.ByteMatchSetId = byteMatchSetId;
@@ -4455,7 +4455,7 @@ namespace Amazon.WAF
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetByteMatchSet">REST API Reference for GetByteMatchSet Operation</seealso>
-        public GetByteMatchSetResponse GetByteMatchSet(GetByteMatchSetRequest request)
+        public virtual GetByteMatchSetResponse GetByteMatchSet(GetByteMatchSetRequest request)
         {
             var marshaller = new GetByteMatchSetRequestMarshaller();
             var unmarshaller = GetByteMatchSetResponseUnmarshaller.Instance;
@@ -4485,7 +4485,7 @@ namespace Amazon.WAF
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetByteMatchSet">REST API Reference for GetByteMatchSet Operation</seealso>
-        public Task<GetByteMatchSetResponse> GetByteMatchSetAsync(string byteMatchSetId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetByteMatchSetResponse> GetByteMatchSetAsync(string byteMatchSetId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new GetByteMatchSetRequest();
             request.ByteMatchSetId = byteMatchSetId;
@@ -4502,7 +4502,7 @@ namespace Amazon.WAF
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetByteMatchSet">REST API Reference for GetByteMatchSet Operation</seealso>
-        public Task<GetByteMatchSetResponse> GetByteMatchSetAsync(GetByteMatchSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetByteMatchSetResponse> GetByteMatchSetAsync(GetByteMatchSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetByteMatchSetRequestMarshaller();
             var unmarshaller = GetByteMatchSetResponseUnmarshaller.Instance;
@@ -4543,7 +4543,7 @@ namespace Amazon.WAF
         /// Retry your request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetChangeToken">REST API Reference for GetChangeToken Operation</seealso>
-        public GetChangeTokenResponse GetChangeToken()
+        public virtual GetChangeTokenResponse GetChangeToken()
         {
             return GetChangeToken(new GetChangeTokenRequest());
         }
@@ -4577,7 +4577,7 @@ namespace Amazon.WAF
         /// Retry your request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetChangeToken">REST API Reference for GetChangeToken Operation</seealso>
-        public GetChangeTokenResponse GetChangeToken(GetChangeTokenRequest request)
+        public virtual GetChangeTokenResponse GetChangeToken(GetChangeTokenRequest request)
         {
             var marshaller = new GetChangeTokenRequestMarshaller();
             var unmarshaller = GetChangeTokenResponseUnmarshaller.Instance;
@@ -4616,7 +4616,7 @@ namespace Amazon.WAF
         /// Retry your request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetChangeToken">REST API Reference for GetChangeToken Operation</seealso>
-        public Task<GetChangeTokenResponse> GetChangeTokenAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetChangeTokenResponse> GetChangeTokenAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return GetChangeTokenAsync(new GetChangeTokenRequest(), cancellationToken);
         }
@@ -4630,7 +4630,7 @@ namespace Amazon.WAF
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetChangeToken">REST API Reference for GetChangeToken Operation</seealso>
-        public Task<GetChangeTokenResponse> GetChangeTokenAsync(GetChangeTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetChangeTokenResponse> GetChangeTokenAsync(GetChangeTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetChangeTokenRequestMarshaller();
             var unmarshaller = GetChangeTokenResponseUnmarshaller.Instance;
@@ -4675,7 +4675,7 @@ namespace Amazon.WAF
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetChangeTokenStatus">REST API Reference for GetChangeTokenStatus Operation</seealso>
-        public GetChangeTokenStatusResponse GetChangeTokenStatus(string changeToken)
+        public virtual GetChangeTokenStatusResponse GetChangeTokenStatus(string changeToken)
         {
             var request = new GetChangeTokenStatusRequest();
             request.ChangeToken = changeToken;
@@ -4714,7 +4714,7 @@ namespace Amazon.WAF
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetChangeTokenStatus">REST API Reference for GetChangeTokenStatus Operation</seealso>
-        public GetChangeTokenStatusResponse GetChangeTokenStatus(GetChangeTokenStatusRequest request)
+        public virtual GetChangeTokenStatusResponse GetChangeTokenStatus(GetChangeTokenStatusRequest request)
         {
             var marshaller = new GetChangeTokenStatusRequestMarshaller();
             var unmarshaller = GetChangeTokenStatusResponseUnmarshaller.Instance;
@@ -4757,7 +4757,7 @@ namespace Amazon.WAF
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetChangeTokenStatus">REST API Reference for GetChangeTokenStatus Operation</seealso>
-        public Task<GetChangeTokenStatusResponse> GetChangeTokenStatusAsync(string changeToken, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetChangeTokenStatusResponse> GetChangeTokenStatusAsync(string changeToken, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new GetChangeTokenStatusRequest();
             request.ChangeToken = changeToken;
@@ -4774,7 +4774,7 @@ namespace Amazon.WAF
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetChangeTokenStatus">REST API Reference for GetChangeTokenStatus Operation</seealso>
-        public Task<GetChangeTokenStatusResponse> GetChangeTokenStatusAsync(GetChangeTokenStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetChangeTokenStatusResponse> GetChangeTokenStatusAsync(GetChangeTokenStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetChangeTokenStatusRequestMarshaller();
             var unmarshaller = GetChangeTokenStatusResponseUnmarshaller.Instance;
@@ -4806,7 +4806,7 @@ namespace Amazon.WAF
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetIPSet">REST API Reference for GetIPSet Operation</seealso>
-        public GetIPSetResponse GetIPSet(string ipSetId)
+        public virtual GetIPSetResponse GetIPSet(string ipSetId)
         {
             var request = new GetIPSetRequest();
             request.IPSetId = ipSetId;
@@ -4832,7 +4832,7 @@ namespace Amazon.WAF
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetIPSet">REST API Reference for GetIPSet Operation</seealso>
-        public GetIPSetResponse GetIPSet(GetIPSetRequest request)
+        public virtual GetIPSetResponse GetIPSet(GetIPSetRequest request)
         {
             var marshaller = new GetIPSetRequestMarshaller();
             var unmarshaller = GetIPSetResponseUnmarshaller.Instance;
@@ -4862,7 +4862,7 @@ namespace Amazon.WAF
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetIPSet">REST API Reference for GetIPSet Operation</seealso>
-        public Task<GetIPSetResponse> GetIPSetAsync(string ipSetId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetIPSetResponse> GetIPSetAsync(string ipSetId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new GetIPSetRequest();
             request.IPSetId = ipSetId;
@@ -4879,7 +4879,7 @@ namespace Amazon.WAF
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetIPSet">REST API Reference for GetIPSet Operation</seealso>
-        public Task<GetIPSetResponse> GetIPSetAsync(GetIPSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetIPSetResponse> GetIPSetAsync(GetIPSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetIPSetRequestMarshaller();
             var unmarshaller = GetIPSetResponseUnmarshaller.Instance;
@@ -4912,7 +4912,7 @@ namespace Amazon.WAF
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetRateBasedRule">REST API Reference for GetRateBasedRule Operation</seealso>
-        public GetRateBasedRuleResponse GetRateBasedRule(GetRateBasedRuleRequest request)
+        public virtual GetRateBasedRuleResponse GetRateBasedRule(GetRateBasedRuleRequest request)
         {
             var marshaller = new GetRateBasedRuleRequestMarshaller();
             var unmarshaller = GetRateBasedRuleResponseUnmarshaller.Instance;
@@ -4930,7 +4930,7 @@ namespace Amazon.WAF
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetRateBasedRule">REST API Reference for GetRateBasedRule Operation</seealso>
-        public Task<GetRateBasedRuleResponse> GetRateBasedRuleAsync(GetRateBasedRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetRateBasedRuleResponse> GetRateBasedRuleAsync(GetRateBasedRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetRateBasedRuleRequestMarshaller();
             var unmarshaller = GetRateBasedRuleResponseUnmarshaller.Instance;
@@ -5014,7 +5014,7 @@ namespace Amazon.WAF
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetRateBasedRuleManagedKeys">REST API Reference for GetRateBasedRuleManagedKeys Operation</seealso>
-        public GetRateBasedRuleManagedKeysResponse GetRateBasedRuleManagedKeys(GetRateBasedRuleManagedKeysRequest request)
+        public virtual GetRateBasedRuleManagedKeysResponse GetRateBasedRuleManagedKeys(GetRateBasedRuleManagedKeysRequest request)
         {
             var marshaller = new GetRateBasedRuleManagedKeysRequestMarshaller();
             var unmarshaller = GetRateBasedRuleManagedKeysResponseUnmarshaller.Instance;
@@ -5032,7 +5032,7 @@ namespace Amazon.WAF
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetRateBasedRuleManagedKeys">REST API Reference for GetRateBasedRuleManagedKeys Operation</seealso>
-        public Task<GetRateBasedRuleManagedKeysResponse> GetRateBasedRuleManagedKeysAsync(GetRateBasedRuleManagedKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetRateBasedRuleManagedKeysResponse> GetRateBasedRuleManagedKeysAsync(GetRateBasedRuleManagedKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetRateBasedRuleManagedKeysRequestMarshaller();
             var unmarshaller = GetRateBasedRuleManagedKeysResponseUnmarshaller.Instance;
@@ -5065,7 +5065,7 @@ namespace Amazon.WAF
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetRule">REST API Reference for GetRule Operation</seealso>
-        public GetRuleResponse GetRule(string ruleId)
+        public virtual GetRuleResponse GetRule(string ruleId)
         {
             var request = new GetRuleRequest();
             request.RuleId = ruleId;
@@ -5092,7 +5092,7 @@ namespace Amazon.WAF
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetRule">REST API Reference for GetRule Operation</seealso>
-        public GetRuleResponse GetRule(GetRuleRequest request)
+        public virtual GetRuleResponse GetRule(GetRuleRequest request)
         {
             var marshaller = new GetRuleRequestMarshaller();
             var unmarshaller = GetRuleResponseUnmarshaller.Instance;
@@ -5123,7 +5123,7 @@ namespace Amazon.WAF
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetRule">REST API Reference for GetRule Operation</seealso>
-        public Task<GetRuleResponse> GetRuleAsync(string ruleId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetRuleResponse> GetRuleAsync(string ruleId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new GetRuleRequest();
             request.RuleId = ruleId;
@@ -5140,7 +5140,7 @@ namespace Amazon.WAF
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetRule">REST API Reference for GetRule Operation</seealso>
-        public Task<GetRuleResponse> GetRuleAsync(GetRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetRuleResponse> GetRuleAsync(GetRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetRuleRequestMarshaller();
             var unmarshaller = GetRuleResponseUnmarshaller.Instance;
@@ -5180,7 +5180,7 @@ namespace Amazon.WAF
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetSampledRequests">REST API Reference for GetSampledRequests Operation</seealso>
-        public GetSampledRequestsResponse GetSampledRequests(GetSampledRequestsRequest request)
+        public virtual GetSampledRequestsResponse GetSampledRequests(GetSampledRequestsRequest request)
         {
             var marshaller = new GetSampledRequestsRequestMarshaller();
             var unmarshaller = GetSampledRequestsResponseUnmarshaller.Instance;
@@ -5198,7 +5198,7 @@ namespace Amazon.WAF
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetSampledRequests">REST API Reference for GetSampledRequests Operation</seealso>
-        public Task<GetSampledRequestsResponse> GetSampledRequestsAsync(GetSampledRequestsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetSampledRequestsResponse> GetSampledRequestsAsync(GetSampledRequestsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetSampledRequestsRequestMarshaller();
             var unmarshaller = GetSampledRequestsResponseUnmarshaller.Instance;
@@ -5230,7 +5230,7 @@ namespace Amazon.WAF
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetSizeConstraintSet">REST API Reference for GetSizeConstraintSet Operation</seealso>
-        public GetSizeConstraintSetResponse GetSizeConstraintSet(GetSizeConstraintSetRequest request)
+        public virtual GetSizeConstraintSetResponse GetSizeConstraintSet(GetSizeConstraintSetRequest request)
         {
             var marshaller = new GetSizeConstraintSetRequestMarshaller();
             var unmarshaller = GetSizeConstraintSetResponseUnmarshaller.Instance;
@@ -5248,7 +5248,7 @@ namespace Amazon.WAF
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetSizeConstraintSet">REST API Reference for GetSizeConstraintSet Operation</seealso>
-        public Task<GetSizeConstraintSetResponse> GetSizeConstraintSetAsync(GetSizeConstraintSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetSizeConstraintSetResponse> GetSizeConstraintSetAsync(GetSizeConstraintSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetSizeConstraintSetRequestMarshaller();
             var unmarshaller = GetSizeConstraintSetResponseUnmarshaller.Instance;
@@ -5280,7 +5280,7 @@ namespace Amazon.WAF
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetSqlInjectionMatchSet">REST API Reference for GetSqlInjectionMatchSet Operation</seealso>
-        public GetSqlInjectionMatchSetResponse GetSqlInjectionMatchSet(string sqlInjectionMatchSetId)
+        public virtual GetSqlInjectionMatchSetResponse GetSqlInjectionMatchSet(string sqlInjectionMatchSetId)
         {
             var request = new GetSqlInjectionMatchSetRequest();
             request.SqlInjectionMatchSetId = sqlInjectionMatchSetId;
@@ -5306,7 +5306,7 @@ namespace Amazon.WAF
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetSqlInjectionMatchSet">REST API Reference for GetSqlInjectionMatchSet Operation</seealso>
-        public GetSqlInjectionMatchSetResponse GetSqlInjectionMatchSet(GetSqlInjectionMatchSetRequest request)
+        public virtual GetSqlInjectionMatchSetResponse GetSqlInjectionMatchSet(GetSqlInjectionMatchSetRequest request)
         {
             var marshaller = new GetSqlInjectionMatchSetRequestMarshaller();
             var unmarshaller = GetSqlInjectionMatchSetResponseUnmarshaller.Instance;
@@ -5336,7 +5336,7 @@ namespace Amazon.WAF
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetSqlInjectionMatchSet">REST API Reference for GetSqlInjectionMatchSet Operation</seealso>
-        public Task<GetSqlInjectionMatchSetResponse> GetSqlInjectionMatchSetAsync(string sqlInjectionMatchSetId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetSqlInjectionMatchSetResponse> GetSqlInjectionMatchSetAsync(string sqlInjectionMatchSetId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new GetSqlInjectionMatchSetRequest();
             request.SqlInjectionMatchSetId = sqlInjectionMatchSetId;
@@ -5353,7 +5353,7 @@ namespace Amazon.WAF
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetSqlInjectionMatchSet">REST API Reference for GetSqlInjectionMatchSet Operation</seealso>
-        public Task<GetSqlInjectionMatchSetResponse> GetSqlInjectionMatchSetAsync(GetSqlInjectionMatchSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetSqlInjectionMatchSetResponse> GetSqlInjectionMatchSetAsync(GetSqlInjectionMatchSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetSqlInjectionMatchSetRequestMarshaller();
             var unmarshaller = GetSqlInjectionMatchSetResponseUnmarshaller.Instance;
@@ -5385,7 +5385,7 @@ namespace Amazon.WAF
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetWebACL">REST API Reference for GetWebACL Operation</seealso>
-        public GetWebACLResponse GetWebACL(string webACLId)
+        public virtual GetWebACLResponse GetWebACL(string webACLId)
         {
             var request = new GetWebACLRequest();
             request.WebACLId = webACLId;
@@ -5411,7 +5411,7 @@ namespace Amazon.WAF
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetWebACL">REST API Reference for GetWebACL Operation</seealso>
-        public GetWebACLResponse GetWebACL(GetWebACLRequest request)
+        public virtual GetWebACLResponse GetWebACL(GetWebACLRequest request)
         {
             var marshaller = new GetWebACLRequestMarshaller();
             var unmarshaller = GetWebACLResponseUnmarshaller.Instance;
@@ -5441,7 +5441,7 @@ namespace Amazon.WAF
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetWebACL">REST API Reference for GetWebACL Operation</seealso>
-        public Task<GetWebACLResponse> GetWebACLAsync(string webACLId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetWebACLResponse> GetWebACLAsync(string webACLId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new GetWebACLRequest();
             request.WebACLId = webACLId;
@@ -5458,7 +5458,7 @@ namespace Amazon.WAF
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetWebACL">REST API Reference for GetWebACL Operation</seealso>
-        public Task<GetWebACLResponse> GetWebACLAsync(GetWebACLRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetWebACLResponse> GetWebACLAsync(GetWebACLRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetWebACLRequestMarshaller();
             var unmarshaller = GetWebACLResponseUnmarshaller.Instance;
@@ -5490,7 +5490,7 @@ namespace Amazon.WAF
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetXssMatchSet">REST API Reference for GetXssMatchSet Operation</seealso>
-        public GetXssMatchSetResponse GetXssMatchSet(GetXssMatchSetRequest request)
+        public virtual GetXssMatchSetResponse GetXssMatchSet(GetXssMatchSetRequest request)
         {
             var marshaller = new GetXssMatchSetRequestMarshaller();
             var unmarshaller = GetXssMatchSetResponseUnmarshaller.Instance;
@@ -5508,7 +5508,7 @@ namespace Amazon.WAF
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetXssMatchSet">REST API Reference for GetXssMatchSet Operation</seealso>
-        public Task<GetXssMatchSetResponse> GetXssMatchSetAsync(GetXssMatchSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetXssMatchSetResponse> GetXssMatchSetAsync(GetXssMatchSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetXssMatchSetRequestMarshaller();
             var unmarshaller = GetXssMatchSetResponseUnmarshaller.Instance;
@@ -5537,7 +5537,7 @@ namespace Amazon.WAF
         /// an invalid account identifier.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListByteMatchSets">REST API Reference for ListByteMatchSets Operation</seealso>
-        public ListByteMatchSetsResponse ListByteMatchSets(ListByteMatchSetsRequest request)
+        public virtual ListByteMatchSetsResponse ListByteMatchSets(ListByteMatchSetsRequest request)
         {
             var marshaller = new ListByteMatchSetsRequestMarshaller();
             var unmarshaller = ListByteMatchSetsResponseUnmarshaller.Instance;
@@ -5555,7 +5555,7 @@ namespace Amazon.WAF
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListByteMatchSets">REST API Reference for ListByteMatchSets Operation</seealso>
-        public Task<ListByteMatchSetsResponse> ListByteMatchSetsAsync(ListByteMatchSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListByteMatchSetsResponse> ListByteMatchSetsAsync(ListByteMatchSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListByteMatchSetsRequestMarshaller();
             var unmarshaller = ListByteMatchSetsResponseUnmarshaller.Instance;
@@ -5584,7 +5584,7 @@ namespace Amazon.WAF
         /// an invalid account identifier.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListIPSets">REST API Reference for ListIPSets Operation</seealso>
-        public ListIPSetsResponse ListIPSets(ListIPSetsRequest request)
+        public virtual ListIPSetsResponse ListIPSets(ListIPSetsRequest request)
         {
             var marshaller = new ListIPSetsRequestMarshaller();
             var unmarshaller = ListIPSetsResponseUnmarshaller.Instance;
@@ -5602,7 +5602,7 @@ namespace Amazon.WAF
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListIPSets">REST API Reference for ListIPSets Operation</seealso>
-        public Task<ListIPSetsResponse> ListIPSetsAsync(ListIPSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListIPSetsResponse> ListIPSetsAsync(ListIPSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListIPSetsRequestMarshaller();
             var unmarshaller = ListIPSetsResponseUnmarshaller.Instance;
@@ -5631,7 +5631,7 @@ namespace Amazon.WAF
         /// an invalid account identifier.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListRateBasedRules">REST API Reference for ListRateBasedRules Operation</seealso>
-        public ListRateBasedRulesResponse ListRateBasedRules(ListRateBasedRulesRequest request)
+        public virtual ListRateBasedRulesResponse ListRateBasedRules(ListRateBasedRulesRequest request)
         {
             var marshaller = new ListRateBasedRulesRequestMarshaller();
             var unmarshaller = ListRateBasedRulesResponseUnmarshaller.Instance;
@@ -5649,7 +5649,7 @@ namespace Amazon.WAF
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListRateBasedRules">REST API Reference for ListRateBasedRules Operation</seealso>
-        public Task<ListRateBasedRulesResponse> ListRateBasedRulesAsync(ListRateBasedRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListRateBasedRulesResponse> ListRateBasedRulesAsync(ListRateBasedRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListRateBasedRulesRequestMarshaller();
             var unmarshaller = ListRateBasedRulesResponseUnmarshaller.Instance;
@@ -5678,7 +5678,7 @@ namespace Amazon.WAF
         /// an invalid account identifier.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListRules">REST API Reference for ListRules Operation</seealso>
-        public ListRulesResponse ListRules(ListRulesRequest request)
+        public virtual ListRulesResponse ListRules(ListRulesRequest request)
         {
             var marshaller = new ListRulesRequestMarshaller();
             var unmarshaller = ListRulesResponseUnmarshaller.Instance;
@@ -5696,7 +5696,7 @@ namespace Amazon.WAF
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListRules">REST API Reference for ListRules Operation</seealso>
-        public Task<ListRulesResponse> ListRulesAsync(ListRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListRulesResponse> ListRulesAsync(ListRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListRulesRequestMarshaller();
             var unmarshaller = ListRulesResponseUnmarshaller.Instance;
@@ -5725,7 +5725,7 @@ namespace Amazon.WAF
         /// an invalid account identifier.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListSizeConstraintSets">REST API Reference for ListSizeConstraintSets Operation</seealso>
-        public ListSizeConstraintSetsResponse ListSizeConstraintSets(ListSizeConstraintSetsRequest request)
+        public virtual ListSizeConstraintSetsResponse ListSizeConstraintSets(ListSizeConstraintSetsRequest request)
         {
             var marshaller = new ListSizeConstraintSetsRequestMarshaller();
             var unmarshaller = ListSizeConstraintSetsResponseUnmarshaller.Instance;
@@ -5743,7 +5743,7 @@ namespace Amazon.WAF
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListSizeConstraintSets">REST API Reference for ListSizeConstraintSets Operation</seealso>
-        public Task<ListSizeConstraintSetsResponse> ListSizeConstraintSetsAsync(ListSizeConstraintSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListSizeConstraintSetsResponse> ListSizeConstraintSetsAsync(ListSizeConstraintSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListSizeConstraintSetsRequestMarshaller();
             var unmarshaller = ListSizeConstraintSetsResponseUnmarshaller.Instance;
@@ -5772,7 +5772,7 @@ namespace Amazon.WAF
         /// an invalid account identifier.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListSqlInjectionMatchSets">REST API Reference for ListSqlInjectionMatchSets Operation</seealso>
-        public ListSqlInjectionMatchSetsResponse ListSqlInjectionMatchSets(ListSqlInjectionMatchSetsRequest request)
+        public virtual ListSqlInjectionMatchSetsResponse ListSqlInjectionMatchSets(ListSqlInjectionMatchSetsRequest request)
         {
             var marshaller = new ListSqlInjectionMatchSetsRequestMarshaller();
             var unmarshaller = ListSqlInjectionMatchSetsResponseUnmarshaller.Instance;
@@ -5790,7 +5790,7 @@ namespace Amazon.WAF
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListSqlInjectionMatchSets">REST API Reference for ListSqlInjectionMatchSets Operation</seealso>
-        public Task<ListSqlInjectionMatchSetsResponse> ListSqlInjectionMatchSetsAsync(ListSqlInjectionMatchSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListSqlInjectionMatchSetsResponse> ListSqlInjectionMatchSetsAsync(ListSqlInjectionMatchSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListSqlInjectionMatchSetsRequestMarshaller();
             var unmarshaller = ListSqlInjectionMatchSetsResponseUnmarshaller.Instance;
@@ -5819,7 +5819,7 @@ namespace Amazon.WAF
         /// an invalid account identifier.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListWebACLs">REST API Reference for ListWebACLs Operation</seealso>
-        public ListWebACLsResponse ListWebACLs(ListWebACLsRequest request)
+        public virtual ListWebACLsResponse ListWebACLs(ListWebACLsRequest request)
         {
             var marshaller = new ListWebACLsRequestMarshaller();
             var unmarshaller = ListWebACLsResponseUnmarshaller.Instance;
@@ -5837,7 +5837,7 @@ namespace Amazon.WAF
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListWebACLs">REST API Reference for ListWebACLs Operation</seealso>
-        public Task<ListWebACLsResponse> ListWebACLsAsync(ListWebACLsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListWebACLsResponse> ListWebACLsAsync(ListWebACLsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListWebACLsRequestMarshaller();
             var unmarshaller = ListWebACLsResponseUnmarshaller.Instance;
@@ -5866,7 +5866,7 @@ namespace Amazon.WAF
         /// an invalid account identifier.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListXssMatchSets">REST API Reference for ListXssMatchSets Operation</seealso>
-        public ListXssMatchSetsResponse ListXssMatchSets(ListXssMatchSetsRequest request)
+        public virtual ListXssMatchSetsResponse ListXssMatchSets(ListXssMatchSetsRequest request)
         {
             var marshaller = new ListXssMatchSetsRequestMarshaller();
             var unmarshaller = ListXssMatchSetsResponseUnmarshaller.Instance;
@@ -5884,7 +5884,7 @@ namespace Amazon.WAF
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListXssMatchSets">REST API Reference for ListXssMatchSets Operation</seealso>
-        public Task<ListXssMatchSetsResponse> ListXssMatchSetsAsync(ListXssMatchSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListXssMatchSetsResponse> ListXssMatchSetsAsync(ListXssMatchSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListXssMatchSetsRequestMarshaller();
             var unmarshaller = ListXssMatchSetsResponseUnmarshaller.Instance;
@@ -6096,7 +6096,7 @@ namespace Amazon.WAF
         /// a change token that has already been used.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateByteMatchSet">REST API Reference for UpdateByteMatchSet Operation</seealso>
-        public UpdateByteMatchSetResponse UpdateByteMatchSet(string byteMatchSetId, List<ByteMatchSetUpdate> updates, string changeToken)
+        public virtual UpdateByteMatchSetResponse UpdateByteMatchSet(string byteMatchSetId, List<ByteMatchSetUpdate> updates, string changeToken)
         {
             var request = new UpdateByteMatchSetRequest();
             request.ByteMatchSetId = byteMatchSetId;
@@ -6302,7 +6302,7 @@ namespace Amazon.WAF
         /// a change token that has already been used.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateByteMatchSet">REST API Reference for UpdateByteMatchSet Operation</seealso>
-        public UpdateByteMatchSetResponse UpdateByteMatchSet(UpdateByteMatchSetRequest request)
+        public virtual UpdateByteMatchSetResponse UpdateByteMatchSet(UpdateByteMatchSetRequest request)
         {
             var marshaller = new UpdateByteMatchSetRequestMarshaller();
             var unmarshaller = UpdateByteMatchSetResponseUnmarshaller.Instance;
@@ -6512,7 +6512,7 @@ namespace Amazon.WAF
         /// a change token that has already been used.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateByteMatchSet">REST API Reference for UpdateByteMatchSet Operation</seealso>
-        public Task<UpdateByteMatchSetResponse> UpdateByteMatchSetAsync(string byteMatchSetId, List<ByteMatchSetUpdate> updates, string changeToken, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateByteMatchSetResponse> UpdateByteMatchSetAsync(string byteMatchSetId, List<ByteMatchSetUpdate> updates, string changeToken, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new UpdateByteMatchSetRequest();
             request.ByteMatchSetId = byteMatchSetId;
@@ -6531,7 +6531,7 @@ namespace Amazon.WAF
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateByteMatchSet">REST API Reference for UpdateByteMatchSet Operation</seealso>
-        public Task<UpdateByteMatchSetResponse> UpdateByteMatchSetAsync(UpdateByteMatchSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateByteMatchSetResponse> UpdateByteMatchSetAsync(UpdateByteMatchSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateByteMatchSetRequestMarshaller();
             var unmarshaller = UpdateByteMatchSetResponseUnmarshaller.Instance;
@@ -6780,7 +6780,7 @@ namespace Amazon.WAF
         /// a change token that has already been used.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateIPSet">REST API Reference for UpdateIPSet Operation</seealso>
-        public UpdateIPSetResponse UpdateIPSet(string ipSetId, List<IPSetUpdate> updates, string changeToken)
+        public virtual UpdateIPSetResponse UpdateIPSet(string ipSetId, List<IPSetUpdate> updates, string changeToken)
         {
             var request = new UpdateIPSetRequest();
             request.IPSetId = ipSetId;
@@ -7023,7 +7023,7 @@ namespace Amazon.WAF
         /// a change token that has already been used.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateIPSet">REST API Reference for UpdateIPSet Operation</seealso>
-        public UpdateIPSetResponse UpdateIPSet(UpdateIPSetRequest request)
+        public virtual UpdateIPSetResponse UpdateIPSet(UpdateIPSetRequest request)
         {
             var marshaller = new UpdateIPSetRequestMarshaller();
             var unmarshaller = UpdateIPSetResponseUnmarshaller.Instance;
@@ -7270,7 +7270,7 @@ namespace Amazon.WAF
         /// a change token that has already been used.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateIPSet">REST API Reference for UpdateIPSet Operation</seealso>
-        public Task<UpdateIPSetResponse> UpdateIPSetAsync(string ipSetId, List<IPSetUpdate> updates, string changeToken, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateIPSetResponse> UpdateIPSetAsync(string ipSetId, List<IPSetUpdate> updates, string changeToken, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new UpdateIPSetRequest();
             request.IPSetId = ipSetId;
@@ -7289,7 +7289,7 @@ namespace Amazon.WAF
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateIPSet">REST API Reference for UpdateIPSet Operation</seealso>
-        public Task<UpdateIPSetResponse> UpdateIPSetAsync(UpdateIPSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateIPSetResponse> UpdateIPSetAsync(UpdateIPSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateIPSetRequestMarshaller();
             var unmarshaller = UpdateIPSetResponseUnmarshaller.Instance;
@@ -7517,7 +7517,7 @@ namespace Amazon.WAF
         /// a change token that has already been used.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateRateBasedRule">REST API Reference for UpdateRateBasedRule Operation</seealso>
-        public UpdateRateBasedRuleResponse UpdateRateBasedRule(UpdateRateBasedRuleRequest request)
+        public virtual UpdateRateBasedRuleResponse UpdateRateBasedRule(UpdateRateBasedRuleRequest request)
         {
             var marshaller = new UpdateRateBasedRuleRequestMarshaller();
             var unmarshaller = UpdateRateBasedRuleResponseUnmarshaller.Instance;
@@ -7535,7 +7535,7 @@ namespace Amazon.WAF
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateRateBasedRule">REST API Reference for UpdateRateBasedRule Operation</seealso>
-        public Task<UpdateRateBasedRuleResponse> UpdateRateBasedRuleAsync(UpdateRateBasedRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateRateBasedRuleResponse> UpdateRateBasedRuleAsync(UpdateRateBasedRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateRateBasedRuleRequestMarshaller();
             var unmarshaller = UpdateRateBasedRuleResponseUnmarshaller.Instance;
@@ -7760,7 +7760,7 @@ namespace Amazon.WAF
         /// a change token that has already been used.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateRule">REST API Reference for UpdateRule Operation</seealso>
-        public UpdateRuleResponse UpdateRule(string ruleId, List<RuleUpdate> updates, string changeToken)
+        public virtual UpdateRuleResponse UpdateRule(string ruleId, List<RuleUpdate> updates, string changeToken)
         {
             var request = new UpdateRuleRequest();
             request.RuleId = ruleId;
@@ -7979,7 +7979,7 @@ namespace Amazon.WAF
         /// a change token that has already been used.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateRule">REST API Reference for UpdateRule Operation</seealso>
-        public UpdateRuleResponse UpdateRule(UpdateRuleRequest request)
+        public virtual UpdateRuleResponse UpdateRule(UpdateRuleRequest request)
         {
             var marshaller = new UpdateRuleRequestMarshaller();
             var unmarshaller = UpdateRuleResponseUnmarshaller.Instance;
@@ -8202,7 +8202,7 @@ namespace Amazon.WAF
         /// a change token that has already been used.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateRule">REST API Reference for UpdateRule Operation</seealso>
-        public Task<UpdateRuleResponse> UpdateRuleAsync(string ruleId, List<RuleUpdate> updates, string changeToken, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateRuleResponse> UpdateRuleAsync(string ruleId, List<RuleUpdate> updates, string changeToken, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new UpdateRuleRequest();
             request.RuleId = ruleId;
@@ -8221,7 +8221,7 @@ namespace Amazon.WAF
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateRule">REST API Reference for UpdateRule Operation</seealso>
-        public Task<UpdateRuleResponse> UpdateRuleAsync(UpdateRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateRuleResponse> UpdateRuleAsync(UpdateRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateRuleRequestMarshaller();
             var unmarshaller = UpdateRuleResponseUnmarshaller.Instance;
@@ -8447,7 +8447,7 @@ namespace Amazon.WAF
         /// a change token that has already been used.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateSizeConstraintSet">REST API Reference for UpdateSizeConstraintSet Operation</seealso>
-        public UpdateSizeConstraintSetResponse UpdateSizeConstraintSet(UpdateSizeConstraintSetRequest request)
+        public virtual UpdateSizeConstraintSetResponse UpdateSizeConstraintSet(UpdateSizeConstraintSetRequest request)
         {
             var marshaller = new UpdateSizeConstraintSetRequestMarshaller();
             var unmarshaller = UpdateSizeConstraintSetResponseUnmarshaller.Instance;
@@ -8465,7 +8465,7 @@ namespace Amazon.WAF
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateSizeConstraintSet">REST API Reference for UpdateSizeConstraintSet Operation</seealso>
-        public Task<UpdateSizeConstraintSetResponse> UpdateSizeConstraintSetAsync(UpdateSizeConstraintSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateSizeConstraintSetResponse> UpdateSizeConstraintSetAsync(UpdateSizeConstraintSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateSizeConstraintSetRequestMarshaller();
             var unmarshaller = UpdateSizeConstraintSetResponseUnmarshaller.Instance;
@@ -8669,7 +8669,7 @@ namespace Amazon.WAF
         /// a change token that has already been used.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateSqlInjectionMatchSet">REST API Reference for UpdateSqlInjectionMatchSet Operation</seealso>
-        public UpdateSqlInjectionMatchSetResponse UpdateSqlInjectionMatchSet(string sqlInjectionMatchSetId, List<SqlInjectionMatchSetUpdate> updates, string changeToken)
+        public virtual UpdateSqlInjectionMatchSetResponse UpdateSqlInjectionMatchSet(string sqlInjectionMatchSetId, List<SqlInjectionMatchSetUpdate> updates, string changeToken)
         {
             var request = new UpdateSqlInjectionMatchSetRequest();
             request.SqlInjectionMatchSetId = sqlInjectionMatchSetId;
@@ -8867,7 +8867,7 @@ namespace Amazon.WAF
         /// a change token that has already been used.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateSqlInjectionMatchSet">REST API Reference for UpdateSqlInjectionMatchSet Operation</seealso>
-        public UpdateSqlInjectionMatchSetResponse UpdateSqlInjectionMatchSet(UpdateSqlInjectionMatchSetRequest request)
+        public virtual UpdateSqlInjectionMatchSetResponse UpdateSqlInjectionMatchSet(UpdateSqlInjectionMatchSetRequest request)
         {
             var marshaller = new UpdateSqlInjectionMatchSetRequestMarshaller();
             var unmarshaller = UpdateSqlInjectionMatchSetResponseUnmarshaller.Instance;
@@ -9069,7 +9069,7 @@ namespace Amazon.WAF
         /// a change token that has already been used.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateSqlInjectionMatchSet">REST API Reference for UpdateSqlInjectionMatchSet Operation</seealso>
-        public Task<UpdateSqlInjectionMatchSetResponse> UpdateSqlInjectionMatchSetAsync(string sqlInjectionMatchSetId, List<SqlInjectionMatchSetUpdate> updates, string changeToken, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateSqlInjectionMatchSetResponse> UpdateSqlInjectionMatchSetAsync(string sqlInjectionMatchSetId, List<SqlInjectionMatchSetUpdate> updates, string changeToken, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new UpdateSqlInjectionMatchSetRequest();
             request.SqlInjectionMatchSetId = sqlInjectionMatchSetId;
@@ -9088,7 +9088,7 @@ namespace Amazon.WAF
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateSqlInjectionMatchSet">REST API Reference for UpdateSqlInjectionMatchSet Operation</seealso>
-        public Task<UpdateSqlInjectionMatchSetResponse> UpdateSqlInjectionMatchSetAsync(UpdateSqlInjectionMatchSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateSqlInjectionMatchSetResponse> UpdateSqlInjectionMatchSetAsync(UpdateSqlInjectionMatchSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateSqlInjectionMatchSetRequestMarshaller();
             var unmarshaller = UpdateSqlInjectionMatchSetResponseUnmarshaller.Instance;
@@ -9327,7 +9327,7 @@ namespace Amazon.WAF
         /// a change token that has already been used.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateWebACL">REST API Reference for UpdateWebACL Operation</seealso>
-        public UpdateWebACLResponse UpdateWebACL(UpdateWebACLRequest request)
+        public virtual UpdateWebACLResponse UpdateWebACL(UpdateWebACLRequest request)
         {
             var marshaller = new UpdateWebACLRequestMarshaller();
             var unmarshaller = UpdateWebACLResponseUnmarshaller.Instance;
@@ -9345,7 +9345,7 @@ namespace Amazon.WAF
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateWebACL">REST API Reference for UpdateWebACL Operation</seealso>
-        public Task<UpdateWebACLResponse> UpdateWebACLAsync(UpdateWebACLRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateWebACLResponse> UpdateWebACLAsync(UpdateWebACLRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateWebACLRequestMarshaller();
             var unmarshaller = UpdateWebACLResponseUnmarshaller.Instance;
@@ -9546,7 +9546,7 @@ namespace Amazon.WAF
         /// a change token that has already been used.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateXssMatchSet">REST API Reference for UpdateXssMatchSet Operation</seealso>
-        public UpdateXssMatchSetResponse UpdateXssMatchSet(UpdateXssMatchSetRequest request)
+        public virtual UpdateXssMatchSetResponse UpdateXssMatchSet(UpdateXssMatchSetRequest request)
         {
             var marshaller = new UpdateXssMatchSetRequestMarshaller();
             var unmarshaller = UpdateXssMatchSetResponseUnmarshaller.Instance;
@@ -9564,7 +9564,7 @@ namespace Amazon.WAF
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateXssMatchSet">REST API Reference for UpdateXssMatchSet Operation</seealso>
-        public Task<UpdateXssMatchSetResponse> UpdateXssMatchSetAsync(UpdateXssMatchSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateXssMatchSetResponse> UpdateXssMatchSetAsync(UpdateXssMatchSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateXssMatchSetRequestMarshaller();
             var unmarshaller = UpdateXssMatchSetResponseUnmarshaller.Instance;

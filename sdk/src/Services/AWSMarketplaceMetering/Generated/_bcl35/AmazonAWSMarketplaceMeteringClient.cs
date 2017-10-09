@@ -301,7 +301,7 @@ namespace Amazon.AWSMarketplaceMetering
         /// The timestamp value passed in the meterUsage() is out of allowed range.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/BatchMeterUsage">REST API Reference for BatchMeterUsage Operation</seealso>
-        public BatchMeterUsageResponse BatchMeterUsage(BatchMeterUsageRequest request)
+        public virtual BatchMeterUsageResponse BatchMeterUsage(BatchMeterUsageRequest request)
         {
             var marshaller = new BatchMeterUsageRequestMarshaller();
             var unmarshaller = BatchMeterUsageResponseUnmarshaller.Instance;
@@ -321,7 +321,7 @@ namespace Amazon.AWSMarketplaceMetering
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchMeterUsage
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/BatchMeterUsage">REST API Reference for BatchMeterUsage Operation</seealso>
-        public IAsyncResult BeginBatchMeterUsage(BatchMeterUsageRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginBatchMeterUsage(BatchMeterUsageRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new BatchMeterUsageRequestMarshaller();
             var unmarshaller = BatchMeterUsageResponseUnmarshaller.Instance;
@@ -338,7 +338,7 @@ namespace Amazon.AWSMarketplaceMetering
         /// 
         /// <returns>Returns a  BatchMeterUsageResult from AWSMarketplaceMetering.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/BatchMeterUsage">REST API Reference for BatchMeterUsage Operation</seealso>
-        public  BatchMeterUsageResponse EndBatchMeterUsage(IAsyncResult asyncResult)
+        public virtual BatchMeterUsageResponse EndBatchMeterUsage(IAsyncResult asyncResult)
         {
             return EndInvoke<BatchMeterUsageResponse>(asyncResult);
         }
@@ -385,7 +385,7 @@ namespace Amazon.AWSMarketplaceMetering
         /// The timestamp value passed in the meterUsage() is out of allowed range.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/MeterUsage">REST API Reference for MeterUsage Operation</seealso>
-        public MeterUsageResponse MeterUsage(MeterUsageRequest request)
+        public virtual MeterUsageResponse MeterUsage(MeterUsageRequest request)
         {
             var marshaller = new MeterUsageRequestMarshaller();
             var unmarshaller = MeterUsageResponseUnmarshaller.Instance;
@@ -405,7 +405,7 @@ namespace Amazon.AWSMarketplaceMetering
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndMeterUsage
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/MeterUsage">REST API Reference for MeterUsage Operation</seealso>
-        public IAsyncResult BeginMeterUsage(MeterUsageRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginMeterUsage(MeterUsageRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new MeterUsageRequestMarshaller();
             var unmarshaller = MeterUsageResponseUnmarshaller.Instance;
@@ -422,7 +422,7 @@ namespace Amazon.AWSMarketplaceMetering
         /// 
         /// <returns>Returns a  MeterUsageResult from AWSMarketplaceMetering.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/MeterUsage">REST API Reference for MeterUsage Operation</seealso>
-        public  MeterUsageResponse EndMeterUsage(IAsyncResult asyncResult)
+        public virtual MeterUsageResponse EndMeterUsage(IAsyncResult asyncResult)
         {
             return EndInvoke<MeterUsageResponse>(asyncResult);
         }
@@ -458,7 +458,7 @@ namespace Amazon.AWSMarketplaceMetering
         /// The calls to the MeterUsage API are throttled.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/ResolveCustomer">REST API Reference for ResolveCustomer Operation</seealso>
-        public ResolveCustomerResponse ResolveCustomer(ResolveCustomerRequest request)
+        public virtual ResolveCustomerResponse ResolveCustomer(ResolveCustomerRequest request)
         {
             var marshaller = new ResolveCustomerRequestMarshaller();
             var unmarshaller = ResolveCustomerResponseUnmarshaller.Instance;
@@ -478,7 +478,7 @@ namespace Amazon.AWSMarketplaceMetering
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndResolveCustomer
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/ResolveCustomer">REST API Reference for ResolveCustomer Operation</seealso>
-        public IAsyncResult BeginResolveCustomer(ResolveCustomerRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginResolveCustomer(ResolveCustomerRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ResolveCustomerRequestMarshaller();
             var unmarshaller = ResolveCustomerResponseUnmarshaller.Instance;
@@ -495,7 +495,7 @@ namespace Amazon.AWSMarketplaceMetering
         /// 
         /// <returns>Returns a  ResolveCustomerResult from AWSMarketplaceMetering.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/ResolveCustomer">REST API Reference for ResolveCustomer Operation</seealso>
-        public  ResolveCustomerResponse EndResolveCustomer(IAsyncResult asyncResult)
+        public virtual ResolveCustomerResponse EndResolveCustomer(IAsyncResult asyncResult)
         {
             return EndInvoke<ResolveCustomerResponse>(asyncResult);
         }

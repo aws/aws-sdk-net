@@ -196,7 +196,7 @@ namespace Amazon.DynamoDBv2
 
         
         #region  BatchGetItem
-        internal BatchGetItemResponse BatchGetItem(BatchGetItemRequest request)
+        internal virtual BatchGetItemResponse BatchGetItem(BatchGetItemRequest request)
         {
             var marshaller = new BatchGetItemRequestMarshaller();
             var unmarshaller = BatchGetItemResponseUnmarshaller.Instance;
@@ -301,7 +301,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchGetItem">REST API Reference for BatchGetItem Operation</seealso>
-        public void BatchGetItemAsync(Dictionary<string, KeysAndAttributes> requestItems, ReturnConsumedCapacity returnConsumedCapacity,  AmazonServiceCallback<BatchGetItemRequest, BatchGetItemResponse> callback, AsyncOptions options = null)
+        public virtual void BatchGetItemAsync(Dictionary<string, KeysAndAttributes> requestItems, ReturnConsumedCapacity returnConsumedCapacity,  AmazonServiceCallback<BatchGetItemRequest, BatchGetItemResponse> callback, AsyncOptions options = null)
         {
             var request = new BatchGetItemRequest();
             request.RequestItems = requestItems;
@@ -406,7 +406,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchGetItem">REST API Reference for BatchGetItem Operation</seealso>
-        public void BatchGetItemAsync(Dictionary<string, KeysAndAttributes> requestItems,  AmazonServiceCallback<BatchGetItemRequest, BatchGetItemResponse> callback, AsyncOptions options = null)
+        public virtual void BatchGetItemAsync(Dictionary<string, KeysAndAttributes> requestItems,  AmazonServiceCallback<BatchGetItemRequest, BatchGetItemResponse> callback, AsyncOptions options = null)
         {
             var request = new BatchGetItemRequest();
             request.RequestItems = requestItems;
@@ -423,7 +423,7 @@ namespace Amazon.DynamoDBv2
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchGetItem">REST API Reference for BatchGetItem Operation</seealso>
-        public void BatchGetItemAsync(BatchGetItemRequest request, AmazonServiceCallback<BatchGetItemRequest, BatchGetItemResponse> callback, AsyncOptions options = null)
+        public virtual void BatchGetItemAsync(BatchGetItemRequest request, AmazonServiceCallback<BatchGetItemRequest, BatchGetItemResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new BatchGetItemRequestMarshaller();
@@ -441,7 +441,7 @@ namespace Amazon.DynamoDBv2
         #endregion
         
         #region  BatchWriteItem
-        internal BatchWriteItemResponse BatchWriteItem(BatchWriteItemRequest request)
+        internal virtual BatchWriteItemResponse BatchWriteItem(BatchWriteItemRequest request)
         {
             var marshaller = new BatchWriteItemRequestMarshaller();
             var unmarshaller = BatchWriteItemResponseUnmarshaller.Instance;
@@ -576,7 +576,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchWriteItem">REST API Reference for BatchWriteItem Operation</seealso>
-        public void BatchWriteItemAsync(Dictionary<string, List<WriteRequest>> requestItems,  AmazonServiceCallback<BatchWriteItemRequest, BatchWriteItemResponse> callback, AsyncOptions options = null)
+        public virtual void BatchWriteItemAsync(Dictionary<string, List<WriteRequest>> requestItems,  AmazonServiceCallback<BatchWriteItemRequest, BatchWriteItemResponse> callback, AsyncOptions options = null)
         {
             var request = new BatchWriteItemRequest();
             request.RequestItems = requestItems;
@@ -593,7 +593,7 @@ namespace Amazon.DynamoDBv2
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchWriteItem">REST API Reference for BatchWriteItem Operation</seealso>
-        public void BatchWriteItemAsync(BatchWriteItemRequest request, AmazonServiceCallback<BatchWriteItemRequest, BatchWriteItemResponse> callback, AsyncOptions options = null)
+        public virtual void BatchWriteItemAsync(BatchWriteItemRequest request, AmazonServiceCallback<BatchWriteItemRequest, BatchWriteItemResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new BatchWriteItemRequestMarshaller();
@@ -611,7 +611,7 @@ namespace Amazon.DynamoDBv2
         #endregion
         
         #region  CreateTable
-        internal CreateTableResponse CreateTable(CreateTableRequest request)
+        internal virtual CreateTableResponse CreateTable(CreateTableRequest request)
         {
             var marshaller = new CreateTableRequestMarshaller();
             var unmarshaller = CreateTableResponseUnmarshaller.Instance;
@@ -679,7 +679,7 @@ namespace Amazon.DynamoDBv2
         /// state.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateTable">REST API Reference for CreateTable Operation</seealso>
-        public void CreateTableAsync(string tableName, List<KeySchemaElement> keySchema, List<AttributeDefinition> attributeDefinitions, ProvisionedThroughput provisionedThroughput,  AmazonServiceCallback<CreateTableRequest, CreateTableResponse> callback, AsyncOptions options = null)
+        public virtual void CreateTableAsync(string tableName, List<KeySchemaElement> keySchema, List<AttributeDefinition> attributeDefinitions, ProvisionedThroughput provisionedThroughput,  AmazonServiceCallback<CreateTableRequest, CreateTableResponse> callback, AsyncOptions options = null)
         {
             var request = new CreateTableRequest();
             request.TableName = tableName;
@@ -699,7 +699,7 @@ namespace Amazon.DynamoDBv2
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateTable">REST API Reference for CreateTable Operation</seealso>
-        public void CreateTableAsync(CreateTableRequest request, AmazonServiceCallback<CreateTableRequest, CreateTableResponse> callback, AsyncOptions options = null)
+        public virtual void CreateTableAsync(CreateTableRequest request, AmazonServiceCallback<CreateTableRequest, CreateTableResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new CreateTableRequestMarshaller();
@@ -717,7 +717,7 @@ namespace Amazon.DynamoDBv2
         #endregion
         
         #region  DeleteItem
-        internal DeleteItemResponse DeleteItem(DeleteItemRequest request)
+        internal virtual DeleteItemResponse DeleteItem(DeleteItemRequest request)
         {
             var marshaller = new DeleteItemRequestMarshaller();
             var unmarshaller = DeleteItemResponseUnmarshaller.Instance;
@@ -778,7 +778,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteItem">REST API Reference for DeleteItem Operation</seealso>
-        public void DeleteItemAsync(string tableName, Dictionary<string, AttributeValue> key,  AmazonServiceCallback<DeleteItemRequest, DeleteItemResponse> callback, AsyncOptions options = null)
+        public virtual void DeleteItemAsync(string tableName, Dictionary<string, AttributeValue> key,  AmazonServiceCallback<DeleteItemRequest, DeleteItemResponse> callback, AsyncOptions options = null)
         {
             var request = new DeleteItemRequest();
             request.TableName = tableName;
@@ -841,7 +841,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteItem">REST API Reference for DeleteItem Operation</seealso>
-        public void DeleteItemAsync(string tableName, Dictionary<string, AttributeValue> key, ReturnValue returnValues,  AmazonServiceCallback<DeleteItemRequest, DeleteItemResponse> callback, AsyncOptions options = null)
+        public virtual void DeleteItemAsync(string tableName, Dictionary<string, AttributeValue> key, ReturnValue returnValues,  AmazonServiceCallback<DeleteItemRequest, DeleteItemResponse> callback, AsyncOptions options = null)
         {
             var request = new DeleteItemRequest();
             request.TableName = tableName;
@@ -860,7 +860,7 @@ namespace Amazon.DynamoDBv2
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteItem">REST API Reference for DeleteItem Operation</seealso>
-        public void DeleteItemAsync(DeleteItemRequest request, AmazonServiceCallback<DeleteItemRequest, DeleteItemResponse> callback, AsyncOptions options = null)
+        public virtual void DeleteItemAsync(DeleteItemRequest request, AmazonServiceCallback<DeleteItemRequest, DeleteItemResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new DeleteItemRequestMarshaller();
@@ -878,7 +878,7 @@ namespace Amazon.DynamoDBv2
         #endregion
         
         #region  DeleteTable
-        internal DeleteTableResponse DeleteTable(DeleteTableRequest request)
+        internal virtual DeleteTableResponse DeleteTable(DeleteTableRequest request)
         {
             var marshaller = new DeleteTableRequestMarshaller();
             var unmarshaller = DeleteTableResponseUnmarshaller.Instance;
@@ -952,7 +952,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteTable">REST API Reference for DeleteTable Operation</seealso>
-        public void DeleteTableAsync(string tableName,  AmazonServiceCallback<DeleteTableRequest, DeleteTableResponse> callback, AsyncOptions options = null)
+        public virtual void DeleteTableAsync(string tableName,  AmazonServiceCallback<DeleteTableRequest, DeleteTableResponse> callback, AsyncOptions options = null)
         {
             var request = new DeleteTableRequest();
             request.TableName = tableName;
@@ -969,7 +969,7 @@ namespace Amazon.DynamoDBv2
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteTable">REST API Reference for DeleteTable Operation</seealso>
-        public void DeleteTableAsync(DeleteTableRequest request, AmazonServiceCallback<DeleteTableRequest, DeleteTableResponse> callback, AsyncOptions options = null)
+        public virtual void DeleteTableAsync(DeleteTableRequest request, AmazonServiceCallback<DeleteTableRequest, DeleteTableResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new DeleteTableRequestMarshaller();
@@ -987,7 +987,7 @@ namespace Amazon.DynamoDBv2
         #endregion
         
         #region  DescribeLimits
-        internal DescribeLimitsResponse DescribeLimits(DescribeLimitsRequest request)
+        internal virtual DescribeLimitsResponse DescribeLimits(DescribeLimitsRequest request)
         {
             var marshaller = new DescribeLimitsRequestMarshaller();
             var unmarshaller = DescribeLimitsResponseUnmarshaller.Instance;
@@ -1004,7 +1004,7 @@ namespace Amazon.DynamoDBv2
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeLimits">REST API Reference for DescribeLimits Operation</seealso>
-        public void DescribeLimitsAsync(DescribeLimitsRequest request, AmazonServiceCallback<DescribeLimitsRequest, DescribeLimitsResponse> callback, AsyncOptions options = null)
+        public virtual void DescribeLimitsAsync(DescribeLimitsRequest request, AmazonServiceCallback<DescribeLimitsRequest, DescribeLimitsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new DescribeLimitsRequestMarshaller();
@@ -1022,7 +1022,7 @@ namespace Amazon.DynamoDBv2
         #endregion
         
         #region  DescribeTable
-        internal DescribeTableResponse DescribeTable(DescribeTableRequest request)
+        internal virtual DescribeTableResponse DescribeTable(DescribeTableRequest request)
         {
             var marshaller = new DescribeTableRequestMarshaller();
             var unmarshaller = DescribeTableResponseUnmarshaller.Instance;
@@ -1060,7 +1060,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTable">REST API Reference for DescribeTable Operation</seealso>
-        public void DescribeTableAsync(string tableName,  AmazonServiceCallback<DescribeTableRequest, DescribeTableResponse> callback, AsyncOptions options = null)
+        public virtual void DescribeTableAsync(string tableName,  AmazonServiceCallback<DescribeTableRequest, DescribeTableResponse> callback, AsyncOptions options = null)
         {
             var request = new DescribeTableRequest();
             request.TableName = tableName;
@@ -1077,7 +1077,7 @@ namespace Amazon.DynamoDBv2
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTable">REST API Reference for DescribeTable Operation</seealso>
-        public void DescribeTableAsync(DescribeTableRequest request, AmazonServiceCallback<DescribeTableRequest, DescribeTableResponse> callback, AsyncOptions options = null)
+        public virtual void DescribeTableAsync(DescribeTableRequest request, AmazonServiceCallback<DescribeTableRequest, DescribeTableResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new DescribeTableRequestMarshaller();
@@ -1095,7 +1095,7 @@ namespace Amazon.DynamoDBv2
         #endregion
         
         #region  DescribeTimeToLive
-        internal DescribeTimeToLiveResponse DescribeTimeToLive(DescribeTimeToLiveRequest request)
+        internal virtual DescribeTimeToLiveResponse DescribeTimeToLive(DescribeTimeToLiveRequest request)
         {
             var marshaller = new DescribeTimeToLiveRequestMarshaller();
             var unmarshaller = DescribeTimeToLiveResponseUnmarshaller.Instance;
@@ -1122,7 +1122,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTimeToLive">REST API Reference for DescribeTimeToLive Operation</seealso>
-        public void DescribeTimeToLiveAsync(string tableName,  AmazonServiceCallback<DescribeTimeToLiveRequest, DescribeTimeToLiveResponse> callback, AsyncOptions options = null)
+        public virtual void DescribeTimeToLiveAsync(string tableName,  AmazonServiceCallback<DescribeTimeToLiveRequest, DescribeTimeToLiveResponse> callback, AsyncOptions options = null)
         {
             var request = new DescribeTimeToLiveRequest();
             request.TableName = tableName;
@@ -1139,7 +1139,7 @@ namespace Amazon.DynamoDBv2
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTimeToLive">REST API Reference for DescribeTimeToLive Operation</seealso>
-        public void DescribeTimeToLiveAsync(DescribeTimeToLiveRequest request, AmazonServiceCallback<DescribeTimeToLiveRequest, DescribeTimeToLiveResponse> callback, AsyncOptions options = null)
+        public virtual void DescribeTimeToLiveAsync(DescribeTimeToLiveRequest request, AmazonServiceCallback<DescribeTimeToLiveRequest, DescribeTimeToLiveResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new DescribeTimeToLiveRequestMarshaller();
@@ -1157,7 +1157,7 @@ namespace Amazon.DynamoDBv2
         #endregion
         
         #region  GetItem
-        internal GetItemResponse GetItem(GetItemRequest request)
+        internal virtual GetItemResponse GetItem(GetItemRequest request)
         {
             var marshaller = new GetItemRequestMarshaller();
             var unmarshaller = GetItemResponseUnmarshaller.Instance;
@@ -1202,7 +1202,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/GetItem">REST API Reference for GetItem Operation</seealso>
-        public void GetItemAsync(string tableName, Dictionary<string, AttributeValue> key,  AmazonServiceCallback<GetItemRequest, GetItemResponse> callback, AsyncOptions options = null)
+        public virtual void GetItemAsync(string tableName, Dictionary<string, AttributeValue> key,  AmazonServiceCallback<GetItemRequest, GetItemResponse> callback, AsyncOptions options = null)
         {
             var request = new GetItemRequest();
             request.TableName = tableName;
@@ -1249,7 +1249,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/GetItem">REST API Reference for GetItem Operation</seealso>
-        public void GetItemAsync(string tableName, Dictionary<string, AttributeValue> key, bool consistentRead,  AmazonServiceCallback<GetItemRequest, GetItemResponse> callback, AsyncOptions options = null)
+        public virtual void GetItemAsync(string tableName, Dictionary<string, AttributeValue> key, bool consistentRead,  AmazonServiceCallback<GetItemRequest, GetItemResponse> callback, AsyncOptions options = null)
         {
             var request = new GetItemRequest();
             request.TableName = tableName;
@@ -1268,7 +1268,7 @@ namespace Amazon.DynamoDBv2
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/GetItem">REST API Reference for GetItem Operation</seealso>
-        public void GetItemAsync(GetItemRequest request, AmazonServiceCallback<GetItemRequest, GetItemResponse> callback, AsyncOptions options = null)
+        public virtual void GetItemAsync(GetItemRequest request, AmazonServiceCallback<GetItemRequest, GetItemResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new GetItemRequestMarshaller();
@@ -1298,11 +1298,11 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListTables">REST API Reference for ListTables Operation</seealso>
-        internal ListTablesResponse ListTables()
+        internal virtual ListTablesResponse ListTables()
         {
             return ListTables(new ListTablesRequest());
         }
-        internal ListTablesResponse ListTables(ListTablesRequest request)
+        internal virtual ListTablesResponse ListTables(ListTablesRequest request)
         {
             var marshaller = new ListTablesRequestMarshaller();
             var unmarshaller = ListTablesResponseUnmarshaller.Instance;
@@ -1327,7 +1327,7 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListTables">REST API Reference for ListTables Operation</seealso>
-        public void ListTablesAsync(AmazonServiceCallback<ListTablesRequest, ListTablesResponse> callback, AsyncOptions options = null)
+        public virtual void ListTablesAsync(AmazonServiceCallback<ListTablesRequest, ListTablesResponse> callback, AsyncOptions options = null)
         {
             ListTablesAsync(new ListTablesRequest(), callback, options);
         }
@@ -1350,7 +1350,7 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListTables">REST API Reference for ListTables Operation</seealso>
-        public void ListTablesAsync(string exclusiveStartTableName,  AmazonServiceCallback<ListTablesRequest, ListTablesResponse> callback, AsyncOptions options = null)
+        public virtual void ListTablesAsync(string exclusiveStartTableName,  AmazonServiceCallback<ListTablesRequest, ListTablesResponse> callback, AsyncOptions options = null)
         {
             var request = new ListTablesRequest();
             request.ExclusiveStartTableName = exclusiveStartTableName;
@@ -1376,7 +1376,7 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListTables">REST API Reference for ListTables Operation</seealso>
-        public void ListTablesAsync(string exclusiveStartTableName, int limit,  AmazonServiceCallback<ListTablesRequest, ListTablesResponse> callback, AsyncOptions options = null)
+        public virtual void ListTablesAsync(string exclusiveStartTableName, int limit,  AmazonServiceCallback<ListTablesRequest, ListTablesResponse> callback, AsyncOptions options = null)
         {
             var request = new ListTablesRequest();
             request.ExclusiveStartTableName = exclusiveStartTableName;
@@ -1402,7 +1402,7 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListTables">REST API Reference for ListTables Operation</seealso>
-        public void ListTablesAsync(int limit,  AmazonServiceCallback<ListTablesRequest, ListTablesResponse> callback, AsyncOptions options = null)
+        public virtual void ListTablesAsync(int limit,  AmazonServiceCallback<ListTablesRequest, ListTablesResponse> callback, AsyncOptions options = null)
         {
             var request = new ListTablesRequest();
             request.Limit = limit;
@@ -1419,7 +1419,7 @@ namespace Amazon.DynamoDBv2
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListTables">REST API Reference for ListTables Operation</seealso>
-        public void ListTablesAsync(ListTablesRequest request, AmazonServiceCallback<ListTablesRequest, ListTablesResponse> callback, AsyncOptions options = null)
+        public virtual void ListTablesAsync(ListTablesRequest request, AmazonServiceCallback<ListTablesRequest, ListTablesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new ListTablesRequestMarshaller();
@@ -1437,7 +1437,7 @@ namespace Amazon.DynamoDBv2
         #endregion
         
         #region  ListTagsOfResource
-        internal ListTagsOfResourceResponse ListTagsOfResource(ListTagsOfResourceRequest request)
+        internal virtual ListTagsOfResourceResponse ListTagsOfResource(ListTagsOfResourceRequest request)
         {
             var marshaller = new ListTagsOfResourceRequestMarshaller();
             var unmarshaller = ListTagsOfResourceResponseUnmarshaller.Instance;
@@ -1454,7 +1454,7 @@ namespace Amazon.DynamoDBv2
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListTagsOfResource">REST API Reference for ListTagsOfResource Operation</seealso>
-        public void ListTagsOfResourceAsync(ListTagsOfResourceRequest request, AmazonServiceCallback<ListTagsOfResourceRequest, ListTagsOfResourceResponse> callback, AsyncOptions options = null)
+        public virtual void ListTagsOfResourceAsync(ListTagsOfResourceRequest request, AmazonServiceCallback<ListTagsOfResourceRequest, ListTagsOfResourceResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new ListTagsOfResourceRequestMarshaller();
@@ -1472,7 +1472,7 @@ namespace Amazon.DynamoDBv2
         #endregion
         
         #region  PutItem
-        internal PutItemResponse PutItem(PutItemRequest request)
+        internal virtual PutItemResponse PutItem(PutItemRequest request)
         {
             var marshaller = new PutItemRequestMarshaller();
             var unmarshaller = PutItemResponseUnmarshaller.Instance;
@@ -1594,7 +1594,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/PutItem">REST API Reference for PutItem Operation</seealso>
-        public void PutItemAsync(string tableName, Dictionary<string, AttributeValue> item,  AmazonServiceCallback<PutItemRequest, PutItemResponse> callback, AsyncOptions options = null)
+        public virtual void PutItemAsync(string tableName, Dictionary<string, AttributeValue> item,  AmazonServiceCallback<PutItemRequest, PutItemResponse> callback, AsyncOptions options = null)
         {
             var request = new PutItemRequest();
             request.TableName = tableName;
@@ -1718,7 +1718,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/PutItem">REST API Reference for PutItem Operation</seealso>
-        public void PutItemAsync(string tableName, Dictionary<string, AttributeValue> item, ReturnValue returnValues,  AmazonServiceCallback<PutItemRequest, PutItemResponse> callback, AsyncOptions options = null)
+        public virtual void PutItemAsync(string tableName, Dictionary<string, AttributeValue> item, ReturnValue returnValues,  AmazonServiceCallback<PutItemRequest, PutItemResponse> callback, AsyncOptions options = null)
         {
             var request = new PutItemRequest();
             request.TableName = tableName;
@@ -1737,7 +1737,7 @@ namespace Amazon.DynamoDBv2
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/PutItem">REST API Reference for PutItem Operation</seealso>
-        public void PutItemAsync(PutItemRequest request, AmazonServiceCallback<PutItemRequest, PutItemResponse> callback, AsyncOptions options = null)
+        public virtual void PutItemAsync(PutItemRequest request, AmazonServiceCallback<PutItemRequest, PutItemResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new PutItemRequestMarshaller();
@@ -1755,7 +1755,7 @@ namespace Amazon.DynamoDBv2
         #endregion
         
         #region  Query
-        internal QueryResponse Query(QueryRequest request)
+        internal virtual QueryResponse Query(QueryRequest request)
         {
             var marshaller = new QueryRequestMarshaller();
             var unmarshaller = QueryResponseUnmarshaller.Instance;
@@ -1772,7 +1772,7 @@ namespace Amazon.DynamoDBv2
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Query">REST API Reference for Query Operation</seealso>
-        public void QueryAsync(QueryRequest request, AmazonServiceCallback<QueryRequest, QueryResponse> callback, AsyncOptions options = null)
+        public virtual void QueryAsync(QueryRequest request, AmazonServiceCallback<QueryRequest, QueryResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new QueryRequestMarshaller();
@@ -1790,7 +1790,7 @@ namespace Amazon.DynamoDBv2
         #endregion
         
         #region  Scan
-        internal ScanResponse Scan(ScanRequest request)
+        internal virtual ScanResponse Scan(ScanRequest request)
         {
             var marshaller = new ScanRequestMarshaller();
             var unmarshaller = ScanResponseUnmarshaller.Instance;
@@ -1861,7 +1861,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Scan">REST API Reference for Scan Operation</seealso>
-        public void ScanAsync(string tableName, List<string> attributesToGet,  AmazonServiceCallback<ScanRequest, ScanResponse> callback, AsyncOptions options = null)
+        public virtual void ScanAsync(string tableName, List<string> attributesToGet,  AmazonServiceCallback<ScanRequest, ScanResponse> callback, AsyncOptions options = null)
         {
             var request = new ScanRequest();
             request.TableName = tableName;
@@ -1933,7 +1933,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Scan">REST API Reference for Scan Operation</seealso>
-        public void ScanAsync(string tableName, Dictionary<string, Condition> scanFilter,  AmazonServiceCallback<ScanRequest, ScanResponse> callback, AsyncOptions options = null)
+        public virtual void ScanAsync(string tableName, Dictionary<string, Condition> scanFilter,  AmazonServiceCallback<ScanRequest, ScanResponse> callback, AsyncOptions options = null)
         {
             var request = new ScanRequest();
             request.TableName = tableName;
@@ -2006,7 +2006,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Scan">REST API Reference for Scan Operation</seealso>
-        public void ScanAsync(string tableName, List<string> attributesToGet, Dictionary<string, Condition> scanFilter,  AmazonServiceCallback<ScanRequest, ScanResponse> callback, AsyncOptions options = null)
+        public virtual void ScanAsync(string tableName, List<string> attributesToGet, Dictionary<string, Condition> scanFilter,  AmazonServiceCallback<ScanRequest, ScanResponse> callback, AsyncOptions options = null)
         {
             var request = new ScanRequest();
             request.TableName = tableName;
@@ -2025,7 +2025,7 @@ namespace Amazon.DynamoDBv2
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Scan">REST API Reference for Scan Operation</seealso>
-        public void ScanAsync(ScanRequest request, AmazonServiceCallback<ScanRequest, ScanResponse> callback, AsyncOptions options = null)
+        public virtual void ScanAsync(ScanRequest request, AmazonServiceCallback<ScanRequest, ScanResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new ScanRequestMarshaller();
@@ -2043,7 +2043,7 @@ namespace Amazon.DynamoDBv2
         #endregion
         
         #region  TagResource
-        internal TagResourceResponse TagResource(TagResourceRequest request)
+        internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
             var marshaller = new TagResourceRequestMarshaller();
             var unmarshaller = TagResourceResponseUnmarshaller.Instance;
@@ -2060,7 +2060,7 @@ namespace Amazon.DynamoDBv2
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/TagResource">REST API Reference for TagResource Operation</seealso>
-        public void TagResourceAsync(TagResourceRequest request, AmazonServiceCallback<TagResourceRequest, TagResourceResponse> callback, AsyncOptions options = null)
+        public virtual void TagResourceAsync(TagResourceRequest request, AmazonServiceCallback<TagResourceRequest, TagResourceResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new TagResourceRequestMarshaller();
@@ -2078,7 +2078,7 @@ namespace Amazon.DynamoDBv2
         #endregion
         
         #region  UntagResource
-        internal UntagResourceResponse UntagResource(UntagResourceRequest request)
+        internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
             var marshaller = new UntagResourceRequestMarshaller();
             var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
@@ -2095,7 +2095,7 @@ namespace Amazon.DynamoDBv2
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
-        public void UntagResourceAsync(UntagResourceRequest request, AmazonServiceCallback<UntagResourceRequest, UntagResourceResponse> callback, AsyncOptions options = null)
+        public virtual void UntagResourceAsync(UntagResourceRequest request, AmazonServiceCallback<UntagResourceRequest, UntagResourceResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new UntagResourceRequestMarshaller();
@@ -2113,7 +2113,7 @@ namespace Amazon.DynamoDBv2
         #endregion
         
         #region  UpdateItem
-        internal UpdateItemResponse UpdateItem(UpdateItemRequest request)
+        internal virtual UpdateItemResponse UpdateItem(UpdateItemRequest request)
         {
             var marshaller = new UpdateItemRequestMarshaller();
             var unmarshaller = UpdateItemResponseUnmarshaller.Instance;
@@ -2166,7 +2166,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateItem">REST API Reference for UpdateItem Operation</seealso>
-        public void UpdateItemAsync(string tableName, Dictionary<string, AttributeValue> key, Dictionary<string, AttributeValueUpdate> attributeUpdates,  AmazonServiceCallback<UpdateItemRequest, UpdateItemResponse> callback, AsyncOptions options = null)
+        public virtual void UpdateItemAsync(string tableName, Dictionary<string, AttributeValue> key, Dictionary<string, AttributeValueUpdate> attributeUpdates,  AmazonServiceCallback<UpdateItemRequest, UpdateItemResponse> callback, AsyncOptions options = null)
         {
             var request = new UpdateItemRequest();
             request.TableName = tableName;
@@ -2222,7 +2222,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateItem">REST API Reference for UpdateItem Operation</seealso>
-        public void UpdateItemAsync(string tableName, Dictionary<string, AttributeValue> key, Dictionary<string, AttributeValueUpdate> attributeUpdates, ReturnValue returnValues,  AmazonServiceCallback<UpdateItemRequest, UpdateItemResponse> callback, AsyncOptions options = null)
+        public virtual void UpdateItemAsync(string tableName, Dictionary<string, AttributeValue> key, Dictionary<string, AttributeValueUpdate> attributeUpdates, ReturnValue returnValues,  AmazonServiceCallback<UpdateItemRequest, UpdateItemResponse> callback, AsyncOptions options = null)
         {
             var request = new UpdateItemRequest();
             request.TableName = tableName;
@@ -2242,7 +2242,7 @@ namespace Amazon.DynamoDBv2
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateItem">REST API Reference for UpdateItem Operation</seealso>
-        public void UpdateItemAsync(UpdateItemRequest request, AmazonServiceCallback<UpdateItemRequest, UpdateItemResponse> callback, AsyncOptions options = null)
+        public virtual void UpdateItemAsync(UpdateItemRequest request, AmazonServiceCallback<UpdateItemRequest, UpdateItemResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new UpdateItemRequestMarshaller();
@@ -2260,7 +2260,7 @@ namespace Amazon.DynamoDBv2
         #endregion
         
         #region  UpdateTable
-        internal UpdateTableResponse UpdateTable(UpdateTableRequest request)
+        internal virtual UpdateTableResponse UpdateTable(UpdateTableRequest request)
         {
             var marshaller = new UpdateTableRequestMarshaller();
             var unmarshaller = UpdateTableResponseUnmarshaller.Instance;
@@ -2339,7 +2339,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTable">REST API Reference for UpdateTable Operation</seealso>
-        public void UpdateTableAsync(string tableName, ProvisionedThroughput provisionedThroughput,  AmazonServiceCallback<UpdateTableRequest, UpdateTableResponse> callback, AsyncOptions options = null)
+        public virtual void UpdateTableAsync(string tableName, ProvisionedThroughput provisionedThroughput,  AmazonServiceCallback<UpdateTableRequest, UpdateTableResponse> callback, AsyncOptions options = null)
         {
             var request = new UpdateTableRequest();
             request.TableName = tableName;
@@ -2357,7 +2357,7 @@ namespace Amazon.DynamoDBv2
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTable">REST API Reference for UpdateTable Operation</seealso>
-        public void UpdateTableAsync(UpdateTableRequest request, AmazonServiceCallback<UpdateTableRequest, UpdateTableResponse> callback, AsyncOptions options = null)
+        public virtual void UpdateTableAsync(UpdateTableRequest request, AmazonServiceCallback<UpdateTableRequest, UpdateTableResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new UpdateTableRequestMarshaller();
@@ -2375,7 +2375,7 @@ namespace Amazon.DynamoDBv2
         #endregion
         
         #region  UpdateTimeToLive
-        internal UpdateTimeToLiveResponse UpdateTimeToLive(UpdateTimeToLiveRequest request)
+        internal virtual UpdateTimeToLiveResponse UpdateTimeToLive(UpdateTimeToLiveRequest request)
         {
             var marshaller = new UpdateTimeToLiveRequestMarshaller();
             var unmarshaller = UpdateTimeToLiveResponseUnmarshaller.Instance;
@@ -2392,7 +2392,7 @@ namespace Amazon.DynamoDBv2
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTimeToLive">REST API Reference for UpdateTimeToLive Operation</seealso>
-        public void UpdateTimeToLiveAsync(UpdateTimeToLiveRequest request, AmazonServiceCallback<UpdateTimeToLiveRequest, UpdateTimeToLiveResponse> callback, AsyncOptions options = null)
+        public virtual void UpdateTimeToLiveAsync(UpdateTimeToLiveRequest request, AmazonServiceCallback<UpdateTimeToLiveRequest, UpdateTimeToLiveResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
             var marshaller = new UpdateTimeToLiveRequestMarshaller();

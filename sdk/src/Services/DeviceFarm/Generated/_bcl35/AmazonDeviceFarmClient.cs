@@ -245,7 +245,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateDevicePool">REST API Reference for CreateDevicePool Operation</seealso>
-        public CreateDevicePoolResponse CreateDevicePool(CreateDevicePoolRequest request)
+        public virtual CreateDevicePoolResponse CreateDevicePool(CreateDevicePoolRequest request)
         {
             var marshaller = new CreateDevicePoolRequestMarshaller();
             var unmarshaller = CreateDevicePoolResponseUnmarshaller.Instance;
@@ -265,7 +265,7 @@ namespace Amazon.DeviceFarm
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDevicePool
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateDevicePool">REST API Reference for CreateDevicePool Operation</seealso>
-        public IAsyncResult BeginCreateDevicePool(CreateDevicePoolRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateDevicePool(CreateDevicePoolRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateDevicePoolRequestMarshaller();
             var unmarshaller = CreateDevicePoolResponseUnmarshaller.Instance;
@@ -282,7 +282,7 @@ namespace Amazon.DeviceFarm
         /// 
         /// <returns>Returns a  CreateDevicePoolResult from DeviceFarm.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateDevicePool">REST API Reference for CreateDevicePool Operation</seealso>
-        public  CreateDevicePoolResponse EndCreateDevicePool(IAsyncResult asyncResult)
+        public virtual CreateDevicePoolResponse EndCreateDevicePool(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateDevicePoolResponse>(asyncResult);
         }
@@ -310,7 +310,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateNetworkProfile">REST API Reference for CreateNetworkProfile Operation</seealso>
-        public CreateNetworkProfileResponse CreateNetworkProfile(CreateNetworkProfileRequest request)
+        public virtual CreateNetworkProfileResponse CreateNetworkProfile(CreateNetworkProfileRequest request)
         {
             var marshaller = new CreateNetworkProfileRequestMarshaller();
             var unmarshaller = CreateNetworkProfileResponseUnmarshaller.Instance;
@@ -330,7 +330,7 @@ namespace Amazon.DeviceFarm
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateNetworkProfile
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateNetworkProfile">REST API Reference for CreateNetworkProfile Operation</seealso>
-        public IAsyncResult BeginCreateNetworkProfile(CreateNetworkProfileRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateNetworkProfile(CreateNetworkProfileRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateNetworkProfileRequestMarshaller();
             var unmarshaller = CreateNetworkProfileResponseUnmarshaller.Instance;
@@ -347,7 +347,7 @@ namespace Amazon.DeviceFarm
         /// 
         /// <returns>Returns a  CreateNetworkProfileResult from DeviceFarm.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateNetworkProfile">REST API Reference for CreateNetworkProfile Operation</seealso>
-        public  CreateNetworkProfileResponse EndCreateNetworkProfile(IAsyncResult asyncResult)
+        public virtual CreateNetworkProfileResponse EndCreateNetworkProfile(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateNetworkProfileResponse>(asyncResult);
         }
@@ -375,7 +375,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateProject">REST API Reference for CreateProject Operation</seealso>
-        public CreateProjectResponse CreateProject(string name)
+        public virtual CreateProjectResponse CreateProject(string name)
         {
             var request = new CreateProjectRequest();
             request.Name = name;
@@ -402,7 +402,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateProject">REST API Reference for CreateProject Operation</seealso>
-        public CreateProjectResponse CreateProject(CreateProjectRequest request)
+        public virtual CreateProjectResponse CreateProject(CreateProjectRequest request)
         {
             var marshaller = new CreateProjectRequestMarshaller();
             var unmarshaller = CreateProjectResponseUnmarshaller.Instance;
@@ -422,7 +422,7 @@ namespace Amazon.DeviceFarm
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateProject
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateProject">REST API Reference for CreateProject Operation</seealso>
-        public IAsyncResult BeginCreateProject(CreateProjectRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateProject(CreateProjectRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateProjectRequestMarshaller();
             var unmarshaller = CreateProjectResponseUnmarshaller.Instance;
@@ -439,7 +439,7 @@ namespace Amazon.DeviceFarm
         /// 
         /// <returns>Returns a  CreateProjectResult from DeviceFarm.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateProject">REST API Reference for CreateProject Operation</seealso>
-        public  CreateProjectResponse EndCreateProject(IAsyncResult asyncResult)
+        public virtual CreateProjectResponse EndCreateProject(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateProjectResponse>(asyncResult);
         }
@@ -467,7 +467,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateRemoteAccessSession">REST API Reference for CreateRemoteAccessSession Operation</seealso>
-        public CreateRemoteAccessSessionResponse CreateRemoteAccessSession(CreateRemoteAccessSessionRequest request)
+        public virtual CreateRemoteAccessSessionResponse CreateRemoteAccessSession(CreateRemoteAccessSessionRequest request)
         {
             var marshaller = new CreateRemoteAccessSessionRequestMarshaller();
             var unmarshaller = CreateRemoteAccessSessionResponseUnmarshaller.Instance;
@@ -487,7 +487,7 @@ namespace Amazon.DeviceFarm
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateRemoteAccessSession
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateRemoteAccessSession">REST API Reference for CreateRemoteAccessSession Operation</seealso>
-        public IAsyncResult BeginCreateRemoteAccessSession(CreateRemoteAccessSessionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateRemoteAccessSession(CreateRemoteAccessSessionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateRemoteAccessSessionRequestMarshaller();
             var unmarshaller = CreateRemoteAccessSessionResponseUnmarshaller.Instance;
@@ -504,7 +504,7 @@ namespace Amazon.DeviceFarm
         /// 
         /// <returns>Returns a  CreateRemoteAccessSessionResult from DeviceFarm.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateRemoteAccessSession">REST API Reference for CreateRemoteAccessSession Operation</seealso>
-        public  CreateRemoteAccessSessionResponse EndCreateRemoteAccessSession(IAsyncResult asyncResult)
+        public virtual CreateRemoteAccessSessionResponse EndCreateRemoteAccessSession(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateRemoteAccessSessionResponse>(asyncResult);
         }
@@ -532,7 +532,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateUpload">REST API Reference for CreateUpload Operation</seealso>
-        public CreateUploadResponse CreateUpload(CreateUploadRequest request)
+        public virtual CreateUploadResponse CreateUpload(CreateUploadRequest request)
         {
             var marshaller = new CreateUploadRequestMarshaller();
             var unmarshaller = CreateUploadResponseUnmarshaller.Instance;
@@ -552,7 +552,7 @@ namespace Amazon.DeviceFarm
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateUpload
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateUpload">REST API Reference for CreateUpload Operation</seealso>
-        public IAsyncResult BeginCreateUpload(CreateUploadRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateUpload(CreateUploadRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateUploadRequestMarshaller();
             var unmarshaller = CreateUploadResponseUnmarshaller.Instance;
@@ -569,7 +569,7 @@ namespace Amazon.DeviceFarm
         /// 
         /// <returns>Returns a  CreateUploadResult from DeviceFarm.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateUpload">REST API Reference for CreateUpload Operation</seealso>
-        public  CreateUploadResponse EndCreateUpload(IAsyncResult asyncResult)
+        public virtual CreateUploadResponse EndCreateUpload(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateUploadResponse>(asyncResult);
         }
@@ -598,7 +598,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteDevicePool">REST API Reference for DeleteDevicePool Operation</seealso>
-        public DeleteDevicePoolResponse DeleteDevicePool(DeleteDevicePoolRequest request)
+        public virtual DeleteDevicePoolResponse DeleteDevicePool(DeleteDevicePoolRequest request)
         {
             var marshaller = new DeleteDevicePoolRequestMarshaller();
             var unmarshaller = DeleteDevicePoolResponseUnmarshaller.Instance;
@@ -618,7 +618,7 @@ namespace Amazon.DeviceFarm
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDevicePool
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteDevicePool">REST API Reference for DeleteDevicePool Operation</seealso>
-        public IAsyncResult BeginDeleteDevicePool(DeleteDevicePoolRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteDevicePool(DeleteDevicePoolRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteDevicePoolRequestMarshaller();
             var unmarshaller = DeleteDevicePoolResponseUnmarshaller.Instance;
@@ -635,7 +635,7 @@ namespace Amazon.DeviceFarm
         /// 
         /// <returns>Returns a  DeleteDevicePoolResult from DeviceFarm.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteDevicePool">REST API Reference for DeleteDevicePool Operation</seealso>
-        public  DeleteDevicePoolResponse EndDeleteDevicePool(IAsyncResult asyncResult)
+        public virtual DeleteDevicePoolResponse EndDeleteDevicePool(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteDevicePoolResponse>(asyncResult);
         }
@@ -663,7 +663,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteNetworkProfile">REST API Reference for DeleteNetworkProfile Operation</seealso>
-        public DeleteNetworkProfileResponse DeleteNetworkProfile(DeleteNetworkProfileRequest request)
+        public virtual DeleteNetworkProfileResponse DeleteNetworkProfile(DeleteNetworkProfileRequest request)
         {
             var marshaller = new DeleteNetworkProfileRequestMarshaller();
             var unmarshaller = DeleteNetworkProfileResponseUnmarshaller.Instance;
@@ -683,7 +683,7 @@ namespace Amazon.DeviceFarm
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteNetworkProfile
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteNetworkProfile">REST API Reference for DeleteNetworkProfile Operation</seealso>
-        public IAsyncResult BeginDeleteNetworkProfile(DeleteNetworkProfileRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteNetworkProfile(DeleteNetworkProfileRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteNetworkProfileRequestMarshaller();
             var unmarshaller = DeleteNetworkProfileResponseUnmarshaller.Instance;
@@ -700,7 +700,7 @@ namespace Amazon.DeviceFarm
         /// 
         /// <returns>Returns a  DeleteNetworkProfileResult from DeviceFarm.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteNetworkProfile">REST API Reference for DeleteNetworkProfile Operation</seealso>
-        public  DeleteNetworkProfileResponse EndDeleteNetworkProfile(IAsyncResult asyncResult)
+        public virtual DeleteNetworkProfileResponse EndDeleteNetworkProfile(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteNetworkProfileResponse>(asyncResult);
         }
@@ -733,7 +733,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
-        public DeleteProjectResponse DeleteProject(DeleteProjectRequest request)
+        public virtual DeleteProjectResponse DeleteProject(DeleteProjectRequest request)
         {
             var marshaller = new DeleteProjectRequestMarshaller();
             var unmarshaller = DeleteProjectResponseUnmarshaller.Instance;
@@ -753,7 +753,7 @@ namespace Amazon.DeviceFarm
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteProject
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
-        public IAsyncResult BeginDeleteProject(DeleteProjectRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteProject(DeleteProjectRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteProjectRequestMarshaller();
             var unmarshaller = DeleteProjectResponseUnmarshaller.Instance;
@@ -770,7 +770,7 @@ namespace Amazon.DeviceFarm
         /// 
         /// <returns>Returns a  DeleteProjectResult from DeviceFarm.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
-        public  DeleteProjectResponse EndDeleteProject(IAsyncResult asyncResult)
+        public virtual DeleteProjectResponse EndDeleteProject(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteProjectResponse>(asyncResult);
         }
@@ -798,7 +798,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteRemoteAccessSession">REST API Reference for DeleteRemoteAccessSession Operation</seealso>
-        public DeleteRemoteAccessSessionResponse DeleteRemoteAccessSession(DeleteRemoteAccessSessionRequest request)
+        public virtual DeleteRemoteAccessSessionResponse DeleteRemoteAccessSession(DeleteRemoteAccessSessionRequest request)
         {
             var marshaller = new DeleteRemoteAccessSessionRequestMarshaller();
             var unmarshaller = DeleteRemoteAccessSessionResponseUnmarshaller.Instance;
@@ -818,7 +818,7 @@ namespace Amazon.DeviceFarm
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRemoteAccessSession
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteRemoteAccessSession">REST API Reference for DeleteRemoteAccessSession Operation</seealso>
-        public IAsyncResult BeginDeleteRemoteAccessSession(DeleteRemoteAccessSessionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteRemoteAccessSession(DeleteRemoteAccessSessionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteRemoteAccessSessionRequestMarshaller();
             var unmarshaller = DeleteRemoteAccessSessionResponseUnmarshaller.Instance;
@@ -835,7 +835,7 @@ namespace Amazon.DeviceFarm
         /// 
         /// <returns>Returns a  DeleteRemoteAccessSessionResult from DeviceFarm.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteRemoteAccessSession">REST API Reference for DeleteRemoteAccessSession Operation</seealso>
-        public  DeleteRemoteAccessSessionResponse EndDeleteRemoteAccessSession(IAsyncResult asyncResult)
+        public virtual DeleteRemoteAccessSessionResponse EndDeleteRemoteAccessSession(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteRemoteAccessSessionResponse>(asyncResult);
         }
@@ -868,7 +868,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteRun">REST API Reference for DeleteRun Operation</seealso>
-        public DeleteRunResponse DeleteRun(DeleteRunRequest request)
+        public virtual DeleteRunResponse DeleteRun(DeleteRunRequest request)
         {
             var marshaller = new DeleteRunRequestMarshaller();
             var unmarshaller = DeleteRunResponseUnmarshaller.Instance;
@@ -888,7 +888,7 @@ namespace Amazon.DeviceFarm
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRun
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteRun">REST API Reference for DeleteRun Operation</seealso>
-        public IAsyncResult BeginDeleteRun(DeleteRunRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteRun(DeleteRunRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteRunRequestMarshaller();
             var unmarshaller = DeleteRunResponseUnmarshaller.Instance;
@@ -905,7 +905,7 @@ namespace Amazon.DeviceFarm
         /// 
         /// <returns>Returns a  DeleteRunResult from DeviceFarm.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteRun">REST API Reference for DeleteRun Operation</seealso>
-        public  DeleteRunResponse EndDeleteRun(IAsyncResult asyncResult)
+        public virtual DeleteRunResponse EndDeleteRun(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteRunResponse>(asyncResult);
         }
@@ -933,7 +933,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteUpload">REST API Reference for DeleteUpload Operation</seealso>
-        public DeleteUploadResponse DeleteUpload(DeleteUploadRequest request)
+        public virtual DeleteUploadResponse DeleteUpload(DeleteUploadRequest request)
         {
             var marshaller = new DeleteUploadRequestMarshaller();
             var unmarshaller = DeleteUploadResponseUnmarshaller.Instance;
@@ -953,7 +953,7 @@ namespace Amazon.DeviceFarm
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteUpload
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteUpload">REST API Reference for DeleteUpload Operation</seealso>
-        public IAsyncResult BeginDeleteUpload(DeleteUploadRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteUpload(DeleteUploadRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteUploadRequestMarshaller();
             var unmarshaller = DeleteUploadResponseUnmarshaller.Instance;
@@ -970,7 +970,7 @@ namespace Amazon.DeviceFarm
         /// 
         /// <returns>Returns a  DeleteUploadResult from DeviceFarm.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteUpload">REST API Reference for DeleteUpload Operation</seealso>
-        public  DeleteUploadResponse EndDeleteUpload(IAsyncResult asyncResult)
+        public virtual DeleteUploadResponse EndDeleteUpload(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteUploadResponse>(asyncResult);
         }
@@ -998,7 +998,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetAccountSettings">REST API Reference for GetAccountSettings Operation</seealso>
-        public GetAccountSettingsResponse GetAccountSettings()
+        public virtual GetAccountSettingsResponse GetAccountSettings()
         {
             return GetAccountSettings(new GetAccountSettingsRequest());
         }
@@ -1023,7 +1023,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetAccountSettings">REST API Reference for GetAccountSettings Operation</seealso>
-        public GetAccountSettingsResponse GetAccountSettings(GetAccountSettingsRequest request)
+        public virtual GetAccountSettingsResponse GetAccountSettings(GetAccountSettingsRequest request)
         {
             var marshaller = new GetAccountSettingsRequestMarshaller();
             var unmarshaller = GetAccountSettingsResponseUnmarshaller.Instance;
@@ -1043,7 +1043,7 @@ namespace Amazon.DeviceFarm
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAccountSettings
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetAccountSettings">REST API Reference for GetAccountSettings Operation</seealso>
-        public IAsyncResult BeginGetAccountSettings(GetAccountSettingsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetAccountSettings(GetAccountSettingsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetAccountSettingsRequestMarshaller();
             var unmarshaller = GetAccountSettingsResponseUnmarshaller.Instance;
@@ -1060,7 +1060,7 @@ namespace Amazon.DeviceFarm
         /// 
         /// <returns>Returns a  GetAccountSettingsResult from DeviceFarm.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetAccountSettings">REST API Reference for GetAccountSettings Operation</seealso>
-        public  GetAccountSettingsResponse EndGetAccountSettings(IAsyncResult asyncResult)
+        public virtual GetAccountSettingsResponse EndGetAccountSettings(IAsyncResult asyncResult)
         {
             return EndInvoke<GetAccountSettingsResponse>(asyncResult);
         }
@@ -1088,7 +1088,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDevice">REST API Reference for GetDevice Operation</seealso>
-        public GetDeviceResponse GetDevice(string arn)
+        public virtual GetDeviceResponse GetDevice(string arn)
         {
             var request = new GetDeviceRequest();
             request.Arn = arn;
@@ -1115,7 +1115,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDevice">REST API Reference for GetDevice Operation</seealso>
-        public GetDeviceResponse GetDevice(GetDeviceRequest request)
+        public virtual GetDeviceResponse GetDevice(GetDeviceRequest request)
         {
             var marshaller = new GetDeviceRequestMarshaller();
             var unmarshaller = GetDeviceResponseUnmarshaller.Instance;
@@ -1135,7 +1135,7 @@ namespace Amazon.DeviceFarm
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDevice
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDevice">REST API Reference for GetDevice Operation</seealso>
-        public IAsyncResult BeginGetDevice(GetDeviceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetDevice(GetDeviceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetDeviceRequestMarshaller();
             var unmarshaller = GetDeviceResponseUnmarshaller.Instance;
@@ -1152,7 +1152,7 @@ namespace Amazon.DeviceFarm
         /// 
         /// <returns>Returns a  GetDeviceResult from DeviceFarm.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDevice">REST API Reference for GetDevice Operation</seealso>
-        public  GetDeviceResponse EndGetDevice(IAsyncResult asyncResult)
+        public virtual GetDeviceResponse EndGetDevice(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDeviceResponse>(asyncResult);
         }
@@ -1180,7 +1180,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDevicePool">REST API Reference for GetDevicePool Operation</seealso>
-        public GetDevicePoolResponse GetDevicePool(string arn)
+        public virtual GetDevicePoolResponse GetDevicePool(string arn)
         {
             var request = new GetDevicePoolRequest();
             request.Arn = arn;
@@ -1207,7 +1207,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDevicePool">REST API Reference for GetDevicePool Operation</seealso>
-        public GetDevicePoolResponse GetDevicePool(GetDevicePoolRequest request)
+        public virtual GetDevicePoolResponse GetDevicePool(GetDevicePoolRequest request)
         {
             var marshaller = new GetDevicePoolRequestMarshaller();
             var unmarshaller = GetDevicePoolResponseUnmarshaller.Instance;
@@ -1227,7 +1227,7 @@ namespace Amazon.DeviceFarm
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDevicePool
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDevicePool">REST API Reference for GetDevicePool Operation</seealso>
-        public IAsyncResult BeginGetDevicePool(GetDevicePoolRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetDevicePool(GetDevicePoolRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetDevicePoolRequestMarshaller();
             var unmarshaller = GetDevicePoolResponseUnmarshaller.Instance;
@@ -1244,7 +1244,7 @@ namespace Amazon.DeviceFarm
         /// 
         /// <returns>Returns a  GetDevicePoolResult from DeviceFarm.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDevicePool">REST API Reference for GetDevicePool Operation</seealso>
-        public  GetDevicePoolResponse EndGetDevicePool(IAsyncResult asyncResult)
+        public virtual GetDevicePoolResponse EndGetDevicePool(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDevicePoolResponse>(asyncResult);
         }
@@ -1272,7 +1272,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDevicePoolCompatibility">REST API Reference for GetDevicePoolCompatibility Operation</seealso>
-        public GetDevicePoolCompatibilityResponse GetDevicePoolCompatibility(GetDevicePoolCompatibilityRequest request)
+        public virtual GetDevicePoolCompatibilityResponse GetDevicePoolCompatibility(GetDevicePoolCompatibilityRequest request)
         {
             var marshaller = new GetDevicePoolCompatibilityRequestMarshaller();
             var unmarshaller = GetDevicePoolCompatibilityResponseUnmarshaller.Instance;
@@ -1292,7 +1292,7 @@ namespace Amazon.DeviceFarm
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDevicePoolCompatibility
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDevicePoolCompatibility">REST API Reference for GetDevicePoolCompatibility Operation</seealso>
-        public IAsyncResult BeginGetDevicePoolCompatibility(GetDevicePoolCompatibilityRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetDevicePoolCompatibility(GetDevicePoolCompatibilityRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetDevicePoolCompatibilityRequestMarshaller();
             var unmarshaller = GetDevicePoolCompatibilityResponseUnmarshaller.Instance;
@@ -1309,7 +1309,7 @@ namespace Amazon.DeviceFarm
         /// 
         /// <returns>Returns a  GetDevicePoolCompatibilityResult from DeviceFarm.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDevicePoolCompatibility">REST API Reference for GetDevicePoolCompatibility Operation</seealso>
-        public  GetDevicePoolCompatibilityResponse EndGetDevicePoolCompatibility(IAsyncResult asyncResult)
+        public virtual GetDevicePoolCompatibilityResponse EndGetDevicePoolCompatibility(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDevicePoolCompatibilityResponse>(asyncResult);
         }
@@ -1337,7 +1337,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetJob">REST API Reference for GetJob Operation</seealso>
-        public GetJobResponse GetJob(string arn)
+        public virtual GetJobResponse GetJob(string arn)
         {
             var request = new GetJobRequest();
             request.Arn = arn;
@@ -1364,7 +1364,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetJob">REST API Reference for GetJob Operation</seealso>
-        public GetJobResponse GetJob(GetJobRequest request)
+        public virtual GetJobResponse GetJob(GetJobRequest request)
         {
             var marshaller = new GetJobRequestMarshaller();
             var unmarshaller = GetJobResponseUnmarshaller.Instance;
@@ -1384,7 +1384,7 @@ namespace Amazon.DeviceFarm
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetJob
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetJob">REST API Reference for GetJob Operation</seealso>
-        public IAsyncResult BeginGetJob(GetJobRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetJob(GetJobRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetJobRequestMarshaller();
             var unmarshaller = GetJobResponseUnmarshaller.Instance;
@@ -1401,7 +1401,7 @@ namespace Amazon.DeviceFarm
         /// 
         /// <returns>Returns a  GetJobResult from DeviceFarm.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetJob">REST API Reference for GetJob Operation</seealso>
-        public  GetJobResponse EndGetJob(IAsyncResult asyncResult)
+        public virtual GetJobResponse EndGetJob(IAsyncResult asyncResult)
         {
             return EndInvoke<GetJobResponse>(asyncResult);
         }
@@ -1429,7 +1429,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetNetworkProfile">REST API Reference for GetNetworkProfile Operation</seealso>
-        public GetNetworkProfileResponse GetNetworkProfile(GetNetworkProfileRequest request)
+        public virtual GetNetworkProfileResponse GetNetworkProfile(GetNetworkProfileRequest request)
         {
             var marshaller = new GetNetworkProfileRequestMarshaller();
             var unmarshaller = GetNetworkProfileResponseUnmarshaller.Instance;
@@ -1449,7 +1449,7 @@ namespace Amazon.DeviceFarm
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetNetworkProfile
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetNetworkProfile">REST API Reference for GetNetworkProfile Operation</seealso>
-        public IAsyncResult BeginGetNetworkProfile(GetNetworkProfileRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetNetworkProfile(GetNetworkProfileRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetNetworkProfileRequestMarshaller();
             var unmarshaller = GetNetworkProfileResponseUnmarshaller.Instance;
@@ -1466,7 +1466,7 @@ namespace Amazon.DeviceFarm
         /// 
         /// <returns>Returns a  GetNetworkProfileResult from DeviceFarm.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetNetworkProfile">REST API Reference for GetNetworkProfile Operation</seealso>
-        public  GetNetworkProfileResponse EndGetNetworkProfile(IAsyncResult asyncResult)
+        public virtual GetNetworkProfileResponse EndGetNetworkProfile(IAsyncResult asyncResult)
         {
             return EndInvoke<GetNetworkProfileResponse>(asyncResult);
         }
@@ -1501,7 +1501,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetOfferingStatus">REST API Reference for GetOfferingStatus Operation</seealso>
-        public GetOfferingStatusResponse GetOfferingStatus(GetOfferingStatusRequest request)
+        public virtual GetOfferingStatusResponse GetOfferingStatus(GetOfferingStatusRequest request)
         {
             var marshaller = new GetOfferingStatusRequestMarshaller();
             var unmarshaller = GetOfferingStatusResponseUnmarshaller.Instance;
@@ -1521,7 +1521,7 @@ namespace Amazon.DeviceFarm
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetOfferingStatus
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetOfferingStatus">REST API Reference for GetOfferingStatus Operation</seealso>
-        public IAsyncResult BeginGetOfferingStatus(GetOfferingStatusRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetOfferingStatus(GetOfferingStatusRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetOfferingStatusRequestMarshaller();
             var unmarshaller = GetOfferingStatusResponseUnmarshaller.Instance;
@@ -1538,7 +1538,7 @@ namespace Amazon.DeviceFarm
         /// 
         /// <returns>Returns a  GetOfferingStatusResult from DeviceFarm.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetOfferingStatus">REST API Reference for GetOfferingStatus Operation</seealso>
-        public  GetOfferingStatusResponse EndGetOfferingStatus(IAsyncResult asyncResult)
+        public virtual GetOfferingStatusResponse EndGetOfferingStatus(IAsyncResult asyncResult)
         {
             return EndInvoke<GetOfferingStatusResponse>(asyncResult);
         }
@@ -1566,7 +1566,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetProject">REST API Reference for GetProject Operation</seealso>
-        public GetProjectResponse GetProject(string arn)
+        public virtual GetProjectResponse GetProject(string arn)
         {
             var request = new GetProjectRequest();
             request.Arn = arn;
@@ -1593,7 +1593,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetProject">REST API Reference for GetProject Operation</seealso>
-        public GetProjectResponse GetProject(GetProjectRequest request)
+        public virtual GetProjectResponse GetProject(GetProjectRequest request)
         {
             var marshaller = new GetProjectRequestMarshaller();
             var unmarshaller = GetProjectResponseUnmarshaller.Instance;
@@ -1613,7 +1613,7 @@ namespace Amazon.DeviceFarm
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetProject
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetProject">REST API Reference for GetProject Operation</seealso>
-        public IAsyncResult BeginGetProject(GetProjectRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetProject(GetProjectRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetProjectRequestMarshaller();
             var unmarshaller = GetProjectResponseUnmarshaller.Instance;
@@ -1630,7 +1630,7 @@ namespace Amazon.DeviceFarm
         /// 
         /// <returns>Returns a  GetProjectResult from DeviceFarm.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetProject">REST API Reference for GetProject Operation</seealso>
-        public  GetProjectResponse EndGetProject(IAsyncResult asyncResult)
+        public virtual GetProjectResponse EndGetProject(IAsyncResult asyncResult)
         {
             return EndInvoke<GetProjectResponse>(asyncResult);
         }
@@ -1658,7 +1658,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetRemoteAccessSession">REST API Reference for GetRemoteAccessSession Operation</seealso>
-        public GetRemoteAccessSessionResponse GetRemoteAccessSession(GetRemoteAccessSessionRequest request)
+        public virtual GetRemoteAccessSessionResponse GetRemoteAccessSession(GetRemoteAccessSessionRequest request)
         {
             var marshaller = new GetRemoteAccessSessionRequestMarshaller();
             var unmarshaller = GetRemoteAccessSessionResponseUnmarshaller.Instance;
@@ -1678,7 +1678,7 @@ namespace Amazon.DeviceFarm
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRemoteAccessSession
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetRemoteAccessSession">REST API Reference for GetRemoteAccessSession Operation</seealso>
-        public IAsyncResult BeginGetRemoteAccessSession(GetRemoteAccessSessionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetRemoteAccessSession(GetRemoteAccessSessionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetRemoteAccessSessionRequestMarshaller();
             var unmarshaller = GetRemoteAccessSessionResponseUnmarshaller.Instance;
@@ -1695,7 +1695,7 @@ namespace Amazon.DeviceFarm
         /// 
         /// <returns>Returns a  GetRemoteAccessSessionResult from DeviceFarm.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetRemoteAccessSession">REST API Reference for GetRemoteAccessSession Operation</seealso>
-        public  GetRemoteAccessSessionResponse EndGetRemoteAccessSession(IAsyncResult asyncResult)
+        public virtual GetRemoteAccessSessionResponse EndGetRemoteAccessSession(IAsyncResult asyncResult)
         {
             return EndInvoke<GetRemoteAccessSessionResponse>(asyncResult);
         }
@@ -1723,7 +1723,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetRun">REST API Reference for GetRun Operation</seealso>
-        public GetRunResponse GetRun(string arn)
+        public virtual GetRunResponse GetRun(string arn)
         {
             var request = new GetRunRequest();
             request.Arn = arn;
@@ -1750,7 +1750,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetRun">REST API Reference for GetRun Operation</seealso>
-        public GetRunResponse GetRun(GetRunRequest request)
+        public virtual GetRunResponse GetRun(GetRunRequest request)
         {
             var marshaller = new GetRunRequestMarshaller();
             var unmarshaller = GetRunResponseUnmarshaller.Instance;
@@ -1770,7 +1770,7 @@ namespace Amazon.DeviceFarm
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRun
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetRun">REST API Reference for GetRun Operation</seealso>
-        public IAsyncResult BeginGetRun(GetRunRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetRun(GetRunRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetRunRequestMarshaller();
             var unmarshaller = GetRunResponseUnmarshaller.Instance;
@@ -1787,7 +1787,7 @@ namespace Amazon.DeviceFarm
         /// 
         /// <returns>Returns a  GetRunResult from DeviceFarm.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetRun">REST API Reference for GetRun Operation</seealso>
-        public  GetRunResponse EndGetRun(IAsyncResult asyncResult)
+        public virtual GetRunResponse EndGetRun(IAsyncResult asyncResult)
         {
             return EndInvoke<GetRunResponse>(asyncResult);
         }
@@ -1815,7 +1815,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetSuite">REST API Reference for GetSuite Operation</seealso>
-        public GetSuiteResponse GetSuite(string arn)
+        public virtual GetSuiteResponse GetSuite(string arn)
         {
             var request = new GetSuiteRequest();
             request.Arn = arn;
@@ -1842,7 +1842,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetSuite">REST API Reference for GetSuite Operation</seealso>
-        public GetSuiteResponse GetSuite(GetSuiteRequest request)
+        public virtual GetSuiteResponse GetSuite(GetSuiteRequest request)
         {
             var marshaller = new GetSuiteRequestMarshaller();
             var unmarshaller = GetSuiteResponseUnmarshaller.Instance;
@@ -1862,7 +1862,7 @@ namespace Amazon.DeviceFarm
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSuite
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetSuite">REST API Reference for GetSuite Operation</seealso>
-        public IAsyncResult BeginGetSuite(GetSuiteRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetSuite(GetSuiteRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetSuiteRequestMarshaller();
             var unmarshaller = GetSuiteResponseUnmarshaller.Instance;
@@ -1879,7 +1879,7 @@ namespace Amazon.DeviceFarm
         /// 
         /// <returns>Returns a  GetSuiteResult from DeviceFarm.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetSuite">REST API Reference for GetSuite Operation</seealso>
-        public  GetSuiteResponse EndGetSuite(IAsyncResult asyncResult)
+        public virtual GetSuiteResponse EndGetSuite(IAsyncResult asyncResult)
         {
             return EndInvoke<GetSuiteResponse>(asyncResult);
         }
@@ -1907,7 +1907,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetTest">REST API Reference for GetTest Operation</seealso>
-        public GetTestResponse GetTest(string arn)
+        public virtual GetTestResponse GetTest(string arn)
         {
             var request = new GetTestRequest();
             request.Arn = arn;
@@ -1934,7 +1934,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetTest">REST API Reference for GetTest Operation</seealso>
-        public GetTestResponse GetTest(GetTestRequest request)
+        public virtual GetTestResponse GetTest(GetTestRequest request)
         {
             var marshaller = new GetTestRequestMarshaller();
             var unmarshaller = GetTestResponseUnmarshaller.Instance;
@@ -1954,7 +1954,7 @@ namespace Amazon.DeviceFarm
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTest
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetTest">REST API Reference for GetTest Operation</seealso>
-        public IAsyncResult BeginGetTest(GetTestRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetTest(GetTestRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetTestRequestMarshaller();
             var unmarshaller = GetTestResponseUnmarshaller.Instance;
@@ -1971,7 +1971,7 @@ namespace Amazon.DeviceFarm
         /// 
         /// <returns>Returns a  GetTestResult from DeviceFarm.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetTest">REST API Reference for GetTest Operation</seealso>
-        public  GetTestResponse EndGetTest(IAsyncResult asyncResult)
+        public virtual GetTestResponse EndGetTest(IAsyncResult asyncResult)
         {
             return EndInvoke<GetTestResponse>(asyncResult);
         }
@@ -1999,7 +1999,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetUpload">REST API Reference for GetUpload Operation</seealso>
-        public GetUploadResponse GetUpload(string arn)
+        public virtual GetUploadResponse GetUpload(string arn)
         {
             var request = new GetUploadRequest();
             request.Arn = arn;
@@ -2026,7 +2026,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetUpload">REST API Reference for GetUpload Operation</seealso>
-        public GetUploadResponse GetUpload(GetUploadRequest request)
+        public virtual GetUploadResponse GetUpload(GetUploadRequest request)
         {
             var marshaller = new GetUploadRequestMarshaller();
             var unmarshaller = GetUploadResponseUnmarshaller.Instance;
@@ -2046,7 +2046,7 @@ namespace Amazon.DeviceFarm
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetUpload
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetUpload">REST API Reference for GetUpload Operation</seealso>
-        public IAsyncResult BeginGetUpload(GetUploadRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetUpload(GetUploadRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetUploadRequestMarshaller();
             var unmarshaller = GetUploadResponseUnmarshaller.Instance;
@@ -2063,7 +2063,7 @@ namespace Amazon.DeviceFarm
         /// 
         /// <returns>Returns a  GetUploadResult from DeviceFarm.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetUpload">REST API Reference for GetUpload Operation</seealso>
-        public  GetUploadResponse EndGetUpload(IAsyncResult asyncResult)
+        public virtual GetUploadResponse EndGetUpload(IAsyncResult asyncResult)
         {
             return EndInvoke<GetUploadResponse>(asyncResult);
         }
@@ -2092,7 +2092,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/InstallToRemoteAccessSession">REST API Reference for InstallToRemoteAccessSession Operation</seealso>
-        public InstallToRemoteAccessSessionResponse InstallToRemoteAccessSession(InstallToRemoteAccessSessionRequest request)
+        public virtual InstallToRemoteAccessSessionResponse InstallToRemoteAccessSession(InstallToRemoteAccessSessionRequest request)
         {
             var marshaller = new InstallToRemoteAccessSessionRequestMarshaller();
             var unmarshaller = InstallToRemoteAccessSessionResponseUnmarshaller.Instance;
@@ -2112,7 +2112,7 @@ namespace Amazon.DeviceFarm
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndInstallToRemoteAccessSession
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/InstallToRemoteAccessSession">REST API Reference for InstallToRemoteAccessSession Operation</seealso>
-        public IAsyncResult BeginInstallToRemoteAccessSession(InstallToRemoteAccessSessionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginInstallToRemoteAccessSession(InstallToRemoteAccessSessionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new InstallToRemoteAccessSessionRequestMarshaller();
             var unmarshaller = InstallToRemoteAccessSessionResponseUnmarshaller.Instance;
@@ -2129,7 +2129,7 @@ namespace Amazon.DeviceFarm
         /// 
         /// <returns>Returns a  InstallToRemoteAccessSessionResult from DeviceFarm.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/InstallToRemoteAccessSession">REST API Reference for InstallToRemoteAccessSession Operation</seealso>
-        public  InstallToRemoteAccessSessionResponse EndInstallToRemoteAccessSession(IAsyncResult asyncResult)
+        public virtual InstallToRemoteAccessSessionResponse EndInstallToRemoteAccessSession(IAsyncResult asyncResult)
         {
             return EndInvoke<InstallToRemoteAccessSessionResponse>(asyncResult);
         }
@@ -2157,7 +2157,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListArtifacts">REST API Reference for ListArtifacts Operation</seealso>
-        public ListArtifactsResponse ListArtifacts(ListArtifactsRequest request)
+        public virtual ListArtifactsResponse ListArtifacts(ListArtifactsRequest request)
         {
             var marshaller = new ListArtifactsRequestMarshaller();
             var unmarshaller = ListArtifactsResponseUnmarshaller.Instance;
@@ -2177,7 +2177,7 @@ namespace Amazon.DeviceFarm
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListArtifacts
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListArtifacts">REST API Reference for ListArtifacts Operation</seealso>
-        public IAsyncResult BeginListArtifacts(ListArtifactsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListArtifacts(ListArtifactsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListArtifactsRequestMarshaller();
             var unmarshaller = ListArtifactsResponseUnmarshaller.Instance;
@@ -2194,7 +2194,7 @@ namespace Amazon.DeviceFarm
         /// 
         /// <returns>Returns a  ListArtifactsResult from DeviceFarm.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListArtifacts">REST API Reference for ListArtifacts Operation</seealso>
-        public  ListArtifactsResponse EndListArtifacts(IAsyncResult asyncResult)
+        public virtual ListArtifactsResponse EndListArtifacts(IAsyncResult asyncResult)
         {
             return EndInvoke<ListArtifactsResponse>(asyncResult);
         }
@@ -2222,7 +2222,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListDevicePools">REST API Reference for ListDevicePools Operation</seealso>
-        public ListDevicePoolsResponse ListDevicePools(ListDevicePoolsRequest request)
+        public virtual ListDevicePoolsResponse ListDevicePools(ListDevicePoolsRequest request)
         {
             var marshaller = new ListDevicePoolsRequestMarshaller();
             var unmarshaller = ListDevicePoolsResponseUnmarshaller.Instance;
@@ -2242,7 +2242,7 @@ namespace Amazon.DeviceFarm
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDevicePools
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListDevicePools">REST API Reference for ListDevicePools Operation</seealso>
-        public IAsyncResult BeginListDevicePools(ListDevicePoolsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListDevicePools(ListDevicePoolsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListDevicePoolsRequestMarshaller();
             var unmarshaller = ListDevicePoolsResponseUnmarshaller.Instance;
@@ -2259,7 +2259,7 @@ namespace Amazon.DeviceFarm
         /// 
         /// <returns>Returns a  ListDevicePoolsResult from DeviceFarm.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListDevicePools">REST API Reference for ListDevicePools Operation</seealso>
-        public  ListDevicePoolsResponse EndListDevicePools(IAsyncResult asyncResult)
+        public virtual ListDevicePoolsResponse EndListDevicePools(IAsyncResult asyncResult)
         {
             return EndInvoke<ListDevicePoolsResponse>(asyncResult);
         }
@@ -2287,7 +2287,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListDevices">REST API Reference for ListDevices Operation</seealso>
-        public ListDevicesResponse ListDevices(ListDevicesRequest request)
+        public virtual ListDevicesResponse ListDevices(ListDevicesRequest request)
         {
             var marshaller = new ListDevicesRequestMarshaller();
             var unmarshaller = ListDevicesResponseUnmarshaller.Instance;
@@ -2307,7 +2307,7 @@ namespace Amazon.DeviceFarm
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDevices
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListDevices">REST API Reference for ListDevices Operation</seealso>
-        public IAsyncResult BeginListDevices(ListDevicesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListDevices(ListDevicesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListDevicesRequestMarshaller();
             var unmarshaller = ListDevicesResponseUnmarshaller.Instance;
@@ -2324,7 +2324,7 @@ namespace Amazon.DeviceFarm
         /// 
         /// <returns>Returns a  ListDevicesResult from DeviceFarm.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListDevices">REST API Reference for ListDevices Operation</seealso>
-        public  ListDevicesResponse EndListDevices(IAsyncResult asyncResult)
+        public virtual ListDevicesResponse EndListDevices(IAsyncResult asyncResult)
         {
             return EndInvoke<ListDevicesResponse>(asyncResult);
         }
@@ -2352,7 +2352,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListJobs">REST API Reference for ListJobs Operation</seealso>
-        public ListJobsResponse ListJobs(ListJobsRequest request)
+        public virtual ListJobsResponse ListJobs(ListJobsRequest request)
         {
             var marshaller = new ListJobsRequestMarshaller();
             var unmarshaller = ListJobsResponseUnmarshaller.Instance;
@@ -2372,7 +2372,7 @@ namespace Amazon.DeviceFarm
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListJobs
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListJobs">REST API Reference for ListJobs Operation</seealso>
-        public IAsyncResult BeginListJobs(ListJobsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListJobs(ListJobsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListJobsRequestMarshaller();
             var unmarshaller = ListJobsResponseUnmarshaller.Instance;
@@ -2389,7 +2389,7 @@ namespace Amazon.DeviceFarm
         /// 
         /// <returns>Returns a  ListJobsResult from DeviceFarm.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListJobs">REST API Reference for ListJobs Operation</seealso>
-        public  ListJobsResponse EndListJobs(IAsyncResult asyncResult)
+        public virtual ListJobsResponse EndListJobs(IAsyncResult asyncResult)
         {
             return EndInvoke<ListJobsResponse>(asyncResult);
         }
@@ -2417,7 +2417,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListNetworkProfiles">REST API Reference for ListNetworkProfiles Operation</seealso>
-        public ListNetworkProfilesResponse ListNetworkProfiles(ListNetworkProfilesRequest request)
+        public virtual ListNetworkProfilesResponse ListNetworkProfiles(ListNetworkProfilesRequest request)
         {
             var marshaller = new ListNetworkProfilesRequestMarshaller();
             var unmarshaller = ListNetworkProfilesResponseUnmarshaller.Instance;
@@ -2437,7 +2437,7 @@ namespace Amazon.DeviceFarm
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListNetworkProfiles
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListNetworkProfiles">REST API Reference for ListNetworkProfiles Operation</seealso>
-        public IAsyncResult BeginListNetworkProfiles(ListNetworkProfilesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListNetworkProfiles(ListNetworkProfilesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListNetworkProfilesRequestMarshaller();
             var unmarshaller = ListNetworkProfilesResponseUnmarshaller.Instance;
@@ -2454,7 +2454,7 @@ namespace Amazon.DeviceFarm
         /// 
         /// <returns>Returns a  ListNetworkProfilesResult from DeviceFarm.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListNetworkProfiles">REST API Reference for ListNetworkProfiles Operation</seealso>
-        public  ListNetworkProfilesResponse EndListNetworkProfiles(IAsyncResult asyncResult)
+        public virtual ListNetworkProfilesResponse EndListNetworkProfiles(IAsyncResult asyncResult)
         {
             return EndInvoke<ListNetworkProfilesResponse>(asyncResult);
         }
@@ -2488,7 +2488,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferingPromotions">REST API Reference for ListOfferingPromotions Operation</seealso>
-        public ListOfferingPromotionsResponse ListOfferingPromotions(ListOfferingPromotionsRequest request)
+        public virtual ListOfferingPromotionsResponse ListOfferingPromotions(ListOfferingPromotionsRequest request)
         {
             var marshaller = new ListOfferingPromotionsRequestMarshaller();
             var unmarshaller = ListOfferingPromotionsResponseUnmarshaller.Instance;
@@ -2508,7 +2508,7 @@ namespace Amazon.DeviceFarm
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListOfferingPromotions
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferingPromotions">REST API Reference for ListOfferingPromotions Operation</seealso>
-        public IAsyncResult BeginListOfferingPromotions(ListOfferingPromotionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListOfferingPromotions(ListOfferingPromotionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListOfferingPromotionsRequestMarshaller();
             var unmarshaller = ListOfferingPromotionsResponseUnmarshaller.Instance;
@@ -2525,7 +2525,7 @@ namespace Amazon.DeviceFarm
         /// 
         /// <returns>Returns a  ListOfferingPromotionsResult from DeviceFarm.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferingPromotions">REST API Reference for ListOfferingPromotions Operation</seealso>
-        public  ListOfferingPromotionsResponse EndListOfferingPromotions(IAsyncResult asyncResult)
+        public virtual ListOfferingPromotionsResponse EndListOfferingPromotions(IAsyncResult asyncResult)
         {
             return EndInvoke<ListOfferingPromotionsResponse>(asyncResult);
         }
@@ -2560,7 +2560,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferings">REST API Reference for ListOfferings Operation</seealso>
-        public ListOfferingsResponse ListOfferings(ListOfferingsRequest request)
+        public virtual ListOfferingsResponse ListOfferings(ListOfferingsRequest request)
         {
             var marshaller = new ListOfferingsRequestMarshaller();
             var unmarshaller = ListOfferingsResponseUnmarshaller.Instance;
@@ -2580,7 +2580,7 @@ namespace Amazon.DeviceFarm
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListOfferings
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferings">REST API Reference for ListOfferings Operation</seealso>
-        public IAsyncResult BeginListOfferings(ListOfferingsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListOfferings(ListOfferingsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListOfferingsRequestMarshaller();
             var unmarshaller = ListOfferingsResponseUnmarshaller.Instance;
@@ -2597,7 +2597,7 @@ namespace Amazon.DeviceFarm
         /// 
         /// <returns>Returns a  ListOfferingsResult from DeviceFarm.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferings">REST API Reference for ListOfferings Operation</seealso>
-        public  ListOfferingsResponse EndListOfferings(IAsyncResult asyncResult)
+        public virtual ListOfferingsResponse EndListOfferings(IAsyncResult asyncResult)
         {
             return EndInvoke<ListOfferingsResponse>(asyncResult);
         }
@@ -2632,7 +2632,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferingTransactions">REST API Reference for ListOfferingTransactions Operation</seealso>
-        public ListOfferingTransactionsResponse ListOfferingTransactions(ListOfferingTransactionsRequest request)
+        public virtual ListOfferingTransactionsResponse ListOfferingTransactions(ListOfferingTransactionsRequest request)
         {
             var marshaller = new ListOfferingTransactionsRequestMarshaller();
             var unmarshaller = ListOfferingTransactionsResponseUnmarshaller.Instance;
@@ -2652,7 +2652,7 @@ namespace Amazon.DeviceFarm
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListOfferingTransactions
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferingTransactions">REST API Reference for ListOfferingTransactions Operation</seealso>
-        public IAsyncResult BeginListOfferingTransactions(ListOfferingTransactionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListOfferingTransactions(ListOfferingTransactionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListOfferingTransactionsRequestMarshaller();
             var unmarshaller = ListOfferingTransactionsResponseUnmarshaller.Instance;
@@ -2669,7 +2669,7 @@ namespace Amazon.DeviceFarm
         /// 
         /// <returns>Returns a  ListOfferingTransactionsResult from DeviceFarm.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferingTransactions">REST API Reference for ListOfferingTransactions Operation</seealso>
-        public  ListOfferingTransactionsResponse EndListOfferingTransactions(IAsyncResult asyncResult)
+        public virtual ListOfferingTransactionsResponse EndListOfferingTransactions(IAsyncResult asyncResult)
         {
             return EndInvoke<ListOfferingTransactionsResponse>(asyncResult);
         }
@@ -2697,7 +2697,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListProjects">REST API Reference for ListProjects Operation</seealso>
-        public ListProjectsResponse ListProjects(ListProjectsRequest request)
+        public virtual ListProjectsResponse ListProjects(ListProjectsRequest request)
         {
             var marshaller = new ListProjectsRequestMarshaller();
             var unmarshaller = ListProjectsResponseUnmarshaller.Instance;
@@ -2717,7 +2717,7 @@ namespace Amazon.DeviceFarm
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListProjects
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListProjects">REST API Reference for ListProjects Operation</seealso>
-        public IAsyncResult BeginListProjects(ListProjectsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListProjects(ListProjectsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListProjectsRequestMarshaller();
             var unmarshaller = ListProjectsResponseUnmarshaller.Instance;
@@ -2734,7 +2734,7 @@ namespace Amazon.DeviceFarm
         /// 
         /// <returns>Returns a  ListProjectsResult from DeviceFarm.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListProjects">REST API Reference for ListProjects Operation</seealso>
-        public  ListProjectsResponse EndListProjects(IAsyncResult asyncResult)
+        public virtual ListProjectsResponse EndListProjects(IAsyncResult asyncResult)
         {
             return EndInvoke<ListProjectsResponse>(asyncResult);
         }
@@ -2762,7 +2762,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListRemoteAccessSessions">REST API Reference for ListRemoteAccessSessions Operation</seealso>
-        public ListRemoteAccessSessionsResponse ListRemoteAccessSessions(ListRemoteAccessSessionsRequest request)
+        public virtual ListRemoteAccessSessionsResponse ListRemoteAccessSessions(ListRemoteAccessSessionsRequest request)
         {
             var marshaller = new ListRemoteAccessSessionsRequestMarshaller();
             var unmarshaller = ListRemoteAccessSessionsResponseUnmarshaller.Instance;
@@ -2782,7 +2782,7 @@ namespace Amazon.DeviceFarm
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListRemoteAccessSessions
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListRemoteAccessSessions">REST API Reference for ListRemoteAccessSessions Operation</seealso>
-        public IAsyncResult BeginListRemoteAccessSessions(ListRemoteAccessSessionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListRemoteAccessSessions(ListRemoteAccessSessionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListRemoteAccessSessionsRequestMarshaller();
             var unmarshaller = ListRemoteAccessSessionsResponseUnmarshaller.Instance;
@@ -2799,7 +2799,7 @@ namespace Amazon.DeviceFarm
         /// 
         /// <returns>Returns a  ListRemoteAccessSessionsResult from DeviceFarm.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListRemoteAccessSessions">REST API Reference for ListRemoteAccessSessions Operation</seealso>
-        public  ListRemoteAccessSessionsResponse EndListRemoteAccessSessions(IAsyncResult asyncResult)
+        public virtual ListRemoteAccessSessionsResponse EndListRemoteAccessSessions(IAsyncResult asyncResult)
         {
             return EndInvoke<ListRemoteAccessSessionsResponse>(asyncResult);
         }
@@ -2827,7 +2827,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListRuns">REST API Reference for ListRuns Operation</seealso>
-        public ListRunsResponse ListRuns(ListRunsRequest request)
+        public virtual ListRunsResponse ListRuns(ListRunsRequest request)
         {
             var marshaller = new ListRunsRequestMarshaller();
             var unmarshaller = ListRunsResponseUnmarshaller.Instance;
@@ -2847,7 +2847,7 @@ namespace Amazon.DeviceFarm
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListRuns
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListRuns">REST API Reference for ListRuns Operation</seealso>
-        public IAsyncResult BeginListRuns(ListRunsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListRuns(ListRunsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListRunsRequestMarshaller();
             var unmarshaller = ListRunsResponseUnmarshaller.Instance;
@@ -2864,7 +2864,7 @@ namespace Amazon.DeviceFarm
         /// 
         /// <returns>Returns a  ListRunsResult from DeviceFarm.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListRuns">REST API Reference for ListRuns Operation</seealso>
-        public  ListRunsResponse EndListRuns(IAsyncResult asyncResult)
+        public virtual ListRunsResponse EndListRuns(IAsyncResult asyncResult)
         {
             return EndInvoke<ListRunsResponse>(asyncResult);
         }
@@ -2892,7 +2892,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListSamples">REST API Reference for ListSamples Operation</seealso>
-        public ListSamplesResponse ListSamples(ListSamplesRequest request)
+        public virtual ListSamplesResponse ListSamples(ListSamplesRequest request)
         {
             var marshaller = new ListSamplesRequestMarshaller();
             var unmarshaller = ListSamplesResponseUnmarshaller.Instance;
@@ -2912,7 +2912,7 @@ namespace Amazon.DeviceFarm
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSamples
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListSamples">REST API Reference for ListSamples Operation</seealso>
-        public IAsyncResult BeginListSamples(ListSamplesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListSamples(ListSamplesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListSamplesRequestMarshaller();
             var unmarshaller = ListSamplesResponseUnmarshaller.Instance;
@@ -2929,7 +2929,7 @@ namespace Amazon.DeviceFarm
         /// 
         /// <returns>Returns a  ListSamplesResult from DeviceFarm.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListSamples">REST API Reference for ListSamples Operation</seealso>
-        public  ListSamplesResponse EndListSamples(IAsyncResult asyncResult)
+        public virtual ListSamplesResponse EndListSamples(IAsyncResult asyncResult)
         {
             return EndInvoke<ListSamplesResponse>(asyncResult);
         }
@@ -2957,7 +2957,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListSuites">REST API Reference for ListSuites Operation</seealso>
-        public ListSuitesResponse ListSuites(ListSuitesRequest request)
+        public virtual ListSuitesResponse ListSuites(ListSuitesRequest request)
         {
             var marshaller = new ListSuitesRequestMarshaller();
             var unmarshaller = ListSuitesResponseUnmarshaller.Instance;
@@ -2977,7 +2977,7 @@ namespace Amazon.DeviceFarm
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSuites
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListSuites">REST API Reference for ListSuites Operation</seealso>
-        public IAsyncResult BeginListSuites(ListSuitesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListSuites(ListSuitesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListSuitesRequestMarshaller();
             var unmarshaller = ListSuitesResponseUnmarshaller.Instance;
@@ -2994,7 +2994,7 @@ namespace Amazon.DeviceFarm
         /// 
         /// <returns>Returns a  ListSuitesResult from DeviceFarm.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListSuites">REST API Reference for ListSuites Operation</seealso>
-        public  ListSuitesResponse EndListSuites(IAsyncResult asyncResult)
+        public virtual ListSuitesResponse EndListSuites(IAsyncResult asyncResult)
         {
             return EndInvoke<ListSuitesResponse>(asyncResult);
         }
@@ -3022,7 +3022,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTests">REST API Reference for ListTests Operation</seealso>
-        public ListTestsResponse ListTests(ListTestsRequest request)
+        public virtual ListTestsResponse ListTests(ListTestsRequest request)
         {
             var marshaller = new ListTestsRequestMarshaller();
             var unmarshaller = ListTestsResponseUnmarshaller.Instance;
@@ -3042,7 +3042,7 @@ namespace Amazon.DeviceFarm
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTests
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTests">REST API Reference for ListTests Operation</seealso>
-        public IAsyncResult BeginListTests(ListTestsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListTests(ListTestsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListTestsRequestMarshaller();
             var unmarshaller = ListTestsResponseUnmarshaller.Instance;
@@ -3059,7 +3059,7 @@ namespace Amazon.DeviceFarm
         /// 
         /// <returns>Returns a  ListTestsResult from DeviceFarm.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTests">REST API Reference for ListTests Operation</seealso>
-        public  ListTestsResponse EndListTests(IAsyncResult asyncResult)
+        public virtual ListTestsResponse EndListTests(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTestsResponse>(asyncResult);
         }
@@ -3087,7 +3087,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListUniqueProblems">REST API Reference for ListUniqueProblems Operation</seealso>
-        public ListUniqueProblemsResponse ListUniqueProblems(ListUniqueProblemsRequest request)
+        public virtual ListUniqueProblemsResponse ListUniqueProblems(ListUniqueProblemsRequest request)
         {
             var marshaller = new ListUniqueProblemsRequestMarshaller();
             var unmarshaller = ListUniqueProblemsResponseUnmarshaller.Instance;
@@ -3107,7 +3107,7 @@ namespace Amazon.DeviceFarm
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListUniqueProblems
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListUniqueProblems">REST API Reference for ListUniqueProblems Operation</seealso>
-        public IAsyncResult BeginListUniqueProblems(ListUniqueProblemsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListUniqueProblems(ListUniqueProblemsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListUniqueProblemsRequestMarshaller();
             var unmarshaller = ListUniqueProblemsResponseUnmarshaller.Instance;
@@ -3124,7 +3124,7 @@ namespace Amazon.DeviceFarm
         /// 
         /// <returns>Returns a  ListUniqueProblemsResult from DeviceFarm.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListUniqueProblems">REST API Reference for ListUniqueProblems Operation</seealso>
-        public  ListUniqueProblemsResponse EndListUniqueProblems(IAsyncResult asyncResult)
+        public virtual ListUniqueProblemsResponse EndListUniqueProblems(IAsyncResult asyncResult)
         {
             return EndInvoke<ListUniqueProblemsResponse>(asyncResult);
         }
@@ -3152,7 +3152,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListUploads">REST API Reference for ListUploads Operation</seealso>
-        public ListUploadsResponse ListUploads(ListUploadsRequest request)
+        public virtual ListUploadsResponse ListUploads(ListUploadsRequest request)
         {
             var marshaller = new ListUploadsRequestMarshaller();
             var unmarshaller = ListUploadsResponseUnmarshaller.Instance;
@@ -3172,7 +3172,7 @@ namespace Amazon.DeviceFarm
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListUploads
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListUploads">REST API Reference for ListUploads Operation</seealso>
-        public IAsyncResult BeginListUploads(ListUploadsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListUploads(ListUploadsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListUploadsRequestMarshaller();
             var unmarshaller = ListUploadsResponseUnmarshaller.Instance;
@@ -3189,7 +3189,7 @@ namespace Amazon.DeviceFarm
         /// 
         /// <returns>Returns a  ListUploadsResult from DeviceFarm.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListUploads">REST API Reference for ListUploads Operation</seealso>
-        public  ListUploadsResponse EndListUploads(IAsyncResult asyncResult)
+        public virtual ListUploadsResponse EndListUploads(IAsyncResult asyncResult)
         {
             return EndInvoke<ListUploadsResponse>(asyncResult);
         }
@@ -3224,7 +3224,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/PurchaseOffering">REST API Reference for PurchaseOffering Operation</seealso>
-        public PurchaseOfferingResponse PurchaseOffering(PurchaseOfferingRequest request)
+        public virtual PurchaseOfferingResponse PurchaseOffering(PurchaseOfferingRequest request)
         {
             var marshaller = new PurchaseOfferingRequestMarshaller();
             var unmarshaller = PurchaseOfferingResponseUnmarshaller.Instance;
@@ -3244,7 +3244,7 @@ namespace Amazon.DeviceFarm
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPurchaseOffering
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/PurchaseOffering">REST API Reference for PurchaseOffering Operation</seealso>
-        public IAsyncResult BeginPurchaseOffering(PurchaseOfferingRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPurchaseOffering(PurchaseOfferingRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PurchaseOfferingRequestMarshaller();
             var unmarshaller = PurchaseOfferingResponseUnmarshaller.Instance;
@@ -3261,7 +3261,7 @@ namespace Amazon.DeviceFarm
         /// 
         /// <returns>Returns a  PurchaseOfferingResult from DeviceFarm.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/PurchaseOffering">REST API Reference for PurchaseOffering Operation</seealso>
-        public  PurchaseOfferingResponse EndPurchaseOffering(IAsyncResult asyncResult)
+        public virtual PurchaseOfferingResponse EndPurchaseOffering(IAsyncResult asyncResult)
         {
             return EndInvoke<PurchaseOfferingResponse>(asyncResult);
         }
@@ -3295,7 +3295,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/RenewOffering">REST API Reference for RenewOffering Operation</seealso>
-        public RenewOfferingResponse RenewOffering(RenewOfferingRequest request)
+        public virtual RenewOfferingResponse RenewOffering(RenewOfferingRequest request)
         {
             var marshaller = new RenewOfferingRequestMarshaller();
             var unmarshaller = RenewOfferingResponseUnmarshaller.Instance;
@@ -3315,7 +3315,7 @@ namespace Amazon.DeviceFarm
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRenewOffering
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/RenewOffering">REST API Reference for RenewOffering Operation</seealso>
-        public IAsyncResult BeginRenewOffering(RenewOfferingRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginRenewOffering(RenewOfferingRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RenewOfferingRequestMarshaller();
             var unmarshaller = RenewOfferingResponseUnmarshaller.Instance;
@@ -3332,7 +3332,7 @@ namespace Amazon.DeviceFarm
         /// 
         /// <returns>Returns a  RenewOfferingResult from DeviceFarm.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/RenewOffering">REST API Reference for RenewOffering Operation</seealso>
-        public  RenewOfferingResponse EndRenewOffering(IAsyncResult asyncResult)
+        public virtual RenewOfferingResponse EndRenewOffering(IAsyncResult asyncResult)
         {
             return EndInvoke<RenewOfferingResponse>(asyncResult);
         }
@@ -3363,7 +3363,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ScheduleRun">REST API Reference for ScheduleRun Operation</seealso>
-        public ScheduleRunResponse ScheduleRun(ScheduleRunRequest request)
+        public virtual ScheduleRunResponse ScheduleRun(ScheduleRunRequest request)
         {
             var marshaller = new ScheduleRunRequestMarshaller();
             var unmarshaller = ScheduleRunResponseUnmarshaller.Instance;
@@ -3383,7 +3383,7 @@ namespace Amazon.DeviceFarm
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndScheduleRun
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ScheduleRun">REST API Reference for ScheduleRun Operation</seealso>
-        public IAsyncResult BeginScheduleRun(ScheduleRunRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginScheduleRun(ScheduleRunRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ScheduleRunRequestMarshaller();
             var unmarshaller = ScheduleRunResponseUnmarshaller.Instance;
@@ -3400,7 +3400,7 @@ namespace Amazon.DeviceFarm
         /// 
         /// <returns>Returns a  ScheduleRunResult from DeviceFarm.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ScheduleRun">REST API Reference for ScheduleRun Operation</seealso>
-        public  ScheduleRunResponse EndScheduleRun(IAsyncResult asyncResult)
+        public virtual ScheduleRunResponse EndScheduleRun(IAsyncResult asyncResult)
         {
             return EndInvoke<ScheduleRunResponse>(asyncResult);
         }
@@ -3428,7 +3428,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopRemoteAccessSession">REST API Reference for StopRemoteAccessSession Operation</seealso>
-        public StopRemoteAccessSessionResponse StopRemoteAccessSession(StopRemoteAccessSessionRequest request)
+        public virtual StopRemoteAccessSessionResponse StopRemoteAccessSession(StopRemoteAccessSessionRequest request)
         {
             var marshaller = new StopRemoteAccessSessionRequestMarshaller();
             var unmarshaller = StopRemoteAccessSessionResponseUnmarshaller.Instance;
@@ -3448,7 +3448,7 @@ namespace Amazon.DeviceFarm
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopRemoteAccessSession
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopRemoteAccessSession">REST API Reference for StopRemoteAccessSession Operation</seealso>
-        public IAsyncResult BeginStopRemoteAccessSession(StopRemoteAccessSessionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginStopRemoteAccessSession(StopRemoteAccessSessionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new StopRemoteAccessSessionRequestMarshaller();
             var unmarshaller = StopRemoteAccessSessionResponseUnmarshaller.Instance;
@@ -3465,7 +3465,7 @@ namespace Amazon.DeviceFarm
         /// 
         /// <returns>Returns a  StopRemoteAccessSessionResult from DeviceFarm.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopRemoteAccessSession">REST API Reference for StopRemoteAccessSession Operation</seealso>
-        public  StopRemoteAccessSessionResponse EndStopRemoteAccessSession(IAsyncResult asyncResult)
+        public virtual StopRemoteAccessSessionResponse EndStopRemoteAccessSession(IAsyncResult asyncResult)
         {
             return EndInvoke<StopRemoteAccessSessionResponse>(asyncResult);
         }
@@ -3498,7 +3498,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopRun">REST API Reference for StopRun Operation</seealso>
-        public StopRunResponse StopRun(StopRunRequest request)
+        public virtual StopRunResponse StopRun(StopRunRequest request)
         {
             var marshaller = new StopRunRequestMarshaller();
             var unmarshaller = StopRunResponseUnmarshaller.Instance;
@@ -3518,7 +3518,7 @@ namespace Amazon.DeviceFarm
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopRun
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopRun">REST API Reference for StopRun Operation</seealso>
-        public IAsyncResult BeginStopRun(StopRunRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginStopRun(StopRunRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new StopRunRequestMarshaller();
             var unmarshaller = StopRunResponseUnmarshaller.Instance;
@@ -3535,7 +3535,7 @@ namespace Amazon.DeviceFarm
         /// 
         /// <returns>Returns a  StopRunResult from DeviceFarm.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopRun">REST API Reference for StopRun Operation</seealso>
-        public  StopRunResponse EndStopRun(IAsyncResult asyncResult)
+        public virtual StopRunResponse EndStopRun(IAsyncResult asyncResult)
         {
             return EndInvoke<StopRunResponse>(asyncResult);
         }
@@ -3565,7 +3565,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateDevicePool">REST API Reference for UpdateDevicePool Operation</seealso>
-        public UpdateDevicePoolResponse UpdateDevicePool(UpdateDevicePoolRequest request)
+        public virtual UpdateDevicePoolResponse UpdateDevicePool(UpdateDevicePoolRequest request)
         {
             var marshaller = new UpdateDevicePoolRequestMarshaller();
             var unmarshaller = UpdateDevicePoolResponseUnmarshaller.Instance;
@@ -3585,7 +3585,7 @@ namespace Amazon.DeviceFarm
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDevicePool
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateDevicePool">REST API Reference for UpdateDevicePool Operation</seealso>
-        public IAsyncResult BeginUpdateDevicePool(UpdateDevicePoolRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateDevicePool(UpdateDevicePoolRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateDevicePoolRequestMarshaller();
             var unmarshaller = UpdateDevicePoolResponseUnmarshaller.Instance;
@@ -3602,7 +3602,7 @@ namespace Amazon.DeviceFarm
         /// 
         /// <returns>Returns a  UpdateDevicePoolResult from DeviceFarm.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateDevicePool">REST API Reference for UpdateDevicePool Operation</seealso>
-        public  UpdateDevicePoolResponse EndUpdateDevicePool(IAsyncResult asyncResult)
+        public virtual UpdateDevicePoolResponse EndUpdateDevicePool(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateDevicePoolResponse>(asyncResult);
         }
@@ -3630,7 +3630,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateNetworkProfile">REST API Reference for UpdateNetworkProfile Operation</seealso>
-        public UpdateNetworkProfileResponse UpdateNetworkProfile(UpdateNetworkProfileRequest request)
+        public virtual UpdateNetworkProfileResponse UpdateNetworkProfile(UpdateNetworkProfileRequest request)
         {
             var marshaller = new UpdateNetworkProfileRequestMarshaller();
             var unmarshaller = UpdateNetworkProfileResponseUnmarshaller.Instance;
@@ -3650,7 +3650,7 @@ namespace Amazon.DeviceFarm
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateNetworkProfile
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateNetworkProfile">REST API Reference for UpdateNetworkProfile Operation</seealso>
-        public IAsyncResult BeginUpdateNetworkProfile(UpdateNetworkProfileRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateNetworkProfile(UpdateNetworkProfileRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateNetworkProfileRequestMarshaller();
             var unmarshaller = UpdateNetworkProfileResponseUnmarshaller.Instance;
@@ -3667,7 +3667,7 @@ namespace Amazon.DeviceFarm
         /// 
         /// <returns>Returns a  UpdateNetworkProfileResult from DeviceFarm.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateNetworkProfile">REST API Reference for UpdateNetworkProfile Operation</seealso>
-        public  UpdateNetworkProfileResponse EndUpdateNetworkProfile(IAsyncResult asyncResult)
+        public virtual UpdateNetworkProfileResponse EndUpdateNetworkProfile(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateNetworkProfileResponse>(asyncResult);
         }
@@ -3695,7 +3695,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
-        public UpdateProjectResponse UpdateProject(UpdateProjectRequest request)
+        public virtual UpdateProjectResponse UpdateProject(UpdateProjectRequest request)
         {
             var marshaller = new UpdateProjectRequestMarshaller();
             var unmarshaller = UpdateProjectResponseUnmarshaller.Instance;
@@ -3715,7 +3715,7 @@ namespace Amazon.DeviceFarm
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateProject
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
-        public IAsyncResult BeginUpdateProject(UpdateProjectRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateProject(UpdateProjectRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateProjectRequestMarshaller();
             var unmarshaller = UpdateProjectResponseUnmarshaller.Instance;
@@ -3732,7 +3732,7 @@ namespace Amazon.DeviceFarm
         /// 
         /// <returns>Returns a  UpdateProjectResult from DeviceFarm.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
-        public  UpdateProjectResponse EndUpdateProject(IAsyncResult asyncResult)
+        public virtual UpdateProjectResponse EndUpdateProject(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateProjectResponse>(asyncResult);
         }

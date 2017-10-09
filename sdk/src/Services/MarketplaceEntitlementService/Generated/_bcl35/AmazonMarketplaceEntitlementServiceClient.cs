@@ -262,7 +262,7 @@ namespace Amazon.MarketplaceEntitlementService
         /// The calls to the GetEntitlements API are throttled.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entitlement.marketplace-2017-01-11/GetEntitlements">REST API Reference for GetEntitlements Operation</seealso>
-        public GetEntitlementsResponse GetEntitlements(GetEntitlementsRequest request)
+        public virtual GetEntitlementsResponse GetEntitlements(GetEntitlementsRequest request)
         {
             var marshaller = new GetEntitlementsRequestMarshaller();
             var unmarshaller = GetEntitlementsResponseUnmarshaller.Instance;
@@ -282,7 +282,7 @@ namespace Amazon.MarketplaceEntitlementService
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetEntitlements
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entitlement.marketplace-2017-01-11/GetEntitlements">REST API Reference for GetEntitlements Operation</seealso>
-        public IAsyncResult BeginGetEntitlements(GetEntitlementsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetEntitlements(GetEntitlementsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetEntitlementsRequestMarshaller();
             var unmarshaller = GetEntitlementsResponseUnmarshaller.Instance;
@@ -299,7 +299,7 @@ namespace Amazon.MarketplaceEntitlementService
         /// 
         /// <returns>Returns a  GetEntitlementsResult from MarketplaceEntitlementService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entitlement.marketplace-2017-01-11/GetEntitlements">REST API Reference for GetEntitlements Operation</seealso>
-        public  GetEntitlementsResponse EndGetEntitlements(IAsyncResult asyncResult)
+        public virtual GetEntitlementsResponse EndGetEntitlements(IAsyncResult asyncResult)
         {
             return EndInvoke<GetEntitlementsResponse>(asyncResult);
         }

@@ -258,7 +258,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
-        public AddTagsResponse AddTags(AddTagsRequest request)
+        public virtual AddTagsResponse AddTags(AddTagsRequest request)
         {
             var marshaller = new AddTagsRequestMarshaller();
             var unmarshaller = AddTagsResponseUnmarshaller.Instance;
@@ -277,7 +277,7 @@ namespace Amazon.Elasticsearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddTags
         ///         operation.</returns>
-        public IAsyncResult BeginAddTags(AddTagsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginAddTags(AddTagsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AddTagsRequestMarshaller();
             var unmarshaller = AddTagsResponseUnmarshaller.Instance;
@@ -293,7 +293,7 @@ namespace Amazon.Elasticsearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddTags.</param>
         /// 
         /// <returns>Returns a  AddTagsResult from Elasticsearch.</returns>
-        public  AddTagsResponse EndAddTags(IAsyncResult asyncResult)
+        public virtual AddTagsResponse EndAddTags(IAsyncResult asyncResult)
         {
             return EndInvoke<AddTagsResponse>(asyncResult);
         }
@@ -336,7 +336,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
-        public CreateElasticsearchDomainResponse CreateElasticsearchDomain(CreateElasticsearchDomainRequest request)
+        public virtual CreateElasticsearchDomainResponse CreateElasticsearchDomain(CreateElasticsearchDomainRequest request)
         {
             var marshaller = new CreateElasticsearchDomainRequestMarshaller();
             var unmarshaller = CreateElasticsearchDomainResponseUnmarshaller.Instance;
@@ -355,7 +355,7 @@ namespace Amazon.Elasticsearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateElasticsearchDomain
         ///         operation.</returns>
-        public IAsyncResult BeginCreateElasticsearchDomain(CreateElasticsearchDomainRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateElasticsearchDomain(CreateElasticsearchDomainRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateElasticsearchDomainRequestMarshaller();
             var unmarshaller = CreateElasticsearchDomainResponseUnmarshaller.Instance;
@@ -371,7 +371,7 @@ namespace Amazon.Elasticsearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateElasticsearchDomain.</param>
         /// 
         /// <returns>Returns a  CreateElasticsearchDomainResult from Elasticsearch.</returns>
-        public  CreateElasticsearchDomainResponse EndCreateElasticsearchDomain(IAsyncResult asyncResult)
+        public virtual CreateElasticsearchDomainResponse EndCreateElasticsearchDomain(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateElasticsearchDomainResponse>(asyncResult);
         }
@@ -401,7 +401,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
-        public DeleteElasticsearchDomainResponse DeleteElasticsearchDomain(DeleteElasticsearchDomainRequest request)
+        public virtual DeleteElasticsearchDomainResponse DeleteElasticsearchDomain(DeleteElasticsearchDomainRequest request)
         {
             var marshaller = new DeleteElasticsearchDomainRequestMarshaller();
             var unmarshaller = DeleteElasticsearchDomainResponseUnmarshaller.Instance;
@@ -420,7 +420,7 @@ namespace Amazon.Elasticsearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteElasticsearchDomain
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteElasticsearchDomain(DeleteElasticsearchDomainRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteElasticsearchDomain(DeleteElasticsearchDomainRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteElasticsearchDomainRequestMarshaller();
             var unmarshaller = DeleteElasticsearchDomainResponseUnmarshaller.Instance;
@@ -436,7 +436,7 @@ namespace Amazon.Elasticsearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteElasticsearchDomain.</param>
         /// 
         /// <returns>Returns a  DeleteElasticsearchDomainResult from Elasticsearch.</returns>
-        public  DeleteElasticsearchDomainResponse EndDeleteElasticsearchDomain(IAsyncResult asyncResult)
+        public virtual DeleteElasticsearchDomainResponse EndDeleteElasticsearchDomain(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteElasticsearchDomainResponse>(asyncResult);
         }
@@ -466,7 +466,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
-        public DescribeElasticsearchDomainResponse DescribeElasticsearchDomain(DescribeElasticsearchDomainRequest request)
+        public virtual DescribeElasticsearchDomainResponse DescribeElasticsearchDomain(DescribeElasticsearchDomainRequest request)
         {
             var marshaller = new DescribeElasticsearchDomainRequestMarshaller();
             var unmarshaller = DescribeElasticsearchDomainResponseUnmarshaller.Instance;
@@ -485,7 +485,7 @@ namespace Amazon.Elasticsearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeElasticsearchDomain
         ///         operation.</returns>
-        public IAsyncResult BeginDescribeElasticsearchDomain(DescribeElasticsearchDomainRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeElasticsearchDomain(DescribeElasticsearchDomainRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeElasticsearchDomainRequestMarshaller();
             var unmarshaller = DescribeElasticsearchDomainResponseUnmarshaller.Instance;
@@ -501,7 +501,7 @@ namespace Amazon.Elasticsearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeElasticsearchDomain.</param>
         /// 
         /// <returns>Returns a  DescribeElasticsearchDomainResult from Elasticsearch.</returns>
-        public  DescribeElasticsearchDomainResponse EndDescribeElasticsearchDomain(IAsyncResult asyncResult)
+        public virtual DescribeElasticsearchDomainResponse EndDescribeElasticsearchDomain(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeElasticsearchDomainResponse>(asyncResult);
         }
@@ -531,7 +531,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
-        public DescribeElasticsearchDomainConfigResponse DescribeElasticsearchDomainConfig(DescribeElasticsearchDomainConfigRequest request)
+        public virtual DescribeElasticsearchDomainConfigResponse DescribeElasticsearchDomainConfig(DescribeElasticsearchDomainConfigRequest request)
         {
             var marshaller = new DescribeElasticsearchDomainConfigRequestMarshaller();
             var unmarshaller = DescribeElasticsearchDomainConfigResponseUnmarshaller.Instance;
@@ -550,7 +550,7 @@ namespace Amazon.Elasticsearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeElasticsearchDomainConfig
         ///         operation.</returns>
-        public IAsyncResult BeginDescribeElasticsearchDomainConfig(DescribeElasticsearchDomainConfigRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeElasticsearchDomainConfig(DescribeElasticsearchDomainConfigRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeElasticsearchDomainConfigRequestMarshaller();
             var unmarshaller = DescribeElasticsearchDomainConfigResponseUnmarshaller.Instance;
@@ -566,7 +566,7 @@ namespace Amazon.Elasticsearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeElasticsearchDomainConfig.</param>
         /// 
         /// <returns>Returns a  DescribeElasticsearchDomainConfigResult from Elasticsearch.</returns>
-        public  DescribeElasticsearchDomainConfigResponse EndDescribeElasticsearchDomainConfig(IAsyncResult asyncResult)
+        public virtual DescribeElasticsearchDomainConfigResponse EndDescribeElasticsearchDomainConfig(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeElasticsearchDomainConfigResponse>(asyncResult);
         }
@@ -592,7 +592,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
-        public DescribeElasticsearchDomainsResponse DescribeElasticsearchDomains(DescribeElasticsearchDomainsRequest request)
+        public virtual DescribeElasticsearchDomainsResponse DescribeElasticsearchDomains(DescribeElasticsearchDomainsRequest request)
         {
             var marshaller = new DescribeElasticsearchDomainsRequestMarshaller();
             var unmarshaller = DescribeElasticsearchDomainsResponseUnmarshaller.Instance;
@@ -611,7 +611,7 @@ namespace Amazon.Elasticsearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeElasticsearchDomains
         ///         operation.</returns>
-        public IAsyncResult BeginDescribeElasticsearchDomains(DescribeElasticsearchDomainsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeElasticsearchDomains(DescribeElasticsearchDomainsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeElasticsearchDomainsRequestMarshaller();
             var unmarshaller = DescribeElasticsearchDomainsResponseUnmarshaller.Instance;
@@ -627,7 +627,7 @@ namespace Amazon.Elasticsearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeElasticsearchDomains.</param>
         /// 
         /// <returns>Returns a  DescribeElasticsearchDomainsResult from Elasticsearch.</returns>
-        public  DescribeElasticsearchDomainsResponse EndDescribeElasticsearchDomains(IAsyncResult asyncResult)
+        public virtual DescribeElasticsearchDomainsResponse EndDescribeElasticsearchDomains(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeElasticsearchDomainsResponse>(asyncResult);
         }
@@ -666,7 +666,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
-        public DescribeElasticsearchInstanceTypeLimitsResponse DescribeElasticsearchInstanceTypeLimits(DescribeElasticsearchInstanceTypeLimitsRequest request)
+        public virtual DescribeElasticsearchInstanceTypeLimitsResponse DescribeElasticsearchInstanceTypeLimits(DescribeElasticsearchInstanceTypeLimitsRequest request)
         {
             var marshaller = new DescribeElasticsearchInstanceTypeLimitsRequestMarshaller();
             var unmarshaller = DescribeElasticsearchInstanceTypeLimitsResponseUnmarshaller.Instance;
@@ -685,7 +685,7 @@ namespace Amazon.Elasticsearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeElasticsearchInstanceTypeLimits
         ///         operation.</returns>
-        public IAsyncResult BeginDescribeElasticsearchInstanceTypeLimits(DescribeElasticsearchInstanceTypeLimitsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeElasticsearchInstanceTypeLimits(DescribeElasticsearchInstanceTypeLimitsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeElasticsearchInstanceTypeLimitsRequestMarshaller();
             var unmarshaller = DescribeElasticsearchInstanceTypeLimitsResponseUnmarshaller.Instance;
@@ -701,7 +701,7 @@ namespace Amazon.Elasticsearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeElasticsearchInstanceTypeLimits.</param>
         /// 
         /// <returns>Returns a  DescribeElasticsearchInstanceTypeLimitsResult from Elasticsearch.</returns>
-        public  DescribeElasticsearchInstanceTypeLimitsResponse EndDescribeElasticsearchInstanceTypeLimits(IAsyncResult asyncResult)
+        public virtual DescribeElasticsearchInstanceTypeLimitsResponse EndDescribeElasticsearchInstanceTypeLimits(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeElasticsearchInstanceTypeLimitsResponse>(asyncResult);
         }
@@ -722,7 +722,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
-        public ListDomainNamesResponse ListDomainNames(ListDomainNamesRequest request)
+        public virtual ListDomainNamesResponse ListDomainNames(ListDomainNamesRequest request)
         {
             var marshaller = new ListDomainNamesRequestMarshaller();
             var unmarshaller = ListDomainNamesResponseUnmarshaller.Instance;
@@ -741,7 +741,7 @@ namespace Amazon.Elasticsearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDomainNames
         ///         operation.</returns>
-        public IAsyncResult BeginListDomainNames(ListDomainNamesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListDomainNames(ListDomainNamesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListDomainNamesRequestMarshaller();
             var unmarshaller = ListDomainNamesResponseUnmarshaller.Instance;
@@ -757,7 +757,7 @@ namespace Amazon.Elasticsearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDomainNames.</param>
         /// 
         /// <returns>Returns a  ListDomainNamesResult from Elasticsearch.</returns>
-        public  ListDomainNamesResponse EndListDomainNames(IAsyncResult asyncResult)
+        public virtual ListDomainNamesResponse EndListDomainNames(IAsyncResult asyncResult)
         {
             return EndInvoke<ListDomainNamesResponse>(asyncResult);
         }
@@ -786,7 +786,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
-        public ListElasticsearchInstanceTypesResponse ListElasticsearchInstanceTypes(ListElasticsearchInstanceTypesRequest request)
+        public virtual ListElasticsearchInstanceTypesResponse ListElasticsearchInstanceTypes(ListElasticsearchInstanceTypesRequest request)
         {
             var marshaller = new ListElasticsearchInstanceTypesRequestMarshaller();
             var unmarshaller = ListElasticsearchInstanceTypesResponseUnmarshaller.Instance;
@@ -805,7 +805,7 @@ namespace Amazon.Elasticsearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListElasticsearchInstanceTypes
         ///         operation.</returns>
-        public IAsyncResult BeginListElasticsearchInstanceTypes(ListElasticsearchInstanceTypesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListElasticsearchInstanceTypes(ListElasticsearchInstanceTypesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListElasticsearchInstanceTypesRequestMarshaller();
             var unmarshaller = ListElasticsearchInstanceTypesResponseUnmarshaller.Instance;
@@ -821,7 +821,7 @@ namespace Amazon.Elasticsearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListElasticsearchInstanceTypes.</param>
         /// 
         /// <returns>Returns a  ListElasticsearchInstanceTypesResult from Elasticsearch.</returns>
-        public  ListElasticsearchInstanceTypesResponse EndListElasticsearchInstanceTypes(IAsyncResult asyncResult)
+        public virtual ListElasticsearchInstanceTypesResponse EndListElasticsearchInstanceTypes(IAsyncResult asyncResult)
         {
             return EndInvoke<ListElasticsearchInstanceTypesResponse>(asyncResult);
         }
@@ -850,7 +850,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
-        public ListElasticsearchVersionsResponse ListElasticsearchVersions(ListElasticsearchVersionsRequest request)
+        public virtual ListElasticsearchVersionsResponse ListElasticsearchVersions(ListElasticsearchVersionsRequest request)
         {
             var marshaller = new ListElasticsearchVersionsRequestMarshaller();
             var unmarshaller = ListElasticsearchVersionsResponseUnmarshaller.Instance;
@@ -869,7 +869,7 @@ namespace Amazon.Elasticsearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListElasticsearchVersions
         ///         operation.</returns>
-        public IAsyncResult BeginListElasticsearchVersions(ListElasticsearchVersionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListElasticsearchVersions(ListElasticsearchVersionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListElasticsearchVersionsRequestMarshaller();
             var unmarshaller = ListElasticsearchVersionsResponseUnmarshaller.Instance;
@@ -885,7 +885,7 @@ namespace Amazon.Elasticsearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListElasticsearchVersions.</param>
         /// 
         /// <returns>Returns a  ListElasticsearchVersionsResult from Elasticsearch.</returns>
-        public  ListElasticsearchVersionsResponse EndListElasticsearchVersions(IAsyncResult asyncResult)
+        public virtual ListElasticsearchVersionsResponse EndListElasticsearchVersions(IAsyncResult asyncResult)
         {
             return EndInvoke<ListElasticsearchVersionsResponse>(asyncResult);
         }
@@ -914,7 +914,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
-        public ListTagsResponse ListTags(ListTagsRequest request)
+        public virtual ListTagsResponse ListTags(ListTagsRequest request)
         {
             var marshaller = new ListTagsRequestMarshaller();
             var unmarshaller = ListTagsResponseUnmarshaller.Instance;
@@ -933,7 +933,7 @@ namespace Amazon.Elasticsearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTags
         ///         operation.</returns>
-        public IAsyncResult BeginListTags(ListTagsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListTags(ListTagsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListTagsRequestMarshaller();
             var unmarshaller = ListTagsResponseUnmarshaller.Instance;
@@ -949,7 +949,7 @@ namespace Amazon.Elasticsearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTags.</param>
         /// 
         /// <returns>Returns a  ListTagsResult from Elasticsearch.</returns>
-        public  ListTagsResponse EndListTags(IAsyncResult asyncResult)
+        public virtual ListTagsResponse EndListTags(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTagsResponse>(asyncResult);
         }
@@ -974,7 +974,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
-        public RemoveTagsResponse RemoveTags(RemoveTagsRequest request)
+        public virtual RemoveTagsResponse RemoveTags(RemoveTagsRequest request)
         {
             var marshaller = new RemoveTagsRequestMarshaller();
             var unmarshaller = RemoveTagsResponseUnmarshaller.Instance;
@@ -993,7 +993,7 @@ namespace Amazon.Elasticsearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveTags
         ///         operation.</returns>
-        public IAsyncResult BeginRemoveTags(RemoveTagsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginRemoveTags(RemoveTagsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RemoveTagsRequestMarshaller();
             var unmarshaller = RemoveTagsResponseUnmarshaller.Instance;
@@ -1009,7 +1009,7 @@ namespace Amazon.Elasticsearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemoveTags.</param>
         /// 
         /// <returns>Returns a  RemoveTagsResult from Elasticsearch.</returns>
-        public  RemoveTagsResponse EndRemoveTags(IAsyncResult asyncResult)
+        public virtual RemoveTagsResponse EndRemoveTags(IAsyncResult asyncResult)
         {
             return EndInvoke<RemoveTagsResponse>(asyncResult);
         }
@@ -1047,7 +1047,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
-        public UpdateElasticsearchDomainConfigResponse UpdateElasticsearchDomainConfig(UpdateElasticsearchDomainConfigRequest request)
+        public virtual UpdateElasticsearchDomainConfigResponse UpdateElasticsearchDomainConfig(UpdateElasticsearchDomainConfigRequest request)
         {
             var marshaller = new UpdateElasticsearchDomainConfigRequestMarshaller();
             var unmarshaller = UpdateElasticsearchDomainConfigResponseUnmarshaller.Instance;
@@ -1066,7 +1066,7 @@ namespace Amazon.Elasticsearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateElasticsearchDomainConfig
         ///         operation.</returns>
-        public IAsyncResult BeginUpdateElasticsearchDomainConfig(UpdateElasticsearchDomainConfigRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateElasticsearchDomainConfig(UpdateElasticsearchDomainConfigRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateElasticsearchDomainConfigRequestMarshaller();
             var unmarshaller = UpdateElasticsearchDomainConfigResponseUnmarshaller.Instance;
@@ -1082,7 +1082,7 @@ namespace Amazon.Elasticsearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateElasticsearchDomainConfig.</param>
         /// 
         /// <returns>Returns a  UpdateElasticsearchDomainConfigResult from Elasticsearch.</returns>
-        public  UpdateElasticsearchDomainConfigResponse EndUpdateElasticsearchDomainConfig(IAsyncResult asyncResult)
+        public virtual UpdateElasticsearchDomainConfigResponse EndUpdateElasticsearchDomainConfig(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateElasticsearchDomainConfigResponse>(asyncResult);
         }

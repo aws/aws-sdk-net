@@ -266,7 +266,7 @@ namespace Amazon.ServerMigrationService
         /// This user does not have permissions to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/CreateReplicationJob">REST API Reference for CreateReplicationJob Operation</seealso>
-        public CreateReplicationJobResponse CreateReplicationJob(CreateReplicationJobRequest request)
+        public virtual CreateReplicationJobResponse CreateReplicationJob(CreateReplicationJobRequest request)
         {
             var marshaller = new CreateReplicationJobRequestMarshaller();
             var unmarshaller = CreateReplicationJobResponseUnmarshaller.Instance;
@@ -284,7 +284,7 @@ namespace Amazon.ServerMigrationService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/CreateReplicationJob">REST API Reference for CreateReplicationJob Operation</seealso>
-        public Task<CreateReplicationJobResponse> CreateReplicationJobAsync(CreateReplicationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateReplicationJobResponse> CreateReplicationJobAsync(CreateReplicationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateReplicationJobRequestMarshaller();
             var unmarshaller = CreateReplicationJobResponseUnmarshaller.Instance;
@@ -325,7 +325,7 @@ namespace Amazon.ServerMigrationService
         /// This user does not have permissions to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DeleteReplicationJob">REST API Reference for DeleteReplicationJob Operation</seealso>
-        public DeleteReplicationJobResponse DeleteReplicationJob(DeleteReplicationJobRequest request)
+        public virtual DeleteReplicationJobResponse DeleteReplicationJob(DeleteReplicationJobRequest request)
         {
             var marshaller = new DeleteReplicationJobRequestMarshaller();
             var unmarshaller = DeleteReplicationJobResponseUnmarshaller.Instance;
@@ -343,7 +343,7 @@ namespace Amazon.ServerMigrationService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DeleteReplicationJob">REST API Reference for DeleteReplicationJob Operation</seealso>
-        public Task<DeleteReplicationJobResponse> DeleteReplicationJobAsync(DeleteReplicationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteReplicationJobResponse> DeleteReplicationJobAsync(DeleteReplicationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteReplicationJobRequestMarshaller();
             var unmarshaller = DeleteReplicationJobResponseUnmarshaller.Instance;
@@ -380,7 +380,7 @@ namespace Amazon.ServerMigrationService
         /// This user does not have permissions to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DeleteServerCatalog">REST API Reference for DeleteServerCatalog Operation</seealso>
-        public DeleteServerCatalogResponse DeleteServerCatalog(DeleteServerCatalogRequest request)
+        public virtual DeleteServerCatalogResponse DeleteServerCatalog(DeleteServerCatalogRequest request)
         {
             var marshaller = new DeleteServerCatalogRequestMarshaller();
             var unmarshaller = DeleteServerCatalogResponseUnmarshaller.Instance;
@@ -398,7 +398,7 @@ namespace Amazon.ServerMigrationService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DeleteServerCatalog">REST API Reference for DeleteServerCatalog Operation</seealso>
-        public Task<DeleteServerCatalogResponse> DeleteServerCatalogAsync(DeleteServerCatalogRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteServerCatalogResponse> DeleteServerCatalogAsync(DeleteServerCatalogRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteServerCatalogRequestMarshaller();
             var unmarshaller = DeleteServerCatalogResponseUnmarshaller.Instance;
@@ -435,7 +435,7 @@ namespace Amazon.ServerMigrationService
         /// This user does not have permissions to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DisassociateConnector">REST API Reference for DisassociateConnector Operation</seealso>
-        public DisassociateConnectorResponse DisassociateConnector(DisassociateConnectorRequest request)
+        public virtual DisassociateConnectorResponse DisassociateConnector(DisassociateConnectorRequest request)
         {
             var marshaller = new DisassociateConnectorRequestMarshaller();
             var unmarshaller = DisassociateConnectorResponseUnmarshaller.Instance;
@@ -453,7 +453,7 @@ namespace Amazon.ServerMigrationService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DisassociateConnector">REST API Reference for DisassociateConnector Operation</seealso>
-        public Task<DisassociateConnectorResponse> DisassociateConnectorAsync(DisassociateConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DisassociateConnectorResponse> DisassociateConnectorAsync(DisassociateConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DisassociateConnectorRequestMarshaller();
             var unmarshaller = DisassociateConnectorResponseUnmarshaller.Instance;
@@ -478,7 +478,7 @@ namespace Amazon.ServerMigrationService
         /// This user does not have permissions to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetConnectors">REST API Reference for GetConnectors Operation</seealso>
-        public GetConnectorsResponse GetConnectors(GetConnectorsRequest request)
+        public virtual GetConnectorsResponse GetConnectors(GetConnectorsRequest request)
         {
             var marshaller = new GetConnectorsRequestMarshaller();
             var unmarshaller = GetConnectorsResponseUnmarshaller.Instance;
@@ -496,7 +496,7 @@ namespace Amazon.ServerMigrationService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetConnectors">REST API Reference for GetConnectors Operation</seealso>
-        public Task<GetConnectorsResponse> GetConnectorsAsync(GetConnectorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetConnectorsResponse> GetConnectorsAsync(GetConnectorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetConnectorsRequestMarshaller();
             var unmarshaller = GetConnectorsResponseUnmarshaller.Instance;
@@ -529,7 +529,7 @@ namespace Amazon.ServerMigrationService
         /// This user does not have permissions to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetReplicationJobs">REST API Reference for GetReplicationJobs Operation</seealso>
-        public GetReplicationJobsResponse GetReplicationJobs(GetReplicationJobsRequest request)
+        public virtual GetReplicationJobsResponse GetReplicationJobs(GetReplicationJobsRequest request)
         {
             var marshaller = new GetReplicationJobsRequestMarshaller();
             var unmarshaller = GetReplicationJobsResponseUnmarshaller.Instance;
@@ -547,7 +547,7 @@ namespace Amazon.ServerMigrationService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetReplicationJobs">REST API Reference for GetReplicationJobs Operation</seealso>
-        public Task<GetReplicationJobsResponse> GetReplicationJobsAsync(GetReplicationJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetReplicationJobsResponse> GetReplicationJobsAsync(GetReplicationJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetReplicationJobsRequestMarshaller();
             var unmarshaller = GetReplicationJobsResponseUnmarshaller.Instance;
@@ -580,7 +580,7 @@ namespace Amazon.ServerMigrationService
         /// This user does not have permissions to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetReplicationRuns">REST API Reference for GetReplicationRuns Operation</seealso>
-        public GetReplicationRunsResponse GetReplicationRuns(GetReplicationRunsRequest request)
+        public virtual GetReplicationRunsResponse GetReplicationRuns(GetReplicationRunsRequest request)
         {
             var marshaller = new GetReplicationRunsRequestMarshaller();
             var unmarshaller = GetReplicationRunsResponseUnmarshaller.Instance;
@@ -598,7 +598,7 @@ namespace Amazon.ServerMigrationService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetReplicationRuns">REST API Reference for GetReplicationRuns Operation</seealso>
-        public Task<GetReplicationRunsResponse> GetReplicationRunsAsync(GetReplicationRunsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetReplicationRunsResponse> GetReplicationRunsAsync(GetReplicationRunsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetReplicationRunsRequestMarshaller();
             var unmarshaller = GetReplicationRunsResponseUnmarshaller.Instance;
@@ -623,7 +623,7 @@ namespace Amazon.ServerMigrationService
         /// This user does not have permissions to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetServers">REST API Reference for GetServers Operation</seealso>
-        public GetServersResponse GetServers(GetServersRequest request)
+        public virtual GetServersResponse GetServers(GetServersRequest request)
         {
             var marshaller = new GetServersRequestMarshaller();
             var unmarshaller = GetServersResponseUnmarshaller.Instance;
@@ -641,7 +641,7 @@ namespace Amazon.ServerMigrationService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetServers">REST API Reference for GetServers Operation</seealso>
-        public Task<GetServersResponse> GetServersAsync(GetServersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetServersResponse> GetServersAsync(GetServersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetServersRequestMarshaller();
             var unmarshaller = GetServersResponseUnmarshaller.Instance;
@@ -684,7 +684,7 @@ namespace Amazon.ServerMigrationService
         /// This user does not have permissions to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/ImportServerCatalog">REST API Reference for ImportServerCatalog Operation</seealso>
-        public ImportServerCatalogResponse ImportServerCatalog(ImportServerCatalogRequest request)
+        public virtual ImportServerCatalogResponse ImportServerCatalog(ImportServerCatalogRequest request)
         {
             var marshaller = new ImportServerCatalogRequestMarshaller();
             var unmarshaller = ImportServerCatalogResponseUnmarshaller.Instance;
@@ -702,7 +702,7 @@ namespace Amazon.ServerMigrationService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/ImportServerCatalog">REST API Reference for ImportServerCatalog Operation</seealso>
-        public Task<ImportServerCatalogResponse> ImportServerCatalogAsync(ImportServerCatalogRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ImportServerCatalogResponse> ImportServerCatalogAsync(ImportServerCatalogRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ImportServerCatalogRequestMarshaller();
             var unmarshaller = ImportServerCatalogResponseUnmarshaller.Instance;
@@ -744,7 +744,7 @@ namespace Amazon.ServerMigrationService
         /// This user does not have permissions to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/StartOnDemandReplicationRun">REST API Reference for StartOnDemandReplicationRun Operation</seealso>
-        public StartOnDemandReplicationRunResponse StartOnDemandReplicationRun(StartOnDemandReplicationRunRequest request)
+        public virtual StartOnDemandReplicationRunResponse StartOnDemandReplicationRun(StartOnDemandReplicationRunRequest request)
         {
             var marshaller = new StartOnDemandReplicationRunRequestMarshaller();
             var unmarshaller = StartOnDemandReplicationRunResponseUnmarshaller.Instance;
@@ -762,7 +762,7 @@ namespace Amazon.ServerMigrationService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/StartOnDemandReplicationRun">REST API Reference for StartOnDemandReplicationRun Operation</seealso>
-        public Task<StartOnDemandReplicationRunResponse> StartOnDemandReplicationRunAsync(StartOnDemandReplicationRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<StartOnDemandReplicationRunResponse> StartOnDemandReplicationRunAsync(StartOnDemandReplicationRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new StartOnDemandReplicationRunRequestMarshaller();
             var unmarshaller = StartOnDemandReplicationRunResponseUnmarshaller.Instance;
@@ -809,7 +809,7 @@ namespace Amazon.ServerMigrationService
         /// This user does not have permissions to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/UpdateReplicationJob">REST API Reference for UpdateReplicationJob Operation</seealso>
-        public UpdateReplicationJobResponse UpdateReplicationJob(UpdateReplicationJobRequest request)
+        public virtual UpdateReplicationJobResponse UpdateReplicationJob(UpdateReplicationJobRequest request)
         {
             var marshaller = new UpdateReplicationJobRequestMarshaller();
             var unmarshaller = UpdateReplicationJobResponseUnmarshaller.Instance;
@@ -827,7 +827,7 @@ namespace Amazon.ServerMigrationService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/UpdateReplicationJob">REST API Reference for UpdateReplicationJob Operation</seealso>
-        public Task<UpdateReplicationJobResponse> UpdateReplicationJobAsync(UpdateReplicationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateReplicationJobResponse> UpdateReplicationJobAsync(UpdateReplicationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateReplicationJobRequestMarshaller();
             var unmarshaller = UpdateReplicationJobResponseUnmarshaller.Instance;

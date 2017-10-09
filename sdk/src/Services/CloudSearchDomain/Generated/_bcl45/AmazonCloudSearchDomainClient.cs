@@ -127,7 +127,7 @@ namespace Amazon.CloudSearchDomain
         /// <exception cref="Amazon.CloudSearchDomain.Model.SearchException">
         /// Information about any problems encountered while processing a search request.
         /// </exception>
-        public SearchResponse Search(SearchRequest request)
+        public virtual SearchResponse Search(SearchRequest request)
         {
             var marshaller = new SearchRequestMarshaller();
             var unmarshaller = SearchResponseUnmarshaller.Instance;
@@ -144,7 +144,7 @@ namespace Amazon.CloudSearchDomain
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<SearchResponse> SearchAsync(SearchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<SearchResponse> SearchAsync(SearchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SearchRequestMarshaller();
             var unmarshaller = SearchResponseUnmarshaller.Instance;
@@ -187,7 +187,7 @@ namespace Amazon.CloudSearchDomain
         /// <exception cref="Amazon.CloudSearchDomain.Model.SearchException">
         /// Information about any problems encountered while processing a search request.
         /// </exception>
-        public SuggestResponse Suggest(SuggestRequest request)
+        public virtual SuggestResponse Suggest(SuggestRequest request)
         {
             var marshaller = new SuggestRequestMarshaller();
             var unmarshaller = SuggestResponseUnmarshaller.Instance;
@@ -204,7 +204,7 @@ namespace Amazon.CloudSearchDomain
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<SuggestResponse> SuggestAsync(SuggestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<SuggestResponse> SuggestAsync(SuggestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SuggestRequestMarshaller();
             var unmarshaller = SuggestResponseUnmarshaller.Instance;
@@ -251,7 +251,7 @@ namespace Amazon.CloudSearchDomain
         /// <exception cref="Amazon.CloudSearchDomain.Model.DocumentServiceException">
         /// Information about any problems encountered while processing an upload request.
         /// </exception>
-        public UploadDocumentsResponse UploadDocuments(UploadDocumentsRequest request)
+        public virtual UploadDocumentsResponse UploadDocuments(UploadDocumentsRequest request)
         {
             var marshaller = new UploadDocumentsRequestMarshaller();
             var unmarshaller = UploadDocumentsResponseUnmarshaller.Instance;
@@ -268,7 +268,7 @@ namespace Amazon.CloudSearchDomain
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UploadDocumentsResponse> UploadDocumentsAsync(UploadDocumentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UploadDocumentsResponse> UploadDocumentsAsync(UploadDocumentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UploadDocumentsRequestMarshaller();
             var unmarshaller = UploadDocumentsResponseUnmarshaller.Instance;

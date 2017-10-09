@@ -377,7 +377,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CancelKeyDeletion">REST API Reference for CancelKeyDeletion Operation</seealso>
-        public CancelKeyDeletionResponse CancelKeyDeletion(string keyId)
+        public virtual CancelKeyDeletionResponse CancelKeyDeletion(string keyId)
         {
             var request = new CancelKeyDeletionRequest();
             request.KeyId = keyId;
@@ -423,7 +423,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CancelKeyDeletion">REST API Reference for CancelKeyDeletion Operation</seealso>
-        public CancelKeyDeletionResponse CancelKeyDeletion(CancelKeyDeletionRequest request)
+        public virtual CancelKeyDeletionResponse CancelKeyDeletion(CancelKeyDeletionRequest request)
         {
             var marshaller = new CancelKeyDeletionRequestMarshaller();
             var unmarshaller = CancelKeyDeletionResponseUnmarshaller.Instance;
@@ -473,7 +473,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CancelKeyDeletion">REST API Reference for CancelKeyDeletion Operation</seealso>
-        public Task<CancelKeyDeletionResponse> CancelKeyDeletionAsync(string keyId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CancelKeyDeletionResponse> CancelKeyDeletionAsync(string keyId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new CancelKeyDeletionRequest();
             request.KeyId = keyId;
@@ -490,7 +490,7 @@ namespace Amazon.KeyManagementService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CancelKeyDeletion">REST API Reference for CancelKeyDeletion Operation</seealso>
-        public Task<CancelKeyDeletionResponse> CancelKeyDeletionAsync(CancelKeyDeletionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CancelKeyDeletionResponse> CancelKeyDeletionAsync(CancelKeyDeletionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CancelKeyDeletionRequestMarshaller();
             var unmarshaller = CancelKeyDeletionResponseUnmarshaller.Instance;
@@ -559,7 +559,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
-        public CreateAliasResponse CreateAlias(string aliasName, string targetKeyId)
+        public virtual CreateAliasResponse CreateAlias(string aliasName, string targetKeyId)
         {
             var request = new CreateAliasRequest();
             request.AliasName = aliasName;
@@ -622,7 +622,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
-        public CreateAliasResponse CreateAlias(CreateAliasRequest request)
+        public virtual CreateAliasResponse CreateAlias(CreateAliasRequest request)
         {
             var marshaller = new CreateAliasRequestMarshaller();
             var unmarshaller = CreateAliasResponseUnmarshaller.Instance;
@@ -689,7 +689,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
-        public Task<CreateAliasResponse> CreateAliasAsync(string aliasName, string targetKeyId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateAliasResponse> CreateAliasAsync(string aliasName, string targetKeyId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new CreateAliasRequest();
             request.AliasName = aliasName;
@@ -707,7 +707,7 @@ namespace Amazon.KeyManagementService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
-        public Task<CreateAliasResponse> CreateAliasAsync(CreateAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateAliasResponse> CreateAliasAsync(CreateAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateAliasRequestMarshaller();
             var unmarshaller = CreateAliasResponseUnmarshaller.Instance;
@@ -770,7 +770,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CreateGrant">REST API Reference for CreateGrant Operation</seealso>
-        public CreateGrantResponse CreateGrant(CreateGrantRequest request)
+        public virtual CreateGrantResponse CreateGrant(CreateGrantRequest request)
         {
             var marshaller = new CreateGrantRequestMarshaller();
             var unmarshaller = CreateGrantResponseUnmarshaller.Instance;
@@ -788,7 +788,7 @@ namespace Amazon.KeyManagementService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CreateGrant">REST API Reference for CreateGrant Operation</seealso>
-        public Task<CreateGrantResponse> CreateGrantAsync(CreateGrantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateGrantResponse> CreateGrantAsync(CreateGrantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateGrantRequestMarshaller();
             var unmarshaller = CreateGrantResponseUnmarshaller.Instance;
@@ -854,7 +854,7 @@ namespace Amazon.KeyManagementService
         /// resource is not valid for this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CreateKey">REST API Reference for CreateKey Operation</seealso>
-        public CreateKeyResponse CreateKey(CreateKeyRequest request)
+        public virtual CreateKeyResponse CreateKey(CreateKeyRequest request)
         {
             var marshaller = new CreateKeyRequestMarshaller();
             var unmarshaller = CreateKeyResponseUnmarshaller.Instance;
@@ -872,7 +872,7 @@ namespace Amazon.KeyManagementService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CreateKey">REST API Reference for CreateKey Operation</seealso>
-        public Task<CreateKeyResponse> CreateKeyAsync(CreateKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateKeyResponse> CreateKeyAsync(CreateKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateKeyRequestMarshaller();
             var unmarshaller = CreateKeyResponseUnmarshaller.Instance;
@@ -953,7 +953,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/Decrypt">REST API Reference for Decrypt Operation</seealso>
-        public DecryptResponse Decrypt(DecryptRequest request)
+        public virtual DecryptResponse Decrypt(DecryptRequest request)
         {
             var marshaller = new DecryptRequestMarshaller();
             var unmarshaller = DecryptResponseUnmarshaller.Instance;
@@ -971,7 +971,7 @@ namespace Amazon.KeyManagementService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/Decrypt">REST API Reference for Decrypt Operation</seealso>
-        public Task<DecryptResponse> DecryptAsync(DecryptRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DecryptResponse> DecryptAsync(DecryptRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DecryptRequestMarshaller();
             var unmarshaller = DecryptResponseUnmarshaller.Instance;
@@ -1013,7 +1013,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
-        public DeleteAliasResponse DeleteAlias(string aliasName)
+        public virtual DeleteAliasResponse DeleteAlias(string aliasName)
         {
             var request = new DeleteAliasRequest();
             request.AliasName = aliasName;
@@ -1049,7 +1049,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
-        public DeleteAliasResponse DeleteAlias(DeleteAliasRequest request)
+        public virtual DeleteAliasResponse DeleteAlias(DeleteAliasRequest request)
         {
             var marshaller = new DeleteAliasRequestMarshaller();
             var unmarshaller = DeleteAliasResponseUnmarshaller.Instance;
@@ -1089,7 +1089,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
-        public Task<DeleteAliasResponse> DeleteAliasAsync(string aliasName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteAliasResponse> DeleteAliasAsync(string aliasName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DeleteAliasRequest();
             request.AliasName = aliasName;
@@ -1106,7 +1106,7 @@ namespace Amazon.KeyManagementService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
-        public Task<DeleteAliasResponse> DeleteAliasAsync(DeleteAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteAliasResponse> DeleteAliasAsync(DeleteAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteAliasRequestMarshaller();
             var unmarshaller = DeleteAliasResponseUnmarshaller.Instance;
@@ -1169,7 +1169,7 @@ namespace Amazon.KeyManagementService
         /// resource is not valid for this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DeleteImportedKeyMaterial">REST API Reference for DeleteImportedKeyMaterial Operation</seealso>
-        public DeleteImportedKeyMaterialResponse DeleteImportedKeyMaterial(DeleteImportedKeyMaterialRequest request)
+        public virtual DeleteImportedKeyMaterialResponse DeleteImportedKeyMaterial(DeleteImportedKeyMaterialRequest request)
         {
             var marshaller = new DeleteImportedKeyMaterialRequestMarshaller();
             var unmarshaller = DeleteImportedKeyMaterialResponseUnmarshaller.Instance;
@@ -1187,7 +1187,7 @@ namespace Amazon.KeyManagementService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DeleteImportedKeyMaterial">REST API Reference for DeleteImportedKeyMaterial Operation</seealso>
-        public Task<DeleteImportedKeyMaterialResponse> DeleteImportedKeyMaterialAsync(DeleteImportedKeyMaterialRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteImportedKeyMaterialResponse> DeleteImportedKeyMaterialAsync(DeleteImportedKeyMaterialRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteImportedKeyMaterialRequestMarshaller();
             var unmarshaller = DeleteImportedKeyMaterialResponseUnmarshaller.Instance;
@@ -1221,7 +1221,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DescribeKey">REST API Reference for DescribeKey Operation</seealso>
-        public DescribeKeyResponse DescribeKey(string keyId)
+        public virtual DescribeKeyResponse DescribeKey(string keyId)
         {
             var request = new DescribeKeyRequest();
             request.KeyId = keyId;
@@ -1249,7 +1249,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DescribeKey">REST API Reference for DescribeKey Operation</seealso>
-        public DescribeKeyResponse DescribeKey(DescribeKeyRequest request)
+        public virtual DescribeKeyResponse DescribeKey(DescribeKeyRequest request)
         {
             var marshaller = new DescribeKeyRequestMarshaller();
             var unmarshaller = DescribeKeyResponseUnmarshaller.Instance;
@@ -1281,7 +1281,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DescribeKey">REST API Reference for DescribeKey Operation</seealso>
-        public Task<DescribeKeyResponse> DescribeKeyAsync(string keyId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeKeyResponse> DescribeKeyAsync(string keyId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DescribeKeyRequest();
             request.KeyId = keyId;
@@ -1298,7 +1298,7 @@ namespace Amazon.KeyManagementService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DescribeKey">REST API Reference for DescribeKey Operation</seealso>
-        public Task<DescribeKeyResponse> DescribeKeyAsync(DescribeKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeKeyResponse> DescribeKeyAsync(DescribeKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeKeyRequestMarshaller();
             var unmarshaller = DescribeKeyResponseUnmarshaller.Instance;
@@ -1347,7 +1347,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DisableKey">REST API Reference for DisableKey Operation</seealso>
-        public DisableKeyResponse DisableKey(string keyId)
+        public virtual DisableKeyResponse DisableKey(string keyId)
         {
             var request = new DisableKeyRequest();
             request.KeyId = keyId;
@@ -1390,7 +1390,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DisableKey">REST API Reference for DisableKey Operation</seealso>
-        public DisableKeyResponse DisableKey(DisableKeyRequest request)
+        public virtual DisableKeyResponse DisableKey(DisableKeyRequest request)
         {
             var marshaller = new DisableKeyRequestMarshaller();
             var unmarshaller = DisableKeyResponseUnmarshaller.Instance;
@@ -1437,7 +1437,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DisableKey">REST API Reference for DisableKey Operation</seealso>
-        public Task<DisableKeyResponse> DisableKeyAsync(string keyId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DisableKeyResponse> DisableKeyAsync(string keyId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DisableKeyRequest();
             request.KeyId = keyId;
@@ -1454,7 +1454,7 @@ namespace Amazon.KeyManagementService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DisableKey">REST API Reference for DisableKey Operation</seealso>
-        public Task<DisableKeyResponse> DisableKeyAsync(DisableKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DisableKeyResponse> DisableKeyAsync(DisableKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DisableKeyRequestMarshaller();
             var unmarshaller = DisableKeyResponseUnmarshaller.Instance;
@@ -1506,7 +1506,7 @@ namespace Amazon.KeyManagementService
         /// resource is not valid for this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DisableKeyRotation">REST API Reference for DisableKeyRotation Operation</seealso>
-        public DisableKeyRotationResponse DisableKeyRotation(string keyId)
+        public virtual DisableKeyRotationResponse DisableKeyRotation(string keyId)
         {
             var request = new DisableKeyRotationRequest();
             request.KeyId = keyId;
@@ -1552,7 +1552,7 @@ namespace Amazon.KeyManagementService
         /// resource is not valid for this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DisableKeyRotation">REST API Reference for DisableKeyRotation Operation</seealso>
-        public DisableKeyRotationResponse DisableKeyRotation(DisableKeyRotationRequest request)
+        public virtual DisableKeyRotationResponse DisableKeyRotation(DisableKeyRotationRequest request)
         {
             var marshaller = new DisableKeyRotationRequestMarshaller();
             var unmarshaller = DisableKeyRotationResponseUnmarshaller.Instance;
@@ -1602,7 +1602,7 @@ namespace Amazon.KeyManagementService
         /// resource is not valid for this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DisableKeyRotation">REST API Reference for DisableKeyRotation Operation</seealso>
-        public Task<DisableKeyRotationResponse> DisableKeyRotationAsync(string keyId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DisableKeyRotationResponse> DisableKeyRotationAsync(string keyId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DisableKeyRotationRequest();
             request.KeyId = keyId;
@@ -1619,7 +1619,7 @@ namespace Amazon.KeyManagementService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DisableKeyRotation">REST API Reference for DisableKeyRotation Operation</seealso>
-        public Task<DisableKeyRotationResponse> DisableKeyRotationAsync(DisableKeyRotationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DisableKeyRotationResponse> DisableKeyRotationAsync(DisableKeyRotationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DisableKeyRotationRequestMarshaller();
             var unmarshaller = DisableKeyRotationResponseUnmarshaller.Instance;
@@ -1669,7 +1669,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/EnableKey">REST API Reference for EnableKey Operation</seealso>
-        public EnableKeyResponse EnableKey(string keyId)
+        public virtual EnableKeyResponse EnableKey(string keyId)
         {
             var request = new EnableKeyRequest();
             request.KeyId = keyId;
@@ -1713,7 +1713,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/EnableKey">REST API Reference for EnableKey Operation</seealso>
-        public EnableKeyResponse EnableKey(EnableKeyRequest request)
+        public virtual EnableKeyResponse EnableKey(EnableKeyRequest request)
         {
             var marshaller = new EnableKeyRequestMarshaller();
             var unmarshaller = EnableKeyResponseUnmarshaller.Instance;
@@ -1761,7 +1761,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/EnableKey">REST API Reference for EnableKey Operation</seealso>
-        public Task<EnableKeyResponse> EnableKeyAsync(string keyId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<EnableKeyResponse> EnableKeyAsync(string keyId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new EnableKeyRequest();
             request.KeyId = keyId;
@@ -1778,7 +1778,7 @@ namespace Amazon.KeyManagementService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/EnableKey">REST API Reference for EnableKey Operation</seealso>
-        public Task<EnableKeyResponse> EnableKeyAsync(EnableKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<EnableKeyResponse> EnableKeyAsync(EnableKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new EnableKeyRequestMarshaller();
             var unmarshaller = EnableKeyResponseUnmarshaller.Instance;
@@ -1830,7 +1830,7 @@ namespace Amazon.KeyManagementService
         /// resource is not valid for this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/EnableKeyRotation">REST API Reference for EnableKeyRotation Operation</seealso>
-        public EnableKeyRotationResponse EnableKeyRotation(string keyId)
+        public virtual EnableKeyRotationResponse EnableKeyRotation(string keyId)
         {
             var request = new EnableKeyRotationRequest();
             request.KeyId = keyId;
@@ -1876,7 +1876,7 @@ namespace Amazon.KeyManagementService
         /// resource is not valid for this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/EnableKeyRotation">REST API Reference for EnableKeyRotation Operation</seealso>
-        public EnableKeyRotationResponse EnableKeyRotation(EnableKeyRotationRequest request)
+        public virtual EnableKeyRotationResponse EnableKeyRotation(EnableKeyRotationRequest request)
         {
             var marshaller = new EnableKeyRotationRequestMarshaller();
             var unmarshaller = EnableKeyRotationResponseUnmarshaller.Instance;
@@ -1926,7 +1926,7 @@ namespace Amazon.KeyManagementService
         /// resource is not valid for this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/EnableKeyRotation">REST API Reference for EnableKeyRotation Operation</seealso>
-        public Task<EnableKeyRotationResponse> EnableKeyRotationAsync(string keyId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<EnableKeyRotationResponse> EnableKeyRotationAsync(string keyId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new EnableKeyRotationRequest();
             request.KeyId = keyId;
@@ -1943,7 +1943,7 @@ namespace Amazon.KeyManagementService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/EnableKeyRotation">REST API Reference for EnableKeyRotation Operation</seealso>
-        public Task<EnableKeyRotationResponse> EnableKeyRotationAsync(EnableKeyRotationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<EnableKeyRotationResponse> EnableKeyRotationAsync(EnableKeyRotationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new EnableKeyRotationRequestMarshaller();
             var unmarshaller = EnableKeyRotationResponseUnmarshaller.Instance;
@@ -2025,7 +2025,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/Encrypt">REST API Reference for Encrypt Operation</seealso>
-        public EncryptResponse Encrypt(EncryptRequest request)
+        public virtual EncryptResponse Encrypt(EncryptRequest request)
         {
             var marshaller = new EncryptRequestMarshaller();
             var unmarshaller = EncryptResponseUnmarshaller.Instance;
@@ -2043,7 +2043,7 @@ namespace Amazon.KeyManagementService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/Encrypt">REST API Reference for Encrypt Operation</seealso>
-        public Task<EncryptResponse> EncryptAsync(EncryptRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<EncryptResponse> EncryptAsync(EncryptRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new EncryptRequestMarshaller();
             var unmarshaller = EncryptResponseUnmarshaller.Instance;
@@ -2161,7 +2161,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateDataKey">REST API Reference for GenerateDataKey Operation</seealso>
-        public GenerateDataKeyResponse GenerateDataKey(GenerateDataKeyRequest request)
+        public virtual GenerateDataKeyResponse GenerateDataKey(GenerateDataKeyRequest request)
         {
             var marshaller = new GenerateDataKeyRequestMarshaller();
             var unmarshaller = GenerateDataKeyResponseUnmarshaller.Instance;
@@ -2179,7 +2179,7 @@ namespace Amazon.KeyManagementService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateDataKey">REST API Reference for GenerateDataKey Operation</seealso>
-        public Task<GenerateDataKeyResponse> GenerateDataKeyAsync(GenerateDataKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GenerateDataKeyResponse> GenerateDataKeyAsync(GenerateDataKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GenerateDataKeyRequestMarshaller();
             var unmarshaller = GenerateDataKeyResponseUnmarshaller.Instance;
@@ -2251,7 +2251,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateDataKeyWithoutPlaintext">REST API Reference for GenerateDataKeyWithoutPlaintext Operation</seealso>
-        public GenerateDataKeyWithoutPlaintextResponse GenerateDataKeyWithoutPlaintext(GenerateDataKeyWithoutPlaintextRequest request)
+        public virtual GenerateDataKeyWithoutPlaintextResponse GenerateDataKeyWithoutPlaintext(GenerateDataKeyWithoutPlaintextRequest request)
         {
             var marshaller = new GenerateDataKeyWithoutPlaintextRequestMarshaller();
             var unmarshaller = GenerateDataKeyWithoutPlaintextResponseUnmarshaller.Instance;
@@ -2269,7 +2269,7 @@ namespace Amazon.KeyManagementService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateDataKeyWithoutPlaintext">REST API Reference for GenerateDataKeyWithoutPlaintext Operation</seealso>
-        public Task<GenerateDataKeyWithoutPlaintextResponse> GenerateDataKeyWithoutPlaintextAsync(GenerateDataKeyWithoutPlaintextRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GenerateDataKeyWithoutPlaintextResponse> GenerateDataKeyWithoutPlaintextAsync(GenerateDataKeyWithoutPlaintextRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GenerateDataKeyWithoutPlaintextRequestMarshaller();
             var unmarshaller = GenerateDataKeyWithoutPlaintextResponseUnmarshaller.Instance;
@@ -2303,7 +2303,7 @@ namespace Amazon.KeyManagementService
         /// retried.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateRandom">REST API Reference for GenerateRandom Operation</seealso>
-        public GenerateRandomResponse GenerateRandom(int numberOfBytes)
+        public virtual GenerateRandomResponse GenerateRandom(int numberOfBytes)
         {
             var request = new GenerateRandomRequest();
             request.NumberOfBytes = numberOfBytes;
@@ -2331,7 +2331,7 @@ namespace Amazon.KeyManagementService
         /// retried.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateRandom">REST API Reference for GenerateRandom Operation</seealso>
-        public GenerateRandomResponse GenerateRandom(GenerateRandomRequest request)
+        public virtual GenerateRandomResponse GenerateRandom(GenerateRandomRequest request)
         {
             var marshaller = new GenerateRandomRequestMarshaller();
             var unmarshaller = GenerateRandomResponseUnmarshaller.Instance;
@@ -2363,7 +2363,7 @@ namespace Amazon.KeyManagementService
         /// retried.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateRandom">REST API Reference for GenerateRandom Operation</seealso>
-        public Task<GenerateRandomResponse> GenerateRandomAsync(int numberOfBytes, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GenerateRandomResponse> GenerateRandomAsync(int numberOfBytes, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new GenerateRandomRequest();
             request.NumberOfBytes = numberOfBytes;
@@ -2380,7 +2380,7 @@ namespace Amazon.KeyManagementService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateRandom">REST API Reference for GenerateRandom Operation</seealso>
-        public Task<GenerateRandomResponse> GenerateRandomAsync(GenerateRandomRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GenerateRandomResponse> GenerateRandomAsync(GenerateRandomRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GenerateRandomRequestMarshaller();
             var unmarshaller = GenerateRandomResponseUnmarshaller.Instance;
@@ -2426,7 +2426,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GetKeyPolicy">REST API Reference for GetKeyPolicy Operation</seealso>
-        public GetKeyPolicyResponse GetKeyPolicy(string keyId, string policyName)
+        public virtual GetKeyPolicyResponse GetKeyPolicy(string keyId, string policyName)
         {
             var request = new GetKeyPolicyRequest();
             request.KeyId = keyId;
@@ -2466,7 +2466,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GetKeyPolicy">REST API Reference for GetKeyPolicy Operation</seealso>
-        public GetKeyPolicyResponse GetKeyPolicy(GetKeyPolicyRequest request)
+        public virtual GetKeyPolicyResponse GetKeyPolicy(GetKeyPolicyRequest request)
         {
             var marshaller = new GetKeyPolicyRequestMarshaller();
             var unmarshaller = GetKeyPolicyResponseUnmarshaller.Instance;
@@ -2510,7 +2510,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GetKeyPolicy">REST API Reference for GetKeyPolicy Operation</seealso>
-        public Task<GetKeyPolicyResponse> GetKeyPolicyAsync(string keyId, string policyName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetKeyPolicyResponse> GetKeyPolicyAsync(string keyId, string policyName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new GetKeyPolicyRequest();
             request.KeyId = keyId;
@@ -2528,7 +2528,7 @@ namespace Amazon.KeyManagementService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GetKeyPolicy">REST API Reference for GetKeyPolicy Operation</seealso>
-        public Task<GetKeyPolicyResponse> GetKeyPolicyAsync(GetKeyPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetKeyPolicyResponse> GetKeyPolicyAsync(GetKeyPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetKeyPolicyRequestMarshaller();
             var unmarshaller = GetKeyPolicyResponseUnmarshaller.Instance;
@@ -2578,7 +2578,7 @@ namespace Amazon.KeyManagementService
         /// resource is not valid for this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GetKeyRotationStatus">REST API Reference for GetKeyRotationStatus Operation</seealso>
-        public GetKeyRotationStatusResponse GetKeyRotationStatus(string keyId)
+        public virtual GetKeyRotationStatusResponse GetKeyRotationStatus(string keyId)
         {
             var request = new GetKeyRotationStatusRequest();
             request.KeyId = keyId;
@@ -2622,7 +2622,7 @@ namespace Amazon.KeyManagementService
         /// resource is not valid for this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GetKeyRotationStatus">REST API Reference for GetKeyRotationStatus Operation</seealso>
-        public GetKeyRotationStatusResponse GetKeyRotationStatus(GetKeyRotationStatusRequest request)
+        public virtual GetKeyRotationStatusResponse GetKeyRotationStatus(GetKeyRotationStatusRequest request)
         {
             var marshaller = new GetKeyRotationStatusRequestMarshaller();
             var unmarshaller = GetKeyRotationStatusResponseUnmarshaller.Instance;
@@ -2670,7 +2670,7 @@ namespace Amazon.KeyManagementService
         /// resource is not valid for this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GetKeyRotationStatus">REST API Reference for GetKeyRotationStatus Operation</seealso>
-        public Task<GetKeyRotationStatusResponse> GetKeyRotationStatusAsync(string keyId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetKeyRotationStatusResponse> GetKeyRotationStatusAsync(string keyId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new GetKeyRotationStatusRequest();
             request.KeyId = keyId;
@@ -2687,7 +2687,7 @@ namespace Amazon.KeyManagementService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GetKeyRotationStatus">REST API Reference for GetKeyRotationStatus Operation</seealso>
-        public Task<GetKeyRotationStatusResponse> GetKeyRotationStatusAsync(GetKeyRotationStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetKeyRotationStatusResponse> GetKeyRotationStatusAsync(GetKeyRotationStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetKeyRotationStatusRequestMarshaller();
             var unmarshaller = GetKeyRotationStatusResponseUnmarshaller.Instance;
@@ -2756,7 +2756,7 @@ namespace Amazon.KeyManagementService
         /// resource is not valid for this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GetParametersForImport">REST API Reference for GetParametersForImport Operation</seealso>
-        public GetParametersForImportResponse GetParametersForImport(GetParametersForImportRequest request)
+        public virtual GetParametersForImportResponse GetParametersForImport(GetParametersForImportRequest request)
         {
             var marshaller = new GetParametersForImportRequestMarshaller();
             var unmarshaller = GetParametersForImportResponseUnmarshaller.Instance;
@@ -2774,7 +2774,7 @@ namespace Amazon.KeyManagementService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GetParametersForImport">REST API Reference for GetParametersForImport Operation</seealso>
-        public Task<GetParametersForImportResponse> GetParametersForImportAsync(GetParametersForImportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetParametersForImportResponse> GetParametersForImportAsync(GetParametersForImportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetParametersForImportRequestMarshaller();
             var unmarshaller = GetParametersForImportResponseUnmarshaller.Instance;
@@ -2866,7 +2866,7 @@ namespace Amazon.KeyManagementService
         /// resource is not valid for this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ImportKeyMaterial">REST API Reference for ImportKeyMaterial Operation</seealso>
-        public ImportKeyMaterialResponse ImportKeyMaterial(ImportKeyMaterialRequest request)
+        public virtual ImportKeyMaterialResponse ImportKeyMaterial(ImportKeyMaterialRequest request)
         {
             var marshaller = new ImportKeyMaterialRequestMarshaller();
             var unmarshaller = ImportKeyMaterialResponseUnmarshaller.Instance;
@@ -2884,7 +2884,7 @@ namespace Amazon.KeyManagementService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ImportKeyMaterial">REST API Reference for ImportKeyMaterial Operation</seealso>
-        public Task<ImportKeyMaterialResponse> ImportKeyMaterialAsync(ImportKeyMaterialRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ImportKeyMaterialResponse> ImportKeyMaterialAsync(ImportKeyMaterialRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ImportKeyMaterialRequestMarshaller();
             var unmarshaller = ImportKeyMaterialResponseUnmarshaller.Instance;
@@ -2916,7 +2916,7 @@ namespace Amazon.KeyManagementService
         /// retried.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListAliases">REST API Reference for ListAliases Operation</seealso>
-        public ListAliasesResponse ListAliases(ListAliasesRequest request)
+        public virtual ListAliasesResponse ListAliases(ListAliasesRequest request)
         {
             var marshaller = new ListAliasesRequestMarshaller();
             var unmarshaller = ListAliasesResponseUnmarshaller.Instance;
@@ -2934,7 +2934,7 @@ namespace Amazon.KeyManagementService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListAliases">REST API Reference for ListAliases Operation</seealso>
-        public Task<ListAliasesResponse> ListAliasesAsync(ListAliasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListAliasesResponse> ListAliasesAsync(ListAliasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListAliasesRequestMarshaller();
             var unmarshaller = ListAliasesResponseUnmarshaller.Instance;
@@ -2983,7 +2983,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListGrants">REST API Reference for ListGrants Operation</seealso>
-        public ListGrantsResponse ListGrants(ListGrantsRequest request)
+        public virtual ListGrantsResponse ListGrants(ListGrantsRequest request)
         {
             var marshaller = new ListGrantsRequestMarshaller();
             var unmarshaller = ListGrantsResponseUnmarshaller.Instance;
@@ -3001,7 +3001,7 @@ namespace Amazon.KeyManagementService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListGrants">REST API Reference for ListGrants Operation</seealso>
-        public Task<ListGrantsResponse> ListGrantsAsync(ListGrantsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListGrantsResponse> ListGrantsAsync(ListGrantsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListGrantsRequestMarshaller();
             var unmarshaller = ListGrantsResponseUnmarshaller.Instance;
@@ -3046,7 +3046,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListKeyPolicies">REST API Reference for ListKeyPolicies Operation</seealso>
-        public ListKeyPoliciesResponse ListKeyPolicies(ListKeyPoliciesRequest request)
+        public virtual ListKeyPoliciesResponse ListKeyPolicies(ListKeyPoliciesRequest request)
         {
             var marshaller = new ListKeyPoliciesRequestMarshaller();
             var unmarshaller = ListKeyPoliciesResponseUnmarshaller.Instance;
@@ -3064,7 +3064,7 @@ namespace Amazon.KeyManagementService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListKeyPolicies">REST API Reference for ListKeyPolicies Operation</seealso>
-        public Task<ListKeyPoliciesResponse> ListKeyPoliciesAsync(ListKeyPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListKeyPoliciesResponse> ListKeyPoliciesAsync(ListKeyPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListKeyPoliciesRequestMarshaller();
             var unmarshaller = ListKeyPoliciesResponseUnmarshaller.Instance;
@@ -3096,7 +3096,7 @@ namespace Amazon.KeyManagementService
         /// retried.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListKeys">REST API Reference for ListKeys Operation</seealso>
-        public ListKeysResponse ListKeys(ListKeysRequest request)
+        public virtual ListKeysResponse ListKeys(ListKeysRequest request)
         {
             var marshaller = new ListKeysRequestMarshaller();
             var unmarshaller = ListKeysResponseUnmarshaller.Instance;
@@ -3114,7 +3114,7 @@ namespace Amazon.KeyManagementService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListKeys">REST API Reference for ListKeys Operation</seealso>
-        public Task<ListKeysResponse> ListKeysAsync(ListKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListKeysResponse> ListKeysAsync(ListKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListKeysRequestMarshaller();
             var unmarshaller = ListKeysResponseUnmarshaller.Instance;
@@ -3149,7 +3149,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListResourceTags">REST API Reference for ListResourceTags Operation</seealso>
-        public ListResourceTagsResponse ListResourceTags(ListResourceTagsRequest request)
+        public virtual ListResourceTagsResponse ListResourceTags(ListResourceTagsRequest request)
         {
             var marshaller = new ListResourceTagsRequestMarshaller();
             var unmarshaller = ListResourceTagsResponseUnmarshaller.Instance;
@@ -3167,7 +3167,7 @@ namespace Amazon.KeyManagementService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListResourceTags">REST API Reference for ListResourceTags Operation</seealso>
-        public Task<ListResourceTagsResponse> ListResourceTagsAsync(ListResourceTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListResourceTagsResponse> ListResourceTagsAsync(ListResourceTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListResourceTagsRequestMarshaller();
             var unmarshaller = ListResourceTagsResponseUnmarshaller.Instance;
@@ -3212,7 +3212,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListRetirableGrants">REST API Reference for ListRetirableGrants Operation</seealso>
-        public ListRetirableGrantsResponse ListRetirableGrants(string retiringPrincipal)
+        public virtual ListRetirableGrantsResponse ListRetirableGrants(string retiringPrincipal)
         {
             var request = new ListRetirableGrantsRequest();
             request.RetiringPrincipal = retiringPrincipal;
@@ -3250,7 +3250,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListRetirableGrants">REST API Reference for ListRetirableGrants Operation</seealso>
-        public ListRetirableGrantsResponse ListRetirableGrants()
+        public virtual ListRetirableGrantsResponse ListRetirableGrants()
         {
             var request = new ListRetirableGrantsRequest();
             return ListRetirableGrants(request);
@@ -3288,7 +3288,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListRetirableGrants">REST API Reference for ListRetirableGrants Operation</seealso>
-        public ListRetirableGrantsResponse ListRetirableGrants(ListRetirableGrantsRequest request)
+        public virtual ListRetirableGrantsResponse ListRetirableGrants(ListRetirableGrantsRequest request)
         {
             var marshaller = new ListRetirableGrantsRequestMarshaller();
             var unmarshaller = ListRetirableGrantsResponseUnmarshaller.Instance;
@@ -3331,7 +3331,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListRetirableGrants">REST API Reference for ListRetirableGrants Operation</seealso>
-        public Task<ListRetirableGrantsResponse> ListRetirableGrantsAsync(string retiringPrincipal, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListRetirableGrantsResponse> ListRetirableGrantsAsync(string retiringPrincipal, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new ListRetirableGrantsRequest();
             request.RetiringPrincipal = retiringPrincipal;
@@ -3372,7 +3372,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListRetirableGrants">REST API Reference for ListRetirableGrants Operation</seealso>
-        public Task<ListRetirableGrantsResponse> ListRetirableGrantsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListRetirableGrantsResponse> ListRetirableGrantsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new ListRetirableGrantsRequest();
             return ListRetirableGrantsAsync(request, cancellationToken);
@@ -3388,7 +3388,7 @@ namespace Amazon.KeyManagementService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListRetirableGrants">REST API Reference for ListRetirableGrants Operation</seealso>
-        public Task<ListRetirableGrantsResponse> ListRetirableGrantsAsync(ListRetirableGrantsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListRetirableGrantsResponse> ListRetirableGrantsAsync(ListRetirableGrantsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListRetirableGrantsRequestMarshaller();
             var unmarshaller = ListRetirableGrantsResponseUnmarshaller.Instance;
@@ -3454,7 +3454,7 @@ namespace Amazon.KeyManagementService
         /// resource is not valid for this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/PutKeyPolicy">REST API Reference for PutKeyPolicy Operation</seealso>
-        public PutKeyPolicyResponse PutKeyPolicy(string keyId, string policy, string policyName)
+        public virtual PutKeyPolicyResponse PutKeyPolicy(string keyId, string policy, string policyName)
         {
             var request = new PutKeyPolicyRequest();
             request.KeyId = keyId;
@@ -3514,7 +3514,7 @@ namespace Amazon.KeyManagementService
         /// resource is not valid for this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/PutKeyPolicy">REST API Reference for PutKeyPolicy Operation</seealso>
-        public PutKeyPolicyResponse PutKeyPolicy(PutKeyPolicyRequest request)
+        public virtual PutKeyPolicyResponse PutKeyPolicy(PutKeyPolicyRequest request)
         {
             var marshaller = new PutKeyPolicyRequestMarshaller();
             var unmarshaller = PutKeyPolicyResponseUnmarshaller.Instance;
@@ -3578,7 +3578,7 @@ namespace Amazon.KeyManagementService
         /// resource is not valid for this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/PutKeyPolicy">REST API Reference for PutKeyPolicy Operation</seealso>
-        public Task<PutKeyPolicyResponse> PutKeyPolicyAsync(string keyId, string policy, string policyName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PutKeyPolicyResponse> PutKeyPolicyAsync(string keyId, string policy, string policyName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new PutKeyPolicyRequest();
             request.KeyId = keyId;
@@ -3597,7 +3597,7 @@ namespace Amazon.KeyManagementService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/PutKeyPolicy">REST API Reference for PutKeyPolicy Operation</seealso>
-        public Task<PutKeyPolicyResponse> PutKeyPolicyAsync(PutKeyPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PutKeyPolicyResponse> PutKeyPolicyAsync(PutKeyPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutKeyPolicyRequestMarshaller();
             var unmarshaller = PutKeyPolicyResponseUnmarshaller.Instance;
@@ -3671,7 +3671,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ReEncrypt">REST API Reference for ReEncrypt Operation</seealso>
-        public ReEncryptResponse ReEncrypt(ReEncryptRequest request)
+        public virtual ReEncryptResponse ReEncrypt(ReEncryptRequest request)
         {
             var marshaller = new ReEncryptRequestMarshaller();
             var unmarshaller = ReEncryptResponseUnmarshaller.Instance;
@@ -3689,7 +3689,7 @@ namespace Amazon.KeyManagementService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ReEncrypt">REST API Reference for ReEncrypt Operation</seealso>
-        public Task<ReEncryptResponse> ReEncryptAsync(ReEncryptRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ReEncryptResponse> ReEncryptAsync(ReEncryptRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ReEncryptRequestMarshaller();
             var unmarshaller = ReEncryptResponseUnmarshaller.Instance;
@@ -3760,7 +3760,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/RetireGrant">REST API Reference for RetireGrant Operation</seealso>
-        public RetireGrantResponse RetireGrant(string grantToken)
+        public virtual RetireGrantResponse RetireGrant(string grantToken)
         {
             var request = new RetireGrantRequest();
             request.GrantToken = grantToken;
@@ -3825,7 +3825,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/RetireGrant">REST API Reference for RetireGrant Operation</seealso>
-        public RetireGrantResponse RetireGrant(RetireGrantRequest request)
+        public virtual RetireGrantResponse RetireGrant(RetireGrantRequest request)
         {
             var marshaller = new RetireGrantRequestMarshaller();
             var unmarshaller = RetireGrantResponseUnmarshaller.Instance;
@@ -3894,7 +3894,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/RetireGrant">REST API Reference for RetireGrant Operation</seealso>
-        public Task<RetireGrantResponse> RetireGrantAsync(string grantToken, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<RetireGrantResponse> RetireGrantAsync(string grantToken, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new RetireGrantRequest();
             request.GrantToken = grantToken;
@@ -3911,7 +3911,7 @@ namespace Amazon.KeyManagementService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/RetireGrant">REST API Reference for RetireGrant Operation</seealso>
-        public Task<RetireGrantResponse> RetireGrantAsync(RetireGrantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<RetireGrantResponse> RetireGrantAsync(RetireGrantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RetireGrantRequestMarshaller();
             var unmarshaller = RetireGrantResponseUnmarshaller.Instance;
@@ -3961,7 +3961,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/RevokeGrant">REST API Reference for RevokeGrant Operation</seealso>
-        public RevokeGrantResponse RevokeGrant(string grantId, string keyId)
+        public virtual RevokeGrantResponse RevokeGrant(string grantId, string keyId)
         {
             var request = new RevokeGrantRequest();
             request.GrantId = grantId;
@@ -4005,7 +4005,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/RevokeGrant">REST API Reference for RevokeGrant Operation</seealso>
-        public RevokeGrantResponse RevokeGrant(RevokeGrantRequest request)
+        public virtual RevokeGrantResponse RevokeGrant(RevokeGrantRequest request)
         {
             var marshaller = new RevokeGrantRequestMarshaller();
             var unmarshaller = RevokeGrantResponseUnmarshaller.Instance;
@@ -4053,7 +4053,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/RevokeGrant">REST API Reference for RevokeGrant Operation</seealso>
-        public Task<RevokeGrantResponse> RevokeGrantAsync(string grantId, string keyId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<RevokeGrantResponse> RevokeGrantAsync(string grantId, string keyId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new RevokeGrantRequest();
             request.GrantId = grantId;
@@ -4071,7 +4071,7 @@ namespace Amazon.KeyManagementService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/RevokeGrant">REST API Reference for RevokeGrant Operation</seealso>
-        public Task<RevokeGrantResponse> RevokeGrantAsync(RevokeGrantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<RevokeGrantResponse> RevokeGrantAsync(RevokeGrantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RevokeGrantRequestMarshaller();
             var unmarshaller = RevokeGrantResponseUnmarshaller.Instance;
@@ -4134,7 +4134,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ScheduleKeyDeletion">REST API Reference for ScheduleKeyDeletion Operation</seealso>
-        public ScheduleKeyDeletionResponse ScheduleKeyDeletion(string keyId)
+        public virtual ScheduleKeyDeletionResponse ScheduleKeyDeletion(string keyId)
         {
             var request = new ScheduleKeyDeletionRequest();
             request.KeyId = keyId;
@@ -4192,7 +4192,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ScheduleKeyDeletion">REST API Reference for ScheduleKeyDeletion Operation</seealso>
-        public ScheduleKeyDeletionResponse ScheduleKeyDeletion(string keyId, int pendingWindowInDays)
+        public virtual ScheduleKeyDeletionResponse ScheduleKeyDeletion(string keyId, int pendingWindowInDays)
         {
             var request = new ScheduleKeyDeletionRequest();
             request.KeyId = keyId;
@@ -4250,7 +4250,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ScheduleKeyDeletion">REST API Reference for ScheduleKeyDeletion Operation</seealso>
-        public ScheduleKeyDeletionResponse ScheduleKeyDeletion(ScheduleKeyDeletionRequest request)
+        public virtual ScheduleKeyDeletionResponse ScheduleKeyDeletion(ScheduleKeyDeletionRequest request)
         {
             var marshaller = new ScheduleKeyDeletionRequestMarshaller();
             var unmarshaller = ScheduleKeyDeletionResponseUnmarshaller.Instance;
@@ -4311,7 +4311,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ScheduleKeyDeletion">REST API Reference for ScheduleKeyDeletion Operation</seealso>
-        public Task<ScheduleKeyDeletionResponse> ScheduleKeyDeletionAsync(string keyId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ScheduleKeyDeletionResponse> ScheduleKeyDeletionAsync(string keyId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new ScheduleKeyDeletionRequest();
             request.KeyId = keyId;
@@ -4372,7 +4372,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ScheduleKeyDeletion">REST API Reference for ScheduleKeyDeletion Operation</seealso>
-        public Task<ScheduleKeyDeletionResponse> ScheduleKeyDeletionAsync(string keyId, int pendingWindowInDays, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ScheduleKeyDeletionResponse> ScheduleKeyDeletionAsync(string keyId, int pendingWindowInDays, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new ScheduleKeyDeletionRequest();
             request.KeyId = keyId;
@@ -4390,7 +4390,7 @@ namespace Amazon.KeyManagementService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ScheduleKeyDeletion">REST API Reference for ScheduleKeyDeletion Operation</seealso>
-        public Task<ScheduleKeyDeletionResponse> ScheduleKeyDeletionAsync(ScheduleKeyDeletionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ScheduleKeyDeletionResponse> ScheduleKeyDeletionAsync(ScheduleKeyDeletionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ScheduleKeyDeletionRequestMarshaller();
             var unmarshaller = ScheduleKeyDeletionResponseUnmarshaller.Instance;
@@ -4454,7 +4454,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because one or more tags are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/TagResource">REST API Reference for TagResource Operation</seealso>
-        public TagResourceResponse TagResource(TagResourceRequest request)
+        public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
             var marshaller = new TagResourceRequestMarshaller();
             var unmarshaller = TagResourceResponseUnmarshaller.Instance;
@@ -4472,7 +4472,7 @@ namespace Amazon.KeyManagementService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/TagResource">REST API Reference for TagResource Operation</seealso>
-        public Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new TagResourceRequestMarshaller();
             var unmarshaller = TagResourceResponseUnmarshaller.Instance;
@@ -4523,7 +4523,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because one or more tags are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
-        public UntagResourceResponse UntagResource(UntagResourceRequest request)
+        public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
             var marshaller = new UntagResourceRequestMarshaller();
             var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
@@ -4541,7 +4541,7 @@ namespace Amazon.KeyManagementService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
-        public Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UntagResourceRequestMarshaller();
             var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
@@ -4602,7 +4602,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UpdateAlias">REST API Reference for UpdateAlias Operation</seealso>
-        public UpdateAliasResponse UpdateAlias(string aliasName, string targetKeyId)
+        public virtual UpdateAliasResponse UpdateAlias(string aliasName, string targetKeyId)
         {
             var request = new UpdateAliasRequest();
             request.AliasName = aliasName;
@@ -4657,7 +4657,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UpdateAlias">REST API Reference for UpdateAlias Operation</seealso>
-        public UpdateAliasResponse UpdateAlias(UpdateAliasRequest request)
+        public virtual UpdateAliasResponse UpdateAlias(UpdateAliasRequest request)
         {
             var marshaller = new UpdateAliasRequestMarshaller();
             var unmarshaller = UpdateAliasResponseUnmarshaller.Instance;
@@ -4716,7 +4716,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UpdateAlias">REST API Reference for UpdateAlias Operation</seealso>
-        public Task<UpdateAliasResponse> UpdateAliasAsync(string aliasName, string targetKeyId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateAliasResponse> UpdateAliasAsync(string aliasName, string targetKeyId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new UpdateAliasRequest();
             request.AliasName = aliasName;
@@ -4734,7 +4734,7 @@ namespace Amazon.KeyManagementService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UpdateAlias">REST API Reference for UpdateAlias Operation</seealso>
-        public Task<UpdateAliasResponse> UpdateAliasAsync(UpdateAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateAliasResponse> UpdateAliasAsync(UpdateAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateAliasRequestMarshaller();
             var unmarshaller = UpdateAliasResponseUnmarshaller.Instance;
@@ -4780,7 +4780,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UpdateKeyDescription">REST API Reference for UpdateKeyDescription Operation</seealso>
-        public UpdateKeyDescriptionResponse UpdateKeyDescription(string keyId, string description)
+        public virtual UpdateKeyDescriptionResponse UpdateKeyDescription(string keyId, string description)
         {
             var request = new UpdateKeyDescriptionRequest();
             request.KeyId = keyId;
@@ -4820,7 +4820,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UpdateKeyDescription">REST API Reference for UpdateKeyDescription Operation</seealso>
-        public UpdateKeyDescriptionResponse UpdateKeyDescription(UpdateKeyDescriptionRequest request)
+        public virtual UpdateKeyDescriptionResponse UpdateKeyDescription(UpdateKeyDescriptionRequest request)
         {
             var marshaller = new UpdateKeyDescriptionRequestMarshaller();
             var unmarshaller = UpdateKeyDescriptionResponseUnmarshaller.Instance;
@@ -4864,7 +4864,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UpdateKeyDescription">REST API Reference for UpdateKeyDescription Operation</seealso>
-        public Task<UpdateKeyDescriptionResponse> UpdateKeyDescriptionAsync(string keyId, string description, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateKeyDescriptionResponse> UpdateKeyDescriptionAsync(string keyId, string description, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new UpdateKeyDescriptionRequest();
             request.KeyId = keyId;
@@ -4882,7 +4882,7 @@ namespace Amazon.KeyManagementService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UpdateKeyDescription">REST API Reference for UpdateKeyDescription Operation</seealso>
-        public Task<UpdateKeyDescriptionResponse> UpdateKeyDescriptionAsync(UpdateKeyDescriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateKeyDescriptionResponse> UpdateKeyDescriptionAsync(UpdateKeyDescriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateKeyDescriptionRequestMarshaller();
             var unmarshaller = UpdateKeyDescriptionResponseUnmarshaller.Instance;

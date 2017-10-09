@@ -251,7 +251,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/AcceptQualificationRequest">REST API Reference for AcceptQualificationRequest Operation</seealso>
-        public AcceptQualificationRequestResponse AcceptQualificationRequest(AcceptQualificationRequestRequest request)
+        public virtual AcceptQualificationRequestResponse AcceptQualificationRequest(AcceptQualificationRequestRequest request)
         {
             var marshaller = new AcceptQualificationRequestRequestMarshaller();
             var unmarshaller = AcceptQualificationRequestResponseUnmarshaller.Instance;
@@ -271,7 +271,7 @@ namespace Amazon.MTurk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAcceptQualificationRequest
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/AcceptQualificationRequest">REST API Reference for AcceptQualificationRequest Operation</seealso>
-        public IAsyncResult BeginAcceptQualificationRequest(AcceptQualificationRequestRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginAcceptQualificationRequest(AcceptQualificationRequestRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AcceptQualificationRequestRequestMarshaller();
             var unmarshaller = AcceptQualificationRequestResponseUnmarshaller.Instance;
@@ -288,7 +288,7 @@ namespace Amazon.MTurk
         /// 
         /// <returns>Returns a  AcceptQualificationRequestResult from MTurk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/AcceptQualificationRequest">REST API Reference for AcceptQualificationRequest Operation</seealso>
-        public  AcceptQualificationRequestResponse EndAcceptQualificationRequest(IAsyncResult asyncResult)
+        public virtual AcceptQualificationRequestResponse EndAcceptQualificationRequest(IAsyncResult asyncResult)
         {
             return EndInvoke<AcceptQualificationRequestResponse>(asyncResult);
         }
@@ -340,7 +340,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ApproveAssignment">REST API Reference for ApproveAssignment Operation</seealso>
-        public ApproveAssignmentResponse ApproveAssignment(ApproveAssignmentRequest request)
+        public virtual ApproveAssignmentResponse ApproveAssignment(ApproveAssignmentRequest request)
         {
             var marshaller = new ApproveAssignmentRequestMarshaller();
             var unmarshaller = ApproveAssignmentResponseUnmarshaller.Instance;
@@ -360,7 +360,7 @@ namespace Amazon.MTurk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndApproveAssignment
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ApproveAssignment">REST API Reference for ApproveAssignment Operation</seealso>
-        public IAsyncResult BeginApproveAssignment(ApproveAssignmentRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginApproveAssignment(ApproveAssignmentRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ApproveAssignmentRequestMarshaller();
             var unmarshaller = ApproveAssignmentResponseUnmarshaller.Instance;
@@ -377,7 +377,7 @@ namespace Amazon.MTurk
         /// 
         /// <returns>Returns a  ApproveAssignmentResult from MTurk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ApproveAssignment">REST API Reference for ApproveAssignment Operation</seealso>
-        public  ApproveAssignmentResponse EndApproveAssignment(IAsyncResult asyncResult)
+        public virtual ApproveAssignmentResponse EndApproveAssignment(IAsyncResult asyncResult)
         {
             return EndInvoke<ApproveAssignmentResponse>(asyncResult);
         }
@@ -418,7 +418,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/AssociateQualificationWithWorker">REST API Reference for AssociateQualificationWithWorker Operation</seealso>
-        public AssociateQualificationWithWorkerResponse AssociateQualificationWithWorker(AssociateQualificationWithWorkerRequest request)
+        public virtual AssociateQualificationWithWorkerResponse AssociateQualificationWithWorker(AssociateQualificationWithWorkerRequest request)
         {
             var marshaller = new AssociateQualificationWithWorkerRequestMarshaller();
             var unmarshaller = AssociateQualificationWithWorkerResponseUnmarshaller.Instance;
@@ -438,7 +438,7 @@ namespace Amazon.MTurk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateQualificationWithWorker
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/AssociateQualificationWithWorker">REST API Reference for AssociateQualificationWithWorker Operation</seealso>
-        public IAsyncResult BeginAssociateQualificationWithWorker(AssociateQualificationWithWorkerRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginAssociateQualificationWithWorker(AssociateQualificationWithWorkerRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AssociateQualificationWithWorkerRequestMarshaller();
             var unmarshaller = AssociateQualificationWithWorkerResponseUnmarshaller.Instance;
@@ -455,7 +455,7 @@ namespace Amazon.MTurk
         /// 
         /// <returns>Returns a  AssociateQualificationWithWorkerResult from MTurk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/AssociateQualificationWithWorker">REST API Reference for AssociateQualificationWithWorker Operation</seealso>
-        public  AssociateQualificationWithWorkerResponse EndAssociateQualificationWithWorker(IAsyncResult asyncResult)
+        public virtual AssociateQualificationWithWorkerResponse EndAssociateQualificationWithWorker(IAsyncResult asyncResult)
         {
             return EndInvoke<AssociateQualificationWithWorkerResponse>(asyncResult);
         }
@@ -498,7 +498,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/CreateAdditionalAssignmentsForHIT">REST API Reference for CreateAdditionalAssignmentsForHIT Operation</seealso>
-        public CreateAdditionalAssignmentsForHITResponse CreateAdditionalAssignmentsForHIT(CreateAdditionalAssignmentsForHITRequest request)
+        public virtual CreateAdditionalAssignmentsForHITResponse CreateAdditionalAssignmentsForHIT(CreateAdditionalAssignmentsForHITRequest request)
         {
             var marshaller = new CreateAdditionalAssignmentsForHITRequestMarshaller();
             var unmarshaller = CreateAdditionalAssignmentsForHITResponseUnmarshaller.Instance;
@@ -518,7 +518,7 @@ namespace Amazon.MTurk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAdditionalAssignmentsForHIT
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/CreateAdditionalAssignmentsForHIT">REST API Reference for CreateAdditionalAssignmentsForHIT Operation</seealso>
-        public IAsyncResult BeginCreateAdditionalAssignmentsForHIT(CreateAdditionalAssignmentsForHITRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateAdditionalAssignmentsForHIT(CreateAdditionalAssignmentsForHITRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateAdditionalAssignmentsForHITRequestMarshaller();
             var unmarshaller = CreateAdditionalAssignmentsForHITResponseUnmarshaller.Instance;
@@ -535,7 +535,7 @@ namespace Amazon.MTurk
         /// 
         /// <returns>Returns a  CreateAdditionalAssignmentsForHITResult from MTurk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/CreateAdditionalAssignmentsForHIT">REST API Reference for CreateAdditionalAssignmentsForHIT Operation</seealso>
-        public  CreateAdditionalAssignmentsForHITResponse EndCreateAdditionalAssignmentsForHIT(IAsyncResult asyncResult)
+        public virtual CreateAdditionalAssignmentsForHITResponse EndCreateAdditionalAssignmentsForHIT(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateAdditionalAssignmentsForHITResponse>(asyncResult);
         }
@@ -590,7 +590,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/CreateHIT">REST API Reference for CreateHIT Operation</seealso>
-        public CreateHITResponse CreateHIT(CreateHITRequest request)
+        public virtual CreateHITResponse CreateHIT(CreateHITRequest request)
         {
             var marshaller = new CreateHITRequestMarshaller();
             var unmarshaller = CreateHITResponseUnmarshaller.Instance;
@@ -610,7 +610,7 @@ namespace Amazon.MTurk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateHIT
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/CreateHIT">REST API Reference for CreateHIT Operation</seealso>
-        public IAsyncResult BeginCreateHIT(CreateHITRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateHIT(CreateHITRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateHITRequestMarshaller();
             var unmarshaller = CreateHITResponseUnmarshaller.Instance;
@@ -627,7 +627,7 @@ namespace Amazon.MTurk
         /// 
         /// <returns>Returns a  CreateHITResult from MTurk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/CreateHIT">REST API Reference for CreateHIT Operation</seealso>
-        public  CreateHITResponse EndCreateHIT(IAsyncResult asyncResult)
+        public virtual CreateHITResponse EndCreateHIT(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateHITResponse>(asyncResult);
         }
@@ -653,7 +653,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/CreateHITType">REST API Reference for CreateHITType Operation</seealso>
-        public CreateHITTypeResponse CreateHITType(CreateHITTypeRequest request)
+        public virtual CreateHITTypeResponse CreateHITType(CreateHITTypeRequest request)
         {
             var marshaller = new CreateHITTypeRequestMarshaller();
             var unmarshaller = CreateHITTypeResponseUnmarshaller.Instance;
@@ -673,7 +673,7 @@ namespace Amazon.MTurk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateHITType
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/CreateHITType">REST API Reference for CreateHITType Operation</seealso>
-        public IAsyncResult BeginCreateHITType(CreateHITTypeRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateHITType(CreateHITTypeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateHITTypeRequestMarshaller();
             var unmarshaller = CreateHITTypeResponseUnmarshaller.Instance;
@@ -690,7 +690,7 @@ namespace Amazon.MTurk
         /// 
         /// <returns>Returns a  CreateHITTypeResult from MTurk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/CreateHITType">REST API Reference for CreateHITType Operation</seealso>
-        public  CreateHITTypeResponse EndCreateHITType(IAsyncResult asyncResult)
+        public virtual CreateHITTypeResponse EndCreateHITType(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateHITTypeResponse>(asyncResult);
         }
@@ -736,7 +736,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/CreateHITWithHITType">REST API Reference for CreateHITWithHITType Operation</seealso>
-        public CreateHITWithHITTypeResponse CreateHITWithHITType(CreateHITWithHITTypeRequest request)
+        public virtual CreateHITWithHITTypeResponse CreateHITWithHITType(CreateHITWithHITTypeRequest request)
         {
             var marshaller = new CreateHITWithHITTypeRequestMarshaller();
             var unmarshaller = CreateHITWithHITTypeResponseUnmarshaller.Instance;
@@ -756,7 +756,7 @@ namespace Amazon.MTurk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateHITWithHITType
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/CreateHITWithHITType">REST API Reference for CreateHITWithHITType Operation</seealso>
-        public IAsyncResult BeginCreateHITWithHITType(CreateHITWithHITTypeRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateHITWithHITType(CreateHITWithHITTypeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateHITWithHITTypeRequestMarshaller();
             var unmarshaller = CreateHITWithHITTypeResponseUnmarshaller.Instance;
@@ -773,7 +773,7 @@ namespace Amazon.MTurk
         /// 
         /// <returns>Returns a  CreateHITWithHITTypeResult from MTurk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/CreateHITWithHITType">REST API Reference for CreateHITWithHITType Operation</seealso>
-        public  CreateHITWithHITTypeResponse EndCreateHITWithHITType(IAsyncResult asyncResult)
+        public virtual CreateHITWithHITTypeResponse EndCreateHITWithHITType(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateHITWithHITTypeResponse>(asyncResult);
         }
@@ -797,7 +797,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/CreateQualificationType">REST API Reference for CreateQualificationType Operation</seealso>
-        public CreateQualificationTypeResponse CreateQualificationType(CreateQualificationTypeRequest request)
+        public virtual CreateQualificationTypeResponse CreateQualificationType(CreateQualificationTypeRequest request)
         {
             var marshaller = new CreateQualificationTypeRequestMarshaller();
             var unmarshaller = CreateQualificationTypeResponseUnmarshaller.Instance;
@@ -817,7 +817,7 @@ namespace Amazon.MTurk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateQualificationType
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/CreateQualificationType">REST API Reference for CreateQualificationType Operation</seealso>
-        public IAsyncResult BeginCreateQualificationType(CreateQualificationTypeRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateQualificationType(CreateQualificationTypeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateQualificationTypeRequestMarshaller();
             var unmarshaller = CreateQualificationTypeResponseUnmarshaller.Instance;
@@ -834,7 +834,7 @@ namespace Amazon.MTurk
         /// 
         /// <returns>Returns a  CreateQualificationTypeResult from MTurk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/CreateQualificationType">REST API Reference for CreateQualificationType Operation</seealso>
-        public  CreateQualificationTypeResponse EndCreateQualificationType(IAsyncResult asyncResult)
+        public virtual CreateQualificationTypeResponse EndCreateQualificationType(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateQualificationTypeResponse>(asyncResult);
         }
@@ -859,7 +859,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/CreateWorkerBlock">REST API Reference for CreateWorkerBlock Operation</seealso>
-        public CreateWorkerBlockResponse CreateWorkerBlock(CreateWorkerBlockRequest request)
+        public virtual CreateWorkerBlockResponse CreateWorkerBlock(CreateWorkerBlockRequest request)
         {
             var marshaller = new CreateWorkerBlockRequestMarshaller();
             var unmarshaller = CreateWorkerBlockResponseUnmarshaller.Instance;
@@ -879,7 +879,7 @@ namespace Amazon.MTurk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateWorkerBlock
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/CreateWorkerBlock">REST API Reference for CreateWorkerBlock Operation</seealso>
-        public IAsyncResult BeginCreateWorkerBlock(CreateWorkerBlockRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateWorkerBlock(CreateWorkerBlockRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateWorkerBlockRequestMarshaller();
             var unmarshaller = CreateWorkerBlockResponseUnmarshaller.Instance;
@@ -896,7 +896,7 @@ namespace Amazon.MTurk
         /// 
         /// <returns>Returns a  CreateWorkerBlockResult from MTurk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/CreateWorkerBlock">REST API Reference for CreateWorkerBlock Operation</seealso>
-        public  CreateWorkerBlockResponse EndCreateWorkerBlock(IAsyncResult asyncResult)
+        public virtual CreateWorkerBlockResponse EndCreateWorkerBlock(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateWorkerBlockResponse>(asyncResult);
         }
@@ -949,7 +949,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/DeleteHIT">REST API Reference for DeleteHIT Operation</seealso>
-        public DeleteHITResponse DeleteHIT(DeleteHITRequest request)
+        public virtual DeleteHITResponse DeleteHIT(DeleteHITRequest request)
         {
             var marshaller = new DeleteHITRequestMarshaller();
             var unmarshaller = DeleteHITResponseUnmarshaller.Instance;
@@ -969,7 +969,7 @@ namespace Amazon.MTurk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteHIT
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/DeleteHIT">REST API Reference for DeleteHIT Operation</seealso>
-        public IAsyncResult BeginDeleteHIT(DeleteHITRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteHIT(DeleteHITRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteHITRequestMarshaller();
             var unmarshaller = DeleteHITResponseUnmarshaller.Instance;
@@ -986,7 +986,7 @@ namespace Amazon.MTurk
         /// 
         /// <returns>Returns a  DeleteHITResult from MTurk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/DeleteHIT">REST API Reference for DeleteHIT Operation</seealso>
-        public  DeleteHITResponse EndDeleteHIT(IAsyncResult asyncResult)
+        public virtual DeleteHITResponse EndDeleteHIT(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteHITResponse>(asyncResult);
         }
@@ -1026,7 +1026,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/DeleteQualificationType">REST API Reference for DeleteQualificationType Operation</seealso>
-        public DeleteQualificationTypeResponse DeleteQualificationType(DeleteQualificationTypeRequest request)
+        public virtual DeleteQualificationTypeResponse DeleteQualificationType(DeleteQualificationTypeRequest request)
         {
             var marshaller = new DeleteQualificationTypeRequestMarshaller();
             var unmarshaller = DeleteQualificationTypeResponseUnmarshaller.Instance;
@@ -1046,7 +1046,7 @@ namespace Amazon.MTurk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteQualificationType
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/DeleteQualificationType">REST API Reference for DeleteQualificationType Operation</seealso>
-        public IAsyncResult BeginDeleteQualificationType(DeleteQualificationTypeRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteQualificationType(DeleteQualificationTypeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteQualificationTypeRequestMarshaller();
             var unmarshaller = DeleteQualificationTypeResponseUnmarshaller.Instance;
@@ -1063,7 +1063,7 @@ namespace Amazon.MTurk
         /// 
         /// <returns>Returns a  DeleteQualificationTypeResult from MTurk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/DeleteQualificationType">REST API Reference for DeleteQualificationType Operation</seealso>
-        public  DeleteQualificationTypeResponse EndDeleteQualificationType(IAsyncResult asyncResult)
+        public virtual DeleteQualificationTypeResponse EndDeleteQualificationType(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteQualificationTypeResponse>(asyncResult);
         }
@@ -1090,7 +1090,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/DeleteWorkerBlock">REST API Reference for DeleteWorkerBlock Operation</seealso>
-        public DeleteWorkerBlockResponse DeleteWorkerBlock(DeleteWorkerBlockRequest request)
+        public virtual DeleteWorkerBlockResponse DeleteWorkerBlock(DeleteWorkerBlockRequest request)
         {
             var marshaller = new DeleteWorkerBlockRequestMarshaller();
             var unmarshaller = DeleteWorkerBlockResponseUnmarshaller.Instance;
@@ -1110,7 +1110,7 @@ namespace Amazon.MTurk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteWorkerBlock
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/DeleteWorkerBlock">REST API Reference for DeleteWorkerBlock Operation</seealso>
-        public IAsyncResult BeginDeleteWorkerBlock(DeleteWorkerBlockRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteWorkerBlock(DeleteWorkerBlockRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteWorkerBlockRequestMarshaller();
             var unmarshaller = DeleteWorkerBlockResponseUnmarshaller.Instance;
@@ -1127,7 +1127,7 @@ namespace Amazon.MTurk
         /// 
         /// <returns>Returns a  DeleteWorkerBlockResult from MTurk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/DeleteWorkerBlock">REST API Reference for DeleteWorkerBlock Operation</seealso>
-        public  DeleteWorkerBlockResponse EndDeleteWorkerBlock(IAsyncResult asyncResult)
+        public virtual DeleteWorkerBlockResponse EndDeleteWorkerBlock(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteWorkerBlockResponse>(asyncResult);
         }
@@ -1157,7 +1157,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/DisassociateQualificationFromWorker">REST API Reference for DisassociateQualificationFromWorker Operation</seealso>
-        public DisassociateQualificationFromWorkerResponse DisassociateQualificationFromWorker(DisassociateQualificationFromWorkerRequest request)
+        public virtual DisassociateQualificationFromWorkerResponse DisassociateQualificationFromWorker(DisassociateQualificationFromWorkerRequest request)
         {
             var marshaller = new DisassociateQualificationFromWorkerRequestMarshaller();
             var unmarshaller = DisassociateQualificationFromWorkerResponseUnmarshaller.Instance;
@@ -1177,7 +1177,7 @@ namespace Amazon.MTurk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateQualificationFromWorker
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/DisassociateQualificationFromWorker">REST API Reference for DisassociateQualificationFromWorker Operation</seealso>
-        public IAsyncResult BeginDisassociateQualificationFromWorker(DisassociateQualificationFromWorkerRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDisassociateQualificationFromWorker(DisassociateQualificationFromWorkerRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DisassociateQualificationFromWorkerRequestMarshaller();
             var unmarshaller = DisassociateQualificationFromWorkerResponseUnmarshaller.Instance;
@@ -1194,7 +1194,7 @@ namespace Amazon.MTurk
         /// 
         /// <returns>Returns a  DisassociateQualificationFromWorkerResult from MTurk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/DisassociateQualificationFromWorker">REST API Reference for DisassociateQualificationFromWorker Operation</seealso>
-        public  DisassociateQualificationFromWorkerResponse EndDisassociateQualificationFromWorker(IAsyncResult asyncResult)
+        public virtual DisassociateQualificationFromWorkerResponse EndDisassociateQualificationFromWorker(IAsyncResult asyncResult)
         {
             return EndInvoke<DisassociateQualificationFromWorkerResponse>(asyncResult);
         }
@@ -1218,7 +1218,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/GetAccountBalance">REST API Reference for GetAccountBalance Operation</seealso>
-        public GetAccountBalanceResponse GetAccountBalance(GetAccountBalanceRequest request)
+        public virtual GetAccountBalanceResponse GetAccountBalance(GetAccountBalanceRequest request)
         {
             var marshaller = new GetAccountBalanceRequestMarshaller();
             var unmarshaller = GetAccountBalanceResponseUnmarshaller.Instance;
@@ -1238,7 +1238,7 @@ namespace Amazon.MTurk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAccountBalance
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/GetAccountBalance">REST API Reference for GetAccountBalance Operation</seealso>
-        public IAsyncResult BeginGetAccountBalance(GetAccountBalanceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetAccountBalance(GetAccountBalanceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetAccountBalanceRequestMarshaller();
             var unmarshaller = GetAccountBalanceResponseUnmarshaller.Instance;
@@ -1255,7 +1255,7 @@ namespace Amazon.MTurk
         /// 
         /// <returns>Returns a  GetAccountBalanceResult from MTurk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/GetAccountBalance">REST API Reference for GetAccountBalance Operation</seealso>
-        public  GetAccountBalanceResponse EndGetAccountBalance(IAsyncResult asyncResult)
+        public virtual GetAccountBalanceResponse EndGetAccountBalance(IAsyncResult asyncResult)
         {
             return EndInvoke<GetAccountBalanceResponse>(asyncResult);
         }
@@ -1278,7 +1278,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/GetAssignment">REST API Reference for GetAssignment Operation</seealso>
-        public GetAssignmentResponse GetAssignment(GetAssignmentRequest request)
+        public virtual GetAssignmentResponse GetAssignment(GetAssignmentRequest request)
         {
             var marshaller = new GetAssignmentRequestMarshaller();
             var unmarshaller = GetAssignmentResponseUnmarshaller.Instance;
@@ -1298,7 +1298,7 @@ namespace Amazon.MTurk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAssignment
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/GetAssignment">REST API Reference for GetAssignment Operation</seealso>
-        public IAsyncResult BeginGetAssignment(GetAssignmentRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetAssignment(GetAssignmentRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetAssignmentRequestMarshaller();
             var unmarshaller = GetAssignmentResponseUnmarshaller.Instance;
@@ -1315,7 +1315,7 @@ namespace Amazon.MTurk
         /// 
         /// <returns>Returns a  GetAssignmentResult from MTurk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/GetAssignment">REST API Reference for GetAssignment Operation</seealso>
-        public  GetAssignmentResponse EndGetAssignment(IAsyncResult asyncResult)
+        public virtual GetAssignmentResponse EndGetAssignment(IAsyncResult asyncResult)
         {
             return EndInvoke<GetAssignmentResponse>(asyncResult);
         }
@@ -1343,7 +1343,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/GetFileUploadURL">REST API Reference for GetFileUploadURL Operation</seealso>
-        public GetFileUploadURLResponse GetFileUploadURL(GetFileUploadURLRequest request)
+        public virtual GetFileUploadURLResponse GetFileUploadURL(GetFileUploadURLRequest request)
         {
             var marshaller = new GetFileUploadURLRequestMarshaller();
             var unmarshaller = GetFileUploadURLResponseUnmarshaller.Instance;
@@ -1363,7 +1363,7 @@ namespace Amazon.MTurk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetFileUploadURL
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/GetFileUploadURL">REST API Reference for GetFileUploadURL Operation</seealso>
-        public IAsyncResult BeginGetFileUploadURL(GetFileUploadURLRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetFileUploadURL(GetFileUploadURLRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetFileUploadURLRequestMarshaller();
             var unmarshaller = GetFileUploadURLResponseUnmarshaller.Instance;
@@ -1380,7 +1380,7 @@ namespace Amazon.MTurk
         /// 
         /// <returns>Returns a  GetFileUploadURLResult from MTurk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/GetFileUploadURL">REST API Reference for GetFileUploadURL Operation</seealso>
-        public  GetFileUploadURLResponse EndGetFileUploadURL(IAsyncResult asyncResult)
+        public virtual GetFileUploadURLResponse EndGetFileUploadURL(IAsyncResult asyncResult)
         {
             return EndInvoke<GetFileUploadURLResponse>(asyncResult);
         }
@@ -1403,7 +1403,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/GetHIT">REST API Reference for GetHIT Operation</seealso>
-        public GetHITResponse GetHIT(GetHITRequest request)
+        public virtual GetHITResponse GetHIT(GetHITRequest request)
         {
             var marshaller = new GetHITRequestMarshaller();
             var unmarshaller = GetHITResponseUnmarshaller.Instance;
@@ -1423,7 +1423,7 @@ namespace Amazon.MTurk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetHIT
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/GetHIT">REST API Reference for GetHIT Operation</seealso>
-        public IAsyncResult BeginGetHIT(GetHITRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetHIT(GetHITRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetHITRequestMarshaller();
             var unmarshaller = GetHITResponseUnmarshaller.Instance;
@@ -1440,7 +1440,7 @@ namespace Amazon.MTurk
         /// 
         /// <returns>Returns a  GetHITResult from MTurk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/GetHIT">REST API Reference for GetHIT Operation</seealso>
-        public  GetHITResponse EndGetHIT(IAsyncResult asyncResult)
+        public virtual GetHITResponse EndGetHIT(IAsyncResult asyncResult)
         {
             return EndInvoke<GetHITResponse>(asyncResult);
         }
@@ -1476,7 +1476,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/GetQualificationScore">REST API Reference for GetQualificationScore Operation</seealso>
-        public GetQualificationScoreResponse GetQualificationScore(GetQualificationScoreRequest request)
+        public virtual GetQualificationScoreResponse GetQualificationScore(GetQualificationScoreRequest request)
         {
             var marshaller = new GetQualificationScoreRequestMarshaller();
             var unmarshaller = GetQualificationScoreResponseUnmarshaller.Instance;
@@ -1496,7 +1496,7 @@ namespace Amazon.MTurk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetQualificationScore
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/GetQualificationScore">REST API Reference for GetQualificationScore Operation</seealso>
-        public IAsyncResult BeginGetQualificationScore(GetQualificationScoreRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetQualificationScore(GetQualificationScoreRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetQualificationScoreRequestMarshaller();
             var unmarshaller = GetQualificationScoreResponseUnmarshaller.Instance;
@@ -1513,7 +1513,7 @@ namespace Amazon.MTurk
         /// 
         /// <returns>Returns a  GetQualificationScoreResult from MTurk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/GetQualificationScore">REST API Reference for GetQualificationScore Operation</seealso>
-        public  GetQualificationScoreResponse EndGetQualificationScore(IAsyncResult asyncResult)
+        public virtual GetQualificationScoreResponse EndGetQualificationScore(IAsyncResult asyncResult)
         {
             return EndInvoke<GetQualificationScoreResponse>(asyncResult);
         }
@@ -1537,7 +1537,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/GetQualificationType">REST API Reference for GetQualificationType Operation</seealso>
-        public GetQualificationTypeResponse GetQualificationType(GetQualificationTypeRequest request)
+        public virtual GetQualificationTypeResponse GetQualificationType(GetQualificationTypeRequest request)
         {
             var marshaller = new GetQualificationTypeRequestMarshaller();
             var unmarshaller = GetQualificationTypeResponseUnmarshaller.Instance;
@@ -1557,7 +1557,7 @@ namespace Amazon.MTurk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetQualificationType
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/GetQualificationType">REST API Reference for GetQualificationType Operation</seealso>
-        public IAsyncResult BeginGetQualificationType(GetQualificationTypeRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetQualificationType(GetQualificationTypeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetQualificationTypeRequestMarshaller();
             var unmarshaller = GetQualificationTypeResponseUnmarshaller.Instance;
@@ -1574,7 +1574,7 @@ namespace Amazon.MTurk
         /// 
         /// <returns>Returns a  GetQualificationTypeResult from MTurk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/GetQualificationType">REST API Reference for GetQualificationType Operation</seealso>
-        public  GetQualificationTypeResponse EndGetQualificationType(IAsyncResult asyncResult)
+        public virtual GetQualificationTypeResponse EndGetQualificationType(IAsyncResult asyncResult)
         {
             return EndInvoke<GetQualificationTypeResponse>(asyncResult);
         }
@@ -1625,7 +1625,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ListAssignmentsForHIT">REST API Reference for ListAssignmentsForHIT Operation</seealso>
-        public ListAssignmentsForHITResponse ListAssignmentsForHIT(ListAssignmentsForHITRequest request)
+        public virtual ListAssignmentsForHITResponse ListAssignmentsForHIT(ListAssignmentsForHITRequest request)
         {
             var marshaller = new ListAssignmentsForHITRequestMarshaller();
             var unmarshaller = ListAssignmentsForHITResponseUnmarshaller.Instance;
@@ -1645,7 +1645,7 @@ namespace Amazon.MTurk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAssignmentsForHIT
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ListAssignmentsForHIT">REST API Reference for ListAssignmentsForHIT Operation</seealso>
-        public IAsyncResult BeginListAssignmentsForHIT(ListAssignmentsForHITRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListAssignmentsForHIT(ListAssignmentsForHITRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListAssignmentsForHITRequestMarshaller();
             var unmarshaller = ListAssignmentsForHITResponseUnmarshaller.Instance;
@@ -1662,7 +1662,7 @@ namespace Amazon.MTurk
         /// 
         /// <returns>Returns a  ListAssignmentsForHITResult from MTurk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ListAssignmentsForHIT">REST API Reference for ListAssignmentsForHIT Operation</seealso>
-        public  ListAssignmentsForHITResponse EndListAssignmentsForHIT(IAsyncResult asyncResult)
+        public virtual ListAssignmentsForHITResponse EndListAssignmentsForHIT(IAsyncResult asyncResult)
         {
             return EndInvoke<ListAssignmentsForHITResponse>(asyncResult);
         }
@@ -1686,7 +1686,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ListBonusPayments">REST API Reference for ListBonusPayments Operation</seealso>
-        public ListBonusPaymentsResponse ListBonusPayments(ListBonusPaymentsRequest request)
+        public virtual ListBonusPaymentsResponse ListBonusPayments(ListBonusPaymentsRequest request)
         {
             var marshaller = new ListBonusPaymentsRequestMarshaller();
             var unmarshaller = ListBonusPaymentsResponseUnmarshaller.Instance;
@@ -1706,7 +1706,7 @@ namespace Amazon.MTurk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListBonusPayments
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ListBonusPayments">REST API Reference for ListBonusPayments Operation</seealso>
-        public IAsyncResult BeginListBonusPayments(ListBonusPaymentsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListBonusPayments(ListBonusPaymentsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListBonusPaymentsRequestMarshaller();
             var unmarshaller = ListBonusPaymentsResponseUnmarshaller.Instance;
@@ -1723,7 +1723,7 @@ namespace Amazon.MTurk
         /// 
         /// <returns>Returns a  ListBonusPaymentsResult from MTurk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ListBonusPayments">REST API Reference for ListBonusPayments Operation</seealso>
-        public  ListBonusPaymentsResponse EndListBonusPayments(IAsyncResult asyncResult)
+        public virtual ListBonusPaymentsResponse EndListBonusPayments(IAsyncResult asyncResult)
         {
             return EndInvoke<ListBonusPaymentsResponse>(asyncResult);
         }
@@ -1748,7 +1748,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ListHITs">REST API Reference for ListHITs Operation</seealso>
-        public ListHITsResponse ListHITs(ListHITsRequest request)
+        public virtual ListHITsResponse ListHITs(ListHITsRequest request)
         {
             var marshaller = new ListHITsRequestMarshaller();
             var unmarshaller = ListHITsResponseUnmarshaller.Instance;
@@ -1768,7 +1768,7 @@ namespace Amazon.MTurk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListHITs
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ListHITs">REST API Reference for ListHITs Operation</seealso>
-        public IAsyncResult BeginListHITs(ListHITsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListHITs(ListHITsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListHITsRequestMarshaller();
             var unmarshaller = ListHITsResponseUnmarshaller.Instance;
@@ -1785,7 +1785,7 @@ namespace Amazon.MTurk
         /// 
         /// <returns>Returns a  ListHITsResult from MTurk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ListHITs">REST API Reference for ListHITs Operation</seealso>
-        public  ListHITsResponse EndListHITs(IAsyncResult asyncResult)
+        public virtual ListHITsResponse EndListHITs(IAsyncResult asyncResult)
         {
             return EndInvoke<ListHITsResponse>(asyncResult);
         }
@@ -1811,7 +1811,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ListHITsForQualificationType">REST API Reference for ListHITsForQualificationType Operation</seealso>
-        public ListHITsForQualificationTypeResponse ListHITsForQualificationType(ListHITsForQualificationTypeRequest request)
+        public virtual ListHITsForQualificationTypeResponse ListHITsForQualificationType(ListHITsForQualificationTypeRequest request)
         {
             var marshaller = new ListHITsForQualificationTypeRequestMarshaller();
             var unmarshaller = ListHITsForQualificationTypeResponseUnmarshaller.Instance;
@@ -1831,7 +1831,7 @@ namespace Amazon.MTurk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListHITsForQualificationType
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ListHITsForQualificationType">REST API Reference for ListHITsForQualificationType Operation</seealso>
-        public IAsyncResult BeginListHITsForQualificationType(ListHITsForQualificationTypeRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListHITsForQualificationType(ListHITsForQualificationTypeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListHITsForQualificationTypeRequestMarshaller();
             var unmarshaller = ListHITsForQualificationTypeResponseUnmarshaller.Instance;
@@ -1848,7 +1848,7 @@ namespace Amazon.MTurk
         /// 
         /// <returns>Returns a  ListHITsForQualificationTypeResult from MTurk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ListHITsForQualificationType">REST API Reference for ListHITsForQualificationType Operation</seealso>
-        public  ListHITsForQualificationTypeResponse EndListHITsForQualificationType(IAsyncResult asyncResult)
+        public virtual ListHITsForQualificationTypeResponse EndListHITsForQualificationType(IAsyncResult asyncResult)
         {
             return EndInvoke<ListHITsForQualificationTypeResponse>(asyncResult);
         }
@@ -1874,7 +1874,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ListQualificationRequests">REST API Reference for ListQualificationRequests Operation</seealso>
-        public ListQualificationRequestsResponse ListQualificationRequests(ListQualificationRequestsRequest request)
+        public virtual ListQualificationRequestsResponse ListQualificationRequests(ListQualificationRequestsRequest request)
         {
             var marshaller = new ListQualificationRequestsRequestMarshaller();
             var unmarshaller = ListQualificationRequestsResponseUnmarshaller.Instance;
@@ -1894,7 +1894,7 @@ namespace Amazon.MTurk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListQualificationRequests
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ListQualificationRequests">REST API Reference for ListQualificationRequests Operation</seealso>
-        public IAsyncResult BeginListQualificationRequests(ListQualificationRequestsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListQualificationRequests(ListQualificationRequestsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListQualificationRequestsRequestMarshaller();
             var unmarshaller = ListQualificationRequestsResponseUnmarshaller.Instance;
@@ -1911,7 +1911,7 @@ namespace Amazon.MTurk
         /// 
         /// <returns>Returns a  ListQualificationRequestsResult from MTurk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ListQualificationRequests">REST API Reference for ListQualificationRequests Operation</seealso>
-        public  ListQualificationRequestsResponse EndListQualificationRequests(IAsyncResult asyncResult)
+        public virtual ListQualificationRequestsResponse EndListQualificationRequests(IAsyncResult asyncResult)
         {
             return EndInvoke<ListQualificationRequestsResponse>(asyncResult);
         }
@@ -1937,7 +1937,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ListQualificationTypes">REST API Reference for ListQualificationTypes Operation</seealso>
-        public ListQualificationTypesResponse ListQualificationTypes(ListQualificationTypesRequest request)
+        public virtual ListQualificationTypesResponse ListQualificationTypes(ListQualificationTypesRequest request)
         {
             var marshaller = new ListQualificationTypesRequestMarshaller();
             var unmarshaller = ListQualificationTypesResponseUnmarshaller.Instance;
@@ -1957,7 +1957,7 @@ namespace Amazon.MTurk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListQualificationTypes
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ListQualificationTypes">REST API Reference for ListQualificationTypes Operation</seealso>
-        public IAsyncResult BeginListQualificationTypes(ListQualificationTypesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListQualificationTypes(ListQualificationTypesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListQualificationTypesRequestMarshaller();
             var unmarshaller = ListQualificationTypesResponseUnmarshaller.Instance;
@@ -1974,7 +1974,7 @@ namespace Amazon.MTurk
         /// 
         /// <returns>Returns a  ListQualificationTypesResult from MTurk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ListQualificationTypes">REST API Reference for ListQualificationTypes Operation</seealso>
-        public  ListQualificationTypesResponse EndListQualificationTypes(IAsyncResult asyncResult)
+        public virtual ListQualificationTypesResponse EndListQualificationTypes(IAsyncResult asyncResult)
         {
             return EndInvoke<ListQualificationTypesResponse>(asyncResult);
         }
@@ -1999,7 +1999,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ListReviewableHITs">REST API Reference for ListReviewableHITs Operation</seealso>
-        public ListReviewableHITsResponse ListReviewableHITs(ListReviewableHITsRequest request)
+        public virtual ListReviewableHITsResponse ListReviewableHITs(ListReviewableHITsRequest request)
         {
             var marshaller = new ListReviewableHITsRequestMarshaller();
             var unmarshaller = ListReviewableHITsResponseUnmarshaller.Instance;
@@ -2019,7 +2019,7 @@ namespace Amazon.MTurk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListReviewableHITs
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ListReviewableHITs">REST API Reference for ListReviewableHITs Operation</seealso>
-        public IAsyncResult BeginListReviewableHITs(ListReviewableHITsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListReviewableHITs(ListReviewableHITsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListReviewableHITsRequestMarshaller();
             var unmarshaller = ListReviewableHITsResponseUnmarshaller.Instance;
@@ -2036,7 +2036,7 @@ namespace Amazon.MTurk
         /// 
         /// <returns>Returns a  ListReviewableHITsResult from MTurk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ListReviewableHITs">REST API Reference for ListReviewableHITs Operation</seealso>
-        public  ListReviewableHITsResponse EndListReviewableHITs(IAsyncResult asyncResult)
+        public virtual ListReviewableHITsResponse EndListReviewableHITs(IAsyncResult asyncResult)
         {
             return EndInvoke<ListReviewableHITsResponse>(asyncResult);
         }
@@ -2063,7 +2063,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ListReviewPolicyResultsForHIT">REST API Reference for ListReviewPolicyResultsForHIT Operation</seealso>
-        public ListReviewPolicyResultsForHITResponse ListReviewPolicyResultsForHIT(ListReviewPolicyResultsForHITRequest request)
+        public virtual ListReviewPolicyResultsForHITResponse ListReviewPolicyResultsForHIT(ListReviewPolicyResultsForHITRequest request)
         {
             var marshaller = new ListReviewPolicyResultsForHITRequestMarshaller();
             var unmarshaller = ListReviewPolicyResultsForHITResponseUnmarshaller.Instance;
@@ -2083,7 +2083,7 @@ namespace Amazon.MTurk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListReviewPolicyResultsForHIT
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ListReviewPolicyResultsForHIT">REST API Reference for ListReviewPolicyResultsForHIT Operation</seealso>
-        public IAsyncResult BeginListReviewPolicyResultsForHIT(ListReviewPolicyResultsForHITRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListReviewPolicyResultsForHIT(ListReviewPolicyResultsForHITRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListReviewPolicyResultsForHITRequestMarshaller();
             var unmarshaller = ListReviewPolicyResultsForHITResponseUnmarshaller.Instance;
@@ -2100,7 +2100,7 @@ namespace Amazon.MTurk
         /// 
         /// <returns>Returns a  ListReviewPolicyResultsForHITResult from MTurk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ListReviewPolicyResultsForHIT">REST API Reference for ListReviewPolicyResultsForHIT Operation</seealso>
-        public  ListReviewPolicyResultsForHITResponse EndListReviewPolicyResultsForHIT(IAsyncResult asyncResult)
+        public virtual ListReviewPolicyResultsForHITResponse EndListReviewPolicyResultsForHIT(IAsyncResult asyncResult)
         {
             return EndInvoke<ListReviewPolicyResultsForHITResponse>(asyncResult);
         }
@@ -2124,7 +2124,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ListWorkerBlocks">REST API Reference for ListWorkerBlocks Operation</seealso>
-        public ListWorkerBlocksResponse ListWorkerBlocks(ListWorkerBlocksRequest request)
+        public virtual ListWorkerBlocksResponse ListWorkerBlocks(ListWorkerBlocksRequest request)
         {
             var marshaller = new ListWorkerBlocksRequestMarshaller();
             var unmarshaller = ListWorkerBlocksResponseUnmarshaller.Instance;
@@ -2144,7 +2144,7 @@ namespace Amazon.MTurk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListWorkerBlocks
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ListWorkerBlocks">REST API Reference for ListWorkerBlocks Operation</seealso>
-        public IAsyncResult BeginListWorkerBlocks(ListWorkerBlocksRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListWorkerBlocks(ListWorkerBlocksRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListWorkerBlocksRequestMarshaller();
             var unmarshaller = ListWorkerBlocksResponseUnmarshaller.Instance;
@@ -2161,7 +2161,7 @@ namespace Amazon.MTurk
         /// 
         /// <returns>Returns a  ListWorkerBlocksResult from MTurk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ListWorkerBlocks">REST API Reference for ListWorkerBlocks Operation</seealso>
-        public  ListWorkerBlocksResponse EndListWorkerBlocks(IAsyncResult asyncResult)
+        public virtual ListWorkerBlocksResponse EndListWorkerBlocks(IAsyncResult asyncResult)
         {
             return EndInvoke<ListWorkerBlocksResponse>(asyncResult);
         }
@@ -2185,7 +2185,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ListWorkersWithQualificationType">REST API Reference for ListWorkersWithQualificationType Operation</seealso>
-        public ListWorkersWithQualificationTypeResponse ListWorkersWithQualificationType(ListWorkersWithQualificationTypeRequest request)
+        public virtual ListWorkersWithQualificationTypeResponse ListWorkersWithQualificationType(ListWorkersWithQualificationTypeRequest request)
         {
             var marshaller = new ListWorkersWithQualificationTypeRequestMarshaller();
             var unmarshaller = ListWorkersWithQualificationTypeResponseUnmarshaller.Instance;
@@ -2205,7 +2205,7 @@ namespace Amazon.MTurk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListWorkersWithQualificationType
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ListWorkersWithQualificationType">REST API Reference for ListWorkersWithQualificationType Operation</seealso>
-        public IAsyncResult BeginListWorkersWithQualificationType(ListWorkersWithQualificationTypeRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListWorkersWithQualificationType(ListWorkersWithQualificationTypeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListWorkersWithQualificationTypeRequestMarshaller();
             var unmarshaller = ListWorkersWithQualificationTypeResponseUnmarshaller.Instance;
@@ -2222,7 +2222,7 @@ namespace Amazon.MTurk
         /// 
         /// <returns>Returns a  ListWorkersWithQualificationTypeResult from MTurk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ListWorkersWithQualificationType">REST API Reference for ListWorkersWithQualificationType Operation</seealso>
-        public  ListWorkersWithQualificationTypeResponse EndListWorkersWithQualificationType(IAsyncResult asyncResult)
+        public virtual ListWorkersWithQualificationTypeResponse EndListWorkersWithQualificationType(IAsyncResult asyncResult)
         {
             return EndInvoke<ListWorkersWithQualificationTypeResponse>(asyncResult);
         }
@@ -2249,7 +2249,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/NotifyWorkers">REST API Reference for NotifyWorkers Operation</seealso>
-        public NotifyWorkersResponse NotifyWorkers(NotifyWorkersRequest request)
+        public virtual NotifyWorkersResponse NotifyWorkers(NotifyWorkersRequest request)
         {
             var marshaller = new NotifyWorkersRequestMarshaller();
             var unmarshaller = NotifyWorkersResponseUnmarshaller.Instance;
@@ -2269,7 +2269,7 @@ namespace Amazon.MTurk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndNotifyWorkers
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/NotifyWorkers">REST API Reference for NotifyWorkers Operation</seealso>
-        public IAsyncResult BeginNotifyWorkers(NotifyWorkersRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginNotifyWorkers(NotifyWorkersRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new NotifyWorkersRequestMarshaller();
             var unmarshaller = NotifyWorkersResponseUnmarshaller.Instance;
@@ -2286,7 +2286,7 @@ namespace Amazon.MTurk
         /// 
         /// <returns>Returns a  NotifyWorkersResult from MTurk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/NotifyWorkers">REST API Reference for NotifyWorkers Operation</seealso>
-        public  NotifyWorkersResponse EndNotifyWorkers(IAsyncResult asyncResult)
+        public virtual NotifyWorkersResponse EndNotifyWorkers(IAsyncResult asyncResult)
         {
             return EndInvoke<NotifyWorkersResponse>(asyncResult);
         }
@@ -2322,7 +2322,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/RejectAssignment">REST API Reference for RejectAssignment Operation</seealso>
-        public RejectAssignmentResponse RejectAssignment(RejectAssignmentRequest request)
+        public virtual RejectAssignmentResponse RejectAssignment(RejectAssignmentRequest request)
         {
             var marshaller = new RejectAssignmentRequestMarshaller();
             var unmarshaller = RejectAssignmentResponseUnmarshaller.Instance;
@@ -2342,7 +2342,7 @@ namespace Amazon.MTurk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRejectAssignment
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/RejectAssignment">REST API Reference for RejectAssignment Operation</seealso>
-        public IAsyncResult BeginRejectAssignment(RejectAssignmentRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginRejectAssignment(RejectAssignmentRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RejectAssignmentRequestMarshaller();
             var unmarshaller = RejectAssignmentResponseUnmarshaller.Instance;
@@ -2359,7 +2359,7 @@ namespace Amazon.MTurk
         /// 
         /// <returns>Returns a  RejectAssignmentResult from MTurk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/RejectAssignment">REST API Reference for RejectAssignment Operation</seealso>
-        public  RejectAssignmentResponse EndRejectAssignment(IAsyncResult asyncResult)
+        public virtual RejectAssignmentResponse EndRejectAssignment(IAsyncResult asyncResult)
         {
             return EndInvoke<RejectAssignmentResponse>(asyncResult);
         }
@@ -2389,7 +2389,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/RejectQualificationRequest">REST API Reference for RejectQualificationRequest Operation</seealso>
-        public RejectQualificationRequestResponse RejectQualificationRequest(RejectQualificationRequestRequest request)
+        public virtual RejectQualificationRequestResponse RejectQualificationRequest(RejectQualificationRequestRequest request)
         {
             var marshaller = new RejectQualificationRequestRequestMarshaller();
             var unmarshaller = RejectQualificationRequestResponseUnmarshaller.Instance;
@@ -2409,7 +2409,7 @@ namespace Amazon.MTurk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRejectQualificationRequest
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/RejectQualificationRequest">REST API Reference for RejectQualificationRequest Operation</seealso>
-        public IAsyncResult BeginRejectQualificationRequest(RejectQualificationRequestRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginRejectQualificationRequest(RejectQualificationRequestRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RejectQualificationRequestRequestMarshaller();
             var unmarshaller = RejectQualificationRequestResponseUnmarshaller.Instance;
@@ -2426,7 +2426,7 @@ namespace Amazon.MTurk
         /// 
         /// <returns>Returns a  RejectQualificationRequestResult from MTurk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/RejectQualificationRequest">REST API Reference for RejectQualificationRequest Operation</seealso>
-        public  RejectQualificationRequestResponse EndRejectQualificationRequest(IAsyncResult asyncResult)
+        public virtual RejectQualificationRequestResponse EndRejectQualificationRequest(IAsyncResult asyncResult)
         {
             return EndInvoke<RejectQualificationRequestResponse>(asyncResult);
         }
@@ -2456,7 +2456,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/SendBonus">REST API Reference for SendBonus Operation</seealso>
-        public SendBonusResponse SendBonus(SendBonusRequest request)
+        public virtual SendBonusResponse SendBonus(SendBonusRequest request)
         {
             var marshaller = new SendBonusRequestMarshaller();
             var unmarshaller = SendBonusResponseUnmarshaller.Instance;
@@ -2476,7 +2476,7 @@ namespace Amazon.MTurk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSendBonus
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/SendBonus">REST API Reference for SendBonus Operation</seealso>
-        public IAsyncResult BeginSendBonus(SendBonusRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginSendBonus(SendBonusRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SendBonusRequestMarshaller();
             var unmarshaller = SendBonusResponseUnmarshaller.Instance;
@@ -2493,7 +2493,7 @@ namespace Amazon.MTurk
         /// 
         /// <returns>Returns a  SendBonusResult from MTurk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/SendBonus">REST API Reference for SendBonus Operation</seealso>
-        public  SendBonusResponse EndSendBonus(IAsyncResult asyncResult)
+        public virtual SendBonusResponse EndSendBonus(IAsyncResult asyncResult)
         {
             return EndInvoke<SendBonusResponse>(asyncResult);
         }
@@ -2520,7 +2520,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/SendTestEventNotification">REST API Reference for SendTestEventNotification Operation</seealso>
-        public SendTestEventNotificationResponse SendTestEventNotification(SendTestEventNotificationRequest request)
+        public virtual SendTestEventNotificationResponse SendTestEventNotification(SendTestEventNotificationRequest request)
         {
             var marshaller = new SendTestEventNotificationRequestMarshaller();
             var unmarshaller = SendTestEventNotificationResponseUnmarshaller.Instance;
@@ -2540,7 +2540,7 @@ namespace Amazon.MTurk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSendTestEventNotification
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/SendTestEventNotification">REST API Reference for SendTestEventNotification Operation</seealso>
-        public IAsyncResult BeginSendTestEventNotification(SendTestEventNotificationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginSendTestEventNotification(SendTestEventNotificationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SendTestEventNotificationRequestMarshaller();
             var unmarshaller = SendTestEventNotificationResponseUnmarshaller.Instance;
@@ -2557,7 +2557,7 @@ namespace Amazon.MTurk
         /// 
         /// <returns>Returns a  SendTestEventNotificationResult from MTurk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/SendTestEventNotification">REST API Reference for SendTestEventNotification Operation</seealso>
-        public  SendTestEventNotificationResponse EndSendTestEventNotification(IAsyncResult asyncResult)
+        public virtual SendTestEventNotificationResponse EndSendTestEventNotification(IAsyncResult asyncResult)
         {
             return EndInvoke<SendTestEventNotificationResponse>(asyncResult);
         }
@@ -2582,7 +2582,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/UpdateExpirationForHIT">REST API Reference for UpdateExpirationForHIT Operation</seealso>
-        public UpdateExpirationForHITResponse UpdateExpirationForHIT(UpdateExpirationForHITRequest request)
+        public virtual UpdateExpirationForHITResponse UpdateExpirationForHIT(UpdateExpirationForHITRequest request)
         {
             var marshaller = new UpdateExpirationForHITRequestMarshaller();
             var unmarshaller = UpdateExpirationForHITResponseUnmarshaller.Instance;
@@ -2602,7 +2602,7 @@ namespace Amazon.MTurk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateExpirationForHIT
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/UpdateExpirationForHIT">REST API Reference for UpdateExpirationForHIT Operation</seealso>
-        public IAsyncResult BeginUpdateExpirationForHIT(UpdateExpirationForHITRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateExpirationForHIT(UpdateExpirationForHITRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateExpirationForHITRequestMarshaller();
             var unmarshaller = UpdateExpirationForHITResponseUnmarshaller.Instance;
@@ -2619,7 +2619,7 @@ namespace Amazon.MTurk
         /// 
         /// <returns>Returns a  UpdateExpirationForHITResult from MTurk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/UpdateExpirationForHIT">REST API Reference for UpdateExpirationForHIT Operation</seealso>
-        public  UpdateExpirationForHITResponse EndUpdateExpirationForHIT(IAsyncResult asyncResult)
+        public virtual UpdateExpirationForHITResponse EndUpdateExpirationForHIT(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateExpirationForHITResponse>(asyncResult);
         }
@@ -2644,7 +2644,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/UpdateHITReviewStatus">REST API Reference for UpdateHITReviewStatus Operation</seealso>
-        public UpdateHITReviewStatusResponse UpdateHITReviewStatus(UpdateHITReviewStatusRequest request)
+        public virtual UpdateHITReviewStatusResponse UpdateHITReviewStatus(UpdateHITReviewStatusRequest request)
         {
             var marshaller = new UpdateHITReviewStatusRequestMarshaller();
             var unmarshaller = UpdateHITReviewStatusResponseUnmarshaller.Instance;
@@ -2664,7 +2664,7 @@ namespace Amazon.MTurk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateHITReviewStatus
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/UpdateHITReviewStatus">REST API Reference for UpdateHITReviewStatus Operation</seealso>
-        public IAsyncResult BeginUpdateHITReviewStatus(UpdateHITReviewStatusRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateHITReviewStatus(UpdateHITReviewStatusRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateHITReviewStatusRequestMarshaller();
             var unmarshaller = UpdateHITReviewStatusResponseUnmarshaller.Instance;
@@ -2681,7 +2681,7 @@ namespace Amazon.MTurk
         /// 
         /// <returns>Returns a  UpdateHITReviewStatusResult from MTurk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/UpdateHITReviewStatus">REST API Reference for UpdateHITReviewStatus Operation</seealso>
-        public  UpdateHITReviewStatusResponse EndUpdateHITReviewStatus(IAsyncResult asyncResult)
+        public virtual UpdateHITReviewStatusResponse EndUpdateHITReviewStatus(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateHITReviewStatusResponse>(asyncResult);
         }
@@ -2707,7 +2707,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/UpdateHITTypeOfHIT">REST API Reference for UpdateHITTypeOfHIT Operation</seealso>
-        public UpdateHITTypeOfHITResponse UpdateHITTypeOfHIT(UpdateHITTypeOfHITRequest request)
+        public virtual UpdateHITTypeOfHITResponse UpdateHITTypeOfHIT(UpdateHITTypeOfHITRequest request)
         {
             var marshaller = new UpdateHITTypeOfHITRequestMarshaller();
             var unmarshaller = UpdateHITTypeOfHITResponseUnmarshaller.Instance;
@@ -2727,7 +2727,7 @@ namespace Amazon.MTurk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateHITTypeOfHIT
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/UpdateHITTypeOfHIT">REST API Reference for UpdateHITTypeOfHIT Operation</seealso>
-        public IAsyncResult BeginUpdateHITTypeOfHIT(UpdateHITTypeOfHITRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateHITTypeOfHIT(UpdateHITTypeOfHITRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateHITTypeOfHITRequestMarshaller();
             var unmarshaller = UpdateHITTypeOfHITResponseUnmarshaller.Instance;
@@ -2744,7 +2744,7 @@ namespace Amazon.MTurk
         /// 
         /// <returns>Returns a  UpdateHITTypeOfHITResult from MTurk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/UpdateHITTypeOfHIT">REST API Reference for UpdateHITTypeOfHIT Operation</seealso>
-        public  UpdateHITTypeOfHITResponse EndUpdateHITTypeOfHIT(IAsyncResult asyncResult)
+        public virtual UpdateHITTypeOfHITResponse EndUpdateHITTypeOfHIT(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateHITTypeOfHITResponse>(asyncResult);
         }
@@ -2775,7 +2775,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/UpdateNotificationSettings">REST API Reference for UpdateNotificationSettings Operation</seealso>
-        public UpdateNotificationSettingsResponse UpdateNotificationSettings(UpdateNotificationSettingsRequest request)
+        public virtual UpdateNotificationSettingsResponse UpdateNotificationSettings(UpdateNotificationSettingsRequest request)
         {
             var marshaller = new UpdateNotificationSettingsRequestMarshaller();
             var unmarshaller = UpdateNotificationSettingsResponseUnmarshaller.Instance;
@@ -2795,7 +2795,7 @@ namespace Amazon.MTurk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateNotificationSettings
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/UpdateNotificationSettings">REST API Reference for UpdateNotificationSettings Operation</seealso>
-        public IAsyncResult BeginUpdateNotificationSettings(UpdateNotificationSettingsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateNotificationSettings(UpdateNotificationSettingsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateNotificationSettingsRequestMarshaller();
             var unmarshaller = UpdateNotificationSettingsResponseUnmarshaller.Instance;
@@ -2812,7 +2812,7 @@ namespace Amazon.MTurk
         /// 
         /// <returns>Returns a  UpdateNotificationSettingsResult from MTurk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/UpdateNotificationSettings">REST API Reference for UpdateNotificationSettings Operation</seealso>
-        public  UpdateNotificationSettingsResponse EndUpdateNotificationSettings(IAsyncResult asyncResult)
+        public virtual UpdateNotificationSettingsResponse EndUpdateNotificationSettings(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateNotificationSettingsResponse>(asyncResult);
         }
@@ -2878,7 +2878,7 @@ namespace Amazon.MTurk
         /// again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/UpdateQualificationType">REST API Reference for UpdateQualificationType Operation</seealso>
-        public UpdateQualificationTypeResponse UpdateQualificationType(UpdateQualificationTypeRequest request)
+        public virtual UpdateQualificationTypeResponse UpdateQualificationType(UpdateQualificationTypeRequest request)
         {
             var marshaller = new UpdateQualificationTypeRequestMarshaller();
             var unmarshaller = UpdateQualificationTypeResponseUnmarshaller.Instance;
@@ -2898,7 +2898,7 @@ namespace Amazon.MTurk
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateQualificationType
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/UpdateQualificationType">REST API Reference for UpdateQualificationType Operation</seealso>
-        public IAsyncResult BeginUpdateQualificationType(UpdateQualificationTypeRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateQualificationType(UpdateQualificationTypeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateQualificationTypeRequestMarshaller();
             var unmarshaller = UpdateQualificationTypeResponseUnmarshaller.Instance;
@@ -2915,7 +2915,7 @@ namespace Amazon.MTurk
         /// 
         /// <returns>Returns a  UpdateQualificationTypeResult from MTurk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/UpdateQualificationType">REST API Reference for UpdateQualificationType Operation</seealso>
-        public  UpdateQualificationTypeResponse EndUpdateQualificationType(IAsyncResult asyncResult)
+        public virtual UpdateQualificationTypeResponse EndUpdateQualificationType(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateQualificationTypeResponse>(asyncResult);
         }

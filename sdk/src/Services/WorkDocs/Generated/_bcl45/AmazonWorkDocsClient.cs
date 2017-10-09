@@ -292,7 +292,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/AbortDocumentVersionUpload">REST API Reference for AbortDocumentVersionUpload Operation</seealso>
-        public AbortDocumentVersionUploadResponse AbortDocumentVersionUpload(AbortDocumentVersionUploadRequest request)
+        public virtual AbortDocumentVersionUploadResponse AbortDocumentVersionUpload(AbortDocumentVersionUploadRequest request)
         {
             var marshaller = new AbortDocumentVersionUploadRequestMarshaller();
             var unmarshaller = AbortDocumentVersionUploadResponseUnmarshaller.Instance;
@@ -310,7 +310,7 @@ namespace Amazon.WorkDocs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/AbortDocumentVersionUpload">REST API Reference for AbortDocumentVersionUpload Operation</seealso>
-        public Task<AbortDocumentVersionUploadResponse> AbortDocumentVersionUploadAsync(AbortDocumentVersionUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<AbortDocumentVersionUploadResponse> AbortDocumentVersionUploadAsync(AbortDocumentVersionUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AbortDocumentVersionUploadRequestMarshaller();
             var unmarshaller = AbortDocumentVersionUploadResponseUnmarshaller.Instance;
@@ -347,7 +347,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/ActivateUser">REST API Reference for ActivateUser Operation</seealso>
-        public ActivateUserResponse ActivateUser(ActivateUserRequest request)
+        public virtual ActivateUserResponse ActivateUser(ActivateUserRequest request)
         {
             var marshaller = new ActivateUserRequestMarshaller();
             var unmarshaller = ActivateUserResponseUnmarshaller.Instance;
@@ -365,7 +365,7 @@ namespace Amazon.WorkDocs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/ActivateUser">REST API Reference for ActivateUser Operation</seealso>
-        public Task<ActivateUserResponse> ActivateUserAsync(ActivateUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ActivateUserResponse> ActivateUserAsync(ActivateUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ActivateUserRequestMarshaller();
             var unmarshaller = ActivateUserResponseUnmarshaller.Instance;
@@ -400,7 +400,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/AddResourcePermissions">REST API Reference for AddResourcePermissions Operation</seealso>
-        public AddResourcePermissionsResponse AddResourcePermissions(AddResourcePermissionsRequest request)
+        public virtual AddResourcePermissionsResponse AddResourcePermissions(AddResourcePermissionsRequest request)
         {
             var marshaller = new AddResourcePermissionsRequestMarshaller();
             var unmarshaller = AddResourcePermissionsResponseUnmarshaller.Instance;
@@ -418,7 +418,7 @@ namespace Amazon.WorkDocs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/AddResourcePermissions">REST API Reference for AddResourcePermissions Operation</seealso>
-        public Task<AddResourcePermissionsResponse> AddResourcePermissionsAsync(AddResourcePermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<AddResourcePermissionsResponse> AddResourcePermissionsAsync(AddResourcePermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AddResourcePermissionsRequestMarshaller();
             var unmarshaller = AddResourcePermissionsResponseUnmarshaller.Instance;
@@ -462,7 +462,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateComment">REST API Reference for CreateComment Operation</seealso>
-        public CreateCommentResponse CreateComment(CreateCommentRequest request)
+        public virtual CreateCommentResponse CreateComment(CreateCommentRequest request)
         {
             var marshaller = new CreateCommentRequestMarshaller();
             var unmarshaller = CreateCommentResponseUnmarshaller.Instance;
@@ -480,7 +480,7 @@ namespace Amazon.WorkDocs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateComment">REST API Reference for CreateComment Operation</seealso>
-        public Task<CreateCommentResponse> CreateCommentAsync(CreateCommentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateCommentResponse> CreateCommentAsync(CreateCommentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateCommentRequestMarshaller();
             var unmarshaller = CreateCommentResponseUnmarshaller.Instance;
@@ -524,7 +524,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateCustomMetadata">REST API Reference for CreateCustomMetadata Operation</seealso>
-        public CreateCustomMetadataResponse CreateCustomMetadata(CreateCustomMetadataRequest request)
+        public virtual CreateCustomMetadataResponse CreateCustomMetadata(CreateCustomMetadataRequest request)
         {
             var marshaller = new CreateCustomMetadataRequestMarshaller();
             var unmarshaller = CreateCustomMetadataResponseUnmarshaller.Instance;
@@ -542,7 +542,7 @@ namespace Amazon.WorkDocs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateCustomMetadata">REST API Reference for CreateCustomMetadata Operation</seealso>
-        public Task<CreateCustomMetadataResponse> CreateCustomMetadataAsync(CreateCustomMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateCustomMetadataResponse> CreateCustomMetadataAsync(CreateCustomMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateCustomMetadataRequestMarshaller();
             var unmarshaller = CreateCustomMetadataResponseUnmarshaller.Instance;
@@ -588,7 +588,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateFolder">REST API Reference for CreateFolder Operation</seealso>
-        public CreateFolderResponse CreateFolder(CreateFolderRequest request)
+        public virtual CreateFolderResponse CreateFolder(CreateFolderRequest request)
         {
             var marshaller = new CreateFolderRequestMarshaller();
             var unmarshaller = CreateFolderResponseUnmarshaller.Instance;
@@ -606,7 +606,7 @@ namespace Amazon.WorkDocs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateFolder">REST API Reference for CreateFolder Operation</seealso>
-        public Task<CreateFolderResponse> CreateFolderAsync(CreateFolderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateFolderResponse> CreateFolderAsync(CreateFolderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateFolderRequestMarshaller();
             var unmarshaller = CreateFolderResponseUnmarshaller.Instance;
@@ -646,7 +646,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateLabels">REST API Reference for CreateLabels Operation</seealso>
-        public CreateLabelsResponse CreateLabels(CreateLabelsRequest request)
+        public virtual CreateLabelsResponse CreateLabels(CreateLabelsRequest request)
         {
             var marshaller = new CreateLabelsRequestMarshaller();
             var unmarshaller = CreateLabelsResponseUnmarshaller.Instance;
@@ -664,7 +664,7 @@ namespace Amazon.WorkDocs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateLabels">REST API Reference for CreateLabels Operation</seealso>
-        public Task<CreateLabelsResponse> CreateLabelsAsync(CreateLabelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateLabelsResponse> CreateLabelsAsync(CreateLabelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateLabelsRequestMarshaller();
             var unmarshaller = CreateLabelsResponseUnmarshaller.Instance;
@@ -701,7 +701,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateNotificationSubscription">REST API Reference for CreateNotificationSubscription Operation</seealso>
-        public CreateNotificationSubscriptionResponse CreateNotificationSubscription(CreateNotificationSubscriptionRequest request)
+        public virtual CreateNotificationSubscriptionResponse CreateNotificationSubscription(CreateNotificationSubscriptionRequest request)
         {
             var marshaller = new CreateNotificationSubscriptionRequestMarshaller();
             var unmarshaller = CreateNotificationSubscriptionResponseUnmarshaller.Instance;
@@ -719,7 +719,7 @@ namespace Amazon.WorkDocs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateNotificationSubscription">REST API Reference for CreateNotificationSubscription Operation</seealso>
-        public Task<CreateNotificationSubscriptionResponse> CreateNotificationSubscriptionAsync(CreateNotificationSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateNotificationSubscriptionResponse> CreateNotificationSubscriptionAsync(CreateNotificationSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateNotificationSubscriptionRequestMarshaller();
             var unmarshaller = CreateNotificationSubscriptionResponseUnmarshaller.Instance;
@@ -757,7 +757,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateUser">REST API Reference for CreateUser Operation</seealso>
-        public CreateUserResponse CreateUser(CreateUserRequest request)
+        public virtual CreateUserResponse CreateUser(CreateUserRequest request)
         {
             var marshaller = new CreateUserRequestMarshaller();
             var unmarshaller = CreateUserResponseUnmarshaller.Instance;
@@ -775,7 +775,7 @@ namespace Amazon.WorkDocs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateUser">REST API Reference for CreateUser Operation</seealso>
-        public Task<CreateUserResponse> CreateUserAsync(CreateUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateUserResponse> CreateUserAsync(CreateUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateUserRequestMarshaller();
             var unmarshaller = CreateUserResponseUnmarshaller.Instance;
@@ -812,7 +812,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeactivateUser">REST API Reference for DeactivateUser Operation</seealso>
-        public DeactivateUserResponse DeactivateUser(DeactivateUserRequest request)
+        public virtual DeactivateUserResponse DeactivateUser(DeactivateUserRequest request)
         {
             var marshaller = new DeactivateUserRequestMarshaller();
             var unmarshaller = DeactivateUserResponseUnmarshaller.Instance;
@@ -830,7 +830,7 @@ namespace Amazon.WorkDocs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeactivateUser">REST API Reference for DeactivateUser Operation</seealso>
-        public Task<DeactivateUserResponse> DeactivateUserAsync(DeactivateUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeactivateUserResponse> DeactivateUserAsync(DeactivateUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeactivateUserRequestMarshaller();
             var unmarshaller = DeactivateUserResponseUnmarshaller.Instance;
@@ -874,7 +874,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteComment">REST API Reference for DeleteComment Operation</seealso>
-        public DeleteCommentResponse DeleteComment(DeleteCommentRequest request)
+        public virtual DeleteCommentResponse DeleteComment(DeleteCommentRequest request)
         {
             var marshaller = new DeleteCommentRequestMarshaller();
             var unmarshaller = DeleteCommentResponseUnmarshaller.Instance;
@@ -892,7 +892,7 @@ namespace Amazon.WorkDocs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteComment">REST API Reference for DeleteComment Operation</seealso>
-        public Task<DeleteCommentResponse> DeleteCommentAsync(DeleteCommentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteCommentResponse> DeleteCommentAsync(DeleteCommentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteCommentRequestMarshaller();
             var unmarshaller = DeleteCommentResponseUnmarshaller.Instance;
@@ -932,7 +932,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteCustomMetadata">REST API Reference for DeleteCustomMetadata Operation</seealso>
-        public DeleteCustomMetadataResponse DeleteCustomMetadata(DeleteCustomMetadataRequest request)
+        public virtual DeleteCustomMetadataResponse DeleteCustomMetadata(DeleteCustomMetadataRequest request)
         {
             var marshaller = new DeleteCustomMetadataRequestMarshaller();
             var unmarshaller = DeleteCustomMetadataResponseUnmarshaller.Instance;
@@ -950,7 +950,7 @@ namespace Amazon.WorkDocs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteCustomMetadata">REST API Reference for DeleteCustomMetadata Operation</seealso>
-        public Task<DeleteCustomMetadataResponse> DeleteCustomMetadataAsync(DeleteCustomMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteCustomMetadataResponse> DeleteCustomMetadataAsync(DeleteCustomMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteCustomMetadataRequestMarshaller();
             var unmarshaller = DeleteCustomMetadataResponseUnmarshaller.Instance;
@@ -993,7 +993,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteDocument">REST API Reference for DeleteDocument Operation</seealso>
-        public DeleteDocumentResponse DeleteDocument(DeleteDocumentRequest request)
+        public virtual DeleteDocumentResponse DeleteDocument(DeleteDocumentRequest request)
         {
             var marshaller = new DeleteDocumentRequestMarshaller();
             var unmarshaller = DeleteDocumentResponseUnmarshaller.Instance;
@@ -1011,7 +1011,7 @@ namespace Amazon.WorkDocs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteDocument">REST API Reference for DeleteDocument Operation</seealso>
-        public Task<DeleteDocumentResponse> DeleteDocumentAsync(DeleteDocumentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteDocumentResponse> DeleteDocumentAsync(DeleteDocumentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteDocumentRequestMarshaller();
             var unmarshaller = DeleteDocumentResponseUnmarshaller.Instance;
@@ -1054,7 +1054,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteFolder">REST API Reference for DeleteFolder Operation</seealso>
-        public DeleteFolderResponse DeleteFolder(DeleteFolderRequest request)
+        public virtual DeleteFolderResponse DeleteFolder(DeleteFolderRequest request)
         {
             var marshaller = new DeleteFolderRequestMarshaller();
             var unmarshaller = DeleteFolderResponseUnmarshaller.Instance;
@@ -1072,7 +1072,7 @@ namespace Amazon.WorkDocs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteFolder">REST API Reference for DeleteFolder Operation</seealso>
-        public Task<DeleteFolderResponse> DeleteFolderAsync(DeleteFolderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteFolderResponse> DeleteFolderAsync(DeleteFolderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteFolderRequestMarshaller();
             var unmarshaller = DeleteFolderResponseUnmarshaller.Instance;
@@ -1109,7 +1109,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteFolderContents">REST API Reference for DeleteFolderContents Operation</seealso>
-        public DeleteFolderContentsResponse DeleteFolderContents(DeleteFolderContentsRequest request)
+        public virtual DeleteFolderContentsResponse DeleteFolderContents(DeleteFolderContentsRequest request)
         {
             var marshaller = new DeleteFolderContentsRequestMarshaller();
             var unmarshaller = DeleteFolderContentsResponseUnmarshaller.Instance;
@@ -1127,7 +1127,7 @@ namespace Amazon.WorkDocs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteFolderContents">REST API Reference for DeleteFolderContents Operation</seealso>
-        public Task<DeleteFolderContentsResponse> DeleteFolderContentsAsync(DeleteFolderContentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteFolderContentsResponse> DeleteFolderContentsAsync(DeleteFolderContentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteFolderContentsRequestMarshaller();
             var unmarshaller = DeleteFolderContentsResponseUnmarshaller.Instance;
@@ -1164,7 +1164,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteLabels">REST API Reference for DeleteLabels Operation</seealso>
-        public DeleteLabelsResponse DeleteLabels(DeleteLabelsRequest request)
+        public virtual DeleteLabelsResponse DeleteLabels(DeleteLabelsRequest request)
         {
             var marshaller = new DeleteLabelsRequestMarshaller();
             var unmarshaller = DeleteLabelsResponseUnmarshaller.Instance;
@@ -1182,7 +1182,7 @@ namespace Amazon.WorkDocs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteLabels">REST API Reference for DeleteLabels Operation</seealso>
-        public Task<DeleteLabelsResponse> DeleteLabelsAsync(DeleteLabelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteLabelsResponse> DeleteLabelsAsync(DeleteLabelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteLabelsRequestMarshaller();
             var unmarshaller = DeleteLabelsResponseUnmarshaller.Instance;
@@ -1215,7 +1215,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteNotificationSubscription">REST API Reference for DeleteNotificationSubscription Operation</seealso>
-        public DeleteNotificationSubscriptionResponse DeleteNotificationSubscription(DeleteNotificationSubscriptionRequest request)
+        public virtual DeleteNotificationSubscriptionResponse DeleteNotificationSubscription(DeleteNotificationSubscriptionRequest request)
         {
             var marshaller = new DeleteNotificationSubscriptionRequestMarshaller();
             var unmarshaller = DeleteNotificationSubscriptionResponseUnmarshaller.Instance;
@@ -1233,7 +1233,7 @@ namespace Amazon.WorkDocs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteNotificationSubscription">REST API Reference for DeleteNotificationSubscription Operation</seealso>
-        public Task<DeleteNotificationSubscriptionResponse> DeleteNotificationSubscriptionAsync(DeleteNotificationSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteNotificationSubscriptionResponse> DeleteNotificationSubscriptionAsync(DeleteNotificationSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteNotificationSubscriptionRequestMarshaller();
             var unmarshaller = DeleteNotificationSubscriptionResponseUnmarshaller.Instance;
@@ -1270,7 +1270,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
-        public DeleteUserResponse DeleteUser(DeleteUserRequest request)
+        public virtual DeleteUserResponse DeleteUser(DeleteUserRequest request)
         {
             var marshaller = new DeleteUserRequestMarshaller();
             var unmarshaller = DeleteUserResponseUnmarshaller.Instance;
@@ -1288,7 +1288,7 @@ namespace Amazon.WorkDocs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
-        public Task<DeleteUserResponse> DeleteUserAsync(DeleteUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteUserResponse> DeleteUserAsync(DeleteUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteUserRequestMarshaller();
             var unmarshaller = DeleteUserResponseUnmarshaller.Instance;
@@ -1325,7 +1325,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeActivities">REST API Reference for DescribeActivities Operation</seealso>
-        public DescribeActivitiesResponse DescribeActivities(DescribeActivitiesRequest request)
+        public virtual DescribeActivitiesResponse DescribeActivities(DescribeActivitiesRequest request)
         {
             var marshaller = new DescribeActivitiesRequestMarshaller();
             var unmarshaller = DescribeActivitiesResponseUnmarshaller.Instance;
@@ -1343,7 +1343,7 @@ namespace Amazon.WorkDocs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeActivities">REST API Reference for DescribeActivities Operation</seealso>
-        public Task<DescribeActivitiesResponse> DescribeActivitiesAsync(DescribeActivitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeActivitiesResponse> DescribeActivitiesAsync(DescribeActivitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeActivitiesRequestMarshaller();
             var unmarshaller = DescribeActivitiesResponseUnmarshaller.Instance;
@@ -1383,7 +1383,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeComments">REST API Reference for DescribeComments Operation</seealso>
-        public DescribeCommentsResponse DescribeComments(DescribeCommentsRequest request)
+        public virtual DescribeCommentsResponse DescribeComments(DescribeCommentsRequest request)
         {
             var marshaller = new DescribeCommentsRequestMarshaller();
             var unmarshaller = DescribeCommentsResponseUnmarshaller.Instance;
@@ -1401,7 +1401,7 @@ namespace Amazon.WorkDocs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeComments">REST API Reference for DescribeComments Operation</seealso>
-        public Task<DescribeCommentsResponse> DescribeCommentsAsync(DescribeCommentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeCommentsResponse> DescribeCommentsAsync(DescribeCommentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeCommentsRequestMarshaller();
             var unmarshaller = DescribeCommentsResponseUnmarshaller.Instance;
@@ -1449,7 +1449,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeDocumentVersions">REST API Reference for DescribeDocumentVersions Operation</seealso>
-        public DescribeDocumentVersionsResponse DescribeDocumentVersions(DescribeDocumentVersionsRequest request)
+        public virtual DescribeDocumentVersionsResponse DescribeDocumentVersions(DescribeDocumentVersionsRequest request)
         {
             var marshaller = new DescribeDocumentVersionsRequestMarshaller();
             var unmarshaller = DescribeDocumentVersionsResponseUnmarshaller.Instance;
@@ -1467,7 +1467,7 @@ namespace Amazon.WorkDocs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeDocumentVersions">REST API Reference for DescribeDocumentVersions Operation</seealso>
-        public Task<DescribeDocumentVersionsResponse> DescribeDocumentVersionsAsync(DescribeDocumentVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeDocumentVersionsResponse> DescribeDocumentVersionsAsync(DescribeDocumentVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeDocumentVersionsRequestMarshaller();
             var unmarshaller = DescribeDocumentVersionsResponseUnmarshaller.Instance;
@@ -1514,7 +1514,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeFolderContents">REST API Reference for DescribeFolderContents Operation</seealso>
-        public DescribeFolderContentsResponse DescribeFolderContents(DescribeFolderContentsRequest request)
+        public virtual DescribeFolderContentsResponse DescribeFolderContents(DescribeFolderContentsRequest request)
         {
             var marshaller = new DescribeFolderContentsRequestMarshaller();
             var unmarshaller = DescribeFolderContentsResponseUnmarshaller.Instance;
@@ -1532,7 +1532,7 @@ namespace Amazon.WorkDocs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeFolderContents">REST API Reference for DescribeFolderContents Operation</seealso>
-        public Task<DescribeFolderContentsResponse> DescribeFolderContentsAsync(DescribeFolderContentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeFolderContentsResponse> DescribeFolderContentsAsync(DescribeFolderContentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeFolderContentsRequestMarshaller();
             var unmarshaller = DescribeFolderContentsResponseUnmarshaller.Instance;
@@ -1562,7 +1562,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeNotificationSubscriptions">REST API Reference for DescribeNotificationSubscriptions Operation</seealso>
-        public DescribeNotificationSubscriptionsResponse DescribeNotificationSubscriptions(DescribeNotificationSubscriptionsRequest request)
+        public virtual DescribeNotificationSubscriptionsResponse DescribeNotificationSubscriptions(DescribeNotificationSubscriptionsRequest request)
         {
             var marshaller = new DescribeNotificationSubscriptionsRequestMarshaller();
             var unmarshaller = DescribeNotificationSubscriptionsResponseUnmarshaller.Instance;
@@ -1580,7 +1580,7 @@ namespace Amazon.WorkDocs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeNotificationSubscriptions">REST API Reference for DescribeNotificationSubscriptions Operation</seealso>
-        public Task<DescribeNotificationSubscriptionsResponse> DescribeNotificationSubscriptionsAsync(DescribeNotificationSubscriptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeNotificationSubscriptionsResponse> DescribeNotificationSubscriptionsAsync(DescribeNotificationSubscriptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeNotificationSubscriptionsRequestMarshaller();
             var unmarshaller = DescribeNotificationSubscriptionsResponseUnmarshaller.Instance;
@@ -1614,7 +1614,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeResourcePermissions">REST API Reference for DescribeResourcePermissions Operation</seealso>
-        public DescribeResourcePermissionsResponse DescribeResourcePermissions(DescribeResourcePermissionsRequest request)
+        public virtual DescribeResourcePermissionsResponse DescribeResourcePermissions(DescribeResourcePermissionsRequest request)
         {
             var marshaller = new DescribeResourcePermissionsRequestMarshaller();
             var unmarshaller = DescribeResourcePermissionsResponseUnmarshaller.Instance;
@@ -1632,7 +1632,7 @@ namespace Amazon.WorkDocs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeResourcePermissions">REST API Reference for DescribeResourcePermissions Operation</seealso>
-        public Task<DescribeResourcePermissionsResponse> DescribeResourcePermissionsAsync(DescribeResourcePermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeResourcePermissionsResponse> DescribeResourcePermissionsAsync(DescribeResourcePermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeResourcePermissionsRequestMarshaller();
             var unmarshaller = DescribeResourcePermissionsResponseUnmarshaller.Instance;
@@ -1672,7 +1672,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeRootFolders">REST API Reference for DescribeRootFolders Operation</seealso>
-        public DescribeRootFoldersResponse DescribeRootFolders(DescribeRootFoldersRequest request)
+        public virtual DescribeRootFoldersResponse DescribeRootFolders(DescribeRootFoldersRequest request)
         {
             var marshaller = new DescribeRootFoldersRequestMarshaller();
             var unmarshaller = DescribeRootFoldersResponseUnmarshaller.Instance;
@@ -1690,7 +1690,7 @@ namespace Amazon.WorkDocs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeRootFolders">REST API Reference for DescribeRootFolders Operation</seealso>
-        public Task<DescribeRootFoldersResponse> DescribeRootFoldersAsync(DescribeRootFoldersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeRootFoldersResponse> DescribeRootFoldersAsync(DescribeRootFoldersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeRootFoldersRequestMarshaller();
             var unmarshaller = DescribeRootFoldersResponseUnmarshaller.Instance;
@@ -1735,7 +1735,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeUsers">REST API Reference for DescribeUsers Operation</seealso>
-        public DescribeUsersResponse DescribeUsers(DescribeUsersRequest request)
+        public virtual DescribeUsersResponse DescribeUsers(DescribeUsersRequest request)
         {
             var marshaller = new DescribeUsersRequestMarshaller();
             var unmarshaller = DescribeUsersResponseUnmarshaller.Instance;
@@ -1753,7 +1753,7 @@ namespace Amazon.WorkDocs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeUsers">REST API Reference for DescribeUsers Operation</seealso>
-        public Task<DescribeUsersResponse> DescribeUsersAsync(DescribeUsersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeUsersResponse> DescribeUsersAsync(DescribeUsersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeUsersRequestMarshaller();
             var unmarshaller = DescribeUsersResponseUnmarshaller.Instance;
@@ -1791,7 +1791,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetCurrentUser">REST API Reference for GetCurrentUser Operation</seealso>
-        public GetCurrentUserResponse GetCurrentUser(GetCurrentUserRequest request)
+        public virtual GetCurrentUserResponse GetCurrentUser(GetCurrentUserRequest request)
         {
             var marshaller = new GetCurrentUserRequestMarshaller();
             var unmarshaller = GetCurrentUserResponseUnmarshaller.Instance;
@@ -1809,7 +1809,7 @@ namespace Amazon.WorkDocs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetCurrentUser">REST API Reference for GetCurrentUser Operation</seealso>
-        public Task<GetCurrentUserResponse> GetCurrentUserAsync(GetCurrentUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetCurrentUserResponse> GetCurrentUserAsync(GetCurrentUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetCurrentUserRequestMarshaller();
             var unmarshaller = GetCurrentUserResponseUnmarshaller.Instance;
@@ -1849,7 +1849,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetDocument">REST API Reference for GetDocument Operation</seealso>
-        public GetDocumentResponse GetDocument(GetDocumentRequest request)
+        public virtual GetDocumentResponse GetDocument(GetDocumentRequest request)
         {
             var marshaller = new GetDocumentRequestMarshaller();
             var unmarshaller = GetDocumentResponseUnmarshaller.Instance;
@@ -1867,7 +1867,7 @@ namespace Amazon.WorkDocs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetDocument">REST API Reference for GetDocument Operation</seealso>
-        public Task<GetDocumentResponse> GetDocumentAsync(GetDocumentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetDocumentResponse> GetDocumentAsync(GetDocumentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetDocumentRequestMarshaller();
             var unmarshaller = GetDocumentResponseUnmarshaller.Instance;
@@ -1912,7 +1912,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetDocumentPath">REST API Reference for GetDocumentPath Operation</seealso>
-        public GetDocumentPathResponse GetDocumentPath(GetDocumentPathRequest request)
+        public virtual GetDocumentPathResponse GetDocumentPath(GetDocumentPathRequest request)
         {
             var marshaller = new GetDocumentPathRequestMarshaller();
             var unmarshaller = GetDocumentPathResponseUnmarshaller.Instance;
@@ -1930,7 +1930,7 @@ namespace Amazon.WorkDocs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetDocumentPath">REST API Reference for GetDocumentPath Operation</seealso>
-        public Task<GetDocumentPathResponse> GetDocumentPathAsync(GetDocumentPathRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetDocumentPathResponse> GetDocumentPathAsync(GetDocumentPathRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetDocumentPathRequestMarshaller();
             var unmarshaller = GetDocumentPathResponseUnmarshaller.Instance;
@@ -1970,7 +1970,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetDocumentVersion">REST API Reference for GetDocumentVersion Operation</seealso>
-        public GetDocumentVersionResponse GetDocumentVersion(GetDocumentVersionRequest request)
+        public virtual GetDocumentVersionResponse GetDocumentVersion(GetDocumentVersionRequest request)
         {
             var marshaller = new GetDocumentVersionRequestMarshaller();
             var unmarshaller = GetDocumentVersionResponseUnmarshaller.Instance;
@@ -1988,7 +1988,7 @@ namespace Amazon.WorkDocs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetDocumentVersion">REST API Reference for GetDocumentVersion Operation</seealso>
-        public Task<GetDocumentVersionResponse> GetDocumentVersionAsync(GetDocumentVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetDocumentVersionResponse> GetDocumentVersionAsync(GetDocumentVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetDocumentVersionRequestMarshaller();
             var unmarshaller = GetDocumentVersionResponseUnmarshaller.Instance;
@@ -2031,7 +2031,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetFolder">REST API Reference for GetFolder Operation</seealso>
-        public GetFolderResponse GetFolder(GetFolderRequest request)
+        public virtual GetFolderResponse GetFolder(GetFolderRequest request)
         {
             var marshaller = new GetFolderRequestMarshaller();
             var unmarshaller = GetFolderResponseUnmarshaller.Instance;
@@ -2049,7 +2049,7 @@ namespace Amazon.WorkDocs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetFolder">REST API Reference for GetFolder Operation</seealso>
-        public Task<GetFolderResponse> GetFolderAsync(GetFolderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetFolderResponse> GetFolderAsync(GetFolderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetFolderRequestMarshaller();
             var unmarshaller = GetFolderResponseUnmarshaller.Instance;
@@ -2094,7 +2094,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetFolderPath">REST API Reference for GetFolderPath Operation</seealso>
-        public GetFolderPathResponse GetFolderPath(GetFolderPathRequest request)
+        public virtual GetFolderPathResponse GetFolderPath(GetFolderPathRequest request)
         {
             var marshaller = new GetFolderPathRequestMarshaller();
             var unmarshaller = GetFolderPathResponseUnmarshaller.Instance;
@@ -2112,7 +2112,7 @@ namespace Amazon.WorkDocs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetFolderPath">REST API Reference for GetFolderPath Operation</seealso>
-        public Task<GetFolderPathResponse> GetFolderPathAsync(GetFolderPathRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetFolderPathResponse> GetFolderPathAsync(GetFolderPathRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetFolderPathRequestMarshaller();
             var unmarshaller = GetFolderPathResponseUnmarshaller.Instance;
@@ -2180,7 +2180,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/InitiateDocumentVersionUpload">REST API Reference for InitiateDocumentVersionUpload Operation</seealso>
-        public InitiateDocumentVersionUploadResponse InitiateDocumentVersionUpload(InitiateDocumentVersionUploadRequest request)
+        public virtual InitiateDocumentVersionUploadResponse InitiateDocumentVersionUpload(InitiateDocumentVersionUploadRequest request)
         {
             var marshaller = new InitiateDocumentVersionUploadRequestMarshaller();
             var unmarshaller = InitiateDocumentVersionUploadResponseUnmarshaller.Instance;
@@ -2198,7 +2198,7 @@ namespace Amazon.WorkDocs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/InitiateDocumentVersionUpload">REST API Reference for InitiateDocumentVersionUpload Operation</seealso>
-        public Task<InitiateDocumentVersionUploadResponse> InitiateDocumentVersionUploadAsync(InitiateDocumentVersionUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<InitiateDocumentVersionUploadResponse> InitiateDocumentVersionUploadAsync(InitiateDocumentVersionUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new InitiateDocumentVersionUploadRequestMarshaller();
             var unmarshaller = InitiateDocumentVersionUploadResponseUnmarshaller.Instance;
@@ -2232,7 +2232,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/RemoveAllResourcePermissions">REST API Reference for RemoveAllResourcePermissions Operation</seealso>
-        public RemoveAllResourcePermissionsResponse RemoveAllResourcePermissions(RemoveAllResourcePermissionsRequest request)
+        public virtual RemoveAllResourcePermissionsResponse RemoveAllResourcePermissions(RemoveAllResourcePermissionsRequest request)
         {
             var marshaller = new RemoveAllResourcePermissionsRequestMarshaller();
             var unmarshaller = RemoveAllResourcePermissionsResponseUnmarshaller.Instance;
@@ -2250,7 +2250,7 @@ namespace Amazon.WorkDocs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/RemoveAllResourcePermissions">REST API Reference for RemoveAllResourcePermissions Operation</seealso>
-        public Task<RemoveAllResourcePermissionsResponse> RemoveAllResourcePermissionsAsync(RemoveAllResourcePermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<RemoveAllResourcePermissionsResponse> RemoveAllResourcePermissionsAsync(RemoveAllResourcePermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RemoveAllResourcePermissionsRequestMarshaller();
             var unmarshaller = RemoveAllResourcePermissionsResponseUnmarshaller.Instance;
@@ -2284,7 +2284,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/RemoveResourcePermission">REST API Reference for RemoveResourcePermission Operation</seealso>
-        public RemoveResourcePermissionResponse RemoveResourcePermission(RemoveResourcePermissionRequest request)
+        public virtual RemoveResourcePermissionResponse RemoveResourcePermission(RemoveResourcePermissionRequest request)
         {
             var marshaller = new RemoveResourcePermissionRequestMarshaller();
             var unmarshaller = RemoveResourcePermissionResponseUnmarshaller.Instance;
@@ -2302,7 +2302,7 @@ namespace Amazon.WorkDocs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/RemoveResourcePermission">REST API Reference for RemoveResourcePermission Operation</seealso>
-        public Task<RemoveResourcePermissionResponse> RemoveResourcePermissionAsync(RemoveResourcePermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<RemoveResourcePermissionResponse> RemoveResourcePermissionAsync(RemoveResourcePermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RemoveResourcePermissionRequestMarshaller();
             var unmarshaller = RemoveResourcePermissionResponseUnmarshaller.Instance;
@@ -2352,7 +2352,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/UpdateDocument">REST API Reference for UpdateDocument Operation</seealso>
-        public UpdateDocumentResponse UpdateDocument(UpdateDocumentRequest request)
+        public virtual UpdateDocumentResponse UpdateDocument(UpdateDocumentRequest request)
         {
             var marshaller = new UpdateDocumentRequestMarshaller();
             var unmarshaller = UpdateDocumentResponseUnmarshaller.Instance;
@@ -2370,7 +2370,7 @@ namespace Amazon.WorkDocs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/UpdateDocument">REST API Reference for UpdateDocument Operation</seealso>
-        public Task<UpdateDocumentResponse> UpdateDocumentAsync(UpdateDocumentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateDocumentResponse> UpdateDocumentAsync(UpdateDocumentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateDocumentRequestMarshaller();
             var unmarshaller = UpdateDocumentResponseUnmarshaller.Instance;
@@ -2423,7 +2423,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/UpdateDocumentVersion">REST API Reference for UpdateDocumentVersion Operation</seealso>
-        public UpdateDocumentVersionResponse UpdateDocumentVersion(UpdateDocumentVersionRequest request)
+        public virtual UpdateDocumentVersionResponse UpdateDocumentVersion(UpdateDocumentVersionRequest request)
         {
             var marshaller = new UpdateDocumentVersionRequestMarshaller();
             var unmarshaller = UpdateDocumentVersionResponseUnmarshaller.Instance;
@@ -2441,7 +2441,7 @@ namespace Amazon.WorkDocs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/UpdateDocumentVersion">REST API Reference for UpdateDocumentVersion Operation</seealso>
-        public Task<UpdateDocumentVersionResponse> UpdateDocumentVersionAsync(UpdateDocumentVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateDocumentVersionResponse> UpdateDocumentVersionAsync(UpdateDocumentVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateDocumentVersionRequestMarshaller();
             var unmarshaller = UpdateDocumentVersionResponseUnmarshaller.Instance;
@@ -2491,7 +2491,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/UpdateFolder">REST API Reference for UpdateFolder Operation</seealso>
-        public UpdateFolderResponse UpdateFolder(UpdateFolderRequest request)
+        public virtual UpdateFolderResponse UpdateFolder(UpdateFolderRequest request)
         {
             var marshaller = new UpdateFolderRequestMarshaller();
             var unmarshaller = UpdateFolderResponseUnmarshaller.Instance;
@@ -2509,7 +2509,7 @@ namespace Amazon.WorkDocs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/UpdateFolder">REST API Reference for UpdateFolder Operation</seealso>
-        public Task<UpdateFolderResponse> UpdateFolderAsync(UpdateFolderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateFolderResponse> UpdateFolderAsync(UpdateFolderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateFolderRequestMarshaller();
             var unmarshaller = UpdateFolderResponseUnmarshaller.Instance;
@@ -2553,7 +2553,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/UpdateUser">REST API Reference for UpdateUser Operation</seealso>
-        public UpdateUserResponse UpdateUser(UpdateUserRequest request)
+        public virtual UpdateUserResponse UpdateUser(UpdateUserRequest request)
         {
             var marshaller = new UpdateUserRequestMarshaller();
             var unmarshaller = UpdateUserResponseUnmarshaller.Instance;
@@ -2571,7 +2571,7 @@ namespace Amazon.WorkDocs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/UpdateUser">REST API Reference for UpdateUser Operation</seealso>
-        public Task<UpdateUserResponse> UpdateUserAsync(UpdateUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateUserResponse> UpdateUserAsync(UpdateUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateUserRequestMarshaller();
             var unmarshaller = UpdateUserResponseUnmarshaller.Instance;

@@ -257,7 +257,7 @@ namespace Amazon.Athena
         /// parameter may be missing or out of range.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/BatchGetNamedQuery">REST API Reference for BatchGetNamedQuery Operation</seealso>
-        public BatchGetNamedQueryResponse BatchGetNamedQuery(BatchGetNamedQueryRequest request)
+        public virtual BatchGetNamedQueryResponse BatchGetNamedQuery(BatchGetNamedQueryRequest request)
         {
             var marshaller = new BatchGetNamedQueryRequestMarshaller();
             var unmarshaller = BatchGetNamedQueryResponseUnmarshaller.Instance;
@@ -277,7 +277,7 @@ namespace Amazon.Athena
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetNamedQuery
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/BatchGetNamedQuery">REST API Reference for BatchGetNamedQuery Operation</seealso>
-        public IAsyncResult BeginBatchGetNamedQuery(BatchGetNamedQueryRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginBatchGetNamedQuery(BatchGetNamedQueryRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new BatchGetNamedQueryRequestMarshaller();
             var unmarshaller = BatchGetNamedQueryResponseUnmarshaller.Instance;
@@ -294,7 +294,7 @@ namespace Amazon.Athena
         /// 
         /// <returns>Returns a  BatchGetNamedQueryResult from Athena.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/BatchGetNamedQuery">REST API Reference for BatchGetNamedQuery Operation</seealso>
-        public  BatchGetNamedQueryResponse EndBatchGetNamedQuery(IAsyncResult asyncResult)
+        public virtual BatchGetNamedQueryResponse EndBatchGetNamedQuery(IAsyncResult asyncResult)
         {
             return EndInvoke<BatchGetNamedQueryResponse>(asyncResult);
         }
@@ -320,7 +320,7 @@ namespace Amazon.Athena
         /// parameter may be missing or out of range.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/BatchGetQueryExecution">REST API Reference for BatchGetQueryExecution Operation</seealso>
-        public BatchGetQueryExecutionResponse BatchGetQueryExecution(BatchGetQueryExecutionRequest request)
+        public virtual BatchGetQueryExecutionResponse BatchGetQueryExecution(BatchGetQueryExecutionRequest request)
         {
             var marshaller = new BatchGetQueryExecutionRequestMarshaller();
             var unmarshaller = BatchGetQueryExecutionResponseUnmarshaller.Instance;
@@ -340,7 +340,7 @@ namespace Amazon.Athena
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetQueryExecution
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/BatchGetQueryExecution">REST API Reference for BatchGetQueryExecution Operation</seealso>
-        public IAsyncResult BeginBatchGetQueryExecution(BatchGetQueryExecutionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginBatchGetQueryExecution(BatchGetQueryExecutionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new BatchGetQueryExecutionRequestMarshaller();
             var unmarshaller = BatchGetQueryExecutionResponseUnmarshaller.Instance;
@@ -357,7 +357,7 @@ namespace Amazon.Athena
         /// 
         /// <returns>Returns a  BatchGetQueryExecutionResult from Athena.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/BatchGetQueryExecution">REST API Reference for BatchGetQueryExecution Operation</seealso>
-        public  BatchGetQueryExecutionResponse EndBatchGetQueryExecution(IAsyncResult asyncResult)
+        public virtual BatchGetQueryExecutionResponse EndBatchGetQueryExecution(IAsyncResult asyncResult)
         {
             return EndInvoke<BatchGetQueryExecutionResponse>(asyncResult);
         }
@@ -386,7 +386,7 @@ namespace Amazon.Athena
         /// parameter may be missing or out of range.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateNamedQuery">REST API Reference for CreateNamedQuery Operation</seealso>
-        public CreateNamedQueryResponse CreateNamedQuery(CreateNamedQueryRequest request)
+        public virtual CreateNamedQueryResponse CreateNamedQuery(CreateNamedQueryRequest request)
         {
             var marshaller = new CreateNamedQueryRequestMarshaller();
             var unmarshaller = CreateNamedQueryResponseUnmarshaller.Instance;
@@ -406,7 +406,7 @@ namespace Amazon.Athena
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateNamedQuery
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateNamedQuery">REST API Reference for CreateNamedQuery Operation</seealso>
-        public IAsyncResult BeginCreateNamedQuery(CreateNamedQueryRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateNamedQuery(CreateNamedQueryRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateNamedQueryRequestMarshaller();
             var unmarshaller = CreateNamedQueryResponseUnmarshaller.Instance;
@@ -423,7 +423,7 @@ namespace Amazon.Athena
         /// 
         /// <returns>Returns a  CreateNamedQueryResult from Athena.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateNamedQuery">REST API Reference for CreateNamedQuery Operation</seealso>
-        public  CreateNamedQueryResponse EndCreateNamedQuery(IAsyncResult asyncResult)
+        public virtual CreateNamedQueryResponse EndCreateNamedQuery(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateNamedQueryResponse>(asyncResult);
         }
@@ -452,7 +452,7 @@ namespace Amazon.Athena
         /// parameter may be missing or out of range.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteNamedQuery">REST API Reference for DeleteNamedQuery Operation</seealso>
-        public DeleteNamedQueryResponse DeleteNamedQuery(DeleteNamedQueryRequest request)
+        public virtual DeleteNamedQueryResponse DeleteNamedQuery(DeleteNamedQueryRequest request)
         {
             var marshaller = new DeleteNamedQueryRequestMarshaller();
             var unmarshaller = DeleteNamedQueryResponseUnmarshaller.Instance;
@@ -472,7 +472,7 @@ namespace Amazon.Athena
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteNamedQuery
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteNamedQuery">REST API Reference for DeleteNamedQuery Operation</seealso>
-        public IAsyncResult BeginDeleteNamedQuery(DeleteNamedQueryRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteNamedQuery(DeleteNamedQueryRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteNamedQueryRequestMarshaller();
             var unmarshaller = DeleteNamedQueryResponseUnmarshaller.Instance;
@@ -489,7 +489,7 @@ namespace Amazon.Athena
         /// 
         /// <returns>Returns a  DeleteNamedQueryResult from Athena.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteNamedQuery">REST API Reference for DeleteNamedQuery Operation</seealso>
-        public  DeleteNamedQueryResponse EndDeleteNamedQuery(IAsyncResult asyncResult)
+        public virtual DeleteNamedQueryResponse EndDeleteNamedQuery(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteNamedQueryResponse>(asyncResult);
         }
@@ -512,7 +512,7 @@ namespace Amazon.Athena
         /// parameter may be missing or out of range.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetNamedQuery">REST API Reference for GetNamedQuery Operation</seealso>
-        public GetNamedQueryResponse GetNamedQuery(GetNamedQueryRequest request)
+        public virtual GetNamedQueryResponse GetNamedQuery(GetNamedQueryRequest request)
         {
             var marshaller = new GetNamedQueryRequestMarshaller();
             var unmarshaller = GetNamedQueryResponseUnmarshaller.Instance;
@@ -532,7 +532,7 @@ namespace Amazon.Athena
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetNamedQuery
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetNamedQuery">REST API Reference for GetNamedQuery Operation</seealso>
-        public IAsyncResult BeginGetNamedQuery(GetNamedQueryRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetNamedQuery(GetNamedQueryRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetNamedQueryRequestMarshaller();
             var unmarshaller = GetNamedQueryResponseUnmarshaller.Instance;
@@ -549,7 +549,7 @@ namespace Amazon.Athena
         /// 
         /// <returns>Returns a  GetNamedQueryResult from Athena.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetNamedQuery">REST API Reference for GetNamedQuery Operation</seealso>
-        public  GetNamedQueryResponse EndGetNamedQuery(IAsyncResult asyncResult)
+        public virtual GetNamedQueryResponse EndGetNamedQuery(IAsyncResult asyncResult)
         {
             return EndInvoke<GetNamedQueryResponse>(asyncResult);
         }
@@ -573,7 +573,7 @@ namespace Amazon.Athena
         /// parameter may be missing or out of range.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetQueryExecution">REST API Reference for GetQueryExecution Operation</seealso>
-        public GetQueryExecutionResponse GetQueryExecution(GetQueryExecutionRequest request)
+        public virtual GetQueryExecutionResponse GetQueryExecution(GetQueryExecutionRequest request)
         {
             var marshaller = new GetQueryExecutionRequestMarshaller();
             var unmarshaller = GetQueryExecutionResponseUnmarshaller.Instance;
@@ -593,7 +593,7 @@ namespace Amazon.Athena
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetQueryExecution
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetQueryExecution">REST API Reference for GetQueryExecution Operation</seealso>
-        public IAsyncResult BeginGetQueryExecution(GetQueryExecutionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetQueryExecution(GetQueryExecutionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetQueryExecutionRequestMarshaller();
             var unmarshaller = GetQueryExecutionResponseUnmarshaller.Instance;
@@ -610,7 +610,7 @@ namespace Amazon.Athena
         /// 
         /// <returns>Returns a  GetQueryExecutionResult from Athena.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetQueryExecution">REST API Reference for GetQueryExecution Operation</seealso>
-        public  GetQueryExecutionResponse EndGetQueryExecution(IAsyncResult asyncResult)
+        public virtual GetQueryExecutionResponse EndGetQueryExecution(IAsyncResult asyncResult)
         {
             return EndInvoke<GetQueryExecutionResponse>(asyncResult);
         }
@@ -635,7 +635,7 @@ namespace Amazon.Athena
         /// parameter may be missing or out of range.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetQueryResults">REST API Reference for GetQueryResults Operation</seealso>
-        public GetQueryResultsResponse GetQueryResults(GetQueryResultsRequest request)
+        public virtual GetQueryResultsResponse GetQueryResults(GetQueryResultsRequest request)
         {
             var marshaller = new GetQueryResultsRequestMarshaller();
             var unmarshaller = GetQueryResultsResponseUnmarshaller.Instance;
@@ -655,7 +655,7 @@ namespace Amazon.Athena
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetQueryResults
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetQueryResults">REST API Reference for GetQueryResults Operation</seealso>
-        public IAsyncResult BeginGetQueryResults(GetQueryResultsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetQueryResults(GetQueryResultsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetQueryResultsRequestMarshaller();
             var unmarshaller = GetQueryResultsResponseUnmarshaller.Instance;
@@ -672,7 +672,7 @@ namespace Amazon.Athena
         /// 
         /// <returns>Returns a  GetQueryResultsResult from Athena.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetQueryResults">REST API Reference for GetQueryResults Operation</seealso>
-        public  GetQueryResultsResponse EndGetQueryResults(IAsyncResult asyncResult)
+        public virtual GetQueryResultsResponse EndGetQueryResults(IAsyncResult asyncResult)
         {
             return EndInvoke<GetQueryResultsResponse>(asyncResult);
         }
@@ -701,7 +701,7 @@ namespace Amazon.Athena
         /// parameter may be missing or out of range.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListNamedQueries">REST API Reference for ListNamedQueries Operation</seealso>
-        public ListNamedQueriesResponse ListNamedQueries(ListNamedQueriesRequest request)
+        public virtual ListNamedQueriesResponse ListNamedQueries(ListNamedQueriesRequest request)
         {
             var marshaller = new ListNamedQueriesRequestMarshaller();
             var unmarshaller = ListNamedQueriesResponseUnmarshaller.Instance;
@@ -721,7 +721,7 @@ namespace Amazon.Athena
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListNamedQueries
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListNamedQueries">REST API Reference for ListNamedQueries Operation</seealso>
-        public IAsyncResult BeginListNamedQueries(ListNamedQueriesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListNamedQueries(ListNamedQueriesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListNamedQueriesRequestMarshaller();
             var unmarshaller = ListNamedQueriesResponseUnmarshaller.Instance;
@@ -738,7 +738,7 @@ namespace Amazon.Athena
         /// 
         /// <returns>Returns a  ListNamedQueriesResult from Athena.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListNamedQueries">REST API Reference for ListNamedQueries Operation</seealso>
-        public  ListNamedQueriesResponse EndListNamedQueries(IAsyncResult asyncResult)
+        public virtual ListNamedQueriesResponse EndListNamedQueries(IAsyncResult asyncResult)
         {
             return EndInvoke<ListNamedQueriesResponse>(asyncResult);
         }
@@ -767,7 +767,7 @@ namespace Amazon.Athena
         /// parameter may be missing or out of range.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListQueryExecutions">REST API Reference for ListQueryExecutions Operation</seealso>
-        public ListQueryExecutionsResponse ListQueryExecutions(ListQueryExecutionsRequest request)
+        public virtual ListQueryExecutionsResponse ListQueryExecutions(ListQueryExecutionsRequest request)
         {
             var marshaller = new ListQueryExecutionsRequestMarshaller();
             var unmarshaller = ListQueryExecutionsResponseUnmarshaller.Instance;
@@ -787,7 +787,7 @@ namespace Amazon.Athena
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListQueryExecutions
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListQueryExecutions">REST API Reference for ListQueryExecutions Operation</seealso>
-        public IAsyncResult BeginListQueryExecutions(ListQueryExecutionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListQueryExecutions(ListQueryExecutionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListQueryExecutionsRequestMarshaller();
             var unmarshaller = ListQueryExecutionsResponseUnmarshaller.Instance;
@@ -804,7 +804,7 @@ namespace Amazon.Athena
         /// 
         /// <returns>Returns a  ListQueryExecutionsResult from Athena.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListQueryExecutions">REST API Reference for ListQueryExecutions Operation</seealso>
-        public  ListQueryExecutionsResponse EndListQueryExecutions(IAsyncResult asyncResult)
+        public virtual ListQueryExecutionsResponse EndListQueryExecutions(IAsyncResult asyncResult)
         {
             return EndInvoke<ListQueryExecutionsResponse>(asyncResult);
         }
@@ -836,7 +836,7 @@ namespace Amazon.Athena
         /// Indicates that the request was throttled.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StartQueryExecution">REST API Reference for StartQueryExecution Operation</seealso>
-        public StartQueryExecutionResponse StartQueryExecution(StartQueryExecutionRequest request)
+        public virtual StartQueryExecutionResponse StartQueryExecution(StartQueryExecutionRequest request)
         {
             var marshaller = new StartQueryExecutionRequestMarshaller();
             var unmarshaller = StartQueryExecutionResponseUnmarshaller.Instance;
@@ -856,7 +856,7 @@ namespace Amazon.Athena
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartQueryExecution
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StartQueryExecution">REST API Reference for StartQueryExecution Operation</seealso>
-        public IAsyncResult BeginStartQueryExecution(StartQueryExecutionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginStartQueryExecution(StartQueryExecutionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new StartQueryExecutionRequestMarshaller();
             var unmarshaller = StartQueryExecutionResponseUnmarshaller.Instance;
@@ -873,7 +873,7 @@ namespace Amazon.Athena
         /// 
         /// <returns>Returns a  StartQueryExecutionResult from Athena.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StartQueryExecution">REST API Reference for StartQueryExecution Operation</seealso>
-        public  StartQueryExecutionResponse EndStartQueryExecution(IAsyncResult asyncResult)
+        public virtual StartQueryExecutionResponse EndStartQueryExecution(IAsyncResult asyncResult)
         {
             return EndInvoke<StartQueryExecutionResponse>(asyncResult);
         }
@@ -902,7 +902,7 @@ namespace Amazon.Athena
         /// parameter may be missing or out of range.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StopQueryExecution">REST API Reference for StopQueryExecution Operation</seealso>
-        public StopQueryExecutionResponse StopQueryExecution(StopQueryExecutionRequest request)
+        public virtual StopQueryExecutionResponse StopQueryExecution(StopQueryExecutionRequest request)
         {
             var marshaller = new StopQueryExecutionRequestMarshaller();
             var unmarshaller = StopQueryExecutionResponseUnmarshaller.Instance;
@@ -922,7 +922,7 @@ namespace Amazon.Athena
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopQueryExecution
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StopQueryExecution">REST API Reference for StopQueryExecution Operation</seealso>
-        public IAsyncResult BeginStopQueryExecution(StopQueryExecutionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginStopQueryExecution(StopQueryExecutionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new StopQueryExecutionRequestMarshaller();
             var unmarshaller = StopQueryExecutionResponseUnmarshaller.Instance;
@@ -939,7 +939,7 @@ namespace Amazon.Athena
         /// 
         /// <returns>Returns a  StopQueryExecutionResult from Athena.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StopQueryExecution">REST API Reference for StopQueryExecution Operation</seealso>
-        public  StopQueryExecutionResponse EndStopQueryExecution(IAsyncResult asyncResult)
+        public virtual StopQueryExecutionResponse EndStopQueryExecution(IAsyncResult asyncResult)
         {
             return EndInvoke<StopQueryExecutionResponse>(asyncResult);
         }

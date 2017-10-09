@@ -279,7 +279,7 @@ namespace Amazon.LexModelBuildingService
         /// in the request. Check the resource's checksum and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/CreateBotVersion">REST API Reference for CreateBotVersion Operation</seealso>
-        public CreateBotVersionResponse CreateBotVersion(CreateBotVersionRequest request)
+        public virtual CreateBotVersionResponse CreateBotVersion(CreateBotVersionRequest request)
         {
             var marshaller = new CreateBotVersionRequestMarshaller();
             var unmarshaller = CreateBotVersionResponseUnmarshaller.Instance;
@@ -297,7 +297,7 @@ namespace Amazon.LexModelBuildingService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/CreateBotVersion">REST API Reference for CreateBotVersion Operation</seealso>
-        public Task<CreateBotVersionResponse> CreateBotVersionAsync(CreateBotVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateBotVersionResponse> CreateBotVersionAsync(CreateBotVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateBotVersionRequestMarshaller();
             var unmarshaller = CreateBotVersionResponseUnmarshaller.Instance;
@@ -357,7 +357,7 @@ namespace Amazon.LexModelBuildingService
         /// in the request. Check the resource's checksum and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/CreateIntentVersion">REST API Reference for CreateIntentVersion Operation</seealso>
-        public CreateIntentVersionResponse CreateIntentVersion(CreateIntentVersionRequest request)
+        public virtual CreateIntentVersionResponse CreateIntentVersion(CreateIntentVersionRequest request)
         {
             var marshaller = new CreateIntentVersionRequestMarshaller();
             var unmarshaller = CreateIntentVersionResponseUnmarshaller.Instance;
@@ -375,7 +375,7 @@ namespace Amazon.LexModelBuildingService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/CreateIntentVersion">REST API Reference for CreateIntentVersion Operation</seealso>
-        public Task<CreateIntentVersionResponse> CreateIntentVersionAsync(CreateIntentVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateIntentVersionResponse> CreateIntentVersionAsync(CreateIntentVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateIntentVersionRequestMarshaller();
             var unmarshaller = CreateIntentVersionResponseUnmarshaller.Instance;
@@ -436,7 +436,7 @@ namespace Amazon.LexModelBuildingService
         /// in the request. Check the resource's checksum and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/CreateSlotTypeVersion">REST API Reference for CreateSlotTypeVersion Operation</seealso>
-        public CreateSlotTypeVersionResponse CreateSlotTypeVersion(CreateSlotTypeVersionRequest request)
+        public virtual CreateSlotTypeVersionResponse CreateSlotTypeVersion(CreateSlotTypeVersionRequest request)
         {
             var marshaller = new CreateSlotTypeVersionRequestMarshaller();
             var unmarshaller = CreateSlotTypeVersionResponseUnmarshaller.Instance;
@@ -454,7 +454,7 @@ namespace Amazon.LexModelBuildingService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/CreateSlotTypeVersion">REST API Reference for CreateSlotTypeVersion Operation</seealso>
-        public Task<CreateSlotTypeVersionResponse> CreateSlotTypeVersionAsync(CreateSlotTypeVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateSlotTypeVersionResponse> CreateSlotTypeVersionAsync(CreateSlotTypeVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateSlotTypeVersionRequestMarshaller();
             var unmarshaller = CreateSlotTypeVersionResponseUnmarshaller.Instance;
@@ -526,7 +526,7 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteBot">REST API Reference for DeleteBot Operation</seealso>
-        public DeleteBotResponse DeleteBot(DeleteBotRequest request)
+        public virtual DeleteBotResponse DeleteBot(DeleteBotRequest request)
         {
             var marshaller = new DeleteBotRequestMarshaller();
             var unmarshaller = DeleteBotResponseUnmarshaller.Instance;
@@ -544,7 +544,7 @@ namespace Amazon.LexModelBuildingService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteBot">REST API Reference for DeleteBot Operation</seealso>
-        public Task<DeleteBotResponse> DeleteBotAsync(DeleteBotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteBotResponse> DeleteBotAsync(DeleteBotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteBotRequestMarshaller();
             var unmarshaller = DeleteBotResponseUnmarshaller.Instance;
@@ -613,7 +613,7 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteBotAlias">REST API Reference for DeleteBotAlias Operation</seealso>
-        public DeleteBotAliasResponse DeleteBotAlias(DeleteBotAliasRequest request)
+        public virtual DeleteBotAliasResponse DeleteBotAlias(DeleteBotAliasRequest request)
         {
             var marshaller = new DeleteBotAliasRequestMarshaller();
             var unmarshaller = DeleteBotAliasResponseUnmarshaller.Instance;
@@ -631,7 +631,7 @@ namespace Amazon.LexModelBuildingService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteBotAlias">REST API Reference for DeleteBotAlias Operation</seealso>
-        public Task<DeleteBotAliasResponse> DeleteBotAliasAsync(DeleteBotAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteBotAliasResponse> DeleteBotAliasAsync(DeleteBotAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteBotAliasRequestMarshaller();
             var unmarshaller = DeleteBotAliasResponseUnmarshaller.Instance;
@@ -674,7 +674,7 @@ namespace Amazon.LexModelBuildingService
         /// The resource specified in the request was not found. Check the resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteBotChannelAssociation">REST API Reference for DeleteBotChannelAssociation Operation</seealso>
-        public DeleteBotChannelAssociationResponse DeleteBotChannelAssociation(DeleteBotChannelAssociationRequest request)
+        public virtual DeleteBotChannelAssociationResponse DeleteBotChannelAssociation(DeleteBotChannelAssociationRequest request)
         {
             var marshaller = new DeleteBotChannelAssociationRequestMarshaller();
             var unmarshaller = DeleteBotChannelAssociationResponseUnmarshaller.Instance;
@@ -692,7 +692,7 @@ namespace Amazon.LexModelBuildingService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteBotChannelAssociation">REST API Reference for DeleteBotChannelAssociation Operation</seealso>
-        public Task<DeleteBotChannelAssociationResponse> DeleteBotChannelAssociationAsync(DeleteBotChannelAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteBotChannelAssociationResponse> DeleteBotChannelAssociationAsync(DeleteBotChannelAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteBotChannelAssociationRequestMarshaller();
             var unmarshaller = DeleteBotChannelAssociationResponseUnmarshaller.Instance;
@@ -756,7 +756,7 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteBotVersion">REST API Reference for DeleteBotVersion Operation</seealso>
-        public DeleteBotVersionResponse DeleteBotVersion(DeleteBotVersionRequest request)
+        public virtual DeleteBotVersionResponse DeleteBotVersion(DeleteBotVersionRequest request)
         {
             var marshaller = new DeleteBotVersionRequestMarshaller();
             var unmarshaller = DeleteBotVersionResponseUnmarshaller.Instance;
@@ -774,7 +774,7 @@ namespace Amazon.LexModelBuildingService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteBotVersion">REST API Reference for DeleteBotVersion Operation</seealso>
-        public Task<DeleteBotVersionResponse> DeleteBotVersionAsync(DeleteBotVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteBotVersionResponse> DeleteBotVersionAsync(DeleteBotVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteBotVersionRequestMarshaller();
             var unmarshaller = DeleteBotVersionResponseUnmarshaller.Instance;
@@ -853,7 +853,7 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteIntent">REST API Reference for DeleteIntent Operation</seealso>
-        public DeleteIntentResponse DeleteIntent(DeleteIntentRequest request)
+        public virtual DeleteIntentResponse DeleteIntent(DeleteIntentRequest request)
         {
             var marshaller = new DeleteIntentRequestMarshaller();
             var unmarshaller = DeleteIntentResponseUnmarshaller.Instance;
@@ -871,7 +871,7 @@ namespace Amazon.LexModelBuildingService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteIntent">REST API Reference for DeleteIntent Operation</seealso>
-        public Task<DeleteIntentResponse> DeleteIntentAsync(DeleteIntentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteIntentResponse> DeleteIntentAsync(DeleteIntentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteIntentRequestMarshaller();
             var unmarshaller = DeleteIntentResponseUnmarshaller.Instance;
@@ -935,7 +935,7 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteIntentVersion">REST API Reference for DeleteIntentVersion Operation</seealso>
-        public DeleteIntentVersionResponse DeleteIntentVersion(DeleteIntentVersionRequest request)
+        public virtual DeleteIntentVersionResponse DeleteIntentVersion(DeleteIntentVersionRequest request)
         {
             var marshaller = new DeleteIntentVersionRequestMarshaller();
             var unmarshaller = DeleteIntentVersionResponseUnmarshaller.Instance;
@@ -953,7 +953,7 @@ namespace Amazon.LexModelBuildingService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteIntentVersion">REST API Reference for DeleteIntentVersion Operation</seealso>
-        public Task<DeleteIntentVersionResponse> DeleteIntentVersionAsync(DeleteIntentVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteIntentVersionResponse> DeleteIntentVersionAsync(DeleteIntentVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteIntentVersionRequestMarshaller();
             var unmarshaller = DeleteIntentVersionResponseUnmarshaller.Instance;
@@ -1033,7 +1033,7 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteSlotType">REST API Reference for DeleteSlotType Operation</seealso>
-        public DeleteSlotTypeResponse DeleteSlotType(DeleteSlotTypeRequest request)
+        public virtual DeleteSlotTypeResponse DeleteSlotType(DeleteSlotTypeRequest request)
         {
             var marshaller = new DeleteSlotTypeRequestMarshaller();
             var unmarshaller = DeleteSlotTypeResponseUnmarshaller.Instance;
@@ -1051,7 +1051,7 @@ namespace Amazon.LexModelBuildingService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteSlotType">REST API Reference for DeleteSlotType Operation</seealso>
-        public Task<DeleteSlotTypeResponse> DeleteSlotTypeAsync(DeleteSlotTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteSlotTypeResponse> DeleteSlotTypeAsync(DeleteSlotTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteSlotTypeRequestMarshaller();
             var unmarshaller = DeleteSlotTypeResponseUnmarshaller.Instance;
@@ -1116,7 +1116,7 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteSlotTypeVersion">REST API Reference for DeleteSlotTypeVersion Operation</seealso>
-        public DeleteSlotTypeVersionResponse DeleteSlotTypeVersion(DeleteSlotTypeVersionRequest request)
+        public virtual DeleteSlotTypeVersionResponse DeleteSlotTypeVersion(DeleteSlotTypeVersionRequest request)
         {
             var marshaller = new DeleteSlotTypeVersionRequestMarshaller();
             var unmarshaller = DeleteSlotTypeVersionResponseUnmarshaller.Instance;
@@ -1134,7 +1134,7 @@ namespace Amazon.LexModelBuildingService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteSlotTypeVersion">REST API Reference for DeleteSlotTypeVersion Operation</seealso>
-        public Task<DeleteSlotTypeVersionResponse> DeleteSlotTypeVersionAsync(DeleteSlotTypeVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteSlotTypeVersionResponse> DeleteSlotTypeVersionAsync(DeleteSlotTypeVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteSlotTypeVersionRequestMarshaller();
             var unmarshaller = DeleteSlotTypeVersionResponseUnmarshaller.Instance;
@@ -1185,7 +1185,7 @@ namespace Amazon.LexModelBuildingService
         /// The resource specified in the request was not found. Check the resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteUtterances">REST API Reference for DeleteUtterances Operation</seealso>
-        public DeleteUtterancesResponse DeleteUtterances(DeleteUtterancesRequest request)
+        public virtual DeleteUtterancesResponse DeleteUtterances(DeleteUtterancesRequest request)
         {
             var marshaller = new DeleteUtterancesRequestMarshaller();
             var unmarshaller = DeleteUtterancesResponseUnmarshaller.Instance;
@@ -1203,7 +1203,7 @@ namespace Amazon.LexModelBuildingService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteUtterances">REST API Reference for DeleteUtterances Operation</seealso>
-        public Task<DeleteUtterancesResponse> DeleteUtterancesAsync(DeleteUtterancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteUtterancesResponse> DeleteUtterancesAsync(DeleteUtterancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteUtterancesRequestMarshaller();
             var unmarshaller = DeleteUtterancesResponseUnmarshaller.Instance;
@@ -1243,7 +1243,7 @@ namespace Amazon.LexModelBuildingService
         /// The resource specified in the request was not found. Check the resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBot">REST API Reference for GetBot Operation</seealso>
-        public GetBotResponse GetBot(GetBotRequest request)
+        public virtual GetBotResponse GetBot(GetBotRequest request)
         {
             var marshaller = new GetBotRequestMarshaller();
             var unmarshaller = GetBotResponseUnmarshaller.Instance;
@@ -1261,7 +1261,7 @@ namespace Amazon.LexModelBuildingService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBot">REST API Reference for GetBot Operation</seealso>
-        public Task<GetBotResponse> GetBotAsync(GetBotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetBotResponse> GetBotAsync(GetBotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetBotRequestMarshaller();
             var unmarshaller = GetBotResponseUnmarshaller.Instance;
@@ -1301,7 +1301,7 @@ namespace Amazon.LexModelBuildingService
         /// The resource specified in the request was not found. Check the resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBotAlias">REST API Reference for GetBotAlias Operation</seealso>
-        public GetBotAliasResponse GetBotAlias(GetBotAliasRequest request)
+        public virtual GetBotAliasResponse GetBotAlias(GetBotAliasRequest request)
         {
             var marshaller = new GetBotAliasRequestMarshaller();
             var unmarshaller = GetBotAliasResponseUnmarshaller.Instance;
@@ -1319,7 +1319,7 @@ namespace Amazon.LexModelBuildingService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBotAlias">REST API Reference for GetBotAlias Operation</seealso>
-        public Task<GetBotAliasResponse> GetBotAliasAsync(GetBotAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetBotAliasResponse> GetBotAliasAsync(GetBotAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetBotAliasRequestMarshaller();
             var unmarshaller = GetBotAliasResponseUnmarshaller.Instance;
@@ -1355,7 +1355,7 @@ namespace Amazon.LexModelBuildingService
         /// The request exceeded a limit. Try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBotAliases">REST API Reference for GetBotAliases Operation</seealso>
-        public GetBotAliasesResponse GetBotAliases(GetBotAliasesRequest request)
+        public virtual GetBotAliasesResponse GetBotAliases(GetBotAliasesRequest request)
         {
             var marshaller = new GetBotAliasesRequestMarshaller();
             var unmarshaller = GetBotAliasesResponseUnmarshaller.Instance;
@@ -1373,7 +1373,7 @@ namespace Amazon.LexModelBuildingService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBotAliases">REST API Reference for GetBotAliases Operation</seealso>
-        public Task<GetBotAliasesResponse> GetBotAliasesAsync(GetBotAliasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetBotAliasesResponse> GetBotAliasesAsync(GetBotAliasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetBotAliasesRequestMarshaller();
             var unmarshaller = GetBotAliasesResponseUnmarshaller.Instance;
@@ -1414,7 +1414,7 @@ namespace Amazon.LexModelBuildingService
         /// The resource specified in the request was not found. Check the resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBotChannelAssociation">REST API Reference for GetBotChannelAssociation Operation</seealso>
-        public GetBotChannelAssociationResponse GetBotChannelAssociation(GetBotChannelAssociationRequest request)
+        public virtual GetBotChannelAssociationResponse GetBotChannelAssociation(GetBotChannelAssociationRequest request)
         {
             var marshaller = new GetBotChannelAssociationRequestMarshaller();
             var unmarshaller = GetBotChannelAssociationResponseUnmarshaller.Instance;
@@ -1432,7 +1432,7 @@ namespace Amazon.LexModelBuildingService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBotChannelAssociation">REST API Reference for GetBotChannelAssociation Operation</seealso>
-        public Task<GetBotChannelAssociationResponse> GetBotChannelAssociationAsync(GetBotChannelAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetBotChannelAssociationResponse> GetBotChannelAssociationAsync(GetBotChannelAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetBotChannelAssociationRequestMarshaller();
             var unmarshaller = GetBotChannelAssociationResponseUnmarshaller.Instance;
@@ -1469,7 +1469,7 @@ namespace Amazon.LexModelBuildingService
         /// The request exceeded a limit. Try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBotChannelAssociations">REST API Reference for GetBotChannelAssociations Operation</seealso>
-        public GetBotChannelAssociationsResponse GetBotChannelAssociations(GetBotChannelAssociationsRequest request)
+        public virtual GetBotChannelAssociationsResponse GetBotChannelAssociations(GetBotChannelAssociationsRequest request)
         {
             var marshaller = new GetBotChannelAssociationsRequestMarshaller();
             var unmarshaller = GetBotChannelAssociationsResponseUnmarshaller.Instance;
@@ -1487,7 +1487,7 @@ namespace Amazon.LexModelBuildingService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBotChannelAssociations">REST API Reference for GetBotChannelAssociations Operation</seealso>
-        public Task<GetBotChannelAssociationsResponse> GetBotChannelAssociationsAsync(GetBotChannelAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetBotChannelAssociationsResponse> GetBotChannelAssociationsAsync(GetBotChannelAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetBotChannelAssociationsRequestMarshaller();
             var unmarshaller = GetBotChannelAssociationsResponseUnmarshaller.Instance;
@@ -1537,7 +1537,7 @@ namespace Amazon.LexModelBuildingService
         /// The resource specified in the request was not found. Check the resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBots">REST API Reference for GetBots Operation</seealso>
-        public GetBotsResponse GetBots(GetBotsRequest request)
+        public virtual GetBotsResponse GetBots(GetBotsRequest request)
         {
             var marshaller = new GetBotsRequestMarshaller();
             var unmarshaller = GetBotsResponseUnmarshaller.Instance;
@@ -1555,7 +1555,7 @@ namespace Amazon.LexModelBuildingService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBots">REST API Reference for GetBots Operation</seealso>
-        public Task<GetBotsResponse> GetBotsAsync(GetBotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetBotsResponse> GetBotsAsync(GetBotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetBotsRequestMarshaller();
             var unmarshaller = GetBotsResponseUnmarshaller.Instance;
@@ -1607,7 +1607,7 @@ namespace Amazon.LexModelBuildingService
         /// The resource specified in the request was not found. Check the resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBotVersions">REST API Reference for GetBotVersions Operation</seealso>
-        public GetBotVersionsResponse GetBotVersions(GetBotVersionsRequest request)
+        public virtual GetBotVersionsResponse GetBotVersions(GetBotVersionsRequest request)
         {
             var marshaller = new GetBotVersionsRequestMarshaller();
             var unmarshaller = GetBotVersionsResponseUnmarshaller.Instance;
@@ -1625,7 +1625,7 @@ namespace Amazon.LexModelBuildingService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBotVersions">REST API Reference for GetBotVersions Operation</seealso>
-        public Task<GetBotVersionsResponse> GetBotVersionsAsync(GetBotVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetBotVersionsResponse> GetBotVersionsAsync(GetBotVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetBotVersionsRequestMarshaller();
             var unmarshaller = GetBotVersionsResponseUnmarshaller.Instance;
@@ -1664,7 +1664,7 @@ namespace Amazon.LexModelBuildingService
         /// The resource specified in the request was not found. Check the resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBuiltinIntent">REST API Reference for GetBuiltinIntent Operation</seealso>
-        public GetBuiltinIntentResponse GetBuiltinIntent(GetBuiltinIntentRequest request)
+        public virtual GetBuiltinIntentResponse GetBuiltinIntent(GetBuiltinIntentRequest request)
         {
             var marshaller = new GetBuiltinIntentRequestMarshaller();
             var unmarshaller = GetBuiltinIntentResponseUnmarshaller.Instance;
@@ -1682,7 +1682,7 @@ namespace Amazon.LexModelBuildingService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBuiltinIntent">REST API Reference for GetBuiltinIntent Operation</seealso>
-        public Task<GetBuiltinIntentResponse> GetBuiltinIntentAsync(GetBuiltinIntentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetBuiltinIntentResponse> GetBuiltinIntentAsync(GetBuiltinIntentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetBuiltinIntentRequestMarshaller();
             var unmarshaller = GetBuiltinIntentResponseUnmarshaller.Instance;
@@ -1718,7 +1718,7 @@ namespace Amazon.LexModelBuildingService
         /// The request exceeded a limit. Try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBuiltinIntents">REST API Reference for GetBuiltinIntents Operation</seealso>
-        public GetBuiltinIntentsResponse GetBuiltinIntents(GetBuiltinIntentsRequest request)
+        public virtual GetBuiltinIntentsResponse GetBuiltinIntents(GetBuiltinIntentsRequest request)
         {
             var marshaller = new GetBuiltinIntentsRequestMarshaller();
             var unmarshaller = GetBuiltinIntentsResponseUnmarshaller.Instance;
@@ -1736,7 +1736,7 @@ namespace Amazon.LexModelBuildingService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBuiltinIntents">REST API Reference for GetBuiltinIntents Operation</seealso>
-        public Task<GetBuiltinIntentsResponse> GetBuiltinIntentsAsync(GetBuiltinIntentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetBuiltinIntentsResponse> GetBuiltinIntentsAsync(GetBuiltinIntentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetBuiltinIntentsRequestMarshaller();
             var unmarshaller = GetBuiltinIntentsResponseUnmarshaller.Instance;
@@ -1777,7 +1777,7 @@ namespace Amazon.LexModelBuildingService
         /// The request exceeded a limit. Try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBuiltinSlotTypes">REST API Reference for GetBuiltinSlotTypes Operation</seealso>
-        public GetBuiltinSlotTypesResponse GetBuiltinSlotTypes(GetBuiltinSlotTypesRequest request)
+        public virtual GetBuiltinSlotTypesResponse GetBuiltinSlotTypes(GetBuiltinSlotTypesRequest request)
         {
             var marshaller = new GetBuiltinSlotTypesRequestMarshaller();
             var unmarshaller = GetBuiltinSlotTypesResponseUnmarshaller.Instance;
@@ -1795,7 +1795,7 @@ namespace Amazon.LexModelBuildingService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBuiltinSlotTypes">REST API Reference for GetBuiltinSlotTypes Operation</seealso>
-        public Task<GetBuiltinSlotTypesResponse> GetBuiltinSlotTypesAsync(GetBuiltinSlotTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetBuiltinSlotTypesResponse> GetBuiltinSlotTypesAsync(GetBuiltinSlotTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetBuiltinSlotTypesRequestMarshaller();
             var unmarshaller = GetBuiltinSlotTypesResponseUnmarshaller.Instance;
@@ -1829,7 +1829,7 @@ namespace Amazon.LexModelBuildingService
         /// The resource specified in the request was not found. Check the resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetExport">REST API Reference for GetExport Operation</seealso>
-        public GetExportResponse GetExport(GetExportRequest request)
+        public virtual GetExportResponse GetExport(GetExportRequest request)
         {
             var marshaller = new GetExportRequestMarshaller();
             var unmarshaller = GetExportResponseUnmarshaller.Instance;
@@ -1847,7 +1847,7 @@ namespace Amazon.LexModelBuildingService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetExport">REST API Reference for GetExport Operation</seealso>
-        public Task<GetExportResponse> GetExportAsync(GetExportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetExportResponse> GetExportAsync(GetExportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetExportRequestMarshaller();
             var unmarshaller = GetExportResponseUnmarshaller.Instance;
@@ -1888,7 +1888,7 @@ namespace Amazon.LexModelBuildingService
         /// The resource specified in the request was not found. Check the resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetIntent">REST API Reference for GetIntent Operation</seealso>
-        public GetIntentResponse GetIntent(GetIntentRequest request)
+        public virtual GetIntentResponse GetIntent(GetIntentRequest request)
         {
             var marshaller = new GetIntentRequestMarshaller();
             var unmarshaller = GetIntentResponseUnmarshaller.Instance;
@@ -1906,7 +1906,7 @@ namespace Amazon.LexModelBuildingService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetIntent">REST API Reference for GetIntent Operation</seealso>
-        public Task<GetIntentResponse> GetIntentAsync(GetIntentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetIntentResponse> GetIntentAsync(GetIntentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetIntentRequestMarshaller();
             var unmarshaller = GetIntentResponseUnmarshaller.Instance;
@@ -1955,7 +1955,7 @@ namespace Amazon.LexModelBuildingService
         /// The resource specified in the request was not found. Check the resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetIntents">REST API Reference for GetIntents Operation</seealso>
-        public GetIntentsResponse GetIntents(GetIntentsRequest request)
+        public virtual GetIntentsResponse GetIntents(GetIntentsRequest request)
         {
             var marshaller = new GetIntentsRequestMarshaller();
             var unmarshaller = GetIntentsResponseUnmarshaller.Instance;
@@ -1973,7 +1973,7 @@ namespace Amazon.LexModelBuildingService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetIntents">REST API Reference for GetIntents Operation</seealso>
-        public Task<GetIntentsResponse> GetIntentsAsync(GetIntentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetIntentsResponse> GetIntentsAsync(GetIntentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetIntentsRequestMarshaller();
             var unmarshaller = GetIntentsResponseUnmarshaller.Instance;
@@ -2025,7 +2025,7 @@ namespace Amazon.LexModelBuildingService
         /// The resource specified in the request was not found. Check the resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetIntentVersions">REST API Reference for GetIntentVersions Operation</seealso>
-        public GetIntentVersionsResponse GetIntentVersions(GetIntentVersionsRequest request)
+        public virtual GetIntentVersionsResponse GetIntentVersions(GetIntentVersionsRequest request)
         {
             var marshaller = new GetIntentVersionsRequestMarshaller();
             var unmarshaller = GetIntentVersionsResponseUnmarshaller.Instance;
@@ -2043,7 +2043,7 @@ namespace Amazon.LexModelBuildingService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetIntentVersions">REST API Reference for GetIntentVersions Operation</seealso>
-        public Task<GetIntentVersionsResponse> GetIntentVersionsAsync(GetIntentVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetIntentVersionsResponse> GetIntentVersionsAsync(GetIntentVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetIntentVersionsRequestMarshaller();
             var unmarshaller = GetIntentVersionsResponseUnmarshaller.Instance;
@@ -2083,7 +2083,7 @@ namespace Amazon.LexModelBuildingService
         /// The resource specified in the request was not found. Check the resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetSlotType">REST API Reference for GetSlotType Operation</seealso>
-        public GetSlotTypeResponse GetSlotType(GetSlotTypeRequest request)
+        public virtual GetSlotTypeResponse GetSlotType(GetSlotTypeRequest request)
         {
             var marshaller = new GetSlotTypeRequestMarshaller();
             var unmarshaller = GetSlotTypeResponseUnmarshaller.Instance;
@@ -2101,7 +2101,7 @@ namespace Amazon.LexModelBuildingService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetSlotType">REST API Reference for GetSlotType Operation</seealso>
-        public Task<GetSlotTypeResponse> GetSlotTypeAsync(GetSlotTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetSlotTypeResponse> GetSlotTypeAsync(GetSlotTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetSlotTypeRequestMarshaller();
             var unmarshaller = GetSlotTypeResponseUnmarshaller.Instance;
@@ -2150,7 +2150,7 @@ namespace Amazon.LexModelBuildingService
         /// The resource specified in the request was not found. Check the resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetSlotTypes">REST API Reference for GetSlotTypes Operation</seealso>
-        public GetSlotTypesResponse GetSlotTypes(GetSlotTypesRequest request)
+        public virtual GetSlotTypesResponse GetSlotTypes(GetSlotTypesRequest request)
         {
             var marshaller = new GetSlotTypesRequestMarshaller();
             var unmarshaller = GetSlotTypesResponseUnmarshaller.Instance;
@@ -2168,7 +2168,7 @@ namespace Amazon.LexModelBuildingService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetSlotTypes">REST API Reference for GetSlotTypes Operation</seealso>
-        public Task<GetSlotTypesResponse> GetSlotTypesAsync(GetSlotTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetSlotTypesResponse> GetSlotTypesAsync(GetSlotTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetSlotTypesRequestMarshaller();
             var unmarshaller = GetSlotTypesResponseUnmarshaller.Instance;
@@ -2220,7 +2220,7 @@ namespace Amazon.LexModelBuildingService
         /// The resource specified in the request was not found. Check the resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetSlotTypeVersions">REST API Reference for GetSlotTypeVersions Operation</seealso>
-        public GetSlotTypeVersionsResponse GetSlotTypeVersions(GetSlotTypeVersionsRequest request)
+        public virtual GetSlotTypeVersionsResponse GetSlotTypeVersions(GetSlotTypeVersionsRequest request)
         {
             var marshaller = new GetSlotTypeVersionsRequestMarshaller();
             var unmarshaller = GetSlotTypeVersionsResponseUnmarshaller.Instance;
@@ -2238,7 +2238,7 @@ namespace Amazon.LexModelBuildingService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetSlotTypeVersions">REST API Reference for GetSlotTypeVersions Operation</seealso>
-        public Task<GetSlotTypeVersionsResponse> GetSlotTypeVersionsAsync(GetSlotTypeVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetSlotTypeVersionsResponse> GetSlotTypeVersionsAsync(GetSlotTypeVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetSlotTypeVersionsRequestMarshaller();
             var unmarshaller = GetSlotTypeVersionsResponseUnmarshaller.Instance;
@@ -2302,7 +2302,7 @@ namespace Amazon.LexModelBuildingService
         /// The request exceeded a limit. Try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetUtterancesView">REST API Reference for GetUtterancesView Operation</seealso>
-        public GetUtterancesViewResponse GetUtterancesView(GetUtterancesViewRequest request)
+        public virtual GetUtterancesViewResponse GetUtterancesView(GetUtterancesViewRequest request)
         {
             var marshaller = new GetUtterancesViewRequestMarshaller();
             var unmarshaller = GetUtterancesViewResponseUnmarshaller.Instance;
@@ -2320,7 +2320,7 @@ namespace Amazon.LexModelBuildingService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetUtterancesView">REST API Reference for GetUtterancesView Operation</seealso>
-        public Task<GetUtterancesViewResponse> GetUtterancesViewAsync(GetUtterancesViewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetUtterancesViewResponse> GetUtterancesViewAsync(GetUtterancesViewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetUtterancesViewRequestMarshaller();
             var unmarshaller = GetUtterancesViewResponseUnmarshaller.Instance;
@@ -2377,7 +2377,7 @@ namespace Amazon.LexModelBuildingService
         /// in the request. Check the resource's checksum and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/PutBot">REST API Reference for PutBot Operation</seealso>
-        public PutBotResponse PutBot(PutBotRequest request)
+        public virtual PutBotResponse PutBot(PutBotRequest request)
         {
             var marshaller = new PutBotRequestMarshaller();
             var unmarshaller = PutBotResponseUnmarshaller.Instance;
@@ -2395,7 +2395,7 @@ namespace Amazon.LexModelBuildingService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/PutBot">REST API Reference for PutBot Operation</seealso>
-        public Task<PutBotResponse> PutBotAsync(PutBotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PutBotResponse> PutBotAsync(PutBotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutBotRequestMarshaller();
             var unmarshaller = PutBotResponseUnmarshaller.Instance;
@@ -2440,7 +2440,7 @@ namespace Amazon.LexModelBuildingService
         /// in the request. Check the resource's checksum and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/PutBotAlias">REST API Reference for PutBotAlias Operation</seealso>
-        public PutBotAliasResponse PutBotAlias(PutBotAliasRequest request)
+        public virtual PutBotAliasResponse PutBotAlias(PutBotAliasRequest request)
         {
             var marshaller = new PutBotAliasRequestMarshaller();
             var unmarshaller = PutBotAliasResponseUnmarshaller.Instance;
@@ -2458,7 +2458,7 @@ namespace Amazon.LexModelBuildingService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/PutBotAlias">REST API Reference for PutBotAlias Operation</seealso>
-        public Task<PutBotAliasResponse> PutBotAliasAsync(PutBotAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PutBotAliasResponse> PutBotAliasAsync(PutBotAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutBotAliasRequestMarshaller();
             var unmarshaller = PutBotAliasResponseUnmarshaller.Instance;
@@ -2564,7 +2564,7 @@ namespace Amazon.LexModelBuildingService
         /// in the request. Check the resource's checksum and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/PutIntent">REST API Reference for PutIntent Operation</seealso>
-        public PutIntentResponse PutIntent(PutIntentRequest request)
+        public virtual PutIntentResponse PutIntent(PutIntentRequest request)
         {
             var marshaller = new PutIntentRequestMarshaller();
             var unmarshaller = PutIntentResponseUnmarshaller.Instance;
@@ -2582,7 +2582,7 @@ namespace Amazon.LexModelBuildingService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/PutIntent">REST API Reference for PutIntent Operation</seealso>
-        public Task<PutIntentResponse> PutIntentAsync(PutIntentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PutIntentResponse> PutIntentAsync(PutIntentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutIntentRequestMarshaller();
             var unmarshaller = PutIntentResponseUnmarshaller.Instance;
@@ -2638,7 +2638,7 @@ namespace Amazon.LexModelBuildingService
         /// in the request. Check the resource's checksum and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/PutSlotType">REST API Reference for PutSlotType Operation</seealso>
-        public PutSlotTypeResponse PutSlotType(PutSlotTypeRequest request)
+        public virtual PutSlotTypeResponse PutSlotType(PutSlotTypeRequest request)
         {
             var marshaller = new PutSlotTypeRequestMarshaller();
             var unmarshaller = PutSlotTypeResponseUnmarshaller.Instance;
@@ -2656,7 +2656,7 @@ namespace Amazon.LexModelBuildingService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/PutSlotType">REST API Reference for PutSlotType Operation</seealso>
-        public Task<PutSlotTypeResponse> PutSlotTypeAsync(PutSlotTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PutSlotTypeResponse> PutSlotTypeAsync(PutSlotTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutSlotTypeRequestMarshaller();
             var unmarshaller = PutSlotTypeResponseUnmarshaller.Instance;

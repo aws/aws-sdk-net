@@ -271,7 +271,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
-        public CancelJobResponse CancelJob(CancelJobRequest request)
+        public virtual CancelJobResponse CancelJob(CancelJobRequest request)
         {
             var marshaller = new CancelJobRequestMarshaller();
             var unmarshaller = CancelJobResponseUnmarshaller.Instance;
@@ -290,7 +290,7 @@ namespace Amazon.ElasticTranscoder
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelJob
         ///         operation.</returns>
-        public IAsyncResult BeginCancelJob(CancelJobRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCancelJob(CancelJobRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CancelJobRequestMarshaller();
             var unmarshaller = CancelJobResponseUnmarshaller.Instance;
@@ -306,7 +306,7 @@ namespace Amazon.ElasticTranscoder
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelJob.</param>
         /// 
         /// <returns>Returns a  CancelJobResult from ElasticTranscoder.</returns>
-        public  CancelJobResponse EndCancelJob(IAsyncResult asyncResult)
+        public virtual CancelJobResponse EndCancelJob(IAsyncResult asyncResult)
         {
             return EndInvoke<CancelJobResponse>(asyncResult);
         }
@@ -350,7 +350,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
-        public CreateJobResponse CreateJob(CreateJobRequest request)
+        public virtual CreateJobResponse CreateJob(CreateJobRequest request)
         {
             var marshaller = new CreateJobRequestMarshaller();
             var unmarshaller = CreateJobResponseUnmarshaller.Instance;
@@ -369,7 +369,7 @@ namespace Amazon.ElasticTranscoder
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateJob
         ///         operation.</returns>
-        public IAsyncResult BeginCreateJob(CreateJobRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateJob(CreateJobRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateJobRequestMarshaller();
             var unmarshaller = CreateJobResponseUnmarshaller.Instance;
@@ -385,7 +385,7 @@ namespace Amazon.ElasticTranscoder
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateJob.</param>
         /// 
         /// <returns>Returns a  CreateJobResult from ElasticTranscoder.</returns>
-        public  CreateJobResponse EndCreateJob(IAsyncResult asyncResult)
+        public virtual CreateJobResponse EndCreateJob(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateJobResponse>(asyncResult);
         }
@@ -421,7 +421,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
-        public CreatePipelineResponse CreatePipeline(CreatePipelineRequest request)
+        public virtual CreatePipelineResponse CreatePipeline(CreatePipelineRequest request)
         {
             var marshaller = new CreatePipelineRequestMarshaller();
             var unmarshaller = CreatePipelineResponseUnmarshaller.Instance;
@@ -440,7 +440,7 @@ namespace Amazon.ElasticTranscoder
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePipeline
         ///         operation.</returns>
-        public IAsyncResult BeginCreatePipeline(CreatePipelineRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreatePipeline(CreatePipelineRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreatePipelineRequestMarshaller();
             var unmarshaller = CreatePipelineResponseUnmarshaller.Instance;
@@ -456,7 +456,7 @@ namespace Amazon.ElasticTranscoder
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePipeline.</param>
         /// 
         /// <returns>Returns a  CreatePipelineResult from ElasticTranscoder.</returns>
-        public  CreatePipelineResponse EndCreatePipeline(IAsyncResult asyncResult)
+        public virtual CreatePipelineResponse EndCreatePipeline(IAsyncResult asyncResult)
         {
             return EndInvoke<CreatePipelineResponse>(asyncResult);
         }
@@ -507,7 +507,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
-        public CreatePresetResponse CreatePreset(CreatePresetRequest request)
+        public virtual CreatePresetResponse CreatePreset(CreatePresetRequest request)
         {
             var marshaller = new CreatePresetRequestMarshaller();
             var unmarshaller = CreatePresetResponseUnmarshaller.Instance;
@@ -526,7 +526,7 @@ namespace Amazon.ElasticTranscoder
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePreset
         ///         operation.</returns>
-        public IAsyncResult BeginCreatePreset(CreatePresetRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreatePreset(CreatePresetRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreatePresetRequestMarshaller();
             var unmarshaller = CreatePresetResponseUnmarshaller.Instance;
@@ -542,7 +542,7 @@ namespace Amazon.ElasticTranscoder
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePreset.</param>
         /// 
         /// <returns>Returns a  CreatePresetResult from ElasticTranscoder.</returns>
-        public  CreatePresetResponse EndCreatePreset(IAsyncResult asyncResult)
+        public virtual CreatePresetResponse EndCreatePreset(IAsyncResult asyncResult)
         {
             return EndInvoke<CreatePresetResponse>(asyncResult);
         }
@@ -585,7 +585,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
-        public DeletePipelineResponse DeletePipeline(DeletePipelineRequest request)
+        public virtual DeletePipelineResponse DeletePipeline(DeletePipelineRequest request)
         {
             var marshaller = new DeletePipelineRequestMarshaller();
             var unmarshaller = DeletePipelineResponseUnmarshaller.Instance;
@@ -604,7 +604,7 @@ namespace Amazon.ElasticTranscoder
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePipeline
         ///         operation.</returns>
-        public IAsyncResult BeginDeletePipeline(DeletePipelineRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeletePipeline(DeletePipelineRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeletePipelineRequestMarshaller();
             var unmarshaller = DeletePipelineResponseUnmarshaller.Instance;
@@ -620,7 +620,7 @@ namespace Amazon.ElasticTranscoder
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePipeline.</param>
         /// 
         /// <returns>Returns a  DeletePipelineResult from ElasticTranscoder.</returns>
-        public  DeletePipelineResponse EndDeletePipeline(IAsyncResult asyncResult)
+        public virtual DeletePipelineResponse EndDeletePipeline(IAsyncResult asyncResult)
         {
             return EndInvoke<DeletePipelineResponse>(asyncResult);
         }
@@ -658,7 +658,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
-        public DeletePresetResponse DeletePreset(DeletePresetRequest request)
+        public virtual DeletePresetResponse DeletePreset(DeletePresetRequest request)
         {
             var marshaller = new DeletePresetRequestMarshaller();
             var unmarshaller = DeletePresetResponseUnmarshaller.Instance;
@@ -677,7 +677,7 @@ namespace Amazon.ElasticTranscoder
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePreset
         ///         operation.</returns>
-        public IAsyncResult BeginDeletePreset(DeletePresetRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeletePreset(DeletePresetRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeletePresetRequestMarshaller();
             var unmarshaller = DeletePresetResponseUnmarshaller.Instance;
@@ -693,7 +693,7 @@ namespace Amazon.ElasticTranscoder
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePreset.</param>
         /// 
         /// <returns>Returns a  DeletePresetResult from ElasticTranscoder.</returns>
-        public  DeletePresetResponse EndDeletePreset(IAsyncResult asyncResult)
+        public virtual DeletePresetResponse EndDeletePreset(IAsyncResult asyncResult)
         {
             return EndInvoke<DeletePresetResponse>(asyncResult);
         }
@@ -731,7 +731,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
-        public ListJobsByPipelineResponse ListJobsByPipeline(ListJobsByPipelineRequest request)
+        public virtual ListJobsByPipelineResponse ListJobsByPipeline(ListJobsByPipelineRequest request)
         {
             var marshaller = new ListJobsByPipelineRequestMarshaller();
             var unmarshaller = ListJobsByPipelineResponseUnmarshaller.Instance;
@@ -750,7 +750,7 @@ namespace Amazon.ElasticTranscoder
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListJobsByPipeline
         ///         operation.</returns>
-        public IAsyncResult BeginListJobsByPipeline(ListJobsByPipelineRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListJobsByPipeline(ListJobsByPipelineRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListJobsByPipelineRequestMarshaller();
             var unmarshaller = ListJobsByPipelineResponseUnmarshaller.Instance;
@@ -766,7 +766,7 @@ namespace Amazon.ElasticTranscoder
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListJobsByPipeline.</param>
         /// 
         /// <returns>Returns a  ListJobsByPipelineResult from ElasticTranscoder.</returns>
-        public  ListJobsByPipelineResponse EndListJobsByPipeline(IAsyncResult asyncResult)
+        public virtual ListJobsByPipelineResponse EndListJobsByPipeline(IAsyncResult asyncResult)
         {
             return EndInvoke<ListJobsByPipelineResponse>(asyncResult);
         }
@@ -799,7 +799,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
-        public ListJobsByStatusResponse ListJobsByStatus(ListJobsByStatusRequest request)
+        public virtual ListJobsByStatusResponse ListJobsByStatus(ListJobsByStatusRequest request)
         {
             var marshaller = new ListJobsByStatusRequestMarshaller();
             var unmarshaller = ListJobsByStatusResponseUnmarshaller.Instance;
@@ -818,7 +818,7 @@ namespace Amazon.ElasticTranscoder
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListJobsByStatus
         ///         operation.</returns>
-        public IAsyncResult BeginListJobsByStatus(ListJobsByStatusRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListJobsByStatus(ListJobsByStatusRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListJobsByStatusRequestMarshaller();
             var unmarshaller = ListJobsByStatusResponseUnmarshaller.Instance;
@@ -834,7 +834,7 @@ namespace Amazon.ElasticTranscoder
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListJobsByStatus.</param>
         /// 
         /// <returns>Returns a  ListJobsByStatusResult from ElasticTranscoder.</returns>
-        public  ListJobsByStatusResponse EndListJobsByStatus(IAsyncResult asyncResult)
+        public virtual ListJobsByStatusResponse EndListJobsByStatus(IAsyncResult asyncResult)
         {
             return EndInvoke<ListJobsByStatusResponse>(asyncResult);
         }
@@ -862,7 +862,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
-        public ListPipelinesResponse ListPipelines()
+        public virtual ListPipelinesResponse ListPipelines()
         {
             return ListPipelines(new ListPipelinesRequest());
         }
@@ -887,7 +887,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
-        public ListPipelinesResponse ListPipelines(ListPipelinesRequest request)
+        public virtual ListPipelinesResponse ListPipelines(ListPipelinesRequest request)
         {
             var marshaller = new ListPipelinesRequestMarshaller();
             var unmarshaller = ListPipelinesResponseUnmarshaller.Instance;
@@ -906,7 +906,7 @@ namespace Amazon.ElasticTranscoder
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPipelines
         ///         operation.</returns>
-        public IAsyncResult BeginListPipelines(ListPipelinesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListPipelines(ListPipelinesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListPipelinesRequestMarshaller();
             var unmarshaller = ListPipelinesResponseUnmarshaller.Instance;
@@ -922,7 +922,7 @@ namespace Amazon.ElasticTranscoder
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPipelines.</param>
         /// 
         /// <returns>Returns a  ListPipelinesResult from ElasticTranscoder.</returns>
-        public  ListPipelinesResponse EndListPipelines(IAsyncResult asyncResult)
+        public virtual ListPipelinesResponse EndListPipelines(IAsyncResult asyncResult)
         {
             return EndInvoke<ListPipelinesResponse>(asyncResult);
         }
@@ -950,7 +950,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
-        public ListPresetsResponse ListPresets()
+        public virtual ListPresetsResponse ListPresets()
         {
             return ListPresets(new ListPresetsRequest());
         }
@@ -975,7 +975,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
-        public ListPresetsResponse ListPresets(ListPresetsRequest request)
+        public virtual ListPresetsResponse ListPresets(ListPresetsRequest request)
         {
             var marshaller = new ListPresetsRequestMarshaller();
             var unmarshaller = ListPresetsResponseUnmarshaller.Instance;
@@ -994,7 +994,7 @@ namespace Amazon.ElasticTranscoder
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPresets
         ///         operation.</returns>
-        public IAsyncResult BeginListPresets(ListPresetsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListPresets(ListPresetsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListPresetsRequestMarshaller();
             var unmarshaller = ListPresetsResponseUnmarshaller.Instance;
@@ -1010,7 +1010,7 @@ namespace Amazon.ElasticTranscoder
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPresets.</param>
         /// 
         /// <returns>Returns a  ListPresetsResult from ElasticTranscoder.</returns>
-        public  ListPresetsResponse EndListPresets(IAsyncResult asyncResult)
+        public virtual ListPresetsResponse EndListPresets(IAsyncResult asyncResult)
         {
             return EndInvoke<ListPresetsResponse>(asyncResult);
         }
@@ -1042,7 +1042,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
-        public ReadJobResponse ReadJob(ReadJobRequest request)
+        public virtual ReadJobResponse ReadJob(ReadJobRequest request)
         {
             var marshaller = new ReadJobRequestMarshaller();
             var unmarshaller = ReadJobResponseUnmarshaller.Instance;
@@ -1061,7 +1061,7 @@ namespace Amazon.ElasticTranscoder
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndReadJob
         ///         operation.</returns>
-        public IAsyncResult BeginReadJob(ReadJobRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginReadJob(ReadJobRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ReadJobRequestMarshaller();
             var unmarshaller = ReadJobResponseUnmarshaller.Instance;
@@ -1077,7 +1077,7 @@ namespace Amazon.ElasticTranscoder
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginReadJob.</param>
         /// 
         /// <returns>Returns a  ReadJobResult from ElasticTranscoder.</returns>
-        public  ReadJobResponse EndReadJob(IAsyncResult asyncResult)
+        public virtual ReadJobResponse EndReadJob(IAsyncResult asyncResult)
         {
             return EndInvoke<ReadJobResponse>(asyncResult);
         }
@@ -1109,7 +1109,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
-        public ReadPipelineResponse ReadPipeline(ReadPipelineRequest request)
+        public virtual ReadPipelineResponse ReadPipeline(ReadPipelineRequest request)
         {
             var marshaller = new ReadPipelineRequestMarshaller();
             var unmarshaller = ReadPipelineResponseUnmarshaller.Instance;
@@ -1128,7 +1128,7 @@ namespace Amazon.ElasticTranscoder
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndReadPipeline
         ///         operation.</returns>
-        public IAsyncResult BeginReadPipeline(ReadPipelineRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginReadPipeline(ReadPipelineRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ReadPipelineRequestMarshaller();
             var unmarshaller = ReadPipelineResponseUnmarshaller.Instance;
@@ -1144,7 +1144,7 @@ namespace Amazon.ElasticTranscoder
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginReadPipeline.</param>
         /// 
         /// <returns>Returns a  ReadPipelineResult from ElasticTranscoder.</returns>
-        public  ReadPipelineResponse EndReadPipeline(IAsyncResult asyncResult)
+        public virtual ReadPipelineResponse EndReadPipeline(IAsyncResult asyncResult)
         {
             return EndInvoke<ReadPipelineResponse>(asyncResult);
         }
@@ -1176,7 +1176,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
-        public ReadPresetResponse ReadPreset(ReadPresetRequest request)
+        public virtual ReadPresetResponse ReadPreset(ReadPresetRequest request)
         {
             var marshaller = new ReadPresetRequestMarshaller();
             var unmarshaller = ReadPresetResponseUnmarshaller.Instance;
@@ -1195,7 +1195,7 @@ namespace Amazon.ElasticTranscoder
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndReadPreset
         ///         operation.</returns>
-        public IAsyncResult BeginReadPreset(ReadPresetRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginReadPreset(ReadPresetRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ReadPresetRequestMarshaller();
             var unmarshaller = ReadPresetResponseUnmarshaller.Instance;
@@ -1211,7 +1211,7 @@ namespace Amazon.ElasticTranscoder
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginReadPreset.</param>
         /// 
         /// <returns>Returns a  ReadPresetResult from ElasticTranscoder.</returns>
-        public  ReadPresetResponse EndReadPreset(IAsyncResult asyncResult)
+        public virtual ReadPresetResponse EndReadPreset(IAsyncResult asyncResult)
         {
             return EndInvoke<ReadPresetResponse>(asyncResult);
         }
@@ -1253,7 +1253,7 @@ namespace Amazon.ElasticTranscoder
         /// One or more required parameter values were not provided in the request.
         /// </exception>
         [Obsolete("This API is deprecated and will be removed in a future release.")]
-        public TestRoleResponse TestRole(TestRoleRequest request)
+        public virtual TestRoleResponse TestRole(TestRoleRequest request)
         {
             var marshaller = new TestRoleRequestMarshaller();
             var unmarshaller = TestRoleResponseUnmarshaller.Instance;
@@ -1273,7 +1273,7 @@ namespace Amazon.ElasticTranscoder
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTestRole
         ///         operation.</returns>
         [Obsolete("This API is deprecated and will be removed in a future release.")]
-        public IAsyncResult BeginTestRole(TestRoleRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginTestRole(TestRoleRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new TestRoleRequestMarshaller();
             var unmarshaller = TestRoleResponseUnmarshaller.Instance;
@@ -1290,7 +1290,7 @@ namespace Amazon.ElasticTranscoder
         /// 
         /// <returns>Returns a  TestRoleResult from ElasticTranscoder.</returns>
         [Obsolete("This API is deprecated and will be removed in a future release.")]
-        public  TestRoleResponse EndTestRole(IAsyncResult asyncResult)
+        public virtual TestRoleResponse EndTestRole(IAsyncResult asyncResult)
         {
             return EndInvoke<TestRoleResponse>(asyncResult);
         }
@@ -1334,7 +1334,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
-        public UpdatePipelineResponse UpdatePipeline(UpdatePipelineRequest request)
+        public virtual UpdatePipelineResponse UpdatePipeline(UpdatePipelineRequest request)
         {
             var marshaller = new UpdatePipelineRequestMarshaller();
             var unmarshaller = UpdatePipelineResponseUnmarshaller.Instance;
@@ -1353,7 +1353,7 @@ namespace Amazon.ElasticTranscoder
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdatePipeline
         ///         operation.</returns>
-        public IAsyncResult BeginUpdatePipeline(UpdatePipelineRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdatePipeline(UpdatePipelineRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdatePipelineRequestMarshaller();
             var unmarshaller = UpdatePipelineResponseUnmarshaller.Instance;
@@ -1369,7 +1369,7 @@ namespace Amazon.ElasticTranscoder
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdatePipeline.</param>
         /// 
         /// <returns>Returns a  UpdatePipelineResult from ElasticTranscoder.</returns>
-        public  UpdatePipelineResponse EndUpdatePipeline(IAsyncResult asyncResult)
+        public virtual UpdatePipelineResponse EndUpdatePipeline(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdatePipelineResponse>(asyncResult);
         }
@@ -1412,7 +1412,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
-        public UpdatePipelineNotificationsResponse UpdatePipelineNotifications(UpdatePipelineNotificationsRequest request)
+        public virtual UpdatePipelineNotificationsResponse UpdatePipelineNotifications(UpdatePipelineNotificationsRequest request)
         {
             var marshaller = new UpdatePipelineNotificationsRequestMarshaller();
             var unmarshaller = UpdatePipelineNotificationsResponseUnmarshaller.Instance;
@@ -1431,7 +1431,7 @@ namespace Amazon.ElasticTranscoder
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdatePipelineNotifications
         ///         operation.</returns>
-        public IAsyncResult BeginUpdatePipelineNotifications(UpdatePipelineNotificationsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdatePipelineNotifications(UpdatePipelineNotificationsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdatePipelineNotificationsRequestMarshaller();
             var unmarshaller = UpdatePipelineNotificationsResponseUnmarshaller.Instance;
@@ -1447,7 +1447,7 @@ namespace Amazon.ElasticTranscoder
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdatePipelineNotifications.</param>
         /// 
         /// <returns>Returns a  UpdatePipelineNotificationsResult from ElasticTranscoder.</returns>
-        public  UpdatePipelineNotificationsResponse EndUpdatePipelineNotifications(IAsyncResult asyncResult)
+        public virtual UpdatePipelineNotificationsResponse EndUpdatePipelineNotifications(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdatePipelineNotificationsResponse>(asyncResult);
         }
@@ -1492,7 +1492,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
-        public UpdatePipelineStatusResponse UpdatePipelineStatus(UpdatePipelineStatusRequest request)
+        public virtual UpdatePipelineStatusResponse UpdatePipelineStatus(UpdatePipelineStatusRequest request)
         {
             var marshaller = new UpdatePipelineStatusRequestMarshaller();
             var unmarshaller = UpdatePipelineStatusResponseUnmarshaller.Instance;
@@ -1511,7 +1511,7 @@ namespace Amazon.ElasticTranscoder
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdatePipelineStatus
         ///         operation.</returns>
-        public IAsyncResult BeginUpdatePipelineStatus(UpdatePipelineStatusRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdatePipelineStatus(UpdatePipelineStatusRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdatePipelineStatusRequestMarshaller();
             var unmarshaller = UpdatePipelineStatusResponseUnmarshaller.Instance;
@@ -1527,7 +1527,7 @@ namespace Amazon.ElasticTranscoder
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdatePipelineStatus.</param>
         /// 
         /// <returns>Returns a  UpdatePipelineStatusResult from ElasticTranscoder.</returns>
-        public  UpdatePipelineStatusResponse EndUpdatePipelineStatus(IAsyncResult asyncResult)
+        public virtual UpdatePipelineStatusResponse EndUpdatePipelineStatus(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdatePipelineStatusResponse>(asyncResult);
         }

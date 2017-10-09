@@ -267,7 +267,7 @@ namespace Amazon.CloudWatchLogs
         
         #region  AssociateKmsKey
 
-        internal AssociateKmsKeyResponse AssociateKmsKey(AssociateKmsKeyRequest request)
+        internal virtual AssociateKmsKeyResponse AssociateKmsKey(AssociateKmsKeyRequest request)
         {
             var marshaller = new AssociateKmsKeyRequestMarshaller();
             var unmarshaller = AssociateKmsKeyResponseUnmarshaller.Instance;
@@ -286,7 +286,7 @@ namespace Amazon.CloudWatchLogs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/AssociateKmsKey">REST API Reference for AssociateKmsKey Operation</seealso>
-        public Task<AssociateKmsKeyResponse> AssociateKmsKeyAsync(AssociateKmsKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<AssociateKmsKeyResponse> AssociateKmsKeyAsync(AssociateKmsKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AssociateKmsKeyRequestMarshaller();
             var unmarshaller = AssociateKmsKeyResponseUnmarshaller.Instance;
@@ -299,7 +299,7 @@ namespace Amazon.CloudWatchLogs
         
         #region  CancelExportTask
 
-        internal CancelExportTaskResponse CancelExportTask(CancelExportTaskRequest request)
+        internal virtual CancelExportTaskResponse CancelExportTask(CancelExportTaskRequest request)
         {
             var marshaller = new CancelExportTaskRequestMarshaller();
             var unmarshaller = CancelExportTaskResponseUnmarshaller.Instance;
@@ -318,7 +318,7 @@ namespace Amazon.CloudWatchLogs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CancelExportTask">REST API Reference for CancelExportTask Operation</seealso>
-        public Task<CancelExportTaskResponse> CancelExportTaskAsync(CancelExportTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CancelExportTaskResponse> CancelExportTaskAsync(CancelExportTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CancelExportTaskRequestMarshaller();
             var unmarshaller = CancelExportTaskResponseUnmarshaller.Instance;
@@ -331,7 +331,7 @@ namespace Amazon.CloudWatchLogs
         
         #region  CreateExportTask
 
-        internal CreateExportTaskResponse CreateExportTask(CreateExportTaskRequest request)
+        internal virtual CreateExportTaskResponse CreateExportTask(CreateExportTaskRequest request)
         {
             var marshaller = new CreateExportTaskRequestMarshaller();
             var unmarshaller = CreateExportTaskResponseUnmarshaller.Instance;
@@ -350,7 +350,7 @@ namespace Amazon.CloudWatchLogs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateExportTask">REST API Reference for CreateExportTask Operation</seealso>
-        public Task<CreateExportTaskResponse> CreateExportTaskAsync(CreateExportTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateExportTaskResponse> CreateExportTaskAsync(CreateExportTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateExportTaskRequestMarshaller();
             var unmarshaller = CreateExportTaskResponseUnmarshaller.Instance;
@@ -363,7 +363,7 @@ namespace Amazon.CloudWatchLogs
         
         #region  CreateLogGroup
 
-        internal CreateLogGroupResponse CreateLogGroup(CreateLogGroupRequest request)
+        internal virtual CreateLogGroupResponse CreateLogGroup(CreateLogGroupRequest request)
         {
             var marshaller = new CreateLogGroupRequestMarshaller();
             var unmarshaller = CreateLogGroupResponseUnmarshaller.Instance;
@@ -382,7 +382,7 @@ namespace Amazon.CloudWatchLogs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateLogGroup">REST API Reference for CreateLogGroup Operation</seealso>
-        public Task<CreateLogGroupResponse> CreateLogGroupAsync(CreateLogGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateLogGroupResponse> CreateLogGroupAsync(CreateLogGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateLogGroupRequestMarshaller();
             var unmarshaller = CreateLogGroupResponseUnmarshaller.Instance;
@@ -395,7 +395,7 @@ namespace Amazon.CloudWatchLogs
         
         #region  CreateLogStream
 
-        internal CreateLogStreamResponse CreateLogStream(CreateLogStreamRequest request)
+        internal virtual CreateLogStreamResponse CreateLogStream(CreateLogStreamRequest request)
         {
             var marshaller = new CreateLogStreamRequestMarshaller();
             var unmarshaller = CreateLogStreamResponseUnmarshaller.Instance;
@@ -414,7 +414,7 @@ namespace Amazon.CloudWatchLogs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateLogStream">REST API Reference for CreateLogStream Operation</seealso>
-        public Task<CreateLogStreamResponse> CreateLogStreamAsync(CreateLogStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateLogStreamResponse> CreateLogStreamAsync(CreateLogStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateLogStreamRequestMarshaller();
             var unmarshaller = CreateLogStreamResponseUnmarshaller.Instance;
@@ -427,7 +427,7 @@ namespace Amazon.CloudWatchLogs
         
         #region  DeleteDestination
 
-        internal DeleteDestinationResponse DeleteDestination(DeleteDestinationRequest request)
+        internal virtual DeleteDestinationResponse DeleteDestination(DeleteDestinationRequest request)
         {
             var marshaller = new DeleteDestinationRequestMarshaller();
             var unmarshaller = DeleteDestinationResponseUnmarshaller.Instance;
@@ -446,7 +446,7 @@ namespace Amazon.CloudWatchLogs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteDestination">REST API Reference for DeleteDestination Operation</seealso>
-        public Task<DeleteDestinationResponse> DeleteDestinationAsync(DeleteDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteDestinationResponse> DeleteDestinationAsync(DeleteDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteDestinationRequestMarshaller();
             var unmarshaller = DeleteDestinationResponseUnmarshaller.Instance;
@@ -459,7 +459,7 @@ namespace Amazon.CloudWatchLogs
         
         #region  DeleteLogGroup
 
-        internal DeleteLogGroupResponse DeleteLogGroup(DeleteLogGroupRequest request)
+        internal virtual DeleteLogGroupResponse DeleteLogGroup(DeleteLogGroupRequest request)
         {
             var marshaller = new DeleteLogGroupRequestMarshaller();
             var unmarshaller = DeleteLogGroupResponseUnmarshaller.Instance;
@@ -478,7 +478,7 @@ namespace Amazon.CloudWatchLogs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteLogGroup">REST API Reference for DeleteLogGroup Operation</seealso>
-        public Task<DeleteLogGroupResponse> DeleteLogGroupAsync(DeleteLogGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteLogGroupResponse> DeleteLogGroupAsync(DeleteLogGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteLogGroupRequestMarshaller();
             var unmarshaller = DeleteLogGroupResponseUnmarshaller.Instance;
@@ -491,7 +491,7 @@ namespace Amazon.CloudWatchLogs
         
         #region  DeleteLogStream
 
-        internal DeleteLogStreamResponse DeleteLogStream(DeleteLogStreamRequest request)
+        internal virtual DeleteLogStreamResponse DeleteLogStream(DeleteLogStreamRequest request)
         {
             var marshaller = new DeleteLogStreamRequestMarshaller();
             var unmarshaller = DeleteLogStreamResponseUnmarshaller.Instance;
@@ -510,7 +510,7 @@ namespace Amazon.CloudWatchLogs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteLogStream">REST API Reference for DeleteLogStream Operation</seealso>
-        public Task<DeleteLogStreamResponse> DeleteLogStreamAsync(DeleteLogStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteLogStreamResponse> DeleteLogStreamAsync(DeleteLogStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteLogStreamRequestMarshaller();
             var unmarshaller = DeleteLogStreamResponseUnmarshaller.Instance;
@@ -523,7 +523,7 @@ namespace Amazon.CloudWatchLogs
         
         #region  DeleteMetricFilter
 
-        internal DeleteMetricFilterResponse DeleteMetricFilter(DeleteMetricFilterRequest request)
+        internal virtual DeleteMetricFilterResponse DeleteMetricFilter(DeleteMetricFilterRequest request)
         {
             var marshaller = new DeleteMetricFilterRequestMarshaller();
             var unmarshaller = DeleteMetricFilterResponseUnmarshaller.Instance;
@@ -542,7 +542,7 @@ namespace Amazon.CloudWatchLogs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteMetricFilter">REST API Reference for DeleteMetricFilter Operation</seealso>
-        public Task<DeleteMetricFilterResponse> DeleteMetricFilterAsync(DeleteMetricFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteMetricFilterResponse> DeleteMetricFilterAsync(DeleteMetricFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteMetricFilterRequestMarshaller();
             var unmarshaller = DeleteMetricFilterResponseUnmarshaller.Instance;
@@ -555,7 +555,7 @@ namespace Amazon.CloudWatchLogs
         
         #region  DeleteResourcePolicy
 
-        internal DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request)
+        internal virtual DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request)
         {
             var marshaller = new DeleteResourcePolicyRequestMarshaller();
             var unmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
@@ -574,7 +574,7 @@ namespace Amazon.CloudWatchLogs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
-        public Task<DeleteResourcePolicyResponse> DeleteResourcePolicyAsync(DeleteResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteResourcePolicyResponse> DeleteResourcePolicyAsync(DeleteResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteResourcePolicyRequestMarshaller();
             var unmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
@@ -587,7 +587,7 @@ namespace Amazon.CloudWatchLogs
         
         #region  DeleteRetentionPolicy
 
-        internal DeleteRetentionPolicyResponse DeleteRetentionPolicy(DeleteRetentionPolicyRequest request)
+        internal virtual DeleteRetentionPolicyResponse DeleteRetentionPolicy(DeleteRetentionPolicyRequest request)
         {
             var marshaller = new DeleteRetentionPolicyRequestMarshaller();
             var unmarshaller = DeleteRetentionPolicyResponseUnmarshaller.Instance;
@@ -606,7 +606,7 @@ namespace Amazon.CloudWatchLogs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteRetentionPolicy">REST API Reference for DeleteRetentionPolicy Operation</seealso>
-        public Task<DeleteRetentionPolicyResponse> DeleteRetentionPolicyAsync(DeleteRetentionPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteRetentionPolicyResponse> DeleteRetentionPolicyAsync(DeleteRetentionPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteRetentionPolicyRequestMarshaller();
             var unmarshaller = DeleteRetentionPolicyResponseUnmarshaller.Instance;
@@ -619,7 +619,7 @@ namespace Amazon.CloudWatchLogs
         
         #region  DeleteSubscriptionFilter
 
-        internal DeleteSubscriptionFilterResponse DeleteSubscriptionFilter(DeleteSubscriptionFilterRequest request)
+        internal virtual DeleteSubscriptionFilterResponse DeleteSubscriptionFilter(DeleteSubscriptionFilterRequest request)
         {
             var marshaller = new DeleteSubscriptionFilterRequestMarshaller();
             var unmarshaller = DeleteSubscriptionFilterResponseUnmarshaller.Instance;
@@ -638,7 +638,7 @@ namespace Amazon.CloudWatchLogs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteSubscriptionFilter">REST API Reference for DeleteSubscriptionFilter Operation</seealso>
-        public Task<DeleteSubscriptionFilterResponse> DeleteSubscriptionFilterAsync(DeleteSubscriptionFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteSubscriptionFilterResponse> DeleteSubscriptionFilterAsync(DeleteSubscriptionFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteSubscriptionFilterRequestMarshaller();
             var unmarshaller = DeleteSubscriptionFilterResponseUnmarshaller.Instance;
@@ -651,7 +651,7 @@ namespace Amazon.CloudWatchLogs
         
         #region  DescribeDestinations
 
-        internal DescribeDestinationsResponse DescribeDestinations(DescribeDestinationsRequest request)
+        internal virtual DescribeDestinationsResponse DescribeDestinations(DescribeDestinationsRequest request)
         {
             var marshaller = new DescribeDestinationsRequestMarshaller();
             var unmarshaller = DescribeDestinationsResponseUnmarshaller.Instance;
@@ -670,7 +670,7 @@ namespace Amazon.CloudWatchLogs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeDestinations">REST API Reference for DescribeDestinations Operation</seealso>
-        public Task<DescribeDestinationsResponse> DescribeDestinationsAsync(DescribeDestinationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeDestinationsResponse> DescribeDestinationsAsync(DescribeDestinationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeDestinationsRequestMarshaller();
             var unmarshaller = DescribeDestinationsResponseUnmarshaller.Instance;
@@ -683,7 +683,7 @@ namespace Amazon.CloudWatchLogs
         
         #region  DescribeExportTasks
 
-        internal DescribeExportTasksResponse DescribeExportTasks(DescribeExportTasksRequest request)
+        internal virtual DescribeExportTasksResponse DescribeExportTasks(DescribeExportTasksRequest request)
         {
             var marshaller = new DescribeExportTasksRequestMarshaller();
             var unmarshaller = DescribeExportTasksResponseUnmarshaller.Instance;
@@ -702,7 +702,7 @@ namespace Amazon.CloudWatchLogs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeExportTasks">REST API Reference for DescribeExportTasks Operation</seealso>
-        public Task<DescribeExportTasksResponse> DescribeExportTasksAsync(DescribeExportTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeExportTasksResponse> DescribeExportTasksAsync(DescribeExportTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeExportTasksRequestMarshaller();
             var unmarshaller = DescribeExportTasksResponseUnmarshaller.Instance;
@@ -715,11 +715,11 @@ namespace Amazon.CloudWatchLogs
         
         #region  DescribeLogGroups
 
-        internal DescribeLogGroupsResponse DescribeLogGroups()
+        internal virtual DescribeLogGroupsResponse DescribeLogGroups()
         {
             return DescribeLogGroups(new DescribeLogGroupsRequest());
         }
-        internal DescribeLogGroupsResponse DescribeLogGroups(DescribeLogGroupsRequest request)
+        internal virtual DescribeLogGroupsResponse DescribeLogGroups(DescribeLogGroupsRequest request)
         {
             var marshaller = new DescribeLogGroupsRequestMarshaller();
             var unmarshaller = DescribeLogGroupsResponseUnmarshaller.Instance;
@@ -744,7 +744,7 @@ namespace Amazon.CloudWatchLogs
         /// The service cannot complete the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeLogGroups">REST API Reference for DescribeLogGroups Operation</seealso>
-        public Task<DescribeLogGroupsResponse> DescribeLogGroupsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeLogGroupsResponse> DescribeLogGroupsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeLogGroupsAsync(new DescribeLogGroupsRequest(), cancellationToken);
         }
@@ -760,7 +760,7 @@ namespace Amazon.CloudWatchLogs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeLogGroups">REST API Reference for DescribeLogGroups Operation</seealso>
-        public Task<DescribeLogGroupsResponse> DescribeLogGroupsAsync(DescribeLogGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeLogGroupsResponse> DescribeLogGroupsAsync(DescribeLogGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeLogGroupsRequestMarshaller();
             var unmarshaller = DescribeLogGroupsResponseUnmarshaller.Instance;
@@ -773,7 +773,7 @@ namespace Amazon.CloudWatchLogs
         
         #region  DescribeLogStreams
 
-        internal DescribeLogStreamsResponse DescribeLogStreams(DescribeLogStreamsRequest request)
+        internal virtual DescribeLogStreamsResponse DescribeLogStreams(DescribeLogStreamsRequest request)
         {
             var marshaller = new DescribeLogStreamsRequestMarshaller();
             var unmarshaller = DescribeLogStreamsResponseUnmarshaller.Instance;
@@ -792,7 +792,7 @@ namespace Amazon.CloudWatchLogs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeLogStreams">REST API Reference for DescribeLogStreams Operation</seealso>
-        public Task<DescribeLogStreamsResponse> DescribeLogStreamsAsync(DescribeLogStreamsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeLogStreamsResponse> DescribeLogStreamsAsync(DescribeLogStreamsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeLogStreamsRequestMarshaller();
             var unmarshaller = DescribeLogStreamsResponseUnmarshaller.Instance;
@@ -805,7 +805,7 @@ namespace Amazon.CloudWatchLogs
         
         #region  DescribeMetricFilters
 
-        internal DescribeMetricFiltersResponse DescribeMetricFilters(DescribeMetricFiltersRequest request)
+        internal virtual DescribeMetricFiltersResponse DescribeMetricFilters(DescribeMetricFiltersRequest request)
         {
             var marshaller = new DescribeMetricFiltersRequestMarshaller();
             var unmarshaller = DescribeMetricFiltersResponseUnmarshaller.Instance;
@@ -824,7 +824,7 @@ namespace Amazon.CloudWatchLogs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeMetricFilters">REST API Reference for DescribeMetricFilters Operation</seealso>
-        public Task<DescribeMetricFiltersResponse> DescribeMetricFiltersAsync(DescribeMetricFiltersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeMetricFiltersResponse> DescribeMetricFiltersAsync(DescribeMetricFiltersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeMetricFiltersRequestMarshaller();
             var unmarshaller = DescribeMetricFiltersResponseUnmarshaller.Instance;
@@ -837,7 +837,7 @@ namespace Amazon.CloudWatchLogs
         
         #region  DescribeResourcePolicies
 
-        internal DescribeResourcePoliciesResponse DescribeResourcePolicies(DescribeResourcePoliciesRequest request)
+        internal virtual DescribeResourcePoliciesResponse DescribeResourcePolicies(DescribeResourcePoliciesRequest request)
         {
             var marshaller = new DescribeResourcePoliciesRequestMarshaller();
             var unmarshaller = DescribeResourcePoliciesResponseUnmarshaller.Instance;
@@ -856,7 +856,7 @@ namespace Amazon.CloudWatchLogs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeResourcePolicies">REST API Reference for DescribeResourcePolicies Operation</seealso>
-        public Task<DescribeResourcePoliciesResponse> DescribeResourcePoliciesAsync(DescribeResourcePoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeResourcePoliciesResponse> DescribeResourcePoliciesAsync(DescribeResourcePoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeResourcePoliciesRequestMarshaller();
             var unmarshaller = DescribeResourcePoliciesResponseUnmarshaller.Instance;
@@ -869,7 +869,7 @@ namespace Amazon.CloudWatchLogs
         
         #region  DescribeSubscriptionFilters
 
-        internal DescribeSubscriptionFiltersResponse DescribeSubscriptionFilters(DescribeSubscriptionFiltersRequest request)
+        internal virtual DescribeSubscriptionFiltersResponse DescribeSubscriptionFilters(DescribeSubscriptionFiltersRequest request)
         {
             var marshaller = new DescribeSubscriptionFiltersRequestMarshaller();
             var unmarshaller = DescribeSubscriptionFiltersResponseUnmarshaller.Instance;
@@ -888,7 +888,7 @@ namespace Amazon.CloudWatchLogs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeSubscriptionFilters">REST API Reference for DescribeSubscriptionFilters Operation</seealso>
-        public Task<DescribeSubscriptionFiltersResponse> DescribeSubscriptionFiltersAsync(DescribeSubscriptionFiltersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeSubscriptionFiltersResponse> DescribeSubscriptionFiltersAsync(DescribeSubscriptionFiltersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeSubscriptionFiltersRequestMarshaller();
             var unmarshaller = DescribeSubscriptionFiltersResponseUnmarshaller.Instance;
@@ -901,7 +901,7 @@ namespace Amazon.CloudWatchLogs
         
         #region  DisassociateKmsKey
 
-        internal DisassociateKmsKeyResponse DisassociateKmsKey(DisassociateKmsKeyRequest request)
+        internal virtual DisassociateKmsKeyResponse DisassociateKmsKey(DisassociateKmsKeyRequest request)
         {
             var marshaller = new DisassociateKmsKeyRequestMarshaller();
             var unmarshaller = DisassociateKmsKeyResponseUnmarshaller.Instance;
@@ -920,7 +920,7 @@ namespace Amazon.CloudWatchLogs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DisassociateKmsKey">REST API Reference for DisassociateKmsKey Operation</seealso>
-        public Task<DisassociateKmsKeyResponse> DisassociateKmsKeyAsync(DisassociateKmsKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DisassociateKmsKeyResponse> DisassociateKmsKeyAsync(DisassociateKmsKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DisassociateKmsKeyRequestMarshaller();
             var unmarshaller = DisassociateKmsKeyResponseUnmarshaller.Instance;
@@ -933,7 +933,7 @@ namespace Amazon.CloudWatchLogs
         
         #region  FilterLogEvents
 
-        internal FilterLogEventsResponse FilterLogEvents(FilterLogEventsRequest request)
+        internal virtual FilterLogEventsResponse FilterLogEvents(FilterLogEventsRequest request)
         {
             var marshaller = new FilterLogEventsRequestMarshaller();
             var unmarshaller = FilterLogEventsResponseUnmarshaller.Instance;
@@ -952,7 +952,7 @@ namespace Amazon.CloudWatchLogs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/FilterLogEvents">REST API Reference for FilterLogEvents Operation</seealso>
-        public Task<FilterLogEventsResponse> FilterLogEventsAsync(FilterLogEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<FilterLogEventsResponse> FilterLogEventsAsync(FilterLogEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new FilterLogEventsRequestMarshaller();
             var unmarshaller = FilterLogEventsResponseUnmarshaller.Instance;
@@ -965,7 +965,7 @@ namespace Amazon.CloudWatchLogs
         
         #region  GetLogEvents
 
-        internal GetLogEventsResponse GetLogEvents(GetLogEventsRequest request)
+        internal virtual GetLogEventsResponse GetLogEvents(GetLogEventsRequest request)
         {
             var marshaller = new GetLogEventsRequestMarshaller();
             var unmarshaller = GetLogEventsResponseUnmarshaller.Instance;
@@ -984,7 +984,7 @@ namespace Amazon.CloudWatchLogs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetLogEvents">REST API Reference for GetLogEvents Operation</seealso>
-        public Task<GetLogEventsResponse> GetLogEventsAsync(GetLogEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetLogEventsResponse> GetLogEventsAsync(GetLogEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetLogEventsRequestMarshaller();
             var unmarshaller = GetLogEventsResponseUnmarshaller.Instance;
@@ -997,7 +997,7 @@ namespace Amazon.CloudWatchLogs
         
         #region  ListTagsLogGroup
 
-        internal ListTagsLogGroupResponse ListTagsLogGroup(ListTagsLogGroupRequest request)
+        internal virtual ListTagsLogGroupResponse ListTagsLogGroup(ListTagsLogGroupRequest request)
         {
             var marshaller = new ListTagsLogGroupRequestMarshaller();
             var unmarshaller = ListTagsLogGroupResponseUnmarshaller.Instance;
@@ -1016,7 +1016,7 @@ namespace Amazon.CloudWatchLogs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListTagsLogGroup">REST API Reference for ListTagsLogGroup Operation</seealso>
-        public Task<ListTagsLogGroupResponse> ListTagsLogGroupAsync(ListTagsLogGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListTagsLogGroupResponse> ListTagsLogGroupAsync(ListTagsLogGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListTagsLogGroupRequestMarshaller();
             var unmarshaller = ListTagsLogGroupResponseUnmarshaller.Instance;
@@ -1029,7 +1029,7 @@ namespace Amazon.CloudWatchLogs
         
         #region  PutDestination
 
-        internal PutDestinationResponse PutDestination(PutDestinationRequest request)
+        internal virtual PutDestinationResponse PutDestination(PutDestinationRequest request)
         {
             var marshaller = new PutDestinationRequestMarshaller();
             var unmarshaller = PutDestinationResponseUnmarshaller.Instance;
@@ -1048,7 +1048,7 @@ namespace Amazon.CloudWatchLogs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutDestination">REST API Reference for PutDestination Operation</seealso>
-        public Task<PutDestinationResponse> PutDestinationAsync(PutDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PutDestinationResponse> PutDestinationAsync(PutDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutDestinationRequestMarshaller();
             var unmarshaller = PutDestinationResponseUnmarshaller.Instance;
@@ -1061,7 +1061,7 @@ namespace Amazon.CloudWatchLogs
         
         #region  PutDestinationPolicy
 
-        internal PutDestinationPolicyResponse PutDestinationPolicy(PutDestinationPolicyRequest request)
+        internal virtual PutDestinationPolicyResponse PutDestinationPolicy(PutDestinationPolicyRequest request)
         {
             var marshaller = new PutDestinationPolicyRequestMarshaller();
             var unmarshaller = PutDestinationPolicyResponseUnmarshaller.Instance;
@@ -1080,7 +1080,7 @@ namespace Amazon.CloudWatchLogs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutDestinationPolicy">REST API Reference for PutDestinationPolicy Operation</seealso>
-        public Task<PutDestinationPolicyResponse> PutDestinationPolicyAsync(PutDestinationPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PutDestinationPolicyResponse> PutDestinationPolicyAsync(PutDestinationPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutDestinationPolicyRequestMarshaller();
             var unmarshaller = PutDestinationPolicyResponseUnmarshaller.Instance;
@@ -1093,7 +1093,7 @@ namespace Amazon.CloudWatchLogs
         
         #region  PutLogEvents
 
-        internal PutLogEventsResponse PutLogEvents(PutLogEventsRequest request)
+        internal virtual PutLogEventsResponse PutLogEvents(PutLogEventsRequest request)
         {
             var marshaller = new PutLogEventsRequestMarshaller();
             var unmarshaller = PutLogEventsResponseUnmarshaller.Instance;
@@ -1112,7 +1112,7 @@ namespace Amazon.CloudWatchLogs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutLogEvents">REST API Reference for PutLogEvents Operation</seealso>
-        public Task<PutLogEventsResponse> PutLogEventsAsync(PutLogEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PutLogEventsResponse> PutLogEventsAsync(PutLogEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutLogEventsRequestMarshaller();
             var unmarshaller = PutLogEventsResponseUnmarshaller.Instance;
@@ -1125,7 +1125,7 @@ namespace Amazon.CloudWatchLogs
         
         #region  PutMetricFilter
 
-        internal PutMetricFilterResponse PutMetricFilter(PutMetricFilterRequest request)
+        internal virtual PutMetricFilterResponse PutMetricFilter(PutMetricFilterRequest request)
         {
             var marshaller = new PutMetricFilterRequestMarshaller();
             var unmarshaller = PutMetricFilterResponseUnmarshaller.Instance;
@@ -1144,7 +1144,7 @@ namespace Amazon.CloudWatchLogs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutMetricFilter">REST API Reference for PutMetricFilter Operation</seealso>
-        public Task<PutMetricFilterResponse> PutMetricFilterAsync(PutMetricFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PutMetricFilterResponse> PutMetricFilterAsync(PutMetricFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutMetricFilterRequestMarshaller();
             var unmarshaller = PutMetricFilterResponseUnmarshaller.Instance;
@@ -1157,7 +1157,7 @@ namespace Amazon.CloudWatchLogs
         
         #region  PutResourcePolicy
 
-        internal PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request)
+        internal virtual PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request)
         {
             var marshaller = new PutResourcePolicyRequestMarshaller();
             var unmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
@@ -1176,7 +1176,7 @@ namespace Amazon.CloudWatchLogs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
-        public Task<PutResourcePolicyResponse> PutResourcePolicyAsync(PutResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PutResourcePolicyResponse> PutResourcePolicyAsync(PutResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutResourcePolicyRequestMarshaller();
             var unmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
@@ -1189,7 +1189,7 @@ namespace Amazon.CloudWatchLogs
         
         #region  PutRetentionPolicy
 
-        internal PutRetentionPolicyResponse PutRetentionPolicy(PutRetentionPolicyRequest request)
+        internal virtual PutRetentionPolicyResponse PutRetentionPolicy(PutRetentionPolicyRequest request)
         {
             var marshaller = new PutRetentionPolicyRequestMarshaller();
             var unmarshaller = PutRetentionPolicyResponseUnmarshaller.Instance;
@@ -1208,7 +1208,7 @@ namespace Amazon.CloudWatchLogs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutRetentionPolicy">REST API Reference for PutRetentionPolicy Operation</seealso>
-        public Task<PutRetentionPolicyResponse> PutRetentionPolicyAsync(PutRetentionPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PutRetentionPolicyResponse> PutRetentionPolicyAsync(PutRetentionPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutRetentionPolicyRequestMarshaller();
             var unmarshaller = PutRetentionPolicyResponseUnmarshaller.Instance;
@@ -1221,7 +1221,7 @@ namespace Amazon.CloudWatchLogs
         
         #region  PutSubscriptionFilter
 
-        internal PutSubscriptionFilterResponse PutSubscriptionFilter(PutSubscriptionFilterRequest request)
+        internal virtual PutSubscriptionFilterResponse PutSubscriptionFilter(PutSubscriptionFilterRequest request)
         {
             var marshaller = new PutSubscriptionFilterRequestMarshaller();
             var unmarshaller = PutSubscriptionFilterResponseUnmarshaller.Instance;
@@ -1240,7 +1240,7 @@ namespace Amazon.CloudWatchLogs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutSubscriptionFilter">REST API Reference for PutSubscriptionFilter Operation</seealso>
-        public Task<PutSubscriptionFilterResponse> PutSubscriptionFilterAsync(PutSubscriptionFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PutSubscriptionFilterResponse> PutSubscriptionFilterAsync(PutSubscriptionFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutSubscriptionFilterRequestMarshaller();
             var unmarshaller = PutSubscriptionFilterResponseUnmarshaller.Instance;
@@ -1253,7 +1253,7 @@ namespace Amazon.CloudWatchLogs
         
         #region  TagLogGroup
 
-        internal TagLogGroupResponse TagLogGroup(TagLogGroupRequest request)
+        internal virtual TagLogGroupResponse TagLogGroup(TagLogGroupRequest request)
         {
             var marshaller = new TagLogGroupRequestMarshaller();
             var unmarshaller = TagLogGroupResponseUnmarshaller.Instance;
@@ -1272,7 +1272,7 @@ namespace Amazon.CloudWatchLogs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/TagLogGroup">REST API Reference for TagLogGroup Operation</seealso>
-        public Task<TagLogGroupResponse> TagLogGroupAsync(TagLogGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<TagLogGroupResponse> TagLogGroupAsync(TagLogGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new TagLogGroupRequestMarshaller();
             var unmarshaller = TagLogGroupResponseUnmarshaller.Instance;
@@ -1285,7 +1285,7 @@ namespace Amazon.CloudWatchLogs
         
         #region  TestMetricFilter
 
-        internal TestMetricFilterResponse TestMetricFilter(TestMetricFilterRequest request)
+        internal virtual TestMetricFilterResponse TestMetricFilter(TestMetricFilterRequest request)
         {
             var marshaller = new TestMetricFilterRequestMarshaller();
             var unmarshaller = TestMetricFilterResponseUnmarshaller.Instance;
@@ -1304,7 +1304,7 @@ namespace Amazon.CloudWatchLogs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/TestMetricFilter">REST API Reference for TestMetricFilter Operation</seealso>
-        public Task<TestMetricFilterResponse> TestMetricFilterAsync(TestMetricFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<TestMetricFilterResponse> TestMetricFilterAsync(TestMetricFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new TestMetricFilterRequestMarshaller();
             var unmarshaller = TestMetricFilterResponseUnmarshaller.Instance;
@@ -1317,7 +1317,7 @@ namespace Amazon.CloudWatchLogs
         
         #region  UntagLogGroup
 
-        internal UntagLogGroupResponse UntagLogGroup(UntagLogGroupRequest request)
+        internal virtual UntagLogGroupResponse UntagLogGroup(UntagLogGroupRequest request)
         {
             var marshaller = new UntagLogGroupRequestMarshaller();
             var unmarshaller = UntagLogGroupResponseUnmarshaller.Instance;
@@ -1336,7 +1336,7 @@ namespace Amazon.CloudWatchLogs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UntagLogGroup">REST API Reference for UntagLogGroup Operation</seealso>
-        public Task<UntagLogGroupResponse> UntagLogGroupAsync(UntagLogGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UntagLogGroupResponse> UntagLogGroupAsync(UntagLogGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UntagLogGroupRequestMarshaller();
             var unmarshaller = UntagLogGroupResponseUnmarshaller.Instance;

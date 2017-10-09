@@ -255,7 +255,7 @@ namespace Amazon.ECR
         /// These errors are usually caused by a server-side issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchCheckLayerAvailability">REST API Reference for BatchCheckLayerAvailability Operation</seealso>
-        public BatchCheckLayerAvailabilityResponse BatchCheckLayerAvailability(BatchCheckLayerAvailabilityRequest request)
+        public virtual BatchCheckLayerAvailabilityResponse BatchCheckLayerAvailability(BatchCheckLayerAvailabilityRequest request)
         {
             var marshaller = new BatchCheckLayerAvailabilityRequestMarshaller();
             var unmarshaller = BatchCheckLayerAvailabilityResponseUnmarshaller.Instance;
@@ -275,7 +275,7 @@ namespace Amazon.ECR
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchCheckLayerAvailability
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchCheckLayerAvailability">REST API Reference for BatchCheckLayerAvailability Operation</seealso>
-        public IAsyncResult BeginBatchCheckLayerAvailability(BatchCheckLayerAvailabilityRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginBatchCheckLayerAvailability(BatchCheckLayerAvailabilityRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new BatchCheckLayerAvailabilityRequestMarshaller();
             var unmarshaller = BatchCheckLayerAvailabilityResponseUnmarshaller.Instance;
@@ -292,7 +292,7 @@ namespace Amazon.ECR
         /// 
         /// <returns>Returns a  BatchCheckLayerAvailabilityResult from ECR.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchCheckLayerAvailability">REST API Reference for BatchCheckLayerAvailability Operation</seealso>
-        public  BatchCheckLayerAvailabilityResponse EndBatchCheckLayerAvailability(IAsyncResult asyncResult)
+        public virtual BatchCheckLayerAvailabilityResponse EndBatchCheckLayerAvailability(IAsyncResult asyncResult)
         {
             return EndInvoke<BatchCheckLayerAvailabilityResponse>(asyncResult);
         }
@@ -330,7 +330,7 @@ namespace Amazon.ECR
         /// These errors are usually caused by a server-side issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchDeleteImage">REST API Reference for BatchDeleteImage Operation</seealso>
-        public BatchDeleteImageResponse BatchDeleteImage(BatchDeleteImageRequest request)
+        public virtual BatchDeleteImageResponse BatchDeleteImage(BatchDeleteImageRequest request)
         {
             var marshaller = new BatchDeleteImageRequestMarshaller();
             var unmarshaller = BatchDeleteImageResponseUnmarshaller.Instance;
@@ -350,7 +350,7 @@ namespace Amazon.ECR
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchDeleteImage
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchDeleteImage">REST API Reference for BatchDeleteImage Operation</seealso>
-        public IAsyncResult BeginBatchDeleteImage(BatchDeleteImageRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginBatchDeleteImage(BatchDeleteImageRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new BatchDeleteImageRequestMarshaller();
             var unmarshaller = BatchDeleteImageResponseUnmarshaller.Instance;
@@ -367,7 +367,7 @@ namespace Amazon.ECR
         /// 
         /// <returns>Returns a  BatchDeleteImageResult from ECR.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchDeleteImage">REST API Reference for BatchDeleteImage Operation</seealso>
-        public  BatchDeleteImageResponse EndBatchDeleteImage(IAsyncResult asyncResult)
+        public virtual BatchDeleteImageResponse EndBatchDeleteImage(IAsyncResult asyncResult)
         {
             return EndInvoke<BatchDeleteImageResponse>(asyncResult);
         }
@@ -394,7 +394,7 @@ namespace Amazon.ECR
         /// These errors are usually caused by a server-side issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchGetImage">REST API Reference for BatchGetImage Operation</seealso>
-        public BatchGetImageResponse BatchGetImage(BatchGetImageRequest request)
+        public virtual BatchGetImageResponse BatchGetImage(BatchGetImageRequest request)
         {
             var marshaller = new BatchGetImageRequestMarshaller();
             var unmarshaller = BatchGetImageResponseUnmarshaller.Instance;
@@ -414,7 +414,7 @@ namespace Amazon.ECR
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetImage
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchGetImage">REST API Reference for BatchGetImage Operation</seealso>
-        public IAsyncResult BeginBatchGetImage(BatchGetImageRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginBatchGetImage(BatchGetImageRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new BatchGetImageRequestMarshaller();
             var unmarshaller = BatchGetImageResponseUnmarshaller.Instance;
@@ -431,7 +431,7 @@ namespace Amazon.ECR
         /// 
         /// <returns>Returns a  BatchGetImageResult from ECR.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchGetImage">REST API Reference for BatchGetImage Operation</seealso>
-        public  BatchGetImageResponse EndBatchGetImage(IAsyncResult asyncResult)
+        public virtual BatchGetImageResponse EndBatchGetImage(IAsyncResult asyncResult)
         {
             return EndInvoke<BatchGetImageResponse>(asyncResult);
         }
@@ -483,7 +483,7 @@ namespace Amazon.ECR
         /// The upload could not be found, or the specified upload id is not valid for this repository.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CompleteLayerUpload">REST API Reference for CompleteLayerUpload Operation</seealso>
-        public CompleteLayerUploadResponse CompleteLayerUpload(CompleteLayerUploadRequest request)
+        public virtual CompleteLayerUploadResponse CompleteLayerUpload(CompleteLayerUploadRequest request)
         {
             var marshaller = new CompleteLayerUploadRequestMarshaller();
             var unmarshaller = CompleteLayerUploadResponseUnmarshaller.Instance;
@@ -503,7 +503,7 @@ namespace Amazon.ECR
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCompleteLayerUpload
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CompleteLayerUpload">REST API Reference for CompleteLayerUpload Operation</seealso>
-        public IAsyncResult BeginCompleteLayerUpload(CompleteLayerUploadRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCompleteLayerUpload(CompleteLayerUploadRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CompleteLayerUploadRequestMarshaller();
             var unmarshaller = CompleteLayerUploadResponseUnmarshaller.Instance;
@@ -520,7 +520,7 @@ namespace Amazon.ECR
         /// 
         /// <returns>Returns a  CompleteLayerUploadResult from ECR.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CompleteLayerUpload">REST API Reference for CompleteLayerUpload Operation</seealso>
-        public  CompleteLayerUploadResponse EndCompleteLayerUpload(IAsyncResult asyncResult)
+        public virtual CompleteLayerUploadResponse EndCompleteLayerUpload(IAsyncResult asyncResult)
         {
             return EndInvoke<CompleteLayerUploadResponse>(asyncResult);
         }
@@ -550,7 +550,7 @@ namespace Amazon.ECR
         /// These errors are usually caused by a server-side issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CreateRepository">REST API Reference for CreateRepository Operation</seealso>
-        public CreateRepositoryResponse CreateRepository(CreateRepositoryRequest request)
+        public virtual CreateRepositoryResponse CreateRepository(CreateRepositoryRequest request)
         {
             var marshaller = new CreateRepositoryRequestMarshaller();
             var unmarshaller = CreateRepositoryResponseUnmarshaller.Instance;
@@ -570,7 +570,7 @@ namespace Amazon.ECR
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateRepository
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CreateRepository">REST API Reference for CreateRepository Operation</seealso>
-        public IAsyncResult BeginCreateRepository(CreateRepositoryRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateRepository(CreateRepositoryRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateRepositoryRequestMarshaller();
             var unmarshaller = CreateRepositoryResponseUnmarshaller.Instance;
@@ -587,7 +587,7 @@ namespace Amazon.ECR
         /// 
         /// <returns>Returns a  CreateRepositoryResult from ECR.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CreateRepository">REST API Reference for CreateRepository Operation</seealso>
-        public  CreateRepositoryResponse EndCreateRepository(IAsyncResult asyncResult)
+        public virtual CreateRepositoryResponse EndCreateRepository(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateRepositoryResponse>(asyncResult);
         }
@@ -618,7 +618,7 @@ namespace Amazon.ECR
         /// These errors are usually caused by a server-side issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteRepository">REST API Reference for DeleteRepository Operation</seealso>
-        public DeleteRepositoryResponse DeleteRepository(DeleteRepositoryRequest request)
+        public virtual DeleteRepositoryResponse DeleteRepository(DeleteRepositoryRequest request)
         {
             var marshaller = new DeleteRepositoryRequestMarshaller();
             var unmarshaller = DeleteRepositoryResponseUnmarshaller.Instance;
@@ -638,7 +638,7 @@ namespace Amazon.ECR
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRepository
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteRepository">REST API Reference for DeleteRepository Operation</seealso>
-        public IAsyncResult BeginDeleteRepository(DeleteRepositoryRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteRepository(DeleteRepositoryRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteRepositoryRequestMarshaller();
             var unmarshaller = DeleteRepositoryResponseUnmarshaller.Instance;
@@ -655,7 +655,7 @@ namespace Amazon.ECR
         /// 
         /// <returns>Returns a  DeleteRepositoryResult from ECR.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteRepository">REST API Reference for DeleteRepository Operation</seealso>
-        public  DeleteRepositoryResponse EndDeleteRepository(IAsyncResult asyncResult)
+        public virtual DeleteRepositoryResponse EndDeleteRepository(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteRepositoryResponse>(asyncResult);
         }
@@ -685,7 +685,7 @@ namespace Amazon.ECR
         /// These errors are usually caused by a server-side issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteRepositoryPolicy">REST API Reference for DeleteRepositoryPolicy Operation</seealso>
-        public DeleteRepositoryPolicyResponse DeleteRepositoryPolicy(DeleteRepositoryPolicyRequest request)
+        public virtual DeleteRepositoryPolicyResponse DeleteRepositoryPolicy(DeleteRepositoryPolicyRequest request)
         {
             var marshaller = new DeleteRepositoryPolicyRequestMarshaller();
             var unmarshaller = DeleteRepositoryPolicyResponseUnmarshaller.Instance;
@@ -705,7 +705,7 @@ namespace Amazon.ECR
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRepositoryPolicy
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteRepositoryPolicy">REST API Reference for DeleteRepositoryPolicy Operation</seealso>
-        public IAsyncResult BeginDeleteRepositoryPolicy(DeleteRepositoryPolicyRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteRepositoryPolicy(DeleteRepositoryPolicyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteRepositoryPolicyRequestMarshaller();
             var unmarshaller = DeleteRepositoryPolicyResponseUnmarshaller.Instance;
@@ -722,7 +722,7 @@ namespace Amazon.ECR
         /// 
         /// <returns>Returns a  DeleteRepositoryPolicyResult from ECR.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteRepositoryPolicy">REST API Reference for DeleteRepositoryPolicy Operation</seealso>
-        public  DeleteRepositoryPolicyResponse EndDeleteRepositoryPolicy(IAsyncResult asyncResult)
+        public virtual DeleteRepositoryPolicyResponse EndDeleteRepositoryPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteRepositoryPolicyResponse>(asyncResult);
         }
@@ -761,7 +761,7 @@ namespace Amazon.ECR
         /// These errors are usually caused by a server-side issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImages">REST API Reference for DescribeImages Operation</seealso>
-        public DescribeImagesResponse DescribeImages(DescribeImagesRequest request)
+        public virtual DescribeImagesResponse DescribeImages(DescribeImagesRequest request)
         {
             var marshaller = new DescribeImagesRequestMarshaller();
             var unmarshaller = DescribeImagesResponseUnmarshaller.Instance;
@@ -781,7 +781,7 @@ namespace Amazon.ECR
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeImages
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImages">REST API Reference for DescribeImages Operation</seealso>
-        public IAsyncResult BeginDescribeImages(DescribeImagesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeImages(DescribeImagesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeImagesRequestMarshaller();
             var unmarshaller = DescribeImagesResponseUnmarshaller.Instance;
@@ -798,7 +798,7 @@ namespace Amazon.ECR
         /// 
         /// <returns>Returns a  DescribeImagesResult from ECR.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImages">REST API Reference for DescribeImages Operation</seealso>
-        public  DescribeImagesResponse EndDescribeImages(IAsyncResult asyncResult)
+        public virtual DescribeImagesResponse EndDescribeImages(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeImagesResponse>(asyncResult);
         }
@@ -824,7 +824,7 @@ namespace Amazon.ECR
         /// These errors are usually caused by a server-side issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeRepositories">REST API Reference for DescribeRepositories Operation</seealso>
-        public DescribeRepositoriesResponse DescribeRepositories(DescribeRepositoriesRequest request)
+        public virtual DescribeRepositoriesResponse DescribeRepositories(DescribeRepositoriesRequest request)
         {
             var marshaller = new DescribeRepositoriesRequestMarshaller();
             var unmarshaller = DescribeRepositoriesResponseUnmarshaller.Instance;
@@ -844,7 +844,7 @@ namespace Amazon.ECR
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeRepositories
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeRepositories">REST API Reference for DescribeRepositories Operation</seealso>
-        public IAsyncResult BeginDescribeRepositories(DescribeRepositoriesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeRepositories(DescribeRepositoriesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeRepositoriesRequestMarshaller();
             var unmarshaller = DescribeRepositoriesResponseUnmarshaller.Instance;
@@ -861,7 +861,7 @@ namespace Amazon.ECR
         /// 
         /// <returns>Returns a  DescribeRepositoriesResult from ECR.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeRepositories">REST API Reference for DescribeRepositories Operation</seealso>
-        public  DescribeRepositoriesResponse EndDescribeRepositories(IAsyncResult asyncResult)
+        public virtual DescribeRepositoriesResponse EndDescribeRepositories(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeRepositoriesResponse>(asyncResult);
         }
@@ -893,7 +893,7 @@ namespace Amazon.ECR
         /// These errors are usually caused by a server-side issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetAuthorizationToken">REST API Reference for GetAuthorizationToken Operation</seealso>
-        public GetAuthorizationTokenResponse GetAuthorizationToken(GetAuthorizationTokenRequest request)
+        public virtual GetAuthorizationTokenResponse GetAuthorizationToken(GetAuthorizationTokenRequest request)
         {
             var marshaller = new GetAuthorizationTokenRequestMarshaller();
             var unmarshaller = GetAuthorizationTokenResponseUnmarshaller.Instance;
@@ -913,7 +913,7 @@ namespace Amazon.ECR
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAuthorizationToken
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetAuthorizationToken">REST API Reference for GetAuthorizationToken Operation</seealso>
-        public IAsyncResult BeginGetAuthorizationToken(GetAuthorizationTokenRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetAuthorizationToken(GetAuthorizationTokenRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetAuthorizationTokenRequestMarshaller();
             var unmarshaller = GetAuthorizationTokenResponseUnmarshaller.Instance;
@@ -930,7 +930,7 @@ namespace Amazon.ECR
         /// 
         /// <returns>Returns a  GetAuthorizationTokenResult from ECR.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetAuthorizationToken">REST API Reference for GetAuthorizationToken Operation</seealso>
-        public  GetAuthorizationTokenResponse EndGetAuthorizationToken(IAsyncResult asyncResult)
+        public virtual GetAuthorizationTokenResponse EndGetAuthorizationToken(IAsyncResult asyncResult)
         {
             return EndInvoke<GetAuthorizationTokenResponse>(asyncResult);
         }
@@ -973,7 +973,7 @@ namespace Amazon.ECR
         /// These errors are usually caused by a server-side issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetDownloadUrlForLayer">REST API Reference for GetDownloadUrlForLayer Operation</seealso>
-        public GetDownloadUrlForLayerResponse GetDownloadUrlForLayer(GetDownloadUrlForLayerRequest request)
+        public virtual GetDownloadUrlForLayerResponse GetDownloadUrlForLayer(GetDownloadUrlForLayerRequest request)
         {
             var marshaller = new GetDownloadUrlForLayerRequestMarshaller();
             var unmarshaller = GetDownloadUrlForLayerResponseUnmarshaller.Instance;
@@ -993,7 +993,7 @@ namespace Amazon.ECR
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDownloadUrlForLayer
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetDownloadUrlForLayer">REST API Reference for GetDownloadUrlForLayer Operation</seealso>
-        public IAsyncResult BeginGetDownloadUrlForLayer(GetDownloadUrlForLayerRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetDownloadUrlForLayer(GetDownloadUrlForLayerRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetDownloadUrlForLayerRequestMarshaller();
             var unmarshaller = GetDownloadUrlForLayerResponseUnmarshaller.Instance;
@@ -1010,7 +1010,7 @@ namespace Amazon.ECR
         /// 
         /// <returns>Returns a  GetDownloadUrlForLayerResult from ECR.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetDownloadUrlForLayer">REST API Reference for GetDownloadUrlForLayer Operation</seealso>
-        public  GetDownloadUrlForLayerResponse EndGetDownloadUrlForLayer(IAsyncResult asyncResult)
+        public virtual GetDownloadUrlForLayerResponse EndGetDownloadUrlForLayer(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDownloadUrlForLayerResponse>(asyncResult);
         }
@@ -1040,7 +1040,7 @@ namespace Amazon.ECR
         /// These errors are usually caused by a server-side issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetRepositoryPolicy">REST API Reference for GetRepositoryPolicy Operation</seealso>
-        public GetRepositoryPolicyResponse GetRepositoryPolicy(GetRepositoryPolicyRequest request)
+        public virtual GetRepositoryPolicyResponse GetRepositoryPolicy(GetRepositoryPolicyRequest request)
         {
             var marshaller = new GetRepositoryPolicyRequestMarshaller();
             var unmarshaller = GetRepositoryPolicyResponseUnmarshaller.Instance;
@@ -1060,7 +1060,7 @@ namespace Amazon.ECR
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRepositoryPolicy
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetRepositoryPolicy">REST API Reference for GetRepositoryPolicy Operation</seealso>
-        public IAsyncResult BeginGetRepositoryPolicy(GetRepositoryPolicyRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetRepositoryPolicy(GetRepositoryPolicyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetRepositoryPolicyRequestMarshaller();
             var unmarshaller = GetRepositoryPolicyResponseUnmarshaller.Instance;
@@ -1077,7 +1077,7 @@ namespace Amazon.ECR
         /// 
         /// <returns>Returns a  GetRepositoryPolicyResult from ECR.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetRepositoryPolicy">REST API Reference for GetRepositoryPolicy Operation</seealso>
-        public  GetRepositoryPolicyResponse EndGetRepositoryPolicy(IAsyncResult asyncResult)
+        public virtual GetRepositoryPolicyResponse EndGetRepositoryPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<GetRepositoryPolicyResponse>(asyncResult);
         }
@@ -1111,7 +1111,7 @@ namespace Amazon.ECR
         /// These errors are usually caused by a server-side issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/InitiateLayerUpload">REST API Reference for InitiateLayerUpload Operation</seealso>
-        public InitiateLayerUploadResponse InitiateLayerUpload(InitiateLayerUploadRequest request)
+        public virtual InitiateLayerUploadResponse InitiateLayerUpload(InitiateLayerUploadRequest request)
         {
             var marshaller = new InitiateLayerUploadRequestMarshaller();
             var unmarshaller = InitiateLayerUploadResponseUnmarshaller.Instance;
@@ -1131,7 +1131,7 @@ namespace Amazon.ECR
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndInitiateLayerUpload
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/InitiateLayerUpload">REST API Reference for InitiateLayerUpload Operation</seealso>
-        public IAsyncResult BeginInitiateLayerUpload(InitiateLayerUploadRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginInitiateLayerUpload(InitiateLayerUploadRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new InitiateLayerUploadRequestMarshaller();
             var unmarshaller = InitiateLayerUploadResponseUnmarshaller.Instance;
@@ -1148,7 +1148,7 @@ namespace Amazon.ECR
         /// 
         /// <returns>Returns a  InitiateLayerUploadResult from ECR.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/InitiateLayerUpload">REST API Reference for InitiateLayerUpload Operation</seealso>
-        public  InitiateLayerUploadResponse EndInitiateLayerUpload(IAsyncResult asyncResult)
+        public virtual InitiateLayerUploadResponse EndInitiateLayerUpload(IAsyncResult asyncResult)
         {
             return EndInvoke<InitiateLayerUploadResponse>(asyncResult);
         }
@@ -1183,7 +1183,7 @@ namespace Amazon.ECR
         /// These errors are usually caused by a server-side issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ListImages">REST API Reference for ListImages Operation</seealso>
-        public ListImagesResponse ListImages(ListImagesRequest request)
+        public virtual ListImagesResponse ListImages(ListImagesRequest request)
         {
             var marshaller = new ListImagesRequestMarshaller();
             var unmarshaller = ListImagesResponseUnmarshaller.Instance;
@@ -1203,7 +1203,7 @@ namespace Amazon.ECR
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListImages
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ListImages">REST API Reference for ListImages Operation</seealso>
-        public IAsyncResult BeginListImages(ListImagesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListImages(ListImagesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListImagesRequestMarshaller();
             var unmarshaller = ListImagesResponseUnmarshaller.Instance;
@@ -1220,7 +1220,7 @@ namespace Amazon.ECR
         /// 
         /// <returns>Returns a  ListImagesResult from ECR.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ListImages">REST API Reference for ListImages Operation</seealso>
-        public  ListImagesResponse EndListImages(IAsyncResult asyncResult)
+        public virtual ListImagesResponse EndListImages(IAsyncResult asyncResult)
         {
             return EndInvoke<ListImagesResponse>(asyncResult);
         }
@@ -1267,7 +1267,7 @@ namespace Amazon.ECR
         /// These errors are usually caused by a server-side issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImage">REST API Reference for PutImage Operation</seealso>
-        public PutImageResponse PutImage(PutImageRequest request)
+        public virtual PutImageResponse PutImage(PutImageRequest request)
         {
             var marshaller = new PutImageRequestMarshaller();
             var unmarshaller = PutImageResponseUnmarshaller.Instance;
@@ -1287,7 +1287,7 @@ namespace Amazon.ECR
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutImage
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImage">REST API Reference for PutImage Operation</seealso>
-        public IAsyncResult BeginPutImage(PutImageRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPutImage(PutImageRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutImageRequestMarshaller();
             var unmarshaller = PutImageResponseUnmarshaller.Instance;
@@ -1304,7 +1304,7 @@ namespace Amazon.ECR
         /// 
         /// <returns>Returns a  PutImageResult from ECR.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImage">REST API Reference for PutImage Operation</seealso>
-        public  PutImageResponse EndPutImage(IAsyncResult asyncResult)
+        public virtual PutImageResponse EndPutImage(IAsyncResult asyncResult)
         {
             return EndInvoke<PutImageResponse>(asyncResult);
         }
@@ -1330,7 +1330,7 @@ namespace Amazon.ECR
         /// These errors are usually caused by a server-side issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/SetRepositoryPolicy">REST API Reference for SetRepositoryPolicy Operation</seealso>
-        public SetRepositoryPolicyResponse SetRepositoryPolicy(SetRepositoryPolicyRequest request)
+        public virtual SetRepositoryPolicyResponse SetRepositoryPolicy(SetRepositoryPolicyRequest request)
         {
             var marshaller = new SetRepositoryPolicyRequestMarshaller();
             var unmarshaller = SetRepositoryPolicyResponseUnmarshaller.Instance;
@@ -1350,7 +1350,7 @@ namespace Amazon.ECR
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetRepositoryPolicy
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/SetRepositoryPolicy">REST API Reference for SetRepositoryPolicy Operation</seealso>
-        public IAsyncResult BeginSetRepositoryPolicy(SetRepositoryPolicyRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginSetRepositoryPolicy(SetRepositoryPolicyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SetRepositoryPolicyRequestMarshaller();
             var unmarshaller = SetRepositoryPolicyResponseUnmarshaller.Instance;
@@ -1367,7 +1367,7 @@ namespace Amazon.ECR
         /// 
         /// <returns>Returns a  SetRepositoryPolicyResult from ECR.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/SetRepositoryPolicy">REST API Reference for SetRepositoryPolicy Operation</seealso>
-        public  SetRepositoryPolicyResponse EndSetRepositoryPolicy(IAsyncResult asyncResult)
+        public virtual SetRepositoryPolicyResponse EndSetRepositoryPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<SetRepositoryPolicyResponse>(asyncResult);
         }
@@ -1413,7 +1413,7 @@ namespace Amazon.ECR
         /// The upload could not be found, or the specified upload id is not valid for this repository.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/UploadLayerPart">REST API Reference for UploadLayerPart Operation</seealso>
-        public UploadLayerPartResponse UploadLayerPart(UploadLayerPartRequest request)
+        public virtual UploadLayerPartResponse UploadLayerPart(UploadLayerPartRequest request)
         {
             var marshaller = new UploadLayerPartRequestMarshaller();
             var unmarshaller = UploadLayerPartResponseUnmarshaller.Instance;
@@ -1433,7 +1433,7 @@ namespace Amazon.ECR
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUploadLayerPart
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/UploadLayerPart">REST API Reference for UploadLayerPart Operation</seealso>
-        public IAsyncResult BeginUploadLayerPart(UploadLayerPartRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUploadLayerPart(UploadLayerPartRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UploadLayerPartRequestMarshaller();
             var unmarshaller = UploadLayerPartResponseUnmarshaller.Instance;
@@ -1450,7 +1450,7 @@ namespace Amazon.ECR
         /// 
         /// <returns>Returns a  UploadLayerPartResult from ECR.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/UploadLayerPart">REST API Reference for UploadLayerPart Operation</seealso>
-        public  UploadLayerPartResponse EndUploadLayerPart(IAsyncResult asyncResult)
+        public virtual UploadLayerPartResponse EndUploadLayerPart(IAsyncResult asyncResult)
         {
             return EndInvoke<UploadLayerPartResponse>(asyncResult);
         }

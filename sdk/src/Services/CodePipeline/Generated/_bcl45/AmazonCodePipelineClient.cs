@@ -430,7 +430,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/AcknowledgeJob">REST API Reference for AcknowledgeJob Operation</seealso>
-        public AcknowledgeJobResponse AcknowledgeJob(string jobId, string nonce)
+        public virtual AcknowledgeJobResponse AcknowledgeJob(string jobId, string nonce)
         {
             var request = new AcknowledgeJobRequest();
             request.JobId = jobId;
@@ -456,7 +456,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/AcknowledgeJob">REST API Reference for AcknowledgeJob Operation</seealso>
-        public AcknowledgeJobResponse AcknowledgeJob(AcknowledgeJobRequest request)
+        public virtual AcknowledgeJobResponse AcknowledgeJob(AcknowledgeJobRequest request)
         {
             var marshaller = new AcknowledgeJobRequestMarshaller();
             var unmarshaller = AcknowledgeJobResponseUnmarshaller.Instance;
@@ -486,7 +486,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/AcknowledgeJob">REST API Reference for AcknowledgeJob Operation</seealso>
-        public Task<AcknowledgeJobResponse> AcknowledgeJobAsync(string jobId, string nonce, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<AcknowledgeJobResponse> AcknowledgeJobAsync(string jobId, string nonce, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new AcknowledgeJobRequest();
             request.JobId = jobId;
@@ -504,7 +504,7 @@ namespace Amazon.CodePipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/AcknowledgeJob">REST API Reference for AcknowledgeJob Operation</seealso>
-        public Task<AcknowledgeJobResponse> AcknowledgeJobAsync(AcknowledgeJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<AcknowledgeJobResponse> AcknowledgeJobAsync(AcknowledgeJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AcknowledgeJobRequestMarshaller();
             var unmarshaller = AcknowledgeJobResponseUnmarshaller.Instance;
@@ -539,7 +539,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/AcknowledgeThirdPartyJob">REST API Reference for AcknowledgeThirdPartyJob Operation</seealso>
-        public AcknowledgeThirdPartyJobResponse AcknowledgeThirdPartyJob(string clientToken, string jobId, string nonce)
+        public virtual AcknowledgeThirdPartyJobResponse AcknowledgeThirdPartyJob(string clientToken, string jobId, string nonce)
         {
             var request = new AcknowledgeThirdPartyJobRequest();
             request.ClientToken = clientToken;
@@ -568,7 +568,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/AcknowledgeThirdPartyJob">REST API Reference for AcknowledgeThirdPartyJob Operation</seealso>
-        public AcknowledgeThirdPartyJobResponse AcknowledgeThirdPartyJob(AcknowledgeThirdPartyJobRequest request)
+        public virtual AcknowledgeThirdPartyJobResponse AcknowledgeThirdPartyJob(AcknowledgeThirdPartyJobRequest request)
         {
             var marshaller = new AcknowledgeThirdPartyJobRequestMarshaller();
             var unmarshaller = AcknowledgeThirdPartyJobResponseUnmarshaller.Instance;
@@ -601,7 +601,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/AcknowledgeThirdPartyJob">REST API Reference for AcknowledgeThirdPartyJob Operation</seealso>
-        public Task<AcknowledgeThirdPartyJobResponse> AcknowledgeThirdPartyJobAsync(string clientToken, string jobId, string nonce, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<AcknowledgeThirdPartyJobResponse> AcknowledgeThirdPartyJobAsync(string clientToken, string jobId, string nonce, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new AcknowledgeThirdPartyJobRequest();
             request.ClientToken = clientToken;
@@ -620,7 +620,7 @@ namespace Amazon.CodePipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/AcknowledgeThirdPartyJob">REST API Reference for AcknowledgeThirdPartyJob Operation</seealso>
-        public Task<AcknowledgeThirdPartyJobResponse> AcknowledgeThirdPartyJobAsync(AcknowledgeThirdPartyJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<AcknowledgeThirdPartyJobResponse> AcknowledgeThirdPartyJobAsync(AcknowledgeThirdPartyJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AcknowledgeThirdPartyJobRequestMarshaller();
             var unmarshaller = AcknowledgeThirdPartyJobResponseUnmarshaller.Instance;
@@ -649,7 +649,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/CreateCustomActionType">REST API Reference for CreateCustomActionType Operation</seealso>
-        public CreateCustomActionTypeResponse CreateCustomActionType(CreateCustomActionTypeRequest request)
+        public virtual CreateCustomActionTypeResponse CreateCustomActionType(CreateCustomActionTypeRequest request)
         {
             var marshaller = new CreateCustomActionTypeRequestMarshaller();
             var unmarshaller = CreateCustomActionTypeResponseUnmarshaller.Instance;
@@ -667,7 +667,7 @@ namespace Amazon.CodePipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/CreateCustomActionType">REST API Reference for CreateCustomActionType Operation</seealso>
-        public Task<CreateCustomActionTypeResponse> CreateCustomActionTypeAsync(CreateCustomActionTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateCustomActionTypeResponse> CreateCustomActionTypeAsync(CreateCustomActionTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateCustomActionTypeRequestMarshaller();
             var unmarshaller = CreateCustomActionTypeResponseUnmarshaller.Instance;
@@ -710,7 +710,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/CreatePipeline">REST API Reference for CreatePipeline Operation</seealso>
-        public CreatePipelineResponse CreatePipeline(PipelineDeclaration pipeline)
+        public virtual CreatePipelineResponse CreatePipeline(PipelineDeclaration pipeline)
         {
             var request = new CreatePipelineRequest();
             request.Pipeline = pipeline;
@@ -747,7 +747,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/CreatePipeline">REST API Reference for CreatePipeline Operation</seealso>
-        public CreatePipelineResponse CreatePipeline(CreatePipelineRequest request)
+        public virtual CreatePipelineResponse CreatePipeline(CreatePipelineRequest request)
         {
             var marshaller = new CreatePipelineRequestMarshaller();
             var unmarshaller = CreatePipelineResponseUnmarshaller.Instance;
@@ -788,7 +788,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/CreatePipeline">REST API Reference for CreatePipeline Operation</seealso>
-        public Task<CreatePipelineResponse> CreatePipelineAsync(PipelineDeclaration pipeline, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreatePipelineResponse> CreatePipelineAsync(PipelineDeclaration pipeline, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new CreatePipelineRequest();
             request.Pipeline = pipeline;
@@ -805,7 +805,7 @@ namespace Amazon.CodePipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/CreatePipeline">REST API Reference for CreatePipeline Operation</seealso>
-        public Task<CreatePipelineResponse> CreatePipelineAsync(CreatePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreatePipelineResponse> CreatePipelineAsync(CreatePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreatePipelineRequestMarshaller();
             var unmarshaller = CreatePipelineResponseUnmarshaller.Instance;
@@ -837,7 +837,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeleteCustomActionType">REST API Reference for DeleteCustomActionType Operation</seealso>
-        public DeleteCustomActionTypeResponse DeleteCustomActionType(DeleteCustomActionTypeRequest request)
+        public virtual DeleteCustomActionTypeResponse DeleteCustomActionType(DeleteCustomActionTypeRequest request)
         {
             var marshaller = new DeleteCustomActionTypeRequestMarshaller();
             var unmarshaller = DeleteCustomActionTypeResponseUnmarshaller.Instance;
@@ -855,7 +855,7 @@ namespace Amazon.CodePipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeleteCustomActionType">REST API Reference for DeleteCustomActionType Operation</seealso>
-        public Task<DeleteCustomActionTypeResponse> DeleteCustomActionTypeAsync(DeleteCustomActionTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteCustomActionTypeResponse> DeleteCustomActionTypeAsync(DeleteCustomActionTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteCustomActionTypeRequestMarshaller();
             var unmarshaller = DeleteCustomActionTypeResponseUnmarshaller.Instance;
@@ -879,7 +879,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeletePipeline">REST API Reference for DeletePipeline Operation</seealso>
-        public DeletePipelineResponse DeletePipeline(string name)
+        public virtual DeletePipelineResponse DeletePipeline(string name)
         {
             var request = new DeletePipelineRequest();
             request.Name = name;
@@ -897,7 +897,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeletePipeline">REST API Reference for DeletePipeline Operation</seealso>
-        public DeletePipelineResponse DeletePipeline(DeletePipelineRequest request)
+        public virtual DeletePipelineResponse DeletePipeline(DeletePipelineRequest request)
         {
             var marshaller = new DeletePipelineRequestMarshaller();
             var unmarshaller = DeletePipelineResponseUnmarshaller.Instance;
@@ -919,7 +919,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeletePipeline">REST API Reference for DeletePipeline Operation</seealso>
-        public Task<DeletePipelineResponse> DeletePipelineAsync(string name, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeletePipelineResponse> DeletePipelineAsync(string name, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DeletePipelineRequest();
             request.Name = name;
@@ -936,7 +936,7 @@ namespace Amazon.CodePipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeletePipeline">REST API Reference for DeletePipeline Operation</seealso>
-        public Task<DeletePipelineResponse> DeletePipelineAsync(DeletePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeletePipelineResponse> DeletePipelineAsync(DeletePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeletePipelineRequestMarshaller();
             var unmarshaller = DeletePipelineResponseUnmarshaller.Instance;
@@ -966,7 +966,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DisableStageTransition">REST API Reference for DisableStageTransition Operation</seealso>
-        public DisableStageTransitionResponse DisableStageTransition(DisableStageTransitionRequest request)
+        public virtual DisableStageTransitionResponse DisableStageTransition(DisableStageTransitionRequest request)
         {
             var marshaller = new DisableStageTransitionRequestMarshaller();
             var unmarshaller = DisableStageTransitionResponseUnmarshaller.Instance;
@@ -984,7 +984,7 @@ namespace Amazon.CodePipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DisableStageTransition">REST API Reference for DisableStageTransition Operation</seealso>
-        public Task<DisableStageTransitionResponse> DisableStageTransitionAsync(DisableStageTransitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DisableStageTransitionResponse> DisableStageTransitionAsync(DisableStageTransitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DisableStageTransitionRequestMarshaller();
             var unmarshaller = DisableStageTransitionResponseUnmarshaller.Instance;
@@ -1014,7 +1014,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/EnableStageTransition">REST API Reference for EnableStageTransition Operation</seealso>
-        public EnableStageTransitionResponse EnableStageTransition(EnableStageTransitionRequest request)
+        public virtual EnableStageTransitionResponse EnableStageTransition(EnableStageTransitionRequest request)
         {
             var marshaller = new EnableStageTransitionRequestMarshaller();
             var unmarshaller = EnableStageTransitionResponseUnmarshaller.Instance;
@@ -1032,7 +1032,7 @@ namespace Amazon.CodePipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/EnableStageTransition">REST API Reference for EnableStageTransition Operation</seealso>
-        public Task<EnableStageTransitionResponse> EnableStageTransitionAsync(EnableStageTransitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<EnableStageTransitionResponse> EnableStageTransitionAsync(EnableStageTransitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new EnableStageTransitionRequestMarshaller();
             var unmarshaller = EnableStageTransitionResponseUnmarshaller.Instance;
@@ -1068,7 +1068,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetJobDetails">REST API Reference for GetJobDetails Operation</seealso>
-        public GetJobDetailsResponse GetJobDetails(string jobId)
+        public virtual GetJobDetailsResponse GetJobDetails(string jobId)
         {
             var request = new GetJobDetailsRequest();
             request.JobId = jobId;
@@ -1098,7 +1098,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetJobDetails">REST API Reference for GetJobDetails Operation</seealso>
-        public GetJobDetailsResponse GetJobDetails(GetJobDetailsRequest request)
+        public virtual GetJobDetailsResponse GetJobDetails(GetJobDetailsRequest request)
         {
             var marshaller = new GetJobDetailsRequestMarshaller();
             var unmarshaller = GetJobDetailsResponseUnmarshaller.Instance;
@@ -1132,7 +1132,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetJobDetails">REST API Reference for GetJobDetails Operation</seealso>
-        public Task<GetJobDetailsResponse> GetJobDetailsAsync(string jobId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetJobDetailsResponse> GetJobDetailsAsync(string jobId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new GetJobDetailsRequest();
             request.JobId = jobId;
@@ -1149,7 +1149,7 @@ namespace Amazon.CodePipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetJobDetails">REST API Reference for GetJobDetails Operation</seealso>
-        public Task<GetJobDetailsResponse> GetJobDetailsAsync(GetJobDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetJobDetailsResponse> GetJobDetailsAsync(GetJobDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetJobDetailsRequestMarshaller();
             var unmarshaller = GetJobDetailsResponseUnmarshaller.Instance;
@@ -1182,7 +1182,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipeline">REST API Reference for GetPipeline Operation</seealso>
-        public GetPipelineResponse GetPipeline(string name, int version)
+        public virtual GetPipelineResponse GetPipeline(string name, int version)
         {
             var request = new GetPipelineRequest();
             request.Name = name;
@@ -1209,7 +1209,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipeline">REST API Reference for GetPipeline Operation</seealso>
-        public GetPipelineResponse GetPipeline(string name)
+        public virtual GetPipelineResponse GetPipeline(string name)
         {
             var request = new GetPipelineRequest();
             request.Name = name;
@@ -1235,7 +1235,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipeline">REST API Reference for GetPipeline Operation</seealso>
-        public GetPipelineResponse GetPipeline(GetPipelineRequest request)
+        public virtual GetPipelineResponse GetPipeline(GetPipelineRequest request)
         {
             var marshaller = new GetPipelineRequestMarshaller();
             var unmarshaller = GetPipelineResponseUnmarshaller.Instance;
@@ -1266,7 +1266,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipeline">REST API Reference for GetPipeline Operation</seealso>
-        public Task<GetPipelineResponse> GetPipelineAsync(string name, int version, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetPipelineResponse> GetPipelineAsync(string name, int version, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new GetPipelineRequest();
             request.Name = name;
@@ -1296,7 +1296,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipeline">REST API Reference for GetPipeline Operation</seealso>
-        public Task<GetPipelineResponse> GetPipelineAsync(string name, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetPipelineResponse> GetPipelineAsync(string name, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new GetPipelineRequest();
             request.Name = name;
@@ -1313,7 +1313,7 @@ namespace Amazon.CodePipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipeline">REST API Reference for GetPipeline Operation</seealso>
-        public Task<GetPipelineResponse> GetPipelineAsync(GetPipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetPipelineResponse> GetPipelineAsync(GetPipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetPipelineRequestMarshaller();
             var unmarshaller = GetPipelineResponseUnmarshaller.Instance;
@@ -1345,7 +1345,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipelineExecution">REST API Reference for GetPipelineExecution Operation</seealso>
-        public GetPipelineExecutionResponse GetPipelineExecution(GetPipelineExecutionRequest request)
+        public virtual GetPipelineExecutionResponse GetPipelineExecution(GetPipelineExecutionRequest request)
         {
             var marshaller = new GetPipelineExecutionRequestMarshaller();
             var unmarshaller = GetPipelineExecutionResponseUnmarshaller.Instance;
@@ -1363,7 +1363,7 @@ namespace Amazon.CodePipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipelineExecution">REST API Reference for GetPipelineExecution Operation</seealso>
-        public Task<GetPipelineExecutionResponse> GetPipelineExecutionAsync(GetPipelineExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetPipelineExecutionResponse> GetPipelineExecutionAsync(GetPipelineExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetPipelineExecutionRequestMarshaller();
             var unmarshaller = GetPipelineExecutionResponseUnmarshaller.Instance;
@@ -1390,7 +1390,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipelineState">REST API Reference for GetPipelineState Operation</seealso>
-        public GetPipelineStateResponse GetPipelineState(string name)
+        public virtual GetPipelineStateResponse GetPipelineState(string name)
         {
             var request = new GetPipelineStateRequest();
             request.Name = name;
@@ -1411,7 +1411,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipelineState">REST API Reference for GetPipelineState Operation</seealso>
-        public GetPipelineStateResponse GetPipelineState(GetPipelineStateRequest request)
+        public virtual GetPipelineStateResponse GetPipelineState(GetPipelineStateRequest request)
         {
             var marshaller = new GetPipelineStateRequestMarshaller();
             var unmarshaller = GetPipelineStateResponseUnmarshaller.Instance;
@@ -1436,7 +1436,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipelineState">REST API Reference for GetPipelineState Operation</seealso>
-        public Task<GetPipelineStateResponse> GetPipelineStateAsync(string name, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetPipelineStateResponse> GetPipelineStateAsync(string name, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new GetPipelineStateRequest();
             request.Name = name;
@@ -1453,7 +1453,7 @@ namespace Amazon.CodePipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipelineState">REST API Reference for GetPipelineState Operation</seealso>
-        public Task<GetPipelineStateResponse> GetPipelineStateAsync(GetPipelineStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetPipelineStateResponse> GetPipelineStateAsync(GetPipelineStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetPipelineStateRequestMarshaller();
             var unmarshaller = GetPipelineStateResponseUnmarshaller.Instance;
@@ -1496,7 +1496,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetThirdPartyJobDetails">REST API Reference for GetThirdPartyJobDetails Operation</seealso>
-        public GetThirdPartyJobDetailsResponse GetThirdPartyJobDetails(string clientToken, string jobId)
+        public virtual GetThirdPartyJobDetailsResponse GetThirdPartyJobDetails(string clientToken, string jobId)
         {
             var request = new GetThirdPartyJobDetailsRequest();
             request.ClientToken = clientToken;
@@ -1533,7 +1533,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetThirdPartyJobDetails">REST API Reference for GetThirdPartyJobDetails Operation</seealso>
-        public GetThirdPartyJobDetailsResponse GetThirdPartyJobDetails(GetThirdPartyJobDetailsRequest request)
+        public virtual GetThirdPartyJobDetailsResponse GetThirdPartyJobDetails(GetThirdPartyJobDetailsRequest request)
         {
             var marshaller = new GetThirdPartyJobDetailsRequestMarshaller();
             var unmarshaller = GetThirdPartyJobDetailsResponseUnmarshaller.Instance;
@@ -1574,7 +1574,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetThirdPartyJobDetails">REST API Reference for GetThirdPartyJobDetails Operation</seealso>
-        public Task<GetThirdPartyJobDetailsResponse> GetThirdPartyJobDetailsAsync(string clientToken, string jobId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetThirdPartyJobDetailsResponse> GetThirdPartyJobDetailsAsync(string clientToken, string jobId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new GetThirdPartyJobDetailsRequest();
             request.ClientToken = clientToken;
@@ -1592,7 +1592,7 @@ namespace Amazon.CodePipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetThirdPartyJobDetails">REST API Reference for GetThirdPartyJobDetails Operation</seealso>
-        public Task<GetThirdPartyJobDetailsResponse> GetThirdPartyJobDetailsAsync(GetThirdPartyJobDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetThirdPartyJobDetailsResponse> GetThirdPartyJobDetailsAsync(GetThirdPartyJobDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetThirdPartyJobDetailsRequestMarshaller();
             var unmarshaller = GetThirdPartyJobDetailsResponseUnmarshaller.Instance;
@@ -1619,7 +1619,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListActionTypes">REST API Reference for ListActionTypes Operation</seealso>
-        public ListActionTypesResponse ListActionTypes()
+        public virtual ListActionTypesResponse ListActionTypes()
         {
             var request = new ListActionTypesRequest();
             return ListActionTypes(request);
@@ -1640,7 +1640,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListActionTypes">REST API Reference for ListActionTypes Operation</seealso>
-        public ListActionTypesResponse ListActionTypes(ActionOwner actionOwnerFilter)
+        public virtual ListActionTypesResponse ListActionTypes(ActionOwner actionOwnerFilter)
         {
             var request = new ListActionTypesRequest();
             request.ActionOwnerFilter = actionOwnerFilter;
@@ -1662,7 +1662,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListActionTypes">REST API Reference for ListActionTypes Operation</seealso>
-        public ListActionTypesResponse ListActionTypes(ListActionTypesRequest request)
+        public virtual ListActionTypesResponse ListActionTypes(ListActionTypesRequest request)
         {
             var marshaller = new ListActionTypesRequestMarshaller();
             var unmarshaller = ListActionTypesResponseUnmarshaller.Instance;
@@ -1687,7 +1687,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListActionTypes">REST API Reference for ListActionTypes Operation</seealso>
-        public Task<ListActionTypesResponse> ListActionTypesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListActionTypesResponse> ListActionTypesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new ListActionTypesRequest();
             return ListActionTypesAsync(request, cancellationToken);
@@ -1711,7 +1711,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListActionTypes">REST API Reference for ListActionTypes Operation</seealso>
-        public Task<ListActionTypesResponse> ListActionTypesAsync(ActionOwner actionOwnerFilter, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListActionTypesResponse> ListActionTypesAsync(ActionOwner actionOwnerFilter, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new ListActionTypesRequest();
             request.ActionOwnerFilter = actionOwnerFilter;
@@ -1728,7 +1728,7 @@ namespace Amazon.CodePipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListActionTypes">REST API Reference for ListActionTypes Operation</seealso>
-        public Task<ListActionTypesResponse> ListActionTypesAsync(ListActionTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListActionTypesResponse> ListActionTypesAsync(ListActionTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListActionTypesRequestMarshaller();
             var unmarshaller = ListActionTypesResponseUnmarshaller.Instance;
@@ -1759,7 +1759,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListPipelineExecutions">REST API Reference for ListPipelineExecutions Operation</seealso>
-        public ListPipelineExecutionsResponse ListPipelineExecutions(ListPipelineExecutionsRequest request)
+        public virtual ListPipelineExecutionsResponse ListPipelineExecutions(ListPipelineExecutionsRequest request)
         {
             var marshaller = new ListPipelineExecutionsRequestMarshaller();
             var unmarshaller = ListPipelineExecutionsResponseUnmarshaller.Instance;
@@ -1777,7 +1777,7 @@ namespace Amazon.CodePipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListPipelineExecutions">REST API Reference for ListPipelineExecutions Operation</seealso>
-        public Task<ListPipelineExecutionsResponse> ListPipelineExecutionsAsync(ListPipelineExecutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListPipelineExecutionsResponse> ListPipelineExecutionsAsync(ListPipelineExecutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListPipelineExecutionsRequestMarshaller();
             var unmarshaller = ListPipelineExecutionsResponseUnmarshaller.Instance;
@@ -1801,7 +1801,7 @@ namespace Amazon.CodePipeline
         /// provided is the token returned by a previous call.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListPipelines">REST API Reference for ListPipelines Operation</seealso>
-        public ListPipelinesResponse ListPipelines()
+        public virtual ListPipelinesResponse ListPipelines()
         {
             var request = new ListPipelinesRequest();
             return ListPipelines(request);
@@ -1819,7 +1819,7 @@ namespace Amazon.CodePipeline
         /// provided is the token returned by a previous call.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListPipelines">REST API Reference for ListPipelines Operation</seealso>
-        public ListPipelinesResponse ListPipelines(ListPipelinesRequest request)
+        public virtual ListPipelinesResponse ListPipelines(ListPipelinesRequest request)
         {
             var marshaller = new ListPipelinesRequestMarshaller();
             var unmarshaller = ListPipelinesResponseUnmarshaller.Instance;
@@ -1841,7 +1841,7 @@ namespace Amazon.CodePipeline
         /// provided is the token returned by a previous call.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListPipelines">REST API Reference for ListPipelines Operation</seealso>
-        public Task<ListPipelinesResponse> ListPipelinesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListPipelinesResponse> ListPipelinesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new ListPipelinesRequest();
             return ListPipelinesAsync(request, cancellationToken);
@@ -1857,7 +1857,7 @@ namespace Amazon.CodePipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListPipelines">REST API Reference for ListPipelines Operation</seealso>
-        public Task<ListPipelinesResponse> ListPipelinesAsync(ListPipelinesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListPipelinesResponse> ListPipelinesAsync(ListPipelinesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListPipelinesRequestMarshaller();
             var unmarshaller = ListPipelinesResponseUnmarshaller.Instance;
@@ -1893,7 +1893,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PollForJobs">REST API Reference for PollForJobs Operation</seealso>
-        public PollForJobsResponse PollForJobs(PollForJobsRequest request)
+        public virtual PollForJobsResponse PollForJobs(PollForJobsRequest request)
         {
             var marshaller = new PollForJobsRequestMarshaller();
             var unmarshaller = PollForJobsResponseUnmarshaller.Instance;
@@ -1911,7 +1911,7 @@ namespace Amazon.CodePipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PollForJobs">REST API Reference for PollForJobs Operation</seealso>
-        public Task<PollForJobsResponse> PollForJobsAsync(PollForJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PollForJobsResponse> PollForJobsAsync(PollForJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PollForJobsRequestMarshaller();
             var unmarshaller = PollForJobsResponseUnmarshaller.Instance;
@@ -1947,7 +1947,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PollForThirdPartyJobs">REST API Reference for PollForThirdPartyJobs Operation</seealso>
-        public PollForThirdPartyJobsResponse PollForThirdPartyJobs(PollForThirdPartyJobsRequest request)
+        public virtual PollForThirdPartyJobsResponse PollForThirdPartyJobs(PollForThirdPartyJobsRequest request)
         {
             var marshaller = new PollForThirdPartyJobsRequestMarshaller();
             var unmarshaller = PollForThirdPartyJobsResponseUnmarshaller.Instance;
@@ -1965,7 +1965,7 @@ namespace Amazon.CodePipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PollForThirdPartyJobs">REST API Reference for PollForThirdPartyJobs Operation</seealso>
-        public Task<PollForThirdPartyJobsResponse> PollForThirdPartyJobsAsync(PollForThirdPartyJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PollForThirdPartyJobsResponse> PollForThirdPartyJobsAsync(PollForThirdPartyJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PollForThirdPartyJobsRequestMarshaller();
             var unmarshaller = PollForThirdPartyJobsResponseUnmarshaller.Instance;
@@ -1998,7 +1998,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutActionRevision">REST API Reference for PutActionRevision Operation</seealso>
-        public PutActionRevisionResponse PutActionRevision(PutActionRevisionRequest request)
+        public virtual PutActionRevisionResponse PutActionRevision(PutActionRevisionRequest request)
         {
             var marshaller = new PutActionRevisionRequestMarshaller();
             var unmarshaller = PutActionRevisionResponseUnmarshaller.Instance;
@@ -2016,7 +2016,7 @@ namespace Amazon.CodePipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutActionRevision">REST API Reference for PutActionRevision Operation</seealso>
-        public Task<PutActionRevisionResponse> PutActionRevisionAsync(PutActionRevisionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PutActionRevisionResponse> PutActionRevisionAsync(PutActionRevisionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutActionRevisionRequestMarshaller();
             var unmarshaller = PutActionRevisionResponseUnmarshaller.Instance;
@@ -2056,7 +2056,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutApprovalResult">REST API Reference for PutApprovalResult Operation</seealso>
-        public PutApprovalResultResponse PutApprovalResult(PutApprovalResultRequest request)
+        public virtual PutApprovalResultResponse PutApprovalResult(PutApprovalResultRequest request)
         {
             var marshaller = new PutApprovalResultRequestMarshaller();
             var unmarshaller = PutApprovalResultResponseUnmarshaller.Instance;
@@ -2074,7 +2074,7 @@ namespace Amazon.CodePipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutApprovalResult">REST API Reference for PutApprovalResult Operation</seealso>
-        public Task<PutApprovalResultResponse> PutApprovalResultAsync(PutApprovalResultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PutApprovalResultResponse> PutApprovalResultAsync(PutApprovalResultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutApprovalResultRequestMarshaller();
             var unmarshaller = PutApprovalResultResponseUnmarshaller.Instance;
@@ -2106,7 +2106,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutJobFailureResult">REST API Reference for PutJobFailureResult Operation</seealso>
-        public PutJobFailureResultResponse PutJobFailureResult(string jobId, FailureDetails failureDetails)
+        public virtual PutJobFailureResultResponse PutJobFailureResult(string jobId, FailureDetails failureDetails)
         {
             var request = new PutJobFailureResultRequest();
             request.JobId = jobId;
@@ -2132,7 +2132,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutJobFailureResult">REST API Reference for PutJobFailureResult Operation</seealso>
-        public PutJobFailureResultResponse PutJobFailureResult(PutJobFailureResultRequest request)
+        public virtual PutJobFailureResultResponse PutJobFailureResult(PutJobFailureResultRequest request)
         {
             var marshaller = new PutJobFailureResultRequestMarshaller();
             var unmarshaller = PutJobFailureResultResponseUnmarshaller.Instance;
@@ -2162,7 +2162,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutJobFailureResult">REST API Reference for PutJobFailureResult Operation</seealso>
-        public Task<PutJobFailureResultResponse> PutJobFailureResultAsync(string jobId, FailureDetails failureDetails, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PutJobFailureResultResponse> PutJobFailureResultAsync(string jobId, FailureDetails failureDetails, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new PutJobFailureResultRequest();
             request.JobId = jobId;
@@ -2180,7 +2180,7 @@ namespace Amazon.CodePipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutJobFailureResult">REST API Reference for PutJobFailureResult Operation</seealso>
-        public Task<PutJobFailureResultResponse> PutJobFailureResultAsync(PutJobFailureResultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PutJobFailureResultResponse> PutJobFailureResultAsync(PutJobFailureResultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutJobFailureResultRequestMarshaller();
             var unmarshaller = PutJobFailureResultResponseUnmarshaller.Instance;
@@ -2211,7 +2211,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutJobSuccessResult">REST API Reference for PutJobSuccessResult Operation</seealso>
-        public PutJobSuccessResultResponse PutJobSuccessResult(PutJobSuccessResultRequest request)
+        public virtual PutJobSuccessResultResponse PutJobSuccessResult(PutJobSuccessResultRequest request)
         {
             var marshaller = new PutJobSuccessResultRequestMarshaller();
             var unmarshaller = PutJobSuccessResultResponseUnmarshaller.Instance;
@@ -2229,7 +2229,7 @@ namespace Amazon.CodePipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutJobSuccessResult">REST API Reference for PutJobSuccessResult Operation</seealso>
-        public Task<PutJobSuccessResultResponse> PutJobSuccessResultAsync(PutJobSuccessResultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PutJobSuccessResultResponse> PutJobSuccessResultAsync(PutJobSuccessResultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutJobSuccessResultRequestMarshaller();
             var unmarshaller = PutJobSuccessResultResponseUnmarshaller.Instance;
@@ -2265,7 +2265,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutThirdPartyJobFailureResult">REST API Reference for PutThirdPartyJobFailureResult Operation</seealso>
-        public PutThirdPartyJobFailureResultResponse PutThirdPartyJobFailureResult(string jobId, string clientToken, FailureDetails failureDetails)
+        public virtual PutThirdPartyJobFailureResultResponse PutThirdPartyJobFailureResult(string jobId, string clientToken, FailureDetails failureDetails)
         {
             var request = new PutThirdPartyJobFailureResultRequest();
             request.JobId = jobId;
@@ -2295,7 +2295,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutThirdPartyJobFailureResult">REST API Reference for PutThirdPartyJobFailureResult Operation</seealso>
-        public PutThirdPartyJobFailureResultResponse PutThirdPartyJobFailureResult(PutThirdPartyJobFailureResultRequest request)
+        public virtual PutThirdPartyJobFailureResultResponse PutThirdPartyJobFailureResult(PutThirdPartyJobFailureResultRequest request)
         {
             var marshaller = new PutThirdPartyJobFailureResultRequestMarshaller();
             var unmarshaller = PutThirdPartyJobFailureResultResponseUnmarshaller.Instance;
@@ -2329,7 +2329,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutThirdPartyJobFailureResult">REST API Reference for PutThirdPartyJobFailureResult Operation</seealso>
-        public Task<PutThirdPartyJobFailureResultResponse> PutThirdPartyJobFailureResultAsync(string jobId, string clientToken, FailureDetails failureDetails, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PutThirdPartyJobFailureResultResponse> PutThirdPartyJobFailureResultAsync(string jobId, string clientToken, FailureDetails failureDetails, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new PutThirdPartyJobFailureResultRequest();
             request.JobId = jobId;
@@ -2348,7 +2348,7 @@ namespace Amazon.CodePipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutThirdPartyJobFailureResult">REST API Reference for PutThirdPartyJobFailureResult Operation</seealso>
-        public Task<PutThirdPartyJobFailureResultResponse> PutThirdPartyJobFailureResultAsync(PutThirdPartyJobFailureResultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PutThirdPartyJobFailureResultResponse> PutThirdPartyJobFailureResultAsync(PutThirdPartyJobFailureResultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutThirdPartyJobFailureResultRequestMarshaller();
             var unmarshaller = PutThirdPartyJobFailureResultResponseUnmarshaller.Instance;
@@ -2382,7 +2382,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutThirdPartyJobSuccessResult">REST API Reference for PutThirdPartyJobSuccessResult Operation</seealso>
-        public PutThirdPartyJobSuccessResultResponse PutThirdPartyJobSuccessResult(PutThirdPartyJobSuccessResultRequest request)
+        public virtual PutThirdPartyJobSuccessResultResponse PutThirdPartyJobSuccessResult(PutThirdPartyJobSuccessResultRequest request)
         {
             var marshaller = new PutThirdPartyJobSuccessResultRequestMarshaller();
             var unmarshaller = PutThirdPartyJobSuccessResultResponseUnmarshaller.Instance;
@@ -2400,7 +2400,7 @@ namespace Amazon.CodePipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutThirdPartyJobSuccessResult">REST API Reference for PutThirdPartyJobSuccessResult Operation</seealso>
-        public Task<PutThirdPartyJobSuccessResultResponse> PutThirdPartyJobSuccessResultAsync(PutThirdPartyJobSuccessResultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PutThirdPartyJobSuccessResultResponse> PutThirdPartyJobSuccessResultAsync(PutThirdPartyJobSuccessResultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutThirdPartyJobSuccessResultRequestMarshaller();
             var unmarshaller = PutThirdPartyJobSuccessResultResponseUnmarshaller.Instance;
@@ -2439,7 +2439,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/RetryStageExecution">REST API Reference for RetryStageExecution Operation</seealso>
-        public RetryStageExecutionResponse RetryStageExecution(RetryStageExecutionRequest request)
+        public virtual RetryStageExecutionResponse RetryStageExecution(RetryStageExecutionRequest request)
         {
             var marshaller = new RetryStageExecutionRequestMarshaller();
             var unmarshaller = RetryStageExecutionResponseUnmarshaller.Instance;
@@ -2457,7 +2457,7 @@ namespace Amazon.CodePipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/RetryStageExecution">REST API Reference for RetryStageExecution Operation</seealso>
-        public Task<RetryStageExecutionResponse> RetryStageExecutionAsync(RetryStageExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<RetryStageExecutionResponse> RetryStageExecutionAsync(RetryStageExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RetryStageExecutionRequestMarshaller();
             var unmarshaller = RetryStageExecutionResponseUnmarshaller.Instance;
@@ -2485,7 +2485,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/StartPipelineExecution">REST API Reference for StartPipelineExecution Operation</seealso>
-        public StartPipelineExecutionResponse StartPipelineExecution(string name)
+        public virtual StartPipelineExecutionResponse StartPipelineExecution(string name)
         {
             var request = new StartPipelineExecutionRequest();
             request.Name = name;
@@ -2507,7 +2507,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/StartPipelineExecution">REST API Reference for StartPipelineExecution Operation</seealso>
-        public StartPipelineExecutionResponse StartPipelineExecution(StartPipelineExecutionRequest request)
+        public virtual StartPipelineExecutionResponse StartPipelineExecution(StartPipelineExecutionRequest request)
         {
             var marshaller = new StartPipelineExecutionRequestMarshaller();
             var unmarshaller = StartPipelineExecutionResponseUnmarshaller.Instance;
@@ -2533,7 +2533,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/StartPipelineExecution">REST API Reference for StartPipelineExecution Operation</seealso>
-        public Task<StartPipelineExecutionResponse> StartPipelineExecutionAsync(string name, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<StartPipelineExecutionResponse> StartPipelineExecutionAsync(string name, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new StartPipelineExecutionRequest();
             request.Name = name;
@@ -2550,7 +2550,7 @@ namespace Amazon.CodePipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/StartPipelineExecution">REST API Reference for StartPipelineExecution Operation</seealso>
-        public Task<StartPipelineExecutionResponse> StartPipelineExecutionAsync(StartPipelineExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<StartPipelineExecutionResponse> StartPipelineExecutionAsync(StartPipelineExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new StartPipelineExecutionRequestMarshaller();
             var unmarshaller = StartPipelineExecutionResponseUnmarshaller.Instance;
@@ -2589,7 +2589,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/UpdatePipeline">REST API Reference for UpdatePipeline Operation</seealso>
-        public UpdatePipelineResponse UpdatePipeline(PipelineDeclaration pipeline)
+        public virtual UpdatePipelineResponse UpdatePipeline(PipelineDeclaration pipeline)
         {
             var request = new UpdatePipelineRequest();
             request.Pipeline = pipeline;
@@ -2622,7 +2622,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/UpdatePipeline">REST API Reference for UpdatePipeline Operation</seealso>
-        public UpdatePipelineResponse UpdatePipeline(UpdatePipelineRequest request)
+        public virtual UpdatePipelineResponse UpdatePipeline(UpdatePipelineRequest request)
         {
             var marshaller = new UpdatePipelineRequestMarshaller();
             var unmarshaller = UpdatePipelineResponseUnmarshaller.Instance;
@@ -2659,7 +2659,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/UpdatePipeline">REST API Reference for UpdatePipeline Operation</seealso>
-        public Task<UpdatePipelineResponse> UpdatePipelineAsync(PipelineDeclaration pipeline, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdatePipelineResponse> UpdatePipelineAsync(PipelineDeclaration pipeline, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new UpdatePipelineRequest();
             request.Pipeline = pipeline;
@@ -2676,7 +2676,7 @@ namespace Amazon.CodePipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/UpdatePipeline">REST API Reference for UpdatePipeline Operation</seealso>
-        public Task<UpdatePipelineResponse> UpdatePipelineAsync(UpdatePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdatePipelineResponse> UpdatePipelineAsync(UpdatePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdatePipelineRequestMarshaller();
             var unmarshaller = UpdatePipelineResponseUnmarshaller.Instance;

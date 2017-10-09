@@ -254,7 +254,7 @@ namespace Amazon.AppStream
         /// The specified resource was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateFleet">REST API Reference for AssociateFleet Operation</seealso>
-        public AssociateFleetResponse AssociateFleet(AssociateFleetRequest request)
+        public virtual AssociateFleetResponse AssociateFleet(AssociateFleetRequest request)
         {
             var marshaller = new AssociateFleetRequestMarshaller();
             var unmarshaller = AssociateFleetResponseUnmarshaller.Instance;
@@ -272,7 +272,7 @@ namespace Amazon.AppStream
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateFleet">REST API Reference for AssociateFleet Operation</seealso>
-        public Task<AssociateFleetResponse> AssociateFleetAsync(AssociateFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<AssociateFleetResponse> AssociateFleetAsync(AssociateFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AssociateFleetRequestMarshaller();
             var unmarshaller = AssociateFleetResponseUnmarshaller.Instance;
@@ -299,7 +299,7 @@ namespace Amazon.AppStream
         /// The specified resource already exists.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateDirectoryConfig">REST API Reference for CreateDirectoryConfig Operation</seealso>
-        public CreateDirectoryConfigResponse CreateDirectoryConfig(CreateDirectoryConfigRequest request)
+        public virtual CreateDirectoryConfigResponse CreateDirectoryConfig(CreateDirectoryConfigRequest request)
         {
             var marshaller = new CreateDirectoryConfigRequestMarshaller();
             var unmarshaller = CreateDirectoryConfigResponseUnmarshaller.Instance;
@@ -317,7 +317,7 @@ namespace Amazon.AppStream
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateDirectoryConfig">REST API Reference for CreateDirectoryConfig Operation</seealso>
-        public Task<CreateDirectoryConfigResponse> CreateDirectoryConfigAsync(CreateDirectoryConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateDirectoryConfigResponse> CreateDirectoryConfigAsync(CreateDirectoryConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateDirectoryConfigRequestMarshaller();
             var unmarshaller = CreateDirectoryConfigResponseUnmarshaller.Instance;
@@ -362,7 +362,7 @@ namespace Amazon.AppStream
         /// The specified resource was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateFleet">REST API Reference for CreateFleet Operation</seealso>
-        public CreateFleetResponse CreateFleet(CreateFleetRequest request)
+        public virtual CreateFleetResponse CreateFleet(CreateFleetRequest request)
         {
             var marshaller = new CreateFleetRequestMarshaller();
             var unmarshaller = CreateFleetResponseUnmarshaller.Instance;
@@ -380,7 +380,7 @@ namespace Amazon.AppStream
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateFleet">REST API Reference for CreateFleet Operation</seealso>
-        public Task<CreateFleetResponse> CreateFleetAsync(CreateFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateFleetResponse> CreateFleetAsync(CreateFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateFleetRequestMarshaller();
             var unmarshaller = CreateFleetResponseUnmarshaller.Instance;
@@ -425,7 +425,7 @@ namespace Amazon.AppStream
         /// The specified resource was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateImageBuilder">REST API Reference for CreateImageBuilder Operation</seealso>
-        public CreateImageBuilderResponse CreateImageBuilder(CreateImageBuilderRequest request)
+        public virtual CreateImageBuilderResponse CreateImageBuilder(CreateImageBuilderRequest request)
         {
             var marshaller = new CreateImageBuilderRequestMarshaller();
             var unmarshaller = CreateImageBuilderResponseUnmarshaller.Instance;
@@ -443,7 +443,7 @@ namespace Amazon.AppStream
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateImageBuilder">REST API Reference for CreateImageBuilder Operation</seealso>
-        public Task<CreateImageBuilderResponse> CreateImageBuilderAsync(CreateImageBuilderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateImageBuilderResponse> CreateImageBuilderAsync(CreateImageBuilderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateImageBuilderRequestMarshaller();
             var unmarshaller = CreateImageBuilderResponseUnmarshaller.Instance;
@@ -470,7 +470,7 @@ namespace Amazon.AppStream
         /// The specified resource was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateImageBuilderStreamingURL">REST API Reference for CreateImageBuilderStreamingURL Operation</seealso>
-        public CreateImageBuilderStreamingURLResponse CreateImageBuilderStreamingURL(CreateImageBuilderStreamingURLRequest request)
+        public virtual CreateImageBuilderStreamingURLResponse CreateImageBuilderStreamingURL(CreateImageBuilderStreamingURLRequest request)
         {
             var marshaller = new CreateImageBuilderStreamingURLRequestMarshaller();
             var unmarshaller = CreateImageBuilderStreamingURLResponseUnmarshaller.Instance;
@@ -488,7 +488,7 @@ namespace Amazon.AppStream
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateImageBuilderStreamingURL">REST API Reference for CreateImageBuilderStreamingURL Operation</seealso>
-        public Task<CreateImageBuilderStreamingURLResponse> CreateImageBuilderStreamingURLAsync(CreateImageBuilderStreamingURLRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateImageBuilderStreamingURLResponse> CreateImageBuilderStreamingURLAsync(CreateImageBuilderStreamingURLRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateImageBuilderStreamingURLRequestMarshaller();
             var unmarshaller = CreateImageBuilderStreamingURLResponseUnmarshaller.Instance;
@@ -527,7 +527,7 @@ namespace Amazon.AppStream
         /// The specified resource was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStack">REST API Reference for CreateStack Operation</seealso>
-        public CreateStackResponse CreateStack(CreateStackRequest request)
+        public virtual CreateStackResponse CreateStack(CreateStackRequest request)
         {
             var marshaller = new CreateStackRequestMarshaller();
             var unmarshaller = CreateStackResponseUnmarshaller.Instance;
@@ -545,7 +545,7 @@ namespace Amazon.AppStream
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStack">REST API Reference for CreateStack Operation</seealso>
-        public Task<CreateStackResponse> CreateStackAsync(CreateStackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateStackResponse> CreateStackAsync(CreateStackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateStackRequestMarshaller();
             var unmarshaller = CreateStackResponseUnmarshaller.Instance;
@@ -583,7 +583,7 @@ namespace Amazon.AppStream
         /// The specified resource was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStreamingURL">REST API Reference for CreateStreamingURL Operation</seealso>
-        public CreateStreamingURLResponse CreateStreamingURL(CreateStreamingURLRequest request)
+        public virtual CreateStreamingURLResponse CreateStreamingURL(CreateStreamingURLRequest request)
         {
             var marshaller = new CreateStreamingURLRequestMarshaller();
             var unmarshaller = CreateStreamingURLResponseUnmarshaller.Instance;
@@ -601,7 +601,7 @@ namespace Amazon.AppStream
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStreamingURL">REST API Reference for CreateStreamingURL Operation</seealso>
-        public Task<CreateStreamingURLResponse> CreateStreamingURLAsync(CreateStreamingURLRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateStreamingURLResponse> CreateStreamingURLAsync(CreateStreamingURLRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateStreamingURLRequestMarshaller();
             var unmarshaller = CreateStreamingURLResponseUnmarshaller.Instance;
@@ -628,7 +628,7 @@ namespace Amazon.AppStream
         /// The specified resource was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteDirectoryConfig">REST API Reference for DeleteDirectoryConfig Operation</seealso>
-        public DeleteDirectoryConfigResponse DeleteDirectoryConfig(DeleteDirectoryConfigRequest request)
+        public virtual DeleteDirectoryConfigResponse DeleteDirectoryConfig(DeleteDirectoryConfigRequest request)
         {
             var marshaller = new DeleteDirectoryConfigRequestMarshaller();
             var unmarshaller = DeleteDirectoryConfigResponseUnmarshaller.Instance;
@@ -646,7 +646,7 @@ namespace Amazon.AppStream
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteDirectoryConfig">REST API Reference for DeleteDirectoryConfig Operation</seealso>
-        public Task<DeleteDirectoryConfigResponse> DeleteDirectoryConfigAsync(DeleteDirectoryConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteDirectoryConfigResponse> DeleteDirectoryConfigAsync(DeleteDirectoryConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteDirectoryConfigRequestMarshaller();
             var unmarshaller = DeleteDirectoryConfigResponseUnmarshaller.Instance;
@@ -676,7 +676,7 @@ namespace Amazon.AppStream
         /// The specified resource was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteFleet">REST API Reference for DeleteFleet Operation</seealso>
-        public DeleteFleetResponse DeleteFleet(DeleteFleetRequest request)
+        public virtual DeleteFleetResponse DeleteFleet(DeleteFleetRequest request)
         {
             var marshaller = new DeleteFleetRequestMarshaller();
             var unmarshaller = DeleteFleetResponseUnmarshaller.Instance;
@@ -694,7 +694,7 @@ namespace Amazon.AppStream
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteFleet">REST API Reference for DeleteFleet Operation</seealso>
-        public Task<DeleteFleetResponse> DeleteFleetAsync(DeleteFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteFleetResponse> DeleteFleetAsync(DeleteFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteFleetRequestMarshaller();
             var unmarshaller = DeleteFleetResponseUnmarshaller.Instance;
@@ -727,7 +727,7 @@ namespace Amazon.AppStream
         /// The specified resource was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteImage">REST API Reference for DeleteImage Operation</seealso>
-        public DeleteImageResponse DeleteImage(DeleteImageRequest request)
+        public virtual DeleteImageResponse DeleteImage(DeleteImageRequest request)
         {
             var marshaller = new DeleteImageRequestMarshaller();
             var unmarshaller = DeleteImageResponseUnmarshaller.Instance;
@@ -745,7 +745,7 @@ namespace Amazon.AppStream
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteImage">REST API Reference for DeleteImage Operation</seealso>
-        public Task<DeleteImageResponse> DeleteImageAsync(DeleteImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteImageResponse> DeleteImageAsync(DeleteImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteImageRequestMarshaller();
             var unmarshaller = DeleteImageResponseUnmarshaller.Instance;
@@ -775,7 +775,7 @@ namespace Amazon.AppStream
         /// The specified resource was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteImageBuilder">REST API Reference for DeleteImageBuilder Operation</seealso>
-        public DeleteImageBuilderResponse DeleteImageBuilder(DeleteImageBuilderRequest request)
+        public virtual DeleteImageBuilderResponse DeleteImageBuilder(DeleteImageBuilderRequest request)
         {
             var marshaller = new DeleteImageBuilderRequestMarshaller();
             var unmarshaller = DeleteImageBuilderResponseUnmarshaller.Instance;
@@ -793,7 +793,7 @@ namespace Amazon.AppStream
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteImageBuilder">REST API Reference for DeleteImageBuilder Operation</seealso>
-        public Task<DeleteImageBuilderResponse> DeleteImageBuilderAsync(DeleteImageBuilderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteImageBuilderResponse> DeleteImageBuilderAsync(DeleteImageBuilderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteImageBuilderRequestMarshaller();
             var unmarshaller = DeleteImageBuilderResponseUnmarshaller.Instance;
@@ -824,7 +824,7 @@ namespace Amazon.AppStream
         /// The specified resource was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteStack">REST API Reference for DeleteStack Operation</seealso>
-        public DeleteStackResponse DeleteStack(DeleteStackRequest request)
+        public virtual DeleteStackResponse DeleteStack(DeleteStackRequest request)
         {
             var marshaller = new DeleteStackRequestMarshaller();
             var unmarshaller = DeleteStackResponseUnmarshaller.Instance;
@@ -842,7 +842,7 @@ namespace Amazon.AppStream
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteStack">REST API Reference for DeleteStack Operation</seealso>
-        public Task<DeleteStackResponse> DeleteStackAsync(DeleteStackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteStackResponse> DeleteStackAsync(DeleteStackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteStackRequestMarshaller();
             var unmarshaller = DeleteStackResponseUnmarshaller.Instance;
@@ -866,7 +866,7 @@ namespace Amazon.AppStream
         /// The specified resource was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeDirectoryConfigs">REST API Reference for DescribeDirectoryConfigs Operation</seealso>
-        public DescribeDirectoryConfigsResponse DescribeDirectoryConfigs(DescribeDirectoryConfigsRequest request)
+        public virtual DescribeDirectoryConfigsResponse DescribeDirectoryConfigs(DescribeDirectoryConfigsRequest request)
         {
             var marshaller = new DescribeDirectoryConfigsRequestMarshaller();
             var unmarshaller = DescribeDirectoryConfigsResponseUnmarshaller.Instance;
@@ -884,7 +884,7 @@ namespace Amazon.AppStream
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeDirectoryConfigs">REST API Reference for DescribeDirectoryConfigs Operation</seealso>
-        public Task<DescribeDirectoryConfigsResponse> DescribeDirectoryConfigsAsync(DescribeDirectoryConfigsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeDirectoryConfigsResponse> DescribeDirectoryConfigsAsync(DescribeDirectoryConfigsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeDirectoryConfigsRequestMarshaller();
             var unmarshaller = DescribeDirectoryConfigsResponseUnmarshaller.Instance;
@@ -908,7 +908,7 @@ namespace Amazon.AppStream
         /// The specified resource was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeFleets">REST API Reference for DescribeFleets Operation</seealso>
-        public DescribeFleetsResponse DescribeFleets(DescribeFleetsRequest request)
+        public virtual DescribeFleetsResponse DescribeFleets(DescribeFleetsRequest request)
         {
             var marshaller = new DescribeFleetsRequestMarshaller();
             var unmarshaller = DescribeFleetsResponseUnmarshaller.Instance;
@@ -926,7 +926,7 @@ namespace Amazon.AppStream
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeFleets">REST API Reference for DescribeFleets Operation</seealso>
-        public Task<DescribeFleetsResponse> DescribeFleetsAsync(DescribeFleetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeFleetsResponse> DescribeFleetsAsync(DescribeFleetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeFleetsRequestMarshaller();
             var unmarshaller = DescribeFleetsResponseUnmarshaller.Instance;
@@ -950,7 +950,7 @@ namespace Amazon.AppStream
         /// The specified resource was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImageBuilders">REST API Reference for DescribeImageBuilders Operation</seealso>
-        public DescribeImageBuildersResponse DescribeImageBuilders(DescribeImageBuildersRequest request)
+        public virtual DescribeImageBuildersResponse DescribeImageBuilders(DescribeImageBuildersRequest request)
         {
             var marshaller = new DescribeImageBuildersRequestMarshaller();
             var unmarshaller = DescribeImageBuildersResponseUnmarshaller.Instance;
@@ -968,7 +968,7 @@ namespace Amazon.AppStream
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImageBuilders">REST API Reference for DescribeImageBuilders Operation</seealso>
-        public Task<DescribeImageBuildersResponse> DescribeImageBuildersAsync(DescribeImageBuildersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeImageBuildersResponse> DescribeImageBuildersAsync(DescribeImageBuildersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeImageBuildersRequestMarshaller();
             var unmarshaller = DescribeImageBuildersResponseUnmarshaller.Instance;
@@ -992,7 +992,7 @@ namespace Amazon.AppStream
         /// The specified resource was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImages">REST API Reference for DescribeImages Operation</seealso>
-        public DescribeImagesResponse DescribeImages(DescribeImagesRequest request)
+        public virtual DescribeImagesResponse DescribeImages(DescribeImagesRequest request)
         {
             var marshaller = new DescribeImagesRequestMarshaller();
             var unmarshaller = DescribeImagesResponseUnmarshaller.Instance;
@@ -1010,7 +1010,7 @@ namespace Amazon.AppStream
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImages">REST API Reference for DescribeImages Operation</seealso>
-        public Task<DescribeImagesResponse> DescribeImagesAsync(DescribeImagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeImagesResponse> DescribeImagesAsync(DescribeImagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeImagesRequestMarshaller();
             var unmarshaller = DescribeImagesResponseUnmarshaller.Instance;
@@ -1036,7 +1036,7 @@ namespace Amazon.AppStream
         /// Indicates an incorrect combination of parameters, or a missing parameter.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeSessions">REST API Reference for DescribeSessions Operation</seealso>
-        public DescribeSessionsResponse DescribeSessions(DescribeSessionsRequest request)
+        public virtual DescribeSessionsResponse DescribeSessions(DescribeSessionsRequest request)
         {
             var marshaller = new DescribeSessionsRequestMarshaller();
             var unmarshaller = DescribeSessionsResponseUnmarshaller.Instance;
@@ -1054,7 +1054,7 @@ namespace Amazon.AppStream
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeSessions">REST API Reference for DescribeSessions Operation</seealso>
-        public Task<DescribeSessionsResponse> DescribeSessionsAsync(DescribeSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeSessionsResponse> DescribeSessionsAsync(DescribeSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeSessionsRequestMarshaller();
             var unmarshaller = DescribeSessionsResponseUnmarshaller.Instance;
@@ -1078,7 +1078,7 @@ namespace Amazon.AppStream
         /// The specified resource was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeStacks">REST API Reference for DescribeStacks Operation</seealso>
-        public DescribeStacksResponse DescribeStacks(DescribeStacksRequest request)
+        public virtual DescribeStacksResponse DescribeStacks(DescribeStacksRequest request)
         {
             var marshaller = new DescribeStacksRequestMarshaller();
             var unmarshaller = DescribeStacksResponseUnmarshaller.Instance;
@@ -1096,7 +1096,7 @@ namespace Amazon.AppStream
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeStacks">REST API Reference for DescribeStacks Operation</seealso>
-        public Task<DescribeStacksResponse> DescribeStacksAsync(DescribeStacksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeStacksResponse> DescribeStacksAsync(DescribeStacksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeStacksRequestMarshaller();
             var unmarshaller = DescribeStacksResponseUnmarshaller.Instance;
@@ -1126,7 +1126,7 @@ namespace Amazon.AppStream
         /// The specified resource was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateFleet">REST API Reference for DisassociateFleet Operation</seealso>
-        public DisassociateFleetResponse DisassociateFleet(DisassociateFleetRequest request)
+        public virtual DisassociateFleetResponse DisassociateFleet(DisassociateFleetRequest request)
         {
             var marshaller = new DisassociateFleetRequestMarshaller();
             var unmarshaller = DisassociateFleetResponseUnmarshaller.Instance;
@@ -1144,7 +1144,7 @@ namespace Amazon.AppStream
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateFleet">REST API Reference for DisassociateFleet Operation</seealso>
-        public Task<DisassociateFleetResponse> DisassociateFleetAsync(DisassociateFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DisassociateFleetResponse> DisassociateFleetAsync(DisassociateFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DisassociateFleetRequestMarshaller();
             var unmarshaller = DisassociateFleetResponseUnmarshaller.Instance;
@@ -1165,7 +1165,7 @@ namespace Amazon.AppStream
         /// 
         /// <returns>The response from the ExpireSession service method, as returned by AppStream.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ExpireSession">REST API Reference for ExpireSession Operation</seealso>
-        public ExpireSessionResponse ExpireSession(ExpireSessionRequest request)
+        public virtual ExpireSessionResponse ExpireSession(ExpireSessionRequest request)
         {
             var marshaller = new ExpireSessionRequestMarshaller();
             var unmarshaller = ExpireSessionResponseUnmarshaller.Instance;
@@ -1183,7 +1183,7 @@ namespace Amazon.AppStream
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ExpireSession">REST API Reference for ExpireSession Operation</seealso>
-        public Task<ExpireSessionResponse> ExpireSessionAsync(ExpireSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ExpireSessionResponse> ExpireSessionAsync(ExpireSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ExpireSessionRequestMarshaller();
             var unmarshaller = ExpireSessionResponseUnmarshaller.Instance;
@@ -1204,7 +1204,7 @@ namespace Amazon.AppStream
         /// 
         /// <returns>The response from the ListAssociatedFleets service method, as returned by AppStream.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedFleets">REST API Reference for ListAssociatedFleets Operation</seealso>
-        public ListAssociatedFleetsResponse ListAssociatedFleets(ListAssociatedFleetsRequest request)
+        public virtual ListAssociatedFleetsResponse ListAssociatedFleets(ListAssociatedFleetsRequest request)
         {
             var marshaller = new ListAssociatedFleetsRequestMarshaller();
             var unmarshaller = ListAssociatedFleetsResponseUnmarshaller.Instance;
@@ -1222,7 +1222,7 @@ namespace Amazon.AppStream
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedFleets">REST API Reference for ListAssociatedFleets Operation</seealso>
-        public Task<ListAssociatedFleetsResponse> ListAssociatedFleetsAsync(ListAssociatedFleetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListAssociatedFleetsResponse> ListAssociatedFleetsAsync(ListAssociatedFleetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListAssociatedFleetsRequestMarshaller();
             var unmarshaller = ListAssociatedFleetsResponseUnmarshaller.Instance;
@@ -1243,7 +1243,7 @@ namespace Amazon.AppStream
         /// 
         /// <returns>The response from the ListAssociatedStacks service method, as returned by AppStream.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedStacks">REST API Reference for ListAssociatedStacks Operation</seealso>
-        public ListAssociatedStacksResponse ListAssociatedStacks(ListAssociatedStacksRequest request)
+        public virtual ListAssociatedStacksResponse ListAssociatedStacks(ListAssociatedStacksRequest request)
         {
             var marshaller = new ListAssociatedStacksRequestMarshaller();
             var unmarshaller = ListAssociatedStacksResponseUnmarshaller.Instance;
@@ -1261,7 +1261,7 @@ namespace Amazon.AppStream
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedStacks">REST API Reference for ListAssociatedStacks Operation</seealso>
-        public Task<ListAssociatedStacksResponse> ListAssociatedStacksAsync(ListAssociatedStacksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListAssociatedStacksResponse> ListAssociatedStacksAsync(ListAssociatedStacksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListAssociatedStacksRequestMarshaller();
             var unmarshaller = ListAssociatedStacksResponseUnmarshaller.Instance;
@@ -1294,7 +1294,7 @@ namespace Amazon.AppStream
         /// The specified resource was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartFleet">REST API Reference for StartFleet Operation</seealso>
-        public StartFleetResponse StartFleet(StartFleetRequest request)
+        public virtual StartFleetResponse StartFleet(StartFleetRequest request)
         {
             var marshaller = new StartFleetRequestMarshaller();
             var unmarshaller = StartFleetResponseUnmarshaller.Instance;
@@ -1312,7 +1312,7 @@ namespace Amazon.AppStream
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartFleet">REST API Reference for StartFleet Operation</seealso>
-        public Task<StartFleetResponse> StartFleetAsync(StartFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<StartFleetResponse> StartFleetAsync(StartFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new StartFleetRequestMarshaller();
             var unmarshaller = StartFleetResponseUnmarshaller.Instance;
@@ -1342,7 +1342,7 @@ namespace Amazon.AppStream
         /// The specified resource was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartImageBuilder">REST API Reference for StartImageBuilder Operation</seealso>
-        public StartImageBuilderResponse StartImageBuilder(StartImageBuilderRequest request)
+        public virtual StartImageBuilderResponse StartImageBuilder(StartImageBuilderRequest request)
         {
             var marshaller = new StartImageBuilderRequestMarshaller();
             var unmarshaller = StartImageBuilderResponseUnmarshaller.Instance;
@@ -1360,7 +1360,7 @@ namespace Amazon.AppStream
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartImageBuilder">REST API Reference for StartImageBuilder Operation</seealso>
-        public Task<StartImageBuilderResponse> StartImageBuilderAsync(StartImageBuilderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<StartImageBuilderResponse> StartImageBuilderAsync(StartImageBuilderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new StartImageBuilderRequestMarshaller();
             var unmarshaller = StartImageBuilderResponseUnmarshaller.Instance;
@@ -1387,7 +1387,7 @@ namespace Amazon.AppStream
         /// The specified resource was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StopFleet">REST API Reference for StopFleet Operation</seealso>
-        public StopFleetResponse StopFleet(StopFleetRequest request)
+        public virtual StopFleetResponse StopFleet(StopFleetRequest request)
         {
             var marshaller = new StopFleetRequestMarshaller();
             var unmarshaller = StopFleetResponseUnmarshaller.Instance;
@@ -1405,7 +1405,7 @@ namespace Amazon.AppStream
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StopFleet">REST API Reference for StopFleet Operation</seealso>
-        public Task<StopFleetResponse> StopFleetAsync(StopFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<StopFleetResponse> StopFleetAsync(StopFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new StopFleetRequestMarshaller();
             var unmarshaller = StopFleetResponseUnmarshaller.Instance;
@@ -1435,7 +1435,7 @@ namespace Amazon.AppStream
         /// The specified resource was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StopImageBuilder">REST API Reference for StopImageBuilder Operation</seealso>
-        public StopImageBuilderResponse StopImageBuilder(StopImageBuilderRequest request)
+        public virtual StopImageBuilderResponse StopImageBuilder(StopImageBuilderRequest request)
         {
             var marshaller = new StopImageBuilderRequestMarshaller();
             var unmarshaller = StopImageBuilderResponseUnmarshaller.Instance;
@@ -1453,7 +1453,7 @@ namespace Amazon.AppStream
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StopImageBuilder">REST API Reference for StopImageBuilder Operation</seealso>
-        public Task<StopImageBuilderResponse> StopImageBuilderAsync(StopImageBuilderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<StopImageBuilderResponse> StopImageBuilderAsync(StopImageBuilderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new StopImageBuilderRequestMarshaller();
             var unmarshaller = StopImageBuilderResponseUnmarshaller.Instance;
@@ -1483,7 +1483,7 @@ namespace Amazon.AppStream
         /// The specified resource was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateDirectoryConfig">REST API Reference for UpdateDirectoryConfig Operation</seealso>
-        public UpdateDirectoryConfigResponse UpdateDirectoryConfig(UpdateDirectoryConfigRequest request)
+        public virtual UpdateDirectoryConfigResponse UpdateDirectoryConfig(UpdateDirectoryConfigRequest request)
         {
             var marshaller = new UpdateDirectoryConfigRequestMarshaller();
             var unmarshaller = UpdateDirectoryConfigResponseUnmarshaller.Instance;
@@ -1501,7 +1501,7 @@ namespace Amazon.AppStream
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateDirectoryConfig">REST API Reference for UpdateDirectoryConfig Operation</seealso>
-        public Task<UpdateDirectoryConfigResponse> UpdateDirectoryConfigAsync(UpdateDirectoryConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateDirectoryConfigResponse> UpdateDirectoryConfigAsync(UpdateDirectoryConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateDirectoryConfigRequestMarshaller();
             var unmarshaller = UpdateDirectoryConfigResponseUnmarshaller.Instance;
@@ -1557,7 +1557,7 @@ namespace Amazon.AppStream
         /// The specified resource was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateFleet">REST API Reference for UpdateFleet Operation</seealso>
-        public UpdateFleetResponse UpdateFleet(UpdateFleetRequest request)
+        public virtual UpdateFleetResponse UpdateFleet(UpdateFleetRequest request)
         {
             var marshaller = new UpdateFleetRequestMarshaller();
             var unmarshaller = UpdateFleetResponseUnmarshaller.Instance;
@@ -1575,7 +1575,7 @@ namespace Amazon.AppStream
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateFleet">REST API Reference for UpdateFleet Operation</seealso>
-        public Task<UpdateFleetResponse> UpdateFleetAsync(UpdateFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateFleetResponse> UpdateFleetAsync(UpdateFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateFleetRequestMarshaller();
             var unmarshaller = UpdateFleetResponseUnmarshaller.Instance;
@@ -1614,7 +1614,7 @@ namespace Amazon.AppStream
         /// The specified resource was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateStack">REST API Reference for UpdateStack Operation</seealso>
-        public UpdateStackResponse UpdateStack(UpdateStackRequest request)
+        public virtual UpdateStackResponse UpdateStack(UpdateStackRequest request)
         {
             var marshaller = new UpdateStackRequestMarshaller();
             var unmarshaller = UpdateStackResponseUnmarshaller.Instance;
@@ -1632,7 +1632,7 @@ namespace Amazon.AppStream
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateStack">REST API Reference for UpdateStack Operation</seealso>
-        public Task<UpdateStackResponse> UpdateStackAsync(UpdateStackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateStackResponse> UpdateStackAsync(UpdateStackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateStackRequestMarshaller();
             var unmarshaller = UpdateStackResponseUnmarshaller.Instance;

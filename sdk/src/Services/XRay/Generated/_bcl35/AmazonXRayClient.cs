@@ -240,7 +240,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
-        public BatchGetTracesResponse BatchGetTraces(BatchGetTracesRequest request)
+        public virtual BatchGetTracesResponse BatchGetTraces(BatchGetTracesRequest request)
         {
             var marshaller = new BatchGetTracesRequestMarshaller();
             var unmarshaller = BatchGetTracesResponseUnmarshaller.Instance;
@@ -259,7 +259,7 @@ namespace Amazon.XRay
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetTraces
         ///         operation.</returns>
-        public IAsyncResult BeginBatchGetTraces(BatchGetTracesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginBatchGetTraces(BatchGetTracesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new BatchGetTracesRequestMarshaller();
             var unmarshaller = BatchGetTracesResponseUnmarshaller.Instance;
@@ -275,7 +275,7 @@ namespace Amazon.XRay
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetTraces.</param>
         /// 
         /// <returns>Returns a  BatchGetTracesResult from XRay.</returns>
-        public  BatchGetTracesResponse EndBatchGetTraces(IAsyncResult asyncResult)
+        public virtual BatchGetTracesResponse EndBatchGetTraces(IAsyncResult asyncResult)
         {
             return EndInvoke<BatchGetTracesResponse>(asyncResult);
         }
@@ -300,7 +300,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
-        public GetServiceGraphResponse GetServiceGraph(GetServiceGraphRequest request)
+        public virtual GetServiceGraphResponse GetServiceGraph(GetServiceGraphRequest request)
         {
             var marshaller = new GetServiceGraphRequestMarshaller();
             var unmarshaller = GetServiceGraphResponseUnmarshaller.Instance;
@@ -319,7 +319,7 @@ namespace Amazon.XRay
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetServiceGraph
         ///         operation.</returns>
-        public IAsyncResult BeginGetServiceGraph(GetServiceGraphRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetServiceGraph(GetServiceGraphRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetServiceGraphRequestMarshaller();
             var unmarshaller = GetServiceGraphResponseUnmarshaller.Instance;
@@ -335,7 +335,7 @@ namespace Amazon.XRay
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetServiceGraph.</param>
         /// 
         /// <returns>Returns a  GetServiceGraphResult from XRay.</returns>
-        public  GetServiceGraphResponse EndGetServiceGraph(IAsyncResult asyncResult)
+        public virtual GetServiceGraphResponse EndGetServiceGraph(IAsyncResult asyncResult)
         {
             return EndInvoke<GetServiceGraphResponse>(asyncResult);
         }
@@ -356,7 +356,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
-        public GetTraceGraphResponse GetTraceGraph(GetTraceGraphRequest request)
+        public virtual GetTraceGraphResponse GetTraceGraph(GetTraceGraphRequest request)
         {
             var marshaller = new GetTraceGraphRequestMarshaller();
             var unmarshaller = GetTraceGraphResponseUnmarshaller.Instance;
@@ -375,7 +375,7 @@ namespace Amazon.XRay
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTraceGraph
         ///         operation.</returns>
-        public IAsyncResult BeginGetTraceGraph(GetTraceGraphRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetTraceGraph(GetTraceGraphRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetTraceGraphRequestMarshaller();
             var unmarshaller = GetTraceGraphResponseUnmarshaller.Instance;
@@ -391,7 +391,7 @@ namespace Amazon.XRay
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTraceGraph.</param>
         /// 
         /// <returns>Returns a  GetTraceGraphResult from XRay.</returns>
-        public  GetTraceGraphResponse EndGetTraceGraph(IAsyncResult asyncResult)
+        public virtual GetTraceGraphResponse EndGetTraceGraph(IAsyncResult asyncResult)
         {
             return EndInvoke<GetTraceGraphResponse>(asyncResult);
         }
@@ -439,7 +439,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
-        public GetTraceSummariesResponse GetTraceSummaries(GetTraceSummariesRequest request)
+        public virtual GetTraceSummariesResponse GetTraceSummaries(GetTraceSummariesRequest request)
         {
             var marshaller = new GetTraceSummariesRequestMarshaller();
             var unmarshaller = GetTraceSummariesResponseUnmarshaller.Instance;
@@ -458,7 +458,7 @@ namespace Amazon.XRay
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTraceSummaries
         ///         operation.</returns>
-        public IAsyncResult BeginGetTraceSummaries(GetTraceSummariesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetTraceSummaries(GetTraceSummariesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetTraceSummariesRequestMarshaller();
             var unmarshaller = GetTraceSummariesResponseUnmarshaller.Instance;
@@ -474,7 +474,7 @@ namespace Amazon.XRay
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTraceSummaries.</param>
         /// 
         /// <returns>Returns a  GetTraceSummariesResult from XRay.</returns>
-        public  GetTraceSummariesResponse EndGetTraceSummaries(IAsyncResult asyncResult)
+        public virtual GetTraceSummariesResponse EndGetTraceSummaries(IAsyncResult asyncResult)
         {
             return EndInvoke<GetTraceSummariesResponse>(asyncResult);
         }
@@ -495,7 +495,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
-        public PutTelemetryRecordsResponse PutTelemetryRecords(PutTelemetryRecordsRequest request)
+        public virtual PutTelemetryRecordsResponse PutTelemetryRecords(PutTelemetryRecordsRequest request)
         {
             var marshaller = new PutTelemetryRecordsRequestMarshaller();
             var unmarshaller = PutTelemetryRecordsResponseUnmarshaller.Instance;
@@ -514,7 +514,7 @@ namespace Amazon.XRay
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutTelemetryRecords
         ///         operation.</returns>
-        public IAsyncResult BeginPutTelemetryRecords(PutTelemetryRecordsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPutTelemetryRecords(PutTelemetryRecordsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutTelemetryRecordsRequestMarshaller();
             var unmarshaller = PutTelemetryRecordsResponseUnmarshaller.Instance;
@@ -530,7 +530,7 @@ namespace Amazon.XRay
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutTelemetryRecords.</param>
         /// 
         /// <returns>Returns a  PutTelemetryRecordsResult from XRay.</returns>
-        public  PutTelemetryRecordsResponse EndPutTelemetryRecords(IAsyncResult asyncResult)
+        public virtual PutTelemetryRecordsResponse EndPutTelemetryRecords(IAsyncResult asyncResult)
         {
             return EndInvoke<PutTelemetryRecordsResponse>(asyncResult);
         }
@@ -617,7 +617,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
-        public PutTraceSegmentsResponse PutTraceSegments(PutTraceSegmentsRequest request)
+        public virtual PutTraceSegmentsResponse PutTraceSegments(PutTraceSegmentsRequest request)
         {
             var marshaller = new PutTraceSegmentsRequestMarshaller();
             var unmarshaller = PutTraceSegmentsResponseUnmarshaller.Instance;
@@ -636,7 +636,7 @@ namespace Amazon.XRay
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutTraceSegments
         ///         operation.</returns>
-        public IAsyncResult BeginPutTraceSegments(PutTraceSegmentsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPutTraceSegments(PutTraceSegmentsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutTraceSegmentsRequestMarshaller();
             var unmarshaller = PutTraceSegmentsResponseUnmarshaller.Instance;
@@ -652,7 +652,7 @@ namespace Amazon.XRay
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutTraceSegments.</param>
         /// 
         /// <returns>Returns a  PutTraceSegmentsResult from XRay.</returns>
-        public  PutTraceSegmentsResponse EndPutTraceSegments(IAsyncResult asyncResult)
+        public virtual PutTraceSegmentsResponse EndPutTraceSegments(IAsyncResult asyncResult)
         {
             return EndInvoke<PutTraceSegmentsResponse>(asyncResult);
         }

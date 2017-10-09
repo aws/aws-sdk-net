@@ -243,7 +243,7 @@ namespace Amazon.Elasticsearch
         
         #region  AddTags
 
-        internal AddTagsResponse AddTags(AddTagsRequest request)
+        internal virtual AddTagsResponse AddTags(AddTagsRequest request)
         {
             var marshaller = new AddTagsRequestMarshaller();
             var unmarshaller = AddTagsResponseUnmarshaller.Instance;
@@ -261,7 +261,7 @@ namespace Amazon.Elasticsearch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<AddTagsResponse> AddTagsAsync(AddTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<AddTagsResponse> AddTagsAsync(AddTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AddTagsRequestMarshaller();
             var unmarshaller = AddTagsResponseUnmarshaller.Instance;
@@ -274,7 +274,7 @@ namespace Amazon.Elasticsearch
         
         #region  CreateElasticsearchDomain
 
-        internal CreateElasticsearchDomainResponse CreateElasticsearchDomain(CreateElasticsearchDomainRequest request)
+        internal virtual CreateElasticsearchDomainResponse CreateElasticsearchDomain(CreateElasticsearchDomainRequest request)
         {
             var marshaller = new CreateElasticsearchDomainRequestMarshaller();
             var unmarshaller = CreateElasticsearchDomainResponseUnmarshaller.Instance;
@@ -292,7 +292,7 @@ namespace Amazon.Elasticsearch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CreateElasticsearchDomainResponse> CreateElasticsearchDomainAsync(CreateElasticsearchDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateElasticsearchDomainResponse> CreateElasticsearchDomainAsync(CreateElasticsearchDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateElasticsearchDomainRequestMarshaller();
             var unmarshaller = CreateElasticsearchDomainResponseUnmarshaller.Instance;
@@ -305,7 +305,7 @@ namespace Amazon.Elasticsearch
         
         #region  DeleteElasticsearchDomain
 
-        internal DeleteElasticsearchDomainResponse DeleteElasticsearchDomain(DeleteElasticsearchDomainRequest request)
+        internal virtual DeleteElasticsearchDomainResponse DeleteElasticsearchDomain(DeleteElasticsearchDomainRequest request)
         {
             var marshaller = new DeleteElasticsearchDomainRequestMarshaller();
             var unmarshaller = DeleteElasticsearchDomainResponseUnmarshaller.Instance;
@@ -323,7 +323,7 @@ namespace Amazon.Elasticsearch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteElasticsearchDomainResponse> DeleteElasticsearchDomainAsync(DeleteElasticsearchDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteElasticsearchDomainResponse> DeleteElasticsearchDomainAsync(DeleteElasticsearchDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteElasticsearchDomainRequestMarshaller();
             var unmarshaller = DeleteElasticsearchDomainResponseUnmarshaller.Instance;
@@ -336,7 +336,7 @@ namespace Amazon.Elasticsearch
         
         #region  DescribeElasticsearchDomain
 
-        internal DescribeElasticsearchDomainResponse DescribeElasticsearchDomain(DescribeElasticsearchDomainRequest request)
+        internal virtual DescribeElasticsearchDomainResponse DescribeElasticsearchDomain(DescribeElasticsearchDomainRequest request)
         {
             var marshaller = new DescribeElasticsearchDomainRequestMarshaller();
             var unmarshaller = DescribeElasticsearchDomainResponseUnmarshaller.Instance;
@@ -354,7 +354,7 @@ namespace Amazon.Elasticsearch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DescribeElasticsearchDomainResponse> DescribeElasticsearchDomainAsync(DescribeElasticsearchDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeElasticsearchDomainResponse> DescribeElasticsearchDomainAsync(DescribeElasticsearchDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeElasticsearchDomainRequestMarshaller();
             var unmarshaller = DescribeElasticsearchDomainResponseUnmarshaller.Instance;
@@ -367,7 +367,7 @@ namespace Amazon.Elasticsearch
         
         #region  DescribeElasticsearchDomainConfig
 
-        internal DescribeElasticsearchDomainConfigResponse DescribeElasticsearchDomainConfig(DescribeElasticsearchDomainConfigRequest request)
+        internal virtual DescribeElasticsearchDomainConfigResponse DescribeElasticsearchDomainConfig(DescribeElasticsearchDomainConfigRequest request)
         {
             var marshaller = new DescribeElasticsearchDomainConfigRequestMarshaller();
             var unmarshaller = DescribeElasticsearchDomainConfigResponseUnmarshaller.Instance;
@@ -385,7 +385,7 @@ namespace Amazon.Elasticsearch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DescribeElasticsearchDomainConfigResponse> DescribeElasticsearchDomainConfigAsync(DescribeElasticsearchDomainConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeElasticsearchDomainConfigResponse> DescribeElasticsearchDomainConfigAsync(DescribeElasticsearchDomainConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeElasticsearchDomainConfigRequestMarshaller();
             var unmarshaller = DescribeElasticsearchDomainConfigResponseUnmarshaller.Instance;
@@ -398,7 +398,7 @@ namespace Amazon.Elasticsearch
         
         #region  DescribeElasticsearchDomains
 
-        internal DescribeElasticsearchDomainsResponse DescribeElasticsearchDomains(DescribeElasticsearchDomainsRequest request)
+        internal virtual DescribeElasticsearchDomainsResponse DescribeElasticsearchDomains(DescribeElasticsearchDomainsRequest request)
         {
             var marshaller = new DescribeElasticsearchDomainsRequestMarshaller();
             var unmarshaller = DescribeElasticsearchDomainsResponseUnmarshaller.Instance;
@@ -416,7 +416,7 @@ namespace Amazon.Elasticsearch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DescribeElasticsearchDomainsResponse> DescribeElasticsearchDomainsAsync(DescribeElasticsearchDomainsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeElasticsearchDomainsResponse> DescribeElasticsearchDomainsAsync(DescribeElasticsearchDomainsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeElasticsearchDomainsRequestMarshaller();
             var unmarshaller = DescribeElasticsearchDomainsResponseUnmarshaller.Instance;
@@ -429,7 +429,7 @@ namespace Amazon.Elasticsearch
         
         #region  DescribeElasticsearchInstanceTypeLimits
 
-        internal DescribeElasticsearchInstanceTypeLimitsResponse DescribeElasticsearchInstanceTypeLimits(DescribeElasticsearchInstanceTypeLimitsRequest request)
+        internal virtual DescribeElasticsearchInstanceTypeLimitsResponse DescribeElasticsearchInstanceTypeLimits(DescribeElasticsearchInstanceTypeLimitsRequest request)
         {
             var marshaller = new DescribeElasticsearchInstanceTypeLimitsRequestMarshaller();
             var unmarshaller = DescribeElasticsearchInstanceTypeLimitsResponseUnmarshaller.Instance;
@@ -447,7 +447,7 @@ namespace Amazon.Elasticsearch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DescribeElasticsearchInstanceTypeLimitsResponse> DescribeElasticsearchInstanceTypeLimitsAsync(DescribeElasticsearchInstanceTypeLimitsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeElasticsearchInstanceTypeLimitsResponse> DescribeElasticsearchInstanceTypeLimitsAsync(DescribeElasticsearchInstanceTypeLimitsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeElasticsearchInstanceTypeLimitsRequestMarshaller();
             var unmarshaller = DescribeElasticsearchInstanceTypeLimitsResponseUnmarshaller.Instance;
@@ -460,7 +460,7 @@ namespace Amazon.Elasticsearch
         
         #region  ListDomainNames
 
-        internal ListDomainNamesResponse ListDomainNames(ListDomainNamesRequest request)
+        internal virtual ListDomainNamesResponse ListDomainNames(ListDomainNamesRequest request)
         {
             var marshaller = new ListDomainNamesRequestMarshaller();
             var unmarshaller = ListDomainNamesResponseUnmarshaller.Instance;
@@ -478,7 +478,7 @@ namespace Amazon.Elasticsearch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<ListDomainNamesResponse> ListDomainNamesAsync(ListDomainNamesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListDomainNamesResponse> ListDomainNamesAsync(ListDomainNamesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListDomainNamesRequestMarshaller();
             var unmarshaller = ListDomainNamesResponseUnmarshaller.Instance;
@@ -491,7 +491,7 @@ namespace Amazon.Elasticsearch
         
         #region  ListElasticsearchInstanceTypes
 
-        internal ListElasticsearchInstanceTypesResponse ListElasticsearchInstanceTypes(ListElasticsearchInstanceTypesRequest request)
+        internal virtual ListElasticsearchInstanceTypesResponse ListElasticsearchInstanceTypes(ListElasticsearchInstanceTypesRequest request)
         {
             var marshaller = new ListElasticsearchInstanceTypesRequestMarshaller();
             var unmarshaller = ListElasticsearchInstanceTypesResponseUnmarshaller.Instance;
@@ -509,7 +509,7 @@ namespace Amazon.Elasticsearch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<ListElasticsearchInstanceTypesResponse> ListElasticsearchInstanceTypesAsync(ListElasticsearchInstanceTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListElasticsearchInstanceTypesResponse> ListElasticsearchInstanceTypesAsync(ListElasticsearchInstanceTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListElasticsearchInstanceTypesRequestMarshaller();
             var unmarshaller = ListElasticsearchInstanceTypesResponseUnmarshaller.Instance;
@@ -522,7 +522,7 @@ namespace Amazon.Elasticsearch
         
         #region  ListElasticsearchVersions
 
-        internal ListElasticsearchVersionsResponse ListElasticsearchVersions(ListElasticsearchVersionsRequest request)
+        internal virtual ListElasticsearchVersionsResponse ListElasticsearchVersions(ListElasticsearchVersionsRequest request)
         {
             var marshaller = new ListElasticsearchVersionsRequestMarshaller();
             var unmarshaller = ListElasticsearchVersionsResponseUnmarshaller.Instance;
@@ -540,7 +540,7 @@ namespace Amazon.Elasticsearch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<ListElasticsearchVersionsResponse> ListElasticsearchVersionsAsync(ListElasticsearchVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListElasticsearchVersionsResponse> ListElasticsearchVersionsAsync(ListElasticsearchVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListElasticsearchVersionsRequestMarshaller();
             var unmarshaller = ListElasticsearchVersionsResponseUnmarshaller.Instance;
@@ -553,7 +553,7 @@ namespace Amazon.Elasticsearch
         
         #region  ListTags
 
-        internal ListTagsResponse ListTags(ListTagsRequest request)
+        internal virtual ListTagsResponse ListTags(ListTagsRequest request)
         {
             var marshaller = new ListTagsRequestMarshaller();
             var unmarshaller = ListTagsResponseUnmarshaller.Instance;
@@ -571,7 +571,7 @@ namespace Amazon.Elasticsearch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<ListTagsResponse> ListTagsAsync(ListTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListTagsResponse> ListTagsAsync(ListTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListTagsRequestMarshaller();
             var unmarshaller = ListTagsResponseUnmarshaller.Instance;
@@ -584,7 +584,7 @@ namespace Amazon.Elasticsearch
         
         #region  RemoveTags
 
-        internal RemoveTagsResponse RemoveTags(RemoveTagsRequest request)
+        internal virtual RemoveTagsResponse RemoveTags(RemoveTagsRequest request)
         {
             var marshaller = new RemoveTagsRequestMarshaller();
             var unmarshaller = RemoveTagsResponseUnmarshaller.Instance;
@@ -602,7 +602,7 @@ namespace Amazon.Elasticsearch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<RemoveTagsResponse> RemoveTagsAsync(RemoveTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<RemoveTagsResponse> RemoveTagsAsync(RemoveTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RemoveTagsRequestMarshaller();
             var unmarshaller = RemoveTagsResponseUnmarshaller.Instance;
@@ -615,7 +615,7 @@ namespace Amazon.Elasticsearch
         
         #region  UpdateElasticsearchDomainConfig
 
-        internal UpdateElasticsearchDomainConfigResponse UpdateElasticsearchDomainConfig(UpdateElasticsearchDomainConfigRequest request)
+        internal virtual UpdateElasticsearchDomainConfigResponse UpdateElasticsearchDomainConfig(UpdateElasticsearchDomainConfigRequest request)
         {
             var marshaller = new UpdateElasticsearchDomainConfigRequestMarshaller();
             var unmarshaller = UpdateElasticsearchDomainConfigResponseUnmarshaller.Instance;
@@ -633,7 +633,7 @@ namespace Amazon.Elasticsearch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateElasticsearchDomainConfigResponse> UpdateElasticsearchDomainConfigAsync(UpdateElasticsearchDomainConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateElasticsearchDomainConfigResponse> UpdateElasticsearchDomainConfigAsync(UpdateElasticsearchDomainConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateElasticsearchDomainConfigRequestMarshaller();
             var unmarshaller = UpdateElasticsearchDomainConfigResponseUnmarshaller.Instance;

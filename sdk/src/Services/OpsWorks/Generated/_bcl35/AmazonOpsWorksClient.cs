@@ -395,7 +395,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/AssignInstance">REST API Reference for AssignInstance Operation</seealso>
-        public AssignInstanceResponse AssignInstance(AssignInstanceRequest request)
+        public virtual AssignInstanceResponse AssignInstance(AssignInstanceRequest request)
         {
             var marshaller = new AssignInstanceRequestMarshaller();
             var unmarshaller = AssignInstanceResponseUnmarshaller.Instance;
@@ -415,7 +415,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssignInstance
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/AssignInstance">REST API Reference for AssignInstance Operation</seealso>
-        public IAsyncResult BeginAssignInstance(AssignInstanceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginAssignInstance(AssignInstanceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AssignInstanceRequestMarshaller();
             var unmarshaller = AssignInstanceResponseUnmarshaller.Instance;
@@ -432,7 +432,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  AssignInstanceResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/AssignInstance">REST API Reference for AssignInstance Operation</seealso>
-        public  AssignInstanceResponse EndAssignInstance(IAsyncResult asyncResult)
+        public virtual AssignInstanceResponse EndAssignInstance(IAsyncResult asyncResult)
         {
             return EndInvoke<AssignInstanceResponse>(asyncResult);
         }
@@ -466,7 +466,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/AssignVolume">REST API Reference for AssignVolume Operation</seealso>
-        public AssignVolumeResponse AssignVolume(AssignVolumeRequest request)
+        public virtual AssignVolumeResponse AssignVolume(AssignVolumeRequest request)
         {
             var marshaller = new AssignVolumeRequestMarshaller();
             var unmarshaller = AssignVolumeResponseUnmarshaller.Instance;
@@ -486,7 +486,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssignVolume
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/AssignVolume">REST API Reference for AssignVolume Operation</seealso>
-        public IAsyncResult BeginAssignVolume(AssignVolumeRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginAssignVolume(AssignVolumeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AssignVolumeRequestMarshaller();
             var unmarshaller = AssignVolumeResponseUnmarshaller.Instance;
@@ -503,7 +503,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  AssignVolumeResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/AssignVolume">REST API Reference for AssignVolume Operation</seealso>
-        public  AssignVolumeResponse EndAssignVolume(IAsyncResult asyncResult)
+        public virtual AssignVolumeResponse EndAssignVolume(IAsyncResult asyncResult)
         {
             return EndInvoke<AssignVolumeResponse>(asyncResult);
         }
@@ -536,7 +536,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/AssociateElasticIp">REST API Reference for AssociateElasticIp Operation</seealso>
-        public AssociateElasticIpResponse AssociateElasticIp(AssociateElasticIpRequest request)
+        public virtual AssociateElasticIpResponse AssociateElasticIp(AssociateElasticIpRequest request)
         {
             var marshaller = new AssociateElasticIpRequestMarshaller();
             var unmarshaller = AssociateElasticIpResponseUnmarshaller.Instance;
@@ -556,7 +556,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateElasticIp
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/AssociateElasticIp">REST API Reference for AssociateElasticIp Operation</seealso>
-        public IAsyncResult BeginAssociateElasticIp(AssociateElasticIpRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginAssociateElasticIp(AssociateElasticIpRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AssociateElasticIpRequestMarshaller();
             var unmarshaller = AssociateElasticIpResponseUnmarshaller.Instance;
@@ -573,7 +573,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  AssociateElasticIpResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/AssociateElasticIp">REST API Reference for AssociateElasticIp Operation</seealso>
-        public  AssociateElasticIpResponse EndAssociateElasticIp(IAsyncResult asyncResult)
+        public virtual AssociateElasticIpResponse EndAssociateElasticIp(IAsyncResult asyncResult)
         {
             return EndInvoke<AssociateElasticIpResponse>(asyncResult);
         }
@@ -612,7 +612,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/AttachElasticLoadBalancer">REST API Reference for AttachElasticLoadBalancer Operation</seealso>
-        public AttachElasticLoadBalancerResponse AttachElasticLoadBalancer(AttachElasticLoadBalancerRequest request)
+        public virtual AttachElasticLoadBalancerResponse AttachElasticLoadBalancer(AttachElasticLoadBalancerRequest request)
         {
             var marshaller = new AttachElasticLoadBalancerRequestMarshaller();
             var unmarshaller = AttachElasticLoadBalancerResponseUnmarshaller.Instance;
@@ -632,7 +632,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAttachElasticLoadBalancer
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/AttachElasticLoadBalancer">REST API Reference for AttachElasticLoadBalancer Operation</seealso>
-        public IAsyncResult BeginAttachElasticLoadBalancer(AttachElasticLoadBalancerRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginAttachElasticLoadBalancer(AttachElasticLoadBalancerRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AttachElasticLoadBalancerRequestMarshaller();
             var unmarshaller = AttachElasticLoadBalancerResponseUnmarshaller.Instance;
@@ -649,7 +649,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  AttachElasticLoadBalancerResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/AttachElasticLoadBalancer">REST API Reference for AttachElasticLoadBalancer Operation</seealso>
-        public  AttachElasticLoadBalancerResponse EndAttachElasticLoadBalancer(IAsyncResult asyncResult)
+        public virtual AttachElasticLoadBalancerResponse EndAttachElasticLoadBalancer(IAsyncResult asyncResult)
         {
             return EndInvoke<AttachElasticLoadBalancerResponse>(asyncResult);
         }
@@ -680,7 +680,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CloneStack">REST API Reference for CloneStack Operation</seealso>
-        public CloneStackResponse CloneStack(CloneStackRequest request)
+        public virtual CloneStackResponse CloneStack(CloneStackRequest request)
         {
             var marshaller = new CloneStackRequestMarshaller();
             var unmarshaller = CloneStackResponseUnmarshaller.Instance;
@@ -700,7 +700,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCloneStack
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CloneStack">REST API Reference for CloneStack Operation</seealso>
-        public IAsyncResult BeginCloneStack(CloneStackRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCloneStack(CloneStackRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CloneStackRequestMarshaller();
             var unmarshaller = CloneStackResponseUnmarshaller.Instance;
@@ -717,7 +717,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  CloneStackResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CloneStack">REST API Reference for CloneStack Operation</seealso>
-        public  CloneStackResponse EndCloneStack(IAsyncResult asyncResult)
+        public virtual CloneStackResponse EndCloneStack(IAsyncResult asyncResult)
         {
             return EndInvoke<CloneStackResponse>(asyncResult);
         }
@@ -748,7 +748,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateApp">REST API Reference for CreateApp Operation</seealso>
-        public CreateAppResponse CreateApp(CreateAppRequest request)
+        public virtual CreateAppResponse CreateApp(CreateAppRequest request)
         {
             var marshaller = new CreateAppRequestMarshaller();
             var unmarshaller = CreateAppResponseUnmarshaller.Instance;
@@ -768,7 +768,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateApp
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateApp">REST API Reference for CreateApp Operation</seealso>
-        public IAsyncResult BeginCreateApp(CreateAppRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateApp(CreateAppRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateAppRequestMarshaller();
             var unmarshaller = CreateAppResponseUnmarshaller.Instance;
@@ -785,7 +785,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  CreateAppResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateApp">REST API Reference for CreateApp Operation</seealso>
-        public  CreateAppResponse EndCreateApp(IAsyncResult asyncResult)
+        public virtual CreateAppResponse EndCreateApp(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateAppResponse>(asyncResult);
         }
@@ -817,7 +817,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateDeployment">REST API Reference for CreateDeployment Operation</seealso>
-        public CreateDeploymentResponse CreateDeployment(CreateDeploymentRequest request)
+        public virtual CreateDeploymentResponse CreateDeployment(CreateDeploymentRequest request)
         {
             var marshaller = new CreateDeploymentRequestMarshaller();
             var unmarshaller = CreateDeploymentResponseUnmarshaller.Instance;
@@ -837,7 +837,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDeployment
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateDeployment">REST API Reference for CreateDeployment Operation</seealso>
-        public IAsyncResult BeginCreateDeployment(CreateDeploymentRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateDeployment(CreateDeploymentRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateDeploymentRequestMarshaller();
             var unmarshaller = CreateDeploymentResponseUnmarshaller.Instance;
@@ -854,7 +854,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  CreateDeploymentResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateDeployment">REST API Reference for CreateDeployment Operation</seealso>
-        public  CreateDeploymentResponse EndCreateDeployment(IAsyncResult asyncResult)
+        public virtual CreateDeploymentResponse EndCreateDeployment(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateDeploymentResponse>(asyncResult);
         }
@@ -885,7 +885,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateInstance">REST API Reference for CreateInstance Operation</seealso>
-        public CreateInstanceResponse CreateInstance(CreateInstanceRequest request)
+        public virtual CreateInstanceResponse CreateInstance(CreateInstanceRequest request)
         {
             var marshaller = new CreateInstanceRequestMarshaller();
             var unmarshaller = CreateInstanceResponseUnmarshaller.Instance;
@@ -905,7 +905,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateInstance
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateInstance">REST API Reference for CreateInstance Operation</seealso>
-        public IAsyncResult BeginCreateInstance(CreateInstanceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateInstance(CreateInstanceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateInstanceRequestMarshaller();
             var unmarshaller = CreateInstanceResponseUnmarshaller.Instance;
@@ -922,7 +922,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  CreateInstanceResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateInstance">REST API Reference for CreateInstance Operation</seealso>
-        public  CreateInstanceResponse EndCreateInstance(IAsyncResult asyncResult)
+        public virtual CreateInstanceResponse EndCreateInstance(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateInstanceResponse>(asyncResult);
         }
@@ -961,7 +961,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateLayer">REST API Reference for CreateLayer Operation</seealso>
-        public CreateLayerResponse CreateLayer(CreateLayerRequest request)
+        public virtual CreateLayerResponse CreateLayer(CreateLayerRequest request)
         {
             var marshaller = new CreateLayerRequestMarshaller();
             var unmarshaller = CreateLayerResponseUnmarshaller.Instance;
@@ -981,7 +981,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateLayer
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateLayer">REST API Reference for CreateLayer Operation</seealso>
-        public IAsyncResult BeginCreateLayer(CreateLayerRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateLayer(CreateLayerRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateLayerRequestMarshaller();
             var unmarshaller = CreateLayerResponseUnmarshaller.Instance;
@@ -998,7 +998,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  CreateLayerResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateLayer">REST API Reference for CreateLayer Operation</seealso>
-        public  CreateLayerResponse EndCreateLayer(IAsyncResult asyncResult)
+        public virtual CreateLayerResponse EndCreateLayer(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateLayerResponse>(asyncResult);
         }
@@ -1026,7 +1026,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateStack">REST API Reference for CreateStack Operation</seealso>
-        public CreateStackResponse CreateStack(CreateStackRequest request)
+        public virtual CreateStackResponse CreateStack(CreateStackRequest request)
         {
             var marshaller = new CreateStackRequestMarshaller();
             var unmarshaller = CreateStackResponseUnmarshaller.Instance;
@@ -1046,7 +1046,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateStack
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateStack">REST API Reference for CreateStack Operation</seealso>
-        public IAsyncResult BeginCreateStack(CreateStackRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateStack(CreateStackRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateStackRequestMarshaller();
             var unmarshaller = CreateStackResponseUnmarshaller.Instance;
@@ -1063,7 +1063,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  CreateStackResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateStack">REST API Reference for CreateStack Operation</seealso>
-        public  CreateStackResponse EndCreateStack(IAsyncResult asyncResult)
+        public virtual CreateStackResponse EndCreateStack(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateStackResponse>(asyncResult);
         }
@@ -1090,7 +1090,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateUserProfile">REST API Reference for CreateUserProfile Operation</seealso>
-        public CreateUserProfileResponse CreateUserProfile(CreateUserProfileRequest request)
+        public virtual CreateUserProfileResponse CreateUserProfile(CreateUserProfileRequest request)
         {
             var marshaller = new CreateUserProfileRequestMarshaller();
             var unmarshaller = CreateUserProfileResponseUnmarshaller.Instance;
@@ -1110,7 +1110,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateUserProfile
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateUserProfile">REST API Reference for CreateUserProfile Operation</seealso>
-        public IAsyncResult BeginCreateUserProfile(CreateUserProfileRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateUserProfile(CreateUserProfileRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateUserProfileRequestMarshaller();
             var unmarshaller = CreateUserProfileResponseUnmarshaller.Instance;
@@ -1127,7 +1127,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  CreateUserProfileResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateUserProfile">REST API Reference for CreateUserProfile Operation</seealso>
-        public  CreateUserProfileResponse EndCreateUserProfile(IAsyncResult asyncResult)
+        public virtual CreateUserProfileResponse EndCreateUserProfile(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateUserProfileResponse>(asyncResult);
         }
@@ -1157,7 +1157,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteApp">REST API Reference for DeleteApp Operation</seealso>
-        public DeleteAppResponse DeleteApp(DeleteAppRequest request)
+        public virtual DeleteAppResponse DeleteApp(DeleteAppRequest request)
         {
             var marshaller = new DeleteAppRequestMarshaller();
             var unmarshaller = DeleteAppResponseUnmarshaller.Instance;
@@ -1177,7 +1177,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteApp
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteApp">REST API Reference for DeleteApp Operation</seealso>
-        public IAsyncResult BeginDeleteApp(DeleteAppRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteApp(DeleteAppRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteAppRequestMarshaller();
             var unmarshaller = DeleteAppResponseUnmarshaller.Instance;
@@ -1194,7 +1194,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  DeleteAppResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteApp">REST API Reference for DeleteApp Operation</seealso>
-        public  DeleteAppResponse EndDeleteApp(IAsyncResult asyncResult)
+        public virtual DeleteAppResponse EndDeleteApp(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteAppResponse>(asyncResult);
         }
@@ -1230,7 +1230,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteInstance">REST API Reference for DeleteInstance Operation</seealso>
-        public DeleteInstanceResponse DeleteInstance(DeleteInstanceRequest request)
+        public virtual DeleteInstanceResponse DeleteInstance(DeleteInstanceRequest request)
         {
             var marshaller = new DeleteInstanceRequestMarshaller();
             var unmarshaller = DeleteInstanceResponseUnmarshaller.Instance;
@@ -1250,7 +1250,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteInstance
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteInstance">REST API Reference for DeleteInstance Operation</seealso>
-        public IAsyncResult BeginDeleteInstance(DeleteInstanceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteInstance(DeleteInstanceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteInstanceRequestMarshaller();
             var unmarshaller = DeleteInstanceResponseUnmarshaller.Instance;
@@ -1267,7 +1267,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  DeleteInstanceResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteInstance">REST API Reference for DeleteInstance Operation</seealso>
-        public  DeleteInstanceResponse EndDeleteInstance(IAsyncResult asyncResult)
+        public virtual DeleteInstanceResponse EndDeleteInstance(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteInstanceResponse>(asyncResult);
         }
@@ -1299,7 +1299,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteLayer">REST API Reference for DeleteLayer Operation</seealso>
-        public DeleteLayerResponse DeleteLayer(DeleteLayerRequest request)
+        public virtual DeleteLayerResponse DeleteLayer(DeleteLayerRequest request)
         {
             var marshaller = new DeleteLayerRequestMarshaller();
             var unmarshaller = DeleteLayerResponseUnmarshaller.Instance;
@@ -1319,7 +1319,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteLayer
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteLayer">REST API Reference for DeleteLayer Operation</seealso>
-        public IAsyncResult BeginDeleteLayer(DeleteLayerRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteLayer(DeleteLayerRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteLayerRequestMarshaller();
             var unmarshaller = DeleteLayerResponseUnmarshaller.Instance;
@@ -1336,7 +1336,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  DeleteLayerResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteLayer">REST API Reference for DeleteLayer Operation</seealso>
-        public  DeleteLayerResponse EndDeleteLayer(IAsyncResult asyncResult)
+        public virtual DeleteLayerResponse EndDeleteLayer(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteLayerResponse>(asyncResult);
         }
@@ -1368,7 +1368,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteStack">REST API Reference for DeleteStack Operation</seealso>
-        public DeleteStackResponse DeleteStack(DeleteStackRequest request)
+        public virtual DeleteStackResponse DeleteStack(DeleteStackRequest request)
         {
             var marshaller = new DeleteStackRequestMarshaller();
             var unmarshaller = DeleteStackResponseUnmarshaller.Instance;
@@ -1388,7 +1388,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteStack
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteStack">REST API Reference for DeleteStack Operation</seealso>
-        public IAsyncResult BeginDeleteStack(DeleteStackRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteStack(DeleteStackRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteStackRequestMarshaller();
             var unmarshaller = DeleteStackResponseUnmarshaller.Instance;
@@ -1405,7 +1405,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  DeleteStackResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteStack">REST API Reference for DeleteStack Operation</seealso>
-        public  DeleteStackResponse EndDeleteStack(IAsyncResult asyncResult)
+        public virtual DeleteStackResponse EndDeleteStack(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteStackResponse>(asyncResult);
         }
@@ -1435,7 +1435,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteUserProfile">REST API Reference for DeleteUserProfile Operation</seealso>
-        public DeleteUserProfileResponse DeleteUserProfile(DeleteUserProfileRequest request)
+        public virtual DeleteUserProfileResponse DeleteUserProfile(DeleteUserProfileRequest request)
         {
             var marshaller = new DeleteUserProfileRequestMarshaller();
             var unmarshaller = DeleteUserProfileResponseUnmarshaller.Instance;
@@ -1455,7 +1455,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteUserProfile
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteUserProfile">REST API Reference for DeleteUserProfile Operation</seealso>
-        public IAsyncResult BeginDeleteUserProfile(DeleteUserProfileRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteUserProfile(DeleteUserProfileRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteUserProfileRequestMarshaller();
             var unmarshaller = DeleteUserProfileResponseUnmarshaller.Instance;
@@ -1472,7 +1472,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  DeleteUserProfileResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteUserProfile">REST API Reference for DeleteUserProfile Operation</seealso>
-        public  DeleteUserProfileResponse EndDeleteUserProfile(IAsyncResult asyncResult)
+        public virtual DeleteUserProfileResponse EndDeleteUserProfile(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteUserProfileResponse>(asyncResult);
         }
@@ -1503,7 +1503,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterEcsCluster">REST API Reference for DeregisterEcsCluster Operation</seealso>
-        public DeregisterEcsClusterResponse DeregisterEcsCluster(DeregisterEcsClusterRequest request)
+        public virtual DeregisterEcsClusterResponse DeregisterEcsCluster(DeregisterEcsClusterRequest request)
         {
             var marshaller = new DeregisterEcsClusterRequestMarshaller();
             var unmarshaller = DeregisterEcsClusterResponseUnmarshaller.Instance;
@@ -1523,7 +1523,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeregisterEcsCluster
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterEcsCluster">REST API Reference for DeregisterEcsCluster Operation</seealso>
-        public IAsyncResult BeginDeregisterEcsCluster(DeregisterEcsClusterRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeregisterEcsCluster(DeregisterEcsClusterRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeregisterEcsClusterRequestMarshaller();
             var unmarshaller = DeregisterEcsClusterResponseUnmarshaller.Instance;
@@ -1540,7 +1540,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  DeregisterEcsClusterResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterEcsCluster">REST API Reference for DeregisterEcsCluster Operation</seealso>
-        public  DeregisterEcsClusterResponse EndDeregisterEcsCluster(IAsyncResult asyncResult)
+        public virtual DeregisterEcsClusterResponse EndDeregisterEcsCluster(IAsyncResult asyncResult)
         {
             return EndInvoke<DeregisterEcsClusterResponse>(asyncResult);
         }
@@ -1572,7 +1572,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterElasticIp">REST API Reference for DeregisterElasticIp Operation</seealso>
-        public DeregisterElasticIpResponse DeregisterElasticIp(DeregisterElasticIpRequest request)
+        public virtual DeregisterElasticIpResponse DeregisterElasticIp(DeregisterElasticIpRequest request)
         {
             var marshaller = new DeregisterElasticIpRequestMarshaller();
             var unmarshaller = DeregisterElasticIpResponseUnmarshaller.Instance;
@@ -1592,7 +1592,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeregisterElasticIp
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterElasticIp">REST API Reference for DeregisterElasticIp Operation</seealso>
-        public IAsyncResult BeginDeregisterElasticIp(DeregisterElasticIpRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeregisterElasticIp(DeregisterElasticIpRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeregisterElasticIpRequestMarshaller();
             var unmarshaller = DeregisterElasticIpResponseUnmarshaller.Instance;
@@ -1609,7 +1609,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  DeregisterElasticIpResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterElasticIp">REST API Reference for DeregisterElasticIp Operation</seealso>
-        public  DeregisterElasticIpResponse EndDeregisterElasticIp(IAsyncResult asyncResult)
+        public virtual DeregisterElasticIpResponse EndDeregisterElasticIp(IAsyncResult asyncResult)
         {
             return EndInvoke<DeregisterElasticIpResponse>(asyncResult);
         }
@@ -1641,7 +1641,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterInstance">REST API Reference for DeregisterInstance Operation</seealso>
-        public DeregisterInstanceResponse DeregisterInstance(DeregisterInstanceRequest request)
+        public virtual DeregisterInstanceResponse DeregisterInstance(DeregisterInstanceRequest request)
         {
             var marshaller = new DeregisterInstanceRequestMarshaller();
             var unmarshaller = DeregisterInstanceResponseUnmarshaller.Instance;
@@ -1661,7 +1661,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeregisterInstance
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterInstance">REST API Reference for DeregisterInstance Operation</seealso>
-        public IAsyncResult BeginDeregisterInstance(DeregisterInstanceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeregisterInstance(DeregisterInstanceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeregisterInstanceRequestMarshaller();
             var unmarshaller = DeregisterInstanceResponseUnmarshaller.Instance;
@@ -1678,7 +1678,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  DeregisterInstanceResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterInstance">REST API Reference for DeregisterInstance Operation</seealso>
-        public  DeregisterInstanceResponse EndDeregisterInstance(IAsyncResult asyncResult)
+        public virtual DeregisterInstanceResponse EndDeregisterInstance(IAsyncResult asyncResult)
         {
             return EndInvoke<DeregisterInstanceResponse>(asyncResult);
         }
@@ -1708,7 +1708,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterRdsDbInstance">REST API Reference for DeregisterRdsDbInstance Operation</seealso>
-        public DeregisterRdsDbInstanceResponse DeregisterRdsDbInstance(DeregisterRdsDbInstanceRequest request)
+        public virtual DeregisterRdsDbInstanceResponse DeregisterRdsDbInstance(DeregisterRdsDbInstanceRequest request)
         {
             var marshaller = new DeregisterRdsDbInstanceRequestMarshaller();
             var unmarshaller = DeregisterRdsDbInstanceResponseUnmarshaller.Instance;
@@ -1728,7 +1728,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeregisterRdsDbInstance
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterRdsDbInstance">REST API Reference for DeregisterRdsDbInstance Operation</seealso>
-        public IAsyncResult BeginDeregisterRdsDbInstance(DeregisterRdsDbInstanceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeregisterRdsDbInstance(DeregisterRdsDbInstanceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeregisterRdsDbInstanceRequestMarshaller();
             var unmarshaller = DeregisterRdsDbInstanceResponseUnmarshaller.Instance;
@@ -1745,7 +1745,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  DeregisterRdsDbInstanceResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterRdsDbInstance">REST API Reference for DeregisterRdsDbInstance Operation</seealso>
-        public  DeregisterRdsDbInstanceResponse EndDeregisterRdsDbInstance(IAsyncResult asyncResult)
+        public virtual DeregisterRdsDbInstanceResponse EndDeregisterRdsDbInstance(IAsyncResult asyncResult)
         {
             return EndInvoke<DeregisterRdsDbInstanceResponse>(asyncResult);
         }
@@ -1777,7 +1777,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterVolume">REST API Reference for DeregisterVolume Operation</seealso>
-        public DeregisterVolumeResponse DeregisterVolume(DeregisterVolumeRequest request)
+        public virtual DeregisterVolumeResponse DeregisterVolume(DeregisterVolumeRequest request)
         {
             var marshaller = new DeregisterVolumeRequestMarshaller();
             var unmarshaller = DeregisterVolumeResponseUnmarshaller.Instance;
@@ -1797,7 +1797,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeregisterVolume
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterVolume">REST API Reference for DeregisterVolume Operation</seealso>
-        public IAsyncResult BeginDeregisterVolume(DeregisterVolumeRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeregisterVolume(DeregisterVolumeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeregisterVolumeRequestMarshaller();
             var unmarshaller = DeregisterVolumeResponseUnmarshaller.Instance;
@@ -1814,7 +1814,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  DeregisterVolumeResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterVolume">REST API Reference for DeregisterVolume Operation</seealso>
-        public  DeregisterVolumeResponse EndDeregisterVolume(IAsyncResult asyncResult)
+        public virtual DeregisterVolumeResponse EndDeregisterVolume(IAsyncResult asyncResult)
         {
             return EndInvoke<DeregisterVolumeResponse>(asyncResult);
         }
@@ -1838,7 +1838,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeAgentVersions">REST API Reference for DescribeAgentVersions Operation</seealso>
-        public DescribeAgentVersionsResponse DescribeAgentVersions(DescribeAgentVersionsRequest request)
+        public virtual DescribeAgentVersionsResponse DescribeAgentVersions(DescribeAgentVersionsRequest request)
         {
             var marshaller = new DescribeAgentVersionsRequestMarshaller();
             var unmarshaller = DescribeAgentVersionsResponseUnmarshaller.Instance;
@@ -1858,7 +1858,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAgentVersions
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeAgentVersions">REST API Reference for DescribeAgentVersions Operation</seealso>
-        public IAsyncResult BeginDescribeAgentVersions(DescribeAgentVersionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeAgentVersions(DescribeAgentVersionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeAgentVersionsRequestMarshaller();
             var unmarshaller = DescribeAgentVersionsResponseUnmarshaller.Instance;
@@ -1875,7 +1875,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  DescribeAgentVersionsResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeAgentVersions">REST API Reference for DescribeAgentVersions Operation</seealso>
-        public  DescribeAgentVersionsResponse EndDescribeAgentVersions(IAsyncResult asyncResult)
+        public virtual DescribeAgentVersionsResponse EndDescribeAgentVersions(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeAgentVersionsResponse>(asyncResult);
         }
@@ -1909,7 +1909,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeApps">REST API Reference for DescribeApps Operation</seealso>
-        public DescribeAppsResponse DescribeApps(DescribeAppsRequest request)
+        public virtual DescribeAppsResponse DescribeApps(DescribeAppsRequest request)
         {
             var marshaller = new DescribeAppsRequestMarshaller();
             var unmarshaller = DescribeAppsResponseUnmarshaller.Instance;
@@ -1929,7 +1929,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeApps
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeApps">REST API Reference for DescribeApps Operation</seealso>
-        public IAsyncResult BeginDescribeApps(DescribeAppsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeApps(DescribeAppsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeAppsRequestMarshaller();
             var unmarshaller = DescribeAppsResponseUnmarshaller.Instance;
@@ -1946,7 +1946,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  DescribeAppsResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeApps">REST API Reference for DescribeApps Operation</seealso>
-        public  DescribeAppsResponse EndDescribeApps(IAsyncResult asyncResult)
+        public virtual DescribeAppsResponse EndDescribeApps(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeAppsResponse>(asyncResult);
         }
@@ -1980,7 +1980,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeCommands">REST API Reference for DescribeCommands Operation</seealso>
-        public DescribeCommandsResponse DescribeCommands(DescribeCommandsRequest request)
+        public virtual DescribeCommandsResponse DescribeCommands(DescribeCommandsRequest request)
         {
             var marshaller = new DescribeCommandsRequestMarshaller();
             var unmarshaller = DescribeCommandsResponseUnmarshaller.Instance;
@@ -2000,7 +2000,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeCommands
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeCommands">REST API Reference for DescribeCommands Operation</seealso>
-        public IAsyncResult BeginDescribeCommands(DescribeCommandsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeCommands(DescribeCommandsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeCommandsRequestMarshaller();
             var unmarshaller = DescribeCommandsResponseUnmarshaller.Instance;
@@ -2017,7 +2017,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  DescribeCommandsResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeCommands">REST API Reference for DescribeCommands Operation</seealso>
-        public  DescribeCommandsResponse EndDescribeCommands(IAsyncResult asyncResult)
+        public virtual DescribeCommandsResponse EndDescribeCommands(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeCommandsResponse>(asyncResult);
         }
@@ -2051,7 +2051,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeDeployments">REST API Reference for DescribeDeployments Operation</seealso>
-        public DescribeDeploymentsResponse DescribeDeployments(DescribeDeploymentsRequest request)
+        public virtual DescribeDeploymentsResponse DescribeDeployments(DescribeDeploymentsRequest request)
         {
             var marshaller = new DescribeDeploymentsRequestMarshaller();
             var unmarshaller = DescribeDeploymentsResponseUnmarshaller.Instance;
@@ -2071,7 +2071,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDeployments
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeDeployments">REST API Reference for DescribeDeployments Operation</seealso>
-        public IAsyncResult BeginDescribeDeployments(DescribeDeploymentsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeDeployments(DescribeDeploymentsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeDeploymentsRequestMarshaller();
             var unmarshaller = DescribeDeploymentsResponseUnmarshaller.Instance;
@@ -2088,7 +2088,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  DescribeDeploymentsResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeDeployments">REST API Reference for DescribeDeployments Operation</seealso>
-        public  DescribeDeploymentsResponse EndDescribeDeployments(IAsyncResult asyncResult)
+        public virtual DescribeDeploymentsResponse EndDescribeDeployments(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeDeploymentsResponse>(asyncResult);
         }
@@ -2125,7 +2125,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeEcsClusters">REST API Reference for DescribeEcsClusters Operation</seealso>
-        public DescribeEcsClustersResponse DescribeEcsClusters(DescribeEcsClustersRequest request)
+        public virtual DescribeEcsClustersResponse DescribeEcsClusters(DescribeEcsClustersRequest request)
         {
             var marshaller = new DescribeEcsClustersRequestMarshaller();
             var unmarshaller = DescribeEcsClustersResponseUnmarshaller.Instance;
@@ -2145,7 +2145,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEcsClusters
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeEcsClusters">REST API Reference for DescribeEcsClusters Operation</seealso>
-        public IAsyncResult BeginDescribeEcsClusters(DescribeEcsClustersRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeEcsClusters(DescribeEcsClustersRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeEcsClustersRequestMarshaller();
             var unmarshaller = DescribeEcsClustersResponseUnmarshaller.Instance;
@@ -2162,7 +2162,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  DescribeEcsClustersResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeEcsClusters">REST API Reference for DescribeEcsClusters Operation</seealso>
-        public  DescribeEcsClustersResponse EndDescribeEcsClusters(IAsyncResult asyncResult)
+        public virtual DescribeEcsClustersResponse EndDescribeEcsClusters(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeEcsClustersResponse>(asyncResult);
         }
@@ -2197,7 +2197,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeElasticIps">REST API Reference for DescribeElasticIps Operation</seealso>
-        public DescribeElasticIpsResponse DescribeElasticIps(DescribeElasticIpsRequest request)
+        public virtual DescribeElasticIpsResponse DescribeElasticIps(DescribeElasticIpsRequest request)
         {
             var marshaller = new DescribeElasticIpsRequestMarshaller();
             var unmarshaller = DescribeElasticIpsResponseUnmarshaller.Instance;
@@ -2217,7 +2217,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeElasticIps
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeElasticIps">REST API Reference for DescribeElasticIps Operation</seealso>
-        public IAsyncResult BeginDescribeElasticIps(DescribeElasticIpsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeElasticIps(DescribeElasticIpsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeElasticIpsRequestMarshaller();
             var unmarshaller = DescribeElasticIpsResponseUnmarshaller.Instance;
@@ -2234,7 +2234,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  DescribeElasticIpsResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeElasticIps">REST API Reference for DescribeElasticIps Operation</seealso>
-        public  DescribeElasticIpsResponse EndDescribeElasticIps(IAsyncResult asyncResult)
+        public virtual DescribeElasticIpsResponse EndDescribeElasticIps(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeElasticIpsResponse>(asyncResult);
         }
@@ -2267,7 +2267,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeElasticLoadBalancers">REST API Reference for DescribeElasticLoadBalancers Operation</seealso>
-        public DescribeElasticLoadBalancersResponse DescribeElasticLoadBalancers()
+        public virtual DescribeElasticLoadBalancersResponse DescribeElasticLoadBalancers()
         {
             return DescribeElasticLoadBalancers(new DescribeElasticLoadBalancersRequest());
         }
@@ -2297,7 +2297,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeElasticLoadBalancers">REST API Reference for DescribeElasticLoadBalancers Operation</seealso>
-        public DescribeElasticLoadBalancersResponse DescribeElasticLoadBalancers(DescribeElasticLoadBalancersRequest request)
+        public virtual DescribeElasticLoadBalancersResponse DescribeElasticLoadBalancers(DescribeElasticLoadBalancersRequest request)
         {
             var marshaller = new DescribeElasticLoadBalancersRequestMarshaller();
             var unmarshaller = DescribeElasticLoadBalancersResponseUnmarshaller.Instance;
@@ -2317,7 +2317,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeElasticLoadBalancers
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeElasticLoadBalancers">REST API Reference for DescribeElasticLoadBalancers Operation</seealso>
-        public IAsyncResult BeginDescribeElasticLoadBalancers(DescribeElasticLoadBalancersRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeElasticLoadBalancers(DescribeElasticLoadBalancersRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeElasticLoadBalancersRequestMarshaller();
             var unmarshaller = DescribeElasticLoadBalancersResponseUnmarshaller.Instance;
@@ -2334,7 +2334,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  DescribeElasticLoadBalancersResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeElasticLoadBalancers">REST API Reference for DescribeElasticLoadBalancers Operation</seealso>
-        public  DescribeElasticLoadBalancersResponse EndDescribeElasticLoadBalancers(IAsyncResult asyncResult)
+        public virtual DescribeElasticLoadBalancersResponse EndDescribeElasticLoadBalancers(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeElasticLoadBalancersResponse>(asyncResult);
         }
@@ -2368,7 +2368,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeInstances">REST API Reference for DescribeInstances Operation</seealso>
-        public DescribeInstancesResponse DescribeInstances(DescribeInstancesRequest request)
+        public virtual DescribeInstancesResponse DescribeInstances(DescribeInstancesRequest request)
         {
             var marshaller = new DescribeInstancesRequestMarshaller();
             var unmarshaller = DescribeInstancesResponseUnmarshaller.Instance;
@@ -2388,7 +2388,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeInstances
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeInstances">REST API Reference for DescribeInstances Operation</seealso>
-        public IAsyncResult BeginDescribeInstances(DescribeInstancesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeInstances(DescribeInstancesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeInstancesRequestMarshaller();
             var unmarshaller = DescribeInstancesResponseUnmarshaller.Instance;
@@ -2405,7 +2405,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  DescribeInstancesResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeInstances">REST API Reference for DescribeInstances Operation</seealso>
-        public  DescribeInstancesResponse EndDescribeInstances(IAsyncResult asyncResult)
+        public virtual DescribeInstancesResponse EndDescribeInstances(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeInstancesResponse>(asyncResult);
         }
@@ -2439,7 +2439,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeLayers">REST API Reference for DescribeLayers Operation</seealso>
-        public DescribeLayersResponse DescribeLayers(DescribeLayersRequest request)
+        public virtual DescribeLayersResponse DescribeLayers(DescribeLayersRequest request)
         {
             var marshaller = new DescribeLayersRequestMarshaller();
             var unmarshaller = DescribeLayersResponseUnmarshaller.Instance;
@@ -2459,7 +2459,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeLayers
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeLayers">REST API Reference for DescribeLayers Operation</seealso>
-        public IAsyncResult BeginDescribeLayers(DescribeLayersRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeLayers(DescribeLayersRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeLayersRequestMarshaller();
             var unmarshaller = DescribeLayersResponseUnmarshaller.Instance;
@@ -2476,7 +2476,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  DescribeLayersResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeLayers">REST API Reference for DescribeLayers Operation</seealso>
-        public  DescribeLayersResponse EndDescribeLayers(IAsyncResult asyncResult)
+        public virtual DescribeLayersResponse EndDescribeLayers(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeLayersResponse>(asyncResult);
         }
@@ -2510,7 +2510,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeLoadBasedAutoScaling">REST API Reference for DescribeLoadBasedAutoScaling Operation</seealso>
-        public DescribeLoadBasedAutoScalingResponse DescribeLoadBasedAutoScaling(DescribeLoadBasedAutoScalingRequest request)
+        public virtual DescribeLoadBasedAutoScalingResponse DescribeLoadBasedAutoScaling(DescribeLoadBasedAutoScalingRequest request)
         {
             var marshaller = new DescribeLoadBasedAutoScalingRequestMarshaller();
             var unmarshaller = DescribeLoadBasedAutoScalingResponseUnmarshaller.Instance;
@@ -2530,7 +2530,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeLoadBasedAutoScaling
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeLoadBasedAutoScaling">REST API Reference for DescribeLoadBasedAutoScaling Operation</seealso>
-        public IAsyncResult BeginDescribeLoadBasedAutoScaling(DescribeLoadBasedAutoScalingRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeLoadBasedAutoScaling(DescribeLoadBasedAutoScalingRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeLoadBasedAutoScalingRequestMarshaller();
             var unmarshaller = DescribeLoadBasedAutoScalingResponseUnmarshaller.Instance;
@@ -2547,7 +2547,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  DescribeLoadBasedAutoScalingResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeLoadBasedAutoScaling">REST API Reference for DescribeLoadBasedAutoScaling Operation</seealso>
-        public  DescribeLoadBasedAutoScalingResponse EndDescribeLoadBasedAutoScaling(IAsyncResult asyncResult)
+        public virtual DescribeLoadBasedAutoScalingResponse EndDescribeLoadBasedAutoScaling(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeLoadBasedAutoScalingResponse>(asyncResult);
         }
@@ -2570,7 +2570,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>The response from the DescribeMyUserProfile service method, as returned by OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeMyUserProfile">REST API Reference for DescribeMyUserProfile Operation</seealso>
-        public DescribeMyUserProfileResponse DescribeMyUserProfile()
+        public virtual DescribeMyUserProfileResponse DescribeMyUserProfile()
         {
             return DescribeMyUserProfile(new DescribeMyUserProfileRequest());
         }
@@ -2590,7 +2590,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>The response from the DescribeMyUserProfile service method, as returned by OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeMyUserProfile">REST API Reference for DescribeMyUserProfile Operation</seealso>
-        public DescribeMyUserProfileResponse DescribeMyUserProfile(DescribeMyUserProfileRequest request)
+        public virtual DescribeMyUserProfileResponse DescribeMyUserProfile(DescribeMyUserProfileRequest request)
         {
             var marshaller = new DescribeMyUserProfileRequestMarshaller();
             var unmarshaller = DescribeMyUserProfileResponseUnmarshaller.Instance;
@@ -2610,7 +2610,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeMyUserProfile
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeMyUserProfile">REST API Reference for DescribeMyUserProfile Operation</seealso>
-        public IAsyncResult BeginDescribeMyUserProfile(DescribeMyUserProfileRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeMyUserProfile(DescribeMyUserProfileRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeMyUserProfileRequestMarshaller();
             var unmarshaller = DescribeMyUserProfileResponseUnmarshaller.Instance;
@@ -2627,7 +2627,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  DescribeMyUserProfileResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeMyUserProfile">REST API Reference for DescribeMyUserProfile Operation</seealso>
-        public  DescribeMyUserProfileResponse EndDescribeMyUserProfile(IAsyncResult asyncResult)
+        public virtual DescribeMyUserProfileResponse EndDescribeMyUserProfile(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeMyUserProfileResponse>(asyncResult);
         }
@@ -2657,7 +2657,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribePermissions">REST API Reference for DescribePermissions Operation</seealso>
-        public DescribePermissionsResponse DescribePermissions(DescribePermissionsRequest request)
+        public virtual DescribePermissionsResponse DescribePermissions(DescribePermissionsRequest request)
         {
             var marshaller = new DescribePermissionsRequestMarshaller();
             var unmarshaller = DescribePermissionsResponseUnmarshaller.Instance;
@@ -2677,7 +2677,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribePermissions
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribePermissions">REST API Reference for DescribePermissions Operation</seealso>
-        public IAsyncResult BeginDescribePermissions(DescribePermissionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribePermissions(DescribePermissionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribePermissionsRequestMarshaller();
             var unmarshaller = DescribePermissionsResponseUnmarshaller.Instance;
@@ -2694,7 +2694,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  DescribePermissionsResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribePermissions">REST API Reference for DescribePermissions Operation</seealso>
-        public  DescribePermissionsResponse EndDescribePermissions(IAsyncResult asyncResult)
+        public virtual DescribePermissionsResponse EndDescribePermissions(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribePermissionsResponse>(asyncResult);
         }
@@ -2728,7 +2728,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeRaidArrays">REST API Reference for DescribeRaidArrays Operation</seealso>
-        public DescribeRaidArraysResponse DescribeRaidArrays(DescribeRaidArraysRequest request)
+        public virtual DescribeRaidArraysResponse DescribeRaidArrays(DescribeRaidArraysRequest request)
         {
             var marshaller = new DescribeRaidArraysRequestMarshaller();
             var unmarshaller = DescribeRaidArraysResponseUnmarshaller.Instance;
@@ -2748,7 +2748,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeRaidArrays
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeRaidArrays">REST API Reference for DescribeRaidArrays Operation</seealso>
-        public IAsyncResult BeginDescribeRaidArrays(DescribeRaidArraysRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeRaidArrays(DescribeRaidArraysRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeRaidArraysRequestMarshaller();
             var unmarshaller = DescribeRaidArraysResponseUnmarshaller.Instance;
@@ -2765,7 +2765,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  DescribeRaidArraysResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeRaidArrays">REST API Reference for DescribeRaidArrays Operation</seealso>
-        public  DescribeRaidArraysResponse EndDescribeRaidArrays(IAsyncResult asyncResult)
+        public virtual DescribeRaidArraysResponse EndDescribeRaidArrays(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeRaidArraysResponse>(asyncResult);
         }
@@ -2799,7 +2799,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeRdsDbInstances">REST API Reference for DescribeRdsDbInstances Operation</seealso>
-        public DescribeRdsDbInstancesResponse DescribeRdsDbInstances(DescribeRdsDbInstancesRequest request)
+        public virtual DescribeRdsDbInstancesResponse DescribeRdsDbInstances(DescribeRdsDbInstancesRequest request)
         {
             var marshaller = new DescribeRdsDbInstancesRequestMarshaller();
             var unmarshaller = DescribeRdsDbInstancesResponseUnmarshaller.Instance;
@@ -2819,7 +2819,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeRdsDbInstances
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeRdsDbInstances">REST API Reference for DescribeRdsDbInstances Operation</seealso>
-        public IAsyncResult BeginDescribeRdsDbInstances(DescribeRdsDbInstancesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeRdsDbInstances(DescribeRdsDbInstancesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeRdsDbInstancesRequestMarshaller();
             var unmarshaller = DescribeRdsDbInstancesResponseUnmarshaller.Instance;
@@ -2836,7 +2836,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  DescribeRdsDbInstancesResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeRdsDbInstances">REST API Reference for DescribeRdsDbInstances Operation</seealso>
-        public  DescribeRdsDbInstancesResponse EndDescribeRdsDbInstances(IAsyncResult asyncResult)
+        public virtual DescribeRdsDbInstancesResponse EndDescribeRdsDbInstances(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeRdsDbInstancesResponse>(asyncResult);
         }
@@ -2869,7 +2869,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeServiceErrors">REST API Reference for DescribeServiceErrors Operation</seealso>
-        public DescribeServiceErrorsResponse DescribeServiceErrors()
+        public virtual DescribeServiceErrorsResponse DescribeServiceErrors()
         {
             return DescribeServiceErrors(new DescribeServiceErrorsRequest());
         }
@@ -2899,7 +2899,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeServiceErrors">REST API Reference for DescribeServiceErrors Operation</seealso>
-        public DescribeServiceErrorsResponse DescribeServiceErrors(DescribeServiceErrorsRequest request)
+        public virtual DescribeServiceErrorsResponse DescribeServiceErrors(DescribeServiceErrorsRequest request)
         {
             var marshaller = new DescribeServiceErrorsRequestMarshaller();
             var unmarshaller = DescribeServiceErrorsResponseUnmarshaller.Instance;
@@ -2919,7 +2919,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeServiceErrors
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeServiceErrors">REST API Reference for DescribeServiceErrors Operation</seealso>
-        public IAsyncResult BeginDescribeServiceErrors(DescribeServiceErrorsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeServiceErrors(DescribeServiceErrorsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeServiceErrorsRequestMarshaller();
             var unmarshaller = DescribeServiceErrorsResponseUnmarshaller.Instance;
@@ -2936,7 +2936,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  DescribeServiceErrorsResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeServiceErrors">REST API Reference for DescribeServiceErrors Operation</seealso>
-        public  DescribeServiceErrorsResponse EndDescribeServiceErrors(IAsyncResult asyncResult)
+        public virtual DescribeServiceErrorsResponse EndDescribeServiceErrors(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeServiceErrorsResponse>(asyncResult);
         }
@@ -2966,7 +2966,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeStackProvisioningParameters">REST API Reference for DescribeStackProvisioningParameters Operation</seealso>
-        public DescribeStackProvisioningParametersResponse DescribeStackProvisioningParameters(DescribeStackProvisioningParametersRequest request)
+        public virtual DescribeStackProvisioningParametersResponse DescribeStackProvisioningParameters(DescribeStackProvisioningParametersRequest request)
         {
             var marshaller = new DescribeStackProvisioningParametersRequestMarshaller();
             var unmarshaller = DescribeStackProvisioningParametersResponseUnmarshaller.Instance;
@@ -2986,7 +2986,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeStackProvisioningParameters
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeStackProvisioningParameters">REST API Reference for DescribeStackProvisioningParameters Operation</seealso>
-        public IAsyncResult BeginDescribeStackProvisioningParameters(DescribeStackProvisioningParametersRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeStackProvisioningParameters(DescribeStackProvisioningParametersRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeStackProvisioningParametersRequestMarshaller();
             var unmarshaller = DescribeStackProvisioningParametersResponseUnmarshaller.Instance;
@@ -3003,7 +3003,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  DescribeStackProvisioningParametersResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeStackProvisioningParameters">REST API Reference for DescribeStackProvisioningParameters Operation</seealso>
-        public  DescribeStackProvisioningParametersResponse EndDescribeStackProvisioningParameters(IAsyncResult asyncResult)
+        public virtual DescribeStackProvisioningParametersResponse EndDescribeStackProvisioningParameters(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeStackProvisioningParametersResponse>(asyncResult);
         }
@@ -3032,7 +3032,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeStacks">REST API Reference for DescribeStacks Operation</seealso>
-        public DescribeStacksResponse DescribeStacks()
+        public virtual DescribeStacksResponse DescribeStacks()
         {
             return DescribeStacks(new DescribeStacksRequest());
         }
@@ -3058,7 +3058,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeStacks">REST API Reference for DescribeStacks Operation</seealso>
-        public DescribeStacksResponse DescribeStacks(DescribeStacksRequest request)
+        public virtual DescribeStacksResponse DescribeStacks(DescribeStacksRequest request)
         {
             var marshaller = new DescribeStacksRequestMarshaller();
             var unmarshaller = DescribeStacksResponseUnmarshaller.Instance;
@@ -3078,7 +3078,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeStacks
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeStacks">REST API Reference for DescribeStacks Operation</seealso>
-        public IAsyncResult BeginDescribeStacks(DescribeStacksRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeStacks(DescribeStacksRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeStacksRequestMarshaller();
             var unmarshaller = DescribeStacksResponseUnmarshaller.Instance;
@@ -3095,7 +3095,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  DescribeStacksResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeStacks">REST API Reference for DescribeStacks Operation</seealso>
-        public  DescribeStacksResponse EndDescribeStacks(IAsyncResult asyncResult)
+        public virtual DescribeStacksResponse EndDescribeStacks(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeStacksResponse>(asyncResult);
         }
@@ -3126,7 +3126,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeStackSummary">REST API Reference for DescribeStackSummary Operation</seealso>
-        public DescribeStackSummaryResponse DescribeStackSummary(DescribeStackSummaryRequest request)
+        public virtual DescribeStackSummaryResponse DescribeStackSummary(DescribeStackSummaryRequest request)
         {
             var marshaller = new DescribeStackSummaryRequestMarshaller();
             var unmarshaller = DescribeStackSummaryResponseUnmarshaller.Instance;
@@ -3146,7 +3146,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeStackSummary
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeStackSummary">REST API Reference for DescribeStackSummary Operation</seealso>
-        public IAsyncResult BeginDescribeStackSummary(DescribeStackSummaryRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeStackSummary(DescribeStackSummaryRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeStackSummaryRequestMarshaller();
             var unmarshaller = DescribeStackSummaryResponseUnmarshaller.Instance;
@@ -3163,7 +3163,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  DescribeStackSummaryResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeStackSummary">REST API Reference for DescribeStackSummary Operation</seealso>
-        public  DescribeStackSummaryResponse EndDescribeStackSummary(IAsyncResult asyncResult)
+        public virtual DescribeStackSummaryResponse EndDescribeStackSummary(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeStackSummaryResponse>(asyncResult);
         }
@@ -3197,7 +3197,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeTimeBasedAutoScaling">REST API Reference for DescribeTimeBasedAutoScaling Operation</seealso>
-        public DescribeTimeBasedAutoScalingResponse DescribeTimeBasedAutoScaling(DescribeTimeBasedAutoScalingRequest request)
+        public virtual DescribeTimeBasedAutoScalingResponse DescribeTimeBasedAutoScaling(DescribeTimeBasedAutoScalingRequest request)
         {
             var marshaller = new DescribeTimeBasedAutoScalingRequestMarshaller();
             var unmarshaller = DescribeTimeBasedAutoScalingResponseUnmarshaller.Instance;
@@ -3217,7 +3217,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTimeBasedAutoScaling
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeTimeBasedAutoScaling">REST API Reference for DescribeTimeBasedAutoScaling Operation</seealso>
-        public IAsyncResult BeginDescribeTimeBasedAutoScaling(DescribeTimeBasedAutoScalingRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeTimeBasedAutoScaling(DescribeTimeBasedAutoScalingRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeTimeBasedAutoScalingRequestMarshaller();
             var unmarshaller = DescribeTimeBasedAutoScalingResponseUnmarshaller.Instance;
@@ -3234,7 +3234,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  DescribeTimeBasedAutoScalingResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeTimeBasedAutoScaling">REST API Reference for DescribeTimeBasedAutoScaling Operation</seealso>
-        public  DescribeTimeBasedAutoScalingResponse EndDescribeTimeBasedAutoScaling(IAsyncResult asyncResult)
+        public virtual DescribeTimeBasedAutoScalingResponse EndDescribeTimeBasedAutoScaling(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeTimeBasedAutoScalingResponse>(asyncResult);
         }
@@ -3263,7 +3263,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeUserProfiles">REST API Reference for DescribeUserProfiles Operation</seealso>
-        public DescribeUserProfilesResponse DescribeUserProfiles()
+        public virtual DescribeUserProfilesResponse DescribeUserProfiles()
         {
             return DescribeUserProfiles(new DescribeUserProfilesRequest());
         }
@@ -3289,7 +3289,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeUserProfiles">REST API Reference for DescribeUserProfiles Operation</seealso>
-        public DescribeUserProfilesResponse DescribeUserProfiles(DescribeUserProfilesRequest request)
+        public virtual DescribeUserProfilesResponse DescribeUserProfiles(DescribeUserProfilesRequest request)
         {
             var marshaller = new DescribeUserProfilesRequestMarshaller();
             var unmarshaller = DescribeUserProfilesResponseUnmarshaller.Instance;
@@ -3309,7 +3309,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeUserProfiles
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeUserProfiles">REST API Reference for DescribeUserProfiles Operation</seealso>
-        public IAsyncResult BeginDescribeUserProfiles(DescribeUserProfilesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeUserProfiles(DescribeUserProfilesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeUserProfilesRequestMarshaller();
             var unmarshaller = DescribeUserProfilesResponseUnmarshaller.Instance;
@@ -3326,7 +3326,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  DescribeUserProfilesResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeUserProfiles">REST API Reference for DescribeUserProfiles Operation</seealso>
-        public  DescribeUserProfilesResponse EndDescribeUserProfiles(IAsyncResult asyncResult)
+        public virtual DescribeUserProfilesResponse EndDescribeUserProfiles(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeUserProfilesResponse>(asyncResult);
         }
@@ -3360,7 +3360,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeVolumes">REST API Reference for DescribeVolumes Operation</seealso>
-        public DescribeVolumesResponse DescribeVolumes(DescribeVolumesRequest request)
+        public virtual DescribeVolumesResponse DescribeVolumes(DescribeVolumesRequest request)
         {
             var marshaller = new DescribeVolumesRequestMarshaller();
             var unmarshaller = DescribeVolumesResponseUnmarshaller.Instance;
@@ -3380,7 +3380,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeVolumes
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeVolumes">REST API Reference for DescribeVolumes Operation</seealso>
-        public IAsyncResult BeginDescribeVolumes(DescribeVolumesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeVolumes(DescribeVolumesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeVolumesRequestMarshaller();
             var unmarshaller = DescribeVolumesResponseUnmarshaller.Instance;
@@ -3397,7 +3397,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  DescribeVolumesResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeVolumes">REST API Reference for DescribeVolumes Operation</seealso>
-        public  DescribeVolumesResponse EndDescribeVolumes(IAsyncResult asyncResult)
+        public virtual DescribeVolumesResponse EndDescribeVolumes(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeVolumesResponse>(asyncResult);
         }
@@ -3424,7 +3424,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DetachElasticLoadBalancer">REST API Reference for DetachElasticLoadBalancer Operation</seealso>
-        public DetachElasticLoadBalancerResponse DetachElasticLoadBalancer(DetachElasticLoadBalancerRequest request)
+        public virtual DetachElasticLoadBalancerResponse DetachElasticLoadBalancer(DetachElasticLoadBalancerRequest request)
         {
             var marshaller = new DetachElasticLoadBalancerRequestMarshaller();
             var unmarshaller = DetachElasticLoadBalancerResponseUnmarshaller.Instance;
@@ -3444,7 +3444,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDetachElasticLoadBalancer
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DetachElasticLoadBalancer">REST API Reference for DetachElasticLoadBalancer Operation</seealso>
-        public IAsyncResult BeginDetachElasticLoadBalancer(DetachElasticLoadBalancerRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDetachElasticLoadBalancer(DetachElasticLoadBalancerRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DetachElasticLoadBalancerRequestMarshaller();
             var unmarshaller = DetachElasticLoadBalancerResponseUnmarshaller.Instance;
@@ -3461,7 +3461,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  DetachElasticLoadBalancerResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DetachElasticLoadBalancer">REST API Reference for DetachElasticLoadBalancer Operation</seealso>
-        public  DetachElasticLoadBalancerResponse EndDetachElasticLoadBalancer(IAsyncResult asyncResult)
+        public virtual DetachElasticLoadBalancerResponse EndDetachElasticLoadBalancer(IAsyncResult asyncResult)
         {
             return EndInvoke<DetachElasticLoadBalancerResponse>(asyncResult);
         }
@@ -3493,7 +3493,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DisassociateElasticIp">REST API Reference for DisassociateElasticIp Operation</seealso>
-        public DisassociateElasticIpResponse DisassociateElasticIp(DisassociateElasticIpRequest request)
+        public virtual DisassociateElasticIpResponse DisassociateElasticIp(DisassociateElasticIpRequest request)
         {
             var marshaller = new DisassociateElasticIpRequestMarshaller();
             var unmarshaller = DisassociateElasticIpResponseUnmarshaller.Instance;
@@ -3513,7 +3513,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateElasticIp
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DisassociateElasticIp">REST API Reference for DisassociateElasticIp Operation</seealso>
-        public IAsyncResult BeginDisassociateElasticIp(DisassociateElasticIpRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDisassociateElasticIp(DisassociateElasticIpRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DisassociateElasticIpRequestMarshaller();
             var unmarshaller = DisassociateElasticIpResponseUnmarshaller.Instance;
@@ -3530,7 +3530,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  DisassociateElasticIpResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DisassociateElasticIp">REST API Reference for DisassociateElasticIp Operation</seealso>
-        public  DisassociateElasticIpResponse EndDisassociateElasticIp(IAsyncResult asyncResult)
+        public virtual DisassociateElasticIpResponse EndDisassociateElasticIp(IAsyncResult asyncResult)
         {
             return EndInvoke<DisassociateElasticIpResponse>(asyncResult);
         }
@@ -3561,7 +3561,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/GetHostnameSuggestion">REST API Reference for GetHostnameSuggestion Operation</seealso>
-        public GetHostnameSuggestionResponse GetHostnameSuggestion(GetHostnameSuggestionRequest request)
+        public virtual GetHostnameSuggestionResponse GetHostnameSuggestion(GetHostnameSuggestionRequest request)
         {
             var marshaller = new GetHostnameSuggestionRequestMarshaller();
             var unmarshaller = GetHostnameSuggestionResponseUnmarshaller.Instance;
@@ -3581,7 +3581,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetHostnameSuggestion
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/GetHostnameSuggestion">REST API Reference for GetHostnameSuggestion Operation</seealso>
-        public IAsyncResult BeginGetHostnameSuggestion(GetHostnameSuggestionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetHostnameSuggestion(GetHostnameSuggestionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetHostnameSuggestionRequestMarshaller();
             var unmarshaller = GetHostnameSuggestionResponseUnmarshaller.Instance;
@@ -3598,7 +3598,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  GetHostnameSuggestionResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/GetHostnameSuggestion">REST API Reference for GetHostnameSuggestion Operation</seealso>
-        public  GetHostnameSuggestionResponse EndGetHostnameSuggestion(IAsyncResult asyncResult)
+        public virtual GetHostnameSuggestionResponse EndGetHostnameSuggestion(IAsyncResult asyncResult)
         {
             return EndInvoke<GetHostnameSuggestionResponse>(asyncResult);
         }
@@ -3627,7 +3627,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/GrantAccess">REST API Reference for GrantAccess Operation</seealso>
-        public GrantAccessResponse GrantAccess(GrantAccessRequest request)
+        public virtual GrantAccessResponse GrantAccess(GrantAccessRequest request)
         {
             var marshaller = new GrantAccessRequestMarshaller();
             var unmarshaller = GrantAccessResponseUnmarshaller.Instance;
@@ -3647,7 +3647,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGrantAccess
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/GrantAccess">REST API Reference for GrantAccess Operation</seealso>
-        public IAsyncResult BeginGrantAccess(GrantAccessRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGrantAccess(GrantAccessRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GrantAccessRequestMarshaller();
             var unmarshaller = GrantAccessResponseUnmarshaller.Instance;
@@ -3664,7 +3664,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  GrantAccessResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/GrantAccess">REST API Reference for GrantAccess Operation</seealso>
-        public  GrantAccessResponse EndGrantAccess(IAsyncResult asyncResult)
+        public virtual GrantAccessResponse EndGrantAccess(IAsyncResult asyncResult)
         {
             return EndInvoke<GrantAccessResponse>(asyncResult);
         }
@@ -3686,7 +3686,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/ListTags">REST API Reference for ListTags Operation</seealso>
-        public ListTagsResponse ListTags(ListTagsRequest request)
+        public virtual ListTagsResponse ListTags(ListTagsRequest request)
         {
             var marshaller = new ListTagsRequestMarshaller();
             var unmarshaller = ListTagsResponseUnmarshaller.Instance;
@@ -3706,7 +3706,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTags
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/ListTags">REST API Reference for ListTags Operation</seealso>
-        public IAsyncResult BeginListTags(ListTagsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListTags(ListTagsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListTagsRequestMarshaller();
             var unmarshaller = ListTagsResponseUnmarshaller.Instance;
@@ -3723,7 +3723,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  ListTagsResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/ListTags">REST API Reference for ListTags Operation</seealso>
-        public  ListTagsResponse EndListTags(IAsyncResult asyncResult)
+        public virtual ListTagsResponse EndListTags(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTagsResponse>(asyncResult);
         }
@@ -3754,7 +3754,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RebootInstance">REST API Reference for RebootInstance Operation</seealso>
-        public RebootInstanceResponse RebootInstance(RebootInstanceRequest request)
+        public virtual RebootInstanceResponse RebootInstance(RebootInstanceRequest request)
         {
             var marshaller = new RebootInstanceRequestMarshaller();
             var unmarshaller = RebootInstanceResponseUnmarshaller.Instance;
@@ -3774,7 +3774,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRebootInstance
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RebootInstance">REST API Reference for RebootInstance Operation</seealso>
-        public IAsyncResult BeginRebootInstance(RebootInstanceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginRebootInstance(RebootInstanceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RebootInstanceRequestMarshaller();
             var unmarshaller = RebootInstanceResponseUnmarshaller.Instance;
@@ -3791,7 +3791,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  RebootInstanceResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RebootInstance">REST API Reference for RebootInstance Operation</seealso>
-        public  RebootInstanceResponse EndRebootInstance(IAsyncResult asyncResult)
+        public virtual RebootInstanceResponse EndRebootInstance(IAsyncResult asyncResult)
         {
             return EndInvoke<RebootInstanceResponse>(asyncResult);
         }
@@ -3824,7 +3824,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterEcsCluster">REST API Reference for RegisterEcsCluster Operation</seealso>
-        public RegisterEcsClusterResponse RegisterEcsCluster(RegisterEcsClusterRequest request)
+        public virtual RegisterEcsClusterResponse RegisterEcsCluster(RegisterEcsClusterRequest request)
         {
             var marshaller = new RegisterEcsClusterRequestMarshaller();
             var unmarshaller = RegisterEcsClusterResponseUnmarshaller.Instance;
@@ -3844,7 +3844,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterEcsCluster
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterEcsCluster">REST API Reference for RegisterEcsCluster Operation</seealso>
-        public IAsyncResult BeginRegisterEcsCluster(RegisterEcsClusterRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginRegisterEcsCluster(RegisterEcsClusterRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RegisterEcsClusterRequestMarshaller();
             var unmarshaller = RegisterEcsClusterResponseUnmarshaller.Instance;
@@ -3861,7 +3861,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  RegisterEcsClusterResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterEcsCluster">REST API Reference for RegisterEcsCluster Operation</seealso>
-        public  RegisterEcsClusterResponse EndRegisterEcsCluster(IAsyncResult asyncResult)
+        public virtual RegisterEcsClusterResponse EndRegisterEcsCluster(IAsyncResult asyncResult)
         {
             return EndInvoke<RegisterEcsClusterResponse>(asyncResult);
         }
@@ -3895,7 +3895,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterElasticIp">REST API Reference for RegisterElasticIp Operation</seealso>
-        public RegisterElasticIpResponse RegisterElasticIp(RegisterElasticIpRequest request)
+        public virtual RegisterElasticIpResponse RegisterElasticIp(RegisterElasticIpRequest request)
         {
             var marshaller = new RegisterElasticIpRequestMarshaller();
             var unmarshaller = RegisterElasticIpResponseUnmarshaller.Instance;
@@ -3915,7 +3915,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterElasticIp
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterElasticIp">REST API Reference for RegisterElasticIp Operation</seealso>
-        public IAsyncResult BeginRegisterElasticIp(RegisterElasticIpRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginRegisterElasticIp(RegisterElasticIpRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RegisterElasticIpRequestMarshaller();
             var unmarshaller = RegisterElasticIpResponseUnmarshaller.Instance;
@@ -3932,7 +3932,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  RegisterElasticIpResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterElasticIp">REST API Reference for RegisterElasticIp Operation</seealso>
-        public  RegisterElasticIpResponse EndRegisterElasticIp(IAsyncResult asyncResult)
+        public virtual RegisterElasticIpResponse EndRegisterElasticIp(IAsyncResult asyncResult)
         {
             return EndInvoke<RegisterElasticIpResponse>(asyncResult);
         }
@@ -3981,7 +3981,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterInstance">REST API Reference for RegisterInstance Operation</seealso>
-        public RegisterInstanceResponse RegisterInstance(RegisterInstanceRequest request)
+        public virtual RegisterInstanceResponse RegisterInstance(RegisterInstanceRequest request)
         {
             var marshaller = new RegisterInstanceRequestMarshaller();
             var unmarshaller = RegisterInstanceResponseUnmarshaller.Instance;
@@ -4001,7 +4001,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterInstance
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterInstance">REST API Reference for RegisterInstance Operation</seealso>
-        public IAsyncResult BeginRegisterInstance(RegisterInstanceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginRegisterInstance(RegisterInstanceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RegisterInstanceRequestMarshaller();
             var unmarshaller = RegisterInstanceResponseUnmarshaller.Instance;
@@ -4018,7 +4018,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  RegisterInstanceResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterInstance">REST API Reference for RegisterInstance Operation</seealso>
-        public  RegisterInstanceResponse EndRegisterInstance(IAsyncResult asyncResult)
+        public virtual RegisterInstanceResponse EndRegisterInstance(IAsyncResult asyncResult)
         {
             return EndInvoke<RegisterInstanceResponse>(asyncResult);
         }
@@ -4048,7 +4048,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterRdsDbInstance">REST API Reference for RegisterRdsDbInstance Operation</seealso>
-        public RegisterRdsDbInstanceResponse RegisterRdsDbInstance(RegisterRdsDbInstanceRequest request)
+        public virtual RegisterRdsDbInstanceResponse RegisterRdsDbInstance(RegisterRdsDbInstanceRequest request)
         {
             var marshaller = new RegisterRdsDbInstanceRequestMarshaller();
             var unmarshaller = RegisterRdsDbInstanceResponseUnmarshaller.Instance;
@@ -4068,7 +4068,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterRdsDbInstance
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterRdsDbInstance">REST API Reference for RegisterRdsDbInstance Operation</seealso>
-        public IAsyncResult BeginRegisterRdsDbInstance(RegisterRdsDbInstanceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginRegisterRdsDbInstance(RegisterRdsDbInstanceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RegisterRdsDbInstanceRequestMarshaller();
             var unmarshaller = RegisterRdsDbInstanceResponseUnmarshaller.Instance;
@@ -4085,7 +4085,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  RegisterRdsDbInstanceResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterRdsDbInstance">REST API Reference for RegisterRdsDbInstance Operation</seealso>
-        public  RegisterRdsDbInstanceResponse EndRegisterRdsDbInstance(IAsyncResult asyncResult)
+        public virtual RegisterRdsDbInstanceResponse EndRegisterRdsDbInstance(IAsyncResult asyncResult)
         {
             return EndInvoke<RegisterRdsDbInstanceResponse>(asyncResult);
         }
@@ -4118,7 +4118,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterVolume">REST API Reference for RegisterVolume Operation</seealso>
-        public RegisterVolumeResponse RegisterVolume(RegisterVolumeRequest request)
+        public virtual RegisterVolumeResponse RegisterVolume(RegisterVolumeRequest request)
         {
             var marshaller = new RegisterVolumeRequestMarshaller();
             var unmarshaller = RegisterVolumeResponseUnmarshaller.Instance;
@@ -4138,7 +4138,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterVolume
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterVolume">REST API Reference for RegisterVolume Operation</seealso>
-        public IAsyncResult BeginRegisterVolume(RegisterVolumeRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginRegisterVolume(RegisterVolumeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RegisterVolumeRequestMarshaller();
             var unmarshaller = RegisterVolumeResponseUnmarshaller.Instance;
@@ -4155,7 +4155,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  RegisterVolumeResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterVolume">REST API Reference for RegisterVolume Operation</seealso>
-        public  RegisterVolumeResponse EndRegisterVolume(IAsyncResult asyncResult)
+        public virtual RegisterVolumeResponse EndRegisterVolume(IAsyncResult asyncResult)
         {
             return EndInvoke<RegisterVolumeResponse>(asyncResult);
         }
@@ -4193,7 +4193,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/SetLoadBasedAutoScaling">REST API Reference for SetLoadBasedAutoScaling Operation</seealso>
-        public SetLoadBasedAutoScalingResponse SetLoadBasedAutoScaling(SetLoadBasedAutoScalingRequest request)
+        public virtual SetLoadBasedAutoScalingResponse SetLoadBasedAutoScaling(SetLoadBasedAutoScalingRequest request)
         {
             var marshaller = new SetLoadBasedAutoScalingRequestMarshaller();
             var unmarshaller = SetLoadBasedAutoScalingResponseUnmarshaller.Instance;
@@ -4213,7 +4213,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetLoadBasedAutoScaling
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/SetLoadBasedAutoScaling">REST API Reference for SetLoadBasedAutoScaling Operation</seealso>
-        public IAsyncResult BeginSetLoadBasedAutoScaling(SetLoadBasedAutoScalingRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginSetLoadBasedAutoScaling(SetLoadBasedAutoScalingRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SetLoadBasedAutoScalingRequestMarshaller();
             var unmarshaller = SetLoadBasedAutoScalingResponseUnmarshaller.Instance;
@@ -4230,7 +4230,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  SetLoadBasedAutoScalingResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/SetLoadBasedAutoScaling">REST API Reference for SetLoadBasedAutoScaling Operation</seealso>
-        public  SetLoadBasedAutoScalingResponse EndSetLoadBasedAutoScaling(IAsyncResult asyncResult)
+        public virtual SetLoadBasedAutoScalingResponse EndSetLoadBasedAutoScaling(IAsyncResult asyncResult)
         {
             return EndInvoke<SetLoadBasedAutoScalingResponse>(asyncResult);
         }
@@ -4261,7 +4261,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/SetPermission">REST API Reference for SetPermission Operation</seealso>
-        public SetPermissionResponse SetPermission(SetPermissionRequest request)
+        public virtual SetPermissionResponse SetPermission(SetPermissionRequest request)
         {
             var marshaller = new SetPermissionRequestMarshaller();
             var unmarshaller = SetPermissionResponseUnmarshaller.Instance;
@@ -4281,7 +4281,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetPermission
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/SetPermission">REST API Reference for SetPermission Operation</seealso>
-        public IAsyncResult BeginSetPermission(SetPermissionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginSetPermission(SetPermissionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SetPermissionRequestMarshaller();
             var unmarshaller = SetPermissionResponseUnmarshaller.Instance;
@@ -4298,7 +4298,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  SetPermissionResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/SetPermission">REST API Reference for SetPermission Operation</seealso>
-        public  SetPermissionResponse EndSetPermission(IAsyncResult asyncResult)
+        public virtual SetPermissionResponse EndSetPermission(IAsyncResult asyncResult)
         {
             return EndInvoke<SetPermissionResponse>(asyncResult);
         }
@@ -4330,7 +4330,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/SetTimeBasedAutoScaling">REST API Reference for SetTimeBasedAutoScaling Operation</seealso>
-        public SetTimeBasedAutoScalingResponse SetTimeBasedAutoScaling(SetTimeBasedAutoScalingRequest request)
+        public virtual SetTimeBasedAutoScalingResponse SetTimeBasedAutoScaling(SetTimeBasedAutoScalingRequest request)
         {
             var marshaller = new SetTimeBasedAutoScalingRequestMarshaller();
             var unmarshaller = SetTimeBasedAutoScalingResponseUnmarshaller.Instance;
@@ -4350,7 +4350,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetTimeBasedAutoScaling
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/SetTimeBasedAutoScaling">REST API Reference for SetTimeBasedAutoScaling Operation</seealso>
-        public IAsyncResult BeginSetTimeBasedAutoScaling(SetTimeBasedAutoScalingRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginSetTimeBasedAutoScaling(SetTimeBasedAutoScalingRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SetTimeBasedAutoScalingRequestMarshaller();
             var unmarshaller = SetTimeBasedAutoScalingResponseUnmarshaller.Instance;
@@ -4367,7 +4367,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  SetTimeBasedAutoScalingResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/SetTimeBasedAutoScaling">REST API Reference for SetTimeBasedAutoScaling Operation</seealso>
-        public  SetTimeBasedAutoScalingResponse EndSetTimeBasedAutoScaling(IAsyncResult asyncResult)
+        public virtual SetTimeBasedAutoScalingResponse EndSetTimeBasedAutoScaling(IAsyncResult asyncResult)
         {
             return EndInvoke<SetTimeBasedAutoScalingResponse>(asyncResult);
         }
@@ -4398,7 +4398,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/StartInstance">REST API Reference for StartInstance Operation</seealso>
-        public StartInstanceResponse StartInstance(StartInstanceRequest request)
+        public virtual StartInstanceResponse StartInstance(StartInstanceRequest request)
         {
             var marshaller = new StartInstanceRequestMarshaller();
             var unmarshaller = StartInstanceResponseUnmarshaller.Instance;
@@ -4418,7 +4418,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartInstance
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/StartInstance">REST API Reference for StartInstance Operation</seealso>
-        public IAsyncResult BeginStartInstance(StartInstanceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginStartInstance(StartInstanceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new StartInstanceRequestMarshaller();
             var unmarshaller = StartInstanceResponseUnmarshaller.Instance;
@@ -4435,7 +4435,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  StartInstanceResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/StartInstance">REST API Reference for StartInstance Operation</seealso>
-        public  StartInstanceResponse EndStartInstance(IAsyncResult asyncResult)
+        public virtual StartInstanceResponse EndStartInstance(IAsyncResult asyncResult)
         {
             return EndInvoke<StartInstanceResponse>(asyncResult);
         }
@@ -4465,7 +4465,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/StartStack">REST API Reference for StartStack Operation</seealso>
-        public StartStackResponse StartStack(StartStackRequest request)
+        public virtual StartStackResponse StartStack(StartStackRequest request)
         {
             var marshaller = new StartStackRequestMarshaller();
             var unmarshaller = StartStackResponseUnmarshaller.Instance;
@@ -4485,7 +4485,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartStack
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/StartStack">REST API Reference for StartStack Operation</seealso>
-        public IAsyncResult BeginStartStack(StartStackRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginStartStack(StartStackRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new StartStackRequestMarshaller();
             var unmarshaller = StartStackResponseUnmarshaller.Instance;
@@ -4502,7 +4502,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  StartStackResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/StartStack">REST API Reference for StartStack Operation</seealso>
-        public  StartStackResponse EndStartStack(IAsyncResult asyncResult)
+        public virtual StartStackResponse EndStartStack(IAsyncResult asyncResult)
         {
             return EndInvoke<StartStackResponse>(asyncResult);
         }
@@ -4535,7 +4535,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/StopInstance">REST API Reference for StopInstance Operation</seealso>
-        public StopInstanceResponse StopInstance(StopInstanceRequest request)
+        public virtual StopInstanceResponse StopInstance(StopInstanceRequest request)
         {
             var marshaller = new StopInstanceRequestMarshaller();
             var unmarshaller = StopInstanceResponseUnmarshaller.Instance;
@@ -4555,7 +4555,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopInstance
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/StopInstance">REST API Reference for StopInstance Operation</seealso>
-        public IAsyncResult BeginStopInstance(StopInstanceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginStopInstance(StopInstanceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new StopInstanceRequestMarshaller();
             var unmarshaller = StopInstanceResponseUnmarshaller.Instance;
@@ -4572,7 +4572,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  StopInstanceResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/StopInstance">REST API Reference for StopInstance Operation</seealso>
-        public  StopInstanceResponse EndStopInstance(IAsyncResult asyncResult)
+        public virtual StopInstanceResponse EndStopInstance(IAsyncResult asyncResult)
         {
             return EndInvoke<StopInstanceResponse>(asyncResult);
         }
@@ -4602,7 +4602,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/StopStack">REST API Reference for StopStack Operation</seealso>
-        public StopStackResponse StopStack(StopStackRequest request)
+        public virtual StopStackResponse StopStack(StopStackRequest request)
         {
             var marshaller = new StopStackRequestMarshaller();
             var unmarshaller = StopStackResponseUnmarshaller.Instance;
@@ -4622,7 +4622,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopStack
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/StopStack">REST API Reference for StopStack Operation</seealso>
-        public IAsyncResult BeginStopStack(StopStackRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginStopStack(StopStackRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new StopStackRequestMarshaller();
             var unmarshaller = StopStackResponseUnmarshaller.Instance;
@@ -4639,7 +4639,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  StopStackResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/StopStack">REST API Reference for StopStack Operation</seealso>
-        public  StopStackResponse EndStopStack(IAsyncResult asyncResult)
+        public virtual StopStackResponse EndStopStack(IAsyncResult asyncResult)
         {
             return EndInvoke<StopStackResponse>(asyncResult);
         }
@@ -4663,7 +4663,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/TagResource">REST API Reference for TagResource Operation</seealso>
-        public TagResourceResponse TagResource(TagResourceRequest request)
+        public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
             var marshaller = new TagResourceRequestMarshaller();
             var unmarshaller = TagResourceResponseUnmarshaller.Instance;
@@ -4683,7 +4683,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResource
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/TagResource">REST API Reference for TagResource Operation</seealso>
-        public IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new TagResourceRequestMarshaller();
             var unmarshaller = TagResourceResponseUnmarshaller.Instance;
@@ -4700,7 +4700,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  TagResourceResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/TagResource">REST API Reference for TagResource Operation</seealso>
-        public  TagResourceResponse EndTagResource(IAsyncResult asyncResult)
+        public virtual TagResourceResponse EndTagResource(IAsyncResult asyncResult)
         {
             return EndInvoke<TagResourceResponse>(asyncResult);
         }
@@ -4732,7 +4732,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UnassignInstance">REST API Reference for UnassignInstance Operation</seealso>
-        public UnassignInstanceResponse UnassignInstance(UnassignInstanceRequest request)
+        public virtual UnassignInstanceResponse UnassignInstance(UnassignInstanceRequest request)
         {
             var marshaller = new UnassignInstanceRequestMarshaller();
             var unmarshaller = UnassignInstanceResponseUnmarshaller.Instance;
@@ -4752,7 +4752,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUnassignInstance
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UnassignInstance">REST API Reference for UnassignInstance Operation</seealso>
-        public IAsyncResult BeginUnassignInstance(UnassignInstanceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUnassignInstance(UnassignInstanceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UnassignInstanceRequestMarshaller();
             var unmarshaller = UnassignInstanceResponseUnmarshaller.Instance;
@@ -4769,7 +4769,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  UnassignInstanceResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UnassignInstance">REST API Reference for UnassignInstance Operation</seealso>
-        public  UnassignInstanceResponse EndUnassignInstance(IAsyncResult asyncResult)
+        public virtual UnassignInstanceResponse EndUnassignInstance(IAsyncResult asyncResult)
         {
             return EndInvoke<UnassignInstanceResponse>(asyncResult);
         }
@@ -4801,7 +4801,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UnassignVolume">REST API Reference for UnassignVolume Operation</seealso>
-        public UnassignVolumeResponse UnassignVolume(UnassignVolumeRequest request)
+        public virtual UnassignVolumeResponse UnassignVolume(UnassignVolumeRequest request)
         {
             var marshaller = new UnassignVolumeRequestMarshaller();
             var unmarshaller = UnassignVolumeResponseUnmarshaller.Instance;
@@ -4821,7 +4821,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUnassignVolume
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UnassignVolume">REST API Reference for UnassignVolume Operation</seealso>
-        public IAsyncResult BeginUnassignVolume(UnassignVolumeRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUnassignVolume(UnassignVolumeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UnassignVolumeRequestMarshaller();
             var unmarshaller = UnassignVolumeResponseUnmarshaller.Instance;
@@ -4838,7 +4838,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  UnassignVolumeResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UnassignVolume">REST API Reference for UnassignVolume Operation</seealso>
-        public  UnassignVolumeResponse EndUnassignVolume(IAsyncResult asyncResult)
+        public virtual UnassignVolumeResponse EndUnassignVolume(IAsyncResult asyncResult)
         {
             return EndInvoke<UnassignVolumeResponse>(asyncResult);
         }
@@ -4860,7 +4860,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UntagResource">REST API Reference for UntagResource Operation</seealso>
-        public UntagResourceResponse UntagResource(UntagResourceRequest request)
+        public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
             var marshaller = new UntagResourceRequestMarshaller();
             var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
@@ -4880,7 +4880,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResource
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UntagResource">REST API Reference for UntagResource Operation</seealso>
-        public IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UntagResourceRequestMarshaller();
             var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
@@ -4897,7 +4897,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  UntagResourceResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UntagResource">REST API Reference for UntagResource Operation</seealso>
-        public  UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
+        public virtual UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
         {
             return EndInvoke<UntagResourceResponse>(asyncResult);
         }
@@ -4927,7 +4927,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateApp">REST API Reference for UpdateApp Operation</seealso>
-        public UpdateAppResponse UpdateApp(UpdateAppRequest request)
+        public virtual UpdateAppResponse UpdateApp(UpdateAppRequest request)
         {
             var marshaller = new UpdateAppRequestMarshaller();
             var unmarshaller = UpdateAppResponseUnmarshaller.Instance;
@@ -4947,7 +4947,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateApp
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateApp">REST API Reference for UpdateApp Operation</seealso>
-        public IAsyncResult BeginUpdateApp(UpdateAppRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateApp(UpdateAppRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateAppRequestMarshaller();
             var unmarshaller = UpdateAppResponseUnmarshaller.Instance;
@@ -4964,7 +4964,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  UpdateAppResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateApp">REST API Reference for UpdateApp Operation</seealso>
-        public  UpdateAppResponse EndUpdateApp(IAsyncResult asyncResult)
+        public virtual UpdateAppResponse EndUpdateApp(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateAppResponse>(asyncResult);
         }
@@ -4995,7 +4995,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateElasticIp">REST API Reference for UpdateElasticIp Operation</seealso>
-        public UpdateElasticIpResponse UpdateElasticIp(UpdateElasticIpRequest request)
+        public virtual UpdateElasticIpResponse UpdateElasticIp(UpdateElasticIpRequest request)
         {
             var marshaller = new UpdateElasticIpRequestMarshaller();
             var unmarshaller = UpdateElasticIpResponseUnmarshaller.Instance;
@@ -5015,7 +5015,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateElasticIp
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateElasticIp">REST API Reference for UpdateElasticIp Operation</seealso>
-        public IAsyncResult BeginUpdateElasticIp(UpdateElasticIpRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateElasticIp(UpdateElasticIpRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateElasticIpRequestMarshaller();
             var unmarshaller = UpdateElasticIpResponseUnmarshaller.Instance;
@@ -5032,7 +5032,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  UpdateElasticIpResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateElasticIp">REST API Reference for UpdateElasticIp Operation</seealso>
-        public  UpdateElasticIpResponse EndUpdateElasticIp(IAsyncResult asyncResult)
+        public virtual UpdateElasticIpResponse EndUpdateElasticIp(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateElasticIpResponse>(asyncResult);
         }
@@ -5062,7 +5062,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateInstance">REST API Reference for UpdateInstance Operation</seealso>
-        public UpdateInstanceResponse UpdateInstance(UpdateInstanceRequest request)
+        public virtual UpdateInstanceResponse UpdateInstance(UpdateInstanceRequest request)
         {
             var marshaller = new UpdateInstanceRequestMarshaller();
             var unmarshaller = UpdateInstanceResponseUnmarshaller.Instance;
@@ -5082,7 +5082,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateInstance
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateInstance">REST API Reference for UpdateInstance Operation</seealso>
-        public IAsyncResult BeginUpdateInstance(UpdateInstanceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateInstance(UpdateInstanceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateInstanceRequestMarshaller();
             var unmarshaller = UpdateInstanceResponseUnmarshaller.Instance;
@@ -5099,7 +5099,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  UpdateInstanceResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateInstance">REST API Reference for UpdateInstance Operation</seealso>
-        public  UpdateInstanceResponse EndUpdateInstance(IAsyncResult asyncResult)
+        public virtual UpdateInstanceResponse EndUpdateInstance(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateInstanceResponse>(asyncResult);
         }
@@ -5129,7 +5129,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateLayer">REST API Reference for UpdateLayer Operation</seealso>
-        public UpdateLayerResponse UpdateLayer(UpdateLayerRequest request)
+        public virtual UpdateLayerResponse UpdateLayer(UpdateLayerRequest request)
         {
             var marshaller = new UpdateLayerRequestMarshaller();
             var unmarshaller = UpdateLayerResponseUnmarshaller.Instance;
@@ -5149,7 +5149,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateLayer
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateLayer">REST API Reference for UpdateLayer Operation</seealso>
-        public IAsyncResult BeginUpdateLayer(UpdateLayerRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateLayer(UpdateLayerRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateLayerRequestMarshaller();
             var unmarshaller = UpdateLayerResponseUnmarshaller.Instance;
@@ -5166,7 +5166,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  UpdateLayerResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateLayer">REST API Reference for UpdateLayer Operation</seealso>
-        public  UpdateLayerResponse EndUpdateLayer(IAsyncResult asyncResult)
+        public virtual UpdateLayerResponse EndUpdateLayer(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateLayerResponse>(asyncResult);
         }
@@ -5192,7 +5192,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateMyUserProfile">REST API Reference for UpdateMyUserProfile Operation</seealso>
-        public UpdateMyUserProfileResponse UpdateMyUserProfile()
+        public virtual UpdateMyUserProfileResponse UpdateMyUserProfile()
         {
             return UpdateMyUserProfile(new UpdateMyUserProfileRequest());
         }
@@ -5215,7 +5215,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateMyUserProfile">REST API Reference for UpdateMyUserProfile Operation</seealso>
-        public UpdateMyUserProfileResponse UpdateMyUserProfile(UpdateMyUserProfileRequest request)
+        public virtual UpdateMyUserProfileResponse UpdateMyUserProfile(UpdateMyUserProfileRequest request)
         {
             var marshaller = new UpdateMyUserProfileRequestMarshaller();
             var unmarshaller = UpdateMyUserProfileResponseUnmarshaller.Instance;
@@ -5235,7 +5235,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateMyUserProfile
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateMyUserProfile">REST API Reference for UpdateMyUserProfile Operation</seealso>
-        public IAsyncResult BeginUpdateMyUserProfile(UpdateMyUserProfileRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateMyUserProfile(UpdateMyUserProfileRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateMyUserProfileRequestMarshaller();
             var unmarshaller = UpdateMyUserProfileResponseUnmarshaller.Instance;
@@ -5252,7 +5252,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  UpdateMyUserProfileResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateMyUserProfile">REST API Reference for UpdateMyUserProfile Operation</seealso>
-        public  UpdateMyUserProfileResponse EndUpdateMyUserProfile(IAsyncResult asyncResult)
+        public virtual UpdateMyUserProfileResponse EndUpdateMyUserProfile(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateMyUserProfileResponse>(asyncResult);
         }
@@ -5282,7 +5282,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateRdsDbInstance">REST API Reference for UpdateRdsDbInstance Operation</seealso>
-        public UpdateRdsDbInstanceResponse UpdateRdsDbInstance(UpdateRdsDbInstanceRequest request)
+        public virtual UpdateRdsDbInstanceResponse UpdateRdsDbInstance(UpdateRdsDbInstanceRequest request)
         {
             var marshaller = new UpdateRdsDbInstanceRequestMarshaller();
             var unmarshaller = UpdateRdsDbInstanceResponseUnmarshaller.Instance;
@@ -5302,7 +5302,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateRdsDbInstance
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateRdsDbInstance">REST API Reference for UpdateRdsDbInstance Operation</seealso>
-        public IAsyncResult BeginUpdateRdsDbInstance(UpdateRdsDbInstanceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateRdsDbInstance(UpdateRdsDbInstanceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateRdsDbInstanceRequestMarshaller();
             var unmarshaller = UpdateRdsDbInstanceResponseUnmarshaller.Instance;
@@ -5319,7 +5319,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  UpdateRdsDbInstanceResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateRdsDbInstance">REST API Reference for UpdateRdsDbInstance Operation</seealso>
-        public  UpdateRdsDbInstanceResponse EndUpdateRdsDbInstance(IAsyncResult asyncResult)
+        public virtual UpdateRdsDbInstanceResponse EndUpdateRdsDbInstance(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateRdsDbInstanceResponse>(asyncResult);
         }
@@ -5349,7 +5349,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateStack">REST API Reference for UpdateStack Operation</seealso>
-        public UpdateStackResponse UpdateStack(UpdateStackRequest request)
+        public virtual UpdateStackResponse UpdateStack(UpdateStackRequest request)
         {
             var marshaller = new UpdateStackRequestMarshaller();
             var unmarshaller = UpdateStackResponseUnmarshaller.Instance;
@@ -5369,7 +5369,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateStack
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateStack">REST API Reference for UpdateStack Operation</seealso>
-        public IAsyncResult BeginUpdateStack(UpdateStackRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateStack(UpdateStackRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateStackRequestMarshaller();
             var unmarshaller = UpdateStackResponseUnmarshaller.Instance;
@@ -5386,7 +5386,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  UpdateStackResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateStack">REST API Reference for UpdateStack Operation</seealso>
-        public  UpdateStackResponse EndUpdateStack(IAsyncResult asyncResult)
+        public virtual UpdateStackResponse EndUpdateStack(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateStackResponse>(asyncResult);
         }
@@ -5416,7 +5416,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateUserProfile">REST API Reference for UpdateUserProfile Operation</seealso>
-        public UpdateUserProfileResponse UpdateUserProfile(UpdateUserProfileRequest request)
+        public virtual UpdateUserProfileResponse UpdateUserProfile(UpdateUserProfileRequest request)
         {
             var marshaller = new UpdateUserProfileRequestMarshaller();
             var unmarshaller = UpdateUserProfileResponseUnmarshaller.Instance;
@@ -5436,7 +5436,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateUserProfile
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateUserProfile">REST API Reference for UpdateUserProfile Operation</seealso>
-        public IAsyncResult BeginUpdateUserProfile(UpdateUserProfileRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateUserProfile(UpdateUserProfileRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateUserProfileRequestMarshaller();
             var unmarshaller = UpdateUserProfileResponseUnmarshaller.Instance;
@@ -5453,7 +5453,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  UpdateUserProfileResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateUserProfile">REST API Reference for UpdateUserProfile Operation</seealso>
-        public  UpdateUserProfileResponse EndUpdateUserProfile(IAsyncResult asyncResult)
+        public virtual UpdateUserProfileResponse EndUpdateUserProfile(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateUserProfileResponse>(asyncResult);
         }
@@ -5484,7 +5484,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateVolume">REST API Reference for UpdateVolume Operation</seealso>
-        public UpdateVolumeResponse UpdateVolume(UpdateVolumeRequest request)
+        public virtual UpdateVolumeResponse UpdateVolume(UpdateVolumeRequest request)
         {
             var marshaller = new UpdateVolumeRequestMarshaller();
             var unmarshaller = UpdateVolumeResponseUnmarshaller.Instance;
@@ -5504,7 +5504,7 @@ namespace Amazon.OpsWorks
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateVolume
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateVolume">REST API Reference for UpdateVolume Operation</seealso>
-        public IAsyncResult BeginUpdateVolume(UpdateVolumeRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateVolume(UpdateVolumeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateVolumeRequestMarshaller();
             var unmarshaller = UpdateVolumeResponseUnmarshaller.Instance;
@@ -5521,7 +5521,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  UpdateVolumeResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateVolume">REST API Reference for UpdateVolume Operation</seealso>
-        public  UpdateVolumeResponse EndUpdateVolume(IAsyncResult asyncResult)
+        public virtual UpdateVolumeResponse EndUpdateVolume(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateVolumeResponse>(asyncResult);
         }

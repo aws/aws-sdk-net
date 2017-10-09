@@ -239,7 +239,7 @@ namespace Amazon.CostAndUsageReport
         /// with an invalid report name, or Delete a report preference with an empty report name.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/DeleteReportDefinition">REST API Reference for DeleteReportDefinition Operation</seealso>
-        public DeleteReportDefinitionResponse DeleteReportDefinition(DeleteReportDefinitionRequest request)
+        public virtual DeleteReportDefinitionResponse DeleteReportDefinition(DeleteReportDefinitionRequest request)
         {
             var marshaller = new DeleteReportDefinitionRequestMarshaller();
             var unmarshaller = DeleteReportDefinitionResponseUnmarshaller.Instance;
@@ -259,7 +259,7 @@ namespace Amazon.CostAndUsageReport
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteReportDefinition
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/DeleteReportDefinition">REST API Reference for DeleteReportDefinition Operation</seealso>
-        public IAsyncResult BeginDeleteReportDefinition(DeleteReportDefinitionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteReportDefinition(DeleteReportDefinitionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteReportDefinitionRequestMarshaller();
             var unmarshaller = DeleteReportDefinitionResponseUnmarshaller.Instance;
@@ -276,7 +276,7 @@ namespace Amazon.CostAndUsageReport
         /// 
         /// <returns>Returns a  DeleteReportDefinitionResult from CostAndUsageReport.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/DeleteReportDefinition">REST API Reference for DeleteReportDefinition Operation</seealso>
-        public  DeleteReportDefinitionResponse EndDeleteReportDefinition(IAsyncResult asyncResult)
+        public virtual DeleteReportDefinitionResponse EndDeleteReportDefinition(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteReportDefinitionResponse>(asyncResult);
         }
@@ -295,7 +295,7 @@ namespace Amazon.CostAndUsageReport
         /// This exception is thrown on a known dependency failure.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/DescribeReportDefinitions">REST API Reference for DescribeReportDefinitions Operation</seealso>
-        public DescribeReportDefinitionsResponse DescribeReportDefinitions(DescribeReportDefinitionsRequest request)
+        public virtual DescribeReportDefinitionsResponse DescribeReportDefinitions(DescribeReportDefinitionsRequest request)
         {
             var marshaller = new DescribeReportDefinitionsRequestMarshaller();
             var unmarshaller = DescribeReportDefinitionsResponseUnmarshaller.Instance;
@@ -315,7 +315,7 @@ namespace Amazon.CostAndUsageReport
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeReportDefinitions
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/DescribeReportDefinitions">REST API Reference for DescribeReportDefinitions Operation</seealso>
-        public IAsyncResult BeginDescribeReportDefinitions(DescribeReportDefinitionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeReportDefinitions(DescribeReportDefinitionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeReportDefinitionsRequestMarshaller();
             var unmarshaller = DescribeReportDefinitionsResponseUnmarshaller.Instance;
@@ -332,7 +332,7 @@ namespace Amazon.CostAndUsageReport
         /// 
         /// <returns>Returns a  DescribeReportDefinitionsResult from CostAndUsageReport.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/DescribeReportDefinitions">REST API Reference for DescribeReportDefinitions Operation</seealso>
-        public  DescribeReportDefinitionsResponse EndDescribeReportDefinitions(IAsyncResult asyncResult)
+        public virtual DescribeReportDefinitionsResponse EndDescribeReportDefinitions(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeReportDefinitionsResponse>(asyncResult);
         }
@@ -363,7 +363,7 @@ namespace Amazon.CostAndUsageReport
         /// with an invalid report name, or Delete a report preference with an empty report name.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/PutReportDefinition">REST API Reference for PutReportDefinition Operation</seealso>
-        public PutReportDefinitionResponse PutReportDefinition(PutReportDefinitionRequest request)
+        public virtual PutReportDefinitionResponse PutReportDefinition(PutReportDefinitionRequest request)
         {
             var marshaller = new PutReportDefinitionRequestMarshaller();
             var unmarshaller = PutReportDefinitionResponseUnmarshaller.Instance;
@@ -383,7 +383,7 @@ namespace Amazon.CostAndUsageReport
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutReportDefinition
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/PutReportDefinition">REST API Reference for PutReportDefinition Operation</seealso>
-        public IAsyncResult BeginPutReportDefinition(PutReportDefinitionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPutReportDefinition(PutReportDefinitionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutReportDefinitionRequestMarshaller();
             var unmarshaller = PutReportDefinitionResponseUnmarshaller.Instance;
@@ -400,7 +400,7 @@ namespace Amazon.CostAndUsageReport
         /// 
         /// <returns>Returns a  PutReportDefinitionResult from CostAndUsageReport.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/PutReportDefinition">REST API Reference for PutReportDefinition Operation</seealso>
-        public  PutReportDefinitionResponse EndPutReportDefinition(IAsyncResult asyncResult)
+        public virtual PutReportDefinitionResponse EndPutReportDefinition(IAsyncResult asyncResult)
         {
             return EndInvoke<PutReportDefinitionResponse>(asyncResult);
         }

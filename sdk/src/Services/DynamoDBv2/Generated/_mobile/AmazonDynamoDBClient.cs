@@ -262,7 +262,7 @@ namespace Amazon.DynamoDBv2
         
         #region  BatchGetItem
 
-        internal BatchGetItemResponse BatchGetItem(BatchGetItemRequest request)
+        internal virtual BatchGetItemResponse BatchGetItem(BatchGetItemRequest request)
         {
             var marshaller = new BatchGetItemRequestMarshaller();
             var unmarshaller = BatchGetItemResponseUnmarshaller.Instance;
@@ -366,7 +366,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchGetItem">REST API Reference for BatchGetItem Operation</seealso>
-        public Task<BatchGetItemResponse> BatchGetItemAsync(Dictionary<string, KeysAndAttributes> requestItems, ReturnConsumedCapacity returnConsumedCapacity, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<BatchGetItemResponse> BatchGetItemAsync(Dictionary<string, KeysAndAttributes> requestItems, ReturnConsumedCapacity returnConsumedCapacity, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new BatchGetItemRequest();
             request.RequestItems = requestItems;
@@ -469,7 +469,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchGetItem">REST API Reference for BatchGetItem Operation</seealso>
-        public Task<BatchGetItemResponse> BatchGetItemAsync(Dictionary<string, KeysAndAttributes> requestItems, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<BatchGetItemResponse> BatchGetItemAsync(Dictionary<string, KeysAndAttributes> requestItems, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new BatchGetItemRequest();
             request.RequestItems = requestItems;
@@ -487,7 +487,7 @@ namespace Amazon.DynamoDBv2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchGetItem">REST API Reference for BatchGetItem Operation</seealso>
-        public Task<BatchGetItemResponse> BatchGetItemAsync(BatchGetItemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<BatchGetItemResponse> BatchGetItemAsync(BatchGetItemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new BatchGetItemRequestMarshaller();
             var unmarshaller = BatchGetItemResponseUnmarshaller.Instance;
@@ -500,7 +500,7 @@ namespace Amazon.DynamoDBv2
         
         #region  BatchWriteItem
 
-        internal BatchWriteItemResponse BatchWriteItem(BatchWriteItemRequest request)
+        internal virtual BatchWriteItemResponse BatchWriteItem(BatchWriteItemRequest request)
         {
             var marshaller = new BatchWriteItemRequestMarshaller();
             var unmarshaller = BatchWriteItemResponseUnmarshaller.Instance;
@@ -634,7 +634,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchWriteItem">REST API Reference for BatchWriteItem Operation</seealso>
-        public Task<BatchWriteItemResponse> BatchWriteItemAsync(Dictionary<string, List<WriteRequest>> requestItems, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<BatchWriteItemResponse> BatchWriteItemAsync(Dictionary<string, List<WriteRequest>> requestItems, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new BatchWriteItemRequest();
             request.RequestItems = requestItems;
@@ -652,7 +652,7 @@ namespace Amazon.DynamoDBv2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchWriteItem">REST API Reference for BatchWriteItem Operation</seealso>
-        public Task<BatchWriteItemResponse> BatchWriteItemAsync(BatchWriteItemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<BatchWriteItemResponse> BatchWriteItemAsync(BatchWriteItemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new BatchWriteItemRequestMarshaller();
             var unmarshaller = BatchWriteItemResponseUnmarshaller.Instance;
@@ -665,7 +665,7 @@ namespace Amazon.DynamoDBv2
         
         #region  CreateTable
 
-        internal CreateTableResponse CreateTable(CreateTableRequest request)
+        internal virtual CreateTableResponse CreateTable(CreateTableRequest request)
         {
             var marshaller = new CreateTableRequestMarshaller();
             var unmarshaller = CreateTableResponseUnmarshaller.Instance;
@@ -732,7 +732,7 @@ namespace Amazon.DynamoDBv2
         /// state.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateTable">REST API Reference for CreateTable Operation</seealso>
-        public Task<CreateTableResponse> CreateTableAsync(string tableName, List<KeySchemaElement> keySchema, List<AttributeDefinition> attributeDefinitions, ProvisionedThroughput provisionedThroughput, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateTableResponse> CreateTableAsync(string tableName, List<KeySchemaElement> keySchema, List<AttributeDefinition> attributeDefinitions, ProvisionedThroughput provisionedThroughput, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new CreateTableRequest();
             request.TableName = tableName;
@@ -753,7 +753,7 @@ namespace Amazon.DynamoDBv2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateTable">REST API Reference for CreateTable Operation</seealso>
-        public Task<CreateTableResponse> CreateTableAsync(CreateTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateTableResponse> CreateTableAsync(CreateTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateTableRequestMarshaller();
             var unmarshaller = CreateTableResponseUnmarshaller.Instance;
@@ -766,7 +766,7 @@ namespace Amazon.DynamoDBv2
         
         #region  DeleteItem
 
-        internal DeleteItemResponse DeleteItem(DeleteItemRequest request)
+        internal virtual DeleteItemResponse DeleteItem(DeleteItemRequest request)
         {
             var marshaller = new DeleteItemRequestMarshaller();
             var unmarshaller = DeleteItemResponseUnmarshaller.Instance;
@@ -826,7 +826,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteItem">REST API Reference for DeleteItem Operation</seealso>
-        public Task<DeleteItemResponse> DeleteItemAsync(string tableName, Dictionary<string, AttributeValue> key, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteItemResponse> DeleteItemAsync(string tableName, Dictionary<string, AttributeValue> key, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DeleteItemRequest();
             request.TableName = tableName;
@@ -887,7 +887,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteItem">REST API Reference for DeleteItem Operation</seealso>
-        public Task<DeleteItemResponse> DeleteItemAsync(string tableName, Dictionary<string, AttributeValue> key, ReturnValue returnValues, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteItemResponse> DeleteItemAsync(string tableName, Dictionary<string, AttributeValue> key, ReturnValue returnValues, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DeleteItemRequest();
             request.TableName = tableName;
@@ -907,7 +907,7 @@ namespace Amazon.DynamoDBv2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteItem">REST API Reference for DeleteItem Operation</seealso>
-        public Task<DeleteItemResponse> DeleteItemAsync(DeleteItemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteItemResponse> DeleteItemAsync(DeleteItemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteItemRequestMarshaller();
             var unmarshaller = DeleteItemResponseUnmarshaller.Instance;
@@ -920,7 +920,7 @@ namespace Amazon.DynamoDBv2
         
         #region  DeleteTable
 
-        internal DeleteTableResponse DeleteTable(DeleteTableRequest request)
+        internal virtual DeleteTableResponse DeleteTable(DeleteTableRequest request)
         {
             var marshaller = new DeleteTableRequestMarshaller();
             var unmarshaller = DeleteTableResponseUnmarshaller.Instance;
@@ -993,7 +993,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteTable">REST API Reference for DeleteTable Operation</seealso>
-        public Task<DeleteTableResponse> DeleteTableAsync(string tableName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteTableResponse> DeleteTableAsync(string tableName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DeleteTableRequest();
             request.TableName = tableName;
@@ -1011,7 +1011,7 @@ namespace Amazon.DynamoDBv2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteTable">REST API Reference for DeleteTable Operation</seealso>
-        public Task<DeleteTableResponse> DeleteTableAsync(DeleteTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteTableResponse> DeleteTableAsync(DeleteTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteTableRequestMarshaller();
             var unmarshaller = DeleteTableResponseUnmarshaller.Instance;
@@ -1024,7 +1024,7 @@ namespace Amazon.DynamoDBv2
         
         #region  DescribeLimits
 
-        internal DescribeLimitsResponse DescribeLimits(DescribeLimitsRequest request)
+        internal virtual DescribeLimitsResponse DescribeLimits(DescribeLimitsRequest request)
         {
             var marshaller = new DescribeLimitsRequestMarshaller();
             var unmarshaller = DescribeLimitsResponseUnmarshaller.Instance;
@@ -1043,7 +1043,7 @@ namespace Amazon.DynamoDBv2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeLimits">REST API Reference for DescribeLimits Operation</seealso>
-        public Task<DescribeLimitsResponse> DescribeLimitsAsync(DescribeLimitsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeLimitsResponse> DescribeLimitsAsync(DescribeLimitsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeLimitsRequestMarshaller();
             var unmarshaller = DescribeLimitsResponseUnmarshaller.Instance;
@@ -1056,7 +1056,7 @@ namespace Amazon.DynamoDBv2
         
         #region  DescribeTable
 
-        internal DescribeTableResponse DescribeTable(DescribeTableRequest request)
+        internal virtual DescribeTableResponse DescribeTable(DescribeTableRequest request)
         {
             var marshaller = new DescribeTableRequestMarshaller();
             var unmarshaller = DescribeTableResponseUnmarshaller.Instance;
@@ -1093,7 +1093,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTable">REST API Reference for DescribeTable Operation</seealso>
-        public Task<DescribeTableResponse> DescribeTableAsync(string tableName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeTableResponse> DescribeTableAsync(string tableName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DescribeTableRequest();
             request.TableName = tableName;
@@ -1111,7 +1111,7 @@ namespace Amazon.DynamoDBv2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTable">REST API Reference for DescribeTable Operation</seealso>
-        public Task<DescribeTableResponse> DescribeTableAsync(DescribeTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeTableResponse> DescribeTableAsync(DescribeTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeTableRequestMarshaller();
             var unmarshaller = DescribeTableResponseUnmarshaller.Instance;
@@ -1124,7 +1124,7 @@ namespace Amazon.DynamoDBv2
         
         #region  DescribeTimeToLive
 
-        internal DescribeTimeToLiveResponse DescribeTimeToLive(DescribeTimeToLiveRequest request)
+        internal virtual DescribeTimeToLiveResponse DescribeTimeToLive(DescribeTimeToLiveRequest request)
         {
             var marshaller = new DescribeTimeToLiveRequestMarshaller();
             var unmarshaller = DescribeTimeToLiveResponseUnmarshaller.Instance;
@@ -1150,7 +1150,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTimeToLive">REST API Reference for DescribeTimeToLive Operation</seealso>
-        public Task<DescribeTimeToLiveResponse> DescribeTimeToLiveAsync(string tableName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeTimeToLiveResponse> DescribeTimeToLiveAsync(string tableName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DescribeTimeToLiveRequest();
             request.TableName = tableName;
@@ -1168,7 +1168,7 @@ namespace Amazon.DynamoDBv2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTimeToLive">REST API Reference for DescribeTimeToLive Operation</seealso>
-        public Task<DescribeTimeToLiveResponse> DescribeTimeToLiveAsync(DescribeTimeToLiveRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeTimeToLiveResponse> DescribeTimeToLiveAsync(DescribeTimeToLiveRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeTimeToLiveRequestMarshaller();
             var unmarshaller = DescribeTimeToLiveResponseUnmarshaller.Instance;
@@ -1181,7 +1181,7 @@ namespace Amazon.DynamoDBv2
         
         #region  GetItem
 
-        internal GetItemResponse GetItem(GetItemRequest request)
+        internal virtual GetItemResponse GetItem(GetItemRequest request)
         {
             var marshaller = new GetItemRequestMarshaller();
             var unmarshaller = GetItemResponseUnmarshaller.Instance;
@@ -1225,7 +1225,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/GetItem">REST API Reference for GetItem Operation</seealso>
-        public Task<GetItemResponse> GetItemAsync(string tableName, Dictionary<string, AttributeValue> key, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetItemResponse> GetItemAsync(string tableName, Dictionary<string, AttributeValue> key, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new GetItemRequest();
             request.TableName = tableName;
@@ -1270,7 +1270,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/GetItem">REST API Reference for GetItem Operation</seealso>
-        public Task<GetItemResponse> GetItemAsync(string tableName, Dictionary<string, AttributeValue> key, bool consistentRead, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetItemResponse> GetItemAsync(string tableName, Dictionary<string, AttributeValue> key, bool consistentRead, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new GetItemRequest();
             request.TableName = tableName;
@@ -1290,7 +1290,7 @@ namespace Amazon.DynamoDBv2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/GetItem">REST API Reference for GetItem Operation</seealso>
-        public Task<GetItemResponse> GetItemAsync(GetItemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetItemResponse> GetItemAsync(GetItemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetItemRequestMarshaller();
             var unmarshaller = GetItemResponseUnmarshaller.Instance;
@@ -1303,11 +1303,11 @@ namespace Amazon.DynamoDBv2
         
         #region  ListTables
 
-        internal ListTablesResponse ListTables()
+        internal virtual ListTablesResponse ListTables()
         {
             return ListTables(new ListTablesRequest());
         }
-        internal ListTablesResponse ListTables(ListTablesRequest request)
+        internal virtual ListTablesResponse ListTables(ListTablesRequest request)
         {
             var marshaller = new ListTablesRequestMarshaller();
             var unmarshaller = ListTablesResponseUnmarshaller.Instance;
@@ -1330,7 +1330,7 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListTables">REST API Reference for ListTables Operation</seealso>
-        public Task<ListTablesResponse> ListTablesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListTablesResponse> ListTablesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return ListTablesAsync(new ListTablesRequest(), cancellationToken);
         }
@@ -1351,7 +1351,7 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListTables">REST API Reference for ListTables Operation</seealso>
-        public Task<ListTablesResponse> ListTablesAsync(string exclusiveStartTableName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListTablesResponse> ListTablesAsync(string exclusiveStartTableName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new ListTablesRequest();
             request.ExclusiveStartTableName = exclusiveStartTableName;
@@ -1375,7 +1375,7 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListTables">REST API Reference for ListTables Operation</seealso>
-        public Task<ListTablesResponse> ListTablesAsync(string exclusiveStartTableName, int limit, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListTablesResponse> ListTablesAsync(string exclusiveStartTableName, int limit, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new ListTablesRequest();
             request.ExclusiveStartTableName = exclusiveStartTableName;
@@ -1399,7 +1399,7 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListTables">REST API Reference for ListTables Operation</seealso>
-        public Task<ListTablesResponse> ListTablesAsync(int limit, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListTablesResponse> ListTablesAsync(int limit, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new ListTablesRequest();
             request.Limit = limit;
@@ -1417,7 +1417,7 @@ namespace Amazon.DynamoDBv2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListTables">REST API Reference for ListTables Operation</seealso>
-        public Task<ListTablesResponse> ListTablesAsync(ListTablesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListTablesResponse> ListTablesAsync(ListTablesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListTablesRequestMarshaller();
             var unmarshaller = ListTablesResponseUnmarshaller.Instance;
@@ -1430,7 +1430,7 @@ namespace Amazon.DynamoDBv2
         
         #region  ListTagsOfResource
 
-        internal ListTagsOfResourceResponse ListTagsOfResource(ListTagsOfResourceRequest request)
+        internal virtual ListTagsOfResourceResponse ListTagsOfResource(ListTagsOfResourceRequest request)
         {
             var marshaller = new ListTagsOfResourceRequestMarshaller();
             var unmarshaller = ListTagsOfResourceResponseUnmarshaller.Instance;
@@ -1449,7 +1449,7 @@ namespace Amazon.DynamoDBv2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListTagsOfResource">REST API Reference for ListTagsOfResource Operation</seealso>
-        public Task<ListTagsOfResourceResponse> ListTagsOfResourceAsync(ListTagsOfResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListTagsOfResourceResponse> ListTagsOfResourceAsync(ListTagsOfResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListTagsOfResourceRequestMarshaller();
             var unmarshaller = ListTagsOfResourceResponseUnmarshaller.Instance;
@@ -1462,7 +1462,7 @@ namespace Amazon.DynamoDBv2
         
         #region  PutItem
 
-        internal PutItemResponse PutItem(PutItemRequest request)
+        internal virtual PutItemResponse PutItem(PutItemRequest request)
         {
             var marshaller = new PutItemRequestMarshaller();
             var unmarshaller = PutItemResponseUnmarshaller.Instance;
@@ -1583,7 +1583,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/PutItem">REST API Reference for PutItem Operation</seealso>
-        public Task<PutItemResponse> PutItemAsync(string tableName, Dictionary<string, AttributeValue> item, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PutItemResponse> PutItemAsync(string tableName, Dictionary<string, AttributeValue> item, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new PutItemRequest();
             request.TableName = tableName;
@@ -1705,7 +1705,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/PutItem">REST API Reference for PutItem Operation</seealso>
-        public Task<PutItemResponse> PutItemAsync(string tableName, Dictionary<string, AttributeValue> item, ReturnValue returnValues, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PutItemResponse> PutItemAsync(string tableName, Dictionary<string, AttributeValue> item, ReturnValue returnValues, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new PutItemRequest();
             request.TableName = tableName;
@@ -1725,7 +1725,7 @@ namespace Amazon.DynamoDBv2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/PutItem">REST API Reference for PutItem Operation</seealso>
-        public Task<PutItemResponse> PutItemAsync(PutItemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PutItemResponse> PutItemAsync(PutItemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutItemRequestMarshaller();
             var unmarshaller = PutItemResponseUnmarshaller.Instance;
@@ -1738,7 +1738,7 @@ namespace Amazon.DynamoDBv2
         
         #region  Query
 
-        internal QueryResponse Query(QueryRequest request)
+        internal virtual QueryResponse Query(QueryRequest request)
         {
             var marshaller = new QueryRequestMarshaller();
             var unmarshaller = QueryResponseUnmarshaller.Instance;
@@ -1757,7 +1757,7 @@ namespace Amazon.DynamoDBv2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Query">REST API Reference for Query Operation</seealso>
-        public Task<QueryResponse> QueryAsync(QueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<QueryResponse> QueryAsync(QueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new QueryRequestMarshaller();
             var unmarshaller = QueryResponseUnmarshaller.Instance;
@@ -1770,7 +1770,7 @@ namespace Amazon.DynamoDBv2
         
         #region  Scan
 
-        internal ScanResponse Scan(ScanRequest request)
+        internal virtual ScanResponse Scan(ScanRequest request)
         {
             var marshaller = new ScanRequestMarshaller();
             var unmarshaller = ScanResponseUnmarshaller.Instance;
@@ -1840,7 +1840,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Scan">REST API Reference for Scan Operation</seealso>
-        public Task<ScanResponse> ScanAsync(string tableName, List<string> attributesToGet, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ScanResponse> ScanAsync(string tableName, List<string> attributesToGet, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new ScanRequest();
             request.TableName = tableName;
@@ -1910,7 +1910,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Scan">REST API Reference for Scan Operation</seealso>
-        public Task<ScanResponse> ScanAsync(string tableName, Dictionary<string, Condition> scanFilter, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ScanResponse> ScanAsync(string tableName, Dictionary<string, Condition> scanFilter, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new ScanRequest();
             request.TableName = tableName;
@@ -1981,7 +1981,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Scan">REST API Reference for Scan Operation</seealso>
-        public Task<ScanResponse> ScanAsync(string tableName, List<string> attributesToGet, Dictionary<string, Condition> scanFilter, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ScanResponse> ScanAsync(string tableName, List<string> attributesToGet, Dictionary<string, Condition> scanFilter, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new ScanRequest();
             request.TableName = tableName;
@@ -2001,7 +2001,7 @@ namespace Amazon.DynamoDBv2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Scan">REST API Reference for Scan Operation</seealso>
-        public Task<ScanResponse> ScanAsync(ScanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ScanResponse> ScanAsync(ScanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ScanRequestMarshaller();
             var unmarshaller = ScanResponseUnmarshaller.Instance;
@@ -2014,7 +2014,7 @@ namespace Amazon.DynamoDBv2
         
         #region  TagResource
 
-        internal TagResourceResponse TagResource(TagResourceRequest request)
+        internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
             var marshaller = new TagResourceRequestMarshaller();
             var unmarshaller = TagResourceResponseUnmarshaller.Instance;
@@ -2033,7 +2033,7 @@ namespace Amazon.DynamoDBv2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/TagResource">REST API Reference for TagResource Operation</seealso>
-        public Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new TagResourceRequestMarshaller();
             var unmarshaller = TagResourceResponseUnmarshaller.Instance;
@@ -2046,7 +2046,7 @@ namespace Amazon.DynamoDBv2
         
         #region  UntagResource
 
-        internal UntagResourceResponse UntagResource(UntagResourceRequest request)
+        internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
             var marshaller = new UntagResourceRequestMarshaller();
             var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
@@ -2065,7 +2065,7 @@ namespace Amazon.DynamoDBv2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
-        public Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UntagResourceRequestMarshaller();
             var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
@@ -2078,7 +2078,7 @@ namespace Amazon.DynamoDBv2
         
         #region  UpdateItem
 
-        internal UpdateItemResponse UpdateItem(UpdateItemRequest request)
+        internal virtual UpdateItemResponse UpdateItem(UpdateItemRequest request)
         {
             var marshaller = new UpdateItemRequestMarshaller();
             var unmarshaller = UpdateItemResponseUnmarshaller.Instance;
@@ -2130,7 +2130,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateItem">REST API Reference for UpdateItem Operation</seealso>
-        public Task<UpdateItemResponse> UpdateItemAsync(string tableName, Dictionary<string, AttributeValue> key, Dictionary<string, AttributeValueUpdate> attributeUpdates, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateItemResponse> UpdateItemAsync(string tableName, Dictionary<string, AttributeValue> key, Dictionary<string, AttributeValueUpdate> attributeUpdates, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new UpdateItemRequest();
             request.TableName = tableName;
@@ -2184,7 +2184,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateItem">REST API Reference for UpdateItem Operation</seealso>
-        public Task<UpdateItemResponse> UpdateItemAsync(string tableName, Dictionary<string, AttributeValue> key, Dictionary<string, AttributeValueUpdate> attributeUpdates, ReturnValue returnValues, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateItemResponse> UpdateItemAsync(string tableName, Dictionary<string, AttributeValue> key, Dictionary<string, AttributeValueUpdate> attributeUpdates, ReturnValue returnValues, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new UpdateItemRequest();
             request.TableName = tableName;
@@ -2205,7 +2205,7 @@ namespace Amazon.DynamoDBv2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateItem">REST API Reference for UpdateItem Operation</seealso>
-        public Task<UpdateItemResponse> UpdateItemAsync(UpdateItemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateItemResponse> UpdateItemAsync(UpdateItemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateItemRequestMarshaller();
             var unmarshaller = UpdateItemResponseUnmarshaller.Instance;
@@ -2218,7 +2218,7 @@ namespace Amazon.DynamoDBv2
         
         #region  UpdateTable
 
-        internal UpdateTableResponse UpdateTable(UpdateTableRequest request)
+        internal virtual UpdateTableResponse UpdateTable(UpdateTableRequest request)
         {
             var marshaller = new UpdateTableRequestMarshaller();
             var unmarshaller = UpdateTableResponseUnmarshaller.Instance;
@@ -2296,7 +2296,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTable">REST API Reference for UpdateTable Operation</seealso>
-        public Task<UpdateTableResponse> UpdateTableAsync(string tableName, ProvisionedThroughput provisionedThroughput, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateTableResponse> UpdateTableAsync(string tableName, ProvisionedThroughput provisionedThroughput, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new UpdateTableRequest();
             request.TableName = tableName;
@@ -2315,7 +2315,7 @@ namespace Amazon.DynamoDBv2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTable">REST API Reference for UpdateTable Operation</seealso>
-        public Task<UpdateTableResponse> UpdateTableAsync(UpdateTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateTableResponse> UpdateTableAsync(UpdateTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateTableRequestMarshaller();
             var unmarshaller = UpdateTableResponseUnmarshaller.Instance;
@@ -2328,7 +2328,7 @@ namespace Amazon.DynamoDBv2
         
         #region  UpdateTimeToLive
 
-        internal UpdateTimeToLiveResponse UpdateTimeToLive(UpdateTimeToLiveRequest request)
+        internal virtual UpdateTimeToLiveResponse UpdateTimeToLive(UpdateTimeToLiveRequest request)
         {
             var marshaller = new UpdateTimeToLiveRequestMarshaller();
             var unmarshaller = UpdateTimeToLiveResponseUnmarshaller.Instance;
@@ -2347,7 +2347,7 @@ namespace Amazon.DynamoDBv2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTimeToLive">REST API Reference for UpdateTimeToLive Operation</seealso>
-        public Task<UpdateTimeToLiveResponse> UpdateTimeToLiveAsync(UpdateTimeToLiveRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateTimeToLiveResponse> UpdateTimeToLiveAsync(UpdateTimeToLiveRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateTimeToLiveRequestMarshaller();
             var unmarshaller = UpdateTimeToLiveResponseUnmarshaller.Instance;

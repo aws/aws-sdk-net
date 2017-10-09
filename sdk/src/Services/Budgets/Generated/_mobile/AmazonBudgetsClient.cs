@@ -232,7 +232,7 @@ namespace Amazon.Budgets
         
         #region  CreateBudget
 
-        internal CreateBudgetResponse CreateBudget(CreateBudgetRequest request)
+        internal virtual CreateBudgetResponse CreateBudget(CreateBudgetRequest request)
         {
             var marshaller = new CreateBudgetRequestMarshaller();
             var unmarshaller = CreateBudgetResponseUnmarshaller.Instance;
@@ -250,7 +250,7 @@ namespace Amazon.Budgets
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CreateBudgetResponse> CreateBudgetAsync(CreateBudgetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateBudgetResponse> CreateBudgetAsync(CreateBudgetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateBudgetRequestMarshaller();
             var unmarshaller = CreateBudgetResponseUnmarshaller.Instance;
@@ -263,7 +263,7 @@ namespace Amazon.Budgets
         
         #region  CreateNotification
 
-        internal CreateNotificationResponse CreateNotification(CreateNotificationRequest request)
+        internal virtual CreateNotificationResponse CreateNotification(CreateNotificationRequest request)
         {
             var marshaller = new CreateNotificationRequestMarshaller();
             var unmarshaller = CreateNotificationResponseUnmarshaller.Instance;
@@ -281,7 +281,7 @@ namespace Amazon.Budgets
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CreateNotificationResponse> CreateNotificationAsync(CreateNotificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateNotificationResponse> CreateNotificationAsync(CreateNotificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateNotificationRequestMarshaller();
             var unmarshaller = CreateNotificationResponseUnmarshaller.Instance;
@@ -294,7 +294,7 @@ namespace Amazon.Budgets
         
         #region  CreateSubscriber
 
-        internal CreateSubscriberResponse CreateSubscriber(CreateSubscriberRequest request)
+        internal virtual CreateSubscriberResponse CreateSubscriber(CreateSubscriberRequest request)
         {
             var marshaller = new CreateSubscriberRequestMarshaller();
             var unmarshaller = CreateSubscriberResponseUnmarshaller.Instance;
@@ -312,7 +312,7 @@ namespace Amazon.Budgets
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CreateSubscriberResponse> CreateSubscriberAsync(CreateSubscriberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateSubscriberResponse> CreateSubscriberAsync(CreateSubscriberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateSubscriberRequestMarshaller();
             var unmarshaller = CreateSubscriberResponseUnmarshaller.Instance;
@@ -325,7 +325,7 @@ namespace Amazon.Budgets
         
         #region  DeleteBudget
 
-        internal DeleteBudgetResponse DeleteBudget(DeleteBudgetRequest request)
+        internal virtual DeleteBudgetResponse DeleteBudget(DeleteBudgetRequest request)
         {
             var marshaller = new DeleteBudgetRequestMarshaller();
             var unmarshaller = DeleteBudgetResponseUnmarshaller.Instance;
@@ -343,7 +343,7 @@ namespace Amazon.Budgets
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteBudgetResponse> DeleteBudgetAsync(DeleteBudgetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteBudgetResponse> DeleteBudgetAsync(DeleteBudgetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteBudgetRequestMarshaller();
             var unmarshaller = DeleteBudgetResponseUnmarshaller.Instance;
@@ -356,7 +356,7 @@ namespace Amazon.Budgets
         
         #region  DeleteNotification
 
-        internal DeleteNotificationResponse DeleteNotification(DeleteNotificationRequest request)
+        internal virtual DeleteNotificationResponse DeleteNotification(DeleteNotificationRequest request)
         {
             var marshaller = new DeleteNotificationRequestMarshaller();
             var unmarshaller = DeleteNotificationResponseUnmarshaller.Instance;
@@ -374,7 +374,7 @@ namespace Amazon.Budgets
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteNotificationResponse> DeleteNotificationAsync(DeleteNotificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteNotificationResponse> DeleteNotificationAsync(DeleteNotificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteNotificationRequestMarshaller();
             var unmarshaller = DeleteNotificationResponseUnmarshaller.Instance;
@@ -387,7 +387,7 @@ namespace Amazon.Budgets
         
         #region  DeleteSubscriber
 
-        internal DeleteSubscriberResponse DeleteSubscriber(DeleteSubscriberRequest request)
+        internal virtual DeleteSubscriberResponse DeleteSubscriber(DeleteSubscriberRequest request)
         {
             var marshaller = new DeleteSubscriberRequestMarshaller();
             var unmarshaller = DeleteSubscriberResponseUnmarshaller.Instance;
@@ -405,7 +405,7 @@ namespace Amazon.Budgets
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteSubscriberResponse> DeleteSubscriberAsync(DeleteSubscriberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteSubscriberResponse> DeleteSubscriberAsync(DeleteSubscriberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteSubscriberRequestMarshaller();
             var unmarshaller = DeleteSubscriberResponseUnmarshaller.Instance;
@@ -418,7 +418,7 @@ namespace Amazon.Budgets
         
         #region  DescribeBudget
 
-        internal DescribeBudgetResponse DescribeBudget(DescribeBudgetRequest request)
+        internal virtual DescribeBudgetResponse DescribeBudget(DescribeBudgetRequest request)
         {
             var marshaller = new DescribeBudgetRequestMarshaller();
             var unmarshaller = DescribeBudgetResponseUnmarshaller.Instance;
@@ -436,7 +436,7 @@ namespace Amazon.Budgets
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DescribeBudgetResponse> DescribeBudgetAsync(DescribeBudgetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeBudgetResponse> DescribeBudgetAsync(DescribeBudgetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeBudgetRequestMarshaller();
             var unmarshaller = DescribeBudgetResponseUnmarshaller.Instance;
@@ -449,7 +449,7 @@ namespace Amazon.Budgets
         
         #region  DescribeBudgets
 
-        internal DescribeBudgetsResponse DescribeBudgets(DescribeBudgetsRequest request)
+        internal virtual DescribeBudgetsResponse DescribeBudgets(DescribeBudgetsRequest request)
         {
             var marshaller = new DescribeBudgetsRequestMarshaller();
             var unmarshaller = DescribeBudgetsResponseUnmarshaller.Instance;
@@ -467,7 +467,7 @@ namespace Amazon.Budgets
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DescribeBudgetsResponse> DescribeBudgetsAsync(DescribeBudgetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeBudgetsResponse> DescribeBudgetsAsync(DescribeBudgetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeBudgetsRequestMarshaller();
             var unmarshaller = DescribeBudgetsResponseUnmarshaller.Instance;
@@ -480,7 +480,7 @@ namespace Amazon.Budgets
         
         #region  DescribeNotificationsForBudget
 
-        internal DescribeNotificationsForBudgetResponse DescribeNotificationsForBudget(DescribeNotificationsForBudgetRequest request)
+        internal virtual DescribeNotificationsForBudgetResponse DescribeNotificationsForBudget(DescribeNotificationsForBudgetRequest request)
         {
             var marshaller = new DescribeNotificationsForBudgetRequestMarshaller();
             var unmarshaller = DescribeNotificationsForBudgetResponseUnmarshaller.Instance;
@@ -498,7 +498,7 @@ namespace Amazon.Budgets
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DescribeNotificationsForBudgetResponse> DescribeNotificationsForBudgetAsync(DescribeNotificationsForBudgetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeNotificationsForBudgetResponse> DescribeNotificationsForBudgetAsync(DescribeNotificationsForBudgetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeNotificationsForBudgetRequestMarshaller();
             var unmarshaller = DescribeNotificationsForBudgetResponseUnmarshaller.Instance;
@@ -511,7 +511,7 @@ namespace Amazon.Budgets
         
         #region  DescribeSubscribersForNotification
 
-        internal DescribeSubscribersForNotificationResponse DescribeSubscribersForNotification(DescribeSubscribersForNotificationRequest request)
+        internal virtual DescribeSubscribersForNotificationResponse DescribeSubscribersForNotification(DescribeSubscribersForNotificationRequest request)
         {
             var marshaller = new DescribeSubscribersForNotificationRequestMarshaller();
             var unmarshaller = DescribeSubscribersForNotificationResponseUnmarshaller.Instance;
@@ -529,7 +529,7 @@ namespace Amazon.Budgets
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DescribeSubscribersForNotificationResponse> DescribeSubscribersForNotificationAsync(DescribeSubscribersForNotificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeSubscribersForNotificationResponse> DescribeSubscribersForNotificationAsync(DescribeSubscribersForNotificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeSubscribersForNotificationRequestMarshaller();
             var unmarshaller = DescribeSubscribersForNotificationResponseUnmarshaller.Instance;
@@ -542,7 +542,7 @@ namespace Amazon.Budgets
         
         #region  UpdateBudget
 
-        internal UpdateBudgetResponse UpdateBudget(UpdateBudgetRequest request)
+        internal virtual UpdateBudgetResponse UpdateBudget(UpdateBudgetRequest request)
         {
             var marshaller = new UpdateBudgetRequestMarshaller();
             var unmarshaller = UpdateBudgetResponseUnmarshaller.Instance;
@@ -560,7 +560,7 @@ namespace Amazon.Budgets
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateBudgetResponse> UpdateBudgetAsync(UpdateBudgetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateBudgetResponse> UpdateBudgetAsync(UpdateBudgetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateBudgetRequestMarshaller();
             var unmarshaller = UpdateBudgetResponseUnmarshaller.Instance;
@@ -573,7 +573,7 @@ namespace Amazon.Budgets
         
         #region  UpdateNotification
 
-        internal UpdateNotificationResponse UpdateNotification(UpdateNotificationRequest request)
+        internal virtual UpdateNotificationResponse UpdateNotification(UpdateNotificationRequest request)
         {
             var marshaller = new UpdateNotificationRequestMarshaller();
             var unmarshaller = UpdateNotificationResponseUnmarshaller.Instance;
@@ -591,7 +591,7 @@ namespace Amazon.Budgets
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateNotificationResponse> UpdateNotificationAsync(UpdateNotificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateNotificationResponse> UpdateNotificationAsync(UpdateNotificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateNotificationRequestMarshaller();
             var unmarshaller = UpdateNotificationResponseUnmarshaller.Instance;
@@ -604,7 +604,7 @@ namespace Amazon.Budgets
         
         #region  UpdateSubscriber
 
-        internal UpdateSubscriberResponse UpdateSubscriber(UpdateSubscriberRequest request)
+        internal virtual UpdateSubscriberResponse UpdateSubscriber(UpdateSubscriberRequest request)
         {
             var marshaller = new UpdateSubscriberRequestMarshaller();
             var unmarshaller = UpdateSubscriberResponseUnmarshaller.Instance;
@@ -622,7 +622,7 @@ namespace Amazon.Budgets
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateSubscriberResponse> UpdateSubscriberAsync(UpdateSubscriberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateSubscriberResponse> UpdateSubscriberAsync(UpdateSubscriberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateSubscriberRequestMarshaller();
             var unmarshaller = UpdateSubscriberResponseUnmarshaller.Instance;

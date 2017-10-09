@@ -279,7 +279,7 @@ namespace Amazon.CertificateManager
         /// The request contains too many tags. Try the request again with fewer tags.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/AddTagsToCertificate">REST API Reference for AddTagsToCertificate Operation</seealso>
-        public AddTagsToCertificateResponse AddTagsToCertificate(AddTagsToCertificateRequest request)
+        public virtual AddTagsToCertificateResponse AddTagsToCertificate(AddTagsToCertificateRequest request)
         {
             var marshaller = new AddTagsToCertificateRequestMarshaller();
             var unmarshaller = AddTagsToCertificateResponseUnmarshaller.Instance;
@@ -297,7 +297,7 @@ namespace Amazon.CertificateManager
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/AddTagsToCertificate">REST API Reference for AddTagsToCertificate Operation</seealso>
-        public Task<AddTagsToCertificateResponse> AddTagsToCertificateAsync(AddTagsToCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<AddTagsToCertificateResponse> AddTagsToCertificateAsync(AddTagsToCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AddTagsToCertificateRequestMarshaller();
             var unmarshaller = AddTagsToCertificateResponseUnmarshaller.Instance;
@@ -339,7 +339,7 @@ namespace Amazon.CertificateManager
         /// account cannot be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DeleteCertificate">REST API Reference for DeleteCertificate Operation</seealso>
-        public DeleteCertificateResponse DeleteCertificate(string certificateArn)
+        public virtual DeleteCertificateResponse DeleteCertificate(string certificateArn)
         {
             var request = new DeleteCertificateRequest();
             request.CertificateArn = certificateArn;
@@ -375,7 +375,7 @@ namespace Amazon.CertificateManager
         /// account cannot be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DeleteCertificate">REST API Reference for DeleteCertificate Operation</seealso>
-        public DeleteCertificateResponse DeleteCertificate(DeleteCertificateRequest request)
+        public virtual DeleteCertificateResponse DeleteCertificate(DeleteCertificateRequest request)
         {
             var marshaller = new DeleteCertificateRequestMarshaller();
             var unmarshaller = DeleteCertificateResponseUnmarshaller.Instance;
@@ -415,7 +415,7 @@ namespace Amazon.CertificateManager
         /// account cannot be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DeleteCertificate">REST API Reference for DeleteCertificate Operation</seealso>
-        public Task<DeleteCertificateResponse> DeleteCertificateAsync(string certificateArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteCertificateResponse> DeleteCertificateAsync(string certificateArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DeleteCertificateRequest();
             request.CertificateArn = certificateArn;
@@ -432,7 +432,7 @@ namespace Amazon.CertificateManager
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DeleteCertificate">REST API Reference for DeleteCertificate Operation</seealso>
-        public Task<DeleteCertificateResponse> DeleteCertificateAsync(DeleteCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteCertificateResponse> DeleteCertificateAsync(DeleteCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteCertificateRequestMarshaller();
             var unmarshaller = DeleteCertificateResponseUnmarshaller.Instance;
@@ -460,7 +460,7 @@ namespace Amazon.CertificateManager
         /// account cannot be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DescribeCertificate">REST API Reference for DescribeCertificate Operation</seealso>
-        public DescribeCertificateResponse DescribeCertificate(string certificateArn)
+        public virtual DescribeCertificateResponse DescribeCertificate(string certificateArn)
         {
             var request = new DescribeCertificateRequest();
             request.CertificateArn = certificateArn;
@@ -482,7 +482,7 @@ namespace Amazon.CertificateManager
         /// account cannot be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DescribeCertificate">REST API Reference for DescribeCertificate Operation</seealso>
-        public DescribeCertificateResponse DescribeCertificate(DescribeCertificateRequest request)
+        public virtual DescribeCertificateResponse DescribeCertificate(DescribeCertificateRequest request)
         {
             var marshaller = new DescribeCertificateRequestMarshaller();
             var unmarshaller = DescribeCertificateResponseUnmarshaller.Instance;
@@ -508,7 +508,7 @@ namespace Amazon.CertificateManager
         /// account cannot be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DescribeCertificate">REST API Reference for DescribeCertificate Operation</seealso>
-        public Task<DescribeCertificateResponse> DescribeCertificateAsync(string certificateArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeCertificateResponse> DescribeCertificateAsync(string certificateArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DescribeCertificateRequest();
             request.CertificateArn = certificateArn;
@@ -525,7 +525,7 @@ namespace Amazon.CertificateManager
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DescribeCertificate">REST API Reference for DescribeCertificate Operation</seealso>
-        public Task<DescribeCertificateResponse> DescribeCertificateAsync(DescribeCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeCertificateResponse> DescribeCertificateAsync(DescribeCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeCertificateRequestMarshaller();
             var unmarshaller = DescribeCertificateResponseUnmarshaller.Instance;
@@ -568,7 +568,7 @@ namespace Amazon.CertificateManager
         /// account cannot be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/GetCertificate">REST API Reference for GetCertificate Operation</seealso>
-        public GetCertificateResponse GetCertificate(string certificateArn)
+        public virtual GetCertificateResponse GetCertificate(string certificateArn)
         {
             var request = new GetCertificateRequest();
             request.CertificateArn = certificateArn;
@@ -605,7 +605,7 @@ namespace Amazon.CertificateManager
         /// account cannot be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/GetCertificate">REST API Reference for GetCertificate Operation</seealso>
-        public GetCertificateResponse GetCertificate(GetCertificateRequest request)
+        public virtual GetCertificateResponse GetCertificate(GetCertificateRequest request)
         {
             var marshaller = new GetCertificateRequestMarshaller();
             var unmarshaller = GetCertificateResponseUnmarshaller.Instance;
@@ -646,7 +646,7 @@ namespace Amazon.CertificateManager
         /// account cannot be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/GetCertificate">REST API Reference for GetCertificate Operation</seealso>
-        public Task<GetCertificateResponse> GetCertificateAsync(string certificateArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetCertificateResponse> GetCertificateAsync(string certificateArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new GetCertificateRequest();
             request.CertificateArn = certificateArn;
@@ -663,7 +663,7 @@ namespace Amazon.CertificateManager
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/GetCertificate">REST API Reference for GetCertificate Operation</seealso>
-        public Task<GetCertificateResponse> GetCertificateAsync(GetCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetCertificateResponse> GetCertificateAsync(GetCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetCertificateRequestMarshaller();
             var unmarshaller = GetCertificateResponseUnmarshaller.Instance;
@@ -730,7 +730,7 @@ namespace Amazon.CertificateManager
         /// account cannot be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ImportCertificate">REST API Reference for ImportCertificate Operation</seealso>
-        public ImportCertificateResponse ImportCertificate(ImportCertificateRequest request)
+        public virtual ImportCertificateResponse ImportCertificate(ImportCertificateRequest request)
         {
             var marshaller = new ImportCertificateRequestMarshaller();
             var unmarshaller = ImportCertificateResponseUnmarshaller.Instance;
@@ -748,7 +748,7 @@ namespace Amazon.CertificateManager
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ImportCertificate">REST API Reference for ImportCertificate Operation</seealso>
-        public Task<ImportCertificateResponse> ImportCertificateAsync(ImportCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ImportCertificateResponse> ImportCertificateAsync(ImportCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ImportCertificateRequestMarshaller();
             var unmarshaller = ImportCertificateResponseUnmarshaller.Instance;
@@ -769,7 +769,7 @@ namespace Amazon.CertificateManager
         /// 
         /// <returns>The response from the ListCertificates service method, as returned by CertificateManager.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListCertificates">REST API Reference for ListCertificates Operation</seealso>
-        public ListCertificatesResponse ListCertificates()
+        public virtual ListCertificatesResponse ListCertificates()
         {
             return ListCertificates(new ListCertificatesRequest());
         }
@@ -783,7 +783,7 @@ namespace Amazon.CertificateManager
         /// 
         /// <returns>The response from the ListCertificates service method, as returned by CertificateManager.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListCertificates">REST API Reference for ListCertificates Operation</seealso>
-        public ListCertificatesResponse ListCertificates(ListCertificatesRequest request)
+        public virtual ListCertificatesResponse ListCertificates(ListCertificatesRequest request)
         {
             var marshaller = new ListCertificatesRequestMarshaller();
             var unmarshaller = ListCertificatesResponseUnmarshaller.Instance;
@@ -802,7 +802,7 @@ namespace Amazon.CertificateManager
         /// 
         /// <returns>The response from the ListCertificates service method, as returned by CertificateManager.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListCertificates">REST API Reference for ListCertificates Operation</seealso>
-        public Task<ListCertificatesResponse> ListCertificatesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListCertificatesResponse> ListCertificatesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return ListCertificatesAsync(new ListCertificatesRequest(), cancellationToken);
         }
@@ -816,7 +816,7 @@ namespace Amazon.CertificateManager
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListCertificates">REST API Reference for ListCertificates Operation</seealso>
-        public Task<ListCertificatesResponse> ListCertificatesAsync(ListCertificatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListCertificatesResponse> ListCertificatesAsync(ListCertificatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListCertificatesRequestMarshaller();
             var unmarshaller = ListCertificatesResponseUnmarshaller.Instance;
@@ -847,7 +847,7 @@ namespace Amazon.CertificateManager
         /// account cannot be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListTagsForCertificate">REST API Reference for ListTagsForCertificate Operation</seealso>
-        public ListTagsForCertificateResponse ListTagsForCertificate(ListTagsForCertificateRequest request)
+        public virtual ListTagsForCertificateResponse ListTagsForCertificate(ListTagsForCertificateRequest request)
         {
             var marshaller = new ListTagsForCertificateRequestMarshaller();
             var unmarshaller = ListTagsForCertificateResponseUnmarshaller.Instance;
@@ -865,7 +865,7 @@ namespace Amazon.CertificateManager
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListTagsForCertificate">REST API Reference for ListTagsForCertificate Operation</seealso>
-        public Task<ListTagsForCertificateResponse> ListTagsForCertificateAsync(ListTagsForCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListTagsForCertificateResponse> ListTagsForCertificateAsync(ListTagsForCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListTagsForCertificateRequestMarshaller();
             var unmarshaller = ListTagsForCertificateResponseUnmarshaller.Instance;
@@ -907,7 +907,7 @@ namespace Amazon.CertificateManager
         /// account cannot be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RemoveTagsFromCertificate">REST API Reference for RemoveTagsFromCertificate Operation</seealso>
-        public RemoveTagsFromCertificateResponse RemoveTagsFromCertificate(RemoveTagsFromCertificateRequest request)
+        public virtual RemoveTagsFromCertificateResponse RemoveTagsFromCertificate(RemoveTagsFromCertificateRequest request)
         {
             var marshaller = new RemoveTagsFromCertificateRequestMarshaller();
             var unmarshaller = RemoveTagsFromCertificateResponseUnmarshaller.Instance;
@@ -925,7 +925,7 @@ namespace Amazon.CertificateManager
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RemoveTagsFromCertificate">REST API Reference for RemoveTagsFromCertificate Operation</seealso>
-        public Task<RemoveTagsFromCertificateResponse> RemoveTagsFromCertificateAsync(RemoveTagsFromCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<RemoveTagsFromCertificateResponse> RemoveTagsFromCertificateAsync(RemoveTagsFromCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RemoveTagsFromCertificateRequestMarshaller();
             var unmarshaller = RemoveTagsFromCertificateResponseUnmarshaller.Instance;
@@ -962,7 +962,7 @@ namespace Amazon.CertificateManager
         /// topic.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RequestCertificate">REST API Reference for RequestCertificate Operation</seealso>
-        public RequestCertificateResponse RequestCertificate(string domainName)
+        public virtual RequestCertificateResponse RequestCertificate(string domainName)
         {
             var request = new RequestCertificateRequest();
             request.DomainName = domainName;
@@ -993,7 +993,7 @@ namespace Amazon.CertificateManager
         /// topic.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RequestCertificate">REST API Reference for RequestCertificate Operation</seealso>
-        public RequestCertificateResponse RequestCertificate(RequestCertificateRequest request)
+        public virtual RequestCertificateResponse RequestCertificate(RequestCertificateRequest request)
         {
             var marshaller = new RequestCertificateRequestMarshaller();
             var unmarshaller = RequestCertificateResponseUnmarshaller.Instance;
@@ -1028,7 +1028,7 @@ namespace Amazon.CertificateManager
         /// topic.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RequestCertificate">REST API Reference for RequestCertificate Operation</seealso>
-        public Task<RequestCertificateResponse> RequestCertificateAsync(string domainName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<RequestCertificateResponse> RequestCertificateAsync(string domainName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new RequestCertificateRequest();
             request.DomainName = domainName;
@@ -1045,7 +1045,7 @@ namespace Amazon.CertificateManager
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RequestCertificate">REST API Reference for RequestCertificate Operation</seealso>
-        public Task<RequestCertificateResponse> RequestCertificateAsync(RequestCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<RequestCertificateResponse> RequestCertificateAsync(RequestCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RequestCertificateRequestMarshaller();
             var unmarshaller = RequestCertificateResponseUnmarshaller.Instance;
@@ -1091,7 +1091,7 @@ namespace Amazon.CertificateManager
         /// account cannot be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ResendValidationEmail">REST API Reference for ResendValidationEmail Operation</seealso>
-        public ResendValidationEmailResponse ResendValidationEmail(ResendValidationEmailRequest request)
+        public virtual ResendValidationEmailResponse ResendValidationEmail(ResendValidationEmailRequest request)
         {
             var marshaller = new ResendValidationEmailRequestMarshaller();
             var unmarshaller = ResendValidationEmailResponseUnmarshaller.Instance;
@@ -1109,7 +1109,7 @@ namespace Amazon.CertificateManager
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ResendValidationEmail">REST API Reference for ResendValidationEmail Operation</seealso>
-        public Task<ResendValidationEmailResponse> ResendValidationEmailAsync(ResendValidationEmailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ResendValidationEmailResponse> ResendValidationEmailAsync(ResendValidationEmailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ResendValidationEmailRequestMarshaller();
             var unmarshaller = ResendValidationEmailResponseUnmarshaller.Instance;

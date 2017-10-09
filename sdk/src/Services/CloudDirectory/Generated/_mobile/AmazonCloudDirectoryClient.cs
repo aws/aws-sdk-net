@@ -241,7 +241,7 @@ namespace Amazon.CloudDirectory
         
         #region  AddFacetToObject
 
-        internal AddFacetToObjectResponse AddFacetToObject(AddFacetToObjectRequest request)
+        internal virtual AddFacetToObjectResponse AddFacetToObject(AddFacetToObjectRequest request)
         {
             var marshaller = new AddFacetToObjectRequestMarshaller();
             var unmarshaller = AddFacetToObjectResponseUnmarshaller.Instance;
@@ -260,7 +260,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AddFacetToObject">REST API Reference for AddFacetToObject Operation</seealso>
-        public Task<AddFacetToObjectResponse> AddFacetToObjectAsync(AddFacetToObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<AddFacetToObjectResponse> AddFacetToObjectAsync(AddFacetToObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AddFacetToObjectRequestMarshaller();
             var unmarshaller = AddFacetToObjectResponseUnmarshaller.Instance;
@@ -273,7 +273,7 @@ namespace Amazon.CloudDirectory
         
         #region  ApplySchema
 
-        internal ApplySchemaResponse ApplySchema(ApplySchemaRequest request)
+        internal virtual ApplySchemaResponse ApplySchema(ApplySchemaRequest request)
         {
             var marshaller = new ApplySchemaRequestMarshaller();
             var unmarshaller = ApplySchemaResponseUnmarshaller.Instance;
@@ -292,7 +292,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ApplySchema">REST API Reference for ApplySchema Operation</seealso>
-        public Task<ApplySchemaResponse> ApplySchemaAsync(ApplySchemaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ApplySchemaResponse> ApplySchemaAsync(ApplySchemaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ApplySchemaRequestMarshaller();
             var unmarshaller = ApplySchemaResponseUnmarshaller.Instance;
@@ -305,7 +305,7 @@ namespace Amazon.CloudDirectory
         
         #region  AttachObject
 
-        internal AttachObjectResponse AttachObject(AttachObjectRequest request)
+        internal virtual AttachObjectResponse AttachObject(AttachObjectRequest request)
         {
             var marshaller = new AttachObjectRequestMarshaller();
             var unmarshaller = AttachObjectResponseUnmarshaller.Instance;
@@ -324,7 +324,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachObject">REST API Reference for AttachObject Operation</seealso>
-        public Task<AttachObjectResponse> AttachObjectAsync(AttachObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<AttachObjectResponse> AttachObjectAsync(AttachObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AttachObjectRequestMarshaller();
             var unmarshaller = AttachObjectResponseUnmarshaller.Instance;
@@ -337,7 +337,7 @@ namespace Amazon.CloudDirectory
         
         #region  AttachPolicy
 
-        internal AttachPolicyResponse AttachPolicy(AttachPolicyRequest request)
+        internal virtual AttachPolicyResponse AttachPolicy(AttachPolicyRequest request)
         {
             var marshaller = new AttachPolicyRequestMarshaller();
             var unmarshaller = AttachPolicyResponseUnmarshaller.Instance;
@@ -356,7 +356,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachPolicy">REST API Reference for AttachPolicy Operation</seealso>
-        public Task<AttachPolicyResponse> AttachPolicyAsync(AttachPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<AttachPolicyResponse> AttachPolicyAsync(AttachPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AttachPolicyRequestMarshaller();
             var unmarshaller = AttachPolicyResponseUnmarshaller.Instance;
@@ -369,7 +369,7 @@ namespace Amazon.CloudDirectory
         
         #region  AttachToIndex
 
-        internal AttachToIndexResponse AttachToIndex(AttachToIndexRequest request)
+        internal virtual AttachToIndexResponse AttachToIndex(AttachToIndexRequest request)
         {
             var marshaller = new AttachToIndexRequestMarshaller();
             var unmarshaller = AttachToIndexResponseUnmarshaller.Instance;
@@ -388,7 +388,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachToIndex">REST API Reference for AttachToIndex Operation</seealso>
-        public Task<AttachToIndexResponse> AttachToIndexAsync(AttachToIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<AttachToIndexResponse> AttachToIndexAsync(AttachToIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AttachToIndexRequestMarshaller();
             var unmarshaller = AttachToIndexResponseUnmarshaller.Instance;
@@ -401,7 +401,7 @@ namespace Amazon.CloudDirectory
         
         #region  AttachTypedLink
 
-        internal AttachTypedLinkResponse AttachTypedLink(AttachTypedLinkRequest request)
+        internal virtual AttachTypedLinkResponse AttachTypedLink(AttachTypedLinkRequest request)
         {
             var marshaller = new AttachTypedLinkRequestMarshaller();
             var unmarshaller = AttachTypedLinkResponseUnmarshaller.Instance;
@@ -420,7 +420,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachTypedLink">REST API Reference for AttachTypedLink Operation</seealso>
-        public Task<AttachTypedLinkResponse> AttachTypedLinkAsync(AttachTypedLinkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<AttachTypedLinkResponse> AttachTypedLinkAsync(AttachTypedLinkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AttachTypedLinkRequestMarshaller();
             var unmarshaller = AttachTypedLinkResponseUnmarshaller.Instance;
@@ -433,7 +433,7 @@ namespace Amazon.CloudDirectory
         
         #region  BatchRead
 
-        internal BatchReadResponse BatchRead(BatchReadRequest request)
+        internal virtual BatchReadResponse BatchRead(BatchReadRequest request)
         {
             var marshaller = new BatchReadRequestMarshaller();
             var unmarshaller = BatchReadResponseUnmarshaller.Instance;
@@ -452,7 +452,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchRead">REST API Reference for BatchRead Operation</seealso>
-        public Task<BatchReadResponse> BatchReadAsync(BatchReadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<BatchReadResponse> BatchReadAsync(BatchReadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new BatchReadRequestMarshaller();
             var unmarshaller = BatchReadResponseUnmarshaller.Instance;
@@ -465,7 +465,7 @@ namespace Amazon.CloudDirectory
         
         #region  BatchWrite
 
-        internal BatchWriteResponse BatchWrite(BatchWriteRequest request)
+        internal virtual BatchWriteResponse BatchWrite(BatchWriteRequest request)
         {
             var marshaller = new BatchWriteRequestMarshaller();
             var unmarshaller = BatchWriteResponseUnmarshaller.Instance;
@@ -484,7 +484,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchWrite">REST API Reference for BatchWrite Operation</seealso>
-        public Task<BatchWriteResponse> BatchWriteAsync(BatchWriteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<BatchWriteResponse> BatchWriteAsync(BatchWriteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new BatchWriteRequestMarshaller();
             var unmarshaller = BatchWriteResponseUnmarshaller.Instance;
@@ -497,7 +497,7 @@ namespace Amazon.CloudDirectory
         
         #region  CreateDirectory
 
-        internal CreateDirectoryResponse CreateDirectory(CreateDirectoryRequest request)
+        internal virtual CreateDirectoryResponse CreateDirectory(CreateDirectoryRequest request)
         {
             var marshaller = new CreateDirectoryRequestMarshaller();
             var unmarshaller = CreateDirectoryResponseUnmarshaller.Instance;
@@ -516,7 +516,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateDirectory">REST API Reference for CreateDirectory Operation</seealso>
-        public Task<CreateDirectoryResponse> CreateDirectoryAsync(CreateDirectoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateDirectoryResponse> CreateDirectoryAsync(CreateDirectoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateDirectoryRequestMarshaller();
             var unmarshaller = CreateDirectoryResponseUnmarshaller.Instance;
@@ -529,7 +529,7 @@ namespace Amazon.CloudDirectory
         
         #region  CreateFacet
 
-        internal CreateFacetResponse CreateFacet(CreateFacetRequest request)
+        internal virtual CreateFacetResponse CreateFacet(CreateFacetRequest request)
         {
             var marshaller = new CreateFacetRequestMarshaller();
             var unmarshaller = CreateFacetResponseUnmarshaller.Instance;
@@ -548,7 +548,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateFacet">REST API Reference for CreateFacet Operation</seealso>
-        public Task<CreateFacetResponse> CreateFacetAsync(CreateFacetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateFacetResponse> CreateFacetAsync(CreateFacetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateFacetRequestMarshaller();
             var unmarshaller = CreateFacetResponseUnmarshaller.Instance;
@@ -561,7 +561,7 @@ namespace Amazon.CloudDirectory
         
         #region  CreateIndex
 
-        internal CreateIndexResponse CreateIndex(CreateIndexRequest request)
+        internal virtual CreateIndexResponse CreateIndex(CreateIndexRequest request)
         {
             var marshaller = new CreateIndexRequestMarshaller();
             var unmarshaller = CreateIndexResponseUnmarshaller.Instance;
@@ -580,7 +580,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateIndex">REST API Reference for CreateIndex Operation</seealso>
-        public Task<CreateIndexResponse> CreateIndexAsync(CreateIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateIndexResponse> CreateIndexAsync(CreateIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateIndexRequestMarshaller();
             var unmarshaller = CreateIndexResponseUnmarshaller.Instance;
@@ -593,7 +593,7 @@ namespace Amazon.CloudDirectory
         
         #region  CreateObject
 
-        internal CreateObjectResponse CreateObject(CreateObjectRequest request)
+        internal virtual CreateObjectResponse CreateObject(CreateObjectRequest request)
         {
             var marshaller = new CreateObjectRequestMarshaller();
             var unmarshaller = CreateObjectResponseUnmarshaller.Instance;
@@ -612,7 +612,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateObject">REST API Reference for CreateObject Operation</seealso>
-        public Task<CreateObjectResponse> CreateObjectAsync(CreateObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateObjectResponse> CreateObjectAsync(CreateObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateObjectRequestMarshaller();
             var unmarshaller = CreateObjectResponseUnmarshaller.Instance;
@@ -625,7 +625,7 @@ namespace Amazon.CloudDirectory
         
         #region  CreateSchema
 
-        internal CreateSchemaResponse CreateSchema(CreateSchemaRequest request)
+        internal virtual CreateSchemaResponse CreateSchema(CreateSchemaRequest request)
         {
             var marshaller = new CreateSchemaRequestMarshaller();
             var unmarshaller = CreateSchemaResponseUnmarshaller.Instance;
@@ -644,7 +644,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateSchema">REST API Reference for CreateSchema Operation</seealso>
-        public Task<CreateSchemaResponse> CreateSchemaAsync(CreateSchemaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateSchemaResponse> CreateSchemaAsync(CreateSchemaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateSchemaRequestMarshaller();
             var unmarshaller = CreateSchemaResponseUnmarshaller.Instance;
@@ -657,7 +657,7 @@ namespace Amazon.CloudDirectory
         
         #region  CreateTypedLinkFacet
 
-        internal CreateTypedLinkFacetResponse CreateTypedLinkFacet(CreateTypedLinkFacetRequest request)
+        internal virtual CreateTypedLinkFacetResponse CreateTypedLinkFacet(CreateTypedLinkFacetRequest request)
         {
             var marshaller = new CreateTypedLinkFacetRequestMarshaller();
             var unmarshaller = CreateTypedLinkFacetResponseUnmarshaller.Instance;
@@ -676,7 +676,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateTypedLinkFacet">REST API Reference for CreateTypedLinkFacet Operation</seealso>
-        public Task<CreateTypedLinkFacetResponse> CreateTypedLinkFacetAsync(CreateTypedLinkFacetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateTypedLinkFacetResponse> CreateTypedLinkFacetAsync(CreateTypedLinkFacetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateTypedLinkFacetRequestMarshaller();
             var unmarshaller = CreateTypedLinkFacetResponseUnmarshaller.Instance;
@@ -689,7 +689,7 @@ namespace Amazon.CloudDirectory
         
         #region  DeleteDirectory
 
-        internal DeleteDirectoryResponse DeleteDirectory(DeleteDirectoryRequest request)
+        internal virtual DeleteDirectoryResponse DeleteDirectory(DeleteDirectoryRequest request)
         {
             var marshaller = new DeleteDirectoryRequestMarshaller();
             var unmarshaller = DeleteDirectoryResponseUnmarshaller.Instance;
@@ -708,7 +708,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteDirectory">REST API Reference for DeleteDirectory Operation</seealso>
-        public Task<DeleteDirectoryResponse> DeleteDirectoryAsync(DeleteDirectoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteDirectoryResponse> DeleteDirectoryAsync(DeleteDirectoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteDirectoryRequestMarshaller();
             var unmarshaller = DeleteDirectoryResponseUnmarshaller.Instance;
@@ -721,7 +721,7 @@ namespace Amazon.CloudDirectory
         
         #region  DeleteFacet
 
-        internal DeleteFacetResponse DeleteFacet(DeleteFacetRequest request)
+        internal virtual DeleteFacetResponse DeleteFacet(DeleteFacetRequest request)
         {
             var marshaller = new DeleteFacetRequestMarshaller();
             var unmarshaller = DeleteFacetResponseUnmarshaller.Instance;
@@ -740,7 +740,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteFacet">REST API Reference for DeleteFacet Operation</seealso>
-        public Task<DeleteFacetResponse> DeleteFacetAsync(DeleteFacetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteFacetResponse> DeleteFacetAsync(DeleteFacetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteFacetRequestMarshaller();
             var unmarshaller = DeleteFacetResponseUnmarshaller.Instance;
@@ -753,7 +753,7 @@ namespace Amazon.CloudDirectory
         
         #region  DeleteObject
 
-        internal DeleteObjectResponse DeleteObject(DeleteObjectRequest request)
+        internal virtual DeleteObjectResponse DeleteObject(DeleteObjectRequest request)
         {
             var marshaller = new DeleteObjectRequestMarshaller();
             var unmarshaller = DeleteObjectResponseUnmarshaller.Instance;
@@ -772,7 +772,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteObject">REST API Reference for DeleteObject Operation</seealso>
-        public Task<DeleteObjectResponse> DeleteObjectAsync(DeleteObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteObjectResponse> DeleteObjectAsync(DeleteObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteObjectRequestMarshaller();
             var unmarshaller = DeleteObjectResponseUnmarshaller.Instance;
@@ -785,7 +785,7 @@ namespace Amazon.CloudDirectory
         
         #region  DeleteSchema
 
-        internal DeleteSchemaResponse DeleteSchema(DeleteSchemaRequest request)
+        internal virtual DeleteSchemaResponse DeleteSchema(DeleteSchemaRequest request)
         {
             var marshaller = new DeleteSchemaRequestMarshaller();
             var unmarshaller = DeleteSchemaResponseUnmarshaller.Instance;
@@ -804,7 +804,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteSchema">REST API Reference for DeleteSchema Operation</seealso>
-        public Task<DeleteSchemaResponse> DeleteSchemaAsync(DeleteSchemaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteSchemaResponse> DeleteSchemaAsync(DeleteSchemaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteSchemaRequestMarshaller();
             var unmarshaller = DeleteSchemaResponseUnmarshaller.Instance;
@@ -817,7 +817,7 @@ namespace Amazon.CloudDirectory
         
         #region  DeleteTypedLinkFacet
 
-        internal DeleteTypedLinkFacetResponse DeleteTypedLinkFacet(DeleteTypedLinkFacetRequest request)
+        internal virtual DeleteTypedLinkFacetResponse DeleteTypedLinkFacet(DeleteTypedLinkFacetRequest request)
         {
             var marshaller = new DeleteTypedLinkFacetRequestMarshaller();
             var unmarshaller = DeleteTypedLinkFacetResponseUnmarshaller.Instance;
@@ -836,7 +836,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteTypedLinkFacet">REST API Reference for DeleteTypedLinkFacet Operation</seealso>
-        public Task<DeleteTypedLinkFacetResponse> DeleteTypedLinkFacetAsync(DeleteTypedLinkFacetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteTypedLinkFacetResponse> DeleteTypedLinkFacetAsync(DeleteTypedLinkFacetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteTypedLinkFacetRequestMarshaller();
             var unmarshaller = DeleteTypedLinkFacetResponseUnmarshaller.Instance;
@@ -849,7 +849,7 @@ namespace Amazon.CloudDirectory
         
         #region  DetachFromIndex
 
-        internal DetachFromIndexResponse DetachFromIndex(DetachFromIndexRequest request)
+        internal virtual DetachFromIndexResponse DetachFromIndex(DetachFromIndexRequest request)
         {
             var marshaller = new DetachFromIndexRequestMarshaller();
             var unmarshaller = DetachFromIndexResponseUnmarshaller.Instance;
@@ -868,7 +868,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachFromIndex">REST API Reference for DetachFromIndex Operation</seealso>
-        public Task<DetachFromIndexResponse> DetachFromIndexAsync(DetachFromIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DetachFromIndexResponse> DetachFromIndexAsync(DetachFromIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DetachFromIndexRequestMarshaller();
             var unmarshaller = DetachFromIndexResponseUnmarshaller.Instance;
@@ -881,7 +881,7 @@ namespace Amazon.CloudDirectory
         
         #region  DetachObject
 
-        internal DetachObjectResponse DetachObject(DetachObjectRequest request)
+        internal virtual DetachObjectResponse DetachObject(DetachObjectRequest request)
         {
             var marshaller = new DetachObjectRequestMarshaller();
             var unmarshaller = DetachObjectResponseUnmarshaller.Instance;
@@ -900,7 +900,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachObject">REST API Reference for DetachObject Operation</seealso>
-        public Task<DetachObjectResponse> DetachObjectAsync(DetachObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DetachObjectResponse> DetachObjectAsync(DetachObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DetachObjectRequestMarshaller();
             var unmarshaller = DetachObjectResponseUnmarshaller.Instance;
@@ -913,7 +913,7 @@ namespace Amazon.CloudDirectory
         
         #region  DetachPolicy
 
-        internal DetachPolicyResponse DetachPolicy(DetachPolicyRequest request)
+        internal virtual DetachPolicyResponse DetachPolicy(DetachPolicyRequest request)
         {
             var marshaller = new DetachPolicyRequestMarshaller();
             var unmarshaller = DetachPolicyResponseUnmarshaller.Instance;
@@ -932,7 +932,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachPolicy">REST API Reference for DetachPolicy Operation</seealso>
-        public Task<DetachPolicyResponse> DetachPolicyAsync(DetachPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DetachPolicyResponse> DetachPolicyAsync(DetachPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DetachPolicyRequestMarshaller();
             var unmarshaller = DetachPolicyResponseUnmarshaller.Instance;
@@ -945,7 +945,7 @@ namespace Amazon.CloudDirectory
         
         #region  DetachTypedLink
 
-        internal DetachTypedLinkResponse DetachTypedLink(DetachTypedLinkRequest request)
+        internal virtual DetachTypedLinkResponse DetachTypedLink(DetachTypedLinkRequest request)
         {
             var marshaller = new DetachTypedLinkRequestMarshaller();
             var unmarshaller = DetachTypedLinkResponseUnmarshaller.Instance;
@@ -964,7 +964,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachTypedLink">REST API Reference for DetachTypedLink Operation</seealso>
-        public Task<DetachTypedLinkResponse> DetachTypedLinkAsync(DetachTypedLinkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DetachTypedLinkResponse> DetachTypedLinkAsync(DetachTypedLinkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DetachTypedLinkRequestMarshaller();
             var unmarshaller = DetachTypedLinkResponseUnmarshaller.Instance;
@@ -977,7 +977,7 @@ namespace Amazon.CloudDirectory
         
         #region  DisableDirectory
 
-        internal DisableDirectoryResponse DisableDirectory(DisableDirectoryRequest request)
+        internal virtual DisableDirectoryResponse DisableDirectory(DisableDirectoryRequest request)
         {
             var marshaller = new DisableDirectoryRequestMarshaller();
             var unmarshaller = DisableDirectoryResponseUnmarshaller.Instance;
@@ -996,7 +996,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DisableDirectory">REST API Reference for DisableDirectory Operation</seealso>
-        public Task<DisableDirectoryResponse> DisableDirectoryAsync(DisableDirectoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DisableDirectoryResponse> DisableDirectoryAsync(DisableDirectoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DisableDirectoryRequestMarshaller();
             var unmarshaller = DisableDirectoryResponseUnmarshaller.Instance;
@@ -1009,7 +1009,7 @@ namespace Amazon.CloudDirectory
         
         #region  EnableDirectory
 
-        internal EnableDirectoryResponse EnableDirectory(EnableDirectoryRequest request)
+        internal virtual EnableDirectoryResponse EnableDirectory(EnableDirectoryRequest request)
         {
             var marshaller = new EnableDirectoryRequestMarshaller();
             var unmarshaller = EnableDirectoryResponseUnmarshaller.Instance;
@@ -1028,7 +1028,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/EnableDirectory">REST API Reference for EnableDirectory Operation</seealso>
-        public Task<EnableDirectoryResponse> EnableDirectoryAsync(EnableDirectoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<EnableDirectoryResponse> EnableDirectoryAsync(EnableDirectoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new EnableDirectoryRequestMarshaller();
             var unmarshaller = EnableDirectoryResponseUnmarshaller.Instance;
@@ -1041,7 +1041,7 @@ namespace Amazon.CloudDirectory
         
         #region  GetDirectory
 
-        internal GetDirectoryResponse GetDirectory(GetDirectoryRequest request)
+        internal virtual GetDirectoryResponse GetDirectory(GetDirectoryRequest request)
         {
             var marshaller = new GetDirectoryRequestMarshaller();
             var unmarshaller = GetDirectoryResponseUnmarshaller.Instance;
@@ -1060,7 +1060,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetDirectory">REST API Reference for GetDirectory Operation</seealso>
-        public Task<GetDirectoryResponse> GetDirectoryAsync(GetDirectoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetDirectoryResponse> GetDirectoryAsync(GetDirectoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetDirectoryRequestMarshaller();
             var unmarshaller = GetDirectoryResponseUnmarshaller.Instance;
@@ -1073,7 +1073,7 @@ namespace Amazon.CloudDirectory
         
         #region  GetFacet
 
-        internal GetFacetResponse GetFacet(GetFacetRequest request)
+        internal virtual GetFacetResponse GetFacet(GetFacetRequest request)
         {
             var marshaller = new GetFacetRequestMarshaller();
             var unmarshaller = GetFacetResponseUnmarshaller.Instance;
@@ -1092,7 +1092,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetFacet">REST API Reference for GetFacet Operation</seealso>
-        public Task<GetFacetResponse> GetFacetAsync(GetFacetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetFacetResponse> GetFacetAsync(GetFacetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetFacetRequestMarshaller();
             var unmarshaller = GetFacetResponseUnmarshaller.Instance;
@@ -1105,7 +1105,7 @@ namespace Amazon.CloudDirectory
         
         #region  GetObjectInformation
 
-        internal GetObjectInformationResponse GetObjectInformation(GetObjectInformationRequest request)
+        internal virtual GetObjectInformationResponse GetObjectInformation(GetObjectInformationRequest request)
         {
             var marshaller = new GetObjectInformationRequestMarshaller();
             var unmarshaller = GetObjectInformationResponseUnmarshaller.Instance;
@@ -1124,7 +1124,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetObjectInformation">REST API Reference for GetObjectInformation Operation</seealso>
-        public Task<GetObjectInformationResponse> GetObjectInformationAsync(GetObjectInformationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetObjectInformationResponse> GetObjectInformationAsync(GetObjectInformationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetObjectInformationRequestMarshaller();
             var unmarshaller = GetObjectInformationResponseUnmarshaller.Instance;
@@ -1137,7 +1137,7 @@ namespace Amazon.CloudDirectory
         
         #region  GetSchemaAsJson
 
-        internal GetSchemaAsJsonResponse GetSchemaAsJson(GetSchemaAsJsonRequest request)
+        internal virtual GetSchemaAsJsonResponse GetSchemaAsJson(GetSchemaAsJsonRequest request)
         {
             var marshaller = new GetSchemaAsJsonRequestMarshaller();
             var unmarshaller = GetSchemaAsJsonResponseUnmarshaller.Instance;
@@ -1156,7 +1156,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetSchemaAsJson">REST API Reference for GetSchemaAsJson Operation</seealso>
-        public Task<GetSchemaAsJsonResponse> GetSchemaAsJsonAsync(GetSchemaAsJsonRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetSchemaAsJsonResponse> GetSchemaAsJsonAsync(GetSchemaAsJsonRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetSchemaAsJsonRequestMarshaller();
             var unmarshaller = GetSchemaAsJsonResponseUnmarshaller.Instance;
@@ -1169,7 +1169,7 @@ namespace Amazon.CloudDirectory
         
         #region  GetTypedLinkFacetInformation
 
-        internal GetTypedLinkFacetInformationResponse GetTypedLinkFacetInformation(GetTypedLinkFacetInformationRequest request)
+        internal virtual GetTypedLinkFacetInformationResponse GetTypedLinkFacetInformation(GetTypedLinkFacetInformationRequest request)
         {
             var marshaller = new GetTypedLinkFacetInformationRequestMarshaller();
             var unmarshaller = GetTypedLinkFacetInformationResponseUnmarshaller.Instance;
@@ -1188,7 +1188,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetTypedLinkFacetInformation">REST API Reference for GetTypedLinkFacetInformation Operation</seealso>
-        public Task<GetTypedLinkFacetInformationResponse> GetTypedLinkFacetInformationAsync(GetTypedLinkFacetInformationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetTypedLinkFacetInformationResponse> GetTypedLinkFacetInformationAsync(GetTypedLinkFacetInformationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetTypedLinkFacetInformationRequestMarshaller();
             var unmarshaller = GetTypedLinkFacetInformationResponseUnmarshaller.Instance;
@@ -1201,7 +1201,7 @@ namespace Amazon.CloudDirectory
         
         #region  ListAppliedSchemaArns
 
-        internal ListAppliedSchemaArnsResponse ListAppliedSchemaArns(ListAppliedSchemaArnsRequest request)
+        internal virtual ListAppliedSchemaArnsResponse ListAppliedSchemaArns(ListAppliedSchemaArnsRequest request)
         {
             var marshaller = new ListAppliedSchemaArnsRequestMarshaller();
             var unmarshaller = ListAppliedSchemaArnsResponseUnmarshaller.Instance;
@@ -1220,7 +1220,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListAppliedSchemaArns">REST API Reference for ListAppliedSchemaArns Operation</seealso>
-        public Task<ListAppliedSchemaArnsResponse> ListAppliedSchemaArnsAsync(ListAppliedSchemaArnsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListAppliedSchemaArnsResponse> ListAppliedSchemaArnsAsync(ListAppliedSchemaArnsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListAppliedSchemaArnsRequestMarshaller();
             var unmarshaller = ListAppliedSchemaArnsResponseUnmarshaller.Instance;
@@ -1233,7 +1233,7 @@ namespace Amazon.CloudDirectory
         
         #region  ListAttachedIndices
 
-        internal ListAttachedIndicesResponse ListAttachedIndices(ListAttachedIndicesRequest request)
+        internal virtual ListAttachedIndicesResponse ListAttachedIndices(ListAttachedIndicesRequest request)
         {
             var marshaller = new ListAttachedIndicesRequestMarshaller();
             var unmarshaller = ListAttachedIndicesResponseUnmarshaller.Instance;
@@ -1252,7 +1252,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListAttachedIndices">REST API Reference for ListAttachedIndices Operation</seealso>
-        public Task<ListAttachedIndicesResponse> ListAttachedIndicesAsync(ListAttachedIndicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListAttachedIndicesResponse> ListAttachedIndicesAsync(ListAttachedIndicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListAttachedIndicesRequestMarshaller();
             var unmarshaller = ListAttachedIndicesResponseUnmarshaller.Instance;
@@ -1265,7 +1265,7 @@ namespace Amazon.CloudDirectory
         
         #region  ListDevelopmentSchemaArns
 
-        internal ListDevelopmentSchemaArnsResponse ListDevelopmentSchemaArns(ListDevelopmentSchemaArnsRequest request)
+        internal virtual ListDevelopmentSchemaArnsResponse ListDevelopmentSchemaArns(ListDevelopmentSchemaArnsRequest request)
         {
             var marshaller = new ListDevelopmentSchemaArnsRequestMarshaller();
             var unmarshaller = ListDevelopmentSchemaArnsResponseUnmarshaller.Instance;
@@ -1284,7 +1284,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListDevelopmentSchemaArns">REST API Reference for ListDevelopmentSchemaArns Operation</seealso>
-        public Task<ListDevelopmentSchemaArnsResponse> ListDevelopmentSchemaArnsAsync(ListDevelopmentSchemaArnsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListDevelopmentSchemaArnsResponse> ListDevelopmentSchemaArnsAsync(ListDevelopmentSchemaArnsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListDevelopmentSchemaArnsRequestMarshaller();
             var unmarshaller = ListDevelopmentSchemaArnsResponseUnmarshaller.Instance;
@@ -1297,7 +1297,7 @@ namespace Amazon.CloudDirectory
         
         #region  ListDirectories
 
-        internal ListDirectoriesResponse ListDirectories(ListDirectoriesRequest request)
+        internal virtual ListDirectoriesResponse ListDirectories(ListDirectoriesRequest request)
         {
             var marshaller = new ListDirectoriesRequestMarshaller();
             var unmarshaller = ListDirectoriesResponseUnmarshaller.Instance;
@@ -1316,7 +1316,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListDirectories">REST API Reference for ListDirectories Operation</seealso>
-        public Task<ListDirectoriesResponse> ListDirectoriesAsync(ListDirectoriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListDirectoriesResponse> ListDirectoriesAsync(ListDirectoriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListDirectoriesRequestMarshaller();
             var unmarshaller = ListDirectoriesResponseUnmarshaller.Instance;
@@ -1329,7 +1329,7 @@ namespace Amazon.CloudDirectory
         
         #region  ListFacetAttributes
 
-        internal ListFacetAttributesResponse ListFacetAttributes(ListFacetAttributesRequest request)
+        internal virtual ListFacetAttributesResponse ListFacetAttributes(ListFacetAttributesRequest request)
         {
             var marshaller = new ListFacetAttributesRequestMarshaller();
             var unmarshaller = ListFacetAttributesResponseUnmarshaller.Instance;
@@ -1348,7 +1348,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListFacetAttributes">REST API Reference for ListFacetAttributes Operation</seealso>
-        public Task<ListFacetAttributesResponse> ListFacetAttributesAsync(ListFacetAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListFacetAttributesResponse> ListFacetAttributesAsync(ListFacetAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListFacetAttributesRequestMarshaller();
             var unmarshaller = ListFacetAttributesResponseUnmarshaller.Instance;
@@ -1361,7 +1361,7 @@ namespace Amazon.CloudDirectory
         
         #region  ListFacetNames
 
-        internal ListFacetNamesResponse ListFacetNames(ListFacetNamesRequest request)
+        internal virtual ListFacetNamesResponse ListFacetNames(ListFacetNamesRequest request)
         {
             var marshaller = new ListFacetNamesRequestMarshaller();
             var unmarshaller = ListFacetNamesResponseUnmarshaller.Instance;
@@ -1380,7 +1380,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListFacetNames">REST API Reference for ListFacetNames Operation</seealso>
-        public Task<ListFacetNamesResponse> ListFacetNamesAsync(ListFacetNamesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListFacetNamesResponse> ListFacetNamesAsync(ListFacetNamesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListFacetNamesRequestMarshaller();
             var unmarshaller = ListFacetNamesResponseUnmarshaller.Instance;
@@ -1393,7 +1393,7 @@ namespace Amazon.CloudDirectory
         
         #region  ListIncomingTypedLinks
 
-        internal ListIncomingTypedLinksResponse ListIncomingTypedLinks(ListIncomingTypedLinksRequest request)
+        internal virtual ListIncomingTypedLinksResponse ListIncomingTypedLinks(ListIncomingTypedLinksRequest request)
         {
             var marshaller = new ListIncomingTypedLinksRequestMarshaller();
             var unmarshaller = ListIncomingTypedLinksResponseUnmarshaller.Instance;
@@ -1412,7 +1412,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListIncomingTypedLinks">REST API Reference for ListIncomingTypedLinks Operation</seealso>
-        public Task<ListIncomingTypedLinksResponse> ListIncomingTypedLinksAsync(ListIncomingTypedLinksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListIncomingTypedLinksResponse> ListIncomingTypedLinksAsync(ListIncomingTypedLinksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListIncomingTypedLinksRequestMarshaller();
             var unmarshaller = ListIncomingTypedLinksResponseUnmarshaller.Instance;
@@ -1425,7 +1425,7 @@ namespace Amazon.CloudDirectory
         
         #region  ListIndex
 
-        internal ListIndexResponse ListIndex(ListIndexRequest request)
+        internal virtual ListIndexResponse ListIndex(ListIndexRequest request)
         {
             var marshaller = new ListIndexRequestMarshaller();
             var unmarshaller = ListIndexResponseUnmarshaller.Instance;
@@ -1444,7 +1444,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListIndex">REST API Reference for ListIndex Operation</seealso>
-        public Task<ListIndexResponse> ListIndexAsync(ListIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListIndexResponse> ListIndexAsync(ListIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListIndexRequestMarshaller();
             var unmarshaller = ListIndexResponseUnmarshaller.Instance;
@@ -1457,7 +1457,7 @@ namespace Amazon.CloudDirectory
         
         #region  ListObjectAttributes
 
-        internal ListObjectAttributesResponse ListObjectAttributes(ListObjectAttributesRequest request)
+        internal virtual ListObjectAttributesResponse ListObjectAttributes(ListObjectAttributesRequest request)
         {
             var marshaller = new ListObjectAttributesRequestMarshaller();
             var unmarshaller = ListObjectAttributesResponseUnmarshaller.Instance;
@@ -1476,7 +1476,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectAttributes">REST API Reference for ListObjectAttributes Operation</seealso>
-        public Task<ListObjectAttributesResponse> ListObjectAttributesAsync(ListObjectAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListObjectAttributesResponse> ListObjectAttributesAsync(ListObjectAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListObjectAttributesRequestMarshaller();
             var unmarshaller = ListObjectAttributesResponseUnmarshaller.Instance;
@@ -1489,7 +1489,7 @@ namespace Amazon.CloudDirectory
         
         #region  ListObjectChildren
 
-        internal ListObjectChildrenResponse ListObjectChildren(ListObjectChildrenRequest request)
+        internal virtual ListObjectChildrenResponse ListObjectChildren(ListObjectChildrenRequest request)
         {
             var marshaller = new ListObjectChildrenRequestMarshaller();
             var unmarshaller = ListObjectChildrenResponseUnmarshaller.Instance;
@@ -1508,7 +1508,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectChildren">REST API Reference for ListObjectChildren Operation</seealso>
-        public Task<ListObjectChildrenResponse> ListObjectChildrenAsync(ListObjectChildrenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListObjectChildrenResponse> ListObjectChildrenAsync(ListObjectChildrenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListObjectChildrenRequestMarshaller();
             var unmarshaller = ListObjectChildrenResponseUnmarshaller.Instance;
@@ -1521,7 +1521,7 @@ namespace Amazon.CloudDirectory
         
         #region  ListObjectParentPaths
 
-        internal ListObjectParentPathsResponse ListObjectParentPaths(ListObjectParentPathsRequest request)
+        internal virtual ListObjectParentPathsResponse ListObjectParentPaths(ListObjectParentPathsRequest request)
         {
             var marshaller = new ListObjectParentPathsRequestMarshaller();
             var unmarshaller = ListObjectParentPathsResponseUnmarshaller.Instance;
@@ -1540,7 +1540,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectParentPaths">REST API Reference for ListObjectParentPaths Operation</seealso>
-        public Task<ListObjectParentPathsResponse> ListObjectParentPathsAsync(ListObjectParentPathsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListObjectParentPathsResponse> ListObjectParentPathsAsync(ListObjectParentPathsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListObjectParentPathsRequestMarshaller();
             var unmarshaller = ListObjectParentPathsResponseUnmarshaller.Instance;
@@ -1553,7 +1553,7 @@ namespace Amazon.CloudDirectory
         
         #region  ListObjectParents
 
-        internal ListObjectParentsResponse ListObjectParents(ListObjectParentsRequest request)
+        internal virtual ListObjectParentsResponse ListObjectParents(ListObjectParentsRequest request)
         {
             var marshaller = new ListObjectParentsRequestMarshaller();
             var unmarshaller = ListObjectParentsResponseUnmarshaller.Instance;
@@ -1572,7 +1572,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectParents">REST API Reference for ListObjectParents Operation</seealso>
-        public Task<ListObjectParentsResponse> ListObjectParentsAsync(ListObjectParentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListObjectParentsResponse> ListObjectParentsAsync(ListObjectParentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListObjectParentsRequestMarshaller();
             var unmarshaller = ListObjectParentsResponseUnmarshaller.Instance;
@@ -1585,7 +1585,7 @@ namespace Amazon.CloudDirectory
         
         #region  ListObjectPolicies
 
-        internal ListObjectPoliciesResponse ListObjectPolicies(ListObjectPoliciesRequest request)
+        internal virtual ListObjectPoliciesResponse ListObjectPolicies(ListObjectPoliciesRequest request)
         {
             var marshaller = new ListObjectPoliciesRequestMarshaller();
             var unmarshaller = ListObjectPoliciesResponseUnmarshaller.Instance;
@@ -1604,7 +1604,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectPolicies">REST API Reference for ListObjectPolicies Operation</seealso>
-        public Task<ListObjectPoliciesResponse> ListObjectPoliciesAsync(ListObjectPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListObjectPoliciesResponse> ListObjectPoliciesAsync(ListObjectPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListObjectPoliciesRequestMarshaller();
             var unmarshaller = ListObjectPoliciesResponseUnmarshaller.Instance;
@@ -1617,7 +1617,7 @@ namespace Amazon.CloudDirectory
         
         #region  ListOutgoingTypedLinks
 
-        internal ListOutgoingTypedLinksResponse ListOutgoingTypedLinks(ListOutgoingTypedLinksRequest request)
+        internal virtual ListOutgoingTypedLinksResponse ListOutgoingTypedLinks(ListOutgoingTypedLinksRequest request)
         {
             var marshaller = new ListOutgoingTypedLinksRequestMarshaller();
             var unmarshaller = ListOutgoingTypedLinksResponseUnmarshaller.Instance;
@@ -1636,7 +1636,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListOutgoingTypedLinks">REST API Reference for ListOutgoingTypedLinks Operation</seealso>
-        public Task<ListOutgoingTypedLinksResponse> ListOutgoingTypedLinksAsync(ListOutgoingTypedLinksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListOutgoingTypedLinksResponse> ListOutgoingTypedLinksAsync(ListOutgoingTypedLinksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListOutgoingTypedLinksRequestMarshaller();
             var unmarshaller = ListOutgoingTypedLinksResponseUnmarshaller.Instance;
@@ -1649,7 +1649,7 @@ namespace Amazon.CloudDirectory
         
         #region  ListPolicyAttachments
 
-        internal ListPolicyAttachmentsResponse ListPolicyAttachments(ListPolicyAttachmentsRequest request)
+        internal virtual ListPolicyAttachmentsResponse ListPolicyAttachments(ListPolicyAttachmentsRequest request)
         {
             var marshaller = new ListPolicyAttachmentsRequestMarshaller();
             var unmarshaller = ListPolicyAttachmentsResponseUnmarshaller.Instance;
@@ -1668,7 +1668,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListPolicyAttachments">REST API Reference for ListPolicyAttachments Operation</seealso>
-        public Task<ListPolicyAttachmentsResponse> ListPolicyAttachmentsAsync(ListPolicyAttachmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListPolicyAttachmentsResponse> ListPolicyAttachmentsAsync(ListPolicyAttachmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListPolicyAttachmentsRequestMarshaller();
             var unmarshaller = ListPolicyAttachmentsResponseUnmarshaller.Instance;
@@ -1681,7 +1681,7 @@ namespace Amazon.CloudDirectory
         
         #region  ListPublishedSchemaArns
 
-        internal ListPublishedSchemaArnsResponse ListPublishedSchemaArns(ListPublishedSchemaArnsRequest request)
+        internal virtual ListPublishedSchemaArnsResponse ListPublishedSchemaArns(ListPublishedSchemaArnsRequest request)
         {
             var marshaller = new ListPublishedSchemaArnsRequestMarshaller();
             var unmarshaller = ListPublishedSchemaArnsResponseUnmarshaller.Instance;
@@ -1700,7 +1700,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListPublishedSchemaArns">REST API Reference for ListPublishedSchemaArns Operation</seealso>
-        public Task<ListPublishedSchemaArnsResponse> ListPublishedSchemaArnsAsync(ListPublishedSchemaArnsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListPublishedSchemaArnsResponse> ListPublishedSchemaArnsAsync(ListPublishedSchemaArnsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListPublishedSchemaArnsRequestMarshaller();
             var unmarshaller = ListPublishedSchemaArnsResponseUnmarshaller.Instance;
@@ -1713,7 +1713,7 @@ namespace Amazon.CloudDirectory
         
         #region  ListTagsForResource
 
-        internal ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
@@ -1732,7 +1732,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
-        public Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
@@ -1745,7 +1745,7 @@ namespace Amazon.CloudDirectory
         
         #region  ListTypedLinkFacetAttributes
 
-        internal ListTypedLinkFacetAttributesResponse ListTypedLinkFacetAttributes(ListTypedLinkFacetAttributesRequest request)
+        internal virtual ListTypedLinkFacetAttributesResponse ListTypedLinkFacetAttributes(ListTypedLinkFacetAttributesRequest request)
         {
             var marshaller = new ListTypedLinkFacetAttributesRequestMarshaller();
             var unmarshaller = ListTypedLinkFacetAttributesResponseUnmarshaller.Instance;
@@ -1764,7 +1764,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTypedLinkFacetAttributes">REST API Reference for ListTypedLinkFacetAttributes Operation</seealso>
-        public Task<ListTypedLinkFacetAttributesResponse> ListTypedLinkFacetAttributesAsync(ListTypedLinkFacetAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListTypedLinkFacetAttributesResponse> ListTypedLinkFacetAttributesAsync(ListTypedLinkFacetAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListTypedLinkFacetAttributesRequestMarshaller();
             var unmarshaller = ListTypedLinkFacetAttributesResponseUnmarshaller.Instance;
@@ -1777,7 +1777,7 @@ namespace Amazon.CloudDirectory
         
         #region  ListTypedLinkFacetNames
 
-        internal ListTypedLinkFacetNamesResponse ListTypedLinkFacetNames(ListTypedLinkFacetNamesRequest request)
+        internal virtual ListTypedLinkFacetNamesResponse ListTypedLinkFacetNames(ListTypedLinkFacetNamesRequest request)
         {
             var marshaller = new ListTypedLinkFacetNamesRequestMarshaller();
             var unmarshaller = ListTypedLinkFacetNamesResponseUnmarshaller.Instance;
@@ -1796,7 +1796,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTypedLinkFacetNames">REST API Reference for ListTypedLinkFacetNames Operation</seealso>
-        public Task<ListTypedLinkFacetNamesResponse> ListTypedLinkFacetNamesAsync(ListTypedLinkFacetNamesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListTypedLinkFacetNamesResponse> ListTypedLinkFacetNamesAsync(ListTypedLinkFacetNamesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListTypedLinkFacetNamesRequestMarshaller();
             var unmarshaller = ListTypedLinkFacetNamesResponseUnmarshaller.Instance;
@@ -1809,7 +1809,7 @@ namespace Amazon.CloudDirectory
         
         #region  LookupPolicy
 
-        internal LookupPolicyResponse LookupPolicy(LookupPolicyRequest request)
+        internal virtual LookupPolicyResponse LookupPolicy(LookupPolicyRequest request)
         {
             var marshaller = new LookupPolicyRequestMarshaller();
             var unmarshaller = LookupPolicyResponseUnmarshaller.Instance;
@@ -1828,7 +1828,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/LookupPolicy">REST API Reference for LookupPolicy Operation</seealso>
-        public Task<LookupPolicyResponse> LookupPolicyAsync(LookupPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<LookupPolicyResponse> LookupPolicyAsync(LookupPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new LookupPolicyRequestMarshaller();
             var unmarshaller = LookupPolicyResponseUnmarshaller.Instance;
@@ -1841,7 +1841,7 @@ namespace Amazon.CloudDirectory
         
         #region  PublishSchema
 
-        internal PublishSchemaResponse PublishSchema(PublishSchemaRequest request)
+        internal virtual PublishSchemaResponse PublishSchema(PublishSchemaRequest request)
         {
             var marshaller = new PublishSchemaRequestMarshaller();
             var unmarshaller = PublishSchemaResponseUnmarshaller.Instance;
@@ -1860,7 +1860,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/PublishSchema">REST API Reference for PublishSchema Operation</seealso>
-        public Task<PublishSchemaResponse> PublishSchemaAsync(PublishSchemaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PublishSchemaResponse> PublishSchemaAsync(PublishSchemaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PublishSchemaRequestMarshaller();
             var unmarshaller = PublishSchemaResponseUnmarshaller.Instance;
@@ -1873,7 +1873,7 @@ namespace Amazon.CloudDirectory
         
         #region  PutSchemaFromJson
 
-        internal PutSchemaFromJsonResponse PutSchemaFromJson(PutSchemaFromJsonRequest request)
+        internal virtual PutSchemaFromJsonResponse PutSchemaFromJson(PutSchemaFromJsonRequest request)
         {
             var marshaller = new PutSchemaFromJsonRequestMarshaller();
             var unmarshaller = PutSchemaFromJsonResponseUnmarshaller.Instance;
@@ -1892,7 +1892,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/PutSchemaFromJson">REST API Reference for PutSchemaFromJson Operation</seealso>
-        public Task<PutSchemaFromJsonResponse> PutSchemaFromJsonAsync(PutSchemaFromJsonRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PutSchemaFromJsonResponse> PutSchemaFromJsonAsync(PutSchemaFromJsonRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutSchemaFromJsonRequestMarshaller();
             var unmarshaller = PutSchemaFromJsonResponseUnmarshaller.Instance;
@@ -1905,7 +1905,7 @@ namespace Amazon.CloudDirectory
         
         #region  RemoveFacetFromObject
 
-        internal RemoveFacetFromObjectResponse RemoveFacetFromObject(RemoveFacetFromObjectRequest request)
+        internal virtual RemoveFacetFromObjectResponse RemoveFacetFromObject(RemoveFacetFromObjectRequest request)
         {
             var marshaller = new RemoveFacetFromObjectRequestMarshaller();
             var unmarshaller = RemoveFacetFromObjectResponseUnmarshaller.Instance;
@@ -1924,7 +1924,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/RemoveFacetFromObject">REST API Reference for RemoveFacetFromObject Operation</seealso>
-        public Task<RemoveFacetFromObjectResponse> RemoveFacetFromObjectAsync(RemoveFacetFromObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<RemoveFacetFromObjectResponse> RemoveFacetFromObjectAsync(RemoveFacetFromObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RemoveFacetFromObjectRequestMarshaller();
             var unmarshaller = RemoveFacetFromObjectResponseUnmarshaller.Instance;
@@ -1937,7 +1937,7 @@ namespace Amazon.CloudDirectory
         
         #region  TagResource
 
-        internal TagResourceResponse TagResource(TagResourceRequest request)
+        internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
             var marshaller = new TagResourceRequestMarshaller();
             var unmarshaller = TagResourceResponseUnmarshaller.Instance;
@@ -1956,7 +1956,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
-        public Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new TagResourceRequestMarshaller();
             var unmarshaller = TagResourceResponseUnmarshaller.Instance;
@@ -1969,7 +1969,7 @@ namespace Amazon.CloudDirectory
         
         #region  UntagResource
 
-        internal UntagResourceResponse UntagResource(UntagResourceRequest request)
+        internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
             var marshaller = new UntagResourceRequestMarshaller();
             var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
@@ -1988,7 +1988,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
-        public Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UntagResourceRequestMarshaller();
             var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
@@ -2001,7 +2001,7 @@ namespace Amazon.CloudDirectory
         
         #region  UpdateFacet
 
-        internal UpdateFacetResponse UpdateFacet(UpdateFacetRequest request)
+        internal virtual UpdateFacetResponse UpdateFacet(UpdateFacetRequest request)
         {
             var marshaller = new UpdateFacetRequestMarshaller();
             var unmarshaller = UpdateFacetResponseUnmarshaller.Instance;
@@ -2020,7 +2020,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateFacet">REST API Reference for UpdateFacet Operation</seealso>
-        public Task<UpdateFacetResponse> UpdateFacetAsync(UpdateFacetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateFacetResponse> UpdateFacetAsync(UpdateFacetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateFacetRequestMarshaller();
             var unmarshaller = UpdateFacetResponseUnmarshaller.Instance;
@@ -2033,7 +2033,7 @@ namespace Amazon.CloudDirectory
         
         #region  UpdateObjectAttributes
 
-        internal UpdateObjectAttributesResponse UpdateObjectAttributes(UpdateObjectAttributesRequest request)
+        internal virtual UpdateObjectAttributesResponse UpdateObjectAttributes(UpdateObjectAttributesRequest request)
         {
             var marshaller = new UpdateObjectAttributesRequestMarshaller();
             var unmarshaller = UpdateObjectAttributesResponseUnmarshaller.Instance;
@@ -2052,7 +2052,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateObjectAttributes">REST API Reference for UpdateObjectAttributes Operation</seealso>
-        public Task<UpdateObjectAttributesResponse> UpdateObjectAttributesAsync(UpdateObjectAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateObjectAttributesResponse> UpdateObjectAttributesAsync(UpdateObjectAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateObjectAttributesRequestMarshaller();
             var unmarshaller = UpdateObjectAttributesResponseUnmarshaller.Instance;
@@ -2065,7 +2065,7 @@ namespace Amazon.CloudDirectory
         
         #region  UpdateSchema
 
-        internal UpdateSchemaResponse UpdateSchema(UpdateSchemaRequest request)
+        internal virtual UpdateSchemaResponse UpdateSchema(UpdateSchemaRequest request)
         {
             var marshaller = new UpdateSchemaRequestMarshaller();
             var unmarshaller = UpdateSchemaResponseUnmarshaller.Instance;
@@ -2084,7 +2084,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateSchema">REST API Reference for UpdateSchema Operation</seealso>
-        public Task<UpdateSchemaResponse> UpdateSchemaAsync(UpdateSchemaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateSchemaResponse> UpdateSchemaAsync(UpdateSchemaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateSchemaRequestMarshaller();
             var unmarshaller = UpdateSchemaResponseUnmarshaller.Instance;
@@ -2097,7 +2097,7 @@ namespace Amazon.CloudDirectory
         
         #region  UpdateTypedLinkFacet
 
-        internal UpdateTypedLinkFacetResponse UpdateTypedLinkFacet(UpdateTypedLinkFacetRequest request)
+        internal virtual UpdateTypedLinkFacetResponse UpdateTypedLinkFacet(UpdateTypedLinkFacetRequest request)
         {
             var marshaller = new UpdateTypedLinkFacetRequestMarshaller();
             var unmarshaller = UpdateTypedLinkFacetResponseUnmarshaller.Instance;
@@ -2116,7 +2116,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateTypedLinkFacet">REST API Reference for UpdateTypedLinkFacet Operation</seealso>
-        public Task<UpdateTypedLinkFacetResponse> UpdateTypedLinkFacetAsync(UpdateTypedLinkFacetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateTypedLinkFacetResponse> UpdateTypedLinkFacetAsync(UpdateTypedLinkFacetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateTypedLinkFacetRequestMarshaller();
             var unmarshaller = UpdateTypedLinkFacetResponseUnmarshaller.Instance;

@@ -248,7 +248,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateDevicePool">REST API Reference for CreateDevicePool Operation</seealso>
-        public CreateDevicePoolResponse CreateDevicePool(CreateDevicePoolRequest request)
+        public virtual CreateDevicePoolResponse CreateDevicePool(CreateDevicePoolRequest request)
         {
             var marshaller = new CreateDevicePoolRequestMarshaller();
             var unmarshaller = CreateDevicePoolResponseUnmarshaller.Instance;
@@ -266,7 +266,7 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateDevicePool">REST API Reference for CreateDevicePool Operation</seealso>
-        public Task<CreateDevicePoolResponse> CreateDevicePoolAsync(CreateDevicePoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateDevicePoolResponse> CreateDevicePoolAsync(CreateDevicePoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateDevicePoolRequestMarshaller();
             var unmarshaller = CreateDevicePoolResponseUnmarshaller.Instance;
@@ -299,7 +299,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateNetworkProfile">REST API Reference for CreateNetworkProfile Operation</seealso>
-        public CreateNetworkProfileResponse CreateNetworkProfile(CreateNetworkProfileRequest request)
+        public virtual CreateNetworkProfileResponse CreateNetworkProfile(CreateNetworkProfileRequest request)
         {
             var marshaller = new CreateNetworkProfileRequestMarshaller();
             var unmarshaller = CreateNetworkProfileResponseUnmarshaller.Instance;
@@ -317,7 +317,7 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateNetworkProfile">REST API Reference for CreateNetworkProfile Operation</seealso>
-        public Task<CreateNetworkProfileResponse> CreateNetworkProfileAsync(CreateNetworkProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateNetworkProfileResponse> CreateNetworkProfileAsync(CreateNetworkProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateNetworkProfileRequestMarshaller();
             var unmarshaller = CreateNetworkProfileResponseUnmarshaller.Instance;
@@ -350,7 +350,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateProject">REST API Reference for CreateProject Operation</seealso>
-        public CreateProjectResponse CreateProject(string name)
+        public virtual CreateProjectResponse CreateProject(string name)
         {
             var request = new CreateProjectRequest();
             request.Name = name;
@@ -377,7 +377,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateProject">REST API Reference for CreateProject Operation</seealso>
-        public CreateProjectResponse CreateProject(CreateProjectRequest request)
+        public virtual CreateProjectResponse CreateProject(CreateProjectRequest request)
         {
             var marshaller = new CreateProjectRequestMarshaller();
             var unmarshaller = CreateProjectResponseUnmarshaller.Instance;
@@ -408,7 +408,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateProject">REST API Reference for CreateProject Operation</seealso>
-        public Task<CreateProjectResponse> CreateProjectAsync(string name, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateProjectResponse> CreateProjectAsync(string name, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new CreateProjectRequest();
             request.Name = name;
@@ -425,7 +425,7 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateProject">REST API Reference for CreateProject Operation</seealso>
-        public Task<CreateProjectResponse> CreateProjectAsync(CreateProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateProjectResponse> CreateProjectAsync(CreateProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateProjectRequestMarshaller();
             var unmarshaller = CreateProjectResponseUnmarshaller.Instance;
@@ -458,7 +458,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateRemoteAccessSession">REST API Reference for CreateRemoteAccessSession Operation</seealso>
-        public CreateRemoteAccessSessionResponse CreateRemoteAccessSession(CreateRemoteAccessSessionRequest request)
+        public virtual CreateRemoteAccessSessionResponse CreateRemoteAccessSession(CreateRemoteAccessSessionRequest request)
         {
             var marshaller = new CreateRemoteAccessSessionRequestMarshaller();
             var unmarshaller = CreateRemoteAccessSessionResponseUnmarshaller.Instance;
@@ -476,7 +476,7 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateRemoteAccessSession">REST API Reference for CreateRemoteAccessSession Operation</seealso>
-        public Task<CreateRemoteAccessSessionResponse> CreateRemoteAccessSessionAsync(CreateRemoteAccessSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateRemoteAccessSessionResponse> CreateRemoteAccessSessionAsync(CreateRemoteAccessSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateRemoteAccessSessionRequestMarshaller();
             var unmarshaller = CreateRemoteAccessSessionResponseUnmarshaller.Instance;
@@ -509,7 +509,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateUpload">REST API Reference for CreateUpload Operation</seealso>
-        public CreateUploadResponse CreateUpload(CreateUploadRequest request)
+        public virtual CreateUploadResponse CreateUpload(CreateUploadRequest request)
         {
             var marshaller = new CreateUploadRequestMarshaller();
             var unmarshaller = CreateUploadResponseUnmarshaller.Instance;
@@ -527,7 +527,7 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateUpload">REST API Reference for CreateUpload Operation</seealso>
-        public Task<CreateUploadResponse> CreateUploadAsync(CreateUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateUploadResponse> CreateUploadAsync(CreateUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateUploadRequestMarshaller();
             var unmarshaller = CreateUploadResponseUnmarshaller.Instance;
@@ -561,7 +561,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteDevicePool">REST API Reference for DeleteDevicePool Operation</seealso>
-        public DeleteDevicePoolResponse DeleteDevicePool(DeleteDevicePoolRequest request)
+        public virtual DeleteDevicePoolResponse DeleteDevicePool(DeleteDevicePoolRequest request)
         {
             var marshaller = new DeleteDevicePoolRequestMarshaller();
             var unmarshaller = DeleteDevicePoolResponseUnmarshaller.Instance;
@@ -579,7 +579,7 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteDevicePool">REST API Reference for DeleteDevicePool Operation</seealso>
-        public Task<DeleteDevicePoolResponse> DeleteDevicePoolAsync(DeleteDevicePoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteDevicePoolResponse> DeleteDevicePoolAsync(DeleteDevicePoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteDevicePoolRequestMarshaller();
             var unmarshaller = DeleteDevicePoolResponseUnmarshaller.Instance;
@@ -612,7 +612,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteNetworkProfile">REST API Reference for DeleteNetworkProfile Operation</seealso>
-        public DeleteNetworkProfileResponse DeleteNetworkProfile(DeleteNetworkProfileRequest request)
+        public virtual DeleteNetworkProfileResponse DeleteNetworkProfile(DeleteNetworkProfileRequest request)
         {
             var marshaller = new DeleteNetworkProfileRequestMarshaller();
             var unmarshaller = DeleteNetworkProfileResponseUnmarshaller.Instance;
@@ -630,7 +630,7 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteNetworkProfile">REST API Reference for DeleteNetworkProfile Operation</seealso>
-        public Task<DeleteNetworkProfileResponse> DeleteNetworkProfileAsync(DeleteNetworkProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteNetworkProfileResponse> DeleteNetworkProfileAsync(DeleteNetworkProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteNetworkProfileRequestMarshaller();
             var unmarshaller = DeleteNetworkProfileResponseUnmarshaller.Instance;
@@ -668,7 +668,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
-        public DeleteProjectResponse DeleteProject(DeleteProjectRequest request)
+        public virtual DeleteProjectResponse DeleteProject(DeleteProjectRequest request)
         {
             var marshaller = new DeleteProjectRequestMarshaller();
             var unmarshaller = DeleteProjectResponseUnmarshaller.Instance;
@@ -686,7 +686,7 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
-        public Task<DeleteProjectResponse> DeleteProjectAsync(DeleteProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteProjectResponse> DeleteProjectAsync(DeleteProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteProjectRequestMarshaller();
             var unmarshaller = DeleteProjectResponseUnmarshaller.Instance;
@@ -719,7 +719,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteRemoteAccessSession">REST API Reference for DeleteRemoteAccessSession Operation</seealso>
-        public DeleteRemoteAccessSessionResponse DeleteRemoteAccessSession(DeleteRemoteAccessSessionRequest request)
+        public virtual DeleteRemoteAccessSessionResponse DeleteRemoteAccessSession(DeleteRemoteAccessSessionRequest request)
         {
             var marshaller = new DeleteRemoteAccessSessionRequestMarshaller();
             var unmarshaller = DeleteRemoteAccessSessionResponseUnmarshaller.Instance;
@@ -737,7 +737,7 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteRemoteAccessSession">REST API Reference for DeleteRemoteAccessSession Operation</seealso>
-        public Task<DeleteRemoteAccessSessionResponse> DeleteRemoteAccessSessionAsync(DeleteRemoteAccessSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteRemoteAccessSessionResponse> DeleteRemoteAccessSessionAsync(DeleteRemoteAccessSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteRemoteAccessSessionRequestMarshaller();
             var unmarshaller = DeleteRemoteAccessSessionResponseUnmarshaller.Instance;
@@ -775,7 +775,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteRun">REST API Reference for DeleteRun Operation</seealso>
-        public DeleteRunResponse DeleteRun(DeleteRunRequest request)
+        public virtual DeleteRunResponse DeleteRun(DeleteRunRequest request)
         {
             var marshaller = new DeleteRunRequestMarshaller();
             var unmarshaller = DeleteRunResponseUnmarshaller.Instance;
@@ -793,7 +793,7 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteRun">REST API Reference for DeleteRun Operation</seealso>
-        public Task<DeleteRunResponse> DeleteRunAsync(DeleteRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteRunResponse> DeleteRunAsync(DeleteRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteRunRequestMarshaller();
             var unmarshaller = DeleteRunResponseUnmarshaller.Instance;
@@ -826,7 +826,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteUpload">REST API Reference for DeleteUpload Operation</seealso>
-        public DeleteUploadResponse DeleteUpload(DeleteUploadRequest request)
+        public virtual DeleteUploadResponse DeleteUpload(DeleteUploadRequest request)
         {
             var marshaller = new DeleteUploadRequestMarshaller();
             var unmarshaller = DeleteUploadResponseUnmarshaller.Instance;
@@ -844,7 +844,7 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteUpload">REST API Reference for DeleteUpload Operation</seealso>
-        public Task<DeleteUploadResponse> DeleteUploadAsync(DeleteUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteUploadResponse> DeleteUploadAsync(DeleteUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteUploadRequestMarshaller();
             var unmarshaller = DeleteUploadResponseUnmarshaller.Instance;
@@ -877,7 +877,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetAccountSettings">REST API Reference for GetAccountSettings Operation</seealso>
-        public GetAccountSettingsResponse GetAccountSettings()
+        public virtual GetAccountSettingsResponse GetAccountSettings()
         {
             return GetAccountSettings(new GetAccountSettingsRequest());
         }
@@ -903,7 +903,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetAccountSettings">REST API Reference for GetAccountSettings Operation</seealso>
-        public GetAccountSettingsResponse GetAccountSettings(GetAccountSettingsRequest request)
+        public virtual GetAccountSettingsResponse GetAccountSettings(GetAccountSettingsRequest request)
         {
             var marshaller = new GetAccountSettingsRequestMarshaller();
             var unmarshaller = GetAccountSettingsResponseUnmarshaller.Instance;
@@ -934,7 +934,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetAccountSettings">REST API Reference for GetAccountSettings Operation</seealso>
-        public Task<GetAccountSettingsResponse> GetAccountSettingsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetAccountSettingsResponse> GetAccountSettingsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return GetAccountSettingsAsync(new GetAccountSettingsRequest(), cancellationToken);
         }
@@ -948,7 +948,7 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetAccountSettings">REST API Reference for GetAccountSettings Operation</seealso>
-        public Task<GetAccountSettingsResponse> GetAccountSettingsAsync(GetAccountSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetAccountSettingsResponse> GetAccountSettingsAsync(GetAccountSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetAccountSettingsRequestMarshaller();
             var unmarshaller = GetAccountSettingsResponseUnmarshaller.Instance;
@@ -981,7 +981,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDevice">REST API Reference for GetDevice Operation</seealso>
-        public GetDeviceResponse GetDevice(string arn)
+        public virtual GetDeviceResponse GetDevice(string arn)
         {
             var request = new GetDeviceRequest();
             request.Arn = arn;
@@ -1008,7 +1008,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDevice">REST API Reference for GetDevice Operation</seealso>
-        public GetDeviceResponse GetDevice(GetDeviceRequest request)
+        public virtual GetDeviceResponse GetDevice(GetDeviceRequest request)
         {
             var marshaller = new GetDeviceRequestMarshaller();
             var unmarshaller = GetDeviceResponseUnmarshaller.Instance;
@@ -1039,7 +1039,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDevice">REST API Reference for GetDevice Operation</seealso>
-        public Task<GetDeviceResponse> GetDeviceAsync(string arn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetDeviceResponse> GetDeviceAsync(string arn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new GetDeviceRequest();
             request.Arn = arn;
@@ -1056,7 +1056,7 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDevice">REST API Reference for GetDevice Operation</seealso>
-        public Task<GetDeviceResponse> GetDeviceAsync(GetDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetDeviceResponse> GetDeviceAsync(GetDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetDeviceRequestMarshaller();
             var unmarshaller = GetDeviceResponseUnmarshaller.Instance;
@@ -1089,7 +1089,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDevicePool">REST API Reference for GetDevicePool Operation</seealso>
-        public GetDevicePoolResponse GetDevicePool(string arn)
+        public virtual GetDevicePoolResponse GetDevicePool(string arn)
         {
             var request = new GetDevicePoolRequest();
             request.Arn = arn;
@@ -1116,7 +1116,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDevicePool">REST API Reference for GetDevicePool Operation</seealso>
-        public GetDevicePoolResponse GetDevicePool(GetDevicePoolRequest request)
+        public virtual GetDevicePoolResponse GetDevicePool(GetDevicePoolRequest request)
         {
             var marshaller = new GetDevicePoolRequestMarshaller();
             var unmarshaller = GetDevicePoolResponseUnmarshaller.Instance;
@@ -1147,7 +1147,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDevicePool">REST API Reference for GetDevicePool Operation</seealso>
-        public Task<GetDevicePoolResponse> GetDevicePoolAsync(string arn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetDevicePoolResponse> GetDevicePoolAsync(string arn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new GetDevicePoolRequest();
             request.Arn = arn;
@@ -1164,7 +1164,7 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDevicePool">REST API Reference for GetDevicePool Operation</seealso>
-        public Task<GetDevicePoolResponse> GetDevicePoolAsync(GetDevicePoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetDevicePoolResponse> GetDevicePoolAsync(GetDevicePoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetDevicePoolRequestMarshaller();
             var unmarshaller = GetDevicePoolResponseUnmarshaller.Instance;
@@ -1197,7 +1197,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDevicePoolCompatibility">REST API Reference for GetDevicePoolCompatibility Operation</seealso>
-        public GetDevicePoolCompatibilityResponse GetDevicePoolCompatibility(GetDevicePoolCompatibilityRequest request)
+        public virtual GetDevicePoolCompatibilityResponse GetDevicePoolCompatibility(GetDevicePoolCompatibilityRequest request)
         {
             var marshaller = new GetDevicePoolCompatibilityRequestMarshaller();
             var unmarshaller = GetDevicePoolCompatibilityResponseUnmarshaller.Instance;
@@ -1215,7 +1215,7 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDevicePoolCompatibility">REST API Reference for GetDevicePoolCompatibility Operation</seealso>
-        public Task<GetDevicePoolCompatibilityResponse> GetDevicePoolCompatibilityAsync(GetDevicePoolCompatibilityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetDevicePoolCompatibilityResponse> GetDevicePoolCompatibilityAsync(GetDevicePoolCompatibilityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetDevicePoolCompatibilityRequestMarshaller();
             var unmarshaller = GetDevicePoolCompatibilityResponseUnmarshaller.Instance;
@@ -1248,7 +1248,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetJob">REST API Reference for GetJob Operation</seealso>
-        public GetJobResponse GetJob(string arn)
+        public virtual GetJobResponse GetJob(string arn)
         {
             var request = new GetJobRequest();
             request.Arn = arn;
@@ -1275,7 +1275,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetJob">REST API Reference for GetJob Operation</seealso>
-        public GetJobResponse GetJob(GetJobRequest request)
+        public virtual GetJobResponse GetJob(GetJobRequest request)
         {
             var marshaller = new GetJobRequestMarshaller();
             var unmarshaller = GetJobResponseUnmarshaller.Instance;
@@ -1306,7 +1306,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetJob">REST API Reference for GetJob Operation</seealso>
-        public Task<GetJobResponse> GetJobAsync(string arn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetJobResponse> GetJobAsync(string arn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new GetJobRequest();
             request.Arn = arn;
@@ -1323,7 +1323,7 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetJob">REST API Reference for GetJob Operation</seealso>
-        public Task<GetJobResponse> GetJobAsync(GetJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetJobResponse> GetJobAsync(GetJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetJobRequestMarshaller();
             var unmarshaller = GetJobResponseUnmarshaller.Instance;
@@ -1356,7 +1356,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetNetworkProfile">REST API Reference for GetNetworkProfile Operation</seealso>
-        public GetNetworkProfileResponse GetNetworkProfile(GetNetworkProfileRequest request)
+        public virtual GetNetworkProfileResponse GetNetworkProfile(GetNetworkProfileRequest request)
         {
             var marshaller = new GetNetworkProfileRequestMarshaller();
             var unmarshaller = GetNetworkProfileResponseUnmarshaller.Instance;
@@ -1374,7 +1374,7 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetNetworkProfile">REST API Reference for GetNetworkProfile Operation</seealso>
-        public Task<GetNetworkProfileResponse> GetNetworkProfileAsync(GetNetworkProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetNetworkProfileResponse> GetNetworkProfileAsync(GetNetworkProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetNetworkProfileRequestMarshaller();
             var unmarshaller = GetNetworkProfileResponseUnmarshaller.Instance;
@@ -1414,7 +1414,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetOfferingStatus">REST API Reference for GetOfferingStatus Operation</seealso>
-        public GetOfferingStatusResponse GetOfferingStatus(GetOfferingStatusRequest request)
+        public virtual GetOfferingStatusResponse GetOfferingStatus(GetOfferingStatusRequest request)
         {
             var marshaller = new GetOfferingStatusRequestMarshaller();
             var unmarshaller = GetOfferingStatusResponseUnmarshaller.Instance;
@@ -1432,7 +1432,7 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetOfferingStatus">REST API Reference for GetOfferingStatus Operation</seealso>
-        public Task<GetOfferingStatusResponse> GetOfferingStatusAsync(GetOfferingStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetOfferingStatusResponse> GetOfferingStatusAsync(GetOfferingStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetOfferingStatusRequestMarshaller();
             var unmarshaller = GetOfferingStatusResponseUnmarshaller.Instance;
@@ -1465,7 +1465,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetProject">REST API Reference for GetProject Operation</seealso>
-        public GetProjectResponse GetProject(string arn)
+        public virtual GetProjectResponse GetProject(string arn)
         {
             var request = new GetProjectRequest();
             request.Arn = arn;
@@ -1492,7 +1492,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetProject">REST API Reference for GetProject Operation</seealso>
-        public GetProjectResponse GetProject(GetProjectRequest request)
+        public virtual GetProjectResponse GetProject(GetProjectRequest request)
         {
             var marshaller = new GetProjectRequestMarshaller();
             var unmarshaller = GetProjectResponseUnmarshaller.Instance;
@@ -1523,7 +1523,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetProject">REST API Reference for GetProject Operation</seealso>
-        public Task<GetProjectResponse> GetProjectAsync(string arn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetProjectResponse> GetProjectAsync(string arn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new GetProjectRequest();
             request.Arn = arn;
@@ -1540,7 +1540,7 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetProject">REST API Reference for GetProject Operation</seealso>
-        public Task<GetProjectResponse> GetProjectAsync(GetProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetProjectResponse> GetProjectAsync(GetProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetProjectRequestMarshaller();
             var unmarshaller = GetProjectResponseUnmarshaller.Instance;
@@ -1573,7 +1573,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetRemoteAccessSession">REST API Reference for GetRemoteAccessSession Operation</seealso>
-        public GetRemoteAccessSessionResponse GetRemoteAccessSession(GetRemoteAccessSessionRequest request)
+        public virtual GetRemoteAccessSessionResponse GetRemoteAccessSession(GetRemoteAccessSessionRequest request)
         {
             var marshaller = new GetRemoteAccessSessionRequestMarshaller();
             var unmarshaller = GetRemoteAccessSessionResponseUnmarshaller.Instance;
@@ -1591,7 +1591,7 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetRemoteAccessSession">REST API Reference for GetRemoteAccessSession Operation</seealso>
-        public Task<GetRemoteAccessSessionResponse> GetRemoteAccessSessionAsync(GetRemoteAccessSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetRemoteAccessSessionResponse> GetRemoteAccessSessionAsync(GetRemoteAccessSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetRemoteAccessSessionRequestMarshaller();
             var unmarshaller = GetRemoteAccessSessionResponseUnmarshaller.Instance;
@@ -1624,7 +1624,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetRun">REST API Reference for GetRun Operation</seealso>
-        public GetRunResponse GetRun(string arn)
+        public virtual GetRunResponse GetRun(string arn)
         {
             var request = new GetRunRequest();
             request.Arn = arn;
@@ -1651,7 +1651,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetRun">REST API Reference for GetRun Operation</seealso>
-        public GetRunResponse GetRun(GetRunRequest request)
+        public virtual GetRunResponse GetRun(GetRunRequest request)
         {
             var marshaller = new GetRunRequestMarshaller();
             var unmarshaller = GetRunResponseUnmarshaller.Instance;
@@ -1682,7 +1682,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetRun">REST API Reference for GetRun Operation</seealso>
-        public Task<GetRunResponse> GetRunAsync(string arn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetRunResponse> GetRunAsync(string arn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new GetRunRequest();
             request.Arn = arn;
@@ -1699,7 +1699,7 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetRun">REST API Reference for GetRun Operation</seealso>
-        public Task<GetRunResponse> GetRunAsync(GetRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetRunResponse> GetRunAsync(GetRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetRunRequestMarshaller();
             var unmarshaller = GetRunResponseUnmarshaller.Instance;
@@ -1732,7 +1732,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetSuite">REST API Reference for GetSuite Operation</seealso>
-        public GetSuiteResponse GetSuite(string arn)
+        public virtual GetSuiteResponse GetSuite(string arn)
         {
             var request = new GetSuiteRequest();
             request.Arn = arn;
@@ -1759,7 +1759,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetSuite">REST API Reference for GetSuite Operation</seealso>
-        public GetSuiteResponse GetSuite(GetSuiteRequest request)
+        public virtual GetSuiteResponse GetSuite(GetSuiteRequest request)
         {
             var marshaller = new GetSuiteRequestMarshaller();
             var unmarshaller = GetSuiteResponseUnmarshaller.Instance;
@@ -1790,7 +1790,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetSuite">REST API Reference for GetSuite Operation</seealso>
-        public Task<GetSuiteResponse> GetSuiteAsync(string arn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetSuiteResponse> GetSuiteAsync(string arn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new GetSuiteRequest();
             request.Arn = arn;
@@ -1807,7 +1807,7 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetSuite">REST API Reference for GetSuite Operation</seealso>
-        public Task<GetSuiteResponse> GetSuiteAsync(GetSuiteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetSuiteResponse> GetSuiteAsync(GetSuiteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetSuiteRequestMarshaller();
             var unmarshaller = GetSuiteResponseUnmarshaller.Instance;
@@ -1840,7 +1840,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetTest">REST API Reference for GetTest Operation</seealso>
-        public GetTestResponse GetTest(string arn)
+        public virtual GetTestResponse GetTest(string arn)
         {
             var request = new GetTestRequest();
             request.Arn = arn;
@@ -1867,7 +1867,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetTest">REST API Reference for GetTest Operation</seealso>
-        public GetTestResponse GetTest(GetTestRequest request)
+        public virtual GetTestResponse GetTest(GetTestRequest request)
         {
             var marshaller = new GetTestRequestMarshaller();
             var unmarshaller = GetTestResponseUnmarshaller.Instance;
@@ -1898,7 +1898,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetTest">REST API Reference for GetTest Operation</seealso>
-        public Task<GetTestResponse> GetTestAsync(string arn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetTestResponse> GetTestAsync(string arn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new GetTestRequest();
             request.Arn = arn;
@@ -1915,7 +1915,7 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetTest">REST API Reference for GetTest Operation</seealso>
-        public Task<GetTestResponse> GetTestAsync(GetTestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetTestResponse> GetTestAsync(GetTestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetTestRequestMarshaller();
             var unmarshaller = GetTestResponseUnmarshaller.Instance;
@@ -1948,7 +1948,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetUpload">REST API Reference for GetUpload Operation</seealso>
-        public GetUploadResponse GetUpload(string arn)
+        public virtual GetUploadResponse GetUpload(string arn)
         {
             var request = new GetUploadRequest();
             request.Arn = arn;
@@ -1975,7 +1975,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetUpload">REST API Reference for GetUpload Operation</seealso>
-        public GetUploadResponse GetUpload(GetUploadRequest request)
+        public virtual GetUploadResponse GetUpload(GetUploadRequest request)
         {
             var marshaller = new GetUploadRequestMarshaller();
             var unmarshaller = GetUploadResponseUnmarshaller.Instance;
@@ -2006,7 +2006,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetUpload">REST API Reference for GetUpload Operation</seealso>
-        public Task<GetUploadResponse> GetUploadAsync(string arn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetUploadResponse> GetUploadAsync(string arn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new GetUploadRequest();
             request.Arn = arn;
@@ -2023,7 +2023,7 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetUpload">REST API Reference for GetUpload Operation</seealso>
-        public Task<GetUploadResponse> GetUploadAsync(GetUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetUploadResponse> GetUploadAsync(GetUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetUploadRequestMarshaller();
             var unmarshaller = GetUploadResponseUnmarshaller.Instance;
@@ -2057,7 +2057,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/InstallToRemoteAccessSession">REST API Reference for InstallToRemoteAccessSession Operation</seealso>
-        public InstallToRemoteAccessSessionResponse InstallToRemoteAccessSession(InstallToRemoteAccessSessionRequest request)
+        public virtual InstallToRemoteAccessSessionResponse InstallToRemoteAccessSession(InstallToRemoteAccessSessionRequest request)
         {
             var marshaller = new InstallToRemoteAccessSessionRequestMarshaller();
             var unmarshaller = InstallToRemoteAccessSessionResponseUnmarshaller.Instance;
@@ -2075,7 +2075,7 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/InstallToRemoteAccessSession">REST API Reference for InstallToRemoteAccessSession Operation</seealso>
-        public Task<InstallToRemoteAccessSessionResponse> InstallToRemoteAccessSessionAsync(InstallToRemoteAccessSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<InstallToRemoteAccessSessionResponse> InstallToRemoteAccessSessionAsync(InstallToRemoteAccessSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new InstallToRemoteAccessSessionRequestMarshaller();
             var unmarshaller = InstallToRemoteAccessSessionResponseUnmarshaller.Instance;
@@ -2108,7 +2108,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListArtifacts">REST API Reference for ListArtifacts Operation</seealso>
-        public ListArtifactsResponse ListArtifacts(ListArtifactsRequest request)
+        public virtual ListArtifactsResponse ListArtifacts(ListArtifactsRequest request)
         {
             var marshaller = new ListArtifactsRequestMarshaller();
             var unmarshaller = ListArtifactsResponseUnmarshaller.Instance;
@@ -2126,7 +2126,7 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListArtifacts">REST API Reference for ListArtifacts Operation</seealso>
-        public Task<ListArtifactsResponse> ListArtifactsAsync(ListArtifactsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListArtifactsResponse> ListArtifactsAsync(ListArtifactsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListArtifactsRequestMarshaller();
             var unmarshaller = ListArtifactsResponseUnmarshaller.Instance;
@@ -2159,7 +2159,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListDevicePools">REST API Reference for ListDevicePools Operation</seealso>
-        public ListDevicePoolsResponse ListDevicePools(ListDevicePoolsRequest request)
+        public virtual ListDevicePoolsResponse ListDevicePools(ListDevicePoolsRequest request)
         {
             var marshaller = new ListDevicePoolsRequestMarshaller();
             var unmarshaller = ListDevicePoolsResponseUnmarshaller.Instance;
@@ -2177,7 +2177,7 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListDevicePools">REST API Reference for ListDevicePools Operation</seealso>
-        public Task<ListDevicePoolsResponse> ListDevicePoolsAsync(ListDevicePoolsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListDevicePoolsResponse> ListDevicePoolsAsync(ListDevicePoolsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListDevicePoolsRequestMarshaller();
             var unmarshaller = ListDevicePoolsResponseUnmarshaller.Instance;
@@ -2210,7 +2210,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListDevices">REST API Reference for ListDevices Operation</seealso>
-        public ListDevicesResponse ListDevices(ListDevicesRequest request)
+        public virtual ListDevicesResponse ListDevices(ListDevicesRequest request)
         {
             var marshaller = new ListDevicesRequestMarshaller();
             var unmarshaller = ListDevicesResponseUnmarshaller.Instance;
@@ -2228,7 +2228,7 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListDevices">REST API Reference for ListDevices Operation</seealso>
-        public Task<ListDevicesResponse> ListDevicesAsync(ListDevicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListDevicesResponse> ListDevicesAsync(ListDevicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListDevicesRequestMarshaller();
             var unmarshaller = ListDevicesResponseUnmarshaller.Instance;
@@ -2261,7 +2261,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListJobs">REST API Reference for ListJobs Operation</seealso>
-        public ListJobsResponse ListJobs(ListJobsRequest request)
+        public virtual ListJobsResponse ListJobs(ListJobsRequest request)
         {
             var marshaller = new ListJobsRequestMarshaller();
             var unmarshaller = ListJobsResponseUnmarshaller.Instance;
@@ -2279,7 +2279,7 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListJobs">REST API Reference for ListJobs Operation</seealso>
-        public Task<ListJobsResponse> ListJobsAsync(ListJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListJobsResponse> ListJobsAsync(ListJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListJobsRequestMarshaller();
             var unmarshaller = ListJobsResponseUnmarshaller.Instance;
@@ -2312,7 +2312,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListNetworkProfiles">REST API Reference for ListNetworkProfiles Operation</seealso>
-        public ListNetworkProfilesResponse ListNetworkProfiles(ListNetworkProfilesRequest request)
+        public virtual ListNetworkProfilesResponse ListNetworkProfiles(ListNetworkProfilesRequest request)
         {
             var marshaller = new ListNetworkProfilesRequestMarshaller();
             var unmarshaller = ListNetworkProfilesResponseUnmarshaller.Instance;
@@ -2330,7 +2330,7 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListNetworkProfiles">REST API Reference for ListNetworkProfiles Operation</seealso>
-        public Task<ListNetworkProfilesResponse> ListNetworkProfilesAsync(ListNetworkProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListNetworkProfilesResponse> ListNetworkProfilesAsync(ListNetworkProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListNetworkProfilesRequestMarshaller();
             var unmarshaller = ListNetworkProfilesResponseUnmarshaller.Instance;
@@ -2369,7 +2369,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferingPromotions">REST API Reference for ListOfferingPromotions Operation</seealso>
-        public ListOfferingPromotionsResponse ListOfferingPromotions(ListOfferingPromotionsRequest request)
+        public virtual ListOfferingPromotionsResponse ListOfferingPromotions(ListOfferingPromotionsRequest request)
         {
             var marshaller = new ListOfferingPromotionsRequestMarshaller();
             var unmarshaller = ListOfferingPromotionsResponseUnmarshaller.Instance;
@@ -2387,7 +2387,7 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferingPromotions">REST API Reference for ListOfferingPromotions Operation</seealso>
-        public Task<ListOfferingPromotionsResponse> ListOfferingPromotionsAsync(ListOfferingPromotionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListOfferingPromotionsResponse> ListOfferingPromotionsAsync(ListOfferingPromotionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListOfferingPromotionsRequestMarshaller();
             var unmarshaller = ListOfferingPromotionsResponseUnmarshaller.Instance;
@@ -2427,7 +2427,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferings">REST API Reference for ListOfferings Operation</seealso>
-        public ListOfferingsResponse ListOfferings(ListOfferingsRequest request)
+        public virtual ListOfferingsResponse ListOfferings(ListOfferingsRequest request)
         {
             var marshaller = new ListOfferingsRequestMarshaller();
             var unmarshaller = ListOfferingsResponseUnmarshaller.Instance;
@@ -2445,7 +2445,7 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferings">REST API Reference for ListOfferings Operation</seealso>
-        public Task<ListOfferingsResponse> ListOfferingsAsync(ListOfferingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListOfferingsResponse> ListOfferingsAsync(ListOfferingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListOfferingsRequestMarshaller();
             var unmarshaller = ListOfferingsResponseUnmarshaller.Instance;
@@ -2485,7 +2485,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferingTransactions">REST API Reference for ListOfferingTransactions Operation</seealso>
-        public ListOfferingTransactionsResponse ListOfferingTransactions(ListOfferingTransactionsRequest request)
+        public virtual ListOfferingTransactionsResponse ListOfferingTransactions(ListOfferingTransactionsRequest request)
         {
             var marshaller = new ListOfferingTransactionsRequestMarshaller();
             var unmarshaller = ListOfferingTransactionsResponseUnmarshaller.Instance;
@@ -2503,7 +2503,7 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferingTransactions">REST API Reference for ListOfferingTransactions Operation</seealso>
-        public Task<ListOfferingTransactionsResponse> ListOfferingTransactionsAsync(ListOfferingTransactionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListOfferingTransactionsResponse> ListOfferingTransactionsAsync(ListOfferingTransactionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListOfferingTransactionsRequestMarshaller();
             var unmarshaller = ListOfferingTransactionsResponseUnmarshaller.Instance;
@@ -2536,7 +2536,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListProjects">REST API Reference for ListProjects Operation</seealso>
-        public ListProjectsResponse ListProjects(ListProjectsRequest request)
+        public virtual ListProjectsResponse ListProjects(ListProjectsRequest request)
         {
             var marshaller = new ListProjectsRequestMarshaller();
             var unmarshaller = ListProjectsResponseUnmarshaller.Instance;
@@ -2554,7 +2554,7 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListProjects">REST API Reference for ListProjects Operation</seealso>
-        public Task<ListProjectsResponse> ListProjectsAsync(ListProjectsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListProjectsResponse> ListProjectsAsync(ListProjectsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListProjectsRequestMarshaller();
             var unmarshaller = ListProjectsResponseUnmarshaller.Instance;
@@ -2587,7 +2587,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListRemoteAccessSessions">REST API Reference for ListRemoteAccessSessions Operation</seealso>
-        public ListRemoteAccessSessionsResponse ListRemoteAccessSessions(ListRemoteAccessSessionsRequest request)
+        public virtual ListRemoteAccessSessionsResponse ListRemoteAccessSessions(ListRemoteAccessSessionsRequest request)
         {
             var marshaller = new ListRemoteAccessSessionsRequestMarshaller();
             var unmarshaller = ListRemoteAccessSessionsResponseUnmarshaller.Instance;
@@ -2605,7 +2605,7 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListRemoteAccessSessions">REST API Reference for ListRemoteAccessSessions Operation</seealso>
-        public Task<ListRemoteAccessSessionsResponse> ListRemoteAccessSessionsAsync(ListRemoteAccessSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListRemoteAccessSessionsResponse> ListRemoteAccessSessionsAsync(ListRemoteAccessSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListRemoteAccessSessionsRequestMarshaller();
             var unmarshaller = ListRemoteAccessSessionsResponseUnmarshaller.Instance;
@@ -2638,7 +2638,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListRuns">REST API Reference for ListRuns Operation</seealso>
-        public ListRunsResponse ListRuns(ListRunsRequest request)
+        public virtual ListRunsResponse ListRuns(ListRunsRequest request)
         {
             var marshaller = new ListRunsRequestMarshaller();
             var unmarshaller = ListRunsResponseUnmarshaller.Instance;
@@ -2656,7 +2656,7 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListRuns">REST API Reference for ListRuns Operation</seealso>
-        public Task<ListRunsResponse> ListRunsAsync(ListRunsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListRunsResponse> ListRunsAsync(ListRunsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListRunsRequestMarshaller();
             var unmarshaller = ListRunsResponseUnmarshaller.Instance;
@@ -2689,7 +2689,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListSamples">REST API Reference for ListSamples Operation</seealso>
-        public ListSamplesResponse ListSamples(ListSamplesRequest request)
+        public virtual ListSamplesResponse ListSamples(ListSamplesRequest request)
         {
             var marshaller = new ListSamplesRequestMarshaller();
             var unmarshaller = ListSamplesResponseUnmarshaller.Instance;
@@ -2707,7 +2707,7 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListSamples">REST API Reference for ListSamples Operation</seealso>
-        public Task<ListSamplesResponse> ListSamplesAsync(ListSamplesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListSamplesResponse> ListSamplesAsync(ListSamplesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListSamplesRequestMarshaller();
             var unmarshaller = ListSamplesResponseUnmarshaller.Instance;
@@ -2740,7 +2740,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListSuites">REST API Reference for ListSuites Operation</seealso>
-        public ListSuitesResponse ListSuites(ListSuitesRequest request)
+        public virtual ListSuitesResponse ListSuites(ListSuitesRequest request)
         {
             var marshaller = new ListSuitesRequestMarshaller();
             var unmarshaller = ListSuitesResponseUnmarshaller.Instance;
@@ -2758,7 +2758,7 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListSuites">REST API Reference for ListSuites Operation</seealso>
-        public Task<ListSuitesResponse> ListSuitesAsync(ListSuitesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListSuitesResponse> ListSuitesAsync(ListSuitesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListSuitesRequestMarshaller();
             var unmarshaller = ListSuitesResponseUnmarshaller.Instance;
@@ -2791,7 +2791,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTests">REST API Reference for ListTests Operation</seealso>
-        public ListTestsResponse ListTests(ListTestsRequest request)
+        public virtual ListTestsResponse ListTests(ListTestsRequest request)
         {
             var marshaller = new ListTestsRequestMarshaller();
             var unmarshaller = ListTestsResponseUnmarshaller.Instance;
@@ -2809,7 +2809,7 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTests">REST API Reference for ListTests Operation</seealso>
-        public Task<ListTestsResponse> ListTestsAsync(ListTestsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListTestsResponse> ListTestsAsync(ListTestsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListTestsRequestMarshaller();
             var unmarshaller = ListTestsResponseUnmarshaller.Instance;
@@ -2842,7 +2842,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListUniqueProblems">REST API Reference for ListUniqueProblems Operation</seealso>
-        public ListUniqueProblemsResponse ListUniqueProblems(ListUniqueProblemsRequest request)
+        public virtual ListUniqueProblemsResponse ListUniqueProblems(ListUniqueProblemsRequest request)
         {
             var marshaller = new ListUniqueProblemsRequestMarshaller();
             var unmarshaller = ListUniqueProblemsResponseUnmarshaller.Instance;
@@ -2860,7 +2860,7 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListUniqueProblems">REST API Reference for ListUniqueProblems Operation</seealso>
-        public Task<ListUniqueProblemsResponse> ListUniqueProblemsAsync(ListUniqueProblemsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListUniqueProblemsResponse> ListUniqueProblemsAsync(ListUniqueProblemsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListUniqueProblemsRequestMarshaller();
             var unmarshaller = ListUniqueProblemsResponseUnmarshaller.Instance;
@@ -2893,7 +2893,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListUploads">REST API Reference for ListUploads Operation</seealso>
-        public ListUploadsResponse ListUploads(ListUploadsRequest request)
+        public virtual ListUploadsResponse ListUploads(ListUploadsRequest request)
         {
             var marshaller = new ListUploadsRequestMarshaller();
             var unmarshaller = ListUploadsResponseUnmarshaller.Instance;
@@ -2911,7 +2911,7 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListUploads">REST API Reference for ListUploads Operation</seealso>
-        public Task<ListUploadsResponse> ListUploadsAsync(ListUploadsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListUploadsResponse> ListUploadsAsync(ListUploadsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListUploadsRequestMarshaller();
             var unmarshaller = ListUploadsResponseUnmarshaller.Instance;
@@ -2951,7 +2951,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/PurchaseOffering">REST API Reference for PurchaseOffering Operation</seealso>
-        public PurchaseOfferingResponse PurchaseOffering(PurchaseOfferingRequest request)
+        public virtual PurchaseOfferingResponse PurchaseOffering(PurchaseOfferingRequest request)
         {
             var marshaller = new PurchaseOfferingRequestMarshaller();
             var unmarshaller = PurchaseOfferingResponseUnmarshaller.Instance;
@@ -2969,7 +2969,7 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/PurchaseOffering">REST API Reference for PurchaseOffering Operation</seealso>
-        public Task<PurchaseOfferingResponse> PurchaseOfferingAsync(PurchaseOfferingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PurchaseOfferingResponse> PurchaseOfferingAsync(PurchaseOfferingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PurchaseOfferingRequestMarshaller();
             var unmarshaller = PurchaseOfferingResponseUnmarshaller.Instance;
@@ -3008,7 +3008,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/RenewOffering">REST API Reference for RenewOffering Operation</seealso>
-        public RenewOfferingResponse RenewOffering(RenewOfferingRequest request)
+        public virtual RenewOfferingResponse RenewOffering(RenewOfferingRequest request)
         {
             var marshaller = new RenewOfferingRequestMarshaller();
             var unmarshaller = RenewOfferingResponseUnmarshaller.Instance;
@@ -3026,7 +3026,7 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/RenewOffering">REST API Reference for RenewOffering Operation</seealso>
-        public Task<RenewOfferingResponse> RenewOfferingAsync(RenewOfferingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<RenewOfferingResponse> RenewOfferingAsync(RenewOfferingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RenewOfferingRequestMarshaller();
             var unmarshaller = RenewOfferingResponseUnmarshaller.Instance;
@@ -3062,7 +3062,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ScheduleRun">REST API Reference for ScheduleRun Operation</seealso>
-        public ScheduleRunResponse ScheduleRun(ScheduleRunRequest request)
+        public virtual ScheduleRunResponse ScheduleRun(ScheduleRunRequest request)
         {
             var marshaller = new ScheduleRunRequestMarshaller();
             var unmarshaller = ScheduleRunResponseUnmarshaller.Instance;
@@ -3080,7 +3080,7 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ScheduleRun">REST API Reference for ScheduleRun Operation</seealso>
-        public Task<ScheduleRunResponse> ScheduleRunAsync(ScheduleRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ScheduleRunResponse> ScheduleRunAsync(ScheduleRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ScheduleRunRequestMarshaller();
             var unmarshaller = ScheduleRunResponseUnmarshaller.Instance;
@@ -3113,7 +3113,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopRemoteAccessSession">REST API Reference for StopRemoteAccessSession Operation</seealso>
-        public StopRemoteAccessSessionResponse StopRemoteAccessSession(StopRemoteAccessSessionRequest request)
+        public virtual StopRemoteAccessSessionResponse StopRemoteAccessSession(StopRemoteAccessSessionRequest request)
         {
             var marshaller = new StopRemoteAccessSessionRequestMarshaller();
             var unmarshaller = StopRemoteAccessSessionResponseUnmarshaller.Instance;
@@ -3131,7 +3131,7 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopRemoteAccessSession">REST API Reference for StopRemoteAccessSession Operation</seealso>
-        public Task<StopRemoteAccessSessionResponse> StopRemoteAccessSessionAsync(StopRemoteAccessSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<StopRemoteAccessSessionResponse> StopRemoteAccessSessionAsync(StopRemoteAccessSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new StopRemoteAccessSessionRequestMarshaller();
             var unmarshaller = StopRemoteAccessSessionResponseUnmarshaller.Instance;
@@ -3169,7 +3169,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopRun">REST API Reference for StopRun Operation</seealso>
-        public StopRunResponse StopRun(StopRunRequest request)
+        public virtual StopRunResponse StopRun(StopRunRequest request)
         {
             var marshaller = new StopRunRequestMarshaller();
             var unmarshaller = StopRunResponseUnmarshaller.Instance;
@@ -3187,7 +3187,7 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopRun">REST API Reference for StopRun Operation</seealso>
-        public Task<StopRunResponse> StopRunAsync(StopRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<StopRunResponse> StopRunAsync(StopRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new StopRunRequestMarshaller();
             var unmarshaller = StopRunResponseUnmarshaller.Instance;
@@ -3222,7 +3222,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateDevicePool">REST API Reference for UpdateDevicePool Operation</seealso>
-        public UpdateDevicePoolResponse UpdateDevicePool(UpdateDevicePoolRequest request)
+        public virtual UpdateDevicePoolResponse UpdateDevicePool(UpdateDevicePoolRequest request)
         {
             var marshaller = new UpdateDevicePoolRequestMarshaller();
             var unmarshaller = UpdateDevicePoolResponseUnmarshaller.Instance;
@@ -3240,7 +3240,7 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateDevicePool">REST API Reference for UpdateDevicePool Operation</seealso>
-        public Task<UpdateDevicePoolResponse> UpdateDevicePoolAsync(UpdateDevicePoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateDevicePoolResponse> UpdateDevicePoolAsync(UpdateDevicePoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateDevicePoolRequestMarshaller();
             var unmarshaller = UpdateDevicePoolResponseUnmarshaller.Instance;
@@ -3273,7 +3273,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateNetworkProfile">REST API Reference for UpdateNetworkProfile Operation</seealso>
-        public UpdateNetworkProfileResponse UpdateNetworkProfile(UpdateNetworkProfileRequest request)
+        public virtual UpdateNetworkProfileResponse UpdateNetworkProfile(UpdateNetworkProfileRequest request)
         {
             var marshaller = new UpdateNetworkProfileRequestMarshaller();
             var unmarshaller = UpdateNetworkProfileResponseUnmarshaller.Instance;
@@ -3291,7 +3291,7 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateNetworkProfile">REST API Reference for UpdateNetworkProfile Operation</seealso>
-        public Task<UpdateNetworkProfileResponse> UpdateNetworkProfileAsync(UpdateNetworkProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateNetworkProfileResponse> UpdateNetworkProfileAsync(UpdateNetworkProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateNetworkProfileRequestMarshaller();
             var unmarshaller = UpdateNetworkProfileResponseUnmarshaller.Instance;
@@ -3324,7 +3324,7 @@ namespace Amazon.DeviceFarm
         /// There was a problem with the service account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
-        public UpdateProjectResponse UpdateProject(UpdateProjectRequest request)
+        public virtual UpdateProjectResponse UpdateProject(UpdateProjectRequest request)
         {
             var marshaller = new UpdateProjectRequestMarshaller();
             var unmarshaller = UpdateProjectResponseUnmarshaller.Instance;
@@ -3342,7 +3342,7 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
-        public Task<UpdateProjectResponse> UpdateProjectAsync(UpdateProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateProjectResponse> UpdateProjectAsync(UpdateProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateProjectRequestMarshaller();
             var unmarshaller = UpdateProjectResponseUnmarshaller.Instance;

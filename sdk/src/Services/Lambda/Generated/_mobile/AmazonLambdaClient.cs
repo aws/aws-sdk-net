@@ -242,7 +242,7 @@ namespace Amazon.Lambda
         
         #region  AddPermission
 
-        internal AddPermissionResponse AddPermission(AddPermissionRequest request)
+        internal virtual AddPermissionResponse AddPermission(AddPermissionRequest request)
         {
             var marshaller = new AddPermissionRequestMarshaller();
             var unmarshaller = AddPermissionResponseUnmarshaller.Instance;
@@ -261,7 +261,7 @@ namespace Amazon.Lambda
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddPermission">REST API Reference for AddPermission Operation</seealso>
-        public Task<AddPermissionResponse> AddPermissionAsync(AddPermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<AddPermissionResponse> AddPermissionAsync(AddPermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AddPermissionRequestMarshaller();
             var unmarshaller = AddPermissionResponseUnmarshaller.Instance;
@@ -274,7 +274,7 @@ namespace Amazon.Lambda
         
         #region  CreateAlias
 
-        internal CreateAliasResponse CreateAlias(CreateAliasRequest request)
+        internal virtual CreateAliasResponse CreateAlias(CreateAliasRequest request)
         {
             var marshaller = new CreateAliasRequestMarshaller();
             var unmarshaller = CreateAliasResponseUnmarshaller.Instance;
@@ -293,7 +293,7 @@ namespace Amazon.Lambda
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
-        public Task<CreateAliasResponse> CreateAliasAsync(CreateAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateAliasResponse> CreateAliasAsync(CreateAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateAliasRequestMarshaller();
             var unmarshaller = CreateAliasResponseUnmarshaller.Instance;
@@ -306,7 +306,7 @@ namespace Amazon.Lambda
         
         #region  CreateEventSourceMapping
 
-        internal CreateEventSourceMappingResponse CreateEventSourceMapping(CreateEventSourceMappingRequest request)
+        internal virtual CreateEventSourceMappingResponse CreateEventSourceMapping(CreateEventSourceMappingRequest request)
         {
             var marshaller = new CreateEventSourceMappingRequestMarshaller();
             var unmarshaller = CreateEventSourceMappingResponseUnmarshaller.Instance;
@@ -325,7 +325,7 @@ namespace Amazon.Lambda
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateEventSourceMapping">REST API Reference for CreateEventSourceMapping Operation</seealso>
-        public Task<CreateEventSourceMappingResponse> CreateEventSourceMappingAsync(CreateEventSourceMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateEventSourceMappingResponse> CreateEventSourceMappingAsync(CreateEventSourceMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateEventSourceMappingRequestMarshaller();
             var unmarshaller = CreateEventSourceMappingResponseUnmarshaller.Instance;
@@ -338,7 +338,7 @@ namespace Amazon.Lambda
         
         #region  CreateFunction
 
-        internal CreateFunctionResponse CreateFunction(CreateFunctionRequest request)
+        internal virtual CreateFunctionResponse CreateFunction(CreateFunctionRequest request)
         {
             var marshaller = new CreateFunctionRequestMarshaller();
             var unmarshaller = CreateFunctionResponseUnmarshaller.Instance;
@@ -357,7 +357,7 @@ namespace Amazon.Lambda
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateFunction">REST API Reference for CreateFunction Operation</seealso>
-        public Task<CreateFunctionResponse> CreateFunctionAsync(CreateFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateFunctionResponse> CreateFunctionAsync(CreateFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateFunctionRequestMarshaller();
             var unmarshaller = CreateFunctionResponseUnmarshaller.Instance;
@@ -370,7 +370,7 @@ namespace Amazon.Lambda
         
         #region  DeleteAlias
 
-        internal DeleteAliasResponse DeleteAlias(DeleteAliasRequest request)
+        internal virtual DeleteAliasResponse DeleteAlias(DeleteAliasRequest request)
         {
             var marshaller = new DeleteAliasRequestMarshaller();
             var unmarshaller = DeleteAliasResponseUnmarshaller.Instance;
@@ -389,7 +389,7 @@ namespace Amazon.Lambda
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
-        public Task<DeleteAliasResponse> DeleteAliasAsync(DeleteAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteAliasResponse> DeleteAliasAsync(DeleteAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteAliasRequestMarshaller();
             var unmarshaller = DeleteAliasResponseUnmarshaller.Instance;
@@ -402,7 +402,7 @@ namespace Amazon.Lambda
         
         #region  DeleteEventSourceMapping
 
-        internal DeleteEventSourceMappingResponse DeleteEventSourceMapping(DeleteEventSourceMappingRequest request)
+        internal virtual DeleteEventSourceMappingResponse DeleteEventSourceMapping(DeleteEventSourceMappingRequest request)
         {
             var marshaller = new DeleteEventSourceMappingRequestMarshaller();
             var unmarshaller = DeleteEventSourceMappingResponseUnmarshaller.Instance;
@@ -421,7 +421,7 @@ namespace Amazon.Lambda
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteEventSourceMapping">REST API Reference for DeleteEventSourceMapping Operation</seealso>
-        public Task<DeleteEventSourceMappingResponse> DeleteEventSourceMappingAsync(DeleteEventSourceMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteEventSourceMappingResponse> DeleteEventSourceMappingAsync(DeleteEventSourceMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteEventSourceMappingRequestMarshaller();
             var unmarshaller = DeleteEventSourceMappingResponseUnmarshaller.Instance;
@@ -434,7 +434,7 @@ namespace Amazon.Lambda
         
         #region  DeleteFunction
 
-        internal DeleteFunctionResponse DeleteFunction(DeleteFunctionRequest request)
+        internal virtual DeleteFunctionResponse DeleteFunction(DeleteFunctionRequest request)
         {
             var marshaller = new DeleteFunctionRequestMarshaller();
             var unmarshaller = DeleteFunctionResponseUnmarshaller.Instance;
@@ -491,7 +491,7 @@ namespace Amazon.Lambda
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunction">REST API Reference for DeleteFunction Operation</seealso>
-        public Task<DeleteFunctionResponse> DeleteFunctionAsync(string functionName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteFunctionResponse> DeleteFunctionAsync(string functionName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DeleteFunctionRequest();
             request.FunctionName = functionName;
@@ -509,7 +509,7 @@ namespace Amazon.Lambda
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunction">REST API Reference for DeleteFunction Operation</seealso>
-        public Task<DeleteFunctionResponse> DeleteFunctionAsync(DeleteFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteFunctionResponse> DeleteFunctionAsync(DeleteFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteFunctionRequestMarshaller();
             var unmarshaller = DeleteFunctionResponseUnmarshaller.Instance;
@@ -522,7 +522,7 @@ namespace Amazon.Lambda
         
         #region  GetAccountSettings
 
-        internal GetAccountSettingsResponse GetAccountSettings(GetAccountSettingsRequest request)
+        internal virtual GetAccountSettingsResponse GetAccountSettings(GetAccountSettingsRequest request)
         {
             var marshaller = new GetAccountSettingsRequestMarshaller();
             var unmarshaller = GetAccountSettingsResponseUnmarshaller.Instance;
@@ -541,7 +541,7 @@ namespace Amazon.Lambda
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAccountSettings">REST API Reference for GetAccountSettings Operation</seealso>
-        public Task<GetAccountSettingsResponse> GetAccountSettingsAsync(GetAccountSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetAccountSettingsResponse> GetAccountSettingsAsync(GetAccountSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetAccountSettingsRequestMarshaller();
             var unmarshaller = GetAccountSettingsResponseUnmarshaller.Instance;
@@ -554,7 +554,7 @@ namespace Amazon.Lambda
         
         #region  GetAlias
 
-        internal GetAliasResponse GetAlias(GetAliasRequest request)
+        internal virtual GetAliasResponse GetAlias(GetAliasRequest request)
         {
             var marshaller = new GetAliasRequestMarshaller();
             var unmarshaller = GetAliasResponseUnmarshaller.Instance;
@@ -573,7 +573,7 @@ namespace Amazon.Lambda
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAlias">REST API Reference for GetAlias Operation</seealso>
-        public Task<GetAliasResponse> GetAliasAsync(GetAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetAliasResponse> GetAliasAsync(GetAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetAliasRequestMarshaller();
             var unmarshaller = GetAliasResponseUnmarshaller.Instance;
@@ -586,7 +586,7 @@ namespace Amazon.Lambda
         
         #region  GetEventSourceMapping
 
-        internal GetEventSourceMappingResponse GetEventSourceMapping(GetEventSourceMappingRequest request)
+        internal virtual GetEventSourceMappingResponse GetEventSourceMapping(GetEventSourceMappingRequest request)
         {
             var marshaller = new GetEventSourceMappingRequestMarshaller();
             var unmarshaller = GetEventSourceMappingResponseUnmarshaller.Instance;
@@ -605,7 +605,7 @@ namespace Amazon.Lambda
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetEventSourceMapping">REST API Reference for GetEventSourceMapping Operation</seealso>
-        public Task<GetEventSourceMappingResponse> GetEventSourceMappingAsync(GetEventSourceMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetEventSourceMappingResponse> GetEventSourceMappingAsync(GetEventSourceMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetEventSourceMappingRequestMarshaller();
             var unmarshaller = GetEventSourceMappingResponseUnmarshaller.Instance;
@@ -618,7 +618,7 @@ namespace Amazon.Lambda
         
         #region  GetFunction
 
-        internal GetFunctionResponse GetFunction(GetFunctionRequest request)
+        internal virtual GetFunctionResponse GetFunction(GetFunctionRequest request)
         {
             var marshaller = new GetFunctionRequestMarshaller();
             var unmarshaller = GetFunctionResponseUnmarshaller.Instance;
@@ -669,7 +669,7 @@ namespace Amazon.Lambda
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunction">REST API Reference for GetFunction Operation</seealso>
-        public Task<GetFunctionResponse> GetFunctionAsync(string functionName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetFunctionResponse> GetFunctionAsync(string functionName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new GetFunctionRequest();
             request.FunctionName = functionName;
@@ -687,7 +687,7 @@ namespace Amazon.Lambda
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunction">REST API Reference for GetFunction Operation</seealso>
-        public Task<GetFunctionResponse> GetFunctionAsync(GetFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetFunctionResponse> GetFunctionAsync(GetFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetFunctionRequestMarshaller();
             var unmarshaller = GetFunctionResponseUnmarshaller.Instance;
@@ -700,7 +700,7 @@ namespace Amazon.Lambda
         
         #region  GetFunctionConfiguration
 
-        internal GetFunctionConfigurationResponse GetFunctionConfiguration(GetFunctionConfigurationRequest request)
+        internal virtual GetFunctionConfigurationResponse GetFunctionConfiguration(GetFunctionConfigurationRequest request)
         {
             var marshaller = new GetFunctionConfigurationRequestMarshaller();
             var unmarshaller = GetFunctionConfigurationResponseUnmarshaller.Instance;
@@ -751,7 +751,7 @@ namespace Amazon.Lambda
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConfiguration">REST API Reference for GetFunctionConfiguration Operation</seealso>
-        public Task<GetFunctionConfigurationResponse> GetFunctionConfigurationAsync(string functionName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetFunctionConfigurationResponse> GetFunctionConfigurationAsync(string functionName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new GetFunctionConfigurationRequest();
             request.FunctionName = functionName;
@@ -769,7 +769,7 @@ namespace Amazon.Lambda
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConfiguration">REST API Reference for GetFunctionConfiguration Operation</seealso>
-        public Task<GetFunctionConfigurationResponse> GetFunctionConfigurationAsync(GetFunctionConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetFunctionConfigurationResponse> GetFunctionConfigurationAsync(GetFunctionConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetFunctionConfigurationRequestMarshaller();
             var unmarshaller = GetFunctionConfigurationResponseUnmarshaller.Instance;
@@ -782,7 +782,7 @@ namespace Amazon.Lambda
         
         #region  GetPolicy
 
-        internal GetPolicyResponse GetPolicy(GetPolicyRequest request)
+        internal virtual GetPolicyResponse GetPolicy(GetPolicyRequest request)
         {
             var marshaller = new GetPolicyRequestMarshaller();
             var unmarshaller = GetPolicyResponseUnmarshaller.Instance;
@@ -801,7 +801,7 @@ namespace Amazon.Lambda
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
-        public Task<GetPolicyResponse> GetPolicyAsync(GetPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetPolicyResponse> GetPolicyAsync(GetPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetPolicyRequestMarshaller();
             var unmarshaller = GetPolicyResponseUnmarshaller.Instance;
@@ -814,7 +814,7 @@ namespace Amazon.Lambda
         
         #region  Invoke
 
-        internal InvokeResponse Invoke(InvokeRequest request)
+        internal virtual InvokeResponse Invoke(InvokeRequest request)
         {
             var marshaller = new InvokeRequestMarshaller();
             var unmarshaller = InvokeResponseUnmarshaller.Instance;
@@ -833,7 +833,7 @@ namespace Amazon.Lambda
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/Invoke">REST API Reference for Invoke Operation</seealso>
-        public Task<InvokeResponse> InvokeAsync(InvokeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<InvokeResponse> InvokeAsync(InvokeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new InvokeRequestMarshaller();
             var unmarshaller = InvokeResponseUnmarshaller.Instance;
@@ -847,7 +847,7 @@ namespace Amazon.Lambda
         #region  InvokeAsync
 
         [Obsolete("This API is deprecated. We recommend that you use Invoke API instead.")]
-        internal InvokeAsyncResponse InvokeAsync(InvokeAsyncRequest request)
+        internal virtual InvokeAsyncResponse InvokeAsync(InvokeAsyncRequest request)
         {
             var marshaller = new InvokeAsyncRequestMarshaller();
             var unmarshaller = InvokeAsyncResponseUnmarshaller.Instance;
@@ -867,7 +867,7 @@ namespace Amazon.Lambda
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/InvokeAsync">REST API Reference for InvokeAsync Operation</seealso>
         [Obsolete("This API is deprecated. We recommend that you use Invoke API instead.")]
-        public Task<InvokeAsyncResponse> InvokeAsyncAsync(InvokeAsyncRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<InvokeAsyncResponse> InvokeAsyncAsync(InvokeAsyncRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new InvokeAsyncRequestMarshaller();
             var unmarshaller = InvokeAsyncResponseUnmarshaller.Instance;
@@ -880,7 +880,7 @@ namespace Amazon.Lambda
         
         #region  ListAliases
 
-        internal ListAliasesResponse ListAliases(ListAliasesRequest request)
+        internal virtual ListAliasesResponse ListAliases(ListAliasesRequest request)
         {
             var marshaller = new ListAliasesRequestMarshaller();
             var unmarshaller = ListAliasesResponseUnmarshaller.Instance;
@@ -899,7 +899,7 @@ namespace Amazon.Lambda
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListAliases">REST API Reference for ListAliases Operation</seealso>
-        public Task<ListAliasesResponse> ListAliasesAsync(ListAliasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListAliasesResponse> ListAliasesAsync(ListAliasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListAliasesRequestMarshaller();
             var unmarshaller = ListAliasesResponseUnmarshaller.Instance;
@@ -912,7 +912,7 @@ namespace Amazon.Lambda
         
         #region  ListEventSourceMappings
 
-        internal ListEventSourceMappingsResponse ListEventSourceMappings(ListEventSourceMappingsRequest request)
+        internal virtual ListEventSourceMappingsResponse ListEventSourceMappings(ListEventSourceMappingsRequest request)
         {
             var marshaller = new ListEventSourceMappingsRequestMarshaller();
             var unmarshaller = ListEventSourceMappingsResponseUnmarshaller.Instance;
@@ -931,7 +931,7 @@ namespace Amazon.Lambda
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListEventSourceMappings">REST API Reference for ListEventSourceMappings Operation</seealso>
-        public Task<ListEventSourceMappingsResponse> ListEventSourceMappingsAsync(ListEventSourceMappingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListEventSourceMappingsResponse> ListEventSourceMappingsAsync(ListEventSourceMappingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListEventSourceMappingsRequestMarshaller();
             var unmarshaller = ListEventSourceMappingsResponseUnmarshaller.Instance;
@@ -944,7 +944,7 @@ namespace Amazon.Lambda
         
         #region  ListFunctions
 
-        internal ListFunctionsResponse ListFunctions(ListFunctionsRequest request)
+        internal virtual ListFunctionsResponse ListFunctions(ListFunctionsRequest request)
         {
             var marshaller = new ListFunctionsRequestMarshaller();
             var unmarshaller = ListFunctionsResponseUnmarshaller.Instance;
@@ -988,7 +988,7 @@ namespace Amazon.Lambda
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctions">REST API Reference for ListFunctions Operation</seealso>
-        public Task<ListFunctionsResponse> ListFunctionsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListFunctionsResponse> ListFunctionsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new ListFunctionsRequest();
             return ListFunctionsAsync(request, cancellationToken);
@@ -1005,7 +1005,7 @@ namespace Amazon.Lambda
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctions">REST API Reference for ListFunctions Operation</seealso>
-        public Task<ListFunctionsResponse> ListFunctionsAsync(ListFunctionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListFunctionsResponse> ListFunctionsAsync(ListFunctionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListFunctionsRequestMarshaller();
             var unmarshaller = ListFunctionsResponseUnmarshaller.Instance;
@@ -1018,7 +1018,7 @@ namespace Amazon.Lambda
         
         #region  ListTags
 
-        internal ListTagsResponse ListTags(ListTagsRequest request)
+        internal virtual ListTagsResponse ListTags(ListTagsRequest request)
         {
             var marshaller = new ListTagsRequestMarshaller();
             var unmarshaller = ListTagsResponseUnmarshaller.Instance;
@@ -1037,7 +1037,7 @@ namespace Amazon.Lambda
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListTags">REST API Reference for ListTags Operation</seealso>
-        public Task<ListTagsResponse> ListTagsAsync(ListTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListTagsResponse> ListTagsAsync(ListTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListTagsRequestMarshaller();
             var unmarshaller = ListTagsResponseUnmarshaller.Instance;
@@ -1050,7 +1050,7 @@ namespace Amazon.Lambda
         
         #region  ListVersionsByFunction
 
-        internal ListVersionsByFunctionResponse ListVersionsByFunction(ListVersionsByFunctionRequest request)
+        internal virtual ListVersionsByFunctionResponse ListVersionsByFunction(ListVersionsByFunctionRequest request)
         {
             var marshaller = new ListVersionsByFunctionRequestMarshaller();
             var unmarshaller = ListVersionsByFunctionResponseUnmarshaller.Instance;
@@ -1069,7 +1069,7 @@ namespace Amazon.Lambda
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListVersionsByFunction">REST API Reference for ListVersionsByFunction Operation</seealso>
-        public Task<ListVersionsByFunctionResponse> ListVersionsByFunctionAsync(ListVersionsByFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListVersionsByFunctionResponse> ListVersionsByFunctionAsync(ListVersionsByFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListVersionsByFunctionRequestMarshaller();
             var unmarshaller = ListVersionsByFunctionResponseUnmarshaller.Instance;
@@ -1082,7 +1082,7 @@ namespace Amazon.Lambda
         
         #region  PublishVersion
 
-        internal PublishVersionResponse PublishVersion(PublishVersionRequest request)
+        internal virtual PublishVersionResponse PublishVersion(PublishVersionRequest request)
         {
             var marshaller = new PublishVersionRequestMarshaller();
             var unmarshaller = PublishVersionResponseUnmarshaller.Instance;
@@ -1101,7 +1101,7 @@ namespace Amazon.Lambda
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PublishVersion">REST API Reference for PublishVersion Operation</seealso>
-        public Task<PublishVersionResponse> PublishVersionAsync(PublishVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PublishVersionResponse> PublishVersionAsync(PublishVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PublishVersionRequestMarshaller();
             var unmarshaller = PublishVersionResponseUnmarshaller.Instance;
@@ -1114,7 +1114,7 @@ namespace Amazon.Lambda
         
         #region  RemovePermission
 
-        internal RemovePermissionResponse RemovePermission(RemovePermissionRequest request)
+        internal virtual RemovePermissionResponse RemovePermission(RemovePermissionRequest request)
         {
             var marshaller = new RemovePermissionRequestMarshaller();
             var unmarshaller = RemovePermissionResponseUnmarshaller.Instance;
@@ -1133,7 +1133,7 @@ namespace Amazon.Lambda
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
-        public Task<RemovePermissionResponse> RemovePermissionAsync(RemovePermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<RemovePermissionResponse> RemovePermissionAsync(RemovePermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RemovePermissionRequestMarshaller();
             var unmarshaller = RemovePermissionResponseUnmarshaller.Instance;
@@ -1146,7 +1146,7 @@ namespace Amazon.Lambda
         
         #region  TagResource
 
-        internal TagResourceResponse TagResource(TagResourceRequest request)
+        internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
             var marshaller = new TagResourceRequestMarshaller();
             var unmarshaller = TagResourceResponseUnmarshaller.Instance;
@@ -1165,7 +1165,7 @@ namespace Amazon.Lambda
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/TagResource">REST API Reference for TagResource Operation</seealso>
-        public Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new TagResourceRequestMarshaller();
             var unmarshaller = TagResourceResponseUnmarshaller.Instance;
@@ -1178,7 +1178,7 @@ namespace Amazon.Lambda
         
         #region  UntagResource
 
-        internal UntagResourceResponse UntagResource(UntagResourceRequest request)
+        internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
             var marshaller = new UntagResourceRequestMarshaller();
             var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
@@ -1197,7 +1197,7 @@ namespace Amazon.Lambda
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UntagResource">REST API Reference for UntagResource Operation</seealso>
-        public Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UntagResourceRequestMarshaller();
             var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
@@ -1210,7 +1210,7 @@ namespace Amazon.Lambda
         
         #region  UpdateAlias
 
-        internal UpdateAliasResponse UpdateAlias(UpdateAliasRequest request)
+        internal virtual UpdateAliasResponse UpdateAlias(UpdateAliasRequest request)
         {
             var marshaller = new UpdateAliasRequestMarshaller();
             var unmarshaller = UpdateAliasResponseUnmarshaller.Instance;
@@ -1229,7 +1229,7 @@ namespace Amazon.Lambda
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateAlias">REST API Reference for UpdateAlias Operation</seealso>
-        public Task<UpdateAliasResponse> UpdateAliasAsync(UpdateAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateAliasResponse> UpdateAliasAsync(UpdateAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateAliasRequestMarshaller();
             var unmarshaller = UpdateAliasResponseUnmarshaller.Instance;
@@ -1242,7 +1242,7 @@ namespace Amazon.Lambda
         
         #region  UpdateEventSourceMapping
 
-        internal UpdateEventSourceMappingResponse UpdateEventSourceMapping(UpdateEventSourceMappingRequest request)
+        internal virtual UpdateEventSourceMappingResponse UpdateEventSourceMapping(UpdateEventSourceMappingRequest request)
         {
             var marshaller = new UpdateEventSourceMappingRequestMarshaller();
             var unmarshaller = UpdateEventSourceMappingResponseUnmarshaller.Instance;
@@ -1261,7 +1261,7 @@ namespace Amazon.Lambda
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateEventSourceMapping">REST API Reference for UpdateEventSourceMapping Operation</seealso>
-        public Task<UpdateEventSourceMappingResponse> UpdateEventSourceMappingAsync(UpdateEventSourceMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateEventSourceMappingResponse> UpdateEventSourceMappingAsync(UpdateEventSourceMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateEventSourceMappingRequestMarshaller();
             var unmarshaller = UpdateEventSourceMappingResponseUnmarshaller.Instance;
@@ -1274,7 +1274,7 @@ namespace Amazon.Lambda
         
         #region  UpdateFunctionCode
 
-        internal UpdateFunctionCodeResponse UpdateFunctionCode(UpdateFunctionCodeRequest request)
+        internal virtual UpdateFunctionCodeResponse UpdateFunctionCode(UpdateFunctionCodeRequest request)
         {
             var marshaller = new UpdateFunctionCodeRequestMarshaller();
             var unmarshaller = UpdateFunctionCodeResponseUnmarshaller.Instance;
@@ -1293,7 +1293,7 @@ namespace Amazon.Lambda
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionCode">REST API Reference for UpdateFunctionCode Operation</seealso>
-        public Task<UpdateFunctionCodeResponse> UpdateFunctionCodeAsync(UpdateFunctionCodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateFunctionCodeResponse> UpdateFunctionCodeAsync(UpdateFunctionCodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateFunctionCodeRequestMarshaller();
             var unmarshaller = UpdateFunctionCodeResponseUnmarshaller.Instance;
@@ -1306,7 +1306,7 @@ namespace Amazon.Lambda
         
         #region  UpdateFunctionConfiguration
 
-        internal UpdateFunctionConfigurationResponse UpdateFunctionConfiguration(UpdateFunctionConfigurationRequest request)
+        internal virtual UpdateFunctionConfigurationResponse UpdateFunctionConfiguration(UpdateFunctionConfigurationRequest request)
         {
             var marshaller = new UpdateFunctionConfigurationRequestMarshaller();
             var unmarshaller = UpdateFunctionConfigurationResponseUnmarshaller.Instance;
@@ -1325,7 +1325,7 @@ namespace Amazon.Lambda
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionConfiguration">REST API Reference for UpdateFunctionConfiguration Operation</seealso>
-        public Task<UpdateFunctionConfigurationResponse> UpdateFunctionConfigurationAsync(UpdateFunctionConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateFunctionConfigurationResponse> UpdateFunctionConfigurationAsync(UpdateFunctionConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateFunctionConfigurationRequestMarshaller();
             var unmarshaller = UpdateFunctionConfigurationResponseUnmarshaller.Instance;

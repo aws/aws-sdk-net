@@ -232,7 +232,7 @@ namespace Amazon.Rekognition
         
         #region  CompareFaces
 
-        internal CompareFacesResponse CompareFaces(CompareFacesRequest request)
+        internal virtual CompareFacesResponse CompareFaces(CompareFacesRequest request)
         {
             var marshaller = new CompareFacesRequestMarshaller();
             var unmarshaller = CompareFacesResponseUnmarshaller.Instance;
@@ -251,7 +251,7 @@ namespace Amazon.Rekognition
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CompareFaces">REST API Reference for CompareFaces Operation</seealso>
-        public Task<CompareFacesResponse> CompareFacesAsync(CompareFacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CompareFacesResponse> CompareFacesAsync(CompareFacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CompareFacesRequestMarshaller();
             var unmarshaller = CompareFacesResponseUnmarshaller.Instance;
@@ -264,7 +264,7 @@ namespace Amazon.Rekognition
         
         #region  CreateCollection
 
-        internal CreateCollectionResponse CreateCollection(CreateCollectionRequest request)
+        internal virtual CreateCollectionResponse CreateCollection(CreateCollectionRequest request)
         {
             var marshaller = new CreateCollectionRequestMarshaller();
             var unmarshaller = CreateCollectionResponseUnmarshaller.Instance;
@@ -283,7 +283,7 @@ namespace Amazon.Rekognition
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateCollection">REST API Reference for CreateCollection Operation</seealso>
-        public Task<CreateCollectionResponse> CreateCollectionAsync(CreateCollectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateCollectionResponse> CreateCollectionAsync(CreateCollectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateCollectionRequestMarshaller();
             var unmarshaller = CreateCollectionResponseUnmarshaller.Instance;
@@ -296,7 +296,7 @@ namespace Amazon.Rekognition
         
         #region  DeleteCollection
 
-        internal DeleteCollectionResponse DeleteCollection(DeleteCollectionRequest request)
+        internal virtual DeleteCollectionResponse DeleteCollection(DeleteCollectionRequest request)
         {
             var marshaller = new DeleteCollectionRequestMarshaller();
             var unmarshaller = DeleteCollectionResponseUnmarshaller.Instance;
@@ -315,7 +315,7 @@ namespace Amazon.Rekognition
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteCollection">REST API Reference for DeleteCollection Operation</seealso>
-        public Task<DeleteCollectionResponse> DeleteCollectionAsync(DeleteCollectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteCollectionResponse> DeleteCollectionAsync(DeleteCollectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteCollectionRequestMarshaller();
             var unmarshaller = DeleteCollectionResponseUnmarshaller.Instance;
@@ -328,7 +328,7 @@ namespace Amazon.Rekognition
         
         #region  DeleteFaces
 
-        internal DeleteFacesResponse DeleteFaces(DeleteFacesRequest request)
+        internal virtual DeleteFacesResponse DeleteFaces(DeleteFacesRequest request)
         {
             var marshaller = new DeleteFacesRequestMarshaller();
             var unmarshaller = DeleteFacesResponseUnmarshaller.Instance;
@@ -347,7 +347,7 @@ namespace Amazon.Rekognition
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteFaces">REST API Reference for DeleteFaces Operation</seealso>
-        public Task<DeleteFacesResponse> DeleteFacesAsync(DeleteFacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteFacesResponse> DeleteFacesAsync(DeleteFacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteFacesRequestMarshaller();
             var unmarshaller = DeleteFacesResponseUnmarshaller.Instance;
@@ -360,7 +360,7 @@ namespace Amazon.Rekognition
         
         #region  DetectFaces
 
-        internal DetectFacesResponse DetectFaces(DetectFacesRequest request)
+        internal virtual DetectFacesResponse DetectFaces(DetectFacesRequest request)
         {
             var marshaller = new DetectFacesRequestMarshaller();
             var unmarshaller = DetectFacesResponseUnmarshaller.Instance;
@@ -379,7 +379,7 @@ namespace Amazon.Rekognition
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectFaces">REST API Reference for DetectFaces Operation</seealso>
-        public Task<DetectFacesResponse> DetectFacesAsync(DetectFacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DetectFacesResponse> DetectFacesAsync(DetectFacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DetectFacesRequestMarshaller();
             var unmarshaller = DetectFacesResponseUnmarshaller.Instance;
@@ -392,7 +392,7 @@ namespace Amazon.Rekognition
         
         #region  DetectLabels
 
-        internal DetectLabelsResponse DetectLabels(DetectLabelsRequest request)
+        internal virtual DetectLabelsResponse DetectLabels(DetectLabelsRequest request)
         {
             var marshaller = new DetectLabelsRequestMarshaller();
             var unmarshaller = DetectLabelsResponseUnmarshaller.Instance;
@@ -411,7 +411,7 @@ namespace Amazon.Rekognition
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectLabels">REST API Reference for DetectLabels Operation</seealso>
-        public Task<DetectLabelsResponse> DetectLabelsAsync(DetectLabelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DetectLabelsResponse> DetectLabelsAsync(DetectLabelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DetectLabelsRequestMarshaller();
             var unmarshaller = DetectLabelsResponseUnmarshaller.Instance;
@@ -424,7 +424,7 @@ namespace Amazon.Rekognition
         
         #region  DetectModerationLabels
 
-        internal DetectModerationLabelsResponse DetectModerationLabels(DetectModerationLabelsRequest request)
+        internal virtual DetectModerationLabelsResponse DetectModerationLabels(DetectModerationLabelsRequest request)
         {
             var marshaller = new DetectModerationLabelsRequestMarshaller();
             var unmarshaller = DetectModerationLabelsResponseUnmarshaller.Instance;
@@ -443,7 +443,7 @@ namespace Amazon.Rekognition
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectModerationLabels">REST API Reference for DetectModerationLabels Operation</seealso>
-        public Task<DetectModerationLabelsResponse> DetectModerationLabelsAsync(DetectModerationLabelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DetectModerationLabelsResponse> DetectModerationLabelsAsync(DetectModerationLabelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DetectModerationLabelsRequestMarshaller();
             var unmarshaller = DetectModerationLabelsResponseUnmarshaller.Instance;
@@ -456,7 +456,7 @@ namespace Amazon.Rekognition
         
         #region  GetCelebrityInfo
 
-        internal GetCelebrityInfoResponse GetCelebrityInfo(GetCelebrityInfoRequest request)
+        internal virtual GetCelebrityInfoResponse GetCelebrityInfo(GetCelebrityInfoRequest request)
         {
             var marshaller = new GetCelebrityInfoRequestMarshaller();
             var unmarshaller = GetCelebrityInfoResponseUnmarshaller.Instance;
@@ -475,7 +475,7 @@ namespace Amazon.Rekognition
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetCelebrityInfo">REST API Reference for GetCelebrityInfo Operation</seealso>
-        public Task<GetCelebrityInfoResponse> GetCelebrityInfoAsync(GetCelebrityInfoRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetCelebrityInfoResponse> GetCelebrityInfoAsync(GetCelebrityInfoRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetCelebrityInfoRequestMarshaller();
             var unmarshaller = GetCelebrityInfoResponseUnmarshaller.Instance;
@@ -488,7 +488,7 @@ namespace Amazon.Rekognition
         
         #region  IndexFaces
 
-        internal IndexFacesResponse IndexFaces(IndexFacesRequest request)
+        internal virtual IndexFacesResponse IndexFaces(IndexFacesRequest request)
         {
             var marshaller = new IndexFacesRequestMarshaller();
             var unmarshaller = IndexFacesResponseUnmarshaller.Instance;
@@ -507,7 +507,7 @@ namespace Amazon.Rekognition
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/IndexFaces">REST API Reference for IndexFaces Operation</seealso>
-        public Task<IndexFacesResponse> IndexFacesAsync(IndexFacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<IndexFacesResponse> IndexFacesAsync(IndexFacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new IndexFacesRequestMarshaller();
             var unmarshaller = IndexFacesResponseUnmarshaller.Instance;
@@ -520,7 +520,7 @@ namespace Amazon.Rekognition
         
         #region  ListCollections
 
-        internal ListCollectionsResponse ListCollections(ListCollectionsRequest request)
+        internal virtual ListCollectionsResponse ListCollections(ListCollectionsRequest request)
         {
             var marshaller = new ListCollectionsRequestMarshaller();
             var unmarshaller = ListCollectionsResponseUnmarshaller.Instance;
@@ -539,7 +539,7 @@ namespace Amazon.Rekognition
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListCollections">REST API Reference for ListCollections Operation</seealso>
-        public Task<ListCollectionsResponse> ListCollectionsAsync(ListCollectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListCollectionsResponse> ListCollectionsAsync(ListCollectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListCollectionsRequestMarshaller();
             var unmarshaller = ListCollectionsResponseUnmarshaller.Instance;
@@ -552,7 +552,7 @@ namespace Amazon.Rekognition
         
         #region  ListFaces
 
-        internal ListFacesResponse ListFaces(ListFacesRequest request)
+        internal virtual ListFacesResponse ListFaces(ListFacesRequest request)
         {
             var marshaller = new ListFacesRequestMarshaller();
             var unmarshaller = ListFacesResponseUnmarshaller.Instance;
@@ -571,7 +571,7 @@ namespace Amazon.Rekognition
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListFaces">REST API Reference for ListFaces Operation</seealso>
-        public Task<ListFacesResponse> ListFacesAsync(ListFacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListFacesResponse> ListFacesAsync(ListFacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListFacesRequestMarshaller();
             var unmarshaller = ListFacesResponseUnmarshaller.Instance;
@@ -584,7 +584,7 @@ namespace Amazon.Rekognition
         
         #region  RecognizeCelebrities
 
-        internal RecognizeCelebritiesResponse RecognizeCelebrities(RecognizeCelebritiesRequest request)
+        internal virtual RecognizeCelebritiesResponse RecognizeCelebrities(RecognizeCelebritiesRequest request)
         {
             var marshaller = new RecognizeCelebritiesRequestMarshaller();
             var unmarshaller = RecognizeCelebritiesResponseUnmarshaller.Instance;
@@ -603,7 +603,7 @@ namespace Amazon.Rekognition
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/RecognizeCelebrities">REST API Reference for RecognizeCelebrities Operation</seealso>
-        public Task<RecognizeCelebritiesResponse> RecognizeCelebritiesAsync(RecognizeCelebritiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<RecognizeCelebritiesResponse> RecognizeCelebritiesAsync(RecognizeCelebritiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RecognizeCelebritiesRequestMarshaller();
             var unmarshaller = RecognizeCelebritiesResponseUnmarshaller.Instance;
@@ -616,7 +616,7 @@ namespace Amazon.Rekognition
         
         #region  SearchFaces
 
-        internal SearchFacesResponse SearchFaces(SearchFacesRequest request)
+        internal virtual SearchFacesResponse SearchFaces(SearchFacesRequest request)
         {
             var marshaller = new SearchFacesRequestMarshaller();
             var unmarshaller = SearchFacesResponseUnmarshaller.Instance;
@@ -635,7 +635,7 @@ namespace Amazon.Rekognition
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/SearchFaces">REST API Reference for SearchFaces Operation</seealso>
-        public Task<SearchFacesResponse> SearchFacesAsync(SearchFacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<SearchFacesResponse> SearchFacesAsync(SearchFacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SearchFacesRequestMarshaller();
             var unmarshaller = SearchFacesResponseUnmarshaller.Instance;
@@ -648,7 +648,7 @@ namespace Amazon.Rekognition
         
         #region  SearchFacesByImage
 
-        internal SearchFacesByImageResponse SearchFacesByImage(SearchFacesByImageRequest request)
+        internal virtual SearchFacesByImageResponse SearchFacesByImage(SearchFacesByImageRequest request)
         {
             var marshaller = new SearchFacesByImageRequestMarshaller();
             var unmarshaller = SearchFacesByImageResponseUnmarshaller.Instance;
@@ -667,7 +667,7 @@ namespace Amazon.Rekognition
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/SearchFacesByImage">REST API Reference for SearchFacesByImage Operation</seealso>
-        public Task<SearchFacesByImageResponse> SearchFacesByImageAsync(SearchFacesByImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<SearchFacesByImageResponse> SearchFacesByImageAsync(SearchFacesByImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SearchFacesByImageRequestMarshaller();
             var unmarshaller = SearchFacesByImageResponseUnmarshaller.Instance;

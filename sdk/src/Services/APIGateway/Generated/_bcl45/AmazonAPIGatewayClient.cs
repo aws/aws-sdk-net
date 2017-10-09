@@ -270,7 +270,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public CreateApiKeyResponse CreateApiKey(CreateApiKeyRequest request)
+        public virtual CreateApiKeyResponse CreateApiKey(CreateApiKeyRequest request)
         {
             var marshaller = new CreateApiKeyRequestMarshaller();
             var unmarshaller = CreateApiKeyResponseUnmarshaller.Instance;
@@ -287,7 +287,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CreateApiKeyResponse> CreateApiKeyAsync(CreateApiKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateApiKeyResponse> CreateApiKeyAsync(CreateApiKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateApiKeyRequestMarshaller();
             var unmarshaller = CreateApiKeyResponseUnmarshaller.Instance;
@@ -326,7 +326,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public CreateAuthorizerResponse CreateAuthorizer(CreateAuthorizerRequest request)
+        public virtual CreateAuthorizerResponse CreateAuthorizer(CreateAuthorizerRequest request)
         {
             var marshaller = new CreateAuthorizerRequestMarshaller();
             var unmarshaller = CreateAuthorizerResponseUnmarshaller.Instance;
@@ -343,7 +343,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CreateAuthorizerResponse> CreateAuthorizerAsync(CreateAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateAuthorizerResponse> CreateAuthorizerAsync(CreateAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateAuthorizerRequestMarshaller();
             var unmarshaller = CreateAuthorizerResponseUnmarshaller.Instance;
@@ -379,7 +379,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public CreateBasePathMappingResponse CreateBasePathMapping(CreateBasePathMappingRequest request)
+        public virtual CreateBasePathMappingResponse CreateBasePathMapping(CreateBasePathMappingRequest request)
         {
             var marshaller = new CreateBasePathMappingRequestMarshaller();
             var unmarshaller = CreateBasePathMappingResponseUnmarshaller.Instance;
@@ -396,7 +396,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CreateBasePathMappingResponse> CreateBasePathMappingAsync(CreateBasePathMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateBasePathMappingResponse> CreateBasePathMappingAsync(CreateBasePathMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateBasePathMappingRequestMarshaller();
             var unmarshaller = CreateBasePathMappingResponseUnmarshaller.Instance;
@@ -440,7 +440,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public CreateDeploymentResponse CreateDeployment(CreateDeploymentRequest request)
+        public virtual CreateDeploymentResponse CreateDeployment(CreateDeploymentRequest request)
         {
             var marshaller = new CreateDeploymentRequestMarshaller();
             var unmarshaller = CreateDeploymentResponseUnmarshaller.Instance;
@@ -457,7 +457,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CreateDeploymentResponse> CreateDeploymentAsync(CreateDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateDeploymentResponse> CreateDeploymentAsync(CreateDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateDeploymentRequestMarshaller();
             var unmarshaller = CreateDeploymentResponseUnmarshaller.Instance;
@@ -496,7 +496,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public CreateDocumentationPartResponse CreateDocumentationPart(CreateDocumentationPartRequest request)
+        public virtual CreateDocumentationPartResponse CreateDocumentationPart(CreateDocumentationPartRequest request)
         {
             var marshaller = new CreateDocumentationPartRequestMarshaller();
             var unmarshaller = CreateDocumentationPartResponseUnmarshaller.Instance;
@@ -513,7 +513,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CreateDocumentationPartResponse> CreateDocumentationPartAsync(CreateDocumentationPartRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateDocumentationPartResponse> CreateDocumentationPartAsync(CreateDocumentationPartRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateDocumentationPartRequestMarshaller();
             var unmarshaller = CreateDocumentationPartResponseUnmarshaller.Instance;
@@ -552,7 +552,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public CreateDocumentationVersionResponse CreateDocumentationVersion(CreateDocumentationVersionRequest request)
+        public virtual CreateDocumentationVersionResponse CreateDocumentationVersion(CreateDocumentationVersionRequest request)
         {
             var marshaller = new CreateDocumentationVersionRequestMarshaller();
             var unmarshaller = CreateDocumentationVersionResponseUnmarshaller.Instance;
@@ -569,7 +569,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CreateDocumentationVersionResponse> CreateDocumentationVersionAsync(CreateDocumentationVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateDocumentationVersionResponse> CreateDocumentationVersionAsync(CreateDocumentationVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateDocumentationVersionRequestMarshaller();
             var unmarshaller = CreateDocumentationVersionResponseUnmarshaller.Instance;
@@ -602,7 +602,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public CreateDomainNameResponse CreateDomainName(CreateDomainNameRequest request)
+        public virtual CreateDomainNameResponse CreateDomainName(CreateDomainNameRequest request)
         {
             var marshaller = new CreateDomainNameRequestMarshaller();
             var unmarshaller = CreateDomainNameResponseUnmarshaller.Instance;
@@ -619,7 +619,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CreateDomainNameResponse> CreateDomainNameAsync(CreateDomainNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateDomainNameResponse> CreateDomainNameAsync(CreateDomainNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateDomainNameRequestMarshaller();
             var unmarshaller = CreateDomainNameResponseUnmarshaller.Instance;
@@ -658,7 +658,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public CreateModelResponse CreateModel(CreateModelRequest request)
+        public virtual CreateModelResponse CreateModel(CreateModelRequest request)
         {
             var marshaller = new CreateModelRequestMarshaller();
             var unmarshaller = CreateModelResponseUnmarshaller.Instance;
@@ -675,7 +675,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CreateModelResponse> CreateModelAsync(CreateModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateModelResponse> CreateModelAsync(CreateModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateModelRequestMarshaller();
             var unmarshaller = CreateModelResponseUnmarshaller.Instance;
@@ -711,7 +711,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public CreateRequestValidatorResponse CreateRequestValidator(CreateRequestValidatorRequest request)
+        public virtual CreateRequestValidatorResponse CreateRequestValidator(CreateRequestValidatorRequest request)
         {
             var marshaller = new CreateRequestValidatorRequestMarshaller();
             var unmarshaller = CreateRequestValidatorResponseUnmarshaller.Instance;
@@ -728,7 +728,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CreateRequestValidatorResponse> CreateRequestValidatorAsync(CreateRequestValidatorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateRequestValidatorResponse> CreateRequestValidatorAsync(CreateRequestValidatorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateRequestValidatorRequestMarshaller();
             var unmarshaller = CreateRequestValidatorResponseUnmarshaller.Instance;
@@ -767,7 +767,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public CreateResourceResponse CreateResource(CreateResourceRequest request)
+        public virtual CreateResourceResponse CreateResource(CreateResourceRequest request)
         {
             var marshaller = new CreateResourceRequestMarshaller();
             var unmarshaller = CreateResourceResponseUnmarshaller.Instance;
@@ -784,7 +784,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CreateResourceResponse> CreateResourceAsync(CreateResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateResourceResponse> CreateResourceAsync(CreateResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateResourceRequestMarshaller();
             var unmarshaller = CreateResourceResponseUnmarshaller.Instance;
@@ -817,7 +817,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public CreateRestApiResponse CreateRestApi(CreateRestApiRequest request)
+        public virtual CreateRestApiResponse CreateRestApi(CreateRestApiRequest request)
         {
             var marshaller = new CreateRestApiRequestMarshaller();
             var unmarshaller = CreateRestApiResponseUnmarshaller.Instance;
@@ -834,7 +834,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CreateRestApiResponse> CreateRestApiAsync(CreateRestApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateRestApiResponse> CreateRestApiAsync(CreateRestApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateRestApiRequestMarshaller();
             var unmarshaller = CreateRestApiResponseUnmarshaller.Instance;
@@ -874,7 +874,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public CreateStageResponse CreateStage(CreateStageRequest request)
+        public virtual CreateStageResponse CreateStage(CreateStageRequest request)
         {
             var marshaller = new CreateStageRequestMarshaller();
             var unmarshaller = CreateStageResponseUnmarshaller.Instance;
@@ -891,7 +891,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CreateStageResponse> CreateStageAsync(CreateStageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateStageResponse> CreateStageAsync(CreateStageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateStageRequestMarshaller();
             var unmarshaller = CreateStageResponseUnmarshaller.Instance;
@@ -931,7 +931,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public CreateUsagePlanResponse CreateUsagePlan(CreateUsagePlanRequest request)
+        public virtual CreateUsagePlanResponse CreateUsagePlan(CreateUsagePlanRequest request)
         {
             var marshaller = new CreateUsagePlanRequestMarshaller();
             var unmarshaller = CreateUsagePlanResponseUnmarshaller.Instance;
@@ -948,7 +948,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CreateUsagePlanResponse> CreateUsagePlanAsync(CreateUsagePlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateUsagePlanResponse> CreateUsagePlanAsync(CreateUsagePlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateUsagePlanRequestMarshaller();
             var unmarshaller = CreateUsagePlanResponseUnmarshaller.Instance;
@@ -984,7 +984,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public CreateUsagePlanKeyResponse CreateUsagePlanKey(CreateUsagePlanKeyRequest request)
+        public virtual CreateUsagePlanKeyResponse CreateUsagePlanKey(CreateUsagePlanKeyRequest request)
         {
             var marshaller = new CreateUsagePlanKeyRequestMarshaller();
             var unmarshaller = CreateUsagePlanKeyResponseUnmarshaller.Instance;
@@ -1001,7 +1001,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CreateUsagePlanKeyResponse> CreateUsagePlanKeyAsync(CreateUsagePlanKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateUsagePlanKeyResponse> CreateUsagePlanKeyAsync(CreateUsagePlanKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateUsagePlanKeyRequestMarshaller();
             var unmarshaller = CreateUsagePlanKeyResponseUnmarshaller.Instance;
@@ -1030,7 +1030,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public DeleteApiKeyResponse DeleteApiKey(DeleteApiKeyRequest request)
+        public virtual DeleteApiKeyResponse DeleteApiKey(DeleteApiKeyRequest request)
         {
             var marshaller = new DeleteApiKeyRequestMarshaller();
             var unmarshaller = DeleteApiKeyResponseUnmarshaller.Instance;
@@ -1047,7 +1047,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteApiKeyResponse> DeleteApiKeyAsync(DeleteApiKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteApiKeyResponse> DeleteApiKeyAsync(DeleteApiKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteApiKeyRequestMarshaller();
             var unmarshaller = DeleteApiKeyResponseUnmarshaller.Instance;
@@ -1086,7 +1086,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public DeleteAuthorizerResponse DeleteAuthorizer(DeleteAuthorizerRequest request)
+        public virtual DeleteAuthorizerResponse DeleteAuthorizer(DeleteAuthorizerRequest request)
         {
             var marshaller = new DeleteAuthorizerRequestMarshaller();
             var unmarshaller = DeleteAuthorizerResponseUnmarshaller.Instance;
@@ -1103,7 +1103,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteAuthorizerResponse> DeleteAuthorizerAsync(DeleteAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteAuthorizerResponse> DeleteAuthorizerAsync(DeleteAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteAuthorizerRequestMarshaller();
             var unmarshaller = DeleteAuthorizerResponseUnmarshaller.Instance;
@@ -1139,7 +1139,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public DeleteBasePathMappingResponse DeleteBasePathMapping(DeleteBasePathMappingRequest request)
+        public virtual DeleteBasePathMappingResponse DeleteBasePathMapping(DeleteBasePathMappingRequest request)
         {
             var marshaller = new DeleteBasePathMappingRequestMarshaller();
             var unmarshaller = DeleteBasePathMappingResponseUnmarshaller.Instance;
@@ -1156,7 +1156,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteBasePathMappingResponse> DeleteBasePathMappingAsync(DeleteBasePathMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteBasePathMappingResponse> DeleteBasePathMappingAsync(DeleteBasePathMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteBasePathMappingRequestMarshaller();
             var unmarshaller = DeleteBasePathMappingResponseUnmarshaller.Instance;
@@ -1189,7 +1189,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public DeleteClientCertificateResponse DeleteClientCertificate(DeleteClientCertificateRequest request)
+        public virtual DeleteClientCertificateResponse DeleteClientCertificate(DeleteClientCertificateRequest request)
         {
             var marshaller = new DeleteClientCertificateRequestMarshaller();
             var unmarshaller = DeleteClientCertificateResponseUnmarshaller.Instance;
@@ -1206,7 +1206,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteClientCertificateResponse> DeleteClientCertificateAsync(DeleteClientCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteClientCertificateResponse> DeleteClientCertificateAsync(DeleteClientCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteClientCertificateRequestMarshaller();
             var unmarshaller = DeleteClientCertificateResponseUnmarshaller.Instance;
@@ -1240,7 +1240,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public DeleteDeploymentResponse DeleteDeployment(DeleteDeploymentRequest request)
+        public virtual DeleteDeploymentResponse DeleteDeployment(DeleteDeploymentRequest request)
         {
             var marshaller = new DeleteDeploymentRequestMarshaller();
             var unmarshaller = DeleteDeploymentResponseUnmarshaller.Instance;
@@ -1257,7 +1257,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteDeploymentResponse> DeleteDeploymentAsync(DeleteDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteDeploymentResponse> DeleteDeploymentAsync(DeleteDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteDeploymentRequestMarshaller();
             var unmarshaller = DeleteDeploymentResponseUnmarshaller.Instance;
@@ -1293,7 +1293,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public DeleteDocumentationPartResponse DeleteDocumentationPart(DeleteDocumentationPartRequest request)
+        public virtual DeleteDocumentationPartResponse DeleteDocumentationPart(DeleteDocumentationPartRequest request)
         {
             var marshaller = new DeleteDocumentationPartRequestMarshaller();
             var unmarshaller = DeleteDocumentationPartResponseUnmarshaller.Instance;
@@ -1310,7 +1310,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteDocumentationPartResponse> DeleteDocumentationPartAsync(DeleteDocumentationPartRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteDocumentationPartResponse> DeleteDocumentationPartAsync(DeleteDocumentationPartRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteDocumentationPartRequestMarshaller();
             var unmarshaller = DeleteDocumentationPartResponseUnmarshaller.Instance;
@@ -1346,7 +1346,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public DeleteDocumentationVersionResponse DeleteDocumentationVersion(DeleteDocumentationVersionRequest request)
+        public virtual DeleteDocumentationVersionResponse DeleteDocumentationVersion(DeleteDocumentationVersionRequest request)
         {
             var marshaller = new DeleteDocumentationVersionRequestMarshaller();
             var unmarshaller = DeleteDocumentationVersionResponseUnmarshaller.Instance;
@@ -1363,7 +1363,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteDocumentationVersionResponse> DeleteDocumentationVersionAsync(DeleteDocumentationVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteDocumentationVersionResponse> DeleteDocumentationVersionAsync(DeleteDocumentationVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteDocumentationVersionRequestMarshaller();
             var unmarshaller = DeleteDocumentationVersionResponseUnmarshaller.Instance;
@@ -1392,7 +1392,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public DeleteDomainNameResponse DeleteDomainName(DeleteDomainNameRequest request)
+        public virtual DeleteDomainNameResponse DeleteDomainName(DeleteDomainNameRequest request)
         {
             var marshaller = new DeleteDomainNameRequestMarshaller();
             var unmarshaller = DeleteDomainNameResponseUnmarshaller.Instance;
@@ -1409,7 +1409,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteDomainNameResponse> DeleteDomainNameAsync(DeleteDomainNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteDomainNameResponse> DeleteDomainNameAsync(DeleteDomainNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteDomainNameRequestMarshaller();
             var unmarshaller = DeleteDomainNameResponseUnmarshaller.Instance;
@@ -1446,7 +1446,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public DeleteGatewayResponseResponse DeleteGatewayResponse(DeleteGatewayResponseRequest request)
+        public virtual DeleteGatewayResponseResponse DeleteGatewayResponse(DeleteGatewayResponseRequest request)
         {
             var marshaller = new DeleteGatewayResponseRequestMarshaller();
             var unmarshaller = DeleteGatewayResponseResponseUnmarshaller.Instance;
@@ -1463,7 +1463,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteGatewayResponseResponse> DeleteGatewayResponseAsync(DeleteGatewayResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteGatewayResponseResponse> DeleteGatewayResponseAsync(DeleteGatewayResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteGatewayResponseRequestMarshaller();
             var unmarshaller = DeleteGatewayResponseResponseUnmarshaller.Instance;
@@ -1495,7 +1495,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public DeleteIntegrationResponse DeleteIntegration(DeleteIntegrationRequest request)
+        public virtual DeleteIntegrationResponse DeleteIntegration(DeleteIntegrationRequest request)
         {
             var marshaller = new DeleteIntegrationRequestMarshaller();
             var unmarshaller = DeleteIntegrationResponseUnmarshaller.Instance;
@@ -1512,7 +1512,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteIntegrationResponse> DeleteIntegrationAsync(DeleteIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteIntegrationResponse> DeleteIntegrationAsync(DeleteIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteIntegrationRequestMarshaller();
             var unmarshaller = DeleteIntegrationResponseUnmarshaller.Instance;
@@ -1548,7 +1548,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public DeleteIntegrationResponseResponse DeleteIntegrationResponse(DeleteIntegrationResponseRequest request)
+        public virtual DeleteIntegrationResponseResponse DeleteIntegrationResponse(DeleteIntegrationResponseRequest request)
         {
             var marshaller = new DeleteIntegrationResponseRequestMarshaller();
             var unmarshaller = DeleteIntegrationResponseResponseUnmarshaller.Instance;
@@ -1565,7 +1565,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteIntegrationResponseResponse> DeleteIntegrationResponseAsync(DeleteIntegrationResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteIntegrationResponseResponse> DeleteIntegrationResponseAsync(DeleteIntegrationResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteIntegrationResponseRequestMarshaller();
             var unmarshaller = DeleteIntegrationResponseResponseUnmarshaller.Instance;
@@ -1597,7 +1597,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public DeleteMethodResponse DeleteMethod(DeleteMethodRequest request)
+        public virtual DeleteMethodResponse DeleteMethod(DeleteMethodRequest request)
         {
             var marshaller = new DeleteMethodRequestMarshaller();
             var unmarshaller = DeleteMethodResponseUnmarshaller.Instance;
@@ -1614,7 +1614,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteMethodResponse> DeleteMethodAsync(DeleteMethodRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteMethodResponse> DeleteMethodAsync(DeleteMethodRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteMethodRequestMarshaller();
             var unmarshaller = DeleteMethodResponseUnmarshaller.Instance;
@@ -1650,7 +1650,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public DeleteMethodResponseResponse DeleteMethodResponse(DeleteMethodResponseRequest request)
+        public virtual DeleteMethodResponseResponse DeleteMethodResponse(DeleteMethodResponseRequest request)
         {
             var marshaller = new DeleteMethodResponseRequestMarshaller();
             var unmarshaller = DeleteMethodResponseResponseUnmarshaller.Instance;
@@ -1667,7 +1667,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteMethodResponseResponse> DeleteMethodResponseAsync(DeleteMethodResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteMethodResponseResponse> DeleteMethodResponseAsync(DeleteMethodResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteMethodResponseRequestMarshaller();
             var unmarshaller = DeleteMethodResponseResponseUnmarshaller.Instance;
@@ -1703,7 +1703,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public DeleteModelResponse DeleteModel(DeleteModelRequest request)
+        public virtual DeleteModelResponse DeleteModel(DeleteModelRequest request)
         {
             var marshaller = new DeleteModelRequestMarshaller();
             var unmarshaller = DeleteModelResponseUnmarshaller.Instance;
@@ -1720,7 +1720,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteModelResponse> DeleteModelAsync(DeleteModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteModelResponse> DeleteModelAsync(DeleteModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteModelRequestMarshaller();
             var unmarshaller = DeleteModelResponseUnmarshaller.Instance;
@@ -1756,7 +1756,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public DeleteRequestValidatorResponse DeleteRequestValidator(DeleteRequestValidatorRequest request)
+        public virtual DeleteRequestValidatorResponse DeleteRequestValidator(DeleteRequestValidatorRequest request)
         {
             var marshaller = new DeleteRequestValidatorRequestMarshaller();
             var unmarshaller = DeleteRequestValidatorResponseUnmarshaller.Instance;
@@ -1773,7 +1773,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteRequestValidatorResponse> DeleteRequestValidatorAsync(DeleteRequestValidatorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteRequestValidatorResponse> DeleteRequestValidatorAsync(DeleteRequestValidatorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteRequestValidatorRequestMarshaller();
             var unmarshaller = DeleteRequestValidatorResponseUnmarshaller.Instance;
@@ -1809,7 +1809,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public DeleteResourceResponse DeleteResource(DeleteResourceRequest request)
+        public virtual DeleteResourceResponse DeleteResource(DeleteResourceRequest request)
         {
             var marshaller = new DeleteResourceRequestMarshaller();
             var unmarshaller = DeleteResourceResponseUnmarshaller.Instance;
@@ -1826,7 +1826,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteResourceResponse> DeleteResourceAsync(DeleteResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteResourceResponse> DeleteResourceAsync(DeleteResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteResourceRequestMarshaller();
             var unmarshaller = DeleteResourceResponseUnmarshaller.Instance;
@@ -1859,7 +1859,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public DeleteRestApiResponse DeleteRestApi(DeleteRestApiRequest request)
+        public virtual DeleteRestApiResponse DeleteRestApi(DeleteRestApiRequest request)
         {
             var marshaller = new DeleteRestApiRequestMarshaller();
             var unmarshaller = DeleteRestApiResponseUnmarshaller.Instance;
@@ -1876,7 +1876,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteRestApiResponse> DeleteRestApiAsync(DeleteRestApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteRestApiResponse> DeleteRestApiAsync(DeleteRestApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteRestApiRequestMarshaller();
             var unmarshaller = DeleteRestApiResponseUnmarshaller.Instance;
@@ -1909,7 +1909,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public DeleteStageResponse DeleteStage(DeleteStageRequest request)
+        public virtual DeleteStageResponse DeleteStage(DeleteStageRequest request)
         {
             var marshaller = new DeleteStageRequestMarshaller();
             var unmarshaller = DeleteStageResponseUnmarshaller.Instance;
@@ -1926,7 +1926,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteStageResponse> DeleteStageAsync(DeleteStageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteStageResponse> DeleteStageAsync(DeleteStageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteStageRequestMarshaller();
             var unmarshaller = DeleteStageResponseUnmarshaller.Instance;
@@ -1959,7 +1959,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public DeleteUsagePlanResponse DeleteUsagePlan(DeleteUsagePlanRequest request)
+        public virtual DeleteUsagePlanResponse DeleteUsagePlan(DeleteUsagePlanRequest request)
         {
             var marshaller = new DeleteUsagePlanRequestMarshaller();
             var unmarshaller = DeleteUsagePlanResponseUnmarshaller.Instance;
@@ -1976,7 +1976,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteUsagePlanResponse> DeleteUsagePlanAsync(DeleteUsagePlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteUsagePlanResponse> DeleteUsagePlanAsync(DeleteUsagePlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteUsagePlanRequestMarshaller();
             var unmarshaller = DeleteUsagePlanResponseUnmarshaller.Instance;
@@ -2013,7 +2013,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public DeleteUsagePlanKeyResponse DeleteUsagePlanKey(DeleteUsagePlanKeyRequest request)
+        public virtual DeleteUsagePlanKeyResponse DeleteUsagePlanKey(DeleteUsagePlanKeyRequest request)
         {
             var marshaller = new DeleteUsagePlanKeyRequestMarshaller();
             var unmarshaller = DeleteUsagePlanKeyResponseUnmarshaller.Instance;
@@ -2030,7 +2030,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteUsagePlanKeyResponse> DeleteUsagePlanKeyAsync(DeleteUsagePlanKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteUsagePlanKeyResponse> DeleteUsagePlanKeyAsync(DeleteUsagePlanKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteUsagePlanKeyRequestMarshaller();
             var unmarshaller = DeleteUsagePlanKeyResponseUnmarshaller.Instance;
@@ -2063,7 +2063,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public FlushStageAuthorizersCacheResponse FlushStageAuthorizersCache(FlushStageAuthorizersCacheRequest request)
+        public virtual FlushStageAuthorizersCacheResponse FlushStageAuthorizersCache(FlushStageAuthorizersCacheRequest request)
         {
             var marshaller = new FlushStageAuthorizersCacheRequestMarshaller();
             var unmarshaller = FlushStageAuthorizersCacheResponseUnmarshaller.Instance;
@@ -2080,7 +2080,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<FlushStageAuthorizersCacheResponse> FlushStageAuthorizersCacheAsync(FlushStageAuthorizersCacheRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<FlushStageAuthorizersCacheResponse> FlushStageAuthorizersCacheAsync(FlushStageAuthorizersCacheRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new FlushStageAuthorizersCacheRequestMarshaller();
             var unmarshaller = FlushStageAuthorizersCacheResponseUnmarshaller.Instance;
@@ -2113,7 +2113,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public FlushStageCacheResponse FlushStageCache(FlushStageCacheRequest request)
+        public virtual FlushStageCacheResponse FlushStageCache(FlushStageCacheRequest request)
         {
             var marshaller = new FlushStageCacheRequestMarshaller();
             var unmarshaller = FlushStageCacheResponseUnmarshaller.Instance;
@@ -2130,7 +2130,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<FlushStageCacheResponse> FlushStageCacheAsync(FlushStageCacheRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<FlushStageCacheResponse> FlushStageCacheAsync(FlushStageCacheRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new FlushStageCacheRequestMarshaller();
             var unmarshaller = FlushStageCacheResponseUnmarshaller.Instance;
@@ -2159,7 +2159,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GenerateClientCertificateResponse GenerateClientCertificate(GenerateClientCertificateRequest request)
+        public virtual GenerateClientCertificateResponse GenerateClientCertificate(GenerateClientCertificateRequest request)
         {
             var marshaller = new GenerateClientCertificateRequestMarshaller();
             var unmarshaller = GenerateClientCertificateResponseUnmarshaller.Instance;
@@ -2176,7 +2176,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GenerateClientCertificateResponse> GenerateClientCertificateAsync(GenerateClientCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GenerateClientCertificateResponse> GenerateClientCertificateAsync(GenerateClientCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GenerateClientCertificateRequestMarshaller();
             var unmarshaller = GenerateClientCertificateResponseUnmarshaller.Instance;
@@ -2205,7 +2205,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetAccountResponse GetAccount(GetAccountRequest request)
+        public virtual GetAccountResponse GetAccount(GetAccountRequest request)
         {
             var marshaller = new GetAccountRequestMarshaller();
             var unmarshaller = GetAccountResponseUnmarshaller.Instance;
@@ -2222,7 +2222,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetAccountResponse> GetAccountAsync(GetAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetAccountResponse> GetAccountAsync(GetAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetAccountRequestMarshaller();
             var unmarshaller = GetAccountResponseUnmarshaller.Instance;
@@ -2251,7 +2251,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetApiKeyResponse GetApiKey(GetApiKeyRequest request)
+        public virtual GetApiKeyResponse GetApiKey(GetApiKeyRequest request)
         {
             var marshaller = new GetApiKeyRequestMarshaller();
             var unmarshaller = GetApiKeyResponseUnmarshaller.Instance;
@@ -2268,7 +2268,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetApiKeyResponse> GetApiKeyAsync(GetApiKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetApiKeyResponse> GetApiKeyAsync(GetApiKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetApiKeyRequestMarshaller();
             var unmarshaller = GetApiKeyResponseUnmarshaller.Instance;
@@ -2298,7 +2298,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetApiKeysResponse GetApiKeys(GetApiKeysRequest request)
+        public virtual GetApiKeysResponse GetApiKeys(GetApiKeysRequest request)
         {
             var marshaller = new GetApiKeysRequestMarshaller();
             var unmarshaller = GetApiKeysResponseUnmarshaller.Instance;
@@ -2315,7 +2315,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetApiKeysResponse> GetApiKeysAsync(GetApiKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetApiKeysResponse> GetApiKeysAsync(GetApiKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetApiKeysRequestMarshaller();
             var unmarshaller = GetApiKeysResponseUnmarshaller.Instance;
@@ -2347,7 +2347,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetAuthorizerResponse GetAuthorizer(GetAuthorizerRequest request)
+        public virtual GetAuthorizerResponse GetAuthorizer(GetAuthorizerRequest request)
         {
             var marshaller = new GetAuthorizerRequestMarshaller();
             var unmarshaller = GetAuthorizerResponseUnmarshaller.Instance;
@@ -2364,7 +2364,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetAuthorizerResponse> GetAuthorizerAsync(GetAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetAuthorizerResponse> GetAuthorizerAsync(GetAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetAuthorizerRequestMarshaller();
             var unmarshaller = GetAuthorizerResponseUnmarshaller.Instance;
@@ -2400,7 +2400,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetAuthorizersResponse GetAuthorizers(GetAuthorizersRequest request)
+        public virtual GetAuthorizersResponse GetAuthorizers(GetAuthorizersRequest request)
         {
             var marshaller = new GetAuthorizersRequestMarshaller();
             var unmarshaller = GetAuthorizersResponseUnmarshaller.Instance;
@@ -2417,7 +2417,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetAuthorizersResponse> GetAuthorizersAsync(GetAuthorizersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetAuthorizersResponse> GetAuthorizersAsync(GetAuthorizersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetAuthorizersRequestMarshaller();
             var unmarshaller = GetAuthorizersResponseUnmarshaller.Instance;
@@ -2446,7 +2446,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetBasePathMappingResponse GetBasePathMapping(GetBasePathMappingRequest request)
+        public virtual GetBasePathMappingResponse GetBasePathMapping(GetBasePathMappingRequest request)
         {
             var marshaller = new GetBasePathMappingRequestMarshaller();
             var unmarshaller = GetBasePathMappingResponseUnmarshaller.Instance;
@@ -2463,7 +2463,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetBasePathMappingResponse> GetBasePathMappingAsync(GetBasePathMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetBasePathMappingResponse> GetBasePathMappingAsync(GetBasePathMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetBasePathMappingRequestMarshaller();
             var unmarshaller = GetBasePathMappingResponseUnmarshaller.Instance;
@@ -2492,7 +2492,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetBasePathMappingsResponse GetBasePathMappings(GetBasePathMappingsRequest request)
+        public virtual GetBasePathMappingsResponse GetBasePathMappings(GetBasePathMappingsRequest request)
         {
             var marshaller = new GetBasePathMappingsRequestMarshaller();
             var unmarshaller = GetBasePathMappingsResponseUnmarshaller.Instance;
@@ -2509,7 +2509,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetBasePathMappingsResponse> GetBasePathMappingsAsync(GetBasePathMappingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetBasePathMappingsResponse> GetBasePathMappingsAsync(GetBasePathMappingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetBasePathMappingsRequestMarshaller();
             var unmarshaller = GetBasePathMappingsResponseUnmarshaller.Instance;
@@ -2538,7 +2538,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetClientCertificateResponse GetClientCertificate(GetClientCertificateRequest request)
+        public virtual GetClientCertificateResponse GetClientCertificate(GetClientCertificateRequest request)
         {
             var marshaller = new GetClientCertificateRequestMarshaller();
             var unmarshaller = GetClientCertificateResponseUnmarshaller.Instance;
@@ -2555,7 +2555,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetClientCertificateResponse> GetClientCertificateAsync(GetClientCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetClientCertificateResponse> GetClientCertificateAsync(GetClientCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetClientCertificateRequestMarshaller();
             var unmarshaller = GetClientCertificateResponseUnmarshaller.Instance;
@@ -2585,7 +2585,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetClientCertificatesResponse GetClientCertificates(GetClientCertificatesRequest request)
+        public virtual GetClientCertificatesResponse GetClientCertificates(GetClientCertificatesRequest request)
         {
             var marshaller = new GetClientCertificatesRequestMarshaller();
             var unmarshaller = GetClientCertificatesResponseUnmarshaller.Instance;
@@ -2602,7 +2602,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetClientCertificatesResponse> GetClientCertificatesAsync(GetClientCertificatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetClientCertificatesResponse> GetClientCertificatesAsync(GetClientCertificatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetClientCertificatesRequestMarshaller();
             var unmarshaller = GetClientCertificatesResponseUnmarshaller.Instance;
@@ -2635,7 +2635,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetDeploymentResponse GetDeployment(GetDeploymentRequest request)
+        public virtual GetDeploymentResponse GetDeployment(GetDeploymentRequest request)
         {
             var marshaller = new GetDeploymentRequestMarshaller();
             var unmarshaller = GetDeploymentResponseUnmarshaller.Instance;
@@ -2652,7 +2652,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetDeploymentResponse> GetDeploymentAsync(GetDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetDeploymentResponse> GetDeploymentAsync(GetDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetDeploymentRequestMarshaller();
             var unmarshaller = GetDeploymentResponseUnmarshaller.Instance;
@@ -2686,7 +2686,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetDeploymentsResponse GetDeployments(GetDeploymentsRequest request)
+        public virtual GetDeploymentsResponse GetDeployments(GetDeploymentsRequest request)
         {
             var marshaller = new GetDeploymentsRequestMarshaller();
             var unmarshaller = GetDeploymentsResponseUnmarshaller.Instance;
@@ -2703,7 +2703,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetDeploymentsResponse> GetDeploymentsAsync(GetDeploymentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetDeploymentsResponse> GetDeploymentsAsync(GetDeploymentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetDeploymentsRequestMarshaller();
             var unmarshaller = GetDeploymentsResponseUnmarshaller.Instance;
@@ -2732,7 +2732,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetDocumentationPartResponse GetDocumentationPart(GetDocumentationPartRequest request)
+        public virtual GetDocumentationPartResponse GetDocumentationPart(GetDocumentationPartRequest request)
         {
             var marshaller = new GetDocumentationPartRequestMarshaller();
             var unmarshaller = GetDocumentationPartResponseUnmarshaller.Instance;
@@ -2749,7 +2749,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetDocumentationPartResponse> GetDocumentationPartAsync(GetDocumentationPartRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetDocumentationPartResponse> GetDocumentationPartAsync(GetDocumentationPartRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetDocumentationPartRequestMarshaller();
             var unmarshaller = GetDocumentationPartResponseUnmarshaller.Instance;
@@ -2782,7 +2782,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetDocumentationPartsResponse GetDocumentationParts(GetDocumentationPartsRequest request)
+        public virtual GetDocumentationPartsResponse GetDocumentationParts(GetDocumentationPartsRequest request)
         {
             var marshaller = new GetDocumentationPartsRequestMarshaller();
             var unmarshaller = GetDocumentationPartsResponseUnmarshaller.Instance;
@@ -2799,7 +2799,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetDocumentationPartsResponse> GetDocumentationPartsAsync(GetDocumentationPartsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetDocumentationPartsResponse> GetDocumentationPartsAsync(GetDocumentationPartsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetDocumentationPartsRequestMarshaller();
             var unmarshaller = GetDocumentationPartsResponseUnmarshaller.Instance;
@@ -2828,7 +2828,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetDocumentationVersionResponse GetDocumentationVersion(GetDocumentationVersionRequest request)
+        public virtual GetDocumentationVersionResponse GetDocumentationVersion(GetDocumentationVersionRequest request)
         {
             var marshaller = new GetDocumentationVersionRequestMarshaller();
             var unmarshaller = GetDocumentationVersionResponseUnmarshaller.Instance;
@@ -2845,7 +2845,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetDocumentationVersionResponse> GetDocumentationVersionAsync(GetDocumentationVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetDocumentationVersionResponse> GetDocumentationVersionAsync(GetDocumentationVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetDocumentationVersionRequestMarshaller();
             var unmarshaller = GetDocumentationVersionResponseUnmarshaller.Instance;
@@ -2878,7 +2878,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetDocumentationVersionsResponse GetDocumentationVersions(GetDocumentationVersionsRequest request)
+        public virtual GetDocumentationVersionsResponse GetDocumentationVersions(GetDocumentationVersionsRequest request)
         {
             var marshaller = new GetDocumentationVersionsRequestMarshaller();
             var unmarshaller = GetDocumentationVersionsResponseUnmarshaller.Instance;
@@ -2895,7 +2895,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetDocumentationVersionsResponse> GetDocumentationVersionsAsync(GetDocumentationVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetDocumentationVersionsResponse> GetDocumentationVersionsAsync(GetDocumentationVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetDocumentationVersionsRequestMarshaller();
             var unmarshaller = GetDocumentationVersionsResponseUnmarshaller.Instance;
@@ -2929,7 +2929,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetDomainNameResponse GetDomainName(GetDomainNameRequest request)
+        public virtual GetDomainNameResponse GetDomainName(GetDomainNameRequest request)
         {
             var marshaller = new GetDomainNameRequestMarshaller();
             var unmarshaller = GetDomainNameResponseUnmarshaller.Instance;
@@ -2946,7 +2946,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetDomainNameResponse> GetDomainNameAsync(GetDomainNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetDomainNameResponse> GetDomainNameAsync(GetDomainNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetDomainNameRequestMarshaller();
             var unmarshaller = GetDomainNameResponseUnmarshaller.Instance;
@@ -2976,7 +2976,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetDomainNamesResponse GetDomainNames(GetDomainNamesRequest request)
+        public virtual GetDomainNamesResponse GetDomainNames(GetDomainNamesRequest request)
         {
             var marshaller = new GetDomainNamesRequestMarshaller();
             var unmarshaller = GetDomainNamesResponseUnmarshaller.Instance;
@@ -2993,7 +2993,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetDomainNamesResponse> GetDomainNamesAsync(GetDomainNamesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetDomainNamesResponse> GetDomainNamesAsync(GetDomainNamesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetDomainNamesRequestMarshaller();
             var unmarshaller = GetDomainNamesResponseUnmarshaller.Instance;
@@ -3029,7 +3029,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetExportResponse GetExport(GetExportRequest request)
+        public virtual GetExportResponse GetExport(GetExportRequest request)
         {
             var marshaller = new GetExportRequestMarshaller();
             var unmarshaller = GetExportResponseUnmarshaller.Instance;
@@ -3046,7 +3046,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetExportResponse> GetExportAsync(GetExportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetExportResponse> GetExportAsync(GetExportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetExportRequestMarshaller();
             var unmarshaller = GetExportResponseUnmarshaller.Instance;
@@ -3075,7 +3075,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetGatewayResponseResponse GetGatewayResponse(GetGatewayResponseRequest request)
+        public virtual GetGatewayResponseResponse GetGatewayResponse(GetGatewayResponseRequest request)
         {
             var marshaller = new GetGatewayResponseRequestMarshaller();
             var unmarshaller = GetGatewayResponseResponseUnmarshaller.Instance;
@@ -3092,7 +3092,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetGatewayResponseResponse> GetGatewayResponseAsync(GetGatewayResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetGatewayResponseResponse> GetGatewayResponseAsync(GetGatewayResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetGatewayResponseRequestMarshaller();
             var unmarshaller = GetGatewayResponseResponseUnmarshaller.Instance;
@@ -3128,7 +3128,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetGatewayResponsesResponse GetGatewayResponses(GetGatewayResponsesRequest request)
+        public virtual GetGatewayResponsesResponse GetGatewayResponses(GetGatewayResponsesRequest request)
         {
             var marshaller = new GetGatewayResponsesRequestMarshaller();
             var unmarshaller = GetGatewayResponsesResponseUnmarshaller.Instance;
@@ -3145,7 +3145,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetGatewayResponsesResponse> GetGatewayResponsesAsync(GetGatewayResponsesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetGatewayResponsesResponse> GetGatewayResponsesAsync(GetGatewayResponsesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetGatewayResponsesRequestMarshaller();
             var unmarshaller = GetGatewayResponsesResponseUnmarshaller.Instance;
@@ -3174,7 +3174,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetIntegrationResponse GetIntegration(GetIntegrationRequest request)
+        public virtual GetIntegrationResponse GetIntegration(GetIntegrationRequest request)
         {
             var marshaller = new GetIntegrationRequestMarshaller();
             var unmarshaller = GetIntegrationResponseUnmarshaller.Instance;
@@ -3191,7 +3191,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetIntegrationResponse> GetIntegrationAsync(GetIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetIntegrationResponse> GetIntegrationAsync(GetIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetIntegrationRequestMarshaller();
             var unmarshaller = GetIntegrationResponseUnmarshaller.Instance;
@@ -3220,7 +3220,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetIntegrationResponseResponse GetIntegrationResponse(GetIntegrationResponseRequest request)
+        public virtual GetIntegrationResponseResponse GetIntegrationResponse(GetIntegrationResponseRequest request)
         {
             var marshaller = new GetIntegrationResponseRequestMarshaller();
             var unmarshaller = GetIntegrationResponseResponseUnmarshaller.Instance;
@@ -3237,7 +3237,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetIntegrationResponseResponse> GetIntegrationResponseAsync(GetIntegrationResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetIntegrationResponseResponse> GetIntegrationResponseAsync(GetIntegrationResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetIntegrationResponseRequestMarshaller();
             var unmarshaller = GetIntegrationResponseResponseUnmarshaller.Instance;
@@ -3266,7 +3266,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetMethodResponse GetMethod(GetMethodRequest request)
+        public virtual GetMethodResponse GetMethod(GetMethodRequest request)
         {
             var marshaller = new GetMethodRequestMarshaller();
             var unmarshaller = GetMethodResponseUnmarshaller.Instance;
@@ -3283,7 +3283,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetMethodResponse> GetMethodAsync(GetMethodRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetMethodResponse> GetMethodAsync(GetMethodRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetMethodRequestMarshaller();
             var unmarshaller = GetMethodResponseUnmarshaller.Instance;
@@ -3312,7 +3312,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetMethodResponseResponse GetMethodResponse(GetMethodResponseRequest request)
+        public virtual GetMethodResponseResponse GetMethodResponse(GetMethodResponseRequest request)
         {
             var marshaller = new GetMethodResponseRequestMarshaller();
             var unmarshaller = GetMethodResponseResponseUnmarshaller.Instance;
@@ -3329,7 +3329,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetMethodResponseResponse> GetMethodResponseAsync(GetMethodResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetMethodResponseResponse> GetMethodResponseAsync(GetMethodResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetMethodResponseRequestMarshaller();
             var unmarshaller = GetMethodResponseResponseUnmarshaller.Instance;
@@ -3358,7 +3358,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetModelResponse GetModel(GetModelRequest request)
+        public virtual GetModelResponse GetModel(GetModelRequest request)
         {
             var marshaller = new GetModelRequestMarshaller();
             var unmarshaller = GetModelResponseUnmarshaller.Instance;
@@ -3375,7 +3375,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetModelResponse> GetModelAsync(GetModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetModelResponse> GetModelAsync(GetModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetModelRequestMarshaller();
             var unmarshaller = GetModelResponseUnmarshaller.Instance;
@@ -3408,7 +3408,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetModelsResponse GetModels(GetModelsRequest request)
+        public virtual GetModelsResponse GetModels(GetModelsRequest request)
         {
             var marshaller = new GetModelsRequestMarshaller();
             var unmarshaller = GetModelsResponseUnmarshaller.Instance;
@@ -3425,7 +3425,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetModelsResponse> GetModelsAsync(GetModelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetModelsResponse> GetModelsAsync(GetModelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetModelsRequestMarshaller();
             var unmarshaller = GetModelsResponseUnmarshaller.Instance;
@@ -3459,7 +3459,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetModelTemplateResponse GetModelTemplate(GetModelTemplateRequest request)
+        public virtual GetModelTemplateResponse GetModelTemplate(GetModelTemplateRequest request)
         {
             var marshaller = new GetModelTemplateRequestMarshaller();
             var unmarshaller = GetModelTemplateResponseUnmarshaller.Instance;
@@ -3476,7 +3476,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetModelTemplateResponse> GetModelTemplateAsync(GetModelTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetModelTemplateResponse> GetModelTemplateAsync(GetModelTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetModelTemplateRequestMarshaller();
             var unmarshaller = GetModelTemplateResponseUnmarshaller.Instance;
@@ -3505,7 +3505,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetRequestValidatorResponse GetRequestValidator(GetRequestValidatorRequest request)
+        public virtual GetRequestValidatorResponse GetRequestValidator(GetRequestValidatorRequest request)
         {
             var marshaller = new GetRequestValidatorRequestMarshaller();
             var unmarshaller = GetRequestValidatorResponseUnmarshaller.Instance;
@@ -3522,7 +3522,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetRequestValidatorResponse> GetRequestValidatorAsync(GetRequestValidatorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetRequestValidatorResponse> GetRequestValidatorAsync(GetRequestValidatorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetRequestValidatorRequestMarshaller();
             var unmarshaller = GetRequestValidatorResponseUnmarshaller.Instance;
@@ -3555,7 +3555,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetRequestValidatorsResponse GetRequestValidators(GetRequestValidatorsRequest request)
+        public virtual GetRequestValidatorsResponse GetRequestValidators(GetRequestValidatorsRequest request)
         {
             var marshaller = new GetRequestValidatorsRequestMarshaller();
             var unmarshaller = GetRequestValidatorsResponseUnmarshaller.Instance;
@@ -3572,7 +3572,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetRequestValidatorsResponse> GetRequestValidatorsAsync(GetRequestValidatorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetRequestValidatorsResponse> GetRequestValidatorsAsync(GetRequestValidatorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetRequestValidatorsRequestMarshaller();
             var unmarshaller = GetRequestValidatorsResponseUnmarshaller.Instance;
@@ -3601,7 +3601,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetResourceResponse GetResource(GetResourceRequest request)
+        public virtual GetResourceResponse GetResource(GetResourceRequest request)
         {
             var marshaller = new GetResourceRequestMarshaller();
             var unmarshaller = GetResourceResponseUnmarshaller.Instance;
@@ -3618,7 +3618,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetResourceResponse> GetResourceAsync(GetResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetResourceResponse> GetResourceAsync(GetResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetResourceRequestMarshaller();
             var unmarshaller = GetResourceResponseUnmarshaller.Instance;
@@ -3651,7 +3651,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetResourcesResponse GetResources(GetResourcesRequest request)
+        public virtual GetResourcesResponse GetResources(GetResourcesRequest request)
         {
             var marshaller = new GetResourcesRequestMarshaller();
             var unmarshaller = GetResourcesResponseUnmarshaller.Instance;
@@ -3668,7 +3668,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetResourcesResponse> GetResourcesAsync(GetResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetResourcesResponse> GetResourcesAsync(GetResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetResourcesRequestMarshaller();
             var unmarshaller = GetResourcesResponseUnmarshaller.Instance;
@@ -3697,7 +3697,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetRestApiResponse GetRestApi(GetRestApiRequest request)
+        public virtual GetRestApiResponse GetRestApi(GetRestApiRequest request)
         {
             var marshaller = new GetRestApiRequestMarshaller();
             var unmarshaller = GetRestApiResponseUnmarshaller.Instance;
@@ -3714,7 +3714,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetRestApiResponse> GetRestApiAsync(GetRestApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetRestApiResponse> GetRestApiAsync(GetRestApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetRestApiRequestMarshaller();
             var unmarshaller = GetRestApiResponseUnmarshaller.Instance;
@@ -3744,7 +3744,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetRestApisResponse GetRestApis(GetRestApisRequest request)
+        public virtual GetRestApisResponse GetRestApis(GetRestApisRequest request)
         {
             var marshaller = new GetRestApisRequestMarshaller();
             var unmarshaller = GetRestApisResponseUnmarshaller.Instance;
@@ -3761,7 +3761,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetRestApisResponse> GetRestApisAsync(GetRestApisRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetRestApisResponse> GetRestApisAsync(GetRestApisRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetRestApisRequestMarshaller();
             var unmarshaller = GetRestApisResponseUnmarshaller.Instance;
@@ -3797,7 +3797,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetSdkResponse GetSdk(GetSdkRequest request)
+        public virtual GetSdkResponse GetSdk(GetSdkRequest request)
         {
             var marshaller = new GetSdkRequestMarshaller();
             var unmarshaller = GetSdkResponseUnmarshaller.Instance;
@@ -3814,7 +3814,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetSdkResponse> GetSdkAsync(GetSdkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetSdkResponse> GetSdkAsync(GetSdkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetSdkRequestMarshaller();
             var unmarshaller = GetSdkResponseUnmarshaller.Instance;
@@ -3843,7 +3843,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetSdkTypeResponse GetSdkType(GetSdkTypeRequest request)
+        public virtual GetSdkTypeResponse GetSdkType(GetSdkTypeRequest request)
         {
             var marshaller = new GetSdkTypeRequestMarshaller();
             var unmarshaller = GetSdkTypeResponseUnmarshaller.Instance;
@@ -3860,7 +3860,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetSdkTypeResponse> GetSdkTypeAsync(GetSdkTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetSdkTypeResponse> GetSdkTypeAsync(GetSdkTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetSdkTypeRequestMarshaller();
             var unmarshaller = GetSdkTypeResponseUnmarshaller.Instance;
@@ -3886,7 +3886,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetSdkTypesResponse GetSdkTypes(GetSdkTypesRequest request)
+        public virtual GetSdkTypesResponse GetSdkTypes(GetSdkTypesRequest request)
         {
             var marshaller = new GetSdkTypesRequestMarshaller();
             var unmarshaller = GetSdkTypesResponseUnmarshaller.Instance;
@@ -3903,7 +3903,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetSdkTypesResponse> GetSdkTypesAsync(GetSdkTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetSdkTypesResponse> GetSdkTypesAsync(GetSdkTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetSdkTypesRequestMarshaller();
             var unmarshaller = GetSdkTypesResponseUnmarshaller.Instance;
@@ -3932,7 +3932,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetStageResponse GetStage(GetStageRequest request)
+        public virtual GetStageResponse GetStage(GetStageRequest request)
         {
             var marshaller = new GetStageRequestMarshaller();
             var unmarshaller = GetStageResponseUnmarshaller.Instance;
@@ -3949,7 +3949,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetStageResponse> GetStageAsync(GetStageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetStageResponse> GetStageAsync(GetStageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetStageRequestMarshaller();
             var unmarshaller = GetStageResponseUnmarshaller.Instance;
@@ -3978,7 +3978,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetStagesResponse GetStages(GetStagesRequest request)
+        public virtual GetStagesResponse GetStages(GetStagesRequest request)
         {
             var marshaller = new GetStagesRequestMarshaller();
             var unmarshaller = GetStagesResponseUnmarshaller.Instance;
@@ -3995,7 +3995,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetStagesResponse> GetStagesAsync(GetStagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetStagesResponse> GetStagesAsync(GetStagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetStagesRequestMarshaller();
             var unmarshaller = GetStagesResponseUnmarshaller.Instance;
@@ -4028,7 +4028,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetUsageResponse GetUsage(GetUsageRequest request)
+        public virtual GetUsageResponse GetUsage(GetUsageRequest request)
         {
             var marshaller = new GetUsageRequestMarshaller();
             var unmarshaller = GetUsageResponseUnmarshaller.Instance;
@@ -4045,7 +4045,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetUsageResponse> GetUsageAsync(GetUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetUsageResponse> GetUsageAsync(GetUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetUsageRequestMarshaller();
             var unmarshaller = GetUsageResponseUnmarshaller.Instance;
@@ -4078,7 +4078,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetUsagePlanResponse GetUsagePlan(GetUsagePlanRequest request)
+        public virtual GetUsagePlanResponse GetUsagePlan(GetUsagePlanRequest request)
         {
             var marshaller = new GetUsagePlanRequestMarshaller();
             var unmarshaller = GetUsagePlanResponseUnmarshaller.Instance;
@@ -4095,7 +4095,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetUsagePlanResponse> GetUsagePlanAsync(GetUsagePlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetUsagePlanResponse> GetUsagePlanAsync(GetUsagePlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetUsagePlanRequestMarshaller();
             var unmarshaller = GetUsagePlanResponseUnmarshaller.Instance;
@@ -4128,7 +4128,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetUsagePlanKeyResponse GetUsagePlanKey(GetUsagePlanKeyRequest request)
+        public virtual GetUsagePlanKeyResponse GetUsagePlanKey(GetUsagePlanKeyRequest request)
         {
             var marshaller = new GetUsagePlanKeyRequestMarshaller();
             var unmarshaller = GetUsagePlanKeyResponseUnmarshaller.Instance;
@@ -4145,7 +4145,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetUsagePlanKeyResponse> GetUsagePlanKeyAsync(GetUsagePlanKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetUsagePlanKeyResponse> GetUsagePlanKeyAsync(GetUsagePlanKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetUsagePlanKeyRequestMarshaller();
             var unmarshaller = GetUsagePlanKeyResponseUnmarshaller.Instance;
@@ -4179,7 +4179,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetUsagePlanKeysResponse GetUsagePlanKeys(GetUsagePlanKeysRequest request)
+        public virtual GetUsagePlanKeysResponse GetUsagePlanKeys(GetUsagePlanKeysRequest request)
         {
             var marshaller = new GetUsagePlanKeysRequestMarshaller();
             var unmarshaller = GetUsagePlanKeysResponseUnmarshaller.Instance;
@@ -4196,7 +4196,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetUsagePlanKeysResponse> GetUsagePlanKeysAsync(GetUsagePlanKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetUsagePlanKeysResponse> GetUsagePlanKeysAsync(GetUsagePlanKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetUsagePlanKeysRequestMarshaller();
             var unmarshaller = GetUsagePlanKeysResponseUnmarshaller.Instance;
@@ -4232,7 +4232,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public GetUsagePlansResponse GetUsagePlans(GetUsagePlansRequest request)
+        public virtual GetUsagePlansResponse GetUsagePlans(GetUsagePlansRequest request)
         {
             var marshaller = new GetUsagePlansRequestMarshaller();
             var unmarshaller = GetUsagePlansResponseUnmarshaller.Instance;
@@ -4249,7 +4249,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetUsagePlansResponse> GetUsagePlansAsync(GetUsagePlansRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetUsagePlansResponse> GetUsagePlansAsync(GetUsagePlansRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetUsagePlansRequestMarshaller();
             var unmarshaller = GetUsagePlansResponseUnmarshaller.Instance;
@@ -4288,7 +4288,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public ImportApiKeysResponse ImportApiKeys(ImportApiKeysRequest request)
+        public virtual ImportApiKeysResponse ImportApiKeys(ImportApiKeysRequest request)
         {
             var marshaller = new ImportApiKeysRequestMarshaller();
             var unmarshaller = ImportApiKeysResponseUnmarshaller.Instance;
@@ -4305,7 +4305,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<ImportApiKeysResponse> ImportApiKeysAsync(ImportApiKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ImportApiKeysResponse> ImportApiKeysAsync(ImportApiKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ImportApiKeysRequestMarshaller();
             var unmarshaller = ImportApiKeysResponseUnmarshaller.Instance;
@@ -4341,7 +4341,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public ImportDocumentationPartsResponse ImportDocumentationParts(ImportDocumentationPartsRequest request)
+        public virtual ImportDocumentationPartsResponse ImportDocumentationParts(ImportDocumentationPartsRequest request)
         {
             var marshaller = new ImportDocumentationPartsRequestMarshaller();
             var unmarshaller = ImportDocumentationPartsResponseUnmarshaller.Instance;
@@ -4358,7 +4358,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<ImportDocumentationPartsResponse> ImportDocumentationPartsAsync(ImportDocumentationPartsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ImportDocumentationPartsResponse> ImportDocumentationPartsAsync(ImportDocumentationPartsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ImportDocumentationPartsRequestMarshaller();
             var unmarshaller = ImportDocumentationPartsResponseUnmarshaller.Instance;
@@ -4395,7 +4395,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public ImportRestApiResponse ImportRestApi(ImportRestApiRequest request)
+        public virtual ImportRestApiResponse ImportRestApi(ImportRestApiRequest request)
         {
             var marshaller = new ImportRestApiRequestMarshaller();
             var unmarshaller = ImportRestApiResponseUnmarshaller.Instance;
@@ -4412,7 +4412,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<ImportRestApiResponse> ImportRestApiAsync(ImportRestApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ImportRestApiResponse> ImportRestApiAsync(ImportRestApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ImportRestApiRequestMarshaller();
             var unmarshaller = ImportRestApiResponseUnmarshaller.Instance;
@@ -4449,7 +4449,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public PutGatewayResponseResponse PutGatewayResponse(PutGatewayResponseRequest request)
+        public virtual PutGatewayResponseResponse PutGatewayResponse(PutGatewayResponseRequest request)
         {
             var marshaller = new PutGatewayResponseRequestMarshaller();
             var unmarshaller = PutGatewayResponseResponseUnmarshaller.Instance;
@@ -4466,7 +4466,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<PutGatewayResponseResponse> PutGatewayResponseAsync(PutGatewayResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PutGatewayResponseResponse> PutGatewayResponseAsync(PutGatewayResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutGatewayResponseRequestMarshaller();
             var unmarshaller = PutGatewayResponseResponseUnmarshaller.Instance;
@@ -4502,7 +4502,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public PutIntegrationResponse PutIntegration(PutIntegrationRequest request)
+        public virtual PutIntegrationResponse PutIntegration(PutIntegrationRequest request)
         {
             var marshaller = new PutIntegrationRequestMarshaller();
             var unmarshaller = PutIntegrationResponseUnmarshaller.Instance;
@@ -4519,7 +4519,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<PutIntegrationResponse> PutIntegrationAsync(PutIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PutIntegrationResponse> PutIntegrationAsync(PutIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutIntegrationRequestMarshaller();
             var unmarshaller = PutIntegrationResponseUnmarshaller.Instance;
@@ -4558,7 +4558,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public PutIntegrationResponseResponse PutIntegrationResponse(PutIntegrationResponseRequest request)
+        public virtual PutIntegrationResponseResponse PutIntegrationResponse(PutIntegrationResponseRequest request)
         {
             var marshaller = new PutIntegrationResponseRequestMarshaller();
             var unmarshaller = PutIntegrationResponseResponseUnmarshaller.Instance;
@@ -4575,7 +4575,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<PutIntegrationResponseResponse> PutIntegrationResponseAsync(PutIntegrationResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PutIntegrationResponseResponse> PutIntegrationResponseAsync(PutIntegrationResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutIntegrationResponseRequestMarshaller();
             var unmarshaller = PutIntegrationResponseResponseUnmarshaller.Instance;
@@ -4614,7 +4614,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public PutMethodResponse PutMethod(PutMethodRequest request)
+        public virtual PutMethodResponse PutMethod(PutMethodRequest request)
         {
             var marshaller = new PutMethodRequestMarshaller();
             var unmarshaller = PutMethodResponseUnmarshaller.Instance;
@@ -4631,7 +4631,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<PutMethodResponse> PutMethodAsync(PutMethodRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PutMethodResponse> PutMethodAsync(PutMethodRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutMethodRequestMarshaller();
             var unmarshaller = PutMethodResponseUnmarshaller.Instance;
@@ -4670,7 +4670,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public PutMethodResponseResponse PutMethodResponse(PutMethodResponseRequest request)
+        public virtual PutMethodResponseResponse PutMethodResponse(PutMethodResponseRequest request)
         {
             var marshaller = new PutMethodResponseRequestMarshaller();
             var unmarshaller = PutMethodResponseResponseUnmarshaller.Instance;
@@ -4687,7 +4687,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<PutMethodResponseResponse> PutMethodResponseAsync(PutMethodResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PutMethodResponseResponse> PutMethodResponseAsync(PutMethodResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutMethodResponseRequestMarshaller();
             var unmarshaller = PutMethodResponseResponseUnmarshaller.Instance;
@@ -4728,7 +4728,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public PutRestApiResponse PutRestApi(PutRestApiRequest request)
+        public virtual PutRestApiResponse PutRestApi(PutRestApiRequest request)
         {
             var marshaller = new PutRestApiRequestMarshaller();
             var unmarshaller = PutRestApiResponseUnmarshaller.Instance;
@@ -4745,7 +4745,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<PutRestApiResponse> PutRestApiAsync(PutRestApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PutRestApiResponse> PutRestApiAsync(PutRestApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutRestApiRequestMarshaller();
             var unmarshaller = PutRestApiResponseUnmarshaller.Instance;
@@ -4782,7 +4782,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public TestInvokeAuthorizerResponse TestInvokeAuthorizer(TestInvokeAuthorizerRequest request)
+        public virtual TestInvokeAuthorizerResponse TestInvokeAuthorizer(TestInvokeAuthorizerRequest request)
         {
             var marshaller = new TestInvokeAuthorizerRequestMarshaller();
             var unmarshaller = TestInvokeAuthorizerResponseUnmarshaller.Instance;
@@ -4799,7 +4799,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<TestInvokeAuthorizerResponse> TestInvokeAuthorizerAsync(TestInvokeAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<TestInvokeAuthorizerResponse> TestInvokeAuthorizerAsync(TestInvokeAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new TestInvokeAuthorizerRequestMarshaller();
             var unmarshaller = TestInvokeAuthorizerResponseUnmarshaller.Instance;
@@ -4833,7 +4833,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public TestInvokeMethodResponse TestInvokeMethod(TestInvokeMethodRequest request)
+        public virtual TestInvokeMethodResponse TestInvokeMethod(TestInvokeMethodRequest request)
         {
             var marshaller = new TestInvokeMethodRequestMarshaller();
             var unmarshaller = TestInvokeMethodResponseUnmarshaller.Instance;
@@ -4850,7 +4850,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<TestInvokeMethodResponse> TestInvokeMethodAsync(TestInvokeMethodRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<TestInvokeMethodResponse> TestInvokeMethodAsync(TestInvokeMethodRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new TestInvokeMethodRequestMarshaller();
             var unmarshaller = TestInvokeMethodResponseUnmarshaller.Instance;
@@ -4883,7 +4883,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public UpdateAccountResponse UpdateAccount(UpdateAccountRequest request)
+        public virtual UpdateAccountResponse UpdateAccount(UpdateAccountRequest request)
         {
             var marshaller = new UpdateAccountRequestMarshaller();
             var unmarshaller = UpdateAccountResponseUnmarshaller.Instance;
@@ -4900,7 +4900,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateAccountResponse> UpdateAccountAsync(UpdateAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateAccountResponse> UpdateAccountAsync(UpdateAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateAccountRequestMarshaller();
             var unmarshaller = UpdateAccountResponseUnmarshaller.Instance;
@@ -4936,7 +4936,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public UpdateApiKeyResponse UpdateApiKey(UpdateApiKeyRequest request)
+        public virtual UpdateApiKeyResponse UpdateApiKey(UpdateApiKeyRequest request)
         {
             var marshaller = new UpdateApiKeyRequestMarshaller();
             var unmarshaller = UpdateApiKeyResponseUnmarshaller.Instance;
@@ -4953,7 +4953,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateApiKeyResponse> UpdateApiKeyAsync(UpdateApiKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateApiKeyResponse> UpdateApiKeyAsync(UpdateApiKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateApiKeyRequestMarshaller();
             var unmarshaller = UpdateApiKeyResponseUnmarshaller.Instance;
@@ -4989,7 +4989,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public UpdateAuthorizerResponse UpdateAuthorizer(UpdateAuthorizerRequest request)
+        public virtual UpdateAuthorizerResponse UpdateAuthorizer(UpdateAuthorizerRequest request)
         {
             var marshaller = new UpdateAuthorizerRequestMarshaller();
             var unmarshaller = UpdateAuthorizerResponseUnmarshaller.Instance;
@@ -5006,7 +5006,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateAuthorizerResponse> UpdateAuthorizerAsync(UpdateAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateAuthorizerResponse> UpdateAuthorizerAsync(UpdateAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateAuthorizerRequestMarshaller();
             var unmarshaller = UpdateAuthorizerResponseUnmarshaller.Instance;
@@ -5042,7 +5042,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public UpdateBasePathMappingResponse UpdateBasePathMapping(UpdateBasePathMappingRequest request)
+        public virtual UpdateBasePathMappingResponse UpdateBasePathMapping(UpdateBasePathMappingRequest request)
         {
             var marshaller = new UpdateBasePathMappingRequestMarshaller();
             var unmarshaller = UpdateBasePathMappingResponseUnmarshaller.Instance;
@@ -5059,7 +5059,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateBasePathMappingResponse> UpdateBasePathMappingAsync(UpdateBasePathMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateBasePathMappingResponse> UpdateBasePathMappingAsync(UpdateBasePathMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateBasePathMappingRequestMarshaller();
             var unmarshaller = UpdateBasePathMappingResponseUnmarshaller.Instance;
@@ -5092,7 +5092,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public UpdateClientCertificateResponse UpdateClientCertificate(UpdateClientCertificateRequest request)
+        public virtual UpdateClientCertificateResponse UpdateClientCertificate(UpdateClientCertificateRequest request)
         {
             var marshaller = new UpdateClientCertificateRequestMarshaller();
             var unmarshaller = UpdateClientCertificateResponseUnmarshaller.Instance;
@@ -5109,7 +5109,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateClientCertificateResponse> UpdateClientCertificateAsync(UpdateClientCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateClientCertificateResponse> UpdateClientCertificateAsync(UpdateClientCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateClientCertificateRequestMarshaller();
             var unmarshaller = UpdateClientCertificateResponseUnmarshaller.Instance;
@@ -5146,7 +5146,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public UpdateDeploymentResponse UpdateDeployment(UpdateDeploymentRequest request)
+        public virtual UpdateDeploymentResponse UpdateDeployment(UpdateDeploymentRequest request)
         {
             var marshaller = new UpdateDeploymentRequestMarshaller();
             var unmarshaller = UpdateDeploymentResponseUnmarshaller.Instance;
@@ -5163,7 +5163,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateDeploymentResponse> UpdateDeploymentAsync(UpdateDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateDeploymentResponse> UpdateDeploymentAsync(UpdateDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateDeploymentRequestMarshaller();
             var unmarshaller = UpdateDeploymentResponseUnmarshaller.Instance;
@@ -5202,7 +5202,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public UpdateDocumentationPartResponse UpdateDocumentationPart(UpdateDocumentationPartRequest request)
+        public virtual UpdateDocumentationPartResponse UpdateDocumentationPart(UpdateDocumentationPartRequest request)
         {
             var marshaller = new UpdateDocumentationPartRequestMarshaller();
             var unmarshaller = UpdateDocumentationPartResponseUnmarshaller.Instance;
@@ -5219,7 +5219,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateDocumentationPartResponse> UpdateDocumentationPartAsync(UpdateDocumentationPartRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateDocumentationPartResponse> UpdateDocumentationPartAsync(UpdateDocumentationPartRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateDocumentationPartRequestMarshaller();
             var unmarshaller = UpdateDocumentationPartResponseUnmarshaller.Instance;
@@ -5255,7 +5255,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public UpdateDocumentationVersionResponse UpdateDocumentationVersion(UpdateDocumentationVersionRequest request)
+        public virtual UpdateDocumentationVersionResponse UpdateDocumentationVersion(UpdateDocumentationVersionRequest request)
         {
             var marshaller = new UpdateDocumentationVersionRequestMarshaller();
             var unmarshaller = UpdateDocumentationVersionResponseUnmarshaller.Instance;
@@ -5272,7 +5272,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateDocumentationVersionResponse> UpdateDocumentationVersionAsync(UpdateDocumentationVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateDocumentationVersionResponse> UpdateDocumentationVersionAsync(UpdateDocumentationVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateDocumentationVersionRequestMarshaller();
             var unmarshaller = UpdateDocumentationVersionResponseUnmarshaller.Instance;
@@ -5308,7 +5308,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public UpdateDomainNameResponse UpdateDomainName(UpdateDomainNameRequest request)
+        public virtual UpdateDomainNameResponse UpdateDomainName(UpdateDomainNameRequest request)
         {
             var marshaller = new UpdateDomainNameRequestMarshaller();
             var unmarshaller = UpdateDomainNameResponseUnmarshaller.Instance;
@@ -5325,7 +5325,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateDomainNameResponse> UpdateDomainNameAsync(UpdateDomainNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateDomainNameResponse> UpdateDomainNameAsync(UpdateDomainNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateDomainNameRequestMarshaller();
             var unmarshaller = UpdateDomainNameResponseUnmarshaller.Instance;
@@ -5358,7 +5358,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public UpdateGatewayResponseResponse UpdateGatewayResponse(UpdateGatewayResponseRequest request)
+        public virtual UpdateGatewayResponseResponse UpdateGatewayResponse(UpdateGatewayResponseRequest request)
         {
             var marshaller = new UpdateGatewayResponseRequestMarshaller();
             var unmarshaller = UpdateGatewayResponseResponseUnmarshaller.Instance;
@@ -5375,7 +5375,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateGatewayResponseResponse> UpdateGatewayResponseAsync(UpdateGatewayResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateGatewayResponseResponse> UpdateGatewayResponseAsync(UpdateGatewayResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateGatewayResponseRequestMarshaller();
             var unmarshaller = UpdateGatewayResponseResponseUnmarshaller.Instance;
@@ -5411,7 +5411,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public UpdateIntegrationResponse UpdateIntegration(UpdateIntegrationRequest request)
+        public virtual UpdateIntegrationResponse UpdateIntegration(UpdateIntegrationRequest request)
         {
             var marshaller = new UpdateIntegrationRequestMarshaller();
             var unmarshaller = UpdateIntegrationResponseUnmarshaller.Instance;
@@ -5428,7 +5428,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateIntegrationResponse> UpdateIntegrationAsync(UpdateIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateIntegrationResponse> UpdateIntegrationAsync(UpdateIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateIntegrationRequestMarshaller();
             var unmarshaller = UpdateIntegrationResponseUnmarshaller.Instance;
@@ -5464,7 +5464,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public UpdateIntegrationResponseResponse UpdateIntegrationResponse(UpdateIntegrationResponseRequest request)
+        public virtual UpdateIntegrationResponseResponse UpdateIntegrationResponse(UpdateIntegrationResponseRequest request)
         {
             var marshaller = new UpdateIntegrationResponseRequestMarshaller();
             var unmarshaller = UpdateIntegrationResponseResponseUnmarshaller.Instance;
@@ -5481,7 +5481,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateIntegrationResponseResponse> UpdateIntegrationResponseAsync(UpdateIntegrationResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateIntegrationResponseResponse> UpdateIntegrationResponseAsync(UpdateIntegrationResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateIntegrationResponseRequestMarshaller();
             var unmarshaller = UpdateIntegrationResponseResponseUnmarshaller.Instance;
@@ -5517,7 +5517,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public UpdateMethodResponse UpdateMethod(UpdateMethodRequest request)
+        public virtual UpdateMethodResponse UpdateMethod(UpdateMethodRequest request)
         {
             var marshaller = new UpdateMethodRequestMarshaller();
             var unmarshaller = UpdateMethodResponseUnmarshaller.Instance;
@@ -5534,7 +5534,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateMethodResponse> UpdateMethodAsync(UpdateMethodRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateMethodResponse> UpdateMethodAsync(UpdateMethodRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateMethodRequestMarshaller();
             var unmarshaller = UpdateMethodResponseUnmarshaller.Instance;
@@ -5573,7 +5573,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public UpdateMethodResponseResponse UpdateMethodResponse(UpdateMethodResponseRequest request)
+        public virtual UpdateMethodResponseResponse UpdateMethodResponse(UpdateMethodResponseRequest request)
         {
             var marshaller = new UpdateMethodResponseRequestMarshaller();
             var unmarshaller = UpdateMethodResponseResponseUnmarshaller.Instance;
@@ -5590,7 +5590,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateMethodResponseResponse> UpdateMethodResponseAsync(UpdateMethodResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateMethodResponseResponse> UpdateMethodResponseAsync(UpdateMethodResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateMethodResponseRequestMarshaller();
             var unmarshaller = UpdateMethodResponseResponseUnmarshaller.Instance;
@@ -5626,7 +5626,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public UpdateModelResponse UpdateModel(UpdateModelRequest request)
+        public virtual UpdateModelResponse UpdateModel(UpdateModelRequest request)
         {
             var marshaller = new UpdateModelRequestMarshaller();
             var unmarshaller = UpdateModelResponseUnmarshaller.Instance;
@@ -5643,7 +5643,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateModelResponse> UpdateModelAsync(UpdateModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateModelResponse> UpdateModelAsync(UpdateModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateModelRequestMarshaller();
             var unmarshaller = UpdateModelResponseUnmarshaller.Instance;
@@ -5676,7 +5676,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public UpdateRequestValidatorResponse UpdateRequestValidator(UpdateRequestValidatorRequest request)
+        public virtual UpdateRequestValidatorResponse UpdateRequestValidator(UpdateRequestValidatorRequest request)
         {
             var marshaller = new UpdateRequestValidatorRequestMarshaller();
             var unmarshaller = UpdateRequestValidatorResponseUnmarshaller.Instance;
@@ -5693,7 +5693,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateRequestValidatorResponse> UpdateRequestValidatorAsync(UpdateRequestValidatorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateRequestValidatorResponse> UpdateRequestValidatorAsync(UpdateRequestValidatorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateRequestValidatorRequestMarshaller();
             var unmarshaller = UpdateRequestValidatorResponseUnmarshaller.Instance;
@@ -5729,7 +5729,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public UpdateResourceResponse UpdateResource(UpdateResourceRequest request)
+        public virtual UpdateResourceResponse UpdateResource(UpdateResourceRequest request)
         {
             var marshaller = new UpdateResourceRequestMarshaller();
             var unmarshaller = UpdateResourceResponseUnmarshaller.Instance;
@@ -5746,7 +5746,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateResourceResponse> UpdateResourceAsync(UpdateResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateResourceResponse> UpdateResourceAsync(UpdateResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateResourceRequestMarshaller();
             var unmarshaller = UpdateResourceResponseUnmarshaller.Instance;
@@ -5782,7 +5782,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public UpdateRestApiResponse UpdateRestApi(UpdateRestApiRequest request)
+        public virtual UpdateRestApiResponse UpdateRestApi(UpdateRestApiRequest request)
         {
             var marshaller = new UpdateRestApiRequestMarshaller();
             var unmarshaller = UpdateRestApiResponseUnmarshaller.Instance;
@@ -5799,7 +5799,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateRestApiResponse> UpdateRestApiAsync(UpdateRestApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateRestApiResponse> UpdateRestApiAsync(UpdateRestApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateRestApiRequestMarshaller();
             var unmarshaller = UpdateRestApiResponseUnmarshaller.Instance;
@@ -5835,7 +5835,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public UpdateStageResponse UpdateStage(UpdateStageRequest request)
+        public virtual UpdateStageResponse UpdateStage(UpdateStageRequest request)
         {
             var marshaller = new UpdateStageRequestMarshaller();
             var unmarshaller = UpdateStageResponseUnmarshaller.Instance;
@@ -5852,7 +5852,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateStageResponse> UpdateStageAsync(UpdateStageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateStageResponse> UpdateStageAsync(UpdateStageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateStageRequestMarshaller();
             var unmarshaller = UpdateStageResponseUnmarshaller.Instance;
@@ -5886,7 +5886,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public UpdateUsageResponse UpdateUsage(UpdateUsageRequest request)
+        public virtual UpdateUsageResponse UpdateUsage(UpdateUsageRequest request)
         {
             var marshaller = new UpdateUsageRequestMarshaller();
             var unmarshaller = UpdateUsageResponseUnmarshaller.Instance;
@@ -5903,7 +5903,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateUsageResponse> UpdateUsageAsync(UpdateUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateUsageResponse> UpdateUsageAsync(UpdateUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateUsageRequestMarshaller();
             var unmarshaller = UpdateUsageResponseUnmarshaller.Instance;
@@ -5939,7 +5939,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
-        public UpdateUsagePlanResponse UpdateUsagePlan(UpdateUsagePlanRequest request)
+        public virtual UpdateUsagePlanResponse UpdateUsagePlan(UpdateUsagePlanRequest request)
         {
             var marshaller = new UpdateUsagePlanRequestMarshaller();
             var unmarshaller = UpdateUsagePlanResponseUnmarshaller.Instance;
@@ -5956,7 +5956,7 @@ namespace Amazon.APIGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateUsagePlanResponse> UpdateUsagePlanAsync(UpdateUsagePlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateUsagePlanResponse> UpdateUsagePlanAsync(UpdateUsagePlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateUsagePlanRequestMarshaller();
             var unmarshaller = UpdateUsagePlanResponseUnmarshaller.Instance;

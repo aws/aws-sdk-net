@@ -281,7 +281,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AddFacetToObject">REST API Reference for AddFacetToObject Operation</seealso>
-        public AddFacetToObjectResponse AddFacetToObject(AddFacetToObjectRequest request)
+        public virtual AddFacetToObjectResponse AddFacetToObject(AddFacetToObjectRequest request)
         {
             var marshaller = new AddFacetToObjectRequestMarshaller();
             var unmarshaller = AddFacetToObjectResponseUnmarshaller.Instance;
@@ -299,7 +299,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AddFacetToObject">REST API Reference for AddFacetToObject Operation</seealso>
-        public Task<AddFacetToObjectResponse> AddFacetToObjectAsync(AddFacetToObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<AddFacetToObjectResponse> AddFacetToObjectAsync(AddFacetToObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AddFacetToObjectRequestMarshaller();
             var unmarshaller = AddFacetToObjectResponseUnmarshaller.Instance;
@@ -356,7 +356,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ApplySchema">REST API Reference for ApplySchema Operation</seealso>
-        public ApplySchemaResponse ApplySchema(ApplySchemaRequest request)
+        public virtual ApplySchemaResponse ApplySchema(ApplySchemaRequest request)
         {
             var marshaller = new ApplySchemaRequestMarshaller();
             var unmarshaller = ApplySchemaResponseUnmarshaller.Instance;
@@ -374,7 +374,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ApplySchema">REST API Reference for ApplySchema Operation</seealso>
-        public Task<ApplySchemaResponse> ApplySchemaAsync(ApplySchemaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ApplySchemaResponse> ApplySchemaAsync(ApplySchemaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ApplySchemaRequestMarshaller();
             var unmarshaller = ApplySchemaResponseUnmarshaller.Instance;
@@ -454,7 +454,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachObject">REST API Reference for AttachObject Operation</seealso>
-        public AttachObjectResponse AttachObject(AttachObjectRequest request)
+        public virtual AttachObjectResponse AttachObject(AttachObjectRequest request)
         {
             var marshaller = new AttachObjectRequestMarshaller();
             var unmarshaller = AttachObjectResponseUnmarshaller.Instance;
@@ -472,7 +472,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachObject">REST API Reference for AttachObject Operation</seealso>
-        public Task<AttachObjectResponse> AttachObjectAsync(AttachObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<AttachObjectResponse> AttachObjectAsync(AttachObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AttachObjectRequestMarshaller();
             var unmarshaller = AttachObjectResponseUnmarshaller.Instance;
@@ -533,7 +533,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachPolicy">REST API Reference for AttachPolicy Operation</seealso>
-        public AttachPolicyResponse AttachPolicy(AttachPolicyRequest request)
+        public virtual AttachPolicyResponse AttachPolicy(AttachPolicyRequest request)
         {
             var marshaller = new AttachPolicyRequestMarshaller();
             var unmarshaller = AttachPolicyResponseUnmarshaller.Instance;
@@ -551,7 +551,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachPolicy">REST API Reference for AttachPolicy Operation</seealso>
-        public Task<AttachPolicyResponse> AttachPolicyAsync(AttachPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<AttachPolicyResponse> AttachPolicyAsync(AttachPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AttachPolicyRequestMarshaller();
             var unmarshaller = AttachPolicyResponseUnmarshaller.Instance;
@@ -616,7 +616,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachToIndex">REST API Reference for AttachToIndex Operation</seealso>
-        public AttachToIndexResponse AttachToIndex(AttachToIndexRequest request)
+        public virtual AttachToIndexResponse AttachToIndex(AttachToIndexRequest request)
         {
             var marshaller = new AttachToIndexRequestMarshaller();
             var unmarshaller = AttachToIndexResponseUnmarshaller.Instance;
@@ -634,7 +634,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachToIndex">REST API Reference for AttachToIndex Operation</seealso>
-        public Task<AttachToIndexResponse> AttachToIndexAsync(AttachToIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<AttachToIndexResponse> AttachToIndexAsync(AttachToIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AttachToIndexRequestMarshaller();
             var unmarshaller = AttachToIndexResponseUnmarshaller.Instance;
@@ -702,7 +702,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachTypedLink">REST API Reference for AttachTypedLink Operation</seealso>
-        public AttachTypedLinkResponse AttachTypedLink(AttachTypedLinkRequest request)
+        public virtual AttachTypedLinkResponse AttachTypedLink(AttachTypedLinkRequest request)
         {
             var marshaller = new AttachTypedLinkRequestMarshaller();
             var unmarshaller = AttachTypedLinkResponseUnmarshaller.Instance;
@@ -720,7 +720,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachTypedLink">REST API Reference for AttachTypedLink Operation</seealso>
-        public Task<AttachTypedLinkResponse> AttachTypedLinkAsync(AttachTypedLinkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<AttachTypedLinkResponse> AttachTypedLinkAsync(AttachTypedLinkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AttachTypedLinkRequestMarshaller();
             var unmarshaller = AttachTypedLinkResponseUnmarshaller.Instance;
@@ -771,7 +771,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchRead">REST API Reference for BatchRead Operation</seealso>
-        public BatchReadResponse BatchRead(BatchReadRequest request)
+        public virtual BatchReadResponse BatchRead(BatchReadRequest request)
         {
             var marshaller = new BatchReadRequestMarshaller();
             var unmarshaller = BatchReadResponseUnmarshaller.Instance;
@@ -789,7 +789,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchRead">REST API Reference for BatchRead Operation</seealso>
-        public Task<BatchReadResponse> BatchReadAsync(BatchReadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<BatchReadResponse> BatchReadAsync(BatchReadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new BatchReadRequestMarshaller();
             var unmarshaller = BatchReadResponseUnmarshaller.Instance;
@@ -844,7 +844,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchWrite">REST API Reference for BatchWrite Operation</seealso>
-        public BatchWriteResponse BatchWrite(BatchWriteRequest request)
+        public virtual BatchWriteResponse BatchWrite(BatchWriteRequest request)
         {
             var marshaller = new BatchWriteRequestMarshaller();
             var unmarshaller = BatchWriteResponseUnmarshaller.Instance;
@@ -862,7 +862,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchWrite">REST API Reference for BatchWrite Operation</seealso>
-        public Task<BatchWriteResponse> BatchWriteAsync(BatchWriteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<BatchWriteResponse> BatchWriteAsync(BatchWriteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new BatchWriteRequestMarshaller();
             var unmarshaller = BatchWriteResponseUnmarshaller.Instance;
@@ -921,7 +921,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateDirectory">REST API Reference for CreateDirectory Operation</seealso>
-        public CreateDirectoryResponse CreateDirectory(CreateDirectoryRequest request)
+        public virtual CreateDirectoryResponse CreateDirectory(CreateDirectoryRequest request)
         {
             var marshaller = new CreateDirectoryRequestMarshaller();
             var unmarshaller = CreateDirectoryResponseUnmarshaller.Instance;
@@ -939,7 +939,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateDirectory">REST API Reference for CreateDirectory Operation</seealso>
-        public Task<CreateDirectoryResponse> CreateDirectoryAsync(CreateDirectoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateDirectoryResponse> CreateDirectoryAsync(CreateDirectoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateDirectoryRequestMarshaller();
             var unmarshaller = CreateDirectoryResponseUnmarshaller.Instance;
@@ -1001,7 +1001,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateFacet">REST API Reference for CreateFacet Operation</seealso>
-        public CreateFacetResponse CreateFacet(CreateFacetRequest request)
+        public virtual CreateFacetResponse CreateFacet(CreateFacetRequest request)
         {
             var marshaller = new CreateFacetRequestMarshaller();
             var unmarshaller = CreateFacetResponseUnmarshaller.Instance;
@@ -1019,7 +1019,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateFacet">REST API Reference for CreateFacet Operation</seealso>
-        public Task<CreateFacetResponse> CreateFacetAsync(CreateFacetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateFacetResponse> CreateFacetAsync(CreateFacetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateFacetRequestMarshaller();
             var unmarshaller = CreateFacetResponseUnmarshaller.Instance;
@@ -1085,7 +1085,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateIndex">REST API Reference for CreateIndex Operation</seealso>
-        public CreateIndexResponse CreateIndex(CreateIndexRequest request)
+        public virtual CreateIndexResponse CreateIndex(CreateIndexRequest request)
         {
             var marshaller = new CreateIndexRequestMarshaller();
             var unmarshaller = CreateIndexResponseUnmarshaller.Instance;
@@ -1103,7 +1103,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateIndex">REST API Reference for CreateIndex Operation</seealso>
-        public Task<CreateIndexResponse> CreateIndexAsync(CreateIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateIndexResponse> CreateIndexAsync(CreateIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateIndexRequestMarshaller();
             var unmarshaller = CreateIndexResponseUnmarshaller.Instance;
@@ -1174,7 +1174,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateObject">REST API Reference for CreateObject Operation</seealso>
-        public CreateObjectResponse CreateObject(CreateObjectRequest request)
+        public virtual CreateObjectResponse CreateObject(CreateObjectRequest request)
         {
             var marshaller = new CreateObjectRequestMarshaller();
             var unmarshaller = CreateObjectResponseUnmarshaller.Instance;
@@ -1192,7 +1192,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateObject">REST API Reference for CreateObject Operation</seealso>
-        public Task<CreateObjectResponse> CreateObjectAsync(CreateObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateObjectResponse> CreateObjectAsync(CreateObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateObjectRequestMarshaller();
             var unmarshaller = CreateObjectResponseUnmarshaller.Instance;
@@ -1265,7 +1265,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateSchema">REST API Reference for CreateSchema Operation</seealso>
-        public CreateSchemaResponse CreateSchema(CreateSchemaRequest request)
+        public virtual CreateSchemaResponse CreateSchema(CreateSchemaRequest request)
         {
             var marshaller = new CreateSchemaRequestMarshaller();
             var unmarshaller = CreateSchemaResponseUnmarshaller.Instance;
@@ -1283,7 +1283,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateSchema">REST API Reference for CreateSchema Operation</seealso>
-        public Task<CreateSchemaResponse> CreateSchemaAsync(CreateSchemaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateSchemaResponse> CreateSchemaAsync(CreateSchemaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateSchemaRequestMarshaller();
             var unmarshaller = CreateSchemaResponseUnmarshaller.Instance;
@@ -1345,7 +1345,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateTypedLinkFacet">REST API Reference for CreateTypedLinkFacet Operation</seealso>
-        public CreateTypedLinkFacetResponse CreateTypedLinkFacet(CreateTypedLinkFacetRequest request)
+        public virtual CreateTypedLinkFacetResponse CreateTypedLinkFacet(CreateTypedLinkFacetRequest request)
         {
             var marshaller = new CreateTypedLinkFacetRequestMarshaller();
             var unmarshaller = CreateTypedLinkFacetResponseUnmarshaller.Instance;
@@ -1363,7 +1363,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateTypedLinkFacet">REST API Reference for CreateTypedLinkFacet Operation</seealso>
-        public Task<CreateTypedLinkFacetResponse> CreateTypedLinkFacetAsync(CreateTypedLinkFacetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateTypedLinkFacetResponse> CreateTypedLinkFacetAsync(CreateTypedLinkFacetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateTypedLinkFacetRequestMarshaller();
             var unmarshaller = CreateTypedLinkFacetResponseUnmarshaller.Instance;
@@ -1422,7 +1422,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteDirectory">REST API Reference for DeleteDirectory Operation</seealso>
-        public DeleteDirectoryResponse DeleteDirectory(DeleteDirectoryRequest request)
+        public virtual DeleteDirectoryResponse DeleteDirectory(DeleteDirectoryRequest request)
         {
             var marshaller = new DeleteDirectoryRequestMarshaller();
             var unmarshaller = DeleteDirectoryResponseUnmarshaller.Instance;
@@ -1440,7 +1440,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteDirectory">REST API Reference for DeleteDirectory Operation</seealso>
-        public Task<DeleteDirectoryResponse> DeleteDirectoryAsync(DeleteDirectoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteDirectoryResponse> DeleteDirectoryAsync(DeleteDirectoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteDirectoryRequestMarshaller();
             var unmarshaller = DeleteDirectoryResponseUnmarshaller.Instance;
@@ -1499,7 +1499,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteFacet">REST API Reference for DeleteFacet Operation</seealso>
-        public DeleteFacetResponse DeleteFacet(DeleteFacetRequest request)
+        public virtual DeleteFacetResponse DeleteFacet(DeleteFacetRequest request)
         {
             var marshaller = new DeleteFacetRequestMarshaller();
             var unmarshaller = DeleteFacetResponseUnmarshaller.Instance;
@@ -1517,7 +1517,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteFacet">REST API Reference for DeleteFacet Operation</seealso>
-        public Task<DeleteFacetResponse> DeleteFacetAsync(DeleteFacetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteFacetResponse> DeleteFacetAsync(DeleteFacetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteFacetRequestMarshaller();
             var unmarshaller = DeleteFacetResponseUnmarshaller.Instance;
@@ -1576,7 +1576,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteObject">REST API Reference for DeleteObject Operation</seealso>
-        public DeleteObjectResponse DeleteObject(DeleteObjectRequest request)
+        public virtual DeleteObjectResponse DeleteObject(DeleteObjectRequest request)
         {
             var marshaller = new DeleteObjectRequestMarshaller();
             var unmarshaller = DeleteObjectResponseUnmarshaller.Instance;
@@ -1594,7 +1594,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteObject">REST API Reference for DeleteObject Operation</seealso>
-        public Task<DeleteObjectResponse> DeleteObjectAsync(DeleteObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteObjectResponse> DeleteObjectAsync(DeleteObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteObjectRequestMarshaller();
             var unmarshaller = DeleteObjectResponseUnmarshaller.Instance;
@@ -1649,7 +1649,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteSchema">REST API Reference for DeleteSchema Operation</seealso>
-        public DeleteSchemaResponse DeleteSchema(DeleteSchemaRequest request)
+        public virtual DeleteSchemaResponse DeleteSchema(DeleteSchemaRequest request)
         {
             var marshaller = new DeleteSchemaRequestMarshaller();
             var unmarshaller = DeleteSchemaResponseUnmarshaller.Instance;
@@ -1667,7 +1667,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteSchema">REST API Reference for DeleteSchema Operation</seealso>
-        public Task<DeleteSchemaResponse> DeleteSchemaAsync(DeleteSchemaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteSchemaResponse> DeleteSchemaAsync(DeleteSchemaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteSchemaRequestMarshaller();
             var unmarshaller = DeleteSchemaResponseUnmarshaller.Instance;
@@ -1722,7 +1722,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteTypedLinkFacet">REST API Reference for DeleteTypedLinkFacet Operation</seealso>
-        public DeleteTypedLinkFacetResponse DeleteTypedLinkFacet(DeleteTypedLinkFacetRequest request)
+        public virtual DeleteTypedLinkFacetResponse DeleteTypedLinkFacet(DeleteTypedLinkFacetRequest request)
         {
             var marshaller = new DeleteTypedLinkFacetRequestMarshaller();
             var unmarshaller = DeleteTypedLinkFacetResponseUnmarshaller.Instance;
@@ -1740,7 +1740,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteTypedLinkFacet">REST API Reference for DeleteTypedLinkFacet Operation</seealso>
-        public Task<DeleteTypedLinkFacetResponse> DeleteTypedLinkFacetAsync(DeleteTypedLinkFacetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteTypedLinkFacetResponse> DeleteTypedLinkFacetAsync(DeleteTypedLinkFacetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteTypedLinkFacetRequestMarshaller();
             var unmarshaller = DeleteTypedLinkFacetResponseUnmarshaller.Instance;
@@ -1800,7 +1800,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachFromIndex">REST API Reference for DetachFromIndex Operation</seealso>
-        public DetachFromIndexResponse DetachFromIndex(DetachFromIndexRequest request)
+        public virtual DetachFromIndexResponse DetachFromIndex(DetachFromIndexRequest request)
         {
             var marshaller = new DetachFromIndexRequestMarshaller();
             var unmarshaller = DetachFromIndexResponseUnmarshaller.Instance;
@@ -1818,7 +1818,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachFromIndex">REST API Reference for DetachFromIndex Operation</seealso>
-        public Task<DetachFromIndexResponse> DetachFromIndexAsync(DetachFromIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DetachFromIndexResponse> DetachFromIndexAsync(DetachFromIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DetachFromIndexRequestMarshaller();
             var unmarshaller = DetachFromIndexResponseUnmarshaller.Instance;
@@ -1873,7 +1873,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachObject">REST API Reference for DetachObject Operation</seealso>
-        public DetachObjectResponse DetachObject(DetachObjectRequest request)
+        public virtual DetachObjectResponse DetachObject(DetachObjectRequest request)
         {
             var marshaller = new DetachObjectRequestMarshaller();
             var unmarshaller = DetachObjectResponseUnmarshaller.Instance;
@@ -1891,7 +1891,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachObject">REST API Reference for DetachObject Operation</seealso>
-        public Task<DetachObjectResponse> DetachObjectAsync(DetachObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DetachObjectResponse> DetachObjectAsync(DetachObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DetachObjectRequestMarshaller();
             var unmarshaller = DetachObjectResponseUnmarshaller.Instance;
@@ -1951,7 +1951,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachPolicy">REST API Reference for DetachPolicy Operation</seealso>
-        public DetachPolicyResponse DetachPolicy(DetachPolicyRequest request)
+        public virtual DetachPolicyResponse DetachPolicy(DetachPolicyRequest request)
         {
             var marshaller = new DetachPolicyRequestMarshaller();
             var unmarshaller = DetachPolicyResponseUnmarshaller.Instance;
@@ -1969,7 +1969,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachPolicy">REST API Reference for DetachPolicy Operation</seealso>
-        public Task<DetachPolicyResponse> DetachPolicyAsync(DetachPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DetachPolicyResponse> DetachPolicyAsync(DetachPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DetachPolicyRequestMarshaller();
             var unmarshaller = DetachPolicyResponseUnmarshaller.Instance;
@@ -2029,7 +2029,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachTypedLink">REST API Reference for DetachTypedLink Operation</seealso>
-        public DetachTypedLinkResponse DetachTypedLink(DetachTypedLinkRequest request)
+        public virtual DetachTypedLinkResponse DetachTypedLink(DetachTypedLinkRequest request)
         {
             var marshaller = new DetachTypedLinkRequestMarshaller();
             var unmarshaller = DetachTypedLinkResponseUnmarshaller.Instance;
@@ -2047,7 +2047,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachTypedLink">REST API Reference for DetachTypedLink Operation</seealso>
-        public Task<DetachTypedLinkResponse> DetachTypedLinkAsync(DetachTypedLinkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DetachTypedLinkResponse> DetachTypedLinkAsync(DetachTypedLinkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DetachTypedLinkRequestMarshaller();
             var unmarshaller = DetachTypedLinkResponseUnmarshaller.Instance;
@@ -2103,7 +2103,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DisableDirectory">REST API Reference for DisableDirectory Operation</seealso>
-        public DisableDirectoryResponse DisableDirectory(DisableDirectoryRequest request)
+        public virtual DisableDirectoryResponse DisableDirectory(DisableDirectoryRequest request)
         {
             var marshaller = new DisableDirectoryRequestMarshaller();
             var unmarshaller = DisableDirectoryResponseUnmarshaller.Instance;
@@ -2121,7 +2121,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DisableDirectory">REST API Reference for DisableDirectory Operation</seealso>
-        public Task<DisableDirectoryResponse> DisableDirectoryAsync(DisableDirectoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DisableDirectoryResponse> DisableDirectoryAsync(DisableDirectoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DisableDirectoryRequestMarshaller();
             var unmarshaller = DisableDirectoryResponseUnmarshaller.Instance;
@@ -2177,7 +2177,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/EnableDirectory">REST API Reference for EnableDirectory Operation</seealso>
-        public EnableDirectoryResponse EnableDirectory(EnableDirectoryRequest request)
+        public virtual EnableDirectoryResponse EnableDirectory(EnableDirectoryRequest request)
         {
             var marshaller = new EnableDirectoryRequestMarshaller();
             var unmarshaller = EnableDirectoryResponseUnmarshaller.Instance;
@@ -2195,7 +2195,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/EnableDirectory">REST API Reference for EnableDirectory Operation</seealso>
-        public Task<EnableDirectoryResponse> EnableDirectoryAsync(EnableDirectoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<EnableDirectoryResponse> EnableDirectoryAsync(EnableDirectoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new EnableDirectoryRequestMarshaller();
             var unmarshaller = EnableDirectoryResponseUnmarshaller.Instance;
@@ -2243,7 +2243,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetDirectory">REST API Reference for GetDirectory Operation</seealso>
-        public GetDirectoryResponse GetDirectory(GetDirectoryRequest request)
+        public virtual GetDirectoryResponse GetDirectory(GetDirectoryRequest request)
         {
             var marshaller = new GetDirectoryRequestMarshaller();
             var unmarshaller = GetDirectoryResponseUnmarshaller.Instance;
@@ -2261,7 +2261,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetDirectory">REST API Reference for GetDirectory Operation</seealso>
-        public Task<GetDirectoryResponse> GetDirectoryAsync(GetDirectoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetDirectoryResponse> GetDirectoryAsync(GetDirectoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetDirectoryRequestMarshaller();
             var unmarshaller = GetDirectoryResponseUnmarshaller.Instance;
@@ -2317,7 +2317,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetFacet">REST API Reference for GetFacet Operation</seealso>
-        public GetFacetResponse GetFacet(GetFacetRequest request)
+        public virtual GetFacetResponse GetFacet(GetFacetRequest request)
         {
             var marshaller = new GetFacetRequestMarshaller();
             var unmarshaller = GetFacetResponseUnmarshaller.Instance;
@@ -2335,7 +2335,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetFacet">REST API Reference for GetFacet Operation</seealso>
-        public Task<GetFacetResponse> GetFacetAsync(GetFacetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetFacetResponse> GetFacetAsync(GetFacetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetFacetRequestMarshaller();
             var unmarshaller = GetFacetResponseUnmarshaller.Instance;
@@ -2389,7 +2389,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetObjectInformation">REST API Reference for GetObjectInformation Operation</seealso>
-        public GetObjectInformationResponse GetObjectInformation(GetObjectInformationRequest request)
+        public virtual GetObjectInformationResponse GetObjectInformation(GetObjectInformationRequest request)
         {
             var marshaller = new GetObjectInformationRequestMarshaller();
             var unmarshaller = GetObjectInformationResponseUnmarshaller.Instance;
@@ -2407,7 +2407,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetObjectInformation">REST API Reference for GetObjectInformation Operation</seealso>
-        public Task<GetObjectInformationResponse> GetObjectInformationAsync(GetObjectInformationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetObjectInformationResponse> GetObjectInformationAsync(GetObjectInformationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetObjectInformationRequestMarshaller();
             var unmarshaller = GetObjectInformationResponseUnmarshaller.Instance;
@@ -2462,7 +2462,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetSchemaAsJson">REST API Reference for GetSchemaAsJson Operation</seealso>
-        public GetSchemaAsJsonResponse GetSchemaAsJson(GetSchemaAsJsonRequest request)
+        public virtual GetSchemaAsJsonResponse GetSchemaAsJson(GetSchemaAsJsonRequest request)
         {
             var marshaller = new GetSchemaAsJsonRequestMarshaller();
             var unmarshaller = GetSchemaAsJsonResponseUnmarshaller.Instance;
@@ -2480,7 +2480,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetSchemaAsJson">REST API Reference for GetSchemaAsJson Operation</seealso>
-        public Task<GetSchemaAsJsonResponse> GetSchemaAsJsonAsync(GetSchemaAsJsonRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetSchemaAsJsonResponse> GetSchemaAsJsonAsync(GetSchemaAsJsonRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetSchemaAsJsonRequestMarshaller();
             var unmarshaller = GetSchemaAsJsonResponseUnmarshaller.Instance;
@@ -2539,7 +2539,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetTypedLinkFacetInformation">REST API Reference for GetTypedLinkFacetInformation Operation</seealso>
-        public GetTypedLinkFacetInformationResponse GetTypedLinkFacetInformation(GetTypedLinkFacetInformationRequest request)
+        public virtual GetTypedLinkFacetInformationResponse GetTypedLinkFacetInformation(GetTypedLinkFacetInformationRequest request)
         {
             var marshaller = new GetTypedLinkFacetInformationRequestMarshaller();
             var unmarshaller = GetTypedLinkFacetInformationResponseUnmarshaller.Instance;
@@ -2557,7 +2557,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetTypedLinkFacetInformation">REST API Reference for GetTypedLinkFacetInformation Operation</seealso>
-        public Task<GetTypedLinkFacetInformationResponse> GetTypedLinkFacetInformationAsync(GetTypedLinkFacetInformationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetTypedLinkFacetInformationResponse> GetTypedLinkFacetInformationAsync(GetTypedLinkFacetInformationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetTypedLinkFacetInformationRequestMarshaller();
             var unmarshaller = GetTypedLinkFacetInformationResponseUnmarshaller.Instance;
@@ -2611,7 +2611,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListAppliedSchemaArns">REST API Reference for ListAppliedSchemaArns Operation</seealso>
-        public ListAppliedSchemaArnsResponse ListAppliedSchemaArns(ListAppliedSchemaArnsRequest request)
+        public virtual ListAppliedSchemaArnsResponse ListAppliedSchemaArns(ListAppliedSchemaArnsRequest request)
         {
             var marshaller = new ListAppliedSchemaArnsRequestMarshaller();
             var unmarshaller = ListAppliedSchemaArnsResponseUnmarshaller.Instance;
@@ -2629,7 +2629,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListAppliedSchemaArns">REST API Reference for ListAppliedSchemaArns Operation</seealso>
-        public Task<ListAppliedSchemaArnsResponse> ListAppliedSchemaArnsAsync(ListAppliedSchemaArnsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListAppliedSchemaArnsResponse> ListAppliedSchemaArnsAsync(ListAppliedSchemaArnsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListAppliedSchemaArnsRequestMarshaller();
             var unmarshaller = ListAppliedSchemaArnsResponseUnmarshaller.Instance;
@@ -2683,7 +2683,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListAttachedIndices">REST API Reference for ListAttachedIndices Operation</seealso>
-        public ListAttachedIndicesResponse ListAttachedIndices(ListAttachedIndicesRequest request)
+        public virtual ListAttachedIndicesResponse ListAttachedIndices(ListAttachedIndicesRequest request)
         {
             var marshaller = new ListAttachedIndicesRequestMarshaller();
             var unmarshaller = ListAttachedIndicesResponseUnmarshaller.Instance;
@@ -2701,7 +2701,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListAttachedIndices">REST API Reference for ListAttachedIndices Operation</seealso>
-        public Task<ListAttachedIndicesResponse> ListAttachedIndicesAsync(ListAttachedIndicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListAttachedIndicesResponse> ListAttachedIndicesAsync(ListAttachedIndicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListAttachedIndicesRequestMarshaller();
             var unmarshaller = ListAttachedIndicesResponseUnmarshaller.Instance;
@@ -2755,7 +2755,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListDevelopmentSchemaArns">REST API Reference for ListDevelopmentSchemaArns Operation</seealso>
-        public ListDevelopmentSchemaArnsResponse ListDevelopmentSchemaArns(ListDevelopmentSchemaArnsRequest request)
+        public virtual ListDevelopmentSchemaArnsResponse ListDevelopmentSchemaArns(ListDevelopmentSchemaArnsRequest request)
         {
             var marshaller = new ListDevelopmentSchemaArnsRequestMarshaller();
             var unmarshaller = ListDevelopmentSchemaArnsResponseUnmarshaller.Instance;
@@ -2773,7 +2773,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListDevelopmentSchemaArns">REST API Reference for ListDevelopmentSchemaArns Operation</seealso>
-        public Task<ListDevelopmentSchemaArnsResponse> ListDevelopmentSchemaArnsAsync(ListDevelopmentSchemaArnsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListDevelopmentSchemaArnsResponse> ListDevelopmentSchemaArnsAsync(ListDevelopmentSchemaArnsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListDevelopmentSchemaArnsRequestMarshaller();
             var unmarshaller = ListDevelopmentSchemaArnsResponseUnmarshaller.Instance;
@@ -2824,7 +2824,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListDirectories">REST API Reference for ListDirectories Operation</seealso>
-        public ListDirectoriesResponse ListDirectories(ListDirectoriesRequest request)
+        public virtual ListDirectoriesResponse ListDirectories(ListDirectoriesRequest request)
         {
             var marshaller = new ListDirectoriesRequestMarshaller();
             var unmarshaller = ListDirectoriesResponseUnmarshaller.Instance;
@@ -2842,7 +2842,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListDirectories">REST API Reference for ListDirectories Operation</seealso>
-        public Task<ListDirectoriesResponse> ListDirectoriesAsync(ListDirectoriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListDirectoriesResponse> ListDirectoriesAsync(ListDirectoriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListDirectoriesRequestMarshaller();
             var unmarshaller = ListDirectoriesResponseUnmarshaller.Instance;
@@ -2899,7 +2899,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListFacetAttributes">REST API Reference for ListFacetAttributes Operation</seealso>
-        public ListFacetAttributesResponse ListFacetAttributes(ListFacetAttributesRequest request)
+        public virtual ListFacetAttributesResponse ListFacetAttributes(ListFacetAttributesRequest request)
         {
             var marshaller = new ListFacetAttributesRequestMarshaller();
             var unmarshaller = ListFacetAttributesResponseUnmarshaller.Instance;
@@ -2917,7 +2917,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListFacetAttributes">REST API Reference for ListFacetAttributes Operation</seealso>
-        public Task<ListFacetAttributesResponse> ListFacetAttributesAsync(ListFacetAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListFacetAttributesResponse> ListFacetAttributesAsync(ListFacetAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListFacetAttributesRequestMarshaller();
             var unmarshaller = ListFacetAttributesResponseUnmarshaller.Instance;
@@ -2971,7 +2971,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListFacetNames">REST API Reference for ListFacetNames Operation</seealso>
-        public ListFacetNamesResponse ListFacetNames(ListFacetNamesRequest request)
+        public virtual ListFacetNamesResponse ListFacetNames(ListFacetNamesRequest request)
         {
             var marshaller = new ListFacetNamesRequestMarshaller();
             var unmarshaller = ListFacetNamesResponseUnmarshaller.Instance;
@@ -2989,7 +2989,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListFacetNames">REST API Reference for ListFacetNames Operation</seealso>
-        public Task<ListFacetNamesResponse> ListFacetNamesAsync(ListFacetNamesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListFacetNamesResponse> ListFacetNamesAsync(ListFacetNamesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListFacetNamesRequestMarshaller();
             var unmarshaller = ListFacetNamesResponseUnmarshaller.Instance;
@@ -3053,7 +3053,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListIncomingTypedLinks">REST API Reference for ListIncomingTypedLinks Operation</seealso>
-        public ListIncomingTypedLinksResponse ListIncomingTypedLinks(ListIncomingTypedLinksRequest request)
+        public virtual ListIncomingTypedLinksResponse ListIncomingTypedLinks(ListIncomingTypedLinksRequest request)
         {
             var marshaller = new ListIncomingTypedLinksRequestMarshaller();
             var unmarshaller = ListIncomingTypedLinksResponseUnmarshaller.Instance;
@@ -3071,7 +3071,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListIncomingTypedLinks">REST API Reference for ListIncomingTypedLinks Operation</seealso>
-        public Task<ListIncomingTypedLinksResponse> ListIncomingTypedLinksAsync(ListIncomingTypedLinksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListIncomingTypedLinksResponse> ListIncomingTypedLinksAsync(ListIncomingTypedLinksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListIncomingTypedLinksRequestMarshaller();
             var unmarshaller = ListIncomingTypedLinksResponseUnmarshaller.Instance;
@@ -3128,7 +3128,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListIndex">REST API Reference for ListIndex Operation</seealso>
-        public ListIndexResponse ListIndex(ListIndexRequest request)
+        public virtual ListIndexResponse ListIndex(ListIndexRequest request)
         {
             var marshaller = new ListIndexRequestMarshaller();
             var unmarshaller = ListIndexResponseUnmarshaller.Instance;
@@ -3146,7 +3146,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListIndex">REST API Reference for ListIndex Operation</seealso>
-        public Task<ListIndexResponse> ListIndexAsync(ListIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListIndexResponse> ListIndexAsync(ListIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListIndexRequestMarshaller();
             var unmarshaller = ListIndexResponseUnmarshaller.Instance;
@@ -3210,7 +3210,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectAttributes">REST API Reference for ListObjectAttributes Operation</seealso>
-        public ListObjectAttributesResponse ListObjectAttributes(ListObjectAttributesRequest request)
+        public virtual ListObjectAttributesResponse ListObjectAttributes(ListObjectAttributesRequest request)
         {
             var marshaller = new ListObjectAttributesRequestMarshaller();
             var unmarshaller = ListObjectAttributesResponseUnmarshaller.Instance;
@@ -3228,7 +3228,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectAttributes">REST API Reference for ListObjectAttributes Operation</seealso>
-        public Task<ListObjectAttributesResponse> ListObjectAttributesAsync(ListObjectAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListObjectAttributesResponse> ListObjectAttributesAsync(ListObjectAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListObjectAttributesRequestMarshaller();
             var unmarshaller = ListObjectAttributesResponseUnmarshaller.Instance;
@@ -3292,7 +3292,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectChildren">REST API Reference for ListObjectChildren Operation</seealso>
-        public ListObjectChildrenResponse ListObjectChildren(ListObjectChildrenRequest request)
+        public virtual ListObjectChildrenResponse ListObjectChildren(ListObjectChildrenRequest request)
         {
             var marshaller = new ListObjectChildrenRequestMarshaller();
             var unmarshaller = ListObjectChildrenResponseUnmarshaller.Instance;
@@ -3310,7 +3310,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectChildren">REST API Reference for ListObjectChildren Operation</seealso>
-        public Task<ListObjectChildrenResponse> ListObjectChildrenAsync(ListObjectChildrenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListObjectChildrenResponse> ListObjectChildrenAsync(ListObjectChildrenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListObjectChildrenRequestMarshaller();
             var unmarshaller = ListObjectChildrenResponseUnmarshaller.Instance;
@@ -3379,7 +3379,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectParentPaths">REST API Reference for ListObjectParentPaths Operation</seealso>
-        public ListObjectParentPathsResponse ListObjectParentPaths(ListObjectParentPathsRequest request)
+        public virtual ListObjectParentPathsResponse ListObjectParentPaths(ListObjectParentPathsRequest request)
         {
             var marshaller = new ListObjectParentPathsRequestMarshaller();
             var unmarshaller = ListObjectParentPathsResponseUnmarshaller.Instance;
@@ -3397,7 +3397,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectParentPaths">REST API Reference for ListObjectParentPaths Operation</seealso>
-        public Task<ListObjectParentPathsResponse> ListObjectParentPathsAsync(ListObjectParentPathsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListObjectParentPathsResponse> ListObjectParentPathsAsync(ListObjectParentPathsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListObjectParentPathsRequestMarshaller();
             var unmarshaller = ListObjectParentPathsResponseUnmarshaller.Instance;
@@ -3460,7 +3460,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectParents">REST API Reference for ListObjectParents Operation</seealso>
-        public ListObjectParentsResponse ListObjectParents(ListObjectParentsRequest request)
+        public virtual ListObjectParentsResponse ListObjectParents(ListObjectParentsRequest request)
         {
             var marshaller = new ListObjectParentsRequestMarshaller();
             var unmarshaller = ListObjectParentsResponseUnmarshaller.Instance;
@@ -3478,7 +3478,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectParents">REST API Reference for ListObjectParents Operation</seealso>
-        public Task<ListObjectParentsResponse> ListObjectParentsAsync(ListObjectParentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListObjectParentsResponse> ListObjectParentsAsync(ListObjectParentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListObjectParentsRequestMarshaller();
             var unmarshaller = ListObjectParentsResponseUnmarshaller.Instance;
@@ -3535,7 +3535,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectPolicies">REST API Reference for ListObjectPolicies Operation</seealso>
-        public ListObjectPoliciesResponse ListObjectPolicies(ListObjectPoliciesRequest request)
+        public virtual ListObjectPoliciesResponse ListObjectPolicies(ListObjectPoliciesRequest request)
         {
             var marshaller = new ListObjectPoliciesRequestMarshaller();
             var unmarshaller = ListObjectPoliciesResponseUnmarshaller.Instance;
@@ -3553,7 +3553,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectPolicies">REST API Reference for ListObjectPolicies Operation</seealso>
-        public Task<ListObjectPoliciesResponse> ListObjectPoliciesAsync(ListObjectPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListObjectPoliciesResponse> ListObjectPoliciesAsync(ListObjectPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListObjectPoliciesRequestMarshaller();
             var unmarshaller = ListObjectPoliciesResponseUnmarshaller.Instance;
@@ -3617,7 +3617,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListOutgoingTypedLinks">REST API Reference for ListOutgoingTypedLinks Operation</seealso>
-        public ListOutgoingTypedLinksResponse ListOutgoingTypedLinks(ListOutgoingTypedLinksRequest request)
+        public virtual ListOutgoingTypedLinksResponse ListOutgoingTypedLinks(ListOutgoingTypedLinksRequest request)
         {
             var marshaller = new ListOutgoingTypedLinksRequestMarshaller();
             var unmarshaller = ListOutgoingTypedLinksResponseUnmarshaller.Instance;
@@ -3635,7 +3635,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListOutgoingTypedLinks">REST API Reference for ListOutgoingTypedLinks Operation</seealso>
-        public Task<ListOutgoingTypedLinksResponse> ListOutgoingTypedLinksAsync(ListOutgoingTypedLinksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListOutgoingTypedLinksResponse> ListOutgoingTypedLinksAsync(ListOutgoingTypedLinksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListOutgoingTypedLinksRequestMarshaller();
             var unmarshaller = ListOutgoingTypedLinksResponseUnmarshaller.Instance;
@@ -3698,7 +3698,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListPolicyAttachments">REST API Reference for ListPolicyAttachments Operation</seealso>
-        public ListPolicyAttachmentsResponse ListPolicyAttachments(ListPolicyAttachmentsRequest request)
+        public virtual ListPolicyAttachmentsResponse ListPolicyAttachments(ListPolicyAttachmentsRequest request)
         {
             var marshaller = new ListPolicyAttachmentsRequestMarshaller();
             var unmarshaller = ListPolicyAttachmentsResponseUnmarshaller.Instance;
@@ -3716,7 +3716,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListPolicyAttachments">REST API Reference for ListPolicyAttachments Operation</seealso>
-        public Task<ListPolicyAttachmentsResponse> ListPolicyAttachmentsAsync(ListPolicyAttachmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListPolicyAttachmentsResponse> ListPolicyAttachmentsAsync(ListPolicyAttachmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListPolicyAttachmentsRequestMarshaller();
             var unmarshaller = ListPolicyAttachmentsResponseUnmarshaller.Instance;
@@ -3770,7 +3770,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListPublishedSchemaArns">REST API Reference for ListPublishedSchemaArns Operation</seealso>
-        public ListPublishedSchemaArnsResponse ListPublishedSchemaArns(ListPublishedSchemaArnsRequest request)
+        public virtual ListPublishedSchemaArnsResponse ListPublishedSchemaArns(ListPublishedSchemaArnsRequest request)
         {
             var marshaller = new ListPublishedSchemaArnsRequestMarshaller();
             var unmarshaller = ListPublishedSchemaArnsResponseUnmarshaller.Instance;
@@ -3788,7 +3788,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListPublishedSchemaArns">REST API Reference for ListPublishedSchemaArns Operation</seealso>
-        public Task<ListPublishedSchemaArnsResponse> ListPublishedSchemaArnsAsync(ListPublishedSchemaArnsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListPublishedSchemaArnsResponse> ListPublishedSchemaArnsAsync(ListPublishedSchemaArnsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListPublishedSchemaArnsRequestMarshaller();
             var unmarshaller = ListPublishedSchemaArnsResponseUnmarshaller.Instance;
@@ -3846,7 +3846,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
-        public ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
@@ -3864,7 +3864,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
-        public Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
@@ -3923,7 +3923,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTypedLinkFacetAttributes">REST API Reference for ListTypedLinkFacetAttributes Operation</seealso>
-        public ListTypedLinkFacetAttributesResponse ListTypedLinkFacetAttributes(ListTypedLinkFacetAttributesRequest request)
+        public virtual ListTypedLinkFacetAttributesResponse ListTypedLinkFacetAttributes(ListTypedLinkFacetAttributesRequest request)
         {
             var marshaller = new ListTypedLinkFacetAttributesRequestMarshaller();
             var unmarshaller = ListTypedLinkFacetAttributesResponseUnmarshaller.Instance;
@@ -3941,7 +3941,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTypedLinkFacetAttributes">REST API Reference for ListTypedLinkFacetAttributes Operation</seealso>
-        public Task<ListTypedLinkFacetAttributesResponse> ListTypedLinkFacetAttributesAsync(ListTypedLinkFacetAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListTypedLinkFacetAttributesResponse> ListTypedLinkFacetAttributesAsync(ListTypedLinkFacetAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListTypedLinkFacetAttributesRequestMarshaller();
             var unmarshaller = ListTypedLinkFacetAttributesResponseUnmarshaller.Instance;
@@ -3997,7 +3997,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTypedLinkFacetNames">REST API Reference for ListTypedLinkFacetNames Operation</seealso>
-        public ListTypedLinkFacetNamesResponse ListTypedLinkFacetNames(ListTypedLinkFacetNamesRequest request)
+        public virtual ListTypedLinkFacetNamesResponse ListTypedLinkFacetNames(ListTypedLinkFacetNamesRequest request)
         {
             var marshaller = new ListTypedLinkFacetNamesRequestMarshaller();
             var unmarshaller = ListTypedLinkFacetNamesResponseUnmarshaller.Instance;
@@ -4015,7 +4015,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTypedLinkFacetNames">REST API Reference for ListTypedLinkFacetNames Operation</seealso>
-        public Task<ListTypedLinkFacetNamesResponse> ListTypedLinkFacetNamesAsync(ListTypedLinkFacetNamesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListTypedLinkFacetNamesResponse> ListTypedLinkFacetNamesAsync(ListTypedLinkFacetNamesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListTypedLinkFacetNamesRequestMarshaller();
             var unmarshaller = ListTypedLinkFacetNamesResponseUnmarshaller.Instance;
@@ -4080,7 +4080,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/LookupPolicy">REST API Reference for LookupPolicy Operation</seealso>
-        public LookupPolicyResponse LookupPolicy(LookupPolicyRequest request)
+        public virtual LookupPolicyResponse LookupPolicy(LookupPolicyRequest request)
         {
             var marshaller = new LookupPolicyRequestMarshaller();
             var unmarshaller = LookupPolicyResponseUnmarshaller.Instance;
@@ -4098,7 +4098,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/LookupPolicy">REST API Reference for LookupPolicy Operation</seealso>
-        public Task<LookupPolicyResponse> LookupPolicyAsync(LookupPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<LookupPolicyResponse> LookupPolicyAsync(LookupPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new LookupPolicyRequestMarshaller();
             var unmarshaller = LookupPolicyResponseUnmarshaller.Instance;
@@ -4154,7 +4154,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/PublishSchema">REST API Reference for PublishSchema Operation</seealso>
-        public PublishSchemaResponse PublishSchema(PublishSchemaRequest request)
+        public virtual PublishSchemaResponse PublishSchema(PublishSchemaRequest request)
         {
             var marshaller = new PublishSchemaRequestMarshaller();
             var unmarshaller = PublishSchemaResponseUnmarshaller.Instance;
@@ -4172,7 +4172,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/PublishSchema">REST API Reference for PublishSchema Operation</seealso>
-        public Task<PublishSchemaResponse> PublishSchemaAsync(PublishSchemaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PublishSchemaResponse> PublishSchemaAsync(PublishSchemaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PublishSchemaRequestMarshaller();
             var unmarshaller = PublishSchemaResponseUnmarshaller.Instance;
@@ -4228,7 +4228,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/PutSchemaFromJson">REST API Reference for PutSchemaFromJson Operation</seealso>
-        public PutSchemaFromJsonResponse PutSchemaFromJson(PutSchemaFromJsonRequest request)
+        public virtual PutSchemaFromJsonResponse PutSchemaFromJson(PutSchemaFromJsonRequest request)
         {
             var marshaller = new PutSchemaFromJsonRequestMarshaller();
             var unmarshaller = PutSchemaFromJsonResponseUnmarshaller.Instance;
@@ -4246,7 +4246,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/PutSchemaFromJson">REST API Reference for PutSchemaFromJson Operation</seealso>
-        public Task<PutSchemaFromJsonResponse> PutSchemaFromJsonAsync(PutSchemaFromJsonRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PutSchemaFromJsonResponse> PutSchemaFromJsonAsync(PutSchemaFromJsonRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutSchemaFromJsonRequestMarshaller();
             var unmarshaller = PutSchemaFromJsonResponseUnmarshaller.Instance;
@@ -4304,7 +4304,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/RemoveFacetFromObject">REST API Reference for RemoveFacetFromObject Operation</seealso>
-        public RemoveFacetFromObjectResponse RemoveFacetFromObject(RemoveFacetFromObjectRequest request)
+        public virtual RemoveFacetFromObjectResponse RemoveFacetFromObject(RemoveFacetFromObjectRequest request)
         {
             var marshaller = new RemoveFacetFromObjectRequestMarshaller();
             var unmarshaller = RemoveFacetFromObjectResponseUnmarshaller.Instance;
@@ -4322,7 +4322,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/RemoveFacetFromObject">REST API Reference for RemoveFacetFromObject Operation</seealso>
-        public Task<RemoveFacetFromObjectResponse> RemoveFacetFromObjectAsync(RemoveFacetFromObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<RemoveFacetFromObjectResponse> RemoveFacetFromObjectAsync(RemoveFacetFromObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RemoveFacetFromObjectRequestMarshaller();
             var unmarshaller = RemoveFacetFromObjectResponseUnmarshaller.Instance;
@@ -4378,7 +4378,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
-        public TagResourceResponse TagResource(TagResourceRequest request)
+        public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
             var marshaller = new TagResourceRequestMarshaller();
             var unmarshaller = TagResourceResponseUnmarshaller.Instance;
@@ -4396,7 +4396,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
-        public Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new TagResourceRequestMarshaller();
             var unmarshaller = TagResourceResponseUnmarshaller.Instance;
@@ -4452,7 +4452,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
-        public UntagResourceResponse UntagResource(UntagResourceRequest request)
+        public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
             var marshaller = new UntagResourceRequestMarshaller();
             var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
@@ -4470,7 +4470,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
-        public Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UntagResourceRequestMarshaller();
             var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
@@ -4544,7 +4544,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateFacet">REST API Reference for UpdateFacet Operation</seealso>
-        public UpdateFacetResponse UpdateFacet(UpdateFacetRequest request)
+        public virtual UpdateFacetResponse UpdateFacet(UpdateFacetRequest request)
         {
             var marshaller = new UpdateFacetRequestMarshaller();
             var unmarshaller = UpdateFacetResponseUnmarshaller.Instance;
@@ -4562,7 +4562,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateFacet">REST API Reference for UpdateFacet Operation</seealso>
-        public Task<UpdateFacetResponse> UpdateFacetAsync(UpdateFacetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateFacetResponse> UpdateFacetAsync(UpdateFacetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateFacetRequestMarshaller();
             var unmarshaller = UpdateFacetResponseUnmarshaller.Instance;
@@ -4620,7 +4620,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateObjectAttributes">REST API Reference for UpdateObjectAttributes Operation</seealso>
-        public UpdateObjectAttributesResponse UpdateObjectAttributes(UpdateObjectAttributesRequest request)
+        public virtual UpdateObjectAttributesResponse UpdateObjectAttributes(UpdateObjectAttributesRequest request)
         {
             var marshaller = new UpdateObjectAttributesRequestMarshaller();
             var unmarshaller = UpdateObjectAttributesResponseUnmarshaller.Instance;
@@ -4638,7 +4638,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateObjectAttributes">REST API Reference for UpdateObjectAttributes Operation</seealso>
-        public Task<UpdateObjectAttributesResponse> UpdateObjectAttributesAsync(UpdateObjectAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateObjectAttributesResponse> UpdateObjectAttributesAsync(UpdateObjectAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateObjectAttributesRequestMarshaller();
             var unmarshaller = UpdateObjectAttributesResponseUnmarshaller.Instance;
@@ -4689,7 +4689,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateSchema">REST API Reference for UpdateSchema Operation</seealso>
-        public UpdateSchemaResponse UpdateSchema(UpdateSchemaRequest request)
+        public virtual UpdateSchemaResponse UpdateSchema(UpdateSchemaRequest request)
         {
             var marshaller = new UpdateSchemaRequestMarshaller();
             var unmarshaller = UpdateSchemaResponseUnmarshaller.Instance;
@@ -4707,7 +4707,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateSchema">REST API Reference for UpdateSchema Operation</seealso>
-        public Task<UpdateSchemaResponse> UpdateSchemaAsync(UpdateSchemaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateSchemaResponse> UpdateSchemaAsync(UpdateSchemaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateSchemaRequestMarshaller();
             var unmarshaller = UpdateSchemaResponseUnmarshaller.Instance;
@@ -4772,7 +4772,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateTypedLinkFacet">REST API Reference for UpdateTypedLinkFacet Operation</seealso>
-        public UpdateTypedLinkFacetResponse UpdateTypedLinkFacet(UpdateTypedLinkFacetRequest request)
+        public virtual UpdateTypedLinkFacetResponse UpdateTypedLinkFacet(UpdateTypedLinkFacetRequest request)
         {
             var marshaller = new UpdateTypedLinkFacetRequestMarshaller();
             var unmarshaller = UpdateTypedLinkFacetResponseUnmarshaller.Instance;
@@ -4790,7 +4790,7 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateTypedLinkFacet">REST API Reference for UpdateTypedLinkFacet Operation</seealso>
-        public Task<UpdateTypedLinkFacetResponse> UpdateTypedLinkFacetAsync(UpdateTypedLinkFacetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateTypedLinkFacetResponse> UpdateTypedLinkFacetAsync(UpdateTypedLinkFacetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateTypedLinkFacetRequestMarshaller();
             var unmarshaller = UpdateTypedLinkFacetResponseUnmarshaller.Instance;

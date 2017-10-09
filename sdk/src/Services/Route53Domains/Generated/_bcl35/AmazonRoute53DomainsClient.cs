@@ -242,7 +242,7 @@ namespace Amazon.Route53Domains
         /// Amazon Route 53 does not support this top-level domain (TLD).
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/CheckDomainAvailability">REST API Reference for CheckDomainAvailability Operation</seealso>
-        public CheckDomainAvailabilityResponse CheckDomainAvailability(CheckDomainAvailabilityRequest request)
+        public virtual CheckDomainAvailabilityResponse CheckDomainAvailability(CheckDomainAvailabilityRequest request)
         {
             var marshaller = new CheckDomainAvailabilityRequestMarshaller();
             var unmarshaller = CheckDomainAvailabilityResponseUnmarshaller.Instance;
@@ -262,7 +262,7 @@ namespace Amazon.Route53Domains
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCheckDomainAvailability
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/CheckDomainAvailability">REST API Reference for CheckDomainAvailability Operation</seealso>
-        public IAsyncResult BeginCheckDomainAvailability(CheckDomainAvailabilityRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCheckDomainAvailability(CheckDomainAvailabilityRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CheckDomainAvailabilityRequestMarshaller();
             var unmarshaller = CheckDomainAvailabilityResponseUnmarshaller.Instance;
@@ -279,7 +279,7 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>Returns a  CheckDomainAvailabilityResult from Route53Domains.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/CheckDomainAvailability">REST API Reference for CheckDomainAvailability Operation</seealso>
-        public  CheckDomainAvailabilityResponse EndCheckDomainAvailability(IAsyncResult asyncResult)
+        public virtual CheckDomainAvailabilityResponse EndCheckDomainAvailability(IAsyncResult asyncResult)
         {
             return EndInvoke<CheckDomainAvailabilityResponse>(asyncResult);
         }
@@ -303,7 +303,7 @@ namespace Amazon.Route53Domains
         /// Amazon Route 53 does not support this top-level domain (TLD).
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/CheckDomainTransferability">REST API Reference for CheckDomainTransferability Operation</seealso>
-        public CheckDomainTransferabilityResponse CheckDomainTransferability(CheckDomainTransferabilityRequest request)
+        public virtual CheckDomainTransferabilityResponse CheckDomainTransferability(CheckDomainTransferabilityRequest request)
         {
             var marshaller = new CheckDomainTransferabilityRequestMarshaller();
             var unmarshaller = CheckDomainTransferabilityResponseUnmarshaller.Instance;
@@ -323,7 +323,7 @@ namespace Amazon.Route53Domains
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCheckDomainTransferability
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/CheckDomainTransferability">REST API Reference for CheckDomainTransferability Operation</seealso>
-        public IAsyncResult BeginCheckDomainTransferability(CheckDomainTransferabilityRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCheckDomainTransferability(CheckDomainTransferabilityRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CheckDomainTransferabilityRequestMarshaller();
             var unmarshaller = CheckDomainTransferabilityResponseUnmarshaller.Instance;
@@ -340,7 +340,7 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>Returns a  CheckDomainTransferabilityResult from Route53Domains.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/CheckDomainTransferability">REST API Reference for CheckDomainTransferability Operation</seealso>
-        public  CheckDomainTransferabilityResponse EndCheckDomainTransferability(IAsyncResult asyncResult)
+        public virtual CheckDomainTransferabilityResponse EndCheckDomainTransferability(IAsyncResult asyncResult)
         {
             return EndInvoke<CheckDomainTransferabilityResponse>(asyncResult);
         }
@@ -374,7 +374,7 @@ namespace Amazon.Route53Domains
         /// Amazon Route 53 does not support this top-level domain (TLD).
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DeleteTagsForDomain">REST API Reference for DeleteTagsForDomain Operation</seealso>
-        public DeleteTagsForDomainResponse DeleteTagsForDomain(string domainName, List<string> tagsToDelete)
+        public virtual DeleteTagsForDomainResponse DeleteTagsForDomain(string domainName, List<string> tagsToDelete)
         {
             var request = new DeleteTagsForDomainRequest();
             request.DomainName = domainName;
@@ -407,7 +407,7 @@ namespace Amazon.Route53Domains
         /// Amazon Route 53 does not support this top-level domain (TLD).
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DeleteTagsForDomain">REST API Reference for DeleteTagsForDomain Operation</seealso>
-        public DeleteTagsForDomainResponse DeleteTagsForDomain(DeleteTagsForDomainRequest request)
+        public virtual DeleteTagsForDomainResponse DeleteTagsForDomain(DeleteTagsForDomainRequest request)
         {
             var marshaller = new DeleteTagsForDomainRequestMarshaller();
             var unmarshaller = DeleteTagsForDomainResponseUnmarshaller.Instance;
@@ -427,7 +427,7 @@ namespace Amazon.Route53Domains
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTagsForDomain
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DeleteTagsForDomain">REST API Reference for DeleteTagsForDomain Operation</seealso>
-        public IAsyncResult BeginDeleteTagsForDomain(DeleteTagsForDomainRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteTagsForDomain(DeleteTagsForDomainRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteTagsForDomainRequestMarshaller();
             var unmarshaller = DeleteTagsForDomainResponseUnmarshaller.Instance;
@@ -444,7 +444,7 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>Returns a  DeleteTagsForDomainResult from Route53Domains.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DeleteTagsForDomain">REST API Reference for DeleteTagsForDomain Operation</seealso>
-        public  DeleteTagsForDomainResponse EndDeleteTagsForDomain(IAsyncResult asyncResult)
+        public virtual DeleteTagsForDomainResponse EndDeleteTagsForDomain(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteTagsForDomainResponse>(asyncResult);
         }
@@ -469,7 +469,7 @@ namespace Amazon.Route53Domains
         /// Amazon Route 53 does not support this top-level domain (TLD).
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DisableDomainAutoRenew">REST API Reference for DisableDomainAutoRenew Operation</seealso>
-        public DisableDomainAutoRenewResponse DisableDomainAutoRenew(DisableDomainAutoRenewRequest request)
+        public virtual DisableDomainAutoRenewResponse DisableDomainAutoRenew(DisableDomainAutoRenewRequest request)
         {
             var marshaller = new DisableDomainAutoRenewRequestMarshaller();
             var unmarshaller = DisableDomainAutoRenewResponseUnmarshaller.Instance;
@@ -489,7 +489,7 @@ namespace Amazon.Route53Domains
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableDomainAutoRenew
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DisableDomainAutoRenew">REST API Reference for DisableDomainAutoRenew Operation</seealso>
-        public IAsyncResult BeginDisableDomainAutoRenew(DisableDomainAutoRenewRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDisableDomainAutoRenew(DisableDomainAutoRenewRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DisableDomainAutoRenewRequestMarshaller();
             var unmarshaller = DisableDomainAutoRenewResponseUnmarshaller.Instance;
@@ -506,7 +506,7 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>Returns a  DisableDomainAutoRenewResult from Route53Domains.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DisableDomainAutoRenew">REST API Reference for DisableDomainAutoRenew Operation</seealso>
-        public  DisableDomainAutoRenewResponse EndDisableDomainAutoRenew(IAsyncResult asyncResult)
+        public virtual DisableDomainAutoRenewResponse EndDisableDomainAutoRenew(IAsyncResult asyncResult)
         {
             return EndInvoke<DisableDomainAutoRenewResponse>(asyncResult);
         }
@@ -544,7 +544,7 @@ namespace Amazon.Route53Domains
         /// Amazon Route 53 does not support this top-level domain (TLD).
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DisableDomainTransferLock">REST API Reference for DisableDomainTransferLock Operation</seealso>
-        public DisableDomainTransferLockResponse DisableDomainTransferLock(DisableDomainTransferLockRequest request)
+        public virtual DisableDomainTransferLockResponse DisableDomainTransferLock(DisableDomainTransferLockRequest request)
         {
             var marshaller = new DisableDomainTransferLockRequestMarshaller();
             var unmarshaller = DisableDomainTransferLockResponseUnmarshaller.Instance;
@@ -564,7 +564,7 @@ namespace Amazon.Route53Domains
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableDomainTransferLock
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DisableDomainTransferLock">REST API Reference for DisableDomainTransferLock Operation</seealso>
-        public IAsyncResult BeginDisableDomainTransferLock(DisableDomainTransferLockRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDisableDomainTransferLock(DisableDomainTransferLockRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DisableDomainTransferLockRequestMarshaller();
             var unmarshaller = DisableDomainTransferLockResponseUnmarshaller.Instance;
@@ -581,7 +581,7 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>Returns a  DisableDomainTransferLockResult from Route53Domains.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DisableDomainTransferLock">REST API Reference for DisableDomainTransferLock Operation</seealso>
-        public  DisableDomainTransferLockResponse EndDisableDomainTransferLock(IAsyncResult asyncResult)
+        public virtual DisableDomainTransferLockResponse EndDisableDomainTransferLock(IAsyncResult asyncResult)
         {
             return EndInvoke<DisableDomainTransferLockResponse>(asyncResult);
         }
@@ -619,7 +619,7 @@ namespace Amazon.Route53Domains
         /// Amazon Route 53 does not support this top-level domain (TLD).
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/EnableDomainAutoRenew">REST API Reference for EnableDomainAutoRenew Operation</seealso>
-        public EnableDomainAutoRenewResponse EnableDomainAutoRenew(EnableDomainAutoRenewRequest request)
+        public virtual EnableDomainAutoRenewResponse EnableDomainAutoRenew(EnableDomainAutoRenewRequest request)
         {
             var marshaller = new EnableDomainAutoRenewRequestMarshaller();
             var unmarshaller = EnableDomainAutoRenewResponseUnmarshaller.Instance;
@@ -639,7 +639,7 @@ namespace Amazon.Route53Domains
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableDomainAutoRenew
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/EnableDomainAutoRenew">REST API Reference for EnableDomainAutoRenew Operation</seealso>
-        public IAsyncResult BeginEnableDomainAutoRenew(EnableDomainAutoRenewRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginEnableDomainAutoRenew(EnableDomainAutoRenewRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new EnableDomainAutoRenewRequestMarshaller();
             var unmarshaller = EnableDomainAutoRenewResponseUnmarshaller.Instance;
@@ -656,7 +656,7 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>Returns a  EnableDomainAutoRenewResult from Route53Domains.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/EnableDomainAutoRenew">REST API Reference for EnableDomainAutoRenew Operation</seealso>
-        public  EnableDomainAutoRenewResponse EndEnableDomainAutoRenew(IAsyncResult asyncResult)
+        public virtual EnableDomainAutoRenewResponse EndEnableDomainAutoRenew(IAsyncResult asyncResult)
         {
             return EndInvoke<EnableDomainAutoRenewResponse>(asyncResult);
         }
@@ -692,7 +692,7 @@ namespace Amazon.Route53Domains
         /// Amazon Route 53 does not support this top-level domain (TLD).
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/EnableDomainTransferLock">REST API Reference for EnableDomainTransferLock Operation</seealso>
-        public EnableDomainTransferLockResponse EnableDomainTransferLock(EnableDomainTransferLockRequest request)
+        public virtual EnableDomainTransferLockResponse EnableDomainTransferLock(EnableDomainTransferLockRequest request)
         {
             var marshaller = new EnableDomainTransferLockRequestMarshaller();
             var unmarshaller = EnableDomainTransferLockResponseUnmarshaller.Instance;
@@ -712,7 +712,7 @@ namespace Amazon.Route53Domains
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableDomainTransferLock
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/EnableDomainTransferLock">REST API Reference for EnableDomainTransferLock Operation</seealso>
-        public IAsyncResult BeginEnableDomainTransferLock(EnableDomainTransferLockRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginEnableDomainTransferLock(EnableDomainTransferLockRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new EnableDomainTransferLockRequestMarshaller();
             var unmarshaller = EnableDomainTransferLockResponseUnmarshaller.Instance;
@@ -729,7 +729,7 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>Returns a  EnableDomainTransferLockResult from Route53Domains.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/EnableDomainTransferLock">REST API Reference for EnableDomainTransferLock Operation</seealso>
-        public  EnableDomainTransferLockResponse EndEnableDomainTransferLock(IAsyncResult asyncResult)
+        public virtual EnableDomainTransferLockResponse EndEnableDomainTransferLock(IAsyncResult asyncResult)
         {
             return EndInvoke<EnableDomainTransferLockResponse>(asyncResult);
         }
@@ -764,7 +764,7 @@ namespace Amazon.Route53Domains
         /// Amazon Route 53 does not support this top-level domain (TLD).
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetContactReachabilityStatus">REST API Reference for GetContactReachabilityStatus Operation</seealso>
-        public GetContactReachabilityStatusResponse GetContactReachabilityStatus(GetContactReachabilityStatusRequest request)
+        public virtual GetContactReachabilityStatusResponse GetContactReachabilityStatus(GetContactReachabilityStatusRequest request)
         {
             var marshaller = new GetContactReachabilityStatusRequestMarshaller();
             var unmarshaller = GetContactReachabilityStatusResponseUnmarshaller.Instance;
@@ -784,7 +784,7 @@ namespace Amazon.Route53Domains
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetContactReachabilityStatus
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetContactReachabilityStatus">REST API Reference for GetContactReachabilityStatus Operation</seealso>
-        public IAsyncResult BeginGetContactReachabilityStatus(GetContactReachabilityStatusRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetContactReachabilityStatus(GetContactReachabilityStatusRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetContactReachabilityStatusRequestMarshaller();
             var unmarshaller = GetContactReachabilityStatusResponseUnmarshaller.Instance;
@@ -801,7 +801,7 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>Returns a  GetContactReachabilityStatusResult from Route53Domains.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetContactReachabilityStatus">REST API Reference for GetContactReachabilityStatus Operation</seealso>
-        public  GetContactReachabilityStatusResponse EndGetContactReachabilityStatus(IAsyncResult asyncResult)
+        public virtual GetContactReachabilityStatusResponse EndGetContactReachabilityStatus(IAsyncResult asyncResult)
         {
             return EndInvoke<GetContactReachabilityStatusResponse>(asyncResult);
         }
@@ -827,7 +827,7 @@ namespace Amazon.Route53Domains
         /// Amazon Route 53 does not support this top-level domain (TLD).
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetDomainDetail">REST API Reference for GetDomainDetail Operation</seealso>
-        public GetDomainDetailResponse GetDomainDetail(GetDomainDetailRequest request)
+        public virtual GetDomainDetailResponse GetDomainDetail(GetDomainDetailRequest request)
         {
             var marshaller = new GetDomainDetailRequestMarshaller();
             var unmarshaller = GetDomainDetailResponseUnmarshaller.Instance;
@@ -847,7 +847,7 @@ namespace Amazon.Route53Domains
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDomainDetail
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetDomainDetail">REST API Reference for GetDomainDetail Operation</seealso>
-        public IAsyncResult BeginGetDomainDetail(GetDomainDetailRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetDomainDetail(GetDomainDetailRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetDomainDetailRequestMarshaller();
             var unmarshaller = GetDomainDetailResponseUnmarshaller.Instance;
@@ -864,7 +864,7 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>Returns a  GetDomainDetailResult from Route53Domains.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetDomainDetail">REST API Reference for GetDomainDetail Operation</seealso>
-        public  GetDomainDetailResponse EndGetDomainDetail(IAsyncResult asyncResult)
+        public virtual GetDomainDetailResponse EndGetDomainDetail(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDomainDetailResponse>(asyncResult);
         }
@@ -889,7 +889,7 @@ namespace Amazon.Route53Domains
         /// Amazon Route 53 does not support this top-level domain (TLD).
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetDomainSuggestions">REST API Reference for GetDomainSuggestions Operation</seealso>
-        public GetDomainSuggestionsResponse GetDomainSuggestions(GetDomainSuggestionsRequest request)
+        public virtual GetDomainSuggestionsResponse GetDomainSuggestions(GetDomainSuggestionsRequest request)
         {
             var marshaller = new GetDomainSuggestionsRequestMarshaller();
             var unmarshaller = GetDomainSuggestionsResponseUnmarshaller.Instance;
@@ -909,7 +909,7 @@ namespace Amazon.Route53Domains
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDomainSuggestions
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetDomainSuggestions">REST API Reference for GetDomainSuggestions Operation</seealso>
-        public IAsyncResult BeginGetDomainSuggestions(GetDomainSuggestionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetDomainSuggestions(GetDomainSuggestionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetDomainSuggestionsRequestMarshaller();
             var unmarshaller = GetDomainSuggestionsResponseUnmarshaller.Instance;
@@ -926,7 +926,7 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>Returns a  GetDomainSuggestionsResult from Route53Domains.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetDomainSuggestions">REST API Reference for GetDomainSuggestions Operation</seealso>
-        public  GetDomainSuggestionsResponse EndGetDomainSuggestions(IAsyncResult asyncResult)
+        public virtual GetDomainSuggestionsResponse EndGetDomainSuggestions(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDomainSuggestionsResponse>(asyncResult);
         }
@@ -947,7 +947,7 @@ namespace Amazon.Route53Domains
         /// be a valid domain name or belong to the requester account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetOperationDetail">REST API Reference for GetOperationDetail Operation</seealso>
-        public GetOperationDetailResponse GetOperationDetail(GetOperationDetailRequest request)
+        public virtual GetOperationDetailResponse GetOperationDetail(GetOperationDetailRequest request)
         {
             var marshaller = new GetOperationDetailRequestMarshaller();
             var unmarshaller = GetOperationDetailResponseUnmarshaller.Instance;
@@ -967,7 +967,7 @@ namespace Amazon.Route53Domains
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetOperationDetail
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetOperationDetail">REST API Reference for GetOperationDetail Operation</seealso>
-        public IAsyncResult BeginGetOperationDetail(GetOperationDetailRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetOperationDetail(GetOperationDetailRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetOperationDetailRequestMarshaller();
             var unmarshaller = GetOperationDetailResponseUnmarshaller.Instance;
@@ -984,7 +984,7 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>Returns a  GetOperationDetailResult from Route53Domains.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetOperationDetail">REST API Reference for GetOperationDetail Operation</seealso>
-        public  GetOperationDetailResponse EndGetOperationDetail(IAsyncResult asyncResult)
+        public virtual GetOperationDetailResponse EndGetOperationDetail(IAsyncResult asyncResult)
         {
             return EndInvoke<GetOperationDetailResponse>(asyncResult);
         }
@@ -1005,7 +1005,7 @@ namespace Amazon.Route53Domains
         /// be a valid domain name or belong to the requester account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListDomains">REST API Reference for ListDomains Operation</seealso>
-        public ListDomainsResponse ListDomains()
+        public virtual ListDomainsResponse ListDomains()
         {
             return ListDomains(new ListDomainsRequest());
         }
@@ -1023,7 +1023,7 @@ namespace Amazon.Route53Domains
         /// be a valid domain name or belong to the requester account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListDomains">REST API Reference for ListDomains Operation</seealso>
-        public ListDomainsResponse ListDomains(ListDomainsRequest request)
+        public virtual ListDomainsResponse ListDomains(ListDomainsRequest request)
         {
             var marshaller = new ListDomainsRequestMarshaller();
             var unmarshaller = ListDomainsResponseUnmarshaller.Instance;
@@ -1043,7 +1043,7 @@ namespace Amazon.Route53Domains
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDomains
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListDomains">REST API Reference for ListDomains Operation</seealso>
-        public IAsyncResult BeginListDomains(ListDomainsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListDomains(ListDomainsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListDomainsRequestMarshaller();
             var unmarshaller = ListDomainsResponseUnmarshaller.Instance;
@@ -1060,7 +1060,7 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>Returns a  ListDomainsResult from Route53Domains.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListDomains">REST API Reference for ListDomains Operation</seealso>
-        public  ListDomainsResponse EndListDomains(IAsyncResult asyncResult)
+        public virtual ListDomainsResponse EndListDomains(IAsyncResult asyncResult)
         {
             return EndInvoke<ListDomainsResponse>(asyncResult);
         }
@@ -1080,7 +1080,7 @@ namespace Amazon.Route53Domains
         /// be a valid domain name or belong to the requester account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListOperations">REST API Reference for ListOperations Operation</seealso>
-        public ListOperationsResponse ListOperations()
+        public virtual ListOperationsResponse ListOperations()
         {
             return ListOperations(new ListOperationsRequest());
         }
@@ -1097,7 +1097,7 @@ namespace Amazon.Route53Domains
         /// be a valid domain name or belong to the requester account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListOperations">REST API Reference for ListOperations Operation</seealso>
-        public ListOperationsResponse ListOperations(ListOperationsRequest request)
+        public virtual ListOperationsResponse ListOperations(ListOperationsRequest request)
         {
             var marshaller = new ListOperationsRequestMarshaller();
             var unmarshaller = ListOperationsResponseUnmarshaller.Instance;
@@ -1117,7 +1117,7 @@ namespace Amazon.Route53Domains
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListOperations
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListOperations">REST API Reference for ListOperations Operation</seealso>
-        public IAsyncResult BeginListOperations(ListOperationsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListOperations(ListOperationsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListOperationsRequestMarshaller();
             var unmarshaller = ListOperationsResponseUnmarshaller.Instance;
@@ -1134,7 +1134,7 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>Returns a  ListOperationsResult from Route53Domains.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListOperations">REST API Reference for ListOperations Operation</seealso>
-        public  ListOperationsResponse EndListOperations(IAsyncResult asyncResult)
+        public virtual ListOperationsResponse EndListOperations(IAsyncResult asyncResult)
         {
             return EndInvoke<ListOperationsResponse>(asyncResult);
         }
@@ -1167,7 +1167,7 @@ namespace Amazon.Route53Domains
         /// Amazon Route 53 does not support this top-level domain (TLD).
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListTagsForDomain">REST API Reference for ListTagsForDomain Operation</seealso>
-        public ListTagsForDomainResponse ListTagsForDomain(string domainName)
+        public virtual ListTagsForDomainResponse ListTagsForDomain(string domainName)
         {
             var request = new ListTagsForDomainRequest();
             request.DomainName = domainName;
@@ -1199,7 +1199,7 @@ namespace Amazon.Route53Domains
         /// Amazon Route 53 does not support this top-level domain (TLD).
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListTagsForDomain">REST API Reference for ListTagsForDomain Operation</seealso>
-        public ListTagsForDomainResponse ListTagsForDomain(ListTagsForDomainRequest request)
+        public virtual ListTagsForDomainResponse ListTagsForDomain(ListTagsForDomainRequest request)
         {
             var marshaller = new ListTagsForDomainRequestMarshaller();
             var unmarshaller = ListTagsForDomainResponseUnmarshaller.Instance;
@@ -1219,7 +1219,7 @@ namespace Amazon.Route53Domains
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForDomain
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListTagsForDomain">REST API Reference for ListTagsForDomain Operation</seealso>
-        public IAsyncResult BeginListTagsForDomain(ListTagsForDomainRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListTagsForDomain(ListTagsForDomainRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListTagsForDomainRequestMarshaller();
             var unmarshaller = ListTagsForDomainResponseUnmarshaller.Instance;
@@ -1236,7 +1236,7 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>Returns a  ListTagsForDomainResult from Route53Domains.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListTagsForDomain">REST API Reference for ListTagsForDomain Operation</seealso>
-        public  ListTagsForDomainResponse EndListTagsForDomain(IAsyncResult asyncResult)
+        public virtual ListTagsForDomainResponse EndListTagsForDomain(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTagsForDomainResponse>(asyncResult);
         }
@@ -1308,7 +1308,7 @@ namespace Amazon.Route53Domains
         /// Amazon Route 53 does not support this top-level domain (TLD).
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RegisterDomain">REST API Reference for RegisterDomain Operation</seealso>
-        public RegisterDomainResponse RegisterDomain(RegisterDomainRequest request)
+        public virtual RegisterDomainResponse RegisterDomain(RegisterDomainRequest request)
         {
             var marshaller = new RegisterDomainRequestMarshaller();
             var unmarshaller = RegisterDomainResponseUnmarshaller.Instance;
@@ -1328,7 +1328,7 @@ namespace Amazon.Route53Domains
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterDomain
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RegisterDomain">REST API Reference for RegisterDomain Operation</seealso>
-        public IAsyncResult BeginRegisterDomain(RegisterDomainRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginRegisterDomain(RegisterDomainRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RegisterDomainRequestMarshaller();
             var unmarshaller = RegisterDomainResponseUnmarshaller.Instance;
@@ -1345,7 +1345,7 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>Returns a  RegisterDomainResult from Route53Domains.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RegisterDomain">REST API Reference for RegisterDomain Operation</seealso>
-        public  RegisterDomainResponse EndRegisterDomain(IAsyncResult asyncResult)
+        public virtual RegisterDomainResponse EndRegisterDomain(IAsyncResult asyncResult)
         {
             return EndInvoke<RegisterDomainResponse>(asyncResult);
         }
@@ -1388,7 +1388,7 @@ namespace Amazon.Route53Domains
         /// Amazon Route 53 does not support this top-level domain (TLD).
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RenewDomain">REST API Reference for RenewDomain Operation</seealso>
-        public RenewDomainResponse RenewDomain(RenewDomainRequest request)
+        public virtual RenewDomainResponse RenewDomain(RenewDomainRequest request)
         {
             var marshaller = new RenewDomainRequestMarshaller();
             var unmarshaller = RenewDomainResponseUnmarshaller.Instance;
@@ -1408,7 +1408,7 @@ namespace Amazon.Route53Domains
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRenewDomain
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RenewDomain">REST API Reference for RenewDomain Operation</seealso>
-        public IAsyncResult BeginRenewDomain(RenewDomainRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginRenewDomain(RenewDomainRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RenewDomainRequestMarshaller();
             var unmarshaller = RenewDomainResponseUnmarshaller.Instance;
@@ -1425,7 +1425,7 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>Returns a  RenewDomainResult from Route53Domains.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RenewDomain">REST API Reference for RenewDomain Operation</seealso>
-        public  RenewDomainResponse EndRenewDomain(IAsyncResult asyncResult)
+        public virtual RenewDomainResponse EndRenewDomain(IAsyncResult asyncResult)
         {
             return EndInvoke<RenewDomainResponse>(asyncResult);
         }
@@ -1454,7 +1454,7 @@ namespace Amazon.Route53Domains
         /// Amazon Route 53 does not support this top-level domain (TLD).
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ResendContactReachabilityEmail">REST API Reference for ResendContactReachabilityEmail Operation</seealso>
-        public ResendContactReachabilityEmailResponse ResendContactReachabilityEmail(ResendContactReachabilityEmailRequest request)
+        public virtual ResendContactReachabilityEmailResponse ResendContactReachabilityEmail(ResendContactReachabilityEmailRequest request)
         {
             var marshaller = new ResendContactReachabilityEmailRequestMarshaller();
             var unmarshaller = ResendContactReachabilityEmailResponseUnmarshaller.Instance;
@@ -1474,7 +1474,7 @@ namespace Amazon.Route53Domains
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndResendContactReachabilityEmail
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ResendContactReachabilityEmail">REST API Reference for ResendContactReachabilityEmail Operation</seealso>
-        public IAsyncResult BeginResendContactReachabilityEmail(ResendContactReachabilityEmailRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginResendContactReachabilityEmail(ResendContactReachabilityEmailRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ResendContactReachabilityEmailRequestMarshaller();
             var unmarshaller = ResendContactReachabilityEmailResponseUnmarshaller.Instance;
@@ -1491,7 +1491,7 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>Returns a  ResendContactReachabilityEmailResult from Route53Domains.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ResendContactReachabilityEmail">REST API Reference for ResendContactReachabilityEmail Operation</seealso>
-        public  ResendContactReachabilityEmailResponse EndResendContactReachabilityEmail(IAsyncResult asyncResult)
+        public virtual ResendContactReachabilityEmailResponse EndResendContactReachabilityEmail(IAsyncResult asyncResult)
         {
             return EndInvoke<ResendContactReachabilityEmailResponse>(asyncResult);
         }
@@ -1516,7 +1516,7 @@ namespace Amazon.Route53Domains
         /// Amazon Route 53 does not support this top-level domain (TLD).
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RetrieveDomainAuthCode">REST API Reference for RetrieveDomainAuthCode Operation</seealso>
-        public RetrieveDomainAuthCodeResponse RetrieveDomainAuthCode(RetrieveDomainAuthCodeRequest request)
+        public virtual RetrieveDomainAuthCodeResponse RetrieveDomainAuthCode(RetrieveDomainAuthCodeRequest request)
         {
             var marshaller = new RetrieveDomainAuthCodeRequestMarshaller();
             var unmarshaller = RetrieveDomainAuthCodeResponseUnmarshaller.Instance;
@@ -1536,7 +1536,7 @@ namespace Amazon.Route53Domains
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRetrieveDomainAuthCode
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RetrieveDomainAuthCode">REST API Reference for RetrieveDomainAuthCode Operation</seealso>
-        public IAsyncResult BeginRetrieveDomainAuthCode(RetrieveDomainAuthCodeRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginRetrieveDomainAuthCode(RetrieveDomainAuthCodeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RetrieveDomainAuthCodeRequestMarshaller();
             var unmarshaller = RetrieveDomainAuthCodeResponseUnmarshaller.Instance;
@@ -1553,7 +1553,7 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>Returns a  RetrieveDomainAuthCodeResult from Route53Domains.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RetrieveDomainAuthCode">REST API Reference for RetrieveDomainAuthCode Operation</seealso>
-        public  RetrieveDomainAuthCodeResponse EndRetrieveDomainAuthCode(IAsyncResult asyncResult)
+        public virtual RetrieveDomainAuthCodeResponse EndRetrieveDomainAuthCode(IAsyncResult asyncResult)
         {
             return EndInvoke<RetrieveDomainAuthCodeResponse>(asyncResult);
         }
@@ -1620,7 +1620,7 @@ namespace Amazon.Route53Domains
         /// Amazon Route 53 does not support this top-level domain (TLD).
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/TransferDomain">REST API Reference for TransferDomain Operation</seealso>
-        public TransferDomainResponse TransferDomain(TransferDomainRequest request)
+        public virtual TransferDomainResponse TransferDomain(TransferDomainRequest request)
         {
             var marshaller = new TransferDomainRequestMarshaller();
             var unmarshaller = TransferDomainResponseUnmarshaller.Instance;
@@ -1640,7 +1640,7 @@ namespace Amazon.Route53Domains
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTransferDomain
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/TransferDomain">REST API Reference for TransferDomain Operation</seealso>
-        public IAsyncResult BeginTransferDomain(TransferDomainRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginTransferDomain(TransferDomainRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new TransferDomainRequestMarshaller();
             var unmarshaller = TransferDomainResponseUnmarshaller.Instance;
@@ -1657,7 +1657,7 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>Returns a  TransferDomainResult from Route53Domains.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/TransferDomain">REST API Reference for TransferDomain Operation</seealso>
-        public  TransferDomainResponse EndTransferDomain(IAsyncResult asyncResult)
+        public virtual TransferDomainResponse EndTransferDomain(IAsyncResult asyncResult)
         {
             return EndInvoke<TransferDomainResponse>(asyncResult);
         }
@@ -1699,7 +1699,7 @@ namespace Amazon.Route53Domains
         /// Amazon Route 53 does not support this top-level domain (TLD).
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainContact">REST API Reference for UpdateDomainContact Operation</seealso>
-        public UpdateDomainContactResponse UpdateDomainContact(UpdateDomainContactRequest request)
+        public virtual UpdateDomainContactResponse UpdateDomainContact(UpdateDomainContactRequest request)
         {
             var marshaller = new UpdateDomainContactRequestMarshaller();
             var unmarshaller = UpdateDomainContactResponseUnmarshaller.Instance;
@@ -1719,7 +1719,7 @@ namespace Amazon.Route53Domains
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDomainContact
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainContact">REST API Reference for UpdateDomainContact Operation</seealso>
-        public IAsyncResult BeginUpdateDomainContact(UpdateDomainContactRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateDomainContact(UpdateDomainContactRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateDomainContactRequestMarshaller();
             var unmarshaller = UpdateDomainContactResponseUnmarshaller.Instance;
@@ -1736,7 +1736,7 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>Returns a  UpdateDomainContactResult from Route53Domains.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainContact">REST API Reference for UpdateDomainContact Operation</seealso>
-        public  UpdateDomainContactResponse EndUpdateDomainContact(IAsyncResult asyncResult)
+        public virtual UpdateDomainContactResponse EndUpdateDomainContact(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateDomainContactResponse>(asyncResult);
         }
@@ -1782,7 +1782,7 @@ namespace Amazon.Route53Domains
         /// Amazon Route 53 does not support this top-level domain (TLD).
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainContactPrivacy">REST API Reference for UpdateDomainContactPrivacy Operation</seealso>
-        public UpdateDomainContactPrivacyResponse UpdateDomainContactPrivacy(UpdateDomainContactPrivacyRequest request)
+        public virtual UpdateDomainContactPrivacyResponse UpdateDomainContactPrivacy(UpdateDomainContactPrivacyRequest request)
         {
             var marshaller = new UpdateDomainContactPrivacyRequestMarshaller();
             var unmarshaller = UpdateDomainContactPrivacyResponseUnmarshaller.Instance;
@@ -1802,7 +1802,7 @@ namespace Amazon.Route53Domains
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDomainContactPrivacy
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainContactPrivacy">REST API Reference for UpdateDomainContactPrivacy Operation</seealso>
-        public IAsyncResult BeginUpdateDomainContactPrivacy(UpdateDomainContactPrivacyRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateDomainContactPrivacy(UpdateDomainContactPrivacyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateDomainContactPrivacyRequestMarshaller();
             var unmarshaller = UpdateDomainContactPrivacyResponseUnmarshaller.Instance;
@@ -1819,7 +1819,7 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>Returns a  UpdateDomainContactPrivacyResult from Route53Domains.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainContactPrivacy">REST API Reference for UpdateDomainContactPrivacy Operation</seealso>
-        public  UpdateDomainContactPrivacyResponse EndUpdateDomainContactPrivacy(IAsyncResult asyncResult)
+        public virtual UpdateDomainContactPrivacyResponse EndUpdateDomainContactPrivacy(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateDomainContactPrivacyResponse>(asyncResult);
         }
@@ -1861,7 +1861,7 @@ namespace Amazon.Route53Domains
         /// Amazon Route 53 does not support this top-level domain (TLD).
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainNameservers">REST API Reference for UpdateDomainNameservers Operation</seealso>
-        public UpdateDomainNameserversResponse UpdateDomainNameservers(UpdateDomainNameserversRequest request)
+        public virtual UpdateDomainNameserversResponse UpdateDomainNameservers(UpdateDomainNameserversRequest request)
         {
             var marshaller = new UpdateDomainNameserversRequestMarshaller();
             var unmarshaller = UpdateDomainNameserversResponseUnmarshaller.Instance;
@@ -1881,7 +1881,7 @@ namespace Amazon.Route53Domains
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDomainNameservers
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainNameservers">REST API Reference for UpdateDomainNameservers Operation</seealso>
-        public IAsyncResult BeginUpdateDomainNameservers(UpdateDomainNameserversRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateDomainNameservers(UpdateDomainNameserversRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateDomainNameserversRequestMarshaller();
             var unmarshaller = UpdateDomainNameserversResponseUnmarshaller.Instance;
@@ -1898,7 +1898,7 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>Returns a  UpdateDomainNameserversResult from Route53Domains.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainNameservers">REST API Reference for UpdateDomainNameservers Operation</seealso>
-        public  UpdateDomainNameserversResponse EndUpdateDomainNameservers(IAsyncResult asyncResult)
+        public virtual UpdateDomainNameserversResponse EndUpdateDomainNameservers(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateDomainNameserversResponse>(asyncResult);
         }
@@ -1932,7 +1932,7 @@ namespace Amazon.Route53Domains
         /// Amazon Route 53 does not support this top-level domain (TLD).
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateTagsForDomain">REST API Reference for UpdateTagsForDomain Operation</seealso>
-        public UpdateTagsForDomainResponse UpdateTagsForDomain(string domainName, List<Tag> tagsToUpdate)
+        public virtual UpdateTagsForDomainResponse UpdateTagsForDomain(string domainName, List<Tag> tagsToUpdate)
         {
             var request = new UpdateTagsForDomainRequest();
             request.DomainName = domainName;
@@ -1965,7 +1965,7 @@ namespace Amazon.Route53Domains
         /// Amazon Route 53 does not support this top-level domain (TLD).
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateTagsForDomain">REST API Reference for UpdateTagsForDomain Operation</seealso>
-        public UpdateTagsForDomainResponse UpdateTagsForDomain(UpdateTagsForDomainRequest request)
+        public virtual UpdateTagsForDomainResponse UpdateTagsForDomain(UpdateTagsForDomainRequest request)
         {
             var marshaller = new UpdateTagsForDomainRequestMarshaller();
             var unmarshaller = UpdateTagsForDomainResponseUnmarshaller.Instance;
@@ -1985,7 +1985,7 @@ namespace Amazon.Route53Domains
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateTagsForDomain
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateTagsForDomain">REST API Reference for UpdateTagsForDomain Operation</seealso>
-        public IAsyncResult BeginUpdateTagsForDomain(UpdateTagsForDomainRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateTagsForDomain(UpdateTagsForDomainRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateTagsForDomainRequestMarshaller();
             var unmarshaller = UpdateTagsForDomainResponseUnmarshaller.Instance;
@@ -2002,7 +2002,7 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>Returns a  UpdateTagsForDomainResult from Route53Domains.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateTagsForDomain">REST API Reference for UpdateTagsForDomain Operation</seealso>
-        public  UpdateTagsForDomainResponse EndUpdateTagsForDomain(IAsyncResult asyncResult)
+        public virtual UpdateTagsForDomainResponse EndUpdateTagsForDomain(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateTagsForDomainResponse>(asyncResult);
         }
@@ -2024,7 +2024,7 @@ namespace Amazon.Route53Domains
         /// be a valid domain name or belong to the requester account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ViewBilling">REST API Reference for ViewBilling Operation</seealso>
-        public ViewBillingResponse ViewBilling(ViewBillingRequest request)
+        public virtual ViewBillingResponse ViewBilling(ViewBillingRequest request)
         {
             var marshaller = new ViewBillingRequestMarshaller();
             var unmarshaller = ViewBillingResponseUnmarshaller.Instance;
@@ -2044,7 +2044,7 @@ namespace Amazon.Route53Domains
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndViewBilling
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ViewBilling">REST API Reference for ViewBilling Operation</seealso>
-        public IAsyncResult BeginViewBilling(ViewBillingRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginViewBilling(ViewBillingRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ViewBillingRequestMarshaller();
             var unmarshaller = ViewBillingResponseUnmarshaller.Instance;
@@ -2061,7 +2061,7 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>Returns a  ViewBillingResult from Route53Domains.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ViewBilling">REST API Reference for ViewBilling Operation</seealso>
-        public  ViewBillingResponse EndViewBilling(IAsyncResult asyncResult)
+        public virtual ViewBillingResponse EndViewBilling(IAsyncResult asyncResult)
         {
             return EndInvoke<ViewBillingResponse>(asyncResult);
         }

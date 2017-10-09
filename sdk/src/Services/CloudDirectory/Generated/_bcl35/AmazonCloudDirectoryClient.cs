@@ -278,7 +278,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AddFacetToObject">REST API Reference for AddFacetToObject Operation</seealso>
-        public AddFacetToObjectResponse AddFacetToObject(AddFacetToObjectRequest request)
+        public virtual AddFacetToObjectResponse AddFacetToObject(AddFacetToObjectRequest request)
         {
             var marshaller = new AddFacetToObjectRequestMarshaller();
             var unmarshaller = AddFacetToObjectResponseUnmarshaller.Instance;
@@ -298,7 +298,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddFacetToObject
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AddFacetToObject">REST API Reference for AddFacetToObject Operation</seealso>
-        public IAsyncResult BeginAddFacetToObject(AddFacetToObjectRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginAddFacetToObject(AddFacetToObjectRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AddFacetToObjectRequestMarshaller();
             var unmarshaller = AddFacetToObjectResponseUnmarshaller.Instance;
@@ -315,7 +315,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  AddFacetToObjectResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AddFacetToObject">REST API Reference for AddFacetToObject Operation</seealso>
-        public  AddFacetToObjectResponse EndAddFacetToObject(IAsyncResult asyncResult)
+        public virtual AddFacetToObjectResponse EndAddFacetToObject(IAsyncResult asyncResult)
         {
             return EndInvoke<AddFacetToObjectResponse>(asyncResult);
         }
@@ -367,7 +367,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ApplySchema">REST API Reference for ApplySchema Operation</seealso>
-        public ApplySchemaResponse ApplySchema(ApplySchemaRequest request)
+        public virtual ApplySchemaResponse ApplySchema(ApplySchemaRequest request)
         {
             var marshaller = new ApplySchemaRequestMarshaller();
             var unmarshaller = ApplySchemaResponseUnmarshaller.Instance;
@@ -387,7 +387,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndApplySchema
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ApplySchema">REST API Reference for ApplySchema Operation</seealso>
-        public IAsyncResult BeginApplySchema(ApplySchemaRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginApplySchema(ApplySchemaRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ApplySchemaRequestMarshaller();
             var unmarshaller = ApplySchemaResponseUnmarshaller.Instance;
@@ -404,7 +404,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  ApplySchemaResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ApplySchema">REST API Reference for ApplySchema Operation</seealso>
-        public  ApplySchemaResponse EndApplySchema(IAsyncResult asyncResult)
+        public virtual ApplySchemaResponse EndApplySchema(IAsyncResult asyncResult)
         {
             return EndInvoke<ApplySchemaResponse>(asyncResult);
         }
@@ -479,7 +479,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachObject">REST API Reference for AttachObject Operation</seealso>
-        public AttachObjectResponse AttachObject(AttachObjectRequest request)
+        public virtual AttachObjectResponse AttachObject(AttachObjectRequest request)
         {
             var marshaller = new AttachObjectRequestMarshaller();
             var unmarshaller = AttachObjectResponseUnmarshaller.Instance;
@@ -499,7 +499,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAttachObject
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachObject">REST API Reference for AttachObject Operation</seealso>
-        public IAsyncResult BeginAttachObject(AttachObjectRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginAttachObject(AttachObjectRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AttachObjectRequestMarshaller();
             var unmarshaller = AttachObjectResponseUnmarshaller.Instance;
@@ -516,7 +516,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  AttachObjectResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachObject">REST API Reference for AttachObject Operation</seealso>
-        public  AttachObjectResponse EndAttachObject(IAsyncResult asyncResult)
+        public virtual AttachObjectResponse EndAttachObject(IAsyncResult asyncResult)
         {
             return EndInvoke<AttachObjectResponse>(asyncResult);
         }
@@ -572,7 +572,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachPolicy">REST API Reference for AttachPolicy Operation</seealso>
-        public AttachPolicyResponse AttachPolicy(AttachPolicyRequest request)
+        public virtual AttachPolicyResponse AttachPolicy(AttachPolicyRequest request)
         {
             var marshaller = new AttachPolicyRequestMarshaller();
             var unmarshaller = AttachPolicyResponseUnmarshaller.Instance;
@@ -592,7 +592,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAttachPolicy
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachPolicy">REST API Reference for AttachPolicy Operation</seealso>
-        public IAsyncResult BeginAttachPolicy(AttachPolicyRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginAttachPolicy(AttachPolicyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AttachPolicyRequestMarshaller();
             var unmarshaller = AttachPolicyResponseUnmarshaller.Instance;
@@ -609,7 +609,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  AttachPolicyResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachPolicy">REST API Reference for AttachPolicy Operation</seealso>
-        public  AttachPolicyResponse EndAttachPolicy(IAsyncResult asyncResult)
+        public virtual AttachPolicyResponse EndAttachPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<AttachPolicyResponse>(asyncResult);
         }
@@ -669,7 +669,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachToIndex">REST API Reference for AttachToIndex Operation</seealso>
-        public AttachToIndexResponse AttachToIndex(AttachToIndexRequest request)
+        public virtual AttachToIndexResponse AttachToIndex(AttachToIndexRequest request)
         {
             var marshaller = new AttachToIndexRequestMarshaller();
             var unmarshaller = AttachToIndexResponseUnmarshaller.Instance;
@@ -689,7 +689,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAttachToIndex
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachToIndex">REST API Reference for AttachToIndex Operation</seealso>
-        public IAsyncResult BeginAttachToIndex(AttachToIndexRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginAttachToIndex(AttachToIndexRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AttachToIndexRequestMarshaller();
             var unmarshaller = AttachToIndexResponseUnmarshaller.Instance;
@@ -706,7 +706,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  AttachToIndexResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachToIndex">REST API Reference for AttachToIndex Operation</seealso>
-        public  AttachToIndexResponse EndAttachToIndex(IAsyncResult asyncResult)
+        public virtual AttachToIndexResponse EndAttachToIndex(IAsyncResult asyncResult)
         {
             return EndInvoke<AttachToIndexResponse>(asyncResult);
         }
@@ -769,7 +769,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachTypedLink">REST API Reference for AttachTypedLink Operation</seealso>
-        public AttachTypedLinkResponse AttachTypedLink(AttachTypedLinkRequest request)
+        public virtual AttachTypedLinkResponse AttachTypedLink(AttachTypedLinkRequest request)
         {
             var marshaller = new AttachTypedLinkRequestMarshaller();
             var unmarshaller = AttachTypedLinkResponseUnmarshaller.Instance;
@@ -789,7 +789,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAttachTypedLink
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachTypedLink">REST API Reference for AttachTypedLink Operation</seealso>
-        public IAsyncResult BeginAttachTypedLink(AttachTypedLinkRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginAttachTypedLink(AttachTypedLinkRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AttachTypedLinkRequestMarshaller();
             var unmarshaller = AttachTypedLinkResponseUnmarshaller.Instance;
@@ -806,7 +806,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  AttachTypedLinkResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachTypedLink">REST API Reference for AttachTypedLink Operation</seealso>
-        public  AttachTypedLinkResponse EndAttachTypedLink(IAsyncResult asyncResult)
+        public virtual AttachTypedLinkResponse EndAttachTypedLink(IAsyncResult asyncResult)
         {
             return EndInvoke<AttachTypedLinkResponse>(asyncResult);
         }
@@ -852,7 +852,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchRead">REST API Reference for BatchRead Operation</seealso>
-        public BatchReadResponse BatchRead(BatchReadRequest request)
+        public virtual BatchReadResponse BatchRead(BatchReadRequest request)
         {
             var marshaller = new BatchReadRequestMarshaller();
             var unmarshaller = BatchReadResponseUnmarshaller.Instance;
@@ -872,7 +872,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchRead
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchRead">REST API Reference for BatchRead Operation</seealso>
-        public IAsyncResult BeginBatchRead(BatchReadRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginBatchRead(BatchReadRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new BatchReadRequestMarshaller();
             var unmarshaller = BatchReadResponseUnmarshaller.Instance;
@@ -889,7 +889,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  BatchReadResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchRead">REST API Reference for BatchRead Operation</seealso>
-        public  BatchReadResponse EndBatchRead(IAsyncResult asyncResult)
+        public virtual BatchReadResponse EndBatchRead(IAsyncResult asyncResult)
         {
             return EndInvoke<BatchReadResponse>(asyncResult);
         }
@@ -939,7 +939,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchWrite">REST API Reference for BatchWrite Operation</seealso>
-        public BatchWriteResponse BatchWrite(BatchWriteRequest request)
+        public virtual BatchWriteResponse BatchWrite(BatchWriteRequest request)
         {
             var marshaller = new BatchWriteRequestMarshaller();
             var unmarshaller = BatchWriteResponseUnmarshaller.Instance;
@@ -959,7 +959,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchWrite
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchWrite">REST API Reference for BatchWrite Operation</seealso>
-        public IAsyncResult BeginBatchWrite(BatchWriteRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginBatchWrite(BatchWriteRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new BatchWriteRequestMarshaller();
             var unmarshaller = BatchWriteResponseUnmarshaller.Instance;
@@ -976,7 +976,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  BatchWriteResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchWrite">REST API Reference for BatchWrite Operation</seealso>
-        public  BatchWriteResponse EndBatchWrite(IAsyncResult asyncResult)
+        public virtual BatchWriteResponse EndBatchWrite(IAsyncResult asyncResult)
         {
             return EndInvoke<BatchWriteResponse>(asyncResult);
         }
@@ -1030,7 +1030,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateDirectory">REST API Reference for CreateDirectory Operation</seealso>
-        public CreateDirectoryResponse CreateDirectory(CreateDirectoryRequest request)
+        public virtual CreateDirectoryResponse CreateDirectory(CreateDirectoryRequest request)
         {
             var marshaller = new CreateDirectoryRequestMarshaller();
             var unmarshaller = CreateDirectoryResponseUnmarshaller.Instance;
@@ -1050,7 +1050,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDirectory
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateDirectory">REST API Reference for CreateDirectory Operation</seealso>
-        public IAsyncResult BeginCreateDirectory(CreateDirectoryRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateDirectory(CreateDirectoryRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateDirectoryRequestMarshaller();
             var unmarshaller = CreateDirectoryResponseUnmarshaller.Instance;
@@ -1067,7 +1067,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  CreateDirectoryResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateDirectory">REST API Reference for CreateDirectory Operation</seealso>
-        public  CreateDirectoryResponse EndCreateDirectory(IAsyncResult asyncResult)
+        public virtual CreateDirectoryResponse EndCreateDirectory(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateDirectoryResponse>(asyncResult);
         }
@@ -1124,7 +1124,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateFacet">REST API Reference for CreateFacet Operation</seealso>
-        public CreateFacetResponse CreateFacet(CreateFacetRequest request)
+        public virtual CreateFacetResponse CreateFacet(CreateFacetRequest request)
         {
             var marshaller = new CreateFacetRequestMarshaller();
             var unmarshaller = CreateFacetResponseUnmarshaller.Instance;
@@ -1144,7 +1144,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateFacet
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateFacet">REST API Reference for CreateFacet Operation</seealso>
-        public IAsyncResult BeginCreateFacet(CreateFacetRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateFacet(CreateFacetRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateFacetRequestMarshaller();
             var unmarshaller = CreateFacetResponseUnmarshaller.Instance;
@@ -1161,7 +1161,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  CreateFacetResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateFacet">REST API Reference for CreateFacet Operation</seealso>
-        public  CreateFacetResponse EndCreateFacet(IAsyncResult asyncResult)
+        public virtual CreateFacetResponse EndCreateFacet(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateFacetResponse>(asyncResult);
         }
@@ -1222,7 +1222,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateIndex">REST API Reference for CreateIndex Operation</seealso>
-        public CreateIndexResponse CreateIndex(CreateIndexRequest request)
+        public virtual CreateIndexResponse CreateIndex(CreateIndexRequest request)
         {
             var marshaller = new CreateIndexRequestMarshaller();
             var unmarshaller = CreateIndexResponseUnmarshaller.Instance;
@@ -1242,7 +1242,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateIndex
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateIndex">REST API Reference for CreateIndex Operation</seealso>
-        public IAsyncResult BeginCreateIndex(CreateIndexRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateIndex(CreateIndexRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateIndexRequestMarshaller();
             var unmarshaller = CreateIndexResponseUnmarshaller.Instance;
@@ -1259,7 +1259,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  CreateIndexResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateIndex">REST API Reference for CreateIndex Operation</seealso>
-        public  CreateIndexResponse EndCreateIndex(IAsyncResult asyncResult)
+        public virtual CreateIndexResponse EndCreateIndex(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateIndexResponse>(asyncResult);
         }
@@ -1325,7 +1325,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateObject">REST API Reference for CreateObject Operation</seealso>
-        public CreateObjectResponse CreateObject(CreateObjectRequest request)
+        public virtual CreateObjectResponse CreateObject(CreateObjectRequest request)
         {
             var marshaller = new CreateObjectRequestMarshaller();
             var unmarshaller = CreateObjectResponseUnmarshaller.Instance;
@@ -1345,7 +1345,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateObject
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateObject">REST API Reference for CreateObject Operation</seealso>
-        public IAsyncResult BeginCreateObject(CreateObjectRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateObject(CreateObjectRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateObjectRequestMarshaller();
             var unmarshaller = CreateObjectResponseUnmarshaller.Instance;
@@ -1362,7 +1362,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  CreateObjectResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateObject">REST API Reference for CreateObject Operation</seealso>
-        public  CreateObjectResponse EndCreateObject(IAsyncResult asyncResult)
+        public virtual CreateObjectResponse EndCreateObject(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateObjectResponse>(asyncResult);
         }
@@ -1430,7 +1430,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateSchema">REST API Reference for CreateSchema Operation</seealso>
-        public CreateSchemaResponse CreateSchema(CreateSchemaRequest request)
+        public virtual CreateSchemaResponse CreateSchema(CreateSchemaRequest request)
         {
             var marshaller = new CreateSchemaRequestMarshaller();
             var unmarshaller = CreateSchemaResponseUnmarshaller.Instance;
@@ -1450,7 +1450,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSchema
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateSchema">REST API Reference for CreateSchema Operation</seealso>
-        public IAsyncResult BeginCreateSchema(CreateSchemaRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateSchema(CreateSchemaRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateSchemaRequestMarshaller();
             var unmarshaller = CreateSchemaResponseUnmarshaller.Instance;
@@ -1467,7 +1467,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  CreateSchemaResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateSchema">REST API Reference for CreateSchema Operation</seealso>
-        public  CreateSchemaResponse EndCreateSchema(IAsyncResult asyncResult)
+        public virtual CreateSchemaResponse EndCreateSchema(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateSchemaResponse>(asyncResult);
         }
@@ -1524,7 +1524,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateTypedLinkFacet">REST API Reference for CreateTypedLinkFacet Operation</seealso>
-        public CreateTypedLinkFacetResponse CreateTypedLinkFacet(CreateTypedLinkFacetRequest request)
+        public virtual CreateTypedLinkFacetResponse CreateTypedLinkFacet(CreateTypedLinkFacetRequest request)
         {
             var marshaller = new CreateTypedLinkFacetRequestMarshaller();
             var unmarshaller = CreateTypedLinkFacetResponseUnmarshaller.Instance;
@@ -1544,7 +1544,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTypedLinkFacet
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateTypedLinkFacet">REST API Reference for CreateTypedLinkFacet Operation</seealso>
-        public IAsyncResult BeginCreateTypedLinkFacet(CreateTypedLinkFacetRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateTypedLinkFacet(CreateTypedLinkFacetRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateTypedLinkFacetRequestMarshaller();
             var unmarshaller = CreateTypedLinkFacetResponseUnmarshaller.Instance;
@@ -1561,7 +1561,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  CreateTypedLinkFacetResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateTypedLinkFacet">REST API Reference for CreateTypedLinkFacet Operation</seealso>
-        public  CreateTypedLinkFacetResponse EndCreateTypedLinkFacet(IAsyncResult asyncResult)
+        public virtual CreateTypedLinkFacetResponse EndCreateTypedLinkFacet(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateTypedLinkFacetResponse>(asyncResult);
         }
@@ -1615,7 +1615,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteDirectory">REST API Reference for DeleteDirectory Operation</seealso>
-        public DeleteDirectoryResponse DeleteDirectory(DeleteDirectoryRequest request)
+        public virtual DeleteDirectoryResponse DeleteDirectory(DeleteDirectoryRequest request)
         {
             var marshaller = new DeleteDirectoryRequestMarshaller();
             var unmarshaller = DeleteDirectoryResponseUnmarshaller.Instance;
@@ -1635,7 +1635,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDirectory
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteDirectory">REST API Reference for DeleteDirectory Operation</seealso>
-        public IAsyncResult BeginDeleteDirectory(DeleteDirectoryRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteDirectory(DeleteDirectoryRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteDirectoryRequestMarshaller();
             var unmarshaller = DeleteDirectoryResponseUnmarshaller.Instance;
@@ -1652,7 +1652,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  DeleteDirectoryResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteDirectory">REST API Reference for DeleteDirectory Operation</seealso>
-        public  DeleteDirectoryResponse EndDeleteDirectory(IAsyncResult asyncResult)
+        public virtual DeleteDirectoryResponse EndDeleteDirectory(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteDirectoryResponse>(asyncResult);
         }
@@ -1706,7 +1706,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteFacet">REST API Reference for DeleteFacet Operation</seealso>
-        public DeleteFacetResponse DeleteFacet(DeleteFacetRequest request)
+        public virtual DeleteFacetResponse DeleteFacet(DeleteFacetRequest request)
         {
             var marshaller = new DeleteFacetRequestMarshaller();
             var unmarshaller = DeleteFacetResponseUnmarshaller.Instance;
@@ -1726,7 +1726,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteFacet
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteFacet">REST API Reference for DeleteFacet Operation</seealso>
-        public IAsyncResult BeginDeleteFacet(DeleteFacetRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteFacet(DeleteFacetRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteFacetRequestMarshaller();
             var unmarshaller = DeleteFacetResponseUnmarshaller.Instance;
@@ -1743,7 +1743,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  DeleteFacetResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteFacet">REST API Reference for DeleteFacet Operation</seealso>
-        public  DeleteFacetResponse EndDeleteFacet(IAsyncResult asyncResult)
+        public virtual DeleteFacetResponse EndDeleteFacet(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteFacetResponse>(asyncResult);
         }
@@ -1797,7 +1797,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteObject">REST API Reference for DeleteObject Operation</seealso>
-        public DeleteObjectResponse DeleteObject(DeleteObjectRequest request)
+        public virtual DeleteObjectResponse DeleteObject(DeleteObjectRequest request)
         {
             var marshaller = new DeleteObjectRequestMarshaller();
             var unmarshaller = DeleteObjectResponseUnmarshaller.Instance;
@@ -1817,7 +1817,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteObject
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteObject">REST API Reference for DeleteObject Operation</seealso>
-        public IAsyncResult BeginDeleteObject(DeleteObjectRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteObject(DeleteObjectRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteObjectRequestMarshaller();
             var unmarshaller = DeleteObjectResponseUnmarshaller.Instance;
@@ -1834,7 +1834,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  DeleteObjectResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteObject">REST API Reference for DeleteObject Operation</seealso>
-        public  DeleteObjectResponse EndDeleteObject(IAsyncResult asyncResult)
+        public virtual DeleteObjectResponse EndDeleteObject(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteObjectResponse>(asyncResult);
         }
@@ -1884,7 +1884,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteSchema">REST API Reference for DeleteSchema Operation</seealso>
-        public DeleteSchemaResponse DeleteSchema(DeleteSchemaRequest request)
+        public virtual DeleteSchemaResponse DeleteSchema(DeleteSchemaRequest request)
         {
             var marshaller = new DeleteSchemaRequestMarshaller();
             var unmarshaller = DeleteSchemaResponseUnmarshaller.Instance;
@@ -1904,7 +1904,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSchema
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteSchema">REST API Reference for DeleteSchema Operation</seealso>
-        public IAsyncResult BeginDeleteSchema(DeleteSchemaRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteSchema(DeleteSchemaRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteSchemaRequestMarshaller();
             var unmarshaller = DeleteSchemaResponseUnmarshaller.Instance;
@@ -1921,7 +1921,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  DeleteSchemaResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteSchema">REST API Reference for DeleteSchema Operation</seealso>
-        public  DeleteSchemaResponse EndDeleteSchema(IAsyncResult asyncResult)
+        public virtual DeleteSchemaResponse EndDeleteSchema(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteSchemaResponse>(asyncResult);
         }
@@ -1971,7 +1971,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteTypedLinkFacet">REST API Reference for DeleteTypedLinkFacet Operation</seealso>
-        public DeleteTypedLinkFacetResponse DeleteTypedLinkFacet(DeleteTypedLinkFacetRequest request)
+        public virtual DeleteTypedLinkFacetResponse DeleteTypedLinkFacet(DeleteTypedLinkFacetRequest request)
         {
             var marshaller = new DeleteTypedLinkFacetRequestMarshaller();
             var unmarshaller = DeleteTypedLinkFacetResponseUnmarshaller.Instance;
@@ -1991,7 +1991,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTypedLinkFacet
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteTypedLinkFacet">REST API Reference for DeleteTypedLinkFacet Operation</seealso>
-        public IAsyncResult BeginDeleteTypedLinkFacet(DeleteTypedLinkFacetRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteTypedLinkFacet(DeleteTypedLinkFacetRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteTypedLinkFacetRequestMarshaller();
             var unmarshaller = DeleteTypedLinkFacetResponseUnmarshaller.Instance;
@@ -2008,7 +2008,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  DeleteTypedLinkFacetResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteTypedLinkFacet">REST API Reference for DeleteTypedLinkFacet Operation</seealso>
-        public  DeleteTypedLinkFacetResponse EndDeleteTypedLinkFacet(IAsyncResult asyncResult)
+        public virtual DeleteTypedLinkFacetResponse EndDeleteTypedLinkFacet(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteTypedLinkFacetResponse>(asyncResult);
         }
@@ -2063,7 +2063,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachFromIndex">REST API Reference for DetachFromIndex Operation</seealso>
-        public DetachFromIndexResponse DetachFromIndex(DetachFromIndexRequest request)
+        public virtual DetachFromIndexResponse DetachFromIndex(DetachFromIndexRequest request)
         {
             var marshaller = new DetachFromIndexRequestMarshaller();
             var unmarshaller = DetachFromIndexResponseUnmarshaller.Instance;
@@ -2083,7 +2083,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDetachFromIndex
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachFromIndex">REST API Reference for DetachFromIndex Operation</seealso>
-        public IAsyncResult BeginDetachFromIndex(DetachFromIndexRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDetachFromIndex(DetachFromIndexRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DetachFromIndexRequestMarshaller();
             var unmarshaller = DetachFromIndexResponseUnmarshaller.Instance;
@@ -2100,7 +2100,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  DetachFromIndexResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachFromIndex">REST API Reference for DetachFromIndex Operation</seealso>
-        public  DetachFromIndexResponse EndDetachFromIndex(IAsyncResult asyncResult)
+        public virtual DetachFromIndexResponse EndDetachFromIndex(IAsyncResult asyncResult)
         {
             return EndInvoke<DetachFromIndexResponse>(asyncResult);
         }
@@ -2150,7 +2150,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachObject">REST API Reference for DetachObject Operation</seealso>
-        public DetachObjectResponse DetachObject(DetachObjectRequest request)
+        public virtual DetachObjectResponse DetachObject(DetachObjectRequest request)
         {
             var marshaller = new DetachObjectRequestMarshaller();
             var unmarshaller = DetachObjectResponseUnmarshaller.Instance;
@@ -2170,7 +2170,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDetachObject
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachObject">REST API Reference for DetachObject Operation</seealso>
-        public IAsyncResult BeginDetachObject(DetachObjectRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDetachObject(DetachObjectRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DetachObjectRequestMarshaller();
             var unmarshaller = DetachObjectResponseUnmarshaller.Instance;
@@ -2187,7 +2187,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  DetachObjectResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachObject">REST API Reference for DetachObject Operation</seealso>
-        public  DetachObjectResponse EndDetachObject(IAsyncResult asyncResult)
+        public virtual DetachObjectResponse EndDetachObject(IAsyncResult asyncResult)
         {
             return EndInvoke<DetachObjectResponse>(asyncResult);
         }
@@ -2242,7 +2242,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachPolicy">REST API Reference for DetachPolicy Operation</seealso>
-        public DetachPolicyResponse DetachPolicy(DetachPolicyRequest request)
+        public virtual DetachPolicyResponse DetachPolicy(DetachPolicyRequest request)
         {
             var marshaller = new DetachPolicyRequestMarshaller();
             var unmarshaller = DetachPolicyResponseUnmarshaller.Instance;
@@ -2262,7 +2262,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDetachPolicy
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachPolicy">REST API Reference for DetachPolicy Operation</seealso>
-        public IAsyncResult BeginDetachPolicy(DetachPolicyRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDetachPolicy(DetachPolicyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DetachPolicyRequestMarshaller();
             var unmarshaller = DetachPolicyResponseUnmarshaller.Instance;
@@ -2279,7 +2279,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  DetachPolicyResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachPolicy">REST API Reference for DetachPolicy Operation</seealso>
-        public  DetachPolicyResponse EndDetachPolicy(IAsyncResult asyncResult)
+        public virtual DetachPolicyResponse EndDetachPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<DetachPolicyResponse>(asyncResult);
         }
@@ -2334,7 +2334,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachTypedLink">REST API Reference for DetachTypedLink Operation</seealso>
-        public DetachTypedLinkResponse DetachTypedLink(DetachTypedLinkRequest request)
+        public virtual DetachTypedLinkResponse DetachTypedLink(DetachTypedLinkRequest request)
         {
             var marshaller = new DetachTypedLinkRequestMarshaller();
             var unmarshaller = DetachTypedLinkResponseUnmarshaller.Instance;
@@ -2354,7 +2354,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDetachTypedLink
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachTypedLink">REST API Reference for DetachTypedLink Operation</seealso>
-        public IAsyncResult BeginDetachTypedLink(DetachTypedLinkRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDetachTypedLink(DetachTypedLinkRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DetachTypedLinkRequestMarshaller();
             var unmarshaller = DetachTypedLinkResponseUnmarshaller.Instance;
@@ -2371,7 +2371,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  DetachTypedLinkResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachTypedLink">REST API Reference for DetachTypedLink Operation</seealso>
-        public  DetachTypedLinkResponse EndDetachTypedLink(IAsyncResult asyncResult)
+        public virtual DetachTypedLinkResponse EndDetachTypedLink(IAsyncResult asyncResult)
         {
             return EndInvoke<DetachTypedLinkResponse>(asyncResult);
         }
@@ -2422,7 +2422,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DisableDirectory">REST API Reference for DisableDirectory Operation</seealso>
-        public DisableDirectoryResponse DisableDirectory(DisableDirectoryRequest request)
+        public virtual DisableDirectoryResponse DisableDirectory(DisableDirectoryRequest request)
         {
             var marshaller = new DisableDirectoryRequestMarshaller();
             var unmarshaller = DisableDirectoryResponseUnmarshaller.Instance;
@@ -2442,7 +2442,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableDirectory
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DisableDirectory">REST API Reference for DisableDirectory Operation</seealso>
-        public IAsyncResult BeginDisableDirectory(DisableDirectoryRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDisableDirectory(DisableDirectoryRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DisableDirectoryRequestMarshaller();
             var unmarshaller = DisableDirectoryResponseUnmarshaller.Instance;
@@ -2459,7 +2459,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  DisableDirectoryResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DisableDirectory">REST API Reference for DisableDirectory Operation</seealso>
-        public  DisableDirectoryResponse EndDisableDirectory(IAsyncResult asyncResult)
+        public virtual DisableDirectoryResponse EndDisableDirectory(IAsyncResult asyncResult)
         {
             return EndInvoke<DisableDirectoryResponse>(asyncResult);
         }
@@ -2510,7 +2510,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/EnableDirectory">REST API Reference for EnableDirectory Operation</seealso>
-        public EnableDirectoryResponse EnableDirectory(EnableDirectoryRequest request)
+        public virtual EnableDirectoryResponse EnableDirectory(EnableDirectoryRequest request)
         {
             var marshaller = new EnableDirectoryRequestMarshaller();
             var unmarshaller = EnableDirectoryResponseUnmarshaller.Instance;
@@ -2530,7 +2530,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableDirectory
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/EnableDirectory">REST API Reference for EnableDirectory Operation</seealso>
-        public IAsyncResult BeginEnableDirectory(EnableDirectoryRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginEnableDirectory(EnableDirectoryRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new EnableDirectoryRequestMarshaller();
             var unmarshaller = EnableDirectoryResponseUnmarshaller.Instance;
@@ -2547,7 +2547,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  EnableDirectoryResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/EnableDirectory">REST API Reference for EnableDirectory Operation</seealso>
-        public  EnableDirectoryResponse EndEnableDirectory(IAsyncResult asyncResult)
+        public virtual EnableDirectoryResponse EndEnableDirectory(IAsyncResult asyncResult)
         {
             return EndInvoke<EnableDirectoryResponse>(asyncResult);
         }
@@ -2590,7 +2590,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetDirectory">REST API Reference for GetDirectory Operation</seealso>
-        public GetDirectoryResponse GetDirectory(GetDirectoryRequest request)
+        public virtual GetDirectoryResponse GetDirectory(GetDirectoryRequest request)
         {
             var marshaller = new GetDirectoryRequestMarshaller();
             var unmarshaller = GetDirectoryResponseUnmarshaller.Instance;
@@ -2610,7 +2610,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDirectory
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetDirectory">REST API Reference for GetDirectory Operation</seealso>
-        public IAsyncResult BeginGetDirectory(GetDirectoryRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetDirectory(GetDirectoryRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetDirectoryRequestMarshaller();
             var unmarshaller = GetDirectoryResponseUnmarshaller.Instance;
@@ -2627,7 +2627,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  GetDirectoryResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetDirectory">REST API Reference for GetDirectory Operation</seealso>
-        public  GetDirectoryResponse EndGetDirectory(IAsyncResult asyncResult)
+        public virtual GetDirectoryResponse EndGetDirectory(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDirectoryResponse>(asyncResult);
         }
@@ -2678,7 +2678,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetFacet">REST API Reference for GetFacet Operation</seealso>
-        public GetFacetResponse GetFacet(GetFacetRequest request)
+        public virtual GetFacetResponse GetFacet(GetFacetRequest request)
         {
             var marshaller = new GetFacetRequestMarshaller();
             var unmarshaller = GetFacetResponseUnmarshaller.Instance;
@@ -2698,7 +2698,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetFacet
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetFacet">REST API Reference for GetFacet Operation</seealso>
-        public IAsyncResult BeginGetFacet(GetFacetRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetFacet(GetFacetRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetFacetRequestMarshaller();
             var unmarshaller = GetFacetResponseUnmarshaller.Instance;
@@ -2715,7 +2715,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  GetFacetResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetFacet">REST API Reference for GetFacet Operation</seealso>
-        public  GetFacetResponse EndGetFacet(IAsyncResult asyncResult)
+        public virtual GetFacetResponse EndGetFacet(IAsyncResult asyncResult)
         {
             return EndInvoke<GetFacetResponse>(asyncResult);
         }
@@ -2764,7 +2764,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetObjectInformation">REST API Reference for GetObjectInformation Operation</seealso>
-        public GetObjectInformationResponse GetObjectInformation(GetObjectInformationRequest request)
+        public virtual GetObjectInformationResponse GetObjectInformation(GetObjectInformationRequest request)
         {
             var marshaller = new GetObjectInformationRequestMarshaller();
             var unmarshaller = GetObjectInformationResponseUnmarshaller.Instance;
@@ -2784,7 +2784,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetObjectInformation
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetObjectInformation">REST API Reference for GetObjectInformation Operation</seealso>
-        public IAsyncResult BeginGetObjectInformation(GetObjectInformationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetObjectInformation(GetObjectInformationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetObjectInformationRequestMarshaller();
             var unmarshaller = GetObjectInformationResponseUnmarshaller.Instance;
@@ -2801,7 +2801,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  GetObjectInformationResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetObjectInformation">REST API Reference for GetObjectInformation Operation</seealso>
-        public  GetObjectInformationResponse EndGetObjectInformation(IAsyncResult asyncResult)
+        public virtual GetObjectInformationResponse EndGetObjectInformation(IAsyncResult asyncResult)
         {
             return EndInvoke<GetObjectInformationResponse>(asyncResult);
         }
@@ -2851,7 +2851,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetSchemaAsJson">REST API Reference for GetSchemaAsJson Operation</seealso>
-        public GetSchemaAsJsonResponse GetSchemaAsJson(GetSchemaAsJsonRequest request)
+        public virtual GetSchemaAsJsonResponse GetSchemaAsJson(GetSchemaAsJsonRequest request)
         {
             var marshaller = new GetSchemaAsJsonRequestMarshaller();
             var unmarshaller = GetSchemaAsJsonResponseUnmarshaller.Instance;
@@ -2871,7 +2871,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSchemaAsJson
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetSchemaAsJson">REST API Reference for GetSchemaAsJson Operation</seealso>
-        public IAsyncResult BeginGetSchemaAsJson(GetSchemaAsJsonRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetSchemaAsJson(GetSchemaAsJsonRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetSchemaAsJsonRequestMarshaller();
             var unmarshaller = GetSchemaAsJsonResponseUnmarshaller.Instance;
@@ -2888,7 +2888,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  GetSchemaAsJsonResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetSchemaAsJson">REST API Reference for GetSchemaAsJson Operation</seealso>
-        public  GetSchemaAsJsonResponse EndGetSchemaAsJson(IAsyncResult asyncResult)
+        public virtual GetSchemaAsJsonResponse EndGetSchemaAsJson(IAsyncResult asyncResult)
         {
             return EndInvoke<GetSchemaAsJsonResponse>(asyncResult);
         }
@@ -2942,7 +2942,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetTypedLinkFacetInformation">REST API Reference for GetTypedLinkFacetInformation Operation</seealso>
-        public GetTypedLinkFacetInformationResponse GetTypedLinkFacetInformation(GetTypedLinkFacetInformationRequest request)
+        public virtual GetTypedLinkFacetInformationResponse GetTypedLinkFacetInformation(GetTypedLinkFacetInformationRequest request)
         {
             var marshaller = new GetTypedLinkFacetInformationRequestMarshaller();
             var unmarshaller = GetTypedLinkFacetInformationResponseUnmarshaller.Instance;
@@ -2962,7 +2962,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTypedLinkFacetInformation
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetTypedLinkFacetInformation">REST API Reference for GetTypedLinkFacetInformation Operation</seealso>
-        public IAsyncResult BeginGetTypedLinkFacetInformation(GetTypedLinkFacetInformationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetTypedLinkFacetInformation(GetTypedLinkFacetInformationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetTypedLinkFacetInformationRequestMarshaller();
             var unmarshaller = GetTypedLinkFacetInformationResponseUnmarshaller.Instance;
@@ -2979,7 +2979,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  GetTypedLinkFacetInformationResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetTypedLinkFacetInformation">REST API Reference for GetTypedLinkFacetInformation Operation</seealso>
-        public  GetTypedLinkFacetInformationResponse EndGetTypedLinkFacetInformation(IAsyncResult asyncResult)
+        public virtual GetTypedLinkFacetInformationResponse EndGetTypedLinkFacetInformation(IAsyncResult asyncResult)
         {
             return EndInvoke<GetTypedLinkFacetInformationResponse>(asyncResult);
         }
@@ -3028,7 +3028,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListAppliedSchemaArns">REST API Reference for ListAppliedSchemaArns Operation</seealso>
-        public ListAppliedSchemaArnsResponse ListAppliedSchemaArns(ListAppliedSchemaArnsRequest request)
+        public virtual ListAppliedSchemaArnsResponse ListAppliedSchemaArns(ListAppliedSchemaArnsRequest request)
         {
             var marshaller = new ListAppliedSchemaArnsRequestMarshaller();
             var unmarshaller = ListAppliedSchemaArnsResponseUnmarshaller.Instance;
@@ -3048,7 +3048,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAppliedSchemaArns
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListAppliedSchemaArns">REST API Reference for ListAppliedSchemaArns Operation</seealso>
-        public IAsyncResult BeginListAppliedSchemaArns(ListAppliedSchemaArnsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListAppliedSchemaArns(ListAppliedSchemaArnsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListAppliedSchemaArnsRequestMarshaller();
             var unmarshaller = ListAppliedSchemaArnsResponseUnmarshaller.Instance;
@@ -3065,7 +3065,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  ListAppliedSchemaArnsResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListAppliedSchemaArns">REST API Reference for ListAppliedSchemaArns Operation</seealso>
-        public  ListAppliedSchemaArnsResponse EndListAppliedSchemaArns(IAsyncResult asyncResult)
+        public virtual ListAppliedSchemaArnsResponse EndListAppliedSchemaArns(IAsyncResult asyncResult)
         {
             return EndInvoke<ListAppliedSchemaArnsResponse>(asyncResult);
         }
@@ -3114,7 +3114,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListAttachedIndices">REST API Reference for ListAttachedIndices Operation</seealso>
-        public ListAttachedIndicesResponse ListAttachedIndices(ListAttachedIndicesRequest request)
+        public virtual ListAttachedIndicesResponse ListAttachedIndices(ListAttachedIndicesRequest request)
         {
             var marshaller = new ListAttachedIndicesRequestMarshaller();
             var unmarshaller = ListAttachedIndicesResponseUnmarshaller.Instance;
@@ -3134,7 +3134,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAttachedIndices
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListAttachedIndices">REST API Reference for ListAttachedIndices Operation</seealso>
-        public IAsyncResult BeginListAttachedIndices(ListAttachedIndicesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListAttachedIndices(ListAttachedIndicesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListAttachedIndicesRequestMarshaller();
             var unmarshaller = ListAttachedIndicesResponseUnmarshaller.Instance;
@@ -3151,7 +3151,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  ListAttachedIndicesResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListAttachedIndices">REST API Reference for ListAttachedIndices Operation</seealso>
-        public  ListAttachedIndicesResponse EndListAttachedIndices(IAsyncResult asyncResult)
+        public virtual ListAttachedIndicesResponse EndListAttachedIndices(IAsyncResult asyncResult)
         {
             return EndInvoke<ListAttachedIndicesResponse>(asyncResult);
         }
@@ -3200,7 +3200,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListDevelopmentSchemaArns">REST API Reference for ListDevelopmentSchemaArns Operation</seealso>
-        public ListDevelopmentSchemaArnsResponse ListDevelopmentSchemaArns(ListDevelopmentSchemaArnsRequest request)
+        public virtual ListDevelopmentSchemaArnsResponse ListDevelopmentSchemaArns(ListDevelopmentSchemaArnsRequest request)
         {
             var marshaller = new ListDevelopmentSchemaArnsRequestMarshaller();
             var unmarshaller = ListDevelopmentSchemaArnsResponseUnmarshaller.Instance;
@@ -3220,7 +3220,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDevelopmentSchemaArns
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListDevelopmentSchemaArns">REST API Reference for ListDevelopmentSchemaArns Operation</seealso>
-        public IAsyncResult BeginListDevelopmentSchemaArns(ListDevelopmentSchemaArnsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListDevelopmentSchemaArns(ListDevelopmentSchemaArnsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListDevelopmentSchemaArnsRequestMarshaller();
             var unmarshaller = ListDevelopmentSchemaArnsResponseUnmarshaller.Instance;
@@ -3237,7 +3237,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  ListDevelopmentSchemaArnsResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListDevelopmentSchemaArns">REST API Reference for ListDevelopmentSchemaArns Operation</seealso>
-        public  ListDevelopmentSchemaArnsResponse EndListDevelopmentSchemaArns(IAsyncResult asyncResult)
+        public virtual ListDevelopmentSchemaArnsResponse EndListDevelopmentSchemaArns(IAsyncResult asyncResult)
         {
             return EndInvoke<ListDevelopmentSchemaArnsResponse>(asyncResult);
         }
@@ -3283,7 +3283,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListDirectories">REST API Reference for ListDirectories Operation</seealso>
-        public ListDirectoriesResponse ListDirectories(ListDirectoriesRequest request)
+        public virtual ListDirectoriesResponse ListDirectories(ListDirectoriesRequest request)
         {
             var marshaller = new ListDirectoriesRequestMarshaller();
             var unmarshaller = ListDirectoriesResponseUnmarshaller.Instance;
@@ -3303,7 +3303,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDirectories
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListDirectories">REST API Reference for ListDirectories Operation</seealso>
-        public IAsyncResult BeginListDirectories(ListDirectoriesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListDirectories(ListDirectoriesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListDirectoriesRequestMarshaller();
             var unmarshaller = ListDirectoriesResponseUnmarshaller.Instance;
@@ -3320,7 +3320,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  ListDirectoriesResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListDirectories">REST API Reference for ListDirectories Operation</seealso>
-        public  ListDirectoriesResponse EndListDirectories(IAsyncResult asyncResult)
+        public virtual ListDirectoriesResponse EndListDirectories(IAsyncResult asyncResult)
         {
             return EndInvoke<ListDirectoriesResponse>(asyncResult);
         }
@@ -3372,7 +3372,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListFacetAttributes">REST API Reference for ListFacetAttributes Operation</seealso>
-        public ListFacetAttributesResponse ListFacetAttributes(ListFacetAttributesRequest request)
+        public virtual ListFacetAttributesResponse ListFacetAttributes(ListFacetAttributesRequest request)
         {
             var marshaller = new ListFacetAttributesRequestMarshaller();
             var unmarshaller = ListFacetAttributesResponseUnmarshaller.Instance;
@@ -3392,7 +3392,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListFacetAttributes
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListFacetAttributes">REST API Reference for ListFacetAttributes Operation</seealso>
-        public IAsyncResult BeginListFacetAttributes(ListFacetAttributesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListFacetAttributes(ListFacetAttributesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListFacetAttributesRequestMarshaller();
             var unmarshaller = ListFacetAttributesResponseUnmarshaller.Instance;
@@ -3409,7 +3409,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  ListFacetAttributesResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListFacetAttributes">REST API Reference for ListFacetAttributes Operation</seealso>
-        public  ListFacetAttributesResponse EndListFacetAttributes(IAsyncResult asyncResult)
+        public virtual ListFacetAttributesResponse EndListFacetAttributes(IAsyncResult asyncResult)
         {
             return EndInvoke<ListFacetAttributesResponse>(asyncResult);
         }
@@ -3458,7 +3458,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListFacetNames">REST API Reference for ListFacetNames Operation</seealso>
-        public ListFacetNamesResponse ListFacetNames(ListFacetNamesRequest request)
+        public virtual ListFacetNamesResponse ListFacetNames(ListFacetNamesRequest request)
         {
             var marshaller = new ListFacetNamesRequestMarshaller();
             var unmarshaller = ListFacetNamesResponseUnmarshaller.Instance;
@@ -3478,7 +3478,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListFacetNames
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListFacetNames">REST API Reference for ListFacetNames Operation</seealso>
-        public IAsyncResult BeginListFacetNames(ListFacetNamesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListFacetNames(ListFacetNamesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListFacetNamesRequestMarshaller();
             var unmarshaller = ListFacetNamesResponseUnmarshaller.Instance;
@@ -3495,7 +3495,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  ListFacetNamesResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListFacetNames">REST API Reference for ListFacetNames Operation</seealso>
-        public  ListFacetNamesResponse EndListFacetNames(IAsyncResult asyncResult)
+        public virtual ListFacetNamesResponse EndListFacetNames(IAsyncResult asyncResult)
         {
             return EndInvoke<ListFacetNamesResponse>(asyncResult);
         }
@@ -3554,7 +3554,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListIncomingTypedLinks">REST API Reference for ListIncomingTypedLinks Operation</seealso>
-        public ListIncomingTypedLinksResponse ListIncomingTypedLinks(ListIncomingTypedLinksRequest request)
+        public virtual ListIncomingTypedLinksResponse ListIncomingTypedLinks(ListIncomingTypedLinksRequest request)
         {
             var marshaller = new ListIncomingTypedLinksRequestMarshaller();
             var unmarshaller = ListIncomingTypedLinksResponseUnmarshaller.Instance;
@@ -3574,7 +3574,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListIncomingTypedLinks
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListIncomingTypedLinks">REST API Reference for ListIncomingTypedLinks Operation</seealso>
-        public IAsyncResult BeginListIncomingTypedLinks(ListIncomingTypedLinksRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListIncomingTypedLinks(ListIncomingTypedLinksRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListIncomingTypedLinksRequestMarshaller();
             var unmarshaller = ListIncomingTypedLinksResponseUnmarshaller.Instance;
@@ -3591,7 +3591,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  ListIncomingTypedLinksResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListIncomingTypedLinks">REST API Reference for ListIncomingTypedLinks Operation</seealso>
-        public  ListIncomingTypedLinksResponse EndListIncomingTypedLinks(IAsyncResult asyncResult)
+        public virtual ListIncomingTypedLinksResponse EndListIncomingTypedLinks(IAsyncResult asyncResult)
         {
             return EndInvoke<ListIncomingTypedLinksResponse>(asyncResult);
         }
@@ -3643,7 +3643,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListIndex">REST API Reference for ListIndex Operation</seealso>
-        public ListIndexResponse ListIndex(ListIndexRequest request)
+        public virtual ListIndexResponse ListIndex(ListIndexRequest request)
         {
             var marshaller = new ListIndexRequestMarshaller();
             var unmarshaller = ListIndexResponseUnmarshaller.Instance;
@@ -3663,7 +3663,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListIndex
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListIndex">REST API Reference for ListIndex Operation</seealso>
-        public IAsyncResult BeginListIndex(ListIndexRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListIndex(ListIndexRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListIndexRequestMarshaller();
             var unmarshaller = ListIndexResponseUnmarshaller.Instance;
@@ -3680,7 +3680,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  ListIndexResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListIndex">REST API Reference for ListIndex Operation</seealso>
-        public  ListIndexResponse EndListIndex(IAsyncResult asyncResult)
+        public virtual ListIndexResponse EndListIndex(IAsyncResult asyncResult)
         {
             return EndInvoke<ListIndexResponse>(asyncResult);
         }
@@ -3739,7 +3739,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectAttributes">REST API Reference for ListObjectAttributes Operation</seealso>
-        public ListObjectAttributesResponse ListObjectAttributes(ListObjectAttributesRequest request)
+        public virtual ListObjectAttributesResponse ListObjectAttributes(ListObjectAttributesRequest request)
         {
             var marshaller = new ListObjectAttributesRequestMarshaller();
             var unmarshaller = ListObjectAttributesResponseUnmarshaller.Instance;
@@ -3759,7 +3759,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListObjectAttributes
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectAttributes">REST API Reference for ListObjectAttributes Operation</seealso>
-        public IAsyncResult BeginListObjectAttributes(ListObjectAttributesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListObjectAttributes(ListObjectAttributesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListObjectAttributesRequestMarshaller();
             var unmarshaller = ListObjectAttributesResponseUnmarshaller.Instance;
@@ -3776,7 +3776,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  ListObjectAttributesResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectAttributes">REST API Reference for ListObjectAttributes Operation</seealso>
-        public  ListObjectAttributesResponse EndListObjectAttributes(IAsyncResult asyncResult)
+        public virtual ListObjectAttributesResponse EndListObjectAttributes(IAsyncResult asyncResult)
         {
             return EndInvoke<ListObjectAttributesResponse>(asyncResult);
         }
@@ -3835,7 +3835,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectChildren">REST API Reference for ListObjectChildren Operation</seealso>
-        public ListObjectChildrenResponse ListObjectChildren(ListObjectChildrenRequest request)
+        public virtual ListObjectChildrenResponse ListObjectChildren(ListObjectChildrenRequest request)
         {
             var marshaller = new ListObjectChildrenRequestMarshaller();
             var unmarshaller = ListObjectChildrenResponseUnmarshaller.Instance;
@@ -3855,7 +3855,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListObjectChildren
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectChildren">REST API Reference for ListObjectChildren Operation</seealso>
-        public IAsyncResult BeginListObjectChildren(ListObjectChildrenRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListObjectChildren(ListObjectChildrenRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListObjectChildrenRequestMarshaller();
             var unmarshaller = ListObjectChildrenResponseUnmarshaller.Instance;
@@ -3872,7 +3872,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  ListObjectChildrenResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectChildren">REST API Reference for ListObjectChildren Operation</seealso>
-        public  ListObjectChildrenResponse EndListObjectChildren(IAsyncResult asyncResult)
+        public virtual ListObjectChildrenResponse EndListObjectChildren(IAsyncResult asyncResult)
         {
             return EndInvoke<ListObjectChildrenResponse>(asyncResult);
         }
@@ -3936,7 +3936,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectParentPaths">REST API Reference for ListObjectParentPaths Operation</seealso>
-        public ListObjectParentPathsResponse ListObjectParentPaths(ListObjectParentPathsRequest request)
+        public virtual ListObjectParentPathsResponse ListObjectParentPaths(ListObjectParentPathsRequest request)
         {
             var marshaller = new ListObjectParentPathsRequestMarshaller();
             var unmarshaller = ListObjectParentPathsResponseUnmarshaller.Instance;
@@ -3956,7 +3956,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListObjectParentPaths
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectParentPaths">REST API Reference for ListObjectParentPaths Operation</seealso>
-        public IAsyncResult BeginListObjectParentPaths(ListObjectParentPathsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListObjectParentPaths(ListObjectParentPathsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListObjectParentPathsRequestMarshaller();
             var unmarshaller = ListObjectParentPathsResponseUnmarshaller.Instance;
@@ -3973,7 +3973,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  ListObjectParentPathsResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectParentPaths">REST API Reference for ListObjectParentPaths Operation</seealso>
-        public  ListObjectParentPathsResponse EndListObjectParentPaths(IAsyncResult asyncResult)
+        public virtual ListObjectParentPathsResponse EndListObjectParentPaths(IAsyncResult asyncResult)
         {
             return EndInvoke<ListObjectParentPathsResponse>(asyncResult);
         }
@@ -4031,7 +4031,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectParents">REST API Reference for ListObjectParents Operation</seealso>
-        public ListObjectParentsResponse ListObjectParents(ListObjectParentsRequest request)
+        public virtual ListObjectParentsResponse ListObjectParents(ListObjectParentsRequest request)
         {
             var marshaller = new ListObjectParentsRequestMarshaller();
             var unmarshaller = ListObjectParentsResponseUnmarshaller.Instance;
@@ -4051,7 +4051,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListObjectParents
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectParents">REST API Reference for ListObjectParents Operation</seealso>
-        public IAsyncResult BeginListObjectParents(ListObjectParentsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListObjectParents(ListObjectParentsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListObjectParentsRequestMarshaller();
             var unmarshaller = ListObjectParentsResponseUnmarshaller.Instance;
@@ -4068,7 +4068,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  ListObjectParentsResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectParents">REST API Reference for ListObjectParents Operation</seealso>
-        public  ListObjectParentsResponse EndListObjectParents(IAsyncResult asyncResult)
+        public virtual ListObjectParentsResponse EndListObjectParents(IAsyncResult asyncResult)
         {
             return EndInvoke<ListObjectParentsResponse>(asyncResult);
         }
@@ -4120,7 +4120,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectPolicies">REST API Reference for ListObjectPolicies Operation</seealso>
-        public ListObjectPoliciesResponse ListObjectPolicies(ListObjectPoliciesRequest request)
+        public virtual ListObjectPoliciesResponse ListObjectPolicies(ListObjectPoliciesRequest request)
         {
             var marshaller = new ListObjectPoliciesRequestMarshaller();
             var unmarshaller = ListObjectPoliciesResponseUnmarshaller.Instance;
@@ -4140,7 +4140,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListObjectPolicies
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectPolicies">REST API Reference for ListObjectPolicies Operation</seealso>
-        public IAsyncResult BeginListObjectPolicies(ListObjectPoliciesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListObjectPolicies(ListObjectPoliciesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListObjectPoliciesRequestMarshaller();
             var unmarshaller = ListObjectPoliciesResponseUnmarshaller.Instance;
@@ -4157,7 +4157,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  ListObjectPoliciesResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectPolicies">REST API Reference for ListObjectPolicies Operation</seealso>
-        public  ListObjectPoliciesResponse EndListObjectPolicies(IAsyncResult asyncResult)
+        public virtual ListObjectPoliciesResponse EndListObjectPolicies(IAsyncResult asyncResult)
         {
             return EndInvoke<ListObjectPoliciesResponse>(asyncResult);
         }
@@ -4216,7 +4216,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListOutgoingTypedLinks">REST API Reference for ListOutgoingTypedLinks Operation</seealso>
-        public ListOutgoingTypedLinksResponse ListOutgoingTypedLinks(ListOutgoingTypedLinksRequest request)
+        public virtual ListOutgoingTypedLinksResponse ListOutgoingTypedLinks(ListOutgoingTypedLinksRequest request)
         {
             var marshaller = new ListOutgoingTypedLinksRequestMarshaller();
             var unmarshaller = ListOutgoingTypedLinksResponseUnmarshaller.Instance;
@@ -4236,7 +4236,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListOutgoingTypedLinks
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListOutgoingTypedLinks">REST API Reference for ListOutgoingTypedLinks Operation</seealso>
-        public IAsyncResult BeginListOutgoingTypedLinks(ListOutgoingTypedLinksRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListOutgoingTypedLinks(ListOutgoingTypedLinksRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListOutgoingTypedLinksRequestMarshaller();
             var unmarshaller = ListOutgoingTypedLinksResponseUnmarshaller.Instance;
@@ -4253,7 +4253,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  ListOutgoingTypedLinksResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListOutgoingTypedLinks">REST API Reference for ListOutgoingTypedLinks Operation</seealso>
-        public  ListOutgoingTypedLinksResponse EndListOutgoingTypedLinks(IAsyncResult asyncResult)
+        public virtual ListOutgoingTypedLinksResponse EndListOutgoingTypedLinks(IAsyncResult asyncResult)
         {
             return EndInvoke<ListOutgoingTypedLinksResponse>(asyncResult);
         }
@@ -4311,7 +4311,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListPolicyAttachments">REST API Reference for ListPolicyAttachments Operation</seealso>
-        public ListPolicyAttachmentsResponse ListPolicyAttachments(ListPolicyAttachmentsRequest request)
+        public virtual ListPolicyAttachmentsResponse ListPolicyAttachments(ListPolicyAttachmentsRequest request)
         {
             var marshaller = new ListPolicyAttachmentsRequestMarshaller();
             var unmarshaller = ListPolicyAttachmentsResponseUnmarshaller.Instance;
@@ -4331,7 +4331,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPolicyAttachments
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListPolicyAttachments">REST API Reference for ListPolicyAttachments Operation</seealso>
-        public IAsyncResult BeginListPolicyAttachments(ListPolicyAttachmentsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListPolicyAttachments(ListPolicyAttachmentsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListPolicyAttachmentsRequestMarshaller();
             var unmarshaller = ListPolicyAttachmentsResponseUnmarshaller.Instance;
@@ -4348,7 +4348,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  ListPolicyAttachmentsResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListPolicyAttachments">REST API Reference for ListPolicyAttachments Operation</seealso>
-        public  ListPolicyAttachmentsResponse EndListPolicyAttachments(IAsyncResult asyncResult)
+        public virtual ListPolicyAttachmentsResponse EndListPolicyAttachments(IAsyncResult asyncResult)
         {
             return EndInvoke<ListPolicyAttachmentsResponse>(asyncResult);
         }
@@ -4397,7 +4397,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListPublishedSchemaArns">REST API Reference for ListPublishedSchemaArns Operation</seealso>
-        public ListPublishedSchemaArnsResponse ListPublishedSchemaArns(ListPublishedSchemaArnsRequest request)
+        public virtual ListPublishedSchemaArnsResponse ListPublishedSchemaArns(ListPublishedSchemaArnsRequest request)
         {
             var marshaller = new ListPublishedSchemaArnsRequestMarshaller();
             var unmarshaller = ListPublishedSchemaArnsResponseUnmarshaller.Instance;
@@ -4417,7 +4417,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPublishedSchemaArns
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListPublishedSchemaArns">REST API Reference for ListPublishedSchemaArns Operation</seealso>
-        public IAsyncResult BeginListPublishedSchemaArns(ListPublishedSchemaArnsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListPublishedSchemaArns(ListPublishedSchemaArnsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListPublishedSchemaArnsRequestMarshaller();
             var unmarshaller = ListPublishedSchemaArnsResponseUnmarshaller.Instance;
@@ -4434,7 +4434,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  ListPublishedSchemaArnsResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListPublishedSchemaArns">REST API Reference for ListPublishedSchemaArns Operation</seealso>
-        public  ListPublishedSchemaArnsResponse EndListPublishedSchemaArns(IAsyncResult asyncResult)
+        public virtual ListPublishedSchemaArnsResponse EndListPublishedSchemaArns(IAsyncResult asyncResult)
         {
             return EndInvoke<ListPublishedSchemaArnsResponse>(asyncResult);
         }
@@ -4487,7 +4487,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
-        public ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
@@ -4507,7 +4507,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
-        public IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
@@ -4524,7 +4524,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  ListTagsForResourceResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
-        public  ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult)
+        public virtual ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTagsForResourceResponse>(asyncResult);
         }
@@ -4578,7 +4578,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTypedLinkFacetAttributes">REST API Reference for ListTypedLinkFacetAttributes Operation</seealso>
-        public ListTypedLinkFacetAttributesResponse ListTypedLinkFacetAttributes(ListTypedLinkFacetAttributesRequest request)
+        public virtual ListTypedLinkFacetAttributesResponse ListTypedLinkFacetAttributes(ListTypedLinkFacetAttributesRequest request)
         {
             var marshaller = new ListTypedLinkFacetAttributesRequestMarshaller();
             var unmarshaller = ListTypedLinkFacetAttributesResponseUnmarshaller.Instance;
@@ -4598,7 +4598,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTypedLinkFacetAttributes
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTypedLinkFacetAttributes">REST API Reference for ListTypedLinkFacetAttributes Operation</seealso>
-        public IAsyncResult BeginListTypedLinkFacetAttributes(ListTypedLinkFacetAttributesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListTypedLinkFacetAttributes(ListTypedLinkFacetAttributesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListTypedLinkFacetAttributesRequestMarshaller();
             var unmarshaller = ListTypedLinkFacetAttributesResponseUnmarshaller.Instance;
@@ -4615,7 +4615,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  ListTypedLinkFacetAttributesResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTypedLinkFacetAttributes">REST API Reference for ListTypedLinkFacetAttributes Operation</seealso>
-        public  ListTypedLinkFacetAttributesResponse EndListTypedLinkFacetAttributes(IAsyncResult asyncResult)
+        public virtual ListTypedLinkFacetAttributesResponse EndListTypedLinkFacetAttributes(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTypedLinkFacetAttributesResponse>(asyncResult);
         }
@@ -4666,7 +4666,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTypedLinkFacetNames">REST API Reference for ListTypedLinkFacetNames Operation</seealso>
-        public ListTypedLinkFacetNamesResponse ListTypedLinkFacetNames(ListTypedLinkFacetNamesRequest request)
+        public virtual ListTypedLinkFacetNamesResponse ListTypedLinkFacetNames(ListTypedLinkFacetNamesRequest request)
         {
             var marshaller = new ListTypedLinkFacetNamesRequestMarshaller();
             var unmarshaller = ListTypedLinkFacetNamesResponseUnmarshaller.Instance;
@@ -4686,7 +4686,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTypedLinkFacetNames
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTypedLinkFacetNames">REST API Reference for ListTypedLinkFacetNames Operation</seealso>
-        public IAsyncResult BeginListTypedLinkFacetNames(ListTypedLinkFacetNamesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListTypedLinkFacetNames(ListTypedLinkFacetNamesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListTypedLinkFacetNamesRequestMarshaller();
             var unmarshaller = ListTypedLinkFacetNamesResponseUnmarshaller.Instance;
@@ -4703,7 +4703,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  ListTypedLinkFacetNamesResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTypedLinkFacetNames">REST API Reference for ListTypedLinkFacetNames Operation</seealso>
-        public  ListTypedLinkFacetNamesResponse EndListTypedLinkFacetNames(IAsyncResult asyncResult)
+        public virtual ListTypedLinkFacetNamesResponse EndListTypedLinkFacetNames(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTypedLinkFacetNamesResponse>(asyncResult);
         }
@@ -4763,7 +4763,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/LookupPolicy">REST API Reference for LookupPolicy Operation</seealso>
-        public LookupPolicyResponse LookupPolicy(LookupPolicyRequest request)
+        public virtual LookupPolicyResponse LookupPolicy(LookupPolicyRequest request)
         {
             var marshaller = new LookupPolicyRequestMarshaller();
             var unmarshaller = LookupPolicyResponseUnmarshaller.Instance;
@@ -4783,7 +4783,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndLookupPolicy
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/LookupPolicy">REST API Reference for LookupPolicy Operation</seealso>
-        public IAsyncResult BeginLookupPolicy(LookupPolicyRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginLookupPolicy(LookupPolicyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new LookupPolicyRequestMarshaller();
             var unmarshaller = LookupPolicyResponseUnmarshaller.Instance;
@@ -4800,7 +4800,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  LookupPolicyResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/LookupPolicy">REST API Reference for LookupPolicy Operation</seealso>
-        public  LookupPolicyResponse EndLookupPolicy(IAsyncResult asyncResult)
+        public virtual LookupPolicyResponse EndLookupPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<LookupPolicyResponse>(asyncResult);
         }
@@ -4851,7 +4851,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/PublishSchema">REST API Reference for PublishSchema Operation</seealso>
-        public PublishSchemaResponse PublishSchema(PublishSchemaRequest request)
+        public virtual PublishSchemaResponse PublishSchema(PublishSchemaRequest request)
         {
             var marshaller = new PublishSchemaRequestMarshaller();
             var unmarshaller = PublishSchemaResponseUnmarshaller.Instance;
@@ -4871,7 +4871,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPublishSchema
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/PublishSchema">REST API Reference for PublishSchema Operation</seealso>
-        public IAsyncResult BeginPublishSchema(PublishSchemaRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPublishSchema(PublishSchemaRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PublishSchemaRequestMarshaller();
             var unmarshaller = PublishSchemaResponseUnmarshaller.Instance;
@@ -4888,7 +4888,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  PublishSchemaResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/PublishSchema">REST API Reference for PublishSchema Operation</seealso>
-        public  PublishSchemaResponse EndPublishSchema(IAsyncResult asyncResult)
+        public virtual PublishSchemaResponse EndPublishSchema(IAsyncResult asyncResult)
         {
             return EndInvoke<PublishSchemaResponse>(asyncResult);
         }
@@ -4939,7 +4939,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/PutSchemaFromJson">REST API Reference for PutSchemaFromJson Operation</seealso>
-        public PutSchemaFromJsonResponse PutSchemaFromJson(PutSchemaFromJsonRequest request)
+        public virtual PutSchemaFromJsonResponse PutSchemaFromJson(PutSchemaFromJsonRequest request)
         {
             var marshaller = new PutSchemaFromJsonRequestMarshaller();
             var unmarshaller = PutSchemaFromJsonResponseUnmarshaller.Instance;
@@ -4959,7 +4959,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutSchemaFromJson
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/PutSchemaFromJson">REST API Reference for PutSchemaFromJson Operation</seealso>
-        public IAsyncResult BeginPutSchemaFromJson(PutSchemaFromJsonRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPutSchemaFromJson(PutSchemaFromJsonRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutSchemaFromJsonRequestMarshaller();
             var unmarshaller = PutSchemaFromJsonResponseUnmarshaller.Instance;
@@ -4976,7 +4976,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  PutSchemaFromJsonResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/PutSchemaFromJson">REST API Reference for PutSchemaFromJson Operation</seealso>
-        public  PutSchemaFromJsonResponse EndPutSchemaFromJson(IAsyncResult asyncResult)
+        public virtual PutSchemaFromJsonResponse EndPutSchemaFromJson(IAsyncResult asyncResult)
         {
             return EndInvoke<PutSchemaFromJsonResponse>(asyncResult);
         }
@@ -5029,7 +5029,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/RemoveFacetFromObject">REST API Reference for RemoveFacetFromObject Operation</seealso>
-        public RemoveFacetFromObjectResponse RemoveFacetFromObject(RemoveFacetFromObjectRequest request)
+        public virtual RemoveFacetFromObjectResponse RemoveFacetFromObject(RemoveFacetFromObjectRequest request)
         {
             var marshaller = new RemoveFacetFromObjectRequestMarshaller();
             var unmarshaller = RemoveFacetFromObjectResponseUnmarshaller.Instance;
@@ -5049,7 +5049,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveFacetFromObject
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/RemoveFacetFromObject">REST API Reference for RemoveFacetFromObject Operation</seealso>
-        public IAsyncResult BeginRemoveFacetFromObject(RemoveFacetFromObjectRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginRemoveFacetFromObject(RemoveFacetFromObjectRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RemoveFacetFromObjectRequestMarshaller();
             var unmarshaller = RemoveFacetFromObjectResponseUnmarshaller.Instance;
@@ -5066,7 +5066,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  RemoveFacetFromObjectResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/RemoveFacetFromObject">REST API Reference for RemoveFacetFromObject Operation</seealso>
-        public  RemoveFacetFromObjectResponse EndRemoveFacetFromObject(IAsyncResult asyncResult)
+        public virtual RemoveFacetFromObjectResponse EndRemoveFacetFromObject(IAsyncResult asyncResult)
         {
             return EndInvoke<RemoveFacetFromObjectResponse>(asyncResult);
         }
@@ -5117,7 +5117,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
-        public TagResourceResponse TagResource(TagResourceRequest request)
+        public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
             var marshaller = new TagResourceRequestMarshaller();
             var unmarshaller = TagResourceResponseUnmarshaller.Instance;
@@ -5137,7 +5137,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResource
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
-        public IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new TagResourceRequestMarshaller();
             var unmarshaller = TagResourceResponseUnmarshaller.Instance;
@@ -5154,7 +5154,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  TagResourceResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
-        public  TagResourceResponse EndTagResource(IAsyncResult asyncResult)
+        public virtual TagResourceResponse EndTagResource(IAsyncResult asyncResult)
         {
             return EndInvoke<TagResourceResponse>(asyncResult);
         }
@@ -5205,7 +5205,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
-        public UntagResourceResponse UntagResource(UntagResourceRequest request)
+        public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
             var marshaller = new UntagResourceRequestMarshaller();
             var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
@@ -5225,7 +5225,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResource
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
-        public IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UntagResourceRequestMarshaller();
             var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
@@ -5242,7 +5242,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  UntagResourceResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
-        public  UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
+        public virtual UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
         {
             return EndInvoke<UntagResourceResponse>(asyncResult);
         }
@@ -5311,7 +5311,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateFacet">REST API Reference for UpdateFacet Operation</seealso>
-        public UpdateFacetResponse UpdateFacet(UpdateFacetRequest request)
+        public virtual UpdateFacetResponse UpdateFacet(UpdateFacetRequest request)
         {
             var marshaller = new UpdateFacetRequestMarshaller();
             var unmarshaller = UpdateFacetResponseUnmarshaller.Instance;
@@ -5331,7 +5331,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateFacet
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateFacet">REST API Reference for UpdateFacet Operation</seealso>
-        public IAsyncResult BeginUpdateFacet(UpdateFacetRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateFacet(UpdateFacetRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateFacetRequestMarshaller();
             var unmarshaller = UpdateFacetResponseUnmarshaller.Instance;
@@ -5348,7 +5348,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  UpdateFacetResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateFacet">REST API Reference for UpdateFacet Operation</seealso>
-        public  UpdateFacetResponse EndUpdateFacet(IAsyncResult asyncResult)
+        public virtual UpdateFacetResponse EndUpdateFacet(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateFacetResponse>(asyncResult);
         }
@@ -5401,7 +5401,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateObjectAttributes">REST API Reference for UpdateObjectAttributes Operation</seealso>
-        public UpdateObjectAttributesResponse UpdateObjectAttributes(UpdateObjectAttributesRequest request)
+        public virtual UpdateObjectAttributesResponse UpdateObjectAttributes(UpdateObjectAttributesRequest request)
         {
             var marshaller = new UpdateObjectAttributesRequestMarshaller();
             var unmarshaller = UpdateObjectAttributesResponseUnmarshaller.Instance;
@@ -5421,7 +5421,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateObjectAttributes
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateObjectAttributes">REST API Reference for UpdateObjectAttributes Operation</seealso>
-        public IAsyncResult BeginUpdateObjectAttributes(UpdateObjectAttributesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateObjectAttributes(UpdateObjectAttributesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateObjectAttributesRequestMarshaller();
             var unmarshaller = UpdateObjectAttributesResponseUnmarshaller.Instance;
@@ -5438,7 +5438,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  UpdateObjectAttributesResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateObjectAttributes">REST API Reference for UpdateObjectAttributes Operation</seealso>
-        public  UpdateObjectAttributesResponse EndUpdateObjectAttributes(IAsyncResult asyncResult)
+        public virtual UpdateObjectAttributesResponse EndUpdateObjectAttributes(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateObjectAttributesResponse>(asyncResult);
         }
@@ -5484,7 +5484,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateSchema">REST API Reference for UpdateSchema Operation</seealso>
-        public UpdateSchemaResponse UpdateSchema(UpdateSchemaRequest request)
+        public virtual UpdateSchemaResponse UpdateSchema(UpdateSchemaRequest request)
         {
             var marshaller = new UpdateSchemaRequestMarshaller();
             var unmarshaller = UpdateSchemaResponseUnmarshaller.Instance;
@@ -5504,7 +5504,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateSchema
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateSchema">REST API Reference for UpdateSchema Operation</seealso>
-        public IAsyncResult BeginUpdateSchema(UpdateSchemaRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateSchema(UpdateSchemaRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateSchemaRequestMarshaller();
             var unmarshaller = UpdateSchemaResponseUnmarshaller.Instance;
@@ -5521,7 +5521,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  UpdateSchemaResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateSchema">REST API Reference for UpdateSchema Operation</seealso>
-        public  UpdateSchemaResponse EndUpdateSchema(IAsyncResult asyncResult)
+        public virtual UpdateSchemaResponse EndUpdateSchema(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateSchemaResponse>(asyncResult);
         }
@@ -5581,7 +5581,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateTypedLinkFacet">REST API Reference for UpdateTypedLinkFacet Operation</seealso>
-        public UpdateTypedLinkFacetResponse UpdateTypedLinkFacet(UpdateTypedLinkFacetRequest request)
+        public virtual UpdateTypedLinkFacetResponse UpdateTypedLinkFacet(UpdateTypedLinkFacetRequest request)
         {
             var marshaller = new UpdateTypedLinkFacetRequestMarshaller();
             var unmarshaller = UpdateTypedLinkFacetResponseUnmarshaller.Instance;
@@ -5601,7 +5601,7 @@ namespace Amazon.CloudDirectory
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateTypedLinkFacet
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateTypedLinkFacet">REST API Reference for UpdateTypedLinkFacet Operation</seealso>
-        public IAsyncResult BeginUpdateTypedLinkFacet(UpdateTypedLinkFacetRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateTypedLinkFacet(UpdateTypedLinkFacetRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateTypedLinkFacetRequestMarshaller();
             var unmarshaller = UpdateTypedLinkFacetResponseUnmarshaller.Instance;
@@ -5618,7 +5618,7 @@ namespace Amazon.CloudDirectory
         /// 
         /// <returns>Returns a  UpdateTypedLinkFacetResult from CloudDirectory.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateTypedLinkFacet">REST API Reference for UpdateTypedLinkFacet Operation</seealso>
-        public  UpdateTypedLinkFacetResponse EndUpdateTypedLinkFacet(IAsyncResult asyncResult)
+        public virtual UpdateTypedLinkFacetResponse EndUpdateTypedLinkFacet(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateTypedLinkFacetResponse>(asyncResult);
         }

@@ -256,7 +256,7 @@ namespace Amazon.SimpleDB
         /// <param name="request">Container for the necessary parameters to execute the BatchDeleteAttributes service method.</param>
         /// 
         /// <returns>The response from the BatchDeleteAttributes service method, as returned by SimpleDB.</returns>
-        public BatchDeleteAttributesResponse BatchDeleteAttributes(BatchDeleteAttributesRequest request)
+        public virtual BatchDeleteAttributesResponse BatchDeleteAttributes(BatchDeleteAttributesRequest request)
         {
             var marshaller = new BatchDeleteAttributesRequestMarshaller();
             var unmarshaller = BatchDeleteAttributesResponseUnmarshaller.Instance;
@@ -275,7 +275,7 @@ namespace Amazon.SimpleDB
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchDeleteAttributes
         ///         operation.</returns>
-        public IAsyncResult BeginBatchDeleteAttributes(BatchDeleteAttributesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginBatchDeleteAttributes(BatchDeleteAttributesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new BatchDeleteAttributesRequestMarshaller();
             var unmarshaller = BatchDeleteAttributesResponseUnmarshaller.Instance;
@@ -291,7 +291,7 @@ namespace Amazon.SimpleDB
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchDeleteAttributes.</param>
         /// 
         /// <returns>Returns a  BatchDeleteAttributesResult from SimpleDB.</returns>
-        public  BatchDeleteAttributesResponse EndBatchDeleteAttributes(IAsyncResult asyncResult)
+        public virtual BatchDeleteAttributesResponse EndBatchDeleteAttributes(IAsyncResult asyncResult)
         {
             return EndInvoke<BatchDeleteAttributesResponse>(asyncResult);
         }
@@ -383,7 +383,7 @@ namespace Amazon.SimpleDB
         /// <exception cref="Amazon.SimpleDB.Model.NumberSubmittedItemsExceededException">
         /// Too many items exist in a single call.
         /// </exception>
-        public BatchPutAttributesResponse BatchPutAttributes(BatchPutAttributesRequest request)
+        public virtual BatchPutAttributesResponse BatchPutAttributes(BatchPutAttributesRequest request)
         {
             var marshaller = new BatchPutAttributesRequestMarshaller();
             var unmarshaller = BatchPutAttributesResponseUnmarshaller.Instance;
@@ -402,7 +402,7 @@ namespace Amazon.SimpleDB
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchPutAttributes
         ///         operation.</returns>
-        public IAsyncResult BeginBatchPutAttributes(BatchPutAttributesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginBatchPutAttributes(BatchPutAttributesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new BatchPutAttributesRequestMarshaller();
             var unmarshaller = BatchPutAttributesResponseUnmarshaller.Instance;
@@ -418,7 +418,7 @@ namespace Amazon.SimpleDB
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchPutAttributes.</param>
         /// 
         /// <returns>Returns a  BatchPutAttributesResult from SimpleDB.</returns>
-        public  BatchPutAttributesResponse EndBatchPutAttributes(IAsyncResult asyncResult)
+        public virtual BatchPutAttributesResponse EndBatchPutAttributes(IAsyncResult asyncResult)
         {
             return EndInvoke<BatchPutAttributesResponse>(asyncResult);
         }
@@ -454,7 +454,7 @@ namespace Amazon.SimpleDB
         /// <exception cref="Amazon.SimpleDB.Model.NumberDomainsExceededException">
         /// Too many domains exist per this account.
         /// </exception>
-        public CreateDomainResponse CreateDomain(CreateDomainRequest request)
+        public virtual CreateDomainResponse CreateDomain(CreateDomainRequest request)
         {
             var marshaller = new CreateDomainRequestMarshaller();
             var unmarshaller = CreateDomainResponseUnmarshaller.Instance;
@@ -473,7 +473,7 @@ namespace Amazon.SimpleDB
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDomain
         ///         operation.</returns>
-        public IAsyncResult BeginCreateDomain(CreateDomainRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateDomain(CreateDomainRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateDomainRequestMarshaller();
             var unmarshaller = CreateDomainResponseUnmarshaller.Instance;
@@ -489,7 +489,7 @@ namespace Amazon.SimpleDB
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDomain.</param>
         /// 
         /// <returns>Returns a  CreateDomainResult from SimpleDB.</returns>
-        public  CreateDomainResponse EndCreateDomain(IAsyncResult asyncResult)
+        public virtual CreateDomainResponse EndCreateDomain(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateDomainResponse>(asyncResult);
         }
@@ -530,7 +530,7 @@ namespace Amazon.SimpleDB
         /// <exception cref="Amazon.SimpleDB.Model.NoSuchDomainException">
         /// The specified domain does not exist.
         /// </exception>
-        public DeleteAttributesResponse DeleteAttributes(DeleteAttributesRequest request)
+        public virtual DeleteAttributesResponse DeleteAttributes(DeleteAttributesRequest request)
         {
             var marshaller = new DeleteAttributesRequestMarshaller();
             var unmarshaller = DeleteAttributesResponseUnmarshaller.Instance;
@@ -549,7 +549,7 @@ namespace Amazon.SimpleDB
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAttributes
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteAttributes(DeleteAttributesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteAttributes(DeleteAttributesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteAttributesRequestMarshaller();
             var unmarshaller = DeleteAttributesResponseUnmarshaller.Instance;
@@ -565,7 +565,7 @@ namespace Amazon.SimpleDB
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAttributes.</param>
         /// 
         /// <returns>Returns a  DeleteAttributesResult from SimpleDB.</returns>
-        public  DeleteAttributesResponse EndDeleteAttributes(IAsyncResult asyncResult)
+        public virtual DeleteAttributesResponse EndDeleteAttributes(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteAttributesResponse>(asyncResult);
         }
@@ -585,7 +585,7 @@ namespace Amazon.SimpleDB
         /// <exception cref="Amazon.SimpleDB.Model.MissingParameterException">
         /// The request must contain the specified missing parameter.
         /// </exception>
-        public DeleteDomainResponse DeleteDomain(DeleteDomainRequest request)
+        public virtual DeleteDomainResponse DeleteDomain(DeleteDomainRequest request)
         {
             var marshaller = new DeleteDomainRequestMarshaller();
             var unmarshaller = DeleteDomainResponseUnmarshaller.Instance;
@@ -604,7 +604,7 @@ namespace Amazon.SimpleDB
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDomain
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteDomain(DeleteDomainRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteDomain(DeleteDomainRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteDomainRequestMarshaller();
             var unmarshaller = DeleteDomainResponseUnmarshaller.Instance;
@@ -620,7 +620,7 @@ namespace Amazon.SimpleDB
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDomain.</param>
         /// 
         /// <returns>Returns a  DeleteDomainResult from SimpleDB.</returns>
-        public  DeleteDomainResponse EndDeleteDomain(IAsyncResult asyncResult)
+        public virtual DeleteDomainResponse EndDeleteDomain(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteDomainResponse>(asyncResult);
         }
@@ -643,7 +643,7 @@ namespace Amazon.SimpleDB
         /// <exception cref="Amazon.SimpleDB.Model.NoSuchDomainException">
         /// The specified domain does not exist.
         /// </exception>
-        public DomainMetadataResponse DomainMetadata(DomainMetadataRequest request)
+        public virtual DomainMetadataResponse DomainMetadata(DomainMetadataRequest request)
         {
             var marshaller = new DomainMetadataRequestMarshaller();
             var unmarshaller = DomainMetadataResponseUnmarshaller.Instance;
@@ -662,7 +662,7 @@ namespace Amazon.SimpleDB
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDomainMetadata
         ///         operation.</returns>
-        public IAsyncResult BeginDomainMetadata(DomainMetadataRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDomainMetadata(DomainMetadataRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DomainMetadataRequestMarshaller();
             var unmarshaller = DomainMetadataResponseUnmarshaller.Instance;
@@ -678,7 +678,7 @@ namespace Amazon.SimpleDB
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDomainMetadata.</param>
         /// 
         /// <returns>Returns a  DomainMetadataResult from SimpleDB.</returns>
-        public  DomainMetadataResponse EndDomainMetadata(IAsyncResult asyncResult)
+        public virtual DomainMetadataResponse EndDomainMetadata(IAsyncResult asyncResult)
         {
             return EndInvoke<DomainMetadataResponse>(asyncResult);
         }
@@ -711,7 +711,7 @@ namespace Amazon.SimpleDB
         /// <exception cref="Amazon.SimpleDB.Model.NoSuchDomainException">
         /// The specified domain does not exist.
         /// </exception>
-        public GetAttributesResponse GetAttributes(GetAttributesRequest request)
+        public virtual GetAttributesResponse GetAttributes(GetAttributesRequest request)
         {
             var marshaller = new GetAttributesRequestMarshaller();
             var unmarshaller = GetAttributesResponseUnmarshaller.Instance;
@@ -730,7 +730,7 @@ namespace Amazon.SimpleDB
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAttributes
         ///         operation.</returns>
-        public IAsyncResult BeginGetAttributes(GetAttributesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetAttributes(GetAttributesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetAttributesRequestMarshaller();
             var unmarshaller = GetAttributesResponseUnmarshaller.Instance;
@@ -746,7 +746,7 @@ namespace Amazon.SimpleDB
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAttributes.</param>
         /// 
         /// <returns>Returns a  GetAttributesResult from SimpleDB.</returns>
-        public  GetAttributesResponse EndGetAttributes(IAsyncResult asyncResult)
+        public virtual GetAttributesResponse EndGetAttributes(IAsyncResult asyncResult)
         {
             return EndInvoke<GetAttributesResponse>(asyncResult);
         }
@@ -771,7 +771,7 @@ namespace Amazon.SimpleDB
         /// <exception cref="Amazon.SimpleDB.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
-        public ListDomainsResponse ListDomains()
+        public virtual ListDomainsResponse ListDomains()
         {
             return ListDomains(new ListDomainsRequest());
         }
@@ -793,7 +793,7 @@ namespace Amazon.SimpleDB
         /// <exception cref="Amazon.SimpleDB.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
-        public ListDomainsResponse ListDomains(ListDomainsRequest request)
+        public virtual ListDomainsResponse ListDomains(ListDomainsRequest request)
         {
             var marshaller = new ListDomainsRequestMarshaller();
             var unmarshaller = ListDomainsResponseUnmarshaller.Instance;
@@ -812,7 +812,7 @@ namespace Amazon.SimpleDB
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDomains
         ///         operation.</returns>
-        public IAsyncResult BeginListDomains(ListDomainsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListDomains(ListDomainsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListDomainsRequestMarshaller();
             var unmarshaller = ListDomainsResponseUnmarshaller.Instance;
@@ -828,7 +828,7 @@ namespace Amazon.SimpleDB
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDomains.</param>
         /// 
         /// <returns>Returns a  ListDomainsResult from SimpleDB.</returns>
-        public  ListDomainsResponse EndListDomains(IAsyncResult asyncResult)
+        public virtual ListDomainsResponse EndListDomains(IAsyncResult asyncResult)
         {
             return EndInvoke<ListDomainsResponse>(asyncResult);
         }
@@ -906,7 +906,7 @@ namespace Amazon.SimpleDB
         /// <exception cref="Amazon.SimpleDB.Model.NumberItemAttributesExceededException">
         /// Too many attributes in this item.
         /// </exception>
-        public PutAttributesResponse PutAttributes(PutAttributesRequest request)
+        public virtual PutAttributesResponse PutAttributes(PutAttributesRequest request)
         {
             var marshaller = new PutAttributesRequestMarshaller();
             var unmarshaller = PutAttributesResponseUnmarshaller.Instance;
@@ -925,7 +925,7 @@ namespace Amazon.SimpleDB
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutAttributes
         ///         operation.</returns>
-        public IAsyncResult BeginPutAttributes(PutAttributesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPutAttributes(PutAttributesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutAttributesRequestMarshaller();
             var unmarshaller = PutAttributesResponseUnmarshaller.Instance;
@@ -941,7 +941,7 @@ namespace Amazon.SimpleDB
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutAttributes.</param>
         /// 
         /// <returns>Returns a  PutAttributesResult from SimpleDB.</returns>
-        public  PutAttributesResponse EndPutAttributes(IAsyncResult asyncResult)
+        public virtual PutAttributesResponse EndPutAttributes(IAsyncResult asyncResult)
         {
             return EndInvoke<PutAttributesResponse>(asyncResult);
         }
@@ -1000,7 +1000,7 @@ namespace Amazon.SimpleDB
         /// <exception cref="Amazon.SimpleDB.Model.TooManyRequestedAttributesException">
         /// Too many attributes requested.
         /// </exception>
-        public SelectResponse Select(SelectRequest request)
+        public virtual SelectResponse Select(SelectRequest request)
         {
             var marshaller = new SelectRequestMarshaller();
             var unmarshaller = SelectResponseUnmarshaller.Instance;
@@ -1019,7 +1019,7 @@ namespace Amazon.SimpleDB
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSelect
         ///         operation.</returns>
-        public IAsyncResult BeginSelect(SelectRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginSelect(SelectRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SelectRequestMarshaller();
             var unmarshaller = SelectResponseUnmarshaller.Instance;
@@ -1035,7 +1035,7 @@ namespace Amazon.SimpleDB
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSelect.</param>
         /// 
         /// <returns>Returns a  SelectResult from SimpleDB.</returns>
-        public  SelectResponse EndSelect(IAsyncResult asyncResult)
+        public virtual SelectResponse EndSelect(IAsyncResult asyncResult)
         {
             return EndInvoke<SelectResponse>(asyncResult);
         }

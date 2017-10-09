@@ -95,7 +95,7 @@ namespace Amazon.CloudSearchDomain
         
         #region  Search
 
-        internal SearchResponse Search(SearchRequest request)
+        internal virtual SearchResponse Search(SearchRequest request)
         {
             var marshaller = new SearchRequestMarshaller();
             var unmarshaller = SearchResponseUnmarshaller.Instance;
@@ -113,7 +113,7 @@ namespace Amazon.CloudSearchDomain
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<SearchResponse> SearchAsync(SearchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<SearchResponse> SearchAsync(SearchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SearchRequestMarshaller();
             var unmarshaller = SearchResponseUnmarshaller.Instance;
@@ -126,7 +126,7 @@ namespace Amazon.CloudSearchDomain
         
         #region  Suggest
 
-        internal SuggestResponse Suggest(SuggestRequest request)
+        internal virtual SuggestResponse Suggest(SuggestRequest request)
         {
             var marshaller = new SuggestRequestMarshaller();
             var unmarshaller = SuggestResponseUnmarshaller.Instance;
@@ -144,7 +144,7 @@ namespace Amazon.CloudSearchDomain
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<SuggestResponse> SuggestAsync(SuggestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<SuggestResponse> SuggestAsync(SuggestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SuggestRequestMarshaller();
             var unmarshaller = SuggestResponseUnmarshaller.Instance;
@@ -157,7 +157,7 @@ namespace Amazon.CloudSearchDomain
         
         #region  UploadDocuments
 
-        internal UploadDocumentsResponse UploadDocuments(UploadDocumentsRequest request)
+        internal virtual UploadDocumentsResponse UploadDocuments(UploadDocumentsRequest request)
         {
             var marshaller = new UploadDocumentsRequestMarshaller();
             var unmarshaller = UploadDocumentsResponseUnmarshaller.Instance;
@@ -175,7 +175,7 @@ namespace Amazon.CloudSearchDomain
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UploadDocumentsResponse> UploadDocumentsAsync(UploadDocumentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UploadDocumentsResponse> UploadDocumentsAsync(UploadDocumentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UploadDocumentsRequestMarshaller();
             var unmarshaller = UploadDocumentsResponseUnmarshaller.Instance;

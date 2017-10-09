@@ -261,7 +261,7 @@ namespace Amazon.Mobile
         /// Credentials of the caller are insufficient to authorize the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/CreateProject">REST API Reference for CreateProject Operation</seealso>
-        public CreateProjectResponse CreateProject(CreateProjectRequest request)
+        public virtual CreateProjectResponse CreateProject(CreateProjectRequest request)
         {
             var marshaller = new CreateProjectRequestMarshaller();
             var unmarshaller = CreateProjectResponseUnmarshaller.Instance;
@@ -281,7 +281,7 @@ namespace Amazon.Mobile
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateProject
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/CreateProject">REST API Reference for CreateProject Operation</seealso>
-        public IAsyncResult BeginCreateProject(CreateProjectRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateProject(CreateProjectRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateProjectRequestMarshaller();
             var unmarshaller = CreateProjectResponseUnmarshaller.Instance;
@@ -298,7 +298,7 @@ namespace Amazon.Mobile
         /// 
         /// <returns>Returns a  CreateProjectResult from Mobile.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/CreateProject">REST API Reference for CreateProject Operation</seealso>
-        public  CreateProjectResponse EndCreateProject(IAsyncResult asyncResult)
+        public virtual CreateProjectResponse EndCreateProject(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateProjectResponse>(asyncResult);
         }
@@ -332,7 +332,7 @@ namespace Amazon.Mobile
         /// Credentials of the caller are insufficient to authorize the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
-        public DeleteProjectResponse DeleteProject(DeleteProjectRequest request)
+        public virtual DeleteProjectResponse DeleteProject(DeleteProjectRequest request)
         {
             var marshaller = new DeleteProjectRequestMarshaller();
             var unmarshaller = DeleteProjectResponseUnmarshaller.Instance;
@@ -352,7 +352,7 @@ namespace Amazon.Mobile
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteProject
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
-        public IAsyncResult BeginDeleteProject(DeleteProjectRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteProject(DeleteProjectRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteProjectRequestMarshaller();
             var unmarshaller = DeleteProjectResponseUnmarshaller.Instance;
@@ -369,7 +369,7 @@ namespace Amazon.Mobile
         /// 
         /// <returns>Returns a  DeleteProjectResult from Mobile.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
-        public  DeleteProjectResponse EndDeleteProject(IAsyncResult asyncResult)
+        public virtual DeleteProjectResponse EndDeleteProject(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteProjectResponse>(asyncResult);
         }
@@ -407,7 +407,7 @@ namespace Amazon.Mobile
         /// Credentials of the caller are insufficient to authorize the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/DescribeBundle">REST API Reference for DescribeBundle Operation</seealso>
-        public DescribeBundleResponse DescribeBundle(DescribeBundleRequest request)
+        public virtual DescribeBundleResponse DescribeBundle(DescribeBundleRequest request)
         {
             var marshaller = new DescribeBundleRequestMarshaller();
             var unmarshaller = DescribeBundleResponseUnmarshaller.Instance;
@@ -427,7 +427,7 @@ namespace Amazon.Mobile
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeBundle
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/DescribeBundle">REST API Reference for DescribeBundle Operation</seealso>
-        public IAsyncResult BeginDescribeBundle(DescribeBundleRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeBundle(DescribeBundleRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeBundleRequestMarshaller();
             var unmarshaller = DescribeBundleResponseUnmarshaller.Instance;
@@ -444,7 +444,7 @@ namespace Amazon.Mobile
         /// 
         /// <returns>Returns a  DescribeBundleResult from Mobile.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/DescribeBundle">REST API Reference for DescribeBundle Operation</seealso>
-        public  DescribeBundleResponse EndDescribeBundle(IAsyncResult asyncResult)
+        public virtual DescribeBundleResponse EndDescribeBundle(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeBundleResponse>(asyncResult);
         }
@@ -482,7 +482,7 @@ namespace Amazon.Mobile
         /// Credentials of the caller are insufficient to authorize the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/DescribeProject">REST API Reference for DescribeProject Operation</seealso>
-        public DescribeProjectResponse DescribeProject(DescribeProjectRequest request)
+        public virtual DescribeProjectResponse DescribeProject(DescribeProjectRequest request)
         {
             var marshaller = new DescribeProjectRequestMarshaller();
             var unmarshaller = DescribeProjectResponseUnmarshaller.Instance;
@@ -502,7 +502,7 @@ namespace Amazon.Mobile
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeProject
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/DescribeProject">REST API Reference for DescribeProject Operation</seealso>
-        public IAsyncResult BeginDescribeProject(DescribeProjectRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeProject(DescribeProjectRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeProjectRequestMarshaller();
             var unmarshaller = DescribeProjectResponseUnmarshaller.Instance;
@@ -519,7 +519,7 @@ namespace Amazon.Mobile
         /// 
         /// <returns>Returns a  DescribeProjectResult from Mobile.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/DescribeProject">REST API Reference for DescribeProject Operation</seealso>
-        public  DescribeProjectResponse EndDescribeProject(IAsyncResult asyncResult)
+        public virtual DescribeProjectResponse EndDescribeProject(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeProjectResponse>(asyncResult);
         }
@@ -558,7 +558,7 @@ namespace Amazon.Mobile
         /// Credentials of the caller are insufficient to authorize the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/ExportBundle">REST API Reference for ExportBundle Operation</seealso>
-        public ExportBundleResponse ExportBundle(ExportBundleRequest request)
+        public virtual ExportBundleResponse ExportBundle(ExportBundleRequest request)
         {
             var marshaller = new ExportBundleRequestMarshaller();
             var unmarshaller = ExportBundleResponseUnmarshaller.Instance;
@@ -578,7 +578,7 @@ namespace Amazon.Mobile
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndExportBundle
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/ExportBundle">REST API Reference for ExportBundle Operation</seealso>
-        public IAsyncResult BeginExportBundle(ExportBundleRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginExportBundle(ExportBundleRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ExportBundleRequestMarshaller();
             var unmarshaller = ExportBundleResponseUnmarshaller.Instance;
@@ -595,7 +595,7 @@ namespace Amazon.Mobile
         /// 
         /// <returns>Returns a  ExportBundleResult from Mobile.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/ExportBundle">REST API Reference for ExportBundle Operation</seealso>
-        public  ExportBundleResponse EndExportBundle(IAsyncResult asyncResult)
+        public virtual ExportBundleResponse EndExportBundle(IAsyncResult asyncResult)
         {
             return EndInvoke<ExportBundleResponse>(asyncResult);
         }
@@ -635,7 +635,7 @@ namespace Amazon.Mobile
         /// Credentials of the caller are insufficient to authorize the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/ExportProject">REST API Reference for ExportProject Operation</seealso>
-        public ExportProjectResponse ExportProject(ExportProjectRequest request)
+        public virtual ExportProjectResponse ExportProject(ExportProjectRequest request)
         {
             var marshaller = new ExportProjectRequestMarshaller();
             var unmarshaller = ExportProjectResponseUnmarshaller.Instance;
@@ -655,7 +655,7 @@ namespace Amazon.Mobile
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndExportProject
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/ExportProject">REST API Reference for ExportProject Operation</seealso>
-        public IAsyncResult BeginExportProject(ExportProjectRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginExportProject(ExportProjectRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ExportProjectRequestMarshaller();
             var unmarshaller = ExportProjectResponseUnmarshaller.Instance;
@@ -672,7 +672,7 @@ namespace Amazon.Mobile
         /// 
         /// <returns>Returns a  ExportProjectResult from Mobile.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/ExportProject">REST API Reference for ExportProject Operation</seealso>
-        public  ExportProjectResponse EndExportProject(IAsyncResult asyncResult)
+        public virtual ExportProjectResponse EndExportProject(IAsyncResult asyncResult)
         {
             return EndInvoke<ExportProjectResponse>(asyncResult);
         }
@@ -707,7 +707,7 @@ namespace Amazon.Mobile
         /// Credentials of the caller are insufficient to authorize the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/ListBundles">REST API Reference for ListBundles Operation</seealso>
-        public ListBundlesResponse ListBundles(ListBundlesRequest request)
+        public virtual ListBundlesResponse ListBundles(ListBundlesRequest request)
         {
             var marshaller = new ListBundlesRequestMarshaller();
             var unmarshaller = ListBundlesResponseUnmarshaller.Instance;
@@ -727,7 +727,7 @@ namespace Amazon.Mobile
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListBundles
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/ListBundles">REST API Reference for ListBundles Operation</seealso>
-        public IAsyncResult BeginListBundles(ListBundlesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListBundles(ListBundlesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListBundlesRequestMarshaller();
             var unmarshaller = ListBundlesResponseUnmarshaller.Instance;
@@ -744,7 +744,7 @@ namespace Amazon.Mobile
         /// 
         /// <returns>Returns a  ListBundlesResult from Mobile.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/ListBundles">REST API Reference for ListBundles Operation</seealso>
-        public  ListBundlesResponse EndListBundles(IAsyncResult asyncResult)
+        public virtual ListBundlesResponse EndListBundles(IAsyncResult asyncResult)
         {
             return EndInvoke<ListBundlesResponse>(asyncResult);
         }
@@ -779,7 +779,7 @@ namespace Amazon.Mobile
         /// Credentials of the caller are insufficient to authorize the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/ListProjects">REST API Reference for ListProjects Operation</seealso>
-        public ListProjectsResponse ListProjects(ListProjectsRequest request)
+        public virtual ListProjectsResponse ListProjects(ListProjectsRequest request)
         {
             var marshaller = new ListProjectsRequestMarshaller();
             var unmarshaller = ListProjectsResponseUnmarshaller.Instance;
@@ -799,7 +799,7 @@ namespace Amazon.Mobile
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListProjects
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/ListProjects">REST API Reference for ListProjects Operation</seealso>
-        public IAsyncResult BeginListProjects(ListProjectsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListProjects(ListProjectsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListProjectsRequestMarshaller();
             var unmarshaller = ListProjectsResponseUnmarshaller.Instance;
@@ -816,7 +816,7 @@ namespace Amazon.Mobile
         /// 
         /// <returns>Returns a  ListProjectsResult from Mobile.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/ListProjects">REST API Reference for ListProjects Operation</seealso>
-        public  ListProjectsResponse EndListProjects(IAsyncResult asyncResult)
+        public virtual ListProjectsResponse EndListProjects(IAsyncResult asyncResult)
         {
             return EndInvoke<ListProjectsResponse>(asyncResult);
         }
@@ -862,7 +862,7 @@ namespace Amazon.Mobile
         /// Credentials of the caller are insufficient to authorize the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
-        public UpdateProjectResponse UpdateProject(UpdateProjectRequest request)
+        public virtual UpdateProjectResponse UpdateProject(UpdateProjectRequest request)
         {
             var marshaller = new UpdateProjectRequestMarshaller();
             var unmarshaller = UpdateProjectResponseUnmarshaller.Instance;
@@ -882,7 +882,7 @@ namespace Amazon.Mobile
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateProject
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
-        public IAsyncResult BeginUpdateProject(UpdateProjectRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateProject(UpdateProjectRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateProjectRequestMarshaller();
             var unmarshaller = UpdateProjectResponseUnmarshaller.Instance;
@@ -899,7 +899,7 @@ namespace Amazon.Mobile
         /// 
         /// <returns>Returns a  UpdateProjectResult from Mobile.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
-        public  UpdateProjectResponse EndUpdateProject(IAsyncResult asyncResult)
+        public virtual UpdateProjectResponse EndUpdateProject(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateProjectResponse>(asyncResult);
         }

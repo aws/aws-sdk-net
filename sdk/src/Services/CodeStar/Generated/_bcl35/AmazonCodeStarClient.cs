@@ -347,7 +347,7 @@ namespace Amazon.CodeStar
         /// The specified input is either not valid, or it could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/AssociateTeamMember">REST API Reference for AssociateTeamMember Operation</seealso>
-        public AssociateTeamMemberResponse AssociateTeamMember(AssociateTeamMemberRequest request)
+        public virtual AssociateTeamMemberResponse AssociateTeamMember(AssociateTeamMemberRequest request)
         {
             var marshaller = new AssociateTeamMemberRequestMarshaller();
             var unmarshaller = AssociateTeamMemberResponseUnmarshaller.Instance;
@@ -367,7 +367,7 @@ namespace Amazon.CodeStar
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateTeamMember
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/AssociateTeamMember">REST API Reference for AssociateTeamMember Operation</seealso>
-        public IAsyncResult BeginAssociateTeamMember(AssociateTeamMemberRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginAssociateTeamMember(AssociateTeamMemberRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AssociateTeamMemberRequestMarshaller();
             var unmarshaller = AssociateTeamMemberResponseUnmarshaller.Instance;
@@ -384,7 +384,7 @@ namespace Amazon.CodeStar
         /// 
         /// <returns>Returns a  AssociateTeamMemberResult from CodeStar.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/AssociateTeamMember">REST API Reference for AssociateTeamMember Operation</seealso>
-        public  AssociateTeamMemberResponse EndAssociateTeamMember(IAsyncResult asyncResult)
+        public virtual AssociateTeamMemberResponse EndAssociateTeamMember(IAsyncResult asyncResult)
         {
             return EndInvoke<AssociateTeamMemberResponse>(asyncResult);
         }
@@ -424,7 +424,7 @@ namespace Amazon.CodeStar
         /// The specified input is either not valid, or it could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/CreateProject">REST API Reference for CreateProject Operation</seealso>
-        public CreateProjectResponse CreateProject(CreateProjectRequest request)
+        public virtual CreateProjectResponse CreateProject(CreateProjectRequest request)
         {
             var marshaller = new CreateProjectRequestMarshaller();
             var unmarshaller = CreateProjectResponseUnmarshaller.Instance;
@@ -444,7 +444,7 @@ namespace Amazon.CodeStar
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateProject
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/CreateProject">REST API Reference for CreateProject Operation</seealso>
-        public IAsyncResult BeginCreateProject(CreateProjectRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateProject(CreateProjectRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateProjectRequestMarshaller();
             var unmarshaller = CreateProjectResponseUnmarshaller.Instance;
@@ -461,7 +461,7 @@ namespace Amazon.CodeStar
         /// 
         /// <returns>Returns a  CreateProjectResult from CodeStar.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/CreateProject">REST API Reference for CreateProject Operation</seealso>
-        public  CreateProjectResponse EndCreateProject(IAsyncResult asyncResult)
+        public virtual CreateProjectResponse EndCreateProject(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateProjectResponse>(asyncResult);
         }
@@ -487,7 +487,7 @@ namespace Amazon.CodeStar
         /// The specified input is either not valid, or it could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/CreateUserProfile">REST API Reference for CreateUserProfile Operation</seealso>
-        public CreateUserProfileResponse CreateUserProfile(CreateUserProfileRequest request)
+        public virtual CreateUserProfileResponse CreateUserProfile(CreateUserProfileRequest request)
         {
             var marshaller = new CreateUserProfileRequestMarshaller();
             var unmarshaller = CreateUserProfileResponseUnmarshaller.Instance;
@@ -507,7 +507,7 @@ namespace Amazon.CodeStar
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateUserProfile
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/CreateUserProfile">REST API Reference for CreateUserProfile Operation</seealso>
-        public IAsyncResult BeginCreateUserProfile(CreateUserProfileRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateUserProfile(CreateUserProfileRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateUserProfileRequestMarshaller();
             var unmarshaller = CreateUserProfileResponseUnmarshaller.Instance;
@@ -524,7 +524,7 @@ namespace Amazon.CodeStar
         /// 
         /// <returns>Returns a  CreateUserProfileResult from CodeStar.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/CreateUserProfile">REST API Reference for CreateUserProfile Operation</seealso>
-        public  CreateUserProfileResponse EndCreateUserProfile(IAsyncResult asyncResult)
+        public virtual CreateUserProfileResponse EndCreateUserProfile(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateUserProfileResponse>(asyncResult);
         }
@@ -551,7 +551,7 @@ namespace Amazon.CodeStar
         /// The specified input is either not valid, or it could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
-        public DeleteProjectResponse DeleteProject(DeleteProjectRequest request)
+        public virtual DeleteProjectResponse DeleteProject(DeleteProjectRequest request)
         {
             var marshaller = new DeleteProjectRequestMarshaller();
             var unmarshaller = DeleteProjectResponseUnmarshaller.Instance;
@@ -571,7 +571,7 @@ namespace Amazon.CodeStar
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteProject
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
-        public IAsyncResult BeginDeleteProject(DeleteProjectRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteProject(DeleteProjectRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteProjectRequestMarshaller();
             var unmarshaller = DeleteProjectResponseUnmarshaller.Instance;
@@ -588,7 +588,7 @@ namespace Amazon.CodeStar
         /// 
         /// <returns>Returns a  DeleteProjectResult from CodeStar.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
-        public  DeleteProjectResponse EndDeleteProject(IAsyncResult asyncResult)
+        public virtual DeleteProjectResponse EndDeleteProject(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteProjectResponse>(asyncResult);
         }
@@ -609,7 +609,7 @@ namespace Amazon.CodeStar
         /// The specified input is either not valid, or it could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/DeleteUserProfile">REST API Reference for DeleteUserProfile Operation</seealso>
-        public DeleteUserProfileResponse DeleteUserProfile(DeleteUserProfileRequest request)
+        public virtual DeleteUserProfileResponse DeleteUserProfile(DeleteUserProfileRequest request)
         {
             var marshaller = new DeleteUserProfileRequestMarshaller();
             var unmarshaller = DeleteUserProfileResponseUnmarshaller.Instance;
@@ -629,7 +629,7 @@ namespace Amazon.CodeStar
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteUserProfile
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/DeleteUserProfile">REST API Reference for DeleteUserProfile Operation</seealso>
-        public IAsyncResult BeginDeleteUserProfile(DeleteUserProfileRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteUserProfile(DeleteUserProfileRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteUserProfileRequestMarshaller();
             var unmarshaller = DeleteUserProfileResponseUnmarshaller.Instance;
@@ -646,7 +646,7 @@ namespace Amazon.CodeStar
         /// 
         /// <returns>Returns a  DeleteUserProfileResult from CodeStar.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/DeleteUserProfile">REST API Reference for DeleteUserProfile Operation</seealso>
-        public  DeleteUserProfileResponse EndDeleteUserProfile(IAsyncResult asyncResult)
+        public virtual DeleteUserProfileResponse EndDeleteUserProfile(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteUserProfileResponse>(asyncResult);
         }
@@ -678,7 +678,7 @@ namespace Amazon.CodeStar
         /// The specified input is either not valid, or it could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/DescribeProject">REST API Reference for DescribeProject Operation</seealso>
-        public DescribeProjectResponse DescribeProject(DescribeProjectRequest request)
+        public virtual DescribeProjectResponse DescribeProject(DescribeProjectRequest request)
         {
             var marshaller = new DescribeProjectRequestMarshaller();
             var unmarshaller = DescribeProjectResponseUnmarshaller.Instance;
@@ -698,7 +698,7 @@ namespace Amazon.CodeStar
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeProject
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/DescribeProject">REST API Reference for DescribeProject Operation</seealso>
-        public IAsyncResult BeginDescribeProject(DescribeProjectRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeProject(DescribeProjectRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeProjectRequestMarshaller();
             var unmarshaller = DescribeProjectResponseUnmarshaller.Instance;
@@ -715,7 +715,7 @@ namespace Amazon.CodeStar
         /// 
         /// <returns>Returns a  DescribeProjectResult from CodeStar.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/DescribeProject">REST API Reference for DescribeProject Operation</seealso>
-        public  DescribeProjectResponse EndDescribeProject(IAsyncResult asyncResult)
+        public virtual DescribeProjectResponse EndDescribeProject(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeProjectResponse>(asyncResult);
         }
@@ -737,7 +737,7 @@ namespace Amazon.CodeStar
         /// The specified input is either not valid, or it could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/DescribeUserProfile">REST API Reference for DescribeUserProfile Operation</seealso>
-        public DescribeUserProfileResponse DescribeUserProfile(DescribeUserProfileRequest request)
+        public virtual DescribeUserProfileResponse DescribeUserProfile(DescribeUserProfileRequest request)
         {
             var marshaller = new DescribeUserProfileRequestMarshaller();
             var unmarshaller = DescribeUserProfileResponseUnmarshaller.Instance;
@@ -757,7 +757,7 @@ namespace Amazon.CodeStar
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeUserProfile
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/DescribeUserProfile">REST API Reference for DescribeUserProfile Operation</seealso>
-        public IAsyncResult BeginDescribeUserProfile(DescribeUserProfileRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeUserProfile(DescribeUserProfileRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeUserProfileRequestMarshaller();
             var unmarshaller = DescribeUserProfileResponseUnmarshaller.Instance;
@@ -774,7 +774,7 @@ namespace Amazon.CodeStar
         /// 
         /// <returns>Returns a  DescribeUserProfileResult from CodeStar.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/DescribeUserProfile">REST API Reference for DescribeUserProfile Operation</seealso>
-        public  DescribeUserProfileResponse EndDescribeUserProfile(IAsyncResult asyncResult)
+        public virtual DescribeUserProfileResponse EndDescribeUserProfile(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeUserProfileResponse>(asyncResult);
         }
@@ -806,7 +806,7 @@ namespace Amazon.CodeStar
         /// The specified input is either not valid, or it could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/DisassociateTeamMember">REST API Reference for DisassociateTeamMember Operation</seealso>
-        public DisassociateTeamMemberResponse DisassociateTeamMember(DisassociateTeamMemberRequest request)
+        public virtual DisassociateTeamMemberResponse DisassociateTeamMember(DisassociateTeamMemberRequest request)
         {
             var marshaller = new DisassociateTeamMemberRequestMarshaller();
             var unmarshaller = DisassociateTeamMemberResponseUnmarshaller.Instance;
@@ -826,7 +826,7 @@ namespace Amazon.CodeStar
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateTeamMember
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/DisassociateTeamMember">REST API Reference for DisassociateTeamMember Operation</seealso>
-        public IAsyncResult BeginDisassociateTeamMember(DisassociateTeamMemberRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDisassociateTeamMember(DisassociateTeamMemberRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DisassociateTeamMemberRequestMarshaller();
             var unmarshaller = DisassociateTeamMemberResponseUnmarshaller.Instance;
@@ -843,7 +843,7 @@ namespace Amazon.CodeStar
         /// 
         /// <returns>Returns a  DisassociateTeamMemberResult from CodeStar.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/DisassociateTeamMember">REST API Reference for DisassociateTeamMember Operation</seealso>
-        public  DisassociateTeamMemberResponse EndDisassociateTeamMember(IAsyncResult asyncResult)
+        public virtual DisassociateTeamMemberResponse EndDisassociateTeamMember(IAsyncResult asyncResult)
         {
             return EndInvoke<DisassociateTeamMemberResponse>(asyncResult);
         }
@@ -865,7 +865,7 @@ namespace Amazon.CodeStar
         /// The specified input is either not valid, or it could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListProjects">REST API Reference for ListProjects Operation</seealso>
-        public ListProjectsResponse ListProjects(ListProjectsRequest request)
+        public virtual ListProjectsResponse ListProjects(ListProjectsRequest request)
         {
             var marshaller = new ListProjectsRequestMarshaller();
             var unmarshaller = ListProjectsResponseUnmarshaller.Instance;
@@ -885,7 +885,7 @@ namespace Amazon.CodeStar
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListProjects
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListProjects">REST API Reference for ListProjects Operation</seealso>
-        public IAsyncResult BeginListProjects(ListProjectsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListProjects(ListProjectsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListProjectsRequestMarshaller();
             var unmarshaller = ListProjectsResponseUnmarshaller.Instance;
@@ -902,7 +902,7 @@ namespace Amazon.CodeStar
         /// 
         /// <returns>Returns a  ListProjectsResult from CodeStar.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListProjects">REST API Reference for ListProjects Operation</seealso>
-        public  ListProjectsResponse EndListProjects(IAsyncResult asyncResult)
+        public virtual ListProjectsResponse EndListProjects(IAsyncResult asyncResult)
         {
             return EndInvoke<ListProjectsResponse>(asyncResult);
         }
@@ -927,7 +927,7 @@ namespace Amazon.CodeStar
         /// The specified input is either not valid, or it could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListResources">REST API Reference for ListResources Operation</seealso>
-        public ListResourcesResponse ListResources(ListResourcesRequest request)
+        public virtual ListResourcesResponse ListResources(ListResourcesRequest request)
         {
             var marshaller = new ListResourcesRequestMarshaller();
             var unmarshaller = ListResourcesResponseUnmarshaller.Instance;
@@ -947,7 +947,7 @@ namespace Amazon.CodeStar
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListResources
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListResources">REST API Reference for ListResources Operation</seealso>
-        public IAsyncResult BeginListResources(ListResourcesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListResources(ListResourcesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListResourcesRequestMarshaller();
             var unmarshaller = ListResourcesResponseUnmarshaller.Instance;
@@ -964,7 +964,7 @@ namespace Amazon.CodeStar
         /// 
         /// <returns>Returns a  ListResourcesResult from CodeStar.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListResources">REST API Reference for ListResources Operation</seealso>
-        public  ListResourcesResponse EndListResources(IAsyncResult asyncResult)
+        public virtual ListResourcesResponse EndListResources(IAsyncResult asyncResult)
         {
             return EndInvoke<ListResourcesResponse>(asyncResult);
         }
@@ -989,7 +989,7 @@ namespace Amazon.CodeStar
         /// The specified input is either not valid, or it could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListTagsForProject">REST API Reference for ListTagsForProject Operation</seealso>
-        public ListTagsForProjectResponse ListTagsForProject(ListTagsForProjectRequest request)
+        public virtual ListTagsForProjectResponse ListTagsForProject(ListTagsForProjectRequest request)
         {
             var marshaller = new ListTagsForProjectRequestMarshaller();
             var unmarshaller = ListTagsForProjectResponseUnmarshaller.Instance;
@@ -1009,7 +1009,7 @@ namespace Amazon.CodeStar
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForProject
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListTagsForProject">REST API Reference for ListTagsForProject Operation</seealso>
-        public IAsyncResult BeginListTagsForProject(ListTagsForProjectRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListTagsForProject(ListTagsForProjectRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListTagsForProjectRequestMarshaller();
             var unmarshaller = ListTagsForProjectResponseUnmarshaller.Instance;
@@ -1026,7 +1026,7 @@ namespace Amazon.CodeStar
         /// 
         /// <returns>Returns a  ListTagsForProjectResult from CodeStar.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListTagsForProject">REST API Reference for ListTagsForProject Operation</seealso>
-        public  ListTagsForProjectResponse EndListTagsForProject(IAsyncResult asyncResult)
+        public virtual ListTagsForProjectResponse EndListTagsForProject(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTagsForProjectResponse>(asyncResult);
         }
@@ -1051,7 +1051,7 @@ namespace Amazon.CodeStar
         /// The specified input is either not valid, or it could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListTeamMembers">REST API Reference for ListTeamMembers Operation</seealso>
-        public ListTeamMembersResponse ListTeamMembers(ListTeamMembersRequest request)
+        public virtual ListTeamMembersResponse ListTeamMembers(ListTeamMembersRequest request)
         {
             var marshaller = new ListTeamMembersRequestMarshaller();
             var unmarshaller = ListTeamMembersResponseUnmarshaller.Instance;
@@ -1071,7 +1071,7 @@ namespace Amazon.CodeStar
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTeamMembers
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListTeamMembers">REST API Reference for ListTeamMembers Operation</seealso>
-        public IAsyncResult BeginListTeamMembers(ListTeamMembersRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListTeamMembers(ListTeamMembersRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListTeamMembersRequestMarshaller();
             var unmarshaller = ListTeamMembersResponseUnmarshaller.Instance;
@@ -1088,7 +1088,7 @@ namespace Amazon.CodeStar
         /// 
         /// <returns>Returns a  ListTeamMembersResult from CodeStar.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListTeamMembers">REST API Reference for ListTeamMembers Operation</seealso>
-        public  ListTeamMembersResponse EndListTeamMembers(IAsyncResult asyncResult)
+        public virtual ListTeamMembersResponse EndListTeamMembers(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTeamMembersResponse>(asyncResult);
         }
@@ -1110,7 +1110,7 @@ namespace Amazon.CodeStar
         /// The specified input is either not valid, or it could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListUserProfiles">REST API Reference for ListUserProfiles Operation</seealso>
-        public ListUserProfilesResponse ListUserProfiles(ListUserProfilesRequest request)
+        public virtual ListUserProfilesResponse ListUserProfiles(ListUserProfilesRequest request)
         {
             var marshaller = new ListUserProfilesRequestMarshaller();
             var unmarshaller = ListUserProfilesResponseUnmarshaller.Instance;
@@ -1130,7 +1130,7 @@ namespace Amazon.CodeStar
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListUserProfiles
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListUserProfiles">REST API Reference for ListUserProfiles Operation</seealso>
-        public IAsyncResult BeginListUserProfiles(ListUserProfilesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListUserProfiles(ListUserProfilesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListUserProfilesRequestMarshaller();
             var unmarshaller = ListUserProfilesResponseUnmarshaller.Instance;
@@ -1147,7 +1147,7 @@ namespace Amazon.CodeStar
         /// 
         /// <returns>Returns a  ListUserProfilesResult from CodeStar.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListUserProfiles">REST API Reference for ListUserProfiles Operation</seealso>
-        public  ListUserProfilesResponse EndListUserProfiles(IAsyncResult asyncResult)
+        public virtual ListUserProfilesResponse EndListUserProfiles(IAsyncResult asyncResult)
         {
             return EndInvoke<ListUserProfilesResponse>(asyncResult);
         }
@@ -1176,7 +1176,7 @@ namespace Amazon.CodeStar
         /// The specified input is either not valid, or it could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/TagProject">REST API Reference for TagProject Operation</seealso>
-        public TagProjectResponse TagProject(TagProjectRequest request)
+        public virtual TagProjectResponse TagProject(TagProjectRequest request)
         {
             var marshaller = new TagProjectRequestMarshaller();
             var unmarshaller = TagProjectResponseUnmarshaller.Instance;
@@ -1196,7 +1196,7 @@ namespace Amazon.CodeStar
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagProject
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/TagProject">REST API Reference for TagProject Operation</seealso>
-        public IAsyncResult BeginTagProject(TagProjectRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginTagProject(TagProjectRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new TagProjectRequestMarshaller();
             var unmarshaller = TagProjectResponseUnmarshaller.Instance;
@@ -1213,7 +1213,7 @@ namespace Amazon.CodeStar
         /// 
         /// <returns>Returns a  TagProjectResult from CodeStar.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/TagProject">REST API Reference for TagProject Operation</seealso>
-        public  TagProjectResponse EndTagProject(IAsyncResult asyncResult)
+        public virtual TagProjectResponse EndTagProject(IAsyncResult asyncResult)
         {
             return EndInvoke<TagProjectResponse>(asyncResult);
         }
@@ -1242,7 +1242,7 @@ namespace Amazon.CodeStar
         /// The specified input is either not valid, or it could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/UntagProject">REST API Reference for UntagProject Operation</seealso>
-        public UntagProjectResponse UntagProject(UntagProjectRequest request)
+        public virtual UntagProjectResponse UntagProject(UntagProjectRequest request)
         {
             var marshaller = new UntagProjectRequestMarshaller();
             var unmarshaller = UntagProjectResponseUnmarshaller.Instance;
@@ -1262,7 +1262,7 @@ namespace Amazon.CodeStar
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagProject
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/UntagProject">REST API Reference for UntagProject Operation</seealso>
-        public IAsyncResult BeginUntagProject(UntagProjectRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUntagProject(UntagProjectRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UntagProjectRequestMarshaller();
             var unmarshaller = UntagProjectResponseUnmarshaller.Instance;
@@ -1279,7 +1279,7 @@ namespace Amazon.CodeStar
         /// 
         /// <returns>Returns a  UntagProjectResult from CodeStar.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/UntagProject">REST API Reference for UntagProject Operation</seealso>
-        public  UntagProjectResponse EndUntagProject(IAsyncResult asyncResult)
+        public virtual UntagProjectResponse EndUntagProject(IAsyncResult asyncResult)
         {
             return EndInvoke<UntagProjectResponse>(asyncResult);
         }
@@ -1301,7 +1301,7 @@ namespace Amazon.CodeStar
         /// The specified input is either not valid, or it could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
-        public UpdateProjectResponse UpdateProject(UpdateProjectRequest request)
+        public virtual UpdateProjectResponse UpdateProject(UpdateProjectRequest request)
         {
             var marshaller = new UpdateProjectRequestMarshaller();
             var unmarshaller = UpdateProjectResponseUnmarshaller.Instance;
@@ -1321,7 +1321,7 @@ namespace Amazon.CodeStar
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateProject
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
-        public IAsyncResult BeginUpdateProject(UpdateProjectRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateProject(UpdateProjectRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateProjectRequestMarshaller();
             var unmarshaller = UpdateProjectResponseUnmarshaller.Instance;
@@ -1338,7 +1338,7 @@ namespace Amazon.CodeStar
         /// 
         /// <returns>Returns a  UpdateProjectResult from CodeStar.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
-        public  UpdateProjectResponse EndUpdateProject(IAsyncResult asyncResult)
+        public virtual UpdateProjectResponse EndUpdateProject(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateProjectResponse>(asyncResult);
         }
@@ -1378,7 +1378,7 @@ namespace Amazon.CodeStar
         /// The specified input is either not valid, or it could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/UpdateTeamMember">REST API Reference for UpdateTeamMember Operation</seealso>
-        public UpdateTeamMemberResponse UpdateTeamMember(UpdateTeamMemberRequest request)
+        public virtual UpdateTeamMemberResponse UpdateTeamMember(UpdateTeamMemberRequest request)
         {
             var marshaller = new UpdateTeamMemberRequestMarshaller();
             var unmarshaller = UpdateTeamMemberResponseUnmarshaller.Instance;
@@ -1398,7 +1398,7 @@ namespace Amazon.CodeStar
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateTeamMember
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/UpdateTeamMember">REST API Reference for UpdateTeamMember Operation</seealso>
-        public IAsyncResult BeginUpdateTeamMember(UpdateTeamMemberRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateTeamMember(UpdateTeamMemberRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateTeamMemberRequestMarshaller();
             var unmarshaller = UpdateTeamMemberResponseUnmarshaller.Instance;
@@ -1415,7 +1415,7 @@ namespace Amazon.CodeStar
         /// 
         /// <returns>Returns a  UpdateTeamMemberResult from CodeStar.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/UpdateTeamMember">REST API Reference for UpdateTeamMember Operation</seealso>
-        public  UpdateTeamMemberResponse EndUpdateTeamMember(IAsyncResult asyncResult)
+        public virtual UpdateTeamMemberResponse EndUpdateTeamMember(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateTeamMemberResponse>(asyncResult);
         }
@@ -1439,7 +1439,7 @@ namespace Amazon.CodeStar
         /// The specified input is either not valid, or it could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/UpdateUserProfile">REST API Reference for UpdateUserProfile Operation</seealso>
-        public UpdateUserProfileResponse UpdateUserProfile(UpdateUserProfileRequest request)
+        public virtual UpdateUserProfileResponse UpdateUserProfile(UpdateUserProfileRequest request)
         {
             var marshaller = new UpdateUserProfileRequestMarshaller();
             var unmarshaller = UpdateUserProfileResponseUnmarshaller.Instance;
@@ -1459,7 +1459,7 @@ namespace Amazon.CodeStar
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateUserProfile
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/UpdateUserProfile">REST API Reference for UpdateUserProfile Operation</seealso>
-        public IAsyncResult BeginUpdateUserProfile(UpdateUserProfileRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateUserProfile(UpdateUserProfileRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateUserProfileRequestMarshaller();
             var unmarshaller = UpdateUserProfileResponseUnmarshaller.Instance;
@@ -1476,7 +1476,7 @@ namespace Amazon.CodeStar
         /// 
         /// <returns>Returns a  UpdateUserProfileResult from CodeStar.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/UpdateUserProfile">REST API Reference for UpdateUserProfile Operation</seealso>
-        public  UpdateUserProfileResponse EndUpdateUserProfile(IAsyncResult asyncResult)
+        public virtual UpdateUserProfileResponse EndUpdateUserProfile(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateUserProfileResponse>(asyncResult);
         }

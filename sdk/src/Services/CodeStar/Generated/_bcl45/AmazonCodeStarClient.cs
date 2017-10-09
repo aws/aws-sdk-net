@@ -350,7 +350,7 @@ namespace Amazon.CodeStar
         /// The specified input is either not valid, or it could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/AssociateTeamMember">REST API Reference for AssociateTeamMember Operation</seealso>
-        public AssociateTeamMemberResponse AssociateTeamMember(AssociateTeamMemberRequest request)
+        public virtual AssociateTeamMemberResponse AssociateTeamMember(AssociateTeamMemberRequest request)
         {
             var marshaller = new AssociateTeamMemberRequestMarshaller();
             var unmarshaller = AssociateTeamMemberResponseUnmarshaller.Instance;
@@ -368,7 +368,7 @@ namespace Amazon.CodeStar
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/AssociateTeamMember">REST API Reference for AssociateTeamMember Operation</seealso>
-        public Task<AssociateTeamMemberResponse> AssociateTeamMemberAsync(AssociateTeamMemberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<AssociateTeamMemberResponse> AssociateTeamMemberAsync(AssociateTeamMemberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AssociateTeamMemberRequestMarshaller();
             var unmarshaller = AssociateTeamMemberResponseUnmarshaller.Instance;
@@ -413,7 +413,7 @@ namespace Amazon.CodeStar
         /// The specified input is either not valid, or it could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/CreateProject">REST API Reference for CreateProject Operation</seealso>
-        public CreateProjectResponse CreateProject(CreateProjectRequest request)
+        public virtual CreateProjectResponse CreateProject(CreateProjectRequest request)
         {
             var marshaller = new CreateProjectRequestMarshaller();
             var unmarshaller = CreateProjectResponseUnmarshaller.Instance;
@@ -431,7 +431,7 @@ namespace Amazon.CodeStar
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/CreateProject">REST API Reference for CreateProject Operation</seealso>
-        public Task<CreateProjectResponse> CreateProjectAsync(CreateProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateProjectResponse> CreateProjectAsync(CreateProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateProjectRequestMarshaller();
             var unmarshaller = CreateProjectResponseUnmarshaller.Instance;
@@ -462,7 +462,7 @@ namespace Amazon.CodeStar
         /// The specified input is either not valid, or it could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/CreateUserProfile">REST API Reference for CreateUserProfile Operation</seealso>
-        public CreateUserProfileResponse CreateUserProfile(CreateUserProfileRequest request)
+        public virtual CreateUserProfileResponse CreateUserProfile(CreateUserProfileRequest request)
         {
             var marshaller = new CreateUserProfileRequestMarshaller();
             var unmarshaller = CreateUserProfileResponseUnmarshaller.Instance;
@@ -480,7 +480,7 @@ namespace Amazon.CodeStar
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/CreateUserProfile">REST API Reference for CreateUserProfile Operation</seealso>
-        public Task<CreateUserProfileResponse> CreateUserProfileAsync(CreateUserProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateUserProfileResponse> CreateUserProfileAsync(CreateUserProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateUserProfileRequestMarshaller();
             var unmarshaller = CreateUserProfileResponseUnmarshaller.Instance;
@@ -512,7 +512,7 @@ namespace Amazon.CodeStar
         /// The specified input is either not valid, or it could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
-        public DeleteProjectResponse DeleteProject(DeleteProjectRequest request)
+        public virtual DeleteProjectResponse DeleteProject(DeleteProjectRequest request)
         {
             var marshaller = new DeleteProjectRequestMarshaller();
             var unmarshaller = DeleteProjectResponseUnmarshaller.Instance;
@@ -530,7 +530,7 @@ namespace Amazon.CodeStar
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
-        public Task<DeleteProjectResponse> DeleteProjectAsync(DeleteProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteProjectResponse> DeleteProjectAsync(DeleteProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteProjectRequestMarshaller();
             var unmarshaller = DeleteProjectResponseUnmarshaller.Instance;
@@ -556,7 +556,7 @@ namespace Amazon.CodeStar
         /// The specified input is either not valid, or it could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/DeleteUserProfile">REST API Reference for DeleteUserProfile Operation</seealso>
-        public DeleteUserProfileResponse DeleteUserProfile(DeleteUserProfileRequest request)
+        public virtual DeleteUserProfileResponse DeleteUserProfile(DeleteUserProfileRequest request)
         {
             var marshaller = new DeleteUserProfileRequestMarshaller();
             var unmarshaller = DeleteUserProfileResponseUnmarshaller.Instance;
@@ -574,7 +574,7 @@ namespace Amazon.CodeStar
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/DeleteUserProfile">REST API Reference for DeleteUserProfile Operation</seealso>
-        public Task<DeleteUserProfileResponse> DeleteUserProfileAsync(DeleteUserProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteUserProfileResponse> DeleteUserProfileAsync(DeleteUserProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteUserProfileRequestMarshaller();
             var unmarshaller = DeleteUserProfileResponseUnmarshaller.Instance;
@@ -611,7 +611,7 @@ namespace Amazon.CodeStar
         /// The specified input is either not valid, or it could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/DescribeProject">REST API Reference for DescribeProject Operation</seealso>
-        public DescribeProjectResponse DescribeProject(DescribeProjectRequest request)
+        public virtual DescribeProjectResponse DescribeProject(DescribeProjectRequest request)
         {
             var marshaller = new DescribeProjectRequestMarshaller();
             var unmarshaller = DescribeProjectResponseUnmarshaller.Instance;
@@ -629,7 +629,7 @@ namespace Amazon.CodeStar
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/DescribeProject">REST API Reference for DescribeProject Operation</seealso>
-        public Task<DescribeProjectResponse> DescribeProjectAsync(DescribeProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeProjectResponse> DescribeProjectAsync(DescribeProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeProjectRequestMarshaller();
             var unmarshaller = DescribeProjectResponseUnmarshaller.Instance;
@@ -656,7 +656,7 @@ namespace Amazon.CodeStar
         /// The specified input is either not valid, or it could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/DescribeUserProfile">REST API Reference for DescribeUserProfile Operation</seealso>
-        public DescribeUserProfileResponse DescribeUserProfile(DescribeUserProfileRequest request)
+        public virtual DescribeUserProfileResponse DescribeUserProfile(DescribeUserProfileRequest request)
         {
             var marshaller = new DescribeUserProfileRequestMarshaller();
             var unmarshaller = DescribeUserProfileResponseUnmarshaller.Instance;
@@ -674,7 +674,7 @@ namespace Amazon.CodeStar
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/DescribeUserProfile">REST API Reference for DescribeUserProfile Operation</seealso>
-        public Task<DescribeUserProfileResponse> DescribeUserProfileAsync(DescribeUserProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeUserProfileResponse> DescribeUserProfileAsync(DescribeUserProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeUserProfileRequestMarshaller();
             var unmarshaller = DescribeUserProfileResponseUnmarshaller.Instance;
@@ -711,7 +711,7 @@ namespace Amazon.CodeStar
         /// The specified input is either not valid, or it could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/DisassociateTeamMember">REST API Reference for DisassociateTeamMember Operation</seealso>
-        public DisassociateTeamMemberResponse DisassociateTeamMember(DisassociateTeamMemberRequest request)
+        public virtual DisassociateTeamMemberResponse DisassociateTeamMember(DisassociateTeamMemberRequest request)
         {
             var marshaller = new DisassociateTeamMemberRequestMarshaller();
             var unmarshaller = DisassociateTeamMemberResponseUnmarshaller.Instance;
@@ -729,7 +729,7 @@ namespace Amazon.CodeStar
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/DisassociateTeamMember">REST API Reference for DisassociateTeamMember Operation</seealso>
-        public Task<DisassociateTeamMemberResponse> DisassociateTeamMemberAsync(DisassociateTeamMemberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DisassociateTeamMemberResponse> DisassociateTeamMemberAsync(DisassociateTeamMemberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DisassociateTeamMemberRequestMarshaller();
             var unmarshaller = DisassociateTeamMemberResponseUnmarshaller.Instance;
@@ -756,7 +756,7 @@ namespace Amazon.CodeStar
         /// The specified input is either not valid, or it could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListProjects">REST API Reference for ListProjects Operation</seealso>
-        public ListProjectsResponse ListProjects(ListProjectsRequest request)
+        public virtual ListProjectsResponse ListProjects(ListProjectsRequest request)
         {
             var marshaller = new ListProjectsRequestMarshaller();
             var unmarshaller = ListProjectsResponseUnmarshaller.Instance;
@@ -774,7 +774,7 @@ namespace Amazon.CodeStar
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListProjects">REST API Reference for ListProjects Operation</seealso>
-        public Task<ListProjectsResponse> ListProjectsAsync(ListProjectsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListProjectsResponse> ListProjectsAsync(ListProjectsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListProjectsRequestMarshaller();
             var unmarshaller = ListProjectsResponseUnmarshaller.Instance;
@@ -804,7 +804,7 @@ namespace Amazon.CodeStar
         /// The specified input is either not valid, or it could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListResources">REST API Reference for ListResources Operation</seealso>
-        public ListResourcesResponse ListResources(ListResourcesRequest request)
+        public virtual ListResourcesResponse ListResources(ListResourcesRequest request)
         {
             var marshaller = new ListResourcesRequestMarshaller();
             var unmarshaller = ListResourcesResponseUnmarshaller.Instance;
@@ -822,7 +822,7 @@ namespace Amazon.CodeStar
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListResources">REST API Reference for ListResources Operation</seealso>
-        public Task<ListResourcesResponse> ListResourcesAsync(ListResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListResourcesResponse> ListResourcesAsync(ListResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListResourcesRequestMarshaller();
             var unmarshaller = ListResourcesResponseUnmarshaller.Instance;
@@ -852,7 +852,7 @@ namespace Amazon.CodeStar
         /// The specified input is either not valid, or it could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListTagsForProject">REST API Reference for ListTagsForProject Operation</seealso>
-        public ListTagsForProjectResponse ListTagsForProject(ListTagsForProjectRequest request)
+        public virtual ListTagsForProjectResponse ListTagsForProject(ListTagsForProjectRequest request)
         {
             var marshaller = new ListTagsForProjectRequestMarshaller();
             var unmarshaller = ListTagsForProjectResponseUnmarshaller.Instance;
@@ -870,7 +870,7 @@ namespace Amazon.CodeStar
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListTagsForProject">REST API Reference for ListTagsForProject Operation</seealso>
-        public Task<ListTagsForProjectResponse> ListTagsForProjectAsync(ListTagsForProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListTagsForProjectResponse> ListTagsForProjectAsync(ListTagsForProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListTagsForProjectRequestMarshaller();
             var unmarshaller = ListTagsForProjectResponseUnmarshaller.Instance;
@@ -900,7 +900,7 @@ namespace Amazon.CodeStar
         /// The specified input is either not valid, or it could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListTeamMembers">REST API Reference for ListTeamMembers Operation</seealso>
-        public ListTeamMembersResponse ListTeamMembers(ListTeamMembersRequest request)
+        public virtual ListTeamMembersResponse ListTeamMembers(ListTeamMembersRequest request)
         {
             var marshaller = new ListTeamMembersRequestMarshaller();
             var unmarshaller = ListTeamMembersResponseUnmarshaller.Instance;
@@ -918,7 +918,7 @@ namespace Amazon.CodeStar
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListTeamMembers">REST API Reference for ListTeamMembers Operation</seealso>
-        public Task<ListTeamMembersResponse> ListTeamMembersAsync(ListTeamMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListTeamMembersResponse> ListTeamMembersAsync(ListTeamMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListTeamMembersRequestMarshaller();
             var unmarshaller = ListTeamMembersResponseUnmarshaller.Instance;
@@ -945,7 +945,7 @@ namespace Amazon.CodeStar
         /// The specified input is either not valid, or it could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListUserProfiles">REST API Reference for ListUserProfiles Operation</seealso>
-        public ListUserProfilesResponse ListUserProfiles(ListUserProfilesRequest request)
+        public virtual ListUserProfilesResponse ListUserProfiles(ListUserProfilesRequest request)
         {
             var marshaller = new ListUserProfilesRequestMarshaller();
             var unmarshaller = ListUserProfilesResponseUnmarshaller.Instance;
@@ -963,7 +963,7 @@ namespace Amazon.CodeStar
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListUserProfiles">REST API Reference for ListUserProfiles Operation</seealso>
-        public Task<ListUserProfilesResponse> ListUserProfilesAsync(ListUserProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListUserProfilesResponse> ListUserProfilesAsync(ListUserProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListUserProfilesRequestMarshaller();
             var unmarshaller = ListUserProfilesResponseUnmarshaller.Instance;
@@ -997,7 +997,7 @@ namespace Amazon.CodeStar
         /// The specified input is either not valid, or it could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/TagProject">REST API Reference for TagProject Operation</seealso>
-        public TagProjectResponse TagProject(TagProjectRequest request)
+        public virtual TagProjectResponse TagProject(TagProjectRequest request)
         {
             var marshaller = new TagProjectRequestMarshaller();
             var unmarshaller = TagProjectResponseUnmarshaller.Instance;
@@ -1015,7 +1015,7 @@ namespace Amazon.CodeStar
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/TagProject">REST API Reference for TagProject Operation</seealso>
-        public Task<TagProjectResponse> TagProjectAsync(TagProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<TagProjectResponse> TagProjectAsync(TagProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new TagProjectRequestMarshaller();
             var unmarshaller = TagProjectResponseUnmarshaller.Instance;
@@ -1049,7 +1049,7 @@ namespace Amazon.CodeStar
         /// The specified input is either not valid, or it could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/UntagProject">REST API Reference for UntagProject Operation</seealso>
-        public UntagProjectResponse UntagProject(UntagProjectRequest request)
+        public virtual UntagProjectResponse UntagProject(UntagProjectRequest request)
         {
             var marshaller = new UntagProjectRequestMarshaller();
             var unmarshaller = UntagProjectResponseUnmarshaller.Instance;
@@ -1067,7 +1067,7 @@ namespace Amazon.CodeStar
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/UntagProject">REST API Reference for UntagProject Operation</seealso>
-        public Task<UntagProjectResponse> UntagProjectAsync(UntagProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UntagProjectResponse> UntagProjectAsync(UntagProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UntagProjectRequestMarshaller();
             var unmarshaller = UntagProjectResponseUnmarshaller.Instance;
@@ -1094,7 +1094,7 @@ namespace Amazon.CodeStar
         /// The specified input is either not valid, or it could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
-        public UpdateProjectResponse UpdateProject(UpdateProjectRequest request)
+        public virtual UpdateProjectResponse UpdateProject(UpdateProjectRequest request)
         {
             var marshaller = new UpdateProjectRequestMarshaller();
             var unmarshaller = UpdateProjectResponseUnmarshaller.Instance;
@@ -1112,7 +1112,7 @@ namespace Amazon.CodeStar
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
-        public Task<UpdateProjectResponse> UpdateProjectAsync(UpdateProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateProjectResponse> UpdateProjectAsync(UpdateProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateProjectRequestMarshaller();
             var unmarshaller = UpdateProjectResponseUnmarshaller.Instance;
@@ -1157,7 +1157,7 @@ namespace Amazon.CodeStar
         /// The specified input is either not valid, or it could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/UpdateTeamMember">REST API Reference for UpdateTeamMember Operation</seealso>
-        public UpdateTeamMemberResponse UpdateTeamMember(UpdateTeamMemberRequest request)
+        public virtual UpdateTeamMemberResponse UpdateTeamMember(UpdateTeamMemberRequest request)
         {
             var marshaller = new UpdateTeamMemberRequestMarshaller();
             var unmarshaller = UpdateTeamMemberResponseUnmarshaller.Instance;
@@ -1175,7 +1175,7 @@ namespace Amazon.CodeStar
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/UpdateTeamMember">REST API Reference for UpdateTeamMember Operation</seealso>
-        public Task<UpdateTeamMemberResponse> UpdateTeamMemberAsync(UpdateTeamMemberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateTeamMemberResponse> UpdateTeamMemberAsync(UpdateTeamMemberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateTeamMemberRequestMarshaller();
             var unmarshaller = UpdateTeamMemberResponseUnmarshaller.Instance;
@@ -1204,7 +1204,7 @@ namespace Amazon.CodeStar
         /// The specified input is either not valid, or it could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/UpdateUserProfile">REST API Reference for UpdateUserProfile Operation</seealso>
-        public UpdateUserProfileResponse UpdateUserProfile(UpdateUserProfileRequest request)
+        public virtual UpdateUserProfileResponse UpdateUserProfile(UpdateUserProfileRequest request)
         {
             var marshaller = new UpdateUserProfileRequestMarshaller();
             var unmarshaller = UpdateUserProfileResponseUnmarshaller.Instance;
@@ -1222,7 +1222,7 @@ namespace Amazon.CodeStar
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/UpdateUserProfile">REST API Reference for UpdateUserProfile Operation</seealso>
-        public Task<UpdateUserProfileResponse> UpdateUserProfileAsync(UpdateUserProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateUserProfileResponse> UpdateUserProfileAsync(UpdateUserProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateUserProfileRequestMarshaller();
             var unmarshaller = UpdateUserProfileResponseUnmarshaller.Instance;

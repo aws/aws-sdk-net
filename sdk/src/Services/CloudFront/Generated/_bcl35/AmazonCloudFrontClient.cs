@@ -262,7 +262,7 @@ namespace Amazon.CloudFront
         /// identities allowed.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateCloudFrontOriginAccessIdentity">REST API Reference for CreateCloudFrontOriginAccessIdentity Operation</seealso>
-        public CreateCloudFrontOriginAccessIdentityResponse CreateCloudFrontOriginAccessIdentity(CreateCloudFrontOriginAccessIdentityRequest request)
+        public virtual CreateCloudFrontOriginAccessIdentityResponse CreateCloudFrontOriginAccessIdentity(CreateCloudFrontOriginAccessIdentityRequest request)
         {
             var marshaller = new CreateCloudFrontOriginAccessIdentityRequestMarshaller();
             var unmarshaller = CreateCloudFrontOriginAccessIdentityResponseUnmarshaller.Instance;
@@ -282,7 +282,7 @@ namespace Amazon.CloudFront
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCloudFrontOriginAccessIdentity
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateCloudFrontOriginAccessIdentity">REST API Reference for CreateCloudFrontOriginAccessIdentity Operation</seealso>
-        public IAsyncResult BeginCreateCloudFrontOriginAccessIdentity(CreateCloudFrontOriginAccessIdentityRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateCloudFrontOriginAccessIdentity(CreateCloudFrontOriginAccessIdentityRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateCloudFrontOriginAccessIdentityRequestMarshaller();
             var unmarshaller = CreateCloudFrontOriginAccessIdentityResponseUnmarshaller.Instance;
@@ -299,7 +299,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>Returns a  CreateCloudFrontOriginAccessIdentityResult from CloudFront.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateCloudFrontOriginAccessIdentity">REST API Reference for CreateCloudFrontOriginAccessIdentity Operation</seealso>
-        public  CreateCloudFrontOriginAccessIdentityResponse EndCreateCloudFrontOriginAccessIdentity(IAsyncResult asyncResult)
+        public virtual CreateCloudFrontOriginAccessIdentityResponse EndCreateCloudFrontOriginAccessIdentity(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateCloudFrontOriginAccessIdentityResponse>(asyncResult);
         }
@@ -446,7 +446,7 @@ namespace Amazon.CloudFront
         /// One or more of your trusted signers do not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateDistribution">REST API Reference for CreateDistribution Operation</seealso>
-        public CreateDistributionResponse CreateDistribution(CreateDistributionRequest request)
+        public virtual CreateDistributionResponse CreateDistribution(CreateDistributionRequest request)
         {
             var marshaller = new CreateDistributionRequestMarshaller();
             var unmarshaller = CreateDistributionResponseUnmarshaller.Instance;
@@ -466,7 +466,7 @@ namespace Amazon.CloudFront
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDistribution
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateDistribution">REST API Reference for CreateDistribution Operation</seealso>
-        public IAsyncResult BeginCreateDistribution(CreateDistributionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateDistribution(CreateDistributionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateDistributionRequestMarshaller();
             var unmarshaller = CreateDistributionResponseUnmarshaller.Instance;
@@ -483,7 +483,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>Returns a  CreateDistributionResult from CloudFront.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateDistribution">REST API Reference for CreateDistribution Operation</seealso>
-        public  CreateDistributionResponse EndCreateDistribution(IAsyncResult asyncResult)
+        public virtual CreateDistributionResponse EndCreateDistribution(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateDistributionResponse>(asyncResult);
         }
@@ -632,7 +632,7 @@ namespace Amazon.CloudFront
         /// One or more of your trusted signers do not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateDistributionWithTags">REST API Reference for CreateDistributionWithTags Operation</seealso>
-        public CreateDistributionWithTagsResponse CreateDistributionWithTags(CreateDistributionWithTagsRequest request)
+        public virtual CreateDistributionWithTagsResponse CreateDistributionWithTags(CreateDistributionWithTagsRequest request)
         {
             var marshaller = new CreateDistributionWithTagsRequestMarshaller();
             var unmarshaller = CreateDistributionWithTagsResponseUnmarshaller.Instance;
@@ -652,7 +652,7 @@ namespace Amazon.CloudFront
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDistributionWithTags
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateDistributionWithTags">REST API Reference for CreateDistributionWithTags Operation</seealso>
-        public IAsyncResult BeginCreateDistributionWithTags(CreateDistributionWithTagsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateDistributionWithTags(CreateDistributionWithTagsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateDistributionWithTagsRequestMarshaller();
             var unmarshaller = CreateDistributionWithTagsResponseUnmarshaller.Instance;
@@ -669,7 +669,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>Returns a  CreateDistributionWithTagsResult from CloudFront.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateDistributionWithTags">REST API Reference for CreateDistributionWithTags Operation</seealso>
-        public  CreateDistributionWithTagsResponse EndCreateDistributionWithTags(IAsyncResult asyncResult)
+        public virtual CreateDistributionWithTagsResponse EndCreateDistributionWithTags(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateDistributionWithTagsResponse>(asyncResult);
         }
@@ -708,7 +708,7 @@ namespace Amazon.CloudFront
         /// or invalidation objects.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateInvalidation">REST API Reference for CreateInvalidation Operation</seealso>
-        public CreateInvalidationResponse CreateInvalidation(CreateInvalidationRequest request)
+        public virtual CreateInvalidationResponse CreateInvalidation(CreateInvalidationRequest request)
         {
             var marshaller = new CreateInvalidationRequestMarshaller();
             var unmarshaller = CreateInvalidationResponseUnmarshaller.Instance;
@@ -728,7 +728,7 @@ namespace Amazon.CloudFront
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateInvalidation
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateInvalidation">REST API Reference for CreateInvalidation Operation</seealso>
-        public IAsyncResult BeginCreateInvalidation(CreateInvalidationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateInvalidation(CreateInvalidationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateInvalidationRequestMarshaller();
             var unmarshaller = CreateInvalidationResponseUnmarshaller.Instance;
@@ -745,7 +745,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>Returns a  CreateInvalidationResult from CloudFront.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateInvalidation">REST API Reference for CreateInvalidation Operation</seealso>
-        public  CreateInvalidationResponse EndCreateInvalidation(IAsyncResult asyncResult)
+        public virtual CreateInvalidationResponse EndCreateInvalidation(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateInvalidationResponse>(asyncResult);
         }
@@ -834,7 +834,7 @@ namespace Amazon.CloudFront
         /// One or more of your trusted signers do not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateStreamingDistribution">REST API Reference for CreateStreamingDistribution Operation</seealso>
-        public CreateStreamingDistributionResponse CreateStreamingDistribution(CreateStreamingDistributionRequest request)
+        public virtual CreateStreamingDistributionResponse CreateStreamingDistribution(CreateStreamingDistributionRequest request)
         {
             var marshaller = new CreateStreamingDistributionRequestMarshaller();
             var unmarshaller = CreateStreamingDistributionResponseUnmarshaller.Instance;
@@ -854,7 +854,7 @@ namespace Amazon.CloudFront
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateStreamingDistribution
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateStreamingDistribution">REST API Reference for CreateStreamingDistribution Operation</seealso>
-        public IAsyncResult BeginCreateStreamingDistribution(CreateStreamingDistributionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateStreamingDistribution(CreateStreamingDistributionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateStreamingDistributionRequestMarshaller();
             var unmarshaller = CreateStreamingDistributionResponseUnmarshaller.Instance;
@@ -871,7 +871,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>Returns a  CreateStreamingDistributionResult from CloudFront.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateStreamingDistribution">REST API Reference for CreateStreamingDistribution Operation</seealso>
-        public  CreateStreamingDistributionResponse EndCreateStreamingDistribution(IAsyncResult asyncResult)
+        public virtual CreateStreamingDistributionResponse EndCreateStreamingDistribution(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateStreamingDistributionResponse>(asyncResult);
         }
@@ -928,7 +928,7 @@ namespace Amazon.CloudFront
         /// One or more of your trusted signers do not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateStreamingDistributionWithTags">REST API Reference for CreateStreamingDistributionWithTags Operation</seealso>
-        public CreateStreamingDistributionWithTagsResponse CreateStreamingDistributionWithTags(CreateStreamingDistributionWithTagsRequest request)
+        public virtual CreateStreamingDistributionWithTagsResponse CreateStreamingDistributionWithTags(CreateStreamingDistributionWithTagsRequest request)
         {
             var marshaller = new CreateStreamingDistributionWithTagsRequestMarshaller();
             var unmarshaller = CreateStreamingDistributionWithTagsResponseUnmarshaller.Instance;
@@ -948,7 +948,7 @@ namespace Amazon.CloudFront
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateStreamingDistributionWithTags
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateStreamingDistributionWithTags">REST API Reference for CreateStreamingDistributionWithTags Operation</seealso>
-        public IAsyncResult BeginCreateStreamingDistributionWithTags(CreateStreamingDistributionWithTagsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateStreamingDistributionWithTags(CreateStreamingDistributionWithTagsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateStreamingDistributionWithTagsRequestMarshaller();
             var unmarshaller = CreateStreamingDistributionWithTagsResponseUnmarshaller.Instance;
@@ -965,7 +965,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>Returns a  CreateStreamingDistributionWithTagsResult from CloudFront.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateStreamingDistributionWithTags">REST API Reference for CreateStreamingDistributionWithTags Operation</seealso>
-        public  CreateStreamingDistributionWithTagsResponse EndCreateStreamingDistributionWithTags(IAsyncResult asyncResult)
+        public virtual CreateStreamingDistributionWithTagsResponse EndCreateStreamingDistributionWithTags(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateStreamingDistributionWithTagsResponse>(asyncResult);
         }
@@ -995,7 +995,7 @@ namespace Amazon.CloudFront
         /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteCloudFrontOriginAccessIdentity">REST API Reference for DeleteCloudFrontOriginAccessIdentity Operation</seealso>
-        public DeleteCloudFrontOriginAccessIdentityResponse DeleteCloudFrontOriginAccessIdentity()
+        public virtual DeleteCloudFrontOriginAccessIdentityResponse DeleteCloudFrontOriginAccessIdentity()
         {
             return DeleteCloudFrontOriginAccessIdentity(new DeleteCloudFrontOriginAccessIdentityRequest());
         }
@@ -1022,7 +1022,7 @@ namespace Amazon.CloudFront
         /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteCloudFrontOriginAccessIdentity">REST API Reference for DeleteCloudFrontOriginAccessIdentity Operation</seealso>
-        public DeleteCloudFrontOriginAccessIdentityResponse DeleteCloudFrontOriginAccessIdentity(DeleteCloudFrontOriginAccessIdentityRequest request)
+        public virtual DeleteCloudFrontOriginAccessIdentityResponse DeleteCloudFrontOriginAccessIdentity(DeleteCloudFrontOriginAccessIdentityRequest request)
         {
             var marshaller = new DeleteCloudFrontOriginAccessIdentityRequestMarshaller();
             var unmarshaller = DeleteCloudFrontOriginAccessIdentityResponseUnmarshaller.Instance;
@@ -1042,7 +1042,7 @@ namespace Amazon.CloudFront
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCloudFrontOriginAccessIdentity
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteCloudFrontOriginAccessIdentity">REST API Reference for DeleteCloudFrontOriginAccessIdentity Operation</seealso>
-        public IAsyncResult BeginDeleteCloudFrontOriginAccessIdentity(DeleteCloudFrontOriginAccessIdentityRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteCloudFrontOriginAccessIdentity(DeleteCloudFrontOriginAccessIdentityRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteCloudFrontOriginAccessIdentityRequestMarshaller();
             var unmarshaller = DeleteCloudFrontOriginAccessIdentityResponseUnmarshaller.Instance;
@@ -1059,7 +1059,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>Returns a  DeleteCloudFrontOriginAccessIdentityResult from CloudFront.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteCloudFrontOriginAccessIdentity">REST API Reference for DeleteCloudFrontOriginAccessIdentity Operation</seealso>
-        public  DeleteCloudFrontOriginAccessIdentityResponse EndDeleteCloudFrontOriginAccessIdentity(IAsyncResult asyncResult)
+        public virtual DeleteCloudFrontOriginAccessIdentityResponse EndDeleteCloudFrontOriginAccessIdentity(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteCloudFrontOriginAccessIdentityResponse>(asyncResult);
         }
@@ -1089,7 +1089,7 @@ namespace Amazon.CloudFront
         /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
-        public DeleteDistributionResponse DeleteDistribution()
+        public virtual DeleteDistributionResponse DeleteDistribution()
         {
             return DeleteDistribution(new DeleteDistributionRequest());
         }
@@ -1116,7 +1116,7 @@ namespace Amazon.CloudFront
         /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
-        public DeleteDistributionResponse DeleteDistribution(DeleteDistributionRequest request)
+        public virtual DeleteDistributionResponse DeleteDistribution(DeleteDistributionRequest request)
         {
             var marshaller = new DeleteDistributionRequestMarshaller();
             var unmarshaller = DeleteDistributionResponseUnmarshaller.Instance;
@@ -1136,7 +1136,7 @@ namespace Amazon.CloudFront
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDistribution
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
-        public IAsyncResult BeginDeleteDistribution(DeleteDistributionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteDistribution(DeleteDistributionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteDistributionRequestMarshaller();
             var unmarshaller = DeleteDistributionResponseUnmarshaller.Instance;
@@ -1153,7 +1153,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>Returns a  DeleteDistributionResult from CloudFront.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
-        public  DeleteDistributionResponse EndDeleteDistribution(IAsyncResult asyncResult)
+        public virtual DeleteDistributionResponse EndDeleteDistribution(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteDistributionResponse>(asyncResult);
         }
@@ -1241,7 +1241,7 @@ namespace Amazon.CloudFront
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteStreamingDistribution">REST API Reference for DeleteStreamingDistribution Operation</seealso>
-        public DeleteStreamingDistributionResponse DeleteStreamingDistribution()
+        public virtual DeleteStreamingDistributionResponse DeleteStreamingDistribution()
         {
             return DeleteStreamingDistribution(new DeleteStreamingDistributionRequest());
         }
@@ -1326,7 +1326,7 @@ namespace Amazon.CloudFront
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteStreamingDistribution">REST API Reference for DeleteStreamingDistribution Operation</seealso>
-        public DeleteStreamingDistributionResponse DeleteStreamingDistribution(DeleteStreamingDistributionRequest request)
+        public virtual DeleteStreamingDistributionResponse DeleteStreamingDistribution(DeleteStreamingDistributionRequest request)
         {
             var marshaller = new DeleteStreamingDistributionRequestMarshaller();
             var unmarshaller = DeleteStreamingDistributionResponseUnmarshaller.Instance;
@@ -1346,7 +1346,7 @@ namespace Amazon.CloudFront
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteStreamingDistribution
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteStreamingDistribution">REST API Reference for DeleteStreamingDistribution Operation</seealso>
-        public IAsyncResult BeginDeleteStreamingDistribution(DeleteStreamingDistributionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteStreamingDistribution(DeleteStreamingDistributionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteStreamingDistributionRequestMarshaller();
             var unmarshaller = DeleteStreamingDistributionResponseUnmarshaller.Instance;
@@ -1363,7 +1363,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>Returns a  DeleteStreamingDistributionResult from CloudFront.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteStreamingDistribution">REST API Reference for DeleteStreamingDistribution Operation</seealso>
-        public  DeleteStreamingDistributionResponse EndDeleteStreamingDistribution(IAsyncResult asyncResult)
+        public virtual DeleteStreamingDistributionResponse EndDeleteStreamingDistribution(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteStreamingDistributionResponse>(asyncResult);
         }
@@ -1384,7 +1384,7 @@ namespace Amazon.CloudFront
         /// The specified origin access identity does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetCloudFrontOriginAccessIdentity">REST API Reference for GetCloudFrontOriginAccessIdentity Operation</seealso>
-        public GetCloudFrontOriginAccessIdentityResponse GetCloudFrontOriginAccessIdentity()
+        public virtual GetCloudFrontOriginAccessIdentityResponse GetCloudFrontOriginAccessIdentity()
         {
             return GetCloudFrontOriginAccessIdentity(new GetCloudFrontOriginAccessIdentityRequest());
         }
@@ -1402,7 +1402,7 @@ namespace Amazon.CloudFront
         /// The specified origin access identity does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetCloudFrontOriginAccessIdentity">REST API Reference for GetCloudFrontOriginAccessIdentity Operation</seealso>
-        public GetCloudFrontOriginAccessIdentityResponse GetCloudFrontOriginAccessIdentity(GetCloudFrontOriginAccessIdentityRequest request)
+        public virtual GetCloudFrontOriginAccessIdentityResponse GetCloudFrontOriginAccessIdentity(GetCloudFrontOriginAccessIdentityRequest request)
         {
             var marshaller = new GetCloudFrontOriginAccessIdentityRequestMarshaller();
             var unmarshaller = GetCloudFrontOriginAccessIdentityResponseUnmarshaller.Instance;
@@ -1422,7 +1422,7 @@ namespace Amazon.CloudFront
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCloudFrontOriginAccessIdentity
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetCloudFrontOriginAccessIdentity">REST API Reference for GetCloudFrontOriginAccessIdentity Operation</seealso>
-        public IAsyncResult BeginGetCloudFrontOriginAccessIdentity(GetCloudFrontOriginAccessIdentityRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetCloudFrontOriginAccessIdentity(GetCloudFrontOriginAccessIdentityRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetCloudFrontOriginAccessIdentityRequestMarshaller();
             var unmarshaller = GetCloudFrontOriginAccessIdentityResponseUnmarshaller.Instance;
@@ -1439,7 +1439,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>Returns a  GetCloudFrontOriginAccessIdentityResult from CloudFront.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetCloudFrontOriginAccessIdentity">REST API Reference for GetCloudFrontOriginAccessIdentity Operation</seealso>
-        public  GetCloudFrontOriginAccessIdentityResponse EndGetCloudFrontOriginAccessIdentity(IAsyncResult asyncResult)
+        public virtual GetCloudFrontOriginAccessIdentityResponse EndGetCloudFrontOriginAccessIdentity(IAsyncResult asyncResult)
         {
             return EndInvoke<GetCloudFrontOriginAccessIdentityResponse>(asyncResult);
         }
@@ -1460,7 +1460,7 @@ namespace Amazon.CloudFront
         /// The specified origin access identity does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetCloudFrontOriginAccessIdentityConfig">REST API Reference for GetCloudFrontOriginAccessIdentityConfig Operation</seealso>
-        public GetCloudFrontOriginAccessIdentityConfigResponse GetCloudFrontOriginAccessIdentityConfig()
+        public virtual GetCloudFrontOriginAccessIdentityConfigResponse GetCloudFrontOriginAccessIdentityConfig()
         {
             return GetCloudFrontOriginAccessIdentityConfig(new GetCloudFrontOriginAccessIdentityConfigRequest());
         }
@@ -1478,7 +1478,7 @@ namespace Amazon.CloudFront
         /// The specified origin access identity does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetCloudFrontOriginAccessIdentityConfig">REST API Reference for GetCloudFrontOriginAccessIdentityConfig Operation</seealso>
-        public GetCloudFrontOriginAccessIdentityConfigResponse GetCloudFrontOriginAccessIdentityConfig(GetCloudFrontOriginAccessIdentityConfigRequest request)
+        public virtual GetCloudFrontOriginAccessIdentityConfigResponse GetCloudFrontOriginAccessIdentityConfig(GetCloudFrontOriginAccessIdentityConfigRequest request)
         {
             var marshaller = new GetCloudFrontOriginAccessIdentityConfigRequestMarshaller();
             var unmarshaller = GetCloudFrontOriginAccessIdentityConfigResponseUnmarshaller.Instance;
@@ -1498,7 +1498,7 @@ namespace Amazon.CloudFront
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCloudFrontOriginAccessIdentityConfig
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetCloudFrontOriginAccessIdentityConfig">REST API Reference for GetCloudFrontOriginAccessIdentityConfig Operation</seealso>
-        public IAsyncResult BeginGetCloudFrontOriginAccessIdentityConfig(GetCloudFrontOriginAccessIdentityConfigRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetCloudFrontOriginAccessIdentityConfig(GetCloudFrontOriginAccessIdentityConfigRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetCloudFrontOriginAccessIdentityConfigRequestMarshaller();
             var unmarshaller = GetCloudFrontOriginAccessIdentityConfigResponseUnmarshaller.Instance;
@@ -1515,7 +1515,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>Returns a  GetCloudFrontOriginAccessIdentityConfigResult from CloudFront.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetCloudFrontOriginAccessIdentityConfig">REST API Reference for GetCloudFrontOriginAccessIdentityConfig Operation</seealso>
-        public  GetCloudFrontOriginAccessIdentityConfigResponse EndGetCloudFrontOriginAccessIdentityConfig(IAsyncResult asyncResult)
+        public virtual GetCloudFrontOriginAccessIdentityConfigResponse EndGetCloudFrontOriginAccessIdentityConfig(IAsyncResult asyncResult)
         {
             return EndInvoke<GetCloudFrontOriginAccessIdentityConfigResponse>(asyncResult);
         }
@@ -1536,7 +1536,7 @@ namespace Amazon.CloudFront
         /// The specified distribution does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetDistribution">REST API Reference for GetDistribution Operation</seealso>
-        public GetDistributionResponse GetDistribution()
+        public virtual GetDistributionResponse GetDistribution()
         {
             return GetDistribution(new GetDistributionRequest());
         }
@@ -1554,7 +1554,7 @@ namespace Amazon.CloudFront
         /// The specified distribution does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetDistribution">REST API Reference for GetDistribution Operation</seealso>
-        public GetDistributionResponse GetDistribution(GetDistributionRequest request)
+        public virtual GetDistributionResponse GetDistribution(GetDistributionRequest request)
         {
             var marshaller = new GetDistributionRequestMarshaller();
             var unmarshaller = GetDistributionResponseUnmarshaller.Instance;
@@ -1574,7 +1574,7 @@ namespace Amazon.CloudFront
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDistribution
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetDistribution">REST API Reference for GetDistribution Operation</seealso>
-        public IAsyncResult BeginGetDistribution(GetDistributionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetDistribution(GetDistributionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetDistributionRequestMarshaller();
             var unmarshaller = GetDistributionResponseUnmarshaller.Instance;
@@ -1591,7 +1591,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>Returns a  GetDistributionResult from CloudFront.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetDistribution">REST API Reference for GetDistribution Operation</seealso>
-        public  GetDistributionResponse EndGetDistribution(IAsyncResult asyncResult)
+        public virtual GetDistributionResponse EndGetDistribution(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDistributionResponse>(asyncResult);
         }
@@ -1612,7 +1612,7 @@ namespace Amazon.CloudFront
         /// The specified distribution does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetDistributionConfig">REST API Reference for GetDistributionConfig Operation</seealso>
-        public GetDistributionConfigResponse GetDistributionConfig()
+        public virtual GetDistributionConfigResponse GetDistributionConfig()
         {
             return GetDistributionConfig(new GetDistributionConfigRequest());
         }
@@ -1630,7 +1630,7 @@ namespace Amazon.CloudFront
         /// The specified distribution does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetDistributionConfig">REST API Reference for GetDistributionConfig Operation</seealso>
-        public GetDistributionConfigResponse GetDistributionConfig(GetDistributionConfigRequest request)
+        public virtual GetDistributionConfigResponse GetDistributionConfig(GetDistributionConfigRequest request)
         {
             var marshaller = new GetDistributionConfigRequestMarshaller();
             var unmarshaller = GetDistributionConfigResponseUnmarshaller.Instance;
@@ -1650,7 +1650,7 @@ namespace Amazon.CloudFront
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDistributionConfig
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetDistributionConfig">REST API Reference for GetDistributionConfig Operation</seealso>
-        public IAsyncResult BeginGetDistributionConfig(GetDistributionConfigRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetDistributionConfig(GetDistributionConfigRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetDistributionConfigRequestMarshaller();
             var unmarshaller = GetDistributionConfigResponseUnmarshaller.Instance;
@@ -1667,7 +1667,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>Returns a  GetDistributionConfigResult from CloudFront.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetDistributionConfig">REST API Reference for GetDistributionConfig Operation</seealso>
-        public  GetDistributionConfigResponse EndGetDistributionConfig(IAsyncResult asyncResult)
+        public virtual GetDistributionConfigResponse EndGetDistributionConfig(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDistributionConfigResponse>(asyncResult);
         }
@@ -1692,7 +1692,7 @@ namespace Amazon.CloudFront
         /// The specified invalidation does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetInvalidation">REST API Reference for GetInvalidation Operation</seealso>
-        public GetInvalidationResponse GetInvalidation(GetInvalidationRequest request)
+        public virtual GetInvalidationResponse GetInvalidation(GetInvalidationRequest request)
         {
             var marshaller = new GetInvalidationRequestMarshaller();
             var unmarshaller = GetInvalidationResponseUnmarshaller.Instance;
@@ -1712,7 +1712,7 @@ namespace Amazon.CloudFront
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetInvalidation
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetInvalidation">REST API Reference for GetInvalidation Operation</seealso>
-        public IAsyncResult BeginGetInvalidation(GetInvalidationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetInvalidation(GetInvalidationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetInvalidationRequestMarshaller();
             var unmarshaller = GetInvalidationResponseUnmarshaller.Instance;
@@ -1729,7 +1729,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>Returns a  GetInvalidationResult from CloudFront.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetInvalidation">REST API Reference for GetInvalidation Operation</seealso>
-        public  GetInvalidationResponse EndGetInvalidation(IAsyncResult asyncResult)
+        public virtual GetInvalidationResponse EndGetInvalidation(IAsyncResult asyncResult)
         {
             return EndInvoke<GetInvalidationResponse>(asyncResult);
         }
@@ -1750,7 +1750,7 @@ namespace Amazon.CloudFront
         /// The specified streaming distribution does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetStreamingDistribution">REST API Reference for GetStreamingDistribution Operation</seealso>
-        public GetStreamingDistributionResponse GetStreamingDistribution()
+        public virtual GetStreamingDistributionResponse GetStreamingDistribution()
         {
             return GetStreamingDistribution(new GetStreamingDistributionRequest());
         }
@@ -1768,7 +1768,7 @@ namespace Amazon.CloudFront
         /// The specified streaming distribution does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetStreamingDistribution">REST API Reference for GetStreamingDistribution Operation</seealso>
-        public GetStreamingDistributionResponse GetStreamingDistribution(GetStreamingDistributionRequest request)
+        public virtual GetStreamingDistributionResponse GetStreamingDistribution(GetStreamingDistributionRequest request)
         {
             var marshaller = new GetStreamingDistributionRequestMarshaller();
             var unmarshaller = GetStreamingDistributionResponseUnmarshaller.Instance;
@@ -1788,7 +1788,7 @@ namespace Amazon.CloudFront
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetStreamingDistribution
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetStreamingDistribution">REST API Reference for GetStreamingDistribution Operation</seealso>
-        public IAsyncResult BeginGetStreamingDistribution(GetStreamingDistributionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetStreamingDistribution(GetStreamingDistributionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetStreamingDistributionRequestMarshaller();
             var unmarshaller = GetStreamingDistributionResponseUnmarshaller.Instance;
@@ -1805,7 +1805,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>Returns a  GetStreamingDistributionResult from CloudFront.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetStreamingDistribution">REST API Reference for GetStreamingDistribution Operation</seealso>
-        public  GetStreamingDistributionResponse EndGetStreamingDistribution(IAsyncResult asyncResult)
+        public virtual GetStreamingDistributionResponse EndGetStreamingDistribution(IAsyncResult asyncResult)
         {
             return EndInvoke<GetStreamingDistributionResponse>(asyncResult);
         }
@@ -1826,7 +1826,7 @@ namespace Amazon.CloudFront
         /// The specified streaming distribution does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetStreamingDistributionConfig">REST API Reference for GetStreamingDistributionConfig Operation</seealso>
-        public GetStreamingDistributionConfigResponse GetStreamingDistributionConfig()
+        public virtual GetStreamingDistributionConfigResponse GetStreamingDistributionConfig()
         {
             return GetStreamingDistributionConfig(new GetStreamingDistributionConfigRequest());
         }
@@ -1844,7 +1844,7 @@ namespace Amazon.CloudFront
         /// The specified streaming distribution does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetStreamingDistributionConfig">REST API Reference for GetStreamingDistributionConfig Operation</seealso>
-        public GetStreamingDistributionConfigResponse GetStreamingDistributionConfig(GetStreamingDistributionConfigRequest request)
+        public virtual GetStreamingDistributionConfigResponse GetStreamingDistributionConfig(GetStreamingDistributionConfigRequest request)
         {
             var marshaller = new GetStreamingDistributionConfigRequestMarshaller();
             var unmarshaller = GetStreamingDistributionConfigResponseUnmarshaller.Instance;
@@ -1864,7 +1864,7 @@ namespace Amazon.CloudFront
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetStreamingDistributionConfig
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetStreamingDistributionConfig">REST API Reference for GetStreamingDistributionConfig Operation</seealso>
-        public IAsyncResult BeginGetStreamingDistributionConfig(GetStreamingDistributionConfigRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetStreamingDistributionConfig(GetStreamingDistributionConfigRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetStreamingDistributionConfigRequestMarshaller();
             var unmarshaller = GetStreamingDistributionConfigResponseUnmarshaller.Instance;
@@ -1881,7 +1881,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>Returns a  GetStreamingDistributionConfigResult from CloudFront.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetStreamingDistributionConfig">REST API Reference for GetStreamingDistributionConfig Operation</seealso>
-        public  GetStreamingDistributionConfigResponse EndGetStreamingDistributionConfig(IAsyncResult asyncResult)
+        public virtual GetStreamingDistributionConfigResponse EndGetStreamingDistributionConfig(IAsyncResult asyncResult)
         {
             return EndInvoke<GetStreamingDistributionConfigResponse>(asyncResult);
         }
@@ -1899,7 +1899,7 @@ namespace Amazon.CloudFront
         /// The argument is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListCloudFrontOriginAccessIdentities">REST API Reference for ListCloudFrontOriginAccessIdentities Operation</seealso>
-        public ListCloudFrontOriginAccessIdentitiesResponse ListCloudFrontOriginAccessIdentities()
+        public virtual ListCloudFrontOriginAccessIdentitiesResponse ListCloudFrontOriginAccessIdentities()
         {
             return ListCloudFrontOriginAccessIdentities(new ListCloudFrontOriginAccessIdentitiesRequest());
         }
@@ -1914,7 +1914,7 @@ namespace Amazon.CloudFront
         /// The argument is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListCloudFrontOriginAccessIdentities">REST API Reference for ListCloudFrontOriginAccessIdentities Operation</seealso>
-        public ListCloudFrontOriginAccessIdentitiesResponse ListCloudFrontOriginAccessIdentities(ListCloudFrontOriginAccessIdentitiesRequest request)
+        public virtual ListCloudFrontOriginAccessIdentitiesResponse ListCloudFrontOriginAccessIdentities(ListCloudFrontOriginAccessIdentitiesRequest request)
         {
             var marshaller = new ListCloudFrontOriginAccessIdentitiesRequestMarshaller();
             var unmarshaller = ListCloudFrontOriginAccessIdentitiesResponseUnmarshaller.Instance;
@@ -1934,7 +1934,7 @@ namespace Amazon.CloudFront
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCloudFrontOriginAccessIdentities
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListCloudFrontOriginAccessIdentities">REST API Reference for ListCloudFrontOriginAccessIdentities Operation</seealso>
-        public IAsyncResult BeginListCloudFrontOriginAccessIdentities(ListCloudFrontOriginAccessIdentitiesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListCloudFrontOriginAccessIdentities(ListCloudFrontOriginAccessIdentitiesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListCloudFrontOriginAccessIdentitiesRequestMarshaller();
             var unmarshaller = ListCloudFrontOriginAccessIdentitiesResponseUnmarshaller.Instance;
@@ -1951,7 +1951,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>Returns a  ListCloudFrontOriginAccessIdentitiesResult from CloudFront.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListCloudFrontOriginAccessIdentities">REST API Reference for ListCloudFrontOriginAccessIdentities Operation</seealso>
-        public  ListCloudFrontOriginAccessIdentitiesResponse EndListCloudFrontOriginAccessIdentities(IAsyncResult asyncResult)
+        public virtual ListCloudFrontOriginAccessIdentitiesResponse EndListCloudFrontOriginAccessIdentities(IAsyncResult asyncResult)
         {
             return EndInvoke<ListCloudFrontOriginAccessIdentitiesResponse>(asyncResult);
         }
@@ -1969,7 +1969,7 @@ namespace Amazon.CloudFront
         /// The argument is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListDistributions">REST API Reference for ListDistributions Operation</seealso>
-        public ListDistributionsResponse ListDistributions()
+        public virtual ListDistributionsResponse ListDistributions()
         {
             return ListDistributions(new ListDistributionsRequest());
         }
@@ -1984,7 +1984,7 @@ namespace Amazon.CloudFront
         /// The argument is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListDistributions">REST API Reference for ListDistributions Operation</seealso>
-        public ListDistributionsResponse ListDistributions(ListDistributionsRequest request)
+        public virtual ListDistributionsResponse ListDistributions(ListDistributionsRequest request)
         {
             var marshaller = new ListDistributionsRequestMarshaller();
             var unmarshaller = ListDistributionsResponseUnmarshaller.Instance;
@@ -2004,7 +2004,7 @@ namespace Amazon.CloudFront
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDistributions
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListDistributions">REST API Reference for ListDistributions Operation</seealso>
-        public IAsyncResult BeginListDistributions(ListDistributionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListDistributions(ListDistributionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListDistributionsRequestMarshaller();
             var unmarshaller = ListDistributionsResponseUnmarshaller.Instance;
@@ -2021,7 +2021,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>Returns a  ListDistributionsResult from CloudFront.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListDistributions">REST API Reference for ListDistributions Operation</seealso>
-        public  ListDistributionsResponse EndListDistributions(IAsyncResult asyncResult)
+        public virtual ListDistributionsResponse EndListDistributions(IAsyncResult asyncResult)
         {
             return EndInvoke<ListDistributionsResponse>(asyncResult);
         }
@@ -2043,7 +2043,7 @@ namespace Amazon.CloudFront
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListDistributionsByWebACLId">REST API Reference for ListDistributionsByWebACLId Operation</seealso>
-        public ListDistributionsByWebACLIdResponse ListDistributionsByWebACLId(ListDistributionsByWebACLIdRequest request)
+        public virtual ListDistributionsByWebACLIdResponse ListDistributionsByWebACLId(ListDistributionsByWebACLIdRequest request)
         {
             var marshaller = new ListDistributionsByWebACLIdRequestMarshaller();
             var unmarshaller = ListDistributionsByWebACLIdResponseUnmarshaller.Instance;
@@ -2063,7 +2063,7 @@ namespace Amazon.CloudFront
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDistributionsByWebACLId
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListDistributionsByWebACLId">REST API Reference for ListDistributionsByWebACLId Operation</seealso>
-        public IAsyncResult BeginListDistributionsByWebACLId(ListDistributionsByWebACLIdRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListDistributionsByWebACLId(ListDistributionsByWebACLIdRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListDistributionsByWebACLIdRequestMarshaller();
             var unmarshaller = ListDistributionsByWebACLIdResponseUnmarshaller.Instance;
@@ -2080,7 +2080,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>Returns a  ListDistributionsByWebACLIdResult from CloudFront.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListDistributionsByWebACLId">REST API Reference for ListDistributionsByWebACLId Operation</seealso>
-        public  ListDistributionsByWebACLIdResponse EndListDistributionsByWebACLId(IAsyncResult asyncResult)
+        public virtual ListDistributionsByWebACLIdResponse EndListDistributionsByWebACLId(IAsyncResult asyncResult)
         {
             return EndInvoke<ListDistributionsByWebACLIdResponse>(asyncResult);
         }
@@ -2105,7 +2105,7 @@ namespace Amazon.CloudFront
         /// The specified distribution does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListInvalidations">REST API Reference for ListInvalidations Operation</seealso>
-        public ListInvalidationsResponse ListInvalidations(ListInvalidationsRequest request)
+        public virtual ListInvalidationsResponse ListInvalidations(ListInvalidationsRequest request)
         {
             var marshaller = new ListInvalidationsRequestMarshaller();
             var unmarshaller = ListInvalidationsResponseUnmarshaller.Instance;
@@ -2125,7 +2125,7 @@ namespace Amazon.CloudFront
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListInvalidations
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListInvalidations">REST API Reference for ListInvalidations Operation</seealso>
-        public IAsyncResult BeginListInvalidations(ListInvalidationsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListInvalidations(ListInvalidationsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListInvalidationsRequestMarshaller();
             var unmarshaller = ListInvalidationsResponseUnmarshaller.Instance;
@@ -2142,7 +2142,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>Returns a  ListInvalidationsResult from CloudFront.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListInvalidations">REST API Reference for ListInvalidations Operation</seealso>
-        public  ListInvalidationsResponse EndListInvalidations(IAsyncResult asyncResult)
+        public virtual ListInvalidationsResponse EndListInvalidations(IAsyncResult asyncResult)
         {
             return EndInvoke<ListInvalidationsResponse>(asyncResult);
         }
@@ -2160,7 +2160,7 @@ namespace Amazon.CloudFront
         /// The argument is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListStreamingDistributions">REST API Reference for ListStreamingDistributions Operation</seealso>
-        public ListStreamingDistributionsResponse ListStreamingDistributions()
+        public virtual ListStreamingDistributionsResponse ListStreamingDistributions()
         {
             return ListStreamingDistributions(new ListStreamingDistributionsRequest());
         }
@@ -2175,7 +2175,7 @@ namespace Amazon.CloudFront
         /// The argument is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListStreamingDistributions">REST API Reference for ListStreamingDistributions Operation</seealso>
-        public ListStreamingDistributionsResponse ListStreamingDistributions(ListStreamingDistributionsRequest request)
+        public virtual ListStreamingDistributionsResponse ListStreamingDistributions(ListStreamingDistributionsRequest request)
         {
             var marshaller = new ListStreamingDistributionsRequestMarshaller();
             var unmarshaller = ListStreamingDistributionsResponseUnmarshaller.Instance;
@@ -2195,7 +2195,7 @@ namespace Amazon.CloudFront
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListStreamingDistributions
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListStreamingDistributions">REST API Reference for ListStreamingDistributions Operation</seealso>
-        public IAsyncResult BeginListStreamingDistributions(ListStreamingDistributionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListStreamingDistributions(ListStreamingDistributionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListStreamingDistributionsRequestMarshaller();
             var unmarshaller = ListStreamingDistributionsResponseUnmarshaller.Instance;
@@ -2212,7 +2212,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>Returns a  ListStreamingDistributionsResult from CloudFront.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListStreamingDistributions">REST API Reference for ListStreamingDistributions Operation</seealso>
-        public  ListStreamingDistributionsResponse EndListStreamingDistributions(IAsyncResult asyncResult)
+        public virtual ListStreamingDistributionsResponse EndListStreamingDistributions(IAsyncResult asyncResult)
         {
             return EndInvoke<ListStreamingDistributionsResponse>(asyncResult);
         }
@@ -2240,7 +2240,7 @@ namespace Amazon.CloudFront
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
-        public ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
@@ -2260,7 +2260,7 @@ namespace Amazon.CloudFront
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
-        public IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
@@ -2277,7 +2277,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>Returns a  ListTagsForResourceResult from CloudFront.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
-        public  ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult)
+        public virtual ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTagsForResourceResponse>(asyncResult);
         }
@@ -2305,7 +2305,7 @@ namespace Amazon.CloudFront
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/TagResource">REST API Reference for TagResource Operation</seealso>
-        public TagResourceResponse TagResource(TagResourceRequest request)
+        public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
             var marshaller = new TagResourceRequestMarshaller();
             var unmarshaller = TagResourceResponseUnmarshaller.Instance;
@@ -2325,7 +2325,7 @@ namespace Amazon.CloudFront
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResource
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/TagResource">REST API Reference for TagResource Operation</seealso>
-        public IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new TagResourceRequestMarshaller();
             var unmarshaller = TagResourceResponseUnmarshaller.Instance;
@@ -2342,7 +2342,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>Returns a  TagResourceResult from CloudFront.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/TagResource">REST API Reference for TagResource Operation</seealso>
-        public  TagResourceResponse EndTagResource(IAsyncResult asyncResult)
+        public virtual TagResourceResponse EndTagResource(IAsyncResult asyncResult)
         {
             return EndInvoke<TagResourceResponse>(asyncResult);
         }
@@ -2370,7 +2370,7 @@ namespace Amazon.CloudFront
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
-        public UntagResourceResponse UntagResource(UntagResourceRequest request)
+        public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
             var marshaller = new UntagResourceRequestMarshaller();
             var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
@@ -2390,7 +2390,7 @@ namespace Amazon.CloudFront
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResource
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
-        public IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UntagResourceRequestMarshaller();
             var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
@@ -2407,7 +2407,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>Returns a  UntagResourceResult from CloudFront.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
-        public  UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
+        public virtual UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
         {
             return EndInvoke<UntagResourceResponse>(asyncResult);
         }
@@ -2448,7 +2448,7 @@ namespace Amazon.CloudFront
         /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UpdateCloudFrontOriginAccessIdentity">REST API Reference for UpdateCloudFrontOriginAccessIdentity Operation</seealso>
-        public UpdateCloudFrontOriginAccessIdentityResponse UpdateCloudFrontOriginAccessIdentity(UpdateCloudFrontOriginAccessIdentityRequest request)
+        public virtual UpdateCloudFrontOriginAccessIdentityResponse UpdateCloudFrontOriginAccessIdentity(UpdateCloudFrontOriginAccessIdentityRequest request)
         {
             var marshaller = new UpdateCloudFrontOriginAccessIdentityRequestMarshaller();
             var unmarshaller = UpdateCloudFrontOriginAccessIdentityResponseUnmarshaller.Instance;
@@ -2468,7 +2468,7 @@ namespace Amazon.CloudFront
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateCloudFrontOriginAccessIdentity
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UpdateCloudFrontOriginAccessIdentity">REST API Reference for UpdateCloudFrontOriginAccessIdentity Operation</seealso>
-        public IAsyncResult BeginUpdateCloudFrontOriginAccessIdentity(UpdateCloudFrontOriginAccessIdentityRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateCloudFrontOriginAccessIdentity(UpdateCloudFrontOriginAccessIdentityRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateCloudFrontOriginAccessIdentityRequestMarshaller();
             var unmarshaller = UpdateCloudFrontOriginAccessIdentityResponseUnmarshaller.Instance;
@@ -2485,7 +2485,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>Returns a  UpdateCloudFrontOriginAccessIdentityResult from CloudFront.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UpdateCloudFrontOriginAccessIdentity">REST API Reference for UpdateCloudFrontOriginAccessIdentity Operation</seealso>
-        public  UpdateCloudFrontOriginAccessIdentityResponse EndUpdateCloudFrontOriginAccessIdentity(IAsyncResult asyncResult)
+        public virtual UpdateCloudFrontOriginAccessIdentityResponse EndUpdateCloudFrontOriginAccessIdentity(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateCloudFrontOriginAccessIdentityResponse>(asyncResult);
         }
@@ -2703,7 +2703,7 @@ namespace Amazon.CloudFront
         /// One or more of your trusted signers do not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UpdateDistribution">REST API Reference for UpdateDistribution Operation</seealso>
-        public UpdateDistributionResponse UpdateDistribution(UpdateDistributionRequest request)
+        public virtual UpdateDistributionResponse UpdateDistribution(UpdateDistributionRequest request)
         {
             var marshaller = new UpdateDistributionRequestMarshaller();
             var unmarshaller = UpdateDistributionResponseUnmarshaller.Instance;
@@ -2723,7 +2723,7 @@ namespace Amazon.CloudFront
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDistribution
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UpdateDistribution">REST API Reference for UpdateDistribution Operation</seealso>
-        public IAsyncResult BeginUpdateDistribution(UpdateDistributionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateDistribution(UpdateDistributionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateDistributionRequestMarshaller();
             var unmarshaller = UpdateDistributionResponseUnmarshaller.Instance;
@@ -2740,7 +2740,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>Returns a  UpdateDistributionResult from CloudFront.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UpdateDistribution">REST API Reference for UpdateDistribution Operation</seealso>
-        public  UpdateDistributionResponse EndUpdateDistribution(IAsyncResult asyncResult)
+        public virtual UpdateDistributionResponse EndUpdateDistribution(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateDistributionResponse>(asyncResult);
         }
@@ -2796,7 +2796,7 @@ namespace Amazon.CloudFront
         /// One or more of your trusted signers do not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UpdateStreamingDistribution">REST API Reference for UpdateStreamingDistribution Operation</seealso>
-        public UpdateStreamingDistributionResponse UpdateStreamingDistribution(UpdateStreamingDistributionRequest request)
+        public virtual UpdateStreamingDistributionResponse UpdateStreamingDistribution(UpdateStreamingDistributionRequest request)
         {
             var marshaller = new UpdateStreamingDistributionRequestMarshaller();
             var unmarshaller = UpdateStreamingDistributionResponseUnmarshaller.Instance;
@@ -2816,7 +2816,7 @@ namespace Amazon.CloudFront
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateStreamingDistribution
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UpdateStreamingDistribution">REST API Reference for UpdateStreamingDistribution Operation</seealso>
-        public IAsyncResult BeginUpdateStreamingDistribution(UpdateStreamingDistributionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateStreamingDistribution(UpdateStreamingDistributionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateStreamingDistributionRequestMarshaller();
             var unmarshaller = UpdateStreamingDistributionResponseUnmarshaller.Instance;
@@ -2833,7 +2833,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>Returns a  UpdateStreamingDistributionResult from CloudFront.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UpdateStreamingDistribution">REST API Reference for UpdateStreamingDistribution Operation</seealso>
-        public  UpdateStreamingDistributionResponse EndUpdateStreamingDistribution(IAsyncResult asyncResult)
+        public virtual UpdateStreamingDistributionResponse EndUpdateStreamingDistribution(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateStreamingDistributionResponse>(asyncResult);
         }

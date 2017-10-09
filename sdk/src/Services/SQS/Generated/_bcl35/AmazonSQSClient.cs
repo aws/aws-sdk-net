@@ -350,7 +350,7 @@ namespace Amazon.SQS
         /// </code> returns this error if the maximum number of permissions for the queue is reached.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/AddPermission">REST API Reference for AddPermission Operation</seealso>
-        public AddPermissionResponse AddPermission(string queueUrl, string label, List<string> awsAccountIds, List<string> actions)
+        public virtual AddPermissionResponse AddPermission(string queueUrl, string label, List<string> awsAccountIds, List<string> actions)
         {
             var request = new AddPermissionRequest();
             request.QueueUrl = queueUrl;
@@ -404,7 +404,7 @@ namespace Amazon.SQS
         /// </code> returns this error if the maximum number of permissions for the queue is reached.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/AddPermission">REST API Reference for AddPermission Operation</seealso>
-        public AddPermissionResponse AddPermission(AddPermissionRequest request)
+        public virtual AddPermissionResponse AddPermission(AddPermissionRequest request)
         {
             var marshaller = new AddPermissionRequestMarshaller();
             var unmarshaller = AddPermissionResponseUnmarshaller.Instance;
@@ -424,7 +424,7 @@ namespace Amazon.SQS
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddPermission
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/AddPermission">REST API Reference for AddPermission Operation</seealso>
-        public IAsyncResult BeginAddPermission(AddPermissionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginAddPermission(AddPermissionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AddPermissionRequestMarshaller();
             var unmarshaller = AddPermissionResponseUnmarshaller.Instance;
@@ -441,7 +441,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>Returns a  AddPermissionResult from SQS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/AddPermission">REST API Reference for AddPermission Operation</seealso>
-        public  AddPermissionResponse EndAddPermission(IAsyncResult asyncResult)
+        public virtual AddPermissionResponse EndAddPermission(IAsyncResult asyncResult)
         {
             return EndInvoke<AddPermissionResponse>(asyncResult);
         }
@@ -512,7 +512,7 @@ namespace Amazon.SQS
         /// The receipt handle provided isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibility">REST API Reference for ChangeMessageVisibility Operation</seealso>
-        public ChangeMessageVisibilityResponse ChangeMessageVisibility(string queueUrl, string receiptHandle, int visibilityTimeout)
+        public virtual ChangeMessageVisibilityResponse ChangeMessageVisibility(string queueUrl, string receiptHandle, int visibilityTimeout)
         {
             var request = new ChangeMessageVisibilityRequest();
             request.QueueUrl = queueUrl;
@@ -582,7 +582,7 @@ namespace Amazon.SQS
         /// The receipt handle provided isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibility">REST API Reference for ChangeMessageVisibility Operation</seealso>
-        public ChangeMessageVisibilityResponse ChangeMessageVisibility(ChangeMessageVisibilityRequest request)
+        public virtual ChangeMessageVisibilityResponse ChangeMessageVisibility(ChangeMessageVisibilityRequest request)
         {
             var marshaller = new ChangeMessageVisibilityRequestMarshaller();
             var unmarshaller = ChangeMessageVisibilityResponseUnmarshaller.Instance;
@@ -602,7 +602,7 @@ namespace Amazon.SQS
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndChangeMessageVisibility
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibility">REST API Reference for ChangeMessageVisibility Operation</seealso>
-        public IAsyncResult BeginChangeMessageVisibility(ChangeMessageVisibilityRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginChangeMessageVisibility(ChangeMessageVisibilityRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ChangeMessageVisibilityRequestMarshaller();
             var unmarshaller = ChangeMessageVisibilityResponseUnmarshaller.Instance;
@@ -619,7 +619,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>Returns a  ChangeMessageVisibilityResult from SQS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibility">REST API Reference for ChangeMessageVisibility Operation</seealso>
-        public  ChangeMessageVisibilityResponse EndChangeMessageVisibility(IAsyncResult asyncResult)
+        public virtual ChangeMessageVisibilityResponse EndChangeMessageVisibility(IAsyncResult asyncResult)
         {
             return EndInvoke<ChangeMessageVisibilityResponse>(asyncResult);
         }
@@ -673,7 +673,7 @@ namespace Amazon.SQS
         /// The batch request contains more entries than permissible.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibilityBatch">REST API Reference for ChangeMessageVisibilityBatch Operation</seealso>
-        public ChangeMessageVisibilityBatchResponse ChangeMessageVisibilityBatch(string queueUrl, List<ChangeMessageVisibilityBatchRequestEntry> entries)
+        public virtual ChangeMessageVisibilityBatchResponse ChangeMessageVisibilityBatch(string queueUrl, List<ChangeMessageVisibilityBatchRequestEntry> entries)
         {
             var request = new ChangeMessageVisibilityBatchRequest();
             request.QueueUrl = queueUrl;
@@ -726,7 +726,7 @@ namespace Amazon.SQS
         /// The batch request contains more entries than permissible.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibilityBatch">REST API Reference for ChangeMessageVisibilityBatch Operation</seealso>
-        public ChangeMessageVisibilityBatchResponse ChangeMessageVisibilityBatch(ChangeMessageVisibilityBatchRequest request)
+        public virtual ChangeMessageVisibilityBatchResponse ChangeMessageVisibilityBatch(ChangeMessageVisibilityBatchRequest request)
         {
             var marshaller = new ChangeMessageVisibilityBatchRequestMarshaller();
             var unmarshaller = ChangeMessageVisibilityBatchResponseUnmarshaller.Instance;
@@ -746,7 +746,7 @@ namespace Amazon.SQS
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndChangeMessageVisibilityBatch
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibilityBatch">REST API Reference for ChangeMessageVisibilityBatch Operation</seealso>
-        public IAsyncResult BeginChangeMessageVisibilityBatch(ChangeMessageVisibilityBatchRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginChangeMessageVisibilityBatch(ChangeMessageVisibilityBatchRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ChangeMessageVisibilityBatchRequestMarshaller();
             var unmarshaller = ChangeMessageVisibilityBatchResponseUnmarshaller.Instance;
@@ -763,7 +763,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>Returns a  ChangeMessageVisibilityBatchResult from SQS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibilityBatch">REST API Reference for ChangeMessageVisibilityBatch Operation</seealso>
-        public  ChangeMessageVisibilityBatchResponse EndChangeMessageVisibilityBatch(IAsyncResult asyncResult)
+        public virtual ChangeMessageVisibilityBatchResponse EndChangeMessageVisibilityBatch(IAsyncResult asyncResult)
         {
             return EndInvoke<ChangeMessageVisibilityBatchResponse>(asyncResult);
         }
@@ -851,7 +851,7 @@ namespace Amazon.SQS
         /// includes attributes whose values differ from those of the existing queue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/CreateQueue">REST API Reference for CreateQueue Operation</seealso>
-        public CreateQueueResponse CreateQueue(string queueName)
+        public virtual CreateQueueResponse CreateQueue(string queueName)
         {
             var request = new CreateQueueRequest();
             request.QueueName = queueName;
@@ -938,7 +938,7 @@ namespace Amazon.SQS
         /// includes attributes whose values differ from those of the existing queue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/CreateQueue">REST API Reference for CreateQueue Operation</seealso>
-        public CreateQueueResponse CreateQueue(CreateQueueRequest request)
+        public virtual CreateQueueResponse CreateQueue(CreateQueueRequest request)
         {
             var marshaller = new CreateQueueRequestMarshaller();
             var unmarshaller = CreateQueueResponseUnmarshaller.Instance;
@@ -958,7 +958,7 @@ namespace Amazon.SQS
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateQueue
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/CreateQueue">REST API Reference for CreateQueue Operation</seealso>
-        public IAsyncResult BeginCreateQueue(CreateQueueRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateQueue(CreateQueueRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateQueueRequestMarshaller();
             var unmarshaller = CreateQueueResponseUnmarshaller.Instance;
@@ -975,7 +975,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>Returns a  CreateQueueResult from SQS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/CreateQueue">REST API Reference for CreateQueue Operation</seealso>
-        public  CreateQueueResponse EndCreateQueue(IAsyncResult asyncResult)
+        public virtual CreateQueueResponse EndCreateQueue(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateQueueResponse>(asyncResult);
         }
@@ -1022,7 +1022,7 @@ namespace Amazon.SQS
         /// The receipt handle provided isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessage">REST API Reference for DeleteMessage Operation</seealso>
-        public DeleteMessageResponse DeleteMessage(string queueUrl, string receiptHandle)
+        public virtual DeleteMessageResponse DeleteMessage(string queueUrl, string receiptHandle)
         {
             var request = new DeleteMessageRequest();
             request.QueueUrl = queueUrl;
@@ -1068,7 +1068,7 @@ namespace Amazon.SQS
         /// The receipt handle provided isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessage">REST API Reference for DeleteMessage Operation</seealso>
-        public DeleteMessageResponse DeleteMessage(DeleteMessageRequest request)
+        public virtual DeleteMessageResponse DeleteMessage(DeleteMessageRequest request)
         {
             var marshaller = new DeleteMessageRequestMarshaller();
             var unmarshaller = DeleteMessageResponseUnmarshaller.Instance;
@@ -1088,7 +1088,7 @@ namespace Amazon.SQS
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteMessage
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessage">REST API Reference for DeleteMessage Operation</seealso>
-        public IAsyncResult BeginDeleteMessage(DeleteMessageRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteMessage(DeleteMessageRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteMessageRequestMarshaller();
             var unmarshaller = DeleteMessageResponseUnmarshaller.Instance;
@@ -1105,7 +1105,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>Returns a  DeleteMessageResult from SQS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessage">REST API Reference for DeleteMessage Operation</seealso>
-        public  DeleteMessageResponse EndDeleteMessage(IAsyncResult asyncResult)
+        public virtual DeleteMessageResponse EndDeleteMessage(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteMessageResponse>(asyncResult);
         }
@@ -1158,7 +1158,7 @@ namespace Amazon.SQS
         /// The batch request contains more entries than permissible.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessageBatch">REST API Reference for DeleteMessageBatch Operation</seealso>
-        public DeleteMessageBatchResponse DeleteMessageBatch(string queueUrl, List<DeleteMessageBatchRequestEntry> entries)
+        public virtual DeleteMessageBatchResponse DeleteMessageBatch(string queueUrl, List<DeleteMessageBatchRequestEntry> entries)
         {
             var request = new DeleteMessageBatchRequest();
             request.QueueUrl = queueUrl;
@@ -1210,7 +1210,7 @@ namespace Amazon.SQS
         /// The batch request contains more entries than permissible.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessageBatch">REST API Reference for DeleteMessageBatch Operation</seealso>
-        public DeleteMessageBatchResponse DeleteMessageBatch(DeleteMessageBatchRequest request)
+        public virtual DeleteMessageBatchResponse DeleteMessageBatch(DeleteMessageBatchRequest request)
         {
             var marshaller = new DeleteMessageBatchRequestMarshaller();
             var unmarshaller = DeleteMessageBatchResponseUnmarshaller.Instance;
@@ -1230,7 +1230,7 @@ namespace Amazon.SQS
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteMessageBatch
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessageBatch">REST API Reference for DeleteMessageBatch Operation</seealso>
-        public IAsyncResult BeginDeleteMessageBatch(DeleteMessageBatchRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteMessageBatch(DeleteMessageBatchRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteMessageBatchRequestMarshaller();
             var unmarshaller = DeleteMessageBatchResponseUnmarshaller.Instance;
@@ -1247,7 +1247,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>Returns a  DeleteMessageBatchResult from SQS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessageBatch">REST API Reference for DeleteMessageBatch Operation</seealso>
-        public  DeleteMessageBatchResponse EndDeleteMessageBatch(IAsyncResult asyncResult)
+        public virtual DeleteMessageBatchResponse EndDeleteMessageBatch(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteMessageBatchResponse>(asyncResult);
         }
@@ -1282,7 +1282,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>The response from the DeleteQueue service method, as returned by SQS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteQueue">REST API Reference for DeleteQueue Operation</seealso>
-        public DeleteQueueResponse DeleteQueue(string queueUrl)
+        public virtual DeleteQueueResponse DeleteQueue(string queueUrl)
         {
             var request = new DeleteQueueRequest();
             request.QueueUrl = queueUrl;
@@ -1316,7 +1316,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>The response from the DeleteQueue service method, as returned by SQS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteQueue">REST API Reference for DeleteQueue Operation</seealso>
-        public DeleteQueueResponse DeleteQueue(DeleteQueueRequest request)
+        public virtual DeleteQueueResponse DeleteQueue(DeleteQueueRequest request)
         {
             var marshaller = new DeleteQueueRequestMarshaller();
             var unmarshaller = DeleteQueueResponseUnmarshaller.Instance;
@@ -1336,7 +1336,7 @@ namespace Amazon.SQS
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteQueue
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteQueue">REST API Reference for DeleteQueue Operation</seealso>
-        public IAsyncResult BeginDeleteQueue(DeleteQueueRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteQueue(DeleteQueueRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteQueueRequestMarshaller();
             var unmarshaller = DeleteQueueResponseUnmarshaller.Instance;
@@ -1353,7 +1353,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>Returns a  DeleteQueueResult from SQS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteQueue">REST API Reference for DeleteQueue Operation</seealso>
-        public  DeleteQueueResponse EndDeleteQueue(IAsyncResult asyncResult)
+        public virtual DeleteQueueResponse EndDeleteQueue(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteQueueResponse>(asyncResult);
         }
@@ -1394,7 +1394,7 @@ namespace Amazon.SQS
         /// The attribute referred to doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueAttributes">REST API Reference for GetQueueAttributes Operation</seealso>
-        public GetQueueAttributesResponse GetQueueAttributes(string queueUrl, List<string> attributeNames)
+        public virtual GetQueueAttributesResponse GetQueueAttributes(string queueUrl, List<string> attributeNames)
         {
             var request = new GetQueueAttributesRequest();
             request.QueueUrl = queueUrl;
@@ -1434,7 +1434,7 @@ namespace Amazon.SQS
         /// The attribute referred to doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueAttributes">REST API Reference for GetQueueAttributes Operation</seealso>
-        public GetQueueAttributesResponse GetQueueAttributes(GetQueueAttributesRequest request)
+        public virtual GetQueueAttributesResponse GetQueueAttributes(GetQueueAttributesRequest request)
         {
             var marshaller = new GetQueueAttributesRequestMarshaller();
             var unmarshaller = GetQueueAttributesResponseUnmarshaller.Instance;
@@ -1454,7 +1454,7 @@ namespace Amazon.SQS
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetQueueAttributes
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueAttributes">REST API Reference for GetQueueAttributes Operation</seealso>
-        public IAsyncResult BeginGetQueueAttributes(GetQueueAttributesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetQueueAttributes(GetQueueAttributesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetQueueAttributesRequestMarshaller();
             var unmarshaller = GetQueueAttributesResponseUnmarshaller.Instance;
@@ -1471,7 +1471,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>Returns a  GetQueueAttributesResult from SQS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueAttributes">REST API Reference for GetQueueAttributes Operation</seealso>
-        public  GetQueueAttributesResponse EndGetQueueAttributes(IAsyncResult asyncResult)
+        public virtual GetQueueAttributesResponse EndGetQueueAttributes(IAsyncResult asyncResult)
         {
             return EndInvoke<GetQueueAttributesResponse>(asyncResult);
         }
@@ -1500,7 +1500,7 @@ namespace Amazon.SQS
         /// The queue referred to doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueUrl">REST API Reference for GetQueueUrl Operation</seealso>
-        public GetQueueUrlResponse GetQueueUrl(string queueName)
+        public virtual GetQueueUrlResponse GetQueueUrl(string queueName)
         {
             var request = new GetQueueUrlRequest();
             request.QueueName = queueName;
@@ -1528,7 +1528,7 @@ namespace Amazon.SQS
         /// The queue referred to doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueUrl">REST API Reference for GetQueueUrl Operation</seealso>
-        public GetQueueUrlResponse GetQueueUrl(GetQueueUrlRequest request)
+        public virtual GetQueueUrlResponse GetQueueUrl(GetQueueUrlRequest request)
         {
             var marshaller = new GetQueueUrlRequestMarshaller();
             var unmarshaller = GetQueueUrlResponseUnmarshaller.Instance;
@@ -1548,7 +1548,7 @@ namespace Amazon.SQS
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetQueueUrl
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueUrl">REST API Reference for GetQueueUrl Operation</seealso>
-        public IAsyncResult BeginGetQueueUrl(GetQueueUrlRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetQueueUrl(GetQueueUrlRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetQueueUrlRequestMarshaller();
             var unmarshaller = GetQueueUrlResponseUnmarshaller.Instance;
@@ -1565,7 +1565,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>Returns a  GetQueueUrlResult from SQS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueUrl">REST API Reference for GetQueueUrl Operation</seealso>
-        public  GetQueueUrlResponse EndGetQueueUrl(IAsyncResult asyncResult)
+        public virtual GetQueueUrlResponse EndGetQueueUrl(IAsyncResult asyncResult)
         {
             return EndInvoke<GetQueueUrlResponse>(asyncResult);
         }
@@ -1591,7 +1591,7 @@ namespace Amazon.SQS
         /// The queue referred to doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListDeadLetterSourceQueues">REST API Reference for ListDeadLetterSourceQueues Operation</seealso>
-        public ListDeadLetterSourceQueuesResponse ListDeadLetterSourceQueues(ListDeadLetterSourceQueuesRequest request)
+        public virtual ListDeadLetterSourceQueuesResponse ListDeadLetterSourceQueues(ListDeadLetterSourceQueuesRequest request)
         {
             var marshaller = new ListDeadLetterSourceQueuesRequestMarshaller();
             var unmarshaller = ListDeadLetterSourceQueuesResponseUnmarshaller.Instance;
@@ -1611,7 +1611,7 @@ namespace Amazon.SQS
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDeadLetterSourceQueues
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListDeadLetterSourceQueues">REST API Reference for ListDeadLetterSourceQueues Operation</seealso>
-        public IAsyncResult BeginListDeadLetterSourceQueues(ListDeadLetterSourceQueuesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListDeadLetterSourceQueues(ListDeadLetterSourceQueuesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListDeadLetterSourceQueuesRequestMarshaller();
             var unmarshaller = ListDeadLetterSourceQueuesResponseUnmarshaller.Instance;
@@ -1628,7 +1628,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>Returns a  ListDeadLetterSourceQueuesResult from SQS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListDeadLetterSourceQueues">REST API Reference for ListDeadLetterSourceQueues Operation</seealso>
-        public  ListDeadLetterSourceQueuesResponse EndListDeadLetterSourceQueues(IAsyncResult asyncResult)
+        public virtual ListDeadLetterSourceQueuesResponse EndListDeadLetterSourceQueues(IAsyncResult asyncResult)
         {
             return EndInvoke<ListDeadLetterSourceQueuesResponse>(asyncResult);
         }
@@ -1646,7 +1646,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>The response from the ListQueues service method, as returned by SQS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueues">REST API Reference for ListQueues Operation</seealso>
-        public ListQueuesResponse ListQueues(string queueNamePrefix)
+        public virtual ListQueuesResponse ListQueues(string queueNamePrefix)
         {
             var request = new ListQueuesRequest();
             request.QueueNamePrefix = queueNamePrefix;
@@ -1663,7 +1663,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>The response from the ListQueues service method, as returned by SQS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueues">REST API Reference for ListQueues Operation</seealso>
-        public ListQueuesResponse ListQueues(ListQueuesRequest request)
+        public virtual ListQueuesResponse ListQueues(ListQueuesRequest request)
         {
             var marshaller = new ListQueuesRequestMarshaller();
             var unmarshaller = ListQueuesResponseUnmarshaller.Instance;
@@ -1683,7 +1683,7 @@ namespace Amazon.SQS
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListQueues
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueues">REST API Reference for ListQueues Operation</seealso>
-        public IAsyncResult BeginListQueues(ListQueuesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListQueues(ListQueuesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListQueuesRequestMarshaller();
             var unmarshaller = ListQueuesResponseUnmarshaller.Instance;
@@ -1700,7 +1700,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>Returns a  ListQueuesResult from SQS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueues">REST API Reference for ListQueues Operation</seealso>
-        public  ListQueuesResponse EndListQueues(IAsyncResult asyncResult)
+        public virtual ListQueuesResponse EndListQueues(IAsyncResult asyncResult)
         {
             return EndInvoke<ListQueuesResponse>(asyncResult);
         }
@@ -1737,7 +1737,7 @@ namespace Amazon.SQS
         /// The queue referred to doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/PurgeQueue">REST API Reference for PurgeQueue Operation</seealso>
-        public PurgeQueueResponse PurgeQueue(string queueUrl)
+        public virtual PurgeQueueResponse PurgeQueue(string queueUrl)
         {
             var request = new PurgeQueueRequest();
             request.QueueUrl = queueUrl;
@@ -1773,7 +1773,7 @@ namespace Amazon.SQS
         /// The queue referred to doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/PurgeQueue">REST API Reference for PurgeQueue Operation</seealso>
-        public PurgeQueueResponse PurgeQueue(PurgeQueueRequest request)
+        public virtual PurgeQueueResponse PurgeQueue(PurgeQueueRequest request)
         {
             var marshaller = new PurgeQueueRequestMarshaller();
             var unmarshaller = PurgeQueueResponseUnmarshaller.Instance;
@@ -1793,7 +1793,7 @@ namespace Amazon.SQS
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPurgeQueue
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/PurgeQueue">REST API Reference for PurgeQueue Operation</seealso>
-        public IAsyncResult BeginPurgeQueue(PurgeQueueRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPurgeQueue(PurgeQueueRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PurgeQueueRequestMarshaller();
             var unmarshaller = PurgeQueueResponseUnmarshaller.Instance;
@@ -1810,7 +1810,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>Returns a  PurgeQueueResult from SQS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/PurgeQueue">REST API Reference for PurgeQueue Operation</seealso>
-        public  PurgeQueueResponse EndPurgeQueue(IAsyncResult asyncResult)
+        public virtual PurgeQueueResponse EndPurgeQueue(IAsyncResult asyncResult)
         {
             return EndInvoke<PurgeQueueResponse>(asyncResult);
         }
@@ -1898,7 +1898,7 @@ namespace Amazon.SQS
         /// </code> returns this error if the maximum number of permissions for the queue is reached.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ReceiveMessage">REST API Reference for ReceiveMessage Operation</seealso>
-        public ReceiveMessageResponse ReceiveMessage(string queueUrl)
+        public virtual ReceiveMessageResponse ReceiveMessage(string queueUrl)
         {
             var request = new ReceiveMessageRequest();
             request.QueueUrl = queueUrl;
@@ -1985,7 +1985,7 @@ namespace Amazon.SQS
         /// </code> returns this error if the maximum number of permissions for the queue is reached.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ReceiveMessage">REST API Reference for ReceiveMessage Operation</seealso>
-        public ReceiveMessageResponse ReceiveMessage(ReceiveMessageRequest request)
+        public virtual ReceiveMessageResponse ReceiveMessage(ReceiveMessageRequest request)
         {
             var marshaller = new ReceiveMessageRequestMarshaller();
             var unmarshaller = ReceiveMessageResponseUnmarshaller.Instance;
@@ -2005,7 +2005,7 @@ namespace Amazon.SQS
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndReceiveMessage
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ReceiveMessage">REST API Reference for ReceiveMessage Operation</seealso>
-        public IAsyncResult BeginReceiveMessage(ReceiveMessageRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginReceiveMessage(ReceiveMessageRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ReceiveMessageRequestMarshaller();
             var unmarshaller = ReceiveMessageResponseUnmarshaller.Instance;
@@ -2022,7 +2022,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>Returns a  ReceiveMessageResult from SQS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ReceiveMessage">REST API Reference for ReceiveMessage Operation</seealso>
-        public  ReceiveMessageResponse EndReceiveMessage(IAsyncResult asyncResult)
+        public virtual ReceiveMessageResponse EndReceiveMessage(IAsyncResult asyncResult)
         {
             return EndInvoke<ReceiveMessageResponse>(asyncResult);
         }
@@ -2040,7 +2040,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>The response from the RemovePermission service method, as returned by SQS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
-        public RemovePermissionResponse RemovePermission(string queueUrl, string label)
+        public virtual RemovePermissionResponse RemovePermission(string queueUrl, string label)
         {
             var request = new RemovePermissionRequest();
             request.QueueUrl = queueUrl;
@@ -2057,7 +2057,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>The response from the RemovePermission service method, as returned by SQS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
-        public RemovePermissionResponse RemovePermission(RemovePermissionRequest request)
+        public virtual RemovePermissionResponse RemovePermission(RemovePermissionRequest request)
         {
             var marshaller = new RemovePermissionRequestMarshaller();
             var unmarshaller = RemovePermissionResponseUnmarshaller.Instance;
@@ -2077,7 +2077,7 @@ namespace Amazon.SQS
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemovePermission
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
-        public IAsyncResult BeginRemovePermission(RemovePermissionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginRemovePermission(RemovePermissionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RemovePermissionRequestMarshaller();
             var unmarshaller = RemovePermissionResponseUnmarshaller.Instance;
@@ -2094,7 +2094,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>Returns a  RemovePermissionResult from SQS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
-        public  RemovePermissionResponse EndRemovePermission(IAsyncResult asyncResult)
+        public virtual RemovePermissionResponse EndRemovePermission(IAsyncResult asyncResult)
         {
             return EndInvoke<RemovePermissionResponse>(asyncResult);
         }
@@ -2135,7 +2135,7 @@ namespace Amazon.SQS
         /// Error code 400. Unsupported operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessage">REST API Reference for SendMessage Operation</seealso>
-        public SendMessageResponse SendMessage(string queueUrl, string messageBody)
+        public virtual SendMessageResponse SendMessage(string queueUrl, string messageBody)
         {
             var request = new SendMessageRequest();
             request.QueueUrl = queueUrl;
@@ -2175,7 +2175,7 @@ namespace Amazon.SQS
         /// Error code 400. Unsupported operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessage">REST API Reference for SendMessage Operation</seealso>
-        public SendMessageResponse SendMessage(SendMessageRequest request)
+        public virtual SendMessageResponse SendMessage(SendMessageRequest request)
         {
             var marshaller = new SendMessageRequestMarshaller();
             var unmarshaller = SendMessageResponseUnmarshaller.Instance;
@@ -2195,7 +2195,7 @@ namespace Amazon.SQS
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSendMessage
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessage">REST API Reference for SendMessage Operation</seealso>
-        public IAsyncResult BeginSendMessage(SendMessageRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginSendMessage(SendMessageRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SendMessageRequestMarshaller();
             var unmarshaller = SendMessageResponseUnmarshaller.Instance;
@@ -2212,7 +2212,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>Returns a  SendMessageResult from SQS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessage">REST API Reference for SendMessage Operation</seealso>
-        public  SendMessageResponse EndSendMessage(IAsyncResult asyncResult)
+        public virtual SendMessageResponse EndSendMessage(IAsyncResult asyncResult)
         {
             return EndInvoke<SendMessageResponse>(asyncResult);
         }
@@ -2299,7 +2299,7 @@ namespace Amazon.SQS
         /// Error code 400. Unsupported operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessageBatch">REST API Reference for SendMessageBatch Operation</seealso>
-        public SendMessageBatchResponse SendMessageBatch(string queueUrl, List<SendMessageBatchRequestEntry> entries)
+        public virtual SendMessageBatchResponse SendMessageBatch(string queueUrl, List<SendMessageBatchRequestEntry> entries)
         {
             var request = new SendMessageBatchRequest();
             request.QueueUrl = queueUrl;
@@ -2385,7 +2385,7 @@ namespace Amazon.SQS
         /// Error code 400. Unsupported operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessageBatch">REST API Reference for SendMessageBatch Operation</seealso>
-        public SendMessageBatchResponse SendMessageBatch(SendMessageBatchRequest request)
+        public virtual SendMessageBatchResponse SendMessageBatch(SendMessageBatchRequest request)
         {
             var marshaller = new SendMessageBatchRequestMarshaller();
             var unmarshaller = SendMessageBatchResponseUnmarshaller.Instance;
@@ -2405,7 +2405,7 @@ namespace Amazon.SQS
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSendMessageBatch
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessageBatch">REST API Reference for SendMessageBatch Operation</seealso>
-        public IAsyncResult BeginSendMessageBatch(SendMessageBatchRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginSendMessageBatch(SendMessageBatchRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SendMessageBatchRequestMarshaller();
             var unmarshaller = SendMessageBatchResponseUnmarshaller.Instance;
@@ -2422,7 +2422,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>Returns a  SendMessageBatchResult from SQS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessageBatch">REST API Reference for SendMessageBatch Operation</seealso>
-        public  SendMessageBatchResponse EndSendMessageBatch(IAsyncResult asyncResult)
+        public virtual SendMessageBatchResponse EndSendMessageBatch(IAsyncResult asyncResult)
         {
             return EndInvoke<SendMessageBatchResponse>(asyncResult);
         }
@@ -2452,7 +2452,7 @@ namespace Amazon.SQS
         /// The attribute referred to doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SetQueueAttributes">REST API Reference for SetQueueAttributes Operation</seealso>
-        public SetQueueAttributesResponse SetQueueAttributes(string queueUrl, Dictionary<string, string> attributes)
+        public virtual SetQueueAttributesResponse SetQueueAttributes(string queueUrl, Dictionary<string, string> attributes)
         {
             var request = new SetQueueAttributesRequest();
             request.QueueUrl = queueUrl;
@@ -2481,7 +2481,7 @@ namespace Amazon.SQS
         /// The attribute referred to doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SetQueueAttributes">REST API Reference for SetQueueAttributes Operation</seealso>
-        public SetQueueAttributesResponse SetQueueAttributes(SetQueueAttributesRequest request)
+        public virtual SetQueueAttributesResponse SetQueueAttributes(SetQueueAttributesRequest request)
         {
             var marshaller = new SetQueueAttributesRequestMarshaller();
             var unmarshaller = SetQueueAttributesResponseUnmarshaller.Instance;
@@ -2501,7 +2501,7 @@ namespace Amazon.SQS
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetQueueAttributes
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SetQueueAttributes">REST API Reference for SetQueueAttributes Operation</seealso>
-        public IAsyncResult BeginSetQueueAttributes(SetQueueAttributesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginSetQueueAttributes(SetQueueAttributesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SetQueueAttributesRequestMarshaller();
             var unmarshaller = SetQueueAttributesResponseUnmarshaller.Instance;
@@ -2518,7 +2518,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>Returns a  SetQueueAttributesResult from SQS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SetQueueAttributes">REST API Reference for SetQueueAttributes Operation</seealso>
-        public  SetQueueAttributesResponse EndSetQueueAttributes(IAsyncResult asyncResult)
+        public virtual SetQueueAttributesResponse EndSetQueueAttributes(IAsyncResult asyncResult)
         {
             return EndInvoke<SetQueueAttributesResponse>(asyncResult);
         }

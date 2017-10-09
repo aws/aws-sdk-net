@@ -257,7 +257,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
-        public BuildSuggestersResponse BuildSuggesters(BuildSuggestersRequest request)
+        public virtual BuildSuggestersResponse BuildSuggesters(BuildSuggestersRequest request)
         {
             var marshaller = new BuildSuggestersRequestMarshaller();
             var unmarshaller = BuildSuggestersResponseUnmarshaller.Instance;
@@ -276,7 +276,7 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBuildSuggesters
         ///         operation.</returns>
-        public IAsyncResult BeginBuildSuggesters(BuildSuggestersRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginBuildSuggesters(BuildSuggestersRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new BuildSuggestersRequestMarshaller();
             var unmarshaller = BuildSuggestersResponseUnmarshaller.Instance;
@@ -292,7 +292,7 @@ namespace Amazon.CloudSearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBuildSuggesters.</param>
         /// 
         /// <returns>Returns a  BuildSuggestersResult from CloudSearch.</returns>
-        public  BuildSuggestersResponse EndBuildSuggesters(IAsyncResult asyncResult)
+        public virtual BuildSuggestersResponse EndBuildSuggesters(IAsyncResult asyncResult)
         {
             return EndInvoke<BuildSuggestersResponse>(asyncResult);
         }
@@ -320,7 +320,7 @@ namespace Amazon.CloudSearch
         /// <exception cref="Amazon.CloudSearch.Model.LimitExceededException">
         /// The request was rejected because a resource limit has already been met.
         /// </exception>
-        public CreateDomainResponse CreateDomain(CreateDomainRequest request)
+        public virtual CreateDomainResponse CreateDomain(CreateDomainRequest request)
         {
             var marshaller = new CreateDomainRequestMarshaller();
             var unmarshaller = CreateDomainResponseUnmarshaller.Instance;
@@ -339,7 +339,7 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDomain
         ///         operation.</returns>
-        public IAsyncResult BeginCreateDomain(CreateDomainRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateDomain(CreateDomainRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateDomainRequestMarshaller();
             var unmarshaller = CreateDomainResponseUnmarshaller.Instance;
@@ -355,7 +355,7 @@ namespace Amazon.CloudSearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDomain.</param>
         /// 
         /// <returns>Returns a  CreateDomainResult from CloudSearch.</returns>
-        public  CreateDomainResponse EndCreateDomain(IAsyncResult asyncResult)
+        public virtual CreateDomainResponse EndCreateDomain(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateDomainResponse>(asyncResult);
         }
@@ -392,7 +392,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
-        public DefineAnalysisSchemeResponse DefineAnalysisScheme(DefineAnalysisSchemeRequest request)
+        public virtual DefineAnalysisSchemeResponse DefineAnalysisScheme(DefineAnalysisSchemeRequest request)
         {
             var marshaller = new DefineAnalysisSchemeRequestMarshaller();
             var unmarshaller = DefineAnalysisSchemeResponseUnmarshaller.Instance;
@@ -411,7 +411,7 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDefineAnalysisScheme
         ///         operation.</returns>
-        public IAsyncResult BeginDefineAnalysisScheme(DefineAnalysisSchemeRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDefineAnalysisScheme(DefineAnalysisSchemeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DefineAnalysisSchemeRequestMarshaller();
             var unmarshaller = DefineAnalysisSchemeResponseUnmarshaller.Instance;
@@ -427,7 +427,7 @@ namespace Amazon.CloudSearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDefineAnalysisScheme.</param>
         /// 
         /// <returns>Returns a  DefineAnalysisSchemeResult from CloudSearch.</returns>
-        public  DefineAnalysisSchemeResponse EndDefineAnalysisScheme(IAsyncResult asyncResult)
+        public virtual DefineAnalysisSchemeResponse EndDefineAnalysisScheme(IAsyncResult asyncResult)
         {
             return EndInvoke<DefineAnalysisSchemeResponse>(asyncResult);
         }
@@ -464,7 +464,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
-        public DefineExpressionResponse DefineExpression(DefineExpressionRequest request)
+        public virtual DefineExpressionResponse DefineExpression(DefineExpressionRequest request)
         {
             var marshaller = new DefineExpressionRequestMarshaller();
             var unmarshaller = DefineExpressionResponseUnmarshaller.Instance;
@@ -483,7 +483,7 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDefineExpression
         ///         operation.</returns>
-        public IAsyncResult BeginDefineExpression(DefineExpressionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDefineExpression(DefineExpressionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DefineExpressionRequestMarshaller();
             var unmarshaller = DefineExpressionResponseUnmarshaller.Instance;
@@ -499,7 +499,7 @@ namespace Amazon.CloudSearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDefineExpression.</param>
         /// 
         /// <returns>Returns a  DefineExpressionResult from CloudSearch.</returns>
-        public  DefineExpressionResponse EndDefineExpression(IAsyncResult asyncResult)
+        public virtual DefineExpressionResponse EndDefineExpression(IAsyncResult asyncResult)
         {
             return EndInvoke<DefineExpressionResponse>(asyncResult);
         }
@@ -540,7 +540,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
-        public DefineIndexFieldResponse DefineIndexField(DefineIndexFieldRequest request)
+        public virtual DefineIndexFieldResponse DefineIndexField(DefineIndexFieldRequest request)
         {
             var marshaller = new DefineIndexFieldRequestMarshaller();
             var unmarshaller = DefineIndexFieldResponseUnmarshaller.Instance;
@@ -559,7 +559,7 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDefineIndexField
         ///         operation.</returns>
-        public IAsyncResult BeginDefineIndexField(DefineIndexFieldRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDefineIndexField(DefineIndexFieldRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DefineIndexFieldRequestMarshaller();
             var unmarshaller = DefineIndexFieldResponseUnmarshaller.Instance;
@@ -575,7 +575,7 @@ namespace Amazon.CloudSearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDefineIndexField.</param>
         /// 
         /// <returns>Returns a  DefineIndexFieldResult from CloudSearch.</returns>
-        public  DefineIndexFieldResponse EndDefineIndexField(IAsyncResult asyncResult)
+        public virtual DefineIndexFieldResponse EndDefineIndexField(IAsyncResult asyncResult)
         {
             return EndInvoke<DefineIndexFieldResponse>(asyncResult);
         }
@@ -613,7 +613,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
-        public DefineSuggesterResponse DefineSuggester(DefineSuggesterRequest request)
+        public virtual DefineSuggesterResponse DefineSuggester(DefineSuggesterRequest request)
         {
             var marshaller = new DefineSuggesterRequestMarshaller();
             var unmarshaller = DefineSuggesterResponseUnmarshaller.Instance;
@@ -632,7 +632,7 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDefineSuggester
         ///         operation.</returns>
-        public IAsyncResult BeginDefineSuggester(DefineSuggesterRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDefineSuggester(DefineSuggesterRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DefineSuggesterRequestMarshaller();
             var unmarshaller = DefineSuggesterResponseUnmarshaller.Instance;
@@ -648,7 +648,7 @@ namespace Amazon.CloudSearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDefineSuggester.</param>
         /// 
         /// <returns>Returns a  DefineSuggesterResult from CloudSearch.</returns>
-        public  DefineSuggesterResponse EndDefineSuggester(IAsyncResult asyncResult)
+        public virtual DefineSuggesterResponse EndDefineSuggester(IAsyncResult asyncResult)
         {
             return EndInvoke<DefineSuggesterResponse>(asyncResult);
         }
@@ -680,7 +680,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
-        public DeleteAnalysisSchemeResponse DeleteAnalysisScheme(DeleteAnalysisSchemeRequest request)
+        public virtual DeleteAnalysisSchemeResponse DeleteAnalysisScheme(DeleteAnalysisSchemeRequest request)
         {
             var marshaller = new DeleteAnalysisSchemeRequestMarshaller();
             var unmarshaller = DeleteAnalysisSchemeResponseUnmarshaller.Instance;
@@ -699,7 +699,7 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAnalysisScheme
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteAnalysisScheme(DeleteAnalysisSchemeRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteAnalysisScheme(DeleteAnalysisSchemeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteAnalysisSchemeRequestMarshaller();
             var unmarshaller = DeleteAnalysisSchemeResponseUnmarshaller.Instance;
@@ -715,7 +715,7 @@ namespace Amazon.CloudSearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAnalysisScheme.</param>
         /// 
         /// <returns>Returns a  DeleteAnalysisSchemeResult from CloudSearch.</returns>
-        public  DeleteAnalysisSchemeResponse EndDeleteAnalysisScheme(IAsyncResult asyncResult)
+        public virtual DeleteAnalysisSchemeResponse EndDeleteAnalysisScheme(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteAnalysisSchemeResponse>(asyncResult);
         }
@@ -741,7 +741,7 @@ namespace Amazon.CloudSearch
         /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
         /// Health Dashboard</a>.
         /// </exception>
-        public DeleteDomainResponse DeleteDomain(DeleteDomainRequest request)
+        public virtual DeleteDomainResponse DeleteDomain(DeleteDomainRequest request)
         {
             var marshaller = new DeleteDomainRequestMarshaller();
             var unmarshaller = DeleteDomainResponseUnmarshaller.Instance;
@@ -760,7 +760,7 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDomain
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteDomain(DeleteDomainRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteDomain(DeleteDomainRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteDomainRequestMarshaller();
             var unmarshaller = DeleteDomainResponseUnmarshaller.Instance;
@@ -776,7 +776,7 @@ namespace Amazon.CloudSearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDomain.</param>
         /// 
         /// <returns>Returns a  DeleteDomainResult from CloudSearch.</returns>
-        public  DeleteDomainResponse EndDeleteDomain(IAsyncResult asyncResult)
+        public virtual DeleteDomainResponse EndDeleteDomain(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteDomainResponse>(asyncResult);
         }
@@ -809,7 +809,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
-        public DeleteExpressionResponse DeleteExpression(DeleteExpressionRequest request)
+        public virtual DeleteExpressionResponse DeleteExpression(DeleteExpressionRequest request)
         {
             var marshaller = new DeleteExpressionRequestMarshaller();
             var unmarshaller = DeleteExpressionResponseUnmarshaller.Instance;
@@ -828,7 +828,7 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteExpression
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteExpression(DeleteExpressionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteExpression(DeleteExpressionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteExpressionRequestMarshaller();
             var unmarshaller = DeleteExpressionResponseUnmarshaller.Instance;
@@ -844,7 +844,7 @@ namespace Amazon.CloudSearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteExpression.</param>
         /// 
         /// <returns>Returns a  DeleteExpressionResult from CloudSearch.</returns>
-        public  DeleteExpressionResponse EndDeleteExpression(IAsyncResult asyncResult)
+        public virtual DeleteExpressionResponse EndDeleteExpression(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteExpressionResponse>(asyncResult);
         }
@@ -877,7 +877,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
-        public DeleteIndexFieldResponse DeleteIndexField(DeleteIndexFieldRequest request)
+        public virtual DeleteIndexFieldResponse DeleteIndexField(DeleteIndexFieldRequest request)
         {
             var marshaller = new DeleteIndexFieldRequestMarshaller();
             var unmarshaller = DeleteIndexFieldResponseUnmarshaller.Instance;
@@ -896,7 +896,7 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteIndexField
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteIndexField(DeleteIndexFieldRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteIndexField(DeleteIndexFieldRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteIndexFieldRequestMarshaller();
             var unmarshaller = DeleteIndexFieldResponseUnmarshaller.Instance;
@@ -912,7 +912,7 @@ namespace Amazon.CloudSearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteIndexField.</param>
         /// 
         /// <returns>Returns a  DeleteIndexFieldResult from CloudSearch.</returns>
-        public  DeleteIndexFieldResponse EndDeleteIndexField(IAsyncResult asyncResult)
+        public virtual DeleteIndexFieldResponse EndDeleteIndexField(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteIndexFieldResponse>(asyncResult);
         }
@@ -944,7 +944,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
-        public DeleteSuggesterResponse DeleteSuggester(DeleteSuggesterRequest request)
+        public virtual DeleteSuggesterResponse DeleteSuggester(DeleteSuggesterRequest request)
         {
             var marshaller = new DeleteSuggesterRequestMarshaller();
             var unmarshaller = DeleteSuggesterResponseUnmarshaller.Instance;
@@ -963,7 +963,7 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSuggester
         ///         operation.</returns>
-        public IAsyncResult BeginDeleteSuggester(DeleteSuggesterRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteSuggester(DeleteSuggesterRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteSuggesterRequestMarshaller();
             var unmarshaller = DeleteSuggesterResponseUnmarshaller.Instance;
@@ -979,7 +979,7 @@ namespace Amazon.CloudSearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSuggester.</param>
         /// 
         /// <returns>Returns a  DeleteSuggesterResult from CloudSearch.</returns>
-        public  DeleteSuggesterResponse EndDeleteSuggester(IAsyncResult asyncResult)
+        public virtual DeleteSuggesterResponse EndDeleteSuggester(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteSuggesterResponse>(asyncResult);
         }
@@ -1013,7 +1013,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
-        public DescribeAnalysisSchemesResponse DescribeAnalysisSchemes(DescribeAnalysisSchemesRequest request)
+        public virtual DescribeAnalysisSchemesResponse DescribeAnalysisSchemes(DescribeAnalysisSchemesRequest request)
         {
             var marshaller = new DescribeAnalysisSchemesRequestMarshaller();
             var unmarshaller = DescribeAnalysisSchemesResponseUnmarshaller.Instance;
@@ -1032,7 +1032,7 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAnalysisSchemes
         ///         operation.</returns>
-        public IAsyncResult BeginDescribeAnalysisSchemes(DescribeAnalysisSchemesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeAnalysisSchemes(DescribeAnalysisSchemesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeAnalysisSchemesRequestMarshaller();
             var unmarshaller = DescribeAnalysisSchemesResponseUnmarshaller.Instance;
@@ -1048,7 +1048,7 @@ namespace Amazon.CloudSearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAnalysisSchemes.</param>
         /// 
         /// <returns>Returns a  DescribeAnalysisSchemesResult from CloudSearch.</returns>
-        public  DescribeAnalysisSchemesResponse EndDescribeAnalysisSchemes(IAsyncResult asyncResult)
+        public virtual DescribeAnalysisSchemesResponse EndDescribeAnalysisSchemes(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeAnalysisSchemesResponse>(asyncResult);
         }
@@ -1089,7 +1089,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
-        public DescribeAvailabilityOptionsResponse DescribeAvailabilityOptions(DescribeAvailabilityOptionsRequest request)
+        public virtual DescribeAvailabilityOptionsResponse DescribeAvailabilityOptions(DescribeAvailabilityOptionsRequest request)
         {
             var marshaller = new DescribeAvailabilityOptionsRequestMarshaller();
             var unmarshaller = DescribeAvailabilityOptionsResponseUnmarshaller.Instance;
@@ -1108,7 +1108,7 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAvailabilityOptions
         ///         operation.</returns>
-        public IAsyncResult BeginDescribeAvailabilityOptions(DescribeAvailabilityOptionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeAvailabilityOptions(DescribeAvailabilityOptionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeAvailabilityOptionsRequestMarshaller();
             var unmarshaller = DescribeAvailabilityOptionsResponseUnmarshaller.Instance;
@@ -1124,7 +1124,7 @@ namespace Amazon.CloudSearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAvailabilityOptions.</param>
         /// 
         /// <returns>Returns a  DescribeAvailabilityOptionsResult from CloudSearch.</returns>
-        public  DescribeAvailabilityOptionsResponse EndDescribeAvailabilityOptions(IAsyncResult asyncResult)
+        public virtual DescribeAvailabilityOptionsResponse EndDescribeAvailabilityOptions(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeAvailabilityOptionsResponse>(asyncResult);
         }
@@ -1152,7 +1152,7 @@ namespace Amazon.CloudSearch
         /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
         /// Health Dashboard</a>.
         /// </exception>
-        public DescribeDomainsResponse DescribeDomains()
+        public virtual DescribeDomainsResponse DescribeDomains()
         {
             return DescribeDomains(new DescribeDomainsRequest());
         }
@@ -1177,7 +1177,7 @@ namespace Amazon.CloudSearch
         /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
         /// Health Dashboard</a>.
         /// </exception>
-        public DescribeDomainsResponse DescribeDomains(DescribeDomainsRequest request)
+        public virtual DescribeDomainsResponse DescribeDomains(DescribeDomainsRequest request)
         {
             var marshaller = new DescribeDomainsRequestMarshaller();
             var unmarshaller = DescribeDomainsResponseUnmarshaller.Instance;
@@ -1196,7 +1196,7 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDomains
         ///         operation.</returns>
-        public IAsyncResult BeginDescribeDomains(DescribeDomainsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeDomains(DescribeDomainsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeDomainsRequestMarshaller();
             var unmarshaller = DescribeDomainsResponseUnmarshaller.Instance;
@@ -1212,7 +1212,7 @@ namespace Amazon.CloudSearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDomains.</param>
         /// 
         /// <returns>Returns a  DescribeDomainsResult from CloudSearch.</returns>
-        public  DescribeDomainsResponse EndDescribeDomains(IAsyncResult asyncResult)
+        public virtual DescribeDomainsResponse EndDescribeDomains(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeDomainsResponse>(asyncResult);
         }
@@ -1245,7 +1245,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
-        public DescribeExpressionsResponse DescribeExpressions(DescribeExpressionsRequest request)
+        public virtual DescribeExpressionsResponse DescribeExpressions(DescribeExpressionsRequest request)
         {
             var marshaller = new DescribeExpressionsRequestMarshaller();
             var unmarshaller = DescribeExpressionsResponseUnmarshaller.Instance;
@@ -1264,7 +1264,7 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeExpressions
         ///         operation.</returns>
-        public IAsyncResult BeginDescribeExpressions(DescribeExpressionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeExpressions(DescribeExpressionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeExpressionsRequestMarshaller();
             var unmarshaller = DescribeExpressionsResponseUnmarshaller.Instance;
@@ -1280,7 +1280,7 @@ namespace Amazon.CloudSearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeExpressions.</param>
         /// 
         /// <returns>Returns a  DescribeExpressionsResult from CloudSearch.</returns>
-        public  DescribeExpressionsResponse EndDescribeExpressions(IAsyncResult asyncResult)
+        public virtual DescribeExpressionsResponse EndDescribeExpressions(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeExpressionsResponse>(asyncResult);
         }
@@ -1313,7 +1313,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
-        public DescribeIndexFieldsResponse DescribeIndexFields(DescribeIndexFieldsRequest request)
+        public virtual DescribeIndexFieldsResponse DescribeIndexFields(DescribeIndexFieldsRequest request)
         {
             var marshaller = new DescribeIndexFieldsRequestMarshaller();
             var unmarshaller = DescribeIndexFieldsResponseUnmarshaller.Instance;
@@ -1332,7 +1332,7 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeIndexFields
         ///         operation.</returns>
-        public IAsyncResult BeginDescribeIndexFields(DescribeIndexFieldsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeIndexFields(DescribeIndexFieldsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeIndexFieldsRequestMarshaller();
             var unmarshaller = DescribeIndexFieldsResponseUnmarshaller.Instance;
@@ -1348,7 +1348,7 @@ namespace Amazon.CloudSearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeIndexFields.</param>
         /// 
         /// <returns>Returns a  DescribeIndexFieldsResult from CloudSearch.</returns>
-        public  DescribeIndexFieldsResponse EndDescribeIndexFields(IAsyncResult asyncResult)
+        public virtual DescribeIndexFieldsResponse EndDescribeIndexFields(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeIndexFieldsResponse>(asyncResult);
         }
@@ -1379,7 +1379,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
-        public DescribeScalingParametersResponse DescribeScalingParameters(DescribeScalingParametersRequest request)
+        public virtual DescribeScalingParametersResponse DescribeScalingParameters(DescribeScalingParametersRequest request)
         {
             var marshaller = new DescribeScalingParametersRequestMarshaller();
             var unmarshaller = DescribeScalingParametersResponseUnmarshaller.Instance;
@@ -1398,7 +1398,7 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeScalingParameters
         ///         operation.</returns>
-        public IAsyncResult BeginDescribeScalingParameters(DescribeScalingParametersRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeScalingParameters(DescribeScalingParametersRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeScalingParametersRequestMarshaller();
             var unmarshaller = DescribeScalingParametersResponseUnmarshaller.Instance;
@@ -1414,7 +1414,7 @@ namespace Amazon.CloudSearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeScalingParameters.</param>
         /// 
         /// <returns>Returns a  DescribeScalingParametersResult from CloudSearch.</returns>
-        public  DescribeScalingParametersResponse EndDescribeScalingParameters(IAsyncResult asyncResult)
+        public virtual DescribeScalingParametersResponse EndDescribeScalingParameters(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeScalingParametersResponse>(asyncResult);
         }
@@ -1446,7 +1446,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
-        public DescribeServiceAccessPoliciesResponse DescribeServiceAccessPolicies(DescribeServiceAccessPoliciesRequest request)
+        public virtual DescribeServiceAccessPoliciesResponse DescribeServiceAccessPolicies(DescribeServiceAccessPoliciesRequest request)
         {
             var marshaller = new DescribeServiceAccessPoliciesRequestMarshaller();
             var unmarshaller = DescribeServiceAccessPoliciesResponseUnmarshaller.Instance;
@@ -1465,7 +1465,7 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeServiceAccessPolicies
         ///         operation.</returns>
-        public IAsyncResult BeginDescribeServiceAccessPolicies(DescribeServiceAccessPoliciesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeServiceAccessPolicies(DescribeServiceAccessPoliciesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeServiceAccessPoliciesRequestMarshaller();
             var unmarshaller = DescribeServiceAccessPoliciesResponseUnmarshaller.Instance;
@@ -1481,7 +1481,7 @@ namespace Amazon.CloudSearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeServiceAccessPolicies.</param>
         /// 
         /// <returns>Returns a  DescribeServiceAccessPoliciesResult from CloudSearch.</returns>
-        public  DescribeServiceAccessPoliciesResponse EndDescribeServiceAccessPolicies(IAsyncResult asyncResult)
+        public virtual DescribeServiceAccessPoliciesResponse EndDescribeServiceAccessPolicies(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeServiceAccessPoliciesResponse>(asyncResult);
         }
@@ -1514,7 +1514,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
-        public DescribeSuggestersResponse DescribeSuggesters(DescribeSuggestersRequest request)
+        public virtual DescribeSuggestersResponse DescribeSuggesters(DescribeSuggestersRequest request)
         {
             var marshaller = new DescribeSuggestersRequestMarshaller();
             var unmarshaller = DescribeSuggestersResponseUnmarshaller.Instance;
@@ -1533,7 +1533,7 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSuggesters
         ///         operation.</returns>
-        public IAsyncResult BeginDescribeSuggesters(DescribeSuggestersRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeSuggesters(DescribeSuggestersRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeSuggestersRequestMarshaller();
             var unmarshaller = DescribeSuggestersResponseUnmarshaller.Instance;
@@ -1549,7 +1549,7 @@ namespace Amazon.CloudSearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSuggesters.</param>
         /// 
         /// <returns>Returns a  DescribeSuggestersResult from CloudSearch.</returns>
-        public  DescribeSuggestersResponse EndDescribeSuggesters(IAsyncResult asyncResult)
+        public virtual DescribeSuggestersResponse EndDescribeSuggesters(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeSuggestersResponse>(asyncResult);
         }
@@ -1578,7 +1578,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
-        public IndexDocumentsResponse IndexDocuments(IndexDocumentsRequest request)
+        public virtual IndexDocumentsResponse IndexDocuments(IndexDocumentsRequest request)
         {
             var marshaller = new IndexDocumentsRequestMarshaller();
             var unmarshaller = IndexDocumentsResponseUnmarshaller.Instance;
@@ -1597,7 +1597,7 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndIndexDocuments
         ///         operation.</returns>
-        public IAsyncResult BeginIndexDocuments(IndexDocumentsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginIndexDocuments(IndexDocumentsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new IndexDocumentsRequestMarshaller();
             var unmarshaller = IndexDocumentsResponseUnmarshaller.Instance;
@@ -1613,7 +1613,7 @@ namespace Amazon.CloudSearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginIndexDocuments.</param>
         /// 
         /// <returns>Returns a  IndexDocumentsResult from CloudSearch.</returns>
-        public  IndexDocumentsResponse EndIndexDocuments(IAsyncResult asyncResult)
+        public virtual IndexDocumentsResponse EndIndexDocuments(IAsyncResult asyncResult)
         {
             return EndInvoke<IndexDocumentsResponse>(asyncResult);
         }
@@ -1630,7 +1630,7 @@ namespace Amazon.CloudSearch
         /// <exception cref="Amazon.CloudSearch.Model.BaseException">
         /// An error occurred while processing the request.
         /// </exception>
-        public ListDomainNamesResponse ListDomainNames()
+        public virtual ListDomainNamesResponse ListDomainNames()
         {
             return ListDomainNames(new ListDomainNamesRequest());
         }
@@ -1644,7 +1644,7 @@ namespace Amazon.CloudSearch
         /// <exception cref="Amazon.CloudSearch.Model.BaseException">
         /// An error occurred while processing the request.
         /// </exception>
-        public ListDomainNamesResponse ListDomainNames(ListDomainNamesRequest request)
+        public virtual ListDomainNamesResponse ListDomainNames(ListDomainNamesRequest request)
         {
             var marshaller = new ListDomainNamesRequestMarshaller();
             var unmarshaller = ListDomainNamesResponseUnmarshaller.Instance;
@@ -1663,7 +1663,7 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDomainNames
         ///         operation.</returns>
-        public IAsyncResult BeginListDomainNames(ListDomainNamesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListDomainNames(ListDomainNamesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListDomainNamesRequestMarshaller();
             var unmarshaller = ListDomainNamesResponseUnmarshaller.Instance;
@@ -1679,7 +1679,7 @@ namespace Amazon.CloudSearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDomainNames.</param>
         /// 
         /// <returns>Returns a  ListDomainNamesResult from CloudSearch.</returns>
-        public  ListDomainNamesResponse EndListDomainNames(IAsyncResult asyncResult)
+        public virtual ListDomainNamesResponse EndListDomainNames(IAsyncResult asyncResult)
         {
             return EndInvoke<ListDomainNamesResponse>(asyncResult);
         }
@@ -1721,7 +1721,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
-        public UpdateAvailabilityOptionsResponse UpdateAvailabilityOptions(UpdateAvailabilityOptionsRequest request)
+        public virtual UpdateAvailabilityOptionsResponse UpdateAvailabilityOptions(UpdateAvailabilityOptionsRequest request)
         {
             var marshaller = new UpdateAvailabilityOptionsRequestMarshaller();
             var unmarshaller = UpdateAvailabilityOptionsResponseUnmarshaller.Instance;
@@ -1740,7 +1740,7 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAvailabilityOptions
         ///         operation.</returns>
-        public IAsyncResult BeginUpdateAvailabilityOptions(UpdateAvailabilityOptionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateAvailabilityOptions(UpdateAvailabilityOptionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateAvailabilityOptionsRequestMarshaller();
             var unmarshaller = UpdateAvailabilityOptionsResponseUnmarshaller.Instance;
@@ -1756,7 +1756,7 @@ namespace Amazon.CloudSearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAvailabilityOptions.</param>
         /// 
         /// <returns>Returns a  UpdateAvailabilityOptionsResult from CloudSearch.</returns>
-        public  UpdateAvailabilityOptionsResponse EndUpdateAvailabilityOptions(IAsyncResult asyncResult)
+        public virtual UpdateAvailabilityOptionsResponse EndUpdateAvailabilityOptions(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateAvailabilityOptionsResponse>(asyncResult);
         }
@@ -1796,7 +1796,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
-        public UpdateScalingParametersResponse UpdateScalingParameters(UpdateScalingParametersRequest request)
+        public virtual UpdateScalingParametersResponse UpdateScalingParameters(UpdateScalingParametersRequest request)
         {
             var marshaller = new UpdateScalingParametersRequestMarshaller();
             var unmarshaller = UpdateScalingParametersResponseUnmarshaller.Instance;
@@ -1815,7 +1815,7 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateScalingParameters
         ///         operation.</returns>
-        public IAsyncResult BeginUpdateScalingParameters(UpdateScalingParametersRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateScalingParameters(UpdateScalingParametersRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateScalingParametersRequestMarshaller();
             var unmarshaller = UpdateScalingParametersResponseUnmarshaller.Instance;
@@ -1831,7 +1831,7 @@ namespace Amazon.CloudSearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateScalingParameters.</param>
         /// 
         /// <returns>Returns a  UpdateScalingParametersResult from CloudSearch.</returns>
-        public  UpdateScalingParametersResponse EndUpdateScalingParameters(IAsyncResult asyncResult)
+        public virtual UpdateScalingParametersResponse EndUpdateScalingParameters(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateScalingParametersResponse>(asyncResult);
         }
@@ -1866,7 +1866,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
-        public UpdateServiceAccessPoliciesResponse UpdateServiceAccessPolicies(UpdateServiceAccessPoliciesRequest request)
+        public virtual UpdateServiceAccessPoliciesResponse UpdateServiceAccessPolicies(UpdateServiceAccessPoliciesRequest request)
         {
             var marshaller = new UpdateServiceAccessPoliciesRequestMarshaller();
             var unmarshaller = UpdateServiceAccessPoliciesResponseUnmarshaller.Instance;
@@ -1885,7 +1885,7 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateServiceAccessPolicies
         ///         operation.</returns>
-        public IAsyncResult BeginUpdateServiceAccessPolicies(UpdateServiceAccessPoliciesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateServiceAccessPolicies(UpdateServiceAccessPoliciesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateServiceAccessPoliciesRequestMarshaller();
             var unmarshaller = UpdateServiceAccessPoliciesResponseUnmarshaller.Instance;
@@ -1901,7 +1901,7 @@ namespace Amazon.CloudSearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateServiceAccessPolicies.</param>
         /// 
         /// <returns>Returns a  UpdateServiceAccessPoliciesResult from CloudSearch.</returns>
-        public  UpdateServiceAccessPoliciesResponse EndUpdateServiceAccessPolicies(IAsyncResult asyncResult)
+        public virtual UpdateServiceAccessPoliciesResponse EndUpdateServiceAccessPolicies(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateServiceAccessPoliciesResponse>(asyncResult);
         }

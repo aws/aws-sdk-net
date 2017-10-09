@@ -325,7 +325,7 @@ namespace Amazon.CodeStar
         
         #region  AssociateTeamMember
 
-        internal AssociateTeamMemberResponse AssociateTeamMember(AssociateTeamMemberRequest request)
+        internal virtual AssociateTeamMemberResponse AssociateTeamMember(AssociateTeamMemberRequest request)
         {
             var marshaller = new AssociateTeamMemberRequestMarshaller();
             var unmarshaller = AssociateTeamMemberResponseUnmarshaller.Instance;
@@ -344,7 +344,7 @@ namespace Amazon.CodeStar
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/AssociateTeamMember">REST API Reference for AssociateTeamMember Operation</seealso>
-        public Task<AssociateTeamMemberResponse> AssociateTeamMemberAsync(AssociateTeamMemberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<AssociateTeamMemberResponse> AssociateTeamMemberAsync(AssociateTeamMemberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AssociateTeamMemberRequestMarshaller();
             var unmarshaller = AssociateTeamMemberResponseUnmarshaller.Instance;
@@ -357,7 +357,7 @@ namespace Amazon.CodeStar
         
         #region  CreateProject
 
-        internal CreateProjectResponse CreateProject(CreateProjectRequest request)
+        internal virtual CreateProjectResponse CreateProject(CreateProjectRequest request)
         {
             var marshaller = new CreateProjectRequestMarshaller();
             var unmarshaller = CreateProjectResponseUnmarshaller.Instance;
@@ -376,7 +376,7 @@ namespace Amazon.CodeStar
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/CreateProject">REST API Reference for CreateProject Operation</seealso>
-        public Task<CreateProjectResponse> CreateProjectAsync(CreateProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateProjectResponse> CreateProjectAsync(CreateProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateProjectRequestMarshaller();
             var unmarshaller = CreateProjectResponseUnmarshaller.Instance;
@@ -389,7 +389,7 @@ namespace Amazon.CodeStar
         
         #region  CreateUserProfile
 
-        internal CreateUserProfileResponse CreateUserProfile(CreateUserProfileRequest request)
+        internal virtual CreateUserProfileResponse CreateUserProfile(CreateUserProfileRequest request)
         {
             var marshaller = new CreateUserProfileRequestMarshaller();
             var unmarshaller = CreateUserProfileResponseUnmarshaller.Instance;
@@ -408,7 +408,7 @@ namespace Amazon.CodeStar
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/CreateUserProfile">REST API Reference for CreateUserProfile Operation</seealso>
-        public Task<CreateUserProfileResponse> CreateUserProfileAsync(CreateUserProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateUserProfileResponse> CreateUserProfileAsync(CreateUserProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateUserProfileRequestMarshaller();
             var unmarshaller = CreateUserProfileResponseUnmarshaller.Instance;
@@ -421,7 +421,7 @@ namespace Amazon.CodeStar
         
         #region  DeleteProject
 
-        internal DeleteProjectResponse DeleteProject(DeleteProjectRequest request)
+        internal virtual DeleteProjectResponse DeleteProject(DeleteProjectRequest request)
         {
             var marshaller = new DeleteProjectRequestMarshaller();
             var unmarshaller = DeleteProjectResponseUnmarshaller.Instance;
@@ -440,7 +440,7 @@ namespace Amazon.CodeStar
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
-        public Task<DeleteProjectResponse> DeleteProjectAsync(DeleteProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteProjectResponse> DeleteProjectAsync(DeleteProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteProjectRequestMarshaller();
             var unmarshaller = DeleteProjectResponseUnmarshaller.Instance;
@@ -453,7 +453,7 @@ namespace Amazon.CodeStar
         
         #region  DeleteUserProfile
 
-        internal DeleteUserProfileResponse DeleteUserProfile(DeleteUserProfileRequest request)
+        internal virtual DeleteUserProfileResponse DeleteUserProfile(DeleteUserProfileRequest request)
         {
             var marshaller = new DeleteUserProfileRequestMarshaller();
             var unmarshaller = DeleteUserProfileResponseUnmarshaller.Instance;
@@ -472,7 +472,7 @@ namespace Amazon.CodeStar
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/DeleteUserProfile">REST API Reference for DeleteUserProfile Operation</seealso>
-        public Task<DeleteUserProfileResponse> DeleteUserProfileAsync(DeleteUserProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteUserProfileResponse> DeleteUserProfileAsync(DeleteUserProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteUserProfileRequestMarshaller();
             var unmarshaller = DeleteUserProfileResponseUnmarshaller.Instance;
@@ -485,7 +485,7 @@ namespace Amazon.CodeStar
         
         #region  DescribeProject
 
-        internal DescribeProjectResponse DescribeProject(DescribeProjectRequest request)
+        internal virtual DescribeProjectResponse DescribeProject(DescribeProjectRequest request)
         {
             var marshaller = new DescribeProjectRequestMarshaller();
             var unmarshaller = DescribeProjectResponseUnmarshaller.Instance;
@@ -504,7 +504,7 @@ namespace Amazon.CodeStar
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/DescribeProject">REST API Reference for DescribeProject Operation</seealso>
-        public Task<DescribeProjectResponse> DescribeProjectAsync(DescribeProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeProjectResponse> DescribeProjectAsync(DescribeProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeProjectRequestMarshaller();
             var unmarshaller = DescribeProjectResponseUnmarshaller.Instance;
@@ -517,7 +517,7 @@ namespace Amazon.CodeStar
         
         #region  DescribeUserProfile
 
-        internal DescribeUserProfileResponse DescribeUserProfile(DescribeUserProfileRequest request)
+        internal virtual DescribeUserProfileResponse DescribeUserProfile(DescribeUserProfileRequest request)
         {
             var marshaller = new DescribeUserProfileRequestMarshaller();
             var unmarshaller = DescribeUserProfileResponseUnmarshaller.Instance;
@@ -536,7 +536,7 @@ namespace Amazon.CodeStar
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/DescribeUserProfile">REST API Reference for DescribeUserProfile Operation</seealso>
-        public Task<DescribeUserProfileResponse> DescribeUserProfileAsync(DescribeUserProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeUserProfileResponse> DescribeUserProfileAsync(DescribeUserProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeUserProfileRequestMarshaller();
             var unmarshaller = DescribeUserProfileResponseUnmarshaller.Instance;
@@ -549,7 +549,7 @@ namespace Amazon.CodeStar
         
         #region  DisassociateTeamMember
 
-        internal DisassociateTeamMemberResponse DisassociateTeamMember(DisassociateTeamMemberRequest request)
+        internal virtual DisassociateTeamMemberResponse DisassociateTeamMember(DisassociateTeamMemberRequest request)
         {
             var marshaller = new DisassociateTeamMemberRequestMarshaller();
             var unmarshaller = DisassociateTeamMemberResponseUnmarshaller.Instance;
@@ -568,7 +568,7 @@ namespace Amazon.CodeStar
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/DisassociateTeamMember">REST API Reference for DisassociateTeamMember Operation</seealso>
-        public Task<DisassociateTeamMemberResponse> DisassociateTeamMemberAsync(DisassociateTeamMemberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DisassociateTeamMemberResponse> DisassociateTeamMemberAsync(DisassociateTeamMemberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DisassociateTeamMemberRequestMarshaller();
             var unmarshaller = DisassociateTeamMemberResponseUnmarshaller.Instance;
@@ -581,7 +581,7 @@ namespace Amazon.CodeStar
         
         #region  ListProjects
 
-        internal ListProjectsResponse ListProjects(ListProjectsRequest request)
+        internal virtual ListProjectsResponse ListProjects(ListProjectsRequest request)
         {
             var marshaller = new ListProjectsRequestMarshaller();
             var unmarshaller = ListProjectsResponseUnmarshaller.Instance;
@@ -600,7 +600,7 @@ namespace Amazon.CodeStar
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListProjects">REST API Reference for ListProjects Operation</seealso>
-        public Task<ListProjectsResponse> ListProjectsAsync(ListProjectsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListProjectsResponse> ListProjectsAsync(ListProjectsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListProjectsRequestMarshaller();
             var unmarshaller = ListProjectsResponseUnmarshaller.Instance;
@@ -613,7 +613,7 @@ namespace Amazon.CodeStar
         
         #region  ListResources
 
-        internal ListResourcesResponse ListResources(ListResourcesRequest request)
+        internal virtual ListResourcesResponse ListResources(ListResourcesRequest request)
         {
             var marshaller = new ListResourcesRequestMarshaller();
             var unmarshaller = ListResourcesResponseUnmarshaller.Instance;
@@ -632,7 +632,7 @@ namespace Amazon.CodeStar
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListResources">REST API Reference for ListResources Operation</seealso>
-        public Task<ListResourcesResponse> ListResourcesAsync(ListResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListResourcesResponse> ListResourcesAsync(ListResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListResourcesRequestMarshaller();
             var unmarshaller = ListResourcesResponseUnmarshaller.Instance;
@@ -645,7 +645,7 @@ namespace Amazon.CodeStar
         
         #region  ListTagsForProject
 
-        internal ListTagsForProjectResponse ListTagsForProject(ListTagsForProjectRequest request)
+        internal virtual ListTagsForProjectResponse ListTagsForProject(ListTagsForProjectRequest request)
         {
             var marshaller = new ListTagsForProjectRequestMarshaller();
             var unmarshaller = ListTagsForProjectResponseUnmarshaller.Instance;
@@ -664,7 +664,7 @@ namespace Amazon.CodeStar
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListTagsForProject">REST API Reference for ListTagsForProject Operation</seealso>
-        public Task<ListTagsForProjectResponse> ListTagsForProjectAsync(ListTagsForProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListTagsForProjectResponse> ListTagsForProjectAsync(ListTagsForProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListTagsForProjectRequestMarshaller();
             var unmarshaller = ListTagsForProjectResponseUnmarshaller.Instance;
@@ -677,7 +677,7 @@ namespace Amazon.CodeStar
         
         #region  ListTeamMembers
 
-        internal ListTeamMembersResponse ListTeamMembers(ListTeamMembersRequest request)
+        internal virtual ListTeamMembersResponse ListTeamMembers(ListTeamMembersRequest request)
         {
             var marshaller = new ListTeamMembersRequestMarshaller();
             var unmarshaller = ListTeamMembersResponseUnmarshaller.Instance;
@@ -696,7 +696,7 @@ namespace Amazon.CodeStar
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListTeamMembers">REST API Reference for ListTeamMembers Operation</seealso>
-        public Task<ListTeamMembersResponse> ListTeamMembersAsync(ListTeamMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListTeamMembersResponse> ListTeamMembersAsync(ListTeamMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListTeamMembersRequestMarshaller();
             var unmarshaller = ListTeamMembersResponseUnmarshaller.Instance;
@@ -709,7 +709,7 @@ namespace Amazon.CodeStar
         
         #region  ListUserProfiles
 
-        internal ListUserProfilesResponse ListUserProfiles(ListUserProfilesRequest request)
+        internal virtual ListUserProfilesResponse ListUserProfiles(ListUserProfilesRequest request)
         {
             var marshaller = new ListUserProfilesRequestMarshaller();
             var unmarshaller = ListUserProfilesResponseUnmarshaller.Instance;
@@ -728,7 +728,7 @@ namespace Amazon.CodeStar
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListUserProfiles">REST API Reference for ListUserProfiles Operation</seealso>
-        public Task<ListUserProfilesResponse> ListUserProfilesAsync(ListUserProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListUserProfilesResponse> ListUserProfilesAsync(ListUserProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListUserProfilesRequestMarshaller();
             var unmarshaller = ListUserProfilesResponseUnmarshaller.Instance;
@@ -741,7 +741,7 @@ namespace Amazon.CodeStar
         
         #region  TagProject
 
-        internal TagProjectResponse TagProject(TagProjectRequest request)
+        internal virtual TagProjectResponse TagProject(TagProjectRequest request)
         {
             var marshaller = new TagProjectRequestMarshaller();
             var unmarshaller = TagProjectResponseUnmarshaller.Instance;
@@ -760,7 +760,7 @@ namespace Amazon.CodeStar
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/TagProject">REST API Reference for TagProject Operation</seealso>
-        public Task<TagProjectResponse> TagProjectAsync(TagProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<TagProjectResponse> TagProjectAsync(TagProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new TagProjectRequestMarshaller();
             var unmarshaller = TagProjectResponseUnmarshaller.Instance;
@@ -773,7 +773,7 @@ namespace Amazon.CodeStar
         
         #region  UntagProject
 
-        internal UntagProjectResponse UntagProject(UntagProjectRequest request)
+        internal virtual UntagProjectResponse UntagProject(UntagProjectRequest request)
         {
             var marshaller = new UntagProjectRequestMarshaller();
             var unmarshaller = UntagProjectResponseUnmarshaller.Instance;
@@ -792,7 +792,7 @@ namespace Amazon.CodeStar
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/UntagProject">REST API Reference for UntagProject Operation</seealso>
-        public Task<UntagProjectResponse> UntagProjectAsync(UntagProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UntagProjectResponse> UntagProjectAsync(UntagProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UntagProjectRequestMarshaller();
             var unmarshaller = UntagProjectResponseUnmarshaller.Instance;
@@ -805,7 +805,7 @@ namespace Amazon.CodeStar
         
         #region  UpdateProject
 
-        internal UpdateProjectResponse UpdateProject(UpdateProjectRequest request)
+        internal virtual UpdateProjectResponse UpdateProject(UpdateProjectRequest request)
         {
             var marshaller = new UpdateProjectRequestMarshaller();
             var unmarshaller = UpdateProjectResponseUnmarshaller.Instance;
@@ -824,7 +824,7 @@ namespace Amazon.CodeStar
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
-        public Task<UpdateProjectResponse> UpdateProjectAsync(UpdateProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateProjectResponse> UpdateProjectAsync(UpdateProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateProjectRequestMarshaller();
             var unmarshaller = UpdateProjectResponseUnmarshaller.Instance;
@@ -837,7 +837,7 @@ namespace Amazon.CodeStar
         
         #region  UpdateTeamMember
 
-        internal UpdateTeamMemberResponse UpdateTeamMember(UpdateTeamMemberRequest request)
+        internal virtual UpdateTeamMemberResponse UpdateTeamMember(UpdateTeamMemberRequest request)
         {
             var marshaller = new UpdateTeamMemberRequestMarshaller();
             var unmarshaller = UpdateTeamMemberResponseUnmarshaller.Instance;
@@ -856,7 +856,7 @@ namespace Amazon.CodeStar
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/UpdateTeamMember">REST API Reference for UpdateTeamMember Operation</seealso>
-        public Task<UpdateTeamMemberResponse> UpdateTeamMemberAsync(UpdateTeamMemberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateTeamMemberResponse> UpdateTeamMemberAsync(UpdateTeamMemberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateTeamMemberRequestMarshaller();
             var unmarshaller = UpdateTeamMemberResponseUnmarshaller.Instance;
@@ -869,7 +869,7 @@ namespace Amazon.CodeStar
         
         #region  UpdateUserProfile
 
-        internal UpdateUserProfileResponse UpdateUserProfile(UpdateUserProfileRequest request)
+        internal virtual UpdateUserProfileResponse UpdateUserProfile(UpdateUserProfileRequest request)
         {
             var marshaller = new UpdateUserProfileRequestMarshaller();
             var unmarshaller = UpdateUserProfileResponseUnmarshaller.Instance;
@@ -888,7 +888,7 @@ namespace Amazon.CodeStar
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/UpdateUserProfile">REST API Reference for UpdateUserProfile Operation</seealso>
-        public Task<UpdateUserProfileResponse> UpdateUserProfileAsync(UpdateUserProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateUserProfileResponse> UpdateUserProfileAsync(UpdateUserProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateUserProfileRequestMarshaller();
             var unmarshaller = UpdateUserProfileResponseUnmarshaller.Instance;

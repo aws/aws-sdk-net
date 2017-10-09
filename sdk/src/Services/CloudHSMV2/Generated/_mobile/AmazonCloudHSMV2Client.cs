@@ -234,7 +234,7 @@ namespace Amazon.CloudHSMV2
         
         #region  CreateCluster
 
-        internal CreateClusterResponse CreateCluster(CreateClusterRequest request)
+        internal virtual CreateClusterResponse CreateCluster(CreateClusterRequest request)
         {
             var marshaller = new CreateClusterRequestMarshaller();
             var unmarshaller = CreateClusterResponseUnmarshaller.Instance;
@@ -253,7 +253,7 @@ namespace Amazon.CloudHSMV2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
-        public Task<CreateClusterResponse> CreateClusterAsync(CreateClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateClusterResponse> CreateClusterAsync(CreateClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateClusterRequestMarshaller();
             var unmarshaller = CreateClusterResponseUnmarshaller.Instance;
@@ -266,7 +266,7 @@ namespace Amazon.CloudHSMV2
         
         #region  CreateHsm
 
-        internal CreateHsmResponse CreateHsm(CreateHsmRequest request)
+        internal virtual CreateHsmResponse CreateHsm(CreateHsmRequest request)
         {
             var marshaller = new CreateHsmRequestMarshaller();
             var unmarshaller = CreateHsmResponseUnmarshaller.Instance;
@@ -285,7 +285,7 @@ namespace Amazon.CloudHSMV2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/CreateHsm">REST API Reference for CreateHsm Operation</seealso>
-        public Task<CreateHsmResponse> CreateHsmAsync(CreateHsmRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateHsmResponse> CreateHsmAsync(CreateHsmRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateHsmRequestMarshaller();
             var unmarshaller = CreateHsmResponseUnmarshaller.Instance;
@@ -298,7 +298,7 @@ namespace Amazon.CloudHSMV2
         
         #region  DeleteCluster
 
-        internal DeleteClusterResponse DeleteCluster(DeleteClusterRequest request)
+        internal virtual DeleteClusterResponse DeleteCluster(DeleteClusterRequest request)
         {
             var marshaller = new DeleteClusterRequestMarshaller();
             var unmarshaller = DeleteClusterResponseUnmarshaller.Instance;
@@ -317,7 +317,7 @@ namespace Amazon.CloudHSMV2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
-        public Task<DeleteClusterResponse> DeleteClusterAsync(DeleteClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteClusterResponse> DeleteClusterAsync(DeleteClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteClusterRequestMarshaller();
             var unmarshaller = DeleteClusterResponseUnmarshaller.Instance;
@@ -330,7 +330,7 @@ namespace Amazon.CloudHSMV2
         
         #region  DeleteHsm
 
-        internal DeleteHsmResponse DeleteHsm(DeleteHsmRequest request)
+        internal virtual DeleteHsmResponse DeleteHsm(DeleteHsmRequest request)
         {
             var marshaller = new DeleteHsmRequestMarshaller();
             var unmarshaller = DeleteHsmResponseUnmarshaller.Instance;
@@ -349,7 +349,7 @@ namespace Amazon.CloudHSMV2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DeleteHsm">REST API Reference for DeleteHsm Operation</seealso>
-        public Task<DeleteHsmResponse> DeleteHsmAsync(DeleteHsmRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteHsmResponse> DeleteHsmAsync(DeleteHsmRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteHsmRequestMarshaller();
             var unmarshaller = DeleteHsmResponseUnmarshaller.Instance;
@@ -362,7 +362,7 @@ namespace Amazon.CloudHSMV2
         
         #region  DescribeBackups
 
-        internal DescribeBackupsResponse DescribeBackups(DescribeBackupsRequest request)
+        internal virtual DescribeBackupsResponse DescribeBackups(DescribeBackupsRequest request)
         {
             var marshaller = new DescribeBackupsRequestMarshaller();
             var unmarshaller = DescribeBackupsResponseUnmarshaller.Instance;
@@ -381,7 +381,7 @@ namespace Amazon.CloudHSMV2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DescribeBackups">REST API Reference for DescribeBackups Operation</seealso>
-        public Task<DescribeBackupsResponse> DescribeBackupsAsync(DescribeBackupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeBackupsResponse> DescribeBackupsAsync(DescribeBackupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeBackupsRequestMarshaller();
             var unmarshaller = DescribeBackupsResponseUnmarshaller.Instance;
@@ -394,7 +394,7 @@ namespace Amazon.CloudHSMV2
         
         #region  DescribeClusters
 
-        internal DescribeClustersResponse DescribeClusters(DescribeClustersRequest request)
+        internal virtual DescribeClustersResponse DescribeClusters(DescribeClustersRequest request)
         {
             var marshaller = new DescribeClustersRequestMarshaller();
             var unmarshaller = DescribeClustersResponseUnmarshaller.Instance;
@@ -413,7 +413,7 @@ namespace Amazon.CloudHSMV2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DescribeClusters">REST API Reference for DescribeClusters Operation</seealso>
-        public Task<DescribeClustersResponse> DescribeClustersAsync(DescribeClustersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeClustersResponse> DescribeClustersAsync(DescribeClustersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeClustersRequestMarshaller();
             var unmarshaller = DescribeClustersResponseUnmarshaller.Instance;
@@ -426,7 +426,7 @@ namespace Amazon.CloudHSMV2
         
         #region  InitializeCluster
 
-        internal InitializeClusterResponse InitializeCluster(InitializeClusterRequest request)
+        internal virtual InitializeClusterResponse InitializeCluster(InitializeClusterRequest request)
         {
             var marshaller = new InitializeClusterRequestMarshaller();
             var unmarshaller = InitializeClusterResponseUnmarshaller.Instance;
@@ -445,7 +445,7 @@ namespace Amazon.CloudHSMV2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/InitializeCluster">REST API Reference for InitializeCluster Operation</seealso>
-        public Task<InitializeClusterResponse> InitializeClusterAsync(InitializeClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<InitializeClusterResponse> InitializeClusterAsync(InitializeClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new InitializeClusterRequestMarshaller();
             var unmarshaller = InitializeClusterResponseUnmarshaller.Instance;
@@ -458,7 +458,7 @@ namespace Amazon.CloudHSMV2
         
         #region  ListTags
 
-        internal ListTagsResponse ListTags(ListTagsRequest request)
+        internal virtual ListTagsResponse ListTags(ListTagsRequest request)
         {
             var marshaller = new ListTagsRequestMarshaller();
             var unmarshaller = ListTagsResponseUnmarshaller.Instance;
@@ -477,7 +477,7 @@ namespace Amazon.CloudHSMV2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/ListTags">REST API Reference for ListTags Operation</seealso>
-        public Task<ListTagsResponse> ListTagsAsync(ListTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListTagsResponse> ListTagsAsync(ListTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListTagsRequestMarshaller();
             var unmarshaller = ListTagsResponseUnmarshaller.Instance;
@@ -490,7 +490,7 @@ namespace Amazon.CloudHSMV2
         
         #region  TagResource
 
-        internal TagResourceResponse TagResource(TagResourceRequest request)
+        internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
             var marshaller = new TagResourceRequestMarshaller();
             var unmarshaller = TagResourceResponseUnmarshaller.Instance;
@@ -509,7 +509,7 @@ namespace Amazon.CloudHSMV2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/TagResource">REST API Reference for TagResource Operation</seealso>
-        public Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new TagResourceRequestMarshaller();
             var unmarshaller = TagResourceResponseUnmarshaller.Instance;
@@ -522,7 +522,7 @@ namespace Amazon.CloudHSMV2
         
         #region  UntagResource
 
-        internal UntagResourceResponse UntagResource(UntagResourceRequest request)
+        internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
             var marshaller = new UntagResourceRequestMarshaller();
             var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
@@ -541,7 +541,7 @@ namespace Amazon.CloudHSMV2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/UntagResource">REST API Reference for UntagResource Operation</seealso>
-        public Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UntagResourceRequestMarshaller();
             var unmarshaller = UntagResourceResponseUnmarshaller.Instance;

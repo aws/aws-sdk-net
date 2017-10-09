@@ -340,7 +340,7 @@ namespace Amazon.AWSSupport
         /// An internal server error occurred.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/AddAttachmentsToSet">REST API Reference for AddAttachmentsToSet Operation</seealso>
-        public AddAttachmentsToSetResponse AddAttachmentsToSet(AddAttachmentsToSetRequest request)
+        public virtual AddAttachmentsToSetResponse AddAttachmentsToSet(AddAttachmentsToSetRequest request)
         {
             var marshaller = new AddAttachmentsToSetRequestMarshaller();
             var unmarshaller = AddAttachmentsToSetResponseUnmarshaller.Instance;
@@ -360,7 +360,7 @@ namespace Amazon.AWSSupport
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddAttachmentsToSet
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/AddAttachmentsToSet">REST API Reference for AddAttachmentsToSet Operation</seealso>
-        public IAsyncResult BeginAddAttachmentsToSet(AddAttachmentsToSetRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginAddAttachmentsToSet(AddAttachmentsToSetRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AddAttachmentsToSetRequestMarshaller();
             var unmarshaller = AddAttachmentsToSetResponseUnmarshaller.Instance;
@@ -377,7 +377,7 @@ namespace Amazon.AWSSupport
         /// 
         /// <returns>Returns a  AddAttachmentsToSetResult from AWSSupport.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/AddAttachmentsToSet">REST API Reference for AddAttachmentsToSet Operation</seealso>
-        public  AddAttachmentsToSetResponse EndAddAttachmentsToSet(IAsyncResult asyncResult)
+        public virtual AddAttachmentsToSetResponse EndAddAttachmentsToSet(IAsyncResult asyncResult)
         {
             return EndInvoke<AddAttachmentsToSetResponse>(asyncResult);
         }
@@ -418,7 +418,7 @@ namespace Amazon.AWSSupport
         /// An internal server error occurred.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/AddCommunicationToCase">REST API Reference for AddCommunicationToCase Operation</seealso>
-        public AddCommunicationToCaseResponse AddCommunicationToCase(AddCommunicationToCaseRequest request)
+        public virtual AddCommunicationToCaseResponse AddCommunicationToCase(AddCommunicationToCaseRequest request)
         {
             var marshaller = new AddCommunicationToCaseRequestMarshaller();
             var unmarshaller = AddCommunicationToCaseResponseUnmarshaller.Instance;
@@ -438,7 +438,7 @@ namespace Amazon.AWSSupport
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddCommunicationToCase
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/AddCommunicationToCase">REST API Reference for AddCommunicationToCase Operation</seealso>
-        public IAsyncResult BeginAddCommunicationToCase(AddCommunicationToCaseRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginAddCommunicationToCase(AddCommunicationToCaseRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AddCommunicationToCaseRequestMarshaller();
             var unmarshaller = AddCommunicationToCaseResponseUnmarshaller.Instance;
@@ -455,7 +455,7 @@ namespace Amazon.AWSSupport
         /// 
         /// <returns>Returns a  AddCommunicationToCaseResult from AWSSupport.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/AddCommunicationToCase">REST API Reference for AddCommunicationToCase Operation</seealso>
-        public  AddCommunicationToCaseResponse EndAddCommunicationToCase(IAsyncResult asyncResult)
+        public virtual AddCommunicationToCaseResponse EndAddCommunicationToCase(IAsyncResult asyncResult)
         {
             return EndInvoke<AddCommunicationToCaseResponse>(asyncResult);
         }
@@ -549,7 +549,7 @@ namespace Amazon.AWSSupport
         /// An internal server error occurred.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/CreateCase">REST API Reference for CreateCase Operation</seealso>
-        public CreateCaseResponse CreateCase(CreateCaseRequest request)
+        public virtual CreateCaseResponse CreateCase(CreateCaseRequest request)
         {
             var marshaller = new CreateCaseRequestMarshaller();
             var unmarshaller = CreateCaseResponseUnmarshaller.Instance;
@@ -569,7 +569,7 @@ namespace Amazon.AWSSupport
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCase
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/CreateCase">REST API Reference for CreateCase Operation</seealso>
-        public IAsyncResult BeginCreateCase(CreateCaseRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateCase(CreateCaseRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateCaseRequestMarshaller();
             var unmarshaller = CreateCaseResponseUnmarshaller.Instance;
@@ -586,7 +586,7 @@ namespace Amazon.AWSSupport
         /// 
         /// <returns>Returns a  CreateCaseResult from AWSSupport.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/CreateCase">REST API Reference for CreateCase Operation</seealso>
-        public  CreateCaseResponse EndCreateCase(IAsyncResult asyncResult)
+        public virtual CreateCaseResponse EndCreateCase(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateCaseResponse>(asyncResult);
         }
@@ -615,7 +615,7 @@ namespace Amazon.AWSSupport
         /// An internal server error occurred.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeAttachment">REST API Reference for DescribeAttachment Operation</seealso>
-        public DescribeAttachmentResponse DescribeAttachment(DescribeAttachmentRequest request)
+        public virtual DescribeAttachmentResponse DescribeAttachment(DescribeAttachmentRequest request)
         {
             var marshaller = new DescribeAttachmentRequestMarshaller();
             var unmarshaller = DescribeAttachmentResponseUnmarshaller.Instance;
@@ -635,7 +635,7 @@ namespace Amazon.AWSSupport
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAttachment
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeAttachment">REST API Reference for DescribeAttachment Operation</seealso>
-        public IAsyncResult BeginDescribeAttachment(DescribeAttachmentRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeAttachment(DescribeAttachmentRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeAttachmentRequestMarshaller();
             var unmarshaller = DescribeAttachmentResponseUnmarshaller.Instance;
@@ -652,7 +652,7 @@ namespace Amazon.AWSSupport
         /// 
         /// <returns>Returns a  DescribeAttachmentResult from AWSSupport.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeAttachment">REST API Reference for DescribeAttachment Operation</seealso>
-        public  DescribeAttachmentResponse EndDescribeAttachment(IAsyncResult asyncResult)
+        public virtual DescribeAttachmentResponse EndDescribeAttachment(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeAttachmentResponse>(asyncResult);
         }
@@ -698,7 +698,7 @@ namespace Amazon.AWSSupport
         /// An internal server error occurred.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeCases">REST API Reference for DescribeCases Operation</seealso>
-        public DescribeCasesResponse DescribeCases(DescribeCasesRequest request)
+        public virtual DescribeCasesResponse DescribeCases(DescribeCasesRequest request)
         {
             var marshaller = new DescribeCasesRequestMarshaller();
             var unmarshaller = DescribeCasesResponseUnmarshaller.Instance;
@@ -718,7 +718,7 @@ namespace Amazon.AWSSupport
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeCases
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeCases">REST API Reference for DescribeCases Operation</seealso>
-        public IAsyncResult BeginDescribeCases(DescribeCasesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeCases(DescribeCasesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeCasesRequestMarshaller();
             var unmarshaller = DescribeCasesResponseUnmarshaller.Instance;
@@ -735,7 +735,7 @@ namespace Amazon.AWSSupport
         /// 
         /// <returns>Returns a  DescribeCasesResult from AWSSupport.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeCases">REST API Reference for DescribeCases Operation</seealso>
-        public  DescribeCasesResponse EndDescribeCases(IAsyncResult asyncResult)
+        public virtual DescribeCasesResponse EndDescribeCases(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeCasesResponse>(asyncResult);
         }
@@ -773,7 +773,7 @@ namespace Amazon.AWSSupport
         /// An internal server error occurred.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeCommunications">REST API Reference for DescribeCommunications Operation</seealso>
-        public DescribeCommunicationsResponse DescribeCommunications(DescribeCommunicationsRequest request)
+        public virtual DescribeCommunicationsResponse DescribeCommunications(DescribeCommunicationsRequest request)
         {
             var marshaller = new DescribeCommunicationsRequestMarshaller();
             var unmarshaller = DescribeCommunicationsResponseUnmarshaller.Instance;
@@ -793,7 +793,7 @@ namespace Amazon.AWSSupport
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeCommunications
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeCommunications">REST API Reference for DescribeCommunications Operation</seealso>
-        public IAsyncResult BeginDescribeCommunications(DescribeCommunicationsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeCommunications(DescribeCommunicationsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeCommunicationsRequestMarshaller();
             var unmarshaller = DescribeCommunicationsResponseUnmarshaller.Instance;
@@ -810,7 +810,7 @@ namespace Amazon.AWSSupport
         /// 
         /// <returns>Returns a  DescribeCommunicationsResult from AWSSupport.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeCommunications">REST API Reference for DescribeCommunications Operation</seealso>
-        public  DescribeCommunicationsResponse EndDescribeCommunications(IAsyncResult asyncResult)
+        public virtual DescribeCommunicationsResponse EndDescribeCommunications(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeCommunicationsResponse>(asyncResult);
         }
@@ -841,7 +841,7 @@ namespace Amazon.AWSSupport
         /// An internal server error occurred.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeServices">REST API Reference for DescribeServices Operation</seealso>
-        public DescribeServicesResponse DescribeServices()
+        public virtual DescribeServicesResponse DescribeServices()
         {
             return DescribeServices(new DescribeServicesRequest());
         }
@@ -869,7 +869,7 @@ namespace Amazon.AWSSupport
         /// An internal server error occurred.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeServices">REST API Reference for DescribeServices Operation</seealso>
-        public DescribeServicesResponse DescribeServices(DescribeServicesRequest request)
+        public virtual DescribeServicesResponse DescribeServices(DescribeServicesRequest request)
         {
             var marshaller = new DescribeServicesRequestMarshaller();
             var unmarshaller = DescribeServicesResponseUnmarshaller.Instance;
@@ -889,7 +889,7 @@ namespace Amazon.AWSSupport
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeServices
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeServices">REST API Reference for DescribeServices Operation</seealso>
-        public IAsyncResult BeginDescribeServices(DescribeServicesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeServices(DescribeServicesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeServicesRequestMarshaller();
             var unmarshaller = DescribeServicesResponseUnmarshaller.Instance;
@@ -906,7 +906,7 @@ namespace Amazon.AWSSupport
         /// 
         /// <returns>Returns a  DescribeServicesResult from AWSSupport.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeServices">REST API Reference for DescribeServices Operation</seealso>
-        public  DescribeServicesResponse EndDescribeServices(IAsyncResult asyncResult)
+        public virtual DescribeServicesResponse EndDescribeServices(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeServicesResponse>(asyncResult);
         }
@@ -926,7 +926,7 @@ namespace Amazon.AWSSupport
         /// An internal server error occurred.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeSeverityLevels">REST API Reference for DescribeSeverityLevels Operation</seealso>
-        public DescribeSeverityLevelsResponse DescribeSeverityLevels()
+        public virtual DescribeSeverityLevelsResponse DescribeSeverityLevels()
         {
             return DescribeSeverityLevels(new DescribeSeverityLevelsRequest());
         }
@@ -943,7 +943,7 @@ namespace Amazon.AWSSupport
         /// An internal server error occurred.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeSeverityLevels">REST API Reference for DescribeSeverityLevels Operation</seealso>
-        public DescribeSeverityLevelsResponse DescribeSeverityLevels(DescribeSeverityLevelsRequest request)
+        public virtual DescribeSeverityLevelsResponse DescribeSeverityLevels(DescribeSeverityLevelsRequest request)
         {
             var marshaller = new DescribeSeverityLevelsRequestMarshaller();
             var unmarshaller = DescribeSeverityLevelsResponseUnmarshaller.Instance;
@@ -963,7 +963,7 @@ namespace Amazon.AWSSupport
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSeverityLevels
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeSeverityLevels">REST API Reference for DescribeSeverityLevels Operation</seealso>
-        public IAsyncResult BeginDescribeSeverityLevels(DescribeSeverityLevelsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeSeverityLevels(DescribeSeverityLevelsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeSeverityLevelsRequestMarshaller();
             var unmarshaller = DescribeSeverityLevelsResponseUnmarshaller.Instance;
@@ -980,7 +980,7 @@ namespace Amazon.AWSSupport
         /// 
         /// <returns>Returns a  DescribeSeverityLevelsResult from AWSSupport.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeSeverityLevels">REST API Reference for DescribeSeverityLevels Operation</seealso>
-        public  DescribeSeverityLevelsResponse EndDescribeSeverityLevels(IAsyncResult asyncResult)
+        public virtual DescribeSeverityLevelsResponse EndDescribeSeverityLevels(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeSeverityLevelsResponse>(asyncResult);
         }
@@ -1008,7 +1008,7 @@ namespace Amazon.AWSSupport
         /// An internal server error occurred.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorCheckRefreshStatuses">REST API Reference for DescribeTrustedAdvisorCheckRefreshStatuses Operation</seealso>
-        public DescribeTrustedAdvisorCheckRefreshStatusesResponse DescribeTrustedAdvisorCheckRefreshStatuses(DescribeTrustedAdvisorCheckRefreshStatusesRequest request)
+        public virtual DescribeTrustedAdvisorCheckRefreshStatusesResponse DescribeTrustedAdvisorCheckRefreshStatuses(DescribeTrustedAdvisorCheckRefreshStatusesRequest request)
         {
             var marshaller = new DescribeTrustedAdvisorCheckRefreshStatusesRequestMarshaller();
             var unmarshaller = DescribeTrustedAdvisorCheckRefreshStatusesResponseUnmarshaller.Instance;
@@ -1028,7 +1028,7 @@ namespace Amazon.AWSSupport
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTrustedAdvisorCheckRefreshStatuses
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorCheckRefreshStatuses">REST API Reference for DescribeTrustedAdvisorCheckRefreshStatuses Operation</seealso>
-        public IAsyncResult BeginDescribeTrustedAdvisorCheckRefreshStatuses(DescribeTrustedAdvisorCheckRefreshStatusesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeTrustedAdvisorCheckRefreshStatuses(DescribeTrustedAdvisorCheckRefreshStatusesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeTrustedAdvisorCheckRefreshStatusesRequestMarshaller();
             var unmarshaller = DescribeTrustedAdvisorCheckRefreshStatusesResponseUnmarshaller.Instance;
@@ -1045,7 +1045,7 @@ namespace Amazon.AWSSupport
         /// 
         /// <returns>Returns a  DescribeTrustedAdvisorCheckRefreshStatusesResult from AWSSupport.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorCheckRefreshStatuses">REST API Reference for DescribeTrustedAdvisorCheckRefreshStatuses Operation</seealso>
-        public  DescribeTrustedAdvisorCheckRefreshStatusesResponse EndDescribeTrustedAdvisorCheckRefreshStatuses(IAsyncResult asyncResult)
+        public virtual DescribeTrustedAdvisorCheckRefreshStatusesResponse EndDescribeTrustedAdvisorCheckRefreshStatuses(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeTrustedAdvisorCheckRefreshStatusesResponse>(asyncResult);
         }
@@ -1101,7 +1101,7 @@ namespace Amazon.AWSSupport
         /// An internal server error occurred.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorCheckResult">REST API Reference for DescribeTrustedAdvisorCheckResult Operation</seealso>
-        public DescribeTrustedAdvisorCheckResultResponse DescribeTrustedAdvisorCheckResult(DescribeTrustedAdvisorCheckResultRequest request)
+        public virtual DescribeTrustedAdvisorCheckResultResponse DescribeTrustedAdvisorCheckResult(DescribeTrustedAdvisorCheckResultRequest request)
         {
             var marshaller = new DescribeTrustedAdvisorCheckResultRequestMarshaller();
             var unmarshaller = DescribeTrustedAdvisorCheckResultResponseUnmarshaller.Instance;
@@ -1121,7 +1121,7 @@ namespace Amazon.AWSSupport
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTrustedAdvisorCheckResult
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorCheckResult">REST API Reference for DescribeTrustedAdvisorCheckResult Operation</seealso>
-        public IAsyncResult BeginDescribeTrustedAdvisorCheckResult(DescribeTrustedAdvisorCheckResultRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeTrustedAdvisorCheckResult(DescribeTrustedAdvisorCheckResultRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeTrustedAdvisorCheckResultRequestMarshaller();
             var unmarshaller = DescribeTrustedAdvisorCheckResultResponseUnmarshaller.Instance;
@@ -1138,7 +1138,7 @@ namespace Amazon.AWSSupport
         /// 
         /// <returns>Returns a  DescribeTrustedAdvisorCheckResultResult from AWSSupport.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorCheckResult">REST API Reference for DescribeTrustedAdvisorCheckResult Operation</seealso>
-        public  DescribeTrustedAdvisorCheckResultResponse EndDescribeTrustedAdvisorCheckResult(IAsyncResult asyncResult)
+        public virtual DescribeTrustedAdvisorCheckResultResponse EndDescribeTrustedAdvisorCheckResult(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeTrustedAdvisorCheckResultResponse>(asyncResult);
         }
@@ -1160,7 +1160,7 @@ namespace Amazon.AWSSupport
         /// An internal server error occurred.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorChecks">REST API Reference for DescribeTrustedAdvisorChecks Operation</seealso>
-        public DescribeTrustedAdvisorChecksResponse DescribeTrustedAdvisorChecks(DescribeTrustedAdvisorChecksRequest request)
+        public virtual DescribeTrustedAdvisorChecksResponse DescribeTrustedAdvisorChecks(DescribeTrustedAdvisorChecksRequest request)
         {
             var marshaller = new DescribeTrustedAdvisorChecksRequestMarshaller();
             var unmarshaller = DescribeTrustedAdvisorChecksResponseUnmarshaller.Instance;
@@ -1180,7 +1180,7 @@ namespace Amazon.AWSSupport
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTrustedAdvisorChecks
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorChecks">REST API Reference for DescribeTrustedAdvisorChecks Operation</seealso>
-        public IAsyncResult BeginDescribeTrustedAdvisorChecks(DescribeTrustedAdvisorChecksRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeTrustedAdvisorChecks(DescribeTrustedAdvisorChecksRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeTrustedAdvisorChecksRequestMarshaller();
             var unmarshaller = DescribeTrustedAdvisorChecksResponseUnmarshaller.Instance;
@@ -1197,7 +1197,7 @@ namespace Amazon.AWSSupport
         /// 
         /// <returns>Returns a  DescribeTrustedAdvisorChecksResult from AWSSupport.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorChecks">REST API Reference for DescribeTrustedAdvisorChecks Operation</seealso>
-        public  DescribeTrustedAdvisorChecksResponse EndDescribeTrustedAdvisorChecks(IAsyncResult asyncResult)
+        public virtual DescribeTrustedAdvisorChecksResponse EndDescribeTrustedAdvisorChecks(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeTrustedAdvisorChecksResponse>(asyncResult);
         }
@@ -1222,7 +1222,7 @@ namespace Amazon.AWSSupport
         /// An internal server error occurred.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorCheckSummaries">REST API Reference for DescribeTrustedAdvisorCheckSummaries Operation</seealso>
-        public DescribeTrustedAdvisorCheckSummariesResponse DescribeTrustedAdvisorCheckSummaries(DescribeTrustedAdvisorCheckSummariesRequest request)
+        public virtual DescribeTrustedAdvisorCheckSummariesResponse DescribeTrustedAdvisorCheckSummaries(DescribeTrustedAdvisorCheckSummariesRequest request)
         {
             var marshaller = new DescribeTrustedAdvisorCheckSummariesRequestMarshaller();
             var unmarshaller = DescribeTrustedAdvisorCheckSummariesResponseUnmarshaller.Instance;
@@ -1242,7 +1242,7 @@ namespace Amazon.AWSSupport
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTrustedAdvisorCheckSummaries
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorCheckSummaries">REST API Reference for DescribeTrustedAdvisorCheckSummaries Operation</seealso>
-        public IAsyncResult BeginDescribeTrustedAdvisorCheckSummaries(DescribeTrustedAdvisorCheckSummariesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeTrustedAdvisorCheckSummaries(DescribeTrustedAdvisorCheckSummariesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeTrustedAdvisorCheckSummariesRequestMarshaller();
             var unmarshaller = DescribeTrustedAdvisorCheckSummariesResponseUnmarshaller.Instance;
@@ -1259,7 +1259,7 @@ namespace Amazon.AWSSupport
         /// 
         /// <returns>Returns a  DescribeTrustedAdvisorCheckSummariesResult from AWSSupport.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorCheckSummaries">REST API Reference for DescribeTrustedAdvisorCheckSummaries Operation</seealso>
-        public  DescribeTrustedAdvisorCheckSummariesResponse EndDescribeTrustedAdvisorCheckSummaries(IAsyncResult asyncResult)
+        public virtual DescribeTrustedAdvisorCheckSummariesResponse EndDescribeTrustedAdvisorCheckSummaries(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeTrustedAdvisorCheckSummariesResponse>(asyncResult);
         }
@@ -1306,7 +1306,7 @@ namespace Amazon.AWSSupport
         /// An internal server error occurred.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/RefreshTrustedAdvisorCheck">REST API Reference for RefreshTrustedAdvisorCheck Operation</seealso>
-        public RefreshTrustedAdvisorCheckResponse RefreshTrustedAdvisorCheck(RefreshTrustedAdvisorCheckRequest request)
+        public virtual RefreshTrustedAdvisorCheckResponse RefreshTrustedAdvisorCheck(RefreshTrustedAdvisorCheckRequest request)
         {
             var marshaller = new RefreshTrustedAdvisorCheckRequestMarshaller();
             var unmarshaller = RefreshTrustedAdvisorCheckResponseUnmarshaller.Instance;
@@ -1326,7 +1326,7 @@ namespace Amazon.AWSSupport
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRefreshTrustedAdvisorCheck
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/RefreshTrustedAdvisorCheck">REST API Reference for RefreshTrustedAdvisorCheck Operation</seealso>
-        public IAsyncResult BeginRefreshTrustedAdvisorCheck(RefreshTrustedAdvisorCheckRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginRefreshTrustedAdvisorCheck(RefreshTrustedAdvisorCheckRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RefreshTrustedAdvisorCheckRequestMarshaller();
             var unmarshaller = RefreshTrustedAdvisorCheckResponseUnmarshaller.Instance;
@@ -1343,7 +1343,7 @@ namespace Amazon.AWSSupport
         /// 
         /// <returns>Returns a  RefreshTrustedAdvisorCheckResult from AWSSupport.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/RefreshTrustedAdvisorCheck">REST API Reference for RefreshTrustedAdvisorCheck Operation</seealso>
-        public  RefreshTrustedAdvisorCheckResponse EndRefreshTrustedAdvisorCheck(IAsyncResult asyncResult)
+        public virtual RefreshTrustedAdvisorCheckResponse EndRefreshTrustedAdvisorCheck(IAsyncResult asyncResult)
         {
             return EndInvoke<RefreshTrustedAdvisorCheckResponse>(asyncResult);
         }
@@ -1366,7 +1366,7 @@ namespace Amazon.AWSSupport
         /// An internal server error occurred.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/ResolveCase">REST API Reference for ResolveCase Operation</seealso>
-        public ResolveCaseResponse ResolveCase(ResolveCaseRequest request)
+        public virtual ResolveCaseResponse ResolveCase(ResolveCaseRequest request)
         {
             var marshaller = new ResolveCaseRequestMarshaller();
             var unmarshaller = ResolveCaseResponseUnmarshaller.Instance;
@@ -1386,7 +1386,7 @@ namespace Amazon.AWSSupport
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndResolveCase
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/ResolveCase">REST API Reference for ResolveCase Operation</seealso>
-        public IAsyncResult BeginResolveCase(ResolveCaseRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginResolveCase(ResolveCaseRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ResolveCaseRequestMarshaller();
             var unmarshaller = ResolveCaseResponseUnmarshaller.Instance;
@@ -1403,7 +1403,7 @@ namespace Amazon.AWSSupport
         /// 
         /// <returns>Returns a  ResolveCaseResult from AWSSupport.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/ResolveCase">REST API Reference for ResolveCase Operation</seealso>
-        public  ResolveCaseResponse EndResolveCase(IAsyncResult asyncResult)
+        public virtual ResolveCaseResponse EndResolveCase(IAsyncResult asyncResult)
         {
             return EndInvoke<ResolveCaseResponse>(asyncResult);
         }

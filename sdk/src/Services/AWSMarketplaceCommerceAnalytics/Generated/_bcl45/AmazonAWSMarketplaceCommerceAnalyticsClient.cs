@@ -246,7 +246,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
         /// This exception is thrown when an internal service error occurs.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/GenerateDataSet">REST API Reference for GenerateDataSet Operation</seealso>
-        public GenerateDataSetResponse GenerateDataSet(GenerateDataSetRequest request)
+        public virtual GenerateDataSetResponse GenerateDataSet(GenerateDataSetRequest request)
         {
             var marshaller = new GenerateDataSetRequestMarshaller();
             var unmarshaller = GenerateDataSetResponseUnmarshaller.Instance;
@@ -264,7 +264,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/GenerateDataSet">REST API Reference for GenerateDataSet Operation</seealso>
-        public Task<GenerateDataSetResponse> GenerateDataSetAsync(GenerateDataSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GenerateDataSetResponse> GenerateDataSetAsync(GenerateDataSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GenerateDataSetRequestMarshaller();
             var unmarshaller = GenerateDataSetResponseUnmarshaller.Instance;
@@ -296,7 +296,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
         /// This exception is thrown when an internal service error occurs.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/StartSupportDataExport">REST API Reference for StartSupportDataExport Operation</seealso>
-        public StartSupportDataExportResponse StartSupportDataExport(StartSupportDataExportRequest request)
+        public virtual StartSupportDataExportResponse StartSupportDataExport(StartSupportDataExportRequest request)
         {
             var marshaller = new StartSupportDataExportRequestMarshaller();
             var unmarshaller = StartSupportDataExportResponseUnmarshaller.Instance;
@@ -314,7 +314,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/StartSupportDataExport">REST API Reference for StartSupportDataExport Operation</seealso>
-        public Task<StartSupportDataExportResponse> StartSupportDataExportAsync(StartSupportDataExportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<StartSupportDataExportResponse> StartSupportDataExportAsync(StartSupportDataExportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new StartSupportDataExportRequestMarshaller();
             var unmarshaller = StartSupportDataExportResponseUnmarshaller.Instance;

@@ -289,7 +289,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/AbortDocumentVersionUpload">REST API Reference for AbortDocumentVersionUpload Operation</seealso>
-        public AbortDocumentVersionUploadResponse AbortDocumentVersionUpload(AbortDocumentVersionUploadRequest request)
+        public virtual AbortDocumentVersionUploadResponse AbortDocumentVersionUpload(AbortDocumentVersionUploadRequest request)
         {
             var marshaller = new AbortDocumentVersionUploadRequestMarshaller();
             var unmarshaller = AbortDocumentVersionUploadResponseUnmarshaller.Instance;
@@ -309,7 +309,7 @@ namespace Amazon.WorkDocs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAbortDocumentVersionUpload
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/AbortDocumentVersionUpload">REST API Reference for AbortDocumentVersionUpload Operation</seealso>
-        public IAsyncResult BeginAbortDocumentVersionUpload(AbortDocumentVersionUploadRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginAbortDocumentVersionUpload(AbortDocumentVersionUploadRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AbortDocumentVersionUploadRequestMarshaller();
             var unmarshaller = AbortDocumentVersionUploadResponseUnmarshaller.Instance;
@@ -326,7 +326,7 @@ namespace Amazon.WorkDocs
         /// 
         /// <returns>Returns a  AbortDocumentVersionUploadResult from WorkDocs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/AbortDocumentVersionUpload">REST API Reference for AbortDocumentVersionUpload Operation</seealso>
-        public  AbortDocumentVersionUploadResponse EndAbortDocumentVersionUpload(IAsyncResult asyncResult)
+        public virtual AbortDocumentVersionUploadResponse EndAbortDocumentVersionUpload(IAsyncResult asyncResult)
         {
             return EndInvoke<AbortDocumentVersionUploadResponse>(asyncResult);
         }
@@ -358,7 +358,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/ActivateUser">REST API Reference for ActivateUser Operation</seealso>
-        public ActivateUserResponse ActivateUser(ActivateUserRequest request)
+        public virtual ActivateUserResponse ActivateUser(ActivateUserRequest request)
         {
             var marshaller = new ActivateUserRequestMarshaller();
             var unmarshaller = ActivateUserResponseUnmarshaller.Instance;
@@ -378,7 +378,7 @@ namespace Amazon.WorkDocs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndActivateUser
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/ActivateUser">REST API Reference for ActivateUser Operation</seealso>
-        public IAsyncResult BeginActivateUser(ActivateUserRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginActivateUser(ActivateUserRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ActivateUserRequestMarshaller();
             var unmarshaller = ActivateUserResponseUnmarshaller.Instance;
@@ -395,7 +395,7 @@ namespace Amazon.WorkDocs
         /// 
         /// <returns>Returns a  ActivateUserResult from WorkDocs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/ActivateUser">REST API Reference for ActivateUser Operation</seealso>
-        public  ActivateUserResponse EndActivateUser(IAsyncResult asyncResult)
+        public virtual ActivateUserResponse EndActivateUser(IAsyncResult asyncResult)
         {
             return EndInvoke<ActivateUserResponse>(asyncResult);
         }
@@ -425,7 +425,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/AddResourcePermissions">REST API Reference for AddResourcePermissions Operation</seealso>
-        public AddResourcePermissionsResponse AddResourcePermissions(AddResourcePermissionsRequest request)
+        public virtual AddResourcePermissionsResponse AddResourcePermissions(AddResourcePermissionsRequest request)
         {
             var marshaller = new AddResourcePermissionsRequestMarshaller();
             var unmarshaller = AddResourcePermissionsResponseUnmarshaller.Instance;
@@ -445,7 +445,7 @@ namespace Amazon.WorkDocs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddResourcePermissions
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/AddResourcePermissions">REST API Reference for AddResourcePermissions Operation</seealso>
-        public IAsyncResult BeginAddResourcePermissions(AddResourcePermissionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginAddResourcePermissions(AddResourcePermissionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AddResourcePermissionsRequestMarshaller();
             var unmarshaller = AddResourcePermissionsResponseUnmarshaller.Instance;
@@ -462,7 +462,7 @@ namespace Amazon.WorkDocs
         /// 
         /// <returns>Returns a  AddResourcePermissionsResult from WorkDocs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/AddResourcePermissions">REST API Reference for AddResourcePermissions Operation</seealso>
-        public  AddResourcePermissionsResponse EndAddResourcePermissions(IAsyncResult asyncResult)
+        public virtual AddResourcePermissionsResponse EndAddResourcePermissions(IAsyncResult asyncResult)
         {
             return EndInvoke<AddResourcePermissionsResponse>(asyncResult);
         }
@@ -501,7 +501,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateComment">REST API Reference for CreateComment Operation</seealso>
-        public CreateCommentResponse CreateComment(CreateCommentRequest request)
+        public virtual CreateCommentResponse CreateComment(CreateCommentRequest request)
         {
             var marshaller = new CreateCommentRequestMarshaller();
             var unmarshaller = CreateCommentResponseUnmarshaller.Instance;
@@ -521,7 +521,7 @@ namespace Amazon.WorkDocs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateComment
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateComment">REST API Reference for CreateComment Operation</seealso>
-        public IAsyncResult BeginCreateComment(CreateCommentRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateComment(CreateCommentRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateCommentRequestMarshaller();
             var unmarshaller = CreateCommentResponseUnmarshaller.Instance;
@@ -538,7 +538,7 @@ namespace Amazon.WorkDocs
         /// 
         /// <returns>Returns a  CreateCommentResult from WorkDocs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateComment">REST API Reference for CreateComment Operation</seealso>
-        public  CreateCommentResponse EndCreateComment(IAsyncResult asyncResult)
+        public virtual CreateCommentResponse EndCreateComment(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateCommentResponse>(asyncResult);
         }
@@ -577,7 +577,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateCustomMetadata">REST API Reference for CreateCustomMetadata Operation</seealso>
-        public CreateCustomMetadataResponse CreateCustomMetadata(CreateCustomMetadataRequest request)
+        public virtual CreateCustomMetadataResponse CreateCustomMetadata(CreateCustomMetadataRequest request)
         {
             var marshaller = new CreateCustomMetadataRequestMarshaller();
             var unmarshaller = CreateCustomMetadataResponseUnmarshaller.Instance;
@@ -597,7 +597,7 @@ namespace Amazon.WorkDocs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCustomMetadata
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateCustomMetadata">REST API Reference for CreateCustomMetadata Operation</seealso>
-        public IAsyncResult BeginCreateCustomMetadata(CreateCustomMetadataRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateCustomMetadata(CreateCustomMetadataRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateCustomMetadataRequestMarshaller();
             var unmarshaller = CreateCustomMetadataResponseUnmarshaller.Instance;
@@ -614,7 +614,7 @@ namespace Amazon.WorkDocs
         /// 
         /// <returns>Returns a  CreateCustomMetadataResult from WorkDocs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateCustomMetadata">REST API Reference for CreateCustomMetadata Operation</seealso>
-        public  CreateCustomMetadataResponse EndCreateCustomMetadata(IAsyncResult asyncResult)
+        public virtual CreateCustomMetadataResponse EndCreateCustomMetadata(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateCustomMetadataResponse>(asyncResult);
         }
@@ -655,7 +655,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateFolder">REST API Reference for CreateFolder Operation</seealso>
-        public CreateFolderResponse CreateFolder(CreateFolderRequest request)
+        public virtual CreateFolderResponse CreateFolder(CreateFolderRequest request)
         {
             var marshaller = new CreateFolderRequestMarshaller();
             var unmarshaller = CreateFolderResponseUnmarshaller.Instance;
@@ -675,7 +675,7 @@ namespace Amazon.WorkDocs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateFolder
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateFolder">REST API Reference for CreateFolder Operation</seealso>
-        public IAsyncResult BeginCreateFolder(CreateFolderRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateFolder(CreateFolderRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateFolderRequestMarshaller();
             var unmarshaller = CreateFolderResponseUnmarshaller.Instance;
@@ -692,7 +692,7 @@ namespace Amazon.WorkDocs
         /// 
         /// <returns>Returns a  CreateFolderResult from WorkDocs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateFolder">REST API Reference for CreateFolder Operation</seealso>
-        public  CreateFolderResponse EndCreateFolder(IAsyncResult asyncResult)
+        public virtual CreateFolderResponse EndCreateFolder(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateFolderResponse>(asyncResult);
         }
@@ -727,7 +727,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateLabels">REST API Reference for CreateLabels Operation</seealso>
-        public CreateLabelsResponse CreateLabels(CreateLabelsRequest request)
+        public virtual CreateLabelsResponse CreateLabels(CreateLabelsRequest request)
         {
             var marshaller = new CreateLabelsRequestMarshaller();
             var unmarshaller = CreateLabelsResponseUnmarshaller.Instance;
@@ -747,7 +747,7 @@ namespace Amazon.WorkDocs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateLabels
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateLabels">REST API Reference for CreateLabels Operation</seealso>
-        public IAsyncResult BeginCreateLabels(CreateLabelsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateLabels(CreateLabelsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateLabelsRequestMarshaller();
             var unmarshaller = CreateLabelsResponseUnmarshaller.Instance;
@@ -764,7 +764,7 @@ namespace Amazon.WorkDocs
         /// 
         /// <returns>Returns a  CreateLabelsResult from WorkDocs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateLabels">REST API Reference for CreateLabels Operation</seealso>
-        public  CreateLabelsResponse EndCreateLabels(IAsyncResult asyncResult)
+        public virtual CreateLabelsResponse EndCreateLabels(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateLabelsResponse>(asyncResult);
         }
@@ -796,7 +796,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateNotificationSubscription">REST API Reference for CreateNotificationSubscription Operation</seealso>
-        public CreateNotificationSubscriptionResponse CreateNotificationSubscription(CreateNotificationSubscriptionRequest request)
+        public virtual CreateNotificationSubscriptionResponse CreateNotificationSubscription(CreateNotificationSubscriptionRequest request)
         {
             var marshaller = new CreateNotificationSubscriptionRequestMarshaller();
             var unmarshaller = CreateNotificationSubscriptionResponseUnmarshaller.Instance;
@@ -816,7 +816,7 @@ namespace Amazon.WorkDocs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateNotificationSubscription
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateNotificationSubscription">REST API Reference for CreateNotificationSubscription Operation</seealso>
-        public IAsyncResult BeginCreateNotificationSubscription(CreateNotificationSubscriptionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateNotificationSubscription(CreateNotificationSubscriptionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateNotificationSubscriptionRequestMarshaller();
             var unmarshaller = CreateNotificationSubscriptionResponseUnmarshaller.Instance;
@@ -833,7 +833,7 @@ namespace Amazon.WorkDocs
         /// 
         /// <returns>Returns a  CreateNotificationSubscriptionResult from WorkDocs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateNotificationSubscription">REST API Reference for CreateNotificationSubscription Operation</seealso>
-        public  CreateNotificationSubscriptionResponse EndCreateNotificationSubscription(IAsyncResult asyncResult)
+        public virtual CreateNotificationSubscriptionResponse EndCreateNotificationSubscription(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateNotificationSubscriptionResponse>(asyncResult);
         }
@@ -866,7 +866,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateUser">REST API Reference for CreateUser Operation</seealso>
-        public CreateUserResponse CreateUser(CreateUserRequest request)
+        public virtual CreateUserResponse CreateUser(CreateUserRequest request)
         {
             var marshaller = new CreateUserRequestMarshaller();
             var unmarshaller = CreateUserResponseUnmarshaller.Instance;
@@ -886,7 +886,7 @@ namespace Amazon.WorkDocs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateUser
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateUser">REST API Reference for CreateUser Operation</seealso>
-        public IAsyncResult BeginCreateUser(CreateUserRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateUser(CreateUserRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateUserRequestMarshaller();
             var unmarshaller = CreateUserResponseUnmarshaller.Instance;
@@ -903,7 +903,7 @@ namespace Amazon.WorkDocs
         /// 
         /// <returns>Returns a  CreateUserResult from WorkDocs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateUser">REST API Reference for CreateUser Operation</seealso>
-        public  CreateUserResponse EndCreateUser(IAsyncResult asyncResult)
+        public virtual CreateUserResponse EndCreateUser(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateUserResponse>(asyncResult);
         }
@@ -935,7 +935,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeactivateUser">REST API Reference for DeactivateUser Operation</seealso>
-        public DeactivateUserResponse DeactivateUser(DeactivateUserRequest request)
+        public virtual DeactivateUserResponse DeactivateUser(DeactivateUserRequest request)
         {
             var marshaller = new DeactivateUserRequestMarshaller();
             var unmarshaller = DeactivateUserResponseUnmarshaller.Instance;
@@ -955,7 +955,7 @@ namespace Amazon.WorkDocs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeactivateUser
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeactivateUser">REST API Reference for DeactivateUser Operation</seealso>
-        public IAsyncResult BeginDeactivateUser(DeactivateUserRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeactivateUser(DeactivateUserRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeactivateUserRequestMarshaller();
             var unmarshaller = DeactivateUserResponseUnmarshaller.Instance;
@@ -972,7 +972,7 @@ namespace Amazon.WorkDocs
         /// 
         /// <returns>Returns a  DeactivateUserResult from WorkDocs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeactivateUser">REST API Reference for DeactivateUser Operation</seealso>
-        public  DeactivateUserResponse EndDeactivateUser(IAsyncResult asyncResult)
+        public virtual DeactivateUserResponse EndDeactivateUser(IAsyncResult asyncResult)
         {
             return EndInvoke<DeactivateUserResponse>(asyncResult);
         }
@@ -1011,7 +1011,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteComment">REST API Reference for DeleteComment Operation</seealso>
-        public DeleteCommentResponse DeleteComment(DeleteCommentRequest request)
+        public virtual DeleteCommentResponse DeleteComment(DeleteCommentRequest request)
         {
             var marshaller = new DeleteCommentRequestMarshaller();
             var unmarshaller = DeleteCommentResponseUnmarshaller.Instance;
@@ -1031,7 +1031,7 @@ namespace Amazon.WorkDocs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteComment
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteComment">REST API Reference for DeleteComment Operation</seealso>
-        public IAsyncResult BeginDeleteComment(DeleteCommentRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteComment(DeleteCommentRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteCommentRequestMarshaller();
             var unmarshaller = DeleteCommentResponseUnmarshaller.Instance;
@@ -1048,7 +1048,7 @@ namespace Amazon.WorkDocs
         /// 
         /// <returns>Returns a  DeleteCommentResult from WorkDocs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteComment">REST API Reference for DeleteComment Operation</seealso>
-        public  DeleteCommentResponse EndDeleteComment(IAsyncResult asyncResult)
+        public virtual DeleteCommentResponse EndDeleteComment(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteCommentResponse>(asyncResult);
         }
@@ -1083,7 +1083,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteCustomMetadata">REST API Reference for DeleteCustomMetadata Operation</seealso>
-        public DeleteCustomMetadataResponse DeleteCustomMetadata(DeleteCustomMetadataRequest request)
+        public virtual DeleteCustomMetadataResponse DeleteCustomMetadata(DeleteCustomMetadataRequest request)
         {
             var marshaller = new DeleteCustomMetadataRequestMarshaller();
             var unmarshaller = DeleteCustomMetadataResponseUnmarshaller.Instance;
@@ -1103,7 +1103,7 @@ namespace Amazon.WorkDocs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCustomMetadata
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteCustomMetadata">REST API Reference for DeleteCustomMetadata Operation</seealso>
-        public IAsyncResult BeginDeleteCustomMetadata(DeleteCustomMetadataRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteCustomMetadata(DeleteCustomMetadataRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteCustomMetadataRequestMarshaller();
             var unmarshaller = DeleteCustomMetadataResponseUnmarshaller.Instance;
@@ -1120,7 +1120,7 @@ namespace Amazon.WorkDocs
         /// 
         /// <returns>Returns a  DeleteCustomMetadataResult from WorkDocs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteCustomMetadata">REST API Reference for DeleteCustomMetadata Operation</seealso>
-        public  DeleteCustomMetadataResponse EndDeleteCustomMetadata(IAsyncResult asyncResult)
+        public virtual DeleteCustomMetadataResponse EndDeleteCustomMetadata(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteCustomMetadataResponse>(asyncResult);
         }
@@ -1158,7 +1158,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteDocument">REST API Reference for DeleteDocument Operation</seealso>
-        public DeleteDocumentResponse DeleteDocument(DeleteDocumentRequest request)
+        public virtual DeleteDocumentResponse DeleteDocument(DeleteDocumentRequest request)
         {
             var marshaller = new DeleteDocumentRequestMarshaller();
             var unmarshaller = DeleteDocumentResponseUnmarshaller.Instance;
@@ -1178,7 +1178,7 @@ namespace Amazon.WorkDocs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDocument
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteDocument">REST API Reference for DeleteDocument Operation</seealso>
-        public IAsyncResult BeginDeleteDocument(DeleteDocumentRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteDocument(DeleteDocumentRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteDocumentRequestMarshaller();
             var unmarshaller = DeleteDocumentResponseUnmarshaller.Instance;
@@ -1195,7 +1195,7 @@ namespace Amazon.WorkDocs
         /// 
         /// <returns>Returns a  DeleteDocumentResult from WorkDocs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteDocument">REST API Reference for DeleteDocument Operation</seealso>
-        public  DeleteDocumentResponse EndDeleteDocument(IAsyncResult asyncResult)
+        public virtual DeleteDocumentResponse EndDeleteDocument(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteDocumentResponse>(asyncResult);
         }
@@ -1233,7 +1233,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteFolder">REST API Reference for DeleteFolder Operation</seealso>
-        public DeleteFolderResponse DeleteFolder(DeleteFolderRequest request)
+        public virtual DeleteFolderResponse DeleteFolder(DeleteFolderRequest request)
         {
             var marshaller = new DeleteFolderRequestMarshaller();
             var unmarshaller = DeleteFolderResponseUnmarshaller.Instance;
@@ -1253,7 +1253,7 @@ namespace Amazon.WorkDocs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteFolder
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteFolder">REST API Reference for DeleteFolder Operation</seealso>
-        public IAsyncResult BeginDeleteFolder(DeleteFolderRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteFolder(DeleteFolderRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteFolderRequestMarshaller();
             var unmarshaller = DeleteFolderResponseUnmarshaller.Instance;
@@ -1270,7 +1270,7 @@ namespace Amazon.WorkDocs
         /// 
         /// <returns>Returns a  DeleteFolderResult from WorkDocs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteFolder">REST API Reference for DeleteFolder Operation</seealso>
-        public  DeleteFolderResponse EndDeleteFolder(IAsyncResult asyncResult)
+        public virtual DeleteFolderResponse EndDeleteFolder(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteFolderResponse>(asyncResult);
         }
@@ -1302,7 +1302,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteFolderContents">REST API Reference for DeleteFolderContents Operation</seealso>
-        public DeleteFolderContentsResponse DeleteFolderContents(DeleteFolderContentsRequest request)
+        public virtual DeleteFolderContentsResponse DeleteFolderContents(DeleteFolderContentsRequest request)
         {
             var marshaller = new DeleteFolderContentsRequestMarshaller();
             var unmarshaller = DeleteFolderContentsResponseUnmarshaller.Instance;
@@ -1322,7 +1322,7 @@ namespace Amazon.WorkDocs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteFolderContents
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteFolderContents">REST API Reference for DeleteFolderContents Operation</seealso>
-        public IAsyncResult BeginDeleteFolderContents(DeleteFolderContentsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteFolderContents(DeleteFolderContentsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteFolderContentsRequestMarshaller();
             var unmarshaller = DeleteFolderContentsResponseUnmarshaller.Instance;
@@ -1339,7 +1339,7 @@ namespace Amazon.WorkDocs
         /// 
         /// <returns>Returns a  DeleteFolderContentsResult from WorkDocs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteFolderContents">REST API Reference for DeleteFolderContents Operation</seealso>
-        public  DeleteFolderContentsResponse EndDeleteFolderContents(IAsyncResult asyncResult)
+        public virtual DeleteFolderContentsResponse EndDeleteFolderContents(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteFolderContentsResponse>(asyncResult);
         }
@@ -1371,7 +1371,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteLabels">REST API Reference for DeleteLabels Operation</seealso>
-        public DeleteLabelsResponse DeleteLabels(DeleteLabelsRequest request)
+        public virtual DeleteLabelsResponse DeleteLabels(DeleteLabelsRequest request)
         {
             var marshaller = new DeleteLabelsRequestMarshaller();
             var unmarshaller = DeleteLabelsResponseUnmarshaller.Instance;
@@ -1391,7 +1391,7 @@ namespace Amazon.WorkDocs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteLabels
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteLabels">REST API Reference for DeleteLabels Operation</seealso>
-        public IAsyncResult BeginDeleteLabels(DeleteLabelsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteLabels(DeleteLabelsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteLabelsRequestMarshaller();
             var unmarshaller = DeleteLabelsResponseUnmarshaller.Instance;
@@ -1408,7 +1408,7 @@ namespace Amazon.WorkDocs
         /// 
         /// <returns>Returns a  DeleteLabelsResult from WorkDocs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteLabels">REST API Reference for DeleteLabels Operation</seealso>
-        public  DeleteLabelsResponse EndDeleteLabels(IAsyncResult asyncResult)
+        public virtual DeleteLabelsResponse EndDeleteLabels(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteLabelsResponse>(asyncResult);
         }
@@ -1436,7 +1436,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteNotificationSubscription">REST API Reference for DeleteNotificationSubscription Operation</seealso>
-        public DeleteNotificationSubscriptionResponse DeleteNotificationSubscription(DeleteNotificationSubscriptionRequest request)
+        public virtual DeleteNotificationSubscriptionResponse DeleteNotificationSubscription(DeleteNotificationSubscriptionRequest request)
         {
             var marshaller = new DeleteNotificationSubscriptionRequestMarshaller();
             var unmarshaller = DeleteNotificationSubscriptionResponseUnmarshaller.Instance;
@@ -1456,7 +1456,7 @@ namespace Amazon.WorkDocs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteNotificationSubscription
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteNotificationSubscription">REST API Reference for DeleteNotificationSubscription Operation</seealso>
-        public IAsyncResult BeginDeleteNotificationSubscription(DeleteNotificationSubscriptionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteNotificationSubscription(DeleteNotificationSubscriptionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteNotificationSubscriptionRequestMarshaller();
             var unmarshaller = DeleteNotificationSubscriptionResponseUnmarshaller.Instance;
@@ -1473,7 +1473,7 @@ namespace Amazon.WorkDocs
         /// 
         /// <returns>Returns a  DeleteNotificationSubscriptionResult from WorkDocs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteNotificationSubscription">REST API Reference for DeleteNotificationSubscription Operation</seealso>
-        public  DeleteNotificationSubscriptionResponse EndDeleteNotificationSubscription(IAsyncResult asyncResult)
+        public virtual DeleteNotificationSubscriptionResponse EndDeleteNotificationSubscription(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteNotificationSubscriptionResponse>(asyncResult);
         }
@@ -1505,7 +1505,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
-        public DeleteUserResponse DeleteUser(DeleteUserRequest request)
+        public virtual DeleteUserResponse DeleteUser(DeleteUserRequest request)
         {
             var marshaller = new DeleteUserRequestMarshaller();
             var unmarshaller = DeleteUserResponseUnmarshaller.Instance;
@@ -1525,7 +1525,7 @@ namespace Amazon.WorkDocs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteUser
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
-        public IAsyncResult BeginDeleteUser(DeleteUserRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteUser(DeleteUserRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteUserRequestMarshaller();
             var unmarshaller = DeleteUserResponseUnmarshaller.Instance;
@@ -1542,7 +1542,7 @@ namespace Amazon.WorkDocs
         /// 
         /// <returns>Returns a  DeleteUserResult from WorkDocs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
-        public  DeleteUserResponse EndDeleteUser(IAsyncResult asyncResult)
+        public virtual DeleteUserResponse EndDeleteUser(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteUserResponse>(asyncResult);
         }
@@ -1574,7 +1574,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeActivities">REST API Reference for DescribeActivities Operation</seealso>
-        public DescribeActivitiesResponse DescribeActivities(DescribeActivitiesRequest request)
+        public virtual DescribeActivitiesResponse DescribeActivities(DescribeActivitiesRequest request)
         {
             var marshaller = new DescribeActivitiesRequestMarshaller();
             var unmarshaller = DescribeActivitiesResponseUnmarshaller.Instance;
@@ -1594,7 +1594,7 @@ namespace Amazon.WorkDocs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeActivities
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeActivities">REST API Reference for DescribeActivities Operation</seealso>
-        public IAsyncResult BeginDescribeActivities(DescribeActivitiesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeActivities(DescribeActivitiesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeActivitiesRequestMarshaller();
             var unmarshaller = DescribeActivitiesResponseUnmarshaller.Instance;
@@ -1611,7 +1611,7 @@ namespace Amazon.WorkDocs
         /// 
         /// <returns>Returns a  DescribeActivitiesResult from WorkDocs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeActivities">REST API Reference for DescribeActivities Operation</seealso>
-        public  DescribeActivitiesResponse EndDescribeActivities(IAsyncResult asyncResult)
+        public virtual DescribeActivitiesResponse EndDescribeActivities(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeActivitiesResponse>(asyncResult);
         }
@@ -1646,7 +1646,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeComments">REST API Reference for DescribeComments Operation</seealso>
-        public DescribeCommentsResponse DescribeComments(DescribeCommentsRequest request)
+        public virtual DescribeCommentsResponse DescribeComments(DescribeCommentsRequest request)
         {
             var marshaller = new DescribeCommentsRequestMarshaller();
             var unmarshaller = DescribeCommentsResponseUnmarshaller.Instance;
@@ -1666,7 +1666,7 @@ namespace Amazon.WorkDocs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeComments
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeComments">REST API Reference for DescribeComments Operation</seealso>
-        public IAsyncResult BeginDescribeComments(DescribeCommentsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeComments(DescribeCommentsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeCommentsRequestMarshaller();
             var unmarshaller = DescribeCommentsResponseUnmarshaller.Instance;
@@ -1683,7 +1683,7 @@ namespace Amazon.WorkDocs
         /// 
         /// <returns>Returns a  DescribeCommentsResult from WorkDocs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeComments">REST API Reference for DescribeComments Operation</seealso>
-        public  DescribeCommentsResponse EndDescribeComments(IAsyncResult asyncResult)
+        public virtual DescribeCommentsResponse EndDescribeComments(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeCommentsResponse>(asyncResult);
         }
@@ -1726,7 +1726,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeDocumentVersions">REST API Reference for DescribeDocumentVersions Operation</seealso>
-        public DescribeDocumentVersionsResponse DescribeDocumentVersions(DescribeDocumentVersionsRequest request)
+        public virtual DescribeDocumentVersionsResponse DescribeDocumentVersions(DescribeDocumentVersionsRequest request)
         {
             var marshaller = new DescribeDocumentVersionsRequestMarshaller();
             var unmarshaller = DescribeDocumentVersionsResponseUnmarshaller.Instance;
@@ -1746,7 +1746,7 @@ namespace Amazon.WorkDocs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDocumentVersions
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeDocumentVersions">REST API Reference for DescribeDocumentVersions Operation</seealso>
-        public IAsyncResult BeginDescribeDocumentVersions(DescribeDocumentVersionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeDocumentVersions(DescribeDocumentVersionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeDocumentVersionsRequestMarshaller();
             var unmarshaller = DescribeDocumentVersionsResponseUnmarshaller.Instance;
@@ -1763,7 +1763,7 @@ namespace Amazon.WorkDocs
         /// 
         /// <returns>Returns a  DescribeDocumentVersionsResult from WorkDocs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeDocumentVersions">REST API Reference for DescribeDocumentVersions Operation</seealso>
-        public  DescribeDocumentVersionsResponse EndDescribeDocumentVersions(IAsyncResult asyncResult)
+        public virtual DescribeDocumentVersionsResponse EndDescribeDocumentVersions(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeDocumentVersionsResponse>(asyncResult);
         }
@@ -1805,7 +1805,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeFolderContents">REST API Reference for DescribeFolderContents Operation</seealso>
-        public DescribeFolderContentsResponse DescribeFolderContents(DescribeFolderContentsRequest request)
+        public virtual DescribeFolderContentsResponse DescribeFolderContents(DescribeFolderContentsRequest request)
         {
             var marshaller = new DescribeFolderContentsRequestMarshaller();
             var unmarshaller = DescribeFolderContentsResponseUnmarshaller.Instance;
@@ -1825,7 +1825,7 @@ namespace Amazon.WorkDocs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeFolderContents
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeFolderContents">REST API Reference for DescribeFolderContents Operation</seealso>
-        public IAsyncResult BeginDescribeFolderContents(DescribeFolderContentsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeFolderContents(DescribeFolderContentsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeFolderContentsRequestMarshaller();
             var unmarshaller = DescribeFolderContentsResponseUnmarshaller.Instance;
@@ -1842,7 +1842,7 @@ namespace Amazon.WorkDocs
         /// 
         /// <returns>Returns a  DescribeFolderContentsResult from WorkDocs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeFolderContents">REST API Reference for DescribeFolderContents Operation</seealso>
-        public  DescribeFolderContentsResponse EndDescribeFolderContents(IAsyncResult asyncResult)
+        public virtual DescribeFolderContentsResponse EndDescribeFolderContents(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeFolderContentsResponse>(asyncResult);
         }
@@ -1867,7 +1867,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeNotificationSubscriptions">REST API Reference for DescribeNotificationSubscriptions Operation</seealso>
-        public DescribeNotificationSubscriptionsResponse DescribeNotificationSubscriptions(DescribeNotificationSubscriptionsRequest request)
+        public virtual DescribeNotificationSubscriptionsResponse DescribeNotificationSubscriptions(DescribeNotificationSubscriptionsRequest request)
         {
             var marshaller = new DescribeNotificationSubscriptionsRequestMarshaller();
             var unmarshaller = DescribeNotificationSubscriptionsResponseUnmarshaller.Instance;
@@ -1887,7 +1887,7 @@ namespace Amazon.WorkDocs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeNotificationSubscriptions
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeNotificationSubscriptions">REST API Reference for DescribeNotificationSubscriptions Operation</seealso>
-        public IAsyncResult BeginDescribeNotificationSubscriptions(DescribeNotificationSubscriptionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeNotificationSubscriptions(DescribeNotificationSubscriptionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeNotificationSubscriptionsRequestMarshaller();
             var unmarshaller = DescribeNotificationSubscriptionsResponseUnmarshaller.Instance;
@@ -1904,7 +1904,7 @@ namespace Amazon.WorkDocs
         /// 
         /// <returns>Returns a  DescribeNotificationSubscriptionsResult from WorkDocs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeNotificationSubscriptions">REST API Reference for DescribeNotificationSubscriptions Operation</seealso>
-        public  DescribeNotificationSubscriptionsResponse EndDescribeNotificationSubscriptions(IAsyncResult asyncResult)
+        public virtual DescribeNotificationSubscriptionsResponse EndDescribeNotificationSubscriptions(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeNotificationSubscriptionsResponse>(asyncResult);
         }
@@ -1933,7 +1933,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeResourcePermissions">REST API Reference for DescribeResourcePermissions Operation</seealso>
-        public DescribeResourcePermissionsResponse DescribeResourcePermissions(DescribeResourcePermissionsRequest request)
+        public virtual DescribeResourcePermissionsResponse DescribeResourcePermissions(DescribeResourcePermissionsRequest request)
         {
             var marshaller = new DescribeResourcePermissionsRequestMarshaller();
             var unmarshaller = DescribeResourcePermissionsResponseUnmarshaller.Instance;
@@ -1953,7 +1953,7 @@ namespace Amazon.WorkDocs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeResourcePermissions
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeResourcePermissions">REST API Reference for DescribeResourcePermissions Operation</seealso>
-        public IAsyncResult BeginDescribeResourcePermissions(DescribeResourcePermissionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeResourcePermissions(DescribeResourcePermissionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeResourcePermissionsRequestMarshaller();
             var unmarshaller = DescribeResourcePermissionsResponseUnmarshaller.Instance;
@@ -1970,7 +1970,7 @@ namespace Amazon.WorkDocs
         /// 
         /// <returns>Returns a  DescribeResourcePermissionsResult from WorkDocs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeResourcePermissions">REST API Reference for DescribeResourcePermissions Operation</seealso>
-        public  DescribeResourcePermissionsResponse EndDescribeResourcePermissions(IAsyncResult asyncResult)
+        public virtual DescribeResourcePermissionsResponse EndDescribeResourcePermissions(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeResourcePermissionsResponse>(asyncResult);
         }
@@ -2005,7 +2005,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeRootFolders">REST API Reference for DescribeRootFolders Operation</seealso>
-        public DescribeRootFoldersResponse DescribeRootFolders(DescribeRootFoldersRequest request)
+        public virtual DescribeRootFoldersResponse DescribeRootFolders(DescribeRootFoldersRequest request)
         {
             var marshaller = new DescribeRootFoldersRequestMarshaller();
             var unmarshaller = DescribeRootFoldersResponseUnmarshaller.Instance;
@@ -2025,7 +2025,7 @@ namespace Amazon.WorkDocs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeRootFolders
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeRootFolders">REST API Reference for DescribeRootFolders Operation</seealso>
-        public IAsyncResult BeginDescribeRootFolders(DescribeRootFoldersRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeRootFolders(DescribeRootFoldersRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeRootFoldersRequestMarshaller();
             var unmarshaller = DescribeRootFoldersResponseUnmarshaller.Instance;
@@ -2042,7 +2042,7 @@ namespace Amazon.WorkDocs
         /// 
         /// <returns>Returns a  DescribeRootFoldersResult from WorkDocs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeRootFolders">REST API Reference for DescribeRootFolders Operation</seealso>
-        public  DescribeRootFoldersResponse EndDescribeRootFolders(IAsyncResult asyncResult)
+        public virtual DescribeRootFoldersResponse EndDescribeRootFolders(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeRootFoldersResponse>(asyncResult);
         }
@@ -2082,7 +2082,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeUsers">REST API Reference for DescribeUsers Operation</seealso>
-        public DescribeUsersResponse DescribeUsers(DescribeUsersRequest request)
+        public virtual DescribeUsersResponse DescribeUsers(DescribeUsersRequest request)
         {
             var marshaller = new DescribeUsersRequestMarshaller();
             var unmarshaller = DescribeUsersResponseUnmarshaller.Instance;
@@ -2102,7 +2102,7 @@ namespace Amazon.WorkDocs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeUsers
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeUsers">REST API Reference for DescribeUsers Operation</seealso>
-        public IAsyncResult BeginDescribeUsers(DescribeUsersRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeUsers(DescribeUsersRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeUsersRequestMarshaller();
             var unmarshaller = DescribeUsersResponseUnmarshaller.Instance;
@@ -2119,7 +2119,7 @@ namespace Amazon.WorkDocs
         /// 
         /// <returns>Returns a  DescribeUsersResult from WorkDocs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeUsers">REST API Reference for DescribeUsers Operation</seealso>
-        public  DescribeUsersResponse EndDescribeUsers(IAsyncResult asyncResult)
+        public virtual DescribeUsersResponse EndDescribeUsers(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeUsersResponse>(asyncResult);
         }
@@ -2152,7 +2152,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetCurrentUser">REST API Reference for GetCurrentUser Operation</seealso>
-        public GetCurrentUserResponse GetCurrentUser(GetCurrentUserRequest request)
+        public virtual GetCurrentUserResponse GetCurrentUser(GetCurrentUserRequest request)
         {
             var marshaller = new GetCurrentUserRequestMarshaller();
             var unmarshaller = GetCurrentUserResponseUnmarshaller.Instance;
@@ -2172,7 +2172,7 @@ namespace Amazon.WorkDocs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCurrentUser
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetCurrentUser">REST API Reference for GetCurrentUser Operation</seealso>
-        public IAsyncResult BeginGetCurrentUser(GetCurrentUserRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetCurrentUser(GetCurrentUserRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetCurrentUserRequestMarshaller();
             var unmarshaller = GetCurrentUserResponseUnmarshaller.Instance;
@@ -2189,7 +2189,7 @@ namespace Amazon.WorkDocs
         /// 
         /// <returns>Returns a  GetCurrentUserResult from WorkDocs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetCurrentUser">REST API Reference for GetCurrentUser Operation</seealso>
-        public  GetCurrentUserResponse EndGetCurrentUser(IAsyncResult asyncResult)
+        public virtual GetCurrentUserResponse EndGetCurrentUser(IAsyncResult asyncResult)
         {
             return EndInvoke<GetCurrentUserResponse>(asyncResult);
         }
@@ -2224,7 +2224,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetDocument">REST API Reference for GetDocument Operation</seealso>
-        public GetDocumentResponse GetDocument(GetDocumentRequest request)
+        public virtual GetDocumentResponse GetDocument(GetDocumentRequest request)
         {
             var marshaller = new GetDocumentRequestMarshaller();
             var unmarshaller = GetDocumentResponseUnmarshaller.Instance;
@@ -2244,7 +2244,7 @@ namespace Amazon.WorkDocs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDocument
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetDocument">REST API Reference for GetDocument Operation</seealso>
-        public IAsyncResult BeginGetDocument(GetDocumentRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetDocument(GetDocumentRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetDocumentRequestMarshaller();
             var unmarshaller = GetDocumentResponseUnmarshaller.Instance;
@@ -2261,7 +2261,7 @@ namespace Amazon.WorkDocs
         /// 
         /// <returns>Returns a  GetDocumentResult from WorkDocs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetDocument">REST API Reference for GetDocument Operation</seealso>
-        public  GetDocumentResponse EndGetDocument(IAsyncResult asyncResult)
+        public virtual GetDocumentResponse EndGetDocument(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDocumentResponse>(asyncResult);
         }
@@ -2301,7 +2301,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetDocumentPath">REST API Reference for GetDocumentPath Operation</seealso>
-        public GetDocumentPathResponse GetDocumentPath(GetDocumentPathRequest request)
+        public virtual GetDocumentPathResponse GetDocumentPath(GetDocumentPathRequest request)
         {
             var marshaller = new GetDocumentPathRequestMarshaller();
             var unmarshaller = GetDocumentPathResponseUnmarshaller.Instance;
@@ -2321,7 +2321,7 @@ namespace Amazon.WorkDocs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDocumentPath
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetDocumentPath">REST API Reference for GetDocumentPath Operation</seealso>
-        public IAsyncResult BeginGetDocumentPath(GetDocumentPathRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetDocumentPath(GetDocumentPathRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetDocumentPathRequestMarshaller();
             var unmarshaller = GetDocumentPathResponseUnmarshaller.Instance;
@@ -2338,7 +2338,7 @@ namespace Amazon.WorkDocs
         /// 
         /// <returns>Returns a  GetDocumentPathResult from WorkDocs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetDocumentPath">REST API Reference for GetDocumentPath Operation</seealso>
-        public  GetDocumentPathResponse EndGetDocumentPath(IAsyncResult asyncResult)
+        public virtual GetDocumentPathResponse EndGetDocumentPath(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDocumentPathResponse>(asyncResult);
         }
@@ -2373,7 +2373,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetDocumentVersion">REST API Reference for GetDocumentVersion Operation</seealso>
-        public GetDocumentVersionResponse GetDocumentVersion(GetDocumentVersionRequest request)
+        public virtual GetDocumentVersionResponse GetDocumentVersion(GetDocumentVersionRequest request)
         {
             var marshaller = new GetDocumentVersionRequestMarshaller();
             var unmarshaller = GetDocumentVersionResponseUnmarshaller.Instance;
@@ -2393,7 +2393,7 @@ namespace Amazon.WorkDocs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDocumentVersion
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetDocumentVersion">REST API Reference for GetDocumentVersion Operation</seealso>
-        public IAsyncResult BeginGetDocumentVersion(GetDocumentVersionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetDocumentVersion(GetDocumentVersionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetDocumentVersionRequestMarshaller();
             var unmarshaller = GetDocumentVersionResponseUnmarshaller.Instance;
@@ -2410,7 +2410,7 @@ namespace Amazon.WorkDocs
         /// 
         /// <returns>Returns a  GetDocumentVersionResult from WorkDocs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetDocumentVersion">REST API Reference for GetDocumentVersion Operation</seealso>
-        public  GetDocumentVersionResponse EndGetDocumentVersion(IAsyncResult asyncResult)
+        public virtual GetDocumentVersionResponse EndGetDocumentVersion(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDocumentVersionResponse>(asyncResult);
         }
@@ -2448,7 +2448,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetFolder">REST API Reference for GetFolder Operation</seealso>
-        public GetFolderResponse GetFolder(GetFolderRequest request)
+        public virtual GetFolderResponse GetFolder(GetFolderRequest request)
         {
             var marshaller = new GetFolderRequestMarshaller();
             var unmarshaller = GetFolderResponseUnmarshaller.Instance;
@@ -2468,7 +2468,7 @@ namespace Amazon.WorkDocs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetFolder
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetFolder">REST API Reference for GetFolder Operation</seealso>
-        public IAsyncResult BeginGetFolder(GetFolderRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetFolder(GetFolderRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetFolderRequestMarshaller();
             var unmarshaller = GetFolderResponseUnmarshaller.Instance;
@@ -2485,7 +2485,7 @@ namespace Amazon.WorkDocs
         /// 
         /// <returns>Returns a  GetFolderResult from WorkDocs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetFolder">REST API Reference for GetFolder Operation</seealso>
-        public  GetFolderResponse EndGetFolder(IAsyncResult asyncResult)
+        public virtual GetFolderResponse EndGetFolder(IAsyncResult asyncResult)
         {
             return EndInvoke<GetFolderResponse>(asyncResult);
         }
@@ -2525,7 +2525,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetFolderPath">REST API Reference for GetFolderPath Operation</seealso>
-        public GetFolderPathResponse GetFolderPath(GetFolderPathRequest request)
+        public virtual GetFolderPathResponse GetFolderPath(GetFolderPathRequest request)
         {
             var marshaller = new GetFolderPathRequestMarshaller();
             var unmarshaller = GetFolderPathResponseUnmarshaller.Instance;
@@ -2545,7 +2545,7 @@ namespace Amazon.WorkDocs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetFolderPath
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetFolderPath">REST API Reference for GetFolderPath Operation</seealso>
-        public IAsyncResult BeginGetFolderPath(GetFolderPathRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetFolderPath(GetFolderPathRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetFolderPathRequestMarshaller();
             var unmarshaller = GetFolderPathResponseUnmarshaller.Instance;
@@ -2562,7 +2562,7 @@ namespace Amazon.WorkDocs
         /// 
         /// <returns>Returns a  GetFolderPathResult from WorkDocs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetFolderPath">REST API Reference for GetFolderPath Operation</seealso>
-        public  GetFolderPathResponse EndGetFolderPath(IAsyncResult asyncResult)
+        public virtual GetFolderPathResponse EndGetFolderPath(IAsyncResult asyncResult)
         {
             return EndInvoke<GetFolderPathResponse>(asyncResult);
         }
@@ -2625,7 +2625,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/InitiateDocumentVersionUpload">REST API Reference for InitiateDocumentVersionUpload Operation</seealso>
-        public InitiateDocumentVersionUploadResponse InitiateDocumentVersionUpload(InitiateDocumentVersionUploadRequest request)
+        public virtual InitiateDocumentVersionUploadResponse InitiateDocumentVersionUpload(InitiateDocumentVersionUploadRequest request)
         {
             var marshaller = new InitiateDocumentVersionUploadRequestMarshaller();
             var unmarshaller = InitiateDocumentVersionUploadResponseUnmarshaller.Instance;
@@ -2645,7 +2645,7 @@ namespace Amazon.WorkDocs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndInitiateDocumentVersionUpload
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/InitiateDocumentVersionUpload">REST API Reference for InitiateDocumentVersionUpload Operation</seealso>
-        public IAsyncResult BeginInitiateDocumentVersionUpload(InitiateDocumentVersionUploadRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginInitiateDocumentVersionUpload(InitiateDocumentVersionUploadRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new InitiateDocumentVersionUploadRequestMarshaller();
             var unmarshaller = InitiateDocumentVersionUploadResponseUnmarshaller.Instance;
@@ -2662,7 +2662,7 @@ namespace Amazon.WorkDocs
         /// 
         /// <returns>Returns a  InitiateDocumentVersionUploadResult from WorkDocs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/InitiateDocumentVersionUpload">REST API Reference for InitiateDocumentVersionUpload Operation</seealso>
-        public  InitiateDocumentVersionUploadResponse EndInitiateDocumentVersionUpload(IAsyncResult asyncResult)
+        public virtual InitiateDocumentVersionUploadResponse EndInitiateDocumentVersionUpload(IAsyncResult asyncResult)
         {
             return EndInvoke<InitiateDocumentVersionUploadResponse>(asyncResult);
         }
@@ -2691,7 +2691,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/RemoveAllResourcePermissions">REST API Reference for RemoveAllResourcePermissions Operation</seealso>
-        public RemoveAllResourcePermissionsResponse RemoveAllResourcePermissions(RemoveAllResourcePermissionsRequest request)
+        public virtual RemoveAllResourcePermissionsResponse RemoveAllResourcePermissions(RemoveAllResourcePermissionsRequest request)
         {
             var marshaller = new RemoveAllResourcePermissionsRequestMarshaller();
             var unmarshaller = RemoveAllResourcePermissionsResponseUnmarshaller.Instance;
@@ -2711,7 +2711,7 @@ namespace Amazon.WorkDocs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveAllResourcePermissions
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/RemoveAllResourcePermissions">REST API Reference for RemoveAllResourcePermissions Operation</seealso>
-        public IAsyncResult BeginRemoveAllResourcePermissions(RemoveAllResourcePermissionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginRemoveAllResourcePermissions(RemoveAllResourcePermissionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RemoveAllResourcePermissionsRequestMarshaller();
             var unmarshaller = RemoveAllResourcePermissionsResponseUnmarshaller.Instance;
@@ -2728,7 +2728,7 @@ namespace Amazon.WorkDocs
         /// 
         /// <returns>Returns a  RemoveAllResourcePermissionsResult from WorkDocs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/RemoveAllResourcePermissions">REST API Reference for RemoveAllResourcePermissions Operation</seealso>
-        public  RemoveAllResourcePermissionsResponse EndRemoveAllResourcePermissions(IAsyncResult asyncResult)
+        public virtual RemoveAllResourcePermissionsResponse EndRemoveAllResourcePermissions(IAsyncResult asyncResult)
         {
             return EndInvoke<RemoveAllResourcePermissionsResponse>(asyncResult);
         }
@@ -2757,7 +2757,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/RemoveResourcePermission">REST API Reference for RemoveResourcePermission Operation</seealso>
-        public RemoveResourcePermissionResponse RemoveResourcePermission(RemoveResourcePermissionRequest request)
+        public virtual RemoveResourcePermissionResponse RemoveResourcePermission(RemoveResourcePermissionRequest request)
         {
             var marshaller = new RemoveResourcePermissionRequestMarshaller();
             var unmarshaller = RemoveResourcePermissionResponseUnmarshaller.Instance;
@@ -2777,7 +2777,7 @@ namespace Amazon.WorkDocs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveResourcePermission
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/RemoveResourcePermission">REST API Reference for RemoveResourcePermission Operation</seealso>
-        public IAsyncResult BeginRemoveResourcePermission(RemoveResourcePermissionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginRemoveResourcePermission(RemoveResourcePermissionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RemoveResourcePermissionRequestMarshaller();
             var unmarshaller = RemoveResourcePermissionResponseUnmarshaller.Instance;
@@ -2794,7 +2794,7 @@ namespace Amazon.WorkDocs
         /// 
         /// <returns>Returns a  RemoveResourcePermissionResult from WorkDocs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/RemoveResourcePermission">REST API Reference for RemoveResourcePermission Operation</seealso>
-        public  RemoveResourcePermissionResponse EndRemoveResourcePermission(IAsyncResult asyncResult)
+        public virtual RemoveResourcePermissionResponse EndRemoveResourcePermission(IAsyncResult asyncResult)
         {
             return EndInvoke<RemoveResourcePermissionResponse>(asyncResult);
         }
@@ -2839,7 +2839,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/UpdateDocument">REST API Reference for UpdateDocument Operation</seealso>
-        public UpdateDocumentResponse UpdateDocument(UpdateDocumentRequest request)
+        public virtual UpdateDocumentResponse UpdateDocument(UpdateDocumentRequest request)
         {
             var marshaller = new UpdateDocumentRequestMarshaller();
             var unmarshaller = UpdateDocumentResponseUnmarshaller.Instance;
@@ -2859,7 +2859,7 @@ namespace Amazon.WorkDocs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDocument
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/UpdateDocument">REST API Reference for UpdateDocument Operation</seealso>
-        public IAsyncResult BeginUpdateDocument(UpdateDocumentRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateDocument(UpdateDocumentRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateDocumentRequestMarshaller();
             var unmarshaller = UpdateDocumentResponseUnmarshaller.Instance;
@@ -2876,7 +2876,7 @@ namespace Amazon.WorkDocs
         /// 
         /// <returns>Returns a  UpdateDocumentResult from WorkDocs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/UpdateDocument">REST API Reference for UpdateDocument Operation</seealso>
-        public  UpdateDocumentResponse EndUpdateDocument(IAsyncResult asyncResult)
+        public virtual UpdateDocumentResponse EndUpdateDocument(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateDocumentResponse>(asyncResult);
         }
@@ -2924,7 +2924,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/UpdateDocumentVersion">REST API Reference for UpdateDocumentVersion Operation</seealso>
-        public UpdateDocumentVersionResponse UpdateDocumentVersion(UpdateDocumentVersionRequest request)
+        public virtual UpdateDocumentVersionResponse UpdateDocumentVersion(UpdateDocumentVersionRequest request)
         {
             var marshaller = new UpdateDocumentVersionRequestMarshaller();
             var unmarshaller = UpdateDocumentVersionResponseUnmarshaller.Instance;
@@ -2944,7 +2944,7 @@ namespace Amazon.WorkDocs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDocumentVersion
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/UpdateDocumentVersion">REST API Reference for UpdateDocumentVersion Operation</seealso>
-        public IAsyncResult BeginUpdateDocumentVersion(UpdateDocumentVersionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateDocumentVersion(UpdateDocumentVersionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateDocumentVersionRequestMarshaller();
             var unmarshaller = UpdateDocumentVersionResponseUnmarshaller.Instance;
@@ -2961,7 +2961,7 @@ namespace Amazon.WorkDocs
         /// 
         /// <returns>Returns a  UpdateDocumentVersionResult from WorkDocs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/UpdateDocumentVersion">REST API Reference for UpdateDocumentVersion Operation</seealso>
-        public  UpdateDocumentVersionResponse EndUpdateDocumentVersion(IAsyncResult asyncResult)
+        public virtual UpdateDocumentVersionResponse EndUpdateDocumentVersion(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateDocumentVersionResponse>(asyncResult);
         }
@@ -3006,7 +3006,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/UpdateFolder">REST API Reference for UpdateFolder Operation</seealso>
-        public UpdateFolderResponse UpdateFolder(UpdateFolderRequest request)
+        public virtual UpdateFolderResponse UpdateFolder(UpdateFolderRequest request)
         {
             var marshaller = new UpdateFolderRequestMarshaller();
             var unmarshaller = UpdateFolderResponseUnmarshaller.Instance;
@@ -3026,7 +3026,7 @@ namespace Amazon.WorkDocs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateFolder
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/UpdateFolder">REST API Reference for UpdateFolder Operation</seealso>
-        public IAsyncResult BeginUpdateFolder(UpdateFolderRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateFolder(UpdateFolderRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateFolderRequestMarshaller();
             var unmarshaller = UpdateFolderResponseUnmarshaller.Instance;
@@ -3043,7 +3043,7 @@ namespace Amazon.WorkDocs
         /// 
         /// <returns>Returns a  UpdateFolderResult from WorkDocs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/UpdateFolder">REST API Reference for UpdateFolder Operation</seealso>
-        public  UpdateFolderResponse EndUpdateFolder(IAsyncResult asyncResult)
+        public virtual UpdateFolderResponse EndUpdateFolder(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateFolderResponse>(asyncResult);
         }
@@ -3082,7 +3082,7 @@ namespace Amazon.WorkDocs
         /// The caller does not have access to perform the action on the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/UpdateUser">REST API Reference for UpdateUser Operation</seealso>
-        public UpdateUserResponse UpdateUser(UpdateUserRequest request)
+        public virtual UpdateUserResponse UpdateUser(UpdateUserRequest request)
         {
             var marshaller = new UpdateUserRequestMarshaller();
             var unmarshaller = UpdateUserResponseUnmarshaller.Instance;
@@ -3102,7 +3102,7 @@ namespace Amazon.WorkDocs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateUser
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/UpdateUser">REST API Reference for UpdateUser Operation</seealso>
-        public IAsyncResult BeginUpdateUser(UpdateUserRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateUser(UpdateUserRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateUserRequestMarshaller();
             var unmarshaller = UpdateUserResponseUnmarshaller.Instance;
@@ -3119,7 +3119,7 @@ namespace Amazon.WorkDocs
         /// 
         /// <returns>Returns a  UpdateUserResult from WorkDocs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/UpdateUser">REST API Reference for UpdateUser Operation</seealso>
-        public  UpdateUserResponse EndUpdateUser(IAsyncResult asyncResult)
+        public virtual UpdateUserResponse EndUpdateUser(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateUserResponse>(asyncResult);
         }

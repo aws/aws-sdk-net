@@ -257,7 +257,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
-        public AddTagsToResourceResponse AddTagsToResource(AddTagsToResourceRequest request)
+        public virtual AddTagsToResourceResponse AddTagsToResource(AddTagsToResourceRequest request)
         {
             var marshaller = new AddTagsToResourceRequestMarshaller();
             var unmarshaller = AddTagsToResourceResponseUnmarshaller.Instance;
@@ -277,7 +277,7 @@ namespace Amazon.CloudHSM
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddTagsToResource
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
-        public IAsyncResult BeginAddTagsToResource(AddTagsToResourceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginAddTagsToResource(AddTagsToResourceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AddTagsToResourceRequestMarshaller();
             var unmarshaller = AddTagsToResourceResponseUnmarshaller.Instance;
@@ -294,7 +294,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>Returns a  AddTagsToResourceResult from CloudHSM.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
-        public  AddTagsToResourceResponse EndAddTagsToResource(IAsyncResult asyncResult)
+        public virtual AddTagsToResourceResponse EndAddTagsToResource(IAsyncResult asyncResult)
         {
             return EndInvoke<AddTagsToResourceResponse>(asyncResult);
         }
@@ -320,7 +320,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHapg">REST API Reference for CreateHapg Operation</seealso>
-        public CreateHapgResponse CreateHapg(string label)
+        public virtual CreateHapgResponse CreateHapg(string label)
         {
             var request = new CreateHapgRequest();
             request.Label = label;
@@ -345,7 +345,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHapg">REST API Reference for CreateHapg Operation</seealso>
-        public CreateHapgResponse CreateHapg(CreateHapgRequest request)
+        public virtual CreateHapgResponse CreateHapg(CreateHapgRequest request)
         {
             var marshaller = new CreateHapgRequestMarshaller();
             var unmarshaller = CreateHapgResponseUnmarshaller.Instance;
@@ -365,7 +365,7 @@ namespace Amazon.CloudHSM
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateHapg
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHapg">REST API Reference for CreateHapg Operation</seealso>
-        public IAsyncResult BeginCreateHapg(CreateHapgRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateHapg(CreateHapgRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateHapgRequestMarshaller();
             var unmarshaller = CreateHapgResponseUnmarshaller.Instance;
@@ -382,7 +382,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>Returns a  CreateHapgResult from CloudHSM.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHapg">REST API Reference for CreateHapg Operation</seealso>
-        public  CreateHapgResponse EndCreateHapg(IAsyncResult asyncResult)
+        public virtual CreateHapgResponse EndCreateHapg(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateHapgResponse>(asyncResult);
         }
@@ -422,7 +422,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHsm">REST API Reference for CreateHsm Operation</seealso>
-        public CreateHsmResponse CreateHsm(CreateHsmRequest request)
+        public virtual CreateHsmResponse CreateHsm(CreateHsmRequest request)
         {
             var marshaller = new CreateHsmRequestMarshaller();
             var unmarshaller = CreateHsmResponseUnmarshaller.Instance;
@@ -442,7 +442,7 @@ namespace Amazon.CloudHSM
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateHsm
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHsm">REST API Reference for CreateHsm Operation</seealso>
-        public IAsyncResult BeginCreateHsm(CreateHsmRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateHsm(CreateHsmRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateHsmRequestMarshaller();
             var unmarshaller = CreateHsmResponseUnmarshaller.Instance;
@@ -459,7 +459,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>Returns a  CreateHsmResult from CloudHSM.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHsm">REST API Reference for CreateHsm Operation</seealso>
-        public  CreateHsmResponse EndCreateHsm(IAsyncResult asyncResult)
+        public virtual CreateHsmResponse EndCreateHsm(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateHsmResponse>(asyncResult);
         }
@@ -484,7 +484,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateLunaClient">REST API Reference for CreateLunaClient Operation</seealso>
-        public CreateLunaClientResponse CreateLunaClient(CreateLunaClientRequest request)
+        public virtual CreateLunaClientResponse CreateLunaClient(CreateLunaClientRequest request)
         {
             var marshaller = new CreateLunaClientRequestMarshaller();
             var unmarshaller = CreateLunaClientResponseUnmarshaller.Instance;
@@ -504,7 +504,7 @@ namespace Amazon.CloudHSM
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateLunaClient
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateLunaClient">REST API Reference for CreateLunaClient Operation</seealso>
-        public IAsyncResult BeginCreateLunaClient(CreateLunaClientRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateLunaClient(CreateLunaClientRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateLunaClientRequestMarshaller();
             var unmarshaller = CreateLunaClientResponseUnmarshaller.Instance;
@@ -521,7 +521,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>Returns a  CreateLunaClientResult from CloudHSM.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateLunaClient">REST API Reference for CreateLunaClient Operation</seealso>
-        public  CreateLunaClientResponse EndCreateLunaClient(IAsyncResult asyncResult)
+        public virtual CreateLunaClientResponse EndCreateLunaClient(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateLunaClientResponse>(asyncResult);
         }
@@ -546,7 +546,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHapg">REST API Reference for DeleteHapg Operation</seealso>
-        public DeleteHapgResponse DeleteHapg(string hapgArn)
+        public virtual DeleteHapgResponse DeleteHapg(string hapgArn)
         {
             var request = new DeleteHapgRequest();
             request.HapgArn = hapgArn;
@@ -570,7 +570,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHapg">REST API Reference for DeleteHapg Operation</seealso>
-        public DeleteHapgResponse DeleteHapg(DeleteHapgRequest request)
+        public virtual DeleteHapgResponse DeleteHapg(DeleteHapgRequest request)
         {
             var marshaller = new DeleteHapgRequestMarshaller();
             var unmarshaller = DeleteHapgResponseUnmarshaller.Instance;
@@ -590,7 +590,7 @@ namespace Amazon.CloudHSM
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteHapg
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHapg">REST API Reference for DeleteHapg Operation</seealso>
-        public IAsyncResult BeginDeleteHapg(DeleteHapgRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteHapg(DeleteHapgRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteHapgRequestMarshaller();
             var unmarshaller = DeleteHapgResponseUnmarshaller.Instance;
@@ -607,7 +607,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>Returns a  DeleteHapgResult from CloudHSM.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHapg">REST API Reference for DeleteHapg Operation</seealso>
-        public  DeleteHapgResponse EndDeleteHapg(IAsyncResult asyncResult)
+        public virtual DeleteHapgResponse EndDeleteHapg(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteHapgResponse>(asyncResult);
         }
@@ -633,7 +633,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHsm">REST API Reference for DeleteHsm Operation</seealso>
-        public DeleteHsmResponse DeleteHsm(string hsmArn)
+        public virtual DeleteHsmResponse DeleteHsm(string hsmArn)
         {
             var request = new DeleteHsmRequest();
             request.HsmArn = hsmArn;
@@ -658,7 +658,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHsm">REST API Reference for DeleteHsm Operation</seealso>
-        public DeleteHsmResponse DeleteHsm(DeleteHsmRequest request)
+        public virtual DeleteHsmResponse DeleteHsm(DeleteHsmRequest request)
         {
             var marshaller = new DeleteHsmRequestMarshaller();
             var unmarshaller = DeleteHsmResponseUnmarshaller.Instance;
@@ -678,7 +678,7 @@ namespace Amazon.CloudHSM
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteHsm
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHsm">REST API Reference for DeleteHsm Operation</seealso>
-        public IAsyncResult BeginDeleteHsm(DeleteHsmRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteHsm(DeleteHsmRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteHsmRequestMarshaller();
             var unmarshaller = DeleteHsmResponseUnmarshaller.Instance;
@@ -695,7 +695,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>Returns a  DeleteHsmResult from CloudHSM.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHsm">REST API Reference for DeleteHsm Operation</seealso>
-        public  DeleteHsmResponse EndDeleteHsm(IAsyncResult asyncResult)
+        public virtual DeleteHsmResponse EndDeleteHsm(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteHsmResponse>(asyncResult);
         }
@@ -720,7 +720,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteLunaClient">REST API Reference for DeleteLunaClient Operation</seealso>
-        public DeleteLunaClientResponse DeleteLunaClient(string clientArn)
+        public virtual DeleteLunaClientResponse DeleteLunaClient(string clientArn)
         {
             var request = new DeleteLunaClientRequest();
             request.ClientArn = clientArn;
@@ -744,7 +744,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteLunaClient">REST API Reference for DeleteLunaClient Operation</seealso>
-        public DeleteLunaClientResponse DeleteLunaClient(DeleteLunaClientRequest request)
+        public virtual DeleteLunaClientResponse DeleteLunaClient(DeleteLunaClientRequest request)
         {
             var marshaller = new DeleteLunaClientRequestMarshaller();
             var unmarshaller = DeleteLunaClientResponseUnmarshaller.Instance;
@@ -764,7 +764,7 @@ namespace Amazon.CloudHSM
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteLunaClient
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteLunaClient">REST API Reference for DeleteLunaClient Operation</seealso>
-        public IAsyncResult BeginDeleteLunaClient(DeleteLunaClientRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteLunaClient(DeleteLunaClientRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteLunaClientRequestMarshaller();
             var unmarshaller = DeleteLunaClientResponseUnmarshaller.Instance;
@@ -781,7 +781,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>Returns a  DeleteLunaClientResult from CloudHSM.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteLunaClient">REST API Reference for DeleteLunaClient Operation</seealso>
-        public  DeleteLunaClientResponse EndDeleteLunaClient(IAsyncResult asyncResult)
+        public virtual DeleteLunaClientResponse EndDeleteLunaClient(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteLunaClientResponse>(asyncResult);
         }
@@ -806,7 +806,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHapg">REST API Reference for DescribeHapg Operation</seealso>
-        public DescribeHapgResponse DescribeHapg(string hapgArn)
+        public virtual DescribeHapgResponse DescribeHapg(string hapgArn)
         {
             var request = new DescribeHapgRequest();
             request.HapgArn = hapgArn;
@@ -830,7 +830,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHapg">REST API Reference for DescribeHapg Operation</seealso>
-        public DescribeHapgResponse DescribeHapg(DescribeHapgRequest request)
+        public virtual DescribeHapgResponse DescribeHapg(DescribeHapgRequest request)
         {
             var marshaller = new DescribeHapgRequestMarshaller();
             var unmarshaller = DescribeHapgResponseUnmarshaller.Instance;
@@ -850,7 +850,7 @@ namespace Amazon.CloudHSM
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeHapg
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHapg">REST API Reference for DescribeHapg Operation</seealso>
-        public IAsyncResult BeginDescribeHapg(DescribeHapgRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeHapg(DescribeHapgRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeHapgRequestMarshaller();
             var unmarshaller = DescribeHapgResponseUnmarshaller.Instance;
@@ -867,7 +867,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>Returns a  DescribeHapgResult from CloudHSM.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHapg">REST API Reference for DescribeHapg Operation</seealso>
-        public  DescribeHapgResponse EndDescribeHapg(IAsyncResult asyncResult)
+        public virtual DescribeHapgResponse EndDescribeHapg(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeHapgResponse>(asyncResult);
         }
@@ -893,7 +893,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHsm">REST API Reference for DescribeHsm Operation</seealso>
-        public DescribeHsmResponse DescribeHsm(string hsmArn)
+        public virtual DescribeHsmResponse DescribeHsm(string hsmArn)
         {
             var request = new DescribeHsmRequest();
             request.HsmArn = hsmArn;
@@ -918,7 +918,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHsm">REST API Reference for DescribeHsm Operation</seealso>
-        public DescribeHsmResponse DescribeHsm(DescribeHsmRequest request)
+        public virtual DescribeHsmResponse DescribeHsm(DescribeHsmRequest request)
         {
             var marshaller = new DescribeHsmRequestMarshaller();
             var unmarshaller = DescribeHsmResponseUnmarshaller.Instance;
@@ -938,7 +938,7 @@ namespace Amazon.CloudHSM
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeHsm
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHsm">REST API Reference for DescribeHsm Operation</seealso>
-        public IAsyncResult BeginDescribeHsm(DescribeHsmRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeHsm(DescribeHsmRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeHsmRequestMarshaller();
             var unmarshaller = DescribeHsmResponseUnmarshaller.Instance;
@@ -955,7 +955,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>Returns a  DescribeHsmResult from CloudHSM.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHsm">REST API Reference for DescribeHsm Operation</seealso>
-        public  DescribeHsmResponse EndDescribeHsm(IAsyncResult asyncResult)
+        public virtual DescribeHsmResponse EndDescribeHsm(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeHsmResponse>(asyncResult);
         }
@@ -980,7 +980,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeLunaClient">REST API Reference for DescribeLunaClient Operation</seealso>
-        public DescribeLunaClientResponse DescribeLunaClient(DescribeLunaClientRequest request)
+        public virtual DescribeLunaClientResponse DescribeLunaClient(DescribeLunaClientRequest request)
         {
             var marshaller = new DescribeLunaClientRequestMarshaller();
             var unmarshaller = DescribeLunaClientResponseUnmarshaller.Instance;
@@ -1000,7 +1000,7 @@ namespace Amazon.CloudHSM
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeLunaClient
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeLunaClient">REST API Reference for DescribeLunaClient Operation</seealso>
-        public IAsyncResult BeginDescribeLunaClient(DescribeLunaClientRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeLunaClient(DescribeLunaClientRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeLunaClientRequestMarshaller();
             var unmarshaller = DescribeLunaClientResponseUnmarshaller.Instance;
@@ -1017,7 +1017,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>Returns a  DescribeLunaClientResult from CloudHSM.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeLunaClient">REST API Reference for DescribeLunaClient Operation</seealso>
-        public  DescribeLunaClientResponse EndDescribeLunaClient(IAsyncResult asyncResult)
+        public virtual DescribeLunaClientResponse EndDescribeLunaClient(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeLunaClientResponse>(asyncResult);
         }
@@ -1043,7 +1043,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/GetConfig">REST API Reference for GetConfig Operation</seealso>
-        public GetConfigResponse GetConfig(GetConfigRequest request)
+        public virtual GetConfigResponse GetConfig(GetConfigRequest request)
         {
             var marshaller = new GetConfigRequestMarshaller();
             var unmarshaller = GetConfigResponseUnmarshaller.Instance;
@@ -1063,7 +1063,7 @@ namespace Amazon.CloudHSM
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetConfig
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/GetConfig">REST API Reference for GetConfig Operation</seealso>
-        public IAsyncResult BeginGetConfig(GetConfigRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetConfig(GetConfigRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetConfigRequestMarshaller();
             var unmarshaller = GetConfigResponseUnmarshaller.Instance;
@@ -1080,7 +1080,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>Returns a  GetConfigResult from CloudHSM.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/GetConfig">REST API Reference for GetConfig Operation</seealso>
-        public  GetConfigResponse EndGetConfig(IAsyncResult asyncResult)
+        public virtual GetConfigResponse EndGetConfig(IAsyncResult asyncResult)
         {
             return EndInvoke<GetConfigResponse>(asyncResult);
         }
@@ -1104,7 +1104,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListAvailableZones">REST API Reference for ListAvailableZones Operation</seealso>
-        public ListAvailableZonesResponse ListAvailableZones()
+        public virtual ListAvailableZonesResponse ListAvailableZones()
         {
             var request = new ListAvailableZonesRequest();
             return ListAvailableZones(request);
@@ -1127,7 +1127,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListAvailableZones">REST API Reference for ListAvailableZones Operation</seealso>
-        public ListAvailableZonesResponse ListAvailableZones(ListAvailableZonesRequest request)
+        public virtual ListAvailableZonesResponse ListAvailableZones(ListAvailableZonesRequest request)
         {
             var marshaller = new ListAvailableZonesRequestMarshaller();
             var unmarshaller = ListAvailableZonesResponseUnmarshaller.Instance;
@@ -1147,7 +1147,7 @@ namespace Amazon.CloudHSM
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAvailableZones
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListAvailableZones">REST API Reference for ListAvailableZones Operation</seealso>
-        public IAsyncResult BeginListAvailableZones(ListAvailableZonesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListAvailableZones(ListAvailableZonesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListAvailableZonesRequestMarshaller();
             var unmarshaller = ListAvailableZonesResponseUnmarshaller.Instance;
@@ -1164,7 +1164,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>Returns a  ListAvailableZonesResult from CloudHSM.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListAvailableZones">REST API Reference for ListAvailableZones Operation</seealso>
-        public  ListAvailableZonesResponse EndListAvailableZones(IAsyncResult asyncResult)
+        public virtual ListAvailableZonesResponse EndListAvailableZones(IAsyncResult asyncResult)
         {
             return EndInvoke<ListAvailableZonesResponse>(asyncResult);
         }
@@ -1196,7 +1196,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHapgs">REST API Reference for ListHapgs Operation</seealso>
-        public ListHapgsResponse ListHapgs()
+        public virtual ListHapgsResponse ListHapgs()
         {
             var request = new ListHapgsRequest();
             return ListHapgs(request);
@@ -1227,7 +1227,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHapgs">REST API Reference for ListHapgs Operation</seealso>
-        public ListHapgsResponse ListHapgs(ListHapgsRequest request)
+        public virtual ListHapgsResponse ListHapgs(ListHapgsRequest request)
         {
             var marshaller = new ListHapgsRequestMarshaller();
             var unmarshaller = ListHapgsResponseUnmarshaller.Instance;
@@ -1247,7 +1247,7 @@ namespace Amazon.CloudHSM
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListHapgs
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHapgs">REST API Reference for ListHapgs Operation</seealso>
-        public IAsyncResult BeginListHapgs(ListHapgsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListHapgs(ListHapgsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListHapgsRequestMarshaller();
             var unmarshaller = ListHapgsResponseUnmarshaller.Instance;
@@ -1264,7 +1264,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>Returns a  ListHapgsResult from CloudHSM.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHapgs">REST API Reference for ListHapgs Operation</seealso>
-        public  ListHapgsResponse EndListHapgs(IAsyncResult asyncResult)
+        public virtual ListHapgsResponse EndListHapgs(IAsyncResult asyncResult)
         {
             return EndInvoke<ListHapgsResponse>(asyncResult);
         }
@@ -1296,7 +1296,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHsms">REST API Reference for ListHsms Operation</seealso>
-        public ListHsmsResponse ListHsms()
+        public virtual ListHsmsResponse ListHsms()
         {
             var request = new ListHsmsRequest();
             return ListHsms(request);
@@ -1327,7 +1327,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHsms">REST API Reference for ListHsms Operation</seealso>
-        public ListHsmsResponse ListHsms(ListHsmsRequest request)
+        public virtual ListHsmsResponse ListHsms(ListHsmsRequest request)
         {
             var marshaller = new ListHsmsRequestMarshaller();
             var unmarshaller = ListHsmsResponseUnmarshaller.Instance;
@@ -1347,7 +1347,7 @@ namespace Amazon.CloudHSM
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListHsms
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHsms">REST API Reference for ListHsms Operation</seealso>
-        public IAsyncResult BeginListHsms(ListHsmsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListHsms(ListHsmsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListHsmsRequestMarshaller();
             var unmarshaller = ListHsmsResponseUnmarshaller.Instance;
@@ -1364,7 +1364,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>Returns a  ListHsmsResult from CloudHSM.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHsms">REST API Reference for ListHsms Operation</seealso>
-        public  ListHsmsResponse EndListHsms(IAsyncResult asyncResult)
+        public virtual ListHsmsResponse EndListHsms(IAsyncResult asyncResult)
         {
             return EndInvoke<ListHsmsResponse>(asyncResult);
         }
@@ -1396,7 +1396,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListLunaClients">REST API Reference for ListLunaClients Operation</seealso>
-        public ListLunaClientsResponse ListLunaClients()
+        public virtual ListLunaClientsResponse ListLunaClients()
         {
             var request = new ListLunaClientsRequest();
             return ListLunaClients(request);
@@ -1427,7 +1427,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListLunaClients">REST API Reference for ListLunaClients Operation</seealso>
-        public ListLunaClientsResponse ListLunaClients(ListLunaClientsRequest request)
+        public virtual ListLunaClientsResponse ListLunaClients(ListLunaClientsRequest request)
         {
             var marshaller = new ListLunaClientsRequestMarshaller();
             var unmarshaller = ListLunaClientsResponseUnmarshaller.Instance;
@@ -1447,7 +1447,7 @@ namespace Amazon.CloudHSM
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListLunaClients
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListLunaClients">REST API Reference for ListLunaClients Operation</seealso>
-        public IAsyncResult BeginListLunaClients(ListLunaClientsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListLunaClients(ListLunaClientsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListLunaClientsRequestMarshaller();
             var unmarshaller = ListLunaClientsResponseUnmarshaller.Instance;
@@ -1464,7 +1464,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>Returns a  ListLunaClientsResult from CloudHSM.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListLunaClients">REST API Reference for ListLunaClients Operation</seealso>
-        public  ListLunaClientsResponse EndListLunaClients(IAsyncResult asyncResult)
+        public virtual ListLunaClientsResponse EndListLunaClients(IAsyncResult asyncResult)
         {
             return EndInvoke<ListLunaClientsResponse>(asyncResult);
         }
@@ -1489,7 +1489,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
-        public ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
@@ -1509,7 +1509,7 @@ namespace Amazon.CloudHSM
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
-        public IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
@@ -1526,7 +1526,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>Returns a  ListTagsForResourceResult from CloudHSM.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
-        public  ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult)
+        public virtual ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTagsForResourceResponse>(asyncResult);
         }
@@ -1551,7 +1551,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHapg">REST API Reference for ModifyHapg Operation</seealso>
-        public ModifyHapgResponse ModifyHapg(ModifyHapgRequest request)
+        public virtual ModifyHapgResponse ModifyHapg(ModifyHapgRequest request)
         {
             var marshaller = new ModifyHapgRequestMarshaller();
             var unmarshaller = ModifyHapgResponseUnmarshaller.Instance;
@@ -1571,7 +1571,7 @@ namespace Amazon.CloudHSM
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyHapg
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHapg">REST API Reference for ModifyHapg Operation</seealso>
-        public IAsyncResult BeginModifyHapg(ModifyHapgRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginModifyHapg(ModifyHapgRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ModifyHapgRequestMarshaller();
             var unmarshaller = ModifyHapgResponseUnmarshaller.Instance;
@@ -1588,7 +1588,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>Returns a  ModifyHapgResult from CloudHSM.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHapg">REST API Reference for ModifyHapg Operation</seealso>
-        public  ModifyHapgResponse EndModifyHapg(IAsyncResult asyncResult)
+        public virtual ModifyHapgResponse EndModifyHapg(IAsyncResult asyncResult)
         {
             return EndInvoke<ModifyHapgResponse>(asyncResult);
         }
@@ -1622,7 +1622,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHsm">REST API Reference for ModifyHsm Operation</seealso>
-        public ModifyHsmResponse ModifyHsm(ModifyHsmRequest request)
+        public virtual ModifyHsmResponse ModifyHsm(ModifyHsmRequest request)
         {
             var marshaller = new ModifyHsmRequestMarshaller();
             var unmarshaller = ModifyHsmResponseUnmarshaller.Instance;
@@ -1642,7 +1642,7 @@ namespace Amazon.CloudHSM
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyHsm
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHsm">REST API Reference for ModifyHsm Operation</seealso>
-        public IAsyncResult BeginModifyHsm(ModifyHsmRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginModifyHsm(ModifyHsmRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ModifyHsmRequestMarshaller();
             var unmarshaller = ModifyHsmResponseUnmarshaller.Instance;
@@ -1659,7 +1659,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>Returns a  ModifyHsmResult from CloudHSM.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHsm">REST API Reference for ModifyHsm Operation</seealso>
-        public  ModifyHsmResponse EndModifyHsm(IAsyncResult asyncResult)
+        public virtual ModifyHsmResponse EndModifyHsm(IAsyncResult asyncResult)
         {
             return EndInvoke<ModifyHsmResponse>(asyncResult);
         }
@@ -1684,7 +1684,7 @@ namespace Amazon.CloudHSM
         /// Indicates that an exception occurred in the AWS CloudHSM service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyLunaClient">REST API Reference for ModifyLunaClient Operation</seealso>
-        public ModifyLunaClientResponse ModifyLunaClient(ModifyLunaClientRequest request)
+        public virtual ModifyLunaClientResponse ModifyLunaClient(ModifyLunaClientRequest request)
         {
             var marshaller = new ModifyLunaClientRequestMarshaller();
             var unmarshaller = ModifyLunaClientResponseUnmarshaller.Instance;
@@ -1704,7 +1704,7 @@ namespace Amazon.CloudHSM
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyLunaClient
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyLunaClient">REST API Reference for ModifyLunaClient Operation</seealso>
-        public IAsyncResult BeginModifyLunaClient(ModifyLunaClientRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginModifyLunaClient(ModifyLunaClientRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ModifyLunaClientRequestMarshaller();
             var unmarshaller = ModifyLunaClientResponseUnmarshaller.Instance;
@@ -1721,7 +1721,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>Returns a  ModifyLunaClientResult from CloudHSM.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyLunaClient">REST API Reference for ModifyLunaClient Operation</seealso>
-        public  ModifyLunaClientResponse EndModifyLunaClient(IAsyncResult asyncResult)
+        public virtual ModifyLunaClientResponse EndModifyLunaClient(IAsyncResult asyncResult)
         {
             return EndInvoke<ModifyLunaClientResponse>(asyncResult);
         }
@@ -1752,7 +1752,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
-        public RemoveTagsFromResourceResponse RemoveTagsFromResource(RemoveTagsFromResourceRequest request)
+        public virtual RemoveTagsFromResourceResponse RemoveTagsFromResource(RemoveTagsFromResourceRequest request)
         {
             var marshaller = new RemoveTagsFromResourceRequestMarshaller();
             var unmarshaller = RemoveTagsFromResourceResponseUnmarshaller.Instance;
@@ -1772,7 +1772,7 @@ namespace Amazon.CloudHSM
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveTagsFromResource
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
-        public IAsyncResult BeginRemoveTagsFromResource(RemoveTagsFromResourceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginRemoveTagsFromResource(RemoveTagsFromResourceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RemoveTagsFromResourceRequestMarshaller();
             var unmarshaller = RemoveTagsFromResourceResponseUnmarshaller.Instance;
@@ -1789,7 +1789,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>Returns a  RemoveTagsFromResourceResult from CloudHSM.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
-        public  RemoveTagsFromResourceResponse EndRemoveTagsFromResource(IAsyncResult asyncResult)
+        public virtual RemoveTagsFromResourceResponse EndRemoveTagsFromResource(IAsyncResult asyncResult)
         {
             return EndInvoke<RemoveTagsFromResourceResponse>(asyncResult);
         }

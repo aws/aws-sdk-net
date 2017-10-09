@@ -392,7 +392,7 @@ namespace Amazon.Organizations
         
         #region  AcceptHandshake
 
-        internal AcceptHandshakeResponse AcceptHandshake(AcceptHandshakeRequest request)
+        internal virtual AcceptHandshakeResponse AcceptHandshake(AcceptHandshakeRequest request)
         {
             var marshaller = new AcceptHandshakeRequestMarshaller();
             var unmarshaller = AcceptHandshakeResponseUnmarshaller.Instance;
@@ -411,7 +411,7 @@ namespace Amazon.Organizations
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/AcceptHandshake">REST API Reference for AcceptHandshake Operation</seealso>
-        public Task<AcceptHandshakeResponse> AcceptHandshakeAsync(AcceptHandshakeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<AcceptHandshakeResponse> AcceptHandshakeAsync(AcceptHandshakeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AcceptHandshakeRequestMarshaller();
             var unmarshaller = AcceptHandshakeResponseUnmarshaller.Instance;
@@ -424,7 +424,7 @@ namespace Amazon.Organizations
         
         #region  AttachPolicy
 
-        internal AttachPolicyResponse AttachPolicy(AttachPolicyRequest request)
+        internal virtual AttachPolicyResponse AttachPolicy(AttachPolicyRequest request)
         {
             var marshaller = new AttachPolicyRequestMarshaller();
             var unmarshaller = AttachPolicyResponseUnmarshaller.Instance;
@@ -443,7 +443,7 @@ namespace Amazon.Organizations
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/AttachPolicy">REST API Reference for AttachPolicy Operation</seealso>
-        public Task<AttachPolicyResponse> AttachPolicyAsync(AttachPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<AttachPolicyResponse> AttachPolicyAsync(AttachPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AttachPolicyRequestMarshaller();
             var unmarshaller = AttachPolicyResponseUnmarshaller.Instance;
@@ -456,7 +456,7 @@ namespace Amazon.Organizations
         
         #region  CancelHandshake
 
-        internal CancelHandshakeResponse CancelHandshake(CancelHandshakeRequest request)
+        internal virtual CancelHandshakeResponse CancelHandshake(CancelHandshakeRequest request)
         {
             var marshaller = new CancelHandshakeRequestMarshaller();
             var unmarshaller = CancelHandshakeResponseUnmarshaller.Instance;
@@ -475,7 +475,7 @@ namespace Amazon.Organizations
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CancelHandshake">REST API Reference for CancelHandshake Operation</seealso>
-        public Task<CancelHandshakeResponse> CancelHandshakeAsync(CancelHandshakeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CancelHandshakeResponse> CancelHandshakeAsync(CancelHandshakeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CancelHandshakeRequestMarshaller();
             var unmarshaller = CancelHandshakeResponseUnmarshaller.Instance;
@@ -488,7 +488,7 @@ namespace Amazon.Organizations
         
         #region  CreateAccount
 
-        internal CreateAccountResponse CreateAccount(CreateAccountRequest request)
+        internal virtual CreateAccountResponse CreateAccount(CreateAccountRequest request)
         {
             var marshaller = new CreateAccountRequestMarshaller();
             var unmarshaller = CreateAccountResponseUnmarshaller.Instance;
@@ -507,7 +507,7 @@ namespace Amazon.Organizations
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CreateAccount">REST API Reference for CreateAccount Operation</seealso>
-        public Task<CreateAccountResponse> CreateAccountAsync(CreateAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateAccountResponse> CreateAccountAsync(CreateAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateAccountRequestMarshaller();
             var unmarshaller = CreateAccountResponseUnmarshaller.Instance;
@@ -520,7 +520,7 @@ namespace Amazon.Organizations
         
         #region  CreateOrganization
 
-        internal CreateOrganizationResponse CreateOrganization(CreateOrganizationRequest request)
+        internal virtual CreateOrganizationResponse CreateOrganization(CreateOrganizationRequest request)
         {
             var marshaller = new CreateOrganizationRequestMarshaller();
             var unmarshaller = CreateOrganizationResponseUnmarshaller.Instance;
@@ -539,7 +539,7 @@ namespace Amazon.Organizations
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CreateOrganization">REST API Reference for CreateOrganization Operation</seealso>
-        public Task<CreateOrganizationResponse> CreateOrganizationAsync(CreateOrganizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateOrganizationResponse> CreateOrganizationAsync(CreateOrganizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateOrganizationRequestMarshaller();
             var unmarshaller = CreateOrganizationResponseUnmarshaller.Instance;
@@ -552,7 +552,7 @@ namespace Amazon.Organizations
         
         #region  CreateOrganizationalUnit
 
-        internal CreateOrganizationalUnitResponse CreateOrganizationalUnit(CreateOrganizationalUnitRequest request)
+        internal virtual CreateOrganizationalUnitResponse CreateOrganizationalUnit(CreateOrganizationalUnitRequest request)
         {
             var marshaller = new CreateOrganizationalUnitRequestMarshaller();
             var unmarshaller = CreateOrganizationalUnitResponseUnmarshaller.Instance;
@@ -571,7 +571,7 @@ namespace Amazon.Organizations
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CreateOrganizationalUnit">REST API Reference for CreateOrganizationalUnit Operation</seealso>
-        public Task<CreateOrganizationalUnitResponse> CreateOrganizationalUnitAsync(CreateOrganizationalUnitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateOrganizationalUnitResponse> CreateOrganizationalUnitAsync(CreateOrganizationalUnitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateOrganizationalUnitRequestMarshaller();
             var unmarshaller = CreateOrganizationalUnitResponseUnmarshaller.Instance;
@@ -584,7 +584,7 @@ namespace Amazon.Organizations
         
         #region  CreatePolicy
 
-        internal CreatePolicyResponse CreatePolicy(CreatePolicyRequest request)
+        internal virtual CreatePolicyResponse CreatePolicy(CreatePolicyRequest request)
         {
             var marshaller = new CreatePolicyRequestMarshaller();
             var unmarshaller = CreatePolicyResponseUnmarshaller.Instance;
@@ -603,7 +603,7 @@ namespace Amazon.Organizations
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CreatePolicy">REST API Reference for CreatePolicy Operation</seealso>
-        public Task<CreatePolicyResponse> CreatePolicyAsync(CreatePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreatePolicyResponse> CreatePolicyAsync(CreatePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreatePolicyRequestMarshaller();
             var unmarshaller = CreatePolicyResponseUnmarshaller.Instance;
@@ -616,7 +616,7 @@ namespace Amazon.Organizations
         
         #region  DeclineHandshake
 
-        internal DeclineHandshakeResponse DeclineHandshake(DeclineHandshakeRequest request)
+        internal virtual DeclineHandshakeResponse DeclineHandshake(DeclineHandshakeRequest request)
         {
             var marshaller = new DeclineHandshakeRequestMarshaller();
             var unmarshaller = DeclineHandshakeResponseUnmarshaller.Instance;
@@ -635,7 +635,7 @@ namespace Amazon.Organizations
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeclineHandshake">REST API Reference for DeclineHandshake Operation</seealso>
-        public Task<DeclineHandshakeResponse> DeclineHandshakeAsync(DeclineHandshakeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeclineHandshakeResponse> DeclineHandshakeAsync(DeclineHandshakeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeclineHandshakeRequestMarshaller();
             var unmarshaller = DeclineHandshakeResponseUnmarshaller.Instance;
@@ -648,7 +648,7 @@ namespace Amazon.Organizations
         
         #region  DeleteOrganization
 
-        internal DeleteOrganizationResponse DeleteOrganization(DeleteOrganizationRequest request)
+        internal virtual DeleteOrganizationResponse DeleteOrganization(DeleteOrganizationRequest request)
         {
             var marshaller = new DeleteOrganizationRequestMarshaller();
             var unmarshaller = DeleteOrganizationResponseUnmarshaller.Instance;
@@ -667,7 +667,7 @@ namespace Amazon.Organizations
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeleteOrganization">REST API Reference for DeleteOrganization Operation</seealso>
-        public Task<DeleteOrganizationResponse> DeleteOrganizationAsync(DeleteOrganizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteOrganizationResponse> DeleteOrganizationAsync(DeleteOrganizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteOrganizationRequestMarshaller();
             var unmarshaller = DeleteOrganizationResponseUnmarshaller.Instance;
@@ -680,7 +680,7 @@ namespace Amazon.Organizations
         
         #region  DeleteOrganizationalUnit
 
-        internal DeleteOrganizationalUnitResponse DeleteOrganizationalUnit(DeleteOrganizationalUnitRequest request)
+        internal virtual DeleteOrganizationalUnitResponse DeleteOrganizationalUnit(DeleteOrganizationalUnitRequest request)
         {
             var marshaller = new DeleteOrganizationalUnitRequestMarshaller();
             var unmarshaller = DeleteOrganizationalUnitResponseUnmarshaller.Instance;
@@ -699,7 +699,7 @@ namespace Amazon.Organizations
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeleteOrganizationalUnit">REST API Reference for DeleteOrganizationalUnit Operation</seealso>
-        public Task<DeleteOrganizationalUnitResponse> DeleteOrganizationalUnitAsync(DeleteOrganizationalUnitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteOrganizationalUnitResponse> DeleteOrganizationalUnitAsync(DeleteOrganizationalUnitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteOrganizationalUnitRequestMarshaller();
             var unmarshaller = DeleteOrganizationalUnitResponseUnmarshaller.Instance;
@@ -712,7 +712,7 @@ namespace Amazon.Organizations
         
         #region  DeletePolicy
 
-        internal DeletePolicyResponse DeletePolicy(DeletePolicyRequest request)
+        internal virtual DeletePolicyResponse DeletePolicy(DeletePolicyRequest request)
         {
             var marshaller = new DeletePolicyRequestMarshaller();
             var unmarshaller = DeletePolicyResponseUnmarshaller.Instance;
@@ -731,7 +731,7 @@ namespace Amazon.Organizations
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeletePolicy">REST API Reference for DeletePolicy Operation</seealso>
-        public Task<DeletePolicyResponse> DeletePolicyAsync(DeletePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeletePolicyResponse> DeletePolicyAsync(DeletePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeletePolicyRequestMarshaller();
             var unmarshaller = DeletePolicyResponseUnmarshaller.Instance;
@@ -744,7 +744,7 @@ namespace Amazon.Organizations
         
         #region  DescribeAccount
 
-        internal DescribeAccountResponse DescribeAccount(DescribeAccountRequest request)
+        internal virtual DescribeAccountResponse DescribeAccount(DescribeAccountRequest request)
         {
             var marshaller = new DescribeAccountRequestMarshaller();
             var unmarshaller = DescribeAccountResponseUnmarshaller.Instance;
@@ -763,7 +763,7 @@ namespace Amazon.Organizations
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeAccount">REST API Reference for DescribeAccount Operation</seealso>
-        public Task<DescribeAccountResponse> DescribeAccountAsync(DescribeAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeAccountResponse> DescribeAccountAsync(DescribeAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeAccountRequestMarshaller();
             var unmarshaller = DescribeAccountResponseUnmarshaller.Instance;
@@ -776,7 +776,7 @@ namespace Amazon.Organizations
         
         #region  DescribeCreateAccountStatus
 
-        internal DescribeCreateAccountStatusResponse DescribeCreateAccountStatus(DescribeCreateAccountStatusRequest request)
+        internal virtual DescribeCreateAccountStatusResponse DescribeCreateAccountStatus(DescribeCreateAccountStatusRequest request)
         {
             var marshaller = new DescribeCreateAccountStatusRequestMarshaller();
             var unmarshaller = DescribeCreateAccountStatusResponseUnmarshaller.Instance;
@@ -795,7 +795,7 @@ namespace Amazon.Organizations
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeCreateAccountStatus">REST API Reference for DescribeCreateAccountStatus Operation</seealso>
-        public Task<DescribeCreateAccountStatusResponse> DescribeCreateAccountStatusAsync(DescribeCreateAccountStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeCreateAccountStatusResponse> DescribeCreateAccountStatusAsync(DescribeCreateAccountStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeCreateAccountStatusRequestMarshaller();
             var unmarshaller = DescribeCreateAccountStatusResponseUnmarshaller.Instance;
@@ -808,7 +808,7 @@ namespace Amazon.Organizations
         
         #region  DescribeHandshake
 
-        internal DescribeHandshakeResponse DescribeHandshake(DescribeHandshakeRequest request)
+        internal virtual DescribeHandshakeResponse DescribeHandshake(DescribeHandshakeRequest request)
         {
             var marshaller = new DescribeHandshakeRequestMarshaller();
             var unmarshaller = DescribeHandshakeResponseUnmarshaller.Instance;
@@ -827,7 +827,7 @@ namespace Amazon.Organizations
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeHandshake">REST API Reference for DescribeHandshake Operation</seealso>
-        public Task<DescribeHandshakeResponse> DescribeHandshakeAsync(DescribeHandshakeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeHandshakeResponse> DescribeHandshakeAsync(DescribeHandshakeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeHandshakeRequestMarshaller();
             var unmarshaller = DescribeHandshakeResponseUnmarshaller.Instance;
@@ -840,7 +840,7 @@ namespace Amazon.Organizations
         
         #region  DescribeOrganization
 
-        internal DescribeOrganizationResponse DescribeOrganization(DescribeOrganizationRequest request)
+        internal virtual DescribeOrganizationResponse DescribeOrganization(DescribeOrganizationRequest request)
         {
             var marshaller = new DescribeOrganizationRequestMarshaller();
             var unmarshaller = DescribeOrganizationResponseUnmarshaller.Instance;
@@ -859,7 +859,7 @@ namespace Amazon.Organizations
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeOrganization">REST API Reference for DescribeOrganization Operation</seealso>
-        public Task<DescribeOrganizationResponse> DescribeOrganizationAsync(DescribeOrganizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeOrganizationResponse> DescribeOrganizationAsync(DescribeOrganizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeOrganizationRequestMarshaller();
             var unmarshaller = DescribeOrganizationResponseUnmarshaller.Instance;
@@ -872,7 +872,7 @@ namespace Amazon.Organizations
         
         #region  DescribeOrganizationalUnit
 
-        internal DescribeOrganizationalUnitResponse DescribeOrganizationalUnit(DescribeOrganizationalUnitRequest request)
+        internal virtual DescribeOrganizationalUnitResponse DescribeOrganizationalUnit(DescribeOrganizationalUnitRequest request)
         {
             var marshaller = new DescribeOrganizationalUnitRequestMarshaller();
             var unmarshaller = DescribeOrganizationalUnitResponseUnmarshaller.Instance;
@@ -891,7 +891,7 @@ namespace Amazon.Organizations
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeOrganizationalUnit">REST API Reference for DescribeOrganizationalUnit Operation</seealso>
-        public Task<DescribeOrganizationalUnitResponse> DescribeOrganizationalUnitAsync(DescribeOrganizationalUnitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeOrganizationalUnitResponse> DescribeOrganizationalUnitAsync(DescribeOrganizationalUnitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeOrganizationalUnitRequestMarshaller();
             var unmarshaller = DescribeOrganizationalUnitResponseUnmarshaller.Instance;
@@ -904,7 +904,7 @@ namespace Amazon.Organizations
         
         #region  DescribePolicy
 
-        internal DescribePolicyResponse DescribePolicy(DescribePolicyRequest request)
+        internal virtual DescribePolicyResponse DescribePolicy(DescribePolicyRequest request)
         {
             var marshaller = new DescribePolicyRequestMarshaller();
             var unmarshaller = DescribePolicyResponseUnmarshaller.Instance;
@@ -923,7 +923,7 @@ namespace Amazon.Organizations
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribePolicy">REST API Reference for DescribePolicy Operation</seealso>
-        public Task<DescribePolicyResponse> DescribePolicyAsync(DescribePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribePolicyResponse> DescribePolicyAsync(DescribePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribePolicyRequestMarshaller();
             var unmarshaller = DescribePolicyResponseUnmarshaller.Instance;
@@ -936,7 +936,7 @@ namespace Amazon.Organizations
         
         #region  DetachPolicy
 
-        internal DetachPolicyResponse DetachPolicy(DetachPolicyRequest request)
+        internal virtual DetachPolicyResponse DetachPolicy(DetachPolicyRequest request)
         {
             var marshaller = new DetachPolicyRequestMarshaller();
             var unmarshaller = DetachPolicyResponseUnmarshaller.Instance;
@@ -955,7 +955,7 @@ namespace Amazon.Organizations
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DetachPolicy">REST API Reference for DetachPolicy Operation</seealso>
-        public Task<DetachPolicyResponse> DetachPolicyAsync(DetachPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DetachPolicyResponse> DetachPolicyAsync(DetachPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DetachPolicyRequestMarshaller();
             var unmarshaller = DetachPolicyResponseUnmarshaller.Instance;
@@ -968,7 +968,7 @@ namespace Amazon.Organizations
         
         #region  DisablePolicyType
 
-        internal DisablePolicyTypeResponse DisablePolicyType(DisablePolicyTypeRequest request)
+        internal virtual DisablePolicyTypeResponse DisablePolicyType(DisablePolicyTypeRequest request)
         {
             var marshaller = new DisablePolicyTypeRequestMarshaller();
             var unmarshaller = DisablePolicyTypeResponseUnmarshaller.Instance;
@@ -987,7 +987,7 @@ namespace Amazon.Organizations
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DisablePolicyType">REST API Reference for DisablePolicyType Operation</seealso>
-        public Task<DisablePolicyTypeResponse> DisablePolicyTypeAsync(DisablePolicyTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DisablePolicyTypeResponse> DisablePolicyTypeAsync(DisablePolicyTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DisablePolicyTypeRequestMarshaller();
             var unmarshaller = DisablePolicyTypeResponseUnmarshaller.Instance;
@@ -1000,7 +1000,7 @@ namespace Amazon.Organizations
         
         #region  EnableAllFeatures
 
-        internal EnableAllFeaturesResponse EnableAllFeatures(EnableAllFeaturesRequest request)
+        internal virtual EnableAllFeaturesResponse EnableAllFeatures(EnableAllFeaturesRequest request)
         {
             var marshaller = new EnableAllFeaturesRequestMarshaller();
             var unmarshaller = EnableAllFeaturesResponseUnmarshaller.Instance;
@@ -1019,7 +1019,7 @@ namespace Amazon.Organizations
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnableAllFeatures">REST API Reference for EnableAllFeatures Operation</seealso>
-        public Task<EnableAllFeaturesResponse> EnableAllFeaturesAsync(EnableAllFeaturesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<EnableAllFeaturesResponse> EnableAllFeaturesAsync(EnableAllFeaturesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new EnableAllFeaturesRequestMarshaller();
             var unmarshaller = EnableAllFeaturesResponseUnmarshaller.Instance;
@@ -1032,7 +1032,7 @@ namespace Amazon.Organizations
         
         #region  EnablePolicyType
 
-        internal EnablePolicyTypeResponse EnablePolicyType(EnablePolicyTypeRequest request)
+        internal virtual EnablePolicyTypeResponse EnablePolicyType(EnablePolicyTypeRequest request)
         {
             var marshaller = new EnablePolicyTypeRequestMarshaller();
             var unmarshaller = EnablePolicyTypeResponseUnmarshaller.Instance;
@@ -1051,7 +1051,7 @@ namespace Amazon.Organizations
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnablePolicyType">REST API Reference for EnablePolicyType Operation</seealso>
-        public Task<EnablePolicyTypeResponse> EnablePolicyTypeAsync(EnablePolicyTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<EnablePolicyTypeResponse> EnablePolicyTypeAsync(EnablePolicyTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new EnablePolicyTypeRequestMarshaller();
             var unmarshaller = EnablePolicyTypeResponseUnmarshaller.Instance;
@@ -1064,7 +1064,7 @@ namespace Amazon.Organizations
         
         #region  InviteAccountToOrganization
 
-        internal InviteAccountToOrganizationResponse InviteAccountToOrganization(InviteAccountToOrganizationRequest request)
+        internal virtual InviteAccountToOrganizationResponse InviteAccountToOrganization(InviteAccountToOrganizationRequest request)
         {
             var marshaller = new InviteAccountToOrganizationRequestMarshaller();
             var unmarshaller = InviteAccountToOrganizationResponseUnmarshaller.Instance;
@@ -1083,7 +1083,7 @@ namespace Amazon.Organizations
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/InviteAccountToOrganization">REST API Reference for InviteAccountToOrganization Operation</seealso>
-        public Task<InviteAccountToOrganizationResponse> InviteAccountToOrganizationAsync(InviteAccountToOrganizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<InviteAccountToOrganizationResponse> InviteAccountToOrganizationAsync(InviteAccountToOrganizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new InviteAccountToOrganizationRequestMarshaller();
             var unmarshaller = InviteAccountToOrganizationResponseUnmarshaller.Instance;
@@ -1096,7 +1096,7 @@ namespace Amazon.Organizations
         
         #region  LeaveOrganization
 
-        internal LeaveOrganizationResponse LeaveOrganization(LeaveOrganizationRequest request)
+        internal virtual LeaveOrganizationResponse LeaveOrganization(LeaveOrganizationRequest request)
         {
             var marshaller = new LeaveOrganizationRequestMarshaller();
             var unmarshaller = LeaveOrganizationResponseUnmarshaller.Instance;
@@ -1115,7 +1115,7 @@ namespace Amazon.Organizations
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/LeaveOrganization">REST API Reference for LeaveOrganization Operation</seealso>
-        public Task<LeaveOrganizationResponse> LeaveOrganizationAsync(LeaveOrganizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<LeaveOrganizationResponse> LeaveOrganizationAsync(LeaveOrganizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new LeaveOrganizationRequestMarshaller();
             var unmarshaller = LeaveOrganizationResponseUnmarshaller.Instance;
@@ -1128,7 +1128,7 @@ namespace Amazon.Organizations
         
         #region  ListAccounts
 
-        internal ListAccountsResponse ListAccounts(ListAccountsRequest request)
+        internal virtual ListAccountsResponse ListAccounts(ListAccountsRequest request)
         {
             var marshaller = new ListAccountsRequestMarshaller();
             var unmarshaller = ListAccountsResponseUnmarshaller.Instance;
@@ -1147,7 +1147,7 @@ namespace Amazon.Organizations
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListAccounts">REST API Reference for ListAccounts Operation</seealso>
-        public Task<ListAccountsResponse> ListAccountsAsync(ListAccountsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListAccountsResponse> ListAccountsAsync(ListAccountsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListAccountsRequestMarshaller();
             var unmarshaller = ListAccountsResponseUnmarshaller.Instance;
@@ -1160,7 +1160,7 @@ namespace Amazon.Organizations
         
         #region  ListAccountsForParent
 
-        internal ListAccountsForParentResponse ListAccountsForParent(ListAccountsForParentRequest request)
+        internal virtual ListAccountsForParentResponse ListAccountsForParent(ListAccountsForParentRequest request)
         {
             var marshaller = new ListAccountsForParentRequestMarshaller();
             var unmarshaller = ListAccountsForParentResponseUnmarshaller.Instance;
@@ -1179,7 +1179,7 @@ namespace Amazon.Organizations
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListAccountsForParent">REST API Reference for ListAccountsForParent Operation</seealso>
-        public Task<ListAccountsForParentResponse> ListAccountsForParentAsync(ListAccountsForParentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListAccountsForParentResponse> ListAccountsForParentAsync(ListAccountsForParentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListAccountsForParentRequestMarshaller();
             var unmarshaller = ListAccountsForParentResponseUnmarshaller.Instance;
@@ -1192,7 +1192,7 @@ namespace Amazon.Organizations
         
         #region  ListChildren
 
-        internal ListChildrenResponse ListChildren(ListChildrenRequest request)
+        internal virtual ListChildrenResponse ListChildren(ListChildrenRequest request)
         {
             var marshaller = new ListChildrenRequestMarshaller();
             var unmarshaller = ListChildrenResponseUnmarshaller.Instance;
@@ -1211,7 +1211,7 @@ namespace Amazon.Organizations
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListChildren">REST API Reference for ListChildren Operation</seealso>
-        public Task<ListChildrenResponse> ListChildrenAsync(ListChildrenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListChildrenResponse> ListChildrenAsync(ListChildrenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListChildrenRequestMarshaller();
             var unmarshaller = ListChildrenResponseUnmarshaller.Instance;
@@ -1224,7 +1224,7 @@ namespace Amazon.Organizations
         
         #region  ListCreateAccountStatus
 
-        internal ListCreateAccountStatusResponse ListCreateAccountStatus(ListCreateAccountStatusRequest request)
+        internal virtual ListCreateAccountStatusResponse ListCreateAccountStatus(ListCreateAccountStatusRequest request)
         {
             var marshaller = new ListCreateAccountStatusRequestMarshaller();
             var unmarshaller = ListCreateAccountStatusResponseUnmarshaller.Instance;
@@ -1243,7 +1243,7 @@ namespace Amazon.Organizations
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListCreateAccountStatus">REST API Reference for ListCreateAccountStatus Operation</seealso>
-        public Task<ListCreateAccountStatusResponse> ListCreateAccountStatusAsync(ListCreateAccountStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListCreateAccountStatusResponse> ListCreateAccountStatusAsync(ListCreateAccountStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListCreateAccountStatusRequestMarshaller();
             var unmarshaller = ListCreateAccountStatusResponseUnmarshaller.Instance;
@@ -1256,7 +1256,7 @@ namespace Amazon.Organizations
         
         #region  ListHandshakesForAccount
 
-        internal ListHandshakesForAccountResponse ListHandshakesForAccount(ListHandshakesForAccountRequest request)
+        internal virtual ListHandshakesForAccountResponse ListHandshakesForAccount(ListHandshakesForAccountRequest request)
         {
             var marshaller = new ListHandshakesForAccountRequestMarshaller();
             var unmarshaller = ListHandshakesForAccountResponseUnmarshaller.Instance;
@@ -1275,7 +1275,7 @@ namespace Amazon.Organizations
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListHandshakesForAccount">REST API Reference for ListHandshakesForAccount Operation</seealso>
-        public Task<ListHandshakesForAccountResponse> ListHandshakesForAccountAsync(ListHandshakesForAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListHandshakesForAccountResponse> ListHandshakesForAccountAsync(ListHandshakesForAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListHandshakesForAccountRequestMarshaller();
             var unmarshaller = ListHandshakesForAccountResponseUnmarshaller.Instance;
@@ -1288,7 +1288,7 @@ namespace Amazon.Organizations
         
         #region  ListHandshakesForOrganization
 
-        internal ListHandshakesForOrganizationResponse ListHandshakesForOrganization(ListHandshakesForOrganizationRequest request)
+        internal virtual ListHandshakesForOrganizationResponse ListHandshakesForOrganization(ListHandshakesForOrganizationRequest request)
         {
             var marshaller = new ListHandshakesForOrganizationRequestMarshaller();
             var unmarshaller = ListHandshakesForOrganizationResponseUnmarshaller.Instance;
@@ -1307,7 +1307,7 @@ namespace Amazon.Organizations
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListHandshakesForOrganization">REST API Reference for ListHandshakesForOrganization Operation</seealso>
-        public Task<ListHandshakesForOrganizationResponse> ListHandshakesForOrganizationAsync(ListHandshakesForOrganizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListHandshakesForOrganizationResponse> ListHandshakesForOrganizationAsync(ListHandshakesForOrganizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListHandshakesForOrganizationRequestMarshaller();
             var unmarshaller = ListHandshakesForOrganizationResponseUnmarshaller.Instance;
@@ -1320,7 +1320,7 @@ namespace Amazon.Organizations
         
         #region  ListOrganizationalUnitsForParent
 
-        internal ListOrganizationalUnitsForParentResponse ListOrganizationalUnitsForParent(ListOrganizationalUnitsForParentRequest request)
+        internal virtual ListOrganizationalUnitsForParentResponse ListOrganizationalUnitsForParent(ListOrganizationalUnitsForParentRequest request)
         {
             var marshaller = new ListOrganizationalUnitsForParentRequestMarshaller();
             var unmarshaller = ListOrganizationalUnitsForParentResponseUnmarshaller.Instance;
@@ -1339,7 +1339,7 @@ namespace Amazon.Organizations
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListOrganizationalUnitsForParent">REST API Reference for ListOrganizationalUnitsForParent Operation</seealso>
-        public Task<ListOrganizationalUnitsForParentResponse> ListOrganizationalUnitsForParentAsync(ListOrganizationalUnitsForParentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListOrganizationalUnitsForParentResponse> ListOrganizationalUnitsForParentAsync(ListOrganizationalUnitsForParentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListOrganizationalUnitsForParentRequestMarshaller();
             var unmarshaller = ListOrganizationalUnitsForParentResponseUnmarshaller.Instance;
@@ -1352,7 +1352,7 @@ namespace Amazon.Organizations
         
         #region  ListParents
 
-        internal ListParentsResponse ListParents(ListParentsRequest request)
+        internal virtual ListParentsResponse ListParents(ListParentsRequest request)
         {
             var marshaller = new ListParentsRequestMarshaller();
             var unmarshaller = ListParentsResponseUnmarshaller.Instance;
@@ -1371,7 +1371,7 @@ namespace Amazon.Organizations
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListParents">REST API Reference for ListParents Operation</seealso>
-        public Task<ListParentsResponse> ListParentsAsync(ListParentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListParentsResponse> ListParentsAsync(ListParentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListParentsRequestMarshaller();
             var unmarshaller = ListParentsResponseUnmarshaller.Instance;
@@ -1384,7 +1384,7 @@ namespace Amazon.Organizations
         
         #region  ListPolicies
 
-        internal ListPoliciesResponse ListPolicies(ListPoliciesRequest request)
+        internal virtual ListPoliciesResponse ListPolicies(ListPoliciesRequest request)
         {
             var marshaller = new ListPoliciesRequestMarshaller();
             var unmarshaller = ListPoliciesResponseUnmarshaller.Instance;
@@ -1403,7 +1403,7 @@ namespace Amazon.Organizations
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListPolicies">REST API Reference for ListPolicies Operation</seealso>
-        public Task<ListPoliciesResponse> ListPoliciesAsync(ListPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListPoliciesResponse> ListPoliciesAsync(ListPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListPoliciesRequestMarshaller();
             var unmarshaller = ListPoliciesResponseUnmarshaller.Instance;
@@ -1416,7 +1416,7 @@ namespace Amazon.Organizations
         
         #region  ListPoliciesForTarget
 
-        internal ListPoliciesForTargetResponse ListPoliciesForTarget(ListPoliciesForTargetRequest request)
+        internal virtual ListPoliciesForTargetResponse ListPoliciesForTarget(ListPoliciesForTargetRequest request)
         {
             var marshaller = new ListPoliciesForTargetRequestMarshaller();
             var unmarshaller = ListPoliciesForTargetResponseUnmarshaller.Instance;
@@ -1435,7 +1435,7 @@ namespace Amazon.Organizations
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListPoliciesForTarget">REST API Reference for ListPoliciesForTarget Operation</seealso>
-        public Task<ListPoliciesForTargetResponse> ListPoliciesForTargetAsync(ListPoliciesForTargetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListPoliciesForTargetResponse> ListPoliciesForTargetAsync(ListPoliciesForTargetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListPoliciesForTargetRequestMarshaller();
             var unmarshaller = ListPoliciesForTargetResponseUnmarshaller.Instance;
@@ -1448,7 +1448,7 @@ namespace Amazon.Organizations
         
         #region  ListRoots
 
-        internal ListRootsResponse ListRoots(ListRootsRequest request)
+        internal virtual ListRootsResponse ListRoots(ListRootsRequest request)
         {
             var marshaller = new ListRootsRequestMarshaller();
             var unmarshaller = ListRootsResponseUnmarshaller.Instance;
@@ -1467,7 +1467,7 @@ namespace Amazon.Organizations
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListRoots">REST API Reference for ListRoots Operation</seealso>
-        public Task<ListRootsResponse> ListRootsAsync(ListRootsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListRootsResponse> ListRootsAsync(ListRootsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListRootsRequestMarshaller();
             var unmarshaller = ListRootsResponseUnmarshaller.Instance;
@@ -1480,7 +1480,7 @@ namespace Amazon.Organizations
         
         #region  ListTargetsForPolicy
 
-        internal ListTargetsForPolicyResponse ListTargetsForPolicy(ListTargetsForPolicyRequest request)
+        internal virtual ListTargetsForPolicyResponse ListTargetsForPolicy(ListTargetsForPolicyRequest request)
         {
             var marshaller = new ListTargetsForPolicyRequestMarshaller();
             var unmarshaller = ListTargetsForPolicyResponseUnmarshaller.Instance;
@@ -1499,7 +1499,7 @@ namespace Amazon.Organizations
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListTargetsForPolicy">REST API Reference for ListTargetsForPolicy Operation</seealso>
-        public Task<ListTargetsForPolicyResponse> ListTargetsForPolicyAsync(ListTargetsForPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListTargetsForPolicyResponse> ListTargetsForPolicyAsync(ListTargetsForPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListTargetsForPolicyRequestMarshaller();
             var unmarshaller = ListTargetsForPolicyResponseUnmarshaller.Instance;
@@ -1512,7 +1512,7 @@ namespace Amazon.Organizations
         
         #region  MoveAccount
 
-        internal MoveAccountResponse MoveAccount(MoveAccountRequest request)
+        internal virtual MoveAccountResponse MoveAccount(MoveAccountRequest request)
         {
             var marshaller = new MoveAccountRequestMarshaller();
             var unmarshaller = MoveAccountResponseUnmarshaller.Instance;
@@ -1531,7 +1531,7 @@ namespace Amazon.Organizations
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/MoveAccount">REST API Reference for MoveAccount Operation</seealso>
-        public Task<MoveAccountResponse> MoveAccountAsync(MoveAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<MoveAccountResponse> MoveAccountAsync(MoveAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new MoveAccountRequestMarshaller();
             var unmarshaller = MoveAccountResponseUnmarshaller.Instance;
@@ -1544,7 +1544,7 @@ namespace Amazon.Organizations
         
         #region  RemoveAccountFromOrganization
 
-        internal RemoveAccountFromOrganizationResponse RemoveAccountFromOrganization(RemoveAccountFromOrganizationRequest request)
+        internal virtual RemoveAccountFromOrganizationResponse RemoveAccountFromOrganization(RemoveAccountFromOrganizationRequest request)
         {
             var marshaller = new RemoveAccountFromOrganizationRequestMarshaller();
             var unmarshaller = RemoveAccountFromOrganizationResponseUnmarshaller.Instance;
@@ -1563,7 +1563,7 @@ namespace Amazon.Organizations
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/RemoveAccountFromOrganization">REST API Reference for RemoveAccountFromOrganization Operation</seealso>
-        public Task<RemoveAccountFromOrganizationResponse> RemoveAccountFromOrganizationAsync(RemoveAccountFromOrganizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<RemoveAccountFromOrganizationResponse> RemoveAccountFromOrganizationAsync(RemoveAccountFromOrganizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RemoveAccountFromOrganizationRequestMarshaller();
             var unmarshaller = RemoveAccountFromOrganizationResponseUnmarshaller.Instance;
@@ -1576,7 +1576,7 @@ namespace Amazon.Organizations
         
         #region  UpdateOrganizationalUnit
 
-        internal UpdateOrganizationalUnitResponse UpdateOrganizationalUnit(UpdateOrganizationalUnitRequest request)
+        internal virtual UpdateOrganizationalUnitResponse UpdateOrganizationalUnit(UpdateOrganizationalUnitRequest request)
         {
             var marshaller = new UpdateOrganizationalUnitRequestMarshaller();
             var unmarshaller = UpdateOrganizationalUnitResponseUnmarshaller.Instance;
@@ -1595,7 +1595,7 @@ namespace Amazon.Organizations
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/UpdateOrganizationalUnit">REST API Reference for UpdateOrganizationalUnit Operation</seealso>
-        public Task<UpdateOrganizationalUnitResponse> UpdateOrganizationalUnitAsync(UpdateOrganizationalUnitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateOrganizationalUnitResponse> UpdateOrganizationalUnitAsync(UpdateOrganizationalUnitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateOrganizationalUnitRequestMarshaller();
             var unmarshaller = UpdateOrganizationalUnitResponseUnmarshaller.Instance;
@@ -1608,7 +1608,7 @@ namespace Amazon.Organizations
         
         #region  UpdatePolicy
 
-        internal UpdatePolicyResponse UpdatePolicy(UpdatePolicyRequest request)
+        internal virtual UpdatePolicyResponse UpdatePolicy(UpdatePolicyRequest request)
         {
             var marshaller = new UpdatePolicyRequestMarshaller();
             var unmarshaller = UpdatePolicyResponseUnmarshaller.Instance;
@@ -1627,7 +1627,7 @@ namespace Amazon.Organizations
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/UpdatePolicy">REST API Reference for UpdatePolicy Operation</seealso>
-        public Task<UpdatePolicyResponse> UpdatePolicyAsync(UpdatePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdatePolicyResponse> UpdatePolicyAsync(UpdatePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdatePolicyRequestMarshaller();
             var unmarshaller = UpdatePolicyResponseUnmarshaller.Instance;

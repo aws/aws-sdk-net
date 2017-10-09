@@ -276,7 +276,7 @@ namespace Amazon.CloudFormation
         /// A client request token already exists.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CancelUpdateStack">REST API Reference for CancelUpdateStack Operation</seealso>
-        public CancelUpdateStackResponse CancelUpdateStack(CancelUpdateStackRequest request)
+        public virtual CancelUpdateStackResponse CancelUpdateStack(CancelUpdateStackRequest request)
         {
             var marshaller = new CancelUpdateStackRequestMarshaller();
             var unmarshaller = CancelUpdateStackResponseUnmarshaller.Instance;
@@ -296,7 +296,7 @@ namespace Amazon.CloudFormation
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelUpdateStack
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CancelUpdateStack">REST API Reference for CancelUpdateStack Operation</seealso>
-        public IAsyncResult BeginCancelUpdateStack(CancelUpdateStackRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCancelUpdateStack(CancelUpdateStackRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CancelUpdateStackRequestMarshaller();
             var unmarshaller = CancelUpdateStackResponseUnmarshaller.Instance;
@@ -313,7 +313,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>Returns a  CancelUpdateStackResult from CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CancelUpdateStack">REST API Reference for CancelUpdateStack Operation</seealso>
-        public  CancelUpdateStackResponse EndCancelUpdateStack(IAsyncResult asyncResult)
+        public virtual CancelUpdateStackResponse EndCancelUpdateStack(IAsyncResult asyncResult)
         {
             return EndInvoke<CancelUpdateStackResponse>(asyncResult);
         }
@@ -347,7 +347,7 @@ namespace Amazon.CloudFormation
         /// A client request token already exists.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ContinueUpdateRollback">REST API Reference for ContinueUpdateRollback Operation</seealso>
-        public ContinueUpdateRollbackResponse ContinueUpdateRollback(ContinueUpdateRollbackRequest request)
+        public virtual ContinueUpdateRollbackResponse ContinueUpdateRollback(ContinueUpdateRollbackRequest request)
         {
             var marshaller = new ContinueUpdateRollbackRequestMarshaller();
             var unmarshaller = ContinueUpdateRollbackResponseUnmarshaller.Instance;
@@ -367,7 +367,7 @@ namespace Amazon.CloudFormation
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndContinueUpdateRollback
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ContinueUpdateRollback">REST API Reference for ContinueUpdateRollback Operation</seealso>
-        public IAsyncResult BeginContinueUpdateRollback(ContinueUpdateRollbackRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginContinueUpdateRollback(ContinueUpdateRollbackRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ContinueUpdateRollbackRequestMarshaller();
             var unmarshaller = ContinueUpdateRollbackResponseUnmarshaller.Instance;
@@ -384,7 +384,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>Returns a  ContinueUpdateRollbackResult from CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ContinueUpdateRollback">REST API Reference for ContinueUpdateRollback Operation</seealso>
-        public  ContinueUpdateRollbackResponse EndContinueUpdateRollback(IAsyncResult asyncResult)
+        public virtual ContinueUpdateRollbackResponse EndContinueUpdateRollback(IAsyncResult asyncResult)
         {
             return EndInvoke<ContinueUpdateRollbackResponse>(asyncResult);
         }
@@ -440,7 +440,7 @@ namespace Amazon.CloudFormation
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">REST API Reference for CreateChangeSet Operation</seealso>
-        public CreateChangeSetResponse CreateChangeSet(CreateChangeSetRequest request)
+        public virtual CreateChangeSetResponse CreateChangeSet(CreateChangeSetRequest request)
         {
             var marshaller = new CreateChangeSetRequestMarshaller();
             var unmarshaller = CreateChangeSetResponseUnmarshaller.Instance;
@@ -460,7 +460,7 @@ namespace Amazon.CloudFormation
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateChangeSet
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">REST API Reference for CreateChangeSet Operation</seealso>
-        public IAsyncResult BeginCreateChangeSet(CreateChangeSetRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateChangeSet(CreateChangeSetRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateChangeSetRequestMarshaller();
             var unmarshaller = CreateChangeSetResponseUnmarshaller.Instance;
@@ -477,7 +477,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>Returns a  CreateChangeSetResult from CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">REST API Reference for CreateChangeSet Operation</seealso>
-        public  CreateChangeSetResponse EndCreateChangeSet(IAsyncResult asyncResult)
+        public virtual CreateChangeSetResponse EndCreateChangeSet(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateChangeSetResponse>(asyncResult);
         }
@@ -514,7 +514,7 @@ namespace Amazon.CloudFormation
         /// A client request token already exists.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateStack">REST API Reference for CreateStack Operation</seealso>
-        public CreateStackResponse CreateStack(CreateStackRequest request)
+        public virtual CreateStackResponse CreateStack(CreateStackRequest request)
         {
             var marshaller = new CreateStackRequestMarshaller();
             var unmarshaller = CreateStackResponseUnmarshaller.Instance;
@@ -534,7 +534,7 @@ namespace Amazon.CloudFormation
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateStack
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateStack">REST API Reference for CreateStack Operation</seealso>
-        public IAsyncResult BeginCreateStack(CreateStackRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateStack(CreateStackRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateStackRequestMarshaller();
             var unmarshaller = CreateStackResponseUnmarshaller.Instance;
@@ -551,7 +551,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>Returns a  CreateStackResult from CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateStack">REST API Reference for CreateStack Operation</seealso>
-        public  CreateStackResponse EndCreateStack(IAsyncResult asyncResult)
+        public virtual CreateStackResponse EndCreateStack(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateStackResponse>(asyncResult);
         }
@@ -596,7 +596,7 @@ namespace Amazon.CloudFormation
         /// was performed.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateStackInstances">REST API Reference for CreateStackInstances Operation</seealso>
-        public CreateStackInstancesResponse CreateStackInstances(CreateStackInstancesRequest request)
+        public virtual CreateStackInstancesResponse CreateStackInstances(CreateStackInstancesRequest request)
         {
             var marshaller = new CreateStackInstancesRequestMarshaller();
             var unmarshaller = CreateStackInstancesResponseUnmarshaller.Instance;
@@ -616,7 +616,7 @@ namespace Amazon.CloudFormation
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateStackInstances
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateStackInstances">REST API Reference for CreateStackInstances Operation</seealso>
-        public IAsyncResult BeginCreateStackInstances(CreateStackInstancesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateStackInstances(CreateStackInstancesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateStackInstancesRequestMarshaller();
             var unmarshaller = CreateStackInstancesResponseUnmarshaller.Instance;
@@ -633,7 +633,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>Returns a  CreateStackInstancesResult from CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateStackInstances">REST API Reference for CreateStackInstances Operation</seealso>
-        public  CreateStackInstancesResponse EndCreateStackInstances(IAsyncResult asyncResult)
+        public virtual CreateStackInstancesResponse EndCreateStackInstances(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateStackInstancesResponse>(asyncResult);
         }
@@ -664,7 +664,7 @@ namespace Amazon.CloudFormation
         /// The specified name is already in use.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateStackSet">REST API Reference for CreateStackSet Operation</seealso>
-        public CreateStackSetResponse CreateStackSet(CreateStackSetRequest request)
+        public virtual CreateStackSetResponse CreateStackSet(CreateStackSetRequest request)
         {
             var marshaller = new CreateStackSetRequestMarshaller();
             var unmarshaller = CreateStackSetResponseUnmarshaller.Instance;
@@ -684,7 +684,7 @@ namespace Amazon.CloudFormation
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateStackSet
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateStackSet">REST API Reference for CreateStackSet Operation</seealso>
-        public IAsyncResult BeginCreateStackSet(CreateStackSetRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateStackSet(CreateStackSetRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateStackSetRequestMarshaller();
             var unmarshaller = CreateStackSetResponseUnmarshaller.Instance;
@@ -701,7 +701,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>Returns a  CreateStackSetResult from CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateStackSet">REST API Reference for CreateStackSet Operation</seealso>
-        public  CreateStackSetResponse EndCreateStackSet(IAsyncResult asyncResult)
+        public virtual CreateStackSetResponse EndCreateStackSet(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateStackSetResponse>(asyncResult);
         }
@@ -729,7 +729,7 @@ namespace Amazon.CloudFormation
         /// <code>UPDATE_IN_PROGRESS</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteChangeSet">REST API Reference for DeleteChangeSet Operation</seealso>
-        public DeleteChangeSetResponse DeleteChangeSet(DeleteChangeSetRequest request)
+        public virtual DeleteChangeSetResponse DeleteChangeSet(DeleteChangeSetRequest request)
         {
             var marshaller = new DeleteChangeSetRequestMarshaller();
             var unmarshaller = DeleteChangeSetResponseUnmarshaller.Instance;
@@ -749,7 +749,7 @@ namespace Amazon.CloudFormation
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteChangeSet
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteChangeSet">REST API Reference for DeleteChangeSet Operation</seealso>
-        public IAsyncResult BeginDeleteChangeSet(DeleteChangeSetRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteChangeSet(DeleteChangeSetRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteChangeSetRequestMarshaller();
             var unmarshaller = DeleteChangeSetResponseUnmarshaller.Instance;
@@ -766,7 +766,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>Returns a  DeleteChangeSetResult from CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteChangeSet">REST API Reference for DeleteChangeSet Operation</seealso>
-        public  DeleteChangeSetResponse EndDeleteChangeSet(IAsyncResult asyncResult)
+        public virtual DeleteChangeSetResponse EndDeleteChangeSet(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteChangeSetResponse>(asyncResult);
         }
@@ -787,7 +787,7 @@ namespace Amazon.CloudFormation
         /// A client request token already exists.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteStack">REST API Reference for DeleteStack Operation</seealso>
-        public DeleteStackResponse DeleteStack(DeleteStackRequest request)
+        public virtual DeleteStackResponse DeleteStack(DeleteStackRequest request)
         {
             var marshaller = new DeleteStackRequestMarshaller();
             var unmarshaller = DeleteStackResponseUnmarshaller.Instance;
@@ -807,7 +807,7 @@ namespace Amazon.CloudFormation
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteStack
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteStack">REST API Reference for DeleteStack Operation</seealso>
-        public IAsyncResult BeginDeleteStack(DeleteStackRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteStack(DeleteStackRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteStackRequestMarshaller();
             var unmarshaller = DeleteStackResponseUnmarshaller.Instance;
@@ -824,7 +824,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>Returns a  DeleteStackResult from CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteStack">REST API Reference for DeleteStack Operation</seealso>
-        public  DeleteStackResponse EndDeleteStack(IAsyncResult asyncResult)
+        public virtual DeleteStackResponse EndDeleteStack(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteStackResponse>(asyncResult);
         }
@@ -857,7 +857,7 @@ namespace Amazon.CloudFormation
         /// was performed.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteStackInstances">REST API Reference for DeleteStackInstances Operation</seealso>
-        public DeleteStackInstancesResponse DeleteStackInstances(DeleteStackInstancesRequest request)
+        public virtual DeleteStackInstancesResponse DeleteStackInstances(DeleteStackInstancesRequest request)
         {
             var marshaller = new DeleteStackInstancesRequestMarshaller();
             var unmarshaller = DeleteStackInstancesResponseUnmarshaller.Instance;
@@ -877,7 +877,7 @@ namespace Amazon.CloudFormation
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteStackInstances
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteStackInstances">REST API Reference for DeleteStackInstances Operation</seealso>
-        public IAsyncResult BeginDeleteStackInstances(DeleteStackInstancesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteStackInstances(DeleteStackInstancesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteStackInstancesRequestMarshaller();
             var unmarshaller = DeleteStackInstancesResponseUnmarshaller.Instance;
@@ -894,7 +894,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>Returns a  DeleteStackInstancesResult from CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteStackInstances">REST API Reference for DeleteStackInstances Operation</seealso>
-        public  DeleteStackInstancesResponse EndDeleteStackInstances(IAsyncResult asyncResult)
+        public virtual DeleteStackInstancesResponse EndDeleteStackInstances(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteStackInstancesResponse>(asyncResult);
         }
@@ -919,7 +919,7 @@ namespace Amazon.CloudFormation
         /// Delete all stack instances from the stack set before deleting the stack set.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteStackSet">REST API Reference for DeleteStackSet Operation</seealso>
-        public DeleteStackSetResponse DeleteStackSet(DeleteStackSetRequest request)
+        public virtual DeleteStackSetResponse DeleteStackSet(DeleteStackSetRequest request)
         {
             var marshaller = new DeleteStackSetRequestMarshaller();
             var unmarshaller = DeleteStackSetResponseUnmarshaller.Instance;
@@ -939,7 +939,7 @@ namespace Amazon.CloudFormation
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteStackSet
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteStackSet">REST API Reference for DeleteStackSet Operation</seealso>
-        public IAsyncResult BeginDeleteStackSet(DeleteStackSetRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteStackSet(DeleteStackSetRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteStackSetRequestMarshaller();
             var unmarshaller = DeleteStackSetResponseUnmarshaller.Instance;
@@ -956,7 +956,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>Returns a  DeleteStackSetResult from CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteStackSet">REST API Reference for DeleteStackSet Operation</seealso>
-        public  DeleteStackSetResponse EndDeleteStackSet(IAsyncResult asyncResult)
+        public virtual DeleteStackSetResponse EndDeleteStackSet(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteStackSetResponse>(asyncResult);
         }
@@ -973,7 +973,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the DescribeAccountLimits service method, as returned by CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeAccountLimits">REST API Reference for DescribeAccountLimits Operation</seealso>
-        public DescribeAccountLimitsResponse DescribeAccountLimits(DescribeAccountLimitsRequest request)
+        public virtual DescribeAccountLimitsResponse DescribeAccountLimits(DescribeAccountLimitsRequest request)
         {
             var marshaller = new DescribeAccountLimitsRequestMarshaller();
             var unmarshaller = DescribeAccountLimitsResponseUnmarshaller.Instance;
@@ -993,7 +993,7 @@ namespace Amazon.CloudFormation
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAccountLimits
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeAccountLimits">REST API Reference for DescribeAccountLimits Operation</seealso>
-        public IAsyncResult BeginDescribeAccountLimits(DescribeAccountLimitsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeAccountLimits(DescribeAccountLimitsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeAccountLimitsRequestMarshaller();
             var unmarshaller = DescribeAccountLimitsResponseUnmarshaller.Instance;
@@ -1010,7 +1010,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>Returns a  DescribeAccountLimitsResult from CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeAccountLimits">REST API Reference for DescribeAccountLimits Operation</seealso>
-        public  DescribeAccountLimitsResponse EndDescribeAccountLimits(IAsyncResult asyncResult)
+        public virtual DescribeAccountLimitsResponse EndDescribeAccountLimits(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeAccountLimitsResponse>(asyncResult);
         }
@@ -1032,7 +1032,7 @@ namespace Amazon.CloudFormation
         /// stack, use the <code>ListChangeSets</code> action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeChangeSet">REST API Reference for DescribeChangeSet Operation</seealso>
-        public DescribeChangeSetResponse DescribeChangeSet(DescribeChangeSetRequest request)
+        public virtual DescribeChangeSetResponse DescribeChangeSet(DescribeChangeSetRequest request)
         {
             var marshaller = new DescribeChangeSetRequestMarshaller();
             var unmarshaller = DescribeChangeSetResponseUnmarshaller.Instance;
@@ -1052,7 +1052,7 @@ namespace Amazon.CloudFormation
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeChangeSet
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeChangeSet">REST API Reference for DescribeChangeSet Operation</seealso>
-        public IAsyncResult BeginDescribeChangeSet(DescribeChangeSetRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeChangeSet(DescribeChangeSetRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeChangeSetRequestMarshaller();
             var unmarshaller = DescribeChangeSetResponseUnmarshaller.Instance;
@@ -1069,7 +1069,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>Returns a  DescribeChangeSetResult from CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeChangeSet">REST API Reference for DescribeChangeSet Operation</seealso>
-        public  DescribeChangeSetResponse EndDescribeChangeSet(IAsyncResult asyncResult)
+        public virtual DescribeChangeSetResponse EndDescribeChangeSet(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeChangeSetResponse>(asyncResult);
         }
@@ -1094,7 +1094,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the DescribeStackEvents service method, as returned by CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackEvents">REST API Reference for DescribeStackEvents Operation</seealso>
-        public DescribeStackEventsResponse DescribeStackEvents(DescribeStackEventsRequest request)
+        public virtual DescribeStackEventsResponse DescribeStackEvents(DescribeStackEventsRequest request)
         {
             var marshaller = new DescribeStackEventsRequestMarshaller();
             var unmarshaller = DescribeStackEventsResponseUnmarshaller.Instance;
@@ -1114,7 +1114,7 @@ namespace Amazon.CloudFormation
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeStackEvents
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackEvents">REST API Reference for DescribeStackEvents Operation</seealso>
-        public IAsyncResult BeginDescribeStackEvents(DescribeStackEventsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeStackEvents(DescribeStackEventsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeStackEventsRequestMarshaller();
             var unmarshaller = DescribeStackEventsResponseUnmarshaller.Instance;
@@ -1131,7 +1131,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>Returns a  DescribeStackEventsResult from CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackEvents">REST API Reference for DescribeStackEvents Operation</seealso>
-        public  DescribeStackEventsResponse EndDescribeStackEvents(IAsyncResult asyncResult)
+        public virtual DescribeStackEventsResponse EndDescribeStackEvents(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeStackEventsResponse>(asyncResult);
         }
@@ -1159,7 +1159,7 @@ namespace Amazon.CloudFormation
         /// The specified stack set doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackInstance">REST API Reference for DescribeStackInstance Operation</seealso>
-        public DescribeStackInstanceResponse DescribeStackInstance(DescribeStackInstanceRequest request)
+        public virtual DescribeStackInstanceResponse DescribeStackInstance(DescribeStackInstanceRequest request)
         {
             var marshaller = new DescribeStackInstanceRequestMarshaller();
             var unmarshaller = DescribeStackInstanceResponseUnmarshaller.Instance;
@@ -1179,7 +1179,7 @@ namespace Amazon.CloudFormation
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeStackInstance
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackInstance">REST API Reference for DescribeStackInstance Operation</seealso>
-        public IAsyncResult BeginDescribeStackInstance(DescribeStackInstanceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeStackInstance(DescribeStackInstanceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeStackInstanceRequestMarshaller();
             var unmarshaller = DescribeStackInstanceResponseUnmarshaller.Instance;
@@ -1196,7 +1196,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>Returns a  DescribeStackInstanceResult from CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackInstance">REST API Reference for DescribeStackInstance Operation</seealso>
-        public  DescribeStackInstanceResponse EndDescribeStackInstance(IAsyncResult asyncResult)
+        public virtual DescribeStackInstanceResponse EndDescribeStackInstance(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeStackInstanceResponse>(asyncResult);
         }
@@ -1218,7 +1218,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the DescribeStackResource service method, as returned by CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackResource">REST API Reference for DescribeStackResource Operation</seealso>
-        public DescribeStackResourceResponse DescribeStackResource(DescribeStackResourceRequest request)
+        public virtual DescribeStackResourceResponse DescribeStackResource(DescribeStackResourceRequest request)
         {
             var marshaller = new DescribeStackResourceRequestMarshaller();
             var unmarshaller = DescribeStackResourceResponseUnmarshaller.Instance;
@@ -1238,7 +1238,7 @@ namespace Amazon.CloudFormation
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeStackResource
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackResource">REST API Reference for DescribeStackResource Operation</seealso>
-        public IAsyncResult BeginDescribeStackResource(DescribeStackResourceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeStackResource(DescribeStackResourceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeStackResourceRequestMarshaller();
             var unmarshaller = DescribeStackResourceResponseUnmarshaller.Instance;
@@ -1255,7 +1255,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>Returns a  DescribeStackResourceResult from CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackResource">REST API Reference for DescribeStackResource Operation</seealso>
-        public  DescribeStackResourceResponse EndDescribeStackResource(IAsyncResult asyncResult)
+        public virtual DescribeStackResourceResponse EndDescribeStackResource(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeStackResourceResponse>(asyncResult);
         }
@@ -1299,7 +1299,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the DescribeStackResources service method, as returned by CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackResources">REST API Reference for DescribeStackResources Operation</seealso>
-        public DescribeStackResourcesResponse DescribeStackResources(DescribeStackResourcesRequest request)
+        public virtual DescribeStackResourcesResponse DescribeStackResources(DescribeStackResourcesRequest request)
         {
             var marshaller = new DescribeStackResourcesRequestMarshaller();
             var unmarshaller = DescribeStackResourcesResponseUnmarshaller.Instance;
@@ -1319,7 +1319,7 @@ namespace Amazon.CloudFormation
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeStackResources
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackResources">REST API Reference for DescribeStackResources Operation</seealso>
-        public IAsyncResult BeginDescribeStackResources(DescribeStackResourcesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeStackResources(DescribeStackResourcesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeStackResourcesRequestMarshaller();
             var unmarshaller = DescribeStackResourcesResponseUnmarshaller.Instance;
@@ -1336,7 +1336,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>Returns a  DescribeStackResourcesResult from CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackResources">REST API Reference for DescribeStackResources Operation</seealso>
-        public  DescribeStackResourcesResponse EndDescribeStackResources(IAsyncResult asyncResult)
+        public virtual DescribeStackResourcesResponse EndDescribeStackResources(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeStackResourcesResponse>(asyncResult);
         }
@@ -1358,7 +1358,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the DescribeStacks service method, as returned by CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStacks">REST API Reference for DescribeStacks Operation</seealso>
-        public DescribeStacksResponse DescribeStacks()
+        public virtual DescribeStacksResponse DescribeStacks()
         {
             return DescribeStacks(new DescribeStacksRequest());
         }
@@ -1377,7 +1377,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the DescribeStacks service method, as returned by CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStacks">REST API Reference for DescribeStacks Operation</seealso>
-        public DescribeStacksResponse DescribeStacks(DescribeStacksRequest request)
+        public virtual DescribeStacksResponse DescribeStacks(DescribeStacksRequest request)
         {
             var marshaller = new DescribeStacksRequestMarshaller();
             var unmarshaller = DescribeStacksResponseUnmarshaller.Instance;
@@ -1397,7 +1397,7 @@ namespace Amazon.CloudFormation
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeStacks
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStacks">REST API Reference for DescribeStacks Operation</seealso>
-        public IAsyncResult BeginDescribeStacks(DescribeStacksRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeStacks(DescribeStacksRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeStacksRequestMarshaller();
             var unmarshaller = DescribeStacksResponseUnmarshaller.Instance;
@@ -1414,7 +1414,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>Returns a  DescribeStacksResult from CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStacks">REST API Reference for DescribeStacks Operation</seealso>
-        public  DescribeStacksResponse EndDescribeStacks(IAsyncResult asyncResult)
+        public virtual DescribeStacksResponse EndDescribeStacks(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeStacksResponse>(asyncResult);
         }
@@ -1433,7 +1433,7 @@ namespace Amazon.CloudFormation
         /// The specified stack set doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackSet">REST API Reference for DescribeStackSet Operation</seealso>
-        public DescribeStackSetResponse DescribeStackSet(DescribeStackSetRequest request)
+        public virtual DescribeStackSetResponse DescribeStackSet(DescribeStackSetRequest request)
         {
             var marshaller = new DescribeStackSetRequestMarshaller();
             var unmarshaller = DescribeStackSetResponseUnmarshaller.Instance;
@@ -1453,7 +1453,7 @@ namespace Amazon.CloudFormation
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeStackSet
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackSet">REST API Reference for DescribeStackSet Operation</seealso>
-        public IAsyncResult BeginDescribeStackSet(DescribeStackSetRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeStackSet(DescribeStackSetRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeStackSetRequestMarshaller();
             var unmarshaller = DescribeStackSetResponseUnmarshaller.Instance;
@@ -1470,7 +1470,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>Returns a  DescribeStackSetResult from CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackSet">REST API Reference for DescribeStackSet Operation</seealso>
-        public  DescribeStackSetResponse EndDescribeStackSet(IAsyncResult asyncResult)
+        public virtual DescribeStackSetResponse EndDescribeStackSet(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeStackSetResponse>(asyncResult);
         }
@@ -1492,7 +1492,7 @@ namespace Amazon.CloudFormation
         /// The specified stack set doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackSetOperation">REST API Reference for DescribeStackSetOperation Operation</seealso>
-        public DescribeStackSetOperationResponse DescribeStackSetOperation(DescribeStackSetOperationRequest request)
+        public virtual DescribeStackSetOperationResponse DescribeStackSetOperation(DescribeStackSetOperationRequest request)
         {
             var marshaller = new DescribeStackSetOperationRequestMarshaller();
             var unmarshaller = DescribeStackSetOperationResponseUnmarshaller.Instance;
@@ -1512,7 +1512,7 @@ namespace Amazon.CloudFormation
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeStackSetOperation
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackSetOperation">REST API Reference for DescribeStackSetOperation Operation</seealso>
-        public IAsyncResult BeginDescribeStackSetOperation(DescribeStackSetOperationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeStackSetOperation(DescribeStackSetOperationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeStackSetOperationRequestMarshaller();
             var unmarshaller = DescribeStackSetOperationResponseUnmarshaller.Instance;
@@ -1529,7 +1529,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>Returns a  DescribeStackSetOperationResult from CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackSetOperation">REST API Reference for DescribeStackSetOperation Operation</seealso>
-        public  DescribeStackSetOperationResponse EndDescribeStackSetOperation(IAsyncResult asyncResult)
+        public virtual DescribeStackSetOperationResponse EndDescribeStackSetOperation(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeStackSetOperationResponse>(asyncResult);
         }
@@ -1547,7 +1547,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the EstimateTemplateCost service method, as returned by CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/EstimateTemplateCost">REST API Reference for EstimateTemplateCost Operation</seealso>
-        public EstimateTemplateCostResponse EstimateTemplateCost(EstimateTemplateCostRequest request)
+        public virtual EstimateTemplateCostResponse EstimateTemplateCost(EstimateTemplateCostRequest request)
         {
             var marshaller = new EstimateTemplateCostRequestMarshaller();
             var unmarshaller = EstimateTemplateCostResponseUnmarshaller.Instance;
@@ -1567,7 +1567,7 @@ namespace Amazon.CloudFormation
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEstimateTemplateCost
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/EstimateTemplateCost">REST API Reference for EstimateTemplateCost Operation</seealso>
-        public IAsyncResult BeginEstimateTemplateCost(EstimateTemplateCostRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginEstimateTemplateCost(EstimateTemplateCostRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new EstimateTemplateCostRequestMarshaller();
             var unmarshaller = EstimateTemplateCostResponseUnmarshaller.Instance;
@@ -1584,7 +1584,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>Returns a  EstimateTemplateCostResult from CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/EstimateTemplateCost">REST API Reference for EstimateTemplateCost Operation</seealso>
-        public  EstimateTemplateCostResponse EndEstimateTemplateCost(IAsyncResult asyncResult)
+        public virtual EstimateTemplateCostResponse EndEstimateTemplateCost(IAsyncResult asyncResult)
         {
             return EndInvoke<EstimateTemplateCostResponse>(asyncResult);
         }
@@ -1631,7 +1631,7 @@ namespace Amazon.CloudFormation
         /// A client request token already exists.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ExecuteChangeSet">REST API Reference for ExecuteChangeSet Operation</seealso>
-        public ExecuteChangeSetResponse ExecuteChangeSet(ExecuteChangeSetRequest request)
+        public virtual ExecuteChangeSetResponse ExecuteChangeSet(ExecuteChangeSetRequest request)
         {
             var marshaller = new ExecuteChangeSetRequestMarshaller();
             var unmarshaller = ExecuteChangeSetResponseUnmarshaller.Instance;
@@ -1651,7 +1651,7 @@ namespace Amazon.CloudFormation
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndExecuteChangeSet
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ExecuteChangeSet">REST API Reference for ExecuteChangeSet Operation</seealso>
-        public IAsyncResult BeginExecuteChangeSet(ExecuteChangeSetRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginExecuteChangeSet(ExecuteChangeSetRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ExecuteChangeSetRequestMarshaller();
             var unmarshaller = ExecuteChangeSetResponseUnmarshaller.Instance;
@@ -1668,7 +1668,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>Returns a  ExecuteChangeSetResult from CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ExecuteChangeSet">REST API Reference for ExecuteChangeSet Operation</seealso>
-        public  ExecuteChangeSetResponse EndExecuteChangeSet(IAsyncResult asyncResult)
+        public virtual ExecuteChangeSetResponse EndExecuteChangeSet(IAsyncResult asyncResult)
         {
             return EndInvoke<ExecuteChangeSetResponse>(asyncResult);
         }
@@ -1685,7 +1685,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the GetStackPolicy service method, as returned by CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetStackPolicy">REST API Reference for GetStackPolicy Operation</seealso>
-        public GetStackPolicyResponse GetStackPolicy(GetStackPolicyRequest request)
+        public virtual GetStackPolicyResponse GetStackPolicy(GetStackPolicyRequest request)
         {
             var marshaller = new GetStackPolicyRequestMarshaller();
             var unmarshaller = GetStackPolicyResponseUnmarshaller.Instance;
@@ -1705,7 +1705,7 @@ namespace Amazon.CloudFormation
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetStackPolicy
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetStackPolicy">REST API Reference for GetStackPolicy Operation</seealso>
-        public IAsyncResult BeginGetStackPolicy(GetStackPolicyRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetStackPolicy(GetStackPolicyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetStackPolicyRequestMarshaller();
             var unmarshaller = GetStackPolicyResponseUnmarshaller.Instance;
@@ -1722,7 +1722,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>Returns a  GetStackPolicyResult from CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetStackPolicy">REST API Reference for GetStackPolicy Operation</seealso>
-        public  GetStackPolicyResponse EndGetStackPolicy(IAsyncResult asyncResult)
+        public virtual GetStackPolicyResponse EndGetStackPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<GetStackPolicyResponse>(asyncResult);
         }
@@ -1754,7 +1754,7 @@ namespace Amazon.CloudFormation
         /// stack, use the <code>ListChangeSets</code> action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetTemplate">REST API Reference for GetTemplate Operation</seealso>
-        public GetTemplateResponse GetTemplate(GetTemplateRequest request)
+        public virtual GetTemplateResponse GetTemplate(GetTemplateRequest request)
         {
             var marshaller = new GetTemplateRequestMarshaller();
             var unmarshaller = GetTemplateResponseUnmarshaller.Instance;
@@ -1774,7 +1774,7 @@ namespace Amazon.CloudFormation
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTemplate
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetTemplate">REST API Reference for GetTemplate Operation</seealso>
-        public IAsyncResult BeginGetTemplate(GetTemplateRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetTemplate(GetTemplateRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetTemplateRequestMarshaller();
             var unmarshaller = GetTemplateResponseUnmarshaller.Instance;
@@ -1791,7 +1791,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>Returns a  GetTemplateResult from CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetTemplate">REST API Reference for GetTemplate Operation</seealso>
-        public  GetTemplateResponse EndGetTemplate(IAsyncResult asyncResult)
+        public virtual GetTemplateResponse EndGetTemplate(IAsyncResult asyncResult)
         {
             return EndInvoke<GetTemplateResponse>(asyncResult);
         }
@@ -1824,7 +1824,7 @@ namespace Amazon.CloudFormation
         /// The specified stack set doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetTemplateSummary">REST API Reference for GetTemplateSummary Operation</seealso>
-        public GetTemplateSummaryResponse GetTemplateSummary(GetTemplateSummaryRequest request)
+        public virtual GetTemplateSummaryResponse GetTemplateSummary(GetTemplateSummaryRequest request)
         {
             var marshaller = new GetTemplateSummaryRequestMarshaller();
             var unmarshaller = GetTemplateSummaryResponseUnmarshaller.Instance;
@@ -1844,7 +1844,7 @@ namespace Amazon.CloudFormation
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTemplateSummary
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetTemplateSummary">REST API Reference for GetTemplateSummary Operation</seealso>
-        public IAsyncResult BeginGetTemplateSummary(GetTemplateSummaryRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetTemplateSummary(GetTemplateSummaryRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetTemplateSummaryRequestMarshaller();
             var unmarshaller = GetTemplateSummaryResponseUnmarshaller.Instance;
@@ -1861,7 +1861,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>Returns a  GetTemplateSummaryResult from CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetTemplateSummary">REST API Reference for GetTemplateSummary Operation</seealso>
-        public  GetTemplateSummaryResponse EndGetTemplateSummary(IAsyncResult asyncResult)
+        public virtual GetTemplateSummaryResponse EndGetTemplateSummary(IAsyncResult asyncResult)
         {
             return EndInvoke<GetTemplateSummaryResponse>(asyncResult);
         }
@@ -1879,7 +1879,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the ListChangeSets service method, as returned by CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListChangeSets">REST API Reference for ListChangeSets Operation</seealso>
-        public ListChangeSetsResponse ListChangeSets(ListChangeSetsRequest request)
+        public virtual ListChangeSetsResponse ListChangeSets(ListChangeSetsRequest request)
         {
             var marshaller = new ListChangeSetsRequestMarshaller();
             var unmarshaller = ListChangeSetsResponseUnmarshaller.Instance;
@@ -1899,7 +1899,7 @@ namespace Amazon.CloudFormation
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListChangeSets
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListChangeSets">REST API Reference for ListChangeSets Operation</seealso>
-        public IAsyncResult BeginListChangeSets(ListChangeSetsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListChangeSets(ListChangeSetsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListChangeSetsRequestMarshaller();
             var unmarshaller = ListChangeSetsResponseUnmarshaller.Instance;
@@ -1916,7 +1916,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>Returns a  ListChangeSetsResult from CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListChangeSets">REST API Reference for ListChangeSets Operation</seealso>
-        public  ListChangeSetsResponse EndListChangeSets(IAsyncResult asyncResult)
+        public virtual ListChangeSetsResponse EndListChangeSets(IAsyncResult asyncResult)
         {
             return EndInvoke<ListChangeSetsResponse>(asyncResult);
         }
@@ -1941,7 +1941,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the ListExports service method, as returned by CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListExports">REST API Reference for ListExports Operation</seealso>
-        public ListExportsResponse ListExports(ListExportsRequest request)
+        public virtual ListExportsResponse ListExports(ListExportsRequest request)
         {
             var marshaller = new ListExportsRequestMarshaller();
             var unmarshaller = ListExportsResponseUnmarshaller.Instance;
@@ -1961,7 +1961,7 @@ namespace Amazon.CloudFormation
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListExports
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListExports">REST API Reference for ListExports Operation</seealso>
-        public IAsyncResult BeginListExports(ListExportsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListExports(ListExportsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListExportsRequestMarshaller();
             var unmarshaller = ListExportsResponseUnmarshaller.Instance;
@@ -1978,7 +1978,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>Returns a  ListExportsResult from CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListExports">REST API Reference for ListExports Operation</seealso>
-        public  ListExportsResponse EndListExports(IAsyncResult asyncResult)
+        public virtual ListExportsResponse EndListExports(IAsyncResult asyncResult)
         {
             return EndInvoke<ListExportsResponse>(asyncResult);
         }
@@ -2002,7 +2002,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the ListImports service method, as returned by CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListImports">REST API Reference for ListImports Operation</seealso>
-        public ListImportsResponse ListImports(ListImportsRequest request)
+        public virtual ListImportsResponse ListImports(ListImportsRequest request)
         {
             var marshaller = new ListImportsRequestMarshaller();
             var unmarshaller = ListImportsResponseUnmarshaller.Instance;
@@ -2022,7 +2022,7 @@ namespace Amazon.CloudFormation
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListImports
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListImports">REST API Reference for ListImports Operation</seealso>
-        public IAsyncResult BeginListImports(ListImportsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListImports(ListImportsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListImportsRequestMarshaller();
             var unmarshaller = ListImportsResponseUnmarshaller.Instance;
@@ -2039,7 +2039,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>Returns a  ListImportsResult from CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListImports">REST API Reference for ListImports Operation</seealso>
-        public  ListImportsResponse EndListImports(IAsyncResult asyncResult)
+        public virtual ListImportsResponse EndListImports(IAsyncResult asyncResult)
         {
             return EndInvoke<ListImportsResponse>(asyncResult);
         }
@@ -2060,7 +2060,7 @@ namespace Amazon.CloudFormation
         /// The specified stack set doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackInstances">REST API Reference for ListStackInstances Operation</seealso>
-        public ListStackInstancesResponse ListStackInstances(ListStackInstancesRequest request)
+        public virtual ListStackInstancesResponse ListStackInstances(ListStackInstancesRequest request)
         {
             var marshaller = new ListStackInstancesRequestMarshaller();
             var unmarshaller = ListStackInstancesResponseUnmarshaller.Instance;
@@ -2080,7 +2080,7 @@ namespace Amazon.CloudFormation
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListStackInstances
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackInstances">REST API Reference for ListStackInstances Operation</seealso>
-        public IAsyncResult BeginListStackInstances(ListStackInstancesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListStackInstances(ListStackInstancesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListStackInstancesRequestMarshaller();
             var unmarshaller = ListStackInstancesResponseUnmarshaller.Instance;
@@ -2097,7 +2097,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>Returns a  ListStackInstancesResult from CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackInstances">REST API Reference for ListStackInstances Operation</seealso>
-        public  ListStackInstancesResponse EndListStackInstances(IAsyncResult asyncResult)
+        public virtual ListStackInstancesResponse EndListStackInstances(IAsyncResult asyncResult)
         {
             return EndInvoke<ListStackInstancesResponse>(asyncResult);
         }
@@ -2119,7 +2119,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the ListStackResources service method, as returned by CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackResources">REST API Reference for ListStackResources Operation</seealso>
-        public ListStackResourcesResponse ListStackResources(ListStackResourcesRequest request)
+        public virtual ListStackResourcesResponse ListStackResources(ListStackResourcesRequest request)
         {
             var marshaller = new ListStackResourcesRequestMarshaller();
             var unmarshaller = ListStackResourcesResponseUnmarshaller.Instance;
@@ -2139,7 +2139,7 @@ namespace Amazon.CloudFormation
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListStackResources
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackResources">REST API Reference for ListStackResources Operation</seealso>
-        public IAsyncResult BeginListStackResources(ListStackResourcesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListStackResources(ListStackResourcesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListStackResourcesRequestMarshaller();
             var unmarshaller = ListStackResourcesResponseUnmarshaller.Instance;
@@ -2156,7 +2156,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>Returns a  ListStackResourcesResult from CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackResources">REST API Reference for ListStackResources Operation</seealso>
-        public  ListStackResourcesResponse EndListStackResources(IAsyncResult asyncResult)
+        public virtual ListStackResourcesResponse EndListStackResources(IAsyncResult asyncResult)
         {
             return EndInvoke<ListStackResourcesResponse>(asyncResult);
         }
@@ -2174,7 +2174,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the ListStacks service method, as returned by CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStacks">REST API Reference for ListStacks Operation</seealso>
-        public ListStacksResponse ListStacks()
+        public virtual ListStacksResponse ListStacks()
         {
             return ListStacks(new ListStacksRequest());
         }
@@ -2189,7 +2189,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the ListStacks service method, as returned by CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStacks">REST API Reference for ListStacks Operation</seealso>
-        public ListStacksResponse ListStacks(ListStacksRequest request)
+        public virtual ListStacksResponse ListStacks(ListStacksRequest request)
         {
             var marshaller = new ListStacksRequestMarshaller();
             var unmarshaller = ListStacksResponseUnmarshaller.Instance;
@@ -2209,7 +2209,7 @@ namespace Amazon.CloudFormation
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListStacks
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStacks">REST API Reference for ListStacks Operation</seealso>
-        public IAsyncResult BeginListStacks(ListStacksRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListStacks(ListStacksRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListStacksRequestMarshaller();
             var unmarshaller = ListStacksResponseUnmarshaller.Instance;
@@ -2226,7 +2226,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>Returns a  ListStacksResult from CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStacks">REST API Reference for ListStacks Operation</seealso>
-        public  ListStacksResponse EndListStacks(IAsyncResult asyncResult)
+        public virtual ListStacksResponse EndListStacks(IAsyncResult asyncResult)
         {
             return EndInvoke<ListStacksResponse>(asyncResult);
         }
@@ -2248,7 +2248,7 @@ namespace Amazon.CloudFormation
         /// The specified stack set doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSetOperationResults">REST API Reference for ListStackSetOperationResults Operation</seealso>
-        public ListStackSetOperationResultsResponse ListStackSetOperationResults(ListStackSetOperationResultsRequest request)
+        public virtual ListStackSetOperationResultsResponse ListStackSetOperationResults(ListStackSetOperationResultsRequest request)
         {
             var marshaller = new ListStackSetOperationResultsRequestMarshaller();
             var unmarshaller = ListStackSetOperationResultsResponseUnmarshaller.Instance;
@@ -2268,7 +2268,7 @@ namespace Amazon.CloudFormation
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListStackSetOperationResults
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSetOperationResults">REST API Reference for ListStackSetOperationResults Operation</seealso>
-        public IAsyncResult BeginListStackSetOperationResults(ListStackSetOperationResultsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListStackSetOperationResults(ListStackSetOperationResultsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListStackSetOperationResultsRequestMarshaller();
             var unmarshaller = ListStackSetOperationResultsResponseUnmarshaller.Instance;
@@ -2285,7 +2285,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>Returns a  ListStackSetOperationResultsResult from CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSetOperationResults">REST API Reference for ListStackSetOperationResults Operation</seealso>
-        public  ListStackSetOperationResultsResponse EndListStackSetOperationResults(IAsyncResult asyncResult)
+        public virtual ListStackSetOperationResultsResponse EndListStackSetOperationResults(IAsyncResult asyncResult)
         {
             return EndInvoke<ListStackSetOperationResultsResponse>(asyncResult);
         }
@@ -2304,7 +2304,7 @@ namespace Amazon.CloudFormation
         /// The specified stack set doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSetOperations">REST API Reference for ListStackSetOperations Operation</seealso>
-        public ListStackSetOperationsResponse ListStackSetOperations(ListStackSetOperationsRequest request)
+        public virtual ListStackSetOperationsResponse ListStackSetOperations(ListStackSetOperationsRequest request)
         {
             var marshaller = new ListStackSetOperationsRequestMarshaller();
             var unmarshaller = ListStackSetOperationsResponseUnmarshaller.Instance;
@@ -2324,7 +2324,7 @@ namespace Amazon.CloudFormation
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListStackSetOperations
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSetOperations">REST API Reference for ListStackSetOperations Operation</seealso>
-        public IAsyncResult BeginListStackSetOperations(ListStackSetOperationsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListStackSetOperations(ListStackSetOperationsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListStackSetOperationsRequestMarshaller();
             var unmarshaller = ListStackSetOperationsResponseUnmarshaller.Instance;
@@ -2341,7 +2341,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>Returns a  ListStackSetOperationsResult from CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSetOperations">REST API Reference for ListStackSetOperations Operation</seealso>
-        public  ListStackSetOperationsResponse EndListStackSetOperations(IAsyncResult asyncResult)
+        public virtual ListStackSetOperationsResponse EndListStackSetOperations(IAsyncResult asyncResult)
         {
             return EndInvoke<ListStackSetOperationsResponse>(asyncResult);
         }
@@ -2357,7 +2357,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the ListStackSets service method, as returned by CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSets">REST API Reference for ListStackSets Operation</seealso>
-        public ListStackSetsResponse ListStackSets(ListStackSetsRequest request)
+        public virtual ListStackSetsResponse ListStackSets(ListStackSetsRequest request)
         {
             var marshaller = new ListStackSetsRequestMarshaller();
             var unmarshaller = ListStackSetsResponseUnmarshaller.Instance;
@@ -2377,7 +2377,7 @@ namespace Amazon.CloudFormation
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListStackSets
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSets">REST API Reference for ListStackSets Operation</seealso>
-        public IAsyncResult BeginListStackSets(ListStackSetsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListStackSets(ListStackSetsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListStackSetsRequestMarshaller();
             var unmarshaller = ListStackSetsResponseUnmarshaller.Instance;
@@ -2394,7 +2394,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>Returns a  ListStackSetsResult from CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSets">REST API Reference for ListStackSets Operation</seealso>
-        public  ListStackSetsResponse EndListStackSets(IAsyncResult asyncResult)
+        public virtual ListStackSetsResponse EndListStackSets(IAsyncResult asyncResult)
         {
             return EndInvoke<ListStackSetsResponse>(asyncResult);
         }
@@ -2410,7 +2410,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the SetStackPolicy service method, as returned by CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/SetStackPolicy">REST API Reference for SetStackPolicy Operation</seealso>
-        public SetStackPolicyResponse SetStackPolicy(SetStackPolicyRequest request)
+        public virtual SetStackPolicyResponse SetStackPolicy(SetStackPolicyRequest request)
         {
             var marshaller = new SetStackPolicyRequestMarshaller();
             var unmarshaller = SetStackPolicyResponseUnmarshaller.Instance;
@@ -2430,7 +2430,7 @@ namespace Amazon.CloudFormation
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetStackPolicy
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/SetStackPolicy">REST API Reference for SetStackPolicy Operation</seealso>
-        public IAsyncResult BeginSetStackPolicy(SetStackPolicyRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginSetStackPolicy(SetStackPolicyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SetStackPolicyRequestMarshaller();
             var unmarshaller = SetStackPolicyResponseUnmarshaller.Instance;
@@ -2447,7 +2447,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>Returns a  SetStackPolicyResult from CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/SetStackPolicy">REST API Reference for SetStackPolicy Operation</seealso>
-        public  SetStackPolicyResponse EndSetStackPolicy(IAsyncResult asyncResult)
+        public virtual SetStackPolicyResponse EndSetStackPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<SetStackPolicyResponse>(asyncResult);
         }
@@ -2468,7 +2468,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the SignalResource service method, as returned by CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/SignalResource">REST API Reference for SignalResource Operation</seealso>
-        public SignalResourceResponse SignalResource(SignalResourceRequest request)
+        public virtual SignalResourceResponse SignalResource(SignalResourceRequest request)
         {
             var marshaller = new SignalResourceRequestMarshaller();
             var unmarshaller = SignalResourceResponseUnmarshaller.Instance;
@@ -2488,7 +2488,7 @@ namespace Amazon.CloudFormation
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSignalResource
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/SignalResource">REST API Reference for SignalResource Operation</seealso>
-        public IAsyncResult BeginSignalResource(SignalResourceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginSignalResource(SignalResourceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SignalResourceRequestMarshaller();
             var unmarshaller = SignalResourceResponseUnmarshaller.Instance;
@@ -2505,7 +2505,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>Returns a  SignalResourceResult from CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/SignalResource">REST API Reference for SignalResource Operation</seealso>
-        public  SignalResourceResponse EndSignalResource(IAsyncResult asyncResult)
+        public virtual SignalResourceResponse EndSignalResource(IAsyncResult asyncResult)
         {
             return EndInvoke<SignalResourceResponse>(asyncResult);
         }
@@ -2530,7 +2530,7 @@ namespace Amazon.CloudFormation
         /// The specified stack set doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StopStackSetOperation">REST API Reference for StopStackSetOperation Operation</seealso>
-        public StopStackSetOperationResponse StopStackSetOperation(StopStackSetOperationRequest request)
+        public virtual StopStackSetOperationResponse StopStackSetOperation(StopStackSetOperationRequest request)
         {
             var marshaller = new StopStackSetOperationRequestMarshaller();
             var unmarshaller = StopStackSetOperationResponseUnmarshaller.Instance;
@@ -2550,7 +2550,7 @@ namespace Amazon.CloudFormation
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopStackSetOperation
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StopStackSetOperation">REST API Reference for StopStackSetOperation Operation</seealso>
-        public IAsyncResult BeginStopStackSetOperation(StopStackSetOperationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginStopStackSetOperation(StopStackSetOperationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new StopStackSetOperationRequestMarshaller();
             var unmarshaller = StopStackSetOperationResponseUnmarshaller.Instance;
@@ -2567,7 +2567,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>Returns a  StopStackSetOperationResult from CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StopStackSetOperation">REST API Reference for StopStackSetOperation Operation</seealso>
-        public  StopStackSetOperationResponse EndStopStackSetOperation(IAsyncResult asyncResult)
+        public virtual StopStackSetOperationResponse EndStopStackSetOperation(IAsyncResult asyncResult)
         {
             return EndInvoke<StopStackSetOperationResponse>(asyncResult);
         }
@@ -2604,7 +2604,7 @@ namespace Amazon.CloudFormation
         /// A client request token already exists.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateStack">REST API Reference for UpdateStack Operation</seealso>
-        public UpdateStackResponse UpdateStack(UpdateStackRequest request)
+        public virtual UpdateStackResponse UpdateStack(UpdateStackRequest request)
         {
             var marshaller = new UpdateStackRequestMarshaller();
             var unmarshaller = UpdateStackResponseUnmarshaller.Instance;
@@ -2624,7 +2624,7 @@ namespace Amazon.CloudFormation
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateStack
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateStack">REST API Reference for UpdateStack Operation</seealso>
-        public IAsyncResult BeginUpdateStack(UpdateStackRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateStack(UpdateStackRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateStackRequestMarshaller();
             var unmarshaller = UpdateStackResponseUnmarshaller.Instance;
@@ -2641,7 +2641,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>Returns a  UpdateStackResult from CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateStack">REST API Reference for UpdateStack Operation</seealso>
-        public  UpdateStackResponse EndUpdateStack(IAsyncResult asyncResult)
+        public virtual UpdateStackResponse EndUpdateStack(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateStackResponse>(asyncResult);
         }
@@ -2682,7 +2682,7 @@ namespace Amazon.CloudFormation
         /// was performed.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateStackSet">REST API Reference for UpdateStackSet Operation</seealso>
-        public UpdateStackSetResponse UpdateStackSet(UpdateStackSetRequest request)
+        public virtual UpdateStackSetResponse UpdateStackSet(UpdateStackSetRequest request)
         {
             var marshaller = new UpdateStackSetRequestMarshaller();
             var unmarshaller = UpdateStackSetResponseUnmarshaller.Instance;
@@ -2702,7 +2702,7 @@ namespace Amazon.CloudFormation
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateStackSet
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateStackSet">REST API Reference for UpdateStackSet Operation</seealso>
-        public IAsyncResult BeginUpdateStackSet(UpdateStackSetRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateStackSet(UpdateStackSetRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateStackSetRequestMarshaller();
             var unmarshaller = UpdateStackSetResponseUnmarshaller.Instance;
@@ -2719,7 +2719,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>Returns a  UpdateStackSetResult from CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateStackSet">REST API Reference for UpdateStackSet Operation</seealso>
-        public  UpdateStackSetResponse EndUpdateStackSet(IAsyncResult asyncResult)
+        public virtual UpdateStackSetResponse EndUpdateStackSet(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateStackSetResponse>(asyncResult);
         }
@@ -2745,7 +2745,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the UpdateTerminationProtection service method, as returned by CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateTerminationProtection">REST API Reference for UpdateTerminationProtection Operation</seealso>
-        public UpdateTerminationProtectionResponse UpdateTerminationProtection(UpdateTerminationProtectionRequest request)
+        public virtual UpdateTerminationProtectionResponse UpdateTerminationProtection(UpdateTerminationProtectionRequest request)
         {
             var marshaller = new UpdateTerminationProtectionRequestMarshaller();
             var unmarshaller = UpdateTerminationProtectionResponseUnmarshaller.Instance;
@@ -2765,7 +2765,7 @@ namespace Amazon.CloudFormation
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateTerminationProtection
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateTerminationProtection">REST API Reference for UpdateTerminationProtection Operation</seealso>
-        public IAsyncResult BeginUpdateTerminationProtection(UpdateTerminationProtectionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateTerminationProtection(UpdateTerminationProtectionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateTerminationProtectionRequestMarshaller();
             var unmarshaller = UpdateTerminationProtectionResponseUnmarshaller.Instance;
@@ -2782,7 +2782,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>Returns a  UpdateTerminationProtectionResult from CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateTerminationProtection">REST API Reference for UpdateTerminationProtection Operation</seealso>
-        public  UpdateTerminationProtectionResponse EndUpdateTerminationProtection(IAsyncResult asyncResult)
+        public virtual UpdateTerminationProtectionResponse EndUpdateTerminationProtection(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateTerminationProtectionResponse>(asyncResult);
         }
@@ -2799,7 +2799,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the ValidateTemplate service method, as returned by CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ValidateTemplate">REST API Reference for ValidateTemplate Operation</seealso>
-        public ValidateTemplateResponse ValidateTemplate()
+        public virtual ValidateTemplateResponse ValidateTemplate()
         {
             return ValidateTemplate(new ValidateTemplateRequest());
         }
@@ -2813,7 +2813,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the ValidateTemplate service method, as returned by CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ValidateTemplate">REST API Reference for ValidateTemplate Operation</seealso>
-        public ValidateTemplateResponse ValidateTemplate(ValidateTemplateRequest request)
+        public virtual ValidateTemplateResponse ValidateTemplate(ValidateTemplateRequest request)
         {
             var marshaller = new ValidateTemplateRequestMarshaller();
             var unmarshaller = ValidateTemplateResponseUnmarshaller.Instance;
@@ -2833,7 +2833,7 @@ namespace Amazon.CloudFormation
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndValidateTemplate
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ValidateTemplate">REST API Reference for ValidateTemplate Operation</seealso>
-        public IAsyncResult BeginValidateTemplate(ValidateTemplateRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginValidateTemplate(ValidateTemplateRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ValidateTemplateRequestMarshaller();
             var unmarshaller = ValidateTemplateResponseUnmarshaller.Instance;
@@ -2850,7 +2850,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>Returns a  ValidateTemplateResult from CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ValidateTemplate">REST API Reference for ValidateTemplate Operation</seealso>
-        public  ValidateTemplateResponse EndValidateTemplate(IAsyncResult asyncResult)
+        public virtual ValidateTemplateResponse EndValidateTemplate(IAsyncResult asyncResult)
         {
             return EndInvoke<ValidateTemplateResponse>(asyncResult);
         }

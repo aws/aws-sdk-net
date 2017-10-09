@@ -232,7 +232,7 @@ namespace Amazon.Route53Domains
         
         #region  CheckDomainAvailability
 
-        internal CheckDomainAvailabilityResponse CheckDomainAvailability(CheckDomainAvailabilityRequest request)
+        internal virtual CheckDomainAvailabilityResponse CheckDomainAvailability(CheckDomainAvailabilityRequest request)
         {
             var marshaller = new CheckDomainAvailabilityRequestMarshaller();
             var unmarshaller = CheckDomainAvailabilityResponseUnmarshaller.Instance;
@@ -251,7 +251,7 @@ namespace Amazon.Route53Domains
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/CheckDomainAvailability">REST API Reference for CheckDomainAvailability Operation</seealso>
-        public Task<CheckDomainAvailabilityResponse> CheckDomainAvailabilityAsync(CheckDomainAvailabilityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CheckDomainAvailabilityResponse> CheckDomainAvailabilityAsync(CheckDomainAvailabilityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CheckDomainAvailabilityRequestMarshaller();
             var unmarshaller = CheckDomainAvailabilityResponseUnmarshaller.Instance;
@@ -264,7 +264,7 @@ namespace Amazon.Route53Domains
         
         #region  CheckDomainTransferability
 
-        internal CheckDomainTransferabilityResponse CheckDomainTransferability(CheckDomainTransferabilityRequest request)
+        internal virtual CheckDomainTransferabilityResponse CheckDomainTransferability(CheckDomainTransferabilityRequest request)
         {
             var marshaller = new CheckDomainTransferabilityRequestMarshaller();
             var unmarshaller = CheckDomainTransferabilityResponseUnmarshaller.Instance;
@@ -283,7 +283,7 @@ namespace Amazon.Route53Domains
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/CheckDomainTransferability">REST API Reference for CheckDomainTransferability Operation</seealso>
-        public Task<CheckDomainTransferabilityResponse> CheckDomainTransferabilityAsync(CheckDomainTransferabilityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CheckDomainTransferabilityResponse> CheckDomainTransferabilityAsync(CheckDomainTransferabilityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CheckDomainTransferabilityRequestMarshaller();
             var unmarshaller = CheckDomainTransferabilityResponseUnmarshaller.Instance;
@@ -296,7 +296,7 @@ namespace Amazon.Route53Domains
         
         #region  DeleteTagsForDomain
 
-        internal DeleteTagsForDomainResponse DeleteTagsForDomain(DeleteTagsForDomainRequest request)
+        internal virtual DeleteTagsForDomainResponse DeleteTagsForDomain(DeleteTagsForDomainRequest request)
         {
             var marshaller = new DeleteTagsForDomainRequestMarshaller();
             var unmarshaller = DeleteTagsForDomainResponseUnmarshaller.Instance;
@@ -333,7 +333,7 @@ namespace Amazon.Route53Domains
         /// Amazon Route 53 does not support this top-level domain (TLD).
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DeleteTagsForDomain">REST API Reference for DeleteTagsForDomain Operation</seealso>
-        public Task<DeleteTagsForDomainResponse> DeleteTagsForDomainAsync(string domainName, List<string> tagsToDelete, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteTagsForDomainResponse> DeleteTagsForDomainAsync(string domainName, List<string> tagsToDelete, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DeleteTagsForDomainRequest();
             request.DomainName = domainName;
@@ -352,7 +352,7 @@ namespace Amazon.Route53Domains
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DeleteTagsForDomain">REST API Reference for DeleteTagsForDomain Operation</seealso>
-        public Task<DeleteTagsForDomainResponse> DeleteTagsForDomainAsync(DeleteTagsForDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteTagsForDomainResponse> DeleteTagsForDomainAsync(DeleteTagsForDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteTagsForDomainRequestMarshaller();
             var unmarshaller = DeleteTagsForDomainResponseUnmarshaller.Instance;
@@ -365,7 +365,7 @@ namespace Amazon.Route53Domains
         
         #region  DisableDomainAutoRenew
 
-        internal DisableDomainAutoRenewResponse DisableDomainAutoRenew(DisableDomainAutoRenewRequest request)
+        internal virtual DisableDomainAutoRenewResponse DisableDomainAutoRenew(DisableDomainAutoRenewRequest request)
         {
             var marshaller = new DisableDomainAutoRenewRequestMarshaller();
             var unmarshaller = DisableDomainAutoRenewResponseUnmarshaller.Instance;
@@ -384,7 +384,7 @@ namespace Amazon.Route53Domains
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DisableDomainAutoRenew">REST API Reference for DisableDomainAutoRenew Operation</seealso>
-        public Task<DisableDomainAutoRenewResponse> DisableDomainAutoRenewAsync(DisableDomainAutoRenewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DisableDomainAutoRenewResponse> DisableDomainAutoRenewAsync(DisableDomainAutoRenewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DisableDomainAutoRenewRequestMarshaller();
             var unmarshaller = DisableDomainAutoRenewResponseUnmarshaller.Instance;
@@ -397,7 +397,7 @@ namespace Amazon.Route53Domains
         
         #region  DisableDomainTransferLock
 
-        internal DisableDomainTransferLockResponse DisableDomainTransferLock(DisableDomainTransferLockRequest request)
+        internal virtual DisableDomainTransferLockResponse DisableDomainTransferLock(DisableDomainTransferLockRequest request)
         {
             var marshaller = new DisableDomainTransferLockRequestMarshaller();
             var unmarshaller = DisableDomainTransferLockResponseUnmarshaller.Instance;
@@ -416,7 +416,7 @@ namespace Amazon.Route53Domains
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DisableDomainTransferLock">REST API Reference for DisableDomainTransferLock Operation</seealso>
-        public Task<DisableDomainTransferLockResponse> DisableDomainTransferLockAsync(DisableDomainTransferLockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DisableDomainTransferLockResponse> DisableDomainTransferLockAsync(DisableDomainTransferLockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DisableDomainTransferLockRequestMarshaller();
             var unmarshaller = DisableDomainTransferLockResponseUnmarshaller.Instance;
@@ -429,7 +429,7 @@ namespace Amazon.Route53Domains
         
         #region  EnableDomainAutoRenew
 
-        internal EnableDomainAutoRenewResponse EnableDomainAutoRenew(EnableDomainAutoRenewRequest request)
+        internal virtual EnableDomainAutoRenewResponse EnableDomainAutoRenew(EnableDomainAutoRenewRequest request)
         {
             var marshaller = new EnableDomainAutoRenewRequestMarshaller();
             var unmarshaller = EnableDomainAutoRenewResponseUnmarshaller.Instance;
@@ -448,7 +448,7 @@ namespace Amazon.Route53Domains
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/EnableDomainAutoRenew">REST API Reference for EnableDomainAutoRenew Operation</seealso>
-        public Task<EnableDomainAutoRenewResponse> EnableDomainAutoRenewAsync(EnableDomainAutoRenewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<EnableDomainAutoRenewResponse> EnableDomainAutoRenewAsync(EnableDomainAutoRenewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new EnableDomainAutoRenewRequestMarshaller();
             var unmarshaller = EnableDomainAutoRenewResponseUnmarshaller.Instance;
@@ -461,7 +461,7 @@ namespace Amazon.Route53Domains
         
         #region  EnableDomainTransferLock
 
-        internal EnableDomainTransferLockResponse EnableDomainTransferLock(EnableDomainTransferLockRequest request)
+        internal virtual EnableDomainTransferLockResponse EnableDomainTransferLock(EnableDomainTransferLockRequest request)
         {
             var marshaller = new EnableDomainTransferLockRequestMarshaller();
             var unmarshaller = EnableDomainTransferLockResponseUnmarshaller.Instance;
@@ -480,7 +480,7 @@ namespace Amazon.Route53Domains
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/EnableDomainTransferLock">REST API Reference for EnableDomainTransferLock Operation</seealso>
-        public Task<EnableDomainTransferLockResponse> EnableDomainTransferLockAsync(EnableDomainTransferLockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<EnableDomainTransferLockResponse> EnableDomainTransferLockAsync(EnableDomainTransferLockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new EnableDomainTransferLockRequestMarshaller();
             var unmarshaller = EnableDomainTransferLockResponseUnmarshaller.Instance;
@@ -493,7 +493,7 @@ namespace Amazon.Route53Domains
         
         #region  GetContactReachabilityStatus
 
-        internal GetContactReachabilityStatusResponse GetContactReachabilityStatus(GetContactReachabilityStatusRequest request)
+        internal virtual GetContactReachabilityStatusResponse GetContactReachabilityStatus(GetContactReachabilityStatusRequest request)
         {
             var marshaller = new GetContactReachabilityStatusRequestMarshaller();
             var unmarshaller = GetContactReachabilityStatusResponseUnmarshaller.Instance;
@@ -512,7 +512,7 @@ namespace Amazon.Route53Domains
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetContactReachabilityStatus">REST API Reference for GetContactReachabilityStatus Operation</seealso>
-        public Task<GetContactReachabilityStatusResponse> GetContactReachabilityStatusAsync(GetContactReachabilityStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetContactReachabilityStatusResponse> GetContactReachabilityStatusAsync(GetContactReachabilityStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetContactReachabilityStatusRequestMarshaller();
             var unmarshaller = GetContactReachabilityStatusResponseUnmarshaller.Instance;
@@ -525,7 +525,7 @@ namespace Amazon.Route53Domains
         
         #region  GetDomainDetail
 
-        internal GetDomainDetailResponse GetDomainDetail(GetDomainDetailRequest request)
+        internal virtual GetDomainDetailResponse GetDomainDetail(GetDomainDetailRequest request)
         {
             var marshaller = new GetDomainDetailRequestMarshaller();
             var unmarshaller = GetDomainDetailResponseUnmarshaller.Instance;
@@ -544,7 +544,7 @@ namespace Amazon.Route53Domains
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetDomainDetail">REST API Reference for GetDomainDetail Operation</seealso>
-        public Task<GetDomainDetailResponse> GetDomainDetailAsync(GetDomainDetailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetDomainDetailResponse> GetDomainDetailAsync(GetDomainDetailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetDomainDetailRequestMarshaller();
             var unmarshaller = GetDomainDetailResponseUnmarshaller.Instance;
@@ -557,7 +557,7 @@ namespace Amazon.Route53Domains
         
         #region  GetDomainSuggestions
 
-        internal GetDomainSuggestionsResponse GetDomainSuggestions(GetDomainSuggestionsRequest request)
+        internal virtual GetDomainSuggestionsResponse GetDomainSuggestions(GetDomainSuggestionsRequest request)
         {
             var marshaller = new GetDomainSuggestionsRequestMarshaller();
             var unmarshaller = GetDomainSuggestionsResponseUnmarshaller.Instance;
@@ -576,7 +576,7 @@ namespace Amazon.Route53Domains
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetDomainSuggestions">REST API Reference for GetDomainSuggestions Operation</seealso>
-        public Task<GetDomainSuggestionsResponse> GetDomainSuggestionsAsync(GetDomainSuggestionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetDomainSuggestionsResponse> GetDomainSuggestionsAsync(GetDomainSuggestionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetDomainSuggestionsRequestMarshaller();
             var unmarshaller = GetDomainSuggestionsResponseUnmarshaller.Instance;
@@ -589,7 +589,7 @@ namespace Amazon.Route53Domains
         
         #region  GetOperationDetail
 
-        internal GetOperationDetailResponse GetOperationDetail(GetOperationDetailRequest request)
+        internal virtual GetOperationDetailResponse GetOperationDetail(GetOperationDetailRequest request)
         {
             var marshaller = new GetOperationDetailRequestMarshaller();
             var unmarshaller = GetOperationDetailResponseUnmarshaller.Instance;
@@ -608,7 +608,7 @@ namespace Amazon.Route53Domains
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetOperationDetail">REST API Reference for GetOperationDetail Operation</seealso>
-        public Task<GetOperationDetailResponse> GetOperationDetailAsync(GetOperationDetailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetOperationDetailResponse> GetOperationDetailAsync(GetOperationDetailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetOperationDetailRequestMarshaller();
             var unmarshaller = GetOperationDetailResponseUnmarshaller.Instance;
@@ -621,11 +621,11 @@ namespace Amazon.Route53Domains
         
         #region  ListDomains
 
-        internal ListDomainsResponse ListDomains()
+        internal virtual ListDomainsResponse ListDomains()
         {
             return ListDomains(new ListDomainsRequest());
         }
-        internal ListDomainsResponse ListDomains(ListDomainsRequest request)
+        internal virtual ListDomainsResponse ListDomains(ListDomainsRequest request)
         {
             var marshaller = new ListDomainsRequestMarshaller();
             var unmarshaller = ListDomainsResponseUnmarshaller.Instance;
@@ -649,7 +649,7 @@ namespace Amazon.Route53Domains
         /// be a valid domain name or belong to the requester account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListDomains">REST API Reference for ListDomains Operation</seealso>
-        public Task<ListDomainsResponse> ListDomainsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListDomainsResponse> ListDomainsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return ListDomainsAsync(new ListDomainsRequest(), cancellationToken);
         }
@@ -665,7 +665,7 @@ namespace Amazon.Route53Domains
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListDomains">REST API Reference for ListDomains Operation</seealso>
-        public Task<ListDomainsResponse> ListDomainsAsync(ListDomainsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListDomainsResponse> ListDomainsAsync(ListDomainsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListDomainsRequestMarshaller();
             var unmarshaller = ListDomainsResponseUnmarshaller.Instance;
@@ -678,11 +678,11 @@ namespace Amazon.Route53Domains
         
         #region  ListOperations
 
-        internal ListOperationsResponse ListOperations()
+        internal virtual ListOperationsResponse ListOperations()
         {
             return ListOperations(new ListOperationsRequest());
         }
-        internal ListOperationsResponse ListOperations(ListOperationsRequest request)
+        internal virtual ListOperationsResponse ListOperations(ListOperationsRequest request)
         {
             var marshaller = new ListOperationsRequestMarshaller();
             var unmarshaller = ListOperationsResponseUnmarshaller.Instance;
@@ -705,7 +705,7 @@ namespace Amazon.Route53Domains
         /// be a valid domain name or belong to the requester account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListOperations">REST API Reference for ListOperations Operation</seealso>
-        public Task<ListOperationsResponse> ListOperationsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListOperationsResponse> ListOperationsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return ListOperationsAsync(new ListOperationsRequest(), cancellationToken);
         }
@@ -721,7 +721,7 @@ namespace Amazon.Route53Domains
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListOperations">REST API Reference for ListOperations Operation</seealso>
-        public Task<ListOperationsResponse> ListOperationsAsync(ListOperationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListOperationsResponse> ListOperationsAsync(ListOperationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListOperationsRequestMarshaller();
             var unmarshaller = ListOperationsResponseUnmarshaller.Instance;
@@ -734,7 +734,7 @@ namespace Amazon.Route53Domains
         
         #region  ListTagsForDomain
 
-        internal ListTagsForDomainResponse ListTagsForDomain(ListTagsForDomainRequest request)
+        internal virtual ListTagsForDomainResponse ListTagsForDomain(ListTagsForDomainRequest request)
         {
             var marshaller = new ListTagsForDomainRequestMarshaller();
             var unmarshaller = ListTagsForDomainResponseUnmarshaller.Instance;
@@ -770,7 +770,7 @@ namespace Amazon.Route53Domains
         /// Amazon Route 53 does not support this top-level domain (TLD).
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListTagsForDomain">REST API Reference for ListTagsForDomain Operation</seealso>
-        public Task<ListTagsForDomainResponse> ListTagsForDomainAsync(string domainName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListTagsForDomainResponse> ListTagsForDomainAsync(string domainName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new ListTagsForDomainRequest();
             request.DomainName = domainName;
@@ -788,7 +788,7 @@ namespace Amazon.Route53Domains
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListTagsForDomain">REST API Reference for ListTagsForDomain Operation</seealso>
-        public Task<ListTagsForDomainResponse> ListTagsForDomainAsync(ListTagsForDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListTagsForDomainResponse> ListTagsForDomainAsync(ListTagsForDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListTagsForDomainRequestMarshaller();
             var unmarshaller = ListTagsForDomainResponseUnmarshaller.Instance;
@@ -801,7 +801,7 @@ namespace Amazon.Route53Domains
         
         #region  RegisterDomain
 
-        internal RegisterDomainResponse RegisterDomain(RegisterDomainRequest request)
+        internal virtual RegisterDomainResponse RegisterDomain(RegisterDomainRequest request)
         {
             var marshaller = new RegisterDomainRequestMarshaller();
             var unmarshaller = RegisterDomainResponseUnmarshaller.Instance;
@@ -820,7 +820,7 @@ namespace Amazon.Route53Domains
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RegisterDomain">REST API Reference for RegisterDomain Operation</seealso>
-        public Task<RegisterDomainResponse> RegisterDomainAsync(RegisterDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<RegisterDomainResponse> RegisterDomainAsync(RegisterDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RegisterDomainRequestMarshaller();
             var unmarshaller = RegisterDomainResponseUnmarshaller.Instance;
@@ -833,7 +833,7 @@ namespace Amazon.Route53Domains
         
         #region  RenewDomain
 
-        internal RenewDomainResponse RenewDomain(RenewDomainRequest request)
+        internal virtual RenewDomainResponse RenewDomain(RenewDomainRequest request)
         {
             var marshaller = new RenewDomainRequestMarshaller();
             var unmarshaller = RenewDomainResponseUnmarshaller.Instance;
@@ -852,7 +852,7 @@ namespace Amazon.Route53Domains
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RenewDomain">REST API Reference for RenewDomain Operation</seealso>
-        public Task<RenewDomainResponse> RenewDomainAsync(RenewDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<RenewDomainResponse> RenewDomainAsync(RenewDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RenewDomainRequestMarshaller();
             var unmarshaller = RenewDomainResponseUnmarshaller.Instance;
@@ -865,7 +865,7 @@ namespace Amazon.Route53Domains
         
         #region  ResendContactReachabilityEmail
 
-        internal ResendContactReachabilityEmailResponse ResendContactReachabilityEmail(ResendContactReachabilityEmailRequest request)
+        internal virtual ResendContactReachabilityEmailResponse ResendContactReachabilityEmail(ResendContactReachabilityEmailRequest request)
         {
             var marshaller = new ResendContactReachabilityEmailRequestMarshaller();
             var unmarshaller = ResendContactReachabilityEmailResponseUnmarshaller.Instance;
@@ -884,7 +884,7 @@ namespace Amazon.Route53Domains
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ResendContactReachabilityEmail">REST API Reference for ResendContactReachabilityEmail Operation</seealso>
-        public Task<ResendContactReachabilityEmailResponse> ResendContactReachabilityEmailAsync(ResendContactReachabilityEmailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ResendContactReachabilityEmailResponse> ResendContactReachabilityEmailAsync(ResendContactReachabilityEmailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ResendContactReachabilityEmailRequestMarshaller();
             var unmarshaller = ResendContactReachabilityEmailResponseUnmarshaller.Instance;
@@ -897,7 +897,7 @@ namespace Amazon.Route53Domains
         
         #region  RetrieveDomainAuthCode
 
-        internal RetrieveDomainAuthCodeResponse RetrieveDomainAuthCode(RetrieveDomainAuthCodeRequest request)
+        internal virtual RetrieveDomainAuthCodeResponse RetrieveDomainAuthCode(RetrieveDomainAuthCodeRequest request)
         {
             var marshaller = new RetrieveDomainAuthCodeRequestMarshaller();
             var unmarshaller = RetrieveDomainAuthCodeResponseUnmarshaller.Instance;
@@ -916,7 +916,7 @@ namespace Amazon.Route53Domains
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RetrieveDomainAuthCode">REST API Reference for RetrieveDomainAuthCode Operation</seealso>
-        public Task<RetrieveDomainAuthCodeResponse> RetrieveDomainAuthCodeAsync(RetrieveDomainAuthCodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<RetrieveDomainAuthCodeResponse> RetrieveDomainAuthCodeAsync(RetrieveDomainAuthCodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RetrieveDomainAuthCodeRequestMarshaller();
             var unmarshaller = RetrieveDomainAuthCodeResponseUnmarshaller.Instance;
@@ -929,7 +929,7 @@ namespace Amazon.Route53Domains
         
         #region  TransferDomain
 
-        internal TransferDomainResponse TransferDomain(TransferDomainRequest request)
+        internal virtual TransferDomainResponse TransferDomain(TransferDomainRequest request)
         {
             var marshaller = new TransferDomainRequestMarshaller();
             var unmarshaller = TransferDomainResponseUnmarshaller.Instance;
@@ -948,7 +948,7 @@ namespace Amazon.Route53Domains
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/TransferDomain">REST API Reference for TransferDomain Operation</seealso>
-        public Task<TransferDomainResponse> TransferDomainAsync(TransferDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<TransferDomainResponse> TransferDomainAsync(TransferDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new TransferDomainRequestMarshaller();
             var unmarshaller = TransferDomainResponseUnmarshaller.Instance;
@@ -961,7 +961,7 @@ namespace Amazon.Route53Domains
         
         #region  UpdateDomainContact
 
-        internal UpdateDomainContactResponse UpdateDomainContact(UpdateDomainContactRequest request)
+        internal virtual UpdateDomainContactResponse UpdateDomainContact(UpdateDomainContactRequest request)
         {
             var marshaller = new UpdateDomainContactRequestMarshaller();
             var unmarshaller = UpdateDomainContactResponseUnmarshaller.Instance;
@@ -980,7 +980,7 @@ namespace Amazon.Route53Domains
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainContact">REST API Reference for UpdateDomainContact Operation</seealso>
-        public Task<UpdateDomainContactResponse> UpdateDomainContactAsync(UpdateDomainContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateDomainContactResponse> UpdateDomainContactAsync(UpdateDomainContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateDomainContactRequestMarshaller();
             var unmarshaller = UpdateDomainContactResponseUnmarshaller.Instance;
@@ -993,7 +993,7 @@ namespace Amazon.Route53Domains
         
         #region  UpdateDomainContactPrivacy
 
-        internal UpdateDomainContactPrivacyResponse UpdateDomainContactPrivacy(UpdateDomainContactPrivacyRequest request)
+        internal virtual UpdateDomainContactPrivacyResponse UpdateDomainContactPrivacy(UpdateDomainContactPrivacyRequest request)
         {
             var marshaller = new UpdateDomainContactPrivacyRequestMarshaller();
             var unmarshaller = UpdateDomainContactPrivacyResponseUnmarshaller.Instance;
@@ -1012,7 +1012,7 @@ namespace Amazon.Route53Domains
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainContactPrivacy">REST API Reference for UpdateDomainContactPrivacy Operation</seealso>
-        public Task<UpdateDomainContactPrivacyResponse> UpdateDomainContactPrivacyAsync(UpdateDomainContactPrivacyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateDomainContactPrivacyResponse> UpdateDomainContactPrivacyAsync(UpdateDomainContactPrivacyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateDomainContactPrivacyRequestMarshaller();
             var unmarshaller = UpdateDomainContactPrivacyResponseUnmarshaller.Instance;
@@ -1025,7 +1025,7 @@ namespace Amazon.Route53Domains
         
         #region  UpdateDomainNameservers
 
-        internal UpdateDomainNameserversResponse UpdateDomainNameservers(UpdateDomainNameserversRequest request)
+        internal virtual UpdateDomainNameserversResponse UpdateDomainNameservers(UpdateDomainNameserversRequest request)
         {
             var marshaller = new UpdateDomainNameserversRequestMarshaller();
             var unmarshaller = UpdateDomainNameserversResponseUnmarshaller.Instance;
@@ -1044,7 +1044,7 @@ namespace Amazon.Route53Domains
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainNameservers">REST API Reference for UpdateDomainNameservers Operation</seealso>
-        public Task<UpdateDomainNameserversResponse> UpdateDomainNameserversAsync(UpdateDomainNameserversRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateDomainNameserversResponse> UpdateDomainNameserversAsync(UpdateDomainNameserversRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateDomainNameserversRequestMarshaller();
             var unmarshaller = UpdateDomainNameserversResponseUnmarshaller.Instance;
@@ -1057,7 +1057,7 @@ namespace Amazon.Route53Domains
         
         #region  UpdateTagsForDomain
 
-        internal UpdateTagsForDomainResponse UpdateTagsForDomain(UpdateTagsForDomainRequest request)
+        internal virtual UpdateTagsForDomainResponse UpdateTagsForDomain(UpdateTagsForDomainRequest request)
         {
             var marshaller = new UpdateTagsForDomainRequestMarshaller();
             var unmarshaller = UpdateTagsForDomainResponseUnmarshaller.Instance;
@@ -1094,7 +1094,7 @@ namespace Amazon.Route53Domains
         /// Amazon Route 53 does not support this top-level domain (TLD).
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateTagsForDomain">REST API Reference for UpdateTagsForDomain Operation</seealso>
-        public Task<UpdateTagsForDomainResponse> UpdateTagsForDomainAsync(string domainName, List<Tag> tagsToUpdate, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateTagsForDomainResponse> UpdateTagsForDomainAsync(string domainName, List<Tag> tagsToUpdate, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new UpdateTagsForDomainRequest();
             request.DomainName = domainName;
@@ -1113,7 +1113,7 @@ namespace Amazon.Route53Domains
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateTagsForDomain">REST API Reference for UpdateTagsForDomain Operation</seealso>
-        public Task<UpdateTagsForDomainResponse> UpdateTagsForDomainAsync(UpdateTagsForDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateTagsForDomainResponse> UpdateTagsForDomainAsync(UpdateTagsForDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateTagsForDomainRequestMarshaller();
             var unmarshaller = UpdateTagsForDomainResponseUnmarshaller.Instance;
@@ -1126,7 +1126,7 @@ namespace Amazon.Route53Domains
         
         #region  ViewBilling
 
-        internal ViewBillingResponse ViewBilling(ViewBillingRequest request)
+        internal virtual ViewBillingResponse ViewBilling(ViewBillingRequest request)
         {
             var marshaller = new ViewBillingRequestMarshaller();
             var unmarshaller = ViewBillingResponseUnmarshaller.Instance;
@@ -1145,7 +1145,7 @@ namespace Amazon.Route53Domains
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ViewBilling">REST API Reference for ViewBilling Operation</seealso>
-        public Task<ViewBillingResponse> ViewBillingAsync(ViewBillingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ViewBillingResponse> ViewBillingAsync(ViewBillingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ViewBillingRequestMarshaller();
             var unmarshaller = ViewBillingResponseUnmarshaller.Instance;

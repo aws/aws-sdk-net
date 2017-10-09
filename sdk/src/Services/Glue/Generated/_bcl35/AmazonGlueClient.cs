@@ -250,7 +250,7 @@ namespace Amazon.Glue
         /// A resource numerical limit was exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchCreatePartition">REST API Reference for BatchCreatePartition Operation</seealso>
-        public BatchCreatePartitionResponse BatchCreatePartition(BatchCreatePartitionRequest request)
+        public virtual BatchCreatePartitionResponse BatchCreatePartition(BatchCreatePartitionRequest request)
         {
             var marshaller = new BatchCreatePartitionRequestMarshaller();
             var unmarshaller = BatchCreatePartitionResponseUnmarshaller.Instance;
@@ -270,7 +270,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchCreatePartition
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchCreatePartition">REST API Reference for BatchCreatePartition Operation</seealso>
-        public IAsyncResult BeginBatchCreatePartition(BatchCreatePartitionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginBatchCreatePartition(BatchCreatePartitionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new BatchCreatePartitionRequestMarshaller();
             var unmarshaller = BatchCreatePartitionResponseUnmarshaller.Instance;
@@ -287,7 +287,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  BatchCreatePartitionResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchCreatePartition">REST API Reference for BatchCreatePartition Operation</seealso>
-        public  BatchCreatePartitionResponse EndBatchCreatePartition(IAsyncResult asyncResult)
+        public virtual BatchCreatePartitionResponse EndBatchCreatePartition(IAsyncResult asyncResult)
         {
             return EndInvoke<BatchCreatePartitionResponse>(asyncResult);
         }
@@ -309,7 +309,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchDeleteConnection">REST API Reference for BatchDeleteConnection Operation</seealso>
-        public BatchDeleteConnectionResponse BatchDeleteConnection(BatchDeleteConnectionRequest request)
+        public virtual BatchDeleteConnectionResponse BatchDeleteConnection(BatchDeleteConnectionRequest request)
         {
             var marshaller = new BatchDeleteConnectionRequestMarshaller();
             var unmarshaller = BatchDeleteConnectionResponseUnmarshaller.Instance;
@@ -329,7 +329,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchDeleteConnection
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchDeleteConnection">REST API Reference for BatchDeleteConnection Operation</seealso>
-        public IAsyncResult BeginBatchDeleteConnection(BatchDeleteConnectionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginBatchDeleteConnection(BatchDeleteConnectionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new BatchDeleteConnectionRequestMarshaller();
             var unmarshaller = BatchDeleteConnectionResponseUnmarshaller.Instance;
@@ -346,7 +346,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  BatchDeleteConnectionResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchDeleteConnection">REST API Reference for BatchDeleteConnection Operation</seealso>
-        public  BatchDeleteConnectionResponse EndBatchDeleteConnection(IAsyncResult asyncResult)
+        public virtual BatchDeleteConnectionResponse EndBatchDeleteConnection(IAsyncResult asyncResult)
         {
             return EndInvoke<BatchDeleteConnectionResponse>(asyncResult);
         }
@@ -374,7 +374,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchDeletePartition">REST API Reference for BatchDeletePartition Operation</seealso>
-        public BatchDeletePartitionResponse BatchDeletePartition(BatchDeletePartitionRequest request)
+        public virtual BatchDeletePartitionResponse BatchDeletePartition(BatchDeletePartitionRequest request)
         {
             var marshaller = new BatchDeletePartitionRequestMarshaller();
             var unmarshaller = BatchDeletePartitionResponseUnmarshaller.Instance;
@@ -394,7 +394,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchDeletePartition
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchDeletePartition">REST API Reference for BatchDeletePartition Operation</seealso>
-        public IAsyncResult BeginBatchDeletePartition(BatchDeletePartitionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginBatchDeletePartition(BatchDeletePartitionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new BatchDeletePartitionRequestMarshaller();
             var unmarshaller = BatchDeletePartitionResponseUnmarshaller.Instance;
@@ -411,7 +411,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  BatchDeletePartitionResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchDeletePartition">REST API Reference for BatchDeletePartition Operation</seealso>
-        public  BatchDeletePartitionResponse EndBatchDeletePartition(IAsyncResult asyncResult)
+        public virtual BatchDeletePartitionResponse EndBatchDeletePartition(IAsyncResult asyncResult)
         {
             return EndInvoke<BatchDeletePartitionResponse>(asyncResult);
         }
@@ -439,7 +439,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchDeleteTable">REST API Reference for BatchDeleteTable Operation</seealso>
-        public BatchDeleteTableResponse BatchDeleteTable(BatchDeleteTableRequest request)
+        public virtual BatchDeleteTableResponse BatchDeleteTable(BatchDeleteTableRequest request)
         {
             var marshaller = new BatchDeleteTableRequestMarshaller();
             var unmarshaller = BatchDeleteTableResponseUnmarshaller.Instance;
@@ -459,7 +459,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchDeleteTable
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchDeleteTable">REST API Reference for BatchDeleteTable Operation</seealso>
-        public IAsyncResult BeginBatchDeleteTable(BatchDeleteTableRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginBatchDeleteTable(BatchDeleteTableRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new BatchDeleteTableRequestMarshaller();
             var unmarshaller = BatchDeleteTableResponseUnmarshaller.Instance;
@@ -476,7 +476,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  BatchDeleteTableResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchDeleteTable">REST API Reference for BatchDeleteTable Operation</seealso>
-        public  BatchDeleteTableResponse EndBatchDeleteTable(IAsyncResult asyncResult)
+        public virtual BatchDeleteTableResponse EndBatchDeleteTable(IAsyncResult asyncResult)
         {
             return EndInvoke<BatchDeleteTableResponse>(asyncResult);
         }
@@ -504,7 +504,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetPartition">REST API Reference for BatchGetPartition Operation</seealso>
-        public BatchGetPartitionResponse BatchGetPartition(BatchGetPartitionRequest request)
+        public virtual BatchGetPartitionResponse BatchGetPartition(BatchGetPartitionRequest request)
         {
             var marshaller = new BatchGetPartitionRequestMarshaller();
             var unmarshaller = BatchGetPartitionResponseUnmarshaller.Instance;
@@ -524,7 +524,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetPartition
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetPartition">REST API Reference for BatchGetPartition Operation</seealso>
-        public IAsyncResult BeginBatchGetPartition(BatchGetPartitionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginBatchGetPartition(BatchGetPartitionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new BatchGetPartitionRequestMarshaller();
             var unmarshaller = BatchGetPartitionResponseUnmarshaller.Instance;
@@ -541,7 +541,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  BatchGetPartitionResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetPartition">REST API Reference for BatchGetPartition Operation</seealso>
-        public  BatchGetPartitionResponse EndBatchGetPartition(IAsyncResult asyncResult)
+        public virtual BatchGetPartitionResponse EndBatchGetPartition(IAsyncResult asyncResult)
         {
             return EndInvoke<BatchGetPartitionResponse>(asyncResult);
         }
@@ -566,7 +566,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateClassifier">REST API Reference for CreateClassifier Operation</seealso>
-        public CreateClassifierResponse CreateClassifier(CreateClassifierRequest request)
+        public virtual CreateClassifierResponse CreateClassifier(CreateClassifierRequest request)
         {
             var marshaller = new CreateClassifierRequestMarshaller();
             var unmarshaller = CreateClassifierResponseUnmarshaller.Instance;
@@ -586,7 +586,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateClassifier
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateClassifier">REST API Reference for CreateClassifier Operation</seealso>
-        public IAsyncResult BeginCreateClassifier(CreateClassifierRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateClassifier(CreateClassifierRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateClassifierRequestMarshaller();
             var unmarshaller = CreateClassifierResponseUnmarshaller.Instance;
@@ -603,7 +603,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  CreateClassifierResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateClassifier">REST API Reference for CreateClassifier Operation</seealso>
-        public  CreateClassifierResponse EndCreateClassifier(IAsyncResult asyncResult)
+        public virtual CreateClassifierResponse EndCreateClassifier(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateClassifierResponse>(asyncResult);
         }
@@ -628,7 +628,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateConnection">REST API Reference for CreateConnection Operation</seealso>
-        public CreateConnectionResponse CreateConnection(CreateConnectionRequest request)
+        public virtual CreateConnectionResponse CreateConnection(CreateConnectionRequest request)
         {
             var marshaller = new CreateConnectionRequestMarshaller();
             var unmarshaller = CreateConnectionResponseUnmarshaller.Instance;
@@ -648,7 +648,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateConnection
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateConnection">REST API Reference for CreateConnection Operation</seealso>
-        public IAsyncResult BeginCreateConnection(CreateConnectionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateConnection(CreateConnectionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateConnectionRequestMarshaller();
             var unmarshaller = CreateConnectionResponseUnmarshaller.Instance;
@@ -665,7 +665,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  CreateConnectionResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateConnection">REST API Reference for CreateConnection Operation</seealso>
-        public  CreateConnectionResponse EndCreateConnection(IAsyncResult asyncResult)
+        public virtual CreateConnectionResponse EndCreateConnection(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateConnectionResponse>(asyncResult);
         }
@@ -695,7 +695,7 @@ namespace Amazon.Glue
         /// A resource numerical limit was exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateCrawler">REST API Reference for CreateCrawler Operation</seealso>
-        public CreateCrawlerResponse CreateCrawler(CreateCrawlerRequest request)
+        public virtual CreateCrawlerResponse CreateCrawler(CreateCrawlerRequest request)
         {
             var marshaller = new CreateCrawlerRequestMarshaller();
             var unmarshaller = CreateCrawlerResponseUnmarshaller.Instance;
@@ -715,7 +715,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCrawler
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateCrawler">REST API Reference for CreateCrawler Operation</seealso>
-        public IAsyncResult BeginCreateCrawler(CreateCrawlerRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateCrawler(CreateCrawlerRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateCrawlerRequestMarshaller();
             var unmarshaller = CreateCrawlerResponseUnmarshaller.Instance;
@@ -732,7 +732,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  CreateCrawlerResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateCrawler">REST API Reference for CreateCrawler Operation</seealso>
-        public  CreateCrawlerResponse EndCreateCrawler(IAsyncResult asyncResult)
+        public virtual CreateCrawlerResponse EndCreateCrawler(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateCrawlerResponse>(asyncResult);
         }
@@ -763,7 +763,7 @@ namespace Amazon.Glue
         /// A resource numerical limit was exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateDatabase">REST API Reference for CreateDatabase Operation</seealso>
-        public CreateDatabaseResponse CreateDatabase(CreateDatabaseRequest request)
+        public virtual CreateDatabaseResponse CreateDatabase(CreateDatabaseRequest request)
         {
             var marshaller = new CreateDatabaseRequestMarshaller();
             var unmarshaller = CreateDatabaseResponseUnmarshaller.Instance;
@@ -783,7 +783,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDatabase
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateDatabase">REST API Reference for CreateDatabase Operation</seealso>
-        public IAsyncResult BeginCreateDatabase(CreateDatabaseRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateDatabase(CreateDatabaseRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateDatabaseRequestMarshaller();
             var unmarshaller = CreateDatabaseResponseUnmarshaller.Instance;
@@ -800,7 +800,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  CreateDatabaseResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateDatabase">REST API Reference for CreateDatabase Operation</seealso>
-        public  CreateDatabaseResponse EndCreateDatabase(IAsyncResult asyncResult)
+        public virtual CreateDatabaseResponse EndCreateDatabase(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateDatabaseResponse>(asyncResult);
         }
@@ -840,7 +840,7 @@ namespace Amazon.Glue
         /// A value could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateDevEndpoint">REST API Reference for CreateDevEndpoint Operation</seealso>
-        public CreateDevEndpointResponse CreateDevEndpoint(CreateDevEndpointRequest request)
+        public virtual CreateDevEndpointResponse CreateDevEndpoint(CreateDevEndpointRequest request)
         {
             var marshaller = new CreateDevEndpointRequestMarshaller();
             var unmarshaller = CreateDevEndpointResponseUnmarshaller.Instance;
@@ -860,7 +860,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDevEndpoint
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateDevEndpoint">REST API Reference for CreateDevEndpoint Operation</seealso>
-        public IAsyncResult BeginCreateDevEndpoint(CreateDevEndpointRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateDevEndpoint(CreateDevEndpointRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateDevEndpointRequestMarshaller();
             var unmarshaller = CreateDevEndpointResponseUnmarshaller.Instance;
@@ -877,7 +877,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  CreateDevEndpointResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateDevEndpoint">REST API Reference for CreateDevEndpoint Operation</seealso>
-        public  CreateDevEndpointResponse EndCreateDevEndpoint(IAsyncResult asyncResult)
+        public virtual CreateDevEndpointResponse EndCreateDevEndpoint(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateDevEndpointResponse>(asyncResult);
         }
@@ -911,7 +911,7 @@ namespace Amazon.Glue
         /// A resource numerical limit was exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateJob">REST API Reference for CreateJob Operation</seealso>
-        public CreateJobResponse CreateJob(CreateJobRequest request)
+        public virtual CreateJobResponse CreateJob(CreateJobRequest request)
         {
             var marshaller = new CreateJobRequestMarshaller();
             var unmarshaller = CreateJobResponseUnmarshaller.Instance;
@@ -931,7 +931,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateJob
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateJob">REST API Reference for CreateJob Operation</seealso>
-        public IAsyncResult BeginCreateJob(CreateJobRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateJob(CreateJobRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateJobRequestMarshaller();
             var unmarshaller = CreateJobResponseUnmarshaller.Instance;
@@ -948,7 +948,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  CreateJobResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateJob">REST API Reference for CreateJob Operation</seealso>
-        public  CreateJobResponse EndCreateJob(IAsyncResult asyncResult)
+        public virtual CreateJobResponse EndCreateJob(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateJobResponse>(asyncResult);
         }
@@ -982,7 +982,7 @@ namespace Amazon.Glue
         /// A resource numerical limit was exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreatePartition">REST API Reference for CreatePartition Operation</seealso>
-        public CreatePartitionResponse CreatePartition(CreatePartitionRequest request)
+        public virtual CreatePartitionResponse CreatePartition(CreatePartitionRequest request)
         {
             var marshaller = new CreatePartitionRequestMarshaller();
             var unmarshaller = CreatePartitionResponseUnmarshaller.Instance;
@@ -1002,7 +1002,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePartition
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreatePartition">REST API Reference for CreatePartition Operation</seealso>
-        public IAsyncResult BeginCreatePartition(CreatePartitionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreatePartition(CreatePartitionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreatePartitionRequestMarshaller();
             var unmarshaller = CreatePartitionResponseUnmarshaller.Instance;
@@ -1019,7 +1019,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  CreatePartitionResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreatePartition">REST API Reference for CreatePartition Operation</seealso>
-        public  CreatePartitionResponse EndCreatePartition(IAsyncResult asyncResult)
+        public virtual CreatePartitionResponse EndCreatePartition(IAsyncResult asyncResult)
         {
             return EndInvoke<CreatePartitionResponse>(asyncResult);
         }
@@ -1044,7 +1044,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateScript">REST API Reference for CreateScript Operation</seealso>
-        public CreateScriptResponse CreateScript(CreateScriptRequest request)
+        public virtual CreateScriptResponse CreateScript(CreateScriptRequest request)
         {
             var marshaller = new CreateScriptRequestMarshaller();
             var unmarshaller = CreateScriptResponseUnmarshaller.Instance;
@@ -1064,7 +1064,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateScript
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateScript">REST API Reference for CreateScript Operation</seealso>
-        public IAsyncResult BeginCreateScript(CreateScriptRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateScript(CreateScriptRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateScriptRequestMarshaller();
             var unmarshaller = CreateScriptResponseUnmarshaller.Instance;
@@ -1081,7 +1081,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  CreateScriptResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateScript">REST API Reference for CreateScript Operation</seealso>
-        public  CreateScriptResponse EndCreateScript(IAsyncResult asyncResult)
+        public virtual CreateScriptResponse EndCreateScript(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateScriptResponse>(asyncResult);
         }
@@ -1115,7 +1115,7 @@ namespace Amazon.Glue
         /// A resource numerical limit was exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateTable">REST API Reference for CreateTable Operation</seealso>
-        public CreateTableResponse CreateTable(CreateTableRequest request)
+        public virtual CreateTableResponse CreateTable(CreateTableRequest request)
         {
             var marshaller = new CreateTableRequestMarshaller();
             var unmarshaller = CreateTableResponseUnmarshaller.Instance;
@@ -1135,7 +1135,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTable
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateTable">REST API Reference for CreateTable Operation</seealso>
-        public IAsyncResult BeginCreateTable(CreateTableRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateTable(CreateTableRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateTableRequestMarshaller();
             var unmarshaller = CreateTableResponseUnmarshaller.Instance;
@@ -1152,7 +1152,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  CreateTableResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateTable">REST API Reference for CreateTable Operation</seealso>
-        public  CreateTableResponse EndCreateTable(IAsyncResult asyncResult)
+        public virtual CreateTableResponse EndCreateTable(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateTableResponse>(asyncResult);
         }
@@ -1183,7 +1183,7 @@ namespace Amazon.Glue
         /// A resource numerical limit was exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateTrigger">REST API Reference for CreateTrigger Operation</seealso>
-        public CreateTriggerResponse CreateTrigger(CreateTriggerRequest request)
+        public virtual CreateTriggerResponse CreateTrigger(CreateTriggerRequest request)
         {
             var marshaller = new CreateTriggerRequestMarshaller();
             var unmarshaller = CreateTriggerResponseUnmarshaller.Instance;
@@ -1203,7 +1203,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTrigger
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateTrigger">REST API Reference for CreateTrigger Operation</seealso>
-        public IAsyncResult BeginCreateTrigger(CreateTriggerRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateTrigger(CreateTriggerRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateTriggerRequestMarshaller();
             var unmarshaller = CreateTriggerResponseUnmarshaller.Instance;
@@ -1220,7 +1220,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  CreateTriggerResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateTrigger">REST API Reference for CreateTrigger Operation</seealso>
-        public  CreateTriggerResponse EndCreateTrigger(IAsyncResult asyncResult)
+        public virtual CreateTriggerResponse EndCreateTrigger(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateTriggerResponse>(asyncResult);
         }
@@ -1251,7 +1251,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateUserDefinedFunction">REST API Reference for CreateUserDefinedFunction Operation</seealso>
-        public CreateUserDefinedFunctionResponse CreateUserDefinedFunction(CreateUserDefinedFunctionRequest request)
+        public virtual CreateUserDefinedFunctionResponse CreateUserDefinedFunction(CreateUserDefinedFunctionRequest request)
         {
             var marshaller = new CreateUserDefinedFunctionRequestMarshaller();
             var unmarshaller = CreateUserDefinedFunctionResponseUnmarshaller.Instance;
@@ -1271,7 +1271,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateUserDefinedFunction
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateUserDefinedFunction">REST API Reference for CreateUserDefinedFunction Operation</seealso>
-        public IAsyncResult BeginCreateUserDefinedFunction(CreateUserDefinedFunctionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateUserDefinedFunction(CreateUserDefinedFunctionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateUserDefinedFunctionRequestMarshaller();
             var unmarshaller = CreateUserDefinedFunctionResponseUnmarshaller.Instance;
@@ -1288,7 +1288,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  CreateUserDefinedFunctionResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateUserDefinedFunction">REST API Reference for CreateUserDefinedFunction Operation</seealso>
-        public  CreateUserDefinedFunctionResponse EndCreateUserDefinedFunction(IAsyncResult asyncResult)
+        public virtual CreateUserDefinedFunctionResponse EndCreateUserDefinedFunction(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateUserDefinedFunctionResponse>(asyncResult);
         }
@@ -1310,7 +1310,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteClassifier">REST API Reference for DeleteClassifier Operation</seealso>
-        public DeleteClassifierResponse DeleteClassifier(DeleteClassifierRequest request)
+        public virtual DeleteClassifierResponse DeleteClassifier(DeleteClassifierRequest request)
         {
             var marshaller = new DeleteClassifierRequestMarshaller();
             var unmarshaller = DeleteClassifierResponseUnmarshaller.Instance;
@@ -1330,7 +1330,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteClassifier
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteClassifier">REST API Reference for DeleteClassifier Operation</seealso>
-        public IAsyncResult BeginDeleteClassifier(DeleteClassifierRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteClassifier(DeleteClassifierRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteClassifierRequestMarshaller();
             var unmarshaller = DeleteClassifierResponseUnmarshaller.Instance;
@@ -1347,7 +1347,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  DeleteClassifierResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteClassifier">REST API Reference for DeleteClassifier Operation</seealso>
-        public  DeleteClassifierResponse EndDeleteClassifier(IAsyncResult asyncResult)
+        public virtual DeleteClassifierResponse EndDeleteClassifier(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteClassifierResponse>(asyncResult);
         }
@@ -1369,7 +1369,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteConnection">REST API Reference for DeleteConnection Operation</seealso>
-        public DeleteConnectionResponse DeleteConnection(DeleteConnectionRequest request)
+        public virtual DeleteConnectionResponse DeleteConnection(DeleteConnectionRequest request)
         {
             var marshaller = new DeleteConnectionRequestMarshaller();
             var unmarshaller = DeleteConnectionResponseUnmarshaller.Instance;
@@ -1389,7 +1389,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteConnection
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteConnection">REST API Reference for DeleteConnection Operation</seealso>
-        public IAsyncResult BeginDeleteConnection(DeleteConnectionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteConnection(DeleteConnectionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteConnectionRequestMarshaller();
             var unmarshaller = DeleteConnectionResponseUnmarshaller.Instance;
@@ -1406,7 +1406,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  DeleteConnectionResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteConnection">REST API Reference for DeleteConnection Operation</seealso>
-        public  DeleteConnectionResponse EndDeleteConnection(IAsyncResult asyncResult)
+        public virtual DeleteConnectionResponse EndDeleteConnection(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteConnectionResponse>(asyncResult);
         }
@@ -1435,7 +1435,7 @@ namespace Amazon.Glue
         /// The specified scheduler is transitioning.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteCrawler">REST API Reference for DeleteCrawler Operation</seealso>
-        public DeleteCrawlerResponse DeleteCrawler(DeleteCrawlerRequest request)
+        public virtual DeleteCrawlerResponse DeleteCrawler(DeleteCrawlerRequest request)
         {
             var marshaller = new DeleteCrawlerRequestMarshaller();
             var unmarshaller = DeleteCrawlerResponseUnmarshaller.Instance;
@@ -1455,7 +1455,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCrawler
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteCrawler">REST API Reference for DeleteCrawler Operation</seealso>
-        public IAsyncResult BeginDeleteCrawler(DeleteCrawlerRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteCrawler(DeleteCrawlerRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteCrawlerRequestMarshaller();
             var unmarshaller = DeleteCrawlerResponseUnmarshaller.Instance;
@@ -1472,7 +1472,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  DeleteCrawlerResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteCrawler">REST API Reference for DeleteCrawler Operation</seealso>
-        public  DeleteCrawlerResponse EndDeleteCrawler(IAsyncResult asyncResult)
+        public virtual DeleteCrawlerResponse EndDeleteCrawler(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteCrawlerResponse>(asyncResult);
         }
@@ -1500,7 +1500,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteDatabase">REST API Reference for DeleteDatabase Operation</seealso>
-        public DeleteDatabaseResponse DeleteDatabase(DeleteDatabaseRequest request)
+        public virtual DeleteDatabaseResponse DeleteDatabase(DeleteDatabaseRequest request)
         {
             var marshaller = new DeleteDatabaseRequestMarshaller();
             var unmarshaller = DeleteDatabaseResponseUnmarshaller.Instance;
@@ -1520,7 +1520,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDatabase
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteDatabase">REST API Reference for DeleteDatabase Operation</seealso>
-        public IAsyncResult BeginDeleteDatabase(DeleteDatabaseRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteDatabase(DeleteDatabaseRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteDatabaseRequestMarshaller();
             var unmarshaller = DeleteDatabaseResponseUnmarshaller.Instance;
@@ -1537,7 +1537,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  DeleteDatabaseResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteDatabase">REST API Reference for DeleteDatabase Operation</seealso>
-        public  DeleteDatabaseResponse EndDeleteDatabase(IAsyncResult asyncResult)
+        public virtual DeleteDatabaseResponse EndDeleteDatabase(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteDatabaseResponse>(asyncResult);
         }
@@ -1565,7 +1565,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteDevEndpoint">REST API Reference for DeleteDevEndpoint Operation</seealso>
-        public DeleteDevEndpointResponse DeleteDevEndpoint(DeleteDevEndpointRequest request)
+        public virtual DeleteDevEndpointResponse DeleteDevEndpoint(DeleteDevEndpointRequest request)
         {
             var marshaller = new DeleteDevEndpointRequestMarshaller();
             var unmarshaller = DeleteDevEndpointResponseUnmarshaller.Instance;
@@ -1585,7 +1585,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDevEndpoint
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteDevEndpoint">REST API Reference for DeleteDevEndpoint Operation</seealso>
-        public IAsyncResult BeginDeleteDevEndpoint(DeleteDevEndpointRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteDevEndpoint(DeleteDevEndpointRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteDevEndpointRequestMarshaller();
             var unmarshaller = DeleteDevEndpointResponseUnmarshaller.Instance;
@@ -1602,7 +1602,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  DeleteDevEndpointResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteDevEndpoint">REST API Reference for DeleteDevEndpoint Operation</seealso>
-        public  DeleteDevEndpointResponse EndDeleteDevEndpoint(IAsyncResult asyncResult)
+        public virtual DeleteDevEndpointResponse EndDeleteDevEndpoint(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteDevEndpointResponse>(asyncResult);
         }
@@ -1627,7 +1627,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteJob">REST API Reference for DeleteJob Operation</seealso>
-        public DeleteJobResponse DeleteJob(DeleteJobRequest request)
+        public virtual DeleteJobResponse DeleteJob(DeleteJobRequest request)
         {
             var marshaller = new DeleteJobRequestMarshaller();
             var unmarshaller = DeleteJobResponseUnmarshaller.Instance;
@@ -1647,7 +1647,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteJob
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteJob">REST API Reference for DeleteJob Operation</seealso>
-        public IAsyncResult BeginDeleteJob(DeleteJobRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteJob(DeleteJobRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteJobRequestMarshaller();
             var unmarshaller = DeleteJobResponseUnmarshaller.Instance;
@@ -1664,7 +1664,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  DeleteJobResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteJob">REST API Reference for DeleteJob Operation</seealso>
-        public  DeleteJobResponse EndDeleteJob(IAsyncResult asyncResult)
+        public virtual DeleteJobResponse EndDeleteJob(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteJobResponse>(asyncResult);
         }
@@ -1692,7 +1692,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeletePartition">REST API Reference for DeletePartition Operation</seealso>
-        public DeletePartitionResponse DeletePartition(DeletePartitionRequest request)
+        public virtual DeletePartitionResponse DeletePartition(DeletePartitionRequest request)
         {
             var marshaller = new DeletePartitionRequestMarshaller();
             var unmarshaller = DeletePartitionResponseUnmarshaller.Instance;
@@ -1712,7 +1712,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePartition
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeletePartition">REST API Reference for DeletePartition Operation</seealso>
-        public IAsyncResult BeginDeletePartition(DeletePartitionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeletePartition(DeletePartitionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeletePartitionRequestMarshaller();
             var unmarshaller = DeletePartitionResponseUnmarshaller.Instance;
@@ -1729,7 +1729,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  DeletePartitionResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeletePartition">REST API Reference for DeletePartition Operation</seealso>
-        public  DeletePartitionResponse EndDeletePartition(IAsyncResult asyncResult)
+        public virtual DeletePartitionResponse EndDeletePartition(IAsyncResult asyncResult)
         {
             return EndInvoke<DeletePartitionResponse>(asyncResult);
         }
@@ -1757,7 +1757,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteTable">REST API Reference for DeleteTable Operation</seealso>
-        public DeleteTableResponse DeleteTable(DeleteTableRequest request)
+        public virtual DeleteTableResponse DeleteTable(DeleteTableRequest request)
         {
             var marshaller = new DeleteTableRequestMarshaller();
             var unmarshaller = DeleteTableResponseUnmarshaller.Instance;
@@ -1777,7 +1777,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTable
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteTable">REST API Reference for DeleteTable Operation</seealso>
-        public IAsyncResult BeginDeleteTable(DeleteTableRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteTable(DeleteTableRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteTableRequestMarshaller();
             var unmarshaller = DeleteTableResponseUnmarshaller.Instance;
@@ -1794,7 +1794,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  DeleteTableResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteTable">REST API Reference for DeleteTable Operation</seealso>
-        public  DeleteTableResponse EndDeleteTable(IAsyncResult asyncResult)
+        public virtual DeleteTableResponse EndDeleteTable(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteTableResponse>(asyncResult);
         }
@@ -1819,7 +1819,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteTrigger">REST API Reference for DeleteTrigger Operation</seealso>
-        public DeleteTriggerResponse DeleteTrigger(DeleteTriggerRequest request)
+        public virtual DeleteTriggerResponse DeleteTrigger(DeleteTriggerRequest request)
         {
             var marshaller = new DeleteTriggerRequestMarshaller();
             var unmarshaller = DeleteTriggerResponseUnmarshaller.Instance;
@@ -1839,7 +1839,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTrigger
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteTrigger">REST API Reference for DeleteTrigger Operation</seealso>
-        public IAsyncResult BeginDeleteTrigger(DeleteTriggerRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteTrigger(DeleteTriggerRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteTriggerRequestMarshaller();
             var unmarshaller = DeleteTriggerResponseUnmarshaller.Instance;
@@ -1856,7 +1856,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  DeleteTriggerResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteTrigger">REST API Reference for DeleteTrigger Operation</seealso>
-        public  DeleteTriggerResponse EndDeleteTrigger(IAsyncResult asyncResult)
+        public virtual DeleteTriggerResponse EndDeleteTrigger(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteTriggerResponse>(asyncResult);
         }
@@ -1884,7 +1884,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteUserDefinedFunction">REST API Reference for DeleteUserDefinedFunction Operation</seealso>
-        public DeleteUserDefinedFunctionResponse DeleteUserDefinedFunction(DeleteUserDefinedFunctionRequest request)
+        public virtual DeleteUserDefinedFunctionResponse DeleteUserDefinedFunction(DeleteUserDefinedFunctionRequest request)
         {
             var marshaller = new DeleteUserDefinedFunctionRequestMarshaller();
             var unmarshaller = DeleteUserDefinedFunctionResponseUnmarshaller.Instance;
@@ -1904,7 +1904,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteUserDefinedFunction
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteUserDefinedFunction">REST API Reference for DeleteUserDefinedFunction Operation</seealso>
-        public IAsyncResult BeginDeleteUserDefinedFunction(DeleteUserDefinedFunctionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteUserDefinedFunction(DeleteUserDefinedFunctionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteUserDefinedFunctionRequestMarshaller();
             var unmarshaller = DeleteUserDefinedFunctionResponseUnmarshaller.Instance;
@@ -1921,7 +1921,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  DeleteUserDefinedFunctionResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteUserDefinedFunction">REST API Reference for DeleteUserDefinedFunction Operation</seealso>
-        public  DeleteUserDefinedFunctionResponse EndDeleteUserDefinedFunction(IAsyncResult asyncResult)
+        public virtual DeleteUserDefinedFunctionResponse EndDeleteUserDefinedFunction(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteUserDefinedFunctionResponse>(asyncResult);
         }
@@ -1943,7 +1943,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetCatalogImportStatus">REST API Reference for GetCatalogImportStatus Operation</seealso>
-        public GetCatalogImportStatusResponse GetCatalogImportStatus(GetCatalogImportStatusRequest request)
+        public virtual GetCatalogImportStatusResponse GetCatalogImportStatus(GetCatalogImportStatusRequest request)
         {
             var marshaller = new GetCatalogImportStatusRequestMarshaller();
             var unmarshaller = GetCatalogImportStatusResponseUnmarshaller.Instance;
@@ -1963,7 +1963,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCatalogImportStatus
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetCatalogImportStatus">REST API Reference for GetCatalogImportStatus Operation</seealso>
-        public IAsyncResult BeginGetCatalogImportStatus(GetCatalogImportStatusRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetCatalogImportStatus(GetCatalogImportStatusRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetCatalogImportStatusRequestMarshaller();
             var unmarshaller = GetCatalogImportStatusResponseUnmarshaller.Instance;
@@ -1980,7 +1980,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  GetCatalogImportStatusResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetCatalogImportStatus">REST API Reference for GetCatalogImportStatus Operation</seealso>
-        public  GetCatalogImportStatusResponse EndGetCatalogImportStatus(IAsyncResult asyncResult)
+        public virtual GetCatalogImportStatusResponse EndGetCatalogImportStatus(IAsyncResult asyncResult)
         {
             return EndInvoke<GetCatalogImportStatusResponse>(asyncResult);
         }
@@ -2002,7 +2002,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetClassifier">REST API Reference for GetClassifier Operation</seealso>
-        public GetClassifierResponse GetClassifier(GetClassifierRequest request)
+        public virtual GetClassifierResponse GetClassifier(GetClassifierRequest request)
         {
             var marshaller = new GetClassifierRequestMarshaller();
             var unmarshaller = GetClassifierResponseUnmarshaller.Instance;
@@ -2022,7 +2022,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetClassifier
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetClassifier">REST API Reference for GetClassifier Operation</seealso>
-        public IAsyncResult BeginGetClassifier(GetClassifierRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetClassifier(GetClassifierRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetClassifierRequestMarshaller();
             var unmarshaller = GetClassifierResponseUnmarshaller.Instance;
@@ -2039,7 +2039,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  GetClassifierResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetClassifier">REST API Reference for GetClassifier Operation</seealso>
-        public  GetClassifierResponse EndGetClassifier(IAsyncResult asyncResult)
+        public virtual GetClassifierResponse EndGetClassifier(IAsyncResult asyncResult)
         {
             return EndInvoke<GetClassifierResponse>(asyncResult);
         }
@@ -2058,7 +2058,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetClassifiers">REST API Reference for GetClassifiers Operation</seealso>
-        public GetClassifiersResponse GetClassifiers(GetClassifiersRequest request)
+        public virtual GetClassifiersResponse GetClassifiers(GetClassifiersRequest request)
         {
             var marshaller = new GetClassifiersRequestMarshaller();
             var unmarshaller = GetClassifiersResponseUnmarshaller.Instance;
@@ -2078,7 +2078,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetClassifiers
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetClassifiers">REST API Reference for GetClassifiers Operation</seealso>
-        public IAsyncResult BeginGetClassifiers(GetClassifiersRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetClassifiers(GetClassifiersRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetClassifiersRequestMarshaller();
             var unmarshaller = GetClassifiersResponseUnmarshaller.Instance;
@@ -2095,7 +2095,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  GetClassifiersResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetClassifiers">REST API Reference for GetClassifiers Operation</seealso>
-        public  GetClassifiersResponse EndGetClassifiers(IAsyncResult asyncResult)
+        public virtual GetClassifiersResponse EndGetClassifiers(IAsyncResult asyncResult)
         {
             return EndInvoke<GetClassifiersResponse>(asyncResult);
         }
@@ -2117,7 +2117,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetConnection">REST API Reference for GetConnection Operation</seealso>
-        public GetConnectionResponse GetConnection(GetConnectionRequest request)
+        public virtual GetConnectionResponse GetConnection(GetConnectionRequest request)
         {
             var marshaller = new GetConnectionRequestMarshaller();
             var unmarshaller = GetConnectionResponseUnmarshaller.Instance;
@@ -2137,7 +2137,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetConnection
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetConnection">REST API Reference for GetConnection Operation</seealso>
-        public IAsyncResult BeginGetConnection(GetConnectionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetConnection(GetConnectionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetConnectionRequestMarshaller();
             var unmarshaller = GetConnectionResponseUnmarshaller.Instance;
@@ -2154,7 +2154,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  GetConnectionResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetConnection">REST API Reference for GetConnection Operation</seealso>
-        public  GetConnectionResponse EndGetConnection(IAsyncResult asyncResult)
+        public virtual GetConnectionResponse EndGetConnection(IAsyncResult asyncResult)
         {
             return EndInvoke<GetConnectionResponse>(asyncResult);
         }
@@ -2176,7 +2176,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetConnections">REST API Reference for GetConnections Operation</seealso>
-        public GetConnectionsResponse GetConnections(GetConnectionsRequest request)
+        public virtual GetConnectionsResponse GetConnections(GetConnectionsRequest request)
         {
             var marshaller = new GetConnectionsRequestMarshaller();
             var unmarshaller = GetConnectionsResponseUnmarshaller.Instance;
@@ -2196,7 +2196,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetConnections
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetConnections">REST API Reference for GetConnections Operation</seealso>
-        public IAsyncResult BeginGetConnections(GetConnectionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetConnections(GetConnectionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetConnectionsRequestMarshaller();
             var unmarshaller = GetConnectionsResponseUnmarshaller.Instance;
@@ -2213,7 +2213,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  GetConnectionsResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetConnections">REST API Reference for GetConnections Operation</seealso>
-        public  GetConnectionsResponse EndGetConnections(IAsyncResult asyncResult)
+        public virtual GetConnectionsResponse EndGetConnections(IAsyncResult asyncResult)
         {
             return EndInvoke<GetConnectionsResponse>(asyncResult);
         }
@@ -2235,7 +2235,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetCrawler">REST API Reference for GetCrawler Operation</seealso>
-        public GetCrawlerResponse GetCrawler(GetCrawlerRequest request)
+        public virtual GetCrawlerResponse GetCrawler(GetCrawlerRequest request)
         {
             var marshaller = new GetCrawlerRequestMarshaller();
             var unmarshaller = GetCrawlerResponseUnmarshaller.Instance;
@@ -2255,7 +2255,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCrawler
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetCrawler">REST API Reference for GetCrawler Operation</seealso>
-        public IAsyncResult BeginGetCrawler(GetCrawlerRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetCrawler(GetCrawlerRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetCrawlerRequestMarshaller();
             var unmarshaller = GetCrawlerResponseUnmarshaller.Instance;
@@ -2272,7 +2272,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  GetCrawlerResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetCrawler">REST API Reference for GetCrawler Operation</seealso>
-        public  GetCrawlerResponse EndGetCrawler(IAsyncResult asyncResult)
+        public virtual GetCrawlerResponse EndGetCrawler(IAsyncResult asyncResult)
         {
             return EndInvoke<GetCrawlerResponse>(asyncResult);
         }
@@ -2291,7 +2291,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetCrawlerMetrics">REST API Reference for GetCrawlerMetrics Operation</seealso>
-        public GetCrawlerMetricsResponse GetCrawlerMetrics(GetCrawlerMetricsRequest request)
+        public virtual GetCrawlerMetricsResponse GetCrawlerMetrics(GetCrawlerMetricsRequest request)
         {
             var marshaller = new GetCrawlerMetricsRequestMarshaller();
             var unmarshaller = GetCrawlerMetricsResponseUnmarshaller.Instance;
@@ -2311,7 +2311,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCrawlerMetrics
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetCrawlerMetrics">REST API Reference for GetCrawlerMetrics Operation</seealso>
-        public IAsyncResult BeginGetCrawlerMetrics(GetCrawlerMetricsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetCrawlerMetrics(GetCrawlerMetricsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetCrawlerMetricsRequestMarshaller();
             var unmarshaller = GetCrawlerMetricsResponseUnmarshaller.Instance;
@@ -2328,7 +2328,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  GetCrawlerMetricsResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetCrawlerMetrics">REST API Reference for GetCrawlerMetrics Operation</seealso>
-        public  GetCrawlerMetricsResponse EndGetCrawlerMetrics(IAsyncResult asyncResult)
+        public virtual GetCrawlerMetricsResponse EndGetCrawlerMetrics(IAsyncResult asyncResult)
         {
             return EndInvoke<GetCrawlerMetricsResponse>(asyncResult);
         }
@@ -2347,7 +2347,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetCrawlers">REST API Reference for GetCrawlers Operation</seealso>
-        public GetCrawlersResponse GetCrawlers(GetCrawlersRequest request)
+        public virtual GetCrawlersResponse GetCrawlers(GetCrawlersRequest request)
         {
             var marshaller = new GetCrawlersRequestMarshaller();
             var unmarshaller = GetCrawlersResponseUnmarshaller.Instance;
@@ -2367,7 +2367,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCrawlers
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetCrawlers">REST API Reference for GetCrawlers Operation</seealso>
-        public IAsyncResult BeginGetCrawlers(GetCrawlersRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetCrawlers(GetCrawlersRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetCrawlersRequestMarshaller();
             var unmarshaller = GetCrawlersResponseUnmarshaller.Instance;
@@ -2384,7 +2384,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  GetCrawlersResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetCrawlers">REST API Reference for GetCrawlers Operation</seealso>
-        public  GetCrawlersResponse EndGetCrawlers(IAsyncResult asyncResult)
+        public virtual GetCrawlersResponse EndGetCrawlers(IAsyncResult asyncResult)
         {
             return EndInvoke<GetCrawlersResponse>(asyncResult);
         }
@@ -2412,7 +2412,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDatabase">REST API Reference for GetDatabase Operation</seealso>
-        public GetDatabaseResponse GetDatabase(GetDatabaseRequest request)
+        public virtual GetDatabaseResponse GetDatabase(GetDatabaseRequest request)
         {
             var marshaller = new GetDatabaseRequestMarshaller();
             var unmarshaller = GetDatabaseResponseUnmarshaller.Instance;
@@ -2432,7 +2432,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDatabase
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDatabase">REST API Reference for GetDatabase Operation</seealso>
-        public IAsyncResult BeginGetDatabase(GetDatabaseRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetDatabase(GetDatabaseRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetDatabaseRequestMarshaller();
             var unmarshaller = GetDatabaseResponseUnmarshaller.Instance;
@@ -2449,7 +2449,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  GetDatabaseResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDatabase">REST API Reference for GetDatabase Operation</seealso>
-        public  GetDatabaseResponse EndGetDatabase(IAsyncResult asyncResult)
+        public virtual GetDatabaseResponse EndGetDatabase(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDatabaseResponse>(asyncResult);
         }
@@ -2474,7 +2474,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDatabases">REST API Reference for GetDatabases Operation</seealso>
-        public GetDatabasesResponse GetDatabases(GetDatabasesRequest request)
+        public virtual GetDatabasesResponse GetDatabases(GetDatabasesRequest request)
         {
             var marshaller = new GetDatabasesRequestMarshaller();
             var unmarshaller = GetDatabasesResponseUnmarshaller.Instance;
@@ -2494,7 +2494,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDatabases
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDatabases">REST API Reference for GetDatabases Operation</seealso>
-        public IAsyncResult BeginGetDatabases(GetDatabasesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetDatabases(GetDatabasesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetDatabasesRequestMarshaller();
             var unmarshaller = GetDatabasesResponseUnmarshaller.Instance;
@@ -2511,7 +2511,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  GetDatabasesResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDatabases">REST API Reference for GetDatabases Operation</seealso>
-        public  GetDatabasesResponse EndGetDatabases(IAsyncResult asyncResult)
+        public virtual GetDatabasesResponse EndGetDatabases(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDatabasesResponse>(asyncResult);
         }
@@ -2536,7 +2536,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataflowGraph">REST API Reference for GetDataflowGraph Operation</seealso>
-        public GetDataflowGraphResponse GetDataflowGraph(GetDataflowGraphRequest request)
+        public virtual GetDataflowGraphResponse GetDataflowGraph(GetDataflowGraphRequest request)
         {
             var marshaller = new GetDataflowGraphRequestMarshaller();
             var unmarshaller = GetDataflowGraphResponseUnmarshaller.Instance;
@@ -2556,7 +2556,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDataflowGraph
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataflowGraph">REST API Reference for GetDataflowGraph Operation</seealso>
-        public IAsyncResult BeginGetDataflowGraph(GetDataflowGraphRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetDataflowGraph(GetDataflowGraphRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetDataflowGraphRequestMarshaller();
             var unmarshaller = GetDataflowGraphResponseUnmarshaller.Instance;
@@ -2573,7 +2573,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  GetDataflowGraphResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataflowGraph">REST API Reference for GetDataflowGraph Operation</seealso>
-        public  GetDataflowGraphResponse EndGetDataflowGraph(IAsyncResult asyncResult)
+        public virtual GetDataflowGraphResponse EndGetDataflowGraph(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDataflowGraphResponse>(asyncResult);
         }
@@ -2601,7 +2601,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDevEndpoint">REST API Reference for GetDevEndpoint Operation</seealso>
-        public GetDevEndpointResponse GetDevEndpoint(GetDevEndpointRequest request)
+        public virtual GetDevEndpointResponse GetDevEndpoint(GetDevEndpointRequest request)
         {
             var marshaller = new GetDevEndpointRequestMarshaller();
             var unmarshaller = GetDevEndpointResponseUnmarshaller.Instance;
@@ -2621,7 +2621,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDevEndpoint
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDevEndpoint">REST API Reference for GetDevEndpoint Operation</seealso>
-        public IAsyncResult BeginGetDevEndpoint(GetDevEndpointRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetDevEndpoint(GetDevEndpointRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetDevEndpointRequestMarshaller();
             var unmarshaller = GetDevEndpointResponseUnmarshaller.Instance;
@@ -2638,7 +2638,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  GetDevEndpointResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDevEndpoint">REST API Reference for GetDevEndpoint Operation</seealso>
-        public  GetDevEndpointResponse EndGetDevEndpoint(IAsyncResult asyncResult)
+        public virtual GetDevEndpointResponse EndGetDevEndpoint(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDevEndpointResponse>(asyncResult);
         }
@@ -2666,7 +2666,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDevEndpoints">REST API Reference for GetDevEndpoints Operation</seealso>
-        public GetDevEndpointsResponse GetDevEndpoints(GetDevEndpointsRequest request)
+        public virtual GetDevEndpointsResponse GetDevEndpoints(GetDevEndpointsRequest request)
         {
             var marshaller = new GetDevEndpointsRequestMarshaller();
             var unmarshaller = GetDevEndpointsResponseUnmarshaller.Instance;
@@ -2686,7 +2686,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDevEndpoints
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDevEndpoints">REST API Reference for GetDevEndpoints Operation</seealso>
-        public IAsyncResult BeginGetDevEndpoints(GetDevEndpointsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetDevEndpoints(GetDevEndpointsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetDevEndpointsRequestMarshaller();
             var unmarshaller = GetDevEndpointsResponseUnmarshaller.Instance;
@@ -2703,7 +2703,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  GetDevEndpointsResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDevEndpoints">REST API Reference for GetDevEndpoints Operation</seealso>
-        public  GetDevEndpointsResponse EndGetDevEndpoints(IAsyncResult asyncResult)
+        public virtual GetDevEndpointsResponse EndGetDevEndpoints(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDevEndpointsResponse>(asyncResult);
         }
@@ -2731,7 +2731,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetJob">REST API Reference for GetJob Operation</seealso>
-        public GetJobResponse GetJob(GetJobRequest request)
+        public virtual GetJobResponse GetJob(GetJobRequest request)
         {
             var marshaller = new GetJobRequestMarshaller();
             var unmarshaller = GetJobResponseUnmarshaller.Instance;
@@ -2751,7 +2751,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetJob
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetJob">REST API Reference for GetJob Operation</seealso>
-        public IAsyncResult BeginGetJob(GetJobRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetJob(GetJobRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetJobRequestMarshaller();
             var unmarshaller = GetJobResponseUnmarshaller.Instance;
@@ -2768,7 +2768,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  GetJobResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetJob">REST API Reference for GetJob Operation</seealso>
-        public  GetJobResponse EndGetJob(IAsyncResult asyncResult)
+        public virtual GetJobResponse EndGetJob(IAsyncResult asyncResult)
         {
             return EndInvoke<GetJobResponse>(asyncResult);
         }
@@ -2796,7 +2796,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetJobRun">REST API Reference for GetJobRun Operation</seealso>
-        public GetJobRunResponse GetJobRun(GetJobRunRequest request)
+        public virtual GetJobRunResponse GetJobRun(GetJobRunRequest request)
         {
             var marshaller = new GetJobRunRequestMarshaller();
             var unmarshaller = GetJobRunResponseUnmarshaller.Instance;
@@ -2816,7 +2816,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetJobRun
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetJobRun">REST API Reference for GetJobRun Operation</seealso>
-        public IAsyncResult BeginGetJobRun(GetJobRunRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetJobRun(GetJobRunRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetJobRunRequestMarshaller();
             var unmarshaller = GetJobRunResponseUnmarshaller.Instance;
@@ -2833,7 +2833,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  GetJobRunResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetJobRun">REST API Reference for GetJobRun Operation</seealso>
-        public  GetJobRunResponse EndGetJobRun(IAsyncResult asyncResult)
+        public virtual GetJobRunResponse EndGetJobRun(IAsyncResult asyncResult)
         {
             return EndInvoke<GetJobRunResponse>(asyncResult);
         }
@@ -2861,7 +2861,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetJobRuns">REST API Reference for GetJobRuns Operation</seealso>
-        public GetJobRunsResponse GetJobRuns(GetJobRunsRequest request)
+        public virtual GetJobRunsResponse GetJobRuns(GetJobRunsRequest request)
         {
             var marshaller = new GetJobRunsRequestMarshaller();
             var unmarshaller = GetJobRunsResponseUnmarshaller.Instance;
@@ -2881,7 +2881,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetJobRuns
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetJobRuns">REST API Reference for GetJobRuns Operation</seealso>
-        public IAsyncResult BeginGetJobRuns(GetJobRunsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetJobRuns(GetJobRunsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetJobRunsRequestMarshaller();
             var unmarshaller = GetJobRunsResponseUnmarshaller.Instance;
@@ -2898,7 +2898,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  GetJobRunsResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetJobRuns">REST API Reference for GetJobRuns Operation</seealso>
-        public  GetJobRunsResponse EndGetJobRuns(IAsyncResult asyncResult)
+        public virtual GetJobRunsResponse EndGetJobRuns(IAsyncResult asyncResult)
         {
             return EndInvoke<GetJobRunsResponse>(asyncResult);
         }
@@ -2926,7 +2926,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetJobs">REST API Reference for GetJobs Operation</seealso>
-        public GetJobsResponse GetJobs(GetJobsRequest request)
+        public virtual GetJobsResponse GetJobs(GetJobsRequest request)
         {
             var marshaller = new GetJobsRequestMarshaller();
             var unmarshaller = GetJobsResponseUnmarshaller.Instance;
@@ -2946,7 +2946,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetJobs
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetJobs">REST API Reference for GetJobs Operation</seealso>
-        public IAsyncResult BeginGetJobs(GetJobsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetJobs(GetJobsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetJobsRequestMarshaller();
             var unmarshaller = GetJobsResponseUnmarshaller.Instance;
@@ -2963,7 +2963,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  GetJobsResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetJobs">REST API Reference for GetJobs Operation</seealso>
-        public  GetJobsResponse EndGetJobs(IAsyncResult asyncResult)
+        public virtual GetJobsResponse EndGetJobs(IAsyncResult asyncResult)
         {
             return EndInvoke<GetJobsResponse>(asyncResult);
         }
@@ -2988,7 +2988,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetMapping">REST API Reference for GetMapping Operation</seealso>
-        public GetMappingResponse GetMapping(GetMappingRequest request)
+        public virtual GetMappingResponse GetMapping(GetMappingRequest request)
         {
             var marshaller = new GetMappingRequestMarshaller();
             var unmarshaller = GetMappingResponseUnmarshaller.Instance;
@@ -3008,7 +3008,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMapping
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetMapping">REST API Reference for GetMapping Operation</seealso>
-        public IAsyncResult BeginGetMapping(GetMappingRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetMapping(GetMappingRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetMappingRequestMarshaller();
             var unmarshaller = GetMappingResponseUnmarshaller.Instance;
@@ -3025,7 +3025,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  GetMappingResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetMapping">REST API Reference for GetMapping Operation</seealso>
-        public  GetMappingResponse EndGetMapping(IAsyncResult asyncResult)
+        public virtual GetMappingResponse EndGetMapping(IAsyncResult asyncResult)
         {
             return EndInvoke<GetMappingResponse>(asyncResult);
         }
@@ -3053,7 +3053,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetPartition">REST API Reference for GetPartition Operation</seealso>
-        public GetPartitionResponse GetPartition(GetPartitionRequest request)
+        public virtual GetPartitionResponse GetPartition(GetPartitionRequest request)
         {
             var marshaller = new GetPartitionRequestMarshaller();
             var unmarshaller = GetPartitionResponseUnmarshaller.Instance;
@@ -3073,7 +3073,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPartition
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetPartition">REST API Reference for GetPartition Operation</seealso>
-        public IAsyncResult BeginGetPartition(GetPartitionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetPartition(GetPartitionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetPartitionRequestMarshaller();
             var unmarshaller = GetPartitionResponseUnmarshaller.Instance;
@@ -3090,7 +3090,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  GetPartitionResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetPartition">REST API Reference for GetPartition Operation</seealso>
-        public  GetPartitionResponse EndGetPartition(IAsyncResult asyncResult)
+        public virtual GetPartitionResponse EndGetPartition(IAsyncResult asyncResult)
         {
             return EndInvoke<GetPartitionResponse>(asyncResult);
         }
@@ -3118,7 +3118,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetPartitions">REST API Reference for GetPartitions Operation</seealso>
-        public GetPartitionsResponse GetPartitions(GetPartitionsRequest request)
+        public virtual GetPartitionsResponse GetPartitions(GetPartitionsRequest request)
         {
             var marshaller = new GetPartitionsRequestMarshaller();
             var unmarshaller = GetPartitionsResponseUnmarshaller.Instance;
@@ -3138,7 +3138,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPartitions
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetPartitions">REST API Reference for GetPartitions Operation</seealso>
-        public IAsyncResult BeginGetPartitions(GetPartitionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetPartitions(GetPartitionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetPartitionsRequestMarshaller();
             var unmarshaller = GetPartitionsResponseUnmarshaller.Instance;
@@ -3155,7 +3155,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  GetPartitionsResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetPartitions">REST API Reference for GetPartitions Operation</seealso>
-        public  GetPartitionsResponse EndGetPartitions(IAsyncResult asyncResult)
+        public virtual GetPartitionsResponse EndGetPartitions(IAsyncResult asyncResult)
         {
             return EndInvoke<GetPartitionsResponse>(asyncResult);
         }
@@ -3180,7 +3180,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetPlan">REST API Reference for GetPlan Operation</seealso>
-        public GetPlanResponse GetPlan(GetPlanRequest request)
+        public virtual GetPlanResponse GetPlan(GetPlanRequest request)
         {
             var marshaller = new GetPlanRequestMarshaller();
             var unmarshaller = GetPlanResponseUnmarshaller.Instance;
@@ -3200,7 +3200,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPlan
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetPlan">REST API Reference for GetPlan Operation</seealso>
-        public IAsyncResult BeginGetPlan(GetPlanRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetPlan(GetPlanRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetPlanRequestMarshaller();
             var unmarshaller = GetPlanResponseUnmarshaller.Instance;
@@ -3217,7 +3217,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  GetPlanResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetPlan">REST API Reference for GetPlan Operation</seealso>
-        public  GetPlanResponse EndGetPlan(IAsyncResult asyncResult)
+        public virtual GetPlanResponse EndGetPlan(IAsyncResult asyncResult)
         {
             return EndInvoke<GetPlanResponse>(asyncResult);
         }
@@ -3245,7 +3245,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTable">REST API Reference for GetTable Operation</seealso>
-        public GetTableResponse GetTable(GetTableRequest request)
+        public virtual GetTableResponse GetTable(GetTableRequest request)
         {
             var marshaller = new GetTableRequestMarshaller();
             var unmarshaller = GetTableResponseUnmarshaller.Instance;
@@ -3265,7 +3265,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTable
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTable">REST API Reference for GetTable Operation</seealso>
-        public IAsyncResult BeginGetTable(GetTableRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetTable(GetTableRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetTableRequestMarshaller();
             var unmarshaller = GetTableResponseUnmarshaller.Instance;
@@ -3282,7 +3282,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  GetTableResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTable">REST API Reference for GetTable Operation</seealso>
-        public  GetTableResponse EndGetTable(IAsyncResult asyncResult)
+        public virtual GetTableResponse EndGetTable(IAsyncResult asyncResult)
         {
             return EndInvoke<GetTableResponse>(asyncResult);
         }
@@ -3310,7 +3310,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTables">REST API Reference for GetTables Operation</seealso>
-        public GetTablesResponse GetTables(GetTablesRequest request)
+        public virtual GetTablesResponse GetTables(GetTablesRequest request)
         {
             var marshaller = new GetTablesRequestMarshaller();
             var unmarshaller = GetTablesResponseUnmarshaller.Instance;
@@ -3330,7 +3330,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTables
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTables">REST API Reference for GetTables Operation</seealso>
-        public IAsyncResult BeginGetTables(GetTablesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetTables(GetTablesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetTablesRequestMarshaller();
             var unmarshaller = GetTablesResponseUnmarshaller.Instance;
@@ -3347,7 +3347,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  GetTablesResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTables">REST API Reference for GetTables Operation</seealso>
-        public  GetTablesResponse EndGetTables(IAsyncResult asyncResult)
+        public virtual GetTablesResponse EndGetTables(IAsyncResult asyncResult)
         {
             return EndInvoke<GetTablesResponse>(asyncResult);
         }
@@ -3375,7 +3375,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTableVersions">REST API Reference for GetTableVersions Operation</seealso>
-        public GetTableVersionsResponse GetTableVersions(GetTableVersionsRequest request)
+        public virtual GetTableVersionsResponse GetTableVersions(GetTableVersionsRequest request)
         {
             var marshaller = new GetTableVersionsRequestMarshaller();
             var unmarshaller = GetTableVersionsResponseUnmarshaller.Instance;
@@ -3395,7 +3395,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTableVersions
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTableVersions">REST API Reference for GetTableVersions Operation</seealso>
-        public IAsyncResult BeginGetTableVersions(GetTableVersionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetTableVersions(GetTableVersionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetTableVersionsRequestMarshaller();
             var unmarshaller = GetTableVersionsResponseUnmarshaller.Instance;
@@ -3412,7 +3412,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  GetTableVersionsResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTableVersions">REST API Reference for GetTableVersions Operation</seealso>
-        public  GetTableVersionsResponse EndGetTableVersions(IAsyncResult asyncResult)
+        public virtual GetTableVersionsResponse EndGetTableVersions(IAsyncResult asyncResult)
         {
             return EndInvoke<GetTableVersionsResponse>(asyncResult);
         }
@@ -3440,7 +3440,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTrigger">REST API Reference for GetTrigger Operation</seealso>
-        public GetTriggerResponse GetTrigger(GetTriggerRequest request)
+        public virtual GetTriggerResponse GetTrigger(GetTriggerRequest request)
         {
             var marshaller = new GetTriggerRequestMarshaller();
             var unmarshaller = GetTriggerResponseUnmarshaller.Instance;
@@ -3460,7 +3460,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTrigger
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTrigger">REST API Reference for GetTrigger Operation</seealso>
-        public IAsyncResult BeginGetTrigger(GetTriggerRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetTrigger(GetTriggerRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetTriggerRequestMarshaller();
             var unmarshaller = GetTriggerResponseUnmarshaller.Instance;
@@ -3477,7 +3477,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  GetTriggerResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTrigger">REST API Reference for GetTrigger Operation</seealso>
-        public  GetTriggerResponse EndGetTrigger(IAsyncResult asyncResult)
+        public virtual GetTriggerResponse EndGetTrigger(IAsyncResult asyncResult)
         {
             return EndInvoke<GetTriggerResponse>(asyncResult);
         }
@@ -3505,7 +3505,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTriggers">REST API Reference for GetTriggers Operation</seealso>
-        public GetTriggersResponse GetTriggers(GetTriggersRequest request)
+        public virtual GetTriggersResponse GetTriggers(GetTriggersRequest request)
         {
             var marshaller = new GetTriggersRequestMarshaller();
             var unmarshaller = GetTriggersResponseUnmarshaller.Instance;
@@ -3525,7 +3525,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTriggers
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTriggers">REST API Reference for GetTriggers Operation</seealso>
-        public IAsyncResult BeginGetTriggers(GetTriggersRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetTriggers(GetTriggersRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetTriggersRequestMarshaller();
             var unmarshaller = GetTriggersResponseUnmarshaller.Instance;
@@ -3542,7 +3542,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  GetTriggersResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTriggers">REST API Reference for GetTriggers Operation</seealso>
-        public  GetTriggersResponse EndGetTriggers(IAsyncResult asyncResult)
+        public virtual GetTriggersResponse EndGetTriggers(IAsyncResult asyncResult)
         {
             return EndInvoke<GetTriggersResponse>(asyncResult);
         }
@@ -3570,7 +3570,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetUserDefinedFunction">REST API Reference for GetUserDefinedFunction Operation</seealso>
-        public GetUserDefinedFunctionResponse GetUserDefinedFunction(GetUserDefinedFunctionRequest request)
+        public virtual GetUserDefinedFunctionResponse GetUserDefinedFunction(GetUserDefinedFunctionRequest request)
         {
             var marshaller = new GetUserDefinedFunctionRequestMarshaller();
             var unmarshaller = GetUserDefinedFunctionResponseUnmarshaller.Instance;
@@ -3590,7 +3590,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetUserDefinedFunction
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetUserDefinedFunction">REST API Reference for GetUserDefinedFunction Operation</seealso>
-        public IAsyncResult BeginGetUserDefinedFunction(GetUserDefinedFunctionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetUserDefinedFunction(GetUserDefinedFunctionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetUserDefinedFunctionRequestMarshaller();
             var unmarshaller = GetUserDefinedFunctionResponseUnmarshaller.Instance;
@@ -3607,7 +3607,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  GetUserDefinedFunctionResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetUserDefinedFunction">REST API Reference for GetUserDefinedFunction Operation</seealso>
-        public  GetUserDefinedFunctionResponse EndGetUserDefinedFunction(IAsyncResult asyncResult)
+        public virtual GetUserDefinedFunctionResponse EndGetUserDefinedFunction(IAsyncResult asyncResult)
         {
             return EndInvoke<GetUserDefinedFunctionResponse>(asyncResult);
         }
@@ -3635,7 +3635,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetUserDefinedFunctions">REST API Reference for GetUserDefinedFunctions Operation</seealso>
-        public GetUserDefinedFunctionsResponse GetUserDefinedFunctions(GetUserDefinedFunctionsRequest request)
+        public virtual GetUserDefinedFunctionsResponse GetUserDefinedFunctions(GetUserDefinedFunctionsRequest request)
         {
             var marshaller = new GetUserDefinedFunctionsRequestMarshaller();
             var unmarshaller = GetUserDefinedFunctionsResponseUnmarshaller.Instance;
@@ -3655,7 +3655,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetUserDefinedFunctions
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetUserDefinedFunctions">REST API Reference for GetUserDefinedFunctions Operation</seealso>
-        public IAsyncResult BeginGetUserDefinedFunctions(GetUserDefinedFunctionsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetUserDefinedFunctions(GetUserDefinedFunctionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetUserDefinedFunctionsRequestMarshaller();
             var unmarshaller = GetUserDefinedFunctionsResponseUnmarshaller.Instance;
@@ -3672,7 +3672,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  GetUserDefinedFunctionsResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetUserDefinedFunctions">REST API Reference for GetUserDefinedFunctions Operation</seealso>
-        public  GetUserDefinedFunctionsResponse EndGetUserDefinedFunctions(IAsyncResult asyncResult)
+        public virtual GetUserDefinedFunctionsResponse EndGetUserDefinedFunctions(IAsyncResult asyncResult)
         {
             return EndInvoke<GetUserDefinedFunctionsResponse>(asyncResult);
         }
@@ -3694,7 +3694,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ImportCatalogToGlue">REST API Reference for ImportCatalogToGlue Operation</seealso>
-        public ImportCatalogToGlueResponse ImportCatalogToGlue(ImportCatalogToGlueRequest request)
+        public virtual ImportCatalogToGlueResponse ImportCatalogToGlue(ImportCatalogToGlueRequest request)
         {
             var marshaller = new ImportCatalogToGlueRequestMarshaller();
             var unmarshaller = ImportCatalogToGlueResponseUnmarshaller.Instance;
@@ -3714,7 +3714,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndImportCatalogToGlue
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ImportCatalogToGlue">REST API Reference for ImportCatalogToGlue Operation</seealso>
-        public IAsyncResult BeginImportCatalogToGlue(ImportCatalogToGlueRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginImportCatalogToGlue(ImportCatalogToGlueRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ImportCatalogToGlueRequestMarshaller();
             var unmarshaller = ImportCatalogToGlueResponseUnmarshaller.Instance;
@@ -3731,7 +3731,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  ImportCatalogToGlueResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ImportCatalogToGlue">REST API Reference for ImportCatalogToGlue Operation</seealso>
-        public  ImportCatalogToGlueResponse EndImportCatalogToGlue(IAsyncResult asyncResult)
+        public virtual ImportCatalogToGlueResponse EndImportCatalogToGlue(IAsyncResult asyncResult)
         {
             return EndInvoke<ImportCatalogToGlueResponse>(asyncResult);
         }
@@ -3759,7 +3759,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ResetJobBookmark">REST API Reference for ResetJobBookmark Operation</seealso>
-        public ResetJobBookmarkResponse ResetJobBookmark(ResetJobBookmarkRequest request)
+        public virtual ResetJobBookmarkResponse ResetJobBookmark(ResetJobBookmarkRequest request)
         {
             var marshaller = new ResetJobBookmarkRequestMarshaller();
             var unmarshaller = ResetJobBookmarkResponseUnmarshaller.Instance;
@@ -3779,7 +3779,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndResetJobBookmark
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ResetJobBookmark">REST API Reference for ResetJobBookmark Operation</seealso>
-        public IAsyncResult BeginResetJobBookmark(ResetJobBookmarkRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginResetJobBookmark(ResetJobBookmarkRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ResetJobBookmarkRequestMarshaller();
             var unmarshaller = ResetJobBookmarkResponseUnmarshaller.Instance;
@@ -3796,7 +3796,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  ResetJobBookmarkResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ResetJobBookmark">REST API Reference for ResetJobBookmark Operation</seealso>
-        public  ResetJobBookmarkResponse EndResetJobBookmark(IAsyncResult asyncResult)
+        public virtual ResetJobBookmarkResponse EndResetJobBookmark(IAsyncResult asyncResult)
         {
             return EndInvoke<ResetJobBookmarkResponse>(asyncResult);
         }
@@ -3822,7 +3822,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartCrawler">REST API Reference for StartCrawler Operation</seealso>
-        public StartCrawlerResponse StartCrawler(StartCrawlerRequest request)
+        public virtual StartCrawlerResponse StartCrawler(StartCrawlerRequest request)
         {
             var marshaller = new StartCrawlerRequestMarshaller();
             var unmarshaller = StartCrawlerResponseUnmarshaller.Instance;
@@ -3842,7 +3842,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartCrawler
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartCrawler">REST API Reference for StartCrawler Operation</seealso>
-        public IAsyncResult BeginStartCrawler(StartCrawlerRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginStartCrawler(StartCrawlerRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new StartCrawlerRequestMarshaller();
             var unmarshaller = StartCrawlerResponseUnmarshaller.Instance;
@@ -3859,7 +3859,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  StartCrawlerResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartCrawler">REST API Reference for StartCrawler Operation</seealso>
-        public  StartCrawlerResponse EndStartCrawler(IAsyncResult asyncResult)
+        public virtual StartCrawlerResponse EndStartCrawler(IAsyncResult asyncResult)
         {
             return EndInvoke<StartCrawlerResponse>(asyncResult);
         }
@@ -3891,7 +3891,7 @@ namespace Amazon.Glue
         /// The specified scheduler is transitioning.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartCrawlerSchedule">REST API Reference for StartCrawlerSchedule Operation</seealso>
-        public StartCrawlerScheduleResponse StartCrawlerSchedule(StartCrawlerScheduleRequest request)
+        public virtual StartCrawlerScheduleResponse StartCrawlerSchedule(StartCrawlerScheduleRequest request)
         {
             var marshaller = new StartCrawlerScheduleRequestMarshaller();
             var unmarshaller = StartCrawlerScheduleResponseUnmarshaller.Instance;
@@ -3911,7 +3911,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartCrawlerSchedule
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartCrawlerSchedule">REST API Reference for StartCrawlerSchedule Operation</seealso>
-        public IAsyncResult BeginStartCrawlerSchedule(StartCrawlerScheduleRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginStartCrawlerSchedule(StartCrawlerScheduleRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new StartCrawlerScheduleRequestMarshaller();
             var unmarshaller = StartCrawlerScheduleResponseUnmarshaller.Instance;
@@ -3928,7 +3928,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  StartCrawlerScheduleResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartCrawlerSchedule">REST API Reference for StartCrawlerSchedule Operation</seealso>
-        public  StartCrawlerScheduleResponse EndStartCrawlerSchedule(IAsyncResult asyncResult)
+        public virtual StartCrawlerScheduleResponse EndStartCrawlerSchedule(IAsyncResult asyncResult)
         {
             return EndInvoke<StartCrawlerScheduleResponse>(asyncResult);
         }
@@ -3962,7 +3962,7 @@ namespace Amazon.Glue
         /// A resource numerical limit was exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartJobRun">REST API Reference for StartJobRun Operation</seealso>
-        public StartJobRunResponse StartJobRun(StartJobRunRequest request)
+        public virtual StartJobRunResponse StartJobRun(StartJobRunRequest request)
         {
             var marshaller = new StartJobRunRequestMarshaller();
             var unmarshaller = StartJobRunResponseUnmarshaller.Instance;
@@ -3982,7 +3982,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartJobRun
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartJobRun">REST API Reference for StartJobRun Operation</seealso>
-        public IAsyncResult BeginStartJobRun(StartJobRunRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginStartJobRun(StartJobRunRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new StartJobRunRequestMarshaller();
             var unmarshaller = StartJobRunResponseUnmarshaller.Instance;
@@ -3999,7 +3999,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  StartJobRunResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartJobRun">REST API Reference for StartJobRun Operation</seealso>
-        public  StartJobRunResponse EndStartJobRun(IAsyncResult asyncResult)
+        public virtual StartJobRunResponse EndStartJobRun(IAsyncResult asyncResult)
         {
             return EndInvoke<StartJobRunResponse>(asyncResult);
         }
@@ -4033,7 +4033,7 @@ namespace Amazon.Glue
         /// A resource numerical limit was exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartTrigger">REST API Reference for StartTrigger Operation</seealso>
-        public StartTriggerResponse StartTrigger(StartTriggerRequest request)
+        public virtual StartTriggerResponse StartTrigger(StartTriggerRequest request)
         {
             var marshaller = new StartTriggerRequestMarshaller();
             var unmarshaller = StartTriggerResponseUnmarshaller.Instance;
@@ -4053,7 +4053,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartTrigger
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartTrigger">REST API Reference for StartTrigger Operation</seealso>
-        public IAsyncResult BeginStartTrigger(StartTriggerRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginStartTrigger(StartTriggerRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new StartTriggerRequestMarshaller();
             var unmarshaller = StartTriggerResponseUnmarshaller.Instance;
@@ -4070,7 +4070,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  StartTriggerResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartTrigger">REST API Reference for StartTrigger Operation</seealso>
-        public  StartTriggerResponse EndStartTrigger(IAsyncResult asyncResult)
+        public virtual StartTriggerResponse EndStartTrigger(IAsyncResult asyncResult)
         {
             return EndInvoke<StartTriggerResponse>(asyncResult);
         }
@@ -4098,7 +4098,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StopCrawler">REST API Reference for StopCrawler Operation</seealso>
-        public StopCrawlerResponse StopCrawler(StopCrawlerRequest request)
+        public virtual StopCrawlerResponse StopCrawler(StopCrawlerRequest request)
         {
             var marshaller = new StopCrawlerRequestMarshaller();
             var unmarshaller = StopCrawlerResponseUnmarshaller.Instance;
@@ -4118,7 +4118,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopCrawler
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StopCrawler">REST API Reference for StopCrawler Operation</seealso>
-        public IAsyncResult BeginStopCrawler(StopCrawlerRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginStopCrawler(StopCrawlerRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new StopCrawlerRequestMarshaller();
             var unmarshaller = StopCrawlerResponseUnmarshaller.Instance;
@@ -4135,7 +4135,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  StopCrawlerResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StopCrawler">REST API Reference for StopCrawler Operation</seealso>
-        public  StopCrawlerResponse EndStopCrawler(IAsyncResult asyncResult)
+        public virtual StopCrawlerResponse EndStopCrawler(IAsyncResult asyncResult)
         {
             return EndInvoke<StopCrawlerResponse>(asyncResult);
         }
@@ -4164,7 +4164,7 @@ namespace Amazon.Glue
         /// The specified scheduler is transitioning.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StopCrawlerSchedule">REST API Reference for StopCrawlerSchedule Operation</seealso>
-        public StopCrawlerScheduleResponse StopCrawlerSchedule(StopCrawlerScheduleRequest request)
+        public virtual StopCrawlerScheduleResponse StopCrawlerSchedule(StopCrawlerScheduleRequest request)
         {
             var marshaller = new StopCrawlerScheduleRequestMarshaller();
             var unmarshaller = StopCrawlerScheduleResponseUnmarshaller.Instance;
@@ -4184,7 +4184,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopCrawlerSchedule
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StopCrawlerSchedule">REST API Reference for StopCrawlerSchedule Operation</seealso>
-        public IAsyncResult BeginStopCrawlerSchedule(StopCrawlerScheduleRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginStopCrawlerSchedule(StopCrawlerScheduleRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new StopCrawlerScheduleRequestMarshaller();
             var unmarshaller = StopCrawlerScheduleResponseUnmarshaller.Instance;
@@ -4201,7 +4201,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  StopCrawlerScheduleResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StopCrawlerSchedule">REST API Reference for StopCrawlerSchedule Operation</seealso>
-        public  StopCrawlerScheduleResponse EndStopCrawlerSchedule(IAsyncResult asyncResult)
+        public virtual StopCrawlerScheduleResponse EndStopCrawlerSchedule(IAsyncResult asyncResult)
         {
             return EndInvoke<StopCrawlerScheduleResponse>(asyncResult);
         }
@@ -4229,7 +4229,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StopTrigger">REST API Reference for StopTrigger Operation</seealso>
-        public StopTriggerResponse StopTrigger(StopTriggerRequest request)
+        public virtual StopTriggerResponse StopTrigger(StopTriggerRequest request)
         {
             var marshaller = new StopTriggerRequestMarshaller();
             var unmarshaller = StopTriggerResponseUnmarshaller.Instance;
@@ -4249,7 +4249,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopTrigger
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StopTrigger">REST API Reference for StopTrigger Operation</seealso>
-        public IAsyncResult BeginStopTrigger(StopTriggerRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginStopTrigger(StopTriggerRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new StopTriggerRequestMarshaller();
             var unmarshaller = StopTriggerResponseUnmarshaller.Instance;
@@ -4266,7 +4266,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  StopTriggerResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StopTrigger">REST API Reference for StopTrigger Operation</seealso>
-        public  StopTriggerResponse EndStopTrigger(IAsyncResult asyncResult)
+        public virtual StopTriggerResponse EndStopTrigger(IAsyncResult asyncResult)
         {
             return EndInvoke<StopTriggerResponse>(asyncResult);
         }
@@ -4294,7 +4294,7 @@ namespace Amazon.Glue
         /// There was a version conflict.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateClassifier">REST API Reference for UpdateClassifier Operation</seealso>
-        public UpdateClassifierResponse UpdateClassifier(UpdateClassifierRequest request)
+        public virtual UpdateClassifierResponse UpdateClassifier(UpdateClassifierRequest request)
         {
             var marshaller = new UpdateClassifierRequestMarshaller();
             var unmarshaller = UpdateClassifierResponseUnmarshaller.Instance;
@@ -4314,7 +4314,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateClassifier
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateClassifier">REST API Reference for UpdateClassifier Operation</seealso>
-        public IAsyncResult BeginUpdateClassifier(UpdateClassifierRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateClassifier(UpdateClassifierRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateClassifierRequestMarshaller();
             var unmarshaller = UpdateClassifierResponseUnmarshaller.Instance;
@@ -4331,7 +4331,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  UpdateClassifierResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateClassifier">REST API Reference for UpdateClassifier Operation</seealso>
-        public  UpdateClassifierResponse EndUpdateClassifier(IAsyncResult asyncResult)
+        public virtual UpdateClassifierResponse EndUpdateClassifier(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateClassifierResponse>(asyncResult);
         }
@@ -4356,7 +4356,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateConnection">REST API Reference for UpdateConnection Operation</seealso>
-        public UpdateConnectionResponse UpdateConnection(UpdateConnectionRequest request)
+        public virtual UpdateConnectionResponse UpdateConnection(UpdateConnectionRequest request)
         {
             var marshaller = new UpdateConnectionRequestMarshaller();
             var unmarshaller = UpdateConnectionResponseUnmarshaller.Instance;
@@ -4376,7 +4376,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateConnection
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateConnection">REST API Reference for UpdateConnection Operation</seealso>
-        public IAsyncResult BeginUpdateConnection(UpdateConnectionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateConnection(UpdateConnectionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateConnectionRequestMarshaller();
             var unmarshaller = UpdateConnectionResponseUnmarshaller.Instance;
@@ -4393,7 +4393,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  UpdateConnectionResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateConnection">REST API Reference for UpdateConnection Operation</seealso>
-        public  UpdateConnectionResponse EndUpdateConnection(IAsyncResult asyncResult)
+        public virtual UpdateConnectionResponse EndUpdateConnection(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateConnectionResponse>(asyncResult);
         }
@@ -4425,7 +4425,7 @@ namespace Amazon.Glue
         /// There was a version conflict.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateCrawler">REST API Reference for UpdateCrawler Operation</seealso>
-        public UpdateCrawlerResponse UpdateCrawler(UpdateCrawlerRequest request)
+        public virtual UpdateCrawlerResponse UpdateCrawler(UpdateCrawlerRequest request)
         {
             var marshaller = new UpdateCrawlerRequestMarshaller();
             var unmarshaller = UpdateCrawlerResponseUnmarshaller.Instance;
@@ -4445,7 +4445,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateCrawler
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateCrawler">REST API Reference for UpdateCrawler Operation</seealso>
-        public IAsyncResult BeginUpdateCrawler(UpdateCrawlerRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateCrawler(UpdateCrawlerRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateCrawlerRequestMarshaller();
             var unmarshaller = UpdateCrawlerResponseUnmarshaller.Instance;
@@ -4462,7 +4462,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  UpdateCrawlerResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateCrawler">REST API Reference for UpdateCrawler Operation</seealso>
-        public  UpdateCrawlerResponse EndUpdateCrawler(IAsyncResult asyncResult)
+        public virtual UpdateCrawlerResponse EndUpdateCrawler(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateCrawlerResponse>(asyncResult);
         }
@@ -4493,7 +4493,7 @@ namespace Amazon.Glue
         /// There was a version conflict.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateCrawlerSchedule">REST API Reference for UpdateCrawlerSchedule Operation</seealso>
-        public UpdateCrawlerScheduleResponse UpdateCrawlerSchedule(UpdateCrawlerScheduleRequest request)
+        public virtual UpdateCrawlerScheduleResponse UpdateCrawlerSchedule(UpdateCrawlerScheduleRequest request)
         {
             var marshaller = new UpdateCrawlerScheduleRequestMarshaller();
             var unmarshaller = UpdateCrawlerScheduleResponseUnmarshaller.Instance;
@@ -4513,7 +4513,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateCrawlerSchedule
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateCrawlerSchedule">REST API Reference for UpdateCrawlerSchedule Operation</seealso>
-        public IAsyncResult BeginUpdateCrawlerSchedule(UpdateCrawlerScheduleRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateCrawlerSchedule(UpdateCrawlerScheduleRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateCrawlerScheduleRequestMarshaller();
             var unmarshaller = UpdateCrawlerScheduleResponseUnmarshaller.Instance;
@@ -4530,7 +4530,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  UpdateCrawlerScheduleResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateCrawlerSchedule">REST API Reference for UpdateCrawlerSchedule Operation</seealso>
-        public  UpdateCrawlerScheduleResponse EndUpdateCrawlerSchedule(IAsyncResult asyncResult)
+        public virtual UpdateCrawlerScheduleResponse EndUpdateCrawlerSchedule(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateCrawlerScheduleResponse>(asyncResult);
         }
@@ -4558,7 +4558,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateDatabase">REST API Reference for UpdateDatabase Operation</seealso>
-        public UpdateDatabaseResponse UpdateDatabase(UpdateDatabaseRequest request)
+        public virtual UpdateDatabaseResponse UpdateDatabase(UpdateDatabaseRequest request)
         {
             var marshaller = new UpdateDatabaseRequestMarshaller();
             var unmarshaller = UpdateDatabaseResponseUnmarshaller.Instance;
@@ -4578,7 +4578,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDatabase
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateDatabase">REST API Reference for UpdateDatabase Operation</seealso>
-        public IAsyncResult BeginUpdateDatabase(UpdateDatabaseRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateDatabase(UpdateDatabaseRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateDatabaseRequestMarshaller();
             var unmarshaller = UpdateDatabaseResponseUnmarshaller.Instance;
@@ -4595,7 +4595,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  UpdateDatabaseResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateDatabase">REST API Reference for UpdateDatabase Operation</seealso>
-        public  UpdateDatabaseResponse EndUpdateDatabase(IAsyncResult asyncResult)
+        public virtual UpdateDatabaseResponse EndUpdateDatabase(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateDatabaseResponse>(asyncResult);
         }
@@ -4626,7 +4626,7 @@ namespace Amazon.Glue
         /// A value could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateDevEndpoint">REST API Reference for UpdateDevEndpoint Operation</seealso>
-        public UpdateDevEndpointResponse UpdateDevEndpoint(UpdateDevEndpointRequest request)
+        public virtual UpdateDevEndpointResponse UpdateDevEndpoint(UpdateDevEndpointRequest request)
         {
             var marshaller = new UpdateDevEndpointRequestMarshaller();
             var unmarshaller = UpdateDevEndpointResponseUnmarshaller.Instance;
@@ -4646,7 +4646,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDevEndpoint
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateDevEndpoint">REST API Reference for UpdateDevEndpoint Operation</seealso>
-        public IAsyncResult BeginUpdateDevEndpoint(UpdateDevEndpointRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateDevEndpoint(UpdateDevEndpointRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateDevEndpointRequestMarshaller();
             var unmarshaller = UpdateDevEndpointResponseUnmarshaller.Instance;
@@ -4663,7 +4663,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  UpdateDevEndpointResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateDevEndpoint">REST API Reference for UpdateDevEndpoint Operation</seealso>
-        public  UpdateDevEndpointResponse EndUpdateDevEndpoint(IAsyncResult asyncResult)
+        public virtual UpdateDevEndpointResponse EndUpdateDevEndpoint(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateDevEndpointResponse>(asyncResult);
         }
@@ -4691,7 +4691,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateJob">REST API Reference for UpdateJob Operation</seealso>
-        public UpdateJobResponse UpdateJob(UpdateJobRequest request)
+        public virtual UpdateJobResponse UpdateJob(UpdateJobRequest request)
         {
             var marshaller = new UpdateJobRequestMarshaller();
             var unmarshaller = UpdateJobResponseUnmarshaller.Instance;
@@ -4711,7 +4711,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateJob
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateJob">REST API Reference for UpdateJob Operation</seealso>
-        public IAsyncResult BeginUpdateJob(UpdateJobRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateJob(UpdateJobRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateJobRequestMarshaller();
             var unmarshaller = UpdateJobResponseUnmarshaller.Instance;
@@ -4728,7 +4728,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  UpdateJobResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateJob">REST API Reference for UpdateJob Operation</seealso>
-        public  UpdateJobResponse EndUpdateJob(IAsyncResult asyncResult)
+        public virtual UpdateJobResponse EndUpdateJob(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateJobResponse>(asyncResult);
         }
@@ -4756,7 +4756,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdatePartition">REST API Reference for UpdatePartition Operation</seealso>
-        public UpdatePartitionResponse UpdatePartition(UpdatePartitionRequest request)
+        public virtual UpdatePartitionResponse UpdatePartition(UpdatePartitionRequest request)
         {
             var marshaller = new UpdatePartitionRequestMarshaller();
             var unmarshaller = UpdatePartitionResponseUnmarshaller.Instance;
@@ -4776,7 +4776,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdatePartition
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdatePartition">REST API Reference for UpdatePartition Operation</seealso>
-        public IAsyncResult BeginUpdatePartition(UpdatePartitionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdatePartition(UpdatePartitionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdatePartitionRequestMarshaller();
             var unmarshaller = UpdatePartitionResponseUnmarshaller.Instance;
@@ -4793,7 +4793,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  UpdatePartitionResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdatePartition">REST API Reference for UpdatePartition Operation</seealso>
-        public  UpdatePartitionResponse EndUpdatePartition(IAsyncResult asyncResult)
+        public virtual UpdatePartitionResponse EndUpdatePartition(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdatePartitionResponse>(asyncResult);
         }
@@ -4824,7 +4824,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateTable">REST API Reference for UpdateTable Operation</seealso>
-        public UpdateTableResponse UpdateTable(UpdateTableRequest request)
+        public virtual UpdateTableResponse UpdateTable(UpdateTableRequest request)
         {
             var marshaller = new UpdateTableRequestMarshaller();
             var unmarshaller = UpdateTableResponseUnmarshaller.Instance;
@@ -4844,7 +4844,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateTable
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateTable">REST API Reference for UpdateTable Operation</seealso>
-        public IAsyncResult BeginUpdateTable(UpdateTableRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateTable(UpdateTableRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateTableRequestMarshaller();
             var unmarshaller = UpdateTableResponseUnmarshaller.Instance;
@@ -4861,7 +4861,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  UpdateTableResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateTable">REST API Reference for UpdateTable Operation</seealso>
-        public  UpdateTableResponse EndUpdateTable(IAsyncResult asyncResult)
+        public virtual UpdateTableResponse EndUpdateTable(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateTableResponse>(asyncResult);
         }
@@ -4889,7 +4889,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateTrigger">REST API Reference for UpdateTrigger Operation</seealso>
-        public UpdateTriggerResponse UpdateTrigger(UpdateTriggerRequest request)
+        public virtual UpdateTriggerResponse UpdateTrigger(UpdateTriggerRequest request)
         {
             var marshaller = new UpdateTriggerRequestMarshaller();
             var unmarshaller = UpdateTriggerResponseUnmarshaller.Instance;
@@ -4909,7 +4909,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateTrigger
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateTrigger">REST API Reference for UpdateTrigger Operation</seealso>
-        public IAsyncResult BeginUpdateTrigger(UpdateTriggerRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateTrigger(UpdateTriggerRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateTriggerRequestMarshaller();
             var unmarshaller = UpdateTriggerResponseUnmarshaller.Instance;
@@ -4926,7 +4926,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  UpdateTriggerResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateTrigger">REST API Reference for UpdateTrigger Operation</seealso>
-        public  UpdateTriggerResponse EndUpdateTrigger(IAsyncResult asyncResult)
+        public virtual UpdateTriggerResponse EndUpdateTrigger(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateTriggerResponse>(asyncResult);
         }
@@ -4954,7 +4954,7 @@ namespace Amazon.Glue
         /// The operation timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateUserDefinedFunction">REST API Reference for UpdateUserDefinedFunction Operation</seealso>
-        public UpdateUserDefinedFunctionResponse UpdateUserDefinedFunction(UpdateUserDefinedFunctionRequest request)
+        public virtual UpdateUserDefinedFunctionResponse UpdateUserDefinedFunction(UpdateUserDefinedFunctionRequest request)
         {
             var marshaller = new UpdateUserDefinedFunctionRequestMarshaller();
             var unmarshaller = UpdateUserDefinedFunctionResponseUnmarshaller.Instance;
@@ -4974,7 +4974,7 @@ namespace Amazon.Glue
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateUserDefinedFunction
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateUserDefinedFunction">REST API Reference for UpdateUserDefinedFunction Operation</seealso>
-        public IAsyncResult BeginUpdateUserDefinedFunction(UpdateUserDefinedFunctionRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateUserDefinedFunction(UpdateUserDefinedFunctionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateUserDefinedFunctionRequestMarshaller();
             var unmarshaller = UpdateUserDefinedFunctionResponseUnmarshaller.Instance;
@@ -4991,7 +4991,7 @@ namespace Amazon.Glue
         /// 
         /// <returns>Returns a  UpdateUserDefinedFunctionResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateUserDefinedFunction">REST API Reference for UpdateUserDefinedFunction Operation</seealso>
-        public  UpdateUserDefinedFunctionResponse EndUpdateUserDefinedFunction(IAsyncResult asyncResult)
+        public virtual UpdateUserDefinedFunctionResponse EndUpdateUserDefinedFunction(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateUserDefinedFunctionResponse>(asyncResult);
         }

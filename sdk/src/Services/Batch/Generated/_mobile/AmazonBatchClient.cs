@@ -250,7 +250,7 @@ namespace Amazon.Batch
         
         #region  CancelJob
 
-        internal CancelJobResponse CancelJob(CancelJobRequest request)
+        internal virtual CancelJobResponse CancelJob(CancelJobRequest request)
         {
             var marshaller = new CancelJobRequestMarshaller();
             var unmarshaller = CancelJobResponseUnmarshaller.Instance;
@@ -269,7 +269,7 @@ namespace Amazon.Batch
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CancelJob">REST API Reference for CancelJob Operation</seealso>
-        public Task<CancelJobResponse> CancelJobAsync(CancelJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CancelJobResponse> CancelJobAsync(CancelJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CancelJobRequestMarshaller();
             var unmarshaller = CancelJobResponseUnmarshaller.Instance;
@@ -282,7 +282,7 @@ namespace Amazon.Batch
         
         #region  CreateComputeEnvironment
 
-        internal CreateComputeEnvironmentResponse CreateComputeEnvironment(CreateComputeEnvironmentRequest request)
+        internal virtual CreateComputeEnvironmentResponse CreateComputeEnvironment(CreateComputeEnvironmentRequest request)
         {
             var marshaller = new CreateComputeEnvironmentRequestMarshaller();
             var unmarshaller = CreateComputeEnvironmentResponseUnmarshaller.Instance;
@@ -301,7 +301,7 @@ namespace Amazon.Batch
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateComputeEnvironment">REST API Reference for CreateComputeEnvironment Operation</seealso>
-        public Task<CreateComputeEnvironmentResponse> CreateComputeEnvironmentAsync(CreateComputeEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateComputeEnvironmentResponse> CreateComputeEnvironmentAsync(CreateComputeEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateComputeEnvironmentRequestMarshaller();
             var unmarshaller = CreateComputeEnvironmentResponseUnmarshaller.Instance;
@@ -314,7 +314,7 @@ namespace Amazon.Batch
         
         #region  CreateJobQueue
 
-        internal CreateJobQueueResponse CreateJobQueue(CreateJobQueueRequest request)
+        internal virtual CreateJobQueueResponse CreateJobQueue(CreateJobQueueRequest request)
         {
             var marshaller = new CreateJobQueueRequestMarshaller();
             var unmarshaller = CreateJobQueueResponseUnmarshaller.Instance;
@@ -333,7 +333,7 @@ namespace Amazon.Batch
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateJobQueue">REST API Reference for CreateJobQueue Operation</seealso>
-        public Task<CreateJobQueueResponse> CreateJobQueueAsync(CreateJobQueueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateJobQueueResponse> CreateJobQueueAsync(CreateJobQueueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateJobQueueRequestMarshaller();
             var unmarshaller = CreateJobQueueResponseUnmarshaller.Instance;
@@ -346,7 +346,7 @@ namespace Amazon.Batch
         
         #region  DeleteComputeEnvironment
 
-        internal DeleteComputeEnvironmentResponse DeleteComputeEnvironment(DeleteComputeEnvironmentRequest request)
+        internal virtual DeleteComputeEnvironmentResponse DeleteComputeEnvironment(DeleteComputeEnvironmentRequest request)
         {
             var marshaller = new DeleteComputeEnvironmentRequestMarshaller();
             var unmarshaller = DeleteComputeEnvironmentResponseUnmarshaller.Instance;
@@ -365,7 +365,7 @@ namespace Amazon.Batch
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteComputeEnvironment">REST API Reference for DeleteComputeEnvironment Operation</seealso>
-        public Task<DeleteComputeEnvironmentResponse> DeleteComputeEnvironmentAsync(DeleteComputeEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteComputeEnvironmentResponse> DeleteComputeEnvironmentAsync(DeleteComputeEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteComputeEnvironmentRequestMarshaller();
             var unmarshaller = DeleteComputeEnvironmentResponseUnmarshaller.Instance;
@@ -378,7 +378,7 @@ namespace Amazon.Batch
         
         #region  DeleteJobQueue
 
-        internal DeleteJobQueueResponse DeleteJobQueue(DeleteJobQueueRequest request)
+        internal virtual DeleteJobQueueResponse DeleteJobQueue(DeleteJobQueueRequest request)
         {
             var marshaller = new DeleteJobQueueRequestMarshaller();
             var unmarshaller = DeleteJobQueueResponseUnmarshaller.Instance;
@@ -397,7 +397,7 @@ namespace Amazon.Batch
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteJobQueue">REST API Reference for DeleteJobQueue Operation</seealso>
-        public Task<DeleteJobQueueResponse> DeleteJobQueueAsync(DeleteJobQueueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteJobQueueResponse> DeleteJobQueueAsync(DeleteJobQueueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteJobQueueRequestMarshaller();
             var unmarshaller = DeleteJobQueueResponseUnmarshaller.Instance;
@@ -410,7 +410,7 @@ namespace Amazon.Batch
         
         #region  DeregisterJobDefinition
 
-        internal DeregisterJobDefinitionResponse DeregisterJobDefinition(DeregisterJobDefinitionRequest request)
+        internal virtual DeregisterJobDefinitionResponse DeregisterJobDefinition(DeregisterJobDefinitionRequest request)
         {
             var marshaller = new DeregisterJobDefinitionRequestMarshaller();
             var unmarshaller = DeregisterJobDefinitionResponseUnmarshaller.Instance;
@@ -429,7 +429,7 @@ namespace Amazon.Batch
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeregisterJobDefinition">REST API Reference for DeregisterJobDefinition Operation</seealso>
-        public Task<DeregisterJobDefinitionResponse> DeregisterJobDefinitionAsync(DeregisterJobDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeregisterJobDefinitionResponse> DeregisterJobDefinitionAsync(DeregisterJobDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeregisterJobDefinitionRequestMarshaller();
             var unmarshaller = DeregisterJobDefinitionResponseUnmarshaller.Instance;
@@ -442,7 +442,7 @@ namespace Amazon.Batch
         
         #region  DescribeComputeEnvironments
 
-        internal DescribeComputeEnvironmentsResponse DescribeComputeEnvironments(DescribeComputeEnvironmentsRequest request)
+        internal virtual DescribeComputeEnvironmentsResponse DescribeComputeEnvironments(DescribeComputeEnvironmentsRequest request)
         {
             var marshaller = new DescribeComputeEnvironmentsRequestMarshaller();
             var unmarshaller = DescribeComputeEnvironmentsResponseUnmarshaller.Instance;
@@ -461,7 +461,7 @@ namespace Amazon.Batch
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeComputeEnvironments">REST API Reference for DescribeComputeEnvironments Operation</seealso>
-        public Task<DescribeComputeEnvironmentsResponse> DescribeComputeEnvironmentsAsync(DescribeComputeEnvironmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeComputeEnvironmentsResponse> DescribeComputeEnvironmentsAsync(DescribeComputeEnvironmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeComputeEnvironmentsRequestMarshaller();
             var unmarshaller = DescribeComputeEnvironmentsResponseUnmarshaller.Instance;
@@ -474,7 +474,7 @@ namespace Amazon.Batch
         
         #region  DescribeJobDefinitions
 
-        internal DescribeJobDefinitionsResponse DescribeJobDefinitions(DescribeJobDefinitionsRequest request)
+        internal virtual DescribeJobDefinitionsResponse DescribeJobDefinitions(DescribeJobDefinitionsRequest request)
         {
             var marshaller = new DescribeJobDefinitionsRequestMarshaller();
             var unmarshaller = DescribeJobDefinitionsResponseUnmarshaller.Instance;
@@ -493,7 +493,7 @@ namespace Amazon.Batch
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeJobDefinitions">REST API Reference for DescribeJobDefinitions Operation</seealso>
-        public Task<DescribeJobDefinitionsResponse> DescribeJobDefinitionsAsync(DescribeJobDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeJobDefinitionsResponse> DescribeJobDefinitionsAsync(DescribeJobDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeJobDefinitionsRequestMarshaller();
             var unmarshaller = DescribeJobDefinitionsResponseUnmarshaller.Instance;
@@ -506,7 +506,7 @@ namespace Amazon.Batch
         
         #region  DescribeJobQueues
 
-        internal DescribeJobQueuesResponse DescribeJobQueues(DescribeJobQueuesRequest request)
+        internal virtual DescribeJobQueuesResponse DescribeJobQueues(DescribeJobQueuesRequest request)
         {
             var marshaller = new DescribeJobQueuesRequestMarshaller();
             var unmarshaller = DescribeJobQueuesResponseUnmarshaller.Instance;
@@ -525,7 +525,7 @@ namespace Amazon.Batch
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeJobQueues">REST API Reference for DescribeJobQueues Operation</seealso>
-        public Task<DescribeJobQueuesResponse> DescribeJobQueuesAsync(DescribeJobQueuesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeJobQueuesResponse> DescribeJobQueuesAsync(DescribeJobQueuesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeJobQueuesRequestMarshaller();
             var unmarshaller = DescribeJobQueuesResponseUnmarshaller.Instance;
@@ -538,7 +538,7 @@ namespace Amazon.Batch
         
         #region  DescribeJobs
 
-        internal DescribeJobsResponse DescribeJobs(DescribeJobsRequest request)
+        internal virtual DescribeJobsResponse DescribeJobs(DescribeJobsRequest request)
         {
             var marshaller = new DescribeJobsRequestMarshaller();
             var unmarshaller = DescribeJobsResponseUnmarshaller.Instance;
@@ -557,7 +557,7 @@ namespace Amazon.Batch
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeJobs">REST API Reference for DescribeJobs Operation</seealso>
-        public Task<DescribeJobsResponse> DescribeJobsAsync(DescribeJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeJobsResponse> DescribeJobsAsync(DescribeJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeJobsRequestMarshaller();
             var unmarshaller = DescribeJobsResponseUnmarshaller.Instance;
@@ -570,7 +570,7 @@ namespace Amazon.Batch
         
         #region  ListJobs
 
-        internal ListJobsResponse ListJobs(ListJobsRequest request)
+        internal virtual ListJobsResponse ListJobs(ListJobsRequest request)
         {
             var marshaller = new ListJobsRequestMarshaller();
             var unmarshaller = ListJobsResponseUnmarshaller.Instance;
@@ -589,7 +589,7 @@ namespace Amazon.Batch
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListJobs">REST API Reference for ListJobs Operation</seealso>
-        public Task<ListJobsResponse> ListJobsAsync(ListJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListJobsResponse> ListJobsAsync(ListJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListJobsRequestMarshaller();
             var unmarshaller = ListJobsResponseUnmarshaller.Instance;
@@ -602,7 +602,7 @@ namespace Amazon.Batch
         
         #region  RegisterJobDefinition
 
-        internal RegisterJobDefinitionResponse RegisterJobDefinition(RegisterJobDefinitionRequest request)
+        internal virtual RegisterJobDefinitionResponse RegisterJobDefinition(RegisterJobDefinitionRequest request)
         {
             var marshaller = new RegisterJobDefinitionRequestMarshaller();
             var unmarshaller = RegisterJobDefinitionResponseUnmarshaller.Instance;
@@ -621,7 +621,7 @@ namespace Amazon.Batch
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/RegisterJobDefinition">REST API Reference for RegisterJobDefinition Operation</seealso>
-        public Task<RegisterJobDefinitionResponse> RegisterJobDefinitionAsync(RegisterJobDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<RegisterJobDefinitionResponse> RegisterJobDefinitionAsync(RegisterJobDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RegisterJobDefinitionRequestMarshaller();
             var unmarshaller = RegisterJobDefinitionResponseUnmarshaller.Instance;
@@ -634,7 +634,7 @@ namespace Amazon.Batch
         
         #region  SubmitJob
 
-        internal SubmitJobResponse SubmitJob(SubmitJobRequest request)
+        internal virtual SubmitJobResponse SubmitJob(SubmitJobRequest request)
         {
             var marshaller = new SubmitJobRequestMarshaller();
             var unmarshaller = SubmitJobResponseUnmarshaller.Instance;
@@ -653,7 +653,7 @@ namespace Amazon.Batch
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/SubmitJob">REST API Reference for SubmitJob Operation</seealso>
-        public Task<SubmitJobResponse> SubmitJobAsync(SubmitJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<SubmitJobResponse> SubmitJobAsync(SubmitJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SubmitJobRequestMarshaller();
             var unmarshaller = SubmitJobResponseUnmarshaller.Instance;
@@ -666,7 +666,7 @@ namespace Amazon.Batch
         
         #region  TerminateJob
 
-        internal TerminateJobResponse TerminateJob(TerminateJobRequest request)
+        internal virtual TerminateJobResponse TerminateJob(TerminateJobRequest request)
         {
             var marshaller = new TerminateJobRequestMarshaller();
             var unmarshaller = TerminateJobResponseUnmarshaller.Instance;
@@ -685,7 +685,7 @@ namespace Amazon.Batch
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/TerminateJob">REST API Reference for TerminateJob Operation</seealso>
-        public Task<TerminateJobResponse> TerminateJobAsync(TerminateJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<TerminateJobResponse> TerminateJobAsync(TerminateJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new TerminateJobRequestMarshaller();
             var unmarshaller = TerminateJobResponseUnmarshaller.Instance;
@@ -698,7 +698,7 @@ namespace Amazon.Batch
         
         #region  UpdateComputeEnvironment
 
-        internal UpdateComputeEnvironmentResponse UpdateComputeEnvironment(UpdateComputeEnvironmentRequest request)
+        internal virtual UpdateComputeEnvironmentResponse UpdateComputeEnvironment(UpdateComputeEnvironmentRequest request)
         {
             var marshaller = new UpdateComputeEnvironmentRequestMarshaller();
             var unmarshaller = UpdateComputeEnvironmentResponseUnmarshaller.Instance;
@@ -717,7 +717,7 @@ namespace Amazon.Batch
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateComputeEnvironment">REST API Reference for UpdateComputeEnvironment Operation</seealso>
-        public Task<UpdateComputeEnvironmentResponse> UpdateComputeEnvironmentAsync(UpdateComputeEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateComputeEnvironmentResponse> UpdateComputeEnvironmentAsync(UpdateComputeEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateComputeEnvironmentRequestMarshaller();
             var unmarshaller = UpdateComputeEnvironmentResponseUnmarshaller.Instance;
@@ -730,7 +730,7 @@ namespace Amazon.Batch
         
         #region  UpdateJobQueue
 
-        internal UpdateJobQueueResponse UpdateJobQueue(UpdateJobQueueRequest request)
+        internal virtual UpdateJobQueueResponse UpdateJobQueue(UpdateJobQueueRequest request)
         {
             var marshaller = new UpdateJobQueueRequestMarshaller();
             var unmarshaller = UpdateJobQueueResponseUnmarshaller.Instance;
@@ -749,7 +749,7 @@ namespace Amazon.Batch
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateJobQueue">REST API Reference for UpdateJobQueue Operation</seealso>
-        public Task<UpdateJobQueueResponse> UpdateJobQueueAsync(UpdateJobQueueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateJobQueueResponse> UpdateJobQueueAsync(UpdateJobQueueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateJobQueueRequestMarshaller();
             var unmarshaller = UpdateJobQueueResponseUnmarshaller.Instance;

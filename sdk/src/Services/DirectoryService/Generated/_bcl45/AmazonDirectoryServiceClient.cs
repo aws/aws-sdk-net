@@ -287,7 +287,7 @@ namespace Amazon.DirectoryService
         /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AddIpRoutes">REST API Reference for AddIpRoutes Operation</seealso>
-        public AddIpRoutesResponse AddIpRoutes(AddIpRoutesRequest request)
+        public virtual AddIpRoutesResponse AddIpRoutes(AddIpRoutesRequest request)
         {
             var marshaller = new AddIpRoutesRequestMarshaller();
             var unmarshaller = AddIpRoutesResponseUnmarshaller.Instance;
@@ -305,7 +305,7 @@ namespace Amazon.DirectoryService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AddIpRoutes">REST API Reference for AddIpRoutes Operation</seealso>
-        public Task<AddIpRoutesResponse> AddIpRoutesAsync(AddIpRoutesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<AddIpRoutesResponse> AddIpRoutesAsync(AddIpRoutesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AddIpRoutesRequestMarshaller();
             var unmarshaller = AddIpRoutesResponseUnmarshaller.Instance;
@@ -343,7 +343,7 @@ namespace Amazon.DirectoryService
         /// The maximum allowed number of tags was exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
-        public AddTagsToResourceResponse AddTagsToResource(AddTagsToResourceRequest request)
+        public virtual AddTagsToResourceResponse AddTagsToResource(AddTagsToResourceRequest request)
         {
             var marshaller = new AddTagsToResourceRequestMarshaller();
             var unmarshaller = AddTagsToResourceResponseUnmarshaller.Instance;
@@ -361,7 +361,7 @@ namespace Amazon.DirectoryService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
-        public Task<AddTagsToResourceResponse> AddTagsToResourceAsync(AddTagsToResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<AddTagsToResourceResponse> AddTagsToResourceAsync(AddTagsToResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AddTagsToResourceRequestMarshaller();
             var unmarshaller = AddTagsToResourceResponseUnmarshaller.Instance;
@@ -394,7 +394,7 @@ namespace Amazon.DirectoryService
         /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CancelSchemaExtension">REST API Reference for CancelSchemaExtension Operation</seealso>
-        public CancelSchemaExtensionResponse CancelSchemaExtension(CancelSchemaExtensionRequest request)
+        public virtual CancelSchemaExtensionResponse CancelSchemaExtension(CancelSchemaExtensionRequest request)
         {
             var marshaller = new CancelSchemaExtensionRequestMarshaller();
             var unmarshaller = CancelSchemaExtensionResponseUnmarshaller.Instance;
@@ -412,7 +412,7 @@ namespace Amazon.DirectoryService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CancelSchemaExtension">REST API Reference for CancelSchemaExtension Operation</seealso>
-        public Task<CancelSchemaExtensionResponse> CancelSchemaExtensionAsync(CancelSchemaExtensionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CancelSchemaExtensionResponse> CancelSchemaExtensionAsync(CancelSchemaExtensionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CancelSchemaExtensionRequestMarshaller();
             var unmarshaller = CancelSchemaExtensionResponseUnmarshaller.Instance;
@@ -454,7 +454,7 @@ namespace Amazon.DirectoryService
         /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ConnectDirectory">REST API Reference for ConnectDirectory Operation</seealso>
-        public ConnectDirectoryResponse ConnectDirectory(ConnectDirectoryRequest request)
+        public virtual ConnectDirectoryResponse ConnectDirectory(ConnectDirectoryRequest request)
         {
             var marshaller = new ConnectDirectoryRequestMarshaller();
             var unmarshaller = ConnectDirectoryResponseUnmarshaller.Instance;
@@ -472,7 +472,7 @@ namespace Amazon.DirectoryService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ConnectDirectory">REST API Reference for ConnectDirectory Operation</seealso>
-        public Task<ConnectDirectoryResponse> ConnectDirectoryAsync(ConnectDirectoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ConnectDirectoryResponse> ConnectDirectoryAsync(ConnectDirectoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ConnectDirectoryRequestMarshaller();
             var unmarshaller = ConnectDirectoryResponseUnmarshaller.Instance;
@@ -516,7 +516,7 @@ namespace Amazon.DirectoryService
         /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
-        public CreateAliasResponse CreateAlias(CreateAliasRequest request)
+        public virtual CreateAliasResponse CreateAlias(CreateAliasRequest request)
         {
             var marshaller = new CreateAliasRequestMarshaller();
             var unmarshaller = CreateAliasResponseUnmarshaller.Instance;
@@ -534,7 +534,7 @@ namespace Amazon.DirectoryService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
-        public Task<CreateAliasResponse> CreateAliasAsync(CreateAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateAliasResponse> CreateAliasAsync(CreateAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateAliasRequestMarshaller();
             var unmarshaller = CreateAliasResponseUnmarshaller.Instance;
@@ -580,7 +580,7 @@ namespace Amazon.DirectoryService
         /// The operation is not supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateComputer">REST API Reference for CreateComputer Operation</seealso>
-        public CreateComputerResponse CreateComputer(CreateComputerRequest request)
+        public virtual CreateComputerResponse CreateComputer(CreateComputerRequest request)
         {
             var marshaller = new CreateComputerRequestMarshaller();
             var unmarshaller = CreateComputerResponseUnmarshaller.Instance;
@@ -598,7 +598,7 @@ namespace Amazon.DirectoryService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateComputer">REST API Reference for CreateComputer Operation</seealso>
-        public Task<CreateComputerResponse> CreateComputerAsync(CreateComputerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateComputerResponse> CreateComputerAsync(CreateComputerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateComputerRequestMarshaller();
             var unmarshaller = CreateComputerResponseUnmarshaller.Instance;
@@ -642,7 +642,7 @@ namespace Amazon.DirectoryService
         /// The operation is not supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateConditionalForwarder">REST API Reference for CreateConditionalForwarder Operation</seealso>
-        public CreateConditionalForwarderResponse CreateConditionalForwarder(CreateConditionalForwarderRequest request)
+        public virtual CreateConditionalForwarderResponse CreateConditionalForwarder(CreateConditionalForwarderRequest request)
         {
             var marshaller = new CreateConditionalForwarderRequestMarshaller();
             var unmarshaller = CreateConditionalForwarderResponseUnmarshaller.Instance;
@@ -660,7 +660,7 @@ namespace Amazon.DirectoryService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateConditionalForwarder">REST API Reference for CreateConditionalForwarder Operation</seealso>
-        public Task<CreateConditionalForwarderResponse> CreateConditionalForwarderAsync(CreateConditionalForwarderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateConditionalForwarderResponse> CreateConditionalForwarderAsync(CreateConditionalForwarderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateConditionalForwarderRequestMarshaller();
             var unmarshaller = CreateConditionalForwarderResponseUnmarshaller.Instance;
@@ -702,7 +702,7 @@ namespace Amazon.DirectoryService
         /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateDirectory">REST API Reference for CreateDirectory Operation</seealso>
-        public CreateDirectoryResponse CreateDirectory(CreateDirectoryRequest request)
+        public virtual CreateDirectoryResponse CreateDirectory(CreateDirectoryRequest request)
         {
             var marshaller = new CreateDirectoryRequestMarshaller();
             var unmarshaller = CreateDirectoryResponseUnmarshaller.Instance;
@@ -720,7 +720,7 @@ namespace Amazon.DirectoryService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateDirectory">REST API Reference for CreateDirectory Operation</seealso>
-        public Task<CreateDirectoryResponse> CreateDirectoryAsync(CreateDirectoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateDirectoryResponse> CreateDirectoryAsync(CreateDirectoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateDirectoryRequestMarshaller();
             var unmarshaller = CreateDirectoryResponseUnmarshaller.Instance;
@@ -765,7 +765,7 @@ namespace Amazon.DirectoryService
         /// The operation is not supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateMicrosoftAD">REST API Reference for CreateMicrosoftAD Operation</seealso>
-        public CreateMicrosoftADResponse CreateMicrosoftAD(CreateMicrosoftADRequest request)
+        public virtual CreateMicrosoftADResponse CreateMicrosoftAD(CreateMicrosoftADRequest request)
         {
             var marshaller = new CreateMicrosoftADRequestMarshaller();
             var unmarshaller = CreateMicrosoftADResponseUnmarshaller.Instance;
@@ -783,7 +783,7 @@ namespace Amazon.DirectoryService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateMicrosoftAD">REST API Reference for CreateMicrosoftAD Operation</seealso>
-        public Task<CreateMicrosoftADResponse> CreateMicrosoftADAsync(CreateMicrosoftADRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateMicrosoftADResponse> CreateMicrosoftADAsync(CreateMicrosoftADRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateMicrosoftADRequestMarshaller();
             var unmarshaller = CreateMicrosoftADResponseUnmarshaller.Instance;
@@ -827,7 +827,7 @@ namespace Amazon.DirectoryService
         /// directory.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateSnapshot">REST API Reference for CreateSnapshot Operation</seealso>
-        public CreateSnapshotResponse CreateSnapshot(CreateSnapshotRequest request)
+        public virtual CreateSnapshotResponse CreateSnapshot(CreateSnapshotRequest request)
         {
             var marshaller = new CreateSnapshotRequestMarshaller();
             var unmarshaller = CreateSnapshotResponseUnmarshaller.Instance;
@@ -845,7 +845,7 @@ namespace Amazon.DirectoryService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateSnapshot">REST API Reference for CreateSnapshot Operation</seealso>
-        public Task<CreateSnapshotResponse> CreateSnapshotAsync(CreateSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateSnapshotResponse> CreateSnapshotAsync(CreateSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateSnapshotRequestMarshaller();
             var unmarshaller = CreateSnapshotResponseUnmarshaller.Instance;
@@ -894,7 +894,7 @@ namespace Amazon.DirectoryService
         /// The operation is not supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateTrust">REST API Reference for CreateTrust Operation</seealso>
-        public CreateTrustResponse CreateTrust(CreateTrustRequest request)
+        public virtual CreateTrustResponse CreateTrust(CreateTrustRequest request)
         {
             var marshaller = new CreateTrustRequestMarshaller();
             var unmarshaller = CreateTrustResponseUnmarshaller.Instance;
@@ -912,7 +912,7 @@ namespace Amazon.DirectoryService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateTrust">REST API Reference for CreateTrust Operation</seealso>
-        public Task<CreateTrustResponse> CreateTrustAsync(CreateTrustRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateTrustResponse> CreateTrustAsync(CreateTrustRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateTrustRequestMarshaller();
             var unmarshaller = CreateTrustResponseUnmarshaller.Instance;
@@ -951,7 +951,7 @@ namespace Amazon.DirectoryService
         /// The operation is not supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteConditionalForwarder">REST API Reference for DeleteConditionalForwarder Operation</seealso>
-        public DeleteConditionalForwarderResponse DeleteConditionalForwarder(DeleteConditionalForwarderRequest request)
+        public virtual DeleteConditionalForwarderResponse DeleteConditionalForwarder(DeleteConditionalForwarderRequest request)
         {
             var marshaller = new DeleteConditionalForwarderRequestMarshaller();
             var unmarshaller = DeleteConditionalForwarderResponseUnmarshaller.Instance;
@@ -969,7 +969,7 @@ namespace Amazon.DirectoryService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteConditionalForwarder">REST API Reference for DeleteConditionalForwarder Operation</seealso>
-        public Task<DeleteConditionalForwarderResponse> DeleteConditionalForwarderAsync(DeleteConditionalForwarderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteConditionalForwarderResponse> DeleteConditionalForwarderAsync(DeleteConditionalForwarderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteConditionalForwarderRequestMarshaller();
             var unmarshaller = DeleteConditionalForwarderResponseUnmarshaller.Instance;
@@ -1007,7 +1007,7 @@ namespace Amazon.DirectoryService
         /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteDirectory">REST API Reference for DeleteDirectory Operation</seealso>
-        public DeleteDirectoryResponse DeleteDirectory(DeleteDirectoryRequest request)
+        public virtual DeleteDirectoryResponse DeleteDirectory(DeleteDirectoryRequest request)
         {
             var marshaller = new DeleteDirectoryRequestMarshaller();
             var unmarshaller = DeleteDirectoryResponseUnmarshaller.Instance;
@@ -1025,7 +1025,7 @@ namespace Amazon.DirectoryService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteDirectory">REST API Reference for DeleteDirectory Operation</seealso>
-        public Task<DeleteDirectoryResponse> DeleteDirectoryAsync(DeleteDirectoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteDirectoryResponse> DeleteDirectoryAsync(DeleteDirectoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteDirectoryRequestMarshaller();
             var unmarshaller = DeleteDirectoryResponseUnmarshaller.Instance;
@@ -1058,7 +1058,7 @@ namespace Amazon.DirectoryService
         /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteSnapshot">REST API Reference for DeleteSnapshot Operation</seealso>
-        public DeleteSnapshotResponse DeleteSnapshot(DeleteSnapshotRequest request)
+        public virtual DeleteSnapshotResponse DeleteSnapshot(DeleteSnapshotRequest request)
         {
             var marshaller = new DeleteSnapshotRequestMarshaller();
             var unmarshaller = DeleteSnapshotResponseUnmarshaller.Instance;
@@ -1076,7 +1076,7 @@ namespace Amazon.DirectoryService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteSnapshot">REST API Reference for DeleteSnapshot Operation</seealso>
-        public Task<DeleteSnapshotResponse> DeleteSnapshotAsync(DeleteSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteSnapshotResponse> DeleteSnapshotAsync(DeleteSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteSnapshotRequestMarshaller();
             var unmarshaller = DeleteSnapshotResponseUnmarshaller.Instance;
@@ -1113,7 +1113,7 @@ namespace Amazon.DirectoryService
         /// The operation is not supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteTrust">REST API Reference for DeleteTrust Operation</seealso>
-        public DeleteTrustResponse DeleteTrust(DeleteTrustRequest request)
+        public virtual DeleteTrustResponse DeleteTrust(DeleteTrustRequest request)
         {
             var marshaller = new DeleteTrustRequestMarshaller();
             var unmarshaller = DeleteTrustResponseUnmarshaller.Instance;
@@ -1131,7 +1131,7 @@ namespace Amazon.DirectoryService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteTrust">REST API Reference for DeleteTrust Operation</seealso>
-        public Task<DeleteTrustResponse> DeleteTrustAsync(DeleteTrustRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteTrustResponse> DeleteTrustAsync(DeleteTrustRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteTrustRequestMarshaller();
             var unmarshaller = DeleteTrustResponseUnmarshaller.Instance;
@@ -1164,7 +1164,7 @@ namespace Amazon.DirectoryService
         /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeregisterEventTopic">REST API Reference for DeregisterEventTopic Operation</seealso>
-        public DeregisterEventTopicResponse DeregisterEventTopic(DeregisterEventTopicRequest request)
+        public virtual DeregisterEventTopicResponse DeregisterEventTopic(DeregisterEventTopicRequest request)
         {
             var marshaller = new DeregisterEventTopicRequestMarshaller();
             var unmarshaller = DeregisterEventTopicResponseUnmarshaller.Instance;
@@ -1182,7 +1182,7 @@ namespace Amazon.DirectoryService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeregisterEventTopic">REST API Reference for DeregisterEventTopic Operation</seealso>
-        public Task<DeregisterEventTopicResponse> DeregisterEventTopicAsync(DeregisterEventTopicRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeregisterEventTopicResponse> DeregisterEventTopicAsync(DeregisterEventTopicRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeregisterEventTopicRequestMarshaller();
             var unmarshaller = DeregisterEventTopicResponseUnmarshaller.Instance;
@@ -1227,7 +1227,7 @@ namespace Amazon.DirectoryService
         /// The operation is not supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeConditionalForwarders">REST API Reference for DescribeConditionalForwarders Operation</seealso>
-        public DescribeConditionalForwardersResponse DescribeConditionalForwarders(DescribeConditionalForwardersRequest request)
+        public virtual DescribeConditionalForwardersResponse DescribeConditionalForwarders(DescribeConditionalForwardersRequest request)
         {
             var marshaller = new DescribeConditionalForwardersRequestMarshaller();
             var unmarshaller = DescribeConditionalForwardersResponseUnmarshaller.Instance;
@@ -1245,7 +1245,7 @@ namespace Amazon.DirectoryService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeConditionalForwarders">REST API Reference for DescribeConditionalForwarders Operation</seealso>
-        public Task<DescribeConditionalForwardersResponse> DescribeConditionalForwardersAsync(DescribeConditionalForwardersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeConditionalForwardersResponse> DescribeConditionalForwardersAsync(DescribeConditionalForwardersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeConditionalForwardersRequestMarshaller();
             var unmarshaller = DescribeConditionalForwardersResponseUnmarshaller.Instance;
@@ -1298,7 +1298,7 @@ namespace Amazon.DirectoryService
         /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeDirectories">REST API Reference for DescribeDirectories Operation</seealso>
-        public DescribeDirectoriesResponse DescribeDirectories()
+        public virtual DescribeDirectoriesResponse DescribeDirectories()
         {
             return DescribeDirectories(new DescribeDirectoriesRequest());
         }
@@ -1344,7 +1344,7 @@ namespace Amazon.DirectoryService
         /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeDirectories">REST API Reference for DescribeDirectories Operation</seealso>
-        public DescribeDirectoriesResponse DescribeDirectories(DescribeDirectoriesRequest request)
+        public virtual DescribeDirectoriesResponse DescribeDirectories(DescribeDirectoriesRequest request)
         {
             var marshaller = new DescribeDirectoriesRequestMarshaller();
             var unmarshaller = DescribeDirectoriesResponseUnmarshaller.Instance;
@@ -1395,7 +1395,7 @@ namespace Amazon.DirectoryService
         /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeDirectories">REST API Reference for DescribeDirectories Operation</seealso>
-        public Task<DescribeDirectoriesResponse> DescribeDirectoriesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeDirectoriesResponse> DescribeDirectoriesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeDirectoriesAsync(new DescribeDirectoriesRequest(), cancellationToken);
         }
@@ -1409,7 +1409,7 @@ namespace Amazon.DirectoryService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeDirectories">REST API Reference for DescribeDirectories Operation</seealso>
-        public Task<DescribeDirectoriesResponse> DescribeDirectoriesAsync(DescribeDirectoriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeDirectoriesResponse> DescribeDirectoriesAsync(DescribeDirectoriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeDirectoriesRequestMarshaller();
             var unmarshaller = DescribeDirectoriesResponseUnmarshaller.Instance;
@@ -1448,7 +1448,7 @@ namespace Amazon.DirectoryService
         /// The operation is not supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeDomainControllers">REST API Reference for DescribeDomainControllers Operation</seealso>
-        public DescribeDomainControllersResponse DescribeDomainControllers(DescribeDomainControllersRequest request)
+        public virtual DescribeDomainControllersResponse DescribeDomainControllers(DescribeDomainControllersRequest request)
         {
             var marshaller = new DescribeDomainControllersRequestMarshaller();
             var unmarshaller = DescribeDomainControllersResponseUnmarshaller.Instance;
@@ -1466,7 +1466,7 @@ namespace Amazon.DirectoryService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeDomainControllers">REST API Reference for DescribeDomainControllers Operation</seealso>
-        public Task<DescribeDomainControllersResponse> DescribeDomainControllersAsync(DescribeDomainControllersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeDomainControllersResponse> DescribeDomainControllersAsync(DescribeDomainControllersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeDomainControllersRequestMarshaller();
             var unmarshaller = DescribeDomainControllersResponseUnmarshaller.Instance;
@@ -1506,7 +1506,7 @@ namespace Amazon.DirectoryService
         /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeEventTopics">REST API Reference for DescribeEventTopics Operation</seealso>
-        public DescribeEventTopicsResponse DescribeEventTopics(DescribeEventTopicsRequest request)
+        public virtual DescribeEventTopicsResponse DescribeEventTopics(DescribeEventTopicsRequest request)
         {
             var marshaller = new DescribeEventTopicsRequestMarshaller();
             var unmarshaller = DescribeEventTopicsResponseUnmarshaller.Instance;
@@ -1524,7 +1524,7 @@ namespace Amazon.DirectoryService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeEventTopics">REST API Reference for DescribeEventTopics Operation</seealso>
-        public Task<DescribeEventTopicsResponse> DescribeEventTopicsAsync(DescribeEventTopicsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeEventTopicsResponse> DescribeEventTopicsAsync(DescribeEventTopicsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeEventTopicsRequestMarshaller();
             var unmarshaller = DescribeEventTopicsResponseUnmarshaller.Instance;
@@ -1572,7 +1572,7 @@ namespace Amazon.DirectoryService
         /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeSnapshots">REST API Reference for DescribeSnapshots Operation</seealso>
-        public DescribeSnapshotsResponse DescribeSnapshots(DescribeSnapshotsRequest request)
+        public virtual DescribeSnapshotsResponse DescribeSnapshots(DescribeSnapshotsRequest request)
         {
             var marshaller = new DescribeSnapshotsRequestMarshaller();
             var unmarshaller = DescribeSnapshotsResponseUnmarshaller.Instance;
@@ -1590,7 +1590,7 @@ namespace Amazon.DirectoryService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeSnapshots">REST API Reference for DescribeSnapshots Operation</seealso>
-        public Task<DescribeSnapshotsResponse> DescribeSnapshotsAsync(DescribeSnapshotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeSnapshotsResponse> DescribeSnapshotsAsync(DescribeSnapshotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeSnapshotsRequestMarshaller();
             var unmarshaller = DescribeSnapshotsResponseUnmarshaller.Instance;
@@ -1635,7 +1635,7 @@ namespace Amazon.DirectoryService
         /// The operation is not supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeTrusts">REST API Reference for DescribeTrusts Operation</seealso>
-        public DescribeTrustsResponse DescribeTrusts(DescribeTrustsRequest request)
+        public virtual DescribeTrustsResponse DescribeTrusts(DescribeTrustsRequest request)
         {
             var marshaller = new DescribeTrustsRequestMarshaller();
             var unmarshaller = DescribeTrustsResponseUnmarshaller.Instance;
@@ -1653,7 +1653,7 @@ namespace Amazon.DirectoryService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeTrusts">REST API Reference for DescribeTrusts Operation</seealso>
-        public Task<DescribeTrustsResponse> DescribeTrustsAsync(DescribeTrustsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeTrustsResponse> DescribeTrustsAsync(DescribeTrustsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeTrustsRequestMarshaller();
             var unmarshaller = DescribeTrustsResponseUnmarshaller.Instance;
@@ -1684,7 +1684,7 @@ namespace Amazon.DirectoryService
         /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableRadius">REST API Reference for DisableRadius Operation</seealso>
-        public DisableRadiusResponse DisableRadius(DisableRadiusRequest request)
+        public virtual DisableRadiusResponse DisableRadius(DisableRadiusRequest request)
         {
             var marshaller = new DisableRadiusRequestMarshaller();
             var unmarshaller = DisableRadiusResponseUnmarshaller.Instance;
@@ -1702,7 +1702,7 @@ namespace Amazon.DirectoryService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableRadius">REST API Reference for DisableRadius Operation</seealso>
-        public Task<DisableRadiusResponse> DisableRadiusAsync(DisableRadiusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DisableRadiusResponse> DisableRadiusAsync(DisableRadiusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DisableRadiusRequestMarshaller();
             var unmarshaller = DisableRadiusResponseUnmarshaller.Instance;
@@ -1738,7 +1738,7 @@ namespace Amazon.DirectoryService
         /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableSso">REST API Reference for DisableSso Operation</seealso>
-        public DisableSsoResponse DisableSso(DisableSsoRequest request)
+        public virtual DisableSsoResponse DisableSso(DisableSsoRequest request)
         {
             var marshaller = new DisableSsoRequestMarshaller();
             var unmarshaller = DisableSsoResponseUnmarshaller.Instance;
@@ -1756,7 +1756,7 @@ namespace Amazon.DirectoryService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableSso">REST API Reference for DisableSso Operation</seealso>
-        public Task<DisableSsoResponse> DisableSsoAsync(DisableSsoRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DisableSsoResponse> DisableSsoAsync(DisableSsoRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DisableSsoRequestMarshaller();
             var unmarshaller = DisableSsoResponseUnmarshaller.Instance;
@@ -1793,7 +1793,7 @@ namespace Amazon.DirectoryService
         /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableRadius">REST API Reference for EnableRadius Operation</seealso>
-        public EnableRadiusResponse EnableRadius(EnableRadiusRequest request)
+        public virtual EnableRadiusResponse EnableRadius(EnableRadiusRequest request)
         {
             var marshaller = new EnableRadiusRequestMarshaller();
             var unmarshaller = EnableRadiusResponseUnmarshaller.Instance;
@@ -1811,7 +1811,7 @@ namespace Amazon.DirectoryService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableRadius">REST API Reference for EnableRadius Operation</seealso>
-        public Task<EnableRadiusResponse> EnableRadiusAsync(EnableRadiusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<EnableRadiusResponse> EnableRadiusAsync(EnableRadiusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new EnableRadiusRequestMarshaller();
             var unmarshaller = EnableRadiusResponseUnmarshaller.Instance;
@@ -1847,7 +1847,7 @@ namespace Amazon.DirectoryService
         /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableSso">REST API Reference for EnableSso Operation</seealso>
-        public EnableSsoResponse EnableSso(EnableSsoRequest request)
+        public virtual EnableSsoResponse EnableSso(EnableSsoRequest request)
         {
             var marshaller = new EnableSsoRequestMarshaller();
             var unmarshaller = EnableSsoResponseUnmarshaller.Instance;
@@ -1865,7 +1865,7 @@ namespace Amazon.DirectoryService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableSso">REST API Reference for EnableSso Operation</seealso>
-        public Task<EnableSsoResponse> EnableSsoAsync(EnableSsoRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<EnableSsoResponse> EnableSsoAsync(EnableSsoRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new EnableSsoRequestMarshaller();
             var unmarshaller = EnableSsoResponseUnmarshaller.Instance;
@@ -1894,7 +1894,7 @@ namespace Amazon.DirectoryService
         /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/GetDirectoryLimits">REST API Reference for GetDirectoryLimits Operation</seealso>
-        public GetDirectoryLimitsResponse GetDirectoryLimits()
+        public virtual GetDirectoryLimitsResponse GetDirectoryLimits()
         {
             return GetDirectoryLimits(new GetDirectoryLimitsRequest());
         }
@@ -1916,7 +1916,7 @@ namespace Amazon.DirectoryService
         /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/GetDirectoryLimits">REST API Reference for GetDirectoryLimits Operation</seealso>
-        public GetDirectoryLimitsResponse GetDirectoryLimits(GetDirectoryLimitsRequest request)
+        public virtual GetDirectoryLimitsResponse GetDirectoryLimits(GetDirectoryLimitsRequest request)
         {
             var marshaller = new GetDirectoryLimitsRequestMarshaller();
             var unmarshaller = GetDirectoryLimitsResponseUnmarshaller.Instance;
@@ -1943,7 +1943,7 @@ namespace Amazon.DirectoryService
         /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/GetDirectoryLimits">REST API Reference for GetDirectoryLimits Operation</seealso>
-        public Task<GetDirectoryLimitsResponse> GetDirectoryLimitsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetDirectoryLimitsResponse> GetDirectoryLimitsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return GetDirectoryLimitsAsync(new GetDirectoryLimitsRequest(), cancellationToken);
         }
@@ -1957,7 +1957,7 @@ namespace Amazon.DirectoryService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/GetDirectoryLimits">REST API Reference for GetDirectoryLimits Operation</seealso>
-        public Task<GetDirectoryLimitsResponse> GetDirectoryLimitsAsync(GetDirectoryLimitsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetDirectoryLimitsResponse> GetDirectoryLimitsAsync(GetDirectoryLimitsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetDirectoryLimitsRequestMarshaller();
             var unmarshaller = GetDirectoryLimitsResponseUnmarshaller.Instance;
@@ -1987,7 +1987,7 @@ namespace Amazon.DirectoryService
         /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/GetSnapshotLimits">REST API Reference for GetSnapshotLimits Operation</seealso>
-        public GetSnapshotLimitsResponse GetSnapshotLimits(GetSnapshotLimitsRequest request)
+        public virtual GetSnapshotLimitsResponse GetSnapshotLimits(GetSnapshotLimitsRequest request)
         {
             var marshaller = new GetSnapshotLimitsRequestMarshaller();
             var unmarshaller = GetSnapshotLimitsResponseUnmarshaller.Instance;
@@ -2005,7 +2005,7 @@ namespace Amazon.DirectoryService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/GetSnapshotLimits">REST API Reference for GetSnapshotLimits Operation</seealso>
-        public Task<GetSnapshotLimitsResponse> GetSnapshotLimitsAsync(GetSnapshotLimitsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetSnapshotLimitsResponse> GetSnapshotLimitsAsync(GetSnapshotLimitsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetSnapshotLimitsRequestMarshaller();
             var unmarshaller = GetSnapshotLimitsResponseUnmarshaller.Instance;
@@ -2041,7 +2041,7 @@ namespace Amazon.DirectoryService
         /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListIpRoutes">REST API Reference for ListIpRoutes Operation</seealso>
-        public ListIpRoutesResponse ListIpRoutes(ListIpRoutesRequest request)
+        public virtual ListIpRoutesResponse ListIpRoutes(ListIpRoutesRequest request)
         {
             var marshaller = new ListIpRoutesRequestMarshaller();
             var unmarshaller = ListIpRoutesResponseUnmarshaller.Instance;
@@ -2059,7 +2059,7 @@ namespace Amazon.DirectoryService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListIpRoutes">REST API Reference for ListIpRoutes Operation</seealso>
-        public Task<ListIpRoutesResponse> ListIpRoutesAsync(ListIpRoutesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListIpRoutesResponse> ListIpRoutesAsync(ListIpRoutesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListIpRoutesRequestMarshaller();
             var unmarshaller = ListIpRoutesResponseUnmarshaller.Instance;
@@ -2092,7 +2092,7 @@ namespace Amazon.DirectoryService
         /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListSchemaExtensions">REST API Reference for ListSchemaExtensions Operation</seealso>
-        public ListSchemaExtensionsResponse ListSchemaExtensions(ListSchemaExtensionsRequest request)
+        public virtual ListSchemaExtensionsResponse ListSchemaExtensions(ListSchemaExtensionsRequest request)
         {
             var marshaller = new ListSchemaExtensionsRequestMarshaller();
             var unmarshaller = ListSchemaExtensionsResponseUnmarshaller.Instance;
@@ -2110,7 +2110,7 @@ namespace Amazon.DirectoryService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListSchemaExtensions">REST API Reference for ListSchemaExtensions Operation</seealso>
-        public Task<ListSchemaExtensionsResponse> ListSchemaExtensionsAsync(ListSchemaExtensionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListSchemaExtensionsResponse> ListSchemaExtensionsAsync(ListSchemaExtensionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListSchemaExtensionsRequestMarshaller();
             var unmarshaller = ListSchemaExtensionsResponseUnmarshaller.Instance;
@@ -2146,7 +2146,7 @@ namespace Amazon.DirectoryService
         /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
-        public ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
@@ -2164,7 +2164,7 @@ namespace Amazon.DirectoryService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
-        public Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
@@ -2201,7 +2201,7 @@ namespace Amazon.DirectoryService
         /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RegisterEventTopic">REST API Reference for RegisterEventTopic Operation</seealso>
-        public RegisterEventTopicResponse RegisterEventTopic(RegisterEventTopicRequest request)
+        public virtual RegisterEventTopicResponse RegisterEventTopic(RegisterEventTopicRequest request)
         {
             var marshaller = new RegisterEventTopicRequestMarshaller();
             var unmarshaller = RegisterEventTopicResponseUnmarshaller.Instance;
@@ -2219,7 +2219,7 @@ namespace Amazon.DirectoryService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RegisterEventTopic">REST API Reference for RegisterEventTopic Operation</seealso>
-        public Task<RegisterEventTopicResponse> RegisterEventTopicAsync(RegisterEventTopicRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<RegisterEventTopicResponse> RegisterEventTopicAsync(RegisterEventTopicRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RegisterEventTopicRequestMarshaller();
             var unmarshaller = RegisterEventTopicResponseUnmarshaller.Instance;
@@ -2255,7 +2255,7 @@ namespace Amazon.DirectoryService
         /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RemoveIpRoutes">REST API Reference for RemoveIpRoutes Operation</seealso>
-        public RemoveIpRoutesResponse RemoveIpRoutes(RemoveIpRoutesRequest request)
+        public virtual RemoveIpRoutesResponse RemoveIpRoutes(RemoveIpRoutesRequest request)
         {
             var marshaller = new RemoveIpRoutesRequestMarshaller();
             var unmarshaller = RemoveIpRoutesResponseUnmarshaller.Instance;
@@ -2273,7 +2273,7 @@ namespace Amazon.DirectoryService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RemoveIpRoutes">REST API Reference for RemoveIpRoutes Operation</seealso>
-        public Task<RemoveIpRoutesResponse> RemoveIpRoutesAsync(RemoveIpRoutesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<RemoveIpRoutesResponse> RemoveIpRoutesAsync(RemoveIpRoutesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RemoveIpRoutesRequestMarshaller();
             var unmarshaller = RemoveIpRoutesResponseUnmarshaller.Instance;
@@ -2306,7 +2306,7 @@ namespace Amazon.DirectoryService
         /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
-        public RemoveTagsFromResourceResponse RemoveTagsFromResource(RemoveTagsFromResourceRequest request)
+        public virtual RemoveTagsFromResourceResponse RemoveTagsFromResource(RemoveTagsFromResourceRequest request)
         {
             var marshaller = new RemoveTagsFromResourceRequestMarshaller();
             var unmarshaller = RemoveTagsFromResourceResponseUnmarshaller.Instance;
@@ -2324,7 +2324,7 @@ namespace Amazon.DirectoryService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
-        public Task<RemoveTagsFromResourceResponse> RemoveTagsFromResourceAsync(RemoveTagsFromResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<RemoveTagsFromResourceResponse> RemoveTagsFromResourceAsync(RemoveTagsFromResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RemoveTagsFromResourceRequestMarshaller();
             var unmarshaller = RemoveTagsFromResourceResponseUnmarshaller.Instance;
@@ -2370,7 +2370,7 @@ namespace Amazon.DirectoryService
         /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RestoreFromSnapshot">REST API Reference for RestoreFromSnapshot Operation</seealso>
-        public RestoreFromSnapshotResponse RestoreFromSnapshot(RestoreFromSnapshotRequest request)
+        public virtual RestoreFromSnapshotResponse RestoreFromSnapshot(RestoreFromSnapshotRequest request)
         {
             var marshaller = new RestoreFromSnapshotRequestMarshaller();
             var unmarshaller = RestoreFromSnapshotResponseUnmarshaller.Instance;
@@ -2388,7 +2388,7 @@ namespace Amazon.DirectoryService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RestoreFromSnapshot">REST API Reference for RestoreFromSnapshot Operation</seealso>
-        public Task<RestoreFromSnapshotResponse> RestoreFromSnapshotAsync(RestoreFromSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<RestoreFromSnapshotResponse> RestoreFromSnapshotAsync(RestoreFromSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RestoreFromSnapshotRequestMarshaller();
             var unmarshaller = RestoreFromSnapshotResponseUnmarshaller.Instance;
@@ -2429,7 +2429,7 @@ namespace Amazon.DirectoryService
         /// directory.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/StartSchemaExtension">REST API Reference for StartSchemaExtension Operation</seealso>
-        public StartSchemaExtensionResponse StartSchemaExtension(StartSchemaExtensionRequest request)
+        public virtual StartSchemaExtensionResponse StartSchemaExtension(StartSchemaExtensionRequest request)
         {
             var marshaller = new StartSchemaExtensionRequestMarshaller();
             var unmarshaller = StartSchemaExtensionResponseUnmarshaller.Instance;
@@ -2447,7 +2447,7 @@ namespace Amazon.DirectoryService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/StartSchemaExtension">REST API Reference for StartSchemaExtension Operation</seealso>
-        public Task<StartSchemaExtensionResponse> StartSchemaExtensionAsync(StartSchemaExtensionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<StartSchemaExtensionResponse> StartSchemaExtensionAsync(StartSchemaExtensionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new StartSchemaExtensionRequestMarshaller();
             var unmarshaller = StartSchemaExtensionResponseUnmarshaller.Instance;
@@ -2486,7 +2486,7 @@ namespace Amazon.DirectoryService
         /// The operation is not supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateConditionalForwarder">REST API Reference for UpdateConditionalForwarder Operation</seealso>
-        public UpdateConditionalForwarderResponse UpdateConditionalForwarder(UpdateConditionalForwarderRequest request)
+        public virtual UpdateConditionalForwarderResponse UpdateConditionalForwarder(UpdateConditionalForwarderRequest request)
         {
             var marshaller = new UpdateConditionalForwarderRequestMarshaller();
             var unmarshaller = UpdateConditionalForwarderResponseUnmarshaller.Instance;
@@ -2504,7 +2504,7 @@ namespace Amazon.DirectoryService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateConditionalForwarder">REST API Reference for UpdateConditionalForwarder Operation</seealso>
-        public Task<UpdateConditionalForwarderResponse> UpdateConditionalForwarderAsync(UpdateConditionalForwarderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateConditionalForwarderResponse> UpdateConditionalForwarderAsync(UpdateConditionalForwarderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateConditionalForwarderRequestMarshaller();
             var unmarshaller = UpdateConditionalForwarderResponseUnmarshaller.Instance;
@@ -2551,7 +2551,7 @@ namespace Amazon.DirectoryService
         /// The operation is not supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateNumberOfDomainControllers">REST API Reference for UpdateNumberOfDomainControllers Operation</seealso>
-        public UpdateNumberOfDomainControllersResponse UpdateNumberOfDomainControllers(UpdateNumberOfDomainControllersRequest request)
+        public virtual UpdateNumberOfDomainControllersResponse UpdateNumberOfDomainControllers(UpdateNumberOfDomainControllersRequest request)
         {
             var marshaller = new UpdateNumberOfDomainControllersRequestMarshaller();
             var unmarshaller = UpdateNumberOfDomainControllersResponseUnmarshaller.Instance;
@@ -2569,7 +2569,7 @@ namespace Amazon.DirectoryService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateNumberOfDomainControllers">REST API Reference for UpdateNumberOfDomainControllers Operation</seealso>
-        public Task<UpdateNumberOfDomainControllersResponse> UpdateNumberOfDomainControllersAsync(UpdateNumberOfDomainControllersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateNumberOfDomainControllersResponse> UpdateNumberOfDomainControllersAsync(UpdateNumberOfDomainControllersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateNumberOfDomainControllersRequestMarshaller();
             var unmarshaller = UpdateNumberOfDomainControllersResponseUnmarshaller.Instance;
@@ -2603,7 +2603,7 @@ namespace Amazon.DirectoryService
         /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateRadius">REST API Reference for UpdateRadius Operation</seealso>
-        public UpdateRadiusResponse UpdateRadius(UpdateRadiusRequest request)
+        public virtual UpdateRadiusResponse UpdateRadius(UpdateRadiusRequest request)
         {
             var marshaller = new UpdateRadiusRequestMarshaller();
             var unmarshaller = UpdateRadiusResponseUnmarshaller.Instance;
@@ -2621,7 +2621,7 @@ namespace Amazon.DirectoryService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateRadius">REST API Reference for UpdateRadius Operation</seealso>
-        public Task<UpdateRadiusResponse> UpdateRadiusAsync(UpdateRadiusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateRadiusResponse> UpdateRadiusAsync(UpdateRadiusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateRadiusRequestMarshaller();
             var unmarshaller = UpdateRadiusResponseUnmarshaller.Instance;
@@ -2664,7 +2664,7 @@ namespace Amazon.DirectoryService
         /// The operation is not supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/VerifyTrust">REST API Reference for VerifyTrust Operation</seealso>
-        public VerifyTrustResponse VerifyTrust(VerifyTrustRequest request)
+        public virtual VerifyTrustResponse VerifyTrust(VerifyTrustRequest request)
         {
             var marshaller = new VerifyTrustRequestMarshaller();
             var unmarshaller = VerifyTrustResponseUnmarshaller.Instance;
@@ -2682,7 +2682,7 @@ namespace Amazon.DirectoryService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/VerifyTrust">REST API Reference for VerifyTrust Operation</seealso>
-        public Task<VerifyTrustResponse> VerifyTrustAsync(VerifyTrustRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<VerifyTrustResponse> VerifyTrustAsync(VerifyTrustRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new VerifyTrustRequestMarshaller();
             var unmarshaller = VerifyTrustResponseUnmarshaller.Instance;

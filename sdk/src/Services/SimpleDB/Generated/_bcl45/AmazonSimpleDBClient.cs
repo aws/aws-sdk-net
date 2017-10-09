@@ -259,7 +259,7 @@ namespace Amazon.SimpleDB
         /// <param name="request">Container for the necessary parameters to execute the BatchDeleteAttributes service method.</param>
         /// 
         /// <returns>The response from the BatchDeleteAttributes service method, as returned by SimpleDB.</returns>
-        public BatchDeleteAttributesResponse BatchDeleteAttributes(BatchDeleteAttributesRequest request)
+        public virtual BatchDeleteAttributesResponse BatchDeleteAttributes(BatchDeleteAttributesRequest request)
         {
             var marshaller = new BatchDeleteAttributesRequestMarshaller();
             var unmarshaller = BatchDeleteAttributesResponseUnmarshaller.Instance;
@@ -276,7 +276,7 @@ namespace Amazon.SimpleDB
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<BatchDeleteAttributesResponse> BatchDeleteAttributesAsync(BatchDeleteAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<BatchDeleteAttributesResponse> BatchDeleteAttributesAsync(BatchDeleteAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new BatchDeleteAttributesRequestMarshaller();
             var unmarshaller = BatchDeleteAttributesResponseUnmarshaller.Instance;
@@ -373,7 +373,7 @@ namespace Amazon.SimpleDB
         /// <exception cref="Amazon.SimpleDB.Model.NumberSubmittedItemsExceededException">
         /// Too many items exist in a single call.
         /// </exception>
-        public BatchPutAttributesResponse BatchPutAttributes(BatchPutAttributesRequest request)
+        public virtual BatchPutAttributesResponse BatchPutAttributes(BatchPutAttributesRequest request)
         {
             var marshaller = new BatchPutAttributesRequestMarshaller();
             var unmarshaller = BatchPutAttributesResponseUnmarshaller.Instance;
@@ -390,7 +390,7 @@ namespace Amazon.SimpleDB
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<BatchPutAttributesResponse> BatchPutAttributesAsync(BatchPutAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<BatchPutAttributesResponse> BatchPutAttributesAsync(BatchPutAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new BatchPutAttributesRequestMarshaller();
             var unmarshaller = BatchPutAttributesResponseUnmarshaller.Instance;
@@ -431,7 +431,7 @@ namespace Amazon.SimpleDB
         /// <exception cref="Amazon.SimpleDB.Model.NumberDomainsExceededException">
         /// Too many domains exist per this account.
         /// </exception>
-        public CreateDomainResponse CreateDomain(CreateDomainRequest request)
+        public virtual CreateDomainResponse CreateDomain(CreateDomainRequest request)
         {
             var marshaller = new CreateDomainRequestMarshaller();
             var unmarshaller = CreateDomainResponseUnmarshaller.Instance;
@@ -448,7 +448,7 @@ namespace Amazon.SimpleDB
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CreateDomainResponse> CreateDomainAsync(CreateDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateDomainResponse> CreateDomainAsync(CreateDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateDomainRequestMarshaller();
             var unmarshaller = CreateDomainResponseUnmarshaller.Instance;
@@ -494,7 +494,7 @@ namespace Amazon.SimpleDB
         /// <exception cref="Amazon.SimpleDB.Model.NoSuchDomainException">
         /// The specified domain does not exist.
         /// </exception>
-        public DeleteAttributesResponse DeleteAttributes(DeleteAttributesRequest request)
+        public virtual DeleteAttributesResponse DeleteAttributes(DeleteAttributesRequest request)
         {
             var marshaller = new DeleteAttributesRequestMarshaller();
             var unmarshaller = DeleteAttributesResponseUnmarshaller.Instance;
@@ -511,7 +511,7 @@ namespace Amazon.SimpleDB
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteAttributesResponse> DeleteAttributesAsync(DeleteAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteAttributesResponse> DeleteAttributesAsync(DeleteAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteAttributesRequestMarshaller();
             var unmarshaller = DeleteAttributesResponseUnmarshaller.Instance;
@@ -536,7 +536,7 @@ namespace Amazon.SimpleDB
         /// <exception cref="Amazon.SimpleDB.Model.MissingParameterException">
         /// The request must contain the specified missing parameter.
         /// </exception>
-        public DeleteDomainResponse DeleteDomain(DeleteDomainRequest request)
+        public virtual DeleteDomainResponse DeleteDomain(DeleteDomainRequest request)
         {
             var marshaller = new DeleteDomainRequestMarshaller();
             var unmarshaller = DeleteDomainResponseUnmarshaller.Instance;
@@ -553,7 +553,7 @@ namespace Amazon.SimpleDB
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteDomainResponse> DeleteDomainAsync(DeleteDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteDomainResponse> DeleteDomainAsync(DeleteDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteDomainRequestMarshaller();
             var unmarshaller = DeleteDomainResponseUnmarshaller.Instance;
@@ -581,7 +581,7 @@ namespace Amazon.SimpleDB
         /// <exception cref="Amazon.SimpleDB.Model.NoSuchDomainException">
         /// The specified domain does not exist.
         /// </exception>
-        public DomainMetadataResponse DomainMetadata(DomainMetadataRequest request)
+        public virtual DomainMetadataResponse DomainMetadata(DomainMetadataRequest request)
         {
             var marshaller = new DomainMetadataRequestMarshaller();
             var unmarshaller = DomainMetadataResponseUnmarshaller.Instance;
@@ -598,7 +598,7 @@ namespace Amazon.SimpleDB
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DomainMetadataResponse> DomainMetadataAsync(DomainMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DomainMetadataResponse> DomainMetadataAsync(DomainMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DomainMetadataRequestMarshaller();
             var unmarshaller = DomainMetadataResponseUnmarshaller.Instance;
@@ -636,7 +636,7 @@ namespace Amazon.SimpleDB
         /// <exception cref="Amazon.SimpleDB.Model.NoSuchDomainException">
         /// The specified domain does not exist.
         /// </exception>
-        public GetAttributesResponse GetAttributes(GetAttributesRequest request)
+        public virtual GetAttributesResponse GetAttributes(GetAttributesRequest request)
         {
             var marshaller = new GetAttributesRequestMarshaller();
             var unmarshaller = GetAttributesResponseUnmarshaller.Instance;
@@ -653,7 +653,7 @@ namespace Amazon.SimpleDB
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetAttributesResponse> GetAttributesAsync(GetAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetAttributesResponse> GetAttributesAsync(GetAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetAttributesRequestMarshaller();
             var unmarshaller = GetAttributesResponseUnmarshaller.Instance;
@@ -683,7 +683,7 @@ namespace Amazon.SimpleDB
         /// <exception cref="Amazon.SimpleDB.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
-        public ListDomainsResponse ListDomains()
+        public virtual ListDomainsResponse ListDomains()
         {
             return ListDomains(new ListDomainsRequest());
         }
@@ -706,7 +706,7 @@ namespace Amazon.SimpleDB
         /// <exception cref="Amazon.SimpleDB.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
-        public ListDomainsResponse ListDomains(ListDomainsRequest request)
+        public virtual ListDomainsResponse ListDomains(ListDomainsRequest request)
         {
             var marshaller = new ListDomainsRequestMarshaller();
             var unmarshaller = ListDomainsResponseUnmarshaller.Instance;
@@ -734,7 +734,7 @@ namespace Amazon.SimpleDB
         /// <exception cref="Amazon.SimpleDB.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
-        public Task<ListDomainsResponse> ListDomainsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListDomainsResponse> ListDomainsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return ListDomainsAsync(new ListDomainsRequest(), cancellationToken);
         }
@@ -747,7 +747,7 @@ namespace Amazon.SimpleDB
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<ListDomainsResponse> ListDomainsAsync(ListDomainsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListDomainsResponse> ListDomainsAsync(ListDomainsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListDomainsRequestMarshaller();
             var unmarshaller = ListDomainsResponseUnmarshaller.Instance;
@@ -830,7 +830,7 @@ namespace Amazon.SimpleDB
         /// <exception cref="Amazon.SimpleDB.Model.NumberItemAttributesExceededException">
         /// Too many attributes in this item.
         /// </exception>
-        public PutAttributesResponse PutAttributes(PutAttributesRequest request)
+        public virtual PutAttributesResponse PutAttributes(PutAttributesRequest request)
         {
             var marshaller = new PutAttributesRequestMarshaller();
             var unmarshaller = PutAttributesResponseUnmarshaller.Instance;
@@ -847,7 +847,7 @@ namespace Amazon.SimpleDB
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<PutAttributesResponse> PutAttributesAsync(PutAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PutAttributesResponse> PutAttributesAsync(PutAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutAttributesRequestMarshaller();
             var unmarshaller = PutAttributesResponseUnmarshaller.Instance;
@@ -911,7 +911,7 @@ namespace Amazon.SimpleDB
         /// <exception cref="Amazon.SimpleDB.Model.TooManyRequestedAttributesException">
         /// Too many attributes requested.
         /// </exception>
-        public SelectResponse Select(SelectRequest request)
+        public virtual SelectResponse Select(SelectRequest request)
         {
             var marshaller = new SelectRequestMarshaller();
             var unmarshaller = SelectResponseUnmarshaller.Instance;
@@ -928,7 +928,7 @@ namespace Amazon.SimpleDB
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<SelectResponse> SelectAsync(SelectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<SelectResponse> SelectAsync(SelectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SelectRequestMarshaller();
             var unmarshaller = SelectResponseUnmarshaller.Instance;

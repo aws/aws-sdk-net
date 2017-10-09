@@ -299,7 +299,7 @@ namespace Amazon.CloudWatchLogs
         /// The service cannot complete the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/AssociateKmsKey">REST API Reference for AssociateKmsKey Operation</seealso>
-        public AssociateKmsKeyResponse AssociateKmsKey(AssociateKmsKeyRequest request)
+        public virtual AssociateKmsKeyResponse AssociateKmsKey(AssociateKmsKeyRequest request)
         {
             var marshaller = new AssociateKmsKeyRequestMarshaller();
             var unmarshaller = AssociateKmsKeyResponseUnmarshaller.Instance;
@@ -319,7 +319,7 @@ namespace Amazon.CloudWatchLogs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateKmsKey
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/AssociateKmsKey">REST API Reference for AssociateKmsKey Operation</seealso>
-        public IAsyncResult BeginAssociateKmsKey(AssociateKmsKeyRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginAssociateKmsKey(AssociateKmsKeyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AssociateKmsKeyRequestMarshaller();
             var unmarshaller = AssociateKmsKeyResponseUnmarshaller.Instance;
@@ -336,7 +336,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>Returns a  AssociateKmsKeyResult from CloudWatchLogs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/AssociateKmsKey">REST API Reference for AssociateKmsKey Operation</seealso>
-        public  AssociateKmsKeyResponse EndAssociateKmsKey(IAsyncResult asyncResult)
+        public virtual AssociateKmsKeyResponse EndAssociateKmsKey(IAsyncResult asyncResult)
         {
             return EndInvoke<AssociateKmsKeyResponse>(asyncResult);
         }
@@ -369,7 +369,7 @@ namespace Amazon.CloudWatchLogs
         /// The service cannot complete the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CancelExportTask">REST API Reference for CancelExportTask Operation</seealso>
-        public CancelExportTaskResponse CancelExportTask(CancelExportTaskRequest request)
+        public virtual CancelExportTaskResponse CancelExportTask(CancelExportTaskRequest request)
         {
             var marshaller = new CancelExportTaskRequestMarshaller();
             var unmarshaller = CancelExportTaskResponseUnmarshaller.Instance;
@@ -389,7 +389,7 @@ namespace Amazon.CloudWatchLogs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelExportTask
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CancelExportTask">REST API Reference for CancelExportTask Operation</seealso>
-        public IAsyncResult BeginCancelExportTask(CancelExportTaskRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCancelExportTask(CancelExportTaskRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CancelExportTaskRequestMarshaller();
             var unmarshaller = CancelExportTaskResponseUnmarshaller.Instance;
@@ -406,7 +406,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>Returns a  CancelExportTaskResult from CloudWatchLogs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CancelExportTask">REST API Reference for CancelExportTask Operation</seealso>
-        public  CancelExportTaskResponse EndCancelExportTask(IAsyncResult asyncResult)
+        public virtual CancelExportTaskResponse EndCancelExportTask(IAsyncResult asyncResult)
         {
             return EndInvoke<CancelExportTaskResponse>(asyncResult);
         }
@@ -456,7 +456,7 @@ namespace Amazon.CloudWatchLogs
         /// The service cannot complete the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateExportTask">REST API Reference for CreateExportTask Operation</seealso>
-        public CreateExportTaskResponse CreateExportTask(CreateExportTaskRequest request)
+        public virtual CreateExportTaskResponse CreateExportTask(CreateExportTaskRequest request)
         {
             var marshaller = new CreateExportTaskRequestMarshaller();
             var unmarshaller = CreateExportTaskResponseUnmarshaller.Instance;
@@ -476,7 +476,7 @@ namespace Amazon.CloudWatchLogs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateExportTask
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateExportTask">REST API Reference for CreateExportTask Operation</seealso>
-        public IAsyncResult BeginCreateExportTask(CreateExportTaskRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateExportTask(CreateExportTaskRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateExportTaskRequestMarshaller();
             var unmarshaller = CreateExportTaskResponseUnmarshaller.Instance;
@@ -493,7 +493,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>Returns a  CreateExportTaskResult from CloudWatchLogs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateExportTask">REST API Reference for CreateExportTask Operation</seealso>
-        public  CreateExportTaskResponse EndCreateExportTask(IAsyncResult asyncResult)
+        public virtual CreateExportTaskResponse EndCreateExportTask(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateExportTaskResponse>(asyncResult);
         }
@@ -559,7 +559,7 @@ namespace Amazon.CloudWatchLogs
         /// The service cannot complete the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateLogGroup">REST API Reference for CreateLogGroup Operation</seealso>
-        public CreateLogGroupResponse CreateLogGroup(CreateLogGroupRequest request)
+        public virtual CreateLogGroupResponse CreateLogGroup(CreateLogGroupRequest request)
         {
             var marshaller = new CreateLogGroupRequestMarshaller();
             var unmarshaller = CreateLogGroupResponseUnmarshaller.Instance;
@@ -579,7 +579,7 @@ namespace Amazon.CloudWatchLogs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateLogGroup
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateLogGroup">REST API Reference for CreateLogGroup Operation</seealso>
-        public IAsyncResult BeginCreateLogGroup(CreateLogGroupRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateLogGroup(CreateLogGroupRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateLogGroupRequestMarshaller();
             var unmarshaller = CreateLogGroupResponseUnmarshaller.Instance;
@@ -596,7 +596,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>Returns a  CreateLogGroupResult from CloudWatchLogs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateLogGroup">REST API Reference for CreateLogGroup Operation</seealso>
-        public  CreateLogGroupResponse EndCreateLogGroup(IAsyncResult asyncResult)
+        public virtual CreateLogGroupResponse EndCreateLogGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateLogGroupResponse>(asyncResult);
         }
@@ -646,7 +646,7 @@ namespace Amazon.CloudWatchLogs
         /// The service cannot complete the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateLogStream">REST API Reference for CreateLogStream Operation</seealso>
-        public CreateLogStreamResponse CreateLogStream(CreateLogStreamRequest request)
+        public virtual CreateLogStreamResponse CreateLogStream(CreateLogStreamRequest request)
         {
             var marshaller = new CreateLogStreamRequestMarshaller();
             var unmarshaller = CreateLogStreamResponseUnmarshaller.Instance;
@@ -666,7 +666,7 @@ namespace Amazon.CloudWatchLogs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateLogStream
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateLogStream">REST API Reference for CreateLogStream Operation</seealso>
-        public IAsyncResult BeginCreateLogStream(CreateLogStreamRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateLogStream(CreateLogStreamRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateLogStreamRequestMarshaller();
             var unmarshaller = CreateLogStreamResponseUnmarshaller.Instance;
@@ -683,7 +683,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>Returns a  CreateLogStreamResult from CloudWatchLogs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateLogStream">REST API Reference for CreateLogStream Operation</seealso>
-        public  CreateLogStreamResponse EndCreateLogStream(IAsyncResult asyncResult)
+        public virtual CreateLogStreamResponse EndCreateLogStream(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateLogStreamResponse>(asyncResult);
         }
@@ -713,7 +713,7 @@ namespace Amazon.CloudWatchLogs
         /// The service cannot complete the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteDestination">REST API Reference for DeleteDestination Operation</seealso>
-        public DeleteDestinationResponse DeleteDestination(DeleteDestinationRequest request)
+        public virtual DeleteDestinationResponse DeleteDestination(DeleteDestinationRequest request)
         {
             var marshaller = new DeleteDestinationRequestMarshaller();
             var unmarshaller = DeleteDestinationResponseUnmarshaller.Instance;
@@ -733,7 +733,7 @@ namespace Amazon.CloudWatchLogs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDestination
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteDestination">REST API Reference for DeleteDestination Operation</seealso>
-        public IAsyncResult BeginDeleteDestination(DeleteDestinationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteDestination(DeleteDestinationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteDestinationRequestMarshaller();
             var unmarshaller = DeleteDestinationResponseUnmarshaller.Instance;
@@ -750,7 +750,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>Returns a  DeleteDestinationResult from CloudWatchLogs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteDestination">REST API Reference for DeleteDestination Operation</seealso>
-        public  DeleteDestinationResponse EndDeleteDestination(IAsyncResult asyncResult)
+        public virtual DeleteDestinationResponse EndDeleteDestination(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteDestinationResponse>(asyncResult);
         }
@@ -779,7 +779,7 @@ namespace Amazon.CloudWatchLogs
         /// The service cannot complete the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteLogGroup">REST API Reference for DeleteLogGroup Operation</seealso>
-        public DeleteLogGroupResponse DeleteLogGroup(DeleteLogGroupRequest request)
+        public virtual DeleteLogGroupResponse DeleteLogGroup(DeleteLogGroupRequest request)
         {
             var marshaller = new DeleteLogGroupRequestMarshaller();
             var unmarshaller = DeleteLogGroupResponseUnmarshaller.Instance;
@@ -799,7 +799,7 @@ namespace Amazon.CloudWatchLogs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteLogGroup
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteLogGroup">REST API Reference for DeleteLogGroup Operation</seealso>
-        public IAsyncResult BeginDeleteLogGroup(DeleteLogGroupRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteLogGroup(DeleteLogGroupRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteLogGroupRequestMarshaller();
             var unmarshaller = DeleteLogGroupResponseUnmarshaller.Instance;
@@ -816,7 +816,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>Returns a  DeleteLogGroupResult from CloudWatchLogs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteLogGroup">REST API Reference for DeleteLogGroup Operation</seealso>
-        public  DeleteLogGroupResponse EndDeleteLogGroup(IAsyncResult asyncResult)
+        public virtual DeleteLogGroupResponse EndDeleteLogGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteLogGroupResponse>(asyncResult);
         }
@@ -845,7 +845,7 @@ namespace Amazon.CloudWatchLogs
         /// The service cannot complete the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteLogStream">REST API Reference for DeleteLogStream Operation</seealso>
-        public DeleteLogStreamResponse DeleteLogStream(DeleteLogStreamRequest request)
+        public virtual DeleteLogStreamResponse DeleteLogStream(DeleteLogStreamRequest request)
         {
             var marshaller = new DeleteLogStreamRequestMarshaller();
             var unmarshaller = DeleteLogStreamResponseUnmarshaller.Instance;
@@ -865,7 +865,7 @@ namespace Amazon.CloudWatchLogs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteLogStream
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteLogStream">REST API Reference for DeleteLogStream Operation</seealso>
-        public IAsyncResult BeginDeleteLogStream(DeleteLogStreamRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteLogStream(DeleteLogStreamRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteLogStreamRequestMarshaller();
             var unmarshaller = DeleteLogStreamResponseUnmarshaller.Instance;
@@ -882,7 +882,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>Returns a  DeleteLogStreamResult from CloudWatchLogs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteLogStream">REST API Reference for DeleteLogStream Operation</seealso>
-        public  DeleteLogStreamResponse EndDeleteLogStream(IAsyncResult asyncResult)
+        public virtual DeleteLogStreamResponse EndDeleteLogStream(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteLogStreamResponse>(asyncResult);
         }
@@ -910,7 +910,7 @@ namespace Amazon.CloudWatchLogs
         /// The service cannot complete the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteMetricFilter">REST API Reference for DeleteMetricFilter Operation</seealso>
-        public DeleteMetricFilterResponse DeleteMetricFilter(DeleteMetricFilterRequest request)
+        public virtual DeleteMetricFilterResponse DeleteMetricFilter(DeleteMetricFilterRequest request)
         {
             var marshaller = new DeleteMetricFilterRequestMarshaller();
             var unmarshaller = DeleteMetricFilterResponseUnmarshaller.Instance;
@@ -930,7 +930,7 @@ namespace Amazon.CloudWatchLogs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteMetricFilter
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteMetricFilter">REST API Reference for DeleteMetricFilter Operation</seealso>
-        public IAsyncResult BeginDeleteMetricFilter(DeleteMetricFilterRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteMetricFilter(DeleteMetricFilterRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteMetricFilterRequestMarshaller();
             var unmarshaller = DeleteMetricFilterResponseUnmarshaller.Instance;
@@ -947,7 +947,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>Returns a  DeleteMetricFilterResult from CloudWatchLogs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteMetricFilter">REST API Reference for DeleteMetricFilter Operation</seealso>
-        public  DeleteMetricFilterResponse EndDeleteMetricFilter(IAsyncResult asyncResult)
+        public virtual DeleteMetricFilterResponse EndDeleteMetricFilter(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteMetricFilterResponse>(asyncResult);
         }
@@ -973,7 +973,7 @@ namespace Amazon.CloudWatchLogs
         /// The service cannot complete the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
-        public DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request)
+        public virtual DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request)
         {
             var marshaller = new DeleteResourcePolicyRequestMarshaller();
             var unmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
@@ -993,7 +993,7 @@ namespace Amazon.CloudWatchLogs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteResourcePolicy
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
-        public IAsyncResult BeginDeleteResourcePolicy(DeleteResourcePolicyRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteResourcePolicy(DeleteResourcePolicyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteResourcePolicyRequestMarshaller();
             var unmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
@@ -1010,7 +1010,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>Returns a  DeleteResourcePolicyResult from CloudWatchLogs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
-        public  DeleteResourcePolicyResponse EndDeleteResourcePolicy(IAsyncResult asyncResult)
+        public virtual DeleteResourcePolicyResponse EndDeleteResourcePolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteResourcePolicyResponse>(asyncResult);
         }
@@ -1043,7 +1043,7 @@ namespace Amazon.CloudWatchLogs
         /// The service cannot complete the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteRetentionPolicy">REST API Reference for DeleteRetentionPolicy Operation</seealso>
-        public DeleteRetentionPolicyResponse DeleteRetentionPolicy(DeleteRetentionPolicyRequest request)
+        public virtual DeleteRetentionPolicyResponse DeleteRetentionPolicy(DeleteRetentionPolicyRequest request)
         {
             var marshaller = new DeleteRetentionPolicyRequestMarshaller();
             var unmarshaller = DeleteRetentionPolicyResponseUnmarshaller.Instance;
@@ -1063,7 +1063,7 @@ namespace Amazon.CloudWatchLogs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRetentionPolicy
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteRetentionPolicy">REST API Reference for DeleteRetentionPolicy Operation</seealso>
-        public IAsyncResult BeginDeleteRetentionPolicy(DeleteRetentionPolicyRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteRetentionPolicy(DeleteRetentionPolicyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteRetentionPolicyRequestMarshaller();
             var unmarshaller = DeleteRetentionPolicyResponseUnmarshaller.Instance;
@@ -1080,7 +1080,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>Returns a  DeleteRetentionPolicyResult from CloudWatchLogs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteRetentionPolicy">REST API Reference for DeleteRetentionPolicy Operation</seealso>
-        public  DeleteRetentionPolicyResponse EndDeleteRetentionPolicy(IAsyncResult asyncResult)
+        public virtual DeleteRetentionPolicyResponse EndDeleteRetentionPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteRetentionPolicyResponse>(asyncResult);
         }
@@ -1108,7 +1108,7 @@ namespace Amazon.CloudWatchLogs
         /// The service cannot complete the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteSubscriptionFilter">REST API Reference for DeleteSubscriptionFilter Operation</seealso>
-        public DeleteSubscriptionFilterResponse DeleteSubscriptionFilter(DeleteSubscriptionFilterRequest request)
+        public virtual DeleteSubscriptionFilterResponse DeleteSubscriptionFilter(DeleteSubscriptionFilterRequest request)
         {
             var marshaller = new DeleteSubscriptionFilterRequestMarshaller();
             var unmarshaller = DeleteSubscriptionFilterResponseUnmarshaller.Instance;
@@ -1128,7 +1128,7 @@ namespace Amazon.CloudWatchLogs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSubscriptionFilter
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteSubscriptionFilter">REST API Reference for DeleteSubscriptionFilter Operation</seealso>
-        public IAsyncResult BeginDeleteSubscriptionFilter(DeleteSubscriptionFilterRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteSubscriptionFilter(DeleteSubscriptionFilterRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteSubscriptionFilterRequestMarshaller();
             var unmarshaller = DeleteSubscriptionFilterResponseUnmarshaller.Instance;
@@ -1145,7 +1145,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>Returns a  DeleteSubscriptionFilterResult from CloudWatchLogs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteSubscriptionFilter">REST API Reference for DeleteSubscriptionFilter Operation</seealso>
-        public  DeleteSubscriptionFilterResponse EndDeleteSubscriptionFilter(IAsyncResult asyncResult)
+        public virtual DeleteSubscriptionFilterResponse EndDeleteSubscriptionFilter(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteSubscriptionFilterResponse>(asyncResult);
         }
@@ -1167,7 +1167,7 @@ namespace Amazon.CloudWatchLogs
         /// The service cannot complete the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeDestinations">REST API Reference for DescribeDestinations Operation</seealso>
-        public DescribeDestinationsResponse DescribeDestinations(DescribeDestinationsRequest request)
+        public virtual DescribeDestinationsResponse DescribeDestinations(DescribeDestinationsRequest request)
         {
             var marshaller = new DescribeDestinationsRequestMarshaller();
             var unmarshaller = DescribeDestinationsResponseUnmarshaller.Instance;
@@ -1187,7 +1187,7 @@ namespace Amazon.CloudWatchLogs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDestinations
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeDestinations">REST API Reference for DescribeDestinations Operation</seealso>
-        public IAsyncResult BeginDescribeDestinations(DescribeDestinationsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeDestinations(DescribeDestinationsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeDestinationsRequestMarshaller();
             var unmarshaller = DescribeDestinationsResponseUnmarshaller.Instance;
@@ -1204,7 +1204,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>Returns a  DescribeDestinationsResult from CloudWatchLogs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeDestinations">REST API Reference for DescribeDestinations Operation</seealso>
-        public  DescribeDestinationsResponse EndDescribeDestinations(IAsyncResult asyncResult)
+        public virtual DescribeDestinationsResponse EndDescribeDestinations(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeDestinationsResponse>(asyncResult);
         }
@@ -1227,7 +1227,7 @@ namespace Amazon.CloudWatchLogs
         /// The service cannot complete the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeExportTasks">REST API Reference for DescribeExportTasks Operation</seealso>
-        public DescribeExportTasksResponse DescribeExportTasks(DescribeExportTasksRequest request)
+        public virtual DescribeExportTasksResponse DescribeExportTasks(DescribeExportTasksRequest request)
         {
             var marshaller = new DescribeExportTasksRequestMarshaller();
             var unmarshaller = DescribeExportTasksResponseUnmarshaller.Instance;
@@ -1247,7 +1247,7 @@ namespace Amazon.CloudWatchLogs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeExportTasks
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeExportTasks">REST API Reference for DescribeExportTasks Operation</seealso>
-        public IAsyncResult BeginDescribeExportTasks(DescribeExportTasksRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeExportTasks(DescribeExportTasksRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeExportTasksRequestMarshaller();
             var unmarshaller = DescribeExportTasksResponseUnmarshaller.Instance;
@@ -1264,7 +1264,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>Returns a  DescribeExportTasksResult from CloudWatchLogs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeExportTasks">REST API Reference for DescribeExportTasks Operation</seealso>
-        public  DescribeExportTasksResponse EndDescribeExportTasks(IAsyncResult asyncResult)
+        public virtual DescribeExportTasksResponse EndDescribeExportTasks(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeExportTasksResponse>(asyncResult);
         }
@@ -1286,7 +1286,7 @@ namespace Amazon.CloudWatchLogs
         /// The service cannot complete the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeLogGroups">REST API Reference for DescribeLogGroups Operation</seealso>
-        public DescribeLogGroupsResponse DescribeLogGroups()
+        public virtual DescribeLogGroupsResponse DescribeLogGroups()
         {
             return DescribeLogGroups(new DescribeLogGroupsRequest());
         }
@@ -1305,7 +1305,7 @@ namespace Amazon.CloudWatchLogs
         /// The service cannot complete the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeLogGroups">REST API Reference for DescribeLogGroups Operation</seealso>
-        public DescribeLogGroupsResponse DescribeLogGroups(DescribeLogGroupsRequest request)
+        public virtual DescribeLogGroupsResponse DescribeLogGroups(DescribeLogGroupsRequest request)
         {
             var marshaller = new DescribeLogGroupsRequestMarshaller();
             var unmarshaller = DescribeLogGroupsResponseUnmarshaller.Instance;
@@ -1325,7 +1325,7 @@ namespace Amazon.CloudWatchLogs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeLogGroups
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeLogGroups">REST API Reference for DescribeLogGroups Operation</seealso>
-        public IAsyncResult BeginDescribeLogGroups(DescribeLogGroupsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeLogGroups(DescribeLogGroupsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeLogGroupsRequestMarshaller();
             var unmarshaller = DescribeLogGroupsResponseUnmarshaller.Instance;
@@ -1342,7 +1342,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>Returns a  DescribeLogGroupsResult from CloudWatchLogs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeLogGroups">REST API Reference for DescribeLogGroups Operation</seealso>
-        public  DescribeLogGroupsResponse EndDescribeLogGroups(IAsyncResult asyncResult)
+        public virtual DescribeLogGroupsResponse EndDescribeLogGroups(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeLogGroupsResponse>(asyncResult);
         }
@@ -1374,7 +1374,7 @@ namespace Amazon.CloudWatchLogs
         /// The service cannot complete the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeLogStreams">REST API Reference for DescribeLogStreams Operation</seealso>
-        public DescribeLogStreamsResponse DescribeLogStreams(DescribeLogStreamsRequest request)
+        public virtual DescribeLogStreamsResponse DescribeLogStreams(DescribeLogStreamsRequest request)
         {
             var marshaller = new DescribeLogStreamsRequestMarshaller();
             var unmarshaller = DescribeLogStreamsResponseUnmarshaller.Instance;
@@ -1394,7 +1394,7 @@ namespace Amazon.CloudWatchLogs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeLogStreams
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeLogStreams">REST API Reference for DescribeLogStreams Operation</seealso>
-        public IAsyncResult BeginDescribeLogStreams(DescribeLogStreamsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeLogStreams(DescribeLogStreamsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeLogStreamsRequestMarshaller();
             var unmarshaller = DescribeLogStreamsResponseUnmarshaller.Instance;
@@ -1411,7 +1411,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>Returns a  DescribeLogStreamsResult from CloudWatchLogs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeLogStreams">REST API Reference for DescribeLogStreams Operation</seealso>
-        public  DescribeLogStreamsResponse EndDescribeLogStreams(IAsyncResult asyncResult)
+        public virtual DescribeLogStreamsResponse EndDescribeLogStreams(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeLogStreamsResponse>(asyncResult);
         }
@@ -1438,7 +1438,7 @@ namespace Amazon.CloudWatchLogs
         /// The service cannot complete the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeMetricFilters">REST API Reference for DescribeMetricFilters Operation</seealso>
-        public DescribeMetricFiltersResponse DescribeMetricFilters(DescribeMetricFiltersRequest request)
+        public virtual DescribeMetricFiltersResponse DescribeMetricFilters(DescribeMetricFiltersRequest request)
         {
             var marshaller = new DescribeMetricFiltersRequestMarshaller();
             var unmarshaller = DescribeMetricFiltersResponseUnmarshaller.Instance;
@@ -1458,7 +1458,7 @@ namespace Amazon.CloudWatchLogs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeMetricFilters
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeMetricFilters">REST API Reference for DescribeMetricFilters Operation</seealso>
-        public IAsyncResult BeginDescribeMetricFilters(DescribeMetricFiltersRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeMetricFilters(DescribeMetricFiltersRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeMetricFiltersRequestMarshaller();
             var unmarshaller = DescribeMetricFiltersResponseUnmarshaller.Instance;
@@ -1475,7 +1475,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>Returns a  DescribeMetricFiltersResult from CloudWatchLogs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeMetricFilters">REST API Reference for DescribeMetricFilters Operation</seealso>
-        public  DescribeMetricFiltersResponse EndDescribeMetricFilters(IAsyncResult asyncResult)
+        public virtual DescribeMetricFiltersResponse EndDescribeMetricFilters(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeMetricFiltersResponse>(asyncResult);
         }
@@ -1497,7 +1497,7 @@ namespace Amazon.CloudWatchLogs
         /// The service cannot complete the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeResourcePolicies">REST API Reference for DescribeResourcePolicies Operation</seealso>
-        public DescribeResourcePoliciesResponse DescribeResourcePolicies(DescribeResourcePoliciesRequest request)
+        public virtual DescribeResourcePoliciesResponse DescribeResourcePolicies(DescribeResourcePoliciesRequest request)
         {
             var marshaller = new DescribeResourcePoliciesRequestMarshaller();
             var unmarshaller = DescribeResourcePoliciesResponseUnmarshaller.Instance;
@@ -1517,7 +1517,7 @@ namespace Amazon.CloudWatchLogs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeResourcePolicies
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeResourcePolicies">REST API Reference for DescribeResourcePolicies Operation</seealso>
-        public IAsyncResult BeginDescribeResourcePolicies(DescribeResourcePoliciesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeResourcePolicies(DescribeResourcePoliciesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeResourcePoliciesRequestMarshaller();
             var unmarshaller = DescribeResourcePoliciesResponseUnmarshaller.Instance;
@@ -1534,7 +1534,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>Returns a  DescribeResourcePoliciesResult from CloudWatchLogs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeResourcePolicies">REST API Reference for DescribeResourcePolicies Operation</seealso>
-        public  DescribeResourcePoliciesResponse EndDescribeResourcePolicies(IAsyncResult asyncResult)
+        public virtual DescribeResourcePoliciesResponse EndDescribeResourcePolicies(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeResourcePoliciesResponse>(asyncResult);
         }
@@ -1560,7 +1560,7 @@ namespace Amazon.CloudWatchLogs
         /// The service cannot complete the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeSubscriptionFilters">REST API Reference for DescribeSubscriptionFilters Operation</seealso>
-        public DescribeSubscriptionFiltersResponse DescribeSubscriptionFilters(DescribeSubscriptionFiltersRequest request)
+        public virtual DescribeSubscriptionFiltersResponse DescribeSubscriptionFilters(DescribeSubscriptionFiltersRequest request)
         {
             var marshaller = new DescribeSubscriptionFiltersRequestMarshaller();
             var unmarshaller = DescribeSubscriptionFiltersResponseUnmarshaller.Instance;
@@ -1580,7 +1580,7 @@ namespace Amazon.CloudWatchLogs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSubscriptionFilters
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeSubscriptionFilters">REST API Reference for DescribeSubscriptionFilters Operation</seealso>
-        public IAsyncResult BeginDescribeSubscriptionFilters(DescribeSubscriptionFiltersRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeSubscriptionFilters(DescribeSubscriptionFiltersRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeSubscriptionFiltersRequestMarshaller();
             var unmarshaller = DescribeSubscriptionFiltersResponseUnmarshaller.Instance;
@@ -1597,7 +1597,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>Returns a  DescribeSubscriptionFiltersResult from CloudWatchLogs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeSubscriptionFilters">REST API Reference for DescribeSubscriptionFilters Operation</seealso>
-        public  DescribeSubscriptionFiltersResponse EndDescribeSubscriptionFilters(IAsyncResult asyncResult)
+        public virtual DescribeSubscriptionFiltersResponse EndDescribeSubscriptionFilters(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeSubscriptionFiltersResponse>(asyncResult);
         }
@@ -1638,7 +1638,7 @@ namespace Amazon.CloudWatchLogs
         /// The service cannot complete the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DisassociateKmsKey">REST API Reference for DisassociateKmsKey Operation</seealso>
-        public DisassociateKmsKeyResponse DisassociateKmsKey(DisassociateKmsKeyRequest request)
+        public virtual DisassociateKmsKeyResponse DisassociateKmsKey(DisassociateKmsKeyRequest request)
         {
             var marshaller = new DisassociateKmsKeyRequestMarshaller();
             var unmarshaller = DisassociateKmsKeyResponseUnmarshaller.Instance;
@@ -1658,7 +1658,7 @@ namespace Amazon.CloudWatchLogs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateKmsKey
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DisassociateKmsKey">REST API Reference for DisassociateKmsKey Operation</seealso>
-        public IAsyncResult BeginDisassociateKmsKey(DisassociateKmsKeyRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDisassociateKmsKey(DisassociateKmsKeyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DisassociateKmsKeyRequestMarshaller();
             var unmarshaller = DisassociateKmsKeyResponseUnmarshaller.Instance;
@@ -1675,7 +1675,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>Returns a  DisassociateKmsKeyResult from CloudWatchLogs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DisassociateKmsKey">REST API Reference for DisassociateKmsKey Operation</seealso>
-        public  DisassociateKmsKeyResponse EndDisassociateKmsKey(IAsyncResult asyncResult)
+        public virtual DisassociateKmsKeyResponse EndDisassociateKmsKey(IAsyncResult asyncResult)
         {
             return EndInvoke<DisassociateKmsKeyResponse>(asyncResult);
         }
@@ -1709,7 +1709,7 @@ namespace Amazon.CloudWatchLogs
         /// The service cannot complete the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/FilterLogEvents">REST API Reference for FilterLogEvents Operation</seealso>
-        public FilterLogEventsResponse FilterLogEvents(FilterLogEventsRequest request)
+        public virtual FilterLogEventsResponse FilterLogEvents(FilterLogEventsRequest request)
         {
             var marshaller = new FilterLogEventsRequestMarshaller();
             var unmarshaller = FilterLogEventsResponseUnmarshaller.Instance;
@@ -1729,7 +1729,7 @@ namespace Amazon.CloudWatchLogs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndFilterLogEvents
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/FilterLogEvents">REST API Reference for FilterLogEvents Operation</seealso>
-        public IAsyncResult BeginFilterLogEvents(FilterLogEventsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginFilterLogEvents(FilterLogEventsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new FilterLogEventsRequestMarshaller();
             var unmarshaller = FilterLogEventsResponseUnmarshaller.Instance;
@@ -1746,7 +1746,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>Returns a  FilterLogEventsResult from CloudWatchLogs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/FilterLogEvents">REST API Reference for FilterLogEvents Operation</seealso>
-        public  FilterLogEventsResponse EndFilterLogEvents(IAsyncResult asyncResult)
+        public virtual FilterLogEventsResponse EndFilterLogEvents(IAsyncResult asyncResult)
         {
             return EndInvoke<FilterLogEventsResponse>(asyncResult);
         }
@@ -1779,7 +1779,7 @@ namespace Amazon.CloudWatchLogs
         /// The service cannot complete the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetLogEvents">REST API Reference for GetLogEvents Operation</seealso>
-        public GetLogEventsResponse GetLogEvents(GetLogEventsRequest request)
+        public virtual GetLogEventsResponse GetLogEvents(GetLogEventsRequest request)
         {
             var marshaller = new GetLogEventsRequestMarshaller();
             var unmarshaller = GetLogEventsResponseUnmarshaller.Instance;
@@ -1799,7 +1799,7 @@ namespace Amazon.CloudWatchLogs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetLogEvents
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetLogEvents">REST API Reference for GetLogEvents Operation</seealso>
-        public IAsyncResult BeginGetLogEvents(GetLogEventsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetLogEvents(GetLogEventsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetLogEventsRequestMarshaller();
             var unmarshaller = GetLogEventsResponseUnmarshaller.Instance;
@@ -1816,7 +1816,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>Returns a  GetLogEventsResult from CloudWatchLogs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetLogEvents">REST API Reference for GetLogEvents Operation</seealso>
-        public  GetLogEventsResponse EndGetLogEvents(IAsyncResult asyncResult)
+        public virtual GetLogEventsResponse EndGetLogEvents(IAsyncResult asyncResult)
         {
             return EndInvoke<GetLogEventsResponse>(asyncResult);
         }
@@ -1838,7 +1838,7 @@ namespace Amazon.CloudWatchLogs
         /// The service cannot complete the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListTagsLogGroup">REST API Reference for ListTagsLogGroup Operation</seealso>
-        public ListTagsLogGroupResponse ListTagsLogGroup(ListTagsLogGroupRequest request)
+        public virtual ListTagsLogGroupResponse ListTagsLogGroup(ListTagsLogGroupRequest request)
         {
             var marshaller = new ListTagsLogGroupRequestMarshaller();
             var unmarshaller = ListTagsLogGroupResponseUnmarshaller.Instance;
@@ -1858,7 +1858,7 @@ namespace Amazon.CloudWatchLogs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsLogGroup
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListTagsLogGroup">REST API Reference for ListTagsLogGroup Operation</seealso>
-        public IAsyncResult BeginListTagsLogGroup(ListTagsLogGroupRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListTagsLogGroup(ListTagsLogGroupRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListTagsLogGroupRequestMarshaller();
             var unmarshaller = ListTagsLogGroupResponseUnmarshaller.Instance;
@@ -1875,7 +1875,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>Returns a  ListTagsLogGroupResult from CloudWatchLogs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListTagsLogGroup">REST API Reference for ListTagsLogGroup Operation</seealso>
-        public  ListTagsLogGroupResponse EndListTagsLogGroup(IAsyncResult asyncResult)
+        public virtual ListTagsLogGroupResponse EndListTagsLogGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTagsLogGroupResponse>(asyncResult);
         }
@@ -1913,7 +1913,7 @@ namespace Amazon.CloudWatchLogs
         /// The service cannot complete the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutDestination">REST API Reference for PutDestination Operation</seealso>
-        public PutDestinationResponse PutDestination(PutDestinationRequest request)
+        public virtual PutDestinationResponse PutDestination(PutDestinationRequest request)
         {
             var marshaller = new PutDestinationRequestMarshaller();
             var unmarshaller = PutDestinationResponseUnmarshaller.Instance;
@@ -1933,7 +1933,7 @@ namespace Amazon.CloudWatchLogs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutDestination
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutDestination">REST API Reference for PutDestination Operation</seealso>
-        public IAsyncResult BeginPutDestination(PutDestinationRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPutDestination(PutDestinationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutDestinationRequestMarshaller();
             var unmarshaller = PutDestinationResponseUnmarshaller.Instance;
@@ -1950,7 +1950,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>Returns a  PutDestinationResult from CloudWatchLogs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutDestination">REST API Reference for PutDestination Operation</seealso>
-        public  PutDestinationResponse EndPutDestination(IAsyncResult asyncResult)
+        public virtual PutDestinationResponse EndPutDestination(IAsyncResult asyncResult)
         {
             return EndInvoke<PutDestinationResponse>(asyncResult);
         }
@@ -1978,7 +1978,7 @@ namespace Amazon.CloudWatchLogs
         /// The service cannot complete the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutDestinationPolicy">REST API Reference for PutDestinationPolicy Operation</seealso>
-        public PutDestinationPolicyResponse PutDestinationPolicy(PutDestinationPolicyRequest request)
+        public virtual PutDestinationPolicyResponse PutDestinationPolicy(PutDestinationPolicyRequest request)
         {
             var marshaller = new PutDestinationPolicyRequestMarshaller();
             var unmarshaller = PutDestinationPolicyResponseUnmarshaller.Instance;
@@ -1998,7 +1998,7 @@ namespace Amazon.CloudWatchLogs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutDestinationPolicy
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutDestinationPolicy">REST API Reference for PutDestinationPolicy Operation</seealso>
-        public IAsyncResult BeginPutDestinationPolicy(PutDestinationPolicyRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPutDestinationPolicy(PutDestinationPolicyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutDestinationPolicyRequestMarshaller();
             var unmarshaller = PutDestinationPolicyResponseUnmarshaller.Instance;
@@ -2015,7 +2015,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>Returns a  PutDestinationPolicyResult from CloudWatchLogs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutDestinationPolicy">REST API Reference for PutDestinationPolicy Operation</seealso>
-        public  PutDestinationPolicyResponse EndPutDestinationPolicy(IAsyncResult asyncResult)
+        public virtual PutDestinationPolicyResponse EndPutDestinationPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<PutDestinationPolicyResponse>(asyncResult);
         }
@@ -2089,7 +2089,7 @@ namespace Amazon.CloudWatchLogs
         /// The service cannot complete the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutLogEvents">REST API Reference for PutLogEvents Operation</seealso>
-        public PutLogEventsResponse PutLogEvents(PutLogEventsRequest request)
+        public virtual PutLogEventsResponse PutLogEvents(PutLogEventsRequest request)
         {
             var marshaller = new PutLogEventsRequestMarshaller();
             var unmarshaller = PutLogEventsResponseUnmarshaller.Instance;
@@ -2109,7 +2109,7 @@ namespace Amazon.CloudWatchLogs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutLogEvents
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutLogEvents">REST API Reference for PutLogEvents Operation</seealso>
-        public IAsyncResult BeginPutLogEvents(PutLogEventsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPutLogEvents(PutLogEventsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutLogEventsRequestMarshaller();
             var unmarshaller = PutLogEventsResponseUnmarshaller.Instance;
@@ -2126,7 +2126,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>Returns a  PutLogEventsResult from CloudWatchLogs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutLogEvents">REST API Reference for PutLogEvents Operation</seealso>
-        public  PutLogEventsResponse EndPutLogEvents(IAsyncResult asyncResult)
+        public virtual PutLogEventsResponse EndPutLogEvents(IAsyncResult asyncResult)
         {
             return EndInvoke<PutLogEventsResponse>(asyncResult);
         }
@@ -2164,7 +2164,7 @@ namespace Amazon.CloudWatchLogs
         /// The service cannot complete the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutMetricFilter">REST API Reference for PutMetricFilter Operation</seealso>
-        public PutMetricFilterResponse PutMetricFilter(PutMetricFilterRequest request)
+        public virtual PutMetricFilterResponse PutMetricFilter(PutMetricFilterRequest request)
         {
             var marshaller = new PutMetricFilterRequestMarshaller();
             var unmarshaller = PutMetricFilterResponseUnmarshaller.Instance;
@@ -2184,7 +2184,7 @@ namespace Amazon.CloudWatchLogs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutMetricFilter
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutMetricFilter">REST API Reference for PutMetricFilter Operation</seealso>
-        public IAsyncResult BeginPutMetricFilter(PutMetricFilterRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPutMetricFilter(PutMetricFilterRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutMetricFilterRequestMarshaller();
             var unmarshaller = PutMetricFilterResponseUnmarshaller.Instance;
@@ -2201,7 +2201,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>Returns a  PutMetricFilterResult from CloudWatchLogs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutMetricFilter">REST API Reference for PutMetricFilter Operation</seealso>
-        public  PutMetricFilterResponse EndPutMetricFilter(IAsyncResult asyncResult)
+        public virtual PutMetricFilterResponse EndPutMetricFilter(IAsyncResult asyncResult)
         {
             return EndInvoke<PutMetricFilterResponse>(asyncResult);
         }
@@ -2228,7 +2228,7 @@ namespace Amazon.CloudWatchLogs
         /// The service cannot complete the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
-        public PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request)
+        public virtual PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request)
         {
             var marshaller = new PutResourcePolicyRequestMarshaller();
             var unmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
@@ -2248,7 +2248,7 @@ namespace Amazon.CloudWatchLogs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutResourcePolicy
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
-        public IAsyncResult BeginPutResourcePolicy(PutResourcePolicyRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPutResourcePolicy(PutResourcePolicyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutResourcePolicyRequestMarshaller();
             var unmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
@@ -2265,7 +2265,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>Returns a  PutResourcePolicyResult from CloudWatchLogs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
-        public  PutResourcePolicyResponse EndPutResourcePolicy(IAsyncResult asyncResult)
+        public virtual PutResourcePolicyResponse EndPutResourcePolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<PutResourcePolicyResponse>(asyncResult);
         }
@@ -2294,7 +2294,7 @@ namespace Amazon.CloudWatchLogs
         /// The service cannot complete the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutRetentionPolicy">REST API Reference for PutRetentionPolicy Operation</seealso>
-        public PutRetentionPolicyResponse PutRetentionPolicy(PutRetentionPolicyRequest request)
+        public virtual PutRetentionPolicyResponse PutRetentionPolicy(PutRetentionPolicyRequest request)
         {
             var marshaller = new PutRetentionPolicyRequestMarshaller();
             var unmarshaller = PutRetentionPolicyResponseUnmarshaller.Instance;
@@ -2314,7 +2314,7 @@ namespace Amazon.CloudWatchLogs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutRetentionPolicy
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutRetentionPolicy">REST API Reference for PutRetentionPolicy Operation</seealso>
-        public IAsyncResult BeginPutRetentionPolicy(PutRetentionPolicyRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPutRetentionPolicy(PutRetentionPolicyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutRetentionPolicyRequestMarshaller();
             var unmarshaller = PutRetentionPolicyResponseUnmarshaller.Instance;
@@ -2331,7 +2331,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>Returns a  PutRetentionPolicyResult from CloudWatchLogs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutRetentionPolicy">REST API Reference for PutRetentionPolicy Operation</seealso>
-        public  PutRetentionPolicyResponse EndPutRetentionPolicy(IAsyncResult asyncResult)
+        public virtual PutRetentionPolicyResponse EndPutRetentionPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<PutRetentionPolicyResponse>(asyncResult);
         }
@@ -2392,7 +2392,7 @@ namespace Amazon.CloudWatchLogs
         /// The service cannot complete the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutSubscriptionFilter">REST API Reference for PutSubscriptionFilter Operation</seealso>
-        public PutSubscriptionFilterResponse PutSubscriptionFilter(PutSubscriptionFilterRequest request)
+        public virtual PutSubscriptionFilterResponse PutSubscriptionFilter(PutSubscriptionFilterRequest request)
         {
             var marshaller = new PutSubscriptionFilterRequestMarshaller();
             var unmarshaller = PutSubscriptionFilterResponseUnmarshaller.Instance;
@@ -2412,7 +2412,7 @@ namespace Amazon.CloudWatchLogs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutSubscriptionFilter
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutSubscriptionFilter">REST API Reference for PutSubscriptionFilter Operation</seealso>
-        public IAsyncResult BeginPutSubscriptionFilter(PutSubscriptionFilterRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginPutSubscriptionFilter(PutSubscriptionFilterRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutSubscriptionFilterRequestMarshaller();
             var unmarshaller = PutSubscriptionFilterResponseUnmarshaller.Instance;
@@ -2429,7 +2429,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>Returns a  PutSubscriptionFilterResult from CloudWatchLogs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutSubscriptionFilter">REST API Reference for PutSubscriptionFilter Operation</seealso>
-        public  PutSubscriptionFilterResponse EndPutSubscriptionFilter(IAsyncResult asyncResult)
+        public virtual PutSubscriptionFilterResponse EndPutSubscriptionFilter(IAsyncResult asyncResult)
         {
             return EndInvoke<PutSubscriptionFilterResponse>(asyncResult);
         }
@@ -2462,7 +2462,7 @@ namespace Amazon.CloudWatchLogs
         /// The specified resource does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/TagLogGroup">REST API Reference for TagLogGroup Operation</seealso>
-        public TagLogGroupResponse TagLogGroup(TagLogGroupRequest request)
+        public virtual TagLogGroupResponse TagLogGroup(TagLogGroupRequest request)
         {
             var marshaller = new TagLogGroupRequestMarshaller();
             var unmarshaller = TagLogGroupResponseUnmarshaller.Instance;
@@ -2482,7 +2482,7 @@ namespace Amazon.CloudWatchLogs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagLogGroup
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/TagLogGroup">REST API Reference for TagLogGroup Operation</seealso>
-        public IAsyncResult BeginTagLogGroup(TagLogGroupRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginTagLogGroup(TagLogGroupRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new TagLogGroupRequestMarshaller();
             var unmarshaller = TagLogGroupResponseUnmarshaller.Instance;
@@ -2499,7 +2499,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>Returns a  TagLogGroupResult from CloudWatchLogs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/TagLogGroup">REST API Reference for TagLogGroup Operation</seealso>
-        public  TagLogGroupResponse EndTagLogGroup(IAsyncResult asyncResult)
+        public virtual TagLogGroupResponse EndTagLogGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<TagLogGroupResponse>(asyncResult);
         }
@@ -2522,7 +2522,7 @@ namespace Amazon.CloudWatchLogs
         /// The service cannot complete the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/TestMetricFilter">REST API Reference for TestMetricFilter Operation</seealso>
-        public TestMetricFilterResponse TestMetricFilter(TestMetricFilterRequest request)
+        public virtual TestMetricFilterResponse TestMetricFilter(TestMetricFilterRequest request)
         {
             var marshaller = new TestMetricFilterRequestMarshaller();
             var unmarshaller = TestMetricFilterResponseUnmarshaller.Instance;
@@ -2542,7 +2542,7 @@ namespace Amazon.CloudWatchLogs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTestMetricFilter
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/TestMetricFilter">REST API Reference for TestMetricFilter Operation</seealso>
-        public IAsyncResult BeginTestMetricFilter(TestMetricFilterRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginTestMetricFilter(TestMetricFilterRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new TestMetricFilterRequestMarshaller();
             var unmarshaller = TestMetricFilterResponseUnmarshaller.Instance;
@@ -2559,7 +2559,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>Returns a  TestMetricFilterResult from CloudWatchLogs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/TestMetricFilter">REST API Reference for TestMetricFilter Operation</seealso>
-        public  TestMetricFilterResponse EndTestMetricFilter(IAsyncResult asyncResult)
+        public virtual TestMetricFilterResponse EndTestMetricFilter(IAsyncResult asyncResult)
         {
             return EndInvoke<TestMetricFilterResponse>(asyncResult);
         }
@@ -2583,7 +2583,7 @@ namespace Amazon.CloudWatchLogs
         /// The specified resource does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UntagLogGroup">REST API Reference for UntagLogGroup Operation</seealso>
-        public UntagLogGroupResponse UntagLogGroup(UntagLogGroupRequest request)
+        public virtual UntagLogGroupResponse UntagLogGroup(UntagLogGroupRequest request)
         {
             var marshaller = new UntagLogGroupRequestMarshaller();
             var unmarshaller = UntagLogGroupResponseUnmarshaller.Instance;
@@ -2603,7 +2603,7 @@ namespace Amazon.CloudWatchLogs
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagLogGroup
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UntagLogGroup">REST API Reference for UntagLogGroup Operation</seealso>
-        public IAsyncResult BeginUntagLogGroup(UntagLogGroupRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUntagLogGroup(UntagLogGroupRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UntagLogGroupRequestMarshaller();
             var unmarshaller = UntagLogGroupResponseUnmarshaller.Instance;
@@ -2620,7 +2620,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>Returns a  UntagLogGroupResult from CloudWatchLogs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UntagLogGroup">REST API Reference for UntagLogGroup Operation</seealso>
-        public  UntagLogGroupResponse EndUntagLogGroup(IAsyncResult asyncResult)
+        public virtual UntagLogGroupResponse EndUntagLogGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<UntagLogGroupResponse>(asyncResult);
         }

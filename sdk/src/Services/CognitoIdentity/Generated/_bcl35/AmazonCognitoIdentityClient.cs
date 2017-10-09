@@ -318,7 +318,7 @@ namespace Amazon.CognitoIdentity
         /// Thrown when a request is throttled.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/CreateIdentityPool">REST API Reference for CreateIdentityPool Operation</seealso>
-        public CreateIdentityPoolResponse CreateIdentityPool(CreateIdentityPoolRequest request)
+        public virtual CreateIdentityPoolResponse CreateIdentityPool(CreateIdentityPoolRequest request)
         {
             var marshaller = new CreateIdentityPoolRequestMarshaller();
             var unmarshaller = CreateIdentityPoolResponseUnmarshaller.Instance;
@@ -338,7 +338,7 @@ namespace Amazon.CognitoIdentity
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateIdentityPool
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/CreateIdentityPool">REST API Reference for CreateIdentityPool Operation</seealso>
-        public IAsyncResult BeginCreateIdentityPool(CreateIdentityPoolRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateIdentityPool(CreateIdentityPoolRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateIdentityPoolRequestMarshaller();
             var unmarshaller = CreateIdentityPoolResponseUnmarshaller.Instance;
@@ -355,7 +355,7 @@ namespace Amazon.CognitoIdentity
         /// 
         /// <returns>Returns a  CreateIdentityPoolResult from CognitoIdentity.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/CreateIdentityPool">REST API Reference for CreateIdentityPool Operation</seealso>
-        public  CreateIdentityPoolResponse EndCreateIdentityPool(IAsyncResult asyncResult)
+        public virtual CreateIdentityPoolResponse EndCreateIdentityPool(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateIdentityPoolResponse>(asyncResult);
         }
@@ -386,7 +386,7 @@ namespace Amazon.CognitoIdentity
         /// Thrown when a request is throttled.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DeleteIdentities">REST API Reference for DeleteIdentities Operation</seealso>
-        public DeleteIdentitiesResponse DeleteIdentities(DeleteIdentitiesRequest request)
+        public virtual DeleteIdentitiesResponse DeleteIdentities(DeleteIdentitiesRequest request)
         {
             var marshaller = new DeleteIdentitiesRequestMarshaller();
             var unmarshaller = DeleteIdentitiesResponseUnmarshaller.Instance;
@@ -406,7 +406,7 @@ namespace Amazon.CognitoIdentity
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteIdentities
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DeleteIdentities">REST API Reference for DeleteIdentities Operation</seealso>
-        public IAsyncResult BeginDeleteIdentities(DeleteIdentitiesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteIdentities(DeleteIdentitiesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteIdentitiesRequestMarshaller();
             var unmarshaller = DeleteIdentitiesResponseUnmarshaller.Instance;
@@ -423,7 +423,7 @@ namespace Amazon.CognitoIdentity
         /// 
         /// <returns>Returns a  DeleteIdentitiesResult from CognitoIdentity.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DeleteIdentities">REST API Reference for DeleteIdentities Operation</seealso>
-        public  DeleteIdentitiesResponse EndDeleteIdentities(IAsyncResult asyncResult)
+        public virtual DeleteIdentitiesResponse EndDeleteIdentities(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteIdentitiesResponse>(asyncResult);
         }
@@ -460,7 +460,7 @@ namespace Amazon.CognitoIdentity
         /// Thrown when a request is throttled.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DeleteIdentityPool">REST API Reference for DeleteIdentityPool Operation</seealso>
-        public DeleteIdentityPoolResponse DeleteIdentityPool(string identityPoolId)
+        public virtual DeleteIdentityPoolResponse DeleteIdentityPool(string identityPoolId)
         {
             var request = new DeleteIdentityPoolRequest();
             request.IdentityPoolId = identityPoolId;
@@ -496,7 +496,7 @@ namespace Amazon.CognitoIdentity
         /// Thrown when a request is throttled.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DeleteIdentityPool">REST API Reference for DeleteIdentityPool Operation</seealso>
-        public DeleteIdentityPoolResponse DeleteIdentityPool(DeleteIdentityPoolRequest request)
+        public virtual DeleteIdentityPoolResponse DeleteIdentityPool(DeleteIdentityPoolRequest request)
         {
             var marshaller = new DeleteIdentityPoolRequestMarshaller();
             var unmarshaller = DeleteIdentityPoolResponseUnmarshaller.Instance;
@@ -516,7 +516,7 @@ namespace Amazon.CognitoIdentity
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteIdentityPool
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DeleteIdentityPool">REST API Reference for DeleteIdentityPool Operation</seealso>
-        public IAsyncResult BeginDeleteIdentityPool(DeleteIdentityPoolRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteIdentityPool(DeleteIdentityPoolRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteIdentityPoolRequestMarshaller();
             var unmarshaller = DeleteIdentityPoolResponseUnmarshaller.Instance;
@@ -533,7 +533,7 @@ namespace Amazon.CognitoIdentity
         /// 
         /// <returns>Returns a  DeleteIdentityPoolResult from CognitoIdentity.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DeleteIdentityPool">REST API Reference for DeleteIdentityPool Operation</seealso>
-        public  DeleteIdentityPoolResponse EndDeleteIdentityPool(IAsyncResult asyncResult)
+        public virtual DeleteIdentityPoolResponse EndDeleteIdentityPool(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteIdentityPoolResponse>(asyncResult);
         }
@@ -570,7 +570,7 @@ namespace Amazon.CognitoIdentity
         /// Thrown when a request is throttled.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DescribeIdentity">REST API Reference for DescribeIdentity Operation</seealso>
-        public DescribeIdentityResponse DescribeIdentity(string identityId)
+        public virtual DescribeIdentityResponse DescribeIdentity(string identityId)
         {
             var request = new DescribeIdentityRequest();
             request.IdentityId = identityId;
@@ -606,7 +606,7 @@ namespace Amazon.CognitoIdentity
         /// Thrown when a request is throttled.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DescribeIdentity">REST API Reference for DescribeIdentity Operation</seealso>
-        public DescribeIdentityResponse DescribeIdentity(DescribeIdentityRequest request)
+        public virtual DescribeIdentityResponse DescribeIdentity(DescribeIdentityRequest request)
         {
             var marshaller = new DescribeIdentityRequestMarshaller();
             var unmarshaller = DescribeIdentityResponseUnmarshaller.Instance;
@@ -626,7 +626,7 @@ namespace Amazon.CognitoIdentity
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeIdentity
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DescribeIdentity">REST API Reference for DescribeIdentity Operation</seealso>
-        public IAsyncResult BeginDescribeIdentity(DescribeIdentityRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeIdentity(DescribeIdentityRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeIdentityRequestMarshaller();
             var unmarshaller = DescribeIdentityResponseUnmarshaller.Instance;
@@ -643,7 +643,7 @@ namespace Amazon.CognitoIdentity
         /// 
         /// <returns>Returns a  DescribeIdentityResult from CognitoIdentity.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DescribeIdentity">REST API Reference for DescribeIdentity Operation</seealso>
-        public  DescribeIdentityResponse EndDescribeIdentity(IAsyncResult asyncResult)
+        public virtual DescribeIdentityResponse EndDescribeIdentity(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeIdentityResponse>(asyncResult);
         }
@@ -680,7 +680,7 @@ namespace Amazon.CognitoIdentity
         /// Thrown when a request is throttled.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DescribeIdentityPool">REST API Reference for DescribeIdentityPool Operation</seealso>
-        public DescribeIdentityPoolResponse DescribeIdentityPool(string identityPoolId)
+        public virtual DescribeIdentityPoolResponse DescribeIdentityPool(string identityPoolId)
         {
             var request = new DescribeIdentityPoolRequest();
             request.IdentityPoolId = identityPoolId;
@@ -716,7 +716,7 @@ namespace Amazon.CognitoIdentity
         /// Thrown when a request is throttled.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DescribeIdentityPool">REST API Reference for DescribeIdentityPool Operation</seealso>
-        public DescribeIdentityPoolResponse DescribeIdentityPool(DescribeIdentityPoolRequest request)
+        public virtual DescribeIdentityPoolResponse DescribeIdentityPool(DescribeIdentityPoolRequest request)
         {
             var marshaller = new DescribeIdentityPoolRequestMarshaller();
             var unmarshaller = DescribeIdentityPoolResponseUnmarshaller.Instance;
@@ -736,7 +736,7 @@ namespace Amazon.CognitoIdentity
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeIdentityPool
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DescribeIdentityPool">REST API Reference for DescribeIdentityPool Operation</seealso>
-        public IAsyncResult BeginDescribeIdentityPool(DescribeIdentityPoolRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeIdentityPool(DescribeIdentityPoolRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeIdentityPoolRequestMarshaller();
             var unmarshaller = DescribeIdentityPoolResponseUnmarshaller.Instance;
@@ -753,7 +753,7 @@ namespace Amazon.CognitoIdentity
         /// 
         /// <returns>Returns a  DescribeIdentityPoolResult from CognitoIdentity.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DescribeIdentityPool">REST API Reference for DescribeIdentityPool Operation</seealso>
-        public  DescribeIdentityPoolResponse EndDescribeIdentityPool(IAsyncResult asyncResult)
+        public virtual DescribeIdentityPoolResponse EndDescribeIdentityPool(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeIdentityPoolResponse>(asyncResult);
         }
@@ -802,7 +802,7 @@ namespace Amazon.CognitoIdentity
         /// Thrown when a request is throttled.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetCredentialsForIdentity">REST API Reference for GetCredentialsForIdentity Operation</seealso>
-        public GetCredentialsForIdentityResponse GetCredentialsForIdentity(string identityId)
+        public virtual GetCredentialsForIdentityResponse GetCredentialsForIdentity(string identityId)
         {
             var request = new GetCredentialsForIdentityRequest();
             request.IdentityId = identityId;
@@ -851,7 +851,7 @@ namespace Amazon.CognitoIdentity
         /// Thrown when a request is throttled.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetCredentialsForIdentity">REST API Reference for GetCredentialsForIdentity Operation</seealso>
-        public GetCredentialsForIdentityResponse GetCredentialsForIdentity(string identityId, Dictionary<string, string> logins)
+        public virtual GetCredentialsForIdentityResponse GetCredentialsForIdentity(string identityId, Dictionary<string, string> logins)
         {
             var request = new GetCredentialsForIdentityRequest();
             request.IdentityId = identityId;
@@ -900,7 +900,7 @@ namespace Amazon.CognitoIdentity
         /// Thrown when a request is throttled.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetCredentialsForIdentity">REST API Reference for GetCredentialsForIdentity Operation</seealso>
-        public GetCredentialsForIdentityResponse GetCredentialsForIdentity(GetCredentialsForIdentityRequest request)
+        public virtual GetCredentialsForIdentityResponse GetCredentialsForIdentity(GetCredentialsForIdentityRequest request)
         {
             var marshaller = new GetCredentialsForIdentityRequestMarshaller();
             var unmarshaller = GetCredentialsForIdentityResponseUnmarshaller.Instance;
@@ -920,7 +920,7 @@ namespace Amazon.CognitoIdentity
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCredentialsForIdentity
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetCredentialsForIdentity">REST API Reference for GetCredentialsForIdentity Operation</seealso>
-        public IAsyncResult BeginGetCredentialsForIdentity(GetCredentialsForIdentityRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetCredentialsForIdentity(GetCredentialsForIdentityRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetCredentialsForIdentityRequestMarshaller();
             var unmarshaller = GetCredentialsForIdentityResponseUnmarshaller.Instance;
@@ -937,7 +937,7 @@ namespace Amazon.CognitoIdentity
         /// 
         /// <returns>Returns a  GetCredentialsForIdentityResult from CognitoIdentity.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetCredentialsForIdentity">REST API Reference for GetCredentialsForIdentity Operation</seealso>
-        public  GetCredentialsForIdentityResponse EndGetCredentialsForIdentity(IAsyncResult asyncResult)
+        public virtual GetCredentialsForIdentityResponse EndGetCredentialsForIdentity(IAsyncResult asyncResult)
         {
             return EndInvoke<GetCredentialsForIdentityResponse>(asyncResult);
         }
@@ -983,7 +983,7 @@ namespace Amazon.CognitoIdentity
         /// Thrown when a request is throttled.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetId">REST API Reference for GetId Operation</seealso>
-        public GetIdResponse GetId(GetIdRequest request)
+        public virtual GetIdResponse GetId(GetIdRequest request)
         {
             var marshaller = new GetIdRequestMarshaller();
             var unmarshaller = GetIdResponseUnmarshaller.Instance;
@@ -1003,7 +1003,7 @@ namespace Amazon.CognitoIdentity
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetId
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetId">REST API Reference for GetId Operation</seealso>
-        public IAsyncResult BeginGetId(GetIdRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetId(GetIdRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetIdRequestMarshaller();
             var unmarshaller = GetIdResponseUnmarshaller.Instance;
@@ -1020,7 +1020,7 @@ namespace Amazon.CognitoIdentity
         /// 
         /// <returns>Returns a  GetIdResult from CognitoIdentity.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetId">REST API Reference for GetId Operation</seealso>
-        public  GetIdResponse EndGetId(IAsyncResult asyncResult)
+        public virtual GetIdResponse EndGetId(IAsyncResult asyncResult)
         {
             return EndInvoke<GetIdResponse>(asyncResult);
         }
@@ -1059,7 +1059,7 @@ namespace Amazon.CognitoIdentity
         /// Thrown when a request is throttled.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetIdentityPoolRoles">REST API Reference for GetIdentityPoolRoles Operation</seealso>
-        public GetIdentityPoolRolesResponse GetIdentityPoolRoles(string identityPoolId)
+        public virtual GetIdentityPoolRolesResponse GetIdentityPoolRoles(string identityPoolId)
         {
             var request = new GetIdentityPoolRolesRequest();
             request.IdentityPoolId = identityPoolId;
@@ -1097,7 +1097,7 @@ namespace Amazon.CognitoIdentity
         /// Thrown when a request is throttled.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetIdentityPoolRoles">REST API Reference for GetIdentityPoolRoles Operation</seealso>
-        public GetIdentityPoolRolesResponse GetIdentityPoolRoles(GetIdentityPoolRolesRequest request)
+        public virtual GetIdentityPoolRolesResponse GetIdentityPoolRoles(GetIdentityPoolRolesRequest request)
         {
             var marshaller = new GetIdentityPoolRolesRequestMarshaller();
             var unmarshaller = GetIdentityPoolRolesResponseUnmarshaller.Instance;
@@ -1117,7 +1117,7 @@ namespace Amazon.CognitoIdentity
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetIdentityPoolRoles
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetIdentityPoolRoles">REST API Reference for GetIdentityPoolRoles Operation</seealso>
-        public IAsyncResult BeginGetIdentityPoolRoles(GetIdentityPoolRolesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetIdentityPoolRoles(GetIdentityPoolRolesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetIdentityPoolRolesRequestMarshaller();
             var unmarshaller = GetIdentityPoolRolesResponseUnmarshaller.Instance;
@@ -1134,7 +1134,7 @@ namespace Amazon.CognitoIdentity
         /// 
         /// <returns>Returns a  GetIdentityPoolRolesResult from CognitoIdentity.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetIdentityPoolRoles">REST API Reference for GetIdentityPoolRoles Operation</seealso>
-        public  GetIdentityPoolRolesResponse EndGetIdentityPoolRoles(IAsyncResult asyncResult)
+        public virtual GetIdentityPoolRolesResponse EndGetIdentityPoolRoles(IAsyncResult asyncResult)
         {
             return EndInvoke<GetIdentityPoolRolesResponse>(asyncResult);
         }
@@ -1182,7 +1182,7 @@ namespace Amazon.CognitoIdentity
         /// Thrown when a request is throttled.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetOpenIdToken">REST API Reference for GetOpenIdToken Operation</seealso>
-        public GetOpenIdTokenResponse GetOpenIdToken(string identityId)
+        public virtual GetOpenIdTokenResponse GetOpenIdToken(string identityId)
         {
             var request = new GetOpenIdTokenRequest();
             request.IdentityId = identityId;
@@ -1229,7 +1229,7 @@ namespace Amazon.CognitoIdentity
         /// Thrown when a request is throttled.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetOpenIdToken">REST API Reference for GetOpenIdToken Operation</seealso>
-        public GetOpenIdTokenResponse GetOpenIdToken(GetOpenIdTokenRequest request)
+        public virtual GetOpenIdTokenResponse GetOpenIdToken(GetOpenIdTokenRequest request)
         {
             var marshaller = new GetOpenIdTokenRequestMarshaller();
             var unmarshaller = GetOpenIdTokenResponseUnmarshaller.Instance;
@@ -1249,7 +1249,7 @@ namespace Amazon.CognitoIdentity
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetOpenIdToken
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetOpenIdToken">REST API Reference for GetOpenIdToken Operation</seealso>
-        public IAsyncResult BeginGetOpenIdToken(GetOpenIdTokenRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetOpenIdToken(GetOpenIdTokenRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetOpenIdTokenRequestMarshaller();
             var unmarshaller = GetOpenIdTokenResponseUnmarshaller.Instance;
@@ -1266,7 +1266,7 @@ namespace Amazon.CognitoIdentity
         /// 
         /// <returns>Returns a  GetOpenIdTokenResult from CognitoIdentity.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetOpenIdToken">REST API Reference for GetOpenIdToken Operation</seealso>
-        public  GetOpenIdTokenResponse EndGetOpenIdToken(IAsyncResult asyncResult)
+        public virtual GetOpenIdTokenResponse EndGetOpenIdToken(IAsyncResult asyncResult)
         {
             return EndInvoke<GetOpenIdTokenResponse>(asyncResult);
         }
@@ -1322,7 +1322,7 @@ namespace Amazon.CognitoIdentity
         /// Thrown when a request is throttled.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetOpenIdTokenForDeveloperIdentity">REST API Reference for GetOpenIdTokenForDeveloperIdentity Operation</seealso>
-        public GetOpenIdTokenForDeveloperIdentityResponse GetOpenIdTokenForDeveloperIdentity(GetOpenIdTokenForDeveloperIdentityRequest request)
+        public virtual GetOpenIdTokenForDeveloperIdentityResponse GetOpenIdTokenForDeveloperIdentity(GetOpenIdTokenForDeveloperIdentityRequest request)
         {
             var marshaller = new GetOpenIdTokenForDeveloperIdentityRequestMarshaller();
             var unmarshaller = GetOpenIdTokenForDeveloperIdentityResponseUnmarshaller.Instance;
@@ -1342,7 +1342,7 @@ namespace Amazon.CognitoIdentity
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetOpenIdTokenForDeveloperIdentity
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetOpenIdTokenForDeveloperIdentity">REST API Reference for GetOpenIdTokenForDeveloperIdentity Operation</seealso>
-        public IAsyncResult BeginGetOpenIdTokenForDeveloperIdentity(GetOpenIdTokenForDeveloperIdentityRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetOpenIdTokenForDeveloperIdentity(GetOpenIdTokenForDeveloperIdentityRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetOpenIdTokenForDeveloperIdentityRequestMarshaller();
             var unmarshaller = GetOpenIdTokenForDeveloperIdentityResponseUnmarshaller.Instance;
@@ -1359,7 +1359,7 @@ namespace Amazon.CognitoIdentity
         /// 
         /// <returns>Returns a  GetOpenIdTokenForDeveloperIdentityResult from CognitoIdentity.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetOpenIdTokenForDeveloperIdentity">REST API Reference for GetOpenIdTokenForDeveloperIdentity Operation</seealso>
-        public  GetOpenIdTokenForDeveloperIdentityResponse EndGetOpenIdTokenForDeveloperIdentity(IAsyncResult asyncResult)
+        public virtual GetOpenIdTokenForDeveloperIdentityResponse EndGetOpenIdTokenForDeveloperIdentity(IAsyncResult asyncResult)
         {
             return EndInvoke<GetOpenIdTokenForDeveloperIdentityResponse>(asyncResult);
         }
@@ -1395,7 +1395,7 @@ namespace Amazon.CognitoIdentity
         /// Thrown when a request is throttled.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/ListIdentities">REST API Reference for ListIdentities Operation</seealso>
-        public ListIdentitiesResponse ListIdentities(ListIdentitiesRequest request)
+        public virtual ListIdentitiesResponse ListIdentities(ListIdentitiesRequest request)
         {
             var marshaller = new ListIdentitiesRequestMarshaller();
             var unmarshaller = ListIdentitiesResponseUnmarshaller.Instance;
@@ -1415,7 +1415,7 @@ namespace Amazon.CognitoIdentity
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListIdentities
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/ListIdentities">REST API Reference for ListIdentities Operation</seealso>
-        public IAsyncResult BeginListIdentities(ListIdentitiesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListIdentities(ListIdentitiesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListIdentitiesRequestMarshaller();
             var unmarshaller = ListIdentitiesResponseUnmarshaller.Instance;
@@ -1432,7 +1432,7 @@ namespace Amazon.CognitoIdentity
         /// 
         /// <returns>Returns a  ListIdentitiesResult from CognitoIdentity.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/ListIdentities">REST API Reference for ListIdentities Operation</seealso>
-        public  ListIdentitiesResponse EndListIdentities(IAsyncResult asyncResult)
+        public virtual ListIdentitiesResponse EndListIdentities(IAsyncResult asyncResult)
         {
             return EndInvoke<ListIdentitiesResponse>(asyncResult);
         }
@@ -1465,7 +1465,7 @@ namespace Amazon.CognitoIdentity
         /// Thrown when a request is throttled.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/ListIdentityPools">REST API Reference for ListIdentityPools Operation</seealso>
-        public ListIdentityPoolsResponse ListIdentityPools(ListIdentityPoolsRequest request)
+        public virtual ListIdentityPoolsResponse ListIdentityPools(ListIdentityPoolsRequest request)
         {
             var marshaller = new ListIdentityPoolsRequestMarshaller();
             var unmarshaller = ListIdentityPoolsResponseUnmarshaller.Instance;
@@ -1485,7 +1485,7 @@ namespace Amazon.CognitoIdentity
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListIdentityPools
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/ListIdentityPools">REST API Reference for ListIdentityPools Operation</seealso>
-        public IAsyncResult BeginListIdentityPools(ListIdentityPoolsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListIdentityPools(ListIdentityPoolsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListIdentityPoolsRequestMarshaller();
             var unmarshaller = ListIdentityPoolsResponseUnmarshaller.Instance;
@@ -1502,7 +1502,7 @@ namespace Amazon.CognitoIdentity
         /// 
         /// <returns>Returns a  ListIdentityPoolsResult from CognitoIdentity.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/ListIdentityPools">REST API Reference for ListIdentityPools Operation</seealso>
-        public  ListIdentityPoolsResponse EndListIdentityPools(IAsyncResult asyncResult)
+        public virtual ListIdentityPoolsResponse EndListIdentityPools(IAsyncResult asyncResult)
         {
             return EndInvoke<ListIdentityPoolsResponse>(asyncResult);
         }
@@ -1549,7 +1549,7 @@ namespace Amazon.CognitoIdentity
         /// Thrown when a request is throttled.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/LookupDeveloperIdentity">REST API Reference for LookupDeveloperIdentity Operation</seealso>
-        public LookupDeveloperIdentityResponse LookupDeveloperIdentity(LookupDeveloperIdentityRequest request)
+        public virtual LookupDeveloperIdentityResponse LookupDeveloperIdentity(LookupDeveloperIdentityRequest request)
         {
             var marshaller = new LookupDeveloperIdentityRequestMarshaller();
             var unmarshaller = LookupDeveloperIdentityResponseUnmarshaller.Instance;
@@ -1569,7 +1569,7 @@ namespace Amazon.CognitoIdentity
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndLookupDeveloperIdentity
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/LookupDeveloperIdentity">REST API Reference for LookupDeveloperIdentity Operation</seealso>
-        public IAsyncResult BeginLookupDeveloperIdentity(LookupDeveloperIdentityRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginLookupDeveloperIdentity(LookupDeveloperIdentityRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new LookupDeveloperIdentityRequestMarshaller();
             var unmarshaller = LookupDeveloperIdentityResponseUnmarshaller.Instance;
@@ -1586,7 +1586,7 @@ namespace Amazon.CognitoIdentity
         /// 
         /// <returns>Returns a  LookupDeveloperIdentityResult from CognitoIdentity.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/LookupDeveloperIdentity">REST API Reference for LookupDeveloperIdentity Operation</seealso>
-        public  LookupDeveloperIdentityResponse EndLookupDeveloperIdentity(IAsyncResult asyncResult)
+        public virtual LookupDeveloperIdentityResponse EndLookupDeveloperIdentity(IAsyncResult asyncResult)
         {
             return EndInvoke<LookupDeveloperIdentityResponse>(asyncResult);
         }
@@ -1631,7 +1631,7 @@ namespace Amazon.CognitoIdentity
         /// Thrown when a request is throttled.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/MergeDeveloperIdentities">REST API Reference for MergeDeveloperIdentities Operation</seealso>
-        public MergeDeveloperIdentitiesResponse MergeDeveloperIdentities(MergeDeveloperIdentitiesRequest request)
+        public virtual MergeDeveloperIdentitiesResponse MergeDeveloperIdentities(MergeDeveloperIdentitiesRequest request)
         {
             var marshaller = new MergeDeveloperIdentitiesRequestMarshaller();
             var unmarshaller = MergeDeveloperIdentitiesResponseUnmarshaller.Instance;
@@ -1651,7 +1651,7 @@ namespace Amazon.CognitoIdentity
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndMergeDeveloperIdentities
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/MergeDeveloperIdentities">REST API Reference for MergeDeveloperIdentities Operation</seealso>
-        public IAsyncResult BeginMergeDeveloperIdentities(MergeDeveloperIdentitiesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginMergeDeveloperIdentities(MergeDeveloperIdentitiesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new MergeDeveloperIdentitiesRequestMarshaller();
             var unmarshaller = MergeDeveloperIdentitiesResponseUnmarshaller.Instance;
@@ -1668,7 +1668,7 @@ namespace Amazon.CognitoIdentity
         /// 
         /// <returns>Returns a  MergeDeveloperIdentitiesResult from CognitoIdentity.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/MergeDeveloperIdentities">REST API Reference for MergeDeveloperIdentities Operation</seealso>
-        public  MergeDeveloperIdentitiesResponse EndMergeDeveloperIdentities(IAsyncResult asyncResult)
+        public virtual MergeDeveloperIdentitiesResponse EndMergeDeveloperIdentities(IAsyncResult asyncResult)
         {
             return EndInvoke<MergeDeveloperIdentitiesResponse>(asyncResult);
         }
@@ -1712,7 +1712,7 @@ namespace Amazon.CognitoIdentity
         /// Thrown when a request is throttled.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/SetIdentityPoolRoles">REST API Reference for SetIdentityPoolRoles Operation</seealso>
-        public SetIdentityPoolRolesResponse SetIdentityPoolRoles(string identityPoolId, Dictionary<string, string> roles)
+        public virtual SetIdentityPoolRolesResponse SetIdentityPoolRoles(string identityPoolId, Dictionary<string, string> roles)
         {
             var request = new SetIdentityPoolRolesRequest();
             request.IdentityPoolId = identityPoolId;
@@ -1755,7 +1755,7 @@ namespace Amazon.CognitoIdentity
         /// Thrown when a request is throttled.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/SetIdentityPoolRoles">REST API Reference for SetIdentityPoolRoles Operation</seealso>
-        public SetIdentityPoolRolesResponse SetIdentityPoolRoles(SetIdentityPoolRolesRequest request)
+        public virtual SetIdentityPoolRolesResponse SetIdentityPoolRoles(SetIdentityPoolRolesRequest request)
         {
             var marshaller = new SetIdentityPoolRolesRequestMarshaller();
             var unmarshaller = SetIdentityPoolRolesResponseUnmarshaller.Instance;
@@ -1775,7 +1775,7 @@ namespace Amazon.CognitoIdentity
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetIdentityPoolRoles
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/SetIdentityPoolRoles">REST API Reference for SetIdentityPoolRoles Operation</seealso>
-        public IAsyncResult BeginSetIdentityPoolRoles(SetIdentityPoolRolesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginSetIdentityPoolRoles(SetIdentityPoolRolesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SetIdentityPoolRolesRequestMarshaller();
             var unmarshaller = SetIdentityPoolRolesResponseUnmarshaller.Instance;
@@ -1792,7 +1792,7 @@ namespace Amazon.CognitoIdentity
         /// 
         /// <returns>Returns a  SetIdentityPoolRolesResult from CognitoIdentity.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/SetIdentityPoolRoles">REST API Reference for SetIdentityPoolRoles Operation</seealso>
-        public  SetIdentityPoolRolesResponse EndSetIdentityPoolRoles(IAsyncResult asyncResult)
+        public virtual SetIdentityPoolRolesResponse EndSetIdentityPoolRoles(IAsyncResult asyncResult)
         {
             return EndInvoke<SetIdentityPoolRolesResponse>(asyncResult);
         }
@@ -1834,7 +1834,7 @@ namespace Amazon.CognitoIdentity
         /// Thrown when a request is throttled.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UnlinkDeveloperIdentity">REST API Reference for UnlinkDeveloperIdentity Operation</seealso>
-        public UnlinkDeveloperIdentityResponse UnlinkDeveloperIdentity(UnlinkDeveloperIdentityRequest request)
+        public virtual UnlinkDeveloperIdentityResponse UnlinkDeveloperIdentity(UnlinkDeveloperIdentityRequest request)
         {
             var marshaller = new UnlinkDeveloperIdentityRequestMarshaller();
             var unmarshaller = UnlinkDeveloperIdentityResponseUnmarshaller.Instance;
@@ -1854,7 +1854,7 @@ namespace Amazon.CognitoIdentity
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUnlinkDeveloperIdentity
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UnlinkDeveloperIdentity">REST API Reference for UnlinkDeveloperIdentity Operation</seealso>
-        public IAsyncResult BeginUnlinkDeveloperIdentity(UnlinkDeveloperIdentityRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUnlinkDeveloperIdentity(UnlinkDeveloperIdentityRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UnlinkDeveloperIdentityRequestMarshaller();
             var unmarshaller = UnlinkDeveloperIdentityResponseUnmarshaller.Instance;
@@ -1871,7 +1871,7 @@ namespace Amazon.CognitoIdentity
         /// 
         /// <returns>Returns a  UnlinkDeveloperIdentityResult from CognitoIdentity.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UnlinkDeveloperIdentity">REST API Reference for UnlinkDeveloperIdentity Operation</seealso>
-        public  UnlinkDeveloperIdentityResponse EndUnlinkDeveloperIdentity(IAsyncResult asyncResult)
+        public virtual UnlinkDeveloperIdentityResponse EndUnlinkDeveloperIdentity(IAsyncResult asyncResult)
         {
             return EndInvoke<UnlinkDeveloperIdentityResponse>(asyncResult);
         }
@@ -1915,7 +1915,7 @@ namespace Amazon.CognitoIdentity
         /// Thrown when a request is throttled.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UnlinkIdentity">REST API Reference for UnlinkIdentity Operation</seealso>
-        public UnlinkIdentityResponse UnlinkIdentity(UnlinkIdentityRequest request)
+        public virtual UnlinkIdentityResponse UnlinkIdentity(UnlinkIdentityRequest request)
         {
             var marshaller = new UnlinkIdentityRequestMarshaller();
             var unmarshaller = UnlinkIdentityResponseUnmarshaller.Instance;
@@ -1935,7 +1935,7 @@ namespace Amazon.CognitoIdentity
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUnlinkIdentity
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UnlinkIdentity">REST API Reference for UnlinkIdentity Operation</seealso>
-        public IAsyncResult BeginUnlinkIdentity(UnlinkIdentityRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUnlinkIdentity(UnlinkIdentityRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UnlinkIdentityRequestMarshaller();
             var unmarshaller = UnlinkIdentityResponseUnmarshaller.Instance;
@@ -1952,7 +1952,7 @@ namespace Amazon.CognitoIdentity
         /// 
         /// <returns>Returns a  UnlinkIdentityResult from CognitoIdentity.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UnlinkIdentity">REST API Reference for UnlinkIdentity Operation</seealso>
-        public  UnlinkIdentityResponse EndUnlinkIdentity(IAsyncResult asyncResult)
+        public virtual UnlinkIdentityResponse EndUnlinkIdentity(IAsyncResult asyncResult)
         {
             return EndInvoke<UnlinkIdentityResponse>(asyncResult);
         }
@@ -1997,7 +1997,7 @@ namespace Amazon.CognitoIdentity
         /// Thrown when a request is throttled.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UpdateIdentityPool">REST API Reference for UpdateIdentityPool Operation</seealso>
-        public UpdateIdentityPoolResponse UpdateIdentityPool(UpdateIdentityPoolRequest request)
+        public virtual UpdateIdentityPoolResponse UpdateIdentityPool(UpdateIdentityPoolRequest request)
         {
             var marshaller = new UpdateIdentityPoolRequestMarshaller();
             var unmarshaller = UpdateIdentityPoolResponseUnmarshaller.Instance;
@@ -2017,7 +2017,7 @@ namespace Amazon.CognitoIdentity
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateIdentityPool
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UpdateIdentityPool">REST API Reference for UpdateIdentityPool Operation</seealso>
-        public IAsyncResult BeginUpdateIdentityPool(UpdateIdentityPoolRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateIdentityPool(UpdateIdentityPoolRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateIdentityPoolRequestMarshaller();
             var unmarshaller = UpdateIdentityPoolResponseUnmarshaller.Instance;
@@ -2034,7 +2034,7 @@ namespace Amazon.CognitoIdentity
         /// 
         /// <returns>Returns a  UpdateIdentityPoolResult from CognitoIdentity.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UpdateIdentityPool">REST API Reference for UpdateIdentityPool Operation</seealso>
-        public  UpdateIdentityPoolResponse EndUpdateIdentityPool(IAsyncResult asyncResult)
+        public virtual UpdateIdentityPoolResponse EndUpdateIdentityPool(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateIdentityPoolResponse>(asyncResult);
         }

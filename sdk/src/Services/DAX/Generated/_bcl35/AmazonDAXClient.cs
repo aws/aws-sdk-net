@@ -277,7 +277,7 @@ namespace Amazon.DAX
         /// You have exceeded the maximum number of tags for this DAX cluster.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
-        public CreateClusterResponse CreateCluster(CreateClusterRequest request)
+        public virtual CreateClusterResponse CreateCluster(CreateClusterRequest request)
         {
             var marshaller = new CreateClusterRequestMarshaller();
             var unmarshaller = CreateClusterResponseUnmarshaller.Instance;
@@ -297,7 +297,7 @@ namespace Amazon.DAX
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCluster
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
-        public IAsyncResult BeginCreateCluster(CreateClusterRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateCluster(CreateClusterRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateClusterRequestMarshaller();
             var unmarshaller = CreateClusterResponseUnmarshaller.Instance;
@@ -314,7 +314,7 @@ namespace Amazon.DAX
         /// 
         /// <returns>Returns a  CreateClusterResult from DAX.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
-        public  CreateClusterResponse EndCreateCluster(IAsyncResult asyncResult)
+        public virtual CreateClusterResponse EndCreateCluster(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateClusterResponse>(asyncResult);
         }
@@ -346,7 +346,7 @@ namespace Amazon.DAX
         /// You have attempted to exceed the maximum number of parameter groups.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/CreateParameterGroup">REST API Reference for CreateParameterGroup Operation</seealso>
-        public CreateParameterGroupResponse CreateParameterGroup(CreateParameterGroupRequest request)
+        public virtual CreateParameterGroupResponse CreateParameterGroup(CreateParameterGroupRequest request)
         {
             var marshaller = new CreateParameterGroupRequestMarshaller();
             var unmarshaller = CreateParameterGroupResponseUnmarshaller.Instance;
@@ -366,7 +366,7 @@ namespace Amazon.DAX
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateParameterGroup
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/CreateParameterGroup">REST API Reference for CreateParameterGroup Operation</seealso>
-        public IAsyncResult BeginCreateParameterGroup(CreateParameterGroupRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateParameterGroup(CreateParameterGroupRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateParameterGroupRequestMarshaller();
             var unmarshaller = CreateParameterGroupResponseUnmarshaller.Instance;
@@ -383,7 +383,7 @@ namespace Amazon.DAX
         /// 
         /// <returns>Returns a  CreateParameterGroupResult from DAX.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/CreateParameterGroup">REST API Reference for CreateParameterGroup Operation</seealso>
-        public  CreateParameterGroupResponse EndCreateParameterGroup(IAsyncResult asyncResult)
+        public virtual CreateParameterGroupResponse EndCreateParameterGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateParameterGroupResponse>(asyncResult);
         }
@@ -413,7 +413,7 @@ namespace Amazon.DAX
         /// in a subnet group.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/CreateSubnetGroup">REST API Reference for CreateSubnetGroup Operation</seealso>
-        public CreateSubnetGroupResponse CreateSubnetGroup(CreateSubnetGroupRequest request)
+        public virtual CreateSubnetGroupResponse CreateSubnetGroup(CreateSubnetGroupRequest request)
         {
             var marshaller = new CreateSubnetGroupRequestMarshaller();
             var unmarshaller = CreateSubnetGroupResponseUnmarshaller.Instance;
@@ -433,7 +433,7 @@ namespace Amazon.DAX
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSubnetGroup
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/CreateSubnetGroup">REST API Reference for CreateSubnetGroup Operation</seealso>
-        public IAsyncResult BeginCreateSubnetGroup(CreateSubnetGroupRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginCreateSubnetGroup(CreateSubnetGroupRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateSubnetGroupRequestMarshaller();
             var unmarshaller = CreateSubnetGroupResponseUnmarshaller.Instance;
@@ -450,7 +450,7 @@ namespace Amazon.DAX
         /// 
         /// <returns>Returns a  CreateSubnetGroupResult from DAX.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/CreateSubnetGroup">REST API Reference for CreateSubnetGroup Operation</seealso>
-        public  CreateSubnetGroupResponse EndCreateSubnetGroup(IAsyncResult asyncResult)
+        public virtual CreateSubnetGroupResponse EndCreateSubnetGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateSubnetGroupResponse>(asyncResult);
         }
@@ -488,7 +488,7 @@ namespace Amazon.DAX
         /// None of the nodes in the cluster have the given node ID.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DecreaseReplicationFactor">REST API Reference for DecreaseReplicationFactor Operation</seealso>
-        public DecreaseReplicationFactorResponse DecreaseReplicationFactor(DecreaseReplicationFactorRequest request)
+        public virtual DecreaseReplicationFactorResponse DecreaseReplicationFactor(DecreaseReplicationFactorRequest request)
         {
             var marshaller = new DecreaseReplicationFactorRequestMarshaller();
             var unmarshaller = DecreaseReplicationFactorResponseUnmarshaller.Instance;
@@ -508,7 +508,7 @@ namespace Amazon.DAX
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDecreaseReplicationFactor
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DecreaseReplicationFactor">REST API Reference for DecreaseReplicationFactor Operation</seealso>
-        public IAsyncResult BeginDecreaseReplicationFactor(DecreaseReplicationFactorRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDecreaseReplicationFactor(DecreaseReplicationFactorRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DecreaseReplicationFactorRequestMarshaller();
             var unmarshaller = DecreaseReplicationFactorResponseUnmarshaller.Instance;
@@ -525,7 +525,7 @@ namespace Amazon.DAX
         /// 
         /// <returns>Returns a  DecreaseReplicationFactorResult from DAX.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DecreaseReplicationFactor">REST API Reference for DecreaseReplicationFactor Operation</seealso>
-        public  DecreaseReplicationFactorResponse EndDecreaseReplicationFactor(IAsyncResult asyncResult)
+        public virtual DecreaseReplicationFactorResponse EndDecreaseReplicationFactor(IAsyncResult asyncResult)
         {
             return EndInvoke<DecreaseReplicationFactorResponse>(asyncResult);
         }
@@ -556,7 +556,7 @@ namespace Amazon.DAX
         /// The value for a parameter is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
-        public DeleteClusterResponse DeleteCluster(DeleteClusterRequest request)
+        public virtual DeleteClusterResponse DeleteCluster(DeleteClusterRequest request)
         {
             var marshaller = new DeleteClusterRequestMarshaller();
             var unmarshaller = DeleteClusterResponseUnmarshaller.Instance;
@@ -576,7 +576,7 @@ namespace Amazon.DAX
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCluster
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
-        public IAsyncResult BeginDeleteCluster(DeleteClusterRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteCluster(DeleteClusterRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteClusterRequestMarshaller();
             var unmarshaller = DeleteClusterResponseUnmarshaller.Instance;
@@ -593,7 +593,7 @@ namespace Amazon.DAX
         /// 
         /// <returns>Returns a  DeleteClusterResult from DAX.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
-        public  DeleteClusterResponse EndDeleteCluster(IAsyncResult asyncResult)
+        public virtual DeleteClusterResponse EndDeleteCluster(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteClusterResponse>(asyncResult);
         }
@@ -622,7 +622,7 @@ namespace Amazon.DAX
         /// The specified parameter group does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DeleteParameterGroup">REST API Reference for DeleteParameterGroup Operation</seealso>
-        public DeleteParameterGroupResponse DeleteParameterGroup(DeleteParameterGroupRequest request)
+        public virtual DeleteParameterGroupResponse DeleteParameterGroup(DeleteParameterGroupRequest request)
         {
             var marshaller = new DeleteParameterGroupRequestMarshaller();
             var unmarshaller = DeleteParameterGroupResponseUnmarshaller.Instance;
@@ -642,7 +642,7 @@ namespace Amazon.DAX
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteParameterGroup
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DeleteParameterGroup">REST API Reference for DeleteParameterGroup Operation</seealso>
-        public IAsyncResult BeginDeleteParameterGroup(DeleteParameterGroupRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteParameterGroup(DeleteParameterGroupRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteParameterGroupRequestMarshaller();
             var unmarshaller = DeleteParameterGroupResponseUnmarshaller.Instance;
@@ -659,7 +659,7 @@ namespace Amazon.DAX
         /// 
         /// <returns>Returns a  DeleteParameterGroupResult from DAX.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DeleteParameterGroup">REST API Reference for DeleteParameterGroup Operation</seealso>
-        public  DeleteParameterGroupResponse EndDeleteParameterGroup(IAsyncResult asyncResult)
+        public virtual DeleteParameterGroupResponse EndDeleteParameterGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteParameterGroupResponse>(asyncResult);
         }
@@ -687,7 +687,7 @@ namespace Amazon.DAX
         /// The requested subnet group name does not refer to an existing subnet group.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DeleteSubnetGroup">REST API Reference for DeleteSubnetGroup Operation</seealso>
-        public DeleteSubnetGroupResponse DeleteSubnetGroup(DeleteSubnetGroupRequest request)
+        public virtual DeleteSubnetGroupResponse DeleteSubnetGroup(DeleteSubnetGroupRequest request)
         {
             var marshaller = new DeleteSubnetGroupRequestMarshaller();
             var unmarshaller = DeleteSubnetGroupResponseUnmarshaller.Instance;
@@ -707,7 +707,7 @@ namespace Amazon.DAX
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSubnetGroup
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DeleteSubnetGroup">REST API Reference for DeleteSubnetGroup Operation</seealso>
-        public IAsyncResult BeginDeleteSubnetGroup(DeleteSubnetGroupRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDeleteSubnetGroup(DeleteSubnetGroupRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteSubnetGroupRequestMarshaller();
             var unmarshaller = DeleteSubnetGroupResponseUnmarshaller.Instance;
@@ -724,7 +724,7 @@ namespace Amazon.DAX
         /// 
         /// <returns>Returns a  DeleteSubnetGroupResult from DAX.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DeleteSubnetGroup">REST API Reference for DeleteSubnetGroup Operation</seealso>
-        public  DeleteSubnetGroupResponse EndDeleteSubnetGroup(IAsyncResult asyncResult)
+        public virtual DeleteSubnetGroupResponse EndDeleteSubnetGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteSubnetGroupResponse>(asyncResult);
         }
@@ -772,7 +772,7 @@ namespace Amazon.DAX
         /// The value for a parameter is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeClusters">REST API Reference for DescribeClusters Operation</seealso>
-        public DescribeClustersResponse DescribeClusters(DescribeClustersRequest request)
+        public virtual DescribeClustersResponse DescribeClusters(DescribeClustersRequest request)
         {
             var marshaller = new DescribeClustersRequestMarshaller();
             var unmarshaller = DescribeClustersResponseUnmarshaller.Instance;
@@ -792,7 +792,7 @@ namespace Amazon.DAX
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeClusters
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeClusters">REST API Reference for DescribeClusters Operation</seealso>
-        public IAsyncResult BeginDescribeClusters(DescribeClustersRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeClusters(DescribeClustersRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeClustersRequestMarshaller();
             var unmarshaller = DescribeClustersResponseUnmarshaller.Instance;
@@ -809,7 +809,7 @@ namespace Amazon.DAX
         /// 
         /// <returns>Returns a  DescribeClustersResult from DAX.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeClusters">REST API Reference for DescribeClusters Operation</seealso>
-        public  DescribeClustersResponse EndDescribeClusters(IAsyncResult asyncResult)
+        public virtual DescribeClustersResponse EndDescribeClusters(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeClustersResponse>(asyncResult);
         }
@@ -831,7 +831,7 @@ namespace Amazon.DAX
         /// The value for a parameter is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeDefaultParameters">REST API Reference for DescribeDefaultParameters Operation</seealso>
-        public DescribeDefaultParametersResponse DescribeDefaultParameters(DescribeDefaultParametersRequest request)
+        public virtual DescribeDefaultParametersResponse DescribeDefaultParameters(DescribeDefaultParametersRequest request)
         {
             var marshaller = new DescribeDefaultParametersRequestMarshaller();
             var unmarshaller = DescribeDefaultParametersResponseUnmarshaller.Instance;
@@ -851,7 +851,7 @@ namespace Amazon.DAX
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDefaultParameters
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeDefaultParameters">REST API Reference for DescribeDefaultParameters Operation</seealso>
-        public IAsyncResult BeginDescribeDefaultParameters(DescribeDefaultParametersRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeDefaultParameters(DescribeDefaultParametersRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeDefaultParametersRequestMarshaller();
             var unmarshaller = DescribeDefaultParametersResponseUnmarshaller.Instance;
@@ -868,7 +868,7 @@ namespace Amazon.DAX
         /// 
         /// <returns>Returns a  DescribeDefaultParametersResult from DAX.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeDefaultParameters">REST API Reference for DescribeDefaultParameters Operation</seealso>
-        public  DescribeDefaultParametersResponse EndDescribeDefaultParameters(IAsyncResult asyncResult)
+        public virtual DescribeDefaultParametersResponse EndDescribeDefaultParameters(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeDefaultParametersResponse>(asyncResult);
         }
@@ -898,7 +898,7 @@ namespace Amazon.DAX
         /// The value for a parameter is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
-        public DescribeEventsResponse DescribeEvents(DescribeEventsRequest request)
+        public virtual DescribeEventsResponse DescribeEvents(DescribeEventsRequest request)
         {
             var marshaller = new DescribeEventsRequestMarshaller();
             var unmarshaller = DescribeEventsResponseUnmarshaller.Instance;
@@ -918,7 +918,7 @@ namespace Amazon.DAX
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEvents
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
-        public IAsyncResult BeginDescribeEvents(DescribeEventsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeEvents(DescribeEventsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeEventsRequestMarshaller();
             var unmarshaller = DescribeEventsResponseUnmarshaller.Instance;
@@ -935,7 +935,7 @@ namespace Amazon.DAX
         /// 
         /// <returns>Returns a  DescribeEventsResult from DAX.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
-        public  DescribeEventsResponse EndDescribeEvents(IAsyncResult asyncResult)
+        public virtual DescribeEventsResponse EndDescribeEvents(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeEventsResponse>(asyncResult);
         }
@@ -961,7 +961,7 @@ namespace Amazon.DAX
         /// The specified parameter group does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeParameterGroups">REST API Reference for DescribeParameterGroups Operation</seealso>
-        public DescribeParameterGroupsResponse DescribeParameterGroups(DescribeParameterGroupsRequest request)
+        public virtual DescribeParameterGroupsResponse DescribeParameterGroups(DescribeParameterGroupsRequest request)
         {
             var marshaller = new DescribeParameterGroupsRequestMarshaller();
             var unmarshaller = DescribeParameterGroupsResponseUnmarshaller.Instance;
@@ -981,7 +981,7 @@ namespace Amazon.DAX
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeParameterGroups
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeParameterGroups">REST API Reference for DescribeParameterGroups Operation</seealso>
-        public IAsyncResult BeginDescribeParameterGroups(DescribeParameterGroupsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeParameterGroups(DescribeParameterGroupsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeParameterGroupsRequestMarshaller();
             var unmarshaller = DescribeParameterGroupsResponseUnmarshaller.Instance;
@@ -998,7 +998,7 @@ namespace Amazon.DAX
         /// 
         /// <returns>Returns a  DescribeParameterGroupsResult from DAX.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeParameterGroups">REST API Reference for DescribeParameterGroups Operation</seealso>
-        public  DescribeParameterGroupsResponse EndDescribeParameterGroups(IAsyncResult asyncResult)
+        public virtual DescribeParameterGroupsResponse EndDescribeParameterGroups(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeParameterGroupsResponse>(asyncResult);
         }
@@ -1023,7 +1023,7 @@ namespace Amazon.DAX
         /// The specified parameter group does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeParameters">REST API Reference for DescribeParameters Operation</seealso>
-        public DescribeParametersResponse DescribeParameters(DescribeParametersRequest request)
+        public virtual DescribeParametersResponse DescribeParameters(DescribeParametersRequest request)
         {
             var marshaller = new DescribeParametersRequestMarshaller();
             var unmarshaller = DescribeParametersResponseUnmarshaller.Instance;
@@ -1043,7 +1043,7 @@ namespace Amazon.DAX
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeParameters
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeParameters">REST API Reference for DescribeParameters Operation</seealso>
-        public IAsyncResult BeginDescribeParameters(DescribeParametersRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeParameters(DescribeParametersRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeParametersRequestMarshaller();
             var unmarshaller = DescribeParametersResponseUnmarshaller.Instance;
@@ -1060,7 +1060,7 @@ namespace Amazon.DAX
         /// 
         /// <returns>Returns a  DescribeParametersResult from DAX.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeParameters">REST API Reference for DescribeParameters Operation</seealso>
-        public  DescribeParametersResponse EndDescribeParameters(IAsyncResult asyncResult)
+        public virtual DescribeParametersResponse EndDescribeParameters(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeParametersResponse>(asyncResult);
         }
@@ -1080,7 +1080,7 @@ namespace Amazon.DAX
         /// The requested subnet group name does not refer to an existing subnet group.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeSubnetGroups">REST API Reference for DescribeSubnetGroups Operation</seealso>
-        public DescribeSubnetGroupsResponse DescribeSubnetGroups(DescribeSubnetGroupsRequest request)
+        public virtual DescribeSubnetGroupsResponse DescribeSubnetGroups(DescribeSubnetGroupsRequest request)
         {
             var marshaller = new DescribeSubnetGroupsRequestMarshaller();
             var unmarshaller = DescribeSubnetGroupsResponseUnmarshaller.Instance;
@@ -1100,7 +1100,7 @@ namespace Amazon.DAX
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSubnetGroups
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeSubnetGroups">REST API Reference for DescribeSubnetGroups Operation</seealso>
-        public IAsyncResult BeginDescribeSubnetGroups(DescribeSubnetGroupsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeSubnetGroups(DescribeSubnetGroupsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeSubnetGroupsRequestMarshaller();
             var unmarshaller = DescribeSubnetGroupsResponseUnmarshaller.Instance;
@@ -1117,7 +1117,7 @@ namespace Amazon.DAX
         /// 
         /// <returns>Returns a  DescribeSubnetGroupsResult from DAX.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeSubnetGroups">REST API Reference for DescribeSubnetGroups Operation</seealso>
-        public  DescribeSubnetGroupsResponse EndDescribeSubnetGroups(IAsyncResult asyncResult)
+        public virtual DescribeSubnetGroupsResponse EndDescribeSubnetGroups(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeSubnetGroupsResponse>(asyncResult);
         }
@@ -1158,7 +1158,7 @@ namespace Amazon.DAX
         /// You have attempted to exceed the maximum number of nodes for your AWS account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/IncreaseReplicationFactor">REST API Reference for IncreaseReplicationFactor Operation</seealso>
-        public IncreaseReplicationFactorResponse IncreaseReplicationFactor(IncreaseReplicationFactorRequest request)
+        public virtual IncreaseReplicationFactorResponse IncreaseReplicationFactor(IncreaseReplicationFactorRequest request)
         {
             var marshaller = new IncreaseReplicationFactorRequestMarshaller();
             var unmarshaller = IncreaseReplicationFactorResponseUnmarshaller.Instance;
@@ -1178,7 +1178,7 @@ namespace Amazon.DAX
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndIncreaseReplicationFactor
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/IncreaseReplicationFactor">REST API Reference for IncreaseReplicationFactor Operation</seealso>
-        public IAsyncResult BeginIncreaseReplicationFactor(IncreaseReplicationFactorRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginIncreaseReplicationFactor(IncreaseReplicationFactorRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new IncreaseReplicationFactorRequestMarshaller();
             var unmarshaller = IncreaseReplicationFactorResponseUnmarshaller.Instance;
@@ -1195,7 +1195,7 @@ namespace Amazon.DAX
         /// 
         /// <returns>Returns a  IncreaseReplicationFactorResult from DAX.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/IncreaseReplicationFactor">REST API Reference for IncreaseReplicationFactor Operation</seealso>
-        public  IncreaseReplicationFactorResponse EndIncreaseReplicationFactor(IAsyncResult asyncResult)
+        public virtual IncreaseReplicationFactorResponse EndIncreaseReplicationFactor(IAsyncResult asyncResult)
         {
             return EndInvoke<IncreaseReplicationFactorResponse>(asyncResult);
         }
@@ -1227,7 +1227,7 @@ namespace Amazon.DAX
         /// The value for a parameter is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/ListTags">REST API Reference for ListTags Operation</seealso>
-        public ListTagsResponse ListTags(ListTagsRequest request)
+        public virtual ListTagsResponse ListTags(ListTagsRequest request)
         {
             var marshaller = new ListTagsRequestMarshaller();
             var unmarshaller = ListTagsResponseUnmarshaller.Instance;
@@ -1247,7 +1247,7 @@ namespace Amazon.DAX
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTags
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/ListTags">REST API Reference for ListTags Operation</seealso>
-        public IAsyncResult BeginListTags(ListTagsRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginListTags(ListTagsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListTagsRequestMarshaller();
             var unmarshaller = ListTagsResponseUnmarshaller.Instance;
@@ -1264,7 +1264,7 @@ namespace Amazon.DAX
         /// 
         /// <returns>Returns a  ListTagsResult from DAX.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/ListTags">REST API Reference for ListTags Operation</seealso>
-        public  ListTagsResponse EndListTags(IAsyncResult asyncResult)
+        public virtual ListTagsResponse EndListTags(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTagsResponse>(asyncResult);
         }
@@ -1296,7 +1296,7 @@ namespace Amazon.DAX
         /// None of the nodes in the cluster have the given node ID.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/RebootNode">REST API Reference for RebootNode Operation</seealso>
-        public RebootNodeResponse RebootNode(RebootNodeRequest request)
+        public virtual RebootNodeResponse RebootNode(RebootNodeRequest request)
         {
             var marshaller = new RebootNodeRequestMarshaller();
             var unmarshaller = RebootNodeResponseUnmarshaller.Instance;
@@ -1316,7 +1316,7 @@ namespace Amazon.DAX
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRebootNode
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/RebootNode">REST API Reference for RebootNode Operation</seealso>
-        public IAsyncResult BeginRebootNode(RebootNodeRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginRebootNode(RebootNodeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RebootNodeRequestMarshaller();
             var unmarshaller = RebootNodeResponseUnmarshaller.Instance;
@@ -1333,7 +1333,7 @@ namespace Amazon.DAX
         /// 
         /// <returns>Returns a  RebootNodeResult from DAX.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/RebootNode">REST API Reference for RebootNode Operation</seealso>
-        public  RebootNodeResponse EndRebootNode(IAsyncResult asyncResult)
+        public virtual RebootNodeResponse EndRebootNode(IAsyncResult asyncResult)
         {
             return EndInvoke<RebootNodeResponse>(asyncResult);
         }
@@ -1368,7 +1368,7 @@ namespace Amazon.DAX
         /// You have exceeded the maximum number of tags for this DAX cluster.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/TagResource">REST API Reference for TagResource Operation</seealso>
-        public TagResourceResponse TagResource(TagResourceRequest request)
+        public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
             var marshaller = new TagResourceRequestMarshaller();
             var unmarshaller = TagResourceResponseUnmarshaller.Instance;
@@ -1388,7 +1388,7 @@ namespace Amazon.DAX
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResource
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/TagResource">REST API Reference for TagResource Operation</seealso>
-        public IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new TagResourceRequestMarshaller();
             var unmarshaller = TagResourceResponseUnmarshaller.Instance;
@@ -1405,7 +1405,7 @@ namespace Amazon.DAX
         /// 
         /// <returns>Returns a  TagResourceResult from DAX.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/TagResource">REST API Reference for TagResource Operation</seealso>
-        public  TagResourceResponse EndTagResource(IAsyncResult asyncResult)
+        public virtual TagResourceResponse EndTagResource(IAsyncResult asyncResult)
         {
             return EndInvoke<TagResourceResponse>(asyncResult);
         }
@@ -1440,7 +1440,7 @@ namespace Amazon.DAX
         /// The tag does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/UntagResource">REST API Reference for UntagResource Operation</seealso>
-        public UntagResourceResponse UntagResource(UntagResourceRequest request)
+        public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
             var marshaller = new UntagResourceRequestMarshaller();
             var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
@@ -1460,7 +1460,7 @@ namespace Amazon.DAX
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResource
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/UntagResource">REST API Reference for UntagResource Operation</seealso>
-        public IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UntagResourceRequestMarshaller();
             var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
@@ -1477,7 +1477,7 @@ namespace Amazon.DAX
         /// 
         /// <returns>Returns a  UntagResourceResult from DAX.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/UntagResource">REST API Reference for UntagResource Operation</seealso>
-        public  UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
+        public virtual UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
         {
             return EndInvoke<UntagResourceResponse>(asyncResult);
         }
@@ -1512,7 +1512,7 @@ namespace Amazon.DAX
         /// The specified parameter group does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/UpdateCluster">REST API Reference for UpdateCluster Operation</seealso>
-        public UpdateClusterResponse UpdateCluster(UpdateClusterRequest request)
+        public virtual UpdateClusterResponse UpdateCluster(UpdateClusterRequest request)
         {
             var marshaller = new UpdateClusterRequestMarshaller();
             var unmarshaller = UpdateClusterResponseUnmarshaller.Instance;
@@ -1532,7 +1532,7 @@ namespace Amazon.DAX
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateCluster
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/UpdateCluster">REST API Reference for UpdateCluster Operation</seealso>
-        public IAsyncResult BeginUpdateCluster(UpdateClusterRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateCluster(UpdateClusterRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateClusterRequestMarshaller();
             var unmarshaller = UpdateClusterResponseUnmarshaller.Instance;
@@ -1549,7 +1549,7 @@ namespace Amazon.DAX
         /// 
         /// <returns>Returns a  UpdateClusterResult from DAX.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/UpdateCluster">REST API Reference for UpdateCluster Operation</seealso>
-        public  UpdateClusterResponse EndUpdateCluster(IAsyncResult asyncResult)
+        public virtual UpdateClusterResponse EndUpdateCluster(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateClusterResponse>(asyncResult);
         }
@@ -1578,7 +1578,7 @@ namespace Amazon.DAX
         /// The specified parameter group does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/UpdateParameterGroup">REST API Reference for UpdateParameterGroup Operation</seealso>
-        public UpdateParameterGroupResponse UpdateParameterGroup(UpdateParameterGroupRequest request)
+        public virtual UpdateParameterGroupResponse UpdateParameterGroup(UpdateParameterGroupRequest request)
         {
             var marshaller = new UpdateParameterGroupRequestMarshaller();
             var unmarshaller = UpdateParameterGroupResponseUnmarshaller.Instance;
@@ -1598,7 +1598,7 @@ namespace Amazon.DAX
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateParameterGroup
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/UpdateParameterGroup">REST API Reference for UpdateParameterGroup Operation</seealso>
-        public IAsyncResult BeginUpdateParameterGroup(UpdateParameterGroupRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateParameterGroup(UpdateParameterGroupRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateParameterGroupRequestMarshaller();
             var unmarshaller = UpdateParameterGroupResponseUnmarshaller.Instance;
@@ -1615,7 +1615,7 @@ namespace Amazon.DAX
         /// 
         /// <returns>Returns a  UpdateParameterGroupResult from DAX.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/UpdateParameterGroup">REST API Reference for UpdateParameterGroup Operation</seealso>
-        public  UpdateParameterGroupResponse EndUpdateParameterGroup(IAsyncResult asyncResult)
+        public virtual UpdateParameterGroupResponse EndUpdateParameterGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateParameterGroupResponse>(asyncResult);
         }
@@ -1644,7 +1644,7 @@ namespace Amazon.DAX
         /// in a subnet group.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/UpdateSubnetGroup">REST API Reference for UpdateSubnetGroup Operation</seealso>
-        public UpdateSubnetGroupResponse UpdateSubnetGroup(UpdateSubnetGroupRequest request)
+        public virtual UpdateSubnetGroupResponse UpdateSubnetGroup(UpdateSubnetGroupRequest request)
         {
             var marshaller = new UpdateSubnetGroupRequestMarshaller();
             var unmarshaller = UpdateSubnetGroupResponseUnmarshaller.Instance;
@@ -1664,7 +1664,7 @@ namespace Amazon.DAX
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateSubnetGroup
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/UpdateSubnetGroup">REST API Reference for UpdateSubnetGroup Operation</seealso>
-        public IAsyncResult BeginUpdateSubnetGroup(UpdateSubnetGroupRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginUpdateSubnetGroup(UpdateSubnetGroupRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateSubnetGroupRequestMarshaller();
             var unmarshaller = UpdateSubnetGroupResponseUnmarshaller.Instance;
@@ -1681,7 +1681,7 @@ namespace Amazon.DAX
         /// 
         /// <returns>Returns a  UpdateSubnetGroupResult from DAX.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/UpdateSubnetGroup">REST API Reference for UpdateSubnetGroup Operation</seealso>
-        public  UpdateSubnetGroupResponse EndUpdateSubnetGroup(IAsyncResult asyncResult)
+        public virtual UpdateSubnetGroupResponse EndUpdateSubnetGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateSubnetGroupResponse>(asyncResult);
         }

@@ -260,7 +260,7 @@ namespace Amazon.StepFunctions
         /// The provided name is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateActivity">REST API Reference for CreateActivity Operation</seealso>
-        public CreateActivityResponse CreateActivity(CreateActivityRequest request)
+        public virtual CreateActivityResponse CreateActivity(CreateActivityRequest request)
         {
             var marshaller = new CreateActivityRequestMarshaller();
             var unmarshaller = CreateActivityResponseUnmarshaller.Instance;
@@ -278,7 +278,7 @@ namespace Amazon.StepFunctions
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateActivity">REST API Reference for CreateActivity Operation</seealso>
-        public Task<CreateActivityResponse> CreateActivityAsync(CreateActivityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateActivityResponse> CreateActivityAsync(CreateActivityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateActivityRequestMarshaller();
             var unmarshaller = CreateActivityResponseUnmarshaller.Instance;
@@ -319,7 +319,7 @@ namespace Amazon.StepFunctions
         /// be deleted before a new state machine can be created.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateStateMachine">REST API Reference for CreateStateMachine Operation</seealso>
-        public CreateStateMachineResponse CreateStateMachine(CreateStateMachineRequest request)
+        public virtual CreateStateMachineResponse CreateStateMachine(CreateStateMachineRequest request)
         {
             var marshaller = new CreateStateMachineRequestMarshaller();
             var unmarshaller = CreateStateMachineResponseUnmarshaller.Instance;
@@ -337,7 +337,7 @@ namespace Amazon.StepFunctions
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateStateMachine">REST API Reference for CreateStateMachine Operation</seealso>
-        public Task<CreateStateMachineResponse> CreateStateMachineAsync(CreateStateMachineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CreateStateMachineResponse> CreateStateMachineAsync(CreateStateMachineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateStateMachineRequestMarshaller();
             var unmarshaller = CreateStateMachineResponseUnmarshaller.Instance;
@@ -361,7 +361,7 @@ namespace Amazon.StepFunctions
         /// The provided Amazon Resource Name (ARN) is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DeleteActivity">REST API Reference for DeleteActivity Operation</seealso>
-        public DeleteActivityResponse DeleteActivity(DeleteActivityRequest request)
+        public virtual DeleteActivityResponse DeleteActivity(DeleteActivityRequest request)
         {
             var marshaller = new DeleteActivityRequestMarshaller();
             var unmarshaller = DeleteActivityResponseUnmarshaller.Instance;
@@ -379,7 +379,7 @@ namespace Amazon.StepFunctions
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DeleteActivity">REST API Reference for DeleteActivity Operation</seealso>
-        public Task<DeleteActivityResponse> DeleteActivityAsync(DeleteActivityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteActivityResponse> DeleteActivityAsync(DeleteActivityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteActivityRequestMarshaller();
             var unmarshaller = DeleteActivityResponseUnmarshaller.Instance;
@@ -404,7 +404,7 @@ namespace Amazon.StepFunctions
         /// The provided Amazon Resource Name (ARN) is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DeleteStateMachine">REST API Reference for DeleteStateMachine Operation</seealso>
-        public DeleteStateMachineResponse DeleteStateMachine(DeleteStateMachineRequest request)
+        public virtual DeleteStateMachineResponse DeleteStateMachine(DeleteStateMachineRequest request)
         {
             var marshaller = new DeleteStateMachineRequestMarshaller();
             var unmarshaller = DeleteStateMachineResponseUnmarshaller.Instance;
@@ -422,7 +422,7 @@ namespace Amazon.StepFunctions
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DeleteStateMachine">REST API Reference for DeleteStateMachine Operation</seealso>
-        public Task<DeleteStateMachineResponse> DeleteStateMachineAsync(DeleteStateMachineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteStateMachineResponse> DeleteStateMachineAsync(DeleteStateMachineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteStateMachineRequestMarshaller();
             var unmarshaller = DeleteStateMachineResponseUnmarshaller.Instance;
@@ -449,7 +449,7 @@ namespace Amazon.StepFunctions
         /// The provided Amazon Resource Name (ARN) is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeActivity">REST API Reference for DescribeActivity Operation</seealso>
-        public DescribeActivityResponse DescribeActivity(DescribeActivityRequest request)
+        public virtual DescribeActivityResponse DescribeActivity(DescribeActivityRequest request)
         {
             var marshaller = new DescribeActivityRequestMarshaller();
             var unmarshaller = DescribeActivityResponseUnmarshaller.Instance;
@@ -467,7 +467,7 @@ namespace Amazon.StepFunctions
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeActivity">REST API Reference for DescribeActivity Operation</seealso>
-        public Task<DescribeActivityResponse> DescribeActivityAsync(DescribeActivityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeActivityResponse> DescribeActivityAsync(DescribeActivityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeActivityRequestMarshaller();
             var unmarshaller = DescribeActivityResponseUnmarshaller.Instance;
@@ -494,7 +494,7 @@ namespace Amazon.StepFunctions
         /// The provided Amazon Resource Name (ARN) is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeExecution">REST API Reference for DescribeExecution Operation</seealso>
-        public DescribeExecutionResponse DescribeExecution(DescribeExecutionRequest request)
+        public virtual DescribeExecutionResponse DescribeExecution(DescribeExecutionRequest request)
         {
             var marshaller = new DescribeExecutionRequestMarshaller();
             var unmarshaller = DescribeExecutionResponseUnmarshaller.Instance;
@@ -512,7 +512,7 @@ namespace Amazon.StepFunctions
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeExecution">REST API Reference for DescribeExecution Operation</seealso>
-        public Task<DescribeExecutionResponse> DescribeExecutionAsync(DescribeExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeExecutionResponse> DescribeExecutionAsync(DescribeExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeExecutionRequestMarshaller();
             var unmarshaller = DescribeExecutionResponseUnmarshaller.Instance;
@@ -539,7 +539,7 @@ namespace Amazon.StepFunctions
         /// The specified state machine does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeStateMachine">REST API Reference for DescribeStateMachine Operation</seealso>
-        public DescribeStateMachineResponse DescribeStateMachine(DescribeStateMachineRequest request)
+        public virtual DescribeStateMachineResponse DescribeStateMachine(DescribeStateMachineRequest request)
         {
             var marshaller = new DescribeStateMachineRequestMarshaller();
             var unmarshaller = DescribeStateMachineResponseUnmarshaller.Instance;
@@ -557,7 +557,7 @@ namespace Amazon.StepFunctions
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeStateMachine">REST API Reference for DescribeStateMachine Operation</seealso>
-        public Task<DescribeStateMachineResponse> DescribeStateMachineAsync(DescribeStateMachineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeStateMachineResponse> DescribeStateMachineAsync(DescribeStateMachineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeStateMachineRequestMarshaller();
             var unmarshaller = DescribeStateMachineResponseUnmarshaller.Instance;
@@ -600,7 +600,7 @@ namespace Amazon.StepFunctions
         /// The provided Amazon Resource Name (ARN) is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/GetActivityTask">REST API Reference for GetActivityTask Operation</seealso>
-        public GetActivityTaskResponse GetActivityTask(GetActivityTaskRequest request)
+        public virtual GetActivityTaskResponse GetActivityTask(GetActivityTaskRequest request)
         {
             var marshaller = new GetActivityTaskRequestMarshaller();
             var unmarshaller = GetActivityTaskResponseUnmarshaller.Instance;
@@ -618,7 +618,7 @@ namespace Amazon.StepFunctions
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/GetActivityTask">REST API Reference for GetActivityTask Operation</seealso>
-        public Task<GetActivityTaskResponse> GetActivityTaskAsync(GetActivityTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetActivityTaskResponse> GetActivityTaskAsync(GetActivityTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetActivityTaskRequestMarshaller();
             var unmarshaller = GetActivityTaskResponseUnmarshaller.Instance;
@@ -652,7 +652,7 @@ namespace Amazon.StepFunctions
         /// The provided token is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/GetExecutionHistory">REST API Reference for GetExecutionHistory Operation</seealso>
-        public GetExecutionHistoryResponse GetExecutionHistory(GetExecutionHistoryRequest request)
+        public virtual GetExecutionHistoryResponse GetExecutionHistory(GetExecutionHistoryRequest request)
         {
             var marshaller = new GetExecutionHistoryRequestMarshaller();
             var unmarshaller = GetExecutionHistoryResponseUnmarshaller.Instance;
@@ -670,7 +670,7 @@ namespace Amazon.StepFunctions
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/GetExecutionHistory">REST API Reference for GetExecutionHistory Operation</seealso>
-        public Task<GetExecutionHistoryResponse> GetExecutionHistoryAsync(GetExecutionHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetExecutionHistoryResponse> GetExecutionHistoryAsync(GetExecutionHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetExecutionHistoryRequestMarshaller();
             var unmarshaller = GetExecutionHistoryResponseUnmarshaller.Instance;
@@ -696,7 +696,7 @@ namespace Amazon.StepFunctions
         /// The provided token is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListActivities">REST API Reference for ListActivities Operation</seealso>
-        public ListActivitiesResponse ListActivities(ListActivitiesRequest request)
+        public virtual ListActivitiesResponse ListActivities(ListActivitiesRequest request)
         {
             var marshaller = new ListActivitiesRequestMarshaller();
             var unmarshaller = ListActivitiesResponseUnmarshaller.Instance;
@@ -714,7 +714,7 @@ namespace Amazon.StepFunctions
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListActivities">REST API Reference for ListActivities Operation</seealso>
-        public Task<ListActivitiesResponse> ListActivitiesAsync(ListActivitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListActivitiesResponse> ListActivitiesAsync(ListActivitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListActivitiesRequestMarshaller();
             var unmarshaller = ListActivitiesResponseUnmarshaller.Instance;
@@ -746,7 +746,7 @@ namespace Amazon.StepFunctions
         /// The specified state machine does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListExecutions">REST API Reference for ListExecutions Operation</seealso>
-        public ListExecutionsResponse ListExecutions(ListExecutionsRequest request)
+        public virtual ListExecutionsResponse ListExecutions(ListExecutionsRequest request)
         {
             var marshaller = new ListExecutionsRequestMarshaller();
             var unmarshaller = ListExecutionsResponseUnmarshaller.Instance;
@@ -764,7 +764,7 @@ namespace Amazon.StepFunctions
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListExecutions">REST API Reference for ListExecutions Operation</seealso>
-        public Task<ListExecutionsResponse> ListExecutionsAsync(ListExecutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListExecutionsResponse> ListExecutionsAsync(ListExecutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListExecutionsRequestMarshaller();
             var unmarshaller = ListExecutionsResponseUnmarshaller.Instance;
@@ -790,7 +790,7 @@ namespace Amazon.StepFunctions
         /// The provided token is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListStateMachines">REST API Reference for ListStateMachines Operation</seealso>
-        public ListStateMachinesResponse ListStateMachines(ListStateMachinesRequest request)
+        public virtual ListStateMachinesResponse ListStateMachines(ListStateMachinesRequest request)
         {
             var marshaller = new ListStateMachinesRequestMarshaller();
             var unmarshaller = ListStateMachinesResponseUnmarshaller.Instance;
@@ -808,7 +808,7 @@ namespace Amazon.StepFunctions
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListStateMachines">REST API Reference for ListStateMachines Operation</seealso>
-        public Task<ListStateMachinesResponse> ListStateMachinesAsync(ListStateMachinesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListStateMachinesResponse> ListStateMachinesAsync(ListStateMachinesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListStateMachinesRequestMarshaller();
             var unmarshaller = ListStateMachinesResponseUnmarshaller.Instance;
@@ -838,7 +838,7 @@ namespace Amazon.StepFunctions
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskFailure">REST API Reference for SendTaskFailure Operation</seealso>
-        public SendTaskFailureResponse SendTaskFailure(SendTaskFailureRequest request)
+        public virtual SendTaskFailureResponse SendTaskFailure(SendTaskFailureRequest request)
         {
             var marshaller = new SendTaskFailureRequestMarshaller();
             var unmarshaller = SendTaskFailureResponseUnmarshaller.Instance;
@@ -856,7 +856,7 @@ namespace Amazon.StepFunctions
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskFailure">REST API Reference for SendTaskFailure Operation</seealso>
-        public Task<SendTaskFailureResponse> SendTaskFailureAsync(SendTaskFailureRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<SendTaskFailureResponse> SendTaskFailureAsync(SendTaskFailureRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SendTaskFailureRequestMarshaller();
             var unmarshaller = SendTaskFailureResponseUnmarshaller.Instance;
@@ -904,7 +904,7 @@ namespace Amazon.StepFunctions
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskHeartbeat">REST API Reference for SendTaskHeartbeat Operation</seealso>
-        public SendTaskHeartbeatResponse SendTaskHeartbeat(SendTaskHeartbeatRequest request)
+        public virtual SendTaskHeartbeatResponse SendTaskHeartbeat(SendTaskHeartbeatRequest request)
         {
             var marshaller = new SendTaskHeartbeatRequestMarshaller();
             var unmarshaller = SendTaskHeartbeatResponseUnmarshaller.Instance;
@@ -922,7 +922,7 @@ namespace Amazon.StepFunctions
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskHeartbeat">REST API Reference for SendTaskHeartbeat Operation</seealso>
-        public Task<SendTaskHeartbeatResponse> SendTaskHeartbeatAsync(SendTaskHeartbeatRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<SendTaskHeartbeatResponse> SendTaskHeartbeatAsync(SendTaskHeartbeatRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SendTaskHeartbeatRequestMarshaller();
             var unmarshaller = SendTaskHeartbeatResponseUnmarshaller.Instance;
@@ -956,7 +956,7 @@ namespace Amazon.StepFunctions
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskSuccess">REST API Reference for SendTaskSuccess Operation</seealso>
-        public SendTaskSuccessResponse SendTaskSuccess(SendTaskSuccessRequest request)
+        public virtual SendTaskSuccessResponse SendTaskSuccess(SendTaskSuccessRequest request)
         {
             var marshaller = new SendTaskSuccessRequestMarshaller();
             var unmarshaller = SendTaskSuccessResponseUnmarshaller.Instance;
@@ -974,7 +974,7 @@ namespace Amazon.StepFunctions
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskSuccess">REST API Reference for SendTaskSuccess Operation</seealso>
-        public Task<SendTaskSuccessResponse> SendTaskSuccessAsync(SendTaskSuccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<SendTaskSuccessResponse> SendTaskSuccessAsync(SendTaskSuccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SendTaskSuccessRequestMarshaller();
             var unmarshaller = SendTaskSuccessResponseUnmarshaller.Instance;
@@ -1017,7 +1017,7 @@ namespace Amazon.StepFunctions
         /// The specified state machine does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StartExecution">REST API Reference for StartExecution Operation</seealso>
-        public StartExecutionResponse StartExecution(StartExecutionRequest request)
+        public virtual StartExecutionResponse StartExecution(StartExecutionRequest request)
         {
             var marshaller = new StartExecutionRequestMarshaller();
             var unmarshaller = StartExecutionResponseUnmarshaller.Instance;
@@ -1035,7 +1035,7 @@ namespace Amazon.StepFunctions
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StartExecution">REST API Reference for StartExecution Operation</seealso>
-        public Task<StartExecutionResponse> StartExecutionAsync(StartExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<StartExecutionResponse> StartExecutionAsync(StartExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new StartExecutionRequestMarshaller();
             var unmarshaller = StartExecutionResponseUnmarshaller.Instance;
@@ -1062,7 +1062,7 @@ namespace Amazon.StepFunctions
         /// The provided Amazon Resource Name (ARN) is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StopExecution">REST API Reference for StopExecution Operation</seealso>
-        public StopExecutionResponse StopExecution(StopExecutionRequest request)
+        public virtual StopExecutionResponse StopExecution(StopExecutionRequest request)
         {
             var marshaller = new StopExecutionRequestMarshaller();
             var unmarshaller = StopExecutionResponseUnmarshaller.Instance;
@@ -1080,7 +1080,7 @@ namespace Amazon.StepFunctions
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StopExecution">REST API Reference for StopExecution Operation</seealso>
-        public Task<StopExecutionResponse> StopExecutionAsync(StopExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<StopExecutionResponse> StopExecutionAsync(StopExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new StopExecutionRequestMarshaller();
             var unmarshaller = StopExecutionResponseUnmarshaller.Instance;

@@ -284,7 +284,7 @@ namespace Amazon.ApplicationAutoScaling
         
         #region  DeleteScalingPolicy
 
-        internal DeleteScalingPolicyResponse DeleteScalingPolicy(DeleteScalingPolicyRequest request)
+        internal virtual DeleteScalingPolicyResponse DeleteScalingPolicy(DeleteScalingPolicyRequest request)
         {
             var marshaller = new DeleteScalingPolicyRequestMarshaller();
             var unmarshaller = DeleteScalingPolicyResponseUnmarshaller.Instance;
@@ -303,7 +303,7 @@ namespace Amazon.ApplicationAutoScaling
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DeleteScalingPolicy">REST API Reference for DeleteScalingPolicy Operation</seealso>
-        public Task<DeleteScalingPolicyResponse> DeleteScalingPolicyAsync(DeleteScalingPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeleteScalingPolicyResponse> DeleteScalingPolicyAsync(DeleteScalingPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteScalingPolicyRequestMarshaller();
             var unmarshaller = DeleteScalingPolicyResponseUnmarshaller.Instance;
@@ -316,7 +316,7 @@ namespace Amazon.ApplicationAutoScaling
         
         #region  DeregisterScalableTarget
 
-        internal DeregisterScalableTargetResponse DeregisterScalableTarget(DeregisterScalableTargetRequest request)
+        internal virtual DeregisterScalableTargetResponse DeregisterScalableTarget(DeregisterScalableTargetRequest request)
         {
             var marshaller = new DeregisterScalableTargetRequestMarshaller();
             var unmarshaller = DeregisterScalableTargetResponseUnmarshaller.Instance;
@@ -335,7 +335,7 @@ namespace Amazon.ApplicationAutoScaling
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DeregisterScalableTarget">REST API Reference for DeregisterScalableTarget Operation</seealso>
-        public Task<DeregisterScalableTargetResponse> DeregisterScalableTargetAsync(DeregisterScalableTargetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DeregisterScalableTargetResponse> DeregisterScalableTargetAsync(DeregisterScalableTargetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeregisterScalableTargetRequestMarshaller();
             var unmarshaller = DeregisterScalableTargetResponseUnmarshaller.Instance;
@@ -348,7 +348,7 @@ namespace Amazon.ApplicationAutoScaling
         
         #region  DescribeScalableTargets
 
-        internal DescribeScalableTargetsResponse DescribeScalableTargets(DescribeScalableTargetsRequest request)
+        internal virtual DescribeScalableTargetsResponse DescribeScalableTargets(DescribeScalableTargetsRequest request)
         {
             var marshaller = new DescribeScalableTargetsRequestMarshaller();
             var unmarshaller = DescribeScalableTargetsResponseUnmarshaller.Instance;
@@ -367,7 +367,7 @@ namespace Amazon.ApplicationAutoScaling
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DescribeScalableTargets">REST API Reference for DescribeScalableTargets Operation</seealso>
-        public Task<DescribeScalableTargetsResponse> DescribeScalableTargetsAsync(DescribeScalableTargetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeScalableTargetsResponse> DescribeScalableTargetsAsync(DescribeScalableTargetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeScalableTargetsRequestMarshaller();
             var unmarshaller = DescribeScalableTargetsResponseUnmarshaller.Instance;
@@ -380,7 +380,7 @@ namespace Amazon.ApplicationAutoScaling
         
         #region  DescribeScalingActivities
 
-        internal DescribeScalingActivitiesResponse DescribeScalingActivities(DescribeScalingActivitiesRequest request)
+        internal virtual DescribeScalingActivitiesResponse DescribeScalingActivities(DescribeScalingActivitiesRequest request)
         {
             var marshaller = new DescribeScalingActivitiesRequestMarshaller();
             var unmarshaller = DescribeScalingActivitiesResponseUnmarshaller.Instance;
@@ -399,7 +399,7 @@ namespace Amazon.ApplicationAutoScaling
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DescribeScalingActivities">REST API Reference for DescribeScalingActivities Operation</seealso>
-        public Task<DescribeScalingActivitiesResponse> DescribeScalingActivitiesAsync(DescribeScalingActivitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeScalingActivitiesResponse> DescribeScalingActivitiesAsync(DescribeScalingActivitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeScalingActivitiesRequestMarshaller();
             var unmarshaller = DescribeScalingActivitiesResponseUnmarshaller.Instance;
@@ -412,7 +412,7 @@ namespace Amazon.ApplicationAutoScaling
         
         #region  DescribeScalingPolicies
 
-        internal DescribeScalingPoliciesResponse DescribeScalingPolicies(DescribeScalingPoliciesRequest request)
+        internal virtual DescribeScalingPoliciesResponse DescribeScalingPolicies(DescribeScalingPoliciesRequest request)
         {
             var marshaller = new DescribeScalingPoliciesRequestMarshaller();
             var unmarshaller = DescribeScalingPoliciesResponseUnmarshaller.Instance;
@@ -431,7 +431,7 @@ namespace Amazon.ApplicationAutoScaling
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DescribeScalingPolicies">REST API Reference for DescribeScalingPolicies Operation</seealso>
-        public Task<DescribeScalingPoliciesResponse> DescribeScalingPoliciesAsync(DescribeScalingPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DescribeScalingPoliciesResponse> DescribeScalingPoliciesAsync(DescribeScalingPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeScalingPoliciesRequestMarshaller();
             var unmarshaller = DescribeScalingPoliciesResponseUnmarshaller.Instance;
@@ -444,7 +444,7 @@ namespace Amazon.ApplicationAutoScaling
         
         #region  PutScalingPolicy
 
-        internal PutScalingPolicyResponse PutScalingPolicy(PutScalingPolicyRequest request)
+        internal virtual PutScalingPolicyResponse PutScalingPolicy(PutScalingPolicyRequest request)
         {
             var marshaller = new PutScalingPolicyRequestMarshaller();
             var unmarshaller = PutScalingPolicyResponseUnmarshaller.Instance;
@@ -463,7 +463,7 @@ namespace Amazon.ApplicationAutoScaling
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/PutScalingPolicy">REST API Reference for PutScalingPolicy Operation</seealso>
-        public Task<PutScalingPolicyResponse> PutScalingPolicyAsync(PutScalingPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<PutScalingPolicyResponse> PutScalingPolicyAsync(PutScalingPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutScalingPolicyRequestMarshaller();
             var unmarshaller = PutScalingPolicyResponseUnmarshaller.Instance;
@@ -476,7 +476,7 @@ namespace Amazon.ApplicationAutoScaling
         
         #region  RegisterScalableTarget
 
-        internal RegisterScalableTargetResponse RegisterScalableTarget(RegisterScalableTargetRequest request)
+        internal virtual RegisterScalableTargetResponse RegisterScalableTarget(RegisterScalableTargetRequest request)
         {
             var marshaller = new RegisterScalableTargetRequestMarshaller();
             var unmarshaller = RegisterScalableTargetResponseUnmarshaller.Instance;
@@ -495,7 +495,7 @@ namespace Amazon.ApplicationAutoScaling
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/RegisterScalableTarget">REST API Reference for RegisterScalableTarget Operation</seealso>
-        public Task<RegisterScalableTargetResponse> RegisterScalableTargetAsync(RegisterScalableTargetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<RegisterScalableTargetResponse> RegisterScalableTargetAsync(RegisterScalableTargetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RegisterScalableTargetRequestMarshaller();
             var unmarshaller = RegisterScalableTargetResponseUnmarshaller.Instance;
