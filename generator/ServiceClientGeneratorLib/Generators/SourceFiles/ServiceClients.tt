@@ -266,7 +266,7 @@ namespace <#=this.Config.Namespace#>
 <#
 		}
 #>
-        public <#=operation.Name#>Response <#=operation.Name#>()
+        public virtual <#=operation.Name#>Response <#=operation.Name#>()
         {
             return <#=operation.Name#>(new <#=operation.Name#>Request());
         }
@@ -283,7 +283,7 @@ namespace <#=this.Config.Namespace#>
 <#		
 		}
 #>
-        <#=operation.IsInternal ? "internal" : "public"#> <#=operation.Name#>Response <#=operation.Name#>(<#=operation.Name#>Request request)
+        <#=operation.IsInternal ? "internal" : "public"#> virtual <#=operation.Name#>Response <#=operation.Name#>(<#=operation.Name#>Request request)
         {
             var marshaller = new <#=operation.Name#>RequestMarshaller();
             var unmarshaller = <#=operation.Name#>ResponseUnmarshaller.Instance;
@@ -300,7 +300,7 @@ namespace <#=this.Config.Namespace#>
 <#		
 		}
 #>
-        <#=operation.IsInternal ? "internal" : "public"#> IAsyncResult Begin<#=operation.Name#>(<#=operation.Name#>Request request, AsyncCallback callback, object state)
+        <#=operation.IsInternal ? "internal" : "public"#> virtual IAsyncResult Begin<#=operation.Name#>(<#=operation.Name#>Request request, AsyncCallback callback, object state)
         {
             var marshaller = new <#=operation.Name#>RequestMarshaller();
             var unmarshaller = <#=operation.Name#>ResponseUnmarshaller.Instance;
@@ -318,7 +318,7 @@ namespace <#=this.Config.Namespace#>
 <#		
 		}
 #>
-        <#=operation.IsInternal ? "internal" : "public"#>  <#=operation.Name#>Response End<#=operation.Name#>(IAsyncResult asyncResult)
+        <#=operation.IsInternal ? "internal" : "public"#> virtual <#=operation.Name#>Response End<#=operation.Name#>(IAsyncResult asyncResult)
         {
             return EndInvoke<<#=operation.Name#>Response>(asyncResult);
         }

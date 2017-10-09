@@ -561,7 +561,7 @@
 <#+		
 			}
 #>
-        public <#=operation.Name#>Response <#=operation.Name#>(<#=currentParams#>)
+        public virtual <#=operation.Name#>Response <#=operation.Name#>(<#=currentParams#>)
 <#+
         }
         else
@@ -575,7 +575,7 @@
 <#+		
 			}
 #>
-        public Task<<#=operation.Name#>Response> <#=operation.Name#>Async(<#=currentParams#>System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<<#=operation.Name#>Response> <#=operation.Name#>Async(<#=currentParams#>System.Threading.CancellationToken cancellationToken = default(CancellationToken))
 <#+
         }
 #>
@@ -634,7 +634,7 @@ foreach (var member in docMembers)
 <#+		
 			}
 #>
-        internal <#=operation.Name#>Response <#=operation.Name#>(<#=currentParams#>)
+        internal virtual <#=operation.Name#>Response <#=operation.Name#>(<#=currentParams#>)
 <#+
         }
         else
@@ -648,7 +648,7 @@ foreach (var member in docMembers)
 <#+		
 			}
 #>
-        public void <#=operation.Name#>Async(<#=currentParams#> AmazonServiceCallback<<#=operation.Name#>Request, <#=operation.Name#>Response> callback, AsyncOptions options = null)
+        public virtual void <#=operation.Name#>Async(<#=currentParams#> AmazonServiceCallback<<#=operation.Name#>Request, <#=operation.Name#>Response> callback, AsyncOptions options = null)
 <#+
         }
 #>

@@ -212,7 +212,7 @@ namespace <#=this.Config.Namespace#>
 <#		
 				}
 #>
-		internal <#=operation.Name#>Response <#=operation.Name#>()
+		internal virtual <#=operation.Name#>Response <#=operation.Name#>()
         {
 			return <#=operation.Name#>(new <#=operation.Name#>Request());
 		}
@@ -226,7 +226,7 @@ namespace <#=this.Config.Namespace#>
 <#		
 			}
 #>
-		internal <#=operation.Name#>Response <#=operation.Name#>(<#=operation.Name#>Request request)
+		internal virtual <#=operation.Name#>Response <#=operation.Name#>(<#=operation.Name#>Request request)
         {
 <#
 			if(!this.Config.ServiceModel.AvailableInWWW(operation))
@@ -259,7 +259,7 @@ namespace <#=this.Config.Namespace#>
 <#		
 		}
 #>
-        public void <#=operation.Name#>Async(AmazonServiceCallback<<#=operation.Name#>Request, <#=operation.Name#>Response> callback, AsyncOptions options = null)
+        public virtual void <#=operation.Name#>Async(AmazonServiceCallback<<#=operation.Name#>Request, <#=operation.Name#>Response> callback, AsyncOptions options = null)
         {
             <#=operation.Name#>Async(new <#=operation.Name#>Request(), callback, options);
         }
@@ -277,7 +277,7 @@ namespace <#=this.Config.Namespace#>
 <#
 		}
 #>
-        <#=operation.IsInternal ? "internal" : "public"#> void <#=operation.Name#>Async(<#=operation.Name#>Request request, AmazonServiceCallback<<#=operation.Name#>Request, <#=operation.Name#>Response> callback, AsyncOptions options = null)
+        <#=operation.IsInternal ? "internal" : "public"#> virtual void <#=operation.Name#>Async(<#=operation.Name#>Request request, AmazonServiceCallback<<#=operation.Name#>Request, <#=operation.Name#>Response> callback, AsyncOptions options = null)
         {
 <#
 			if(!this.Config.ServiceModel.AvailableInWWW(operation))

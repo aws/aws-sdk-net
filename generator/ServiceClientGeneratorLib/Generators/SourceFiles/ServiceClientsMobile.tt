@@ -274,7 +274,7 @@ namespace <#=this.Config.Namespace#>
 <#		
 		}
 #>
-        internal <#=operation.Name#>Response <#=operation.Name#>()
+        internal virtual <#=operation.Name#>Response <#=operation.Name#>()
         {
             return <#=operation.Name#>(new <#=operation.Name#>Request());
         }
@@ -287,7 +287,7 @@ namespace <#=this.Config.Namespace#>
 <#		
 		}
 #>
-        internal <#=operation.Name#>Response <#=operation.Name#>(<#=operation.Name#>Request request)
+        internal virtual <#=operation.Name#>Response <#=operation.Name#>(<#=operation.Name#>Request request)
         {
             var marshaller = new <#=operation.Name#>RequestMarshaller();
             var unmarshaller = <#=operation.Name#>ResponseUnmarshaller.Instance;
@@ -309,7 +309,7 @@ namespace <#=this.Config.Namespace#>
 <#		
 		}
 #>
-        public Task<<#=operation.Name#>Response> <#=operation.Name#>Async(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<<#=operation.Name#>Response> <#=operation.Name#>Async(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return <#=operation.Name#>Async(new <#=operation.Name#>Request(), cancellationToken);
         }
@@ -329,7 +329,7 @@ namespace <#=this.Config.Namespace#>
 <#		
 		}
 #>
-        <#=operation.IsInternal ? "internal" : "public"#> Task<<#=operation.Name#>Response> <#=operation.Name#>Async(<#=operation.Name#>Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        <#=operation.IsInternal ? "internal" : "public"#> virtual Task<<#=operation.Name#>Response> <#=operation.Name#>Async(<#=operation.Name#>Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new <#=operation.Name#>RequestMarshaller();
             var unmarshaller = <#=operation.Name#>ResponseUnmarshaller.Instance;
