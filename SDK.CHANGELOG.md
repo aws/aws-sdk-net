@@ -1,3 +1,9 @@
+### 3.3.169.0 (2017-10-09 01:26 UTC)
+* Core 3.3.18.0
+	* Added a new HttpClientCacheSize property to service config to control the number of HttpClient cached for .NET Core version of the SDK.
+Updated all service clients operations to be virtual
+	* All services packages updated to require new Core
+
 ### 3.3.168.1 (2017-10-06 22:28 UTC)
 * SQS (3.3.2.8)
 	* Documentation updates regarding availability of FIFO queues and miscellaneous corrections.
