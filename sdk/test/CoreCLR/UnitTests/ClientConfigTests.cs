@@ -41,6 +41,7 @@ namespace UnitTests
             "CacheHttpClient",
             "ThrottleRetries",
             "MaxConnectionsPerServer",
+            "HttpClientCacheSize",
         };
 
         [Fact]

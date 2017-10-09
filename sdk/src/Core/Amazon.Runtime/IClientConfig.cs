@@ -240,6 +240,11 @@ namespace Amazon.Runtime
         /// </para>
         /// </summary>
         bool CacheHttpClient { get; }
+
+        /// <summary>
+        /// If CacheHttpClient is set to true then HttpClientCacheSize controls the number of HttpClients cached.
+        /// </summary>
+        int HttpClientCacheSize { get; }
 #endif
     }
 }

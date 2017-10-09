@@ -22,6 +22,11 @@ using Amazon.Runtime.Internal.Auth;
 using Amazon.Util;
 using System.Globalization;
 
+#if CORECLR
+using System.Runtime.InteropServices;
+#endif
+
+
 namespace Amazon.Runtime
 {
     /// <summary>
@@ -495,6 +500,41 @@ namespace Amazon.Runtime
         {
             get { return this.cacheHttpClient; }
             set { this.cacheHttpClient = value; }
+        }
+
+
+        int? _httpClientCacheSize;
+        /// <summary>
+        /// If CacheHttpClient is set to true then HttpClientCacheSize controls the number of HttpClients cached.
+        /// <para>
+        /// On Windows the default value is 1 since the underlying native implementation does not have throttling constraints
+        /// like the non Windows Curl based implementation. For non Windows based platforms the default is the value return from 
+        /// System.Environment.ProcessorCount.
+        /// </para>
+        /// </summary>
+        public int HttpClientCacheSize
+        {
+            get
+            {
+                if(this._httpClientCacheSize.HasValue)
+                {
+                    return this._httpClientCacheSize.Value;
+                }
+#if CORECLR
+                if(RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+                {
+                    return 1;
+                }
+
+                return Environment.ProcessorCount;
+#else
+                return 1;
+#endif
+            }
+            set
+            {
+                this._httpClientCacheSize = value;
+            }
         }
 #endif
     }

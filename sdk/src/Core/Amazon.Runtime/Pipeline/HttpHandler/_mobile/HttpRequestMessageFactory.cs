@@ -31,6 +31,7 @@ using System.Threading.Tasks;
 
 namespace Amazon.Runtime
 {
+
     /// <summary>
     /// A factory which creates HTTP requests which uses System.Net.Http.HttpClient.
     /// </summary>
@@ -39,12 +40,10 @@ namespace Amazon.Runtime
     {
         // This is the global cache of HttpClient for service clients that are using 
         static readonly ReaderWriterLockSlim _httpClientCacheRWLock = new ReaderWriterLockSlim();
-        static readonly IDictionary<string, HttpClient> _httpClientCache = new Dictionary<string, HttpClient>();
+        static readonly IDictionary<string, HttpClientCache> _httpClientCaches = new Dictionary<string, HttpClientCache>();
 
-        // This lock is used for when the instance variable is set.
-        readonly object _httpClientCacheCreateLock = new object();
 
-        HttpClient _cachedHttpClient;
+        private HttpClientCache _httpClientCache;
         private IClientConfig _clientConfig;
 
         /// <summary>
@@ -63,78 +62,19 @@ namespace Amazon.Runtime
         /// <returns>An HTTP request.</returns>
         public IHttpRequest<HttpContent> CreateHttpRequest(Uri requestUri)
         {
-            HttpClient httpClient;
+            HttpClient httpClient = null;
             if(_clientConfig.CacheHttpClient)
             {
-                // If a HttpClient has already been created for the service client then just reuse it.
-                if(_cachedHttpClient != null)
+                if(_httpClientCache == null)
                 {
-                    httpClient = _cachedHttpClient;
-                }
-                else if (!CanClientConfigBeSerialized(_clientConfig))
-                {
-                    lock (_httpClientCacheCreateLock)
-                    {
-                        // Check if the HttpClient was created by some other thread 
-                        // while this thread was waiting for the lock.
-                        if (_cachedHttpClient != null)
-                        {
-                            httpClient = _cachedHttpClient;
-                        }
-                        else
-                        {
-                            httpClient = CreateHttpClient(_clientConfig);
-                            _cachedHttpClient = httpClient;
-                        }
-                    }
-                }
-                else
-                {
-                    // Check to see if an HttpClient was created by another service client with the 
-                    // same settings on the ClientConfig.
-                    var configUniqueString = CreateConfigUniqueString(_clientConfig);
-                    bool found;
-                    _httpClientCacheRWLock.EnterReadLock();
-                    try
-                    {
-                        found = _httpClientCache.TryGetValue(configUniqueString, out httpClient);
-                    }
-                    finally
-                    {
-                        _httpClientCacheRWLock.ExitReadLock();
-                    }
-
-                    if (found)
-                    {
-                        _cachedHttpClient = httpClient;
-                    }
-                    else
+                    if (!CanClientConfigBeSerialized(_clientConfig))
                     {
                         _httpClientCacheRWLock.EnterWriteLock();
                         try
                         {
-                            found = _httpClientCache.TryGetValue(configUniqueString, out httpClient);
-                            if (found)
+                            if (_httpClientCache == null)
                             {
-                                _cachedHttpClient = httpClient;
-                            }
-                            else
-                            {
-                                lock (_httpClientCacheCreateLock)
-                                {
-                                    // Check if the HttpClient was created by some other thread 
-                                    // while this thread was waiting for the lock.
-                                    if (_cachedHttpClient != null)
-                                    {
-                                        httpClient = _cachedHttpClient;
-                                    }
-                                    else
-                                    {
-                                        httpClient = CreateHttpClient(_clientConfig);
-                                        _cachedHttpClient = httpClient;
-                                        _httpClientCache[configUniqueString] = httpClient;
-                                    }
-                                }
+                                _httpClientCache = CreateHttpClientCache(_clientConfig);
                             }
                         }
                         finally
@@ -142,7 +82,47 @@ namespace Amazon.Runtime
                             _httpClientCacheRWLock.ExitWriteLock();
                         }
                     }
+                    else
+                    {
+                        // Check to see if an HttpClient was created by another service client with the 
+                        // same settings on the ClientConfig.
+                        var configUniqueString = CreateConfigUniqueString(_clientConfig);
+                        _httpClientCacheRWLock.EnterReadLock();
+                        try
+                        {
+                            _httpClientCaches.TryGetValue(configUniqueString, out _httpClientCache);
+                        }
+                        finally
+                        {
+                            _httpClientCacheRWLock.ExitReadLock();
+                        }
+
+                        // If a HttpClientCache is not found in the global cache then create one
+                        // for this and other service clients to use.
+                        if (_httpClientCache == null)
+                        {
+                            _httpClientCacheRWLock.EnterWriteLock();
+                            try
+                            {
+                                // Check if the HttpClientCache was created by some other thread 
+                                // while this thread was waiting for the lock.
+                                if (!_httpClientCaches.TryGetValue(configUniqueString, out _httpClientCache))
+                                {
+                                    _httpClientCache = CreateHttpClientCache(_clientConfig);
+                                    _httpClientCaches[configUniqueString] = _httpClientCache;
+                                }
+                            }
+                            finally
+                            {
+                                _httpClientCacheRWLock.ExitWriteLock();
+                            }
+                        }
+                    }
                 }
+
+                // Now that we have a HttpClientCache from either the global cache or just created a new HttpClientCache
+                // get the next HttpClient to be used for making a web request.
+                httpClient = _httpClientCache.GetNextClient();
             }
             else
             {
@@ -168,6 +148,17 @@ namespace Amazon.Runtime
         /// <param name="disposing"></param>
         protected virtual void Dispose(bool disposing)
         {
+        }
+
+        private static HttpClientCache CreateHttpClientCache(IClientConfig clientConfig)
+        {
+            var clients = new HttpClient[clientConfig.HttpClientCacheSize];
+            for(int i = 0; i < clients.Length; i++)
+            {
+                clients[i] = CreateHttpClient(clientConfig);
+            }
+            var cache = new HttpClientCache(clients);
+            return cache;
         }
 
         private static HttpClient CreateHttpClient(IClientConfig clientConfig)
@@ -218,7 +209,7 @@ namespace Amazon.Runtime
         private static string CreateConfigUniqueString(IClientConfig clientConfig)
         {
             string uniqueString = string.Empty;
-            uniqueString = string.Concat("AllowAutoRedirect:", clientConfig.AllowAutoRedirect.ToString());
+            uniqueString = string.Concat("AllowAutoRedirect:", clientConfig.AllowAutoRedirect.ToString(), "CacheSize:", clientConfig.HttpClientCacheSize);
 
             if (clientConfig.Timeout.HasValue)
                 uniqueString = string.Concat(uniqueString, "Timeout:", clientConfig.Timeout.Value.ToString());
@@ -242,6 +233,44 @@ namespace Amazon.Runtime
 #else
             return clientConfig.ProxyCredentials == null;
 #endif
+        }
+    }
+
+    /// <summary>
+    /// A cache of HttpClient objects. The GetNextClient method does a round robin cycle through the clients
+    /// to distribute the load even across.
+    /// </summary>
+    public class HttpClientCache
+    {
+        HttpClient[] _clients;
+
+        /// <summary>
+        /// Constructs a container for a cache of HttpClient objects
+        /// </summary>
+        /// <param name="clients">The HttpClient to cache</param>
+        public HttpClientCache(HttpClient[] clients)
+        {
+            _clients = clients;
+        }
+
+        private int count = 0;
+        /// <summary>
+        /// Returns the next HttpClient using a round robin rotation. It is expected that individual clients will be used
+        /// by more then one Thread.
+        /// </summary>
+        /// <returns></returns>
+        public HttpClient GetNextClient()
+        {
+            if (_clients.Length == 1)
+            {
+                return _clients[0];
+            }
+            else
+            {
+                int next = Interlocked.Increment(ref count);
+                int nextIndex = Math.Abs(next % _clients.Length);
+                return _clients[nextIndex];
+            }
         }
     }
 
