@@ -67,6 +67,22 @@ namespace Amazon.OpsWorksCM.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetEngineAttributes())
+                {
+                    context.Writer.WritePropertyName("EngineAttributes");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestEngineAttributesListValue in publicRequest.EngineAttributes)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = EngineAttributeMarshaller.Instance;
+                        marshaller.Marshall(publicRequestEngineAttributesListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetServerName())
                 {
                     context.Writer.WritePropertyName("ServerName");

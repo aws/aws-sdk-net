@@ -46,7 +46,11 @@ namespace Amazon.OpsWorksCM.Model
         private string _serverName;
 
         /// <summary>
-        /// Gets and sets the property NodeAssociationStatusToken.
+        /// Gets and sets the property NodeAssociationStatusToken. 
+        /// <para>
+        /// The token returned in either the AssociateNodeResponse or the DisassociateNodeResponse.
+        /// 
+        /// </para>
         /// </summary>
         public string NodeAssociationStatusToken
         {

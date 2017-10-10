@@ -32,7 +32,26 @@ namespace Amazon.OpsWorksCM.Model
     /// </summary>
     public partial class DescribeNodeAssociationStatusResponse : AmazonWebServiceResponse
     {
+        private List<EngineAttribute> _engineAttributes = new List<EngineAttribute>();
         private NodeAssociationStatus _nodeAssociationStatus;
+
+        /// <summary>
+        /// Gets and sets the property EngineAttributes. 
+        /// <para>
+        /// Attributes specific to the node association. 
+        /// </para>
+        /// </summary>
+        public List<EngineAttribute> EngineAttributes
+        {
+            get { return this._engineAttributes; }
+            set { this._engineAttributes = value; }
+        }
+
+        // Check to see if EngineAttributes property is set
+        internal bool IsSetEngineAttributes()
+        {
+            return this._engineAttributes != null && this._engineAttributes.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property NodeAssociationStatus. 

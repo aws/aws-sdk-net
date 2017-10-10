@@ -44,7 +44,27 @@ namespace Amazon.OpsWorksCM.Model
     /// </summary>
     public partial class StartMaintenanceRequest : AmazonOpsWorksCMRequest
     {
+        private List<EngineAttribute> _engineAttributes = new List<EngineAttribute>();
         private string _serverName;
+
+        /// <summary>
+        /// Gets and sets the property EngineAttributes. 
+        /// <para>
+        /// Engine attributes that are specific to the server on which you want to run maintenance.
+        /// 
+        /// </para>
+        /// </summary>
+        public List<EngineAttribute> EngineAttributes
+        {
+            get { return this._engineAttributes; }
+            set { this._engineAttributes = value; }
+        }
+
+        // Check to see if EngineAttributes property is set
+        internal bool IsSetEngineAttributes()
+        {
+            return this._engineAttributes != null && this._engineAttributes.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property ServerName. 

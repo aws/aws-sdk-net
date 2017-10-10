@@ -434,7 +434,7 @@ namespace Amazon.OpsWorksCM.Model
         ///  The service role that the AWS OpsWorks for Chef Automate service backend uses to
         /// work with your account. Although the AWS OpsWorks management console typically creates
         /// the service role for you, if you are using the AWS CLI or API commands, run the service-role-creation.yaml
-        /// AWS CloudFormation template, located at https://s3.amazonaws.com/opsworks-stuff/latest/service-role-creation.yaml.
+        /// AWS CloudFormation template, located at https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml.
         /// This template creates a CloudFormation stack that includes the service role that you
         /// need. 
         /// </para>
@@ -469,7 +469,7 @@ namespace Amazon.OpsWorksCM.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about supported Amazon EC2 platforms, see <a href="http://docs.aws.amazon.com/https:/docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+        /// For more information about supported Amazon EC2 platforms, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
         /// Platforms</a>.
         /// </para>
         /// </summary>

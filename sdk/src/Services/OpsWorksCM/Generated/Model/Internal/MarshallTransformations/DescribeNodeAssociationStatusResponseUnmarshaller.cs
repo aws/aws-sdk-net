@@ -51,6 +51,12 @@ namespace Amazon.OpsWorksCM.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("EngineAttributes", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<EngineAttribute, EngineAttributeUnmarshaller>(EngineAttributeUnmarshaller.Instance);
+                    response.EngineAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("NodeAssociationStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
