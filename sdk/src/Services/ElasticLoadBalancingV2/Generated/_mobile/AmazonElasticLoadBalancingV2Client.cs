@@ -302,6 +302,38 @@ namespace Amazon.ElasticLoadBalancingV2
         #endregion
 
         
+        #region  AddListenerCertificates
+
+        internal AddListenerCertificatesResponse AddListenerCertificates(AddListenerCertificatesRequest request)
+        {
+            var marshaller = new AddListenerCertificatesRequestMarshaller();
+            var unmarshaller = AddListenerCertificatesResponseUnmarshaller.Instance;
+
+            return Invoke<AddListenerCertificatesRequest,AddListenerCertificatesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddListenerCertificates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddListenerCertificates operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/AddListenerCertificates">REST API Reference for AddListenerCertificates Operation</seealso>
+        public Task<AddListenerCertificatesResponse> AddListenerCertificatesAsync(AddListenerCertificatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AddListenerCertificatesRequestMarshaller();
+            var unmarshaller = AddListenerCertificatesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AddListenerCertificatesRequest,AddListenerCertificatesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AddTags
 
         internal virtual AddTagsResponse AddTags(AddTagsRequest request)
@@ -649,6 +681,38 @@ namespace Amazon.ElasticLoadBalancingV2
             var unmarshaller = DescribeAccountLimitsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeAccountLimitsRequest,DescribeAccountLimitsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeListenerCertificates
+
+        internal DescribeListenerCertificatesResponse DescribeListenerCertificates(DescribeListenerCertificatesRequest request)
+        {
+            var marshaller = new DescribeListenerCertificatesRequestMarshaller();
+            var unmarshaller = DescribeListenerCertificatesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeListenerCertificatesRequest,DescribeListenerCertificatesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeListenerCertificates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeListenerCertificates operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeListenerCertificates">REST API Reference for DescribeListenerCertificates Operation</seealso>
+        public Task<DescribeListenerCertificatesResponse> DescribeListenerCertificatesAsync(DescribeListenerCertificatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeListenerCertificatesRequestMarshaller();
+            var unmarshaller = DescribeListenerCertificatesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeListenerCertificatesRequest,DescribeListenerCertificatesResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1129,6 +1193,38 @@ namespace Amazon.ElasticLoadBalancingV2
             var unmarshaller = RegisterTargetsResponseUnmarshaller.Instance;
 
             return InvokeAsync<RegisterTargetsRequest,RegisterTargetsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RemoveListenerCertificates
+
+        internal RemoveListenerCertificatesResponse RemoveListenerCertificates(RemoveListenerCertificatesRequest request)
+        {
+            var marshaller = new RemoveListenerCertificatesRequestMarshaller();
+            var unmarshaller = RemoveListenerCertificatesResponseUnmarshaller.Instance;
+
+            return Invoke<RemoveListenerCertificatesRequest,RemoveListenerCertificatesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveListenerCertificates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveListenerCertificates operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RemoveListenerCertificates">REST API Reference for RemoveListenerCertificates Operation</seealso>
+        public Task<RemoveListenerCertificatesResponse> RemoveListenerCertificatesAsync(RemoveListenerCertificatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new RemoveListenerCertificatesRequestMarshaller();
+            var unmarshaller = RemoveListenerCertificatesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RemoveListenerCertificatesRequest,RemoveListenerCertificatesResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

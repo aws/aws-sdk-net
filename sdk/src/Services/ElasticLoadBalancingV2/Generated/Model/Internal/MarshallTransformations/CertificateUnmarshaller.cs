@@ -60,6 +60,12 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                         unmarshalledObject.CertificateArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("IsDefault", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.IsDefault = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

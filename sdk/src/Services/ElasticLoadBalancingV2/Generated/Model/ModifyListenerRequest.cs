@@ -51,7 +51,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Certificates. 
         /// <para>
-        /// The SSL server certificate.
+        /// The default SSL server certificate.
         /// </para>
         /// </summary>
         public List<Certificate> Certificates

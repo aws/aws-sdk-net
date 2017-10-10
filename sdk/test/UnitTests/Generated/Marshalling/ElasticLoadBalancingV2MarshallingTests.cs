@@ -44,6 +44,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("ElasticLoadBalancingV2")]
+        public void AddListenerCertificatesMarshallTest()
+        {
+            var operation = service_model.FindOperation("AddListenerCertificates");
+
+            var request = InstantiateClassGenerator.Execute<AddListenerCertificatesRequest>();
+            var marshaller = new AddListenerCertificatesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = AddListenerCertificatesResponseUnmarshaller.Instance.Unmarshall(context)
+                as AddListenerCertificatesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticLoadBalancingV2")]
         public void AddTagsMarshallTest()
         {
             var operation = service_model.FindOperation("AddTags");
@@ -299,6 +323,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = DescribeAccountLimitsResponseUnmarshaller.Instance.Unmarshall(context)
                 as DescribeAccountLimitsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticLoadBalancingV2")]
+        public void DescribeListenerCertificatesMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeListenerCertificates");
+
+            var request = InstantiateClassGenerator.Execute<DescribeListenerCertificatesRequest>();
+            var marshaller = new DescribeListenerCertificatesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribeListenerCertificatesResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeListenerCertificatesResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -659,6 +707,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = RegisterTargetsResponseUnmarshaller.Instance.Unmarshall(context)
                 as RegisterTargetsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticLoadBalancingV2")]
+        public void RemoveListenerCertificatesMarshallTest()
+        {
+            var operation = service_model.FindOperation("RemoveListenerCertificates");
+
+            var request = InstantiateClassGenerator.Execute<RemoveListenerCertificatesRequest>();
+            var marshaller = new RemoveListenerCertificatesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = RemoveListenerCertificatesResponseUnmarshaller.Instance.Unmarshall(context)
+                as RemoveListenerCertificatesResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

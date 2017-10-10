@@ -39,18 +39,21 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        /// The Availability Zone where the IP address is to be registered. Specify <code>all</code>
-        /// to register an IP address outside the target group VPC with all Availability Zones
-        /// that are enabled for the load balancer.
-        /// </para>
-        ///  
-        /// <para>
-        /// If the IP address is in a subnet of the VPC for the target group, the Availability
-        /// Zone is automatically detected and this parameter is optional.
+        /// An Availability Zone or <code>all</code>. This determines whether the target receives
+        /// traffic from the load balancer nodes in the specified Availability Zone or from all
+        /// enabled Availability Zones for the load balancer.
         /// </para>
         ///  
         /// <para>
         /// This parameter is not supported if the target type of the target group is <code>instance</code>.
+        /// If the IP address is in a subnet of the VPC for the target group, the Availability
+        /// Zone is automatically detected and this parameter is optional. If the IP address is
+        /// outside the VPC, this parameter is required.
+        /// </para>
+        ///  
+        /// <para>
+        /// With an Application Load Balancer, if the IP address is outside the VPC for the target
+        /// group, the only supported value is <code>all</code>.
         /// </para>
         /// </summary>
         public string AvailabilityZone

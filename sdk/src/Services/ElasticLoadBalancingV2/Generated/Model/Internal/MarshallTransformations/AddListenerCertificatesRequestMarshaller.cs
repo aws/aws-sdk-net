@@ -31,9 +31,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateListener Request Marshaller
+    /// AddListenerCertificates Request Marshaller
     /// </summary>       
-    public class CreateListenerRequestMarshaller : IMarshaller<IRequest, CreateListenerRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class AddListenerCertificatesRequestMarshaller : IMarshaller<IRequest, AddListenerCertificatesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -42,7 +42,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateListenerRequest)input);
+            return this.Marshall((AddListenerCertificatesRequest)input);
         }
     
         /// <summary>
@@ -50,10 +50,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateListenerRequest publicRequest)
+        public IRequest Marshall(AddListenerCertificatesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticLoadBalancingV2");
-            request.Parameters.Add("Action", "CreateListener");
+            request.Parameters.Add("Action", "AddListenerCertificates");
             request.Parameters.Add("Version", "2015-12-01");
 
             if(publicRequest != null)
@@ -74,37 +74,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-                if(publicRequest.IsSetDefaultActions())
+                if(publicRequest.IsSetListenerArn())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.DefaultActions)
-                    {
-                        if(publicRequestlistValue.IsSetTargetGroupArn())
-                        {
-                            request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "TargetGroupArn", StringUtils.FromString(publicRequestlistValue.TargetGroupArn));
-                        }
-                        if(publicRequestlistValue.IsSetType())
-                        {
-                            request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Type", StringUtils.FromString(publicRequestlistValue.Type));
-                        }
-                        publicRequestlistValueIndex++;
-                    }
-                }
-                if(publicRequest.IsSetLoadBalancerArn())
-                {
-                    request.Parameters.Add("LoadBalancerArn", StringUtils.FromString(publicRequest.LoadBalancerArn));
-                }
-                if(publicRequest.IsSetPort())
-                {
-                    request.Parameters.Add("Port", StringUtils.FromInt(publicRequest.Port));
-                }
-                if(publicRequest.IsSetProtocol())
-                {
-                    request.Parameters.Add("Protocol", StringUtils.FromString(publicRequest.Protocol));
-                }
-                if(publicRequest.IsSetSslPolicy())
-                {
-                    request.Parameters.Add("SslPolicy", StringUtils.FromString(publicRequest.SslPolicy));
+                    request.Parameters.Add("ListenerArn", StringUtils.FromString(publicRequest.ListenerArn));
                 }
             }
             return request;

@@ -109,6 +109,53 @@ namespace Amazon.ElasticLoadBalancingV2
     {
 
         
+        #region  AddListenerCertificates
+
+
+        /// <summary>
+        /// Adds the specified certificate to the specified secure listener.
+        /// 
+        ///  
+        /// <para>
+        /// If the certificate was already added, the call is successful but the certificate is
+        /// not added again.
+        /// </para>
+        ///  
+        /// <para>
+        /// To list the certificates for your listener, use <a>DescribeListenerCertificates</a>.
+        /// To remove certificates from your listener, use <a>RemoveListenerCertificates</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddListenerCertificates service method.</param>
+        /// 
+        /// <returns>The response from the AddListenerCertificates service method, as returned by ElasticLoadBalancingV2.</returns>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.CertificateNotFoundException">
+        /// The specified certificate does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.ListenerNotFoundException">
+        /// The specified listener does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyCertificatesException">
+        /// You've reached the limit on the number of certificates per load balancer.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/AddListenerCertificates">REST API Reference for AddListenerCertificates Operation</seealso>
+        AddListenerCertificatesResponse AddListenerCertificates(AddListenerCertificatesRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddListenerCertificates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddListenerCertificates operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/AddListenerCertificates">REST API Reference for AddListenerCertificates Operation</seealso>
+        Task<AddListenerCertificatesResponse> AddListenerCertificatesAsync(AddListenerCertificatesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  AddTags
 
 
@@ -212,7 +259,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// The specified target group does not exist.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyCertificatesException">
-        /// You've reached the limit on the number of certificates per listener.
+        /// You've reached the limit on the number of certificates per load balancer.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyListenersException">
         /// You've reached the limit on the number of listeners per load balancer.
@@ -688,6 +735,36 @@ namespace Amazon.ElasticLoadBalancingV2
 
         #endregion
         
+        #region  DescribeListenerCertificates
+
+
+        /// <summary>
+        /// Describes the certificates for the specified secure listener.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeListenerCertificates service method.</param>
+        /// 
+        /// <returns>The response from the DescribeListenerCertificates service method, as returned by ElasticLoadBalancingV2.</returns>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.ListenerNotFoundException">
+        /// The specified listener does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeListenerCertificates">REST API Reference for DescribeListenerCertificates Operation</seealso>
+        DescribeListenerCertificatesResponse DescribeListenerCertificates(DescribeListenerCertificatesRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeListenerCertificates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeListenerCertificates operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeListenerCertificates">REST API Reference for DescribeListenerCertificates Operation</seealso>
+        Task<DescribeListenerCertificatesResponse> DescribeListenerCertificatesAsync(DescribeListenerCertificatesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeListeners
 
 
@@ -1050,7 +1127,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// The specified target group does not exist.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyCertificatesException">
-        /// You've reached the limit on the number of certificates per listener.
+        /// You've reached the limit on the number of certificates per load balancer.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyListenersException">
         /// You've reached the limit on the number of listeners per load balancer.
@@ -1261,20 +1338,21 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         ///  
         /// <para>
+        /// You can register targets by instance ID or by IP address. If the target is an EC2
+        /// instance, it must be in the <code>running</code> state when you register it.
+        /// </para>
+        ///  
+        /// <para>
         /// By default, the load balancer routes requests to registered targets using the protocol
-        /// and port number for the target group. Alternatively, you can override the port for
-        /// a target when you register it.
+        /// and port for the target group. Alternatively, you can override the port for a target
+        /// when you register it. You can register each EC2 instance or IP address with the same
+        /// target group multiple times using different ports.
         /// </para>
         ///  
         /// <para>
-        /// The target must be in the virtual private cloud (VPC) that you specified for the target
-        /// group. If the target is an EC2 instance, it must be in the <code>running</code> state
-        /// when you register it.
-        /// </para>
-        ///  
-        /// <para>
-        /// Network Load Balancers do not support the following instance types as targets: C1,
-        /// CC1, CC2, CG1, CG2, CR1, CS1, G1, G2, HI1, HS1, M1, M2, M3, and T1.
+        /// With a Network Load Balancer, you cannot register instances by instance ID if they
+        /// have the following instance types: C1, CC1, CC2, CG1, CG2, CR1, CS1, G1, G2, HI1,
+        /// HS1, M1, M2, M3, and T1. You can register instances of these types by IP address.
         /// </para>
         ///  
         /// <para>
@@ -1312,6 +1390,49 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RegisterTargets">REST API Reference for RegisterTargets Operation</seealso>
         Task<RegisterTargetsResponse> RegisterTargetsAsync(RegisterTargetsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  RemoveListenerCertificates
+
+
+        /// <summary>
+        /// Removes the specified certificate from the specified secure listener.
+        /// 
+        ///  
+        /// <para>
+        /// You can't remove the default certificate for a listener. To replace the default certificate,
+        /// call <a>ModifyListener</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To list the certificates for your listener, use <a>DescribeListenerCertificates</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveListenerCertificates service method.</param>
+        /// 
+        /// <returns>The response from the RemoveListenerCertificates service method, as returned by ElasticLoadBalancingV2.</returns>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.ListenerNotFoundException">
+        /// The specified listener does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.OperationNotPermittedException">
+        /// This operation is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RemoveListenerCertificates">REST API Reference for RemoveListenerCertificates Operation</seealso>
+        RemoveListenerCertificatesResponse RemoveListenerCertificates(RemoveListenerCertificatesRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveListenerCertificates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveListenerCertificates operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RemoveListenerCertificates">REST API Reference for RemoveListenerCertificates Operation</seealso>
+        Task<RemoveListenerCertificatesResponse> RemoveListenerCertificatesAsync(RemoveListenerCertificatesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

@@ -28,47 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
-    /// Information about an SSL server certificate.
+    /// This is the response object from the AddListenerCertificates operation.
     /// </summary>
-    public partial class Certificate
+    public partial class AddListenerCertificatesResponse : AmazonWebServiceResponse
     {
-        private string _certificateArn;
-        private bool? _isDefault;
+        private List<Certificate> _certificates = new List<Certificate>();
 
         /// <summary>
-        /// Gets and sets the property CertificateArn. 
+        /// Gets and sets the property Certificates. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the certificate.
+        /// Information about the certificates.
         /// </para>
         /// </summary>
-        public string CertificateArn
+        public List<Certificate> Certificates
         {
-            get { return this._certificateArn; }
-            set { this._certificateArn = value; }
+            get { return this._certificates; }
+            set { this._certificates = value; }
         }
 
-        // Check to see if CertificateArn property is set
-        internal bool IsSetCertificateArn()
+        // Check to see if Certificates property is set
+        internal bool IsSetCertificates()
         {
-            return this._certificateArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property IsDefault. 
-        /// <para>
-        /// Indicates whether the certificate is the default certificate.
-        /// </para>
-        /// </summary>
-        public bool IsDefault
-        {
-            get { return this._isDefault.GetValueOrDefault(); }
-            set { this._isDefault = value; }
-        }
-
-        // Check to see if IsDefault property is set
-        internal bool IsSetIsDefault()
-        {
-            return this._isDefault.HasValue; 
+            return this._certificates != null && this._certificates.Count > 0; 
         }
 
     }
