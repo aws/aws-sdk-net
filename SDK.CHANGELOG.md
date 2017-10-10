@@ -1,3 +1,11 @@
+### 3.3.170.0 (2017-10-10 18:57 UTC)
+* EC2 (3.3.30.0)
+	* This release includes updates to AWS Virtual Private Gateway.
+* ElasticLoadBalancingV2 (3.3.6.0)
+	* Server Name Indication (SNI) is an extension to the TLS protocol by which a client indicates the hostname to connect to at the start of the TLS handshake. The load balancer can present multiple certificates through the same secure listener, which enables it to support multiple secure websites using a single secure listener. Application Load Balancers also support a smart certificate selection algorithm with SNI. If the hostname indicated by a client matches multiple certificates, the load balancer determines the best certificate to use based on multiple factors including the capabilities of the client.
+* OpsWorksCM (3.3.4.0)
+	* Provide engine specific information for node associations.
+
 ### 3.3.169.0 (2017-10-09 01:26 UTC)
 * Core 3.3.18.0
 	* Added a new **HttpClientCacheSize** property to the service config object to control the number of HttpClient objects cached for the .NET Core version of the SDK.

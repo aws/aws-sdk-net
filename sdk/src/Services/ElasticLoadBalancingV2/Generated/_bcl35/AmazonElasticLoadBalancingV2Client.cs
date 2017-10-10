@@ -324,7 +324,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// You've reached the limit on the number of certificates per load balancer.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/AddListenerCertificates">REST API Reference for AddListenerCertificates Operation</seealso>
-        public AddListenerCertificatesResponse AddListenerCertificates(AddListenerCertificatesRequest request)
+        public virtual AddListenerCertificatesResponse AddListenerCertificates(AddListenerCertificatesRequest request)
         {
             var marshaller = new AddListenerCertificatesRequestMarshaller();
             var unmarshaller = AddListenerCertificatesResponseUnmarshaller.Instance;
@@ -344,7 +344,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddListenerCertificates
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/AddListenerCertificates">REST API Reference for AddListenerCertificates Operation</seealso>
-        public IAsyncResult BeginAddListenerCertificates(AddListenerCertificatesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginAddListenerCertificates(AddListenerCertificatesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AddListenerCertificatesRequestMarshaller();
             var unmarshaller = AddListenerCertificatesResponseUnmarshaller.Instance;
@@ -361,7 +361,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         /// <returns>Returns a  AddListenerCertificatesResult from ElasticLoadBalancingV2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/AddListenerCertificates">REST API Reference for AddListenerCertificates Operation</seealso>
-        public  AddListenerCertificatesResponse EndAddListenerCertificates(IAsyncResult asyncResult)
+        public virtual AddListenerCertificatesResponse EndAddListenerCertificates(IAsyncResult asyncResult)
         {
             return EndInvoke<AddListenerCertificatesResponse>(asyncResult);
         }
@@ -1245,7 +1245,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// The specified listener does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeListenerCertificates">REST API Reference for DescribeListenerCertificates Operation</seealso>
-        public DescribeListenerCertificatesResponse DescribeListenerCertificates(DescribeListenerCertificatesRequest request)
+        public virtual DescribeListenerCertificatesResponse DescribeListenerCertificates(DescribeListenerCertificatesRequest request)
         {
             var marshaller = new DescribeListenerCertificatesRequestMarshaller();
             var unmarshaller = DescribeListenerCertificatesResponseUnmarshaller.Instance;
@@ -1265,7 +1265,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeListenerCertificates
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeListenerCertificates">REST API Reference for DescribeListenerCertificates Operation</seealso>
-        public IAsyncResult BeginDescribeListenerCertificates(DescribeListenerCertificatesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginDescribeListenerCertificates(DescribeListenerCertificatesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeListenerCertificatesRequestMarshaller();
             var unmarshaller = DescribeListenerCertificatesResponseUnmarshaller.Instance;
@@ -1282,7 +1282,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         /// <returns>Returns a  DescribeListenerCertificatesResult from ElasticLoadBalancingV2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeListenerCertificates">REST API Reference for DescribeListenerCertificates Operation</seealso>
-        public  DescribeListenerCertificatesResponse EndDescribeListenerCertificates(IAsyncResult asyncResult)
+        public virtual DescribeListenerCertificatesResponse EndDescribeListenerCertificates(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeListenerCertificatesResponse>(asyncResult);
         }
@@ -2332,7 +2332,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// This operation is not allowed.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RemoveListenerCertificates">REST API Reference for RemoveListenerCertificates Operation</seealso>
-        public RemoveListenerCertificatesResponse RemoveListenerCertificates(RemoveListenerCertificatesRequest request)
+        public virtual RemoveListenerCertificatesResponse RemoveListenerCertificates(RemoveListenerCertificatesRequest request)
         {
             var marshaller = new RemoveListenerCertificatesRequestMarshaller();
             var unmarshaller = RemoveListenerCertificatesResponseUnmarshaller.Instance;
@@ -2352,7 +2352,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveListenerCertificates
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RemoveListenerCertificates">REST API Reference for RemoveListenerCertificates Operation</seealso>
-        public IAsyncResult BeginRemoveListenerCertificates(RemoveListenerCertificatesRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginRemoveListenerCertificates(RemoveListenerCertificatesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RemoveListenerCertificatesRequestMarshaller();
             var unmarshaller = RemoveListenerCertificatesResponseUnmarshaller.Instance;
@@ -2369,7 +2369,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         /// <returns>Returns a  RemoveListenerCertificatesResult from ElasticLoadBalancingV2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RemoveListenerCertificates">REST API Reference for RemoveListenerCertificates Operation</seealso>
-        public  RemoveListenerCertificatesResponse EndRemoveListenerCertificates(IAsyncResult asyncResult)
+        public virtual RemoveListenerCertificatesResponse EndRemoveListenerCertificates(IAsyncResult asyncResult)
         {
             return EndInvoke<RemoveListenerCertificatesResponse>(asyncResult);
         }

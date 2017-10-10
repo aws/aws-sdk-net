@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.169.0",
+    "ProductVersion" : "3.3.170.0",
     "CoreVersion"    : "3.3.18.0",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -151,7 +151,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.3.29.1",
+            "Version" : "3.3.30.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.18.0"
@@ -569,7 +569,7 @@
             "InPreview"               : false
         },
         "ElasticLoadBalancingV2"          : {
-            "Version" : "3.3.5.1",
+            "Version" : "3.3.6.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.18.0"
@@ -649,7 +649,7 @@
             "InPreview"               : false
         },
         "OpsWorksCM"                      : {
-            "Version" : "3.3.3.14",
+            "Version" : "3.3.4.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.18.0"
