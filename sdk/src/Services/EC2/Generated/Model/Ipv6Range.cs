@@ -39,7 +39,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property CidrIpv6. 
         /// <para>
         /// The IPv6 CIDR range. You can either specify a CIDR range or a source security group,
-        /// not both. To specify a single IPv6 address, use the /128 prefix.
+        /// not both. To specify a single IPv6 address, use the /128 prefix length.
         /// </para>
         /// </summary>
         public string CidrIpv6

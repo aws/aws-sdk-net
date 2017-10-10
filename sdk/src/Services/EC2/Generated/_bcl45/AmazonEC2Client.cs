@@ -1111,9 +1111,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding
-        /// a Hardware Virtual Private Gateway to Your VPC</a> in the <i>Amazon Virtual Private
-        /// Cloud User Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
+        /// Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachVpnGateway service method.</param>
@@ -1859,9 +1858,8 @@ namespace Amazon.EC2
         /// </para>
         ///  </note> 
         /// <para>
-        /// For more information about VPN customer gateways, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding
-        /// a Hardware Virtual Private Gateway to Your VPC</a> in the <i>Amazon Virtual Private
-        /// Cloud User Guide</i>.
+        /// For more information about VPN customer gateways, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
+        /// Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -3540,9 +3538,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about VPN connections, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding
-        /// a Hardware Virtual Private Gateway to Your VPC</a> in the <i>Amazon Virtual Private
-        /// Cloud User Guide</i>.
+        /// For more information about VPN connections, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
+        /// Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVpnConnectionRoute service method.</param>
@@ -3588,9 +3585,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about virtual private gateways, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding
-        /// a Hardware Virtual Private Gateway to Your VPC</a> in the <i>Amazon Virtual Private
-        /// Cloud User Guide</i>.
+        /// For more information about virtual private gateways, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
+        /// Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVpnGateway service method.</param>
@@ -5404,9 +5400,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about VPN customer gateways, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding
-        /// a Hardware Virtual Private Gateway to Your VPC</a> in the <i>Amazon Virtual Private
-        /// Cloud User Guide</i>.
+        /// For more information about VPN customer gateways, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
+        /// Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// 
@@ -5423,9 +5418,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about VPN customer gateways, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding
-        /// a Hardware Virtual Private Gateway to Your VPC</a> in the <i>Amazon Virtual Private
-        /// Cloud User Guide</i>.
+        /// For more information about VPN customer gateways, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
+        /// Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCustomerGateways service method.</param>
@@ -5446,9 +5440,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about VPN customer gateways, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding
-        /// a Hardware Virtual Private Gateway to Your VPC</a> in the <i>Amazon Virtual Private
-        /// Cloud User Guide</i>.
+        /// For more information about VPN customer gateways, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
+        /// Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -9730,9 +9723,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about VPN connections, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding
-        /// a Hardware Virtual Private Gateway to Your VPC</a> in the <i>Amazon Virtual Private
-        /// Cloud User Guide</i>.
+        /// For more information about VPN connections, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
+        /// Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// 
@@ -9749,9 +9741,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about VPN connections, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding
-        /// a Hardware Virtual Private Gateway to Your VPC</a> in the <i>Amazon Virtual Private
-        /// Cloud User Guide</i>.
+        /// For more information about VPN connections, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
+        /// Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVpnConnections service method.</param>
@@ -9772,9 +9763,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about VPN connections, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding
-        /// a Hardware Virtual Private Gateway to Your VPC</a> in the <i>Amazon Virtual Private
-        /// Cloud User Guide</i>.
+        /// For more information about VPN connections, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
+        /// Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -9816,9 +9806,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about virtual private gateways, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding
-        /// an IPsec Hardware VPN to Your VPC</a> in the <i>Amazon Virtual Private Cloud User
-        /// Guide</i>.
+        /// For more information about virtual private gateways, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
+        /// Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// 
@@ -9835,9 +9824,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about virtual private gateways, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding
-        /// an IPsec Hardware VPN to Your VPC</a> in the <i>Amazon Virtual Private Cloud User
-        /// Guide</i>.
+        /// For more information about virtual private gateways, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
+        /// Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVpnGateways service method.</param>
@@ -9858,9 +9846,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about virtual private gateways, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding
-        /// an IPsec Hardware VPN to Your VPC</a> in the <i>Amazon Virtual Private Cloud User
-        /// Guide</i>.
+        /// For more information about virtual private gateways, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
+        /// Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -11334,20 +11321,20 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Modifies the specified attribute of the specified AMI. You can specify only one attribute
-        /// at a time.
+        /// at a time. You can use the <code>Attribute</code> parameter to specify the attribute
+        /// or one of the following parameters: <code>Description</code>, <code>LaunchPermission</code>,
+        /// or <code>ProductCode</code>.
         /// 
-        ///  <note> 
+        ///  
         /// <para>
         /// AWS Marketplace product codes cannot be modified. Images with an AWS Marketplace product
         /// code cannot be made public.
         /// </para>
-        ///  </note> <note> 
+        ///  
         /// <para>
-        /// The SriovNetSupport enhanced networking attribute cannot be changed using this command.
-        /// Instead, enable SriovNetSupport on an instance and create an AMI from the instance.
-        /// This will result in an image with SriovNetSupport enabled.
+        /// To enable the SriovNetSupport enhanced networking attribute of an image, enable SriovNetSupport
+        /// on an instance and create an AMI from the instance.
         /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyImageAttribute service method.</param>
         /// 

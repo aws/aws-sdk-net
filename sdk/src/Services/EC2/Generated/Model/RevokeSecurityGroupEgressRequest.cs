@@ -74,8 +74,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property IpPermissions. 
         /// <para>
-        /// A set of IP permissions. You can't specify a destination security group and a CIDR
-        /// IP address range.
+        /// One or more sets of IP permissions. You can't specify a destination security group
+        /// and a CIDR IP address range in the same set of permissions.
         /// </para>
         /// </summary>
         public List<IpPermission> IpPermissions

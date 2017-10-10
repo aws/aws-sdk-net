@@ -54,6 +54,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("amazonSideAsn", targetDepth))
+                    {
+                        var unmarshaller = LongUnmarshaller.Instance;
+                        unmarshalledObject.AmazonSideAsn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("availabilityZone", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

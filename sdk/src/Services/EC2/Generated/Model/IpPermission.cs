@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes a security group rule.
+    /// Describes a set of permissions for a security group rule.
     /// </summary>
     public partial class IpPermission
     {

@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetAmazonSideAsn())
+                {
+                    request.Parameters.Add("AmazonSideAsn", StringUtils.FromLong(publicRequest.AmazonSideAsn));
+                }
                 if(publicRequest.IsSetAvailabilityZone())
                 {
                     request.Parameters.Add("AvailabilityZone", StringUtils.FromString(publicRequest.AvailabilityZone));

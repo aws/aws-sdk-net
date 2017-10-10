@@ -34,9 +34,8 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding
-    /// a Hardware Virtual Private Gateway to Your VPC</a> in the <i>Amazon Virtual Private
-    /// Cloud User Guide</i>.
+    /// For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
+    /// Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
     /// </para>
     /// </summary>
     public partial class AttachVpnGatewayRequest : AmazonEC2Request

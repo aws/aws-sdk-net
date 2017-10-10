@@ -32,12 +32,31 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class VpnGateway
     {
+        private long? _amazonSideAsn;
         private string _availabilityZone;
         private VpnState _state;
         private List<Tag> _tags = new List<Tag>();
         private GatewayType _type;
         private List<VpcAttachment> _vpcAttachments = new List<VpcAttachment>();
         private string _vpnGatewayId;
+
+        /// <summary>
+        /// Gets and sets the property AmazonSideAsn. 
+        /// <para>
+        /// The private Autonomous System Number (ASN) for the Amazon side of a BGP session.
+        /// </para>
+        /// </summary>
+        public long AmazonSideAsn
+        {
+            get { return this._amazonSideAsn.GetValueOrDefault(); }
+            set { this._amazonSideAsn = value; }
+        }
+
+        // Check to see if AmazonSideAsn property is set
+        internal bool IsSetAmazonSideAsn()
+        {
+            return this._amazonSideAsn.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 

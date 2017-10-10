@@ -35,13 +35,13 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// For more information about virtual private gateways, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding
-    /// a Hardware Virtual Private Gateway to Your VPC</a> in the <i>Amazon Virtual Private
-    /// Cloud User Guide</i>.
+    /// For more information about virtual private gateways, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
+    /// Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateVpnGatewayRequest : AmazonEC2Request
     {
+        private long? _amazonSideAsn;
         private string _availabilityZone;
         private GatewayType _type;
 
@@ -57,6 +57,30 @@ namespace Amazon.EC2.Model
         public CreateVpnGatewayRequest(GatewayType type)
         {
             _type = type;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AmazonSideAsn. 
+        /// <para>
+        /// A private Autonomous System Number (ASN) for the Amazon side of a BGP session. If
+        /// you're using a 16-bit ASN, it must be in the 64512 to 65534 range. If you're using
+        /// a 32-bit ASN, it must be in the 4200000000 to 4294967294 range.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: 64512
+        /// </para>
+        /// </summary>
+        public long AmazonSideAsn
+        {
+            get { return this._amazonSideAsn.GetValueOrDefault(); }
+            set { this._amazonSideAsn = value; }
+        }
+
+        // Check to see if AmazonSideAsn property is set
+        internal bool IsSetAmazonSideAsn()
+        {
+            return this._amazonSideAsn.HasValue; 
         }
 
         /// <summary>

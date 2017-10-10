@@ -33,9 +33,8 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// For more information about virtual private gateways, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding
-    /// an IPsec Hardware VPN to Your VPC</a> in the <i>Amazon Virtual Private Cloud User
-    /// Guide</i>.
+    /// For more information about virtual private gateways, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
+    /// Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
     /// </para>
     /// </summary>
     public partial class DescribeVpnGatewaysRequest : AmazonEC2Request
@@ -49,6 +48,11 @@ namespace Amazon.EC2.Model
         /// One or more filters.
         /// </para>
         ///  <ul> <li> 
+        /// <para>
+        ///  <code>amazon-side-asn</code> - The Autonomous System Number (ASN) for the Amazon
+        /// side of the gateway.
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <code>attachment.state</code> - The current state of the attachment between the gateway
         /// and the VPC (<code>attaching</code> | <code>attached</code> | <code>detaching</code>

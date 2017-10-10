@@ -30,20 +30,20 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the ModifyImageAttribute operation.
     /// Modifies the specified attribute of the specified AMI. You can specify only one attribute
-    /// at a time.
+    /// at a time. You can use the <code>Attribute</code> parameter to specify the attribute
+    /// or one of the following parameters: <code>Description</code>, <code>LaunchPermission</code>,
+    /// or <code>ProductCode</code>.
     /// 
-    ///  <note> 
+    ///  
     /// <para>
     /// AWS Marketplace product codes cannot be modified. Images with an AWS Marketplace product
     /// code cannot be made public.
     /// </para>
-    ///  </note> <note> 
+    ///  
     /// <para>
-    /// The SriovNetSupport enhanced networking attribute cannot be changed using this command.
-    /// Instead, enable SriovNetSupport on an instance and create an AMI from the instance.
-    /// This will result in an image with SriovNetSupport enabled.
+    /// To enable the SriovNetSupport enhanced networking attribute of an image, enable SriovNetSupport
+    /// on an instance and create an AMI from the instance.
     /// </para>
-    ///  </note>
     /// </summary>
     public partial class ModifyImageAttributeRequest : AmazonEC2Request
     {
@@ -66,7 +66,7 @@ namespace Amazon.EC2.Model
         /// Instantiates ModifyImageAttributeRequest with the parameterized properties
         /// </summary>
         /// <param name="imageId">The ID of the AMI.</param>
-        /// <param name="attribute">The name of the attribute to modify.</param>
+        /// <param name="attribute">The name of the attribute to modify. The valid values are <code>description</code>, <code>launchPermission</code>, and <code>productCodes</code>.</param>
         public ModifyImageAttributeRequest(string imageId, string attribute)
         {
             _imageId = imageId;
@@ -76,7 +76,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Attribute. 
         /// <para>
-        /// The name of the attribute to modify.
+        /// The name of the attribute to modify. The valid values are <code>description</code>,
+        /// <code>launchPermission</code>, and <code>productCodes</code>.
         /// </para>
         /// </summary>
         public string Attribute
@@ -94,7 +95,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A description for the AMI.
+        /// A new description for the AMI.
         /// </para>
         /// </summary>
         public string Description
@@ -130,7 +131,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property LaunchPermission. 
         /// <para>
-        /// A launch permission modification.
+        /// A new launch permission for the AMI.
         /// </para>
         /// </summary>
         public LaunchPermissionModifications LaunchPermission
@@ -148,7 +149,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OperationType. 
         /// <para>
-        /// The operation type.
+        /// The operation type. This parameter can be used only when the <code>Attribute</code>
+        /// parameter is <code>launchPermission</code>.
         /// </para>
         /// </summary>
         public OperationType OperationType
@@ -166,8 +168,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ProductCodes. 
         /// <para>
-        /// One or more product codes. After you add a product code to an AMI, it can't be removed.
-        /// This is only valid when modifying the <code>productCodes</code> attribute.
+        /// One or more DevPay product codes. After you add a product code to an AMI, it can't
+        /// be removed.
         /// </para>
         /// </summary>
         public List<string> ProductCodes
@@ -185,8 +187,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property UserGroups. 
         /// <para>
-        /// One or more user groups. This is only valid when modifying the <code>launchPermission</code>
-        /// attribute.
+        /// One or more user groups. This parameter can be used only when the <code>Attribute</code>
+        /// parameter is <code>launchPermission</code>.
         /// </para>
         /// </summary>
         public List<string> UserGroups
@@ -204,8 +206,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property UserIds. 
         /// <para>
-        /// One or more AWS account IDs. This is only valid when modifying the <code>launchPermission</code>
-        /// attribute.
+        /// One or more AWS account IDs. This parameter can be used only when the <code>Attribute</code>
+        /// parameter is <code>launchPermission</code>.
         /// </para>
         /// </summary>
         public List<string> UserIds
@@ -223,8 +225,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value of the attribute being modified. This is only valid when modifying the <code>description</code>
-        /// attribute.
+        /// The value of the attribute being modified. This parameter can be used only when the
+        /// <code>Attribute</code> parameter is <code>description</code> or <code>productCodes</code>.
         /// </para>
         /// </summary>
         public string Value
