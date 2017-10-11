@@ -28,39 +28,37 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECR.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteRepository operation.
-    /// Deletes an existing image repository. If a repository contains images, you must use
-    /// the <code>force</code> option to delete it.
+    /// This is the response object from the StartLifecyclePolicyPreview operation.
     /// </summary>
-    public partial class DeleteRepositoryRequest : AmazonECRRequest
+    public partial class StartLifecyclePolicyPreviewResponse : AmazonWebServiceResponse
     {
-        private bool? _force;
+        private string _lifecyclePolicyText;
         private string _registryId;
         private string _repositoryName;
+        private LifecyclePolicyPreviewStatus _status;
 
         /// <summary>
-        /// Gets and sets the property Force. 
+        /// Gets and sets the property LifecyclePolicyText. 
         /// <para>
-        ///  If a repository contains images, forces the deletion.
+        /// The JSON repository policy text.
         /// </para>
         /// </summary>
-        public bool Force
+        public string LifecyclePolicyText
         {
-            get { return this._force.GetValueOrDefault(); }
-            set { this._force = value; }
+            get { return this._lifecyclePolicyText; }
+            set { this._lifecyclePolicyText = value; }
         }
 
-        // Check to see if Force property is set
-        internal bool IsSetForce()
+        // Check to see if LifecyclePolicyText property is set
+        internal bool IsSetLifecyclePolicyText()
         {
-            return this._force.HasValue; 
+            return this._lifecyclePolicyText != null;
         }
 
         /// <summary>
         /// Gets and sets the property RegistryId. 
         /// <para>
-        /// The AWS account ID associated with the registry that contains the repository to delete.
-        /// If you do not specify a registry, the default registry is assumed.
+        /// The registry ID associated with the request.
         /// </para>
         /// </summary>
         public string RegistryId
@@ -78,7 +76,7 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property RepositoryName. 
         /// <para>
-        /// The name of the repository to delete.
+        /// The repository name associated with the request.
         /// </para>
         /// </summary>
         public string RepositoryName
@@ -91,6 +89,24 @@ namespace Amazon.ECR.Model
         internal bool IsSetRepositoryName()
         {
             return this._repositoryName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the lifecycle policy preview request.
+        /// </para>
+        /// </summary>
+        public LifecyclePolicyPreviewStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
     }

@@ -29,12 +29,12 @@ namespace Amazon.ECR
     /// <summary>
     /// Interface for accessing ECR
     ///
-    /// Amazon EC2 Container Registry (Amazon ECR) is a managed AWS Docker registry service.
-    /// Customers can use the familiar Docker CLI to push, pull, and manage images. Amazon
-    /// ECR provides a secure, scalable, and reliable registry. Amazon ECR supports private
-    /// Docker repositories with resource-based permissions using AWS IAM so that specific
-    /// users or Amazon EC2 instances can access repositories and images. Developers can use
-    /// the Docker CLI to author and manage images.
+    /// Amazon EC2 Container Registry (Amazon ECR) is a managed Docker registry service. Customers
+    /// can use the familiar Docker CLI to push, pull, and manage images. Amazon ECR provides
+    /// a secure, scalable, and reliable registry. Amazon ECR supports private Docker repositories
+    /// with resource-based permissions using IAM so that specific users or Amazon EC2 instances
+    /// can access repositories and images. Developers can use the Docker CLI to author and
+    /// manage images.
     /// </summary>
     public partial interface IAmazonECR : IAmazonService, IDisposable
     {
@@ -215,9 +215,9 @@ namespace Amazon.ECR
 
 
         /// <summary>
-        /// Inform Amazon ECR that the image layer upload for a specified registry, repository
-        /// name, and upload ID, has completed. You can optionally provide a <code>sha256</code>
-        /// digest of the image layer for data validation purposes.
+        /// Informs Amazon ECR that the image layer upload has completed for a specified registry,
+        /// repository name, and upload ID. You can optionally provide a <code>sha256</code> digest
+        /// of the image layer for data validation purposes.
         /// 
         ///  <note> 
         /// <para>
@@ -338,6 +338,59 @@ namespace Amazon.ECR
         /// <returns>Returns a  CreateRepositoryResult from ECR.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CreateRepository">REST API Reference for CreateRepository Operation</seealso>
         CreateRepositoryResponse EndCreateRepository(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteLifecyclePolicy
+
+
+        /// <summary>
+        /// Deletes the specified lifecycle policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLifecyclePolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteLifecyclePolicy service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.LifecyclePolicyNotFoundException">
+        /// The lifecycle policy could not be found, and no policy is set to the repository.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.RepositoryNotFoundException">
+        /// The specified repository could not be found. Check the spelling of the specified repository
+        /// and ensure that you are performing operations on the correct registry.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteLifecyclePolicy">REST API Reference for DeleteLifecyclePolicy Operation</seealso>
+        DeleteLifecyclePolicyResponse DeleteLifecyclePolicy(DeleteLifecyclePolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteLifecyclePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLifecyclePolicy operation on AmazonECRClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteLifecyclePolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteLifecyclePolicy">REST API Reference for DeleteLifecyclePolicy Operation</seealso>
+        IAsyncResult BeginDeleteLifecyclePolicy(DeleteLifecyclePolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteLifecyclePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteLifecyclePolicy.</param>
+        /// 
+        /// <returns>Returns a  DeleteLifecyclePolicyResult from ECR.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteLifecyclePolicy">REST API Reference for DeleteLifecyclePolicy Operation</seealso>
+        DeleteLifecyclePolicyResponse EndDeleteLifecyclePolicy(IAsyncResult asyncResult);
 
         #endregion
         
@@ -686,6 +739,112 @@ namespace Amazon.ECR
 
         #endregion
         
+        #region  GetLifecyclePolicy
+
+
+        /// <summary>
+        /// Retrieves the specified lifecycle policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLifecyclePolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetLifecyclePolicy service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.LifecyclePolicyNotFoundException">
+        /// The lifecycle policy could not be found, and no policy is set to the repository.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.RepositoryNotFoundException">
+        /// The specified repository could not be found. Check the spelling of the specified repository
+        /// and ensure that you are performing operations on the correct registry.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetLifecyclePolicy">REST API Reference for GetLifecyclePolicy Operation</seealso>
+        GetLifecyclePolicyResponse GetLifecyclePolicy(GetLifecyclePolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetLifecyclePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetLifecyclePolicy operation on AmazonECRClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetLifecyclePolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetLifecyclePolicy">REST API Reference for GetLifecyclePolicy Operation</seealso>
+        IAsyncResult BeginGetLifecyclePolicy(GetLifecyclePolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetLifecyclePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetLifecyclePolicy.</param>
+        /// 
+        /// <returns>Returns a  GetLifecyclePolicyResult from ECR.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetLifecyclePolicy">REST API Reference for GetLifecyclePolicy Operation</seealso>
+        GetLifecyclePolicyResponse EndGetLifecyclePolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetLifecyclePolicyPreview
+
+
+        /// <summary>
+        /// Retrieves the results of the specified lifecycle policy preview request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLifecyclePolicyPreview service method.</param>
+        /// 
+        /// <returns>The response from the GetLifecyclePolicyPreview service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.LifecyclePolicyPreviewNotFoundException">
+        /// There is no dry run for this repository.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.RepositoryNotFoundException">
+        /// The specified repository could not be found. Check the spelling of the specified repository
+        /// and ensure that you are performing operations on the correct registry.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetLifecyclePolicyPreview">REST API Reference for GetLifecyclePolicyPreview Operation</seealso>
+        GetLifecyclePolicyPreviewResponse GetLifecyclePolicyPreview(GetLifecyclePolicyPreviewRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetLifecyclePolicyPreview operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetLifecyclePolicyPreview operation on AmazonECRClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetLifecyclePolicyPreview
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetLifecyclePolicyPreview">REST API Reference for GetLifecyclePolicyPreview Operation</seealso>
+        IAsyncResult BeginGetLifecyclePolicyPreview(GetLifecyclePolicyPreviewRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetLifecyclePolicyPreview operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetLifecyclePolicyPreview.</param>
+        /// 
+        /// <returns>Returns a  GetLifecyclePolicyPreviewResult from ECR.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetLifecyclePolicyPreview">REST API Reference for GetLifecyclePolicyPreview Operation</seealso>
+        GetLifecyclePolicyPreviewResponse EndGetLifecyclePolicyPreview(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetRepositoryPolicy
 
 
@@ -875,8 +1034,8 @@ namespace Amazon.ECR
         /// 
         /// <returns>The response from the PutImage service method, as returned by ECR.</returns>
         /// <exception cref="Amazon.ECR.Model.ImageAlreadyExistsException">
-        /// The specified image has already been pushed, and there are no changes to the manifest
-        /// or image tag since the last push.
+        /// The specified image has already been pushed, and there were no changes to the manifest
+        /// or image tag after the last push.
         /// </exception>
         /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
         /// The specified parameter is invalid. Review the available parameters for the API request.
@@ -928,6 +1087,56 @@ namespace Amazon.ECR
 
         #endregion
         
+        #region  PutLifecyclePolicy
+
+
+        /// <summary>
+        /// Creates or updates a lifecycle policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutLifecyclePolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutLifecyclePolicy service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.RepositoryNotFoundException">
+        /// The specified repository could not be found. Check the spelling of the specified repository
+        /// and ensure that you are performing operations on the correct registry.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutLifecyclePolicy">REST API Reference for PutLifecyclePolicy Operation</seealso>
+        PutLifecyclePolicyResponse PutLifecyclePolicy(PutLifecyclePolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutLifecyclePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutLifecyclePolicy operation on AmazonECRClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutLifecyclePolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutLifecyclePolicy">REST API Reference for PutLifecyclePolicy Operation</seealso>
+        IAsyncResult BeginPutLifecyclePolicy(PutLifecyclePolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutLifecyclePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutLifecyclePolicy.</param>
+        /// 
+        /// <returns>Returns a  PutLifecyclePolicyResult from ECR.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutLifecyclePolicy">REST API Reference for PutLifecyclePolicy Operation</seealso>
+        PutLifecyclePolicyResponse EndPutLifecyclePolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  SetRepositoryPolicy
 
 
@@ -975,6 +1184,64 @@ namespace Amazon.ECR
         /// <returns>Returns a  SetRepositoryPolicyResult from ECR.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/SetRepositoryPolicy">REST API Reference for SetRepositoryPolicy Operation</seealso>
         SetRepositoryPolicyResponse EndSetRepositoryPolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartLifecyclePolicyPreview
+
+
+        /// <summary>
+        /// Starts a preview of the specified lifecycle policy. This allows you to see the results
+        /// before creating the lifecycle policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartLifecyclePolicyPreview service method.</param>
+        /// 
+        /// <returns>The response from the StartLifecyclePolicyPreview service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.LifecyclePolicyNotFoundException">
+        /// The lifecycle policy could not be found, and no policy is set to the repository.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.LifecyclePolicyPreviewInProgressException">
+        /// The previous lifecycle policy preview request has not completed. Please try again
+        /// later.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.RepositoryNotFoundException">
+        /// The specified repository could not be found. Check the spelling of the specified repository
+        /// and ensure that you are performing operations on the correct registry.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/StartLifecyclePolicyPreview">REST API Reference for StartLifecyclePolicyPreview Operation</seealso>
+        StartLifecyclePolicyPreviewResponse StartLifecyclePolicyPreview(StartLifecyclePolicyPreviewRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartLifecyclePolicyPreview operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartLifecyclePolicyPreview operation on AmazonECRClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartLifecyclePolicyPreview
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/StartLifecyclePolicyPreview">REST API Reference for StartLifecyclePolicyPreview Operation</seealso>
+        IAsyncResult BeginStartLifecyclePolicyPreview(StartLifecyclePolicyPreviewRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartLifecyclePolicyPreview operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartLifecyclePolicyPreview.</param>
+        /// 
+        /// <returns>Returns a  StartLifecyclePolicyPreviewResult from ECR.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/StartLifecyclePolicyPreview">REST API Reference for StartLifecyclePolicyPreview Operation</seealso>
+        StartLifecyclePolicyPreviewResponse EndStartLifecyclePolicyPreview(IAsyncResult asyncResult);
 
         #endregion
         

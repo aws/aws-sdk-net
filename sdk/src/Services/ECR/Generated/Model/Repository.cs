@@ -41,7 +41,7 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The date and time, in JavaScript date/time format, when the repository was created.
+        /// The date and time, in JavaScript date format, when the repository was created.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -78,9 +78,9 @@ namespace Amazon.ECR.Model
         /// Gets and sets the property RepositoryArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) that identifies the repository. The ARN contains the
-        /// <code>arn:aws:ecr</code> namespace, followed by the region of the repository, the
-        /// AWS account ID of the repository owner, the repository namespace, and then the repository
-        /// name. For example, <code>arn:aws:ecr:region:012345678910:repository/test</code>.
+        /// <code>arn:aws:ecr</code> namespace, followed by the region of the repository, AWS
+        /// account ID of the repository owner, repository namespace, and repository name. For
+        /// example, <code>arn:aws:ecr:region:012345678910:repository/test</code>.
         /// </para>
         /// </summary>
         public string RepositoryArn
@@ -116,8 +116,8 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property RepositoryUri. 
         /// <para>
-        /// The URI for the repository. You can use this URI for Docker <code>push</code> and
-        /// <code>pull</code> operations.
+        /// The URI for the repository. You can use this URI for Docker <code>push</code> or <code>pull</code>
+        /// operations.
         /// </para>
         /// </summary>
         public string RepositoryUri

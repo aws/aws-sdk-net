@@ -36,12 +36,12 @@ namespace Amazon.ECR
     /// <summary>
     /// Implementation for accessing ECR
     ///
-    /// Amazon EC2 Container Registry (Amazon ECR) is a managed AWS Docker registry service.
-    /// Customers can use the familiar Docker CLI to push, pull, and manage images. Amazon
-    /// ECR provides a secure, scalable, and reliable registry. Amazon ECR supports private
-    /// Docker repositories with resource-based permissions using AWS IAM so that specific
-    /// users or Amazon EC2 instances can access repositories and images. Developers can use
-    /// the Docker CLI to author and manage images.
+    /// Amazon EC2 Container Registry (Amazon ECR) is a managed Docker registry service. Customers
+    /// can use the familiar Docker CLI to push, pull, and manage images. Amazon ECR provides
+    /// a secure, scalable, and reliable registry. Amazon ECR supports private Docker repositories
+    /// with resource-based permissions using IAM so that specific users or Amazon EC2 instances
+    /// can access repositories and images. Developers can use the Docker CLI to author and
+    /// manage images.
     /// </summary>
     public partial class AmazonECRClient : AmazonServiceClient, IAmazonECR
     {
@@ -395,6 +395,38 @@ namespace Amazon.ECR
 
         #endregion
         
+        #region  DeleteLifecyclePolicy
+
+        internal virtual DeleteLifecyclePolicyResponse DeleteLifecyclePolicy(DeleteLifecyclePolicyRequest request)
+        {
+            var marshaller = new DeleteLifecyclePolicyRequestMarshaller();
+            var unmarshaller = DeleteLifecyclePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLifecyclePolicyRequest,DeleteLifecyclePolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteLifecyclePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLifecyclePolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteLifecyclePolicy">REST API Reference for DeleteLifecyclePolicy Operation</seealso>
+        public virtual Task<DeleteLifecyclePolicyResponse> DeleteLifecyclePolicyAsync(DeleteLifecyclePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteLifecyclePolicyRequestMarshaller();
+            var unmarshaller = DeleteLifecyclePolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteLifecyclePolicyRequest,DeleteLifecyclePolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteRepository
 
         internal virtual DeleteRepositoryResponse DeleteRepository(DeleteRepositoryRequest request)
@@ -587,6 +619,70 @@ namespace Amazon.ECR
 
         #endregion
         
+        #region  GetLifecyclePolicy
+
+        internal virtual GetLifecyclePolicyResponse GetLifecyclePolicy(GetLifecyclePolicyRequest request)
+        {
+            var marshaller = new GetLifecyclePolicyRequestMarshaller();
+            var unmarshaller = GetLifecyclePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetLifecyclePolicyRequest,GetLifecyclePolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetLifecyclePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetLifecyclePolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetLifecyclePolicy">REST API Reference for GetLifecyclePolicy Operation</seealso>
+        public virtual Task<GetLifecyclePolicyResponse> GetLifecyclePolicyAsync(GetLifecyclePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetLifecyclePolicyRequestMarshaller();
+            var unmarshaller = GetLifecyclePolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetLifecyclePolicyRequest,GetLifecyclePolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetLifecyclePolicyPreview
+
+        internal virtual GetLifecyclePolicyPreviewResponse GetLifecyclePolicyPreview(GetLifecyclePolicyPreviewRequest request)
+        {
+            var marshaller = new GetLifecyclePolicyPreviewRequestMarshaller();
+            var unmarshaller = GetLifecyclePolicyPreviewResponseUnmarshaller.Instance;
+
+            return Invoke<GetLifecyclePolicyPreviewRequest,GetLifecyclePolicyPreviewResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetLifecyclePolicyPreview operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetLifecyclePolicyPreview operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetLifecyclePolicyPreview">REST API Reference for GetLifecyclePolicyPreview Operation</seealso>
+        public virtual Task<GetLifecyclePolicyPreviewResponse> GetLifecyclePolicyPreviewAsync(GetLifecyclePolicyPreviewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetLifecyclePolicyPreviewRequestMarshaller();
+            var unmarshaller = GetLifecyclePolicyPreviewResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetLifecyclePolicyPreviewRequest,GetLifecyclePolicyPreviewResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetRepositoryPolicy
 
         internal virtual GetRepositoryPolicyResponse GetRepositoryPolicy(GetRepositoryPolicyRequest request)
@@ -715,6 +811,38 @@ namespace Amazon.ECR
 
         #endregion
         
+        #region  PutLifecyclePolicy
+
+        internal virtual PutLifecyclePolicyResponse PutLifecyclePolicy(PutLifecyclePolicyRequest request)
+        {
+            var marshaller = new PutLifecyclePolicyRequestMarshaller();
+            var unmarshaller = PutLifecyclePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutLifecyclePolicyRequest,PutLifecyclePolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutLifecyclePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutLifecyclePolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutLifecyclePolicy">REST API Reference for PutLifecyclePolicy Operation</seealso>
+        public virtual Task<PutLifecyclePolicyResponse> PutLifecyclePolicyAsync(PutLifecyclePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new PutLifecyclePolicyRequestMarshaller();
+            var unmarshaller = PutLifecyclePolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutLifecyclePolicyRequest,PutLifecyclePolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  SetRepositoryPolicy
 
         internal virtual SetRepositoryPolicyResponse SetRepositoryPolicy(SetRepositoryPolicyRequest request)
@@ -742,6 +870,38 @@ namespace Amazon.ECR
             var unmarshaller = SetRepositoryPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<SetRepositoryPolicyRequest,SetRepositoryPolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartLifecyclePolicyPreview
+
+        internal virtual StartLifecyclePolicyPreviewResponse StartLifecyclePolicyPreview(StartLifecyclePolicyPreviewRequest request)
+        {
+            var marshaller = new StartLifecyclePolicyPreviewRequestMarshaller();
+            var unmarshaller = StartLifecyclePolicyPreviewResponseUnmarshaller.Instance;
+
+            return Invoke<StartLifecyclePolicyPreviewRequest,StartLifecyclePolicyPreviewResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartLifecyclePolicyPreview operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartLifecyclePolicyPreview operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/StartLifecyclePolicyPreview">REST API Reference for StartLifecyclePolicyPreview Operation</seealso>
+        public virtual Task<StartLifecyclePolicyPreviewResponse> StartLifecyclePolicyPreviewAsync(StartLifecyclePolicyPreviewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new StartLifecyclePolicyPreviewRequestMarshaller();
+            var unmarshaller = StartLifecyclePolicyPreviewResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartLifecyclePolicyPreviewRequest,StartLifecyclePolicyPreviewResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

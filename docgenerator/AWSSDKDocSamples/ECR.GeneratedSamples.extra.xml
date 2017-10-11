@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECR.IAmazonECR.BatchDeleteImage(Amazon.ECR.Model.BatchDeleteImageRequest)" />
+            <member name="M:Amazon.ECR.AmazonECRClient.BatchDeleteImage(Amazon.ECR.Model.BatchDeleteImageRequest)" />
+            <member name="T:Amazon.ECR.Model.BatchDeleteImageRequest" />
+            <member name="T:Amazon.ECR.Model.BatchDeleteImageResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes images with the tags precise and trusty in a repository called ubuntu in the default registry for an account.
+                </para>
+                <code
+                    title="To delete multiple images"
+                    source=".\AWSSDKDocSamples\ECR\ECR.GeneratedSamples.cs"
+                    region="batchdeleteimages-example-1470860541707" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECR.IAmazonECR.BatchGetImage(Amazon.ECR.Model.BatchGetImageRequest)" />
+            <member name="M:Amazon.ECR.AmazonECRClient.BatchGetImage(Amazon.ECR.Model.BatchGetImageRequest)" />
+            <member name="T:Amazon.ECR.Model.BatchGetImageRequest" />
+            <member name="T:Amazon.ECR.Model.BatchGetImageResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example obtains information for an image with a specified image digest ID from the repository named ubuntu in the current account.
+                </para>
+                <code
+                    title="To obtain multiple images in a single request"
+                    source=".\AWSSDKDocSamples\ECR\ECR.GeneratedSamples.cs"
+                    region="batchgetimage-example-1470862771437" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECR.IAmazonECR.CreateRepository(Amazon.ECR.Model.CreateRepositoryRequest)" />
+            <member name="M:Amazon.ECR.AmazonECRClient.CreateRepository(Amazon.ECR.Model.CreateRepositoryRequest)" />
+            <member name="T:Amazon.ECR.Model.CreateRepositoryRequest" />
+            <member name="T:Amazon.ECR.Model.CreateRepositoryResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a repository called nginx-web-app inside the project-a namespace in the default registry for an account.
+                </para>
+                <code
+                    title="To create a new repository"
+                    source=".\AWSSDKDocSamples\ECR\ECR.GeneratedSamples.cs"
+                    region="createrepository-example-1470863688724" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECR.IAmazonECR.DeleteRepository(Amazon.ECR.Model.DeleteRepositoryRequest)" />
+            <member name="M:Amazon.ECR.AmazonECRClient.DeleteRepository(Amazon.ECR.Model.DeleteRepositoryRequest)" />
+            <member name="T:Amazon.ECR.Model.DeleteRepositoryRequest" />
+            <member name="T:Amazon.ECR.Model.DeleteRepositoryResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example force deletes a repository named ubuntu in the default registry for an account. The force parameter is required if the repository contains images.
+                </para>
+                <code
+                    title="To force delete a repository"
+                    source=".\AWSSDKDocSamples\ECR\ECR.GeneratedSamples.cs"
+                    region="deleterepository-example-1470863805703" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECR.IAmazonECR.DeleteRepositoryPolicy(Amazon.ECR.Model.DeleteRepositoryPolicyRequest)" />
+            <member name="M:Amazon.ECR.AmazonECRClient.DeleteRepositoryPolicy(Amazon.ECR.Model.DeleteRepositoryPolicyRequest)" />
+            <member name="T:Amazon.ECR.Model.DeleteRepositoryPolicyRequest" />
+            <member name="T:Amazon.ECR.Model.DeleteRepositoryPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes the policy associated with the repository named ubuntu in the current account.
+                </para>
+                <code
+                    title="To delete the policy associated with a repository"
+                    source=".\AWSSDKDocSamples\ECR\ECR.GeneratedSamples.cs"
+                    region="deleterepositorypolicy-example-1470866943748" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECR.IAmazonECR.DescribeRepositories(Amazon.ECR.Model.DescribeRepositoriesRequest)" />
+            <member name="M:Amazon.ECR.AmazonECRClient.DescribeRepositories(Amazon.ECR.Model.DescribeRepositoriesRequest)" />
+            <member name="T:Amazon.ECR.Model.DescribeRepositoriesRequest" />
+            <member name="T:Amazon.ECR.Model.DescribeRepositoriesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example obtains a list and description of all repositories in the default registry to which the current user has access.
+                </para>
+                <code
+                    title="To describe all repositories in the current account"
+                    source=".\AWSSDKDocSamples\ECR\ECR.GeneratedSamples.cs"
+                    region="describe-repositories-1470856017467" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECR.IAmazonECR.GetAuthorizationToken(Amazon.ECR.Model.GetAuthorizationTokenRequest)" />
+            <member name="M:Amazon.ECR.AmazonECRClient.GetAuthorizationToken(Amazon.ECR.Model.GetAuthorizationTokenRequest)" />
+            <member name="T:Amazon.ECR.Model.GetAuthorizationTokenRequest" />
+            <member name="T:Amazon.ECR.Model.GetAuthorizationTokenResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example gets an authorization token for your default registry.
+                </para>
+                <code
+                    title="To obtain an authorization token"
+                    source=".\AWSSDKDocSamples\ECR\ECR.GeneratedSamples.cs"
+                    region="getauthorizationtoken-example-1470867047084" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECR.IAmazonECR.GetRepositoryPolicy(Amazon.ECR.Model.GetRepositoryPolicyRequest)" />
+            <member name="M:Amazon.ECR.AmazonECRClient.GetRepositoryPolicy(Amazon.ECR.Model.GetRepositoryPolicyRequest)" />
+            <member name="T:Amazon.ECR.Model.GetRepositoryPolicyRequest" />
+            <member name="T:Amazon.ECR.Model.GetRepositoryPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example obtains the repository policy for the repository named ubuntu.
+                </para>
+                <code
+                    title="To get the current policy for a repository"
+                    source=".\AWSSDKDocSamples\ECR\ECR.GeneratedSamples.cs"
+                    region="getrepositorypolicy-example-1470867669211" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECR.IAmazonECR.ListImages(Amazon.ECR.Model.ListImagesRequest)" />
+            <member name="M:Amazon.ECR.AmazonECRClient.ListImages(Amazon.ECR.Model.ListImagesRequest)" />
+            <member name="T:Amazon.ECR.Model.ListImagesRequest" />
+            <member name="T:Amazon.ECR.Model.ListImagesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example lists all of the images in the repository named ubuntu in the default registry in the current account. 
+                </para>
+                <code
+                    title="To list all images in a repository"
+                    source=".\AWSSDKDocSamples\ECR\ECR.GeneratedSamples.cs"
+                    region="listimages-example-1470868161594" />
+            </example>
+        </value>
+    </doc>
+</docs>

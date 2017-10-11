@@ -28,39 +28,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECR.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteRepository operation.
-    /// Deletes an existing image repository. If a repository contains images, you must use
-    /// the <code>force</code> option to delete it.
+    /// Container for the parameters to the DeleteLifecyclePolicy operation.
+    /// Deletes the specified lifecycle policy.
     /// </summary>
-    public partial class DeleteRepositoryRequest : AmazonECRRequest
+    public partial class DeleteLifecyclePolicyRequest : AmazonECRRequest
     {
-        private bool? _force;
         private string _registryId;
         private string _repositoryName;
 
         /// <summary>
-        /// Gets and sets the property Force. 
-        /// <para>
-        ///  If a repository contains images, forces the deletion.
-        /// </para>
-        /// </summary>
-        public bool Force
-        {
-            get { return this._force.GetValueOrDefault(); }
-            set { this._force = value; }
-        }
-
-        // Check to see if Force property is set
-        internal bool IsSetForce()
-        {
-            return this._force.HasValue; 
-        }
-
-        /// <summary>
         /// Gets and sets the property RegistryId. 
         /// <para>
-        /// The AWS account ID associated with the registry that contains the repository to delete.
-        /// If you do not specify a registry, the default registry is assumed.
+        /// The AWS account ID associated with the registry that contains the repository. If you
+        /// do not specify a registry, the default registry is assumed.
         /// </para>
         /// </summary>
         public string RegistryId
@@ -78,7 +58,8 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property RepositoryName. 
         /// <para>
-        /// The name of the repository to delete.
+        /// The name of the repository that is associated with the repository policy to&#8232;
+        /// delete.
         /// </para>
         /// </summary>
         public string RepositoryName

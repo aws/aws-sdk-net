@@ -25,6 +25,52 @@ namespace Amazon.ECR
 {
 
     /// <summary>
+    /// Constants used for properties of type ImageActionType.
+    /// </summary>
+    public class ImageActionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EXPIRE for ImageActionType
+        /// </summary>
+        public static readonly ImageActionType EXPIRE = new ImageActionType("EXPIRE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImageActionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImageActionType FindValue(string value)
+        {
+            return FindValue<ImageActionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImageActionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ImageFailureCode.
     /// </summary>
     public class ImageFailureCode : ConstantClass
@@ -180,6 +226,64 @@ namespace Amazon.ECR
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator LayerFailureCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LifecyclePolicyPreviewStatus.
+    /// </summary>
+    public class LifecyclePolicyPreviewStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETE for LifecyclePolicyPreviewStatus
+        /// </summary>
+        public static readonly LifecyclePolicyPreviewStatus COMPLETE = new LifecyclePolicyPreviewStatus("COMPLETE");
+        /// <summary>
+        /// Constant EXPIRED for LifecyclePolicyPreviewStatus
+        /// </summary>
+        public static readonly LifecyclePolicyPreviewStatus EXPIRED = new LifecyclePolicyPreviewStatus("EXPIRED");
+        /// <summary>
+        /// Constant FAILED for LifecyclePolicyPreviewStatus
+        /// </summary>
+        public static readonly LifecyclePolicyPreviewStatus FAILED = new LifecyclePolicyPreviewStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for LifecyclePolicyPreviewStatus
+        /// </summary>
+        public static readonly LifecyclePolicyPreviewStatus IN_PROGRESS = new LifecyclePolicyPreviewStatus("IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LifecyclePolicyPreviewStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LifecyclePolicyPreviewStatus FindValue(string value)
+        {
+            return FindValue<LifecyclePolicyPreviewStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LifecyclePolicyPreviewStatus(string value)
         {
             return FindValue(value);
         }

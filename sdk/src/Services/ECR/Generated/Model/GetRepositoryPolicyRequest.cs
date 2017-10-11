@@ -58,7 +58,7 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property RepositoryName. 
         /// <para>
-        /// The name of the repository whose policy you want to retrieve.
+        /// The name of the repository with the policy to retrieve.
         /// </para>
         /// </summary>
         public string RepositoryName

@@ -28,21 +28,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECR.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListImages operation.
-    /// Lists all the image IDs for a given repository.
-    /// 
-    ///  
-    /// <para>
-    /// You can filter images based on whether or not they are tagged by setting the <code>tagStatus</code>
-    /// parameter to <code>TAGGED</code> or <code>UNTAGGED</code>. For example, you can filter
-    /// your results to return only <code>UNTAGGED</code> images and then pipe that result
-    /// to a <a>BatchDeleteImage</a> operation to delete them. Or, you can filter your results
-    /// to return only <code>TAGGED</code> images to list all of the tags in your repository.
-    /// </para>
+    /// Container for the parameters to the GetLifecyclePolicyPreview operation.
+    /// Retrieves the results of the specified lifecycle policy preview request.
     /// </summary>
-    public partial class ListImagesRequest : AmazonECRRequest
+    public partial class GetLifecyclePolicyPreviewRequest : AmazonECRRequest
     {
-        private ListImagesFilter _filter;
+        private LifecyclePolicyPreviewFilter _filter;
+        private List<ImageIdentifier> _imageIds = new List<ImageIdentifier>();
         private int? _maxResults;
         private string _nextToken;
         private string _registryId;
@@ -51,10 +43,11 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property Filter. 
         /// <para>
-        /// The filter key and value with which to filter your <code>ListImages</code> results.
+        /// An optional parameter that filters results based on image tag status and all tags,
+        /// if tagged.
         /// </para>
         /// </summary>
-        public ListImagesFilter Filter
+        public LifecyclePolicyPreviewFilter Filter
         {
             get { return this._filter; }
             set { this._filter = value; }
@@ -67,15 +60,34 @@ namespace Amazon.ECR.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ImageIds. 
+        /// <para>
+        /// The list of imageIDs to be included.
+        /// </para>
+        /// </summary>
+        public List<ImageIdentifier> ImageIds
+        {
+            get { return this._imageIds; }
+            set { this._imageIds = value; }
+        }
+
+        // Check to see if ImageIds property is set
+        internal bool IsSetImageIds()
+        {
+            return this._imageIds != null && this._imageIds.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of image results returned by <code>ListImages</code> in paginated
-        /// output. When this parameter is used, <code>ListImages</code> only returns <code>maxResults</code>
-        /// results in a single page along with a <code>nextToken</code> response element. The
-        /// remaining results of the initial request can be seen by sending another <code>ListImages</code>
-        /// request with the returned <code>nextToken</code> value. This value can be between
-        /// 1 and 100. If this parameter is not used, then <code>ListImages</code> returns up
-        /// to 100 results and a <code>nextToken</code> value, if applicable.
+        /// The maximum number of repository results returned by <code>GetLifecyclePolicyPreviewRequest</code>
+        /// in&#8232; paginated output. When this parameter is used, <code>GetLifecyclePolicyPreviewRequest</code>
+        /// only returns&#8232; <code>maxResults</code> results in a single page along with a
+        /// <code>nextToken</code>&#8232; response element. The remaining results of the initial
+        /// request can be seen by sending&#8232; another <code>GetLifecyclePolicyPreviewRequest</code>
+        /// request with the returned <code>nextToken</code>&#8232; value. This value can be between
+        /// 1 and 100. If this&#8232; parameter is not used, then <code>GetLifecyclePolicyPreviewRequest</code>
+        /// returns up to&#8232; 100 results and a <code>nextToken</code> value, if&#8232; applicable.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -93,18 +105,12 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>nextToken</code> value returned from a previous paginated <code>ListImages</code>
-        /// request where <code>maxResults</code> was used and the results exceeded the value
-        /// of that parameter. Pagination continues from the end of the previous results that
-        /// returned the <code>nextToken</code> value. This value is <code>null</code> when there
-        /// are no more results to return.
+        /// The <code>nextToken</code> value returned from a previous paginated&#8232; <code>GetLifecyclePolicyPreviewRequest</code>
+        /// request where <code>maxResults</code> was used and the&#8232; results exceeded the
+        /// value of that parameter. Pagination continues from the end of the&#8232; previous
+        /// results that returned the <code>nextToken</code> value. This value is&#8232; <code>null</code>
+        /// when there are no more results to return.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// This token should be treated as an opaque identifier that is only used to retrieve
-        /// the next items in a list and not for other programmatic purposes.
-        /// </para>
-        ///  </note>
         /// </summary>
         public string NextToken
         {
@@ -121,8 +127,8 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property RegistryId. 
         /// <para>
-        /// The AWS account ID associated with the registry that contains the repository in which
-        /// to list images. If you do not specify a registry, the default registry is assumed.
+        /// The AWS account ID associated with the registry that contains the repository. If you
+        /// do not specify a registry, the default registry is assumed.
         /// </para>
         /// </summary>
         public string RegistryId
@@ -140,7 +146,7 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property RepositoryName. 
         /// <para>
-        /// The repository with image IDs to be listed.
+        /// The name of the repository with the policy to retrieve.
         /// </para>
         /// </summary>
         public string RepositoryName
