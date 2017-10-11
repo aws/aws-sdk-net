@@ -1,3 +1,9 @@
+### 3.3.171.0 (2017-10-11 19:11 UTC)
+* ECR (3.3.3.0)
+	* Adds support for new API set used to manage Amazon ECR repository lifecycle policies. Amazon ECR lifecycle policies enable you to specify the lifecycle management of images in a repository. The configuration is a set of one or more rules, where each rule defines an action for Amazon ECR to apply to an image. This allows the automation of cleaning up unused images, for example expiring images based on age or status. A lifecycle policy preview API is provided as well, which allows you to see the impact of a lifecycle policy on an image repository before you execute it
+* SimpleEmail (3.3.4.0)
+	* Added content related to email template management and templated email sending operations.
+
 ### 3.3.170.0 (2017-10-10 18:57 UTC)
 * EC2 (3.3.30.0)
 	* This release includes updates to AWS Virtual Private Gateway.

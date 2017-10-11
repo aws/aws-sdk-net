@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.170.0",
+    "ProductVersion" : "3.3.171.0",
     "CoreVersion"    : "3.3.18.0",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -337,7 +337,7 @@
             "InPreview"               : false
         },
         "SimpleEmail"          : {
-            "Version" : "3.3.3.1",
+            "Version" : "3.3.4.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.18.0"
@@ -489,7 +489,7 @@
             "InPreview"               : false
         },
         "ECR"                             : {
-            "Version" : "3.3.2.16",
+            "Version" : "3.3.3.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.18.0"
