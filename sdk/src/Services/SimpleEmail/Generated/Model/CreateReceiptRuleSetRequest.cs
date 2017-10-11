@@ -33,8 +33,8 @@ namespace Amazon.SimpleEmail.Model
     /// 
     ///  
     /// <para>
-    /// For information about setting up receipt rule sets, see the <i> <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
-    /// SES Developer Guide</a>.</i> 
+    /// For information about setting up receipt rule sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
+    /// SES Developer Guide</a>.
     /// </para>
     ///  
     /// <para>

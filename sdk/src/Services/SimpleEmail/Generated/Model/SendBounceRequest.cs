@@ -40,8 +40,8 @@ namespace Amazon.SimpleEmail.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// For information about receiving email through Amazon SES, see the <i> <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon
-    /// SES Developer Guide</a>.</i> 
+    /// For information about receiving email through Amazon SES, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon
+    /// SES Developer Guide</a>.
     /// </para>
     ///  
     /// <para>

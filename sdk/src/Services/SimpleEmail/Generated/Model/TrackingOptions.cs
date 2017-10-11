@@ -34,8 +34,8 @@ namespace Amazon.SimpleEmail.Model
     ///  
     /// <para>
     /// For more information, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring
-    /// Custom Domains to Handle Open and Click Tracking</a> in the <i> <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
-    /// SES Developer Guide</a>.</i> 
+    /// Custom Domains to Handle Open and Click Tracking</a> in the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
+    /// SES Developer Guide</a>.
     /// </para>
     /// </summary>
     public partial class TrackingOptions

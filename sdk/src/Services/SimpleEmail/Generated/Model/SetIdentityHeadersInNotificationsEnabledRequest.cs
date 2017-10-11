@@ -39,8 +39,8 @@ namespace Amazon.SimpleEmail.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information about using notifications with Amazon SES, see the <i> <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
-    /// SES Developer Guide</a>.</i> 
+    /// For more information about using notifications with Amazon SES, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
+    /// SES Developer Guide</a>.
     /// </para>
     /// </summary>
     public partial class SetIdentityHeadersInNotificationsEnabledRequest : AmazonSimpleEmailServiceRequest

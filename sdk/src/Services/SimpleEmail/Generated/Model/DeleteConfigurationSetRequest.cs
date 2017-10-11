@@ -30,8 +30,8 @@ namespace Amazon.SimpleEmail.Model
     /// <summary>
     /// Container for the parameters to the DeleteConfigurationSet operation.
     /// Deletes a configuration set. Configuration sets enable you to publish email sending
-    /// events. For information about using configuration sets, see the <i> <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
-    /// SES Developer Guide</a>.</i> 
+    /// events. For information about using configuration sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
+    /// SES Developer Guide</a>.
     /// 
     ///  
     /// <para>

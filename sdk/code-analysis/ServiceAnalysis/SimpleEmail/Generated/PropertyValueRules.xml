@@ -14,4 +14,20 @@
     <min>1</min>
     <max>64</max>
   </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmail.Model.SendBulkTemplatedEmailRequest.DefaultTemplateData</property>
+    <max>262144</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmail.Model.SendTemplatedEmailRequest.TemplateData</property>
+    <max>262144</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmail.Model.TestRenderTemplateRequest.TemplateData</property>
+    <max>262144</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmail.Model.BulkEmailDestination.ReplacementTemplateData</property>
+    <max>262144</max>
+  </property-value-rule>
 </property-value-rules>

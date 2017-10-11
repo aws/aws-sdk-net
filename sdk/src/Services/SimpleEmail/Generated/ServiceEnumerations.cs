@@ -141,6 +141,96 @@ namespace Amazon.SimpleEmail
 
 
     /// <summary>
+    /// Constants used for properties of type BulkEmailStatus.
+    /// </summary>
+    public class BulkEmailStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AccountDailyQuotaExceeded for BulkEmailStatus
+        /// </summary>
+        public static readonly BulkEmailStatus AccountDailyQuotaExceeded = new BulkEmailStatus("AccountDailyQuotaExceeded");
+        /// <summary>
+        /// Constant AccountSuspended for BulkEmailStatus
+        /// </summary>
+        public static readonly BulkEmailStatus AccountSuspended = new BulkEmailStatus("AccountSuspended");
+        /// <summary>
+        /// Constant AccountThrottled for BulkEmailStatus
+        /// </summary>
+        public static readonly BulkEmailStatus AccountThrottled = new BulkEmailStatus("AccountThrottled");
+        /// <summary>
+        /// Constant ConfigurationSetDoesNotExist for BulkEmailStatus
+        /// </summary>
+        public static readonly BulkEmailStatus ConfigurationSetDoesNotExist = new BulkEmailStatus("ConfigurationSetDoesNotExist");
+        /// <summary>
+        /// Constant Failed for BulkEmailStatus
+        /// </summary>
+        public static readonly BulkEmailStatus Failed = new BulkEmailStatus("Failed");
+        /// <summary>
+        /// Constant InvalidParameterValue for BulkEmailStatus
+        /// </summary>
+        public static readonly BulkEmailStatus InvalidParameterValue = new BulkEmailStatus("InvalidParameterValue");
+        /// <summary>
+        /// Constant InvalidSendingPoolName for BulkEmailStatus
+        /// </summary>
+        public static readonly BulkEmailStatus InvalidSendingPoolName = new BulkEmailStatus("InvalidSendingPoolName");
+        /// <summary>
+        /// Constant MailFromDomainNotVerified for BulkEmailStatus
+        /// </summary>
+        public static readonly BulkEmailStatus MailFromDomainNotVerified = new BulkEmailStatus("MailFromDomainNotVerified");
+        /// <summary>
+        /// Constant MessageRejected for BulkEmailStatus
+        /// </summary>
+        public static readonly BulkEmailStatus MessageRejected = new BulkEmailStatus("MessageRejected");
+        /// <summary>
+        /// Constant Success for BulkEmailStatus
+        /// </summary>
+        public static readonly BulkEmailStatus Success = new BulkEmailStatus("Success");
+        /// <summary>
+        /// Constant TemplateDoesNotExist for BulkEmailStatus
+        /// </summary>
+        public static readonly BulkEmailStatus TemplateDoesNotExist = new BulkEmailStatus("TemplateDoesNotExist");
+        /// <summary>
+        /// Constant TransientFailure for BulkEmailStatus
+        /// </summary>
+        public static readonly BulkEmailStatus TransientFailure = new BulkEmailStatus("TransientFailure");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BulkEmailStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BulkEmailStatus FindValue(string value)
+        {
+            return FindValue<BulkEmailStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BulkEmailStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ConfigurationSetAttribute.
     /// </summary>
     public class ConfigurationSetAttribute : ConstantClass
@@ -394,6 +484,10 @@ namespace Amazon.SimpleEmail
         /// Constant Reject for EventType
         /// </summary>
         public static readonly EventType Reject = new EventType("reject");
+        /// <summary>
+        /// Constant RenderingFailure for EventType
+        /// </summary>
+        public static readonly EventType RenderingFailure = new EventType("renderingFailure");
         /// <summary>
         /// Constant Send for EventType
         /// </summary>

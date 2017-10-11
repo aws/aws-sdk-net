@@ -44,7 +44,7 @@ namespace Amazon.SimpleEmail.Model
     /// If your account is still in the Amazon SES sandbox, you may only send to verified
     /// addresses or domains, or to email addresses associated with the Amazon SES Mailbox
     /// Simulator. For more information, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Verifying
-    /// Email Addresses and Domains</a> in the <i>Amazon SES Developer Guide</i>.
+    /// Email Addresses and Domains</a> in the <i>Amazon SES Developer Guide.</i> 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -71,7 +71,7 @@ namespace Amazon.SimpleEmail.Model
     /// in the To:, CC: and BCC: fields) is counted against the maximum number of emails you
     /// can send in a 24-hour period (your <i>sending quota</i>). For more information about
     /// sending quotas in Amazon SES, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Managing
-    /// Your Amazon SES Sending Limits</a> in the <i>Amazon SES Developer Guide</i>.
+    /// Your Amazon SES Sending Limits</a> in the <i>Amazon SES Developer Guide.</i> 
     /// </para>
     ///  </important>
     /// </summary>
@@ -218,7 +218,7 @@ namespace Amazon.SimpleEmail.Model
         ///  
         /// <para>
         /// For more information about sending authorization, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
-        /// SES Developer Guide</a>. 
+        /// SES Developer Guide</a>.
         /// </para>
         /// </summary>
         public string ReturnPathArn
@@ -286,7 +286,7 @@ namespace Amazon.SimpleEmail.Model
         ///  
         /// <para>
         /// For more information about sending authorization, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
-        /// SES Developer Guide</a>. 
+        /// SES Developer Guide</a>.
         /// </para>
         /// </summary>
         public string SourceArn

@@ -40,14 +40,14 @@ namespace Amazon.SimpleEmail
     /// <para>
     ///  This is the API Reference for <a href="https://aws.amazon.com/ses/">Amazon Simple
     /// Email Service</a> (Amazon SES). This documentation is intended to be used in conjunction
-    /// with the <i> <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
-    /// SES Developer Guide</a>.</i> 
+    /// with the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
+    /// SES Developer Guide</a>. 
     /// </para>
     ///  <note> 
     /// <para>
     ///  For a list of Amazon SES endpoints to use in service requests, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/regions.html">Regions
-    /// and Amazon SES</a> in the <i> <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
-    /// SES Developer Guide</a>.</i> 
+    /// and Amazon SES</a> in the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
+    /// SES Developer Guide</a>. 
     /// </para>
     ///  </note>
     /// </summary>
@@ -467,6 +467,38 @@ namespace Amazon.SimpleEmail
 
         #endregion
         
+        #region  CreateTemplate
+
+        internal virtual CreateTemplateResponse CreateTemplate(CreateTemplateRequest request)
+        {
+            var marshaller = new CreateTemplateRequestMarshaller();
+            var unmarshaller = CreateTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTemplateRequest,CreateTemplateResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTemplate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateTemplate">REST API Reference for CreateTemplate Operation</seealso>
+        public virtual Task<CreateTemplateResponse> CreateTemplateAsync(CreateTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateTemplateRequestMarshaller();
+            var unmarshaller = CreateTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateTemplateRequest,CreateTemplateResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteConfigurationSet
 
         internal virtual DeleteConfigurationSetResponse DeleteConfigurationSet(DeleteConfigurationSetRequest request)
@@ -718,6 +750,38 @@ namespace Amazon.SimpleEmail
             var unmarshaller = DeleteReceiptRuleSetResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteReceiptRuleSetRequest,DeleteReceiptRuleSetResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteTemplate
+
+        internal virtual DeleteTemplateResponse DeleteTemplate(DeleteTemplateRequest request)
+        {
+            var marshaller = new DeleteTemplateRequestMarshaller();
+            var unmarshaller = DeleteTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTemplateRequest,DeleteTemplateResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTemplate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteTemplate">REST API Reference for DeleteTemplate Operation</seealso>
+        public virtual Task<DeleteTemplateResponse> DeleteTemplateAsync(DeleteTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteTemplateRequestMarshaller();
+            var unmarshaller = DeleteTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteTemplateRequest,DeleteTemplateResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1157,6 +1221,38 @@ namespace Amazon.SimpleEmail
 
         #endregion
         
+        #region  GetTemplate
+
+        internal virtual GetTemplateResponse GetTemplate(GetTemplateRequest request)
+        {
+            var marshaller = new GetTemplateRequestMarshaller();
+            var unmarshaller = GetTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<GetTemplateRequest,GetTemplateResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTemplate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetTemplate">REST API Reference for GetTemplate Operation</seealso>
+        public virtual Task<GetTemplateResponse> GetTemplateAsync(GetTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetTemplateRequestMarshaller();
+            var unmarshaller = GetTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetTemplateRequest,GetTemplateResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListConfigurationSets
 
         internal virtual ListConfigurationSetsResponse ListConfigurationSets(ListConfigurationSetsRequest request)
@@ -1342,6 +1438,38 @@ namespace Amazon.SimpleEmail
 
         #endregion
         
+        #region  ListTemplates
+
+        internal virtual ListTemplatesResponse ListTemplates(ListTemplatesRequest request)
+        {
+            var marshaller = new ListTemplatesRequestMarshaller();
+            var unmarshaller = ListTemplatesResponseUnmarshaller.Instance;
+
+            return Invoke<ListTemplatesRequest,ListTemplatesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTemplates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTemplates operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListTemplates">REST API Reference for ListTemplates Operation</seealso>
+        public virtual Task<ListTemplatesResponse> ListTemplatesAsync(ListTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListTemplatesRequestMarshaller();
+            var unmarshaller = ListTemplatesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTemplatesRequest,ListTemplatesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListVerifiedEmailAddresses
 
         internal virtual ListVerifiedEmailAddressesResponse ListVerifiedEmailAddresses()
@@ -1490,6 +1618,38 @@ namespace Amazon.SimpleEmail
 
         #endregion
         
+        #region  SendBulkTemplatedEmail
+
+        internal virtual SendBulkTemplatedEmailResponse SendBulkTemplatedEmail(SendBulkTemplatedEmailRequest request)
+        {
+            var marshaller = new SendBulkTemplatedEmailRequestMarshaller();
+            var unmarshaller = SendBulkTemplatedEmailResponseUnmarshaller.Instance;
+
+            return Invoke<SendBulkTemplatedEmailRequest,SendBulkTemplatedEmailResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SendBulkTemplatedEmail operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SendBulkTemplatedEmail operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendBulkTemplatedEmail">REST API Reference for SendBulkTemplatedEmail Operation</seealso>
+        public virtual Task<SendBulkTemplatedEmailResponse> SendBulkTemplatedEmailAsync(SendBulkTemplatedEmailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new SendBulkTemplatedEmailRequestMarshaller();
+            var unmarshaller = SendBulkTemplatedEmailResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SendBulkTemplatedEmailRequest,SendBulkTemplatedEmailResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  SendEmail
 
         internal virtual SendEmailResponse SendEmail(SendEmailRequest request)
@@ -1549,6 +1709,38 @@ namespace Amazon.SimpleEmail
             var unmarshaller = SendRawEmailResponseUnmarshaller.Instance;
 
             return InvokeAsync<SendRawEmailRequest,SendRawEmailResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SendTemplatedEmail
+
+        internal virtual SendTemplatedEmailResponse SendTemplatedEmail(SendTemplatedEmailRequest request)
+        {
+            var marshaller = new SendTemplatedEmailRequestMarshaller();
+            var unmarshaller = SendTemplatedEmailResponseUnmarshaller.Instance;
+
+            return Invoke<SendTemplatedEmailRequest,SendTemplatedEmailResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SendTemplatedEmail operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SendTemplatedEmail operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendTemplatedEmail">REST API Reference for SendTemplatedEmail Operation</seealso>
+        public virtual Task<SendTemplatedEmailResponse> SendTemplatedEmailAsync(SendTemplatedEmailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new SendTemplatedEmailRequestMarshaller();
+            var unmarshaller = SendTemplatedEmailResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SendTemplatedEmailRequest,SendTemplatedEmailResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1778,6 +1970,38 @@ namespace Amazon.SimpleEmail
 
         #endregion
         
+        #region  TestRenderTemplate
+
+        internal virtual TestRenderTemplateResponse TestRenderTemplate(TestRenderTemplateRequest request)
+        {
+            var marshaller = new TestRenderTemplateRequestMarshaller();
+            var unmarshaller = TestRenderTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<TestRenderTemplateRequest,TestRenderTemplateResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TestRenderTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TestRenderTemplate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/TestRenderTemplate">REST API Reference for TestRenderTemplate Operation</seealso>
+        public virtual Task<TestRenderTemplateResponse> TestRenderTemplateAsync(TestRenderTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new TestRenderTemplateRequestMarshaller();
+            var unmarshaller = TestRenderTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<TestRenderTemplateRequest,TestRenderTemplateResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateConfigurationSetEventDestination
 
         internal virtual UpdateConfigurationSetEventDestinationResponse UpdateConfigurationSetEventDestination(UpdateConfigurationSetEventDestinationRequest request)
@@ -1869,6 +2093,38 @@ namespace Amazon.SimpleEmail
             var unmarshaller = UpdateReceiptRuleResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateReceiptRuleRequest,UpdateReceiptRuleResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateTemplate
+
+        internal virtual UpdateTemplateResponse UpdateTemplate(UpdateTemplateRequest request)
+        {
+            var marshaller = new UpdateTemplateRequestMarshaller();
+            var unmarshaller = UpdateTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateTemplateRequest,UpdateTemplateResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTemplate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateTemplate">REST API Reference for UpdateTemplate Operation</seealso>
+        public virtual Task<UpdateTemplateResponse> UpdateTemplateAsync(UpdateTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateTemplateRequestMarshaller();
+            var unmarshaller = UpdateTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateTemplateRequest,UpdateTemplateResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

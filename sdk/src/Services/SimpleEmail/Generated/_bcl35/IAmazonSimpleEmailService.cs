@@ -33,14 +33,14 @@ namespace Amazon.SimpleEmail
     /// <para>
     ///  This is the API Reference for <a href="https://aws.amazon.com/ses/">Amazon Simple
     /// Email Service</a> (Amazon SES). This documentation is intended to be used in conjunction
-    /// with the <i> <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
-    /// SES Developer Guide</a>.</i> 
+    /// with the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
+    /// SES Developer Guide</a>. 
     /// </para>
     ///  <note> 
     /// <para>
     ///  For a list of Amazon SES endpoints to use in service requests, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/regions.html">Regions
-    /// and Amazon SES</a> in the <i> <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
-    /// SES Developer Guide</a>.</i> 
+    /// and Amazon SES</a> in the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
+    /// SES Developer Guide</a>. 
     /// </para>
     ///  </note>
     /// </summary>
@@ -58,8 +58,8 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// For information about setting up rule sets, see the <i> <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
-        /// SES Developer Guide</a>.</i> 
+        /// For information about setting up rule sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
+        /// SES Developer Guide</a>.
         /// </para>
         ///  
         /// <para>
@@ -120,8 +120,8 @@ namespace Amazon.SimpleEmail
         ///  
         /// <para>
         /// Configuration sets enable you to publish email sending events. For information about
-        /// using configuration sets, see the <i> <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
-        /// SES Developer Guide</a>.</i> 
+        /// using configuration sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
+        /// SES Developer Guide</a>.
         /// </para>
         ///  
         /// <para>
@@ -189,8 +189,8 @@ namespace Amazon.SimpleEmail
         /// <para>
         /// An event destination is the AWS service to which Amazon SES publishes the email sending
         /// events associated with a configuration set. For information about using configuration
-        /// sets, see the <i> <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
-        /// SES Developer Guide</a>.</i> 
+        /// sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
+        /// SES Developer Guide</a>.
         /// </para>
         ///  
         /// <para>
@@ -265,10 +265,9 @@ namespace Amazon.SimpleEmail
         /// <para>
         /// By default, images and links used for tracking open and click events are hosted on
         /// domains operated by Amazon SES. You can configure a subdomain of your own to handle
-        /// these events by redirecting them to the Amazon SES-operated domain. For information
-        /// about using configuration sets, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring
-        /// Custom Domains to Handle Open and Click Tracking</a> in the <i> <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
-        /// SES Developer Guide</a>.</i> 
+        /// these events. For information about using configuration sets, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring
+        /// Custom Domains to Handle Open and Click Tracking</a> in the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
+        /// SES Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateConfigurationSetTrackingOptions service method.</param>
@@ -334,8 +333,8 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// For information about setting up IP address filters, see the <i> <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-ip-filters.html">Amazon
-        /// SES Developer Guide</a>.</i> 
+        /// For information about setting up IP address filters, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-ip-filters.html">Amazon
+        /// SES Developer Guide</a>.
         /// </para>
         ///  
         /// <para>
@@ -392,8 +391,8 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// For information about setting up receipt rules, see the <i> <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon
-        /// SES Developer Guide</a>.</i> 
+        /// For information about setting up receipt rules, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon
+        /// SES Developer Guide</a>.
         /// </para>
         ///  
         /// <para>
@@ -474,8 +473,8 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// For information about setting up receipt rule sets, see the <i> <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
-        /// SES Developer Guide</a>.</i> 
+        /// For information about setting up receipt rule sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
+        /// SES Developer Guide</a>.
         /// </para>
         ///  
         /// <para>
@@ -524,13 +523,72 @@ namespace Amazon.SimpleEmail
 
         #endregion
         
+        #region  CreateTemplate
+
+
+        /// <summary>
+        /// Creates an email template. Email templates enable you to send personalized email to
+        /// one or more destinations in a single API operation. For more information, see the
+        /// <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon
+        /// SES Developer Guide</a>.
+        /// 
+        ///  
+        /// <para>
+        /// You can execute this operation no more than once per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTemplate service method.</param>
+        /// 
+        /// <returns>The response from the CreateTemplate service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.AlreadyExistsException">
+        /// Indicates that a resource could not be created because of a naming conflict.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.InvalidTemplateException">
+        /// Indicates that a template could not be created because it contained invalid JSON.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.LimitExceededException">
+        /// Indicates that a resource could not be created because of service limits. For a list
+        /// of Amazon SES limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateTemplate">REST API Reference for CreateTemplate Operation</seealso>
+        CreateTemplateResponse CreateTemplate(CreateTemplateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTemplate operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateTemplate">REST API Reference for CreateTemplate Operation</seealso>
+        IAsyncResult BeginCreateTemplate(CreateTemplateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTemplate.</param>
+        /// 
+        /// <returns>Returns a  CreateTemplateResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateTemplate">REST API Reference for CreateTemplate Operation</seealso>
+        CreateTemplateResponse EndCreateTemplate(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteConfigurationSet
 
 
         /// <summary>
         /// Deletes a configuration set. Configuration sets enable you to publish email sending
-        /// events. For information about using configuration sets, see the <i> <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
-        /// SES Developer Guide</a>.</i> 
+        /// events. For information about using configuration sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
+        /// SES Developer Guide</a>.
         /// 
         ///  
         /// <para>
@@ -580,8 +638,8 @@ namespace Amazon.SimpleEmail
         /// <summary>
         /// Deletes a configuration set event destination. Configuration set event destinations
         /// are associated with configuration sets, which enable you to publish email sending
-        /// events. For information about using configuration sets, see the <i> <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
-        /// SES Developer Guide</a>.</i> 
+        /// events. For information about using configuration sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
+        /// SES Developer Guide</a>.
         /// 
         ///  
         /// <para>
@@ -639,10 +697,9 @@ namespace Amazon.SimpleEmail
         /// <para>
         /// By default, images and links used for tracking open and click events are hosted on
         /// domains operated by Amazon SES. You can configure a subdomain of your own to handle
-        /// these events by redirecting them to the Amazon SES-operated domain. For information
-        /// about using configuration sets, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring
-        /// Custom Domains to Handle Open and Click Tracking</a> in the <i> <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
-        /// SES Developer Guide</a>.</i> 
+        /// these events. For information about using configuration sets, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring
+        /// Custom Domains to Handle Open and Click Tracking</a> in the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
+        /// SES Developer Guide</a>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -754,8 +811,8 @@ namespace Amazon.SimpleEmail
         /// <para>
         /// Sending authorization is a feature that enables an identity owner to authorize other
         /// senders to use its identities. For information about using sending authorization,
-        /// see the <i> <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
-        /// SES Developer Guide</a>.</i> 
+        /// see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+        /// SES Developer Guide</a>.
         /// </para>
         ///  
         /// <para>
@@ -804,8 +861,8 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// For information about managing IP address filters, see the <i> <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-ip-filters.html">Amazon
-        /// SES Developer Guide</a>.</i> 
+        /// For information about managing IP address filters, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-ip-filters.html">Amazon
+        /// SES Developer Guide</a>.
         /// </para>
         ///  
         /// <para>
@@ -854,8 +911,8 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// For information about managing receipt rules, see the <i> <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
-        /// SES Developer Guide</a>.</i> 
+        /// For information about managing receipt rules, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
+        /// SES Developer Guide</a>.
         /// </para>
         ///  
         /// <para>
@@ -911,8 +968,8 @@ namespace Amazon.SimpleEmail
         /// </para>
         ///  </note> 
         /// <para>
-        /// For information about managing receipt rule sets, see the <i> <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
-        /// SES Developer Guide</a>.</i> 
+        /// For information about managing receipt rule sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
+        /// SES Developer Guide</a>.
         /// </para>
         ///  
         /// <para>
@@ -953,6 +1010,51 @@ namespace Amazon.SimpleEmail
         /// <returns>Returns a  DeleteReceiptRuleSetResult from SimpleEmailService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteReceiptRuleSet">REST API Reference for DeleteReceiptRuleSet Operation</seealso>
         DeleteReceiptRuleSetResponse EndDeleteReceiptRuleSet(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteTemplate
+
+
+        /// <summary>
+        /// Deletes an email template.
+        /// 
+        ///  
+        /// <para>
+        /// You can execute this operation no more than once per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTemplate service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTemplate service method, as returned by SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteTemplate">REST API Reference for DeleteTemplate Operation</seealso>
+        DeleteTemplateResponse DeleteTemplate(DeleteTemplateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTemplate operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteTemplate">REST API Reference for DeleteTemplate Operation</seealso>
+        IAsyncResult BeginDeleteTemplate(DeleteTemplateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTemplate.</param>
+        /// 
+        /// <returns>Returns a  DeleteTemplateResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteTemplate">REST API Reference for DeleteTemplate Operation</seealso>
+        DeleteTemplateResponse EndDeleteTemplate(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1006,8 +1108,8 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// For information about setting up receipt rule sets, see the <i> <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
-        /// SES Developer Guide</a>.</i> 
+        /// For information about setting up receipt rule sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
+        /// SES Developer Guide</a>.
         /// </para>
         ///  
         /// <para>
@@ -1053,8 +1155,8 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Returns the details of the specified configuration set. For information about using
-        /// configuration sets, see the <i> <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
-        /// SES Developer Guide</a>.</i> 
+        /// configuration sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
+        /// SES Developer Guide</a>.
         /// 
         ///  
         /// <para>
@@ -1106,8 +1208,8 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// For information about setting up receipt rules, see the <i> <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon
-        /// SES Developer Guide</a>.</i> 
+        /// For information about setting up receipt rules, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon
+        /// SES Developer Guide</a>.
         /// </para>
         ///  
         /// <para>
@@ -1162,8 +1264,8 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// For information about managing receipt rule sets, see the <i> <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
-        /// SES Developer Guide</a>.</i> 
+        /// For information about managing receipt rule sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
+        /// SES Developer Guide</a>.
         /// </para>
         ///  
         /// <para>
@@ -1241,9 +1343,8 @@ namespace Amazon.SimpleEmail
         /// </para>
         ///  
         /// <para>
-        /// For more information about creating DNS records using DKIM tokens, go to the <i> <a
-        /// href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon
-        /// SES Developer Guide</a>.</i> 
+        /// For more information about creating DNS records using DKIM tokens, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon
+        /// SES Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetIdentityDkimAttributes service method.</param>
@@ -1341,8 +1442,8 @@ namespace Amazon.SimpleEmail
         /// </para>
         ///  
         /// <para>
-        /// For more information about using notifications with Amazon SES, see the <i> <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
-        /// SES Developer Guide</a>.</i> 
+        /// For more information about using notifications with Amazon SES, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
+        /// SES Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetIdentityNotificationAttributes service method.</param>
@@ -1396,8 +1497,8 @@ namespace Amazon.SimpleEmail
         /// <para>
         /// Sending authorization is a feature that enables an identity owner to authorize other
         /// senders to use its identities. For information about using sending authorization,
-        /// see the <i> <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
-        /// SES Developer Guide</a>.</i> 
+        /// see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+        /// SES Developer Guide</a>.
         /// </para>
         ///  
         /// <para>
@@ -1623,21 +1724,71 @@ namespace Amazon.SimpleEmail
 
         #endregion
         
+        #region  GetTemplate
+
+
+        /// <summary>
+        /// Displays the template object (which includes the Subject line, HTML part and text
+        /// part) for the template you specify.
+        /// 
+        ///  
+        /// <para>
+        /// You can execute this operation no more than once per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTemplate service method.</param>
+        /// 
+        /// <returns>The response from the GetTemplate service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.TemplateDoesNotExistException">
+        /// Indicates that the Template object you specified does not exist in your Amazon SES
+        /// account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetTemplate">REST API Reference for GetTemplate Operation</seealso>
+        GetTemplateResponse GetTemplate(GetTemplateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTemplate operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetTemplate">REST API Reference for GetTemplate Operation</seealso>
+        IAsyncResult BeginGetTemplate(GetTemplateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTemplate.</param>
+        /// 
+        /// <returns>Returns a  GetTemplateResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetTemplate">REST API Reference for GetTemplate Operation</seealso>
+        GetTemplateResponse EndGetTemplate(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListConfigurationSets
 
 
         /// <summary>
         /// Provides a list of the configuration sets associated with your Amazon SES account.
         /// For information about using configuration sets, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Monitoring
-        /// Your Amazon SES Sending Activity</a> in the <i>Amazon SES Developer Guide</i>.
+        /// Your Amazon SES Sending Activity</a> in the <i>Amazon SES Developer Guide.</i> 
         /// 
         ///  
         /// <para>
         /// You can execute this operation no more than once per second. This operation will return
-        /// up to 50 configuration sets each time it is run. If your Amazon SES account has more
-        /// than 50 configuration sets, this operation will also return a NextToken element. You
-        /// can then execute the <code>ListConfigurationSets</code> operation again, passing the
-        /// <code>NextToken</code> parameter and the value of the NextToken element to retrieve
+        /// up to 1,000 configuration sets each time it is run. If your Amazon SES account has
+        /// more than 1,000 configuration sets, this operation will also return a NextToken element.
+        /// You can then execute the <code>ListConfigurationSets</code> operation again, passing
+        /// the <code>NextToken</code> parameter and the value of the NextToken element to retrieve
         /// additional results.
         /// </para>
         /// </summary>
@@ -1752,8 +1903,8 @@ namespace Amazon.SimpleEmail
         /// <para>
         /// Sending authorization is a feature that enables an identity owner to authorize other
         /// senders to use its identities. For information about using sending authorization,
-        /// see the <i> <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
-        /// SES Developer Guide</a>.</i> 
+        /// see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+        /// SES Developer Guide</a>.
         /// </para>
         ///  
         /// <para>
@@ -1802,8 +1953,8 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// For information about managing IP address filters, see the <i> <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-ip-filters.html">Amazon
-        /// SES Developer Guide</a>.</i> 
+        /// For information about managing IP address filters, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-ip-filters.html">Amazon
+        /// SES Developer Guide</a>.
         /// </para>
         ///  
         /// <para>
@@ -1855,8 +2006,8 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// For information about managing receipt rule sets, see the <i> <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
-        /// SES Developer Guide</a>.</i> 
+        /// For information about managing receipt rule sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
+        /// SES Developer Guide</a>.
         /// </para>
         ///  
         /// <para>
@@ -1894,6 +2045,51 @@ namespace Amazon.SimpleEmail
         /// <returns>Returns a  ListReceiptRuleSetsResult from SimpleEmailService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListReceiptRuleSets">REST API Reference for ListReceiptRuleSets Operation</seealso>
         ListReceiptRuleSetsResponse EndListReceiptRuleSets(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListTemplates
+
+
+        /// <summary>
+        /// Lists the email templates present in your Amazon SES account.
+        /// 
+        ///  
+        /// <para>
+        /// You can execute this operation no more than once per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTemplates service method.</param>
+        /// 
+        /// <returns>The response from the ListTemplates service method, as returned by SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListTemplates">REST API Reference for ListTemplates Operation</seealso>
+        ListTemplatesResponse ListTemplates(ListTemplatesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTemplates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTemplates operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTemplates
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListTemplates">REST API Reference for ListTemplates Operation</seealso>
+        IAsyncResult BeginListTemplates(ListTemplatesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTemplates operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTemplates.</param>
+        /// 
+        /// <returns>Returns a  ListTemplatesResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListTemplates">REST API Reference for ListTemplates Operation</seealso>
+        ListTemplatesResponse EndListTemplates(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1963,8 +2159,8 @@ namespace Amazon.SimpleEmail
         /// <para>
         /// Sending authorization is a feature that enables an identity owner to authorize other
         /// senders to use its identities. For information about using sending authorization,
-        /// see the <i> <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
-        /// SES Developer Guide</a>.</i> 
+        /// see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+        /// SES Developer Guide</a>.
         /// </para>
         ///  
         /// <para>
@@ -2023,8 +2219,8 @@ namespace Amazon.SimpleEmail
         /// </para>
         ///  </note> 
         /// <para>
-        /// For information about managing receipt rule sets, see the <i> <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
-        /// SES Developer Guide</a>.</i> 
+        /// For information about managing receipt rule sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
+        /// SES Developer Guide</a>.
         /// </para>
         ///  
         /// <para>
@@ -2086,8 +2282,8 @@ namespace Amazon.SimpleEmail
         /// </para>
         ///  </note> 
         /// <para>
-        /// For information about receiving email through Amazon SES, see the <i> <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon
-        /// SES Developer Guide</a>.</i> 
+        /// For information about receiving email through Amazon SES, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon
+        /// SES Developer Guide</a>.
         /// </para>
         ///  
         /// <para>
@@ -2132,6 +2328,99 @@ namespace Amazon.SimpleEmail
 
         #endregion
         
+        #region  SendBulkTemplatedEmail
+
+
+        /// <summary>
+        /// Composes an email message to multiple destinations. The message body is created using
+        /// an email template.
+        /// 
+        ///  
+        /// <para>
+        /// In order to send email using the <code>SendBulkTemplatedEmail</code> operation, your
+        /// call to the API must meet the following requirements:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The call must refer to an existing email template. You can create email templates
+        /// using the <a>CreateTemplate</a> operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The message must be sent from a verified email address or domain.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If your account is still in the Amazon SES sandbox, you may only send to verified
+        /// addresses or domains, or to email addresses associated with the Amazon SES Mailbox
+        /// Simulator. For more information, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Verifying
+        /// Email Addresses and Domains</a> in the <i>Amazon SES Developer Guide.</i> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The total size of the message, including attachments, must be less than 10 MB.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Each <code>Destination</code> parameter must include at least one recipient email
+        /// address. The recipient address can be a To: address, a CC: address, or a BCC: address.
+        /// If a recipient email address is invalid (that is, it is not in the format <i>UserName@[SubDomain.]Domain.TopLevelDomain</i>),
+        /// the entire message will be rejected, even if the message contains other recipients
+        /// that are valid.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendBulkTemplatedEmail service method.</param>
+        /// 
+        /// <returns>The response from the SendBulkTemplatedEmail service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.ConfigurationSetDoesNotExistException">
+        /// Indicates that the configuration set does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.MailFromDomainNotVerifiedException">
+        /// Indicates that the message could not be sent because Amazon SES could not read the
+        /// MX record required to use the specified MAIL FROM domain. For information about editing
+        /// the custom MAIL FROM domain settings for an identity, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-edit.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.MessageRejectedException">
+        /// Indicates that the action failed, and the message could not be sent. Check the error
+        /// stack for more information about what caused the error.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.TemplateDoesNotExistException">
+        /// Indicates that the Template object you specified does not exist in your Amazon SES
+        /// account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendBulkTemplatedEmail">REST API Reference for SendBulkTemplatedEmail Operation</seealso>
+        SendBulkTemplatedEmailResponse SendBulkTemplatedEmail(SendBulkTemplatedEmailRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SendBulkTemplatedEmail operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SendBulkTemplatedEmail operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSendBulkTemplatedEmail
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendBulkTemplatedEmail">REST API Reference for SendBulkTemplatedEmail Operation</seealso>
+        IAsyncResult BeginSendBulkTemplatedEmail(SendBulkTemplatedEmailRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SendBulkTemplatedEmail operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSendBulkTemplatedEmail.</param>
+        /// 
+        /// <returns>Returns a  SendBulkTemplatedEmailResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendBulkTemplatedEmail">REST API Reference for SendBulkTemplatedEmail Operation</seealso>
+        SendBulkTemplatedEmailResponse EndSendBulkTemplatedEmail(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  SendEmail
 
 
@@ -2151,7 +2440,7 @@ namespace Amazon.SimpleEmail
         /// If your account is still in the Amazon SES sandbox, you may only send to verified
         /// addresses or domains, or to email addresses associated with the Amazon SES Mailbox
         /// Simulator. For more information, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Verifying
-        /// Email Addresses and Domains</a> in the <i>Amazon SES Developer Guide</i>.
+        /// Email Addresses and Domains</a> in the <i>Amazon SES Developer Guide.</i> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2178,7 +2467,7 @@ namespace Amazon.SimpleEmail
         /// in the To:, CC: and BCC: fields) is counted against the maximum number of emails you
         /// can send in a 24-hour period (your <i>sending quota</i>). For more information about
         /// sending quotas in Amazon SES, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Managing
-        /// Your Amazon SES Sending Limits</a> in the <i>Amazon SES Developer Guide</i>.
+        /// Your Amazon SES Sending Limits</a> in the <i>Amazon SES Developer Guide.</i> 
         /// </para>
         ///  </important>
         /// </summary>
@@ -2254,7 +2543,7 @@ namespace Amazon.SimpleEmail
         /// If your account is still in the Amazon SES sandbox, you may only send to verified
         /// addresses or domains, or to email addresses associated with the Amazon SES Mailbox
         /// Simulator. For more information, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Verifying
-        /// Email Addresses and Domains</a> in the <i>Amazon SES Developer Guide</i>.
+        /// Email Addresses and Domains</a> in the <i>Amazon SES Developer Guide.</i> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2281,7 +2570,7 @@ namespace Amazon.SimpleEmail
         /// in the To:, CC: and BCC: fields) is counted against the maximum number of emails you
         /// can send in a 24-hour period (your <i>sending quota</i>). For more information about
         /// sending quotas in Amazon SES, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Managing
-        /// Your Amazon SES Sending Limits</a> in the <i>Amazon SES Developer Guide</i>.
+        /// Your Amazon SES Sending Limits</a> in the <i>Amazon SES Developer Guide.</i> 
         /// </para>
         ///  </important> 
         /// <para>
@@ -2328,7 +2617,8 @@ namespace Amazon.SimpleEmail
         /// parameter, Amazon SES will set the From and Return Path addresses to the identity
         /// specified in <code>SourceIdentityArn</code>. For more information about sending authorization,
         /// see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Using
-        /// Sending Authorization with Amazon SES</a> in the <i>Amazon SES Developer Guide</i>.
+        /// Sending Authorization with Amazon SES</a> in the <i>Amazon SES Developer Guide.</i>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -2379,6 +2669,105 @@ namespace Amazon.SimpleEmail
 
         #endregion
         
+        #region  SendTemplatedEmail
+
+
+        /// <summary>
+        /// Composes an email message using an email template and immediately queues it for sending.
+        /// 
+        ///  
+        /// <para>
+        /// In order to send email using the <code>SendTemplatedEmail</code> operation, your call
+        /// to the API must meet the following requirements:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The call must refer to an existing email template. You can create email templates
+        /// using the <a>CreateTemplate</a> operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The message must be sent from a verified email address or domain.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If your account is still in the Amazon SES sandbox, you may only send to verified
+        /// addresses or domains, or to email addresses associated with the Amazon SES Mailbox
+        /// Simulator. For more information, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Verifying
+        /// Email Addresses and Domains</a> in the <i>Amazon SES Developer Guide.</i> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The total size of the message, including attachments, must be less than 10 MB.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Calls to the <code>SendTemplatedEmail</code> operation may only include one <code>Destination</code>
+        /// parameter. A destination is a set of recipients who will receive the same version
+        /// of the email. The <code>Destination</code> parameter can include up to 50 recipients,
+        /// across the To:, CC: and BCC: fields.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <code>Destination</code> parameter must include at least one recipient email address.
+        /// The recipient address can be a To: address, a CC: address, or a BCC: address. If a
+        /// recipient email address is invalid (that is, it is not in the format <i>UserName@[SubDomain.]Domain.TopLevelDomain</i>),
+        /// the entire message will be rejected, even if the message contains other recipients
+        /// that are valid.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendTemplatedEmail service method.</param>
+        /// 
+        /// <returns>The response from the SendTemplatedEmail service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.ConfigurationSetDoesNotExistException">
+        /// Indicates that the configuration set does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.MailFromDomainNotVerifiedException">
+        /// Indicates that the message could not be sent because Amazon SES could not read the
+        /// MX record required to use the specified MAIL FROM domain. For information about editing
+        /// the custom MAIL FROM domain settings for an identity, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-edit.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.MessageRejectedException">
+        /// Indicates that the action failed, and the message could not be sent. Check the error
+        /// stack for more information about what caused the error.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.TemplateDoesNotExistException">
+        /// Indicates that the Template object you specified does not exist in your Amazon SES
+        /// account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendTemplatedEmail">REST API Reference for SendTemplatedEmail Operation</seealso>
+        SendTemplatedEmailResponse SendTemplatedEmail(SendTemplatedEmailRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SendTemplatedEmail operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SendTemplatedEmail operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSendTemplatedEmail
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendTemplatedEmail">REST API Reference for SendTemplatedEmail Operation</seealso>
+        IAsyncResult BeginSendTemplatedEmail(SendTemplatedEmailRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SendTemplatedEmail operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSendTemplatedEmail.</param>
+        /// 
+        /// <returns>Returns a  SendTemplatedEmailResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendTemplatedEmail">REST API Reference for SendTemplatedEmail Operation</seealso>
+        SendTemplatedEmailResponse EndSendTemplatedEmail(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  SetActiveReceiptRuleSet
 
 
@@ -2392,8 +2781,8 @@ namespace Amazon.SimpleEmail
         /// </para>
         ///  </note> 
         /// <para>
-        /// For information about managing receipt rule sets, see the <i> <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
-        /// SES Developer Guide</a>.</i> 
+        /// For information about managing receipt rule sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
+        /// SES Developer Guide</a>.
         /// </para>
         ///  
         /// <para>
@@ -2467,8 +2856,8 @@ namespace Amazon.SimpleEmail
         /// </para>
         ///  
         /// <para>
-        /// For more information about Easy DKIM signing, go to the <i> <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon
-        /// SES Developer Guide</a>.</i> 
+        /// For more information about Easy DKIM signing, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon
+        /// SES Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetIdentityDkimEnabled service method.</param>
@@ -2525,8 +2914,8 @@ namespace Amazon.SimpleEmail
         /// </para>
         ///  
         /// <para>
-        /// For more information about using notifications with Amazon SES, see the <i> <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
-        /// SES Developer Guide</a>.</i> 
+        /// For more information about using notifications with Amazon SES, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
+        /// SES Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetIdentityFeedbackForwardingEnabled service method.</param>
@@ -2577,8 +2966,8 @@ namespace Amazon.SimpleEmail
         /// </para>
         ///  
         /// <para>
-        /// For more information about using notifications with Amazon SES, see the <i> <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
-        /// SES Developer Guide</a>.</i> 
+        /// For more information about using notifications with Amazon SES, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
+        /// SES Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetIdentityHeadersInNotificationsEnabled service method.</param>
@@ -2627,8 +3016,8 @@ namespace Amazon.SimpleEmail
         /// To send emails using the specified MAIL FROM domain, you must add an MX record to
         /// your MAIL FROM domain's DNS settings. If you want your emails to pass Sender Policy
         /// Framework (SPF) checks, you must also add or update an SPF record. For more information,
-        /// see the <i> <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-set.html">Amazon
-        /// SES Developer Guide</a>.</i> 
+        /// see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-set.html">Amazon
+        /// SES Developer Guide</a>.
         /// </para>
         ///  </important> 
         /// <para>
@@ -2688,8 +3077,8 @@ namespace Amazon.SimpleEmail
         /// </para>
         ///  
         /// <para>
-        /// For more information about feedback notification, see the <i> <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
-        /// SES Developer Guide</a>.</i> 
+        /// For more information about feedback notification, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
+        /// SES Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetIdentityNotificationTopic service method.</param>
@@ -2734,8 +3123,8 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// For information about managing receipt rules, see the <i> <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
-        /// SES Developer Guide</a>.</i> 
+        /// For information about managing receipt rules, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
+        /// SES Developer Guide</a>.
         /// </para>
         ///  
         /// <para>
@@ -2782,6 +3171,65 @@ namespace Amazon.SimpleEmail
 
         #endregion
         
+        #region  TestRenderTemplate
+
+
+        /// <summary>
+        /// Creates a preview of the MIME content of an email when provided with a template and
+        /// a set of replacement data.
+        /// 
+        ///  
+        /// <para>
+        /// You can execute this operation no more than once per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TestRenderTemplate service method.</param>
+        /// 
+        /// <returns>The response from the TestRenderTemplate service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.InvalidRenderingParameterException">
+        /// Indicates that one or more of the replacement values you provided is invalid. This
+        /// error may occur when the TemplateData object contains invalid JSON.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.MissingRenderingAttributeException">
+        /// Indicates that one or more of the replacement values for the specified template was
+        /// not specified. Ensure that the TemplateData object contains references to all of the
+        /// replacement tags in the specified template.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.TemplateDoesNotExistException">
+        /// Indicates that the Template object you specified does not exist in your Amazon SES
+        /// account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/TestRenderTemplate">REST API Reference for TestRenderTemplate Operation</seealso>
+        TestRenderTemplateResponse TestRenderTemplate(TestRenderTemplateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TestRenderTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TestRenderTemplate operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTestRenderTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/TestRenderTemplate">REST API Reference for TestRenderTemplate Operation</seealso>
+        IAsyncResult BeginTestRenderTemplate(TestRenderTemplateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TestRenderTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTestRenderTemplate.</param>
+        /// 
+        /// <returns>Returns a  TestRenderTemplateResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/TestRenderTemplate">REST API Reference for TestRenderTemplate Operation</seealso>
+        TestRenderTemplateResponse EndTestRenderTemplate(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  UpdateConfigurationSetEventDestination
 
 
@@ -2790,7 +3238,7 @@ namespace Amazon.SimpleEmail
         /// with configuration sets, which enable you to publish email sending events to Amazon
         /// CloudWatch, Amazon Kinesis Firehose, or Amazon Simple Notification Service (Amazon
         /// SNS). For information about using configuration sets, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Monitoring
-        /// Your Amazon SES Sending Activity</a> in the <i>Amazon SES Developer Guide</i>.
+        /// Your Amazon SES Sending Activity</a> in the <i>Amazon SES Developer Guide.</i> 
         /// 
         ///  <note> 
         /// <para>
@@ -2866,10 +3314,9 @@ namespace Amazon.SimpleEmail
         /// <para>
         /// By default, images and links used for tracking open and click events are hosted on
         /// domains operated by Amazon SES. You can configure a subdomain of your own to handle
-        /// these events by redirecting them to the Amazon SES-operated domain. For information
-        /// about using configuration sets, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring
-        /// Custom Domains to Handle Open and Click Tracking</a> in the <i> <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
-        /// SES Developer Guide</a>.</i> 
+        /// these events. For information about using configuration sets, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring
+        /// Custom Domains to Handle Open and Click Tracking</a> in the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
+        /// SES Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateConfigurationSetTrackingOptions service method.</param>
@@ -2934,8 +3381,8 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// For information about managing receipt rules, see the <i> <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
-        /// SES Developer Guide</a>.</i> 
+        /// For information about managing receipt rules, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
+        /// SES Developer Guide</a>.
         /// </para>
         ///  
         /// <para>
@@ -3005,6 +3452,61 @@ namespace Amazon.SimpleEmail
 
         #endregion
         
+        #region  UpdateTemplate
+
+
+        /// <summary>
+        /// Updates an email template. Email templates enable you to send personalized email to
+        /// one or more destinations in a single API operation. For more information, see the
+        /// <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon
+        /// SES Developer Guide</a>.
+        /// 
+        ///  
+        /// <para>
+        /// You can execute this operation no more than once per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTemplate service method.</param>
+        /// 
+        /// <returns>The response from the UpdateTemplate service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.InvalidTemplateException">
+        /// Indicates that a template could not be created because it contained invalid JSON.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.TemplateDoesNotExistException">
+        /// Indicates that the Template object you specified does not exist in your Amazon SES
+        /// account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateTemplate">REST API Reference for UpdateTemplate Operation</seealso>
+        UpdateTemplateResponse UpdateTemplate(UpdateTemplateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTemplate operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateTemplate">REST API Reference for UpdateTemplate Operation</seealso>
+        IAsyncResult BeginUpdateTemplate(UpdateTemplateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateTemplate.</param>
+        /// 
+        /// <returns>Returns a  UpdateTemplateResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateTemplate">REST API Reference for UpdateTemplate Operation</seealso>
+        UpdateTemplateResponse EndUpdateTemplate(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  VerifyDomainDkim
 
 
@@ -3027,9 +3529,8 @@ namespace Amazon.SimpleEmail
         /// </para>
         ///  
         /// <para>
-        /// For more information about creating DNS records using DKIM tokens, go to the <i> <a
-        /// href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon
-        /// SES Developer Guide</a>.</i> 
+        /// For more information about creating DNS records using DKIM tokens, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon
+        /// SES Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the VerifyDomainDkim service method.</param>
@@ -3072,7 +3573,7 @@ namespace Amazon.SimpleEmail
         /// <summary>
         /// Adds a domain to the list of identities for your Amazon SES account and attempts to
         /// verify it. For more information about verifying domains, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Verifying
-        /// Email Addresses and Domains</a> in the <i>Amazon SES Developer Guide</i>.
+        /// Email Addresses and Domains</a> in the <i>Amazon SES Developer Guide.</i> 
         /// 
         ///  
         /// <para>

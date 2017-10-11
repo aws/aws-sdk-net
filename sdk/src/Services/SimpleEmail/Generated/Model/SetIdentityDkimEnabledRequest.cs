@@ -55,8 +55,8 @@ namespace Amazon.SimpleEmail.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information about Easy DKIM signing, go to the <i> <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon
-    /// SES Developer Guide</a>.</i> 
+    /// For more information about Easy DKIM signing, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon
+    /// SES Developer Guide</a>.
     /// </para>
     /// </summary>
     public partial class SetIdentityDkimEnabledRequest : AmazonSimpleEmailServiceRequest
