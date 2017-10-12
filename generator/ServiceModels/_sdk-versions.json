@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.171.0",
+    "ProductVersion" : "3.3.172.0",
     "CoreVersion"    : "3.3.18.0",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -175,7 +175,7 @@
             "InPreview"               : false
         },
         "ElasticBeanstalk"  : {
-            "Version" : "3.3.5.1",
+            "Version" : "3.3.6.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.18.0"
@@ -281,7 +281,7 @@
             "InPreview"               : false
         },
         "RDS"                  : {
-            "Version" : "3.3.14.2",
+            "Version" : "3.3.15.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.18.0"
@@ -409,7 +409,7 @@
             "InPreview"               : false
         },
         "CodeCommit"                : {
-            "Version" : "3.3.1.14",
+            "Version" : "3.3.2.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.18.0"
@@ -521,7 +521,7 @@
             "InPreview"               : false
         },
         "DatabaseMigrationService"        : {
-            "Version" : "3.3.3.4",
+            "Version" : "3.3.4.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.18.0"
@@ -625,7 +625,7 @@
             "InPreview"               : false
         },
         "Polly"                           : {
-            "Version" : "3.3.2.4",
+            "Version" : "3.3.3.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.18.0"
