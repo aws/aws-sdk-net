@@ -92,6 +92,11 @@ namespace Amazon.CodeCommit
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <a>DeleteBranch</a>, which deletes the specified branch in a repository unless it
+    /// is the default branch
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <a>GetBranch</a>, which returns information about a specified branch
     /// </para>
     ///  </li> <li> 
@@ -430,6 +435,38 @@ namespace Amazon.CodeCommit
             var unmarshaller = CreateRepositoryResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateRepositoryRequest,CreateRepositoryResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteBranch
+
+        internal virtual DeleteBranchResponse DeleteBranch(DeleteBranchRequest request)
+        {
+            var marshaller = new DeleteBranchRequestMarshaller();
+            var unmarshaller = DeleteBranchResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteBranchRequest,DeleteBranchResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBranch operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBranch operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteBranch">REST API Reference for DeleteBranch Operation</seealso>
+        public virtual Task<DeleteBranchResponse> DeleteBranchAsync(DeleteBranchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteBranchRequestMarshaller();
+            var unmarshaller = DeleteBranchResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteBranchRequest,DeleteBranchResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

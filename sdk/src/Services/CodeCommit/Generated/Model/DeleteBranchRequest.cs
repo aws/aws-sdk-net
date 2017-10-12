@@ -28,36 +28,37 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeCommit.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetCommit operation.
-    /// Returns information about a commit, including commit message and committer information.
+    /// Container for the parameters to the DeleteBranch operation.
+    /// Deletes a branch from a repository, unless that branch is the default branch for the
+    /// repository.
     /// </summary>
-    public partial class GetCommitRequest : AmazonCodeCommitRequest
+    public partial class DeleteBranchRequest : AmazonCodeCommitRequest
     {
-        private string _commitId;
+        private string _branchName;
         private string _repositoryName;
 
         /// <summary>
-        /// Gets and sets the property CommitId. 
+        /// Gets and sets the property BranchName. 
         /// <para>
-        /// The commit ID. Commit IDs are the full SHA of the commit.
+        /// The name of the branch to delete.
         /// </para>
         /// </summary>
-        public string CommitId
+        public string BranchName
         {
-            get { return this._commitId; }
-            set { this._commitId = value; }
+            get { return this._branchName; }
+            set { this._branchName = value; }
         }
 
-        // Check to see if CommitId property is set
-        internal bool IsSetCommitId()
+        // Check to see if BranchName property is set
+        internal bool IsSetBranchName()
         {
-            return this._commitId != null;
+            return this._branchName != null;
         }
 
         /// <summary>
         /// Gets and sets the property RepositoryName. 
         /// <para>
-        /// The name of the repository to which the commit was made.
+        /// The name of the repository that contains the branch to be deleted.
         /// </para>
         /// </summary>
         public string RepositoryName

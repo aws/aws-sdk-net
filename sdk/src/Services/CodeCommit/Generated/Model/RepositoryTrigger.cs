@@ -41,9 +41,14 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property Branches. 
         /// <para>
-        /// The branches that will be included in the trigger configuration. If no branches are
-        /// specified, the trigger will apply to all branches.
+        /// The branches that will be included in the trigger configuration. If you specify an
+        /// empty array, the trigger will apply to all branches.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// While no content is required in the array, you must include the array itself.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<string> Branches
         {

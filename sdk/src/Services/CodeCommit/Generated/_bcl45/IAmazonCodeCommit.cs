@@ -87,6 +87,11 @@ namespace Amazon.CodeCommit
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <a>DeleteBranch</a>, which deletes the specified branch in a repository unless it
+    /// is the default branch
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <a>GetBranch</a>, which returns information about a specified branch
     /// </para>
     ///  </li> <li> 
@@ -366,6 +371,76 @@ namespace Amazon.CodeCommit
 
         #endregion
         
+        #region  DeleteBranch
+
+
+        /// <summary>
+        /// Deletes a branch from a repository, unless that branch is the default branch for the
+        /// repository.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBranch service method.</param>
+        /// 
+        /// <returns>The response from the DeleteBranch service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.BranchNameRequiredException">
+        /// A branch name is required but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.DefaultBranchCannotBeDeletedException">
+        /// The specified branch is the default branch for the repository, and cannot be deleted.
+        /// To delete this branch, you must first set another branch as the default branch.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidBranchNameException">
+        /// The specified branch name is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
+        /// At least one specified repository name is not valid.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// occur when a required repository parameter is missing, or when a specified repository
+        /// does not exist.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryDoesNotExistException">
+        /// The specified repository does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
+        /// A repository name is required but was not specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteBranch">REST API Reference for DeleteBranch Operation</seealso>
+        DeleteBranchResponse DeleteBranch(DeleteBranchRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBranch operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBranch operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteBranch">REST API Reference for DeleteBranch Operation</seealso>
+        Task<DeleteBranchResponse> DeleteBranchAsync(DeleteBranchRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteRepository
 
 
@@ -373,7 +448,7 @@ namespace Amazon.CodeCommit
         /// Deletes a repository. If a specified repository was already deleted, a null repository
         /// ID will be returned.
         /// 
-        ///  <important>
+        ///  <important> 
         /// <para>
         /// Deleting a repository also deletes all associated objects and metadata. After a repository
         /// is deleted, all future push calls to the deleted repository will fail.

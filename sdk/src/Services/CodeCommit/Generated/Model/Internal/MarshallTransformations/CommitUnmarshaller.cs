@@ -76,6 +76,12 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
                     unmarshalledObject.Author = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("commitId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CommitId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("committer", targetDepth))
                 {
                     var unmarshaller = UserInfoUnmarshaller.Instance;

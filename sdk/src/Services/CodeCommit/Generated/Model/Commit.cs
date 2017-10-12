@@ -34,6 +34,7 @@ namespace Amazon.CodeCommit.Model
     {
         private string _additionalData;
         private UserInfo _author;
+        private string _commitId;
         private UserInfo _committer;
         private string _message;
         private List<string> _parents = new List<string>();
@@ -75,6 +76,24 @@ namespace Amazon.CodeCommit.Model
         internal bool IsSetAuthor()
         {
             return this._author != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CommitId. 
+        /// <para>
+        /// The full SHA of the specified commit. 
+        /// </para>
+        /// </summary>
+        public string CommitId
+        {
+            get { return this._commitId; }
+            set { this._commitId = value; }
+        }
+
+        // Check to see if CommitId property is set
+        internal bool IsSetCommitId()
+        {
+            return this._commitId != null;
         }
 
         /// <summary>

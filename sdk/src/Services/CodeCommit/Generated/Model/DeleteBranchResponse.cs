@@ -28,37 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeCommit.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteRepository operation.
-    /// Deletes a repository. If a specified repository was already deleted, a null repository
-    /// ID will be returned.
-    /// 
-    ///  <important> 
-    /// <para>
-    /// Deleting a repository also deletes all associated objects and metadata. After a repository
-    /// is deleted, all future push calls to the deleted repository will fail.
-    /// </para>
-    ///  </important>
+    /// Represents the output of a delete branch operation.
     /// </summary>
-    public partial class DeleteRepositoryRequest : AmazonCodeCommitRequest
+    public partial class DeleteBranchResponse : AmazonWebServiceResponse
     {
-        private string _repositoryName;
+        private BranchInfo _deletedBranch;
 
         /// <summary>
-        /// Gets and sets the property RepositoryName. 
+        /// Gets and sets the property DeletedBranch. 
         /// <para>
-        /// The name of the repository to delete.
+        /// Information about the branch deleted by the operation, including the branch name and
+        /// the commit ID that was the tip of the branch.
         /// </para>
         /// </summary>
-        public string RepositoryName
+        public BranchInfo DeletedBranch
         {
-            get { return this._repositoryName; }
-            set { this._repositoryName = value; }
+            get { return this._deletedBranch; }
+            set { this._deletedBranch = value; }
         }
 
-        // Check to see if RepositoryName property is set
-        internal bool IsSetRepositoryName()
+        // Check to see if DeletedBranch property is set
+        internal bool IsSetDeletedBranch()
         {
-            return this._repositoryName != null;
+            return this._deletedBranch != null;
         }
 
     }
