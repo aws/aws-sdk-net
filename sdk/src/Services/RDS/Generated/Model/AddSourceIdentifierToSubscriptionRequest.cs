@@ -39,9 +39,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SourceIdentifier. 
         /// <para>
-        /// The identifier of the event source to be added. An identifier must begin with a letter
-        /// and must contain only ASCII letters, digits, and hyphens; it cannot end with a hyphen
-        /// or contain two consecutive hyphens.
+        /// The identifier of the event source to be added.
         /// </para>
         ///  
         /// <para>

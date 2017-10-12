@@ -1425,6 +1425,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void DescribeValidDBInstanceModificationsMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeValidDBInstanceModifications");
+
+            var request = InstantiateClassGenerator.Execute<DescribeValidDBInstanceModificationsRequest>();
+            var marshaller = new DescribeValidDBInstanceModificationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribeValidDBInstanceModificationsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeValidDBInstanceModificationsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void DownloadDBLogFilePortionMarshallTest()
         {
             var operation = service_model.FindOperation("DownloadDBLogFilePortion");

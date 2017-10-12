@@ -45,8 +45,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Instantiates CreateDBSnapshotRequest with the parameterized properties
         /// </summary>
-        /// <param name="dbSnapshotIdentifier">The identifier for the DB snapshot. Constraints: <ul> <li> Cannot be null, empty, or blank </li> <li> Must contain from 1 to 255 alphanumeric characters or hyphens </li> <li> First character must be a letter </li> <li> Cannot end with a hyphen or contain two consecutive hyphens </li> </ul> Example: <code>my-snapshot-id</code> </param>
-        /// <param name="dbInstanceIdentifier">The DB instance identifier. This is the unique key that identifies a DB instance. Constraints: <ul> <li> Must contain from 1 to 63 alphanumeric characters or hyphens </li> <li> First character must be a letter </li> <li> Cannot end with a hyphen or contain two consecutive hyphens </li> </ul></param>
+        /// <param name="dbSnapshotIdentifier">The identifier for the DB snapshot. Constraints: <ul> <li> Cannot be null, empty, or blank </li> <li> Must contain from 1 to 255 letters, numbers, or hyphens </li> <li> First character must be a letter </li> <li> Cannot end with a hyphen or contain two consecutive hyphens </li> </ul> Example: <code>my-snapshot-id</code> </param>
+        /// <param name="dbInstanceIdentifier">The identifier of the DB instance that you want to create the snapshot of. Constraints: <ul> <li> Must match the identifier of an existing DBInstance. </li> </ul></param>
         public CreateDBSnapshotRequest(string dbSnapshotIdentifier, string dbInstanceIdentifier)
         {
             _dbSnapshotIdentifier = dbSnapshotIdentifier;
@@ -56,7 +56,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBInstanceIdentifier. 
         /// <para>
-        /// The DB instance identifier. This is the unique key that identifies a DB instance.
+        /// The identifier of the DB instance that you want to create the snapshot of.
         /// </para>
         ///  
         /// <para>
@@ -64,15 +64,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must contain from 1 to 63 alphanumeric characters or hyphens
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// First character must be a letter
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Cannot end with a hyphen or contain two consecutive hyphens
+        /// Must match the identifier of an existing DBInstance.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -103,7 +95,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Must contain from 1 to 255 alphanumeric characters or hyphens
+        /// Must contain from 1 to 255 letters, numbers, or hyphens
         /// </para>
         ///  </li> <li> 
         /// <para>

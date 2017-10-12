@@ -75,7 +75,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must contain from 1 to 63 alphanumeric characters or hyphens
+        /// Must contain from 1 to 63 letters, numbers, or hyphens
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -106,8 +106,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores,
-        /// spaces, or hyphens. Must not be default.
+        /// Constraints: If supplied, must match the name of an existing DBSubnetGroup.
         /// </para>
         ///  
         /// <para>
@@ -341,19 +340,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must be the identifier of an existing database instance
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Must contain from 1 to 63 alphanumeric characters or hyphens
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// First character must be a letter
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Cannot end with a hyphen or contain two consecutive hyphens
+        /// Must match the identifier of an existing DBCluster.
         /// </para>
         ///  </li> </ul>
         /// </summary>

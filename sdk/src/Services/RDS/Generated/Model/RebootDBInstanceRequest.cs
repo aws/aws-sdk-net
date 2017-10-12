@@ -64,7 +64,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Instantiates RebootDBInstanceRequest with the parameterized properties
         /// </summary>
-        /// <param name="dbInstanceIdentifier">The DB instance identifier. This parameter is stored as a lowercase string. Constraints: <ul> <li> Must contain from 1 to 63 alphanumeric characters or hyphens </li> <li> First character must be a letter </li> <li> Cannot end with a hyphen or contain two consecutive hyphens </li> </ul></param>
+        /// <param name="dbInstanceIdentifier">The DB instance identifier. This parameter is stored as a lowercase string. Constraints: <ul> <li> Must match the identifier of an existing DBInstance. </li> </ul></param>
         public RebootDBInstanceRequest(string dbInstanceIdentifier)
         {
             _dbInstanceIdentifier = dbInstanceIdentifier;
@@ -81,15 +81,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must contain from 1 to 63 alphanumeric characters or hyphens
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// First character must be a letter
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Cannot end with a hyphen or contain two consecutive hyphens
+        /// Must match the identifier of an existing DBInstance.
         /// </para>
         ///  </li> </ul>
         /// </summary>

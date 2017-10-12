@@ -28,42 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Container for the parameters to the PromoteReadReplicaDBCluster operation.
-    /// Promotes a Read Replica DB cluster to a standalone DB cluster.
+    /// A range of double values.
     /// </summary>
-    public partial class PromoteReadReplicaDBClusterRequest : AmazonRDSRequest
+    public partial class DoubleRange
     {
-        private string _dbClusterIdentifier;
+        private double? _from;
+        private double? _to;
 
         /// <summary>
-        /// Gets and sets the property DBClusterIdentifier. 
+        /// Gets and sets the property From. 
         /// <para>
-        /// The identifier of the DB cluster Read Replica to promote. This parameter is not case-sensitive.
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Must match the identifier of an existing DBCluster Read Replica.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// Example: <code>my-cluster-replica1</code> 
+        /// The minimum value in the range.
         /// </para>
         /// </summary>
-        public string DBClusterIdentifier
+        public double From
         {
-            get { return this._dbClusterIdentifier; }
-            set { this._dbClusterIdentifier = value; }
+            get { return this._from.GetValueOrDefault(); }
+            set { this._from = value; }
         }
 
-        // Check to see if DBClusterIdentifier property is set
-        internal bool IsSetDBClusterIdentifier()
+        // Check to see if From property is set
+        internal bool IsSetFrom()
         {
-            return this._dbClusterIdentifier != null;
+            return this._from.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property To. 
+        /// <para>
+        /// The maximum value in the range.
+        /// </para>
+        /// </summary>
+        public double To
+        {
+            get { return this._to.GetValueOrDefault(); }
+            set { this._to = value; }
+        }
+
+        // Check to see if To property is set
+        internal bool IsSetTo()
+        {
+            return this._to.HasValue; 
         }
 
     }

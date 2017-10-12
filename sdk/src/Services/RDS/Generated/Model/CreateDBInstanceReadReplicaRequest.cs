@@ -229,6 +229,10 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// If supplied, must match the name of an existing DBSubnetGroup.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// The specified DB subnet group must be in the same AWS Region in which the operation
         /// is running.
         /// </para>
@@ -248,11 +252,6 @@ namespace Amazon.RDS.Model
         /// any VPC.
         /// </para>
         ///  </li> </ul> </li> </ul> 
-        /// <para>
-        /// Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores,
-        /// spaces, or hyphens. Must not be default.
-        /// </para>
-        ///  
         /// <para>
         /// Example: <code>mySubnetgroup</code> 
         /// </para>

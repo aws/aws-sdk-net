@@ -85,8 +85,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Instantiates RestoreDBInstanceFromDBSnapshotRequest with the parameterized properties
         /// </summary>
-        /// <param name="dbInstanceIdentifier">Name of the DB instance to create from the DB snapshot. This parameter isn't case-sensitive. Constraints: <ul> <li> Must contain from 1 to 63 alphanumeric characters or hyphens </li> <li> First character must be a letter </li> <li> Cannot end with a hyphen or contain two consecutive hyphens </li> </ul> Example: <code>my-snapshot-id</code> </param>
-        /// <param name="dbSnapshotIdentifier">The identifier for the DB snapshot to restore from. Constraints: <ul> <li> Must contain from 1 to 255 alphanumeric characters or hyphens </li> <li> First character must be a letter </li> <li> Cannot end with a hyphen or contain two consecutive hyphens </li> </ul> If you are restoring from a shared manual DB snapshot, the <code>DBSnapshotIdentifier</code> must be the ARN of the shared DB snapshot.</param>
+        /// <param name="dbInstanceIdentifier">Name of the DB instance to create from the DB snapshot. This parameter isn't case-sensitive. Constraints: <ul> <li> Must contain from 1 to 63 numbers, letters, or hyphens </li> <li> First character must be a letter </li> <li> Cannot end with a hyphen or contain two consecutive hyphens </li> </ul> Example: <code>my-snapshot-id</code> </param>
+        /// <param name="dbSnapshotIdentifier">The identifier for the DB snapshot to restore from. Constraints: <ul> <li> Must match the identifier of an existing DBSnapshot. </li> <li> If you are restoring from a shared manual DB snapshot, the <code>DBSnapshotIdentifier</code> must be the ARN of the shared DB snapshot. </li> </ul></param>
         public RestoreDBInstanceFromDBSnapshotRequest(string dbInstanceIdentifier, string dbSnapshotIdentifier)
         {
             _dbInstanceIdentifier = dbInstanceIdentifier;
@@ -199,7 +199,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must contain from 1 to 63 alphanumeric characters or hyphens
+        /// Must contain from 1 to 63 numbers, letters, or hyphens
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -260,21 +260,14 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must contain from 1 to 255 alphanumeric characters or hyphens
+        /// Must match the identifier of an existing DBSnapshot.
         /// </para>
         ///  </li> <li> 
-        /// <para>
-        /// First character must be a letter
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Cannot end with a hyphen or contain two consecutive hyphens
-        /// </para>
-        ///  </li> </ul> 
         /// <para>
         /// If you are restoring from a shared manual DB snapshot, the <code>DBSnapshotIdentifier</code>
         /// must be the ARN of the shared DB snapshot.
         /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string DBSnapshotIdentifier
         {
@@ -295,8 +288,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores,
-        /// spaces, or hyphens. Must not be default.
+        /// Constraints: If supplied, must match the name of an existing DBSubnetGroup.
         /// </para>
         ///  
         /// <para>
@@ -407,11 +399,57 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Valid Values: <code>MySQL</code> | <code>mariadb</code> | <code>oracle-se1</code>
-        /// | <code>oracle-se</code> | <code>oracle-ee</code> | <code>sqlserver-ee</code> | <code>sqlserver-se</code>
-        /// | <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> |
-        /// <code>aurora</code> 
+        /// Valid Values:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>aurora</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>mariadb</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>mysql</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>oracle-ee</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>oracle-se2</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>oracle-se1</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>oracle-se</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>postgres</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>sqlserver-ee</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>sqlserver-se</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>sqlserver-ex</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>sqlserver-web</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Engine
         {

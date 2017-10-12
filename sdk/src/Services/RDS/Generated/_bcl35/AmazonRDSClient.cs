@@ -4584,6 +4584,66 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  DescribeValidDBInstanceModifications
+
+        /// <summary>
+        /// You can call <a>DescribeValidDBInstanceModifications</a> to learn what modifications
+        /// you can make to your DB instance. You can use this information when you call <a>ModifyDBInstance</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeValidDBInstanceModifications service method.</param>
+        /// 
+        /// <returns>The response from the DescribeValidDBInstanceModifications service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
+        /// <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
+        /// The specified DB instance is not in the <i>available</i> state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeValidDBInstanceModifications">REST API Reference for DescribeValidDBInstanceModifications Operation</seealso>
+        public virtual DescribeValidDBInstanceModificationsResponse DescribeValidDBInstanceModifications(DescribeValidDBInstanceModificationsRequest request)
+        {
+            var marshaller = new DescribeValidDBInstanceModificationsRequestMarshaller();
+            var unmarshaller = DescribeValidDBInstanceModificationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeValidDBInstanceModificationsRequest,DescribeValidDBInstanceModificationsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeValidDBInstanceModifications operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeValidDBInstanceModifications operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeValidDBInstanceModifications
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeValidDBInstanceModifications">REST API Reference for DescribeValidDBInstanceModifications Operation</seealso>
+        public virtual IAsyncResult BeginDescribeValidDBInstanceModifications(DescribeValidDBInstanceModificationsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeValidDBInstanceModificationsRequestMarshaller();
+            var unmarshaller = DescribeValidDBInstanceModificationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeValidDBInstanceModificationsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeValidDBInstanceModifications operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeValidDBInstanceModifications.</param>
+        /// 
+        /// <returns>Returns a  DescribeValidDBInstanceModificationsResult from RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeValidDBInstanceModifications">REST API Reference for DescribeValidDBInstanceModifications Operation</seealso>
+        public virtual DescribeValidDBInstanceModificationsResponse EndDescribeValidDBInstanceModifications(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeValidDBInstanceModificationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DownloadDBLogFilePortion
 
         /// <summary>
@@ -5062,7 +5122,9 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Modifies settings for a DB instance. You can change one or more database configuration
-        /// parameters by specifying these parameters and the new values in the request.
+        /// parameters by specifying these parameters and the new values in the request. To learn
+        /// what modifications you can make to your DB instance, call <a>DescribeValidDBInstanceModifications</a>
+        /// before you call <a>ModifyDBInstance</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyDBInstance service method.</param>
         /// 

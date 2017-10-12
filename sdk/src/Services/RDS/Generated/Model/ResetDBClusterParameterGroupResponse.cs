@@ -45,7 +45,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must be 1 to 255 alphanumeric characters
+        /// Must be 1 to 255 letters or numbers.
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -82,7 +82,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Instantiates DeleteDBInstanceRequest with the parameterized properties
         /// </summary>
-        /// <param name="dbInstanceIdentifier">The DB instance identifier for the DB instance to be deleted. This parameter isn't case-sensitive. Constraints: <ul> <li> Must contain from 1 to 63 alphanumeric characters or hyphens </li> <li> First character must be a letter </li> <li> Cannot end with a hyphen or contain two consecutive hyphens </li> </ul></param>
+        /// <param name="dbInstanceIdentifier">The DB instance identifier for the DB instance to be deleted. This parameter isn't case-sensitive. Constraints: <ul> <li> Must match the name of an existing DB instance. </li> </ul></param>
         public DeleteDBInstanceRequest(string dbInstanceIdentifier)
         {
             _dbInstanceIdentifier = dbInstanceIdentifier;
@@ -100,15 +100,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must contain from 1 to 63 alphanumeric characters or hyphens
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// First character must be a letter
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Cannot end with a hyphen or contain two consecutive hyphens
+        /// Must match the name of an existing DB instance.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -141,7 +133,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must be 1 to 255 alphanumeric characters
+        /// Must be 1 to 255 letters or numbers.
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -3046,6 +3046,40 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  DescribeValidDBInstanceModifications
+
+
+        /// <summary>
+        /// You can call <a>DescribeValidDBInstanceModifications</a> to learn what modifications
+        /// you can make to your DB instance. You can use this information when you call <a>ModifyDBInstance</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeValidDBInstanceModifications service method.</param>
+        /// 
+        /// <returns>The response from the DescribeValidDBInstanceModifications service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
+        /// <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
+        /// The specified DB instance is not in the <i>available</i> state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeValidDBInstanceModifications">REST API Reference for DescribeValidDBInstanceModifications Operation</seealso>
+        DescribeValidDBInstanceModificationsResponse DescribeValidDBInstanceModifications(DescribeValidDBInstanceModificationsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeValidDBInstanceModifications operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeValidDBInstanceModifications operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeValidDBInstanceModifications">REST API Reference for DescribeValidDBInstanceModifications Operation</seealso>
+        Task<DescribeValidDBInstanceModificationsResponse> DescribeValidDBInstanceModificationsAsync(DescribeValidDBInstanceModificationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DownloadDBLogFilePortion
 
 
@@ -3369,7 +3403,9 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Modifies settings for a DB instance. You can change one or more database configuration
-        /// parameters by specifying these parameters and the new values in the request.
+        /// parameters by specifying these parameters and the new values in the request. To learn
+        /// what modifications you can make to your DB instance, call <a>DescribeValidDBInstanceModifications</a>
+        /// before you call <a>ModifyDBInstance</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyDBInstance service method.</param>
         /// 

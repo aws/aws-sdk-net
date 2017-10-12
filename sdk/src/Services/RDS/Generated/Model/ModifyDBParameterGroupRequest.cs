@@ -67,7 +67,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Instantiates ModifyDBParameterGroupRequest with the parameterized properties
         /// </summary>
-        /// <param name="dbParameterGroupName">The name of the DB parameter group. Constraints: <ul> <li> Must be the name of an existing DB parameter group </li> <li> Must be 1 to 255 alphanumeric characters </li> <li> First character must be a letter </li> <li> Cannot end with a hyphen or contain two consecutive hyphens </li> </ul></param>
+        /// <param name="dbParameterGroupName">The name of the DB parameter group. Constraints: <ul> <li> If supplied, must match the name of an existing DBParameterGroup. </li> </ul></param>
         /// <param name="parameters">An array of parameter names, values, and the apply method for the parameter update. At least one parameter name, value, and apply method must be supplied; subsequent arguments are optional. A maximum of 20 parameters can be modified in a single request. Valid Values (for the application method): <code>immediate | pending-reboot</code>  <note> You can use the immediate value with dynamic parameters only. You can use the pending-reboot value for both dynamic and static parameters, and changes are applied when you reboot the DB instance without failover. </note></param>
         public ModifyDBParameterGroupRequest(string dbParameterGroupName, List<Parameter> parameters)
         {
@@ -86,19 +86,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must be the name of an existing DB parameter group
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Must be 1 to 255 alphanumeric characters
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// First character must be a letter
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Cannot end with a hyphen or contain two consecutive hyphens
+        /// If supplied, must match the name of an existing DBParameterGroup.
         /// </para>
         ///  </li> </ul>
         /// </summary>

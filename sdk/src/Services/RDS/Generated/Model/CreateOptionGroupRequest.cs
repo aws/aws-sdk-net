@@ -105,7 +105,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must be 1 to 255 alphanumeric characters or hyphens
+        /// Must be 1 to 255 letters, numbers, or hyphens
         /// </para>
         ///  </li> <li> 
         /// <para>

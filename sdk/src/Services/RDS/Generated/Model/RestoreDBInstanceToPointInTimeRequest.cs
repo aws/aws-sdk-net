@@ -78,8 +78,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Instantiates RestoreDBInstanceToPointInTimeRequest with the parameterized properties
         /// </summary>
-        /// <param name="sourceDBInstanceIdentifier">The identifier of the source DB instance from which to restore. Constraints: <ul> <li> Must be the identifier of an existing database instance </li> <li> Must contain from 1 to 63 alphanumeric characters or hyphens </li> <li> First character must be a letter </li> <li> Cannot end with a hyphen or contain two consecutive hyphens </li> </ul></param>
-        /// <param name="targetDBInstanceIdentifier">The name of the new database instance to be created. Constraints: <ul> <li> Must contain from 1 to 63 alphanumeric characters or hyphens </li> <li> First character must be a letter </li> <li> Cannot end with a hyphen or contain two consecutive hyphens </li> </ul></param>
+        /// <param name="sourceDBInstanceIdentifier">The identifier of the source DB instance from which to restore. Constraints: <ul> <li> Must match the identifier of an existing DBInstance. </li> </ul></param>
+        /// <param name="targetDBInstanceIdentifier">The name of the new database instance to be created. Constraints: <ul> <li> Must contain from 1 to 63 letters, numbers, or hyphens </li> <li> First character must be a letter </li> <li> Cannot end with a hyphen or contain two consecutive hyphens </li> </ul></param>
         public RestoreDBInstanceToPointInTimeRequest(string sourceDBInstanceIdentifier, string targetDBInstanceIdentifier)
         {
             _sourceDBInstanceIdentifier = sourceDBInstanceIdentifier;
@@ -215,8 +215,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores,
-        /// spaces, or hyphens. Must not be default.
+        /// Constraints: If supplied, must match the name of an existing DBSubnetGroup.
         /// </para>
         ///  
         /// <para>
@@ -326,11 +325,57 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Valid Values: <code>MySQL</code> | <code>mariadb</code> | <code>oracle-se1</code>
-        /// | <code>oracle-se</code> | <code>oracle-ee</code> | <code>sqlserver-ee</code> | <code>sqlserver-se</code>
-        /// | <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> |
-        /// <code>aurora</code> 
+        /// Valid Values:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>aurora</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>mariadb</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>mysql</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>oracle-ee</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>oracle-se2</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>oracle-se1</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>oracle-se</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>postgres</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>sqlserver-ee</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>sqlserver-se</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>sqlserver-ex</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>sqlserver-web</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Engine
         {
@@ -565,19 +610,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must be the identifier of an existing database instance
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Must contain from 1 to 63 alphanumeric characters or hyphens
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// First character must be a letter
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Cannot end with a hyphen or contain two consecutive hyphens
+        /// Must match the identifier of an existing DBInstance.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -651,7 +684,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must contain from 1 to 63 alphanumeric characters or hyphens
+        /// Must contain from 1 to 63 letters, numbers, or hyphens
         /// </para>
         ///  </li> <li> 
         /// <para>

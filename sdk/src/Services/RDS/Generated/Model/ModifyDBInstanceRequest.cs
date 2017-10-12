@@ -30,7 +30,9 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Container for the parameters to the ModifyDBInstance operation.
     /// Modifies settings for a DB instance. You can change one or more database configuration
-    /// parameters by specifying these parameters and the new values in the request.
+    /// parameters by specifying these parameters and the new values in the request. To learn
+    /// what modifications you can make to your DB instance, call <a>DescribeValidDBInstanceModifications</a>
+    /// before you call <a>ModifyDBInstance</a>.
     /// </summary>
     public partial class ModifyDBInstanceRequest : AmazonRDSRequest
     {
@@ -78,7 +80,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Instantiates ModifyDBInstanceRequest with the parameterized properties
         /// </summary>
-        /// <param name="dbInstanceIdentifier">The DB instance identifier. This value is stored as a lowercase string. Constraints: <ul> <li> Must be the identifier for an existing DB instance </li> <li> Must contain from 1 to 63 alphanumeric characters or hyphens </li> <li> First character must be a letter </li> <li> Cannot end with a hyphen or contain two consecutive hyphens </li> </ul></param>
+        /// <param name="dbInstanceIdentifier">The DB instance identifier. This value is stored as a lowercase string. Constraints: <ul> <li> Must match the identifier of an existing DBInstance. </li> </ul></param>
         public ModifyDBInstanceRequest(string dbInstanceIdentifier)
         {
             _dbInstanceIdentifier = dbInstanceIdentifier;
@@ -440,19 +442,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must be the identifier for an existing DB instance
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Must contain from 1 to 63 alphanumeric characters or hyphens
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// First character must be a letter
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Cannot end with a hyphen or contain two consecutive hyphens
+        /// Must match the identifier of an existing DBInstance.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -617,15 +607,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must be 1 to 255 alphanumeric characters
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// First character must be a letter
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Cannot end with a hyphen or contain two consecutive hyphens
+        /// If supplied, must match existing DBSecurityGroups.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -658,8 +640,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores,
-        /// spaces, or hyphens.
+        /// Constraints: If supplied, must match the name of an existing DBSubnetGroup.
         /// </para>
         ///  
         /// <para>
@@ -914,7 +895,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// Not applicable. The password for the master user is managed by the DB cluster. For
-        /// more information, see <a>ModifyDBCluster</a>.
+        /// more information, see <a>ModifyDBCluster</a>. 
         /// </para>
         ///  
         /// <para>
@@ -922,15 +903,49 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Must be 8 to 41 alphanumeric characters (MySQL, MariaDB, and Amazon Aurora),
-        /// 8 to 30 alphanumeric characters (Oracle), or 8 to 128 alphanumeric characters (SQL
-        /// Server).
+        ///  <b>MariaDB</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: Must contain from 8 to 41 characters.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Microsoft SQL Server</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: Must contain from 8 to 128 characters.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>MySQL</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: Must contain from 8 to 41 characters.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Oracle</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: Must contain from 8 to 30 characters.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>PostgreSQL</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: Must contain from 8 to 128 characters.
         /// </para>
         ///  <note> 
         /// <para>
         /// Amazon RDS API actions never return the password, so this action provides a way to
         /// regain access to a primary instance user if the password is lost. This includes restoring
-        /// privileges that might have been accidentally revoked.
+        /// privileges that might have been accidentally revoked. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -1041,17 +1056,20 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must contain from 1 to 63 alphanumeric characters or hyphens
+        /// Must contain from 1 to 63 letters, numbers, or hyphens.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// First character must be a letter
+        /// The first character must be a letter.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Cannot end with a hyphen or contain two consecutive hyphens
+        /// Cannot end with a hyphen or contain two consecutive hyphens.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// Example: <code>mydbinstance</code> 
+        /// </para>
         /// </summary>
         public string NewDBInstanceIdentifier
         {
@@ -1356,15 +1374,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must be 1 to 255 alphanumeric characters
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// First character must be a letter
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Cannot end with a hyphen or contain two consecutive hyphens
+        /// If supplied, must match existing VpcSecurityGroupIds.
         /// </para>
         ///  </li> </ul>
         /// </summary>

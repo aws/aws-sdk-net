@@ -263,18 +263,6 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must contain from 1 to 63 alphanumeric characters or hyphens.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// First character must be a letter.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Cannot end with a hyphen or contain two consecutive hyphens.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// Must specify a valid system snapshot in the "available" state.
         /// </para>
         ///  </li> <li> 
@@ -332,7 +320,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must contain from 1 to 63 alphanumeric characters or hyphens.
+        /// Must contain from 1 to 63 letters, numbers, or hyphens.
         /// </para>
         ///  </li> <li> 
         /// <para>
