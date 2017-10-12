@@ -521,6 +521,10 @@ namespace Amazon.Polly
         /// </summary>
         public static readonly VoiceId Mathieu = new VoiceId("Mathieu");
         /// <summary>
+        /// Constant Matthew for VoiceId
+        /// </summary>
+        public static readonly VoiceId Matthew = new VoiceId("Matthew");
+        /// <summary>
         /// Constant Maxim for VoiceId
         /// </summary>
         public static readonly VoiceId Maxim = new VoiceId("Maxim");
@@ -564,6 +568,10 @@ namespace Amazon.Polly
         /// Constant Salli for VoiceId
         /// </summary>
         public static readonly VoiceId Salli = new VoiceId("Salli");
+        /// <summary>
+        /// Constant Takumi for VoiceId
+        /// </summary>
+        public static readonly VoiceId Takumi = new VoiceId("Takumi");
         /// <summary>
         /// Constant Tatyana for VoiceId
         /// </summary>
