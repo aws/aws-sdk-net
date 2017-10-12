@@ -1912,6 +1912,60 @@ namespace Amazon.ElasticBeanstalk
 
         #endregion
         
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// Returns the tags applied to an AWS Elastic Beanstalk resource. The response contains
+        /// a list of tag key-value pairs.
+        /// 
+        ///  
+        /// <para>
+        /// Currently, Elastic Beanstalk only supports tagging Elastic Beanstalk environments.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one of more AWS services.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ResourceNotFoundException">
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN).
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ResourceTypeNotSupportedException">
+        /// The type of the specified Amazon Resource Name (ARN) isn't supported for this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        {
+            var marshaller = new ListTagsForResourceRequestMarshaller();
+            var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListTagsForResourceRequestMarshaller();
+            var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  RebuildEnvironment
 
 
@@ -2440,6 +2494,74 @@ namespace Amazon.ElasticBeanstalk
             var unmarshaller = UpdateEnvironmentResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateEnvironmentRequest,UpdateEnvironmentResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateTagsForResource
+
+
+        /// <summary>
+        /// Update the list of tags applied to an AWS Elastic Beanstalk resource. Two lists can
+        /// be passed: <code>TagsToAdd</code> for tags to add or update, and <code>TagsToRemove</code>.
+        /// 
+        ///  
+        /// <para>
+        /// Currently, Elastic Beanstalk only supports tagging of Elastic Beanstalk environments.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the UpdateTagsForResource service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one of more AWS services.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.OperationInProgressException">
+        /// Unable to perform the specified operation because another operation that effects an
+        /// element in this activity is already in progress.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ResourceNotFoundException">
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN).
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ResourceTypeNotSupportedException">
+        /// The type of the specified Amazon Resource Name (ARN) isn't supported for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyTagsException">
+        /// The number of tags in the resource would exceed the number of tags that each resource
+        /// can have.
+        /// 
+        ///  
+        /// <para>
+        /// To calculate this, the operation considers both the number of tags the resource already
+        /// has and the tags this operation would add if it succeeded.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateTagsForResource">REST API Reference for UpdateTagsForResource Operation</seealso>
+        public virtual UpdateTagsForResourceResponse UpdateTagsForResource(UpdateTagsForResourceRequest request)
+        {
+            var marshaller = new UpdateTagsForResourceRequestMarshaller();
+            var unmarshaller = UpdateTagsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateTagsForResourceRequest,UpdateTagsForResourceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTagsForResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateTagsForResource">REST API Reference for UpdateTagsForResource Operation</seealso>
+        public virtual Task<UpdateTagsForResourceResponse> UpdateTagsForResourceAsync(UpdateTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateTagsForResourceRequestMarshaller();
+            var unmarshaller = UpdateTagsForResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateTagsForResourceRequest,UpdateTagsForResourceResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

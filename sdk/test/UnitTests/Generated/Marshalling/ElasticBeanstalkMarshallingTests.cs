@@ -715,6 +715,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("ElasticBeanstalk")]
+        public void ListTagsForResourceMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListTagsForResource");
+
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var marshaller = new ListTagsForResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ListTagsForResourceResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListTagsForResourceResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
         public void RebuildEnvironmentMarshallTest()
         {
             var operation = service_model.FindOperation("RebuildEnvironment");
@@ -951,6 +975,25 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var response = UpdateEnvironmentResponseUnmarshaller.Instance.Unmarshall(context)
                 as UpdateEnvironmentResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void UpdateTagsForResourceMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateTagsForResource");
+
+            var request = InstantiateClassGenerator.Execute<UpdateTagsForResourceRequest>();
+            var marshaller = new UpdateTagsForResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
         }
 
         

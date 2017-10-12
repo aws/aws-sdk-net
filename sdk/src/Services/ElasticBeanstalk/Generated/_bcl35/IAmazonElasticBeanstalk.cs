@@ -1598,6 +1598,61 @@ namespace Amazon.ElasticBeanstalk
 
         #endregion
         
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// Returns the tags applied to an AWS Elastic Beanstalk resource. The response contains
+        /// a list of tag key-value pairs.
+        /// 
+        ///  
+        /// <para>
+        /// Currently, Elastic Beanstalk only supports tagging Elastic Beanstalk environments.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one of more AWS services.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ResourceNotFoundException">
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN).
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ResourceTypeNotSupportedException">
+        /// The type of the specified Amazon Resource Name (ARN) isn't supported for this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation on AmazonElasticBeanstalkClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForResource.</param>
+        /// 
+        /// <returns>Returns a  ListTagsForResourceResult from ElasticBeanstalk.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  RebuildEnvironment
 
 
@@ -2139,6 +2194,75 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>Returns a  UpdateEnvironmentResult from ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateEnvironment">REST API Reference for UpdateEnvironment Operation</seealso>
         UpdateEnvironmentResponse EndUpdateEnvironment(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateTagsForResource
+
+
+        /// <summary>
+        /// Update the list of tags applied to an AWS Elastic Beanstalk resource. Two lists can
+        /// be passed: <code>TagsToAdd</code> for tags to add or update, and <code>TagsToRemove</code>.
+        /// 
+        ///  
+        /// <para>
+        /// Currently, Elastic Beanstalk only supports tagging of Elastic Beanstalk environments.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the UpdateTagsForResource service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one of more AWS services.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.OperationInProgressException">
+        /// Unable to perform the specified operation because another operation that effects an
+        /// element in this activity is already in progress.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ResourceNotFoundException">
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN).
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ResourceTypeNotSupportedException">
+        /// The type of the specified Amazon Resource Name (ARN) isn't supported for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyTagsException">
+        /// The number of tags in the resource would exceed the number of tags that each resource
+        /// can have.
+        /// 
+        ///  
+        /// <para>
+        /// To calculate this, the operation considers both the number of tags the resource already
+        /// has and the tags this operation would add if it succeeded.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateTagsForResource">REST API Reference for UpdateTagsForResource Operation</seealso>
+        UpdateTagsForResourceResponse UpdateTagsForResource(UpdateTagsForResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTagsForResource operation on AmazonElasticBeanstalkClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateTagsForResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateTagsForResource">REST API Reference for UpdateTagsForResource Operation</seealso>
+        IAsyncResult BeginUpdateTagsForResource(UpdateTagsForResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateTagsForResource.</param>
+        /// 
+        /// <returns>Returns a  UpdateTagsForResourceResult from ElasticBeanstalk.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateTagsForResource">REST API Reference for UpdateTagsForResource Operation</seealso>
+        UpdateTagsForResourceResponse EndUpdateTagsForResource(IAsyncResult asyncResult);
 
         #endregion
         
