@@ -186,7 +186,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ExtraConnectionAttributes. 
         /// <para>
-        /// Additional attributes associated with the connection.
+        /// Additional attributes associated with the connection. To reset this parameter, pass
+        /// the empty string ("") as an argument.
         /// </para>
         /// </summary>
         public string ExtraConnectionAttributes

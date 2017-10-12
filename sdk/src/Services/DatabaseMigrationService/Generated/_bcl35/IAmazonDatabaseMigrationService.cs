@@ -1328,6 +1328,13 @@ namespace Amazon.DatabaseMigrationService
         /// <summary>
         /// Returns table statistics on the database migration task, including table name, rows
         /// inserted, rows updated, and rows deleted.
+        /// 
+        ///  
+        /// <para>
+        /// Note that the "last updated" column the DMS console only indicates the time that AWS
+        /// DMS last updated the table statistics record for a table. It does not indicate the
+        /// time of the last update to the table.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTableStatistics service method.</param>
         /// 

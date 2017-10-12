@@ -212,7 +212,12 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property TableState. 
         /// <para>
-        /// The state of the table.
+        /// The state of the tables described.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid states: Table does not exist | Before load | Full load | Table completed | Table
+        /// cancelled | Table error | Table all | Table updates | Table is being reloaded
         /// </para>
         /// </summary>
         public string TableState
