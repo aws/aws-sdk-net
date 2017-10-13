@@ -35,7 +35,7 @@ namespace Amazon.S3.Transfer.Internal
             ValidateRequest();
             GetObjectRequest getRequest = ConvertToGetObjectRequest(this._request);
 
-            var maxRetries = ((AmazonS3Client)_s3Client).Config.MaxErrorRetry;
+            var maxRetries = _s3Client.Config.MaxErrorRetry;
             var retries = 0;
             bool shouldRetry = false;
             string mostRecentETag = null;
