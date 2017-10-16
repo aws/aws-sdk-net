@@ -1,11 +1,11 @@
 
 {
-    "ProductVersion" : "3.3.172.0",
+    "ProductVersion" : "3.3.173.0",
     "CoreVersion"    : "3.3.18.0",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
         "CloudHSM" : {
-            "Version" : "3.3.0.22",
+            "Version" : "3.3.0.23",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.18.0"
@@ -151,7 +151,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.3.30.0",
+            "Version" : "3.3.31.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.18.0"
@@ -281,7 +281,7 @@
             "InPreview"               : false
         },
         "RDS"                  : {
-            "Version" : "3.3.15.0",
+            "Version" : "3.3.16.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.18.0"
@@ -313,7 +313,7 @@
             "InPreview"               : false
         },
         "S3"                   : {
-            "Version" : "3.3.11.1",
+            "Version" : "3.3.11.2",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.18.0"
@@ -425,7 +425,7 @@
             "InPreview"               : false
         },
         "Elasticsearch"             : {
-            "Version" : "3.3.1.14",
+            "Version" : "3.3.2.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.18.0"
@@ -433,7 +433,7 @@
             "InPreview"               : false
         },
         "WAF"                       : {
-            "Version" : "3.3.2.4",
+            "Version" : "3.3.3.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.18.0"
@@ -697,7 +697,7 @@
             "InPreview"               : false
         },
         "WAFRegional"                     : {
-            "Version" : "3.3.1.4",
+            "Version" : "3.3.2.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.18.0"

@@ -1,3 +1,19 @@
+### 3.3.173.0 (2017-10-16 20:49 UTC)
+* CloudHSM (3.3.0.23)
+	* Documentation updates for AWS CloudHSM Classic.
+* EC2 (3.3.31.0)
+	* You can now change the tenancy of your VPC from dedicated to default with a single API operation. For more details refer to the documentation for changing VPC tenancy.
+* Elasticsearch (3.3.2.0)
+	* AWS Elasticsearch adds support for enabling slow log publishing. Using slow log publishing options customers can configure and enable index/query slow log publishing of their domain to preferred AWS Cloudwatch log group.
+* RDS (3.3.16.0)
+	* Adds waiters for DBSnapshotAvailable and DBSnapshotDeleted.
+* S3 (3.3.11.2)
+	* Fixed typo in exception messages.
+* WAF (3.3.3.0)
+	* This release adds support for regular expressions as match conditions in rules, and support for geographical location by country of request IP address as a match condition in rules.
+* WAFRegional (3.3.2.0)
+	* This release adds support for regular expressions as match conditions in rules, and support for geographical location by country of request IP address as a match condition in rules.
+
 ### 3.3.172.0 (2017-10-12 18:48 UTC)
 * CodeCommit (3.3.2.0)
 	* This release includes the DeleteBranch API and a change to the contents of a Commit object.
