@@ -970,7 +970,7 @@ namespace Amazon.S3.IO
         {
             if (!Directory.Exists(path))
             {
-                throw new ArgumentException("Destiation for CopyTo operation does not exist.", "path");
+                throw new ArgumentException("Destination for CopyTo operation does not exist.", "path");
             }
 
             if (LastWriteTime > changesSince)
@@ -1073,7 +1073,7 @@ namespace Amazon.S3.IO
         {
             if (!newLoc.Exists)
             {
-                throw new ArgumentException("Destiation for MoveTo operation does not exist.", "newLoc");
+                throw new ArgumentException("Destination for MoveTo operation does not exist.", "newLoc");
             }
 
             S3DirectoryInfo newSub = newLoc.CreateSubdirectory(Name);
@@ -1105,7 +1105,7 @@ namespace Amazon.S3.IO
         {
             if (!Directory.Exists(path))
             {
-                throw new ArgumentException("Destiation for MoveTo operation does not exist.", "path");
+                throw new ArgumentException("Destination for MoveTo operation does not exist.", "path");
             }
            
             foreach (S3DirectoryInfo dir in EnumerateDirectories())
