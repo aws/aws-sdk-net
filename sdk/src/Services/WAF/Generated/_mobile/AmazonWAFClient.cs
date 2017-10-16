@@ -339,7 +339,7 @@ namespace Amazon.WAF
         ///  </li> <li> 
         /// <para>
         /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
-        /// other than HEADER, QUERY_STRING, or URI.
+        /// other than HEADER, METHOD, QUERY_STRING, URI, or BODY.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -388,6 +388,38 @@ namespace Amazon.WAF
             var unmarshaller = CreateByteMatchSetResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateByteMatchSetRequest,CreateByteMatchSetResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateGeoMatchSet
+
+        internal virtual CreateGeoMatchSetResponse CreateGeoMatchSet(CreateGeoMatchSetRequest request)
+        {
+            var marshaller = new CreateGeoMatchSetRequestMarshaller();
+            var unmarshaller = CreateGeoMatchSetResponseUnmarshaller.Instance;
+
+            return Invoke<CreateGeoMatchSetRequest,CreateGeoMatchSetResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateGeoMatchSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateGeoMatchSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateGeoMatchSet">REST API Reference for CreateGeoMatchSet Operation</seealso>
+        public virtual Task<CreateGeoMatchSetResponse> CreateGeoMatchSetAsync(CreateGeoMatchSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateGeoMatchSetRequestMarshaller();
+            var unmarshaller = CreateGeoMatchSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateGeoMatchSetRequest,CreateGeoMatchSetResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -495,7 +527,7 @@ namespace Amazon.WAF
         ///  </li> <li> 
         /// <para>
         /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
-        /// other than HEADER, QUERY_STRING, or URI.
+        /// other than HEADER, METHOD, QUERY_STRING, URI, or BODY.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -576,6 +608,70 @@ namespace Amazon.WAF
             var unmarshaller = CreateRateBasedRuleResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateRateBasedRuleRequest,CreateRateBasedRuleResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateRegexMatchSet
+
+        internal virtual CreateRegexMatchSetResponse CreateRegexMatchSet(CreateRegexMatchSetRequest request)
+        {
+            var marshaller = new CreateRegexMatchSetRequestMarshaller();
+            var unmarshaller = CreateRegexMatchSetResponseUnmarshaller.Instance;
+
+            return Invoke<CreateRegexMatchSetRequest,CreateRegexMatchSetResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateRegexMatchSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateRegexMatchSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRegexMatchSet">REST API Reference for CreateRegexMatchSet Operation</seealso>
+        public virtual Task<CreateRegexMatchSetResponse> CreateRegexMatchSetAsync(CreateRegexMatchSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateRegexMatchSetRequestMarshaller();
+            var unmarshaller = CreateRegexMatchSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateRegexMatchSetRequest,CreateRegexMatchSetResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateRegexPatternSet
+
+        internal virtual CreateRegexPatternSetResponse CreateRegexPatternSet(CreateRegexPatternSetRequest request)
+        {
+            var marshaller = new CreateRegexPatternSetRequestMarshaller();
+            var unmarshaller = CreateRegexPatternSetResponseUnmarshaller.Instance;
+
+            return Invoke<CreateRegexPatternSetRequest,CreateRegexPatternSetResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateRegexPatternSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateRegexPatternSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRegexPatternSet">REST API Reference for CreateRegexPatternSet Operation</seealso>
+        public virtual Task<CreateRegexPatternSetResponse> CreateRegexPatternSetAsync(CreateRegexPatternSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateRegexPatternSetRequestMarshaller();
+            var unmarshaller = CreateRegexPatternSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateRegexPatternSetRequest,CreateRegexPatternSetResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -705,7 +801,7 @@ namespace Amazon.WAF
         ///  </li> <li> 
         /// <para>
         /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
-        /// other than HEADER, QUERY_STRING, or URI.
+        /// other than HEADER, METHOD, QUERY_STRING, URI, or BODY.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -892,7 +988,7 @@ namespace Amazon.WAF
         ///  </li> <li> 
         /// <para>
         /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
-        /// other than HEADER, QUERY_STRING, or URI.
+        /// other than HEADER, METHOD, QUERY_STRING, URI, or BODY.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1142,6 +1238,38 @@ namespace Amazon.WAF
 
         #endregion
         
+        #region  DeleteGeoMatchSet
+
+        internal virtual DeleteGeoMatchSetResponse DeleteGeoMatchSet(DeleteGeoMatchSetRequest request)
+        {
+            var marshaller = new DeleteGeoMatchSetRequestMarshaller();
+            var unmarshaller = DeleteGeoMatchSetResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteGeoMatchSetRequest,DeleteGeoMatchSetResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteGeoMatchSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGeoMatchSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteGeoMatchSet">REST API Reference for DeleteGeoMatchSet Operation</seealso>
+        public virtual Task<DeleteGeoMatchSetResponse> DeleteGeoMatchSetAsync(DeleteGeoMatchSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteGeoMatchSetRequestMarshaller();
+            var unmarshaller = DeleteGeoMatchSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteGeoMatchSetRequest,DeleteGeoMatchSetResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteIPSet
 
         internal virtual DeleteIPSetResponse DeleteIPSet(DeleteIPSetRequest request)
@@ -1299,6 +1427,70 @@ namespace Amazon.WAF
             var unmarshaller = DeleteRateBasedRuleResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteRateBasedRuleRequest,DeleteRateBasedRuleResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteRegexMatchSet
+
+        internal virtual DeleteRegexMatchSetResponse DeleteRegexMatchSet(DeleteRegexMatchSetRequest request)
+        {
+            var marshaller = new DeleteRegexMatchSetRequestMarshaller();
+            var unmarshaller = DeleteRegexMatchSetResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRegexMatchSetRequest,DeleteRegexMatchSetResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteRegexMatchSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRegexMatchSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteRegexMatchSet">REST API Reference for DeleteRegexMatchSet Operation</seealso>
+        public virtual Task<DeleteRegexMatchSetResponse> DeleteRegexMatchSetAsync(DeleteRegexMatchSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteRegexMatchSetRequestMarshaller();
+            var unmarshaller = DeleteRegexMatchSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteRegexMatchSetRequest,DeleteRegexMatchSetResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteRegexPatternSet
+
+        internal virtual DeleteRegexPatternSetResponse DeleteRegexPatternSet(DeleteRegexPatternSetRequest request)
+        {
+            var marshaller = new DeleteRegexPatternSetRequestMarshaller();
+            var unmarshaller = DeleteRegexPatternSetResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRegexPatternSetRequest,DeleteRegexPatternSetResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteRegexPatternSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRegexPatternSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteRegexPatternSet">REST API Reference for DeleteRegexPatternSet Operation</seealso>
+        public virtual Task<DeleteRegexPatternSetResponse> DeleteRegexPatternSetAsync(DeleteRegexPatternSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteRegexPatternSetRequestMarshaller();
+            var unmarshaller = DeleteRegexPatternSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteRegexPatternSetRequest,DeleteRegexPatternSetResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1965,6 +2157,38 @@ namespace Amazon.WAF
 
         #endregion
         
+        #region  GetGeoMatchSet
+
+        internal virtual GetGeoMatchSetResponse GetGeoMatchSet(GetGeoMatchSetRequest request)
+        {
+            var marshaller = new GetGeoMatchSetRequestMarshaller();
+            var unmarshaller = GetGeoMatchSetResponseUnmarshaller.Instance;
+
+            return Invoke<GetGeoMatchSetRequest,GetGeoMatchSetResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetGeoMatchSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetGeoMatchSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetGeoMatchSet">REST API Reference for GetGeoMatchSet Operation</seealso>
+        public virtual Task<GetGeoMatchSetResponse> GetGeoMatchSetAsync(GetGeoMatchSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetGeoMatchSetRequestMarshaller();
+            var unmarshaller = GetGeoMatchSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetGeoMatchSetRequest,GetGeoMatchSetResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetIPSet
 
         internal virtual GetIPSetResponse GetIPSet(GetIPSetRequest request)
@@ -2085,6 +2309,70 @@ namespace Amazon.WAF
             var unmarshaller = GetRateBasedRuleManagedKeysResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetRateBasedRuleManagedKeysRequest,GetRateBasedRuleManagedKeysResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetRegexMatchSet
+
+        internal virtual GetRegexMatchSetResponse GetRegexMatchSet(GetRegexMatchSetRequest request)
+        {
+            var marshaller = new GetRegexMatchSetRequestMarshaller();
+            var unmarshaller = GetRegexMatchSetResponseUnmarshaller.Instance;
+
+            return Invoke<GetRegexMatchSetRequest,GetRegexMatchSetResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRegexMatchSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRegexMatchSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetRegexMatchSet">REST API Reference for GetRegexMatchSet Operation</seealso>
+        public virtual Task<GetRegexMatchSetResponse> GetRegexMatchSetAsync(GetRegexMatchSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetRegexMatchSetRequestMarshaller();
+            var unmarshaller = GetRegexMatchSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetRegexMatchSetRequest,GetRegexMatchSetResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetRegexPatternSet
+
+        internal virtual GetRegexPatternSetResponse GetRegexPatternSet(GetRegexPatternSetRequest request)
+        {
+            var marshaller = new GetRegexPatternSetRequestMarshaller();
+            var unmarshaller = GetRegexPatternSetResponseUnmarshaller.Instance;
+
+            return Invoke<GetRegexPatternSetRequest,GetRegexPatternSetResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRegexPatternSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRegexPatternSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetRegexPatternSet">REST API Reference for GetRegexPatternSet Operation</seealso>
+        public virtual Task<GetRegexPatternSetResponse> GetRegexPatternSetAsync(GetRegexPatternSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetRegexPatternSetRequestMarshaller();
+            var unmarshaller = GetRegexPatternSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetRegexPatternSetRequest,GetRegexPatternSetResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2402,6 +2690,38 @@ namespace Amazon.WAF
 
         #endregion
         
+        #region  ListGeoMatchSets
+
+        internal virtual ListGeoMatchSetsResponse ListGeoMatchSets(ListGeoMatchSetsRequest request)
+        {
+            var marshaller = new ListGeoMatchSetsRequestMarshaller();
+            var unmarshaller = ListGeoMatchSetsResponseUnmarshaller.Instance;
+
+            return Invoke<ListGeoMatchSetsRequest,ListGeoMatchSetsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListGeoMatchSets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListGeoMatchSets operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListGeoMatchSets">REST API Reference for ListGeoMatchSets Operation</seealso>
+        public virtual Task<ListGeoMatchSetsResponse> ListGeoMatchSetsAsync(ListGeoMatchSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListGeoMatchSetsRequestMarshaller();
+            var unmarshaller = ListGeoMatchSetsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListGeoMatchSetsRequest,ListGeoMatchSetsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListIPSets
 
         internal virtual ListIPSetsResponse ListIPSets(ListIPSetsRequest request)
@@ -2461,6 +2781,70 @@ namespace Amazon.WAF
             var unmarshaller = ListRateBasedRulesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListRateBasedRulesRequest,ListRateBasedRulesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListRegexMatchSets
+
+        internal virtual ListRegexMatchSetsResponse ListRegexMatchSets(ListRegexMatchSetsRequest request)
+        {
+            var marshaller = new ListRegexMatchSetsRequestMarshaller();
+            var unmarshaller = ListRegexMatchSetsResponseUnmarshaller.Instance;
+
+            return Invoke<ListRegexMatchSetsRequest,ListRegexMatchSetsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListRegexMatchSets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListRegexMatchSets operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListRegexMatchSets">REST API Reference for ListRegexMatchSets Operation</seealso>
+        public virtual Task<ListRegexMatchSetsResponse> ListRegexMatchSetsAsync(ListRegexMatchSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListRegexMatchSetsRequestMarshaller();
+            var unmarshaller = ListRegexMatchSetsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListRegexMatchSetsRequest,ListRegexMatchSetsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListRegexPatternSets
+
+        internal virtual ListRegexPatternSetsResponse ListRegexPatternSets(ListRegexPatternSetsRequest request)
+        {
+            var marshaller = new ListRegexPatternSetsRequestMarshaller();
+            var unmarshaller = ListRegexPatternSetsResponseUnmarshaller.Instance;
+
+            return Invoke<ListRegexPatternSetsRequest,ListRegexPatternSetsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListRegexPatternSets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListRegexPatternSets operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListRegexPatternSets">REST API Reference for ListRegexPatternSets Operation</seealso>
+        public virtual Task<ListRegexPatternSetsResponse> ListRegexPatternSetsAsync(ListRegexPatternSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListRegexPatternSetsRequestMarshaller();
+            var unmarshaller = ListRegexPatternSetsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListRegexPatternSetsRequest,ListRegexPatternSetsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2785,7 +3169,7 @@ namespace Amazon.WAF
         ///  </li> <li> 
         /// <para>
         /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
-        /// other than HEADER, QUERY_STRING, or URI.
+        /// other than HEADER, METHOD, QUERY_STRING, URI, or BODY.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2864,6 +3248,38 @@ namespace Amazon.WAF
             var unmarshaller = UpdateByteMatchSetResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateByteMatchSetRequest,UpdateByteMatchSetResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateGeoMatchSet
+
+        internal virtual UpdateGeoMatchSetResponse UpdateGeoMatchSet(UpdateGeoMatchSetRequest request)
+        {
+            var marshaller = new UpdateGeoMatchSetRequestMarshaller();
+            var unmarshaller = UpdateGeoMatchSetResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateGeoMatchSetRequest,UpdateGeoMatchSetResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateGeoMatchSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGeoMatchSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateGeoMatchSet">REST API Reference for UpdateGeoMatchSet Operation</seealso>
+        public virtual Task<UpdateGeoMatchSetResponse> UpdateGeoMatchSetAsync(UpdateGeoMatchSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateGeoMatchSetRequestMarshaller();
+            var unmarshaller = UpdateGeoMatchSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateGeoMatchSetRequest,UpdateGeoMatchSetResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -3051,7 +3467,7 @@ namespace Amazon.WAF
         ///  </li> <li> 
         /// <para>
         /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
-        /// other than HEADER, QUERY_STRING, or URI.
+        /// other than HEADER, METHOD, QUERY_STRING, URI, or BODY.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3176,6 +3592,70 @@ namespace Amazon.WAF
             var unmarshaller = UpdateRateBasedRuleResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateRateBasedRuleRequest,UpdateRateBasedRuleResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateRegexMatchSet
+
+        internal virtual UpdateRegexMatchSetResponse UpdateRegexMatchSet(UpdateRegexMatchSetRequest request)
+        {
+            var marshaller = new UpdateRegexMatchSetRequestMarshaller();
+            var unmarshaller = UpdateRegexMatchSetResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRegexMatchSetRequest,UpdateRegexMatchSetResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateRegexMatchSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRegexMatchSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateRegexMatchSet">REST API Reference for UpdateRegexMatchSet Operation</seealso>
+        public virtual Task<UpdateRegexMatchSetResponse> UpdateRegexMatchSetAsync(UpdateRegexMatchSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateRegexMatchSetRequestMarshaller();
+            var unmarshaller = UpdateRegexMatchSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateRegexMatchSetRequest,UpdateRegexMatchSetResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateRegexPatternSet
+
+        internal virtual UpdateRegexPatternSetResponse UpdateRegexPatternSet(UpdateRegexPatternSetRequest request)
+        {
+            var marshaller = new UpdateRegexPatternSetRequestMarshaller();
+            var unmarshaller = UpdateRegexPatternSetResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRegexPatternSetRequest,UpdateRegexPatternSetResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateRegexPatternSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRegexPatternSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateRegexPatternSet">REST API Reference for UpdateRegexPatternSet Operation</seealso>
+        public virtual Task<UpdateRegexPatternSetResponse> UpdateRegexPatternSetAsync(UpdateRegexPatternSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateRegexPatternSetRequestMarshaller();
+            var unmarshaller = UpdateRegexPatternSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateRegexPatternSetRequest,UpdateRegexPatternSetResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -3339,7 +3819,7 @@ namespace Amazon.WAF
         ///  </li> <li> 
         /// <para>
         /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
-        /// other than HEADER, QUERY_STRING, or URI.
+        /// other than HEADER, METHOD, QUERY_STRING, URI, or BODY.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3620,7 +4100,7 @@ namespace Amazon.WAF
         ///  </li> <li> 
         /// <para>
         /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
-        /// other than HEADER, QUERY_STRING, or URI.
+        /// other than HEADER, METHOD, QUERY_STRING, URI, or BODY.
         /// </para>
         ///  </li> <li> 
         /// <para>

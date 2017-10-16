@@ -14,6 +14,19 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAF.Model.CreateGeoMatchSetRequest.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.CreateGeoMatchSetRequest.Name</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.CreateGeoMatchSetResponse.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAF.Model.CreateIPSetRequest.ChangeToken</property>
     <min>1</min>
   </property-value-rule>
@@ -41,6 +54,32 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAF.Model.CreateRateBasedRuleResponse.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.CreateRegexMatchSetRequest.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.CreateRegexMatchSetRequest.Name</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.CreateRegexMatchSetResponse.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.CreateRegexPatternSetRequest.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.CreateRegexPatternSetRequest.Name</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.CreateRegexPatternSetResponse.ChangeToken</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
@@ -122,6 +161,19 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAF.Model.DeleteGeoMatchSetRequest.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.DeleteGeoMatchSetRequest.GeoMatchSetId</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.DeleteGeoMatchSetResponse.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAF.Model.DeleteIPSetRequest.ChangeToken</property>
     <min>1</min>
   </property-value-rule>
@@ -145,6 +197,32 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAF.Model.DeleteRateBasedRuleResponse.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.DeleteRegexMatchSetRequest.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.DeleteRegexMatchSetRequest.RegexMatchSetId</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.DeleteRegexMatchSetResponse.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.DeleteRegexPatternSetRequest.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.DeleteRegexPatternSetRequest.RegexPatternSetId</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.DeleteRegexPatternSetResponse.ChangeToken</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
@@ -226,6 +304,11 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAF.Model.GetGeoMatchSetRequest.GeoMatchSetId</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAF.Model.GetIPSetRequest.IPSetId</property>
     <min>1</min>
     <max>128</max>
@@ -247,6 +330,16 @@
   <property-value-rule>
     <property>Amazon.WAF.Model.GetRateBasedRuleManagedKeysResponse.NextMarker</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.GetRegexMatchSetRequest.RegexMatchSetId</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.GetRegexPatternSetRequest.RegexPatternSetId</property>
+    <min>1</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAF.Model.GetRuleRequest.RuleId</property>
@@ -302,6 +395,19 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAF.Model.ListGeoMatchSetsRequest.Limit</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.ListGeoMatchSetsRequest.NextMarker</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.ListGeoMatchSetsResponse.NextMarker</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAF.Model.ListIPSetsRequest.Limit</property>
     <min>0</min>
     <max>100</max>
@@ -325,6 +431,32 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAF.Model.ListRateBasedRulesResponse.NextMarker</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.ListRegexMatchSetsRequest.Limit</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.ListRegexMatchSetsRequest.NextMarker</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.ListRegexMatchSetsResponse.NextMarker</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.ListRegexPatternSetsRequest.Limit</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.ListRegexPatternSetsRequest.NextMarker</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.ListRegexPatternSetsResponse.NextMarker</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
@@ -406,6 +538,19 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAF.Model.UpdateGeoMatchSetRequest.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.UpdateGeoMatchSetRequest.GeoMatchSetId</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.UpdateGeoMatchSetResponse.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAF.Model.UpdateIPSetRequest.ChangeToken</property>
     <min>1</min>
   </property-value-rule>
@@ -433,6 +578,32 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAF.Model.UpdateRateBasedRuleResponse.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.UpdateRegexMatchSetRequest.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.UpdateRegexMatchSetRequest.RegexMatchSetId</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.UpdateRegexMatchSetResponse.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.UpdateRegexPatternSetRequest.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.UpdateRegexPatternSetRequest.RegexPatternSetId</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.UpdateRegexPatternSetResponse.ChangeToken</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
@@ -526,6 +697,26 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAF.Model.GeoMatchSet.GeoMatchSetId</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.GeoMatchSet.Name</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.GeoMatchSetSummary.GeoMatchSetId</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.GeoMatchSetSummary.Name</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAF.Model.IPSet.IPSetId</property>
     <min>1</min>
     <max>128</max>
@@ -563,6 +754,55 @@
     <property>Amazon.WAF.Model.RateBasedRule.RuleId</property>
     <min>1</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.RegexMatchSet.Name</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.RegexMatchSet.RegexMatchSetId</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.RegexMatchSetSummary.Name</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.RegexMatchSetSummary.RegexMatchSetId</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.RegexMatchTuple.RegexPatternSetId</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.RegexPatternSet.Name</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.RegexPatternSet.RegexPatternSetId</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.RegexPatternSetSummary.Name</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.RegexPatternSetSummary.RegexPatternSetId</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.RegexPatternSetUpdate.RegexPatternString</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAF.Model.Rule.Name</property>

@@ -64,7 +64,7 @@ namespace Amazon.WAF.Model
         /// than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value
         /// in the response that allows you to list another group of <code>IPSets</code>. For
         /// the second and subsequent <code>ListIPSets</code> requests, specify the value of <code>NextMarker</code>
-        /// from the previous response to get information about another batch of <code>ByteMatchSets</code>.
+        /// from the previous response to get information about another batch of <code>IPSets</code>.
         /// </para>
         /// </summary>
         public string NextMarker
