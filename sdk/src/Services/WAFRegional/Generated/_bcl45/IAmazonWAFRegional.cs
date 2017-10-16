@@ -96,7 +96,7 @@ namespace Amazon.WAFRegional
         ///  </li> <li> 
         /// <para>
         /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
-        /// other than HEADER, QUERY_STRING, or URI.
+        /// other than HEADER, METHOD, QUERY_STRING, URI, or BODY.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -227,7 +227,7 @@ namespace Amazon.WAFRegional
         ///  </li> <li> 
         /// <para>
         /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
-        /// other than HEADER, QUERY_STRING, or URI.
+        /// other than HEADER, METHOD, QUERY_STRING, URI, or BODY.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -341,7 +341,7 @@ namespace Amazon.WAFRegional
         ///  </li> <li> 
         /// <para>
         /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
-        /// other than HEADER, QUERY_STRING, or URI.
+        /// other than HEADER, METHOD, QUERY_STRING, URI, or BODY.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -460,7 +460,7 @@ namespace Amazon.WAFRegional
         ///  </li> <li> 
         /// <para>
         /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
-        /// other than HEADER, QUERY_STRING, or URI.
+        /// other than HEADER, METHOD, QUERY_STRING, URI, or BODY.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -497,6 +497,136 @@ namespace Amazon.WAFRegional
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/CreateByteMatchSet">REST API Reference for CreateByteMatchSet Operation</seealso>
         Task<CreateByteMatchSetResponse> CreateByteMatchSetAsync(CreateByteMatchSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateGeoMatchSet
+
+
+        /// <summary>
+        /// Creates an <a>GeoMatchSet</a>, which you use to specify which web requests you want
+        /// to allow or block based on the country that the requests originate from. For example,
+        /// if you're receiving a lot of requests from one or more countries and you want to block
+        /// the requests, you can create an <code>GeoMatchSet</code> that contains those countries
+        /// and then configure AWS WAF to block the requests. 
+        /// 
+        ///  
+        /// <para>
+        /// To create and configure a <code>GeoMatchSet</code>, perform the following steps:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of a <code>CreateGeoMatchSet</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <code>CreateGeoMatchSet</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of an <a>UpdateGeoMatchSet</a> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit an <code>UpdateGeoMatchSetSet</code> request to specify the countries that
+        /// you want AWS WAF to watch for.
+        /// </para>
+        ///  </li> </ol> 
+        /// <para>
+        /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
+        /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+        /// Guide</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateGeoMatchSet service method.</param>
+        /// 
+        /// <returns>The response from the CreateGeoMatchSet service method, as returned by WAFRegional.</returns>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFDisallowedNameException">
+        /// The name specified is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFInternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFInvalidAccountException">
+        /// The operation failed because you tried to create, update, or delete an object by using
+        /// an invalid account identifier.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFInvalidParameterException">
+        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
+        /// For example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an invalid parameter name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>,
+        /// or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value
+        /// other than <code>IP</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
+        /// other than HEADER, METHOD, QUERY_STRING, URI, or BODY.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
+        /// but no value for <code>Data</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL cannot be associated.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFLimitsExceededException">
+        /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
+        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// in the <i>AWS WAF Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFStaleDataException">
+        /// The operation failed because you tried to create, update, or delete an object by using
+        /// a change token that has already been used.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/CreateGeoMatchSet">REST API Reference for CreateGeoMatchSet Operation</seealso>
+        CreateGeoMatchSetResponse CreateGeoMatchSet(CreateGeoMatchSetRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateGeoMatchSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateGeoMatchSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/CreateGeoMatchSet">REST API Reference for CreateGeoMatchSet Operation</seealso>
+        Task<CreateGeoMatchSetResponse> CreateGeoMatchSetAsync(CreateGeoMatchSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -591,7 +721,7 @@ namespace Amazon.WAFRegional
         ///  </li> <li> 
         /// <para>
         /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
-        /// other than HEADER, QUERY_STRING, or URI.
+        /// other than HEADER, METHOD, QUERY_STRING, URI, or BODY.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -704,7 +834,7 @@ namespace Amazon.WAFRegional
         ///  </li> <li> 
         /// <para>
         /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
-        /// other than HEADER, QUERY_STRING, or URI.
+        /// other than HEADER, METHOD, QUERY_STRING, URI, or BODY.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -822,7 +952,7 @@ namespace Amazon.WAFRegional
         ///  </li> <li> 
         /// <para>
         /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
-        /// other than HEADER, QUERY_STRING, or URI.
+        /// other than HEADER, METHOD, QUERY_STRING, URI, or BODY.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1014,7 +1144,7 @@ namespace Amazon.WAFRegional
         ///  </li> <li> 
         /// <para>
         /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
-        /// other than HEADER, QUERY_STRING, or URI.
+        /// other than HEADER, METHOD, QUERY_STRING, URI, or BODY.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1052,6 +1182,162 @@ namespace Amazon.WAFRegional
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/CreateRateBasedRule">REST API Reference for CreateRateBasedRule Operation</seealso>
         Task<CreateRateBasedRuleResponse> CreateRateBasedRuleAsync(CreateRateBasedRuleRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateRegexMatchSet
+
+
+        /// <summary>
+        /// Creates a <a>RegexMatchSet</a>. You then use <a>UpdateRegexMatchSet</a> to identify
+        /// the part of a web request that you want AWS WAF to inspect, such as the values of
+        /// the <code>User-Agent</code> header or the query string. For example, you can create
+        /// a <code>RegexMatchSet</code> that contains a <code>RegexMatchTuple</code> that looks
+        /// for any requests with <code>User-Agent</code> headers that match a <code>RegexPatternSet</code>
+        /// with pattern <code>B[a@]dB[o0]t</code>. You can then configure AWS WAF to reject those
+        /// requests.
+        /// 
+        ///  
+        /// <para>
+        /// To create and configure a <code>RegexMatchSet</code>, perform the following steps:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of a <code>CreateRegexMatchSet</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <code>CreateRegexMatchSet</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of an <code>UpdateRegexMatchSet</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit an <a>UpdateRegexMatchSet</a> request to specify the part of the request that
+        /// you want AWS WAF to inspect (for example, the header or the URI) and the value, using
+        /// a <code>RegexPatternSet</code>, that you want AWS WAF to watch for.
+        /// </para>
+        ///  </li> </ol> 
+        /// <para>
+        /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
+        /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+        /// Guide</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRegexMatchSet service method.</param>
+        /// 
+        /// <returns>The response from the CreateRegexMatchSet service method, as returned by WAFRegional.</returns>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFDisallowedNameException">
+        /// The name specified is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFInternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFLimitsExceededException">
+        /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
+        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// in the <i>AWS WAF Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFStaleDataException">
+        /// The operation failed because you tried to create, update, or delete an object by using
+        /// a change token that has already been used.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/CreateRegexMatchSet">REST API Reference for CreateRegexMatchSet Operation</seealso>
+        CreateRegexMatchSetResponse CreateRegexMatchSet(CreateRegexMatchSetRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateRegexMatchSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateRegexMatchSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/CreateRegexMatchSet">REST API Reference for CreateRegexMatchSet Operation</seealso>
+        Task<CreateRegexMatchSetResponse> CreateRegexMatchSetAsync(CreateRegexMatchSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateRegexPatternSet
+
+
+        /// <summary>
+        /// Creates a <code>RegexPatternSet</code>. You then use <a>UpdateRegexPatternSet</a>
+        /// to specify the regular expression (regex) pattern that you want AWS WAF to search
+        /// for, such as <code>B[a@]dB[o0]t</code>. You can then configure AWS WAF to reject those
+        /// requests.
+        /// 
+        ///  
+        /// <para>
+        /// To create and configure a <code>RegexPatternSet</code>, perform the following steps:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of a <code>CreateRegexPatternSet</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <code>CreateRegexPatternSet</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of an <code>UpdateRegexPatternSet</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit an <a>UpdateRegexPatternSet</a> request to specify the string that you want
+        /// AWS WAF to watch for.
+        /// </para>
+        ///  </li> </ol> 
+        /// <para>
+        /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
+        /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+        /// Guide</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRegexPatternSet service method.</param>
+        /// 
+        /// <returns>The response from the CreateRegexPatternSet service method, as returned by WAFRegional.</returns>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFDisallowedNameException">
+        /// The name specified is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFInternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFLimitsExceededException">
+        /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
+        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// in the <i>AWS WAF Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFStaleDataException">
+        /// The operation failed because you tried to create, update, or delete an object by using
+        /// a change token that has already been used.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/CreateRegexPatternSet">REST API Reference for CreateRegexPatternSet Operation</seealso>
+        CreateRegexPatternSetResponse CreateRegexPatternSet(CreateRegexPatternSetRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateRegexPatternSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateRegexPatternSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/CreateRegexPatternSet">REST API Reference for CreateRegexPatternSet Operation</seealso>
+        Task<CreateRegexPatternSetResponse> CreateRegexPatternSetAsync(CreateRegexPatternSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1168,7 +1454,7 @@ namespace Amazon.WAFRegional
         ///  </li> <li> 
         /// <para>
         /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
-        /// other than HEADER, QUERY_STRING, or URI.
+        /// other than HEADER, METHOD, QUERY_STRING, URI, or BODY.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1302,7 +1588,7 @@ namespace Amazon.WAFRegional
         ///  </li> <li> 
         /// <para>
         /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
-        /// other than HEADER, QUERY_STRING, or URI.
+        /// other than HEADER, METHOD, QUERY_STRING, URI, or BODY.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1442,7 +1728,7 @@ namespace Amazon.WAFRegional
         ///  </li> <li> 
         /// <para>
         /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
-        /// other than HEADER, QUERY_STRING, or URI.
+        /// other than HEADER, METHOD, QUERY_STRING, URI, or BODY.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1573,7 +1859,7 @@ namespace Amazon.WAFRegional
         ///  </li> <li> 
         /// <para>
         /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
-        /// other than HEADER, QUERY_STRING, or URI.
+        /// other than HEADER, METHOD, QUERY_STRING, URI, or BODY.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1703,7 +1989,7 @@ namespace Amazon.WAFRegional
         ///  </li> <li> 
         /// <para>
         /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
-        /// other than HEADER, QUERY_STRING, or URI.
+        /// other than HEADER, METHOD, QUERY_STRING, URI, or BODY.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1814,7 +2100,7 @@ namespace Amazon.WAFRegional
         ///  </li> <li> 
         /// <para>
         /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
-        /// other than HEADER, QUERY_STRING, or URI.
+        /// other than HEADER, METHOD, QUERY_STRING, URI, or BODY.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1930,7 +2216,7 @@ namespace Amazon.WAFRegional
         ///  </li> <li> 
         /// <para>
         /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
-        /// other than HEADER, QUERY_STRING, or URI.
+        /// other than HEADER, METHOD, QUERY_STRING, URI, or BODY.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2075,7 +2361,7 @@ namespace Amazon.WAFRegional
         ///  </li> <li> 
         /// <para>
         /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
-        /// other than HEADER, QUERY_STRING, or URI.
+        /// other than HEADER, METHOD, QUERY_STRING, URI, or BODY.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2203,7 +2489,7 @@ namespace Amazon.WAFRegional
         ///  </li> <li> 
         /// <para>
         /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
-        /// other than HEADER, QUERY_STRING, or URI.
+        /// other than HEADER, METHOD, QUERY_STRING, URI, or BODY.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2531,6 +2817,113 @@ namespace Amazon.WAFRegional
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteByteMatchSet">REST API Reference for DeleteByteMatchSet Operation</seealso>
         Task<DeleteByteMatchSetResponse> DeleteByteMatchSetAsync(DeleteByteMatchSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteGeoMatchSet
+
+
+        /// <summary>
+        /// Permanently deletes a <a>GeoMatchSet</a>. You can't delete a <code>GeoMatchSet</code>
+        /// if it's still used in any <code>Rules</code> or if it still includes any countries.
+        /// 
+        ///  
+        /// <para>
+        /// If you just want to remove a <code>GeoMatchSet</code> from a <code>Rule</code>, use
+        /// <a>UpdateRule</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To permanently delete a <code>GeoMatchSet</code> from AWS WAF, perform the following
+        /// steps:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Update the <code>GeoMatchSet</code> to remove any countries. For more information,
+        /// see <a>UpdateGeoMatchSet</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of a <code>DeleteGeoMatchSet</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <code>DeleteGeoMatchSet</code> request.
+        /// </para>
+        ///  </li> </ol>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGeoMatchSet service method.</param>
+        /// 
+        /// <returns>The response from the DeleteGeoMatchSet service method, as returned by WAFRegional.</returns>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFInternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFInvalidAccountException">
+        /// The operation failed because you tried to create, update, or delete an object by using
+        /// an invalid account identifier.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFNonEmptyEntityException">
+        /// The operation failed because you tried to delete an object that isn't empty. For example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code>
+        /// objects.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code>
+        /// objects or other predicates.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code>
+        /// objects.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete an <code>IPSet</code> that references one or more IP addresses.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFNonexistentItemException">
+        /// The operation failed because the referenced object doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFReferencedItemException">
+        /// The operation failed because you tried to delete an object that is still in use. For
+        /// example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFStaleDataException">
+        /// The operation failed because you tried to create, update, or delete an object by using
+        /// a change token that has already been used.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteGeoMatchSet">REST API Reference for DeleteGeoMatchSet Operation</seealso>
+        DeleteGeoMatchSetResponse DeleteGeoMatchSet(DeleteGeoMatchSetRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteGeoMatchSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGeoMatchSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteGeoMatchSet">REST API Reference for DeleteGeoMatchSet Operation</seealso>
+        Task<DeleteGeoMatchSetResponse> DeleteGeoMatchSetAsync(DeleteGeoMatchSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2922,6 +3315,195 @@ namespace Amazon.WAFRegional
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteRateBasedRule">REST API Reference for DeleteRateBasedRule Operation</seealso>
         Task<DeleteRateBasedRuleResponse> DeleteRateBasedRuleAsync(DeleteRateBasedRuleRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteRegexMatchSet
+
+
+        /// <summary>
+        /// Permanently deletes a <a>RegexMatchSet</a>. You can't delete a <code>RegexMatchSet</code>
+        /// if it's still used in any <code>Rules</code> or if it still includes any <code>RegexMatchTuples</code>
+        /// objects (any filters).
+        /// 
+        ///  
+        /// <para>
+        /// If you just want to remove a <code>RegexMatchSet</code> from a <code>Rule</code>,
+        /// use <a>UpdateRule</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To permanently delete a <code>RegexMatchSet</code>, perform the following steps:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Update the <code>RegexMatchSet</code> to remove filters, if any. For more information,
+        /// see <a>UpdateRegexMatchSet</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of a <code>DeleteRegexMatchSet</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <code>DeleteRegexMatchSet</code> request.
+        /// </para>
+        ///  </li> </ol>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRegexMatchSet service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRegexMatchSet service method, as returned by WAFRegional.</returns>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFInternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFInvalidAccountException">
+        /// The operation failed because you tried to create, update, or delete an object by using
+        /// an invalid account identifier.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFNonEmptyEntityException">
+        /// The operation failed because you tried to delete an object that isn't empty. For example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code>
+        /// objects.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code>
+        /// objects or other predicates.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code>
+        /// objects.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete an <code>IPSet</code> that references one or more IP addresses.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFNonexistentItemException">
+        /// The operation failed because the referenced object doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFReferencedItemException">
+        /// The operation failed because you tried to delete an object that is still in use. For
+        /// example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFStaleDataException">
+        /// The operation failed because you tried to create, update, or delete an object by using
+        /// a change token that has already been used.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteRegexMatchSet">REST API Reference for DeleteRegexMatchSet Operation</seealso>
+        DeleteRegexMatchSetResponse DeleteRegexMatchSet(DeleteRegexMatchSetRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteRegexMatchSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRegexMatchSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteRegexMatchSet">REST API Reference for DeleteRegexMatchSet Operation</seealso>
+        Task<DeleteRegexMatchSetResponse> DeleteRegexMatchSetAsync(DeleteRegexMatchSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteRegexPatternSet
+
+
+        /// <summary>
+        /// Permanently deletes a <a>RegexPatternSet</a>. You can't delete a <code>RegexPatternSet</code>
+        /// if it's still used in any <code>RegexMatchSet</code> or if the <code>RegexPatternSet</code>
+        /// is not empty.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRegexPatternSet service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRegexPatternSet service method, as returned by WAFRegional.</returns>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFInternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFInvalidAccountException">
+        /// The operation failed because you tried to create, update, or delete an object by using
+        /// an invalid account identifier.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFNonEmptyEntityException">
+        /// The operation failed because you tried to delete an object that isn't empty. For example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code>
+        /// objects.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code>
+        /// objects or other predicates.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code>
+        /// objects.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete an <code>IPSet</code> that references one or more IP addresses.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFNonexistentItemException">
+        /// The operation failed because the referenced object doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFReferencedItemException">
+        /// The operation failed because you tried to delete an object that is still in use. For
+        /// example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFStaleDataException">
+        /// The operation failed because you tried to create, update, or delete an object by using
+        /// a change token that has already been used.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteRegexPatternSet">REST API Reference for DeleteRegexPatternSet Operation</seealso>
+        DeleteRegexPatternSetResponse DeleteRegexPatternSet(DeleteRegexPatternSetRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteRegexPatternSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRegexPatternSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteRegexPatternSet">REST API Reference for DeleteRegexPatternSet Operation</seealso>
+        Task<DeleteRegexPatternSetResponse> DeleteRegexPatternSetAsync(DeleteRegexPatternSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -4044,7 +4626,7 @@ namespace Amazon.WAFRegional
         ///  </li> <li> 
         /// <para>
         /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
-        /// other than HEADER, QUERY_STRING, or URI.
+        /// other than HEADER, METHOD, QUERY_STRING, URI, or BODY.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4391,6 +4973,44 @@ namespace Amazon.WAFRegional
 
         #endregion
         
+        #region  GetGeoMatchSet
+
+
+        /// <summary>
+        /// Returns the <a>GeoMatchSet</a> that is specified by <code>GeoMatchSetId</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGeoMatchSet service method.</param>
+        /// 
+        /// <returns>The response from the GetGeoMatchSet service method, as returned by WAFRegional.</returns>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFInternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFInvalidAccountException">
+        /// The operation failed because you tried to create, update, or delete an object by using
+        /// an invalid account identifier.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFNonexistentItemException">
+        /// The operation failed because the referenced object doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetGeoMatchSet">REST API Reference for GetGeoMatchSet Operation</seealso>
+        GetGeoMatchSetResponse GetGeoMatchSet(GetGeoMatchSetRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetGeoMatchSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetGeoMatchSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetGeoMatchSet">REST API Reference for GetGeoMatchSet Operation</seealso>
+        Task<GetGeoMatchSetResponse> GetGeoMatchSetAsync(GetGeoMatchSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetIPSet
 
 
@@ -4566,7 +5186,7 @@ namespace Amazon.WAFRegional
         ///  </li> <li> 
         /// <para>
         /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
-        /// other than HEADER, QUERY_STRING, or URI.
+        /// other than HEADER, METHOD, QUERY_STRING, URI, or BODY.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4598,6 +5218,82 @@ namespace Amazon.WAFRegional
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetRateBasedRuleManagedKeys">REST API Reference for GetRateBasedRuleManagedKeys Operation</seealso>
         Task<GetRateBasedRuleManagedKeysResponse> GetRateBasedRuleManagedKeysAsync(GetRateBasedRuleManagedKeysRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetRegexMatchSet
+
+
+        /// <summary>
+        /// Returns the <a>RegexMatchSet</a> specified by <code>RegexMatchSetId</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRegexMatchSet service method.</param>
+        /// 
+        /// <returns>The response from the GetRegexMatchSet service method, as returned by WAFRegional.</returns>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFInternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFInvalidAccountException">
+        /// The operation failed because you tried to create, update, or delete an object by using
+        /// an invalid account identifier.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFNonexistentItemException">
+        /// The operation failed because the referenced object doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetRegexMatchSet">REST API Reference for GetRegexMatchSet Operation</seealso>
+        GetRegexMatchSetResponse GetRegexMatchSet(GetRegexMatchSetRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRegexMatchSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRegexMatchSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetRegexMatchSet">REST API Reference for GetRegexMatchSet Operation</seealso>
+        Task<GetRegexMatchSetResponse> GetRegexMatchSetAsync(GetRegexMatchSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetRegexPatternSet
+
+
+        /// <summary>
+        /// Returns the <a>RegexPatternSet</a> specified by <code>RegexPatternSetId</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRegexPatternSet service method.</param>
+        /// 
+        /// <returns>The response from the GetRegexPatternSet service method, as returned by WAFRegional.</returns>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFInternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFInvalidAccountException">
+        /// The operation failed because you tried to create, update, or delete an object by using
+        /// an invalid account identifier.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFNonexistentItemException">
+        /// The operation failed because the referenced object doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetRegexPatternSet">REST API Reference for GetRegexPatternSet Operation</seealso>
+        GetRegexPatternSetResponse GetRegexPatternSet(GetRegexPatternSetRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRegexPatternSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRegexPatternSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetRegexPatternSet">REST API Reference for GetRegexPatternSet Operation</seealso>
+        Task<GetRegexPatternSetResponse> GetRegexPatternSetAsync(GetRegexPatternSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -4983,7 +5679,7 @@ namespace Amazon.WAFRegional
         ///  </li> <li> 
         /// <para>
         /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
-        /// other than HEADER, QUERY_STRING, or URI.
+        /// other than HEADER, METHOD, QUERY_STRING, URI, or BODY.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5095,6 +5791,41 @@ namespace Amazon.WAFRegional
 
         #endregion
         
+        #region  ListGeoMatchSets
+
+
+        /// <summary>
+        /// Returns an array of <a>GeoMatchSetSummary</a> objects in the response.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListGeoMatchSets service method.</param>
+        /// 
+        /// <returns>The response from the ListGeoMatchSets service method, as returned by WAFRegional.</returns>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFInternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFInvalidAccountException">
+        /// The operation failed because you tried to create, update, or delete an object by using
+        /// an invalid account identifier.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListGeoMatchSets">REST API Reference for ListGeoMatchSets Operation</seealso>
+        ListGeoMatchSetsResponse ListGeoMatchSets(ListGeoMatchSetsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListGeoMatchSets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListGeoMatchSets operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListGeoMatchSets">REST API Reference for ListGeoMatchSets Operation</seealso>
+        Task<ListGeoMatchSetsResponse> ListGeoMatchSetsAsync(ListGeoMatchSetsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListIPSets
 
 
@@ -5162,6 +5893,76 @@ namespace Amazon.WAFRegional
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListRateBasedRules">REST API Reference for ListRateBasedRules Operation</seealso>
         Task<ListRateBasedRulesResponse> ListRateBasedRulesAsync(ListRateBasedRulesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListRegexMatchSets
+
+
+        /// <summary>
+        /// Returns an array of <a>RegexMatchSetSummary</a> objects.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRegexMatchSets service method.</param>
+        /// 
+        /// <returns>The response from the ListRegexMatchSets service method, as returned by WAFRegional.</returns>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFInternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFInvalidAccountException">
+        /// The operation failed because you tried to create, update, or delete an object by using
+        /// an invalid account identifier.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListRegexMatchSets">REST API Reference for ListRegexMatchSets Operation</seealso>
+        ListRegexMatchSetsResponse ListRegexMatchSets(ListRegexMatchSetsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListRegexMatchSets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListRegexMatchSets operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListRegexMatchSets">REST API Reference for ListRegexMatchSets Operation</seealso>
+        Task<ListRegexMatchSetsResponse> ListRegexMatchSetsAsync(ListRegexMatchSetsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListRegexPatternSets
+
+
+        /// <summary>
+        /// Returns an array of <a>RegexPatternSetSummary</a> objects.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRegexPatternSets service method.</param>
+        /// 
+        /// <returns>The response from the ListRegexPatternSets service method, as returned by WAFRegional.</returns>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFInternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFInvalidAccountException">
+        /// The operation failed because you tried to create, update, or delete an object by using
+        /// an invalid account identifier.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListRegexPatternSets">REST API Reference for ListRegexPatternSets Operation</seealso>
+        ListRegexPatternSetsResponse ListRegexPatternSets(ListRegexPatternSetsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListRegexPatternSets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListRegexPatternSets operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListRegexPatternSets">REST API Reference for ListRegexPatternSets Operation</seealso>
+        Task<ListRegexPatternSetsResponse> ListRegexPatternSetsAsync(ListRegexPatternSetsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -5526,7 +6327,7 @@ namespace Amazon.WAFRegional
         ///  </li> <li> 
         /// <para>
         /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
-        /// other than HEADER, QUERY_STRING, or URI.
+        /// other than HEADER, METHOD, QUERY_STRING, URI, or BODY.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5724,7 +6525,7 @@ namespace Amazon.WAFRegional
         ///  </li> <li> 
         /// <para>
         /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
-        /// other than HEADER, QUERY_STRING, or URI.
+        /// other than HEADER, METHOD, QUERY_STRING, URI, or BODY.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5928,7 +6729,7 @@ namespace Amazon.WAFRegional
         ///  </li> <li> 
         /// <para>
         /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
-        /// other than HEADER, QUERY_STRING, or URI.
+        /// other than HEADER, METHOD, QUERY_STRING, URI, or BODY.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5994,6 +6795,224 @@ namespace Amazon.WAFRegional
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/UpdateByteMatchSet">REST API Reference for UpdateByteMatchSet Operation</seealso>
         Task<UpdateByteMatchSetResponse> UpdateByteMatchSetAsync(UpdateByteMatchSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateGeoMatchSet
+
+
+        /// <summary>
+        /// Inserts or deletes <a>GeoMatchConstraint</a> objects in an <code>GeoMatchSet</code>.
+        /// For each <code>GeoMatchConstraint</code> object, you specify the following values:
+        /// 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Whether to insert or delete the object from the array. If you want to change an <code>GeoMatchConstraint</code>
+        /// object, you delete the existing object and add a new one.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <code>Type</code>. The only valid value for <code>Type</code> is <code>Country</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <code>Value</code>, which is a two character code for the country to add to the
+        /// <code>GeoMatchConstraint</code> object. Valid codes are listed in <a>GeoMatchConstraint$Value</a>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To create and configure an <code>GeoMatchSet</code>, perform the following steps:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Submit a <a>CreateGeoMatchSet</a> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of an <a>UpdateGeoMatchSet</a> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit an <code>UpdateGeoMatchSet</code> request to specify the country that you want
+        /// AWS WAF to watch for.
+        /// </para>
+        ///  </li> </ol> 
+        /// <para>
+        /// When you update an <code>GeoMatchSet</code>, you specify the country that you want
+        /// to add and/or the country that you want to delete. If you want to change a country,
+        /// you delete the existing country and add the new one.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
+        /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+        /// Guide</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGeoMatchSet service method.</param>
+        /// 
+        /// <returns>The response from the UpdateGeoMatchSet service method, as returned by WAFRegional.</returns>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFInternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFInvalidAccountException">
+        /// The operation failed because you tried to create, update, or delete an object by using
+        /// an invalid account identifier.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFInvalidOperationException">
+        /// The operation failed because there was nothing to do. For example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code>
+        /// isn't in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't
+        /// in the specified <code>IPSet</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>,
+        /// but the <code>ByteMatchTuple</code> isn't in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code>
+        /// already exists in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add an IP address to an <code>IPSet</code>, but the IP address already
+        /// exists in the specified <code>IPSet</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but
+        /// the <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFInvalidParameterException">
+        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
+        /// For example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an invalid parameter name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>,
+        /// or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value
+        /// other than <code>IP</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
+        /// other than HEADER, METHOD, QUERY_STRING, URI, or BODY.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
+        /// but no value for <code>Data</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL cannot be associated.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFLimitsExceededException">
+        /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
+        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// in the <i>AWS WAF Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFNonexistentContainerException">
+        /// The operation failed because you tried to add an object to or delete an object from
+        /// another object that doesn't exist. For example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from a <code>WebACL</code>
+        /// that doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>ByteMatchSet</code> to or delete a <code>ByteMatchSet</code>
+        /// from a <code>Rule</code> that doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add an IP address to or delete an IP address from an <code>IPSet</code>
+        /// that doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>ByteMatchTuple</code> to or delete a <code>ByteMatchTuple</code>
+        /// from a <code>ByteMatchSet</code> that doesn't exist.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFNonexistentItemException">
+        /// The operation failed because the referenced object doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFReferencedItemException">
+        /// The operation failed because you tried to delete an object that is still in use. For
+        /// example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFStaleDataException">
+        /// The operation failed because you tried to create, update, or delete an object by using
+        /// a change token that has already been used.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/UpdateGeoMatchSet">REST API Reference for UpdateGeoMatchSet Operation</seealso>
+        UpdateGeoMatchSetResponse UpdateGeoMatchSet(UpdateGeoMatchSetRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateGeoMatchSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGeoMatchSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/UpdateGeoMatchSet">REST API Reference for UpdateGeoMatchSet Operation</seealso>
+        Task<UpdateGeoMatchSetResponse> UpdateGeoMatchSetAsync(UpdateGeoMatchSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -6168,7 +7187,7 @@ namespace Amazon.WAFRegional
         ///  </li> <li> 
         /// <para>
         /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
-        /// other than HEADER, QUERY_STRING, or URI.
+        /// other than HEADER, METHOD, QUERY_STRING, URI, or BODY.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6403,7 +7422,7 @@ namespace Amazon.WAFRegional
         ///  </li> <li> 
         /// <para>
         /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
-        /// other than HEADER, QUERY_STRING, or URI.
+        /// other than HEADER, METHOD, QUERY_STRING, URI, or BODY.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6644,7 +7663,7 @@ namespace Amazon.WAFRegional
         ///  </li> <li> 
         /// <para>
         /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
-        /// other than HEADER, QUERY_STRING, or URI.
+        /// other than HEADER, METHOD, QUERY_STRING, URI, or BODY.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6877,7 +7896,7 @@ namespace Amazon.WAFRegional
         ///  </li> <li> 
         /// <para>
         /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
-        /// other than HEADER, QUERY_STRING, or URI.
+        /// other than HEADER, METHOD, QUERY_STRING, URI, or BODY.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6958,6 +7977,338 @@ namespace Amazon.WAFRegional
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/UpdateRateBasedRule">REST API Reference for UpdateRateBasedRule Operation</seealso>
         Task<UpdateRateBasedRuleResponse> UpdateRateBasedRuleAsync(UpdateRateBasedRuleRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateRegexMatchSet
+
+
+        /// <summary>
+        /// Inserts or deletes <a>RegexMatchSetUpdate</a> objects (filters) in a <a>RegexMatchSet</a>.
+        /// For each <code>RegexMatchSetUpdate</code> object, you specify the following values:
+        /// 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Whether to insert or delete the object from the array. If you want to change a <code>RegexMatchSetUpdate</code>
+        /// object, you delete the existing object and add a new one.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The part of a web request that you want AWS WAF to inspect, such as a query string
+        /// or the value of the <code>User-Agent</code> header. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The identifier of the pattern (a regular expression) that you want AWS WAF to look
+        /// for. For more information, see <a>RegexPatternSet</a>. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Whether to perform any conversions on the request, such as converting it to lowercase,
+        /// before inspecting it for the specified string.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  For example, you can create a <code>RegexPatternSet</code> that matches any requests
+        /// with <code>User-Agent</code> headers that contain the string <code>B[a@]dB[o0]t</code>.
+        /// You can then configure AWS WAF to reject those requests.
+        /// </para>
+        ///  
+        /// <para>
+        /// To create and configure a <code>RegexMatchSet</code>, perform the following steps:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Create a <code>RegexMatchSet.</code> For more information, see <a>CreateRegexMatchSet</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of an <code>UpdateRegexMatchSet</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit an <code>UpdateRegexMatchSet</code> request to specify the part of the request
+        /// that you want AWS WAF to inspect (for example, the header or the URI) and the identifier
+        /// of the <code>RegexPatternSet</code> that contain the regular expression patters you
+        /// want AWS WAF to watch for.
+        /// </para>
+        ///  </li> </ol> 
+        /// <para>
+        /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
+        /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+        /// Guide</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRegexMatchSet service method.</param>
+        /// 
+        /// <returns>The response from the UpdateRegexMatchSet service method, as returned by WAFRegional.</returns>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFDisallowedNameException">
+        /// The name specified is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFInternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFInvalidAccountException">
+        /// The operation failed because you tried to create, update, or delete an object by using
+        /// an invalid account identifier.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFInvalidOperationException">
+        /// The operation failed because there was nothing to do. For example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code>
+        /// isn't in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't
+        /// in the specified <code>IPSet</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>,
+        /// but the <code>ByteMatchTuple</code> isn't in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code>
+        /// already exists in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add an IP address to an <code>IPSet</code>, but the IP address already
+        /// exists in the specified <code>IPSet</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but
+        /// the <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFLimitsExceededException">
+        /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
+        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// in the <i>AWS WAF Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFNonexistentContainerException">
+        /// The operation failed because you tried to add an object to or delete an object from
+        /// another object that doesn't exist. For example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from a <code>WebACL</code>
+        /// that doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>ByteMatchSet</code> to or delete a <code>ByteMatchSet</code>
+        /// from a <code>Rule</code> that doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add an IP address to or delete an IP address from an <code>IPSet</code>
+        /// that doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>ByteMatchTuple</code> to or delete a <code>ByteMatchTuple</code>
+        /// from a <code>ByteMatchSet</code> that doesn't exist.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFNonexistentItemException">
+        /// The operation failed because the referenced object doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFStaleDataException">
+        /// The operation failed because you tried to create, update, or delete an object by using
+        /// a change token that has already been used.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/UpdateRegexMatchSet">REST API Reference for UpdateRegexMatchSet Operation</seealso>
+        UpdateRegexMatchSetResponse UpdateRegexMatchSet(UpdateRegexMatchSetRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateRegexMatchSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRegexMatchSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/UpdateRegexMatchSet">REST API Reference for UpdateRegexMatchSet Operation</seealso>
+        Task<UpdateRegexMatchSetResponse> UpdateRegexMatchSetAsync(UpdateRegexMatchSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateRegexPatternSet
+
+
+        /// <summary>
+        /// Inserts or deletes <a>RegexMatchSetUpdate</a> objects (filters) in a <a>RegexPatternSet</a>.
+        /// For each <code>RegexPatternSet</code> object, you specify the following values: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Whether to insert or delete the object from the array. If you want to change a <code>RegexPatternSet</code>
+        /// object, you delete the existing object and add a new one.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The regular expression pattern that you want AWS WAF to look for. For more information,
+        /// see <a>RegexPatternSet</a>. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  For example, you can create a <code>RegexPatternString</code> such as <code>B[a@]dB[o0]t</code>.
+        /// AWS WAF will match this <code>RegexPatternString</code> to:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// BadBot
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// BadB0t
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// B@dBot
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// B@dB0t
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To create and configure a <code>RegexPatternSet</code>, perform the following steps:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Create a <code>RegexPatternSet.</code> For more information, see <a>CreateRegexPatternSet</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of an <code>UpdateRegexPatternSet</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit an <code>UpdateRegexPatternSet</code> request to specify the regular expression
+        /// pattern that you want AWS WAF to watch for.
+        /// </para>
+        ///  </li> </ol> 
+        /// <para>
+        /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
+        /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+        /// Guide</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRegexPatternSet service method.</param>
+        /// 
+        /// <returns>The response from the UpdateRegexPatternSet service method, as returned by WAFRegional.</returns>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFInternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFInvalidAccountException">
+        /// The operation failed because you tried to create, update, or delete an object by using
+        /// an invalid account identifier.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFInvalidOperationException">
+        /// The operation failed because there was nothing to do. For example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code>
+        /// isn't in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't
+        /// in the specified <code>IPSet</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>,
+        /// but the <code>ByteMatchTuple</code> isn't in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code>
+        /// already exists in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add an IP address to an <code>IPSet</code>, but the IP address already
+        /// exists in the specified <code>IPSet</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but
+        /// the <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFInvalidRegexPatternException">
+        /// The regular expression (regex) you specified in <code>RegexPatternString</code> is
+        /// invalid.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFLimitsExceededException">
+        /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
+        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// in the <i>AWS WAF Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFNonexistentContainerException">
+        /// The operation failed because you tried to add an object to or delete an object from
+        /// another object that doesn't exist. For example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from a <code>WebACL</code>
+        /// that doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>ByteMatchSet</code> to or delete a <code>ByteMatchSet</code>
+        /// from a <code>Rule</code> that doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add an IP address to or delete an IP address from an <code>IPSet</code>
+        /// that doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>ByteMatchTuple</code> to or delete a <code>ByteMatchTuple</code>
+        /// from a <code>ByteMatchSet</code> that doesn't exist.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFStaleDataException">
+        /// The operation failed because you tried to create, update, or delete an object by using
+        /// a change token that has already been used.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/UpdateRegexPatternSet">REST API Reference for UpdateRegexPatternSet Operation</seealso>
+        UpdateRegexPatternSetResponse UpdateRegexPatternSet(UpdateRegexPatternSetRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateRegexPatternSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRegexPatternSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/UpdateRegexPatternSet">REST API Reference for UpdateRegexPatternSet Operation</seealso>
+        Task<UpdateRegexPatternSetResponse> UpdateRegexPatternSetAsync(UpdateRegexPatternSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -7108,7 +8459,7 @@ namespace Amazon.WAFRegional
         ///  </li> <li> 
         /// <para>
         /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
-        /// other than HEADER, QUERY_STRING, or URI.
+        /// other than HEADER, METHOD, QUERY_STRING, URI, or BODY.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7319,7 +8670,7 @@ namespace Amazon.WAFRegional
         ///  </li> <li> 
         /// <para>
         /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
-        /// other than HEADER, QUERY_STRING, or URI.
+        /// other than HEADER, METHOD, QUERY_STRING, URI, or BODY.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7536,7 +8887,7 @@ namespace Amazon.WAFRegional
         ///  </li> <li> 
         /// <para>
         /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
-        /// other than HEADER, QUERY_STRING, or URI.
+        /// other than HEADER, METHOD, QUERY_STRING, URI, or BODY.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7767,7 +9118,7 @@ namespace Amazon.WAFRegional
         ///  </li> <li> 
         /// <para>
         /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
-        /// other than HEADER, QUERY_STRING, or URI.
+        /// other than HEADER, METHOD, QUERY_STRING, URI, or BODY.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7991,7 +9342,7 @@ namespace Amazon.WAFRegional
         ///  </li> <li> 
         /// <para>
         /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
-        /// other than HEADER, QUERY_STRING, or URI.
+        /// other than HEADER, METHOD, QUERY_STRING, URI, or BODY.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8181,7 +9532,7 @@ namespace Amazon.WAFRegional
         ///  </li> <li> 
         /// <para>
         /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
-        /// other than HEADER, QUERY_STRING, or URI.
+        /// other than HEADER, METHOD, QUERY_STRING, URI, or BODY.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8377,7 +9728,7 @@ namespace Amazon.WAFRegional
         ///  </li> <li> 
         /// <para>
         /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
-        /// other than HEADER, QUERY_STRING, or URI.
+        /// other than HEADER, METHOD, QUERY_STRING, URI, or BODY.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8607,7 +9958,7 @@ namespace Amazon.WAFRegional
         ///  </li> <li> 
         /// <para>
         /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
-        /// other than HEADER, QUERY_STRING, or URI.
+        /// other than HEADER, METHOD, QUERY_STRING, URI, or BODY.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8828,7 +10179,7 @@ namespace Amazon.WAFRegional
         ///  </li> <li> 
         /// <para>
         /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
-        /// other than HEADER, QUERY_STRING, or URI.
+        /// other than HEADER, METHOD, QUERY_STRING, URI, or BODY.
         /// </para>
         ///  </li> <li> 
         /// <para>
