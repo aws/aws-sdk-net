@@ -29,8 +29,23 @@ namespace Amazon.CloudHSM.Model
 {
     /// <summary>
     /// Container for the parameters to the RemoveTagsFromResource operation.
-    /// Removes one or more tags from the specified AWS CloudHSM resource.
+    /// This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+    /// href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>,
+    /// the <a href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM
+    /// Classic User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS
+    /// CloudHSM Classic API Reference</a>.
     /// 
+    ///  
+    /// <para>
+    ///  <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS
+    /// CloudHSM</a>, the <a href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS
+    /// CloudHSM User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS
+    /// CloudHSM API Reference</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// Removes one or more tags from the specified AWS CloudHSM resource.
+    /// </para>
     ///  
     /// <para>
     /// To remove a tag, specify only the tag key to remove (not the value). To overwrite

@@ -33,15 +33,18 @@ namespace Amazon.CloudHSM
     ///
     /// AWS CloudHSM Service 
     /// <para>
-    /// This is the reference for AWS CloudHSM Classic. For more information, see <a href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS
-    /// CloudHSM Classic FAQs</a> and the <a href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS
-    /// CloudHSM Classic User Guide</a>.
+    /// This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+    /// href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>,
+    /// the <a href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM
+    /// Classic User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS
+    /// CloudHSM Classic API Reference</a>.
     /// </para>
     ///  
     /// <para>
-    /// For more information about AWS CloudHSM, see <a href="http://aws.amazon.com/cloudhsm/">AWS
-    /// CloudHSM</a> and the <a href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS
-    /// CloudHSM User Guide</a>.
+    ///  <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS
+    /// CloudHSM</a>, the <a href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS
+    /// CloudHSM User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS
+    /// CloudHSM API Reference</a>.
     /// </para>
     /// </summary>
     public partial interface IAmazonCloudHSM : IAmazonService, IDisposable
@@ -52,8 +55,23 @@ namespace Amazon.CloudHSM
 
 
         /// <summary>
-        /// Adds or overwrites one or more tags for the specified AWS CloudHSM resource.
+        /// This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+        /// href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>,
+        /// the <a href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM
+        /// Classic User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS
+        /// CloudHSM Classic API Reference</a>.
         /// 
+        ///  
+        /// <para>
+        ///  <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS
+        /// CloudHSM</a>, the <a href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS
+        /// CloudHSM User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS
+        /// CloudHSM API Reference</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Adds or overwrites one or more tags for the specified AWS CloudHSM resource.
+        /// </para>
         ///  
         /// <para>
         /// Each tag consists of a key and a value. Tag keys must be unique to each resource.
@@ -93,8 +111,24 @@ namespace Amazon.CloudHSM
 
 
         /// <summary>
+        /// This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+        /// href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>,
+        /// the <a href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM
+        /// Classic User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS
+        /// CloudHSM Classic API Reference</a>.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS
+        /// CloudHSM</a>, the <a href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS
+        /// CloudHSM User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS
+        /// CloudHSM API Reference</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// Creates a high-availability partition group. A high-availability partition group is
         /// a group of partitions that spans multiple physical HSMs.
+        /// </para>
         /// </summary>
         /// <param name="label">The label of the new high-availability partition group.</param>
         /// 
@@ -112,8 +146,24 @@ namespace Amazon.CloudHSM
         CreateHapgResponse CreateHapg(string label);
 
         /// <summary>
+        /// This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+        /// href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>,
+        /// the <a href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM
+        /// Classic User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS
+        /// CloudHSM Classic API Reference</a>.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS
+        /// CloudHSM</a>, the <a href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS
+        /// CloudHSM User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS
+        /// CloudHSM API Reference</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// Creates a high-availability partition group. A high-availability partition group is
         /// a group of partitions that spans multiple physical HSMs.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateHapg service method.</param>
         /// 
@@ -132,8 +182,24 @@ namespace Amazon.CloudHSM
 
 
         /// <summary>
+        /// This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+        /// href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>,
+        /// the <a href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM
+        /// Classic User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS
+        /// CloudHSM Classic API Reference</a>.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS
+        /// CloudHSM</a>, the <a href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS
+        /// CloudHSM User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS
+        /// CloudHSM API Reference</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// Creates a high-availability partition group. A high-availability partition group is
         /// a group of partitions that spans multiple physical HSMs.
+        /// </para>
         /// </summary>
         /// <param name="label">The label of the new high-availability partition group.</param>
         /// <param name="cancellationToken">
@@ -171,8 +237,23 @@ namespace Amazon.CloudHSM
 
 
         /// <summary>
-        /// Creates an uninitialized HSM instance.
+        /// This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+        /// href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>,
+        /// the <a href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM
+        /// Classic User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS
+        /// CloudHSM Classic API Reference</a>.
         /// 
+        ///  
+        /// <para>
+        ///  <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS
+        /// CloudHSM</a>, the <a href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS
+        /// CloudHSM User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS
+        /// CloudHSM API Reference</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Creates an uninitialized HSM instance.
+        /// </para>
         ///  
         /// <para>
         /// There is an upfront fee charged for each HSM instance that you create with the <code>CreateHsm</code>
@@ -222,7 +303,23 @@ namespace Amazon.CloudHSM
 
 
         /// <summary>
+        /// This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+        /// href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>,
+        /// the <a href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM
+        /// Classic User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS
+        /// CloudHSM Classic API Reference</a>.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS
+        /// CloudHSM</a>, the <a href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS
+        /// CloudHSM User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS
+        /// CloudHSM API Reference</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// Creates an HSM client.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLunaClient service method.</param>
         /// 
@@ -258,7 +355,23 @@ namespace Amazon.CloudHSM
 
 
         /// <summary>
+        /// This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+        /// href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>,
+        /// the <a href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM
+        /// Classic User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS
+        /// CloudHSM Classic API Reference</a>.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS
+        /// CloudHSM</a>, the <a href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS
+        /// CloudHSM User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS
+        /// CloudHSM API Reference</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// Deletes a high-availability partition group.
+        /// </para>
         /// </summary>
         /// <param name="hapgArn">The ARN of the high-availability partition group to delete.</param>
         /// 
@@ -276,7 +389,23 @@ namespace Amazon.CloudHSM
         DeleteHapgResponse DeleteHapg(string hapgArn);
 
         /// <summary>
+        /// This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+        /// href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>,
+        /// the <a href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM
+        /// Classic User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS
+        /// CloudHSM Classic API Reference</a>.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS
+        /// CloudHSM</a>, the <a href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS
+        /// CloudHSM User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS
+        /// CloudHSM API Reference</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// Deletes a high-availability partition group.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteHapg service method.</param>
         /// 
@@ -295,7 +424,23 @@ namespace Amazon.CloudHSM
 
 
         /// <summary>
+        /// This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+        /// href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>,
+        /// the <a href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM
+        /// Classic User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS
+        /// CloudHSM Classic API Reference</a>.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS
+        /// CloudHSM</a>, the <a href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS
+        /// CloudHSM User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS
+        /// CloudHSM API Reference</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// Deletes a high-availability partition group.
+        /// </para>
         /// </summary>
         /// <param name="hapgArn">The ARN of the high-availability partition group to delete.</param>
         /// <param name="cancellationToken">
@@ -333,8 +478,24 @@ namespace Amazon.CloudHSM
 
 
         /// <summary>
+        /// This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+        /// href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>,
+        /// the <a href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM
+        /// Classic User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS
+        /// CloudHSM Classic API Reference</a>.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS
+        /// CloudHSM</a>, the <a href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS
+        /// CloudHSM User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS
+        /// CloudHSM API Reference</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// Deletes an HSM. After completion, this operation cannot be undone and your key material
         /// cannot be recovered.
+        /// </para>
         /// </summary>
         /// <param name="hsmArn">The ARN of the HSM to delete.</param>
         /// 
@@ -352,8 +513,24 @@ namespace Amazon.CloudHSM
         DeleteHsmResponse DeleteHsm(string hsmArn);
 
         /// <summary>
+        /// This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+        /// href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>,
+        /// the <a href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM
+        /// Classic User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS
+        /// CloudHSM Classic API Reference</a>.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS
+        /// CloudHSM</a>, the <a href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS
+        /// CloudHSM User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS
+        /// CloudHSM API Reference</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// Deletes an HSM. After completion, this operation cannot be undone and your key material
         /// cannot be recovered.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteHsm service method.</param>
         /// 
@@ -372,8 +549,24 @@ namespace Amazon.CloudHSM
 
 
         /// <summary>
+        /// This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+        /// href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>,
+        /// the <a href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM
+        /// Classic User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS
+        /// CloudHSM Classic API Reference</a>.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS
+        /// CloudHSM</a>, the <a href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS
+        /// CloudHSM User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS
+        /// CloudHSM API Reference</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// Deletes an HSM. After completion, this operation cannot be undone and your key material
         /// cannot be recovered.
+        /// </para>
         /// </summary>
         /// <param name="hsmArn">The ARN of the HSM to delete.</param>
         /// <param name="cancellationToken">
@@ -411,7 +604,23 @@ namespace Amazon.CloudHSM
 
 
         /// <summary>
+        /// This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+        /// href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>,
+        /// the <a href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM
+        /// Classic User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS
+        /// CloudHSM Classic API Reference</a>.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS
+        /// CloudHSM</a>, the <a href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS
+        /// CloudHSM User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS
+        /// CloudHSM API Reference</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// Deletes a client.
+        /// </para>
         /// </summary>
         /// <param name="clientArn">The ARN of the client to delete.</param>
         /// 
@@ -429,7 +638,23 @@ namespace Amazon.CloudHSM
         DeleteLunaClientResponse DeleteLunaClient(string clientArn);
 
         /// <summary>
+        /// This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+        /// href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>,
+        /// the <a href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM
+        /// Classic User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS
+        /// CloudHSM Classic API Reference</a>.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS
+        /// CloudHSM</a>, the <a href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS
+        /// CloudHSM User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS
+        /// CloudHSM API Reference</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// Deletes a client.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLunaClient service method.</param>
         /// 
@@ -448,7 +673,23 @@ namespace Amazon.CloudHSM
 
 
         /// <summary>
+        /// This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+        /// href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>,
+        /// the <a href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM
+        /// Classic User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS
+        /// CloudHSM Classic API Reference</a>.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS
+        /// CloudHSM</a>, the <a href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS
+        /// CloudHSM User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS
+        /// CloudHSM API Reference</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// Deletes a client.
+        /// </para>
         /// </summary>
         /// <param name="clientArn">The ARN of the client to delete.</param>
         /// <param name="cancellationToken">
@@ -486,7 +727,23 @@ namespace Amazon.CloudHSM
 
 
         /// <summary>
+        /// This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+        /// href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>,
+        /// the <a href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM
+        /// Classic User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS
+        /// CloudHSM Classic API Reference</a>.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS
+        /// CloudHSM</a>, the <a href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS
+        /// CloudHSM User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS
+        /// CloudHSM API Reference</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// Retrieves information about a high-availability partition group.
+        /// </para>
         /// </summary>
         /// <param name="hapgArn">The ARN of the high-availability partition group to describe.</param>
         /// 
@@ -504,7 +761,23 @@ namespace Amazon.CloudHSM
         DescribeHapgResponse DescribeHapg(string hapgArn);
 
         /// <summary>
+        /// This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+        /// href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>,
+        /// the <a href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM
+        /// Classic User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS
+        /// CloudHSM Classic API Reference</a>.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS
+        /// CloudHSM</a>, the <a href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS
+        /// CloudHSM User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS
+        /// CloudHSM API Reference</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// Retrieves information about a high-availability partition group.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeHapg service method.</param>
         /// 
@@ -523,7 +796,23 @@ namespace Amazon.CloudHSM
 
 
         /// <summary>
+        /// This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+        /// href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>,
+        /// the <a href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM
+        /// Classic User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS
+        /// CloudHSM Classic API Reference</a>.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS
+        /// CloudHSM</a>, the <a href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS
+        /// CloudHSM User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS
+        /// CloudHSM API Reference</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// Retrieves information about a high-availability partition group.
+        /// </para>
         /// </summary>
         /// <param name="hapgArn">The ARN of the high-availability partition group to describe.</param>
         /// <param name="cancellationToken">
@@ -561,8 +850,24 @@ namespace Amazon.CloudHSM
 
 
         /// <summary>
+        /// This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+        /// href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>,
+        /// the <a href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM
+        /// Classic User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS
+        /// CloudHSM Classic API Reference</a>.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS
+        /// CloudHSM</a>, the <a href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS
+        /// CloudHSM User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS
+        /// CloudHSM API Reference</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// Retrieves information about an HSM. You can identify the HSM by its ARN or its serial
         /// number.
+        /// </para>
         /// </summary>
         /// <param name="hsmArn">The ARN of the HSM. Either the <code>HsmArn</code> or the <code>SerialNumber</code> parameter must be specified.</param>
         /// 
@@ -580,8 +885,24 @@ namespace Amazon.CloudHSM
         DescribeHsmResponse DescribeHsm(string hsmArn);
 
         /// <summary>
+        /// This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+        /// href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>,
+        /// the <a href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM
+        /// Classic User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS
+        /// CloudHSM Classic API Reference</a>.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS
+        /// CloudHSM</a>, the <a href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS
+        /// CloudHSM User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS
+        /// CloudHSM API Reference</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// Retrieves information about an HSM. You can identify the HSM by its ARN or its serial
         /// number.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeHsm service method.</param>
         /// 
@@ -600,8 +921,24 @@ namespace Amazon.CloudHSM
 
 
         /// <summary>
+        /// This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+        /// href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>,
+        /// the <a href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM
+        /// Classic User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS
+        /// CloudHSM Classic API Reference</a>.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS
+        /// CloudHSM</a>, the <a href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS
+        /// CloudHSM User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS
+        /// CloudHSM API Reference</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// Retrieves information about an HSM. You can identify the HSM by its ARN or its serial
         /// number.
+        /// </para>
         /// </summary>
         /// <param name="hsmArn">The ARN of the HSM. Either the <code>HsmArn</code> or the <code>SerialNumber</code> parameter must be specified.</param>
         /// <param name="cancellationToken">
@@ -639,7 +976,23 @@ namespace Amazon.CloudHSM
 
 
         /// <summary>
+        /// This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+        /// href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>,
+        /// the <a href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM
+        /// Classic User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS
+        /// CloudHSM Classic API Reference</a>.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS
+        /// CloudHSM</a>, the <a href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS
+        /// CloudHSM User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS
+        /// CloudHSM API Reference</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// Retrieves information about an HSM client.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLunaClient service method.</param>
         /// 
@@ -675,8 +1028,24 @@ namespace Amazon.CloudHSM
 
 
         /// <summary>
+        /// This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+        /// href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>,
+        /// the <a href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM
+        /// Classic User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS
+        /// CloudHSM Classic API Reference</a>.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS
+        /// CloudHSM</a>, the <a href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS
+        /// CloudHSM User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS
+        /// CloudHSM API Reference</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// Gets the configuration files necessary to connect to all high availability partition
         /// groups the client is associated with.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetConfig service method.</param>
         /// 
@@ -712,7 +1081,23 @@ namespace Amazon.CloudHSM
 
 
         /// <summary>
+        /// This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+        /// href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>,
+        /// the <a href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM
+        /// Classic User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS
+        /// CloudHSM Classic API Reference</a>.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS
+        /// CloudHSM</a>, the <a href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS
+        /// CloudHSM User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS
+        /// CloudHSM API Reference</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// Lists the Availability Zones that have available AWS CloudHSM capacity.
+        /// </para>
         /// </summary>
         /// 
         /// <returns>The response from the ListAvailableZones service method, as returned by CloudHSM.</returns>
@@ -729,7 +1114,23 @@ namespace Amazon.CloudHSM
         ListAvailableZonesResponse ListAvailableZones();
 
         /// <summary>
+        /// This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+        /// href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>,
+        /// the <a href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM
+        /// Classic User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS
+        /// CloudHSM Classic API Reference</a>.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS
+        /// CloudHSM</a>, the <a href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS
+        /// CloudHSM User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS
+        /// CloudHSM API Reference</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// Lists the Availability Zones that have available AWS CloudHSM capacity.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAvailableZones service method.</param>
         /// 
@@ -748,7 +1149,23 @@ namespace Amazon.CloudHSM
 
 
         /// <summary>
+        /// This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+        /// href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>,
+        /// the <a href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM
+        /// Classic User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS
+        /// CloudHSM Classic API Reference</a>.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS
+        /// CloudHSM</a>, the <a href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS
+        /// CloudHSM User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS
+        /// CloudHSM API Reference</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// Lists the Availability Zones that have available AWS CloudHSM capacity.
+        /// </para>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -785,8 +1202,23 @@ namespace Amazon.CloudHSM
 
 
         /// <summary>
-        /// Lists the high-availability partition groups for the account.
+        /// This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+        /// href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>,
+        /// the <a href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM
+        /// Classic User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS
+        /// CloudHSM Classic API Reference</a>.
         /// 
+        ///  
+        /// <para>
+        ///  <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS
+        /// CloudHSM</a>, the <a href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS
+        /// CloudHSM User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS
+        /// CloudHSM API Reference</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Lists the high-availability partition groups for the account.
+        /// </para>
         ///  
         /// <para>
         /// This operation supports pagination with the use of the <code>NextToken</code> member.
@@ -810,8 +1242,23 @@ namespace Amazon.CloudHSM
         ListHapgsResponse ListHapgs();
 
         /// <summary>
-        /// Lists the high-availability partition groups for the account.
+        /// This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+        /// href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>,
+        /// the <a href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM
+        /// Classic User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS
+        /// CloudHSM Classic API Reference</a>.
         /// 
+        ///  
+        /// <para>
+        ///  <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS
+        /// CloudHSM</a>, the <a href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS
+        /// CloudHSM User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS
+        /// CloudHSM API Reference</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Lists the high-availability partition groups for the account.
+        /// </para>
         ///  
         /// <para>
         /// This operation supports pagination with the use of the <code>NextToken</code> member.
@@ -837,8 +1284,23 @@ namespace Amazon.CloudHSM
 
 
         /// <summary>
-        /// Lists the high-availability partition groups for the account.
+        /// This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+        /// href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>,
+        /// the <a href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM
+        /// Classic User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS
+        /// CloudHSM Classic API Reference</a>.
         /// 
+        ///  
+        /// <para>
+        ///  <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS
+        /// CloudHSM</a>, the <a href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS
+        /// CloudHSM User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS
+        /// CloudHSM API Reference</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Lists the high-availability partition groups for the account.
+        /// </para>
         ///  
         /// <para>
         /// This operation supports pagination with the use of the <code>NextToken</code> member.
@@ -882,8 +1344,23 @@ namespace Amazon.CloudHSM
 
 
         /// <summary>
-        /// Retrieves the identifiers of all of the HSMs provisioned for the current customer.
+        /// This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+        /// href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>,
+        /// the <a href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM
+        /// Classic User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS
+        /// CloudHSM Classic API Reference</a>.
         /// 
+        ///  
+        /// <para>
+        ///  <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS
+        /// CloudHSM</a>, the <a href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS
+        /// CloudHSM User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS
+        /// CloudHSM API Reference</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Retrieves the identifiers of all of the HSMs provisioned for the current customer.
+        /// </para>
         ///  
         /// <para>
         /// This operation supports pagination with the use of the <code>NextToken</code> member.
@@ -907,8 +1384,23 @@ namespace Amazon.CloudHSM
         ListHsmsResponse ListHsms();
 
         /// <summary>
-        /// Retrieves the identifiers of all of the HSMs provisioned for the current customer.
+        /// This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+        /// href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>,
+        /// the <a href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM
+        /// Classic User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS
+        /// CloudHSM Classic API Reference</a>.
         /// 
+        ///  
+        /// <para>
+        ///  <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS
+        /// CloudHSM</a>, the <a href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS
+        /// CloudHSM User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS
+        /// CloudHSM API Reference</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Retrieves the identifiers of all of the HSMs provisioned for the current customer.
+        /// </para>
         ///  
         /// <para>
         /// This operation supports pagination with the use of the <code>NextToken</code> member.
@@ -934,8 +1426,23 @@ namespace Amazon.CloudHSM
 
 
         /// <summary>
-        /// Retrieves the identifiers of all of the HSMs provisioned for the current customer.
+        /// This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+        /// href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>,
+        /// the <a href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM
+        /// Classic User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS
+        /// CloudHSM Classic API Reference</a>.
         /// 
+        ///  
+        /// <para>
+        ///  <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS
+        /// CloudHSM</a>, the <a href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS
+        /// CloudHSM User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS
+        /// CloudHSM API Reference</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Retrieves the identifiers of all of the HSMs provisioned for the current customer.
+        /// </para>
         ///  
         /// <para>
         /// This operation supports pagination with the use of the <code>NextToken</code> member.
@@ -979,8 +1486,23 @@ namespace Amazon.CloudHSM
 
 
         /// <summary>
-        /// Lists all of the clients.
+        /// This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+        /// href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>,
+        /// the <a href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM
+        /// Classic User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS
+        /// CloudHSM Classic API Reference</a>.
         /// 
+        ///  
+        /// <para>
+        ///  <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS
+        /// CloudHSM</a>, the <a href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS
+        /// CloudHSM User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS
+        /// CloudHSM API Reference</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Lists all of the clients.
+        /// </para>
         ///  
         /// <para>
         /// This operation supports pagination with the use of the <code>NextToken</code> member.
@@ -1004,8 +1526,23 @@ namespace Amazon.CloudHSM
         ListLunaClientsResponse ListLunaClients();
 
         /// <summary>
-        /// Lists all of the clients.
+        /// This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+        /// href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>,
+        /// the <a href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM
+        /// Classic User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS
+        /// CloudHSM Classic API Reference</a>.
         /// 
+        ///  
+        /// <para>
+        ///  <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS
+        /// CloudHSM</a>, the <a href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS
+        /// CloudHSM User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS
+        /// CloudHSM API Reference</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Lists all of the clients.
+        /// </para>
         ///  
         /// <para>
         /// This operation supports pagination with the use of the <code>NextToken</code> member.
@@ -1031,8 +1568,23 @@ namespace Amazon.CloudHSM
 
 
         /// <summary>
-        /// Lists all of the clients.
+        /// This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+        /// href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>,
+        /// the <a href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM
+        /// Classic User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS
+        /// CloudHSM Classic API Reference</a>.
         /// 
+        ///  
+        /// <para>
+        ///  <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS
+        /// CloudHSM</a>, the <a href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS
+        /// CloudHSM User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS
+        /// CloudHSM API Reference</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Lists all of the clients.
+        /// </para>
         ///  
         /// <para>
         /// This operation supports pagination with the use of the <code>NextToken</code> member.
@@ -1076,7 +1628,23 @@ namespace Amazon.CloudHSM
 
 
         /// <summary>
+        /// This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+        /// href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>,
+        /// the <a href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM
+        /// Classic User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS
+        /// CloudHSM Classic API Reference</a>.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS
+        /// CloudHSM</a>, the <a href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS
+        /// CloudHSM User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS
+        /// CloudHSM API Reference</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// Returns a list of all tags for the specified AWS CloudHSM resource.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -1112,7 +1680,23 @@ namespace Amazon.CloudHSM
 
 
         /// <summary>
+        /// This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+        /// href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>,
+        /// the <a href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM
+        /// Classic User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS
+        /// CloudHSM Classic API Reference</a>.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS
+        /// CloudHSM</a>, the <a href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS
+        /// CloudHSM User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS
+        /// CloudHSM API Reference</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// Modifies an existing high-availability partition group.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyHapg service method.</param>
         /// 
@@ -1148,8 +1732,23 @@ namespace Amazon.CloudHSM
 
 
         /// <summary>
-        /// Modifies an HSM.
+        /// This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+        /// href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>,
+        /// the <a href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM
+        /// Classic User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS
+        /// CloudHSM Classic API Reference</a>.
         /// 
+        ///  
+        /// <para>
+        ///  <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS
+        /// CloudHSM</a>, the <a href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS
+        /// CloudHSM User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS
+        /// CloudHSM API Reference</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Modifies an HSM.
+        /// </para>
         ///  <important> 
         /// <para>
         /// This operation can result in the HSM being offline for up to 15 minutes while the
@@ -1193,8 +1792,23 @@ namespace Amazon.CloudHSM
 
 
         /// <summary>
-        /// Modifies the certificate used by the client.
+        /// This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+        /// href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>,
+        /// the <a href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM
+        /// Classic User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS
+        /// CloudHSM Classic API Reference</a>.
         /// 
+        ///  
+        /// <para>
+        ///  <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS
+        /// CloudHSM</a>, the <a href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS
+        /// CloudHSM User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS
+        /// CloudHSM API Reference</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Modifies the certificate used by the client.
+        /// </para>
         ///  
         /// <para>
         /// This action can potentially start a workflow to install the new certificate on the
@@ -1229,8 +1843,23 @@ namespace Amazon.CloudHSM
 
 
         /// <summary>
-        /// Removes one or more tags from the specified AWS CloudHSM resource.
+        /// This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+        /// href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>,
+        /// the <a href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM
+        /// Classic User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS
+        /// CloudHSM Classic API Reference</a>.
         /// 
+        ///  
+        /// <para>
+        ///  <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS
+        /// CloudHSM</a>, the <a href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS
+        /// CloudHSM User Guide</a>, and the <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS
+        /// CloudHSM API Reference</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Removes one or more tags from the specified AWS CloudHSM resource.
+        /// </para>
         ///  
         /// <para>
         /// To remove a tag, specify only the tag key to remove (not the value). To overwrite
