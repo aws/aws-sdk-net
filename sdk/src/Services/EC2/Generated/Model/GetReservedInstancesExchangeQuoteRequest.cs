@@ -29,9 +29,10 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the GetReservedInstancesExchangeQuote operation.
-    /// Returns details about the values and term of your specified Convertible Reserved Instances.
-    /// When a target configuration is specified, it returns information about whether the
-    /// exchange is valid and can be performed.
+    /// Returns a quote and exchange information for exchanging one or more specified Convertible
+    /// Reserved Instances for a new Convertible Reserved Instance. If the exchange cannot
+    /// be performed, the reason is returned in the response. Use <a>AcceptReservedInstancesExchangeQuote</a>
+    /// to perform the exchange.
     /// </summary>
     public partial class GetReservedInstancesExchangeQuoteRequest : AmazonEC2Request
     {
@@ -59,8 +60,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TargetConfigurations. 
         /// <para>
-        /// The configuration requirements of the Convertible Reserved Instances to exchange for
-        /// your current Convertible Reserved Instances.
+        /// The configuration of the target Convertible Reserved Instance to exchange for your
+        /// current Convertible Reserved Instances.
         /// </para>
         /// </summary>
         public List<TargetConfigurationRequest> TargetConfigurations

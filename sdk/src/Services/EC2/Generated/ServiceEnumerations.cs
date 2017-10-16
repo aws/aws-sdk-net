@@ -6087,6 +6087,52 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type VpcTenancy.
+    /// </summary>
+    public class VpcTenancy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Default for VpcTenancy
+        /// </summary>
+        public static readonly VpcTenancy Default = new VpcTenancy("default");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VpcTenancy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VpcTenancy FindValue(string value)
+        {
+            return FindValue<VpcTenancy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VpcTenancy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type VpnState.
     /// </summary>
     public class VpnState : ConstantClass

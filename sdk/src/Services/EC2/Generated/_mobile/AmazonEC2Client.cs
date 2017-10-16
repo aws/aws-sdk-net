@@ -7963,6 +7963,38 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ModifyVpcTenancy
+
+        internal virtual ModifyVpcTenancyResponse ModifyVpcTenancy(ModifyVpcTenancyRequest request)
+        {
+            var marshaller = new ModifyVpcTenancyRequestMarshaller();
+            var unmarshaller = ModifyVpcTenancyResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyVpcTenancyRequest,ModifyVpcTenancyResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyVpcTenancy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVpcTenancy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcTenancy">REST API Reference for ModifyVpcTenancy Operation</seealso>
+        public virtual Task<ModifyVpcTenancyResponse> ModifyVpcTenancyAsync(ModifyVpcTenancyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ModifyVpcTenancyRequestMarshaller();
+            var unmarshaller = ModifyVpcTenancyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyVpcTenancyRequest,ModifyVpcTenancyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  MonitorInstances
 
         internal virtual MonitorInstancesResponse MonitorInstances(MonitorInstancesRequest request)

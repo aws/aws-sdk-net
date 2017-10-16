@@ -30,9 +30,9 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the ModifyReservedInstances operation.
     /// Modifies the Availability Zone, instance count, instance type, or network platform
-    /// (EC2-Classic or EC2-VPC) of your Standard Reserved Instances. The Reserved Instances
-    /// to be modified must be identical, except for Availability Zone, network platform,
-    /// and instance type.
+    /// (EC2-Classic or EC2-VPC) of your Reserved Instances. The Reserved Instances to be
+    /// modified must be identical, except for Availability Zone, network platform, and instance
+    /// type.
     /// 
     ///  
     /// <para>

@@ -40,8 +40,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ReservedInstanceIds. 
         /// <para>
-        /// The IDs of the Convertible Reserved Instances to exchange for other Convertible Reserved
-        /// Instances of the same or higher value.
+        /// The IDs of the Convertible Reserved Instances to exchange for another Convertible
+        /// Reserved Instance of the same or higher value.
         /// </para>
         /// </summary>
         public List<string> ReservedInstanceIds
@@ -59,8 +59,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TargetConfigurations. 
         /// <para>
-        /// The configurations of the Convertible Reserved Instance offerings that you are purchasing
-        /// in this exchange.
+        /// The configuration of the target Convertible Reserved Instance to exchange for your
+        /// current Convertible Reserved Instances.
         /// </para>
         /// </summary>
         public List<TargetConfigurationRequest> TargetConfigurations

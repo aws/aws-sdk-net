@@ -4720,6 +4720,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void ModifyVpcTenancyMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyVpcTenancy");
+
+            var request = InstantiateClassGenerator.Execute<ModifyVpcTenancyRequest>();
+            var marshaller = new ModifyVpcTenancyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = ModifyVpcTenancyResponseUnmarshaller.Instance.Unmarshall(context)
+                as ModifyVpcTenancyResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void MonitorInstancesMarshallTest()
         {
             var operation = service_model.FindOperation("MonitorInstances");

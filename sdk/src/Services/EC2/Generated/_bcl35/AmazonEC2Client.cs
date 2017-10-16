@@ -12392,9 +12392,10 @@ namespace Amazon.EC2
         #region  GetReservedInstancesExchangeQuote
 
         /// <summary>
-        /// Returns details about the values and term of your specified Convertible Reserved Instances.
-        /// When a target configuration is specified, it returns information about whether the
-        /// exchange is valid and can be performed.
+        /// Returns a quote and exchange information for exchanging one or more specified Convertible
+        /// Reserved Instances for a new Convertible Reserved Instance. If the exchange cannot
+        /// be performed, the reason is returned in the response. Use <a>AcceptReservedInstancesExchangeQuote</a>
+        /// to perform the exchange.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetReservedInstancesExchangeQuote service method.</param>
         /// 
@@ -13260,9 +13261,9 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Modifies the Availability Zone, instance count, instance type, or network platform
-        /// (EC2-Classic or EC2-VPC) of your Standard Reserved Instances. The Reserved Instances
-        /// to be modified must be identical, except for Availability Zone, network platform,
-        /// and instance type.
+        /// (EC2-Classic or EC2-VPC) of your Reserved Instances. The Reserved Instances to be
+        /// modified must be identical, except for Availability Zone, network platform, and instance
+        /// type.
         /// 
         ///  
         /// <para>
@@ -13861,6 +13862,73 @@ namespace Amazon.EC2
         public virtual ModifyVpcPeeringConnectionOptionsResponse EndModifyVpcPeeringConnectionOptions(IAsyncResult asyncResult)
         {
             return EndInvoke<ModifyVpcPeeringConnectionOptionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ModifyVpcTenancy
+
+        /// <summary>
+        /// Modifies the instance tenancy attribute of the specified VPC. You can change the instance
+        /// tenancy attribute of a VPC to <code>default</code> only. You cannot change the instance
+        /// tenancy attribute to <code>dedicated</code>.
+        /// 
+        ///  
+        /// <para>
+        /// After you modify the tenancy of the VPC, any new instances that you launch into the
+        /// VPC have a tenancy of <code>default</code>, unless you specify otherwise during launch.
+        /// The tenancy of any existing instances in the VPC is not affected.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about Dedicated Instances, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-instance.html">Dedicated
+        /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVpcTenancy service method.</param>
+        /// 
+        /// <returns>The response from the ModifyVpcTenancy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcTenancy">REST API Reference for ModifyVpcTenancy Operation</seealso>
+        public virtual ModifyVpcTenancyResponse ModifyVpcTenancy(ModifyVpcTenancyRequest request)
+        {
+            var marshaller = new ModifyVpcTenancyRequestMarshaller();
+            var unmarshaller = ModifyVpcTenancyResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyVpcTenancyRequest,ModifyVpcTenancyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyVpcTenancy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVpcTenancy operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyVpcTenancy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcTenancy">REST API Reference for ModifyVpcTenancy Operation</seealso>
+        public virtual IAsyncResult BeginModifyVpcTenancy(ModifyVpcTenancyRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ModifyVpcTenancyRequestMarshaller();
+            var unmarshaller = ModifyVpcTenancyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ModifyVpcTenancyRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyVpcTenancy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyVpcTenancy.</param>
+        /// 
+        /// <returns>Returns a  ModifyVpcTenancyResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcTenancy">REST API Reference for ModifyVpcTenancy Operation</seealso>
+        public virtual ModifyVpcTenancyResponse EndModifyVpcTenancy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ModifyVpcTenancyResponse>(asyncResult);
         }
 
         #endregion
