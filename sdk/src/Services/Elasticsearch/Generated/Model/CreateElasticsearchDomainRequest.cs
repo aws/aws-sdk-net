@@ -41,6 +41,7 @@ namespace Amazon.Elasticsearch.Model
         private EBSOptions _ebsOptions;
         private ElasticsearchClusterConfig _elasticsearchClusterConfig;
         private string _elasticsearchVersion;
+        private Dictionary<string, LogPublishingOption> _logPublishingOptions = new Dictionary<string, LogPublishingOption>();
         private SnapshotOptions _snapshotOptions;
 
         /// <summary>
@@ -159,6 +160,25 @@ namespace Amazon.Elasticsearch.Model
         internal bool IsSetElasticsearchVersion()
         {
             return this._elasticsearchVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogPublishingOptions. 
+        /// <para>
+        /// Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing
+        /// options to publish a given type of Elasticsearch log.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, LogPublishingOption> LogPublishingOptions
+        {
+            get { return this._logPublishingOptions; }
+            set { this._logPublishingOptions = value; }
+        }
+
+        // Check to see if LogPublishingOptions property is set
+        internal bool IsSetLogPublishingOptions()
+        {
+            return this._logPublishingOptions != null && this._logPublishingOptions.Count > 0; 
         }
 
         /// <summary>

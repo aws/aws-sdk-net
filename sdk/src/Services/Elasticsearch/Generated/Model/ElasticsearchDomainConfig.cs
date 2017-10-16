@@ -37,6 +37,7 @@ namespace Amazon.Elasticsearch.Model
         private EBSOptionsStatus _ebsOptions;
         private ElasticsearchClusterConfigStatus _elasticsearchClusterConfig;
         private ElasticsearchVersionStatus _elasticsearchVersion;
+        private LogPublishingOptionsStatus _logPublishingOptions;
         private SnapshotOptionsStatus _snapshotOptions;
 
         /// <summary>
@@ -128,6 +129,24 @@ namespace Amazon.Elasticsearch.Model
         internal bool IsSetElasticsearchVersion()
         {
             return this._elasticsearchVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogPublishingOptions. 
+        /// <para>
+        /// Log publishing options for the given domain.
+        /// </para>
+        /// </summary>
+        public LogPublishingOptionsStatus LogPublishingOptions
+        {
+            get { return this._logPublishingOptions; }
+            set { this._logPublishingOptions = value; }
+        }
+
+        // Check to see if LogPublishingOptions property is set
+        internal bool IsSetLogPublishingOptions()
+        {
+            return this._logPublishingOptions != null;
         }
 
         /// <summary>

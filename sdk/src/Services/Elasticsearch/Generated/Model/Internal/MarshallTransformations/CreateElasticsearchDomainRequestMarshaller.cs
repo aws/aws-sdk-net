@@ -119,6 +119,25 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ElasticsearchVersion);
                 }
 
+                if(publicRequest.IsSetLogPublishingOptions())
+                {
+                    context.Writer.WritePropertyName("LogPublishingOptions");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestLogPublishingOptionsKvp in publicRequest.LogPublishingOptions)
+                    {
+                        context.Writer.WritePropertyName(publicRequestLogPublishingOptionsKvp.Key);
+                        var publicRequestLogPublishingOptionsValue = publicRequestLogPublishingOptionsKvp.Value;
+
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = LogPublishingOptionMarshaller.Instance;
+                        marshaller.Marshall(publicRequestLogPublishingOptionsValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetSnapshotOptions())
                 {
                     context.Writer.WritePropertyName("SnapshotOptions");

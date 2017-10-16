@@ -94,6 +94,12 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                     unmarshalledObject.ElasticsearchVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LogPublishingOptions", targetDepth))
+                {
+                    var unmarshaller = LogPublishingOptionsStatusUnmarshaller.Instance;
+                    unmarshalledObject.LogPublishingOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SnapshotOptions", targetDepth))
                 {
                     var unmarshaller = SnapshotOptionsStatusUnmarshaller.Instance;

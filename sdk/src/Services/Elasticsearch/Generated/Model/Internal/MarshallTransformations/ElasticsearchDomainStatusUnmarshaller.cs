@@ -130,6 +130,12 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                     unmarshalledObject.Endpoint = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LogPublishingOptions", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, LogPublishingOption, StringUnmarshaller, LogPublishingOptionUnmarshaller>(StringUnmarshaller.Instance, LogPublishingOptionUnmarshaller.Instance);
+                    unmarshalledObject.LogPublishingOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Processing", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

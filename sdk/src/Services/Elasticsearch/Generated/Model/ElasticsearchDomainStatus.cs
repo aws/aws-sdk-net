@@ -43,6 +43,7 @@ namespace Amazon.Elasticsearch.Model
         private ElasticsearchClusterConfig _elasticsearchClusterConfig;
         private string _elasticsearchVersion;
         private string _endpoint;
+        private Dictionary<string, LogPublishingOption> _logPublishingOptions = new Dictionary<string, LogPublishingOption>();
         private bool? _processing;
         private SnapshotOptions _snapshotOptions;
 
@@ -248,6 +249,24 @@ namespace Amazon.Elasticsearch.Model
         internal bool IsSetEndpoint()
         {
             return this._endpoint != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogPublishingOptions. 
+        /// <para>
+        /// Log publishing options for the given domain.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, LogPublishingOption> LogPublishingOptions
+        {
+            get { return this._logPublishingOptions; }
+            set { this._logPublishingOptions = value; }
+        }
+
+        // Check to see if LogPublishingOptions property is set
+        internal bool IsSetLogPublishingOptions()
+        {
+            return this._logPublishingOptions != null && this._logPublishingOptions.Count > 0; 
         }
 
         /// <summary>
