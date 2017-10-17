@@ -106,6 +106,12 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                     unmarshalledObject.SnapshotOptions = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("VPCOptions", targetDepth))
+                {
+                    var unmarshaller = VPCDerivedInfoStatusUnmarshaller.Instance;
+                    unmarshalledObject.VPCOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

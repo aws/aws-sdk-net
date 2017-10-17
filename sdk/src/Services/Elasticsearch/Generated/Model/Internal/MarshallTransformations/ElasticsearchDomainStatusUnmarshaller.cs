@@ -130,6 +130,12 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                     unmarshalledObject.Endpoint = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Endpoints", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.Endpoints = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LogPublishingOptions", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, LogPublishingOption, StringUnmarshaller, LogPublishingOptionUnmarshaller>(StringUnmarshaller.Instance, LogPublishingOptionUnmarshaller.Instance);
@@ -146,6 +152,12 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = SnapshotOptionsUnmarshaller.Instance;
                     unmarshalledObject.SnapshotOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VPCOptions", targetDepth))
+                {
+                    var unmarshaller = VPCDerivedInfoUnmarshaller.Instance;
+                    unmarshalledObject.VPCOptions = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

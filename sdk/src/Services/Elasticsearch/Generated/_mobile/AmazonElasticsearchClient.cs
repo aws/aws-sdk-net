@@ -334,6 +334,37 @@ namespace Amazon.Elasticsearch
 
         #endregion
         
+        #region  DeleteElasticsearchServiceRole
+
+        internal virtual DeleteElasticsearchServiceRoleResponse DeleteElasticsearchServiceRole(DeleteElasticsearchServiceRoleRequest request)
+        {
+            var marshaller = new DeleteElasticsearchServiceRoleRequestMarshaller();
+            var unmarshaller = DeleteElasticsearchServiceRoleResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteElasticsearchServiceRoleRequest,DeleteElasticsearchServiceRoleResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteElasticsearchServiceRole operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteElasticsearchServiceRole operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<DeleteElasticsearchServiceRoleResponse> DeleteElasticsearchServiceRoleAsync(DeleteElasticsearchServiceRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteElasticsearchServiceRoleRequestMarshaller();
+            var unmarshaller = DeleteElasticsearchServiceRoleResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteElasticsearchServiceRoleRequest,DeleteElasticsearchServiceRoleResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeElasticsearchDomain
 
         internal virtual DescribeElasticsearchDomainResponse DescribeElasticsearchDomain(DescribeElasticsearchDomainRequest request)

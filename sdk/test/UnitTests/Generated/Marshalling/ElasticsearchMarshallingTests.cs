@@ -125,6 +125,23 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Elasticsearch")]
+        public void DeleteElasticsearchServiceRoleMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteElasticsearchServiceRole");
+
+            var request = InstantiateClassGenerator.Execute<DeleteElasticsearchServiceRoleRequest>();
+            var marshaller = new DeleteElasticsearchServiceRoleRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteElasticsearchServiceRole", request, internalRequest, service_model);            
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Elasticsearch")]
         public void DescribeElasticsearchDomainMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeElasticsearchDomain");
