@@ -1,3 +1,11 @@
+### 3.3.174.0 (2017-10-17 20:37 UTC)
+* Elasticsearch (3.3.3.0)
+	* This release adds support for VPC access to Amazon Elasticsearch Service.
+* Core 3.3.18.1
+	* Service Region Launch.
+
+
+
 ### 3.3.173.0 (2017-10-16 20:49 UTC)
 * CloudHSM (3.3.0.23)
 	* Documentation updates for AWS CloudHSM Classic.

@@ -1,7 +1,7 @@
 
 {
-    "ProductVersion" : "3.3.173.0",
-    "CoreVersion"    : "3.3.18.0",
+    "ProductVersion" : "3.3.174.0",
+    "CoreVersion"    : "3.3.18.1",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
         "CloudHSM" : {
@@ -425,7 +425,7 @@
             "InPreview"               : false
         },
         "Elasticsearch"             : {
-            "Version" : "3.3.2.0",
+            "Version" : "3.3.3.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.18.0"
