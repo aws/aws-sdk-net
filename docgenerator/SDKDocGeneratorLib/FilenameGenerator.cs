@@ -74,32 +74,32 @@ namespace SDKDocGenerator
 
         public static string GenerateFilename(TypeWrapper type)
         {
-            return Fixup(string.Format("T_{0}_{1}", type.Namespace, type.Name)) + ".html";
+            return Fixup(string.Format("T_{0}", type.Name)) + ".html";
         }
 
         public static string GenerateFilename(PropertyInfoWrapper info)
         {
-            return Fixup(string.Format("P_{0}_{1}_{2}", info.DeclaringType.Namespace, info.DeclaringType.Name, info.Name)) + ".html";
+            return Fixup(string.Format("P_{0}_{1}", info.DeclaringType.Name, info.Name)) + ".html";
         }
 
         public static string GenerateFilename(MethodInfoWrapper info)
         {
-            return Fixup(string.Format("M_{0}_{1}_{2}_{3}", info.DeclaringType.Namespace, info.DeclaringType.Name, info.Name, GenerateParametersTail(info.GetParameters()))) + ".html";
+            return Fixup(string.Format("M_{0}_{1}_{2}", info.DeclaringType.Name, info.Name, GenerateParametersTail(info.GetParameters()))) + ".html";
         }
 
         public static string GenerateFilename(ConstructorInfoWrapper info)
         {
-            return Fixup(string.Format("M_{0}_{1}_{2}_{3}", info.DeclaringType.Namespace, info.DeclaringType.Name, info.Name, GenerateParametersTail(info.GetParameters()))) + ".html";
+            return Fixup(string.Format("M_{0}_{1}_{2}", info.DeclaringType.Name, info.Name, GenerateParametersTail(info.GetParameters()))) + ".html";
         }
 
         public static string GenerateFilename(FieldInfoWrapper info)
         {
-            return Fixup(string.Format("F_{0}_{1}_{2}", info.DeclaringType.Namespace, info.DeclaringType.Name, info.Name)) + ".html";
+            return Fixup(string.Format("F_{0}_{1}", info.DeclaringType.Name, info.Name)) + ".html";
         }
 
         public static string GenerateFilename(EventInfoWrapper info)
         {
-            return Fixup(string.Format("E_{0}_{1}_{2}", info.DeclaringType.Namespace, info.DeclaringType.Name, info.Name)) + ".html";
+            return Fixup(string.Format("E_{0}_{1}", info.DeclaringType.Name, info.Name)) + ".html";
         }
 
         public static string GenerateNamespaceFilename(string namespaceName)

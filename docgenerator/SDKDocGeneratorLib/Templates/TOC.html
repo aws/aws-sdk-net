@@ -23,35 +23,6 @@
         jQuery(function ($) {
             AWSTOCObj.init("div#toc");
 
-            var params = parseUri($(window.parent.location).attr('href')).queryKey;
-            if (params && params.page) {
-                AWSTOCObj.setContentPane("./items/" + params.page.replace(/_/g, ""));
-            }
-            else {
-                AWSTOCObj.setContentPane("./items/sdk-api-home.html");
-            }
-
-            if (params && params.tocid) {
-                var li = jQuery("li#" + params.tocid);
-                var tocItem = li.children("a.nav");
-
-                // If the page is not a namespace page then we need to expand the namespace node
-                if (params.page[0] != 'N') {
-                    var pos = params.tocid.lastIndexOf('_');
-                    if (pos > 0) {
-
-                        var nid = params.tocid.substr(0, pos);
-
-                        var nli = jQuery("li#" + nid);
-                        AWSTOCObj.expandTOCGroup(nli);
-                    }
-                }
-
-                AWSTOCObj.setActiveTopic(tocItem);
-                AWSTOCObj.toggleTOCGroup(li);
-            }
-
-
             $("li.nav").click(function (event) {
                 event.stopPropagation();
                 AWSTOCObj.clearActiveTopic();
@@ -67,6 +38,44 @@
                     AWSTOCObj.toggleTOCGroup(this);
                 }
             });
+            
+
+            var params = parseUri($(window.parent.location).attr('href')).queryKey;
+            var li = jQuery("li#" + params.tocid);
+            var tocItem = li.children("a.nav");
+
+            if (params && params.page) {
+                var page = tocItem.attr('href');
+                if(page){
+                    page = page.substr(8,page.length);
+                    if(page!=params.page)
+                    {
+                        params.page = page;
+                    }
+                }
+                
+                AWSTOCObj.setContentPane("./items/" + params.page.replace(/_/g, ""));
+            }
+            else {
+                AWSTOCObj.setContentPane("./items/sdk-api-home.html");
+            }
+            
+            if (params && params.tocid) {
+                // If the page is not a namespace page then we need to expand the namespace node
+                if (params.page[0] != 'N') {
+                    var pos = params.tocid.lastIndexOf('_');
+                    if (pos > 0) {
+
+                        var nid = params.tocid.substr(0, pos);
+
+                        var nli = jQuery("li#" + nid);
+                        AWSTOCObj.expandTOCGroup(nli);
+                    }
+                }
+
+                AWSTOCObj.setActiveTopic(tocItem);
+                AWSTOCObj.toggleTOCGroup(li);
+            }
         });
 
         function updateContentPane(basePageName) {

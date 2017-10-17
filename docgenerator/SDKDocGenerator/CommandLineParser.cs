@@ -216,7 +216,11 @@ namespace SDKDocGenerator
                 OptionName = "services", 
                 ShortName = "svc", 
                 HasValue = true,
-                Parse = (arguments, argValue) => arguments.ParsedOptions.Services = argValue.Split(','), 
+                Parse = (arguments, argValue) => {
+                    var services = argValue.Split(',').ToList();
+                    if (!services.Contains("Core")) services.Add("Core");
+                    arguments.ParsedOptions.Services = services.ToArray();
+                },
                 HelpText = "Comma-delimited set of service names to process. If not specified all assemblies within the primary platform folder matching the SDK naming pattern are used."
             },    
             new ArgDeclaration

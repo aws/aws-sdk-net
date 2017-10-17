@@ -96,7 +96,15 @@ namespace SDKDocGenerator.Writers
         public void Write()
         {
             var filename = Path.Combine(Artifacts.OutputFolder, GenerateFilepath(), GenerateFilename());
-            RootRelativePath = ComputeRelativePathToRoot(filename);
+            try
+            {
+                RootRelativePath = ComputeRelativePathToRoot(filename);
+            }
+            catch (PathTooLongException)
+            {
+                Console.WriteLine("Path is too long for file : {0}", filename);
+                throw;
+            }
 
             var directory = new FileInfo(filename).Directory.FullName;
 
