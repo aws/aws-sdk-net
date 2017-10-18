@@ -37,6 +37,7 @@ namespace Amazon.Lightsail.Model
         private string _instanceName;
         private string _ipAddress;
         private string _password;
+        private PasswordData _passwordData;
         private string _privateKey;
         private InstanceAccessProtocol _protocol;
         private string _username;
@@ -117,8 +118,22 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Password. 
         /// <para>
-        /// For RDP access, the temporary password of the Amazon EC2 instance.
+        /// For RDP access, the password for your Amazon Lightsail instance. Password will be
+        /// an empty string if the password for your new instance is not ready yet. When you create
+        /// an instance, it can take up to 15 minutes for the instance to be ready.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you create an instance using any key pair other than the default (<code>LightsailDefaultKeyPair</code>),
+        /// <code>password</code> will always be an empty string.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you change the Administrator password on the instance, Lightsail will continue
+        /// to return the original password value. When accessing the instance using RDP, you
+        /// need to manually enter the Administrator password after changing it from the default.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string Password
         {
@@ -130,6 +145,27 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetPassword()
         {
             return this._password != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PasswordData. 
+        /// <para>
+        /// For a Windows Server-based instance, an object with the data you can use to retrieve
+        /// your password. This is only needed if <code>password</code> is empty and the instance
+        /// is not new (and therefore the password is not ready yet). When you create an instance,
+        /// it can take up to 15 minutes for the instance to be ready.
+        /// </para>
+        /// </summary>
+        public PasswordData PasswordData
+        {
+            get { return this._passwordData; }
+            set { this._passwordData = value; }
+        }
+
+        // Check to see if PasswordData property is set
+        internal bool IsSetPasswordData()
+        {
+            return this._passwordData != null;
         }
 
         /// <summary>

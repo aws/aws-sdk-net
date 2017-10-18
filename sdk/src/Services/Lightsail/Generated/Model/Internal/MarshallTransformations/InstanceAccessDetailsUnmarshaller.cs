@@ -94,6 +94,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                     unmarshalledObject.Password = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("passwordData", targetDepth))
+                {
+                    var unmarshaller = PasswordDataUnmarshaller.Instance;
+                    unmarshalledObject.PasswordData = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("privateKey", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
