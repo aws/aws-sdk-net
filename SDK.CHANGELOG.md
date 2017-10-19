@@ -1,3 +1,9 @@
+### 3.3.176.0 (2017-10-19 21:02 UTC)
+* SimpleSystemsManagement (3.3.13.0)
+	* EC2 Systems Manager versioning support for Parameter Store. Also support for referencing parameter versions in SSM Documents.
+* SQS (3.3.3.0)
+	* Added support for tracking cost allocation by adding, updating, removing, and listing the metadata tags of Amazon SQS queues.
+
 ### 3.3.175.0 (2017-10-18 20:10 UTC)
 * Lightsail (3.3.3.0)
 	* This release adds support for Windows Server-based Lightsail instances. The GetInstanceAccessDetails API now returns the password of your Windows Server-based instance when using the default key pair. GetInstanceAccessDetails also returns a PasswordData object for Windows Server instances containing the ciphertext and keyPairName. The Blueprint data type now includes a list of platform values (LINUX_UNIX or WINDOWS). The Bundle data type now includes a list of SupportedPlatforms values (LINUX_UNIX or WINDOWS).
