@@ -28,29 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/UnderstandingResponses.html">Responses</a>
-    /// in the <i>Amazon Simple Queue Service Developer Guide</i>.
+    /// This is the response object from the ListQueueTags operation.
     /// </summary>
-    public partial class GetQueueUrlResponse : AmazonWebServiceResponse
+    public partial class ListQueueTagsResponse : AmazonWebServiceResponse
     {
-        private string _queueUrl;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property QueueUrl. 
+        /// Gets and sets the property Tags. 
         /// <para>
-        /// The URL of the queue.
+        /// The list of all tags added to the specified queue.
         /// </para>
         /// </summary>
-        public string QueueUrl
+        public Dictionary<string, string> Tags
         {
-            get { return this._queueUrl; }
-            set { this._queueUrl = value; }
+            get { return this._tags; }
+            set { this._tags = value; }
         }
 
-        // Check to see if QueueUrl property is set
-        internal bool IsSetQueueUrl()
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
         {
-            return this._queueUrl != null;
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

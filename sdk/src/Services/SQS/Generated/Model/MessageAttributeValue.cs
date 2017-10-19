@@ -94,7 +94,8 @@ namespace Amazon.SQS.Model
         ///  
         /// <para>
         /// You can also append custom labels. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-data-types-validation">Message
-        /// Attribute Data Types and Validation</a> in the <i>Amazon SQS Developer Guide</i>.
+        /// Attribute Data Types and Validation</a> in the <i>Amazon Simple Queue Service Developer
+        /// Guide</i>.
         /// </para>
         /// </summary>
         public string DataType

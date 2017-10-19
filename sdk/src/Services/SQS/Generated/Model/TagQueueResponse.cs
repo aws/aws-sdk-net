@@ -28,30 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/UnderstandingResponses.html">Responses</a>
-    /// in the <i>Amazon Simple Queue Service Developer Guide</i>.
+    /// This is the response object from the TagQueue operation.
     /// </summary>
-    public partial class GetQueueUrlResponse : AmazonWebServiceResponse
+    public partial class TagQueueResponse : AmazonWebServiceResponse
     {
-        private string _queueUrl;
-
-        /// <summary>
-        /// Gets and sets the property QueueUrl. 
-        /// <para>
-        /// The URL of the queue.
-        /// </para>
-        /// </summary>
-        public string QueueUrl
-        {
-            get { return this._queueUrl; }
-            set { this._queueUrl = value; }
-        }
-
-        // Check to see if QueueUrl property is set
-        internal bool IsSetQueueUrl()
-        {
-            return this._queueUrl != null;
-        }
 
     }
 }
