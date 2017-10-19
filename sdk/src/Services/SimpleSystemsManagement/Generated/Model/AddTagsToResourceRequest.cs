@@ -67,6 +67,15 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The resource ID you want to tag.
         /// </para>
+        ///  
+        /// <para>
+        /// For the ManagedInstance, MaintenanceWindow, and PatchBaseline values, use the ID of
+        /// the resource, such as mw-01234361858c9b57b for a Maintenance Window.
+        /// </para>
+        ///  
+        /// <para>
+        /// For the Document and Parameter values, use the name of the resource.
+        /// </para>
         /// </summary>
         public string ResourceId
         {

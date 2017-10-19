@@ -40,6 +40,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _lastModifiedUser;
         private string _name;
         private ParameterType _type;
+        private long? _version;
 
         /// <summary>
         /// Gets and sets the property AllowedPattern. 
@@ -170,6 +171,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetType()
         {
             return this._type != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Version. 
+        /// <para>
+        /// The parameter version.
+        /// </para>
+        /// </summary>
+        public long Version
+        {
+            get { return this._version.GetValueOrDefault(); }
+            set { this._version = value; }
+        }
+
+        // Check to see if Version property is set
+        internal bool IsSetVersion()
+        {
+            return this._version.HasValue; 
         }
 
     }
