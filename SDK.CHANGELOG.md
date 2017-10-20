@@ -1,3 +1,7 @@
+### 3.3.177.0 (2017-10-20 19:09 UTC)
+* EC2 (3.3.32.0)
+	* Adding pagination support for DescribeSecurityGroups for EC2 Classic and VPC Security Groups
+
 ### 3.3.176.0 (2017-10-19 21:02 UTC)
 * SimpleSystemsManagement (3.3.13.0)
 	* EC2 Systems Manager versioning support for Parameter Store. Also support for referencing parameter versions in SSM Documents.
