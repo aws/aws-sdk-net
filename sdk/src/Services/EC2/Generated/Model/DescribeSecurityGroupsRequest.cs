@@ -45,6 +45,8 @@ namespace Amazon.EC2.Model
         private List<Filter> _filters = new List<Filter>();
         private List<string> _groupIds = new List<string>();
         private List<string> _groupNames = new List<string>();
+        private int? _maxResults;
+        private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property Filters. 
@@ -185,6 +187,44 @@ namespace Amazon.EC2.Model
         internal bool IsSetGroupNames()
         {
             return this._groupNames != null && this._groupNames.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of results to return in a single call. To retrieve the remaining
+        /// results, make another request with the returned <code>NextToken</code> value. This
+        /// value can be between 5 and 1000.
+        /// </para>
+        /// </summary>
+        public int MaxResults
+        {
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
+        }
+
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
+        {
+            return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token to request the next page of results.
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
         }
 
     }

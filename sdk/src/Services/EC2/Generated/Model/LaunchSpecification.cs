@@ -92,11 +92,6 @@ namespace Amazon.EC2.Model
         /// <para>
         /// One or more block device mapping entries.
         /// </para>
-        ///  
-        /// <para>
-        /// Although you can specify encrypted EBS volumes in this block device mapping for your
-        /// Spot Instances, these volumes are not encrypted.
-        /// </para>
         /// </summary>
         public List<BlockDeviceMapping> BlockDeviceMappings
         {
