@@ -1,3 +1,7 @@
+### 3.3.178.0 (2017-10-23 20:39 UTC)
+* Organizations (3.3.6.0)
+	* This release supports integrating other AWS services with AWS Organizations through the use of an IAM service-linked role called AWSServiceRoleForOrganizations. Certain operations automatically create that role if it does not already exist.
+
 ### 3.3.177.0 (2017-10-20 19:09 UTC)
 * EC2 (3.3.32.0)
 	* Adding pagination support for DescribeSecurityGroups for EC2 Classic and VPC Security Groups
