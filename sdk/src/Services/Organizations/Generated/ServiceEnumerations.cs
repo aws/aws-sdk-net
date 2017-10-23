@@ -25,6 +25,52 @@ namespace Amazon.Organizations
 {
 
     /// <summary>
+    /// Constants used for properties of type AccessDeniedForDependencyExceptionReason.
+    /// </summary>
+    public class AccessDeniedForDependencyExceptionReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCESS_DENIED_DURING_CREATE_SERVICE_LINKED_ROLE for AccessDeniedForDependencyExceptionReason
+        /// </summary>
+        public static readonly AccessDeniedForDependencyExceptionReason ACCESS_DENIED_DURING_CREATE_SERVICE_LINKED_ROLE = new AccessDeniedForDependencyExceptionReason("ACCESS_DENIED_DURING_CREATE_SERVICE_LINKED_ROLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AccessDeniedForDependencyExceptionReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AccessDeniedForDependencyExceptionReason FindValue(string value)
+        {
+            return FindValue<AccessDeniedForDependencyExceptionReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AccessDeniedForDependencyExceptionReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AccountJoinedMethod.
     /// </summary>
     public class AccountJoinedMethod : ConstantClass
@@ -130,6 +176,10 @@ namespace Amazon.Organizations
     public class ActionType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE for ActionType
+        /// </summary>
+        public static readonly ActionType ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE = new ActionType("ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE");
         /// <summary>
         /// Constant APPROVE_ALL_FEATURES for ActionType
         /// </summary>
@@ -340,6 +390,10 @@ namespace Amazon.Organizations
         /// Constant ACCOUNT_LIMIT_EXCEEDED for CreateAccountFailureReason
         /// </summary>
         public static readonly CreateAccountFailureReason ACCOUNT_LIMIT_EXCEEDED = new CreateAccountFailureReason("ACCOUNT_LIMIT_EXCEEDED");
+        /// <summary>
+        /// Constant CONCURRENT_ACCOUNT_MODIFICATION for CreateAccountFailureReason
+        /// </summary>
+        public static readonly CreateAccountFailureReason CONCURRENT_ACCOUNT_MODIFICATION = new CreateAccountFailureReason("CONCURRENT_ACCOUNT_MODIFICATION");
         /// <summary>
         /// Constant EMAIL_ALREADY_EXISTS for CreateAccountFailureReason
         /// </summary>

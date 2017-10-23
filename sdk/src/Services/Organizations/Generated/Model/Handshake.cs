@@ -54,8 +54,28 @@ namespace Amazon.Organizations.Model
         /// Gets and sets the property Action. 
         /// <para>
         /// The type of handshake, indicating what action occurs when the recipient accepts the
-        /// handshake.
+        /// handshake. The following handshake types are supported:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>INVITE</b>: This type of handshake represents a request to join an organization.
+        /// It is always sent from the master account to only non-member accounts.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>ENABLE_ALL_FEATURES</b>: This type of handshake represents a request to enable
+        /// all features in an organization. It is always sent from the master account to only
+        /// <i>invited</i> member accounts. Created accounts do not receive this because those
+        /// accounts were created by the organization's master account and approval is inferred.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>APPROVE_ALL_FEATURES</b>: This type of handshake is sent from the Organizations
+        /// service when all member accounts have approved the <code>ENABLE_ALL_FEATURES</code>
+        /// invitation. It is sent only to the master account and signals the master that it can
+        /// finalize the process to enable all features.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public ActionType Action
         {
