@@ -142,6 +142,10 @@
     <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.xml" target="lib\MonoTouch10" />
     <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.pdb" target="lib\MonoTouch10" />
 
+    <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.dll" target="lib\uap" />
+    <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.xml" target="lib\uap" />
+    <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.pdb" target="lib\uap" />
+
 <#
 	}
 
