@@ -29,7 +29,7 @@ namespace Amazon.SQS.Model
 {
     /// <summary>
     /// For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/UnderstandingResponses.html">Responses</a>
-    /// in the <i>Amazon SQS Developer Guide</i>.
+    /// in the <i>Amazon Simple Queue Service Developer Guide</i>.
     /// </summary>
     public partial class GetQueueUrlResponse : AmazonWebServiceResponse
     {

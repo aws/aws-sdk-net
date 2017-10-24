@@ -32,6 +32,8 @@ namespace Amazon.ElastiCache.Model
     /// </summary>
     public partial class ReplicationGroup
     {
+        private bool? _atRestEncryptionEnabled;
+        private bool? _authTokenEnabled;
         private AutomaticFailoverStatus _automaticFailover;
         private string _cacheNodeType;
         private bool? _clusterEnabled;
@@ -45,15 +47,68 @@ namespace Amazon.ElastiCache.Model
         private string _snapshottingClusterId;
         private string _snapshotWindow;
         private string _status;
+        private bool? _transitEncryptionEnabled;
+
+        /// <summary>
+        /// Gets and sets the property AtRestEncryptionEnabled. 
+        /// <para>
+        /// A flag that enables encryption at-rest when set to <code>true</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the cluster
+        /// is created. To enable encryption at-rest on a cluster you must set <code>AtRestEncryptionEnabled</code>
+        /// to <code>true</code> when you create a cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>false</code> 
+        /// </para>
+        /// </summary>
+        public bool AtRestEncryptionEnabled
+        {
+            get { return this._atRestEncryptionEnabled.GetValueOrDefault(); }
+            set { this._atRestEncryptionEnabled = value; }
+        }
+
+        // Check to see if AtRestEncryptionEnabled property is set
+        internal bool IsSetAtRestEncryptionEnabled()
+        {
+            return this._atRestEncryptionEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AuthTokenEnabled. 
+        /// <para>
+        /// A flag that enables using an <code>AuthToken</code> (password) when issuing Redis
+        /// commands.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>false</code> 
+        /// </para>
+        /// </summary>
+        public bool AuthTokenEnabled
+        {
+            get { return this._authTokenEnabled.GetValueOrDefault(); }
+            set { this._authTokenEnabled = value; }
+        }
+
+        // Check to see if AuthTokenEnabled property is set
+        internal bool IsSetAuthTokenEnabled()
+        {
+            return this._authTokenEnabled.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property AutomaticFailover. 
         /// <para>
-        /// Indicates the status of Multi-AZ for this replication group.
+        /// Indicates the status of Multi-AZ with automatic failover for this Redis replication
+        /// group.
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
-        /// ElastiCache Multi-AZ replication groups are not supported on:
+        /// Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -61,13 +116,13 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Redis (cluster mode disabled):T1 and T2 cache node types.
+        /// Redis (cluster mode disabled): T1 and T2 cache node types.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
         /// Redis (cluster mode enabled): T1 node types.
         /// </para>
-        ///  </li> </ul> </note>
+        ///  </li> </ul>
         /// </summary>
         public AutomaticFailoverStatus AutomaticFailover
         {
@@ -293,11 +348,11 @@ namespace Amazon.ElastiCache.Model
         /// If you do not specify this parameter, ElastiCache automatically chooses an appropriate
         /// time range.
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        ///  <b>Note:</b> This parameter is only valid if the <code>Engine</code> parameter is
-        /// <code>redis</code>.
+        /// This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.
         /// </para>
+        ///  </note>
         /// </summary>
         public string SnapshotWindow
         {
@@ -328,6 +383,34 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransitEncryptionEnabled. 
+        /// <para>
+        /// A flag that enables in-transit encryption when set to <code>true</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You cannot modify the value of <code>TransitEncryptionEnabled</code> after the cluster
+        /// is created. To enable in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code>
+        /// to <code>true</code> when you create a cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>false</code> 
+        /// </para>
+        /// </summary>
+        public bool TransitEncryptionEnabled
+        {
+            get { return this._transitEncryptionEnabled.GetValueOrDefault(); }
+            set { this._transitEncryptionEnabled = value; }
+        }
+
+        // Check to see if TransitEncryptionEnabled property is set
+        internal bool IsSetTransitEncryptionEnabled()
+        {
+            return this._transitEncryptionEnabled.HasValue; 
         }
 
     }

@@ -33,7 +33,10 @@ namespace Amazon.Glue
     /// <summary>
     /// Implementation for accessing Glue
     ///
-    /// Defines service operations used by the GlueFrontendService
+    /// AWS Glue 
+    /// <para>
+    /// Defines the public endpoint for the AWS Glue service.
+    /// </para>
     /// </summary>
     public partial class AmazonGlueClient : AmazonServiceClient, IAmazonGlue
     {
@@ -544,6 +547,68 @@ namespace Amazon.Glue
         public virtual BatchGetPartitionResponse EndBatchGetPartition(IAsyncResult asyncResult)
         {
             return EndInvoke<BatchGetPartitionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  BatchStopJobRun
+
+        /// <summary>
+        /// Stops a batch of job runs for a given job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchStopJobRun service method.</param>
+        /// 
+        /// <returns>The response from the BatchStopJobRun service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchStopJobRun">REST API Reference for BatchStopJobRun Operation</seealso>
+        public virtual BatchStopJobRunResponse BatchStopJobRun(BatchStopJobRunRequest request)
+        {
+            var marshaller = new BatchStopJobRunRequestMarshaller();
+            var unmarshaller = BatchStopJobRunResponseUnmarshaller.Instance;
+
+            return Invoke<BatchStopJobRunRequest,BatchStopJobRunResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchStopJobRun operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchStopJobRun operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchStopJobRun
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchStopJobRun">REST API Reference for BatchStopJobRun Operation</seealso>
+        public virtual IAsyncResult BeginBatchStopJobRun(BatchStopJobRunRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new BatchStopJobRunRequestMarshaller();
+            var unmarshaller = BatchStopJobRunResponseUnmarshaller.Instance;
+
+            return BeginInvoke<BatchStopJobRunRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchStopJobRun operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchStopJobRun.</param>
+        /// 
+        /// <returns>Returns a  BatchStopJobRunResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchStopJobRun">REST API Reference for BatchStopJobRun Operation</seealso>
+        public virtual BatchStopJobRunResponse EndBatchStopJobRun(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchStopJobRunResponse>(asyncResult);
         }
 
         #endregion

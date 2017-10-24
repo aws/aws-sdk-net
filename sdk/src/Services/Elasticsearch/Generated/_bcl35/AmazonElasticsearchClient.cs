@@ -443,6 +443,70 @@ namespace Amazon.Elasticsearch
 
         #endregion
         
+        #region  DeleteElasticsearchServiceRole
+
+        /// <summary>
+        /// Deletes the service-linked role that Elasticsearch Service uses to manage and maintain
+        /// VPC domains. Role deletion will fail if any existing VPC domains use the role. You
+        /// must delete any such Elasticsearch domains before deleting the role. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html#es-enabling-slr"
+        /// target="_blank">Deleting Elasticsearch Service Role</a> in <i>VPC Endpoints for Amazon
+        /// Elasticsearch Service Domains</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteElasticsearchServiceRole service method.</param>
+        /// 
+        /// <returns>The response from the DeleteElasticsearchServiceRole service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        public virtual DeleteElasticsearchServiceRoleResponse DeleteElasticsearchServiceRole(DeleteElasticsearchServiceRoleRequest request)
+        {
+            var marshaller = new DeleteElasticsearchServiceRoleRequestMarshaller();
+            var unmarshaller = DeleteElasticsearchServiceRoleResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteElasticsearchServiceRoleRequest,DeleteElasticsearchServiceRoleResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteElasticsearchServiceRole operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteElasticsearchServiceRole operation on AmazonElasticsearchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteElasticsearchServiceRole
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginDeleteElasticsearchServiceRole(DeleteElasticsearchServiceRoleRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteElasticsearchServiceRoleRequestMarshaller();
+            var unmarshaller = DeleteElasticsearchServiceRoleResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteElasticsearchServiceRoleRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteElasticsearchServiceRole operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteElasticsearchServiceRole.</param>
+        /// 
+        /// <returns>Returns a  DeleteElasticsearchServiceRoleResult from Elasticsearch.</returns>
+        public virtual DeleteElasticsearchServiceRoleResponse EndDeleteElasticsearchServiceRole(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteElasticsearchServiceRoleResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeElasticsearchDomain
 
         /// <summary>

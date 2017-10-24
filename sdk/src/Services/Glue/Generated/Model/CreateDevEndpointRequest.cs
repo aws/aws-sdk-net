@@ -81,8 +81,14 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property ExtraPythonLibsS3Path. 
         /// <para>
-        /// Path to one or more Python libraries in an S3 bucket that should be loaded in your
-        /// DevEndpoint.
+        /// Path(s) to one or more Python libraries in an S3 bucket that should be loaded in your
+        /// DevEndpoint. Multiple values must be complete paths separated by a comma.
+        /// </para>
+        ///  
+        /// <para>
+        /// Please note that only pure Python libraries can currently be used on a DevEndpoint.
+        /// Libraries that rely on C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a>
+        /// Python data analysis library, are not yet supported.
         /// </para>
         /// </summary>
         public string ExtraPythonLibsS3Path
@@ -100,7 +106,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property NumberOfNodes. 
         /// <para>
-        /// The number of nodes to use.
+        /// The number of AWS Glue Data Processing Units (DPUs) to allocate to this DevEndpoint.
         /// </para>
         /// </summary>
         public int NumberOfNodes

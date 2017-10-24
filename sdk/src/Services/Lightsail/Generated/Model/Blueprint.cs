@@ -39,6 +39,7 @@ namespace Amazon.Lightsail.Model
         private string _licenseUrl;
         private int? _minPower;
         private string _name;
+        private InstancePlatform _platform;
         private string _productUrl;
         private BlueprintType _type;
         private string _version;
@@ -139,8 +140,10 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property MinPower. 
         /// <para>
-        /// The minimum machine size required to run this blueprint. <code>0</code> indicates
-        /// that the blueprint runs on all instances.
+        /// The minimum bundle power required to run this blueprint. For example, you need a bundle
+        /// with a power value of 500 or more to create an instance that uses a blueprint with
+        /// a minimum power value of 500. <code>0</code> indicates that the blueprint runs on
+        /// all instance sizes. 
         /// </para>
         /// </summary>
         public int MinPower
@@ -171,6 +174,25 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Platform. 
+        /// <para>
+        /// The operating system platform (either Linux/Unix-based or Windows Server-based) of
+        /// the blueprint.
+        /// </para>
+        /// </summary>
+        public InstancePlatform Platform
+        {
+            get { return this._platform; }
+            set { this._platform = value; }
+        }
+
+        // Check to see if Platform property is set
+        internal bool IsSetPlatform()
+        {
+            return this._platform != null;
         }
 
         /// <summary>

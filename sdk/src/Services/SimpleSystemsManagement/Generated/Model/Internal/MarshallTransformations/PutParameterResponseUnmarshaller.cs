@@ -47,6 +47,17 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         {
             PutParameterResponse response = new PutParameterResponse();
 
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("Version", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    response.Version = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
 
             return response;
         }
@@ -88,6 +99,10 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             if (errorResponse.Code != null && errorResponse.Code.Equals("ParameterLimitExceeded"))
             {
                 return new ParameterLimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ParameterMaxVersionLimitExceeded"))
+            {
+                return new ParameterMaxVersionLimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ParameterPatternMismatchException"))
             {

@@ -64,10 +64,22 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ADMMessage", targetDepth))
+                {
+                    var unmarshaller = MessageUnmarshaller.Instance;
+                    unmarshalledObject.ADMMessage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("APNSMessage", targetDepth))
                 {
                     var unmarshaller = MessageUnmarshaller.Instance;
                     unmarshalledObject.APNSMessage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("BaiduMessage", targetDepth))
+                {
+                    var unmarshaller = MessageUnmarshaller.Instance;
+                    unmarshalledObject.BaiduMessage = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DefaultMessage", targetDepth))

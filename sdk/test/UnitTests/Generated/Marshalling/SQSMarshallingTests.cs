@@ -288,6 +288,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("SQS")]
+        public void ListQueueTagsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListQueueTags");
+
+            var request = InstantiateClassGenerator.Execute<ListQueueTagsRequest>();
+            var marshaller = new ListQueueTagsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ListQueueTagsResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListQueueTagsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SQS")]
         public void PurgeQueueMarshallTest()
         {
             var operation = service_model.FindOperation("PurgeQueue");
@@ -404,6 +428,44 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             var request = InstantiateClassGenerator.Execute<SetQueueAttributesRequest>();
             var marshaller = new SetQueueAttributesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SQS")]
+        public void TagQueueMarshallTest()
+        {
+            var operation = service_model.FindOperation("TagQueue");
+
+            var request = InstantiateClassGenerator.Execute<TagQueueRequest>();
+            var marshaller = new TagQueueRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SQS")]
+        public void UntagQueueMarshallTest()
+        {
+            var operation = service_model.FindOperation("UntagQueue");
+
+            var request = InstantiateClassGenerator.Execute<UntagQueueRequest>();
+            var marshaller = new UntagQueueRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
             validator.Validate();

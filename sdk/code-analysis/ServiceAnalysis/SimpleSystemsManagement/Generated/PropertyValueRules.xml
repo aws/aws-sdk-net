@@ -162,7 +162,7 @@
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.DeleteParameterRequest.Name</property>
     <min>1</min>
-    <max>1024</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.DeletePatchBaselineRequest.BaselineId</property>
@@ -785,7 +785,7 @@
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.GetParameterRequest.Name</property>
     <min>1</min>
-    <max>1024</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.GetParameterHistoryRequest.MaxResults</property>
@@ -795,7 +795,7 @@
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.GetParameterHistoryRequest.Name</property>
     <min>1</min>
-    <max>1024</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.GetParametersByPathRequest.MaxResults</property>
@@ -805,7 +805,7 @@
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.GetParametersByPathRequest.Path</property>
     <min>1</min>
-    <max>1024</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.GetPatchBaselineRequest.BaselineId</property>
@@ -992,7 +992,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.PutParameterRequest.Description</property>
-    <min>1</min>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -1004,7 +1004,7 @@
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.PutParameterRequest.Name</property>
     <min>1</min>
-    <max>1024</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.PutParameterRequest.Value</property>
@@ -2316,7 +2316,7 @@
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.Parameter.Name</property>
     <min>1</min>
-    <max>1024</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.Parameter.Value</property>
@@ -2330,7 +2330,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.ParameterHistory.Description</property>
-    <min>1</min>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -2342,7 +2342,7 @@
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.ParameterHistory.Name</property>
     <min>1</min>
-    <max>1024</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.ParameterHistory.Value</property>
@@ -2356,7 +2356,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.ParameterMetadata.Description</property>
-    <min>1</min>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -2368,7 +2368,7 @@
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.ParameterMetadata.Name</property>
     <min>1</min>
-    <max>1024</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.ParameterStringFilter.Key</property>

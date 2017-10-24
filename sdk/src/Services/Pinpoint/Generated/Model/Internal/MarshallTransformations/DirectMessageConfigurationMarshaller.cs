@@ -100,17 +100,6 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetEmailMessage())
-            {
-                context.Writer.WritePropertyName("EmailMessage");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = EmailMessageMarshaller.Instance;
-                marshaller.Marshall(requestObject.EmailMessage, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
             if(requestObject.IsSetGCMMessage())
             {
                 context.Writer.WritePropertyName("GCMMessage");

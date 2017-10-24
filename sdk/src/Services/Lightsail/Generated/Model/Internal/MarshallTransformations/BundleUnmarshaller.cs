@@ -118,6 +118,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                     unmarshalledObject.RamSizeInGb = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("supportedPlatforms", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SupportedPlatforms = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("transferPerMonthInGb", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

@@ -36,6 +36,7 @@ namespace Amazon.Pinpoint.Model
         private string _creationDate;
         private bool? _enabled;
         private string _fromAddress;
+        private bool? _hasCredential;
         private string _id;
         private string _identity;
         private bool? _isArchived;
@@ -105,6 +106,22 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetFromAddress()
         {
             return this._fromAddress != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HasCredential. If the channel is registered with a credential
+        /// for authentication.
+        /// </summary>
+        public bool HasCredential
+        {
+            get { return this._hasCredential.GetValueOrDefault(); }
+            set { this._hasCredential = value; }
+        }
+
+        // Check to see if HasCredential property is set
+        internal bool IsSetHasCredential()
+        {
+            return this._hasCredential.HasValue; 
         }
 
         /// <summary>

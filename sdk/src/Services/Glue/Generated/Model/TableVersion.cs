@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// 
+    /// Specifies a version of a table.
     /// </summary>
     public partial class TableVersion
     {
@@ -36,7 +36,10 @@ namespace Amazon.Glue.Model
         private string _versionId;
 
         /// <summary>
-        /// Gets and sets the property Table.
+        /// Gets and sets the property Table. 
+        /// <para>
+        /// The table in question
+        /// </para>
         /// </summary>
         public Table Table
         {
@@ -51,7 +54,10 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VersionId.
+        /// Gets and sets the property VersionId. 
+        /// <para>
+        /// The ID value that identifies this table version.
+        /// </para>
         /// </summary>
         public string VersionId
         {

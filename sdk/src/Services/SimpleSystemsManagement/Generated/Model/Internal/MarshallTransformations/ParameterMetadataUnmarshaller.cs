@@ -106,6 +106,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Version", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.Version = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

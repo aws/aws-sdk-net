@@ -166,6 +166,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.YarnEndpointAddress = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ZeppelinRemoteSparkInterpreterPort", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.ZeppelinRemoteSparkInterpreterPort = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

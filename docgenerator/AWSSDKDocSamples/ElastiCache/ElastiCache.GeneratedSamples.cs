@@ -248,6 +248,7 @@ namespace AWSSDKDocSamples.Amazon.ElastiCache.Generated
                 SnapshotName = "snapshot-2"
             });
 
+            Snapshot snapshot = response.Snapshot;
 
             #endregion
         }
@@ -262,6 +263,7 @@ namespace AWSSDKDocSamples.Amazon.ElastiCache.Generated
                 SnapshotName = "snapshot-2x5"
             });
 
+            Snapshot snapshot = response.Snapshot;
 
             #endregion
         }

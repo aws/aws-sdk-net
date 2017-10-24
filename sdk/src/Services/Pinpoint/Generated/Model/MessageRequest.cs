@@ -33,11 +33,9 @@ namespace Amazon.Pinpoint.Model
     public partial class MessageRequest
     {
         private Dictionary<string, AddressConfiguration> _addresses = new Dictionary<string, AddressConfiguration>();
-        private Dictionary<string, string> _campaign = new Dictionary<string, string>();
         private Dictionary<string, string> _context = new Dictionary<string, string>();
         private Dictionary<string, EndpointSendConfiguration> _endpoints = new Dictionary<string, EndpointSendConfiguration>();
         private DirectMessageConfiguration _messageConfiguration;
-        private string _requestId;
 
         /// <summary>
         /// Gets and sets the property Addresses. A map of destination addresses, with the address
@@ -54,24 +52,6 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetAddresses()
         {
             return this._addresses != null && this._addresses.Count > 0; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property Campaign. The JSON payload used for campaign attributes.
-        /// This payload is added to the notifications' data->pinpoint->campaign' object in iOS
-        /// and flattened to pinpoint.campaign.{AttributeName} keys in Android. Email will use
-        /// the attribute campaign_id to save the templates.
-        /// </summary>
-        public Dictionary<string, string> Campaign
-        {
-            get { return this._campaign; }
-            set { this._campaign = value; }
-        }
-
-        // Check to see if Campaign property is set
-        internal bool IsSetCampaign()
-        {
-            return this._campaign != null && this._campaign.Count > 0; 
         }
 
         /// <summary>
@@ -121,22 +101,6 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetMessageConfiguration()
         {
             return this._messageConfiguration != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property RequestId. Original request Id for which this message is
-        /// delivered.
-        /// </summary>
-        public string RequestId
-        {
-            get { return this._requestId; }
-            set { this._requestId = value; }
-        }
-
-        // Check to see if RequestId property is set
-        internal bool IsSetRequestId()
-        {
-            return this._requestId != null;
         }
 
     }

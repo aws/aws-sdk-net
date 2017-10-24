@@ -51,12 +51,6 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DestinationStreamArn);
             }
 
-            if(requestObject.IsSetExternalId())
-            {
-                context.Writer.WritePropertyName("ExternalId");
-                context.Writer.Write(requestObject.ExternalId);
-            }
-
             if(requestObject.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("RoleArn");

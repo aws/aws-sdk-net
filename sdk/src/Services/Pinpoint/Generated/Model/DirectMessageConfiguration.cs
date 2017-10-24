@@ -37,7 +37,6 @@ namespace Amazon.Pinpoint.Model
         private BaiduMessage _baiduMessage;
         private DefaultMessage _defaultMessage;
         private DefaultPushNotificationMessage _defaultPushNotificationMessage;
-        private EmailMessage _emailMessage;
         private GCMMessage _gcmMessage;
         private SMSMessage _smsMessage;
 
@@ -118,22 +117,6 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetDefaultPushNotificationMessage()
         {
             return this._defaultPushNotificationMessage != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property EmailMessage. The message to Email channels. Overrides
-        /// the default message.
-        /// </summary>
-        public EmailMessage EmailMessage
-        {
-            get { return this._emailMessage; }
-            set { this._emailMessage = value; }
-        }
-
-        // Check to see if EmailMessage property is set
-        internal bool IsSetEmailMessage()
-        {
-            return this._emailMessage != null;
         }
 
         /// <summary>

@@ -149,6 +149,17 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetVPCOptions())
+                {
+                    context.Writer.WritePropertyName("VPCOptions");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = VPCOptionsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.VPCOptions, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

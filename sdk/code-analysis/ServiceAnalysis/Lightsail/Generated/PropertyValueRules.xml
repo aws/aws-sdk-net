@@ -290,6 +290,10 @@
     <pattern>\w[\w\-]*\w</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lightsail.Model.PasswordData.KeyPairName</property>
+    <pattern>\w[\w\-]*\w</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lightsail.Model.PortInfo.FromPort</property>
     <min>0</min>
     <max>65535</max>

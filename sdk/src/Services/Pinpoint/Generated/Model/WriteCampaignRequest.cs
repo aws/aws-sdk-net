@@ -42,7 +42,6 @@ namespace Amazon.Pinpoint.Model
         private Schedule _schedule;
         private string _segmentId;
         private int? _segmentVersion;
-        private bool? _trace;
         private string _treatmentDescription;
         private string _treatmentName;
 
@@ -199,22 +198,6 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetSegmentVersion()
         {
             return this._segmentVersion.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property Trace. Whether or not to enable trace logging for the campaign.
-        /// Undocumented
-        /// </summary>
-        public bool Trace
-        {
-            get { return this._trace.GetValueOrDefault(); }
-            set { this._trace = value; }
-        }
-
-        // Check to see if Trace property is set
-        internal bool IsSetTrace()
-        {
-            return this._trace.HasValue; 
         }
 
         /// <summary>

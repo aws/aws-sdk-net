@@ -39,6 +39,7 @@ namespace Amazon.Elasticsearch.Model
         private ElasticsearchVersionStatus _elasticsearchVersion;
         private LogPublishingOptionsStatus _logPublishingOptions;
         private SnapshotOptionsStatus _snapshotOptions;
+        private VPCDerivedInfoStatus _vpcOptions;
 
         /// <summary>
         /// Gets and sets the property AccessPolicies. 
@@ -165,6 +166,26 @@ namespace Amazon.Elasticsearch.Model
         internal bool IsSetSnapshotOptions()
         {
             return this._snapshotOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VPCOptions. 
+        /// <para>
+        /// The <code>VPCOptions</code> for the specified domain. For more information, see <a
+        /// href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html"
+        /// target="_blank">VPC Endpoints for Amazon Elasticsearch Service Domains</a>.
+        /// </para>
+        /// </summary>
+        public VPCDerivedInfoStatus VPCOptions
+        {
+            get { return this._vpcOptions; }
+            set { this._vpcOptions = value; }
+        }
+
+        // Check to see if VPCOptions property is set
+        internal bool IsSetVPCOptions()
+        {
+            return this._vpcOptions != null;
         }
 
     }

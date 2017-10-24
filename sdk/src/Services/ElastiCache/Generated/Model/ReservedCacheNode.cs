@@ -70,7 +70,9 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid node types are as follows:
+        /// The following node types are supported by ElastiCache. Generally speaking, the current
+        /// generation types provide more memory and computational power at lower cost when compared
+        /// to their equivalent previous generation counterparts.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -78,33 +80,70 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
-        /// <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
-        /// <code>cache.m3.2xlarge</code>, <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+        /// Current generation: 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>T2 node types:</b> <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>M3 node types:</b> <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
+        /// <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>M4 node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
         /// <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Previous generation: <code>cache.t1.micro</code>, <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
+        /// Previous generation: (not recommended)
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>T1 node types:</b> <code>cache.t1.micro</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>M1 node types:</b> <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
         /// <code>cache.m1.large</code>, <code>cache.m1.xlarge</code> 
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Compute optimized: <code>cache.c1.xlarge</code> 
+        /// Compute optimized:
         /// </para>
-        ///  </li> <li> 
+        ///  <ul> <li> 
+        /// <para>
+        /// Previous generation: (not recommended)
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>C1 node types:</b> <code>cache.c1.xlarge</code> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// Memory optimized:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Current generation: <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
-        /// <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code> 
+        /// Current generation: 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>R3 node types:</b> <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>,
+        /// <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Previous generation: <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
+        /// Previous generation: (not recommended)
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>M2 node types:</b> <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
         /// <code>cache.m2.4xlarge</code> 
         /// </para>
         ///  </li> </ul> </li> </ul> 
@@ -117,14 +156,23 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Redis backup/restore is not supported for Redis (cluster mode disabled) T1 and T2
-        /// instances. Backup/restore is supported on Redis (cluster mode enabled) T2 instances.
+        /// Redis (cluster mode disabled): Redis backup/restore is not supported on T1 and T2
+        /// instances. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Redis (cluster mode enabled): Backup/restore is not supported on T1 instances.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Redis Append-only files (AOF) functionality is not supported for T1 or T2 instances.
         /// </para>
         ///  </li> </ul> 
+        /// <para>
+        /// Supported node types are available in all regions except as noted in the following
+        /// table.
+        /// </para>
+        ///  
         /// <para>
         /// For a complete listing of node types and specifications, see <a href="http://aws.amazon.com/elasticache/details">Amazon
         /// ElastiCache Product Features and Details</a> and either <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache

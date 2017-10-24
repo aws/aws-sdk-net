@@ -106,6 +106,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("platform", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Platform = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("productUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -214,6 +214,15 @@ namespace Amazon.Organizations
         ///  <b>Invitation to join</b> or <b>Approve all features request</b> handshakes: only
         /// a principal from the member account. 
         /// </para>
+        ///  
+        /// <para>
+        /// The user who calls the API for an invitation to join must have the <code>organizations:AcceptHandshake</code>
+        /// permission. If you enabled all features in the organization, then the user must also
+        /// have the <code>iam:CreateServiceLinkedRole</code> permission so that Organizations
+        /// can create the required service-linked role named <i>OrgsServiceLinkedRoleName</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integration_services.html#orgs_integration_service-linked-roles">AWS
+        /// Organizations and Service-Linked Roles</a> in the <i>AWS Organizations User Guide</i>.
+        /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <b>Enable all features final confirmation</b> handshake: only a principal from the
@@ -241,6 +250,11 @@ namespace Amazon.Organizations
         /// is making the request must have at least one IAM permissions policy attached that
         /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Organizations.Model.AccessDeniedForDependencyException">
+        /// The operation you attempted requires you to have the <code>iam:CreateServiceLinkedRole</code>
+        /// so that Organizations can create the required service-linked role. You do not have
+        /// that permission.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
         /// Your account is not a member of an organization. To make this request, you must use
@@ -507,9 +521,14 @@ namespace Amazon.Organizations
         /// attempting to removing the last SCP from an OU or root, inviting or creating too many
         /// accounts to the organization, or attaching too many policies to an account, OU, or
         /// root. This exception includes a reason that contains additional information about
-        /// the violated limit:
+        /// the violated limit.
         /// 
-        ///   <ul> <li> 
+        ///  <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation:
+        /// </para>
+        ///  </note>  <ul> <li> 
         /// <para>
         /// ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of
         /// accounts in an organization. If you need more accounts, contact AWS Support to request
@@ -906,12 +925,23 @@ namespace Amazon.Organizations
         /// 
         ///  
         /// <para>
-        /// AWS Organizations preconfigures the new member account with a role (named <code>OrganizationAccountAccessRole</code>
-        /// by default) that grants administrator permissions to the new account. Principals in
-        /// the master account can assume the role. AWS Organizations clones the company name
-        /// and address information for the new account from the organization's master account.
+        /// The user who calls the API for an invitation to join must have the <code>organizations:CreateAccount</code>
+        /// permission. If you enabled all features in the organization, then the user must also
+        /// have the <code>iam:CreateServiceLinkedRole</code> permission so that Organizations
+        /// can create the required service-linked role named <i>OrgsServiceLinkedRoleName</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integration_services.html#orgs_integration_service-linked-roles">AWS
+        /// Organizations and Service-Linked Roles</a> in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  
+        /// <para>
+        /// The user in the master account who calls this API must also have the <code>iam:CreateRole</code>
+        /// permission because AWS Organizations preconfigures the new member account with a role
+        /// (named <code>OrganizationAccountAccessRole</code> by default) that grants users in
+        /// the master account administrator permissions in the new member account. Principals
+        /// in the master account can assume the role. AWS Organizations clones the company name
+        /// and address information for the new account from the organization's master account.
+        /// </para>
+        ///   
         /// <para>
         /// For more information about creating accounts, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_create.html">Creating
         /// an AWS Account in Your Organization</a> in the <i>AWS Organizations User Guide</i>.
@@ -972,9 +1002,14 @@ namespace Amazon.Organizations
         /// attempting to removing the last SCP from an OU or root, inviting or creating too many
         /// accounts to the organization, or attaching too many policies to an account, OU, or
         /// root. This exception includes a reason that contains additional information about
-        /// the violated limit:
+        /// the violated limit.
         /// 
-        ///   <ul> <li> 
+        ///  <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation:
+        /// </para>
+        ///  </note>  <ul> <li> 
         /// <para>
         /// ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of
         /// accounts in an organization. If you need more accounts, contact AWS Support to request
@@ -1228,6 +1263,11 @@ namespace Amazon.Organizations
         /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
+        /// <exception cref="Amazon.Organizations.Model.AccessDeniedForDependencyException">
+        /// The operation you attempted requires you to have the <code>iam:CreateServiceLinkedRole</code>
+        /// so that Organizations can create the required service-linked role. You do not have
+        /// that permission.
+        /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AlreadyInOrganizationException">
         /// This account is already a member of an organization. An account can belong to only
         /// one organization at a time.
@@ -1241,9 +1281,14 @@ namespace Amazon.Organizations
         /// attempting to removing the last SCP from an OU or root, inviting or creating too many
         /// accounts to the organization, or attaching too many policies to an account, OU, or
         /// root. This exception includes a reason that contains additional information about
-        /// the violated limit:
+        /// the violated limit.
         /// 
-        ///   <ul> <li> 
+        ///  <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation:
+        /// </para>
+        ///  </note>  <ul> <li> 
         /// <para>
         /// ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of
         /// accounts in an organization. If you need more accounts, contact AWS Support to request
@@ -1502,9 +1547,14 @@ namespace Amazon.Organizations
         /// attempting to removing the last SCP from an OU or root, inviting or creating too many
         /// accounts to the organization, or attaching too many policies to an account, OU, or
         /// root. This exception includes a reason that contains additional information about
-        /// the violated limit:
+        /// the violated limit.
         /// 
-        ///   <ul> <li> 
+        ///  <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation:
+        /// </para>
+        ///  </note>  <ul> <li> 
         /// <para>
         /// ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of
         /// accounts in an organization. If you need more accounts, contact AWS Support to request
@@ -1766,9 +1816,14 @@ namespace Amazon.Organizations
         /// attempting to removing the last SCP from an OU or root, inviting or creating too many
         /// accounts to the organization, or attaching too many policies to an account, OU, or
         /// root. This exception includes a reason that contains additional information about
-        /// the violated limit:
+        /// the violated limit.
         /// 
-        ///   <ul> <li> 
+        ///  <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation:
+        /// </para>
+        ///  </note>  <ul> <li> 
         /// <para>
         /// ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of
         /// accounts in an organization. If you need more accounts, contact AWS Support to request
@@ -3363,9 +3418,14 @@ namespace Amazon.Organizations
         /// attempting to removing the last SCP from an OU or root, inviting or creating too many
         /// accounts to the organization, or attaching too many policies to an account, OU, or
         /// root. This exception includes a reason that contains additional information about
-        /// the violated limit:
+        /// the violated limit.
         /// 
-        ///   <ul> <li> 
+        ///  <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation:
+        /// </para>
+        ///  </note>  <ul> <li> 
         /// <para>
         /// ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of
         /// accounts in an organization. If you need more accounts, contact AWS Support to request
@@ -3628,9 +3688,14 @@ namespace Amazon.Organizations
         /// attempting to removing the last SCP from an OU or root, inviting or creating too many
         /// accounts to the organization, or attaching too many policies to an account, OU, or
         /// root. This exception includes a reason that contains additional information about
-        /// the violated limit:
+        /// the violated limit.
         /// 
-        ///   <ul> <li> 
+        ///  <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation:
+        /// </para>
+        ///  </note>  <ul> <li> 
         /// <para>
         /// ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of
         /// accounts in an organization. If you need more accounts, contact AWS Support to request
@@ -4112,9 +4177,14 @@ namespace Amazon.Organizations
         /// attempting to removing the last SCP from an OU or root, inviting or creating too many
         /// accounts to the organization, or attaching too many policies to an account, OU, or
         /// root. This exception includes a reason that contains additional information about
-        /// the violated limit:
+        /// the violated limit.
         /// 
-        ///   <ul> <li> 
+        ///  <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation:
+        /// </para>
+        ///  </note>  <ul> <li> 
         /// <para>
         /// ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of
         /// accounts in an organization. If you need more accounts, contact AWS Support to request
@@ -4635,9 +4705,14 @@ namespace Amazon.Organizations
         /// attempting to removing the last SCP from an OU or root, inviting or creating too many
         /// accounts to the organization, or attaching too many policies to an account, OU, or
         /// root. This exception includes a reason that contains additional information about
-        /// the violated limit:
+        /// the violated limit.
         /// 
-        ///   <ul> <li> 
+        ///  <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation:
+        /// </para>
+        ///  </note>  <ul> <li> 
         /// <para>
         /// ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of
         /// accounts in an organization. If you need more accounts, contact AWS Support to request
@@ -6708,9 +6783,14 @@ namespace Amazon.Organizations
         /// attempting to removing the last SCP from an OU or root, inviting or creating too many
         /// accounts to the organization, or attaching too many policies to an account, OU, or
         /// root. This exception includes a reason that contains additional information about
-        /// the violated limit:
+        /// the violated limit.
         /// 
-        ///   <ul> <li> 
+        ///  <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation:
+        /// </para>
+        ///  </note>  <ul> <li> 
         /// <para>
         /// ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of
         /// accounts in an organization. If you need more accounts, contact AWS Support to request
@@ -7111,9 +7191,14 @@ namespace Amazon.Organizations
         /// attempting to removing the last SCP from an OU or root, inviting or creating too many
         /// accounts to the organization, or attaching too many policies to an account, OU, or
         /// root. This exception includes a reason that contains additional information about
-        /// the violated limit:
+        /// the violated limit.
         /// 
-        ///   <ul> <li> 
+        ///  <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation:
+        /// </para>
+        ///  </note>  <ul> <li> 
         /// <para>
         /// ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of
         /// accounts in an organization. If you need more accounts, contact AWS Support to request

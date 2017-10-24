@@ -34,7 +34,10 @@ namespace Amazon.Pinpoint.Model
     {
         private string _applicationId;
         private string _creationDate;
+        private string _defaultAuthenticationMethod;
         private bool? _enabled;
+        private bool? _hasCredential;
+        private bool? _hasTokenKey;
         private string _id;
         private bool? _isArchived;
         private string _lastModifiedBy;
@@ -74,6 +77,22 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DefaultAuthenticationMethod. The default authentication
+        /// method used for APNs.
+        /// </summary>
+        public string DefaultAuthenticationMethod
+        {
+            get { return this._defaultAuthenticationMethod; }
+            set { this._defaultAuthenticationMethod = value; }
+        }
+
+        // Check to see if DefaultAuthenticationMethod property is set
+        internal bool IsSetDefaultAuthenticationMethod()
+        {
+            return this._defaultAuthenticationMethod != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Enabled. If the channel is enabled for sending messages.
         /// </summary>
         public bool Enabled
@@ -86,6 +105,38 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetEnabled()
         {
             return this._enabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property HasCredential. If the channel is registered with a credential
+        /// for authentication.
+        /// </summary>
+        public bool HasCredential
+        {
+            get { return this._hasCredential.GetValueOrDefault(); }
+            set { this._hasCredential = value; }
+        }
+
+        // Check to see if HasCredential property is set
+        internal bool IsSetHasCredential()
+        {
+            return this._hasCredential.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property HasTokenKey. If the channel is registered with a token
+        /// key for authentication.
+        /// </summary>
+        public bool HasTokenKey
+        {
+            get { return this._hasTokenKey.GetValueOrDefault(); }
+            set { this._hasTokenKey = value; }
+        }
+
+        // Check to see if HasTokenKey property is set
+        internal bool IsSetHasTokenKey()
+        {
+            return this._hasTokenKey.HasValue; 
         }
 
         /// <summary>

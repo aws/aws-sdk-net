@@ -121,8 +121,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Role. 
         /// <para>
-        /// The AWS ARN of the IAM role used by the new <code>Crawler</code> to access customer
-        /// resources.
+        /// The IAM role (or ARN of an IAM role) used by the new <code>Crawler</code> to access
+        /// customer resources.
         /// </para>
         /// </summary>
         public string Role
@@ -140,9 +140,9 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Schedule. 
         /// <para>
-        /// A cron expression that can be used as a Cloudwatch event (see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">CloudWatch
-        /// Schedule Expression Syntax</a>. For example, to run every day at 12:15 UTC, specify:
-        /// <code>cron(15 12 * * ? *)</code>.
+        /// A <code>cron</code> expression used to specify the schedule (see <a href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
+        /// Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15
+        /// UTC, you would specify: <code>cron(15 12 * * ? *)</code>.
         /// </para>
         /// </summary>
         public string Schedule

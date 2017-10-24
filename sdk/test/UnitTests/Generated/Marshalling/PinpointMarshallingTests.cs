@@ -268,6 +268,70 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Pinpoint")]
+        public void DeleteApnsVoipChannelMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteApnsVoipChannel");
+
+            var request = InstantiateClassGenerator.Execute<DeleteApnsVoipChannelRequest>();
+            var marshaller = new DeleteApnsVoipChannelRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteApnsVoipChannel", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = DeleteApnsVoipChannelResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as DeleteApnsVoipChannelResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Pinpoint")]
+        public void DeleteApnsVoipSandboxChannelMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteApnsVoipSandboxChannel");
+
+            var request = InstantiateClassGenerator.Execute<DeleteApnsVoipSandboxChannelRequest>();
+            var marshaller = new DeleteApnsVoipSandboxChannelRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteApnsVoipSandboxChannel", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = DeleteApnsVoipSandboxChannelResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as DeleteApnsVoipSandboxChannelResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Pinpoint")]
         public void DeleteAppMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteApp");
@@ -612,6 +676,70 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = GetApnsSandboxChannelResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as GetApnsSandboxChannelResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Pinpoint")]
+        public void GetApnsVoipChannelMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetApnsVoipChannel");
+
+            var request = InstantiateClassGenerator.Execute<GetApnsVoipChannelRequest>();
+            var marshaller = new GetApnsVoipChannelRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetApnsVoipChannel", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetApnsVoipChannelResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetApnsVoipChannelResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Pinpoint")]
+        public void GetApnsVoipSandboxChannelMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetApnsVoipSandboxChannel");
+
+            var request = InstantiateClassGenerator.Execute<GetApnsVoipSandboxChannelRequest>();
+            var marshaller = new GetApnsVoipSandboxChannelRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetApnsVoipSandboxChannel", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetApnsVoipSandboxChannelResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetApnsVoipSandboxChannelResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 
@@ -1476,6 +1604,70 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = UpdateApnsSandboxChannelResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as UpdateApnsSandboxChannelResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Pinpoint")]
+        public void UpdateApnsVoipChannelMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateApnsVoipChannel");
+
+            var request = InstantiateClassGenerator.Execute<UpdateApnsVoipChannelRequest>();
+            var marshaller = new UpdateApnsVoipChannelRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("UpdateApnsVoipChannel", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = UpdateApnsVoipChannelResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as UpdateApnsVoipChannelResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Pinpoint")]
+        public void UpdateApnsVoipSandboxChannelMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateApnsVoipSandboxChannel");
+
+            var request = InstantiateClassGenerator.Execute<UpdateApnsVoipSandboxChannelRequest>();
+            var marshaller = new UpdateApnsVoipSandboxChannelRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("UpdateApnsVoipSandboxChannel", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = UpdateApnsVoipSandboxChannelResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as UpdateApnsVoipSandboxChannelResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 

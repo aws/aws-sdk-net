@@ -148,12 +148,6 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                     unmarshalledObject.RequestId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ShardId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ShardId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("User", targetDepth))
                 {
                     var unmarshaller = EndpointUserUnmarshaller.Instance;

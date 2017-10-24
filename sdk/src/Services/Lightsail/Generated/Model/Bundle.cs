@@ -42,6 +42,7 @@ namespace Amazon.Lightsail.Model
         private int? _power;
         private float? _price;
         private float? _ramSizeInGb;
+        private List<string> _supportedPlatforms = new List<string>();
         private int? _transferPerMonthInGb;
 
         /// <summary>
@@ -155,7 +156,11 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Power. 
         /// <para>
-        /// The power of the bundle (e.g., <code>500</code>).
+        /// A numeric value that represents the power of the bundle (e.g., <code>500</code>).
+        /// You can use the bundle's power value in conjunction with a blueprint's minimum power
+        /// value to determine whether the blueprint will run on the bundle. For example, you
+        /// need a bundle with a power value of 500 or more to create an instance that uses a
+        /// blueprint with a minimum power value of 500.
         /// </para>
         /// </summary>
         public int Power
@@ -204,6 +209,27 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetRamSizeInGb()
         {
             return this._ramSizeInGb.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedPlatforms. 
+        /// <para>
+        /// The operating system platform (Linux/Unix-based or Windows Server-based) that the
+        /// bundle supports. You can only launch a <code>WINDOWS</code> bundle on a blueprint
+        /// that supports the <code>WINDOWS</code> platform. <code>LINUX_UNIX</code> blueprints
+        /// require a <code>LINUX_UNIX</code> bundle.
+        /// </para>
+        /// </summary>
+        public List<string> SupportedPlatforms
+        {
+            get { return this._supportedPlatforms; }
+            set { this._supportedPlatforms = value; }
+        }
+
+        // Check to see if SupportedPlatforms property is set
+        internal bool IsSetSupportedPlatforms()
+        {
+            return this._supportedPlatforms != null && this._supportedPlatforms.Count > 0; 
         }
 
         /// <summary>

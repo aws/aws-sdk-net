@@ -76,6 +76,10 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
             {
                 return new AccessDeniedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedForDependencyException"))
+            {
+                return new AccessDeniedForDependencyException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("AlreadyInOrganizationException"))
             {
                 return new AlreadyInOrganizationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

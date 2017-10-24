@@ -88,6 +88,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                     unmarshalledObject.FromAddress = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("HasCredential", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.HasCredential = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

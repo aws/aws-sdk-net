@@ -49,6 +49,7 @@ namespace Amazon.Glue.Model
         private string _subnetId;
         private string _vpcId;
         private string _yarnEndpointAddress;
+        private int? _zeppelinRemoteSparkInterpreterPort;
 
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
@@ -109,6 +110,10 @@ namespace Amazon.Glue.Model
         /// <para>
         /// Path to one or more Java Jars in an S3 bucket that should be loaded in your DevEndpoint.
         /// </para>
+        ///  
+        /// <para>
+        /// Please note that only pure Java/Scala libraries can currently be used on a DevEndpoint.
+        /// </para>
         /// </summary>
         public string ExtraJarsS3Path
         {
@@ -125,8 +130,14 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property ExtraPythonLibsS3Path. 
         /// <para>
-        /// Path to one or more Python libraries in an S3 bucket that should be loaded in your
-        /// DevEndpoint.
+        /// Path(s) to one or more Python libraries in an S3 bucket that should be loaded in your
+        /// DevEndpoint. Multiple values must be complete paths separated by a comma.
+        /// </para>
+        ///  
+        /// <para>
+        /// Please note that only pure Python libraries can currently be used on a DevEndpoint.
+        /// Libraries that rely on C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a>
+        /// Python data analysis library, are not yet supported.
         /// </para>
         /// </summary>
         public string ExtraPythonLibsS3Path
@@ -198,7 +209,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property NumberOfNodes. 
         /// <para>
-        /// The number of nodes used by this DevEndpoint.
+        /// The number of AWS Glue Data Processing Units (DPUs) allocated to this DevEndpoint.
         /// </para>
         /// </summary>
         public int NumberOfNodes
@@ -355,6 +366,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetYarnEndpointAddress()
         {
             return this._yarnEndpointAddress != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ZeppelinRemoteSparkInterpreterPort. 
+        /// <para>
+        /// The Apache Zeppelin port for the remote Apache Spark interpreter.
+        /// </para>
+        /// </summary>
+        public int ZeppelinRemoteSparkInterpreterPort
+        {
+            get { return this._zeppelinRemoteSparkInterpreterPort.GetValueOrDefault(); }
+            set { this._zeppelinRemoteSparkInterpreterPort = value; }
+        }
+
+        // Check to see if ZeppelinRemoteSparkInterpreterPort property is set
+        internal bool IsSetZeppelinRemoteSparkInterpreterPort()
+        {
+            return this._zeppelinRemoteSparkInterpreterPort.HasValue; 
         }
 
     }

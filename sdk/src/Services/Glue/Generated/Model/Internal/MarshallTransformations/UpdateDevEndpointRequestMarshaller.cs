@@ -90,6 +90,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.PublicKey);
                 }
 
+                if(publicRequest.IsSetUpdateEtlLibraries())
+                {
+                    context.Writer.WritePropertyName("UpdateEtlLibraries");
+                    context.Writer.Write(publicRequest.UpdateEtlLibraries);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

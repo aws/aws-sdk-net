@@ -1,3 +1,46 @@
+### 3.3.179.0 (2017-10-24 18:01 UTC)
+* ConfigService (3.3.11.0)
+	* AWS Config support for CodeBuild Project resource type
+* ElastiCache (3.3.4.0)
+	* Amazon ElastiCache for Redis today announced support for data encryption both for data in-transit and data at-rest. The new encryption in-transit functionality enables ElastiCache for Redis customers to encrypt data for all communication between clients and Redis engine, and all intra-cluster Redis communication. The encryption at-rest functionality allows customers to encrypt their S3 based backups. Customers can begin using the new functionality by simply enabling this functionality via AWS console, and a small configuration change in their Redis clients. The ElastiCache for Redis service automatically manages life cycle of the certificates required for encryption, including the issuance, renewal and expiration of certificates. Additionally, as part of this launch, customers will gain the ability to start using the Redis AUTH command that provides an added level of authentication.
+* Glue (3.3.1.0)
+	* AWS Glue: Adding a new API, BatchStopJobRun, to stop one or more job runs for a specified Job. 
+* Pinpoint (3.3.5.0)
+	* Added support for APNs VoIP messages. Added support for collapsible IDs, message priority, and TTL for APNs and FCM/GCM.
+* S3 (3.3.11.4)
+	* PR 769, fix issue with mocking TransferUtility
+
+### 3.3.178.1 (2017-10-24 00:07 UTC)
+* Core 3.3.18.2
+	* Restored missing UAP binaries in service nuget packages.
+	* All services packages updated to require new Core
+
+### 3.3.178.0 (2017-10-23 20:39 UTC)
+* Organizations (3.3.6.0)
+	* This release supports integrating other AWS services with AWS Organizations through the use of an IAM service-linked role called AWSServiceRoleForOrganizations. Certain operations automatically create that role if it does not already exist.
+
+### 3.3.177.0 (2017-10-20 19:09 UTC)
+* EC2 (3.3.32.0)
+	* Adding pagination support for DescribeSecurityGroups for EC2 Classic and VPC Security Groups
+
+### 3.3.176.0 (2017-10-19 21:02 UTC)
+* SimpleSystemsManagement (3.3.13.0)
+	* EC2 Systems Manager versioning support for Parameter Store. Also support for referencing parameter versions in SSM Documents.
+* SQS (3.3.3.0)
+	* Added support for tracking cost allocation by adding, updating, removing, and listing the metadata tags of Amazon SQS queues.
+
+### 3.3.175.0 (2017-10-18 20:10 UTC)
+* Lightsail (3.3.3.0)
+	* This release adds support for Windows Server-based Lightsail instances. The GetInstanceAccessDetails API now returns the password of your Windows Server-based instance when using the default key pair. GetInstanceAccessDetails also returns a PasswordData object for Windows Server instances containing the ciphertext and keyPairName. The Blueprint data type now includes a list of platform values (LINUX_UNIX or WINDOWS). The Bundle data type now includes a list of SupportedPlatforms values (LINUX_UNIX or WINDOWS).
+
+### 3.3.174.0 (2017-10-17 20:37 UTC)
+* Elasticsearch (3.3.3.0)
+	* This release adds support for VPC access to Amazon Elasticsearch Service.
+* Core 3.3.18.1
+	* Service Region Launch.
+
+
+
 ### 3.3.173.0 (2017-10-16 20:49 UTC)
 * CloudHSM (3.3.0.23)
 	* Documentation updates for AWS CloudHSM Classic.

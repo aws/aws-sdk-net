@@ -28,14 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// 
+    /// Contains a list of values defining partitions.
     /// </summary>
     public partial class PartitionValueList
     {
         private List<string> _values = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property Values.
+        /// Gets and sets the property Values. 
+        /// <para>
+        /// The list of values.
+        /// </para>
         /// </summary>
         public List<string> Values
         {

@@ -154,7 +154,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property LogUri. 
         /// <para>
-        /// Location of the logs for this job.
+        /// This field is reserved for future use.
         /// </para>
         /// </summary>
         public string LogUri

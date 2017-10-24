@@ -46,7 +46,6 @@ namespace Amazon.Pinpoint.Model
         private Dictionary<string, double> _metrics = new Dictionary<string, double>();
         private string _optOut;
         private string _requestId;
-        private string _shardId;
         private EndpointUser _user;
 
         /// <summary>
@@ -275,21 +274,6 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetRequestId()
         {
             return this._requestId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ShardId. The ShardId of endpoint.
-        /// </summary>
-        public string ShardId
-        {
-            get { return this._shardId; }
-            set { this._shardId = value; }
-        }
-
-        // Check to see if ShardId property is set
-        internal bool IsSetShardId()
-        {
-            return this._shardId != null;
         }
 
         /// <summary>

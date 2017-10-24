@@ -32,11 +32,29 @@ namespace Amazon.Pinpoint.Model
     /// </summary>
     public partial class MessageConfiguration
     {
+        private Message _admMessage;
         private Message _apnsMessage;
+        private Message _baiduMessage;
         private Message _defaultMessage;
         private CampaignEmailMessage _emailMessage;
         private Message _gcmMessage;
         private CampaignSmsMessage _smsMessage;
+
+        /// <summary>
+        /// Gets and sets the property ADMMessage. The message that the campaign delivers to ADM
+        /// channels. Overrides the default message.
+        /// </summary>
+        public Message ADMMessage
+        {
+            get { return this._admMessage; }
+            set { this._admMessage = value; }
+        }
+
+        // Check to see if ADMMessage property is set
+        internal bool IsSetADMMessage()
+        {
+            return this._admMessage != null;
+        }
 
         /// <summary>
         /// Gets and sets the property APNSMessage. The message that the campaign delivers to
@@ -52,6 +70,22 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetAPNSMessage()
         {
             return this._apnsMessage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BaiduMessage. The message that the campaign delivers to
+        /// Baidu channels. Overrides the default message.
+        /// </summary>
+        public Message BaiduMessage
+        {
+            get { return this._baiduMessage; }
+            set { this._baiduMessage = value; }
+        }
+
+        // Check to see if BaiduMessage property is set
+        internal bool IsSetBaiduMessage()
+        {
+            return this._baiduMessage != null;
         }
 
         /// <summary>

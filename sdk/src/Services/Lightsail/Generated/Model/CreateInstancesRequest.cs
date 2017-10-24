@@ -174,7 +174,7 @@ namespace Amazon.Lightsail.Model
         /// <para>
         /// Depending on the machine image you choose, the command to get software on your instance
         /// varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>,
-        /// and FreeBSD uses <code>pkg</code>. For a complete list, see the <a href="http://lightsail.aws.amazon.com/ls/docs/getting-started/articles/pre-installed-apps">Dev
+        /// and FreeBSD uses <code>pkg</code>. For a complete list, see the <a href="https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image">Dev
         /// Guide</a>.
         /// </para>
         ///  </note>

@@ -35,6 +35,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _name;
         private ParameterType _type;
         private string _value;
+        private long? _version;
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -89,6 +90,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetValue()
         {
             return this._value != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Version. 
+        /// <para>
+        /// The parameter version.
+        /// </para>
+        /// </summary>
+        public long Version
+        {
+            get { return this._version.GetValueOrDefault(); }
+            set { this._version = value; }
+        }
+
+        // Check to see if Version property is set
+        internal bool IsSetVersion()
+        {
+            return this._version.HasValue; 
         }
 
     }

@@ -106,9 +106,9 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// Valid values: <code>true</code> | <code>false</code> 
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
-        /// ElastiCache Multi-AZ replication groups are not supported on:
+        /// Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -116,13 +116,13 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Redis (cluster mode disabled):T1 and T2 cache node types.
+        /// Redis (cluster mode disabled): T1 and T2 cache node types.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
         /// Redis (cluster mode enabled): T1 node types.
         /// </para>
-        ///  </li> </ul> </note>
+        ///  </li> </ul>
         /// </summary>
         public bool AutomaticFailoverEnabled
         {

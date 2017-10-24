@@ -110,7 +110,8 @@ namespace Amazon.SQS.Model
         /// <para>
         /// Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
-        /// Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.
+        /// Attribute Items and Validation</a> in the <i>Amazon Simple Queue Service Developer
+        /// Guide</i>.
         /// </para>
         /// </summary>
         public Dictionary<string, MessageAttributeValue> MessageAttributes
@@ -154,7 +155,7 @@ namespace Amazon.SQS.Model
         /// interval. If a message with a particular <code>MessageDeduplicationId</code> is sent
         /// successfully, subsequent messages with the same <code>MessageDeduplicationId</code>
         /// are accepted successfully but aren't delivered. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">
-        /// Exactly-Once Processing</a> in the <i>Amazon SQS Developer Guide</i>.
+        /// Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
         /// </para>
         ///  <ul> <li> 
         /// <para>

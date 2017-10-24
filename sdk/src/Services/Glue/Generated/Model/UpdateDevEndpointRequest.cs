@@ -36,11 +36,12 @@ namespace Amazon.Glue.Model
         private DevEndpointCustomLibraries _customLibraries;
         private string _endpointName;
         private string _publicKey;
+        private bool? _updateEtlLibraries;
 
         /// <summary>
         /// Gets and sets the property CustomLibraries. 
         /// <para>
-        /// Custom Python or Java custom libraries to be loaded in the DevEndpoint.
+        /// Custom Python or Java libraries to be loaded in the DevEndpoint.
         /// </para>
         /// </summary>
         public DevEndpointCustomLibraries CustomLibraries
@@ -89,6 +90,25 @@ namespace Amazon.Glue.Model
         internal bool IsSetPublicKey()
         {
             return this._publicKey != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdateEtlLibraries. 
+        /// <para>
+        /// True if the list of custom libraries to be loaded in the development endpoint needs
+        /// to be updated, or False otherwise.
+        /// </para>
+        /// </summary>
+        public bool UpdateEtlLibraries
+        {
+            get { return this._updateEtlLibraries.GetValueOrDefault(); }
+            set { this._updateEtlLibraries = value; }
+        }
+
+        // Check to see if UpdateEtlLibraries property is set
+        internal bool IsSetUpdateEtlLibraries()
+        {
+            return this._updateEtlLibraries.HasValue; 
         }
 
     }

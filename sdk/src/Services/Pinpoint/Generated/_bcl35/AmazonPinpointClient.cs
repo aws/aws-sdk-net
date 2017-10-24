@@ -699,6 +699,142 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  DeleteApnsVoipChannel
+
+        /// <summary>
+        /// Delete an APNS VoIP channel
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApnsVoipChannel service method.</param>
+        /// 
+        /// <returns>The response from the DeleteApnsVoipChannel service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        public virtual DeleteApnsVoipChannelResponse DeleteApnsVoipChannel(DeleteApnsVoipChannelRequest request)
+        {
+            var marshaller = new DeleteApnsVoipChannelRequestMarshaller();
+            var unmarshaller = DeleteApnsVoipChannelResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteApnsVoipChannelRequest,DeleteApnsVoipChannelResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteApnsVoipChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApnsVoipChannel operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteApnsVoipChannel
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginDeleteApnsVoipChannel(DeleteApnsVoipChannelRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteApnsVoipChannelRequestMarshaller();
+            var unmarshaller = DeleteApnsVoipChannelResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteApnsVoipChannelRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteApnsVoipChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteApnsVoipChannel.</param>
+        /// 
+        /// <returns>Returns a  DeleteApnsVoipChannelResult from Pinpoint.</returns>
+        public virtual DeleteApnsVoipChannelResponse EndDeleteApnsVoipChannel(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteApnsVoipChannelResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteApnsVoipSandboxChannel
+
+        /// <summary>
+        /// Delete an APNS VoIP sandbox channel
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApnsVoipSandboxChannel service method.</param>
+        /// 
+        /// <returns>The response from the DeleteApnsVoipSandboxChannel service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        public virtual DeleteApnsVoipSandboxChannelResponse DeleteApnsVoipSandboxChannel(DeleteApnsVoipSandboxChannelRequest request)
+        {
+            var marshaller = new DeleteApnsVoipSandboxChannelRequestMarshaller();
+            var unmarshaller = DeleteApnsVoipSandboxChannelResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteApnsVoipSandboxChannelRequest,DeleteApnsVoipSandboxChannelResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteApnsVoipSandboxChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApnsVoipSandboxChannel operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteApnsVoipSandboxChannel
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginDeleteApnsVoipSandboxChannel(DeleteApnsVoipSandboxChannelRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteApnsVoipSandboxChannelRequestMarshaller();
+            var unmarshaller = DeleteApnsVoipSandboxChannelResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteApnsVoipSandboxChannelRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteApnsVoipSandboxChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteApnsVoipSandboxChannel.</param>
+        /// 
+        /// <returns>Returns a  DeleteApnsVoipSandboxChannelResult from Pinpoint.</returns>
+        public virtual DeleteApnsVoipSandboxChannelResponse EndDeleteApnsVoipSandboxChannel(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteApnsVoipSandboxChannelResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteApp
 
         /// <summary>
@@ -1443,6 +1579,142 @@ namespace Amazon.Pinpoint
         public virtual GetApnsSandboxChannelResponse EndGetApnsSandboxChannel(IAsyncResult asyncResult)
         {
             return EndInvoke<GetApnsSandboxChannelResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetApnsVoipChannel
+
+        /// <summary>
+        /// Get an APNS VoIP channel
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetApnsVoipChannel service method.</param>
+        /// 
+        /// <returns>The response from the GetApnsVoipChannel service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        public virtual GetApnsVoipChannelResponse GetApnsVoipChannel(GetApnsVoipChannelRequest request)
+        {
+            var marshaller = new GetApnsVoipChannelRequestMarshaller();
+            var unmarshaller = GetApnsVoipChannelResponseUnmarshaller.Instance;
+
+            return Invoke<GetApnsVoipChannelRequest,GetApnsVoipChannelResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetApnsVoipChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetApnsVoipChannel operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetApnsVoipChannel
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginGetApnsVoipChannel(GetApnsVoipChannelRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetApnsVoipChannelRequestMarshaller();
+            var unmarshaller = GetApnsVoipChannelResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetApnsVoipChannelRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetApnsVoipChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetApnsVoipChannel.</param>
+        /// 
+        /// <returns>Returns a  GetApnsVoipChannelResult from Pinpoint.</returns>
+        public virtual GetApnsVoipChannelResponse EndGetApnsVoipChannel(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetApnsVoipChannelResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetApnsVoipSandboxChannel
+
+        /// <summary>
+        /// Get an APNS VoipSandbox channel
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetApnsVoipSandboxChannel service method.</param>
+        /// 
+        /// <returns>The response from the GetApnsVoipSandboxChannel service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        public virtual GetApnsVoipSandboxChannelResponse GetApnsVoipSandboxChannel(GetApnsVoipSandboxChannelRequest request)
+        {
+            var marshaller = new GetApnsVoipSandboxChannelRequestMarshaller();
+            var unmarshaller = GetApnsVoipSandboxChannelResponseUnmarshaller.Instance;
+
+            return Invoke<GetApnsVoipSandboxChannelRequest,GetApnsVoipSandboxChannelResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetApnsVoipSandboxChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetApnsVoipSandboxChannel operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetApnsVoipSandboxChannel
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginGetApnsVoipSandboxChannel(GetApnsVoipSandboxChannelRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetApnsVoipSandboxChannelRequestMarshaller();
+            var unmarshaller = GetApnsVoipSandboxChannelResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetApnsVoipSandboxChannelRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetApnsVoipSandboxChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetApnsVoipSandboxChannel.</param>
+        /// 
+        /// <returns>Returns a  GetApnsVoipSandboxChannelResult from Pinpoint.</returns>
+        public virtual GetApnsVoipSandboxChannelResponse EndGetApnsVoipSandboxChannel(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetApnsVoipSandboxChannelResponse>(asyncResult);
         }
 
         #endregion
@@ -3279,6 +3551,142 @@ namespace Amazon.Pinpoint
         public virtual UpdateApnsSandboxChannelResponse EndUpdateApnsSandboxChannel(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateApnsSandboxChannelResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateApnsVoipChannel
+
+        /// <summary>
+        /// Update an APNS VoIP channel
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApnsVoipChannel service method.</param>
+        /// 
+        /// <returns>The response from the UpdateApnsVoipChannel service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        public virtual UpdateApnsVoipChannelResponse UpdateApnsVoipChannel(UpdateApnsVoipChannelRequest request)
+        {
+            var marshaller = new UpdateApnsVoipChannelRequestMarshaller();
+            var unmarshaller = UpdateApnsVoipChannelResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateApnsVoipChannelRequest,UpdateApnsVoipChannelResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateApnsVoipChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApnsVoipChannel operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateApnsVoipChannel
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginUpdateApnsVoipChannel(UpdateApnsVoipChannelRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new UpdateApnsVoipChannelRequestMarshaller();
+            var unmarshaller = UpdateApnsVoipChannelResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateApnsVoipChannelRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateApnsVoipChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateApnsVoipChannel.</param>
+        /// 
+        /// <returns>Returns a  UpdateApnsVoipChannelResult from Pinpoint.</returns>
+        public virtual UpdateApnsVoipChannelResponse EndUpdateApnsVoipChannel(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateApnsVoipChannelResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateApnsVoipSandboxChannel
+
+        /// <summary>
+        /// Update an APNS VoIP sandbox channel
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApnsVoipSandboxChannel service method.</param>
+        /// 
+        /// <returns>The response from the UpdateApnsVoipSandboxChannel service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        public virtual UpdateApnsVoipSandboxChannelResponse UpdateApnsVoipSandboxChannel(UpdateApnsVoipSandboxChannelRequest request)
+        {
+            var marshaller = new UpdateApnsVoipSandboxChannelRequestMarshaller();
+            var unmarshaller = UpdateApnsVoipSandboxChannelResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateApnsVoipSandboxChannelRequest,UpdateApnsVoipSandboxChannelResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateApnsVoipSandboxChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApnsVoipSandboxChannel operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateApnsVoipSandboxChannel
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginUpdateApnsVoipSandboxChannel(UpdateApnsVoipSandboxChannelRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new UpdateApnsVoipSandboxChannelRequestMarshaller();
+            var unmarshaller = UpdateApnsVoipSandboxChannelResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateApnsVoipSandboxChannelRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateApnsVoipSandboxChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateApnsVoipSandboxChannel.</param>
+        /// 
+        /// <returns>Returns a  UpdateApnsVoipSandboxChannelResult from Pinpoint.</returns>
+        public virtual UpdateApnsVoipSandboxChannelResponse EndUpdateApnsVoipSandboxChannel(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateApnsVoipSandboxChannelResponse>(asyncResult);
         }
 
         #endregion

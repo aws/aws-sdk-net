@@ -32,6 +32,8 @@ namespace Amazon.ElastiCache.Model
     /// </summary>
     public partial class CacheCluster
     {
+        private bool? _atRestEncryptionEnabled;
+        private bool? _authTokenEnabled;
         private bool? _autoMinorVersionUpgrade;
         private DateTime? _cacheClusterCreateTime;
         private string _cacheClusterId;
@@ -54,6 +56,58 @@ namespace Amazon.ElastiCache.Model
         private List<SecurityGroupMembership> _securityGroups = new List<SecurityGroupMembership>();
         private int? _snapshotRetentionLimit;
         private string _snapshotWindow;
+        private bool? _transitEncryptionEnabled;
+
+        /// <summary>
+        /// Gets and sets the property AtRestEncryptionEnabled. 
+        /// <para>
+        /// A flag that enables encryption at-rest when set to <code>true</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the cluster
+        /// is created. To enable at-rest encryption on a cluster you must set <code>AtRestEncryptionEnabled</code>
+        /// to <code>true</code> when you create a cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>false</code> 
+        /// </para>
+        /// </summary>
+        public bool AtRestEncryptionEnabled
+        {
+            get { return this._atRestEncryptionEnabled.GetValueOrDefault(); }
+            set { this._atRestEncryptionEnabled = value; }
+        }
+
+        // Check to see if AtRestEncryptionEnabled property is set
+        internal bool IsSetAtRestEncryptionEnabled()
+        {
+            return this._atRestEncryptionEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AuthTokenEnabled. 
+        /// <para>
+        /// A flag that enables using an <code>AuthToken</code> (password) when issuing Redis
+        /// commands.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>false</code> 
+        /// </para>
+        /// </summary>
+        public bool AuthTokenEnabled
+        {
+            get { return this._authTokenEnabled.GetValueOrDefault(); }
+            set { this._authTokenEnabled = value; }
+        }
+
+        // Check to see if AuthTokenEnabled property is set
+        internal bool IsSetAuthTokenEnabled()
+        {
+            return this._authTokenEnabled.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property AutoMinorVersionUpgrade. 
@@ -156,7 +210,9 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid node types are as follows:
+        /// The following node types are supported by ElastiCache. Generally speaking, the current
+        /// generation types provide more memory and computational power at lower cost when compared
+        /// to their equivalent previous generation counterparts.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -164,33 +220,70 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
-        /// <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
-        /// <code>cache.m3.2xlarge</code>, <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+        /// Current generation: 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>T2 node types:</b> <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>M3 node types:</b> <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
+        /// <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>M4 node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
         /// <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Previous generation: <code>cache.t1.micro</code>, <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
+        /// Previous generation: (not recommended)
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>T1 node types:</b> <code>cache.t1.micro</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>M1 node types:</b> <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
         /// <code>cache.m1.large</code>, <code>cache.m1.xlarge</code> 
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Compute optimized: <code>cache.c1.xlarge</code> 
+        /// Compute optimized:
         /// </para>
-        ///  </li> <li> 
+        ///  <ul> <li> 
+        /// <para>
+        /// Previous generation: (not recommended)
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>C1 node types:</b> <code>cache.c1.xlarge</code> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// Memory optimized:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Current generation: <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
-        /// <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code> 
+        /// Current generation: 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>R3 node types:</b> <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>,
+        /// <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Previous generation: <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
+        /// Previous generation: (not recommended)
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>M2 node types:</b> <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
         /// <code>cache.m2.4xlarge</code> 
         /// </para>
         ///  </li> </ul> </li> </ul> 
@@ -203,14 +296,23 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Redis backup/restore is not supported for Redis (cluster mode disabled) T1 and T2
-        /// instances. Backup/restore is supported on Redis (cluster mode enabled) T2 instances.
+        /// Redis (cluster mode disabled): Redis backup/restore is not supported on T1 and T2
+        /// instances. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Redis (cluster mode enabled): Backup/restore is not supported on T1 instances.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Redis Append-only files (AOF) functionality is not supported for T1 or T2 instances.
         /// </para>
         ///  </li> </ul> 
+        /// <para>
+        /// Supported node types are available in all regions except as noted in the following
+        /// table.
+        /// </para>
+        ///  
         /// <para>
         /// For a complete listing of node types and specifications, see <a href="http://aws.amazon.com/elasticache/details">Amazon
         /// ElastiCache Product Features and Details</a> and either <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
@@ -231,7 +333,10 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CacheParameterGroup.
+        /// Gets and sets the property CacheParameterGroup. 
+        /// <para>
+        /// Status of the cache parameter group.
+        /// </para>
         /// </summary>
         public CacheParameterGroupStatus CacheParameterGroup
         {
@@ -361,7 +466,12 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NotificationConfiguration.
+        /// Gets and sets the property NotificationConfiguration. 
+        /// <para>
+        /// Describes a notification topic and its status. Notification topics are used for publishing
+        /// ElastiCache events to subscribers using Amazon Simple Notification Service (SNS).
+        /// 
+        /// </para>
         /// </summary>
         public NotificationConfiguration NotificationConfiguration
         {
@@ -571,6 +681,34 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetSnapshotWindow()
         {
             return this._snapshotWindow != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransitEncryptionEnabled. 
+        /// <para>
+        /// A flag that enables in-transit encryption when set to <code>true</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You cannot modify the value of <code>TransitEncryptionEnabled</code> after the cluster
+        /// is created. To enable in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code>
+        /// to <code>true</code> when you create a cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>false</code> 
+        /// </para>
+        /// </summary>
+        public bool TransitEncryptionEnabled
+        {
+            get { return this._transitEncryptionEnabled.GetValueOrDefault(); }
+            set { this._transitEncryptionEnabled = value; }
+        }
+
+        // Check to see if TransitEncryptionEnabled property is set
+        internal bool IsSetTransitEncryptionEnabled()
+        {
+            return this._transitEncryptionEnabled.HasValue; 
         }
 
     }

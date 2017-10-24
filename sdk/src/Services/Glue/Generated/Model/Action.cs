@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// 
+    /// Defines an action to be initiated by a trigger.
     /// </summary>
     public partial class Action
     {
@@ -36,7 +36,10 @@ namespace Amazon.Glue.Model
         private string _jobName;
 
         /// <summary>
-        /// Gets and sets the property Arguments.
+        /// Gets and sets the property Arguments. 
+        /// <para>
+        /// Arguments to be passed to the job.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> Arguments
         {
@@ -51,7 +54,10 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property JobName.
+        /// Gets and sets the property JobName. 
+        /// <para>
+        /// The name of a job to be executed.
+        /// </para>
         /// </summary>
         public string JobName
         {

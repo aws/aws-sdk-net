@@ -36,15 +36,17 @@ namespace Amazon.Pinpoint.Model
         private int? _badge;
         private string _body;
         private string _category;
+        private string _collapseId;
         private Dictionary<string, string> _data = new Dictionary<string, string>();
-        private string _jsonData;
         private string _mediaUrl;
         private string _preferredAuthenticationMethod;
+        private string _priority;
         private string _rawContent;
         private bool? _silentPush;
         private string _sound;
         private Dictionary<string, List<string>> _substitutions = new Dictionary<string, List<string>>();
         private string _threadId;
+        private int? _timeToLive;
         private string _title;
         private string _url;
 
@@ -120,6 +122,23 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CollapseId. Multiple notifications with the same collapse
+        /// identifier are displayed to the user as a single notification. The value of this key
+        /// must not exceed 64 bytes.
+        /// </summary>
+        public string CollapseId
+        {
+            get { return this._collapseId; }
+            set { this._collapseId = value; }
+        }
+
+        // Check to see if CollapseId property is set
+        internal bool IsSetCollapseId()
+        {
+            return this._collapseId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Data. The data payload used for a silent push. This payload
         /// is added to the notifications' data.pinpoint.jsonBody' object
         /// </summary>
@@ -133,22 +152,6 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetData()
         {
             return this._data != null && this._data.Count > 0; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property JsonData. The data payload used for a silent push. This
-        /// payload is added to the notifications' data.pinpoint.jsonBody' object
-        /// </summary>
-        public string JsonData
-        {
-            get { return this._jsonData; }
-            set { this._jsonData = value; }
-        }
-
-        // Check to see if JsonData property is set
-        internal bool IsSetJsonData()
-        {
-            return this._jsonData != null;
         }
 
         /// <summary>
@@ -181,6 +184,22 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetPreferredAuthenticationMethod()
         {
             return this._preferredAuthenticationMethod != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Priority. Is this a transaction priority message or lower
+        /// priority.
+        /// </summary>
+        public string Priority
+        {
+            get { return this._priority; }
+            set { this._priority = value; }
+        }
+
+        // Check to see if Priority property is set
+        internal bool IsSetPriority()
+        {
+            return this._priority != null;
         }
 
         /// <summary>
@@ -266,6 +285,25 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetThreadId()
         {
             return this._threadId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimeToLive. This parameter specifies how long (in seconds)
+        /// the message should be kept if APNS is unable to deliver the notification the first
+        /// time. If the value is 0, APNS treats the notification as if it expires immediately
+        /// and does not store the notification or attempt to redeliver it. This value is converted
+        /// to the expiration field when sent to APNS
+        /// </summary>
+        public int TimeToLive
+        {
+            get { return this._timeToLive.GetValueOrDefault(); }
+            set { this._timeToLive = value; }
+        }
+
+        // Check to see if TimeToLive property is set
+        internal bool IsSetTimeToLive()
+        {
+            return this._timeToLive.HasValue; 
         }
 
         /// <summary>

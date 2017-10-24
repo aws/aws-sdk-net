@@ -34,7 +34,6 @@ namespace Amazon.Pinpoint.Model
     {
         private Dictionary<string, string> _context = new Dictionary<string, string>();
         private DirectMessageConfiguration _messageConfiguration;
-        private string _requestId;
         private Dictionary<string, EndpointSendConfiguration> _users = new Dictionary<string, EndpointSendConfiguration>();
 
         /// <summary>
@@ -67,22 +66,6 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetMessageConfiguration()
         {
             return this._messageConfiguration != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property RequestId. Original request Id for which this message is
-        /// delivered.
-        /// </summary>
-        public string RequestId
-        {
-            get { return this._requestId; }
-            set { this._requestId = value; }
-        }
-
-        // Check to see if RequestId property is set
-        internal bool IsSetRequestId()
-        {
-            return this._requestId != null;
         }
 
         /// <summary>
