@@ -39,11 +39,12 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property AutomaticFailoverStatus. 
         /// <para>
-        /// Indicates the status of Multi-AZ for this Redis replication group.
+        /// Indicates the status of Multi-AZ with automatic failover for this Redis replication
+        /// group.
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
-        /// ElastiCache Multi-AZ replication groups are not supported on:
+        /// Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -51,13 +52,13 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Redis (cluster mode disabled):T1 and T2 cache node types.
+        /// Redis (cluster mode disabled): T1 and T2 cache node types.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
         /// Redis (cluster mode enabled): T1 node types.
         /// </para>
-        ///  </li> </ul> </note>
+        ///  </li> </ul>
         /// </summary>
         public PendingAutomaticFailoverStatus AutomaticFailoverStatus
         {

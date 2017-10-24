@@ -58,6 +58,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetAtRestEncryptionEnabled())
+                {
+                    request.Parameters.Add("AtRestEncryptionEnabled", StringUtils.FromBool(publicRequest.AtRestEncryptionEnabled));
+                }
                 if(publicRequest.IsSetAuthToken())
                 {
                     request.Parameters.Add("AuthToken", StringUtils.FromString(publicRequest.AuthToken));
@@ -218,6 +222,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         }
                         publicRequestlistValueIndex++;
                     }
+                }
+                if(publicRequest.IsSetTransitEncryptionEnabled())
+                {
+                    request.Parameters.Add("TransitEncryptionEnabled", StringUtils.FromBool(publicRequest.TransitEncryptionEnabled));
                 }
             }
             return request;

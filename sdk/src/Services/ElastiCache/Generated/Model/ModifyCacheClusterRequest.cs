@@ -195,8 +195,8 @@ namespace Amazon.ElastiCache.Model
         ///  
         /// <para>
         /// For example: If you have 3 active cache nodes, 7 pending cache nodes, and the number
-        /// of cache nodes in this <code>ModifyCacheCluser</code> call is 5, you must list 2 (7
-        /// - 5) cache node IDs to remove.
+        /// of cache nodes in this <code>ModifyCacheCluster</code> call is 5, you must list 2
+        /// (7 - 5) cache node IDs to remove.
         /// </para>
         /// </summary>
         public List<string> CacheNodeIdsToRemove
