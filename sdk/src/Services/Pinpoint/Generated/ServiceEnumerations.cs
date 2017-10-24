@@ -209,6 +209,14 @@ namespace Amazon.Pinpoint
         /// </summary>
         public static readonly ChannelType APNS_SANDBOX = new ChannelType("APNS_SANDBOX");
         /// <summary>
+        /// Constant APNS_VOIP for ChannelType
+        /// </summary>
+        public static readonly ChannelType APNS_VOIP = new ChannelType("APNS_VOIP");
+        /// <summary>
+        /// Constant APNS_VOIP_SANDBOX for ChannelType
+        /// </summary>
+        public static readonly ChannelType APNS_VOIP_SANDBOX = new ChannelType("APNS_VOIP_SANDBOX");
+        /// <summary>
         /// Constant BAIDU for ChannelType
         /// </summary>
         public static readonly ChannelType BAIDU = new ChannelType("BAIDU");

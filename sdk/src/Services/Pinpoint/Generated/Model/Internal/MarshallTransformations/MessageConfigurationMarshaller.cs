@@ -45,6 +45,17 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MessageConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetADMMessage())
+            {
+                context.Writer.WritePropertyName("ADMMessage");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = MessageMarshaller.Instance;
+                marshaller.Marshall(requestObject.ADMMessage, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetAPNSMessage())
             {
                 context.Writer.WritePropertyName("APNSMessage");
@@ -52,6 +63,17 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
                 var marshaller = MessageMarshaller.Instance;
                 marshaller.Marshall(requestObject.APNSMessage, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetBaiduMessage())
+            {
+                context.Writer.WritePropertyName("BaiduMessage");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = MessageMarshaller.Instance;
+                marshaller.Marshall(requestObject.BaiduMessage, context);
 
                 context.Writer.WriteObjectEnd();
             }

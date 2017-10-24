@@ -64,20 +64,6 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetCampaign())
-            {
-                context.Writer.WritePropertyName("Campaign");
-                context.Writer.WriteObjectStart();
-                foreach (var requestObjectCampaignKvp in requestObject.Campaign)
-                {
-                    context.Writer.WritePropertyName(requestObjectCampaignKvp.Key);
-                    var requestObjectCampaignValue = requestObjectCampaignKvp.Value;
-
-                        context.Writer.Write(requestObjectCampaignValue);
-                }
-                context.Writer.WriteObjectEnd();
-            }
-
             if(requestObject.IsSetContext())
             {
                 context.Writer.WritePropertyName("Context");
@@ -120,12 +106,6 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.MessageConfiguration, context);
 
                 context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetRequestId())
-            {
-                context.Writer.WritePropertyName("RequestId");
-                context.Writer.Write(requestObject.RequestId);
             }
 
         }

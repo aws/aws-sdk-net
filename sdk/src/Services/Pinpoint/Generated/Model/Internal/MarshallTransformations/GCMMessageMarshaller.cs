@@ -95,10 +95,10 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ImageUrl);
             }
 
-            if(requestObject.IsSetJsonData())
+            if(requestObject.IsSetPriority())
             {
-                context.Writer.WritePropertyName("JsonData");
-                context.Writer.Write(requestObject.JsonData);
+                context.Writer.WritePropertyName("Priority");
+                context.Writer.Write(requestObject.Priority);
             }
 
             if(requestObject.IsSetRawContent())
@@ -148,6 +148,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
                 context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetTimeToLive())
+            {
+                context.Writer.WritePropertyName("TimeToLive");
+                context.Writer.Write(requestObject.TimeToLive);
             }
 
             if(requestObject.IsSetTitle())

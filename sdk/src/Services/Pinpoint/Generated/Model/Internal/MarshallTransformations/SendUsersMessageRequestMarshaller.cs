@@ -70,12 +70,6 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetRequestId())
-            {
-                context.Writer.WritePropertyName("RequestId");
-                context.Writer.Write(requestObject.RequestId);
-            }
-
             if(requestObject.IsSetUsers())
             {
                 context.Writer.WritePropertyName("Users");

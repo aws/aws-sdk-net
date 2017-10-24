@@ -33,7 +33,6 @@ namespace Amazon.Pinpoint.Model
     public partial class WriteEventStream
     {
         private string _destinationStreamArn;
-        private string _externalId;
         private string _roleArn;
 
         /// <summary>
@@ -52,22 +51,6 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetDestinationStreamArn()
         {
             return this._destinationStreamArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ExternalId. The external ID assigned the IAM role that
-        /// authorizes Amazon Pinpoint to publish to the stream.
-        /// </summary>
-        public string ExternalId
-        {
-            get { return this._externalId; }
-            set { this._externalId = value; }
-        }
-
-        // Check to see if ExternalId property is set
-        internal bool IsSetExternalId()
-        {
-            return this._externalId != null;
         }
 
         /// <summary>

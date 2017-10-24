@@ -69,6 +69,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Category);
             }
 
+            if(requestObject.IsSetCollapseId())
+            {
+                context.Writer.WritePropertyName("CollapseId");
+                context.Writer.Write(requestObject.CollapseId);
+            }
+
             if(requestObject.IsSetData())
             {
                 context.Writer.WritePropertyName("Data");
@@ -83,12 +89,6 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetJsonData())
-            {
-                context.Writer.WritePropertyName("JsonData");
-                context.Writer.Write(requestObject.JsonData);
-            }
-
             if(requestObject.IsSetMediaUrl())
             {
                 context.Writer.WritePropertyName("MediaUrl");
@@ -99,6 +99,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("PreferredAuthenticationMethod");
                 context.Writer.Write(requestObject.PreferredAuthenticationMethod);
+            }
+
+            if(requestObject.IsSetPriority())
+            {
+                context.Writer.WritePropertyName("Priority");
+                context.Writer.Write(requestObject.Priority);
             }
 
             if(requestObject.IsSetRawContent())
@@ -142,6 +148,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("ThreadId");
                 context.Writer.Write(requestObject.ThreadId);
+            }
+
+            if(requestObject.IsSetTimeToLive())
+            {
+                context.Writer.WritePropertyName("TimeToLive");
+                context.Writer.Write(requestObject.TimeToLive);
             }
 
             if(requestObject.IsSetTitle())

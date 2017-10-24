@@ -39,13 +39,14 @@ namespace Amazon.Pinpoint.Model
         private string _iconReference;
         private string _imageIconUrl;
         private string _imageUrl;
-        private string _jsonData;
+        private string _priority;
         private string _rawContent;
         private string _restrictedPackageName;
         private bool? _silentPush;
         private string _smallImageIconUrl;
         private string _sound;
         private Dictionary<string, List<string>> _substitutions = new Dictionary<string, List<string>>();
+        private int? _timeToLive;
         private string _title;
         private string _url;
 
@@ -170,19 +171,19 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property JsonData. The data payload used for a silent push. This
-        /// payload is added to the notifications' data.pinpoint.jsonBody' object
+        /// Gets and sets the property Priority. Is this a transaction priority message or lower
+        /// priority.
         /// </summary>
-        public string JsonData
+        public string Priority
         {
-            get { return this._jsonData; }
-            set { this._jsonData = value; }
+            get { return this._priority; }
+            set { this._priority = value; }
         }
 
-        // Check to see if JsonData property is set
-        internal bool IsSetJsonData()
+        // Check to see if Priority property is set
+        internal bool IsSetPriority()
         {
-            return this._jsonData != null;
+            return this._priority != null;
         }
 
         /// <summary>
@@ -283,6 +284,23 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetSubstitutions()
         {
             return this._substitutions != null && this._substitutions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimeToLive. This parameter specifies how long (in seconds)
+        /// the message should be kept in GCM storage if the device is offline. The maximum time
+        /// to live supported is 4 weeks, and the default value is 4 weeks.
+        /// </summary>
+        public int TimeToLive
+        {
+            get { return this._timeToLive.GetValueOrDefault(); }
+            set { this._timeToLive = value; }
+        }
+
+        // Check to see if TimeToLive property is set
+        internal bool IsSetTimeToLive()
+        {
+            return this._timeToLive.HasValue; 
         }
 
         /// <summary>

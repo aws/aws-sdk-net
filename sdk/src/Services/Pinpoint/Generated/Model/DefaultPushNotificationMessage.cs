@@ -35,7 +35,6 @@ namespace Amazon.Pinpoint.Model
         private Action _action;
         private string _body;
         private Dictionary<string, string> _data = new Dictionary<string, string>();
-        private string _jsonData;
         private bool? _silentPush;
         private Dictionary<string, List<string>> _substitutions = new Dictionary<string, List<string>>();
         private string _title;
@@ -92,22 +91,6 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetData()
         {
             return this._data != null && this._data.Count > 0; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property JsonData. The data payload used for a silent push. This
-        /// payload is added to the notifications' data.pinpoint.jsonBody' object
-        /// </summary>
-        public string JsonData
-        {
-            get { return this._jsonData; }
-            set { this._jsonData = value; }
-        }
-
-        // Check to see if JsonData property is set
-        internal bool IsSetJsonData()
-        {
-            return this._jsonData != null;
         }
 
         /// <summary>
