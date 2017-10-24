@@ -47,7 +47,7 @@
             if (params && params.page) {
                 var page = tocItem.attr('href');
                 if(page){
-                    page = page.substr(8,page.length);
+                    page = page.substr(('./items/').length,page.length);
                     if(page!=params.page)
                     {
                         params.page = page;
