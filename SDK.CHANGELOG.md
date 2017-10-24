@@ -1,3 +1,8 @@
+### 3.3.178.1 (2017-10-24 00:07 UTC)
+* Core 3.3.18.2
+	* Restored missing UAP binaries in service nuget packages.
+	* All services packages updated to require new Core
+
 ### 3.3.178.0 (2017-10-23 20:39 UTC)
 * Organizations (3.3.6.0)
 	* This release supports integrating other AWS services with AWS Organizations through the use of an IAM service-linked role called AWSServiceRoleForOrganizations. Certain operations automatically create that role if it does not already exist.
