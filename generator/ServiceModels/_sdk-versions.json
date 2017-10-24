@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.178.1",
+    "ProductVersion" : "3.3.179.0",
     "CoreVersion"    : "3.3.18.2",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -69,7 +69,7 @@
             "InPreview"               : false
         },
         "ConfigService"     : {
-            "Version" : "3.3.10.2",
+            "Version" : "3.3.11.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.18.2"
@@ -167,7 +167,7 @@
             "InPreview"               : false
         },
         "ElastiCache"       : {
-            "Version" : "3.3.3.11",
+            "Version" : "3.3.4.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.18.2"
@@ -313,7 +313,7 @@
             "InPreview"               : false
         },
         "S3"                   : {
-            "Version" : "3.3.11.3",
+            "Version" : "3.3.11.4",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.18.2"
@@ -665,7 +665,7 @@
             "InPreview"               : false
         },
         "Pinpoint"                        : {
-            "Version" : "3.3.4.2",
+            "Version" : "3.3.5.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.18.2"
@@ -825,7 +825,7 @@
             "InPreview"               : false
         },
         "Glue"                            : {
-            "Version" : "3.3.0.2",
+            "Version" : "3.3.1.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.18.2"

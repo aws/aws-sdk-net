@@ -1,3 +1,15 @@
+### 3.3.179.0 (2017-10-24 18:01 UTC)
+* ConfigService (3.3.11.0)
+	* AWS Config support for CodeBuild Project resource type
+* ElastiCache (3.3.4.0)
+	* Amazon ElastiCache for Redis today announced support for data encryption both for data in-transit and data at-rest. The new encryption in-transit functionality enables ElastiCache for Redis customers to encrypt data for all communication between clients and Redis engine, and all intra-cluster Redis communication. The encryption at-rest functionality allows customers to encrypt their S3 based backups. Customers can begin using the new functionality by simply enabling this functionality via AWS console, and a small configuration change in their Redis clients. The ElastiCache for Redis service automatically manages life cycle of the certificates required for encryption, including the issuance, renewal and expiration of certificates. Additionally, as part of this launch, customers will gain the ability to start using the Redis AUTH command that provides an added level of authentication.
+* Glue (3.3.1.0)
+	* AWS Glue: Adding a new API, BatchStopJobRun, to stop one or more job runs for a specified Job. 
+* Pinpoint (3.3.5.0)
+	* Added support for APNs VoIP messages. Added support for collapsible IDs, message priority, and TTL for APNs and FCM/GCM.
+* S3 (3.3.11.4)
+	* PR 769, fix issue with mocking TransferUtility
+
 ### 3.3.178.1 (2017-10-24 00:07 UTC)
 * Core 3.3.18.2
 	* Restored missing UAP binaries in service nuget packages.
