@@ -611,6 +611,10 @@ namespace Amazon.ConfigService
         /// </summary>
         public static readonly ResourceType AWSCloudWatchAlarm = new ResourceType("AWS::CloudWatch::Alarm");
         /// <summary>
+        /// Constant AWSCodeBuildProject for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSCodeBuildProject = new ResourceType("AWS::CodeBuild::Project");
+        /// <summary>
         /// Constant AWSDynamoDBTable for ResourceType
         /// </summary>
         public static readonly ResourceType AWSDynamoDBTable = new ResourceType("AWS::DynamoDB::Table");
