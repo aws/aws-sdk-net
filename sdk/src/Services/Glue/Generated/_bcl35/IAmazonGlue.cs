@@ -29,7 +29,10 @@ namespace Amazon.Glue
     /// <summary>
     /// Interface for accessing Glue
     ///
-    /// Defines service operations used by the GlueFrontendService
+    /// AWS Glue 
+    /// <para>
+    /// Defines the public endpoint for the AWS Glue service.
+    /// </para>
     /// </summary>
     public partial interface IAmazonGlue : IAmazonService, IDisposable
     {
@@ -292,6 +295,55 @@ namespace Amazon.Glue
         /// <returns>Returns a  BatchGetPartitionResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetPartition">REST API Reference for BatchGetPartition Operation</seealso>
         BatchGetPartitionResponse EndBatchGetPartition(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  BatchStopJobRun
+
+
+        /// <summary>
+        /// Stops a batch of job runs for a given job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchStopJobRun service method.</param>
+        /// 
+        /// <returns>The response from the BatchStopJobRun service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchStopJobRun">REST API Reference for BatchStopJobRun Operation</seealso>
+        BatchStopJobRunResponse BatchStopJobRun(BatchStopJobRunRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchStopJobRun operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchStopJobRun operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchStopJobRun
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchStopJobRun">REST API Reference for BatchStopJobRun Operation</seealso>
+        IAsyncResult BeginBatchStopJobRun(BatchStopJobRunRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchStopJobRun operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchStopJobRun.</param>
+        /// 
+        /// <returns>Returns a  BatchStopJobRunResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchStopJobRun">REST API Reference for BatchStopJobRun Operation</seealso>
+        BatchStopJobRunResponse EndBatchStopJobRun(IAsyncResult asyncResult);
 
         #endregion
         

@@ -45,6 +45,7 @@ namespace Amazon.Glue.Model
         private string _subnetId;
         private string _vpcId;
         private string _yarnEndpointAddress;
+        private int? _zeppelinRemoteSparkInterpreterPort;
 
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
@@ -121,7 +122,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property ExtraPythonLibsS3Path. 
         /// <para>
-        /// Path to one or more Python libraries in an S3 bucket that will be loaded in your DevEndpoint.
+        /// Path(s) to one or more Python libraries in an S3 bucket that will be loaded in your
+        /// DevEndpoint.
         /// </para>
         /// </summary>
         public string ExtraPythonLibsS3Path
@@ -157,7 +159,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property NumberOfNodes. 
         /// <para>
-        /// The number of nodes in this DevEndpoint.
+        /// The number of AWS Glue Data Processing Units (DPUs) allocated to this DevEndpoint.
         /// </para>
         /// </summary>
         public int NumberOfNodes
@@ -278,6 +280,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetYarnEndpointAddress()
         {
             return this._yarnEndpointAddress != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ZeppelinRemoteSparkInterpreterPort. 
+        /// <para>
+        /// The Apache Zeppelin port for the remote Apache Spark interpreter.
+        /// </para>
+        /// </summary>
+        public int ZeppelinRemoteSparkInterpreterPort
+        {
+            get { return this._zeppelinRemoteSparkInterpreterPort.GetValueOrDefault(); }
+            set { this._zeppelinRemoteSparkInterpreterPort = value; }
+        }
+
+        // Check to see if ZeppelinRemoteSparkInterpreterPort property is set
+        internal bool IsSetZeppelinRemoteSparkInterpreterPort()
+        {
+            return this._zeppelinRemoteSparkInterpreterPort.HasValue; 
         }
 
     }

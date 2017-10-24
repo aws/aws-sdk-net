@@ -36,7 +36,10 @@ namespace Amazon.Glue
     /// <summary>
     /// Implementation for accessing Glue
     ///
-    /// Defines service operations used by the GlueFrontendService
+    /// AWS Glue 
+    /// <para>
+    /// Defines the public endpoint for the AWS Glue service.
+    /// </para>
     /// </summary>
     public partial class AmazonGlueClient : AmazonServiceClient, IAmazonGlue
     {
@@ -385,6 +388,38 @@ namespace Amazon.Glue
             var unmarshaller = BatchGetPartitionResponseUnmarshaller.Instance;
 
             return InvokeAsync<BatchGetPartitionRequest,BatchGetPartitionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  BatchStopJobRun
+
+        internal virtual BatchStopJobRunResponse BatchStopJobRun(BatchStopJobRunRequest request)
+        {
+            var marshaller = new BatchStopJobRunRequestMarshaller();
+            var unmarshaller = BatchStopJobRunResponseUnmarshaller.Instance;
+
+            return Invoke<BatchStopJobRunRequest,BatchStopJobRunResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchStopJobRun operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchStopJobRun operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchStopJobRun">REST API Reference for BatchStopJobRun Operation</seealso>
+        public virtual Task<BatchStopJobRunResponse> BatchStopJobRunAsync(BatchStopJobRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new BatchStopJobRunRequestMarshaller();
+            var unmarshaller = BatchStopJobRunResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchStopJobRunRequest,BatchStopJobRunResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

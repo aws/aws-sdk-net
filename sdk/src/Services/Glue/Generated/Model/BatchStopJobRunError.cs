@@ -28,35 +28,37 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Defines an action to be initiated by a trigger.
+    /// Details about the job run and the error that occurred while trying to submit it for
+    /// stopping.
     /// </summary>
-    public partial class Action
+    public partial class BatchStopJobRunError
     {
-        private Dictionary<string, string> _arguments = new Dictionary<string, string>();
+        private ErrorDetail _errorDetail;
         private string _jobName;
+        private string _jobRunId;
 
         /// <summary>
-        /// Gets and sets the property Arguments. 
+        /// Gets and sets the property ErrorDetail. 
         /// <para>
-        /// Arguments to be passed to the job.
+        /// The details of the error that occurred.
         /// </para>
         /// </summary>
-        public Dictionary<string, string> Arguments
+        public ErrorDetail ErrorDetail
         {
-            get { return this._arguments; }
-            set { this._arguments = value; }
+            get { return this._errorDetail; }
+            set { this._errorDetail = value; }
         }
 
-        // Check to see if Arguments property is set
-        internal bool IsSetArguments()
+        // Check to see if ErrorDetail property is set
+        internal bool IsSetErrorDetail()
         {
-            return this._arguments != null && this._arguments.Count > 0; 
+            return this._errorDetail != null;
         }
 
         /// <summary>
         /// Gets and sets the property JobName. 
         /// <para>
-        /// The name of a job to be executed.
+        /// The name of the job.
         /// </para>
         /// </summary>
         public string JobName
@@ -69,6 +71,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetJobName()
         {
             return this._jobName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobRunId. 
+        /// <para>
+        /// The job run Id.
+        /// </para>
+        /// </summary>
+        public string JobRunId
+        {
+            get { return this._jobRunId; }
+            set { this._jobRunId = value; }
+        }
+
+        // Check to see if JobRunId property is set
+        internal bool IsSetJobRunId()
+        {
+            return this._jobRunId != null;
         }
 
     }

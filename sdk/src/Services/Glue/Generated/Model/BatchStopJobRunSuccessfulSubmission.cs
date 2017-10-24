@@ -28,35 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Defines an action to be initiated by a trigger.
+    /// Details about the job run which is submitted successfully for stopping.
     /// </summary>
-    public partial class Action
+    public partial class BatchStopJobRunSuccessfulSubmission
     {
-        private Dictionary<string, string> _arguments = new Dictionary<string, string>();
         private string _jobName;
-
-        /// <summary>
-        /// Gets and sets the property Arguments. 
-        /// <para>
-        /// Arguments to be passed to the job.
-        /// </para>
-        /// </summary>
-        public Dictionary<string, string> Arguments
-        {
-            get { return this._arguments; }
-            set { this._arguments = value; }
-        }
-
-        // Check to see if Arguments property is set
-        internal bool IsSetArguments()
-        {
-            return this._arguments != null && this._arguments.Count > 0; 
-        }
+        private string _jobRunId;
 
         /// <summary>
         /// Gets and sets the property JobName. 
         /// <para>
-        /// The name of a job to be executed.
+        /// The name of the job.
         /// </para>
         /// </summary>
         public string JobName
@@ -69,6 +51,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetJobName()
         {
             return this._jobName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobRunId. 
+        /// <para>
+        /// The job run Id.
+        /// </para>
+        /// </summary>
+        public string JobRunId
+        {
+            get { return this._jobRunId; }
+            set { this._jobRunId = value; }
+        }
+
+        // Check to see if JobRunId property is set
+        internal bool IsSetJobRunId()
+        {
+            return this._jobRunId != null;
         }
 
     }

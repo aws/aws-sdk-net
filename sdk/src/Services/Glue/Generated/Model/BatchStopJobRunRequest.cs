@@ -28,35 +28,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Defines an action to be initiated by a trigger.
+    /// Container for the parameters to the BatchStopJobRun operation.
+    /// Stops a batch of job runs for a given job.
     /// </summary>
-    public partial class Action
+    public partial class BatchStopJobRunRequest : AmazonGlueRequest
     {
-        private Dictionary<string, string> _arguments = new Dictionary<string, string>();
         private string _jobName;
-
-        /// <summary>
-        /// Gets and sets the property Arguments. 
-        /// <para>
-        /// Arguments to be passed to the job.
-        /// </para>
-        /// </summary>
-        public Dictionary<string, string> Arguments
-        {
-            get { return this._arguments; }
-            set { this._arguments = value; }
-        }
-
-        // Check to see if Arguments property is set
-        internal bool IsSetArguments()
-        {
-            return this._arguments != null && this._arguments.Count > 0; 
-        }
+        private List<string> _jobRunIds = new List<string>();
 
         /// <summary>
         /// Gets and sets the property JobName. 
         /// <para>
-        /// The name of a job to be executed.
+        /// The name of the job whose job runs are to be stopped.
         /// </para>
         /// </summary>
         public string JobName
@@ -69,6 +52,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetJobName()
         {
             return this._jobName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobRunIds. 
+        /// <para>
+        /// A list of job run Ids of the given job to be stopped.
+        /// </para>
+        /// </summary>
+        public List<string> JobRunIds
+        {
+            get { return this._jobRunIds; }
+            set { this._jobRunIds = value; }
+        }
+
+        // Check to see if JobRunIds property is set
+        internal bool IsSetJobRunIds()
+        {
+            return this._jobRunIds != null && this._jobRunIds.Count > 0; 
         }
 
     }

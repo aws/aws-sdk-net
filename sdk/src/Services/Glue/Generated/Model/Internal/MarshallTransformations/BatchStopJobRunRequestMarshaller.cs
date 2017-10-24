@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateDevEndpoint Request Marshaller
+    /// BatchStopJobRun Request Marshaller
     /// </summary>       
-    public class UpdateDevEndpointRequestMarshaller : IMarshaller<IRequest, UpdateDevEndpointRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class BatchStopJobRunRequestMarshaller : IMarshaller<IRequest, BatchStopJobRunRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((UpdateDevEndpointRequest)input);
+            return this.Marshall((BatchStopJobRunRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(UpdateDevEndpointRequest publicRequest)
+        public IRequest Marshall(BatchStopJobRunRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Glue");
-            string target = "AWSGlue.UpdateDevEndpoint";
+            string target = "AWSGlue.BatchStopJobRun";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -67,33 +67,21 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCustomLibraries())
+                if(publicRequest.IsSetJobName())
                 {
-                    context.Writer.WritePropertyName("CustomLibraries");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DevEndpointCustomLibrariesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CustomLibraries, context);
-
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("JobName");
+                    context.Writer.Write(publicRequest.JobName);
                 }
 
-                if(publicRequest.IsSetEndpointName())
+                if(publicRequest.IsSetJobRunIds())
                 {
-                    context.Writer.WritePropertyName("EndpointName");
-                    context.Writer.Write(publicRequest.EndpointName);
-                }
-
-                if(publicRequest.IsSetPublicKey())
-                {
-                    context.Writer.WritePropertyName("PublicKey");
-                    context.Writer.Write(publicRequest.PublicKey);
-                }
-
-                if(publicRequest.IsSetUpdateEtlLibraries())
-                {
-                    context.Writer.WritePropertyName("UpdateEtlLibraries");
-                    context.Writer.Write(publicRequest.UpdateEtlLibraries);
+                    context.Writer.WritePropertyName("JobRunIds");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestJobRunIdsListValue in publicRequest.JobRunIds)
+                    {
+                            context.Writer.Write(publicRequestJobRunIdsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
         
