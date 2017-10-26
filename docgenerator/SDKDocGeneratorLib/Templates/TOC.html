@@ -48,6 +48,8 @@
                 var page = tocItem.attr('href');
                 if(page){
                     page = page.substr(('./items/').length,page.length);
+                    // Code to check if customer's bookmark has been deprecated. If so, he customer will be 
+                    // redirected to the correct page
                     if(page!=params.page)
                     {
                         params.page = page;
