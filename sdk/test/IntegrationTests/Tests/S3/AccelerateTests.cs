@@ -63,87 +63,87 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             BaseClean();
         }
 
-        [TestMethod]
-        [TestCategory("S3")]
-        public void TestAccelerateEnabledClient()
-        {
-            using (var client = new AmazonS3Client(
-                new AmazonS3Config
-                {
-                    UseAccelerateEndpoint = true,
-                    RegionEndpoint = TestRegionEndpoint
-                }))
-            {
-                
-                TestAccelerateUnsupportedOperations(client);                
-                TestControlPlaneOperations(client);
-                TestDataPlaneOperations(client);
+        //[TestMethod]
+        //[TestCategory("S3")]
+        //public void TestAccelerateEnabledClient()
+        //{
+        //    using (var client = new AmazonS3Client(
+        //        new AmazonS3Config
+        //        {
+        //            UseAccelerateEndpoint = true,
+        //            RegionEndpoint = TestRegionEndpoint
+        //        }))
+        //    {
 
-                // Test error scenarios
-                var exception1 = AssertExtensions.ExpectException<AmazonClientException>(
-                    () => client.ListObjects("accelerate.incompatible.bucket"));
-            }
+        //        TestAccelerateUnsupportedOperations(client);                
+        //        TestControlPlaneOperations(client);
+        //        TestDataPlaneOperations(client);
 
-            var exception2 = AssertExtensions.ExpectException<AmazonClientException>(
-                () => new AmazonS3Client(new AmazonS3Config
-                {
-                    ForcePathStyle = true,
-                    UseAccelerateEndpoint = true,
-                    RegionEndpoint = TestRegionEndpoint
-                }));
+        //        // Test error scenarios
+        //        var exception1 = AssertExtensions.ExpectException<AmazonClientException>(
+        //            () => client.ListObjects("accelerate.incompatible.bucket"));
+        //    }
 
-            using (var sigV4Client = new AmazonS3Client(new AmazonS3Config
-                {
-                    UseAccelerateEndpoint = true,
-                SignatureVersion = "4",
-                RegionEndpoint = TestRegionEndpoint
-                }))
-            {
+        //    var exception2 = AssertExtensions.ExpectException<AmazonClientException>(
+        //        () => new AmazonS3Client(new AmazonS3Config
+        //        {
+        //            ForcePathStyle = true,
+        //            UseAccelerateEndpoint = true,
+        //            RegionEndpoint = TestRegionEndpoint
+        //        }));
 
-                TestAccelerateUnsupportedOperations(sigV4Client);
-                TestControlPlaneOperations(sigV4Client);
-                TestDataPlaneOperations(sigV4Client);
-            }
+        //    using (var sigV4Client = new AmazonS3Client(new AmazonS3Config
+        //        {
+        //            UseAccelerateEndpoint = true,
+        //        SignatureVersion = "4",
+        //        RegionEndpoint = TestRegionEndpoint
+        //        }))
+        //    {
 
-            using (var dualstackAccelerateEndpointClient = new AmazonS3Client(new AmazonS3Config
-                {
-                    UseAccelerateEndpoint = true,
-                    UseDualstackEndpoint = true
-                }))
-            {
-                TestAccelerateUnsupportedOperations(dualstackAccelerateEndpointClient);
-                TestControlPlaneOperations(dualstackAccelerateEndpointClient);
-                TestDataPlaneOperations(dualstackAccelerateEndpointClient);
-            }
-        }
+        //        TestAccelerateUnsupportedOperations(sigV4Client);
+        //        TestControlPlaneOperations(sigV4Client);
+        //        TestDataPlaneOperations(sigV4Client);
+        //    }
 
-        [TestMethod]
-        [TestCategory("S3")]
-        public void TestClientWithExplicitRegionEndpointAndAccelerateEnabled()
-        {
-            using (var explicitAccelerateEndpointClient = new AmazonS3Client(new AmazonS3Config
-                {
-                    ServiceURL = TestServiceUrl,
-                    UseAccelerateEndpoint = true
-                }))
-            {
-                TestAccelerateUnsupportedOperations(explicitAccelerateEndpointClient);
-                TestControlPlaneOperations(explicitAccelerateEndpointClient);
-                TestDataPlaneOperations(explicitAccelerateEndpointClient);
-            }
+        //    using (var dualstackAccelerateEndpointClient = new AmazonS3Client(new AmazonS3Config
+        //        {
+        //            UseAccelerateEndpoint = true,
+        //            UseDualstackEndpoint = true
+        //        }))
+        //    {
+        //        TestAccelerateUnsupportedOperations(dualstackAccelerateEndpointClient);
+        //        TestControlPlaneOperations(dualstackAccelerateEndpointClient);
+        //        TestDataPlaneOperations(dualstackAccelerateEndpointClient);
+        //    }
+        //}
 
-            using (var explicitAccelerateEndpointClient = new AmazonS3Client(new AmazonS3Config
-            {
-                ServiceURL = TestServiceUrl,
-                UseAccelerateEndpoint = true,
-                UseDualstackEndpoint = true
-            }))
-            {
-                TestAccelerateUnsupportedOperations(explicitAccelerateEndpointClient);
-                TestControlPlaneOperations(explicitAccelerateEndpointClient);
-                TestDataPlaneOperations(explicitAccelerateEndpointClient);
-            }
-        }
+        //[TestMethod]
+        //[TestCategory("S3")]
+        //public void TestClientWithExplicitRegionEndpointAndAccelerateEnabled()
+        //{
+        //    using (var explicitAccelerateEndpointClient = new AmazonS3Client(new AmazonS3Config
+        //    {
+        //        ServiceURL = TestServiceUrl,
+        //        UseAccelerateEndpoint = true
+        //    }))
+        //    {
+        //        TestAccelerateUnsupportedOperations(explicitAccelerateEndpointClient);
+        //        TestControlPlaneOperations(explicitAccelerateEndpointClient);
+        //        TestDataPlaneOperations(explicitAccelerateEndpointClient);
+        //    }
+
+        //    using (var explicitAccelerateEndpointClient = new AmazonS3Client(new AmazonS3Config
+        //    {
+        //        ServiceURL = TestServiceUrl,
+        //        UseAccelerateEndpoint = true,
+        //        UseDualstackEndpoint = true
+        //    }))
+        //    {
+        //        TestAccelerateUnsupportedOperations(explicitAccelerateEndpointClient);
+        //        TestControlPlaneOperations(explicitAccelerateEndpointClient);
+        //        TestDataPlaneOperations(explicitAccelerateEndpointClient);
+        //    }
+        //}
 
         [TestMethod]
         [TestCategory("S3")]
