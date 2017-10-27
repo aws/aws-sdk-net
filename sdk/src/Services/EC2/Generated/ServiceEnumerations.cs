@@ -2673,6 +2673,18 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType P2Xlarge = new InstanceType("p2.xlarge");
         /// <summary>
+        /// Constant P316xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType P316xlarge = new InstanceType("p3.16xlarge");
+        /// <summary>
+        /// Constant P32xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType P32xlarge = new InstanceType("p3.2xlarge");
+        /// <summary>
+        /// Constant P38xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType P38xlarge = new InstanceType("p3.8xlarge");
+        /// <summary>
         /// Constant R32xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType R32xlarge = new InstanceType("r3.2xlarge");
