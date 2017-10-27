@@ -38,24 +38,42 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property EventType. 
         /// <para>
-        /// Specifies the event type that triggers a Lambda function invocation. Valid values
-        /// are:
+        /// Specifies the event type that triggers a Lambda function invocation. You can specify
+        /// the following values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>viewer-request</code> 
+        ///  <code>viewer-request</code>: The function executes when CloudFront receives a request
+        /// from a viewer and before it checks to see whether the requested object is in the edge
+        /// cache. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>origin-request</code> 
+        ///  <code>origin-request</code>: The function executes only when CloudFront forwards
+        /// a request to your origin. When the requested object is in the edge cache, the function
+        /// doesn't execute.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>viewer-response</code> 
+        ///  <code>origin-response</code>: The function executes after CloudFront receives a response
+        /// from the origin and before it caches the object in the response. When the requested
+        /// object is in the edge cache, the function doesn't execute.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the origin returns an HTTP status code other than HTTP 200 (OK), the function doesn't
+        /// execute.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>origin-response</code> 
+        ///  <code>viewer-response</code>: The function executes before CloudFront returns the
+        /// requested object to the viewer. The function executes regardless of whether the object
+        /// was already in the edge cache.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the origin returns an HTTP status code other than HTTP 200 (OK), the function doesn't
+        /// execute.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -74,7 +92,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property LambdaFunctionARN. 
         /// <para>
-        /// The ARN of the Lambda function.
+        /// The ARN of the Lambda function. You must specify the ARN of a function version; you
+        /// can't specify a Lambda alias or $LATEST.
         /// </para>
         /// </summary>
         public string LambdaFunctionARN

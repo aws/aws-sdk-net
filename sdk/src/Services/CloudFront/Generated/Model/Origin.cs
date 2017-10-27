@@ -97,8 +97,8 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you configured Amazon S3 Transfer Acceleration for your bucket, do not specify
-        /// the <code>s3-accelerate</code> endpoint for <code>DomainName</code>.
+        /// If you configured Amazon S3 Transfer Acceleration for your bucket, don't specify the
+        /// <code>s3-accelerate</code> endpoint for <code>DomainName</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>

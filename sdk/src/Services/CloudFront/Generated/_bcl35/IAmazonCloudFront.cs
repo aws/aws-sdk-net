@@ -32,9 +32,9 @@ namespace Amazon.CloudFront
     /// Amazon CloudFront 
     /// <para>
     /// This is the <i>Amazon CloudFront API Reference</i>. This guide is for developers who
-    /// need detailed information about the CloudFront API actions, data types, and errors.
-    /// For detailed information about CloudFront features and their associated API calls,
-    /// see the <i>Amazon CloudFront Developer Guide</i>.
+    /// need detailed information about CloudFront API actions, data types, and errors. For
+    /// detailed information about CloudFront features, see the <i>Amazon CloudFront Developer
+    /// Guide</i>.
     /// </para>
     /// </summary>
     public partial interface IAmazonCloudFront : IAmazonService, IDisposable
@@ -61,13 +61,13 @@ namespace Amazon.CloudFront
         /// error.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of <code>Quantity</code> and the size of <code>Items</code> do not match.
+        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
-        /// This operation requires a body. Ensure that the body is present and the Content-Type
+        /// This operation requires a body. Ensure that the body is present and the <code>Content-Type</code>
         /// header is set.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyCloudFrontOriginAccessIdentitiesException">
@@ -126,7 +126,7 @@ namespace Amazon.CloudFront
         /// another distribution.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of <code>Quantity</code> and the size of <code>Items</code> do not match.
+        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
@@ -197,7 +197,7 @@ namespace Amazon.CloudFront
         /// 
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
-        /// This operation requires a body. Ensure that the body is present and the Content-Type
+        /// This operation requires a body. Ensure that the body is present and the <code>Content-Type</code>
         /// header is set.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginException">
@@ -243,7 +243,7 @@ namespace Amazon.CloudFront
         /// Your request contains more trusted signers than are allowed per distribution.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TrustedSignerDoesNotExistException">
-        /// One or more of your trusted signers do not exist.
+        /// One or more of your trusted signers don't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateDistribution">REST API Reference for CreateDistribution Operation</seealso>
         CreateDistributionResponse CreateDistribution(CreateDistributionRequest request);
@@ -296,7 +296,7 @@ namespace Amazon.CloudFront
         /// another distribution.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of <code>Quantity</code> and the size of <code>Items</code> do not match.
+        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
@@ -370,7 +370,7 @@ namespace Amazon.CloudFront
         /// 
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
-        /// This operation requires a body. Ensure that the body is present and the Content-Type
+        /// This operation requires a body. Ensure that the body is present and the <code>Content-Type</code>
         /// header is set.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginException">
@@ -416,7 +416,7 @@ namespace Amazon.CloudFront
         /// Your request contains more trusted signers than are allowed per distribution.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TrustedSignerDoesNotExistException">
-        /// One or more of your trusted signers do not exist.
+        /// One or more of your trusted signers don't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateDistributionWithTags">REST API Reference for CreateDistributionWithTags Operation</seealso>
         CreateDistributionWithTagsResponse CreateDistributionWithTags(CreateDistributionWithTagsRequest request);
@@ -465,13 +465,13 @@ namespace Amazon.CloudFront
         /// 
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of <code>Quantity</code> and the size of <code>Items</code> do not match.
+        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
-        /// This operation requires a body. Ensure that the body is present and the Content-Type
+        /// This operation requires a body. Ensure that the body is present and the <code>Content-Type</code>
         /// header is set.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
@@ -563,7 +563,7 @@ namespace Amazon.CloudFront
         /// 
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of <code>Quantity</code> and the size of <code>Items</code> do not match.
+        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
@@ -575,7 +575,7 @@ namespace Amazon.CloudFront
         /// The Amazon S3 origin server specified does not refer to a valid Amazon S3 bucket.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
-        /// This operation requires a body. Ensure that the body is present and the Content-Type
+        /// This operation requires a body. Ensure that the body is present and the <code>Content-Type</code>
         /// header is set.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.StreamingDistributionAlreadyExistsException">
@@ -592,7 +592,7 @@ namespace Amazon.CloudFront
         /// Your request contains more trusted signers than are allowed per distribution.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TrustedSignerDoesNotExistException">
-        /// One or more of your trusted signers do not exist.
+        /// One or more of your trusted signers don't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateStreamingDistribution">REST API Reference for CreateStreamingDistribution Operation</seealso>
         CreateStreamingDistributionResponse CreateStreamingDistribution(CreateStreamingDistributionRequest request);
@@ -641,7 +641,7 @@ namespace Amazon.CloudFront
         /// 
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of <code>Quantity</code> and the size of <code>Items</code> do not match.
+        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
@@ -656,7 +656,7 @@ namespace Amazon.CloudFront
         /// 
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
-        /// This operation requires a body. Ensure that the body is present and the Content-Type
+        /// This operation requires a body. Ensure that the body is present and the <code>Content-Type</code>
         /// header is set.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.StreamingDistributionAlreadyExistsException">
@@ -673,7 +673,7 @@ namespace Amazon.CloudFront
         /// Your request contains more trusted signers than are allowed per distribution.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TrustedSignerDoesNotExistException">
-        /// One or more of your trusted signers do not exist.
+        /// One or more of your trusted signers don't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateStreamingDistributionWithTags">REST API Reference for CreateStreamingDistributionWithTags Operation</seealso>
         CreateStreamingDistributionWithTagsResponse CreateStreamingDistributionWithTags(CreateStreamingDistributionWithTagsRequest request);
@@ -859,6 +859,58 @@ namespace Amazon.CloudFront
         /// <returns>Returns a  DeleteDistributionResult from CloudFront.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
         DeleteDistributionResponse EndDeleteDistribution(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteServiceLinkedRole
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteServiceLinkedRole service method.</param>
+        /// 
+        /// <returns>The response from the DeleteServiceLinkedRole service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// The argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResourceException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ResourceInUseException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteServiceLinkedRole">REST API Reference for DeleteServiceLinkedRole Operation</seealso>
+        DeleteServiceLinkedRoleResponse DeleteServiceLinkedRole(DeleteServiceLinkedRoleRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteServiceLinkedRole operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteServiceLinkedRole operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteServiceLinkedRole
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteServiceLinkedRole">REST API Reference for DeleteServiceLinkedRole Operation</seealso>
+        IAsyncResult BeginDeleteServiceLinkedRole(DeleteServiceLinkedRoleRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteServiceLinkedRole operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteServiceLinkedRole.</param>
+        /// 
+        /// <returns>Returns a  DeleteServiceLinkedRoleResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteServiceLinkedRole">REST API Reference for DeleteServiceLinkedRole Operation</seealso>
+        DeleteServiceLinkedRoleResponse EndDeleteServiceLinkedRole(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1894,7 +1946,7 @@ namespace Amazon.CloudFront
         /// Origin and <code>CallerReference</code> cannot be updated.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of <code>Quantity</code> and the size of <code>Items</code> do not match.
+        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
@@ -1903,7 +1955,7 @@ namespace Amazon.CloudFront
         /// The <code>If-Match</code> version is missing or not valid for the distribution.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
-        /// This operation requires a body. Ensure that the body is present and the Content-Type
+        /// This operation requires a body. Ensure that the body is present and the <code>Content-Type</code>
         /// header is set.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException">
@@ -2037,7 +2089,7 @@ namespace Amazon.CloudFront
         /// Origin and <code>CallerReference</code> cannot be updated.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of <code>Quantity</code> and the size of <code>Items</code> do not match.
+        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
@@ -2104,7 +2156,7 @@ namespace Amazon.CloudFront
         /// 
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
-        /// This operation requires a body. Ensure that the body is present and the Content-Type
+        /// This operation requires a body. Ensure that the body is present and the <code>Content-Type</code>
         /// header is set.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
@@ -2152,7 +2204,7 @@ namespace Amazon.CloudFront
         /// Your request contains more trusted signers than are allowed per distribution.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TrustedSignerDoesNotExistException">
-        /// One or more of your trusted signers do not exist.
+        /// One or more of your trusted signers don't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UpdateDistribution">REST API Reference for UpdateDistribution Operation</seealso>
         UpdateDistributionResponse UpdateDistribution(UpdateDistributionRequest request);
@@ -2204,7 +2256,7 @@ namespace Amazon.CloudFront
         /// Origin and <code>CallerReference</code> cannot be updated.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of <code>Quantity</code> and the size of <code>Items</code> do not match.
+        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
@@ -2216,7 +2268,7 @@ namespace Amazon.CloudFront
         /// The origin access identity is not valid or doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
-        /// This operation requires a body. Ensure that the body is present and the Content-Type
+        /// This operation requires a body. Ensure that the body is present and the <code>Content-Type</code>
         /// header is set.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchStreamingDistributionException">
@@ -2232,7 +2284,7 @@ namespace Amazon.CloudFront
         /// Your request contains more trusted signers than are allowed per distribution.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TrustedSignerDoesNotExistException">
-        /// One or more of your trusted signers do not exist.
+        /// One or more of your trusted signers don't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UpdateStreamingDistribution">REST API Reference for UpdateStreamingDistribution Operation</seealso>
         UpdateStreamingDistributionResponse UpdateStreamingDistribution(UpdateStreamingDistributionRequest request);

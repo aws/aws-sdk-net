@@ -108,7 +108,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// The domain name corresponding to the distribution. For example: <code>d604721fxaaqy9.cloudfront.net</code>.
+        /// The domain name corresponding to the distribution, for example, <code>d111111abcdef8.cloudfront.net</code>.
         /// </para>
         /// </summary>
         public string DomainName
@@ -144,7 +144,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier for the distribution. For example: <code>EDFDVBD632BHDS5</code>.
+        /// The identifier for the distribution, for example, <code>EDFDVBD632BHDS5</code>.
         /// </para>
         /// </summary>
         public string Id

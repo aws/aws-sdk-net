@@ -34,9 +34,9 @@ namespace Amazon.CloudFront
     /// Amazon CloudFront 
     /// <para>
     /// This is the <i>Amazon CloudFront API Reference</i>. This guide is for developers who
-    /// need detailed information about the CloudFront API actions, data types, and errors.
-    /// For detailed information about CloudFront features and their associated API calls,
-    /// see the <i>Amazon CloudFront Developer Guide</i>.
+    /// need detailed information about CloudFront API actions, data types, and errors. For
+    /// detailed information about CloudFront features, see the <i>Amazon CloudFront Developer
+    /// Guide</i>.
     /// </para>
     /// </summary>
     public partial interface IAmazonCloudFront : IAmazonService, IDisposable
@@ -229,6 +229,23 @@ namespace Amazon.CloudFront
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
         Task<DeleteDistributionResponse> DeleteDistributionAsync(DeleteDistributionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteServiceLinkedRole
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteServiceLinkedRole operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteServiceLinkedRole operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteServiceLinkedRole">REST API Reference for DeleteServiceLinkedRole Operation</seealso>
+        Task<DeleteServiceLinkedRoleResponse> DeleteServiceLinkedRoleAsync(DeleteServiceLinkedRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

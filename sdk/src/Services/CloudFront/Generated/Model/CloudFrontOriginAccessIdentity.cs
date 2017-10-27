@@ -57,7 +57,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID for the origin access identity. For example: <code>E74FTE3AJFJ256A</code>.
+        /// The ID for the origin access identity, for example, <code>E74FTE3AJFJ256A</code>.
         /// 
         /// </para>
         /// </summary>

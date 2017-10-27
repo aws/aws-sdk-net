@@ -63,7 +63,7 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property Headers. 
         /// <para>
         /// A complex type that specifies the <code>Headers</code>, if any, that you want CloudFront
-        /// to vary upon for this cache behavior. 
+        /// to base caching on for this cache behavior. 
         /// </para>
         /// </summary>
         public Headers Headers

@@ -51,7 +51,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="id">The identifier for the distribution. For example: <code>EDFDVBD632BHDS5</code>. </param>
         /// <param name="status">This response element indicates the current status of the distribution. When the status is <code>Deployed</code>, the distribution's information is fully propagated to all CloudFront edge locations. </param>
-        /// <param name="domainName">The domain name corresponding to the distribution. For example: <code>d604721fxaaqy9.cloudfront.net</code>. </param>
+        /// <param name="domainName">The domain name corresponding to the distribution, for example, <code>d111111abcdef8.cloudfront.net</code>. </param>
         public Distribution(string id, string status, string domainName)
         {
             _id = id;
@@ -126,7 +126,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// The domain name corresponding to the distribution. For example: <code>d604721fxaaqy9.cloudfront.net</code>.
+        /// The domain name corresponding to the distribution, for example, <code>d111111abcdef8.cloudfront.net</code>.
         /// 
         /// </para>
         /// </summary>

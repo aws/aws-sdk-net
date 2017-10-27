@@ -46,7 +46,7 @@ namespace Amazon.CloudFront.Model
         /// Instantiates LoggingConfig with the parameterized properties
         /// </summary>
         /// <param name="bucket">The Amazon S3 bucket to store the access logs in, for example, <code>myawslogbucket.s3.amazonaws.com</code>.</param>
-        /// <param name="prefix">An optional string that you want CloudFront to prefix to the access log <code>filenames</code> for this distribution, for example, <code>myprefix/</code>. If you want to enable logging, but you do not want to specify a prefix, you still must include an empty <code>Prefix</code> element in the <code>Logging</code> element.</param>
+        /// <param name="prefix">An optional string that you want CloudFront to prefix to the access log <code>filenames</code> for this distribution, for example, <code>myprefix/</code>. If you want to enable logging, but you don't want to specify a prefix, you still must include an empty <code>Prefix</code> element in the <code>Logging</code> element.</param>
         public LoggingConfig(string bucket, string prefix)
         {
             _bucket = bucket;
@@ -75,7 +75,7 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property Enabled. 
         /// <para>
         /// Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket.
-        /// If you do not want to enable logging when you create a distribution or if you want
+        /// If you don't want to enable logging when you create a distribution or if you want
         /// to disable logging for an existing distribution, specify <code>false</code> for <code>Enabled</code>,
         /// and specify empty <code>Bucket</code> and <code>Prefix</code> elements. If you specify
         /// <code>false</code> for <code>Enabled</code> but you specify values for <code>Bucket</code>,
@@ -101,7 +101,7 @@ namespace Amazon.CloudFront.Model
         /// Specifies whether you want CloudFront to include cookies in access logs, specify <code>true</code>
         /// for <code>IncludeCookies</code>. If you choose to include cookies in logs, CloudFront
         /// logs all cookies regardless of how you configure the cache behaviors for this distribution.
-        /// If you do not want to include cookies when you create a distribution or if you want
+        /// If you don't want to include cookies when you create a distribution or if you want
         /// to disable include cookies for an existing distribution, specify <code>false</code>
         /// for <code>IncludeCookies</code>.
         /// </para>
@@ -123,8 +123,8 @@ namespace Amazon.CloudFront.Model
         /// <para>
         /// An optional string that you want CloudFront to prefix to the access log <code>filenames</code>
         /// for this distribution, for example, <code>myprefix/</code>. If you want to enable
-        /// logging, but you do not want to specify a prefix, you still must include an empty
-        /// <code>Prefix</code> element in the <code>Logging</code> element.
+        /// logging, but you don't want to specify a prefix, you still must include an empty <code>Prefix</code>
+        /// element in the <code>Logging</code> element.
         /// </para>
         /// </summary>
         public string Prefix

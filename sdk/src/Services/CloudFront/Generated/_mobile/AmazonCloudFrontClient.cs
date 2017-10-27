@@ -39,9 +39,9 @@ namespace Amazon.CloudFront
     /// Amazon CloudFront 
     /// <para>
     /// This is the <i>Amazon CloudFront API Reference</i>. This guide is for developers who
-    /// need detailed information about the CloudFront API actions, data types, and errors.
-    /// For detailed information about CloudFront features and their associated API calls,
-    /// see the <i>Amazon CloudFront Developer Guide</i>.
+    /// need detailed information about CloudFront API actions, data types, and errors. For
+    /// detailed information about CloudFront features, see the <i>Amazon CloudFront Developer
+    /// Guide</i>.
     /// </para>
     /// </summary>
     public partial class AmazonCloudFrontClient : AmazonServiceClient, IAmazonCloudFront
@@ -555,6 +555,38 @@ namespace Amazon.CloudFront
             var unmarshaller = DeleteDistributionResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteDistributionRequest,DeleteDistributionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteServiceLinkedRole
+
+        internal virtual DeleteServiceLinkedRoleResponse DeleteServiceLinkedRole(DeleteServiceLinkedRoleRequest request)
+        {
+            var marshaller = new DeleteServiceLinkedRoleRequestMarshaller();
+            var unmarshaller = DeleteServiceLinkedRoleResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteServiceLinkedRoleRequest,DeleteServiceLinkedRoleResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteServiceLinkedRole operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteServiceLinkedRole operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteServiceLinkedRole">REST API Reference for DeleteServiceLinkedRole Operation</seealso>
+        public virtual Task<DeleteServiceLinkedRoleResponse> DeleteServiceLinkedRoleAsync(DeleteServiceLinkedRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteServiceLinkedRoleRequestMarshaller();
+            var unmarshaller = DeleteServiceLinkedRoleResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteServiceLinkedRoleRequest,DeleteServiceLinkedRoleResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

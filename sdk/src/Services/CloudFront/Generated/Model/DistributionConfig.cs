@@ -207,7 +207,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property DefaultCacheBehavior. 
         /// <para>
-        /// A complex type that describes the default cache behavior if you do not specify a <code>CacheBehavior</code>
+        /// A complex type that describes the default cache behavior if you don't specify a <code>CacheBehavior</code>
         /// element or if files don't match any of the values of <code>PathPattern</code> in <code>CacheBehavior</code>
         /// elements. You must create exactly one default cache behavior.
         /// </para>
@@ -234,7 +234,7 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  
         /// <para>
-        /// Specify only the object name, for example, <code>index.html</code>. Do not add a <code>/</code>
+        /// Specify only the object name, for example, <code>index.html</code>. Don't add a <code>/</code>
         /// before the object name.
         /// </para>
         ///  
@@ -338,7 +338,7 @@ namespace Amazon.CloudFront.Model
         /// In general, you should enable IPv6 if you have users on IPv6 networks who want to
         /// access your content. However, if you're using signed URLs or signed cookies to restrict
         /// access to your content, and if you're using a custom policy that includes the <code>IpAddress</code>
-        /// parameter to restrict the IP addresses that can access your content, do not enable
+        /// parameter to restrict the IP addresses that can access your content, don't enable
         /// IPv6. If you want to restrict access to some content by IP address and not restrict
         /// access to other content (or restrict access but not by IP address), you can create
         /// two distributions. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html">Creating

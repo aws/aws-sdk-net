@@ -151,7 +151,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property DefaultCacheBehavior. 
         /// <para>
-        /// A complex type that describes the default cache behavior if you do not specify a <code>CacheBehavior</code>
+        /// A complex type that describes the default cache behavior if you don't specify a <code>CacheBehavior</code>
         /// element or if files don't match any of the values of <code>PathPattern</code> in <code>CacheBehavior</code>
         /// elements. You must create exactly one default cache behavior.
         /// </para>
@@ -171,7 +171,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// The domain name that corresponds to the distribution. For example: <code>d604721fxaaqy9.cloudfront.net</code>.
+        /// The domain name that corresponds to the distribution, for example, <code>d111111abcdef8.cloudfront.net</code>.
         /// </para>
         /// </summary>
         public string DomainName

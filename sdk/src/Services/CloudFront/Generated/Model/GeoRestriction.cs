@@ -45,7 +45,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Instantiates GeoRestriction with the parameterized properties
         /// </summary>
-        /// <param name="restrictionType">The method that you want to use to restrict distribution of your content by country: <ul> <li>  <code>none</code>: No geo restriction is enabled, meaning access to content is not restricted by client geo location. </li> <li>  <code>blacklist</code>: The <code>Location</code> elements specify the countries in which you do not want CloudFront to distribute your content. </li> <li>  <code>whitelist</code>: The <code>Location</code> elements specify the countries in which you want CloudFront to distribute your content. </li> </ul></param>
+        /// <param name="restrictionType">The method that you want to use to restrict distribution of your content by country: <ul> <li>  <code>none</code>: No geo restriction is enabled, meaning access to content is not restricted by client geo location. </li> <li>  <code>blacklist</code>: The <code>Location</code> elements specify the countries in which you don't want CloudFront to distribute your content. </li> <li>  <code>whitelist</code>: The <code>Location</code> elements specify the countries in which you want CloudFront to distribute your content. </li> </ul></param>
         public GeoRestriction(GeoRestrictionType restrictionType)
         {
             _restrictionType = restrictionType;
@@ -69,7 +69,7 @@ namespace Amazon.CloudFront.Model
         /// CloudFront and <code>MaxMind</code> both use <code>ISO 3166</code> country codes.
         /// For the current list of countries and the corresponding codes, see <code>ISO 3166-1-alpha-2</code>
         /// code on the <i>International Organization for Standardization</i> website. You can
-        /// also refer to the country list in the CloudFront console, which includes both country
+        /// also refer to the country list on the CloudFront console, which includes both country
         /// names and codes.
         /// </para>
         /// </summary>
@@ -118,7 +118,7 @@ namespace Amazon.CloudFront.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>blacklist</code>: The <code>Location</code> elements specify the countries
-        /// in which you do not want CloudFront to distribute your content.
+        /// in which you don't want CloudFront to distribute your content.
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -378,6 +378,18 @@ namespace Amazon.CloudFront
         /// Constant TLSv1 for MinimumProtocolVersion
         /// </summary>
         public static readonly MinimumProtocolVersion TLSv1 = new MinimumProtocolVersion("TLSv1");
+        /// <summary>
+        /// Constant TLSv1_2016 for MinimumProtocolVersion
+        /// </summary>
+        public static readonly MinimumProtocolVersion TLSv1_2016 = new MinimumProtocolVersion("TLSv1_2016");
+        /// <summary>
+        /// Constant TLSv11_2016 for MinimumProtocolVersion
+        /// </summary>
+        public static readonly MinimumProtocolVersion TLSv11_2016 = new MinimumProtocolVersion("TLSv1.1_2016");
+        /// <summary>
+        /// Constant TLSv12_2018 for MinimumProtocolVersion
+        /// </summary>
+        public static readonly MinimumProtocolVersion TLSv12_2018 = new MinimumProtocolVersion("TLSv1.2_2018");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

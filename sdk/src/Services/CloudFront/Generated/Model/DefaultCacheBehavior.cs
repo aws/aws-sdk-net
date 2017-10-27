@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// A complex type that describes the default cache behavior if you do not specify a <code>CacheBehavior</code>
+    /// A complex type that describes the default cache behavior if you don't specify a <code>CacheBehavior</code>
     /// element or if files don't match any of the values of <code>PathPattern</code> in <code>CacheBehavior</code>
     /// elements. You must create exactly one default cache behavior.
     /// </summary>
