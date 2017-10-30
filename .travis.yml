@@ -2,6 +2,9 @@ language: csharp
 mono: none
 dotnet: 1.0.1
 dist: trusty
+branches:
+  only:
+    - master
 
 script:
   - dotnet restore sdk/AWSSDK.CoreCLR.sln
