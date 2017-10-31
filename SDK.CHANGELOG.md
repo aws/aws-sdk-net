@@ -1,3 +1,7 @@
+### 3.3.181.0 (2017-10-30 23:54 UTC)
+* WorkDocs (3.3.3.0)
+	* Added WorkDocs ContentManager
+
 ### 3.3.180.0 (2017-10-27 00:36 UTC)
 * CloudFront (3.3.6.0)
 	* You can now specify additional options for MinimumProtocolVersion, which controls the SSL/TLS protocol that CloudFront uses to communicate with viewers. The minimum protocol version that you choose also determines the ciphers that CloudFront uses to encrypt the content that it returns to viewers.
