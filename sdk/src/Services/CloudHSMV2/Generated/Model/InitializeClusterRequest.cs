@@ -63,7 +63,7 @@ namespace Amazon.CloudHSMV2.Model
         /// Gets and sets the property SignedCert. 
         /// <para>
         /// The cluster certificate issued (signed) by your issuing certificate authority (CA).
-        /// The certificate must be in PEM format.
+        /// The certificate must be in PEM format and can contain a maximum of 5000 characters.
         /// </para>
         /// </summary>
         public string SignedCert
@@ -84,7 +84,8 @@ namespace Amazon.CloudHSMV2.Model
         /// The issuing certificate of the issuing certificate authority (CA) that issued (signed)
         /// the cluster certificate. This can be a root (self-signed) certificate or a certificate
         /// chain that begins with the certificate that issued the cluster certificate and ends
-        /// with a root certificate. The certificate or certificate chain must be in PEM format.
+        /// with a root certificate. The certificate or certificate chain must be in PEM format
+        /// and can contain a maximum of 5000 characters.
         /// </para>
         /// </summary>
         public string TrustAnchor
