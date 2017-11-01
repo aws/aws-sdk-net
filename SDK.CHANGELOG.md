@@ -1,3 +1,11 @@
+### 3.3.182.0 (2017-11-01 16:59 UTC)
+* CertificateManager (3.3.2.17)
+	* Documentation updates for ACM
+* CloudHSMV2 (3.3.0.3)
+	* Minor documentation update for AWS CloudHSM (cloudhsmv2).
+* DirectConnect (3.3.5.0)
+	* AWS DirectConnect now provides support for Global Access for Virtual Private Cloud (VPC) via a new feature called Direct Connect Gateway. A Direct Connect Gateway will allow you to group multiple Direct Connect Private Virtual Interfaces (DX-VIF) and Private Virtual Gateways (VGW) from different AWS regions (but belonging to the same AWS Account) and pass traffic from any DX-VIF to any VPC in the grouping.
+
 ### 3.3.181.0 (2017-10-30 23:54 UTC)
 * WorkDocs (3.3.3.0)
 	* Added WorkDocs ContentManager

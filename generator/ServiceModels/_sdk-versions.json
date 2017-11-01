@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.181.0",
+    "ProductVersion" : "3.3.182.0",
     "CoreVersion"    : "3.3.18.2",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -135,7 +135,7 @@
             "InPreview"               : false
         },
         "DirectConnect"     : {
-            "Version" : "3.3.4.13",
+            "Version" : "3.3.5.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.18.2"
@@ -505,7 +505,7 @@
             "InPreview"               : false
         },
         "CertificateManager"              : {
-            "Version" : "3.3.2.16",
+            "Version" : "3.3.2.17",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.18.2"
@@ -833,7 +833,7 @@
             "InPreview"               : false
         },
         "CloudHSMV2"                      : {
-            "Version" : "3.3.0.2",
+            "Version" : "3.3.0.3",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.18.2"
