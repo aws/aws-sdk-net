@@ -28,31 +28,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// Container for the parameters to the ConfirmPrivateVirtualInterface operation.
-    /// Accept ownership of a private virtual interface created by another customer.
-    /// 
-    ///  
-    /// <para>
-    /// After the virtual interface owner calls this function, the virtual interface will
-    /// be created and attached to the given virtual private gateway or direct connect gateway,
-    /// and will be available for handling traffic.
-    /// </para>
+    /// Container for the parameters to the DeleteDirectConnectGatewayAssociation operation.
+    /// Deletes the association between a direct connect gateway and a virtual private gateway.
     /// </summary>
-    public partial class ConfirmPrivateVirtualInterfaceRequest : AmazonDirectConnectRequest
+    public partial class DeleteDirectConnectGatewayAssociationRequest : AmazonDirectConnectRequest
     {
         private string _directConnectGatewayId;
         private string _virtualGatewayId;
-        private string _virtualInterfaceId;
 
         /// <summary>
         /// Gets and sets the property DirectConnectGatewayId. 
         /// <para>
-        /// ID of the direct connect gateway that will be attached to the virtual interface.
+        /// The ID of the direct connect gateway.
         /// </para>
         ///  
         /// <para>
-        ///  A direct connect gateway can be managed via the AWS Direct Connect console or the
-        /// <a>CreateDirectConnectGateway</a> action.
+        /// Example: "abcd1234-dcba-5678-be23-cdef9876ab45"
         /// </para>
         ///  
         /// <para>
@@ -74,13 +65,11 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property VirtualGatewayId. 
         /// <para>
-        /// ID of the virtual private gateway that will be attached to the virtual interface.
+        /// The ID of the virtual private gateway.
         /// </para>
         ///  
         /// <para>
-        ///  A virtual private gateway can be managed via the Amazon Virtual Private Cloud (VPC)
-        /// console or the <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-CreateVpnGateway.html">EC2
-        /// CreateVpnGateway</a> action.
+        /// Example: "vgw-abc123ef"
         /// </para>
         ///  
         /// <para>
@@ -97,21 +86,6 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetVirtualGatewayId()
         {
             return this._virtualGatewayId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property VirtualInterfaceId.
-        /// </summary>
-        public string VirtualInterfaceId
-        {
-            get { return this._virtualInterfaceId; }
-            set { this._virtualInterfaceId = value; }
-        }
-
-        // Check to see if VirtualInterfaceId property is set
-        internal bool IsSetVirtualInterfaceId()
-        {
-            return this._virtualInterfaceId != null;
         }
 
     }

@@ -42,9 +42,10 @@ namespace Amazon.DirectConnect.Model
     /// </para>
     ///  
     /// <para>
-    /// Hosted virtual interfaces (an interface for which the owner of the connection is not
-    /// the owner of physical connection) can only be reassociated by the owner of the physical
-    /// connection.
+    /// In order to reassociate a virtual interface to a new connection or LAG, the requester
+    /// must own either the virtual interface itself or the connection to which the virtual
+    /// interface is currently associated. Additionally, the requester must own the connection
+    /// or LAG to which the virtual interface will be newly associated.
     /// </para>
     /// </summary>
     public partial class AssociateVirtualInterfaceRequest : AmazonDirectConnectRequest

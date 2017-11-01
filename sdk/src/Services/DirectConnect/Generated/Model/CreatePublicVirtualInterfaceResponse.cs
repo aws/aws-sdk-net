@@ -35,12 +35,14 @@ namespace Amazon.DirectConnect.Model
     {
         private AddressFamily _addressFamily;
         private string _amazonAddress;
+        private long? _amazonSideAsn;
         private int? _asn;
         private string _authKey;
         private List<BGPPeer> _bgpPeers = new List<BGPPeer>();
         private string _connectionId;
         private string _customerAddress;
         private string _customerRouterConfig;
+        private string _directConnectGatewayId;
         private string _location;
         private string _ownerAccount;
         private List<RouteFilterPrefix> _routeFilterPrefixes = new List<RouteFilterPrefix>();
@@ -79,6 +81,24 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetAmazonAddress()
         {
             return this._amazonAddress != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AmazonSideAsn. 
+        /// <para>
+        /// The autonomous system number (ASN) for the Amazon side of the connection.
+        /// </para>
+        /// </summary>
+        public long AmazonSideAsn
+        {
+            get { return this._amazonSideAsn.GetValueOrDefault(); }
+            set { this._amazonSideAsn = value; }
+        }
+
+        // Check to see if AmazonSideAsn property is set
+        internal bool IsSetAmazonSideAsn()
+        {
+            return this._amazonSideAsn.HasValue; 
         }
 
         /// <summary>
@@ -172,6 +192,21 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetCustomerRouterConfig()
         {
             return this._customerRouterConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DirectConnectGatewayId.
+        /// </summary>
+        public string DirectConnectGatewayId
+        {
+            get { return this._directConnectGatewayId; }
+            set { this._directConnectGatewayId = value; }
+        }
+
+        // Check to see if DirectConnectGatewayId property is set
+        internal bool IsSetDirectConnectGatewayId()
+        {
+            return this._directConnectGatewayId != null;
         }
 
         /// <summary>

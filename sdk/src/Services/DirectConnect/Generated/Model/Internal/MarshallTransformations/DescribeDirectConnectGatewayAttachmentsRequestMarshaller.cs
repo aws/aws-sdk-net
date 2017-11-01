@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ConfirmPrivateVirtualInterface Request Marshaller
+    /// DescribeDirectConnectGatewayAttachments Request Marshaller
     /// </summary>       
-    public class ConfirmPrivateVirtualInterfaceRequestMarshaller : IMarshaller<IRequest, ConfirmPrivateVirtualInterfaceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DescribeDirectConnectGatewayAttachmentsRequestMarshaller : IMarshaller<IRequest, DescribeDirectConnectGatewayAttachmentsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ConfirmPrivateVirtualInterfaceRequest)input);
+            return this.Marshall((DescribeDirectConnectGatewayAttachmentsRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ConfirmPrivateVirtualInterfaceRequest publicRequest)
+        public IRequest Marshall(DescribeDirectConnectGatewayAttachmentsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.DirectConnect");
-            string target = "OvertureService.ConfirmPrivateVirtualInterface";
+            string target = "OvertureService.DescribeDirectConnectGatewayAttachments";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -73,10 +73,16 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DirectConnectGatewayId);
                 }
 
-                if(publicRequest.IsSetVirtualGatewayId())
+                if(publicRequest.IsSetMaxResults())
                 {
-                    context.Writer.WritePropertyName("virtualGatewayId");
-                    context.Writer.Write(publicRequest.VirtualGatewayId);
+                    context.Writer.WritePropertyName("maxResults");
+                    context.Writer.Write(publicRequest.MaxResults);
+                }
+
+                if(publicRequest.IsSetNextToken())
+                {
+                    context.Writer.WritePropertyName("nextToken");
+                    context.Writer.Write(publicRequest.NextToken);
                 }
 
                 if(publicRequest.IsSetVirtualInterfaceId())

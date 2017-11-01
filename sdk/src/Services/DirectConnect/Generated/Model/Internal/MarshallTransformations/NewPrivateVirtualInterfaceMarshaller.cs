@@ -75,6 +75,12 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CustomerAddress);
             }
 
+            if(requestObject.IsSetDirectConnectGatewayId())
+            {
+                context.Writer.WritePropertyName("directConnectGatewayId");
+                context.Writer.Write(requestObject.DirectConnectGatewayId);
+            }
+
             if(requestObject.IsSetVirtualGatewayId())
             {
                 context.Writer.WritePropertyName("virtualGatewayId");

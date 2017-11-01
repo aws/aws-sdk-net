@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ConfirmPrivateVirtualInterface Request Marshaller
+    /// CreateDirectConnectGateway Request Marshaller
     /// </summary>       
-    public class ConfirmPrivateVirtualInterfaceRequestMarshaller : IMarshaller<IRequest, ConfirmPrivateVirtualInterfaceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class CreateDirectConnectGatewayRequestMarshaller : IMarshaller<IRequest, CreateDirectConnectGatewayRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ConfirmPrivateVirtualInterfaceRequest)input);
+            return this.Marshall((CreateDirectConnectGatewayRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ConfirmPrivateVirtualInterfaceRequest publicRequest)
+        public IRequest Marshall(CreateDirectConnectGatewayRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.DirectConnect");
-            string target = "OvertureService.ConfirmPrivateVirtualInterface";
+            string target = "OvertureService.CreateDirectConnectGateway";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -67,22 +67,16 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDirectConnectGatewayId())
+                if(publicRequest.IsSetAmazonSideAsn())
                 {
-                    context.Writer.WritePropertyName("directConnectGatewayId");
-                    context.Writer.Write(publicRequest.DirectConnectGatewayId);
+                    context.Writer.WritePropertyName("amazonSideAsn");
+                    context.Writer.Write(publicRequest.AmazonSideAsn);
                 }
 
-                if(publicRequest.IsSetVirtualGatewayId())
+                if(publicRequest.IsSetDirectConnectGatewayName())
                 {
-                    context.Writer.WritePropertyName("virtualGatewayId");
-                    context.Writer.Write(publicRequest.VirtualGatewayId);
-                }
-
-                if(publicRequest.IsSetVirtualInterfaceId())
-                {
-                    context.Writer.WritePropertyName("virtualInterfaceId");
-                    context.Writer.Write(publicRequest.VirtualInterfaceId);
+                    context.Writer.WritePropertyName("directConnectGatewayName");
+                    context.Writer.Write(publicRequest.DirectConnectGatewayName);
                 }
 
         

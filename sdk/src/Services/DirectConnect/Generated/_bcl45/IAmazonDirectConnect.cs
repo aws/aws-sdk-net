@@ -357,9 +357,10 @@ namespace Amazon.DirectConnect
         /// </para>
         ///  
         /// <para>
-        /// Hosted virtual interfaces (an interface for which the owner of the connection is not
-        /// the owner of physical connection) can only be reassociated by the owner of the physical
-        /// connection.
+        /// In order to reassociate a virtual interface to a new connection or LAG, the requester
+        /// must own either the virtual interface itself or the connection to which the virtual
+        /// interface is currently associated. Additionally, the requester must own the connection
+        /// or LAG to which the virtual interface will be newly associated.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateVirtualInterface service method.</param>
@@ -442,8 +443,8 @@ namespace Amazon.DirectConnect
         ///  
         /// <para>
         /// After the virtual interface owner calls this function, the virtual interface will
-        /// be created and attached to the given virtual private gateway, and will be available
-        /// for handling traffic.
+        /// be created and attached to the given virtual private gateway or direct connect gateway,
+        /// and will be available for handling traffic.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ConfirmPrivateVirtualInterface service method.</param>
@@ -587,6 +588,10 @@ namespace Amazon.DirectConnect
         /// </para>
         ///  
         /// <para>
+        /// To find the locations for your region, use <a>DescribeLocations</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// You can automatically add the new connection to a link aggregation group (LAG) by
         /// specifying a LAG ID in the request. This ensures that the new connection is allocated
         /// on the same AWS Direct Connect endpoint that hosts the specified LAG. If there are
@@ -619,6 +624,84 @@ namespace Amazon.DirectConnect
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateConnection">REST API Reference for CreateConnection Operation</seealso>
         Task<CreateConnectionResponse> CreateConnectionAsync(CreateConnectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateDirectConnectGateway
+
+
+        /// <summary>
+        /// Creates a new direct connect gateway. A direct connect gateway is an intermediate
+        /// object that enables you to connect a set of virtual interfaces and virtual private
+        /// gateways. direct connect gateways are global and visible in any AWS region after they
+        /// are created. The virtual interfaces and virtual private gateways that are connected
+        /// through a direct connect gateway can be in different regions. This enables you to
+        /// connect to a VPC in any region, regardless of the region in which the virtual interfaces
+        /// are located, and pass traffic between them.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDirectConnectGateway service method.</param>
+        /// 
+        /// <returns>The response from the CreateDirectConnectGateway service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// The API was called with invalid parameters. The error message will contain additional
+        /// details about the cause.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred during the API call. The error message will contain additional
+        /// details about the cause.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateDirectConnectGateway">REST API Reference for CreateDirectConnectGateway Operation</seealso>
+        CreateDirectConnectGatewayResponse CreateDirectConnectGateway(CreateDirectConnectGatewayRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDirectConnectGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDirectConnectGateway operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateDirectConnectGateway">REST API Reference for CreateDirectConnectGateway Operation</seealso>
+        Task<CreateDirectConnectGatewayResponse> CreateDirectConnectGatewayAsync(CreateDirectConnectGatewayRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateDirectConnectGatewayAssociation
+
+
+        /// <summary>
+        /// Creates an association between a direct connect gateway and a virtual private gateway
+        /// (VGW). The VGW must be attached to a VPC and must not be associated with another direct
+        /// connect gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDirectConnectGatewayAssociation service method.</param>
+        /// 
+        /// <returns>The response from the CreateDirectConnectGatewayAssociation service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// The API was called with invalid parameters. The error message will contain additional
+        /// details about the cause.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred during the API call. The error message will contain additional
+        /// details about the cause.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateDirectConnectGatewayAssociation">REST API Reference for CreateDirectConnectGatewayAssociation Operation</seealso>
+        CreateDirectConnectGatewayAssociationResponse CreateDirectConnectGatewayAssociation(CreateDirectConnectGatewayAssociationRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDirectConnectGatewayAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDirectConnectGatewayAssociation operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateDirectConnectGatewayAssociation">REST API Reference for CreateDirectConnectGatewayAssociation Operation</seealso>
+        Task<CreateDirectConnectGatewayAssociationResponse> CreateDirectConnectGatewayAssociationAsync(CreateDirectConnectGatewayAssociationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -913,6 +996,78 @@ namespace Amazon.DirectConnect
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteConnection">REST API Reference for DeleteConnection Operation</seealso>
         Task<DeleteConnectionResponse> DeleteConnectionAsync(DeleteConnectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteDirectConnectGateway
+
+
+        /// <summary>
+        /// Deletes a direct connect gateway. You must first delete all virtual interfaces that
+        /// are attached to the direct connect gateway and disassociate all virtual private gateways
+        /// that are associated with the direct connect gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDirectConnectGateway service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDirectConnectGateway service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// The API was called with invalid parameters. The error message will contain additional
+        /// details about the cause.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred during the API call. The error message will contain additional
+        /// details about the cause.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteDirectConnectGateway">REST API Reference for DeleteDirectConnectGateway Operation</seealso>
+        DeleteDirectConnectGatewayResponse DeleteDirectConnectGateway(DeleteDirectConnectGatewayRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDirectConnectGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDirectConnectGateway operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteDirectConnectGateway">REST API Reference for DeleteDirectConnectGateway Operation</seealso>
+        Task<DeleteDirectConnectGatewayResponse> DeleteDirectConnectGatewayAsync(DeleteDirectConnectGatewayRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteDirectConnectGatewayAssociation
+
+
+        /// <summary>
+        /// Deletes the association between a direct connect gateway and a virtual private gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDirectConnectGatewayAssociation service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDirectConnectGatewayAssociation service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// The API was called with invalid parameters. The error message will contain additional
+        /// details about the cause.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred during the API call. The error message will contain additional
+        /// details about the cause.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteDirectConnectGatewayAssociation">REST API Reference for DeleteDirectConnectGatewayAssociation Operation</seealso>
+        DeleteDirectConnectGatewayAssociationResponse DeleteDirectConnectGatewayAssociation(DeleteDirectConnectGatewayAssociationRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDirectConnectGatewayAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDirectConnectGatewayAssociation operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteDirectConnectGatewayAssociation">REST API Reference for DeleteDirectConnectGatewayAssociation Operation</seealso>
+        Task<DeleteDirectConnectGatewayAssociationResponse> DeleteDirectConnectGatewayAssociationAsync(DeleteDirectConnectGatewayAssociationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1212,6 +1367,126 @@ namespace Amazon.DirectConnect
 
         #endregion
         
+        #region  DescribeDirectConnectGatewayAssociations
+
+
+        /// <summary>
+        /// Returns a list of all direct connect gateway and virtual private gateway (VGW) associations.
+        /// Either a direct connect gateway ID or a VGW ID must be provided in the request. If
+        /// a direct connect gateway ID is provided, the response returns all VGWs associated
+        /// with the direct connect gateway. If a VGW ID is provided, the response returns all
+        /// direct connect gateways associated with the VGW. If both are provided, the response
+        /// only returns the association that matches both the direct connect gateway and the
+        /// VGW.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDirectConnectGatewayAssociations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDirectConnectGatewayAssociations service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// The API was called with invalid parameters. The error message will contain additional
+        /// details about the cause.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred during the API call. The error message will contain additional
+        /// details about the cause.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeDirectConnectGatewayAssociations">REST API Reference for DescribeDirectConnectGatewayAssociations Operation</seealso>
+        DescribeDirectConnectGatewayAssociationsResponse DescribeDirectConnectGatewayAssociations(DescribeDirectConnectGatewayAssociationsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDirectConnectGatewayAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDirectConnectGatewayAssociations operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeDirectConnectGatewayAssociations">REST API Reference for DescribeDirectConnectGatewayAssociations Operation</seealso>
+        Task<DescribeDirectConnectGatewayAssociationsResponse> DescribeDirectConnectGatewayAssociationsAsync(DescribeDirectConnectGatewayAssociationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeDirectConnectGatewayAttachments
+
+
+        /// <summary>
+        /// Returns a list of all direct connect gateway and virtual interface (VIF) attachments.
+        /// Either a direct connect gateway ID or a VIF ID must be provided in the request. If
+        /// a direct connect gateway ID is provided, the response returns all VIFs attached to
+        /// the direct connect gateway. If a VIF ID is provided, the response returns all direct
+        /// connect gateways attached to the VIF. If both are provided, the response only returns
+        /// the attachment that matches both the direct connect gateway and the VIF.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDirectConnectGatewayAttachments service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDirectConnectGatewayAttachments service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// The API was called with invalid parameters. The error message will contain additional
+        /// details about the cause.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred during the API call. The error message will contain additional
+        /// details about the cause.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeDirectConnectGatewayAttachments">REST API Reference for DescribeDirectConnectGatewayAttachments Operation</seealso>
+        DescribeDirectConnectGatewayAttachmentsResponse DescribeDirectConnectGatewayAttachments(DescribeDirectConnectGatewayAttachmentsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDirectConnectGatewayAttachments operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDirectConnectGatewayAttachments operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeDirectConnectGatewayAttachments">REST API Reference for DescribeDirectConnectGatewayAttachments Operation</seealso>
+        Task<DescribeDirectConnectGatewayAttachmentsResponse> DescribeDirectConnectGatewayAttachmentsAsync(DescribeDirectConnectGatewayAttachmentsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeDirectConnectGateways
+
+
+        /// <summary>
+        /// Returns a list of direct connect gateways in your account. Deleted direct connect
+        /// gateways are not returned. You can provide a direct connect gateway ID in the request
+        /// to return information about the specific direct connect gateway only. Otherwise, if
+        /// a direct connect gateway ID is not provided, information about all of your direct
+        /// connect gateways is returned.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDirectConnectGateways service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDirectConnectGateways service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// The API was called with invalid parameters. The error message will contain additional
+        /// details about the cause.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred during the API call. The error message will contain additional
+        /// details about the cause.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeDirectConnectGateways">REST API Reference for DescribeDirectConnectGateways Operation</seealso>
+        DescribeDirectConnectGatewaysResponse DescribeDirectConnectGateways(DescribeDirectConnectGatewaysRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDirectConnectGateways operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDirectConnectGateways operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeDirectConnectGateways">REST API Reference for DescribeDirectConnectGateways Operation</seealso>
+        Task<DescribeDirectConnectGatewaysResponse> DescribeDirectConnectGatewaysAsync(DescribeDirectConnectGatewaysRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeHostedConnections
 
 
@@ -1480,7 +1755,7 @@ namespace Amazon.DirectConnect
 
         /// <summary>
         /// Returns the list of AWS Direct Connect locations in the current AWS region. These
-        /// are the locations that may be selected when calling CreateConnection or CreateInterconnect.
+        /// are the locations that may be selected when calling <a>CreateConnection</a> or <a>CreateInterconnect</a>.
         /// </summary>
         /// 
         /// <returns>The response from the DescribeLocations service method, as returned by DirectConnect.</returns>
@@ -1498,7 +1773,7 @@ namespace Amazon.DirectConnect
 
         /// <summary>
         /// Returns the list of AWS Direct Connect locations in the current AWS region. These
-        /// are the locations that may be selected when calling CreateConnection or CreateInterconnect.
+        /// are the locations that may be selected when calling <a>CreateConnection</a> or <a>CreateInterconnect</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLocations service method.</param>
         /// 
@@ -1517,7 +1792,7 @@ namespace Amazon.DirectConnect
 
         /// <summary>
         /// Returns the list of AWS Direct Connect locations in the current AWS region. These
-        /// are the locations that may be selected when calling CreateConnection or CreateInterconnect.
+        /// are the locations that may be selected when calling <a>CreateConnection</a> or <a>CreateInterconnect</a>.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.

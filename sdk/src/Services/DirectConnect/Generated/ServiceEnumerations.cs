@@ -261,6 +261,180 @@ namespace Amazon.DirectConnect
 
 
     /// <summary>
+    /// Constants used for properties of type DirectConnectGatewayAssociationState.
+    /// </summary>
+    public class DirectConnectGatewayAssociationState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Associated for DirectConnectGatewayAssociationState
+        /// </summary>
+        public static readonly DirectConnectGatewayAssociationState Associated = new DirectConnectGatewayAssociationState("associated");
+        /// <summary>
+        /// Constant Associating for DirectConnectGatewayAssociationState
+        /// </summary>
+        public static readonly DirectConnectGatewayAssociationState Associating = new DirectConnectGatewayAssociationState("associating");
+        /// <summary>
+        /// Constant Disassociated for DirectConnectGatewayAssociationState
+        /// </summary>
+        public static readonly DirectConnectGatewayAssociationState Disassociated = new DirectConnectGatewayAssociationState("disassociated");
+        /// <summary>
+        /// Constant Disassociating for DirectConnectGatewayAssociationState
+        /// </summary>
+        public static readonly DirectConnectGatewayAssociationState Disassociating = new DirectConnectGatewayAssociationState("disassociating");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DirectConnectGatewayAssociationState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DirectConnectGatewayAssociationState FindValue(string value)
+        {
+            return FindValue<DirectConnectGatewayAssociationState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DirectConnectGatewayAssociationState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DirectConnectGatewayAttachmentState.
+    /// </summary>
+    public class DirectConnectGatewayAttachmentState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Attached for DirectConnectGatewayAttachmentState
+        /// </summary>
+        public static readonly DirectConnectGatewayAttachmentState Attached = new DirectConnectGatewayAttachmentState("attached");
+        /// <summary>
+        /// Constant Attaching for DirectConnectGatewayAttachmentState
+        /// </summary>
+        public static readonly DirectConnectGatewayAttachmentState Attaching = new DirectConnectGatewayAttachmentState("attaching");
+        /// <summary>
+        /// Constant Detached for DirectConnectGatewayAttachmentState
+        /// </summary>
+        public static readonly DirectConnectGatewayAttachmentState Detached = new DirectConnectGatewayAttachmentState("detached");
+        /// <summary>
+        /// Constant Detaching for DirectConnectGatewayAttachmentState
+        /// </summary>
+        public static readonly DirectConnectGatewayAttachmentState Detaching = new DirectConnectGatewayAttachmentState("detaching");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DirectConnectGatewayAttachmentState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DirectConnectGatewayAttachmentState FindValue(string value)
+        {
+            return FindValue<DirectConnectGatewayAttachmentState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DirectConnectGatewayAttachmentState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DirectConnectGatewayState.
+    /// </summary>
+    public class DirectConnectGatewayState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Available for DirectConnectGatewayState
+        /// </summary>
+        public static readonly DirectConnectGatewayState Available = new DirectConnectGatewayState("available");
+        /// <summary>
+        /// Constant Deleted for DirectConnectGatewayState
+        /// </summary>
+        public static readonly DirectConnectGatewayState Deleted = new DirectConnectGatewayState("deleted");
+        /// <summary>
+        /// Constant Deleting for DirectConnectGatewayState
+        /// </summary>
+        public static readonly DirectConnectGatewayState Deleting = new DirectConnectGatewayState("deleting");
+        /// <summary>
+        /// Constant Pending for DirectConnectGatewayState
+        /// </summary>
+        public static readonly DirectConnectGatewayState Pending = new DirectConnectGatewayState("pending");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DirectConnectGatewayState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DirectConnectGatewayState FindValue(string value)
+        {
+            return FindValue<DirectConnectGatewayState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DirectConnectGatewayState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InterconnectState.
     /// </summary>
     public class InterconnectState : ConstantClass

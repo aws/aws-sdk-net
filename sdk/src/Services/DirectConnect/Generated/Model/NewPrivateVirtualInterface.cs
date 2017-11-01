@@ -37,6 +37,7 @@ namespace Amazon.DirectConnect.Model
         private int? _asn;
         private string _authKey;
         private string _customerAddress;
+        private string _directConnectGatewayId;
         private string _virtualGatewayId;
         private string _virtualInterfaceName;
         private int? _vlan;
@@ -114,6 +115,21 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetCustomerAddress()
         {
             return this._customerAddress != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DirectConnectGatewayId.
+        /// </summary>
+        public string DirectConnectGatewayId
+        {
+            get { return this._directConnectGatewayId; }
+            set { this._directConnectGatewayId = value; }
+        }
+
+        // Check to see if DirectConnectGatewayId property is set
+        internal bool IsSetDirectConnectGatewayId()
+        {
+            return this._directConnectGatewayId != null;
         }
 
         /// <summary>

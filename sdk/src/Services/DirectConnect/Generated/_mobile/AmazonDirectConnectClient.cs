@@ -626,6 +626,70 @@ namespace Amazon.DirectConnect
 
         #endregion
         
+        #region  CreateDirectConnectGateway
+
+        internal virtual CreateDirectConnectGatewayResponse CreateDirectConnectGateway(CreateDirectConnectGatewayRequest request)
+        {
+            var marshaller = new CreateDirectConnectGatewayRequestMarshaller();
+            var unmarshaller = CreateDirectConnectGatewayResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDirectConnectGatewayRequest,CreateDirectConnectGatewayResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDirectConnectGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDirectConnectGateway operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateDirectConnectGateway">REST API Reference for CreateDirectConnectGateway Operation</seealso>
+        public virtual Task<CreateDirectConnectGatewayResponse> CreateDirectConnectGatewayAsync(CreateDirectConnectGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateDirectConnectGatewayRequestMarshaller();
+            var unmarshaller = CreateDirectConnectGatewayResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateDirectConnectGatewayRequest,CreateDirectConnectGatewayResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateDirectConnectGatewayAssociation
+
+        internal virtual CreateDirectConnectGatewayAssociationResponse CreateDirectConnectGatewayAssociation(CreateDirectConnectGatewayAssociationRequest request)
+        {
+            var marshaller = new CreateDirectConnectGatewayAssociationRequestMarshaller();
+            var unmarshaller = CreateDirectConnectGatewayAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDirectConnectGatewayAssociationRequest,CreateDirectConnectGatewayAssociationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDirectConnectGatewayAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDirectConnectGatewayAssociation operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateDirectConnectGatewayAssociation">REST API Reference for CreateDirectConnectGatewayAssociation Operation</seealso>
+        public virtual Task<CreateDirectConnectGatewayAssociationResponse> CreateDirectConnectGatewayAssociationAsync(CreateDirectConnectGatewayAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateDirectConnectGatewayAssociationRequestMarshaller();
+            var unmarshaller = CreateDirectConnectGatewayAssociationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateDirectConnectGatewayAssociationRequest,CreateDirectConnectGatewayAssociationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateInterconnect
 
         internal virtual CreateInterconnectResponse CreateInterconnect(CreateInterconnectRequest request)
@@ -813,6 +877,70 @@ namespace Amazon.DirectConnect
             var unmarshaller = DeleteConnectionResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteConnectionRequest,DeleteConnectionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteDirectConnectGateway
+
+        internal virtual DeleteDirectConnectGatewayResponse DeleteDirectConnectGateway(DeleteDirectConnectGatewayRequest request)
+        {
+            var marshaller = new DeleteDirectConnectGatewayRequestMarshaller();
+            var unmarshaller = DeleteDirectConnectGatewayResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDirectConnectGatewayRequest,DeleteDirectConnectGatewayResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDirectConnectGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDirectConnectGateway operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteDirectConnectGateway">REST API Reference for DeleteDirectConnectGateway Operation</seealso>
+        public virtual Task<DeleteDirectConnectGatewayResponse> DeleteDirectConnectGatewayAsync(DeleteDirectConnectGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteDirectConnectGatewayRequestMarshaller();
+            var unmarshaller = DeleteDirectConnectGatewayResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteDirectConnectGatewayRequest,DeleteDirectConnectGatewayResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteDirectConnectGatewayAssociation
+
+        internal virtual DeleteDirectConnectGatewayAssociationResponse DeleteDirectConnectGatewayAssociation(DeleteDirectConnectGatewayAssociationRequest request)
+        {
+            var marshaller = new DeleteDirectConnectGatewayAssociationRequestMarshaller();
+            var unmarshaller = DeleteDirectConnectGatewayAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDirectConnectGatewayAssociationRequest,DeleteDirectConnectGatewayAssociationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDirectConnectGatewayAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDirectConnectGatewayAssociation operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteDirectConnectGatewayAssociation">REST API Reference for DeleteDirectConnectGatewayAssociation Operation</seealso>
+        public virtual Task<DeleteDirectConnectGatewayAssociationResponse> DeleteDirectConnectGatewayAssociationAsync(DeleteDirectConnectGatewayAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteDirectConnectGatewayAssociationRequestMarshaller();
+            var unmarshaller = DeleteDirectConnectGatewayAssociationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteDirectConnectGatewayAssociationRequest,DeleteDirectConnectGatewayAssociationResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1046,6 +1174,102 @@ namespace Amazon.DirectConnect
 
         #endregion
         
+        #region  DescribeDirectConnectGatewayAssociations
+
+        internal virtual DescribeDirectConnectGatewayAssociationsResponse DescribeDirectConnectGatewayAssociations(DescribeDirectConnectGatewayAssociationsRequest request)
+        {
+            var marshaller = new DescribeDirectConnectGatewayAssociationsRequestMarshaller();
+            var unmarshaller = DescribeDirectConnectGatewayAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDirectConnectGatewayAssociationsRequest,DescribeDirectConnectGatewayAssociationsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDirectConnectGatewayAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDirectConnectGatewayAssociations operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeDirectConnectGatewayAssociations">REST API Reference for DescribeDirectConnectGatewayAssociations Operation</seealso>
+        public virtual Task<DescribeDirectConnectGatewayAssociationsResponse> DescribeDirectConnectGatewayAssociationsAsync(DescribeDirectConnectGatewayAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeDirectConnectGatewayAssociationsRequestMarshaller();
+            var unmarshaller = DescribeDirectConnectGatewayAssociationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeDirectConnectGatewayAssociationsRequest,DescribeDirectConnectGatewayAssociationsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeDirectConnectGatewayAttachments
+
+        internal virtual DescribeDirectConnectGatewayAttachmentsResponse DescribeDirectConnectGatewayAttachments(DescribeDirectConnectGatewayAttachmentsRequest request)
+        {
+            var marshaller = new DescribeDirectConnectGatewayAttachmentsRequestMarshaller();
+            var unmarshaller = DescribeDirectConnectGatewayAttachmentsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDirectConnectGatewayAttachmentsRequest,DescribeDirectConnectGatewayAttachmentsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDirectConnectGatewayAttachments operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDirectConnectGatewayAttachments operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeDirectConnectGatewayAttachments">REST API Reference for DescribeDirectConnectGatewayAttachments Operation</seealso>
+        public virtual Task<DescribeDirectConnectGatewayAttachmentsResponse> DescribeDirectConnectGatewayAttachmentsAsync(DescribeDirectConnectGatewayAttachmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeDirectConnectGatewayAttachmentsRequestMarshaller();
+            var unmarshaller = DescribeDirectConnectGatewayAttachmentsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeDirectConnectGatewayAttachmentsRequest,DescribeDirectConnectGatewayAttachmentsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeDirectConnectGateways
+
+        internal virtual DescribeDirectConnectGatewaysResponse DescribeDirectConnectGateways(DescribeDirectConnectGatewaysRequest request)
+        {
+            var marshaller = new DescribeDirectConnectGatewaysRequestMarshaller();
+            var unmarshaller = DescribeDirectConnectGatewaysResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDirectConnectGatewaysRequest,DescribeDirectConnectGatewaysResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDirectConnectGateways operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDirectConnectGateways operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeDirectConnectGateways">REST API Reference for DescribeDirectConnectGateways Operation</seealso>
+        public virtual Task<DescribeDirectConnectGatewaysResponse> DescribeDirectConnectGatewaysAsync(DescribeDirectConnectGatewaysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeDirectConnectGatewaysRequestMarshaller();
+            var unmarshaller = DescribeDirectConnectGatewaysResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeDirectConnectGatewaysRequest,DescribeDirectConnectGatewaysResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeHostedConnections
 
         internal virtual DescribeHostedConnectionsResponse DescribeHostedConnections(DescribeHostedConnectionsRequest request)
@@ -1257,7 +1481,7 @@ namespace Amazon.DirectConnect
 
         /// <summary>
         /// Returns the list of AWS Direct Connect locations in the current AWS region. These
-        /// are the locations that may be selected when calling CreateConnection or CreateInterconnect.
+        /// are the locations that may be selected when calling <a>CreateConnection</a> or <a>CreateInterconnect</a>.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.

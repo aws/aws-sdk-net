@@ -28,12 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeLocations operation.
-    /// Returns the list of AWS Direct Connect locations in the current AWS region. These
-    /// are the locations that may be selected when calling <a>CreateConnection</a> or <a>CreateInterconnect</a>.
+    /// Container for the response from the CreateDirectConnectGateway API call
     /// </summary>
-    public partial class DescribeLocationsRequest : AmazonDirectConnectRequest
+    public partial class CreateDirectConnectGatewayResponse : AmazonWebServiceResponse
     {
+        private DirectConnectGateway _directConnectGateway;
+
+        /// <summary>
+        /// Gets and sets the property DirectConnectGateway. 
+        /// <para>
+        /// The direct connect gateway to be created.
+        /// </para>
+        /// </summary>
+        public DirectConnectGateway DirectConnectGateway
+        {
+            get { return this._directConnectGateway; }
+            set { this._directConnectGateway = value; }
+        }
+
+        // Check to see if DirectConnectGateway property is set
+        internal bool IsSetDirectConnectGateway()
+        {
+            return this._directConnectGateway != null;
+        }
 
     }
 }

@@ -76,6 +76,12 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.AmazonAddress = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("amazonSideAsn", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.AmazonSideAsn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("asn", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
@@ -110,6 +116,12 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CustomerRouterConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("directConnectGatewayId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DirectConnectGatewayId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("location", targetDepth))

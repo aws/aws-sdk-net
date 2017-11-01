@@ -28,31 +28,27 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// Container for the parameters to the ConfirmPrivateVirtualInterface operation.
-    /// Accept ownership of a private virtual interface created by another customer.
-    /// 
-    ///  
-    /// <para>
-    /// After the virtual interface owner calls this function, the virtual interface will
-    /// be created and attached to the given virtual private gateway or direct connect gateway,
-    /// and will be available for handling traffic.
-    /// </para>
+    /// Container for the parameters to the DescribeDirectConnectGateways operation.
+    /// Returns a list of direct connect gateways in your account. Deleted direct connect
+    /// gateways are not returned. You can provide a direct connect gateway ID in the request
+    /// to return information about the specific direct connect gateway only. Otherwise, if
+    /// a direct connect gateway ID is not provided, information about all of your direct
+    /// connect gateways is returned.
     /// </summary>
-    public partial class ConfirmPrivateVirtualInterfaceRequest : AmazonDirectConnectRequest
+    public partial class DescribeDirectConnectGatewaysRequest : AmazonDirectConnectRequest
     {
         private string _directConnectGatewayId;
-        private string _virtualGatewayId;
-        private string _virtualInterfaceId;
+        private int? _maxResults;
+        private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property DirectConnectGatewayId. 
         /// <para>
-        /// ID of the direct connect gateway that will be attached to the virtual interface.
+        /// The ID of the direct connect gateway.
         /// </para>
         ///  
         /// <para>
-        ///  A direct connect gateway can be managed via the AWS Direct Connect console or the
-        /// <a>CreateDirectConnectGateway</a> action.
+        /// Example: "abcd1234-dcba-5678-be23-cdef9876ab45"
         /// </para>
         ///  
         /// <para>
@@ -72,46 +68,52 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VirtualGatewayId. 
+        /// Gets and sets the property MaxResults. 
         /// <para>
-        /// ID of the virtual private gateway that will be attached to the virtual interface.
+        /// The maximum number of direct connect gateways to return per page.
         /// </para>
         ///  
         /// <para>
-        ///  A virtual private gateway can be managed via the Amazon Virtual Private Cloud (VPC)
-        /// console or the <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-CreateVpnGateway.html">EC2
-        /// CreateVpnGateway</a> action.
+        /// Example: 15
         /// </para>
         ///  
         /// <para>
         /// Default: None
         /// </para>
         /// </summary>
-        public string VirtualGatewayId
+        public int MaxResults
         {
-            get { return this._virtualGatewayId; }
-            set { this._virtualGatewayId = value; }
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
         }
 
-        // Check to see if VirtualGatewayId property is set
-        internal bool IsSetVirtualGatewayId()
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
         {
-            return this._virtualGatewayId != null;
+            return this._maxResults.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property VirtualInterfaceId.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token provided in the previous describe result to retrieve the next page of the
+        /// result.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: None
+        /// </para>
         /// </summary>
-        public string VirtualInterfaceId
+        public string NextToken
         {
-            get { return this._virtualInterfaceId; }
-            set { this._virtualInterfaceId = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if VirtualInterfaceId property is set
-        internal bool IsSetVirtualInterfaceId()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._virtualInterfaceId != null;
+            return this._nextToken != null;
         }
 
     }
