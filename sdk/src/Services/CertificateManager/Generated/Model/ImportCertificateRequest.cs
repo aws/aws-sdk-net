@@ -40,8 +40,8 @@ namespace Amazon.CertificateManager.Model
     ///  </note> 
     /// <para>
     /// For more information about importing certificates into ACM, including the differences
-    /// between certificates that you import and those that ACM provides, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-    /// Certificates</a> in the <i>AWS Certificate Manager User Guide</i>.
+    /// between certificates that you import and those that ACM provides, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">
+    /// Importing Certificates</a> in the <i>AWS Certificate Manager User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -59,6 +59,14 @@ namespace Amazon.CertificateManager.Model
     /// <para>
     /// To import a new certificate, omit the <code>CertificateArn</code> field. Include this
     /// field only when you want to replace a previously imported certificate.
+    /// </para>
+    ///  
+    /// <para>
+    /// When you import a certificate by using the CLI or one of the SDKs, you must specify
+    /// the certificate, chain, and private key parameters as file names preceded by <code>file://</code>.
+    /// For example, you can specify a certificate saved in the <code>C:\temp</code> folder
+    /// as <code>C:\temp\certificate_to_import.pem</code>. If you are making an HTTP or HTTPS
+    /// Query request, include these parameters as BLOBs. 
     /// </para>
     ///  
     /// <para>
