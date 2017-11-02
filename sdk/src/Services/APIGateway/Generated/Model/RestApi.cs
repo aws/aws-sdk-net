@@ -38,6 +38,7 @@ namespace Amazon.APIGateway.Model
         private List<string> _binaryMediaTypes = new List<string>();
         private DateTime? _createdDate;
         private string _description;
+        private EndpointConfiguration _endpointConfiguration;
         private string _id;
         private string _name;
         private string _version;
@@ -96,6 +97,25 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EndpointConfiguration. 
+        /// <para>
+        /// The endpoint configuration of this <a>RestApi</a> showing the endpoint types of the
+        /// API. 
+        /// </para>
+        /// </summary>
+        public EndpointConfiguration EndpointConfiguration
+        {
+            get { return this._endpointConfiguration; }
+            set { this._endpointConfiguration = value; }
+        }
+
+        // Check to see if EndpointConfiguration property is set
+        internal bool IsSetEndpointConfiguration()
+        {
+            return this._endpointConfiguration != null;
         }
 
         /// <summary>

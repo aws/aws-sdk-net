@@ -101,6 +101,29 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DomainName);
                 }
 
+                if(publicRequest.IsSetEndpointConfiguration())
+                {
+                    context.Writer.WritePropertyName("endpointConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EndpointConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.EndpointConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetRegionalCertificateArn())
+                {
+                    context.Writer.WritePropertyName("regionalCertificateArn");
+                    context.Writer.Write(publicRequest.RegionalCertificateArn);
+                }
+
+                if(publicRequest.IsSetRegionalCertificateName())
+                {
+                    context.Writer.WritePropertyName("regionalCertificateName");
+                    context.Writer.Write(publicRequest.RegionalCertificateName);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

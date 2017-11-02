@@ -88,6 +88,17 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetEndpointConfiguration())
+                {
+                    context.Writer.WritePropertyName("endpointConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EndpointConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.EndpointConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("name");

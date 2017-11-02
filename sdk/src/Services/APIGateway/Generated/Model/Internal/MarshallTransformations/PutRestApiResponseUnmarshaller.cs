@@ -69,6 +69,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     response.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("endpointConfiguration", targetDepth))
+                {
+                    var unmarshaller = EndpointConfigurationUnmarshaller.Instance;
+                    response.EndpointConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -28,11 +28,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
-    /// Represents a domain name that is contained in a simpler, more intuitive URL that can
-    /// be called.
+    /// Represents a custom domain name as a user-friendly host name of an API (<a>RestApi</a>).
     /// 
-    ///  <div class="seeAlso"> <a href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html">Use
-    /// Client-Side Certificate</a> </div>
+    ///  <div class="Remarks"> 
+    /// <para>
+    /// When you deploy an API, Amazon API Gateway creates a default host name for the API.
+    /// This default API host name is of the <code>{restapi-id}.execute-api.{region}.amazonaws.com</code>
+    /// format. With the default host name, you can access the API's root resource with the
+    /// URL of <code>https://{restapi-id}.execute-api.{region}.amazonaws.com/{stage}/</code>.
+    /// When you set up a custom domain name of <code>apis.example.com</code> for this API,
+    /// you can then access the same resource using the URL of the <code>https://apis.examples.com/myApi</code>,
+    /// where <code>myApi</code> is the base path mapping (<a>BasePathMapping</a>) of your
+    /// API under the custom domain name. 
+    /// </para>
+    ///  </div> <div class="seeAlso"> <a href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html">Set
+    /// a Custom Host Name for an API</a> </div>
     /// </summary>
     public partial class DomainName
     {
@@ -40,13 +50,17 @@ namespace Amazon.APIGateway.Model
         private string _certificateName;
         private DateTime? _certificateUploadDate;
         private string _distributionDomainName;
+        private EndpointConfiguration _endpointConfiguration;
         private string _name;
+        private string _regionalCertificateArn;
+        private string _regionalCertificateName;
+        private string _regionalDomainName;
 
         /// <summary>
         /// Gets and sets the property CertificateArn. 
         /// <para>
-        /// The reference to an AWS-managed certificate. AWS Certificate Manager is the only supported
-        /// source.
+        /// The reference to an AWS-managed certificate that will be used by edge-optimized endpoint
+        /// for this domain name. AWS Certificate Manager is the only supported source.
         /// </para>
         /// </summary>
         public string CertificateArn
@@ -64,7 +78,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property CertificateName. 
         /// <para>
-        /// The name of the certificate.
+        /// The name of the certificate that will be used by edge-optimized endpoint for this
+        /// domain name.
         /// </para>
         /// </summary>
         public string CertificateName
@@ -82,7 +97,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property CertificateUploadDate. 
         /// <para>
-        /// The timestamp when the certificate was uploaded.
+        /// The timestamp when the certificate that was used by edge-optimized endpoint for this
+        /// domain name was uploaded.
         /// </para>
         /// </summary>
         public DateTime CertificateUploadDate
@@ -100,9 +116,11 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property DistributionDomainName. 
         /// <para>
-        /// The domain name of the Amazon CloudFront distribution. For more information, see the
-        /// <a href="http://aws.amazon.com/documentation/cloudfront/" target="_blank">Amazon CloudFront
-        /// documentation</a>.
+        /// The domain name of the Amazon CloudFront distribution associated with this custom
+        /// domain name for an edge-optimized endpoint. You set up this association when adding
+        /// a DNS record pointing the custom domain name to this distribution name. For more information
+        /// about CloudFront distributions, see the <a href="http://aws.amazon.com/documentation/cloudfront/"
+        /// target="_blank">Amazon CloudFront documentation</a>.
         /// </para>
         /// </summary>
         public string DistributionDomainName
@@ -115,6 +133,25 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetDistributionDomainName()
         {
             return this._distributionDomainName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EndpointConfiguration. 
+        /// <para>
+        /// The endpoint configuration of this <a>DomainName</a> showing the endpoint types of
+        /// the domain name. 
+        /// </para>
+        /// </summary>
+        public EndpointConfiguration EndpointConfiguration
+        {
+            get { return this._endpointConfiguration; }
+            set { this._endpointConfiguration = value; }
+        }
+
+        // Check to see if EndpointConfiguration property is set
+        internal bool IsSetEndpointConfiguration()
+        {
+            return this._endpointConfiguration != null;
         }
 
         /// <summary>
@@ -133,6 +170,64 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RegionalCertificateArn. 
+        /// <para>
+        /// The reference to an AWS-managed certificate that will be used for validating the regional
+        /// domain name. AWS Certificate Manager is the only supported source.
+        /// </para>
+        /// </summary>
+        public string RegionalCertificateArn
+        {
+            get { return this._regionalCertificateArn; }
+            set { this._regionalCertificateArn = value; }
+        }
+
+        // Check to see if RegionalCertificateArn property is set
+        internal bool IsSetRegionalCertificateArn()
+        {
+            return this._regionalCertificateArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RegionalCertificateName. 
+        /// <para>
+        /// The name of the certificate that will be used for validating the regional domain name.
+        /// </para>
+        /// </summary>
+        public string RegionalCertificateName
+        {
+            get { return this._regionalCertificateName; }
+            set { this._regionalCertificateName = value; }
+        }
+
+        // Check to see if RegionalCertificateName property is set
+        internal bool IsSetRegionalCertificateName()
+        {
+            return this._regionalCertificateName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RegionalDomainName. 
+        /// <para>
+        /// The domain name associated with the regional endpoint for this custom domain name.
+        /// You set up this association by adding a DNS record that points the custom domain name
+        /// to this regional domain name. The regional domain name is returned by Amazon API Gateway
+        /// when you create a regional endpoint.
+        /// </para>
+        /// </summary>
+        public string RegionalDomainName
+        {
+            get { return this._regionalDomainName; }
+            set { this._regionalDomainName = value; }
+        }
+
+        // Check to see if RegionalDomainName property is set
+        internal bool IsSetRegionalDomainName()
+        {
+            return this._regionalDomainName != null;
         }
 
     }

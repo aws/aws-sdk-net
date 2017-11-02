@@ -75,10 +75,34 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     response.DistributionDomainName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("endpointConfiguration", targetDepth))
+                {
+                    var unmarshaller = EndpointConfigurationUnmarshaller.Instance;
+                    response.EndpointConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("domainName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("regionalCertificateArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.RegionalCertificateArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("regionalCertificateName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.RegionalCertificateName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("regionalDomainName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.RegionalDomainName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
