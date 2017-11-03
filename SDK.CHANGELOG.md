@@ -1,3 +1,7 @@
+### 3.3.184.0 (2017-11-03 20:48 UTC)
+* ECS (3.3.7.0)
+	* Amazon ECS users can now add devices to their containers and enable init process in containers through the use of docker's 'devices' and 'init' features. These fields can be specified under linuxParameters in ContainerDefinition in the Task Definition Template. 
+
 ### 3.3.183.0 (2017-11-02 23:55 UTC)
 * APIGateway (3.3.10.0)
 	* This release supports creating and managing Regional and Edge-Optimized API endpoints.
