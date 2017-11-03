@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// LinuxParameters Marshaller
+    /// Device Marshaller
     /// </summary>       
-    public class LinuxParametersMarshaller : IRequestMarshaller<LinuxParameters, JsonMarshallerContext> 
+    public class DeviceMarshaller : IRequestMarshaller<Device, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,39 +43,29 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(LinuxParameters requestObject, JsonMarshallerContext context)
+        public void Marshall(Device requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetCapabilities())
+            if(requestObject.IsSetContainerPath())
             {
-                context.Writer.WritePropertyName("capabilities");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = KernelCapabilitiesMarshaller.Instance;
-                marshaller.Marshall(requestObject.Capabilities, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("containerPath");
+                context.Writer.Write(requestObject.ContainerPath);
             }
 
-            if(requestObject.IsSetDevices())
+            if(requestObject.IsSetHostPath())
             {
-                context.Writer.WritePropertyName("devices");
+                context.Writer.WritePropertyName("hostPath");
+                context.Writer.Write(requestObject.HostPath);
+            }
+
+            if(requestObject.IsSetPermissions())
+            {
+                context.Writer.WritePropertyName("permissions");
                 context.Writer.WriteArrayStart();
-                foreach(var requestObjectDevicesListValue in requestObject.Devices)
+                foreach(var requestObjectPermissionsListValue in requestObject.Permissions)
                 {
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DeviceMarshaller.Instance;
-                    marshaller.Marshall(requestObjectDevicesListValue, context);
-
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.Write(requestObjectPermissionsListValue);
                 }
                 context.Writer.WriteArrayEnd();
-            }
-
-            if(requestObject.IsSetInitProcessEnabled())
-            {
-                context.Writer.WritePropertyName("initProcessEnabled");
-                context.Writer.Write(requestObject.InitProcessEnabled);
             }
 
         }
@@ -83,7 +73,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static LinuxParametersMarshaller Instance = new LinuxParametersMarshaller();
+        public readonly static DeviceMarshaller Instance = new DeviceMarshaller();
 
     }
 }

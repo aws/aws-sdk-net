@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for LinuxParameters Object
+    /// Response Unmarshaller for Device Object
     /// </summary>  
-    public class LinuxParametersUnmarshaller : IUnmarshaller<LinuxParameters, XmlUnmarshallerContext>, IUnmarshaller<LinuxParameters, JsonUnmarshallerContext>
+    public class DeviceUnmarshaller : IUnmarshaller<Device, XmlUnmarshallerContext>, IUnmarshaller<Device, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        LinuxParameters IUnmarshaller<LinuxParameters, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Device IUnmarshaller<Device, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,33 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public LinuxParameters Unmarshall(JsonUnmarshallerContext context)
+        public Device Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            LinuxParameters unmarshalledObject = new LinuxParameters();
+            Device unmarshalledObject = new Device();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("capabilities", targetDepth))
+                if (context.TestExpression("containerPath", targetDepth))
                 {
-                    var unmarshaller = KernelCapabilitiesUnmarshaller.Instance;
-                    unmarshalledObject.Capabilities = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ContainerPath = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("devices", targetDepth))
+                if (context.TestExpression("hostPath", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Device, DeviceUnmarshaller>(DeviceUnmarshaller.Instance);
-                    unmarshalledObject.Devices = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.HostPath = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("initProcessEnabled", targetDepth))
+                if (context.TestExpression("permissions", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.InitProcessEnabled = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Permissions = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +88,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         }
 
 
-        private static LinuxParametersUnmarshaller _instance = new LinuxParametersUnmarshaller();        
+        private static DeviceUnmarshaller _instance = new DeviceUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static LinuxParametersUnmarshaller Instance
+        public static DeviceUnmarshaller Instance
         {
             get
             {
