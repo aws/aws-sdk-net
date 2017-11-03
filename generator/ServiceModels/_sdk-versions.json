@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.182.0",
+    "ProductVersion" : "3.3.183.0",
     "CoreVersion"    : "3.3.18.2",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -481,7 +481,7 @@
             "InPreview"               : false
         },
         "APIGateway"                      : {
-            "Version" : "3.3.9.2",
+            "Version" : "3.3.10.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.18.2"

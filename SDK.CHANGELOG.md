@@ -1,3 +1,7 @@
+### 3.3.183.0 (2017-11-02 23:55 UTC)
+* APIGateway (3.3.10.0)
+	* This release supports creating and managing Regional and Edge-Optimized API endpoints.
+
 ### 3.3.182.0 (2017-11-01 16:59 UTC)
 * CertificateManager (3.3.2.17)
 	* Documentation updates for ACM
