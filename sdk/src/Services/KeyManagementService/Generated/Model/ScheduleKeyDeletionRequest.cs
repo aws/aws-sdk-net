@@ -37,6 +37,10 @@ namespace Amazon.KeyManagementService.Model
     /// waiting period ends, AWS KMS deletes the CMK and all AWS KMS data associated with
     /// it, including all aliases that refer to it.
     /// 
+    ///  
+    /// <para>
+    /// You cannot perform this operation on a CMK in a different AWS account.
+    /// </para>
     ///  <important> 
     /// <para>
     /// Deleting a CMK is a destructive and potentially dangerous operation. When a CMK is
@@ -57,24 +61,28 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// The unique identifier for the customer master key (CMK) to delete.
+        /// The unique identifier of the customer master key (CMK) to delete.
         /// </para>
         ///  
         /// <para>
-        /// To specify this value, use the unique key ID or the Amazon Resource Name (ARN) of
-        /// the CMK. Examples:
+        /// Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Unique key ID: 1234abcd-12ab-34cd-56ef-1234567890ab
+        /// Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Key ARN: arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab
+        /// Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To obtain the unique key ID and key ARN for a given CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
+        /// To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
         /// </para>
         /// </summary>
         public string KeyId

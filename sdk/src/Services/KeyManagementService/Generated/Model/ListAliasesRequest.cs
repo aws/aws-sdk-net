@@ -29,7 +29,17 @@ namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAliases operation.
-    /// Lists all of the key aliases in the account.
+    /// Gets a list of all aliases in the caller's AWS account and region. You cannot list
+    /// aliases in other accounts. For more information about aliases, see <a>CreateAlias</a>.
+    /// 
+    ///  
+    /// <para>
+    /// The response might include several aliases that do not have a <code>TargetKeyId</code>
+    /// field because they are not associated with a CMK. These are predefined aliases that
+    /// are reserved for CMKs managed by AWS services. If an alias is not associated with
+    /// a CMK, the alias does not count against the <a href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html#aliases-limit">alias
+    /// limit</a> for your account.
+    /// </para>
     /// </summary>
     public partial class ListAliasesRequest : AmazonKeyManagementServiceRequest
     {

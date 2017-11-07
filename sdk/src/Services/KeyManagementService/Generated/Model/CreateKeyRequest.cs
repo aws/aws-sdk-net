@@ -29,7 +29,7 @@ namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateKey operation.
-    /// Creates a customer master key (CMK).
+    /// Creates a customer master key (CMK) in the caller's AWS account.
     /// 
     ///  
     /// <para>
@@ -48,7 +48,10 @@ namespace Amazon.KeyManagementService.Model
     /// Key Management Service Concepts</a> in the <i>AWS Key Management Service Developer
     /// Guide</i> 
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> 
+    /// <para>
+    /// You cannot use this operation to create a CMK in a different AWS account.
+    /// </para>
     /// </summary>
     public partial class CreateKeyRequest : AmazonKeyManagementServiceRequest
     {
@@ -207,7 +210,7 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  
         /// <para>
-        /// The policy size limit is 32 KiB (32768 bytes).
+        /// The policy size limit is 32 kilobytes (32768 bytes).
         /// </para>
         /// </summary>
         public string Policy

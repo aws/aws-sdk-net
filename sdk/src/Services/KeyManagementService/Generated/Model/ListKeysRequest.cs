@@ -29,7 +29,7 @@ namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
     /// Container for the parameters to the ListKeys operation.
-    /// Lists the customer master keys.
+    /// Gets a list of all customer master keys (CMKs) in the caller's AWS account and region.
     /// </summary>
     public partial class ListKeysRequest : AmazonKeyManagementServiceRequest
     {

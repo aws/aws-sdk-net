@@ -30,7 +30,7 @@ namespace Amazon.KeyManagementService.Model
     /// <summary>
     /// Container for the parameters to the Decrypt operation.
     /// Decrypts ciphertext. Ciphertext is plaintext that has been previously encrypted by
-    /// using any of the following functions:
+    /// using any of the following operations:
     /// 
     ///  <ul> <li> 
     /// <para>

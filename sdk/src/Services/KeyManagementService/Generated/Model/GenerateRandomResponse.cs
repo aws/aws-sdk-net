@@ -37,7 +37,8 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property Plaintext. 
         /// <para>
-        /// The random byte string.
+        /// The random byte string. When you use the HTTP API or the AWS CLI, the value is Base64-encoded.
+        /// Otherwise, it is not encoded.
         /// </para>
         /// </summary>
         public MemoryStream Plaintext

@@ -254,13 +254,13 @@
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.ListAliasesRequest.Marker</property>
     <min>1</min>
-    <max>320</max>
+    <max>1024</max>
     <pattern>[\u0020-\u00FF]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.ListAliasesResponse.NextMarker</property>
     <min>1</min>
-    <max>320</max>
+    <max>1024</max>
     <pattern>[\u0020-\u00FF]*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -276,13 +276,13 @@
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.ListGrantsRequest.Marker</property>
     <min>1</min>
-    <max>320</max>
+    <max>1024</max>
     <pattern>[\u0020-\u00FF]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.ListGrantsResponse.NextMarker</property>
     <min>1</min>
-    <max>320</max>
+    <max>1024</max>
     <pattern>[\u0020-\u00FF]*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -298,13 +298,13 @@
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.ListKeyPoliciesRequest.Marker</property>
     <min>1</min>
-    <max>320</max>
+    <max>1024</max>
     <pattern>[\u0020-\u00FF]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.ListKeyPoliciesResponse.NextMarker</property>
     <min>1</min>
-    <max>320</max>
+    <max>1024</max>
     <pattern>[\u0020-\u00FF]*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -315,13 +315,13 @@
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.ListKeysRequest.Marker</property>
     <min>1</min>
-    <max>320</max>
+    <max>1024</max>
     <pattern>[\u0020-\u00FF]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.ListKeysResponse.NextMarker</property>
     <min>1</min>
-    <max>320</max>
+    <max>1024</max>
     <pattern>[\u0020-\u00FF]*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -337,13 +337,13 @@
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.ListResourceTagsRequest.Marker</property>
     <min>1</min>
-    <max>320</max>
+    <max>1024</max>
     <pattern>[\u0020-\u00FF]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.ListResourceTagsResponse.NextMarker</property>
     <min>1</min>
-    <max>320</max>
+    <max>1024</max>
     <pattern>[\u0020-\u00FF]*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -354,7 +354,7 @@
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.ListRetirableGrantsRequest.Marker</property>
     <min>1</min>
-    <max>320</max>
+    <max>1024</max>
     <pattern>[\u0020-\u00FF]*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -365,7 +365,7 @@
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.ListRetirableGrantsResponse.NextMarker</property>
     <min>1</min>
-    <max>320</max>
+    <max>1024</max>
     <pattern>[\u0020-\u00FF]*</pattern>
   </property-value-rule>
   <property-value-rule>

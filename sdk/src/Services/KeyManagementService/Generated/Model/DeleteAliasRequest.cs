@@ -29,7 +29,22 @@ namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAlias operation.
-    /// Deletes the specified alias. To map an alias to a different key, call <a>UpdateAlias</a>.
+    /// Deletes the specified alias. You cannot perform this operation on an alias in a different
+    /// AWS account. 
+    /// 
+    ///  
+    /// <para>
+    /// Because an alias is not a property of a CMK, you can delete and change the aliases
+    /// of a CMK without affecting the CMK. Also, aliases do not appear in the response from
+    /// the <a>DescribeKey</a> operation. To get the aliases of all CMKs, use the <a>ListAliases</a>
+    /// operation. 
+    /// </para>
+    ///  
+    /// <para>
+    /// Each CMK can have multiple aliases. To change the alias of a CMK, use <a>DeleteAlias</a>
+    /// to delete the current alias and <a>CreateAlias</a> to create a new alias. To associate
+    /// an existing alias with a different customer master key (CMK), call <a>UpdateAlias</a>.
+    /// </para>
     /// </summary>
     public partial class DeleteAliasRequest : AmazonKeyManagementServiceRequest
     {
@@ -39,7 +54,7 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property AliasName. 
         /// <para>
         /// The alias to be deleted. The name must start with the word "alias" followed by a forward
-        /// slash (alias/). Aliases that begin with "alias/AWS" are reserved.
+        /// slash (alias/). Aliases that begin with "alias/aws" are reserved.
         /// </para>
         /// </summary>
         public string AliasName

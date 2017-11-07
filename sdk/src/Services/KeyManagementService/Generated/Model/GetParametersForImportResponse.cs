@@ -79,7 +79,7 @@ namespace Amazon.KeyManagementService.Model
         /// <para>
         /// The time at which the import token and public key are no longer valid. After this
         /// time, you cannot use them to make an <a>ImportKeyMaterial</a> request and you must
-        /// send another <code>GetParametersForImport</code> request to retrieve new ones.
+        /// send another <code>GetParametersForImport</code> request to get new ones.
         /// </para>
         /// </summary>
         public DateTime ParametersValidTo

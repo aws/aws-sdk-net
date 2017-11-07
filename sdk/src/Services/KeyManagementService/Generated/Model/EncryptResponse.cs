@@ -38,8 +38,8 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property CiphertextBlob. 
         /// <para>
-        /// The encrypted plaintext. If you are using the CLI, the value is Base64 encoded. Otherwise,
-        /// it is not encoded.
+        /// The encrypted plaintext. When you use the HTTP API or the AWS CLI, the value is Base64-encoded.
+        /// Otherwise, it is not encoded.
         /// </para>
         /// </summary>
         public MemoryStream CiphertextBlob

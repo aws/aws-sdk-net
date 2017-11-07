@@ -29,7 +29,8 @@ namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
     /// Container for the parameters to the PutKeyPolicy operation.
-    /// Attaches a key policy to the specified customer master key (CMK).
+    /// Attaches a key policy to the specified customer master key (CMK). You cannot perform
+    /// this operation on a CMK in a different AWS account.
     /// 
     ///  
     /// <para>
@@ -84,21 +85,29 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// A unique identifier for the CMK.
+        /// A unique identifier for the customer master key (CMK).
         /// </para>
         ///  
         /// <para>
-        /// Use the CMK's unique identifier or its Amazon Resource Name (ARN). For example:
+        /// Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Unique ID: 1234abcd-12ab-34cd-56ef-1234567890ab
+        /// Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ARN: arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab
+        /// Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
+        /// </para>
         /// </summary>
         public string KeyId
         {
@@ -141,7 +150,7 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The policy size limit is 32 KiB (32768 bytes).
+        /// The policy size limit is 32 kilobytes (32768 bytes).
         /// </para>
         /// </summary>
         public string Policy
@@ -159,11 +168,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property PolicyName. 
         /// <para>
-        /// The name of the key policy.
-        /// </para>
-        ///  
-        /// <para>
-        /// This value must be <code>default</code>.
+        /// The name of the key policy. The only valid value is <code>default</code>.
         /// </para>
         /// </summary>
         public string PolicyName

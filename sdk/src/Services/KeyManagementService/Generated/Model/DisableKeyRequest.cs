@@ -30,10 +30,15 @@ namespace Amazon.KeyManagementService.Model
     /// <summary>
     /// Container for the parameters to the DisableKey operation.
     /// Sets the state of a customer master key (CMK) to disabled, thereby preventing its
-    /// use for cryptographic operations. For more information about how key state affects
-    /// the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+    /// use for cryptographic operations. You cannot perform this operation on a CMK in a
+    /// different AWS account.
+    /// 
+    ///  
+    /// <para>
+    /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
     /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
     /// Service Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class DisableKeyRequest : AmazonKeyManagementServiceRequest
     {
@@ -42,21 +47,29 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// A unique identifier for the CMK.
+        /// A unique identifier for the customer master key (CMK).
         /// </para>
         ///  
         /// <para>
-        /// Use the CMK's unique identifier or its Amazon Resource Name (ARN). For example:
+        /// Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Unique ID: 1234abcd-12ab-34cd-56ef-1234567890ab
+        /// Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ARN: arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab
+        /// Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
+        /// </para>
         /// </summary>
         public string KeyId
         {

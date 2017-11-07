@@ -77,9 +77,9 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property Truncated. 
         /// <para>
         /// A flag that indicates whether there are more items in the list. When this value is
-        /// true, the list in this response is truncated. To retrieve more items, pass the value
-        /// of the <code>NextMarker</code> element in this response to the <code>Marker</code>
-        /// parameter in a subsequent request.
+        /// true, the list in this response is truncated. To get more items, pass the value of
+        /// the <code>NextMarker</code> element in this response to the <code>Marker</code> parameter
+        /// in a subsequent request.
         /// </para>
         /// </summary>
         public bool Truncated

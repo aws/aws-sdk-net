@@ -57,8 +57,8 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property Plaintext. 
         /// <para>
-        /// Decrypted plaintext data. This value may not be returned if the customer master key
-        /// is not available or if you didn't have permission to use it.
+        /// Decrypted plaintext data. When you use the HTTP API or the AWS CLI, the value is Base64-encoded.
+        /// Otherwise, it is not encoded.
         /// </para>
         /// </summary>
         public MemoryStream Plaintext

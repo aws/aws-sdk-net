@@ -39,7 +39,8 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property CiphertextBlob. 
         /// <para>
-        /// The encrypted data encryption key.
+        /// The encrypted data encryption key. When you use the HTTP API or the AWS CLI, the value
+        /// is Base64-encoded. Otherwise, it is not encoded.
         /// </para>
         /// </summary>
         public MemoryStream CiphertextBlob
@@ -75,8 +76,9 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property Plaintext. 
         /// <para>
-        /// The data encryption key. Use this data key for local encryption and decryption, then
-        /// remove it from memory as soon as possible.
+        /// The data encryption key. When you use the HTTP API or the AWS CLI, the value is Base64-encoded.
+        /// Otherwise, it is not encoded. Use this data key for local encryption and decryption,
+        /// then remove it from memory as soon as possible.
         /// </para>
         /// </summary>
         public MemoryStream Plaintext

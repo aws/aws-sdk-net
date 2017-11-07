@@ -29,7 +29,9 @@ namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
     /// Container for the parameters to the EnableKey operation.
-    /// Marks a key as enabled, thereby permitting its use.
+    /// Sets the state of a customer master key (CMK) to enabled, thereby permitting its use
+    /// for cryptographic operations. You cannot perform this operation on a CMK in a different
+    /// AWS account.
     /// </summary>
     public partial class EnableKeyRequest : AmazonKeyManagementServiceRequest
     {
@@ -38,18 +40,29 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// A unique identifier for the customer master key. This value can be a globally unique
-        /// identifier or the fully specified ARN to a key.
+        /// A unique identifier for the customer master key (CMK).
+        /// </para>
+        ///  
+        /// <para>
+        /// Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+        /// Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+        /// Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
+        /// </para>
         /// </summary>
         public string KeyId
         {

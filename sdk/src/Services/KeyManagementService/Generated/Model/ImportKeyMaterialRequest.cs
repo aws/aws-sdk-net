@@ -29,32 +29,56 @@ namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
     /// Container for the parameters to the ImportKeyMaterial operation.
-    /// Imports key material into an AWS KMS customer master key (CMK) from your existing
-    /// key management infrastructure. For more information about importing key material into
-    /// AWS KMS, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
+    /// Imports key material into an existing AWS KMS customer master key (CMK) that was created
+    /// without key material. You cannot perform this operation on a CMK in a different AWS
+    /// account. For more information about creating CMKs with no key material and then importing
+    /// key material, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
     /// Key Material</a> in the <i>AWS Key Management Service Developer Guide</i>.
     /// 
     ///  
     /// <para>
-    /// You must specify the key ID of the CMK to import the key material into. This CMK's
-    /// <code>Origin</code> must be <code>EXTERNAL</code>. You must also send an import token
-    /// and the encrypted key material. Send the import token that you received in the same
-    /// <a>GetParametersForImport</a> response that contained the public key that you used
-    /// to encrypt the key material. You must also specify whether the key material expires
-    /// and if so, when. When the key material expires, AWS KMS deletes the key material and
-    /// the CMK becomes unusable. To use the CMK again, you can reimport the same key material.
-    /// If you set an expiration date, you can change it only by reimporting the same key
-    /// material and specifying a new expiration date.
+    /// Before using this operation, call <a>GetParametersForImport</a>. Its response includes
+    /// a public key and an import token. Use the public key to encrypt the key material.
+    /// Then, submit the import token from the same <code>GetParametersForImport</code> response.
     /// </para>
     ///  
     /// <para>
-    /// When this operation is successful, the specified CMK's key state changes to <code>Enabled</code>,
-    /// and you can use the CMK.
+    /// When calling this operation, you must specify the following values:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// The key ID or key ARN of a CMK with no key material. Its <code>Origin</code> must
+    /// be <code>EXTERNAL</code>.
     /// </para>
     ///  
     /// <para>
-    /// After you successfully import key material into a CMK, you can reimport the same key
-    /// material into that CMK, but you cannot import different key material.
+    /// To create a CMK with no key material, call <a>CreateKey</a> and set the value of its
+    /// <code>Origin</code> parameter to <code>EXTERNAL</code>. To get the <code>Origin</code>
+    /// of a CMK, call <a>DescribeKey</a>.)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The encrypted key material. To get the public key to encrypt the key material, call
+    /// <a>GetParametersForImport</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The import token that <a>GetParametersForImport</a> returned. This token and the public
+    /// key used to encrypt the key material must have come from the same response.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Whether the key material expires and if so, when. If you set an expiration date, you
+    /// can change it only by reimporting the same key material and specifying a new expiration
+    /// date. If the key material expires, AWS KMS deletes the key material and the CMK becomes
+    /// unusable. To use the CMK again, you must reimport the same key material.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// When this operation is successful, the CMK's key state changes from <code>PendingImport</code>
+    /// to <code>Enabled</code>, and you can use the CMK. After you successfully import key
+    /// material into a CMK, you can reimport the same key material into that CMK, but you
+    /// cannot import different key material.
     /// </para>
     /// </summary>
     public partial class ImportKeyMaterialRequest : AmazonKeyManagementServiceRequest
@@ -134,19 +158,25 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  
         /// <para>
-        /// A valid identifier is the unique key ID or the Amazon Resource Name (ARN) of the CMK.
-        /// Examples:
+        /// Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Unique key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> 
+        /// Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
+        /// </para>
         /// </summary>
         public string KeyId
         {
