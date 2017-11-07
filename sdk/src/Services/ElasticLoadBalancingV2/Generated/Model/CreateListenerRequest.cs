@@ -33,13 +33,14 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// 
     ///  
     /// <para>
-    /// You can create up to 10 listeners per load balancer.
-    /// </para>
-    ///  
-    /// <para>
     /// To update a listener, use <a>ModifyListener</a>. When you are finished with a listener,
     /// you can delete it using <a>DeleteListener</a>. If you are finished with both the listener
     /// and the load balancer, you can delete them both using <a>DeleteLoadBalancer</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// This operation is idempotent, which means that it completes at most one time. If you
+    /// attempt to create multiple listeners with the same settings, each call succeeds.
     /// </para>
     ///  
     /// <para>
