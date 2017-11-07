@@ -32,6 +32,11 @@ namespace Amazon.Organizations.Model
     /// Lists all of the OUs or accounts that are contained in the specified parent OU or
     /// root. This operation, along with <a>ListParents</a> enables you to traverse the tree
     /// structure that makes up this root.
+    /// 
+    ///  
+    /// <para>
+    /// This operation can be called only from the organization's master account.
+    /// </para>
     /// </summary>
     public partial class ListChildrenRequest : AmazonOrganizationsRequest
     {

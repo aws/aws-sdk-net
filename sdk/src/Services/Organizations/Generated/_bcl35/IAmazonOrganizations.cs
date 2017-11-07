@@ -973,12 +973,16 @@ namespace Amazon.Organizations
         /// <para>
         /// The user in the master account who calls this API must also have the <code>iam:CreateRole</code>
         /// permission because AWS Organizations preconfigures the new member account with a role
-        /// (named <code>OrganizationAccountAccessRole</code> by default) that grants users in
-        /// the master account administrator permissions in the new member account. Principals
-        /// in the master account can assume the role. AWS Organizations clones the company name
-        /// and address information for the new account from the organization's master account.
+        /// (named <code>OrganizationAccountAccessRole</code>) that grants users in the master
+        /// account administrator permissions in the new member account. Principals in the master
+        /// account can assume the role. AWS Organizations clones the company name and address
+        /// information for the new account from the organization's master account.
         /// </para>
-        ///   
+        ///  
+        /// <para>
+        /// This operation can be called only from the organization's master account.
+        /// </para>
+        ///  
         /// <para>
         /// For more information about creating accounts, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_create.html">Creating
         /// an AWS Account in Your Organization</a> in the <i>AWS Organizations User Guide</i>.
@@ -1004,11 +1008,7 @@ namespace Amazon.Organizations
         /// for an account, see <a href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html">Granting
         /// Access to Your Billing Information and Tools</a>.
         /// </para>
-        ///  </note> 
-        /// <para>
-        /// This operation can be called only from the organization's master account.
-        /// </para>
-        ///  <important> 
+        ///  </note> <important> 
         /// <para>
         /// If you get an exception that indicates that you exceeded your account limits for the
         /// organization or that you can"t add an account because your organization is still initializing,
@@ -5386,6 +5386,11 @@ namespace Amazon.Organizations
         /// that are not in any OU. If you specify an OU, you get a list of all the accounts in
         /// only that OU, and not in any child OUs. To get a list of all accounts in the organization,
         /// use the <a>ListAccounts</a> operation.
+        /// 
+        ///  
+        /// <para>
+        /// This operation can be called only from the organization's master account.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccountsForParent service method.</param>
         /// 
@@ -5531,6 +5536,11 @@ namespace Amazon.Organizations
         /// Lists all of the OUs or accounts that are contained in the specified parent OU or
         /// root. This operation, along with <a>ListParents</a> enables you to traverse the tree
         /// structure that makes up this root.
+        /// 
+        ///  
+        /// <para>
+        /// This operation can be called only from the organization's master account.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListChildren service method.</param>
         /// 

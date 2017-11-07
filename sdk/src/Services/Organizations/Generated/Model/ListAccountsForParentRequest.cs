@@ -34,6 +34,11 @@ namespace Amazon.Organizations.Model
     /// that are not in any OU. If you specify an OU, you get a list of all the accounts in
     /// only that OU, and not in any child OUs. To get a list of all accounts in the organization,
     /// use the <a>ListAccounts</a> operation.
+    /// 
+    ///  
+    /// <para>
+    /// This operation can be called only from the organization's master account.
+    /// </para>
     /// </summary>
     public partial class ListAccountsForParentRequest : AmazonOrganizationsRequest
     {
