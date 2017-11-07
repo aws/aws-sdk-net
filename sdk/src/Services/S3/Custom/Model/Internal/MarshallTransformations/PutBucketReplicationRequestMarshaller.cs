@@ -80,6 +80,20 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         {
                             xmlWriter.WriteElementString("Status", "", S3Transforms.ToXmlStringValue(rule.Status.ToString()));
                         }
+                        if (rule.IsSetSourceSelectionCriteria())
+                        {
+                            xmlWriter.WriteStartElement("SourceSelectionCriteria");
+                            if (rule.SourceSelectionCriteria.IsSetSseKmsEncryptedObjects())
+                            {
+                                xmlWriter.WriteStartElement("SseKmsEncryptedObjects");
+                                if (rule.SourceSelectionCriteria.SseKmsEncryptedObjects.IsSetSseKmsEncryptedObjectsStatus())
+                                {
+                                    xmlWriter.WriteElementString("Status", "", rule.SourceSelectionCriteria.SseKmsEncryptedObjects.SseKmsEncryptedObjectsStatus);
+                                }
+                                xmlWriter.WriteEndElement();
+                            }
+                            xmlWriter.WriteEndElement();
+                        }
                         if (rule.IsSetDestination())
                         {
                             xmlWriter.WriteStartElement("Destination", "");
@@ -90,6 +104,28 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                             if (rule.Destination.IsSetStorageClass())
                             {
                                 xmlWriter.WriteElementString("StorageClass", "", rule.Destination.StorageClass);
+                            }
+                            if (rule.Destination.IsSetAccountId())
+                            {
+                                xmlWriter.WriteElementString("Account", "", S3Transforms.ToXmlStringValue(rule.Destination.AccountId));
+                            }
+                            if (rule.Destination.IsSetEncryptionConfiguration())
+                            {
+                                xmlWriter.WriteStartElement("EncryptionConfiguration");
+                                if (rule.Destination.EncryptionConfiguration.isSetReplicaKmsKeyID())
+                                {
+                                    xmlWriter.WriteElementString("ReplicaKmsKeyID", "", S3Transforms.ToXmlStringValue(rule.Destination.EncryptionConfiguration.ReplicaKmsKeyID));
+                                }
+                                xmlWriter.WriteEndElement();
+                            }
+                            if (rule.Destination.IsSetAccessControlTranslation())
+                            {
+                                xmlWriter.WriteStartElement("AccessControlTranslation");
+                                if (rule.Destination.AccessControlTranslation.IsSetOwner())
+                                {
+                                    xmlWriter.WriteElementString("Owner", "", S3Transforms.ToXmlStringValue(rule.Destination.AccessControlTranslation.Owner));
+                                }
+                                xmlWriter.WriteEndElement();
                             }
                             xmlWriter.WriteEndElement();
                         }

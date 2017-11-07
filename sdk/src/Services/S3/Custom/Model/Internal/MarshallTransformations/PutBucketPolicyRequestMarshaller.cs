@@ -43,7 +43,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Headers.Add(HeaderKeys.ContentMD5Header, S3Transforms.ToStringValue(putBucketPolicyRequest.ContentMD5));
             if (!request.Headers.ContainsKey(HeaderKeys.ContentTypeHeader))
                 request.Headers.Add(HeaderKeys.ContentTypeHeader, "text/plain");
-
+            if (putBucketPolicyRequest.IsSetConfirmRemoveSelfBucketAccess())
+                request.Headers.Add(HeaderKeys.ConfirmSelfBucketAccess, putBucketPolicyRequest.ConfirmRemoveSelfBucketAccess.ToString().ToLowerInvariant());
             request.ResourcePath = string.Concat("/", S3Transforms.ToStringValue(putBucketPolicyRequest.BucketName));
 
             request.AddSubResource("policy");

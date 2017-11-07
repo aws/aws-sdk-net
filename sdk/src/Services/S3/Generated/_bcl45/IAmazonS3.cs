@@ -359,6 +359,31 @@ namespace Amazon.S3
 
         #endregion
         
+        #region  DeleteBucketEncryption
+
+
+        /// <summary>
+        /// Deletes the server-side encryption configuration from the bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketEncryption service method.</param>
+        /// 
+        /// <returns>The response from the DeleteBucketEncryption service method, as returned by S3.</returns>
+        DeleteBucketEncryptionResponse DeleteBucketEncryption(DeleteBucketEncryptionRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBucketEncryption operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketEncryption operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteBucketEncryptionResponse> DeleteBucketEncryptionAsync(DeleteBucketEncryptionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteBucketInventoryConfiguration
 
 
@@ -896,6 +921,31 @@ namespace Amazon.S3
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<GetBucketAnalyticsConfigurationResponse> GetBucketAnalyticsConfigurationAsync(GetBucketAnalyticsConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetBucketEncryption
+
+
+        /// <summary>
+        /// Returns the server-side encryption configuration of a bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketEncryption service method.</param>
+        /// 
+        /// <returns>The response from the GetBucketEncryption service method, as returned by S3.</returns>
+        GetBucketEncryptionResponse GetBucketEncryption(GetBucketEncryptionRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBucketEncryption operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketEncryption operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetBucketEncryptionResponse> GetBucketEncryptionAsync(GetBucketEncryptionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2200,6 +2250,32 @@ namespace Amazon.S3
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<PutBucketAnalyticsConfigurationResponse> PutBucketAnalyticsConfigurationAsync(PutBucketAnalyticsConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutBucketEncryption
+
+
+        /// <summary>
+        /// Creates a new server-side encryption configuration (or replaces an existing one, if
+        /// present).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketEncryption service method.</param>
+        /// 
+        /// <returns>The response from the PutBucketEncryption service method, as returned by S3.</returns>
+        PutBucketEncryptionResponse PutBucketEncryption(PutBucketEncryptionRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutBucketEncryption operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketEncryption operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<PutBucketEncryptionResponse> PutBucketEncryptionAsync(PutBucketEncryptionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

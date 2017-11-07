@@ -27,7 +27,9 @@ namespace Amazon.S3.Model
     {
         private string bucketArn;
         private S3StorageClass storageClass;
-
+        private EncryptionConfiguration encryptionConfiguration;
+        private AccessControlTranslation accessControlTranslation;
+        private string accountId;
         /// <summary>
         /// The Amazon Resource Name (ARN) of the bucket to which replicas are sent.
         /// </summary>
@@ -61,6 +63,49 @@ namespace Amazon.S3.Model
         internal bool IsSetStorageClass()
         {
             return this.storageClass != null;
+        }
+        /// <summary>
+        /// Account ID of the destination bucket. Currently this is only being verified if Access Control Translation is enabled.
+        /// </summary>
+        public string AccountId
+        {
+            get { return this.accountId; }
+            set { this.accountId = value; }
+        }
+        // Check to see if AccountId property is set
+        public bool IsSetAccountId()
+        {
+            return !(string.IsNullOrEmpty(this.accountId));
+        }
+
+        /// <summary>
+        /// Container for information regarding the access control for replicas.
+        /// </summary>
+        public AccessControlTranslation AccessControlTranslation
+        {
+            get { return this.accessControlTranslation; }
+            set { this.accessControlTranslation = value; }
+        }
+
+        // Check to see if AccessControlTranslation property is set
+        public bool IsSetAccessControlTranslation()
+        {
+            return this.accessControlTranslation != null;
+        }
+
+        /// <summary>
+        /// Container for information regarding encryption based configuration for replicas.
+        /// </summary>
+        public EncryptionConfiguration EncryptionConfiguration
+        {
+            get { return this.encryptionConfiguration; }
+            set { this.encryptionConfiguration = value; }
+        }
+
+        // Check to see if EncryptionConfiguration property is set
+        public bool IsSetEncryptionConfiguration()
+        {
+            return this.encryptionConfiguration != null;
         }
     }
 }

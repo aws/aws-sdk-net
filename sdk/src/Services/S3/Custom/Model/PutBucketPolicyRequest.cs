@@ -29,6 +29,7 @@ namespace Amazon.S3.Model
     /// </summary>
     public partial class PutBucketPolicyRequest : AmazonWebServiceRequest
     {
+        private bool confirmRemoveSelfBucketAccess;
         /// <summary>
         /// The name of the bucket.
         /// </summary>
@@ -65,7 +66,21 @@ namespace Amazon.S3.Model
         {
             return this.Policy != null;
         }
-        
+        /// <summary>
+        /// Set this parameter to true to confirm that you want to remove your 
+        /// permissions to change this bucket policy in the future.
+        /// </summary>
+        public bool ConfirmRemoveSelfBucketAccess
+        {
+            get { return this.confirmRemoveSelfBucketAccess; }
+            set { this.confirmRemoveSelfBucketAccess = value; }
+        }
+        // Check to see if ConfirmRemoveSelfBucketAccess property is set
+        internal bool IsSetConfirmRemoveSelfBucketAccess()
+        {
+            return this.ConfirmRemoveSelfBucketAccess != null;
+        }
+
         /// <summary>
         /// Overriden to turn off sending SHA256 header.
         /// </summary>

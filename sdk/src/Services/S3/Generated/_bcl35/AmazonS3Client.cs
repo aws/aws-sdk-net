@@ -672,6 +672,56 @@ namespace Amazon.S3
 
         #endregion
         
+        #region  DeleteBucketEncryption
+
+        /// <summary>
+        /// Deletes the server-side encryption configuration from the bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketEncryption service method.</param>
+        /// 
+        /// <returns>The response from the DeleteBucketEncryption service method, as returned by S3.</returns>
+        public virtual DeleteBucketEncryptionResponse DeleteBucketEncryption(DeleteBucketEncryptionRequest request)
+        {
+            var marshaller = new DeleteBucketEncryptionRequestMarshaller();
+            var unmarshaller = DeleteBucketEncryptionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteBucketEncryptionRequest,DeleteBucketEncryptionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBucketEncryption operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketEncryption operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBucketEncryption
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginDeleteBucketEncryption(DeleteBucketEncryptionRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteBucketEncryptionRequestMarshaller();
+            var unmarshaller = DeleteBucketEncryptionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteBucketEncryptionRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteBucketEncryption operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBucketEncryption.</param>
+        /// 
+        /// <returns>Returns a  DeleteBucketEncryptionResult from S3.</returns>
+        public virtual DeleteBucketEncryptionResponse EndDeleteBucketEncryption(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteBucketEncryptionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteBucketInventoryConfiguration
 
         /// <summary>
@@ -1509,6 +1559,56 @@ namespace Amazon.S3
         public virtual GetBucketAnalyticsConfigurationResponse EndGetBucketAnalyticsConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<GetBucketAnalyticsConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetBucketEncryption
+
+        /// <summary>
+        /// Returns the server-side encryption configuration of a bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketEncryption service method.</param>
+        /// 
+        /// <returns>The response from the GetBucketEncryption service method, as returned by S3.</returns>
+        public virtual GetBucketEncryptionResponse GetBucketEncryption(GetBucketEncryptionRequest request)
+        {
+            var marshaller = new GetBucketEncryptionRequestMarshaller();
+            var unmarshaller = GetBucketEncryptionResponseUnmarshaller.Instance;
+
+            return Invoke<GetBucketEncryptionRequest,GetBucketEncryptionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBucketEncryption operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketEncryption operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketEncryption
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginGetBucketEncryption(GetBucketEncryptionRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetBucketEncryptionRequestMarshaller();
+            var unmarshaller = GetBucketEncryptionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetBucketEncryptionRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetBucketEncryption operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketEncryption.</param>
+        /// 
+        /// <returns>Returns a  GetBucketEncryptionResult from S3.</returns>
+        public virtual GetBucketEncryptionResponse EndGetBucketEncryption(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetBucketEncryptionResponse>(asyncResult);
         }
 
         #endregion
@@ -3500,6 +3600,57 @@ namespace Amazon.S3
         public virtual PutBucketAnalyticsConfigurationResponse EndPutBucketAnalyticsConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<PutBucketAnalyticsConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutBucketEncryption
+
+        /// <summary>
+        /// Creates a new server-side encryption configuration (or replaces an existing one, if
+        /// present).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketEncryption service method.</param>
+        /// 
+        /// <returns>The response from the PutBucketEncryption service method, as returned by S3.</returns>
+        public virtual PutBucketEncryptionResponse PutBucketEncryption(PutBucketEncryptionRequest request)
+        {
+            var marshaller = new PutBucketEncryptionRequestMarshaller();
+            var unmarshaller = PutBucketEncryptionResponseUnmarshaller.Instance;
+
+            return Invoke<PutBucketEncryptionRequest,PutBucketEncryptionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutBucketEncryption operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketEncryption operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucketEncryption
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginPutBucketEncryption(PutBucketEncryptionRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new PutBucketEncryptionRequestMarshaller();
+            var unmarshaller = PutBucketEncryptionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<PutBucketEncryptionRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutBucketEncryption operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketEncryption.</param>
+        /// 
+        /// <returns>Returns a  PutBucketEncryptionResult from S3.</returns>
+        public virtual PutBucketEncryptionResponse EndPutBucketEncryption(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutBucketEncryptionResponse>(asyncResult);
         }
 
         #endregion

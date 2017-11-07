@@ -27,7 +27,7 @@ namespace Amazon.S3.Model
         private string bucketName;
         private string prefix;
         private InventoryFormat inventoryFormat;
-
+        private InventoryEncryption inventoryEncryption;
         /// <summary>
         /// The ID of the account that owns the destination bucket.
         /// </summary>
@@ -87,5 +87,21 @@ namespace Amazon.S3.Model
         {
             return this.inventoryFormat != null;
         }
+
+        /// <summary>
+        /// Contains the type of server-side encryption used to encrypt the inventory results.
+        /// </summary>
+        public InventoryEncryption InventoryEncryption
+        {
+            get { return this.inventoryEncryption; }
+            set { this.inventoryEncryption = value; }
+        }
+
+        // Check to see if InventoryEncryption property is set
+        internal bool IsSetInventoryEncryption()
+        {
+            return this.inventoryEncryption != null;
+        }
+
     }
 }

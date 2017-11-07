@@ -85,6 +85,26 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                 {
                                     xmlWriter.WriteElementString("Prefix", "http://s3.amazonaws.com/doc/2006-03-01/", S3Transforms.ToXmlStringValue(inventoryS3BucketDestination.Prefix));
                                 }
+                                if (inventoryS3BucketDestination.IsSetInventoryEncryption())
+                                {
+                                    xmlWriter.WriteStartElement("Encryption", "http://s3.amazonaws.com/doc/2006-03-01/");
+                                    var inventoryEncryption = inventoryS3BucketDestination.InventoryEncryption;
+                                    if (inventoryEncryption.IsSetSSEKMS())
+                                    {
+                                        xmlWriter.WriteStartElement("SSE-KMS", "http://s3.amazonaws.com/doc/2006-03-01/");
+                                        if (inventoryEncryption.SSEKMS.IsSetKeyId())
+                                        {
+                                            xmlWriter.WriteElementString("KeyId", "http://s3.amazonaws.com/doc/2006-03-01/", S3Transforms.ToXmlStringValue(inventoryEncryption.SSEKMS.KeyId));
+                                        }
+                                        xmlWriter.WriteEndElement();
+                                    }
+                                    if (inventoryEncryption.IsSetSSES3())
+                                    {
+                                        xmlWriter.WriteStartElement("SSE-S3", "http://s3.amazonaws.com/doc/2006-03-01/");
+                                        xmlWriter.WriteEndElement();
+                                    }
+                                    xmlWriter.WriteEndElement();
+                                }
                                 xmlWriter.WriteEndElement();
                             }
                             xmlWriter.WriteEndElement();

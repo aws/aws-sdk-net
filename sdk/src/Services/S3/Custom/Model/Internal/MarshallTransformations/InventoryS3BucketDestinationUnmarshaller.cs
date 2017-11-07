@@ -61,6 +61,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
                         continue;
                     }
+                    if (context.TestExpression("Encryption", targetDepth))
+                    {
+                        condition.InventoryEncryption = InventoryEncryptionUnmarshaller.Instance.Unmarshall(context);
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

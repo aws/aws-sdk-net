@@ -58,6 +58,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
                         continue;
                     }
+                    if (context.TestExpression("SourceSelectionCriteria", targetDepth))
+                    {
+                        rule.SourceSelectionCriteria = SourceSelectionCriteriaUnmarshaller.Instance.Unmarshall(context);
+
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

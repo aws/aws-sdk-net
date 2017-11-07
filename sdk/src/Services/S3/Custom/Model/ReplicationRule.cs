@@ -30,6 +30,7 @@ namespace Amazon.S3.Model
         private string prefix;
         private ReplicationRuleStatus status;
         private ReplicationDestination destination;
+        private SourceSelectionCriteria sourceSelectionCriteria;
 
         /// <summary>
         /// Unique identifier for the rule. The value cannot be longer than 255 characters.
@@ -101,6 +102,20 @@ namespace Amazon.S3.Model
         internal bool IsSetDestination()
         {
             return this.destination != null;
+        }
+
+        /// <summary>
+        /// Container for filters that define which source objects should be replicated.
+        /// </summary>
+        public SourceSelectionCriteria SourceSelectionCriteria
+        {
+            get { return this.sourceSelectionCriteria; }
+            set { this.sourceSelectionCriteria = value; }
+        }
+        // Check to see if SourceSelectionCriteria property is set
+        internal bool IsSetSourceSelectionCriteria()
+        {
+            return this.sourceSelectionCriteria != null;
         }
     }
 }

@@ -47,6 +47,24 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
                         continue;
                     }
+                    if (context.TestExpression("Account", targetDepth))
+                    {
+                        destination.AccountId = StringUnmarshaller.GetInstance().Unmarshall(context);
+
+                        continue;
+                    }
+                    if (context.TestExpression("AccessControlTranslation", targetDepth))
+                    {
+                        destination.AccessControlTranslation = AccessControlTranslationUnmarshaller.Instance.Unmarshall(context);
+
+                        continue;
+                    }
+                    if (context.TestExpression("EncryptionConfiguration", targetDepth))
+                    {
+                        destination.EncryptionConfiguration = EncryptionConfigurationUnmarshaller.Instance.Unmarshall(context);
+
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

@@ -30,6 +30,7 @@ namespace Amazon.Util
         public const string IfMatchHeader = "If-Match";
         public const string IfNoneMatchHeader = "If-None-Match";
         public const string IfUnmodifiedSinceHeader = "If-Unmodified-Since";
+        public const string ConfirmSelfBucketAccess = "x-amz-confirm-remove-self-bucket-access";
         public const string ContentRangeHeader = "Content-Range";
         public const string ContentTypeHeader = "Content-Type";
         public const string ContentLengthHeader = "Content-Length";

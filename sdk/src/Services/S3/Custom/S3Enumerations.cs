@@ -1099,6 +1099,10 @@ namespace Amazon.S3
         public static readonly InventoryOptionalField ReplicationStatus = new InventoryOptionalField("ReplicationStatus");
 
         /// <summary>
+        ///  InventoryOptionalField for EncryptionStatus
+        /// </summary>
+        public static readonly InventoryOptionalField EncryptionStatus = new InventoryOptionalField("EncryptionStatus");
+        /// <summary>
         /// Construct instance of InventoryOptionalField.
         /// </summary>
         /// <param name="value"></param>
@@ -1450,4 +1454,73 @@ namespace Amazon.S3
             return FindValue<RequestCharged>(value);
         }
     }
+
+    /// <summary>
+    /// The override value for the owner of the replica object.
+    /// </summary>
+    public sealed class OwnerOverride : ConstantClass
+    {
+        /// <summary>
+        /// Overrides destination bucket's owner.
+        /// </summary>
+        public static readonly OwnerOverride Destination = new OwnerOverride("Destination");
+        
+        public OwnerOverride(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the OwnerOverride instance for the string value
+        /// </summary>
+        public static OwnerOverride FindValue(string value)
+        {
+            return FindValue<OwnerOverride>(value);
+        }
+
+        /// <summary>
+        ///  converts the string to OwnerOverride instance
+        /// </summary>
+        public static implicit operator OwnerOverride(string value)
+        {
+            return FindValue(value);
+        }
+    }
+    /// <summary>
+    /// The replication for KMS encrypted S3 objects is disabled if status is not Enabled.
+    /// </summary>
+    public sealed class SseKmsEncryptedObjectsStatus : ConstantClass
+    {
+        /// <summary>
+        /// The replication for KMS encrypted S3 objects is enabled.
+        /// </summary>
+        public static readonly SseKmsEncryptedObjectsStatus Enabled = new SseKmsEncryptedObjectsStatus("Enabled");
+        /// <summary>
+        /// The replication for KMS encrypted S3 objects is disabled.
+        /// </summary>
+        public static readonly SseKmsEncryptedObjectsStatus Disabled = new SseKmsEncryptedObjectsStatus("Disabled");
+        
+        public SseKmsEncryptedObjectsStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the SseKmsEncryptedObjectsStatus instance for the string value
+        /// </summary>
+        public static SseKmsEncryptedObjectsStatus FindValue(string value)
+        {
+            return FindValue<SseKmsEncryptedObjectsStatus>(value);
+        }
+
+        /// <summary>
+        ///  converts the string to SseKmsEncryptedObjectsStatus instance
+        /// </summary>
+        public static implicit operator SseKmsEncryptedObjectsStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
 }
