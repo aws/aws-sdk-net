@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StepFunctions.Model
 {
     /// <summary>
-    /// 
+    /// Contains details about an activity which successfully terminated during an execution.
     /// </summary>
     public partial class ActivitySucceededEventDetails
     {

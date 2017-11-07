@@ -45,7 +45,7 @@ namespace Amazon.StepFunctions.Model
         /// <para>
         /// The maximum number of results that will be returned per call. <code>nextToken</code>
         /// can be used to obtain further pages of results. The default is 100 and the maximum
-        /// allowed page size is 1000.
+        /// allowed page size is 100. A value of 0 means to use the default.
         /// </para>
         ///  
         /// <para>

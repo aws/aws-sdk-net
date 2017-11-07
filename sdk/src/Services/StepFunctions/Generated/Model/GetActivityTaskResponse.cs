@@ -38,7 +38,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property Input. 
         /// <para>
-        /// The JSON input data for the task.
+        /// The string that contains the JSON input data for the task.
         /// </para>
         /// </summary>
         public string Input

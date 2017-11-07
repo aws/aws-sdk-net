@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StepFunctions.Model
 {
     /// <summary>
-    /// 
+    /// Contains details about the events of an execution.
     /// </summary>
     public partial class HistoryEvent
     {
@@ -87,7 +87,10 @@ namespace Amazon.StepFunctions.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ActivityScheduleFailedEventDetails.
+        /// Gets and sets the property ActivityScheduleFailedEventDetails. 
+        /// <para>
+        /// Contains details about an activity schedule event which failed during an execution.
+        /// </para>
         /// </summary>
         public ActivityScheduleFailedEventDetails ActivityScheduleFailedEventDetails
         {
@@ -285,7 +288,10 @@ namespace Amazon.StepFunctions.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LambdaFunctionStartFailedEventDetails.
+        /// Gets and sets the property LambdaFunctionStartFailedEventDetails. 
+        /// <para>
+        /// Contains details about a lambda function which failed to start during an execution.
+        /// </para>
         /// </summary>
         public LambdaFunctionStartFailedEventDetails LambdaFunctionStartFailedEventDetails
         {
@@ -300,7 +306,10 @@ namespace Amazon.StepFunctions.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LambdaFunctionSucceededEventDetails.
+        /// Gets and sets the property LambdaFunctionSucceededEventDetails. 
+        /// <para>
+        /// Contains details about a lambda function which terminated successfully during an execution.
+        /// </para>
         /// </summary>
         public LambdaFunctionSucceededEventDetails LambdaFunctionSucceededEventDetails
         {
@@ -380,7 +389,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property Timestamp. 
         /// <para>
-        /// The date the event occured.
+        /// The date the event occurred.
         /// </para>
         /// </summary>
         public DateTime Timestamp

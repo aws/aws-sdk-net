@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StepFunctions.Model
 {
     /// <summary>
-    /// 
+    /// Contains details about the start of an activity during an execution.
     /// </summary>
     public partial class ActivityStartedEventDetails
     {

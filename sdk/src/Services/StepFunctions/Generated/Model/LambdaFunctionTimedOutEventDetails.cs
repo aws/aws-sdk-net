@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StepFunctions.Model
 {
     /// <summary>
-    /// 
+    /// Contains details about a lambda function timeout which occurred during an execution.
     /// </summary>
     public partial class LambdaFunctionTimedOutEventDetails
     {

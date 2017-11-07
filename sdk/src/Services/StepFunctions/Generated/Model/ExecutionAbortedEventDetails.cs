@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StepFunctions.Model
 {
     /// <summary>
-    /// 
+    /// Contains details about an abort of an execution.
     /// </summary>
     public partial class ExecutionAbortedEventDetails
     {

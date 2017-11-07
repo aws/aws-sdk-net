@@ -80,6 +80,31 @@ namespace Amazon.StepFunctions.Model
         /// <para>
         /// The name of the state machine.
         /// </para>
+        ///  
+        /// <para>
+        /// A name must <i>not</i> contain:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// whitespace
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// brackets <code>&lt; &gt; { } [ ]</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// wildcard characters <code>? *</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Name
         {
@@ -96,7 +121,8 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the IAM role used for executing this state machine.
+        /// The Amazon Resource Name (ARN) of the IAM role used when creating this state machine.
+        /// (The IAM role maintains security by granting Step Functions access to AWS resources.)
         /// </para>
         /// </summary>
         public string RoleArn

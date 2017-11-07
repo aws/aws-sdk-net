@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StepFunctions.Model
 {
     /// <summary>
-    /// 
+    /// Contains details about a failed lambda function schedule event which occurred during
+    /// an execution.
     /// </summary>
     public partial class LambdaFunctionScheduleFailedEventDetails
     {

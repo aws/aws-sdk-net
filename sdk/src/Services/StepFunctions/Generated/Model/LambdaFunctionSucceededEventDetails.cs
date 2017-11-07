@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StepFunctions.Model
 {
     /// <summary>
-    /// 
+    /// Contains details about a lambda function which successfully terminated during an execution.
     /// </summary>
     public partial class LambdaFunctionSucceededEventDetails
     {

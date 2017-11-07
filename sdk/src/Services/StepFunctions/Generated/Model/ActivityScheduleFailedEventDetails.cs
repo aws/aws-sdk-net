@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StepFunctions.Model
 {
     /// <summary>
-    /// 
+    /// Contains details about an activity schedule failure which occurred during an execution.
     /// </summary>
     public partial class ActivityScheduleFailedEventDetails
     {

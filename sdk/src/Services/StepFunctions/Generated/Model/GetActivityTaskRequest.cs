@@ -29,13 +29,12 @@ namespace Amazon.StepFunctions.Model
 {
     /// <summary>
     /// Container for the parameters to the GetActivityTask operation.
-    /// Used by workers to retrieve a task (with the specified activity ARN) scheduled for
-    /// execution by a running state machine. This initiates a long poll, where the service
-    /// holds the HTTP connection open and responds as soon as a task becomes available (i.e.
-    /// an execution of a task of this type is needed.) The maximum time the service holds
-    /// on to the request before responding is 60 seconds. If no task is available within
-    /// 60 seconds, the poll will return an empty result, that is, the <code>taskToken</code>
-    /// returned is an empty string.
+    /// Used by workers to retrieve a task (with the specified activity ARN) which has been
+    /// scheduled for execution by a running state machine. This initiates a long poll, where
+    /// the service holds the HTTP connection open and responds as soon as a task becomes
+    /// available (i.e. an execution of a task of this type is needed.) The maximum time the
+    /// service holds on to the request before responding is 60 seconds. If no task is available
+    /// within 60 seconds, the poll will return a <code>taskToken</code> with a null string.
     /// 
     ///  <important> 
     /// <para>
@@ -52,7 +51,8 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property ActivityArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the activity to retrieve tasks from.
+        /// The Amazon Resource Name (ARN) of the activity to retrieve tasks from (assigned when
+        /// you create the task using <a>CreateActivity</a>.)
         /// </para>
         /// </summary>
         public string ActivityArn
@@ -70,7 +70,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property WorkerName. 
         /// <para>
-        /// An arbitrary name may be provided in order to identify the worker that the task is
+        /// You can provide an arbitrary name in order to identify the worker that the task is
         /// assigned to. This name will be used when it is logged in the execution history.
         /// </para>
         /// </summary>

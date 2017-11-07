@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StepFunctions.Model
 {
     /// <summary>
-    /// 
+    /// Contains details about a state entered during an execution.
     /// </summary>
     public partial class StateEnteredEventDetails
     {
@@ -38,7 +38,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property Input. 
         /// <para>
-        /// The JSON input data to the state.
+        /// The string that contains the JSON input data for the state.
         /// </para>
         /// </summary>
         public string Input

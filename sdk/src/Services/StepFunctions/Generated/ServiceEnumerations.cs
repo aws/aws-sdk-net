@@ -177,6 +177,10 @@ namespace Amazon.StepFunctions
         /// </summary>
         public static readonly HistoryEventType LambdaFunctionTimedOut = new HistoryEventType("LambdaFunctionTimedOut");
         /// <summary>
+        /// Constant ParallelStateAborted for HistoryEventType
+        /// </summary>
+        public static readonly HistoryEventType ParallelStateAborted = new HistoryEventType("ParallelStateAborted");
+        /// <summary>
         /// Constant ParallelStateEntered for HistoryEventType
         /// </summary>
         public static readonly HistoryEventType ParallelStateEntered = new HistoryEventType("ParallelStateEntered");
@@ -184,6 +188,18 @@ namespace Amazon.StepFunctions
         /// Constant ParallelStateExited for HistoryEventType
         /// </summary>
         public static readonly HistoryEventType ParallelStateExited = new HistoryEventType("ParallelStateExited");
+        /// <summary>
+        /// Constant ParallelStateFailed for HistoryEventType
+        /// </summary>
+        public static readonly HistoryEventType ParallelStateFailed = new HistoryEventType("ParallelStateFailed");
+        /// <summary>
+        /// Constant ParallelStateStarted for HistoryEventType
+        /// </summary>
+        public static readonly HistoryEventType ParallelStateStarted = new HistoryEventType("ParallelStateStarted");
+        /// <summary>
+        /// Constant ParallelStateSucceeded for HistoryEventType
+        /// </summary>
+        public static readonly HistoryEventType ParallelStateSucceeded = new HistoryEventType("ParallelStateSucceeded");
         /// <summary>
         /// Constant PassStateEntered for HistoryEventType
         /// </summary>
@@ -201,6 +217,10 @@ namespace Amazon.StepFunctions
         /// </summary>
         public static readonly HistoryEventType SucceedStateExited = new HistoryEventType("SucceedStateExited");
         /// <summary>
+        /// Constant TaskStateAborted for HistoryEventType
+        /// </summary>
+        public static readonly HistoryEventType TaskStateAborted = new HistoryEventType("TaskStateAborted");
+        /// <summary>
         /// Constant TaskStateEntered for HistoryEventType
         /// </summary>
         public static readonly HistoryEventType TaskStateEntered = new HistoryEventType("TaskStateEntered");
@@ -208,6 +228,10 @@ namespace Amazon.StepFunctions
         /// Constant TaskStateExited for HistoryEventType
         /// </summary>
         public static readonly HistoryEventType TaskStateExited = new HistoryEventType("TaskStateExited");
+        /// <summary>
+        /// Constant WaitStateAborted for HistoryEventType
+        /// </summary>
+        public static readonly HistoryEventType WaitStateAborted = new HistoryEventType("WaitStateAborted");
         /// <summary>
         /// Constant WaitStateEntered for HistoryEventType
         /// </summary>
