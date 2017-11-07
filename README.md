@@ -235,6 +235,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Amazon Pinpoint makes it easy to run targeted campaigns to improve user engagement. Pinpoint helps you understand your users behavior, define who to target, what messages to send, when to deliver them, and tracks the results of the campaign.
 * [AWSSDK.Polly](https://www.nuget.org/packages/AWSSDK.Polly/)
 	* Amazon Polly is a service that turns text into lifelike speech, making it easy to develop applications that use high-quality speech to increase engagement and accessibility.
+* [AWSSDK.Pricing](https://www.nuget.org/packages/AWSSDK.Pricing/)
+	* We launched new service, Price List Service.
 * [AWSSDK.RDS](https://www.nuget.org/packages/AWSSDK.RDS/)
 	* Amazon Relational Database Service (Amazon RDS) is a web service that makes it easy to set up, operate, and scale a relational database in the cloud. It provides cost-efficient and resizable capacity while managing time-consuming database management tasks, freeing you up to focus on your applications and business.
 * [AWSSDK.Redshift](https://www.nuget.org/packages/AWSSDK.Redshift/)

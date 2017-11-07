@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.Pricing.IAmazonPricing.DescribeServices(Amazon.Pricing.Model.DescribeServicesRequest)" />
+            <member name="M:Amazon.Pricing.AmazonPricingClient.DescribeServices(Amazon.Pricing.Model.DescribeServicesRequest)" />
+            <member name="T:Amazon.Pricing.Model.DescribeServicesRequest" />
+            <member name="T:Amazon.Pricing.Model.DescribeServicesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="To retrieve a list of services and service codes"
+                    source=".\AWSSDKDocSamples\Pricing\Pricing.GeneratedSamples.cs"
+                    region="to-retrieve-service-metadata" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Pricing.IAmazonPricing.GetAttributeValues(Amazon.Pricing.Model.GetAttributeValuesRequest)" />
+            <member name="M:Amazon.Pricing.AmazonPricingClient.GetAttributeValues(Amazon.Pricing.Model.GetAttributeValuesRequest)" />
+            <member name="T:Amazon.Pricing.Model.GetAttributeValuesRequest" />
+            <member name="T:Amazon.Pricing.Model.GetAttributeValuesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation returns a list of values available for the given attribute.
+                </para>
+                <code
+                    title="To retrieve a list of attribute values"
+                    source=".\AWSSDKDocSamples\Pricing\Pricing.GeneratedSamples.cs"
+                    region="to-retreive-attribute-values" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Pricing.IAmazonPricing.GetProducts(Amazon.Pricing.Model.GetProductsRequest)" />
+            <member name="M:Amazon.Pricing.AmazonPricingClient.GetProducts(Amazon.Pricing.Model.GetProductsRequest)" />
+            <member name="T:Amazon.Pricing.Model.GetProductsRequest" />
+            <member name="T:Amazon.Pricing.Model.GetProductsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation returns a list of products that match the given criteria.
+                </para>
+                <code
+                    title="To retrieve a list of products"
+                    source=".\AWSSDKDocSamples\Pricing\Pricing.GeneratedSamples.cs"
+                    region="to-retrieve-available products" />
+            </example>
+        </value>
+    </doc>
+</docs>

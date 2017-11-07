@@ -107,6 +107,7 @@
     <ProjectReference Include="..\..\src\Services\Organizations\AWSSDK.Organizations.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\Pinpoint\AWSSDK.Pinpoint.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\Polly\AWSSDK.Polly.Net45.csproj"/>
+    <ProjectReference Include="..\..\src\Services\Pricing\AWSSDK.Pricing.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\RDS\AWSSDK.RDS.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\Redshift\AWSSDK.Redshift.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\Rekognition\AWSSDK.Rekognition.Net45.csproj"/>

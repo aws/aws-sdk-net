@@ -376,6 +376,10 @@
       <Project>{4846B39F-6A15-4FC7-B7D5-6A4FA76D09DC}</Project>
       <Name>AWSSDK.Polly.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/Pricing/AWSSDK.Pricing.CodeAnalysis.csproj">
+      <Project>{9329CB2C-3AFF-4AFC-BDE5-638A24A81952}</Project>
+      <Name>AWSSDK.Pricing.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/RDS/AWSSDK.RDS.CodeAnalysis.csproj">
       <Project>{B3C3F105-ECCC-43C7-BD16-11E15487264C}</Project>
       <Name>AWSSDK.RDS.CodeAnalysis</Name>
