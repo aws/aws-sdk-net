@@ -2485,6 +2485,30 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType C4Xlarge = new InstanceType("c4.xlarge");
         /// <summary>
+        /// Constant C518xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C518xlarge = new InstanceType("c5.18xlarge");
+        /// <summary>
+        /// Constant C52xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C52xlarge = new InstanceType("c5.2xlarge");
+        /// <summary>
+        /// Constant C54xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C54xlarge = new InstanceType("c5.4xlarge");
+        /// <summary>
+        /// Constant C59xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C59xlarge = new InstanceType("c5.9xlarge");
+        /// <summary>
+        /// Constant C5Large for InstanceType
+        /// </summary>
+        public static readonly InstanceType C5Large = new InstanceType("c5.large");
+        /// <summary>
+        /// Constant C5Xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C5Xlarge = new InstanceType("c5.xlarge");
+        /// <summary>
         /// Constant Cc14xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType Cc14xlarge = new InstanceType("cc1.4xlarge");
