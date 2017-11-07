@@ -102,7 +102,8 @@ namespace Amazon.Internal
         {
             foreach (string serviceName in _servicesJsonData.PropertyNames)
             {
-                AddServiceToMap(_servicesJsonData[serviceName], serviceName);
+                if(_servicesJsonData[serviceName]!=null&&_servicesJsonData[serviceName].Count>0)
+                    AddServiceToMap(_servicesJsonData[serviceName], serviceName);
             }
         }
 
@@ -466,12 +467,15 @@ namespace Amazon.Internal
                 JsonData partitionServices = partition["services"];
                 foreach (string service in partitionServices.PropertyNames)
                 {
-                    JsonData serviceData = partitionServices[service];
-                    if (serviceData != null && serviceData["endpoints"][regionName] != null)
+                    if(partitionServices[service]!=null&& partitionServices[service].Count>0)
                     {
-                        partitionData = partition;
-                        servicesData = partitionServices;
-                        break;
+                        JsonData serviceData = partitionServices[service];
+                        if (serviceData != null && serviceData["endpoints"][regionName] != null)
+                        {
+                            partitionData = partition;
+                            servicesData = partitionServices;
+                            break;
+                        }
                     }
                 }
             }
