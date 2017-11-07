@@ -1,3 +1,15 @@
+### 3.3.185.0 (2017-11-07 01:38 UTC)
+* EC2 (3.3.34.0)
+	* You are now able to create and launch EC2 C5 instances, the next generation of EC2's compute-optimized instances, in us-east-1, us-west-2 and eu-west-1. C5 instances offer up to 72 vCPUs, 144 GiB of DDR4 instance memory, 25 Gbps in Network bandwidth and improved EBS and Networking bandwidth on smaller instance sizes to deliver improved performance for compute-intensive workloads.
+* KeyManagementService (3.3.4.0)
+	* Documentation updates for AWS KMS. 
+* Organizations (3.3.6.2)
+	* This release updates permission statements for several API operations, and corrects some other minor errors.
+* Pricing (3.3.0.0)
+	* This is the initial release of AWS Price List Service.
+* StepFunctions (3.3.1.0)
+	* Documentation update.
+
 ### 3.3.184.0 (2017-11-03 20:48 UTC)
 * ECS (3.3.7.0)
 	* Amazon ECS users can now add devices to their containers and enable init process in containers through the use of docker's 'devices' and 'init' features. These fields can be specified under linuxParameters in ContainerDefinition in the Task Definition Template. 
