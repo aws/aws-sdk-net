@@ -797,7 +797,10 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PerformanceInsightsEnabled.
+        /// Gets and sets the property PerformanceInsightsEnabled. 
+        /// <para>
+        /// True if Performance Insights is enabled for the DB instance; otherwise false.
+        /// </para>
         /// </summary>
         public bool PerformanceInsightsEnabled
         {
@@ -812,7 +815,12 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PerformanceInsightsKMSKeyId.
+        /// Gets and sets the property PerformanceInsightsKMSKeyId. 
+        /// <para>
+        /// The KMS key identifier for encryption of Performance Insights data. The KMS key ID
+        /// is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the
+        /// KMS encryption key.
+        /// </para>
         /// </summary>
         public string PerformanceInsightsKMSKeyId
         {
@@ -909,9 +917,9 @@ namespace Amazon.RDS.Model
         ///  </li> </ul> 
         /// <para>
         /// If no DB subnet group has been specified as part of the request and the PubliclyAccessible
-        /// value has not been set, the DB instance will be publicly accessible. If a specific
-        /// DB subnet group has been specified as part of the request and the PubliclyAccessible
-        /// value has not been set, the DB instance will be private.
+        /// value has not been set, the DB instance is publicly accessible. If a specific DB subnet
+        /// group has been specified as part of the request and the PubliclyAccessible value has
+        /// not been set, the DB instance is private.
         /// </para>
         /// </summary>
         public bool PubliclyAccessible
@@ -1003,8 +1011,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property StatusInfos. 
         /// <para>
-        /// The status of a Read Replica. If the instance is not a Read Replica, this will be
-        /// blank.
+        /// The status of a Read Replica. If the instance is not a Read Replica, this is blank.
         /// </para>
         /// </summary>
         public List<DBInstanceStatusInfo> StatusInfos

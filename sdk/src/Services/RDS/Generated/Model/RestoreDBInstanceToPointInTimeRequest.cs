@@ -89,7 +89,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AutoMinorVersionUpgrade. 
         /// <para>
-        /// Indicates that minor version upgrades will be applied automatically to the DB instance
+        /// Indicates that minor version upgrades are applied automatically to the DB instance
         /// during the maintenance window.
         /// </para>
         /// </summary>
@@ -108,7 +108,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        /// The EC2 Availability Zone that the database instance will be created in.
+        /// The EC2 Availability Zone that the database instance is created in.
         /// </para>
         ///  
         /// <para>
@@ -158,15 +158,11 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBInstanceClass. 
         /// <para>
-        /// The compute and memory capacity of the Amazon RDS DB instance.
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge
-        /// | db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge
-        /// | db.m4.large | db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large
-        /// | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small
-        /// | db.t2.medium | db.t2.large</code> 
+        /// The compute and memory capacity of the Amazon RDS DB instance, for example, <code>db.m4.large</code>.
+        /// Not all DB instance classes are available in all regions, or for all database engines.
+        /// For the full list of DB instance classes, and availability for your engine, see <a
+        /// href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+        /// Instance Class</a> in the Amazon RDS User Guide. 
         /// </para>
         ///  
         /// <para>
@@ -544,9 +540,9 @@ namespace Amazon.RDS.Model
         ///  </li> </ul> 
         /// <para>
         /// If no DB subnet group has been specified as part of the request and the PubliclyAccessible
-        /// value has not been set, the DB instance will be publicly accessible. If a specific
-        /// DB subnet group has been specified as part of the request and the PubliclyAccessible
-        /// value has not been set, the DB instance will be private.
+        /// value has not been set, the DB instance is publicly accessible. If a specific DB subnet
+        /// group has been specified as part of the request and the PubliclyAccessible value has
+        /// not been set, the DB instance is private.
         /// </para>
         /// </summary>
         public bool PubliclyAccessible

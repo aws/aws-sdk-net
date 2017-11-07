@@ -184,7 +184,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SourceIdentifier. 
         /// <para>
-        /// The identifier of the event source for which events will be returned. If not specified,
+        /// The identifier of the event source for which events are returned. If not specified,
         /// then all sources are included in the response.
         /// </para>
         ///  

@@ -42,7 +42,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EngineName. 
         /// <para>
-        /// A required parameter. Options available for the given engine name will be described.
+        /// A required parameter. Options available for the given engine name are described.
         /// </para>
         /// </summary>
         public string EngineName

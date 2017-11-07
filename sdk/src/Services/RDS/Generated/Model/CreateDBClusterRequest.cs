@@ -201,7 +201,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DBClusterParameterGroupName. 
         /// <para>
         ///  The name of the DB cluster parameter group to associate with this DB cluster. If
-        /// this argument is omitted, <code>default.aurora5.6</code> will be used. 
+        /// this argument is omitted, <code>default.aurora5.6</code> is used. 
         /// </para>
         ///  
         /// <para>
@@ -567,8 +567,8 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property PreSignedUrl. 
         /// <para>
         /// A URL that contains a Signature Version 4 signed request for the <code>CreateDBCluster</code>
-        /// action to be called in the source AWS Region where the DB cluster will be replicated
-        /// from. You only need to specify <code>PreSignedUrl</code> when you are performing cross-region
+        /// action to be called in the source AWS Region where the DB cluster is replicated from.
+        /// You only need to specify <code>PreSignedUrl</code> when you are performing cross-region
         /// replication from an encrypted DB cluster.
         /// </para>
         ///  

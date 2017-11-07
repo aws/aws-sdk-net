@@ -55,7 +55,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property AllocatedStorage. 
         /// <para>
         ///  Contains the new <code>AllocatedStorage</code> size for the DB instance that will
-        /// be applied or is in progress. 
+        /// be applied or is currently being applied. 
         /// </para>
         /// </summary>
         public int AllocatedStorage
@@ -110,7 +110,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DBInstanceClass. 
         /// <para>
         ///  Contains the new <code>DBInstanceClass</code> for the DB instance that will be applied
-        /// or is in progress. 
+        /// or is currently being applied. 
         /// </para>
         /// </summary>
         public string DBInstanceClass
@@ -129,7 +129,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DBInstanceIdentifier. 
         /// <para>
         ///  Contains the new <code>DBInstanceIdentifier</code> for the DB instance that will
-        /// be applied or is in progress. 
+        /// be applied or is currently being applied. 
         /// </para>
         /// </summary>
         public string DBInstanceIdentifier
@@ -184,7 +184,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property Iops. 
         /// <para>
         /// Specifies the new Provisioned IOPS value for the DB instance that will be applied
-        /// or is being applied.
+        /// or is currently being applied.
         /// </para>
         /// </summary>
         public int Iops
@@ -225,7 +225,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MasterUserPassword. 
         /// <para>
-        /// Contains the pending or in-progress change of the master credentials for the DB instance.
+        /// Contains the pending or currently-in-progress change of the master credentials for
+        /// the DB instance.
         /// </para>
         /// </summary>
         public string MasterUserPassword

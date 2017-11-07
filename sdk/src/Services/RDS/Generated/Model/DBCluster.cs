@@ -649,9 +649,9 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// If a failover occurs, and the Aurora Replica that you are connected to is promoted
-        /// to be the primary instance, your connection will be dropped. To continue sending your
-        /// read workload to other Aurora Replicas in the cluster, you can then reconnect to the
-        /// reader endpoint.
+        /// to be the primary instance, your connection is dropped. To continue sending your read
+        /// workload to other Aurora Replicas in the cluster, you can then reconnect to the reader
+        /// endpoint.
         /// </para>
         /// </summary>
         public string ReaderEndpoint

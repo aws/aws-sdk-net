@@ -193,7 +193,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DBClusterParameterGroupName. 
         /// <para>
         /// The name of the DB cluster parameter group to associate with the restored DB cluster.
-        /// If this argument is omitted, <code>default.aurora5.6</code> will be used. 
+        /// If this argument is omitted, <code>default.aurora5.6</code> is used. 
         /// </para>
         ///  
         /// <para>

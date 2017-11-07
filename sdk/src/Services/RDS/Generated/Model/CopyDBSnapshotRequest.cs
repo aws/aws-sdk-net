@@ -169,9 +169,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>DestinationRegion</code> - The AWS Region that the encrypted DB snapshot will
-        /// be copied to. This AWS Region is the same one where the <code>CopyDBSnapshot</code>
-        /// action is called that contains this presigned URL. 
+        ///  <code>DestinationRegion</code> - The AWS Region that the encrypted DB snapshot is
+        /// copied to. This AWS Region is the same one where the <code>CopyDBSnapshot</code> action
+        /// is called that contains this presigned URL. 
         /// </para>
         ///  
         /// <para>

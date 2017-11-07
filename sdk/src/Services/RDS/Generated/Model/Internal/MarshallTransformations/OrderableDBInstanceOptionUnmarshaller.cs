@@ -85,6 +85,42 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.LicenseModel = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("MaxIopsPerDbInstance", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.MaxIopsPerDbInstance = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("MaxIopsPerGib", targetDepth))
+                    {
+                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        unmarshalledObject.MaxIopsPerGib = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("MaxStorageSize", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.MaxStorageSize = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("MinIopsPerDbInstance", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.MinIopsPerDbInstance = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("MinIopsPerGib", targetDepth))
+                    {
+                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        unmarshalledObject.MinIopsPerGib = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("MinStorageSize", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.MinStorageSize = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("MultiAZCapable", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;

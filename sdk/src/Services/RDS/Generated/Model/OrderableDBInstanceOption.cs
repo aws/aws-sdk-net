@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains a list of available options for a DB instance
+    /// Contains a list of available options for a DB instance.
     /// 
     ///  
     /// <para>
@@ -43,6 +43,12 @@ namespace Amazon.RDS.Model
         private string _engine;
         private string _engineVersion;
         private string _licenseModel;
+        private int? _maxIopsPerDbInstance;
+        private double? _maxIopsPerGib;
+        private int? _maxStorageSize;
+        private int? _minIopsPerDbInstance;
+        private double? _minIopsPerGib;
+        private int? _minStorageSize;
         private bool? _multiAZCapable;
         private bool? _readReplicaCapable;
         private string _storageType;
@@ -56,7 +62,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZones. 
         /// <para>
-        /// A list of Availability Zones for the orderable DB instance.
+        /// A list of Availability Zones for a DB instance.
         /// </para>
         /// </summary>
         public List<AvailabilityZone> AvailabilityZones
@@ -74,7 +80,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBInstanceClass. 
         /// <para>
-        /// The DB instance class for the orderable DB instance.
+        /// The DB instance class for a DB instance.
         /// </para>
         /// </summary>
         public string DBInstanceClass
@@ -92,7 +98,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// The engine type of the orderable DB instance.
+        /// The engine type of a DB instance.
         /// </para>
         /// </summary>
         public string Engine
@@ -110,7 +116,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// The engine version of the orderable DB instance.
+        /// The engine version of a DB instance.
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -128,7 +134,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property LicenseModel. 
         /// <para>
-        /// The license model for the orderable DB instance.
+        /// The license model for a DB instance.
         /// </para>
         /// </summary>
         public string LicenseModel
@@ -144,9 +150,117 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MaxIopsPerDbInstance. 
+        /// <para>
+        /// Maximum total provisioned IOPS for a DB instance.
+        /// </para>
+        /// </summary>
+        public int MaxIopsPerDbInstance
+        {
+            get { return this._maxIopsPerDbInstance.GetValueOrDefault(); }
+            set { this._maxIopsPerDbInstance = value; }
+        }
+
+        // Check to see if MaxIopsPerDbInstance property is set
+        internal bool IsSetMaxIopsPerDbInstance()
+        {
+            return this._maxIopsPerDbInstance.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxIopsPerGib. 
+        /// <para>
+        /// Maximum provisioned IOPS per GiB for a DB instance.
+        /// </para>
+        /// </summary>
+        public double MaxIopsPerGib
+        {
+            get { return this._maxIopsPerGib.GetValueOrDefault(); }
+            set { this._maxIopsPerGib = value; }
+        }
+
+        // Check to see if MaxIopsPerGib property is set
+        internal bool IsSetMaxIopsPerGib()
+        {
+            return this._maxIopsPerGib.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxStorageSize. 
+        /// <para>
+        /// Maximum storage size for a DB instance.
+        /// </para>
+        /// </summary>
+        public int MaxStorageSize
+        {
+            get { return this._maxStorageSize.GetValueOrDefault(); }
+            set { this._maxStorageSize = value; }
+        }
+
+        // Check to see if MaxStorageSize property is set
+        internal bool IsSetMaxStorageSize()
+        {
+            return this._maxStorageSize.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MinIopsPerDbInstance. 
+        /// <para>
+        /// Minimum total provisioned IOPS for a DB instance.
+        /// </para>
+        /// </summary>
+        public int MinIopsPerDbInstance
+        {
+            get { return this._minIopsPerDbInstance.GetValueOrDefault(); }
+            set { this._minIopsPerDbInstance = value; }
+        }
+
+        // Check to see if MinIopsPerDbInstance property is set
+        internal bool IsSetMinIopsPerDbInstance()
+        {
+            return this._minIopsPerDbInstance.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MinIopsPerGib. 
+        /// <para>
+        /// Minimum provisioned IOPS per GiB for a DB instance.
+        /// </para>
+        /// </summary>
+        public double MinIopsPerGib
+        {
+            get { return this._minIopsPerGib.GetValueOrDefault(); }
+            set { this._minIopsPerGib = value; }
+        }
+
+        // Check to see if MinIopsPerGib property is set
+        internal bool IsSetMinIopsPerGib()
+        {
+            return this._minIopsPerGib.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MinStorageSize. 
+        /// <para>
+        /// Minimum storage size for a DB instance.
+        /// </para>
+        /// </summary>
+        public int MinStorageSize
+        {
+            get { return this._minStorageSize.GetValueOrDefault(); }
+            set { this._minStorageSize = value; }
+        }
+
+        // Check to see if MinStorageSize property is set
+        internal bool IsSetMinStorageSize()
+        {
+            return this._minStorageSize.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property MultiAZCapable. 
         /// <para>
-        /// Indicates whether this orderable DB instance is multi-AZ capable.
+        /// Indicates whether a DB instance is Multi-AZ capable.
         /// </para>
         /// </summary>
         public bool MultiAZCapable
@@ -164,7 +278,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ReadReplicaCapable. 
         /// <para>
-        /// Indicates whether this orderable DB instance can have a Read Replica.
+        /// Indicates whether a DB instance can have a Read Replica.
         /// </para>
         /// </summary>
         public bool ReadReplicaCapable
@@ -182,7 +296,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property StorageType. 
         /// <para>
-        /// Indicates the storage type for this orderable DB instance.
+        /// Indicates the storage type for a DB instance.
         /// </para>
         /// </summary>
         public string StorageType
@@ -200,8 +314,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SupportsEnhancedMonitoring. 
         /// <para>
-        /// Indicates whether the DB instance supports enhanced monitoring at intervals from 1
-        /// to 60 seconds.
+        /// Indicates whether a DB instance supports Enhanced Monitoring at intervals from 1 to
+        /// 60 seconds.
         /// </para>
         /// </summary>
         public bool SupportsEnhancedMonitoring
@@ -219,7 +333,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SupportsIAMDatabaseAuthentication. 
         /// <para>
-        /// Indicates whether this orderable DB instance supports IAM database authentication.
+        /// Indicates whether a DB instance supports IAM database authentication.
         /// </para>
         /// </summary>
         public bool SupportsIAMDatabaseAuthentication
@@ -237,7 +351,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SupportsIops. 
         /// <para>
-        /// Indicates whether this orderable DB instance supports provisioned IOPS.
+        /// Indicates whether a DB instance supports provisioned IOPS.
         /// </para>
         /// </summary>
         public bool SupportsIops
@@ -253,7 +367,10 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SupportsPerformanceInsights.
+        /// Gets and sets the property SupportsPerformanceInsights. 
+        /// <para>
+        /// True if a DB instance supports Performance Insights, otherwise false.
+        /// </para>
         /// </summary>
         public bool SupportsPerformanceInsights
         {
@@ -270,7 +387,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SupportsStorageEncryption. 
         /// <para>
-        /// Indicates whether this orderable DB instance supports encrypted storage.
+        /// Indicates whether a DB instance supports encrypted storage.
         /// </para>
         /// </summary>
         public bool SupportsStorageEncryption
@@ -288,7 +405,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Vpc. 
         /// <para>
-        /// Indicates whether this is a VPC orderable DB instance.
+        /// Indicates whether a DB instance is in a VPC.
         /// </para>
         /// </summary>
         public bool Vpc

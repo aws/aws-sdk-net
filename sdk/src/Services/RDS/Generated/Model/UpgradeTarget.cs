@@ -41,8 +41,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AutoUpgrade. 
         /// <para>
-        /// A value that indicates whether the target version will be applied to any source DB
-        /// instances that have AutoMinorVersionUpgrade set to true.
+        /// A value that indicates whether the target version is applied to any source DB instances
+        /// that have AutoMinorVersionUpgrade set to true.
         /// </para>
         /// </summary>
         public bool AutoUpgrade
@@ -114,7 +114,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property IsMajorVersionUpgrade. 
         /// <para>
-        /// A value that indicates whether a database engine will be upgraded to a major version.
+        /// A value that indicates whether a database engine is upgraded to a major version.
         /// </para>
         /// </summary>
         public bool IsMajorVersionUpgrade

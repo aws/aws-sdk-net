@@ -53,9 +53,9 @@ namespace Amazon.RDS.Model
     /// <para>
     ///  <code>PreSignedUrl</code> - A URL that contains a Signature Version 4 signed request
     /// for the <code>CopyDBClusterSnapshot</code> action to be called in the source AWS Region
-    /// where the DB cluster snapshot will be copied from. The pre-signed URL must be a valid
-    /// request for the <code>CopyDBClusterSnapshot</code> API action that can be executed
-    /// in the source AWS Region that contains the encrypted DB cluster snapshot to be copied.
+    /// where the DB cluster snapshot is copied from. The pre-signed URL must be a valid request
+    /// for the <code>CopyDBClusterSnapshot</code> API action that can be executed in the
+    /// source AWS Region that contains the encrypted DB cluster snapshot to be copied.
     /// </para>
     ///  
     /// <para>

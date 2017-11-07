@@ -45,7 +45,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ResourceName. 
         /// <para>
-        /// The Amazon RDS resource the tags will be removed from. This value is an Amazon Resource
+        /// The Amazon RDS resource that the tags are removed from. This value is an Amazon Resource
         /// Name (ARN). For information about creating an ARN, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
         /// Constructing an RDS Amazon Resource Name (ARN)</a>.
         /// </para>
