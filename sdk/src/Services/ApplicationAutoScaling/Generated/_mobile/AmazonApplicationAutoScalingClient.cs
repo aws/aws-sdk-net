@@ -37,8 +37,8 @@ namespace Amazon.ApplicationAutoScaling
     /// Implementation for accessing ApplicationAutoScaling
     ///
     /// With Application Auto Scaling, you can automatically scale your AWS resources. The
-    /// experience similar to that of <a href="https://aws.amazon.com/autoscaling/">Auto Scaling</a>.
-    /// You can use Application Auto Scaling to accomplish the following tasks:
+    /// experience is similar to that of <a href="https://aws.amazon.com/autoscaling/">Auto
+    /// Scaling</a>. You can use Application Auto Scaling to accomplish the following tasks:
     /// 
     ///  <ul> <li> 
     /// <para>
@@ -314,6 +314,38 @@ namespace Amazon.ApplicationAutoScaling
 
         #endregion
         
+        #region  DeleteScheduledAction
+
+        internal virtual DeleteScheduledActionResponse DeleteScheduledAction(DeleteScheduledActionRequest request)
+        {
+            var marshaller = new DeleteScheduledActionRequestMarshaller();
+            var unmarshaller = DeleteScheduledActionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteScheduledActionRequest,DeleteScheduledActionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteScheduledAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteScheduledAction operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DeleteScheduledAction">REST API Reference for DeleteScheduledAction Operation</seealso>
+        public virtual Task<DeleteScheduledActionResponse> DeleteScheduledActionAsync(DeleteScheduledActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteScheduledActionRequestMarshaller();
+            var unmarshaller = DeleteScheduledActionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteScheduledActionRequest,DeleteScheduledActionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeregisterScalableTarget
 
         internal virtual DeregisterScalableTargetResponse DeregisterScalableTarget(DeregisterScalableTargetRequest request)
@@ -442,6 +474,38 @@ namespace Amazon.ApplicationAutoScaling
 
         #endregion
         
+        #region  DescribeScheduledActions
+
+        internal virtual DescribeScheduledActionsResponse DescribeScheduledActions(DescribeScheduledActionsRequest request)
+        {
+            var marshaller = new DescribeScheduledActionsRequestMarshaller();
+            var unmarshaller = DescribeScheduledActionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeScheduledActionsRequest,DescribeScheduledActionsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeScheduledActions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeScheduledActions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DescribeScheduledActions">REST API Reference for DescribeScheduledActions Operation</seealso>
+        public virtual Task<DescribeScheduledActionsResponse> DescribeScheduledActionsAsync(DescribeScheduledActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeScheduledActionsRequestMarshaller();
+            var unmarshaller = DescribeScheduledActionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeScheduledActionsRequest,DescribeScheduledActionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PutScalingPolicy
 
         internal virtual PutScalingPolicyResponse PutScalingPolicy(PutScalingPolicyRequest request)
@@ -469,6 +533,38 @@ namespace Amazon.ApplicationAutoScaling
             var unmarshaller = PutScalingPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutScalingPolicyRequest,PutScalingPolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutScheduledAction
+
+        internal virtual PutScheduledActionResponse PutScheduledAction(PutScheduledActionRequest request)
+        {
+            var marshaller = new PutScheduledActionRequestMarshaller();
+            var unmarshaller = PutScheduledActionResponseUnmarshaller.Instance;
+
+            return Invoke<PutScheduledActionRequest,PutScheduledActionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutScheduledAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutScheduledAction operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/PutScheduledAction">REST API Reference for PutScheduledAction Operation</seealso>
+        public virtual Task<PutScheduledActionResponse> PutScheduledActionAsync(PutScheduledActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new PutScheduledActionRequestMarshaller();
+            var unmarshaller = PutScheduledActionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutScheduledActionRequest,PutScheduledActionResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

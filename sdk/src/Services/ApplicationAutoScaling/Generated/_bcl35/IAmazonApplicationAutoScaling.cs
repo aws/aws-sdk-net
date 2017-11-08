@@ -30,8 +30,8 @@ namespace Amazon.ApplicationAutoScaling
     /// Interface for accessing ApplicationAutoScaling
     ///
     /// With Application Auto Scaling, you can automatically scale your AWS resources. The
-    /// experience similar to that of <a href="https://aws.amazon.com/autoscaling/">Auto Scaling</a>.
-    /// You can use Application Auto Scaling to accomplish the following tasks:
+    /// experience is similar to that of <a href="https://aws.amazon.com/autoscaling/">Auto
+    /// Scaling</a>. You can use Application Auto Scaling to accomplish the following tasks:
     /// 
     ///  <ul> <li> 
     /// <para>
@@ -153,6 +153,65 @@ namespace Amazon.ApplicationAutoScaling
         /// <returns>Returns a  DeleteScalingPolicyResult from ApplicationAutoScaling.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DeleteScalingPolicy">REST API Reference for DeleteScalingPolicy Operation</seealso>
         DeleteScalingPolicyResponse EndDeleteScalingPolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteScheduledAction
+
+
+        /// <summary>
+        /// Deletes the specified Application Auto Scaling scheduled action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteScheduledAction service method.</param>
+        /// 
+        /// <returns>The response from the DeleteScheduledAction service method, as returned by ApplicationAutoScaling.</returns>
+        /// <exception cref="Amazon.ApplicationAutoScaling.Model.ConcurrentUpdateException">
+        /// Concurrent updates caused an exception, for example, if you request an update to an
+        /// Application Auto Scaling resource that already has a pending update.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationAutoScaling.Model.InternalServiceException">
+        /// The service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationAutoScaling.Model.ObjectNotFoundException">
+        /// The specified object could not be found. For any <code>Put</code> or <code>Register</code>
+        /// API operation, which depends on the existence of a scalable target, this exception
+        /// is thrown if the scalable target with the specified service namespace, resource ID,
+        /// and scalable dimension does not exist. For any <code>Delete</code> or <code>Deregister</code>
+        /// API operation, this exception is thrown if the resource that is to be deleted or deregistered
+        /// cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationAutoScaling.Model.ValidationException">
+        /// An exception was thrown for a validation issue. Review the available parameters for
+        /// the API request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DeleteScheduledAction">REST API Reference for DeleteScheduledAction Operation</seealso>
+        DeleteScheduledActionResponse DeleteScheduledAction(DeleteScheduledActionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteScheduledAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteScheduledAction operation on AmazonApplicationAutoScalingClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteScheduledAction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DeleteScheduledAction">REST API Reference for DeleteScheduledAction Operation</seealso>
+        IAsyncResult BeginDeleteScheduledAction(DeleteScheduledActionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteScheduledAction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteScheduledAction.</param>
+        /// 
+        /// <returns>Returns a  DeleteScheduledActionResult from ApplicationAutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DeleteScheduledAction">REST API Reference for DeleteScheduledAction Operation</seealso>
+        DeleteScheduledActionResponse EndDeleteScheduledAction(IAsyncResult asyncResult);
 
         #endregion
         
@@ -361,7 +420,7 @@ namespace Amazon.ApplicationAutoScaling
 
 
         /// <summary>
-        /// Provides descriptive information about the scaling policies in the specified namespace.
+        /// Describes the scaling policies for the specified service namespace.
         /// 
         ///  
         /// <para>
@@ -426,6 +485,71 @@ namespace Amazon.ApplicationAutoScaling
         /// <returns>Returns a  DescribeScalingPoliciesResult from ApplicationAutoScaling.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DescribeScalingPolicies">REST API Reference for DescribeScalingPolicies Operation</seealso>
         DescribeScalingPoliciesResponse EndDescribeScalingPolicies(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeScheduledActions
+
+
+        /// <summary>
+        /// Describes the scheduled actions for the specified service namespace.
+        /// 
+        ///  
+        /// <para>
+        /// You can filter the results using the <code>ResourceId</code>, <code>ScalableDimension</code>,
+        /// and <code>ScheduledActionNames</code> parameters.
+        /// </para>
+        ///  
+        /// <para>
+        /// To create a scheduled action or update an existing one, see <a>PutScheduledAction</a>.
+        /// If you are no longer using a scheduled action, you can delete it using <a>DeleteScheduledAction</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeScheduledActions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeScheduledActions service method, as returned by ApplicationAutoScaling.</returns>
+        /// <exception cref="Amazon.ApplicationAutoScaling.Model.ConcurrentUpdateException">
+        /// Concurrent updates caused an exception, for example, if you request an update to an
+        /// Application Auto Scaling resource that already has a pending update.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationAutoScaling.Model.InternalServiceException">
+        /// The service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationAutoScaling.Model.InvalidNextTokenException">
+        /// The next token supplied was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationAutoScaling.Model.ValidationException">
+        /// An exception was thrown for a validation issue. Review the available parameters for
+        /// the API request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DescribeScheduledActions">REST API Reference for DescribeScheduledActions Operation</seealso>
+        DescribeScheduledActionsResponse DescribeScheduledActions(DescribeScheduledActionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeScheduledActions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeScheduledActions operation on AmazonApplicationAutoScalingClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeScheduledActions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DescribeScheduledActions">REST API Reference for DescribeScheduledActions Operation</seealso>
+        IAsyncResult BeginDescribeScheduledActions(DescribeScheduledActionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeScheduledActions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeScheduledActions.</param>
+        /// 
+        /// <returns>Returns a  DescribeScheduledActionsResult from ApplicationAutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DescribeScheduledActions">REST API Reference for DescribeScheduledActions Operation</seealso>
+        DescribeScheduledActionsResponse EndDescribeScheduledActions(IAsyncResult asyncResult);
 
         #endregion
         
@@ -515,6 +639,89 @@ namespace Amazon.ApplicationAutoScaling
         /// <returns>Returns a  PutScalingPolicyResult from ApplicationAutoScaling.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/PutScalingPolicy">REST API Reference for PutScalingPolicy Operation</seealso>
         PutScalingPolicyResponse EndPutScalingPolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PutScheduledAction
+
+
+        /// <summary>
+        /// Creates or updates a scheduled action for an Application Auto Scaling scalable target.
+        /// 
+        ///  
+        /// <para>
+        /// Each scalable target is identified by a service namespace, resource ID, and scalable
+        /// dimension. A scheduled action applies to the scalable target identified by those three
+        /// attributes. You cannot create a scheduled action without first registering a scalable
+        /// target using <a>RegisterScalableTarget</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To update an action, specify its name and the parameters that you want to change.
+        /// If you don't specify start and end times, the old values are deleted. Any other parameters
+        /// that you don't specify are not changed by this update request.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can view the scheduled actions using <a>DescribeScheduledActions</a>. If you are
+        /// no longer using a scheduled action, you can delete it using <a>DeleteScheduledAction</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutScheduledAction service method.</param>
+        /// 
+        /// <returns>The response from the PutScheduledAction service method, as returned by ApplicationAutoScaling.</returns>
+        /// <exception cref="Amazon.ApplicationAutoScaling.Model.ConcurrentUpdateException">
+        /// Concurrent updates caused an exception, for example, if you request an update to an
+        /// Application Auto Scaling resource that already has a pending update.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationAutoScaling.Model.InternalServiceException">
+        /// The service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationAutoScaling.Model.LimitExceededException">
+        /// Your account exceeded a limit. This exception is thrown when a per-account resource
+        /// limit is exceeded. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_as-app">Application
+        /// Auto Scaling Limits</a>.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationAutoScaling.Model.ObjectNotFoundException">
+        /// The specified object could not be found. For any <code>Put</code> or <code>Register</code>
+        /// API operation, which depends on the existence of a scalable target, this exception
+        /// is thrown if the scalable target with the specified service namespace, resource ID,
+        /// and scalable dimension does not exist. For any <code>Delete</code> or <code>Deregister</code>
+        /// API operation, this exception is thrown if the resource that is to be deleted or deregistered
+        /// cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationAutoScaling.Model.ValidationException">
+        /// An exception was thrown for a validation issue. Review the available parameters for
+        /// the API request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/PutScheduledAction">REST API Reference for PutScheduledAction Operation</seealso>
+        PutScheduledActionResponse PutScheduledAction(PutScheduledActionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutScheduledAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutScheduledAction operation on AmazonApplicationAutoScalingClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutScheduledAction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/PutScheduledAction">REST API Reference for PutScheduledAction Operation</seealso>
+        IAsyncResult BeginPutScheduledAction(PutScheduledActionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutScheduledAction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutScheduledAction.</param>
+        /// 
+        /// <returns>Returns a  PutScheduledActionResult from ApplicationAutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/PutScheduledAction">REST API Reference for PutScheduledAction Operation</seealso>
+        PutScheduledActionResponse EndPutScheduledAction(IAsyncResult asyncResult);
 
         #endregion
         

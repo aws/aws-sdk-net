@@ -28,98 +28,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationAutoScaling.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeScalingPolicies operation.
-    /// Describes the scaling policies for the specified service namespace.
-    /// 
-    ///  
-    /// <para>
-    /// You can filter the results using the <code>ResourceId</code>, <code>ScalableDimension</code>,
-    /// and <code>PolicyNames</code> parameters.
-    /// </para>
-    ///  
-    /// <para>
-    /// To create a scaling policy or update an existing one, see <a>PutScalingPolicy</a>.
-    /// If you are no longer using a scaling policy, you can delete it using <a>DeleteScalingPolicy</a>.
-    /// </para>
+    /// Container for the parameters to the DeleteScheduledAction operation.
+    /// Deletes the specified Application Auto Scaling scheduled action.
     /// </summary>
-    public partial class DescribeScalingPoliciesRequest : AmazonApplicationAutoScalingRequest
+    public partial class DeleteScheduledActionRequest : AmazonApplicationAutoScalingRequest
     {
-        private int? _maxResults;
-        private string _nextToken;
-        private List<string> _policyNames = new List<string>();
         private string _resourceId;
         private ScalableDimension _scalableDimension;
+        private string _scheduledActionName;
         private ServiceNamespace _serviceNamespace;
-
-        /// <summary>
-        /// Gets and sets the property MaxResults. 
-        /// <para>
-        /// The maximum number of scalable target results. This value can be between 1 and 50.
-        /// The default value is 50.
-        /// </para>
-        ///  
-        /// <para>
-        /// If this parameter is used, the operation returns up to <code>MaxResults</code> results
-        /// at a time, along with a <code>NextToken</code> value. To get the next set of results,
-        /// include the <code>NextToken</code> value in a subsequent call. If this parameter is
-        /// not used, the operation returns up to 50 results and a <code>NextToken</code> value,
-        /// if applicable.
-        /// </para>
-        /// </summary>
-        public int MaxResults
-        {
-            get { return this._maxResults.GetValueOrDefault(); }
-            set { this._maxResults = value; }
-        }
-
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
-        {
-            return this._maxResults.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property NextToken. 
-        /// <para>
-        /// The token for the next set of results.
-        /// </para>
-        /// </summary>
-        public string NextToken
-        {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
-        }
-
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
-        {
-            return this._nextToken != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property PolicyNames. 
-        /// <para>
-        /// The names of the scaling policies to describe.
-        /// </para>
-        /// </summary>
-        public List<string> PolicyNames
-        {
-            get { return this._policyNames; }
-            set { this._policyNames = value; }
-        }
-
-        // Check to see if PolicyNames property is set
-        internal bool IsSetPolicyNames()
-        {
-            return this._policyNames != null && this._policyNames.Count > 0; 
-        }
 
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// The identifier of the resource associated with the scaling policy. This string consists
-        /// of the resource type and unique identifier. If you specify a scalable dimension, you
-        /// must also specify a resource ID.
+        /// The identifier of the resource associated with the scheduled action. This string consists
+        /// of the resource type and unique identifier.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -169,8 +92,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// Gets and sets the property ScalableDimension. 
         /// <para>
         /// The scalable dimension. This string consists of the service namespace, resource type,
-        /// and scaling property. If you specify a scalable dimension, you must also specify a
-        /// resource ID.
+        /// and scaling property.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -223,6 +145,24 @@ namespace Amazon.ApplicationAutoScaling.Model
         internal bool IsSetScalableDimension()
         {
             return this._scalableDimension != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScheduledActionName. 
+        /// <para>
+        /// The name of the scheduled action.
+        /// </para>
+        /// </summary>
+        public string ScheduledActionName
+        {
+            get { return this._scheduledActionName; }
+            set { this._scheduledActionName = value; }
+        }
+
+        // Check to see if ScheduledActionName property is set
+        internal bool IsSetScheduledActionName()
+        {
+            return this._scheduledActionName != null;
         }
 
         /// <summary>

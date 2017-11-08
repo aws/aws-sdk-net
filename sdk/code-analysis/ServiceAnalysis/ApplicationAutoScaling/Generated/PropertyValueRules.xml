@@ -11,6 +11,16 @@
     <max>1600</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ApplicationAutoScaling.Model.DeleteScheduledActionRequest.ResourceId</property>
+    <min>1</min>
+    <max>1600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationAutoScaling.Model.DeleteScheduledActionRequest.ScheduledActionName</property>
+    <min>1</min>
+    <max>1600</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ApplicationAutoScaling.Model.DeregisterScalableTargetRequest.ResourceId</property>
     <min>1</min>
     <max>1600</max>
@@ -44,6 +54,17 @@
     <property>Amazon.ApplicationAutoScaling.Model.DescribeScalingPoliciesResponse.NextToken</property>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ApplicationAutoScaling.Model.DescribeScheduledActionsRequest.NextToken</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationAutoScaling.Model.DescribeScheduledActionsRequest.ResourceId</property>
+    <min>1</min>
+    <max>1600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationAutoScaling.Model.DescribeScheduledActionsResponse.NextToken</property>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ApplicationAutoScaling.Model.PutScalingPolicyRequest.PolicyName</property>
     <min>1</min>
     <max>256</max>
@@ -57,6 +78,22 @@
     <property>Amazon.ApplicationAutoScaling.Model.PutScalingPolicyResponse.PolicyARN</property>
     <min>1</min>
     <max>1600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationAutoScaling.Model.PutScheduledActionRequest.ResourceId</property>
+    <min>1</min>
+    <max>1600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationAutoScaling.Model.PutScheduledActionRequest.Schedule</property>
+    <min>1</min>
+    <max>1600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationAutoScaling.Model.PutScheduledActionRequest.ScheduledActionName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>(?!((^[ ]+.*)|(.*([\u0000-\u001f]|[\u007f-\u009f]|[:/|])+.*)|(.*[ ]+$))).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationAutoScaling.Model.RegisterScalableTargetRequest.ResourceId</property>
@@ -123,5 +160,26 @@
     <property>Amazon.ApplicationAutoScaling.Model.ScalingPolicy.ResourceId</property>
     <min>1</min>
     <max>1600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationAutoScaling.Model.ScheduledAction.ResourceId</property>
+    <min>1</min>
+    <max>1600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationAutoScaling.Model.ScheduledAction.Schedule</property>
+    <min>1</min>
+    <max>1600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationAutoScaling.Model.ScheduledAction.ScheduledActionARN</property>
+    <min>1</min>
+    <max>1600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationAutoScaling.Model.ScheduledAction.ScheduledActionName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>(?!((^[ ]+.*)|(.*([\u0000-\u001f]|[\u007f-\u009f]|[:/|])+.*)|(.*[ ]+$))).+</pattern>
   </property-value-rule>
 </property-value-rules>

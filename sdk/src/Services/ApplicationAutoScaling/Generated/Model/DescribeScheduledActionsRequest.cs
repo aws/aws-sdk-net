@@ -28,27 +28,27 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationAutoScaling.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeScalingPolicies operation.
-    /// Describes the scaling policies for the specified service namespace.
+    /// Container for the parameters to the DescribeScheduledActions operation.
+    /// Describes the scheduled actions for the specified service namespace.
     /// 
     ///  
     /// <para>
     /// You can filter the results using the <code>ResourceId</code>, <code>ScalableDimension</code>,
-    /// and <code>PolicyNames</code> parameters.
+    /// and <code>ScheduledActionNames</code> parameters.
     /// </para>
     ///  
     /// <para>
-    /// To create a scaling policy or update an existing one, see <a>PutScalingPolicy</a>.
-    /// If you are no longer using a scaling policy, you can delete it using <a>DeleteScalingPolicy</a>.
+    /// To create a scheduled action or update an existing one, see <a>PutScheduledAction</a>.
+    /// If you are no longer using a scheduled action, you can delete it using <a>DeleteScheduledAction</a>.
     /// </para>
     /// </summary>
-    public partial class DescribeScalingPoliciesRequest : AmazonApplicationAutoScalingRequest
+    public partial class DescribeScheduledActionsRequest : AmazonApplicationAutoScalingRequest
     {
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _policyNames = new List<string>();
         private string _resourceId;
         private ScalableDimension _scalableDimension;
+        private List<string> _scheduledActionNames = new List<string>();
         private ServiceNamespace _serviceNamespace;
 
         /// <summary>
@@ -97,27 +97,9 @@ namespace Amazon.ApplicationAutoScaling.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PolicyNames. 
-        /// <para>
-        /// The names of the scaling policies to describe.
-        /// </para>
-        /// </summary>
-        public List<string> PolicyNames
-        {
-            get { return this._policyNames; }
-            set { this._policyNames = value; }
-        }
-
-        // Check to see if PolicyNames property is set
-        internal bool IsSetPolicyNames()
-        {
-            return this._policyNames != null && this._policyNames.Count > 0; 
-        }
-
-        /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// The identifier of the resource associated with the scaling policy. This string consists
+        /// The identifier of the resource associated with the scheduled action. This string consists
         /// of the resource type and unique identifier. If you specify a scalable dimension, you
         /// must also specify a resource ID.
         /// </para>
@@ -223,6 +205,24 @@ namespace Amazon.ApplicationAutoScaling.Model
         internal bool IsSetScalableDimension()
         {
             return this._scalableDimension != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScheduledActionNames. 
+        /// <para>
+        /// The names of the scheduled actions to describe.
+        /// </para>
+        /// </summary>
+        public List<string> ScheduledActionNames
+        {
+            get { return this._scheduledActionNames; }
+            set { this._scheduledActionNames = value; }
+        }
+
+        // Check to see if ScheduledActionNames property is set
+        internal bool IsSetScheduledActionNames()
+        {
+            return this._scheduledActionNames != null && this._scheduledActionNames.Count > 0; 
         }
 
         /// <summary>

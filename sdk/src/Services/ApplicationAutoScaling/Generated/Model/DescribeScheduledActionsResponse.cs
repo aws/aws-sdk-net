@@ -28,12 +28,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationAutoScaling.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeScalingPolicies operation.
+    /// This is the response object from the DescribeScheduledActions operation.
     /// </summary>
-    public partial class DescribeScalingPoliciesResponse : AmazonWebServiceResponse
+    public partial class DescribeScheduledActionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ScalingPolicy> _scalingPolicies = new List<ScalingPolicy>();
+        private List<ScheduledAction> _scheduledActions = new List<ScheduledAction>();
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -55,21 +55,21 @@ namespace Amazon.ApplicationAutoScaling.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ScalingPolicies. 
+        /// Gets and sets the property ScheduledActions. 
         /// <para>
-        /// Information about the scaling policies.
+        /// Information about the scheduled actions.
         /// </para>
         /// </summary>
-        public List<ScalingPolicy> ScalingPolicies
+        public List<ScheduledAction> ScheduledActions
         {
-            get { return this._scalingPolicies; }
-            set { this._scalingPolicies = value; }
+            get { return this._scheduledActions; }
+            set { this._scheduledActions = value; }
         }
 
-        // Check to see if ScalingPolicies property is set
-        internal bool IsSetScalingPolicies()
+        // Check to see if ScheduledActions property is set
+        internal bool IsSetScheduledActions()
         {
-            return this._scalingPolicies != null && this._scalingPolicies.Count > 0; 
+            return this._scheduledActions != null && this._scheduledActions.Count > 0; 
         }
 
     }

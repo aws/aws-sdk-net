@@ -28,98 +28,62 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationAutoScaling.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeScalingPolicies operation.
-    /// Describes the scaling policies for the specified service namespace.
-    /// 
-    ///  
-    /// <para>
-    /// You can filter the results using the <code>ResourceId</code>, <code>ScalableDimension</code>,
-    /// and <code>PolicyNames</code> parameters.
-    /// </para>
-    ///  
-    /// <para>
-    /// To create a scaling policy or update an existing one, see <a>PutScalingPolicy</a>.
-    /// If you are no longer using a scaling policy, you can delete it using <a>DeleteScalingPolicy</a>.
-    /// </para>
+    /// Represents a scheduled action.
     /// </summary>
-    public partial class DescribeScalingPoliciesRequest : AmazonApplicationAutoScalingRequest
+    public partial class ScheduledAction
     {
-        private int? _maxResults;
-        private string _nextToken;
-        private List<string> _policyNames = new List<string>();
+        private DateTime? _creationTime;
+        private DateTime? _endTime;
         private string _resourceId;
         private ScalableDimension _scalableDimension;
+        private ScalableTargetAction _scalableTargetAction;
+        private string _schedule;
+        private string _scheduledActionARN;
+        private string _scheduledActionName;
         private ServiceNamespace _serviceNamespace;
+        private DateTime? _startTime;
 
         /// <summary>
-        /// Gets and sets the property MaxResults. 
+        /// Gets and sets the property CreationTime. 
         /// <para>
-        /// The maximum number of scalable target results. This value can be between 1 and 50.
-        /// The default value is 50.
-        /// </para>
-        ///  
-        /// <para>
-        /// If this parameter is used, the operation returns up to <code>MaxResults</code> results
-        /// at a time, along with a <code>NextToken</code> value. To get the next set of results,
-        /// include the <code>NextToken</code> value in a subsequent call. If this parameter is
-        /// not used, the operation returns up to 50 results and a <code>NextToken</code> value,
-        /// if applicable.
+        /// The date and time that the scheduled action was created.
         /// </para>
         /// </summary>
-        public int MaxResults
+        public DateTime CreationTime
         {
-            get { return this._maxResults.GetValueOrDefault(); }
-            set { this._maxResults = value; }
+            get { return this._creationTime.GetValueOrDefault(); }
+            set { this._creationTime = value; }
         }
 
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
+        // Check to see if CreationTime property is set
+        internal bool IsSetCreationTime()
         {
-            return this._maxResults.HasValue; 
+            return this._creationTime.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property EndTime. 
         /// <para>
-        /// The token for the next set of results.
+        /// The date and time that the action is scheduled to end.
         /// </para>
         /// </summary>
-        public string NextToken
+        public DateTime EndTime
         {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
+            get { return this._endTime.GetValueOrDefault(); }
+            set { this._endTime = value; }
         }
 
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
+        // Check to see if EndTime property is set
+        internal bool IsSetEndTime()
         {
-            return this._nextToken != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property PolicyNames. 
-        /// <para>
-        /// The names of the scaling policies to describe.
-        /// </para>
-        /// </summary>
-        public List<string> PolicyNames
-        {
-            get { return this._policyNames; }
-            set { this._policyNames = value; }
-        }
-
-        // Check to see if PolicyNames property is set
-        internal bool IsSetPolicyNames()
-        {
-            return this._policyNames != null && this._policyNames.Count > 0; 
+            return this._endTime.HasValue; 
         }
 
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
         /// The identifier of the resource associated with the scaling policy. This string consists
-        /// of the resource type and unique identifier. If you specify a scalable dimension, you
-        /// must also specify a resource ID.
+        /// of the resource type and unique identifier.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -169,8 +133,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// Gets and sets the property ScalableDimension. 
         /// <para>
         /// The scalable dimension. This string consists of the service namespace, resource type,
-        /// and scaling property. If you specify a scalable dimension, you must also specify a
-        /// resource ID.
+        /// and scaling property.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -226,6 +189,108 @@ namespace Amazon.ApplicationAutoScaling.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ScalableTargetAction. 
+        /// <para>
+        /// The new minimum and maximum capacity. You can set both values or just one. During
+        /// the scheduled time, if the current capacity is below the minimum capacity, Application
+        /// Auto Scaling scales out to the minimum capacity. If the current capacity is above
+        /// the maximum capacity, Application Auto Scaling scales in to the maximum capacity.
+        /// </para>
+        /// </summary>
+        public ScalableTargetAction ScalableTargetAction
+        {
+            get { return this._scalableTargetAction; }
+            set { this._scalableTargetAction = value; }
+        }
+
+        // Check to see if ScalableTargetAction property is set
+        internal bool IsSetScalableTargetAction()
+        {
+            return this._scalableTargetAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Schedule. 
+        /// <para>
+        /// The schedule for this action. The following formats are supported:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// At expressions - <code>at(<i>yyyy</i>-<i>mm</i>-<i>dd</i>T<i>hh</i>:<i>mm</i>:<i>ss</i>)</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Rate expressions - <code>rate(<i>value</i> <i>unit</i>)</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cron expressions - <code>cron(<i>fields</i>)</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// At expressions are useful for one-time schedules. Specify the time, in UTC.
+        /// </para>
+        ///  
+        /// <para>
+        /// For rate expressions, <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code>
+        /// | <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code>
+        /// | <code>days</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about cron expressions, see <a href="https://en.wikipedia.org/wiki/Cron">Cron</a>.
+        /// </para>
+        /// </summary>
+        public string Schedule
+        {
+            get { return this._schedule; }
+            set { this._schedule = value; }
+        }
+
+        // Check to see if Schedule property is set
+        internal bool IsSetSchedule()
+        {
+            return this._schedule != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScheduledActionARN. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the scheduled action.
+        /// </para>
+        /// </summary>
+        public string ScheduledActionARN
+        {
+            get { return this._scheduledActionARN; }
+            set { this._scheduledActionARN = value; }
+        }
+
+        // Check to see if ScheduledActionARN property is set
+        internal bool IsSetScheduledActionARN()
+        {
+            return this._scheduledActionARN != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScheduledActionName. 
+        /// <para>
+        /// The name of the scheduled action.
+        /// </para>
+        /// </summary>
+        public string ScheduledActionName
+        {
+            get { return this._scheduledActionName; }
+            set { this._scheduledActionName = value; }
+        }
+
+        // Check to see if ScheduledActionName property is set
+        internal bool IsSetScheduledActionName()
+        {
+            return this._scheduledActionName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ServiceNamespace. 
         /// <para>
         /// The namespace of the AWS service. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
@@ -242,6 +307,24 @@ namespace Amazon.ApplicationAutoScaling.Model
         internal bool IsSetServiceNamespace()
         {
             return this._serviceNamespace != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartTime. 
+        /// <para>
+        /// The date and time that the action is scheduled to begin.
+        /// </para>
+        /// </summary>
+        public DateTime StartTime
+        {
+            get { return this._startTime.GetValueOrDefault(); }
+            set { this._startTime = value; }
+        }
+
+        // Check to see if StartTime property is set
+        internal bool IsSetStartTime()
+        {
+            return this._startTime.HasValue; 
         }
 
     }

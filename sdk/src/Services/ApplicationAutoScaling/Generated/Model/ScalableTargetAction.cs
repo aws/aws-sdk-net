@@ -28,48 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationAutoScaling.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeScalingPolicies operation.
+    /// Represents the minimum and maximum capacity for a scheduled action.
     /// </summary>
-    public partial class DescribeScalingPoliciesResponse : AmazonWebServiceResponse
+    public partial class ScalableTargetAction
     {
-        private string _nextToken;
-        private List<ScalingPolicy> _scalingPolicies = new List<ScalingPolicy>();
+        private int? _maxCapacity;
+        private int? _minCapacity;
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property MaxCapacity. 
         /// <para>
-        /// The token required to get the next set of results. This value is <code>null</code>
-        /// if there are no more results to return.
+        /// The maximum capacity.
         /// </para>
         /// </summary>
-        public string NextToken
+        public int MaxCapacity
         {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
+            get { return this._maxCapacity.GetValueOrDefault(); }
+            set { this._maxCapacity = value; }
         }
 
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
+        // Check to see if MaxCapacity property is set
+        internal bool IsSetMaxCapacity()
         {
-            return this._nextToken != null;
+            return this._maxCapacity.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property ScalingPolicies. 
+        /// Gets and sets the property MinCapacity. 
         /// <para>
-        /// Information about the scaling policies.
+        /// The minimum capacity.
         /// </para>
         /// </summary>
-        public List<ScalingPolicy> ScalingPolicies
+        public int MinCapacity
         {
-            get { return this._scalingPolicies; }
-            set { this._scalingPolicies = value; }
+            get { return this._minCapacity.GetValueOrDefault(); }
+            set { this._minCapacity = value; }
         }
 
-        // Check to see if ScalingPolicies property is set
-        internal bool IsSetScalingPolicies()
+        // Check to see if MinCapacity property is set
+        internal bool IsSetMinCapacity()
         {
-            return this._scalingPolicies != null && this._scalingPolicies.Count > 0; 
+            return this._minCapacity.HasValue; 
         }
 
     }
