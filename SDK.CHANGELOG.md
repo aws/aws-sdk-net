@@ -1,3 +1,7 @@
+### 3.3.186.1 (2017-11-08 01:16 UTC)
+* WorkDocs (3.3.3.1)
+	* WorkDocs content manager bug fix: remove encryption header from shared http client once it is used
+
 ### 3.3.186.0 (2017-11-07 22:48 UTC)
 * ElasticLoadBalancingV2 (3.3.7.0)
 	* Added a new limit related to Network Load Balancers on the number of targets per load balancer per AZ.

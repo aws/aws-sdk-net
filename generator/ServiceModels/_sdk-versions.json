@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.186.0",
+    "ProductVersion" : "3.3.186.1",
     "CoreVersion"    : "3.3.18.3",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -753,7 +753,7 @@
             "InPreview"               : false
         },
         "WorkDocs"                        : {
-            "Version" : "3.3.3.0",
+            "Version" : "3.3.3.1",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.18.2"
