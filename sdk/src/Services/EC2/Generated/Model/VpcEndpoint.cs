@@ -33,11 +33,17 @@ namespace Amazon.EC2.Model
     public partial class VpcEndpoint
     {
         private DateTime? _creationTimestamp;
+        private List<DnsEntry> _dnsEntries = new List<DnsEntry>();
+        private List<SecurityGroupIdentifier> _groups = new List<SecurityGroupIdentifier>();
+        private List<string> _networkInterfaceIds = new List<string>();
         private string _policyDocument;
+        private bool? _privateDnsEnabled;
         private List<string> _routeTableIds = new List<string>();
         private string _serviceName;
         private State _state;
+        private List<string> _subnetIds = new List<string>();
         private string _vpcEndpointId;
+        private VpcEndpointType _vpcEndpointType;
         private string _vpcId;
 
         /// <summary>
@@ -59,9 +65,64 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DnsEntries. 
+        /// <para>
+        /// (Interface endpoint) The DNS entries for the endpoint.
+        /// </para>
+        /// </summary>
+        public List<DnsEntry> DnsEntries
+        {
+            get { return this._dnsEntries; }
+            set { this._dnsEntries = value; }
+        }
+
+        // Check to see if DnsEntries property is set
+        internal bool IsSetDnsEntries()
+        {
+            return this._dnsEntries != null && this._dnsEntries.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Groups. 
+        /// <para>
+        /// (Interface endpoint) Information about the security groups associated with the network
+        /// interface.
+        /// </para>
+        /// </summary>
+        public List<SecurityGroupIdentifier> Groups
+        {
+            get { return this._groups; }
+            set { this._groups = value; }
+        }
+
+        // Check to see if Groups property is set
+        internal bool IsSetGroups()
+        {
+            return this._groups != null && this._groups.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkInterfaceIds. 
+        /// <para>
+        /// (Interface endpoint) One or more network interfaces for the endpoint.
+        /// </para>
+        /// </summary>
+        public List<string> NetworkInterfaceIds
+        {
+            get { return this._networkInterfaceIds; }
+            set { this._networkInterfaceIds = value; }
+        }
+
+        // Check to see if NetworkInterfaceIds property is set
+        internal bool IsSetNetworkInterfaceIds()
+        {
+            return this._networkInterfaceIds != null && this._networkInterfaceIds.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property PolicyDocument. 
         /// <para>
-        /// The policy document associated with the endpoint.
+        /// The policy document associated with the endpoint, if applicable.
         /// </para>
         /// </summary>
         public string PolicyDocument
@@ -77,9 +138,28 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PrivateDnsEnabled. 
+        /// <para>
+        /// (Interface endpoint) Indicates whether the VPC is associated with a private hosted
+        /// zone.
+        /// </para>
+        /// </summary>
+        public bool PrivateDnsEnabled
+        {
+            get { return this._privateDnsEnabled.GetValueOrDefault(); }
+            set { this._privateDnsEnabled = value; }
+        }
+
+        // Check to see if PrivateDnsEnabled property is set
+        internal bool IsSetPrivateDnsEnabled()
+        {
+            return this._privateDnsEnabled.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property RouteTableIds. 
         /// <para>
-        /// One or more route tables associated with the endpoint.
+        /// (Gateway endpoint) One or more route tables associated with the endpoint.
         /// </para>
         /// </summary>
         public List<string> RouteTableIds
@@ -131,6 +211,24 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SubnetIds. 
+        /// <para>
+        /// (Interface endpoint) One or more subnets in which the endpoint is located.
+        /// </para>
+        /// </summary>
+        public List<string> SubnetIds
+        {
+            get { return this._subnetIds; }
+            set { this._subnetIds = value; }
+        }
+
+        // Check to see if SubnetIds property is set
+        internal bool IsSetSubnetIds()
+        {
+            return this._subnetIds != null && this._subnetIds.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property VpcEndpointId. 
         /// <para>
         /// The ID of the VPC endpoint.
@@ -146,6 +244,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetVpcEndpointId()
         {
             return this._vpcEndpointId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcEndpointType. 
+        /// <para>
+        /// The type of endpoint.
+        /// </para>
+        /// </summary>
+        public VpcEndpointType VpcEndpointType
+        {
+            get { return this._vpcEndpointType; }
+            set { this._vpcEndpointType = value; }
+        }
+
+        // Check to see if VpcEndpointType property is set
+        internal bool IsSetVpcEndpointType()
+        {
+            return this._vpcEndpointType != null;
         }
 
         /// <summary>

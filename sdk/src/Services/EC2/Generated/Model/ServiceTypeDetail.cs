@@ -28,10 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the ModifyVpcEndpoint operation.
+    /// Describes the type of service for a VPC endpoint.
     /// </summary>
-    public partial class ModifyVpcEndpointResponse : AmazonWebServiceResponse
+    public partial class ServiceTypeDetail
     {
+        private ServiceType _serviceType;
+
+        /// <summary>
+        /// Gets and sets the property ServiceType. 
+        /// <para>
+        /// The type of service.
+        /// </para>
+        /// </summary>
+        public ServiceType ServiceType
+        {
+            get { return this._serviceType; }
+            set { this._serviceType = value; }
+        }
+
+        // Check to see if ServiceType property is set
+        internal bool IsSetServiceType()
+        {
+            return this._serviceType != null;
+        }
 
     }
 }

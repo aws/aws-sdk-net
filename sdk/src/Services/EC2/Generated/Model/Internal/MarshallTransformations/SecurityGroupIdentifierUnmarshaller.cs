@@ -32,84 +32,72 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeVpcEndpointServices operation
+    /// Response Unmarshaller for SecurityGroupIdentifier Object
     /// </summary>  
-    public class DescribeVpcEndpointServicesResponseUnmarshaller : EC2ResponseUnmarshaller
+    public class SecurityGroupIdentifierUnmarshaller : IUnmarshaller<SecurityGroupIdentifier, XmlUnmarshallerContext>, IUnmarshaller<SecurityGroupIdentifier, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
+        public SecurityGroupIdentifier Unmarshall(XmlUnmarshallerContext context)
         {
-            DescribeVpcEndpointServicesResponse response = new DescribeVpcEndpointServicesResponse();
-
+            SecurityGroupIdentifier unmarshalledObject = new SecurityGroupIdentifier();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
-               targetDepth = 2;
-
+               targetDepth += 2;
+            
             while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-
-                    if (context.TestExpression("nextToken", targetDepth))
+                    if (context.TestExpression("groupId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        response.NextToken = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.GroupId = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("serviceDetailSet/item", targetDepth))
-                    {
-                        var unmarshaller = ServiceDetailUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        response.ServiceDetails.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("serviceNameSet/item", targetDepth))
+                    if (context.TestExpression("groupName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        response.ServiceNames.Add(item);
+                        unmarshalledObject.GroupName = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                } 
+                }
+                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
+                {
+                    return unmarshalledObject;
+                }
             }
 
-            return response;
+            return unmarshalledObject;
         }
 
         /// <summary>
         /// Unmarshaller error response to exception.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="innerException"></param>
-        /// <param name="statusCode"></param>
         /// <returns></returns>
-        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public SecurityGroupIdentifier Unmarshall(JsonUnmarshallerContext context)
         {
-            ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            return new AmazonEC2Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            return null;
         }
-        private static DescribeVpcEndpointServicesResponseUnmarshaller _instance = new DescribeVpcEndpointServicesResponseUnmarshaller();        
 
-        internal static DescribeVpcEndpointServicesResponseUnmarshaller GetInstance()
-        {
-            return _instance;
-        }
+
+        private static SecurityGroupIdentifierUnmarshaller _instance = new SecurityGroupIdentifierUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeVpcEndpointServicesResponseUnmarshaller Instance
+        public static SecurityGroupIdentifierUnmarshaller Instance
         {
             get
             {
                 return _instance;
             }
         }
-
     }
 }

@@ -28,31 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteVpcEndpoints operation.
-    /// Deletes one or more specified VPC endpoints. Deleting a gateway endpoint also deletes
-    /// the endpoint routes in the route tables that were associated with the endpoint. Deleting
-    /// an interface endpoint deletes the endpoint network interfaces.
+    /// Describes a DNS entry.
     /// </summary>
-    public partial class DeleteVpcEndpointsRequest : AmazonEC2Request
+    public partial class DnsEntry
     {
-        private List<string> _vpcEndpointIds = new List<string>();
+        private string _dnsName;
+        private string _hostedZoneId;
 
         /// <summary>
-        /// Gets and sets the property VpcEndpointIds. 
+        /// Gets and sets the property DnsName. 
         /// <para>
-        /// One or more endpoint IDs.
+        /// The DNS name.
         /// </para>
         /// </summary>
-        public List<string> VpcEndpointIds
+        public string DnsName
         {
-            get { return this._vpcEndpointIds; }
-            set { this._vpcEndpointIds = value; }
+            get { return this._dnsName; }
+            set { this._dnsName = value; }
         }
 
-        // Check to see if VpcEndpointIds property is set
-        internal bool IsSetVpcEndpointIds()
+        // Check to see if DnsName property is set
+        internal bool IsSetDnsName()
         {
-            return this._vpcEndpointIds != null && this._vpcEndpointIds.Count > 0; 
+            return this._dnsName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HostedZoneId. 
+        /// <para>
+        /// The ID of the private hosted zone.
+        /// </para>
+        /// </summary>
+        public string HostedZoneId
+        {
+            get { return this._hostedZoneId; }
+            set { this._hostedZoneId = value; }
+        }
+
+        // Check to see if HostedZoneId property is set
+        internal bool IsSetHostedZoneId()
+        {
+            return this._hostedZoneId != null;
         }
 
     }

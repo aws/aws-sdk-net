@@ -2474,13 +2474,21 @@ namespace Amazon.EC2
         /// <summary>
         /// Creates a VPC endpoint for a specified AWS service. An endpoint enables you to create
         /// a private connection between your VPC and another AWS service in your account. You
-        /// can specify an endpoint policy to attach to the endpoint that will control access
-        /// to the service from your VPC. You can also specify the VPC route tables that use the
-        /// endpoint.
+        /// can create a gateway endpoint or an interface endpoint. 
         /// 
         ///  
         /// <para>
-        /// Use <a>DescribeVpcEndpointServices</a> to get a list of supported AWS services.
+        /// A gateway endpoint serves as a target for a route in your route table for traffic
+        /// destined for the AWS service. You can specify the VPC route tables that use the endpoint,
+        /// and you can optionally specify an endpoint policy to attach to the endpoint that will
+        /// control access to the service from your VPC.
+        /// </para>
+        ///  
+        /// <para>
+        /// An interface endpoint is a network interface in your subnet with a private IP address
+        /// that serves as an entry point for traffic destined to the AWS service. You can specify
+        /// the subnets in which to create an endpoint, and the security groups to associate with
+        /// the network interface.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVpcEndpoint service method.</param>
@@ -3352,8 +3360,9 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Deletes one or more specified VPC endpoints. Deleting the endpoint also deletes the
-        /// endpoint routes in the route tables that were associated with the endpoint.
+        /// Deletes one or more specified VPC endpoints. Deleting a gateway endpoint also deletes
+        /// the endpoint routes in the route tables that were associated with the endpoint. Deleting
+        /// an interface endpoint deletes the endpoint network interfaces.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVpcEndpoints service method.</param>
         /// 
@@ -4166,7 +4175,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the Elastic GPUs associated with your instances. For more information about
-        /// Elastic GPUs, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-gpus.html">Amazon
+        /// Elastic GPUs, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-gpus.html">Amazon
         /// EC2 Elastic GPUs</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeElasticGpus service method.</param>
@@ -9079,8 +9088,10 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Modifies attributes of a specified VPC endpoint. You can modify the policy associated
-        /// with the endpoint, and you can add and remove route tables associated with the endpoint.
+        /// Modifies attributes of a specified VPC endpoint. The attributes that you can modify
+        /// depend on the type of VPC endpoint (interface or gateway). For more information, see
+        /// <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-endpoints.html">VPC
+        /// Endpoints</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyVpcEndpoint service method.</param>
         /// 

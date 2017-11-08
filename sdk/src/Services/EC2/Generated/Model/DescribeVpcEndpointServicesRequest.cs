@@ -33,8 +33,33 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeVpcEndpointServicesRequest : AmazonEC2Request
     {
+        private List<Filter> _filters = new List<Filter>();
         private int? _maxResults;
         private string _nextToken;
+        private List<string> _serviceNames = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property Filters. 
+        /// <para>
+        /// One or more filters.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>service-name</code>: The name of the service.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public List<Filter> Filters
+        {
+            get { return this._filters; }
+            set { this._filters = value; }
+        }
+
+        // Check to see if Filters property is set
+        internal bool IsSetFilters()
+        {
+            return this._filters != null && this._filters.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -76,6 +101,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceNames. 
+        /// <para>
+        /// One or more service names.
+        /// </para>
+        /// </summary>
+        public List<string> ServiceNames
+        {
+            get { return this._serviceNames; }
+            set { this._serviceNames = value; }
+        }
+
+        // Check to see if ServiceNames property is set
+        internal bool IsSetServiceNames()
+        {
+            return this._serviceNames != null && this._serviceNames.Count > 0; 
         }
 
     }

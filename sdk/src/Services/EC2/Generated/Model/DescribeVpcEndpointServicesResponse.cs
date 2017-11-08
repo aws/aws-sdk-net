@@ -33,6 +33,7 @@ namespace Amazon.EC2.Model
     public partial class DescribeVpcEndpointServicesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
+        private List<ServiceDetail> _serviceDetails = new List<ServiceDetail>();
         private List<string> _serviceNames = new List<string>();
 
         /// <summary>
@@ -52,6 +53,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceDetails. 
+        /// <para>
+        /// Information about the service.
+        /// </para>
+        /// </summary>
+        public List<ServiceDetail> ServiceDetails
+        {
+            get { return this._serviceDetails; }
+            set { this._serviceDetails = value; }
+        }
+
+        // Check to see if ServiceDetails property is set
+        internal bool IsSetServiceDetails()
+        {
+            return this._serviceDetails != null && this._serviceDetails.Count > 0; 
         }
 
         /// <summary>

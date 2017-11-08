@@ -28,31 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteVpcEndpoints operation.
-    /// Deletes one or more specified VPC endpoints. Deleting a gateway endpoint also deletes
-    /// the endpoint routes in the route tables that were associated with the endpoint. Deleting
-    /// an interface endpoint deletes the endpoint network interfaces.
+    /// Describes a security group.
     /// </summary>
-    public partial class DeleteVpcEndpointsRequest : AmazonEC2Request
+    public partial class SecurityGroupIdentifier
     {
-        private List<string> _vpcEndpointIds = new List<string>();
+        private string _groupId;
+        private string _groupName;
 
         /// <summary>
-        /// Gets and sets the property VpcEndpointIds. 
+        /// Gets and sets the property GroupId. 
         /// <para>
-        /// One or more endpoint IDs.
+        /// The ID of the security group.
         /// </para>
         /// </summary>
-        public List<string> VpcEndpointIds
+        public string GroupId
         {
-            get { return this._vpcEndpointIds; }
-            set { this._vpcEndpointIds = value; }
+            get { return this._groupId; }
+            set { this._groupId = value; }
         }
 
-        // Check to see if VpcEndpointIds property is set
-        internal bool IsSetVpcEndpointIds()
+        // Check to see if GroupId property is set
+        internal bool IsSetGroupId()
         {
-            return this._vpcEndpointIds != null && this._vpcEndpointIds.Count > 0; 
+            return this._groupId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GroupName. 
+        /// <para>
+        /// The name of the security group.
+        /// </para>
+        /// </summary>
+        public string GroupName
+        {
+            get { return this._groupName; }
+            set { this._groupName = value; }
+        }
+
+        // Check to see if GroupName property is set
+        internal bool IsSetGroupName()
+        {
+            return this._groupName != null;
         }
 
     }

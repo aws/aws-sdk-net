@@ -29,21 +29,28 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyVpcEndpoint operation.
-    /// Modifies attributes of a specified VPC endpoint. You can modify the policy associated
-    /// with the endpoint, and you can add and remove route tables associated with the endpoint.
+    /// Modifies attributes of a specified VPC endpoint. The attributes that you can modify
+    /// depend on the type of VPC endpoint (interface or gateway). For more information, see
+    /// <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-endpoints.html">VPC
+    /// Endpoints</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
     /// </summary>
     public partial class ModifyVpcEndpointRequest : AmazonEC2Request
     {
         private List<string> _addRouteTableIds = new List<string>();
+        private List<string> _addSecurityGroupIds = new List<string>();
+        private List<string> _addSubnetIds = new List<string>();
         private string _policyDocument;
+        private bool? _privateDnsEnabled;
         private List<string> _removeRouteTableIds = new List<string>();
+        private List<string> _removeSecurityGroupIds = new List<string>();
+        private List<string> _removeSubnetIds = new List<string>();
         private bool? _resetPolicy;
         private string _vpcEndpointId;
 
         /// <summary>
         /// Gets and sets the property AddRouteTableIds. 
         /// <para>
-        /// One or more route tables IDs to associate with the endpoint.
+        /// (Gateway endpoint) One or more route tables IDs to associate with the endpoint.
         /// </para>
         /// </summary>
         public List<string> AddRouteTableIds
@@ -59,9 +66,47 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AddSecurityGroupIds. 
+        /// <para>
+        /// (Interface endpoint) One or more security group IDs to associate with the network
+        /// interface.
+        /// </para>
+        /// </summary>
+        public List<string> AddSecurityGroupIds
+        {
+            get { return this._addSecurityGroupIds; }
+            set { this._addSecurityGroupIds = value; }
+        }
+
+        // Check to see if AddSecurityGroupIds property is set
+        internal bool IsSetAddSecurityGroupIds()
+        {
+            return this._addSecurityGroupIds != null && this._addSecurityGroupIds.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AddSubnetIds. 
+        /// <para>
+        /// (Interface endpoint) One or more subnet IDs in which to serve the endpoint.
+        /// </para>
+        /// </summary>
+        public List<string> AddSubnetIds
+        {
+            get { return this._addSubnetIds; }
+            set { this._addSubnetIds = value; }
+        }
+
+        // Check to see if AddSubnetIds property is set
+        internal bool IsSetAddSubnetIds()
+        {
+            return this._addSubnetIds != null && this._addSubnetIds.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property PolicyDocument. 
         /// <para>
-        /// A policy document to attach to the endpoint. The policy must be in valid JSON format.
+        /// (Gateway endpoint) A policy document to attach to the endpoint. The policy must be
+        /// in valid JSON format.
         /// </para>
         /// </summary>
         public string PolicyDocument
@@ -77,9 +122,28 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PrivateDnsEnabled. 
+        /// <para>
+        /// (Interface endpoint) Indicate whether a private hosted zone is associated with the
+        /// VPC.
+        /// </para>
+        /// </summary>
+        public bool PrivateDnsEnabled
+        {
+            get { return this._privateDnsEnabled.GetValueOrDefault(); }
+            set { this._privateDnsEnabled = value; }
+        }
+
+        // Check to see if PrivateDnsEnabled property is set
+        internal bool IsSetPrivateDnsEnabled()
+        {
+            return this._privateDnsEnabled.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property RemoveRouteTableIds. 
         /// <para>
-        /// One or more route table IDs to disassociate from the endpoint.
+        /// (Gateway endpoint) One or more route table IDs to disassociate from the endpoint.
         /// </para>
         /// </summary>
         public List<string> RemoveRouteTableIds
@@ -95,10 +159,47 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RemoveSecurityGroupIds. 
+        /// <para>
+        /// (Interface endpoint) One or more security group IDs to disassociate from the network
+        /// interface.
+        /// </para>
+        /// </summary>
+        public List<string> RemoveSecurityGroupIds
+        {
+            get { return this._removeSecurityGroupIds; }
+            set { this._removeSecurityGroupIds = value; }
+        }
+
+        // Check to see if RemoveSecurityGroupIds property is set
+        internal bool IsSetRemoveSecurityGroupIds()
+        {
+            return this._removeSecurityGroupIds != null && this._removeSecurityGroupIds.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RemoveSubnetIds. 
+        /// <para>
+        /// (Interface endpoint) One or more subnets IDs in which to remove the endpoint.
+        /// </para>
+        /// </summary>
+        public List<string> RemoveSubnetIds
+        {
+            get { return this._removeSubnetIds; }
+            set { this._removeSubnetIds = value; }
+        }
+
+        // Check to see if RemoveSubnetIds property is set
+        internal bool IsSetRemoveSubnetIds()
+        {
+            return this._removeSubnetIds != null && this._removeSubnetIds.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ResetPolicy. 
         /// <para>
-        /// Specify <code>true</code> to reset the policy document to the default policy. The
-        /// default policy allows access to the service.
+        /// (Gateway endpoint) Specify <code>true</code> to reset the policy document to the default
+        /// policy. The default policy allows full access to the service.
         /// </para>
         /// </summary>
         public bool ResetPolicy

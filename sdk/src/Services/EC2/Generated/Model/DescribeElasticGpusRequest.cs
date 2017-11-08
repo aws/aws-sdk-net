@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the DescribeElasticGpus operation.
     /// Describes the Elastic GPUs associated with your instances. For more information about
-    /// Elastic GPUs, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-gpus.html">Amazon
+    /// Elastic GPUs, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-gpus.html">Amazon
     /// EC2 Elastic GPUs</a>.
     /// </summary>
     public partial class DescribeElasticGpusRequest : AmazonEC2Request

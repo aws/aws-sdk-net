@@ -4613,6 +4613,56 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type ServiceType.
+    /// </summary>
+    public class ServiceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Gateway for ServiceType
+        /// </summary>
+        public static readonly ServiceType Gateway = new ServiceType("Gateway");
+        /// <summary>
+        /// Constant Interface for ServiceType
+        /// </summary>
+        public static readonly ServiceType Interface = new ServiceType("Interface");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ServiceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ServiceType FindValue(string value)
+        {
+            return FindValue<ServiceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ServiceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ShutdownBehavior.
     /// </summary>
     public class ShutdownBehavior : ConstantClass
@@ -4897,9 +4947,25 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly State Deleting = new State("Deleting");
         /// <summary>
+        /// Constant Expired for State
+        /// </summary>
+        public static readonly State Expired = new State("Expired");
+        /// <summary>
+        /// Constant Failed for State
+        /// </summary>
+        public static readonly State Failed = new State("Failed");
+        /// <summary>
         /// Constant Pending for State
         /// </summary>
         public static readonly State Pending = new State("Pending");
+        /// <summary>
+        /// Constant PendingAcceptance for State
+        /// </summary>
+        public static readonly State PendingAcceptance = new State("PendingAcceptance");
+        /// <summary>
+        /// Constant Rejected for State
+        /// </summary>
+        public static readonly State Rejected = new State("Rejected");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -5988,6 +6054,56 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator VpcCidrBlockStateCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VpcEndpointType.
+    /// </summary>
+    public class VpcEndpointType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Gateway for VpcEndpointType
+        /// </summary>
+        public static readonly VpcEndpointType Gateway = new VpcEndpointType("Gateway");
+        /// <summary>
+        /// Constant Interface for VpcEndpointType
+        /// </summary>
+        public static readonly VpcEndpointType Interface = new VpcEndpointType("Interface");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VpcEndpointType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VpcEndpointType FindValue(string value)
+        {
+            return FindValue<VpcEndpointType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VpcEndpointType(string value)
         {
             return FindValue(value);
         }

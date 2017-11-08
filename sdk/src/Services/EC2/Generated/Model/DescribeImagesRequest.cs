@@ -191,6 +191,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>sriov-net-support</code> - A value of <code>simple</code> indicates that enhanced
+        /// networking with the Intel 82599 VF interface is enabled.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned
         /// to the resource. Specify the key of the tag in the filter name and the value of the
         /// tag in the filter value. For example, for the tag Purpose=X, specify <code>tag:Purpose</code>

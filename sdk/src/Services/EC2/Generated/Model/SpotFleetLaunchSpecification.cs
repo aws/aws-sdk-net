@@ -72,7 +72,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property BlockDeviceMappings. 
         /// <para>
-        /// One or more block device mapping entries.
+        /// One or more block device mapping entries. You can't specify both a snapshot ID and
+        /// an encryption value. This is because only blank volumes can be encrypted on creation.
+        /// If a snapshot is the basis for a volume, it is not blank and its encryption status
+        /// is used for the volume encryption status.
         /// </para>
         /// </summary>
         public List<BlockDeviceMapping> BlockDeviceMappings
