@@ -83,7 +83,6 @@ namespace Amazon.WorkDocs.Utils
             GetDocumentVersionResponse response = await client.GetDocumentVersionAsync(getDocumentVersionRequest).ConfigureAwait(false);
             String downloadUrl = response.Metadata.Source[DocumentSourceType.ORIGINAL.Value];
 
-            httpClient.DefaultRequestHeaders.Remove("x-amz-server-side-encryption");
             return await httpClient.GetStreamAsync(downloadUrl).ConfigureAwait(false);
         }
 
@@ -112,21 +111,29 @@ namespace Amazon.WorkDocs.Utils
             String versionId = response.Metadata.LatestVersionMetadata.Id;
             String uploadUrl = uploadMetadata.UploadUrl;
 
-            httpClient.DefaultRequestHeaders.Add("x-amz-server-side-encryption", "AES256");
-
-            StreamContent content = new StreamContent(uploadDocumentStreamRequest.Stream);
-            content.Headers.Remove("Content-Type");
-            content.Headers.Add("Content-Type", uploadDocumentStreamRequest.ContentType);
-
-            Task<HttpResponseMessage> responseTask = httpClient.PutAsync(uploadUrl, content);
-            Task<Task<String>> task = responseTask.ContinueWith(t => CompleteUpload(documentId, versionId));
-
-            UploadDocumentStreamResponse uploadDocumentStreamResponse = new UploadDocumentStreamResponse(uploadDocumentStreamRequest)
+            try
             {
-                DocumentId = task.Result.Result,
-                VersionId = versionId
-            };
-            return uploadDocumentStreamResponse;
+                httpClient.DefaultRequestHeaders.Add("x-amz-server-side-encryption", "AES256");
+
+                StreamContent content = new StreamContent(uploadDocumentStreamRequest.Stream);
+                content.Headers.Remove("Content-Type");
+                content.Headers.Add("Content-Type", uploadDocumentStreamRequest.ContentType);
+
+                Task<HttpResponseMessage> responseTask = httpClient.PutAsync(uploadUrl, content);
+                Task<Task<String>> task = responseTask.ContinueWith(t => CompleteUpload(documentId, versionId));
+
+                UploadDocumentStreamResponse uploadDocumentStreamResponse = new UploadDocumentStreamResponse(uploadDocumentStreamRequest)
+                {
+                    DocumentId = task.Result.Result,
+                    VersionId = versionId
+                };
+
+                return uploadDocumentStreamResponse;
+            }
+            finally
+            {
+                httpClient.DefaultRequestHeaders.Remove("x-amz-server-side-encryption");
+            }
         }
 
         private async Task<String> CompleteUpload(String documentId, String versionId)
