@@ -743,15 +743,15 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// Returns information about all provisioned cache clusters if no cache cluster identifier
-        /// is specified, or about a specific cache cluster if a cache cluster identifier is supplied.
+        /// Returns information about all provisioned clusters if no cluster identifier is specified,
+        /// or about a specific cache cluster if a cluster identifier is supplied.
         /// 
         ///  
         /// <para>
-        /// By default, abbreviated information about the cache clusters is returned. You can
-        /// use the optional <i>ShowCacheNodeInfo</i> flag to retrieve detailed information about
-        /// the cache nodes associated with the cache clusters. These details include the DNS
-        /// address and port for the cache node endpoint.
+        /// By default, abbreviated information about the clusters is returned. You can use the
+        /// optional <i>ShowCacheNodeInfo</i> flag to retrieve detailed information about the
+        /// cache nodes associated with the clusters. These details include the DNS address and
+        /// port for the cache node endpoint.
         /// </para>
         ///  
         /// <para>
@@ -765,14 +765,14 @@ namespace Amazon.ElastiCache
         /// </para>
         ///  
         /// <para>
-        /// If cache nodes are currently being added to the cache cluster, node endpoint information
+        /// If cache nodes are currently being added to the cluster, node endpoint information
         /// and creation time for the additional nodes are not displayed until they are completely
-        /// provisioned. When the cache cluster state is <i>available</i>, the cluster is ready
-        /// for use.
+        /// provisioned. When the cluster state is <i>available</i>, the cluster is ready for
+        /// use.
         /// </para>
         ///  
         /// <para>
-        /// If cache nodes are currently being removed from the cache cluster, no endpoint information
+        /// If cache nodes are currently being removed from the cluster, no endpoint information
         /// for the removed nodes is displayed.
         /// </para>
         /// </summary>
@@ -782,7 +782,7 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>The response from the DescribeCacheClusters service method, as returned by ElastiCache.</returns>
         /// <exception cref="Amazon.ElastiCache.Model.CacheClusterNotFoundException">
-        /// The requested cache cluster ID does not refer to an existing cache cluster.
+        /// The requested cluster ID does not refer to an existing cluster.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
@@ -1128,9 +1128,9 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// Returns events related to cache clusters, cache security groups, and cache parameter
-        /// groups. You can obtain events specific to a particular cache cluster, cache security
-        /// group, or cache parameter group by providing the name as a parameter.
+        /// Returns events related to clusters, cache security groups, and cache parameter groups.
+        /// You can obtain events specific to a particular cluster, cache security group, or cache
+        /// parameter group by providing the name as a parameter.
         /// 
         ///  
         /// <para>
@@ -1381,9 +1381,9 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// Returns information about cache cluster or replication group snapshots. By default,
-        /// <code>DescribeSnapshots</code> lists all of your snapshots; it can optionally describe
-        /// a single snapshot, or just the snapshots associated with a particular cache cluster.
+        /// Returns information about cluster or replication group snapshots. By default, <code>DescribeSnapshots</code>
+        /// lists all of your snapshots; it can optionally describe a single snapshot, or just
+        /// the snapshots associated with a particular cache cluster.
         /// 
         ///  <note> 
         /// <para>
@@ -1397,7 +1397,7 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>The response from the DescribeSnapshots service method, as returned by ElastiCache.</returns>
         /// <exception cref="Amazon.ElastiCache.Model.CacheClusterNotFoundException">
-        /// The requested cache cluster ID does not refer to an existing cache cluster.
+        /// The requested cluster ID does not refer to an existing cluster.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
@@ -1623,6 +1623,38 @@ namespace Amazon.ElastiCache
             var unmarshaller = ModifyReplicationGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<ModifyReplicationGroupRequest,ModifyReplicationGroupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyReplicationGroupShardConfiguration
+
+        internal virtual ModifyReplicationGroupShardConfigurationResponse ModifyReplicationGroupShardConfiguration(ModifyReplicationGroupShardConfigurationRequest request)
+        {
+            var marshaller = new ModifyReplicationGroupShardConfigurationRequestMarshaller();
+            var unmarshaller = ModifyReplicationGroupShardConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyReplicationGroupShardConfigurationRequest,ModifyReplicationGroupShardConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyReplicationGroupShardConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyReplicationGroupShardConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyReplicationGroupShardConfiguration">REST API Reference for ModifyReplicationGroupShardConfiguration Operation</seealso>
+        public virtual Task<ModifyReplicationGroupShardConfigurationResponse> ModifyReplicationGroupShardConfigurationAsync(ModifyReplicationGroupShardConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ModifyReplicationGroupShardConfigurationRequestMarshaller();
+            var unmarshaller = ModifyReplicationGroupShardConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyReplicationGroupShardConfigurationRequest,ModifyReplicationGroupShardConfigurationResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

@@ -29,15 +29,15 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeCacheClusters operation.
-    /// Returns information about all provisioned cache clusters if no cache cluster identifier
-    /// is specified, or about a specific cache cluster if a cache cluster identifier is supplied.
+    /// Returns information about all provisioned clusters if no cluster identifier is specified,
+    /// or about a specific cache cluster if a cluster identifier is supplied.
     /// 
     ///  
     /// <para>
-    /// By default, abbreviated information about the cache clusters is returned. You can
-    /// use the optional <i>ShowCacheNodeInfo</i> flag to retrieve detailed information about
-    /// the cache nodes associated with the cache clusters. These details include the DNS
-    /// address and port for the cache node endpoint.
+    /// By default, abbreviated information about the clusters is returned. You can use the
+    /// optional <i>ShowCacheNodeInfo</i> flag to retrieve detailed information about the
+    /// cache nodes associated with the clusters. These details include the DNS address and
+    /// port for the cache node endpoint.
     /// </para>
     ///  
     /// <para>
@@ -51,14 +51,14 @@ namespace Amazon.ElastiCache.Model
     /// </para>
     ///  
     /// <para>
-    /// If cache nodes are currently being added to the cache cluster, node endpoint information
+    /// If cache nodes are currently being added to the cluster, node endpoint information
     /// and creation time for the additional nodes are not displayed until they are completely
-    /// provisioned. When the cache cluster state is <i>available</i>, the cluster is ready
-    /// for use.
+    /// provisioned. When the cluster state is <i>available</i>, the cluster is ready for
+    /// use.
     /// </para>
     ///  
     /// <para>
-    /// If cache nodes are currently being removed from the cache cluster, no endpoint information
+    /// If cache nodes are currently being removed from the cluster, no endpoint information
     /// for the removed nodes is displayed.
     /// </para>
     /// </summary>
@@ -79,7 +79,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property CacheClusterId. 
         /// <para>
         /// The user-supplied cluster identifier. If this parameter is specified, only information
-        /// about that specific cache cluster is returned. This parameter isn't case sensitive.
+        /// about that specific cluster is returned. This parameter isn't case sensitive.
         /// </para>
         /// </summary>
         public string CacheClusterId

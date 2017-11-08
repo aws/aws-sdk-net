@@ -35,6 +35,7 @@ namespace Amazon.ElastiCache.Model
     {
         private PendingAutomaticFailoverStatus _automaticFailoverStatus;
         private string _primaryClusterId;
+        private ReshardingStatus _resharding;
 
         /// <summary>
         /// Gets and sets the property AutomaticFailoverStatus. 
@@ -89,6 +90,24 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetPrimaryClusterId()
         {
             return this._primaryClusterId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Resharding. 
+        /// <para>
+        /// The status of an online resharding operation.
+        /// </para>
+        /// </summary>
+        public ReshardingStatus Resharding
+        {
+            get { return this._resharding; }
+            set { this._resharding = value; }
+        }
+
+        // Check to see if Resharding property is set
+        internal bool IsSetResharding()
+        {
+            return this._resharding != null;
         }
 
     }

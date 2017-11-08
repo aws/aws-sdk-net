@@ -53,7 +53,8 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the resource to which the tags are to be added,
         /// for example <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>
-        /// or <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.
+        /// or <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>. ElastiCache
+        /// resources are <i>cluster</i> and <i>snapshot</i>.
         /// </para>
         ///  
         /// <para>

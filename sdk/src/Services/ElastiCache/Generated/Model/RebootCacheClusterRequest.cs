@@ -29,10 +29,10 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the RebootCacheCluster operation.
-    /// Reboots some, or all, of the cache nodes within a provisioned cache cluster. This
-    /// operation applies any modified cache parameter groups to the cache cluster. The reboot
-    /// operation takes place as soon as possible, and results in a momentary outage to the
-    /// cache cluster. During the reboot, the cache cluster status is set to REBOOTING.
+    /// Reboots some, or all, of the cache nodes within a provisioned cluster. This operation
+    /// applies any modified cache parameter groups to the cluster. The reboot operation takes
+    /// place as soon as possible, and results in a momentary outage to the cluster. During
+    /// the reboot, the cluster status is set to REBOOTING.
     /// 
     ///  
     /// <para>
@@ -41,7 +41,7 @@ namespace Amazon.ElastiCache.Model
     /// </para>
     ///  
     /// <para>
-    /// When the reboot is complete, a cache cluster event is created.
+    /// When the reboot is complete, a cluster event is created.
     /// </para>
     ///  
     /// <para>
@@ -68,8 +68,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Instantiates RebootCacheClusterRequest with the parameterized properties
         /// </summary>
-        /// <param name="cacheClusterId">The cache cluster identifier. This parameter is stored as a lowercase string.</param>
-        /// <param name="cacheNodeIdsToReboot">A list of cache node IDs to reboot. A node ID is a numeric identifier (0001, 0002, etc.). To reboot an entire cache cluster, specify all of the cache node IDs.</param>
+        /// <param name="cacheClusterId">The cluster identifier. This parameter is stored as a lowercase string.</param>
+        /// <param name="cacheNodeIdsToReboot">A list of cache node IDs to reboot. A node ID is a numeric identifier (0001, 0002, etc.). To reboot an entire cluster, specify all of the cache node IDs.</param>
         public RebootCacheClusterRequest(string cacheClusterId, List<string> cacheNodeIdsToReboot)
         {
             _cacheClusterId = cacheClusterId;
@@ -79,7 +79,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property CacheClusterId. 
         /// <para>
-        /// The cache cluster identifier. This parameter is stored as a lowercase string.
+        /// The cluster identifier. This parameter is stored as a lowercase string.
         /// </para>
         /// </summary>
         public string CacheClusterId
@@ -98,7 +98,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property CacheNodeIdsToReboot. 
         /// <para>
         /// A list of cache node IDs to reboot. A node ID is a numeric identifier (0001, 0002,
-        /// etc.). To reboot an entire cache cluster, specify all of the cache node IDs.
+        /// etc.). To reboot an entire cluster, specify all of the cache node IDs.
         /// </para>
         /// </summary>
         public List<string> CacheNodeIdsToReboot

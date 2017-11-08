@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// Describes an Availability Zone in which the cache cluster is launched.
+    /// Describes an Availability Zone in which the cluster is launched.
     /// </summary>
     public partial class AvailabilityZone
     {

@@ -34,9 +34,9 @@ namespace Amazon.ElastiCache.Model
     /// 
     ///  
     /// <para>
-    /// A Redis (cluster mode disabled) replication group is a collection of cache clusters,
-    /// where one of the cache clusters is a read/write primary and the others are read-only
-    /// replicas. Writes to the primary are asynchronously propagated to the replicas.
+    /// A Redis (cluster mode disabled) replication group is a collection of clusters, where
+    /// one of the clusters is a read/write primary and the others are read-only replicas.
+    /// Writes to the primary are asynchronously propagated to the replicas.
     /// </para>
     ///  
     /// <para>
@@ -353,11 +353,6 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Supported node types are available in all regions except as noted in the following
-        /// table.
-        /// </para>
-        ///  
-        /// <para>
         /// For a complete listing of node types and specifications, see <a href="http://aws.amazon.com/elasticache/details">Amazon
         /// ElastiCache Product Features and Details</a> and either <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
         /// Node Type-Specific Parameters for Memcached</a> or <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
@@ -457,8 +452,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// The name of the cache engine to be used for the cache clusters in this replication
-        /// group.
+        /// The name of the cache engine to be used for the clusters in this replication group.
         /// </para>
         /// </summary>
         public string Engine
@@ -476,7 +470,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// The version number of the cache engine to be used for the cache clusters in this replication
+        /// The version number of the cache engine to be used for the clusters in this replication
         /// group. To view the supported cache engine versions, use the <code>DescribeCacheEngineVersions</code>
         /// operation.
         /// </para>
@@ -485,8 +479,8 @@ namespace Amazon.ElastiCache.Model
         ///  <b>Important:</b> You can upgrade to a newer engine version (see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
         /// a Cache Engine and Version</a>) in the <i>ElastiCache User Guide</i>, but you cannot
         /// downgrade to an earlier engine version. If you want to use an earlier engine version,
-        /// you must delete the existing cache cluster or replication group and create it anew
-        /// with the earlier engine version. 
+        /// you must delete the existing cluster or replication group and create it anew with
+        /// the earlier engine version. 
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -534,7 +528,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The Amazon SNS topic owner must be the same as the cache cluster owner.
+        /// The Amazon SNS topic owner must be the same as the cluster owner.
         /// </para>
         ///  </note>
         /// </summary>
@@ -630,9 +624,9 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property PreferredCacheClusterAZs. 
         /// <para>
-        /// A list of EC2 Availability Zones in which the replication group's cache clusters are
-        /// created. The order of the Availability Zones in the list is the order in which clusters
-        /// are allocated. The primary cluster is created in the first AZ in the list.
+        /// A list of EC2 Availability Zones in which the replication group's clusters are created.
+        /// The order of the Availability Zones in the list is the order in which clusters are
+        /// allocated. The primary cluster is created in the first AZ in the list.
         /// </para>
         ///  
         /// <para>
@@ -642,8 +636,8 @@ namespace Amazon.ElastiCache.Model
         ///  <note> 
         /// <para>
         /// If you are creating your replication group in an Amazon VPC (recommended), you can
-        /// only locate cache clusters in Availability Zones associated with the subnets in the
-        /// selected subnet group.
+        /// only locate clusters in Availability Zones associated with the subnets in the selected
+        /// subnet group.
         /// </para>
         ///  
         /// <para>
@@ -669,7 +663,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property PreferredMaintenanceWindow. 
         /// <para>
-        /// Specifies the weekly time range during which maintenance on the cache cluster is performed.
+        /// Specifies the weekly time range during which maintenance on the cluster is performed.
         /// It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC).
         /// The minimum maintenance window is a 60 minute period. Valid values for <code>ddd</code>
         /// are:
@@ -732,8 +726,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property PrimaryClusterId. 
         /// <para>
-        /// The identifier of the cache cluster that serves as the primary for this replication
-        /// group. This cache cluster must already exist and have a status of <code>available</code>.
+        /// The identifier of the cluster that serves as the primary for this replication group.
+        /// This cluster must already exist and have a status of <code>available</code>.
         /// </para>
         ///  
         /// <para>
@@ -904,7 +898,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: 0 (i.e., automatic backups are disabled for this cache cluster).
+        /// Default: 0 (i.e., automatic backups are disabled for this cluster).
         /// </para>
         /// </summary>
         public int SnapshotRetentionLimit
@@ -951,7 +945,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// A list of cost allocation tags to be added to this resource. A tag is a key-value
-        /// pair.
+        /// pair. A tag key does not have to be accompanied by a tag value.
         /// </para>
         /// </summary>
         public List<Tag> Tags

@@ -28,39 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteCacheSubnetGroup operation.
-    /// Deletes a cache subnet group.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// You cannot delete a cache subnet group if it is associated with any clusters.
-    /// </para>
-    ///  </note>
+    /// A list of <code>PreferredAvailabilityZones</code> objects that specifies the configuration
+    /// of a node group in the resharded cluster.
     /// </summary>
-    public partial class DeleteCacheSubnetGroupRequest : AmazonElastiCacheRequest
+    public partial class ReshardingConfiguration
     {
-        private string _cacheSubnetGroupName;
+        private List<string> _preferredAvailabilityZones = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property CacheSubnetGroupName. 
+        /// Gets and sets the property PreferredAvailabilityZones. 
         /// <para>
-        /// The name of the cache subnet group to delete.
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints: Must contain no more than 255 alphanumeric characters or hyphens.
+        /// A list of preferred availability zones for the nodes in this cluster.
         /// </para>
         /// </summary>
-        public string CacheSubnetGroupName
+        public List<string> PreferredAvailabilityZones
         {
-            get { return this._cacheSubnetGroupName; }
-            set { this._cacheSubnetGroupName = value; }
+            get { return this._preferredAvailabilityZones; }
+            set { this._preferredAvailabilityZones = value; }
         }
 
-        // Check to see if CacheSubnetGroupName property is set
-        internal bool IsSetCacheSubnetGroupName()
+        // Check to see if PreferredAvailabilityZones property is set
+        internal bool IsSetPreferredAvailabilityZones()
         {
-            return this._cacheSubnetGroupName != null;
+            return this._preferredAvailabilityZones != null && this._preferredAvailabilityZones.Count > 0; 
         }
 
     }

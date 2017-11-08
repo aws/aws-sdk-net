@@ -74,7 +74,7 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>The response from the AddTagsToResource service method, as returned by ElastiCache.</returns>
         /// <exception cref="Amazon.ElastiCache.Model.CacheClusterNotFoundException">
-        /// The requested cache cluster ID does not refer to an existing cache cluster.
+        /// The requested cluster ID does not refer to an existing cluster.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidARNException">
         /// The requested Amazon Resource Name (ARN) does not refer to an existing resource.
@@ -350,8 +350,8 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// Creates a cache cluster. All nodes in the cache cluster run the same protocol-compliant
-        /// cache engine software, either Memcached or Redis.
+        /// Creates a cluster. All nodes in the cluster run the same protocol-compliant cache
+        /// engine software, either Memcached or Redis.
         /// 
         ///  <important> 
         /// <para>
@@ -364,7 +364,7 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>The response from the CreateCacheCluster service method, as returned by ElastiCache.</returns>
         /// <exception cref="Amazon.ElastiCache.Model.CacheClusterAlreadyExistsException">
-        /// You already have a cache cluster with the given identifier.
+        /// You already have a cluster with the given identifier.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.CacheParameterGroupNotFoundException">
         /// The requested cache parameter group name does not refer to an existing cache parameter
@@ -378,8 +378,8 @@ namespace Amazon.ElastiCache
         /// The requested cache subnet group name does not refer to an existing cache subnet group.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ClusterQuotaForCustomerExceededException">
-        /// The request cannot be processed because it would exceed the allowed number of cache
-        /// clusters per customer.
+        /// The request cannot be processed because it would exceed the allowed number of clusters
+        /// per customer.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InsufficientCacheClusterCapacityException">
         /// The requested cache node type is not available in the specified Availability Zone.
@@ -398,7 +398,7 @@ namespace Amazon.ElastiCache
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.NodeQuotaForClusterExceededException">
         /// The request cannot be processed because it would exceed the allowed number of cache
-        /// nodes in a single cache cluster.
+        /// nodes in a single cluster.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.NodeQuotaForCustomerExceededException">
         /// The request cannot be processed because it would exceed the allowed number of cache
@@ -449,7 +449,7 @@ namespace Amazon.ElastiCache
         /// <summary>
         /// Creates a new Amazon ElastiCache cache parameter group. An ElastiCache cache parameter
         /// group is a collection of parameters and their values that are applied to all of the
-        /// nodes in any cache cluster or replication group using the CacheParameterGroup.
+        /// nodes in any cluster or replication group using the CacheParameterGroup.
         /// 
         ///  
         /// <para>
@@ -525,13 +525,13 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Creates a new cache security group. Use a cache security group to control access to
-        /// one or more cache clusters.
+        /// one or more clusters.
         /// 
         ///  
         /// <para>
-        /// Cache security groups are only used when you are creating a cache cluster outside
-        /// of an Amazon Virtual Private Cloud (Amazon VPC). If you are creating a cache cluster
-        /// inside of a VPC, use a cache subnet group instead. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheSubnetGroup.html">CreateCacheSubnetGroup</a>.
+        /// Cache security groups are only used when you are creating a cluster outside of an
+        /// Amazon Virtual Private Cloud (Amazon VPC). If you are creating a cluster inside of
+        /// a VPC, use a cache subnet group instead. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheSubnetGroup.html">CreateCacheSubnetGroup</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCacheSecurityGroup service method.</param>
@@ -651,9 +651,9 @@ namespace Amazon.ElastiCache
         /// 
         ///  
         /// <para>
-        /// A Redis (cluster mode disabled) replication group is a collection of cache clusters,
-        /// where one of the cache clusters is a read/write primary and the others are read-only
-        /// replicas. Writes to the primary are asynchronously propagated to the replicas.
+        /// A Redis (cluster mode disabled) replication group is a collection of clusters, where
+        /// one of the clusters is a read/write primary and the others are read-only replicas.
+        /// Writes to the primary are asynchronously propagated to the replicas.
         /// </para>
         ///  
         /// <para>
@@ -683,7 +683,7 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>The response from the CreateReplicationGroup service method, as returned by ElastiCache.</returns>
         /// <exception cref="Amazon.ElastiCache.Model.CacheClusterNotFoundException">
-        /// The requested cache cluster ID does not refer to an existing cache cluster.
+        /// The requested cluster ID does not refer to an existing cluster.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.CacheParameterGroupNotFoundException">
         /// The requested cache parameter group name does not refer to an existing cache parameter
@@ -697,14 +697,14 @@ namespace Amazon.ElastiCache
         /// The requested cache subnet group name does not refer to an existing cache subnet group.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ClusterQuotaForCustomerExceededException">
-        /// The request cannot be processed because it would exceed the allowed number of cache
-        /// clusters per customer.
+        /// The request cannot be processed because it would exceed the allowed number of clusters
+        /// per customer.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InsufficientCacheClusterCapacityException">
         /// The requested cache node type is not available in the specified Availability Zone.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
-        /// The requested cache cluster is not in the <code>available</code> state.
+        /// The requested cluster is not in the <code>available</code> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
@@ -716,12 +716,12 @@ namespace Amazon.ElastiCache
         /// The VPC network is in an invalid state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.NodeGroupsPerReplicationGroupQuotaExceededException">
-        /// The request cannot be processed because it would exceed the maximum of 15 node groups
-        /// (shards) in a single replication group.
+        /// The request cannot be processed because it would exceed the maximum allowed number
+        /// of node groups (shards) in a single replication group. The default maximum is 15
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.NodeQuotaForClusterExceededException">
         /// The request cannot be processed because it would exceed the allowed number of cache
-        /// nodes in a single cache cluster.
+        /// nodes in a single cluster.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.NodeQuotaForCustomerExceededException">
         /// The request cannot be processed because it would exceed the allowed number of cache
@@ -770,8 +770,7 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// Creates a copy of an entire cache cluster or replication group at a specific moment
-        /// in time.
+        /// Creates a copy of an entire cluster or replication group at a specific moment in time.
         /// 
         ///  <note> 
         /// <para>
@@ -783,10 +782,10 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>The response from the CreateSnapshot service method, as returned by ElastiCache.</returns>
         /// <exception cref="Amazon.ElastiCache.Model.CacheClusterNotFoundException">
-        /// The requested cache cluster ID does not refer to an existing cache cluster.
+        /// The requested cluster ID does not refer to an existing cluster.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
-        /// The requested cache cluster is not in the <code>available</code> state.
+        /// The requested cluster is not in the <code>available</code> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
@@ -808,12 +807,12 @@ namespace Amazon.ElastiCache
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// Creating a snapshot of a Redis cache cluster running on a <code>cache.t1.micro</code>
-        /// cache node.
+        /// Creating a snapshot of a Redis cluster running on a <code>cache.t1.micro</code> cache
+        /// node.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Creating a snapshot of a cache cluster that is running Memcached rather than Redis.
+        /// Creating a snapshot of a cluster that is running Memcached rather than Redis.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -858,16 +857,16 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// Deletes a previously provisioned cache cluster. <code>DeleteCacheCluster</code> deletes
-        /// all associated cache nodes, node endpoints and the cache cluster itself. When you
-        /// receive a successful response from this operation, Amazon ElastiCache immediately
-        /// begins deleting the cache cluster; you cannot cancel or revert this operation.
+        /// Deletes a previously provisioned cluster. <code>DeleteCacheCluster</code> deletes
+        /// all associated cache nodes, node endpoints and the cluster itself. When you receive
+        /// a successful response from this operation, Amazon ElastiCache immediately begins deleting
+        /// the cluster; you cannot cancel or revert this operation.
         /// 
         ///  
         /// <para>
-        /// This operation cannot be used to delete a cache cluster that is the last read replica
-        /// of a replication group or node group (shard) that has Multi-AZ mode enabled or a cache
-        /// cluster from a Redis (cluster mode enabled) replication group.
+        /// This operation cannot be used to delete a cluster that is the last read replica of
+        /// a replication group or node group (shard) that has Multi-AZ mode enabled or a cluster
+        /// from a Redis (cluster mode enabled) replication group.
         /// </para>
         ///  <important> 
         /// <para>
@@ -880,10 +879,10 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>The response from the DeleteCacheCluster service method, as returned by ElastiCache.</returns>
         /// <exception cref="Amazon.ElastiCache.Model.CacheClusterNotFoundException">
-        /// The requested cache cluster ID does not refer to an existing cache cluster.
+        /// The requested cluster ID does not refer to an existing cluster.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
-        /// The requested cache cluster is not in the <code>available</code> state.
+        /// The requested cluster is not in the <code>available</code> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
@@ -899,12 +898,12 @@ namespace Amazon.ElastiCache
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// Creating a snapshot of a Redis cache cluster running on a <code>cache.t1.micro</code>
-        /// cache node.
+        /// Creating a snapshot of a Redis cluster running on a <code>cache.t1.micro</code> cache
+        /// node.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Creating a snapshot of a cache cluster that is running Memcached rather than Redis.
+        /// Creating a snapshot of a cluster that is running Memcached rather than Redis.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1008,7 +1007,7 @@ namespace Amazon.ElastiCache
         /// 
         ///  <note> 
         /// <para>
-        /// You cannot delete a cache security group if it is associated with any cache clusters.
+        /// You cannot delete a cache security group if it is associated with any clusters.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1067,7 +1066,7 @@ namespace Amazon.ElastiCache
         /// 
         ///  <note> 
         /// <para>
-        /// You cannot delete a cache subnet group if it is associated with any cache clusters.
+        /// You cannot delete a cache subnet group if it is associated with any clusters.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1154,12 +1153,12 @@ namespace Amazon.ElastiCache
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// Creating a snapshot of a Redis cache cluster running on a <code>cache.t1.micro</code>
-        /// cache node.
+        /// Creating a snapshot of a Redis cluster running on a <code>cache.t1.micro</code> cache
+        /// node.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Creating a snapshot of a cache cluster that is running Memcached rather than Redis.
+        /// Creating a snapshot of a cluster that is running Memcached rather than Redis.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1264,15 +1263,15 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// Returns information about all provisioned cache clusters if no cache cluster identifier
-        /// is specified, or about a specific cache cluster if a cache cluster identifier is supplied.
+        /// Returns information about all provisioned clusters if no cluster identifier is specified,
+        /// or about a specific cache cluster if a cluster identifier is supplied.
         /// 
         ///  
         /// <para>
-        /// By default, abbreviated information about the cache clusters is returned. You can
-        /// use the optional <i>ShowCacheNodeInfo</i> flag to retrieve detailed information about
-        /// the cache nodes associated with the cache clusters. These details include the DNS
-        /// address and port for the cache node endpoint.
+        /// By default, abbreviated information about the clusters is returned. You can use the
+        /// optional <i>ShowCacheNodeInfo</i> flag to retrieve detailed information about the
+        /// cache nodes associated with the clusters. These details include the DNS address and
+        /// port for the cache node endpoint.
         /// </para>
         ///  
         /// <para>
@@ -1286,21 +1285,21 @@ namespace Amazon.ElastiCache
         /// </para>
         ///  
         /// <para>
-        /// If cache nodes are currently being added to the cache cluster, node endpoint information
+        /// If cache nodes are currently being added to the cluster, node endpoint information
         /// and creation time for the additional nodes are not displayed until they are completely
-        /// provisioned. When the cache cluster state is <i>available</i>, the cluster is ready
-        /// for use.
+        /// provisioned. When the cluster state is <i>available</i>, the cluster is ready for
+        /// use.
         /// </para>
         ///  
         /// <para>
-        /// If cache nodes are currently being removed from the cache cluster, no endpoint information
+        /// If cache nodes are currently being removed from the cluster, no endpoint information
         /// for the removed nodes is displayed.
         /// </para>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeCacheClusters service method, as returned by ElastiCache.</returns>
         /// <exception cref="Amazon.ElastiCache.Model.CacheClusterNotFoundException">
-        /// The requested cache cluster ID does not refer to an existing cache cluster.
+        /// The requested cluster ID does not refer to an existing cluster.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
@@ -1312,15 +1311,15 @@ namespace Amazon.ElastiCache
         DescribeCacheClustersResponse DescribeCacheClusters();
 
         /// <summary>
-        /// Returns information about all provisioned cache clusters if no cache cluster identifier
-        /// is specified, or about a specific cache cluster if a cache cluster identifier is supplied.
+        /// Returns information about all provisioned clusters if no cluster identifier is specified,
+        /// or about a specific cache cluster if a cluster identifier is supplied.
         /// 
         ///  
         /// <para>
-        /// By default, abbreviated information about the cache clusters is returned. You can
-        /// use the optional <i>ShowCacheNodeInfo</i> flag to retrieve detailed information about
-        /// the cache nodes associated with the cache clusters. These details include the DNS
-        /// address and port for the cache node endpoint.
+        /// By default, abbreviated information about the clusters is returned. You can use the
+        /// optional <i>ShowCacheNodeInfo</i> flag to retrieve detailed information about the
+        /// cache nodes associated with the clusters. These details include the DNS address and
+        /// port for the cache node endpoint.
         /// </para>
         ///  
         /// <para>
@@ -1334,14 +1333,14 @@ namespace Amazon.ElastiCache
         /// </para>
         ///  
         /// <para>
-        /// If cache nodes are currently being added to the cache cluster, node endpoint information
+        /// If cache nodes are currently being added to the cluster, node endpoint information
         /// and creation time for the additional nodes are not displayed until they are completely
-        /// provisioned. When the cache cluster state is <i>available</i>, the cluster is ready
-        /// for use.
+        /// provisioned. When the cluster state is <i>available</i>, the cluster is ready for
+        /// use.
         /// </para>
         ///  
         /// <para>
-        /// If cache nodes are currently being removed from the cache cluster, no endpoint information
+        /// If cache nodes are currently being removed from the cluster, no endpoint information
         /// for the removed nodes is displayed.
         /// </para>
         /// </summary>
@@ -1349,7 +1348,7 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>The response from the DescribeCacheClusters service method, as returned by ElastiCache.</returns>
         /// <exception cref="Amazon.ElastiCache.Model.CacheClusterNotFoundException">
-        /// The requested cache cluster ID does not refer to an existing cache cluster.
+        /// The requested cluster ID does not refer to an existing cluster.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
@@ -1733,9 +1732,9 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// Returns events related to cache clusters, cache security groups, and cache parameter
-        /// groups. You can obtain events specific to a particular cache cluster, cache security
-        /// group, or cache parameter group by providing the name as a parameter.
+        /// Returns events related to clusters, cache security groups, and cache parameter groups.
+        /// You can obtain events specific to a particular cluster, cache security group, or cache
+        /// parameter group by providing the name as a parameter.
         /// 
         ///  
         /// <para>
@@ -1755,9 +1754,9 @@ namespace Amazon.ElastiCache
         DescribeEventsResponse DescribeEvents();
 
         /// <summary>
-        /// Returns events related to cache clusters, cache security groups, and cache parameter
-        /// groups. You can obtain events specific to a particular cache cluster, cache security
-        /// group, or cache parameter group by providing the name as a parameter.
+        /// Returns events related to clusters, cache security groups, and cache parameter groups.
+        /// You can obtain events specific to a particular cluster, cache security group, or cache
+        /// parameter group by providing the name as a parameter.
         /// 
         ///  
         /// <para>
@@ -2023,9 +2022,9 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// Returns information about cache cluster or replication group snapshots. By default,
-        /// <code>DescribeSnapshots</code> lists all of your snapshots; it can optionally describe
-        /// a single snapshot, or just the snapshots associated with a particular cache cluster.
+        /// Returns information about cluster or replication group snapshots. By default, <code>DescribeSnapshots</code>
+        /// lists all of your snapshots; it can optionally describe a single snapshot, or just
+        /// the snapshots associated with a particular cache cluster.
         /// 
         ///  <note> 
         /// <para>
@@ -2036,7 +2035,7 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>The response from the DescribeSnapshots service method, as returned by ElastiCache.</returns>
         /// <exception cref="Amazon.ElastiCache.Model.CacheClusterNotFoundException">
-        /// The requested cache cluster ID does not refer to an existing cache cluster.
+        /// The requested cluster ID does not refer to an existing cluster.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
@@ -2051,9 +2050,9 @@ namespace Amazon.ElastiCache
         DescribeSnapshotsResponse DescribeSnapshots();
 
         /// <summary>
-        /// Returns information about cache cluster or replication group snapshots. By default,
-        /// <code>DescribeSnapshots</code> lists all of your snapshots; it can optionally describe
-        /// a single snapshot, or just the snapshots associated with a particular cache cluster.
+        /// Returns information about cluster or replication group snapshots. By default, <code>DescribeSnapshots</code>
+        /// lists all of your snapshots; it can optionally describe a single snapshot, or just
+        /// the snapshots associated with a particular cache cluster.
         /// 
         ///  <note> 
         /// <para>
@@ -2065,7 +2064,7 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>The response from the DescribeSnapshots service method, as returned by ElastiCache.</returns>
         /// <exception cref="Amazon.ElastiCache.Model.CacheClusterNotFoundException">
-        /// The requested cache cluster ID does not refer to an existing cache cluster.
+        /// The requested cluster ID does not refer to an existing cluster.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
@@ -2125,7 +2124,7 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>The response from the ListAllowedNodeTypeModifications service method, as returned by ElastiCache.</returns>
         /// <exception cref="Amazon.ElastiCache.Model.CacheClusterNotFoundException">
-        /// The requested cache cluster ID does not refer to an existing cache cluster.
+        /// The requested cluster ID does not refer to an existing cluster.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
@@ -2186,7 +2185,7 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by ElastiCache.</returns>
         /// <exception cref="Amazon.ElastiCache.Model.CacheClusterNotFoundException">
-        /// The requested cache cluster ID does not refer to an existing cache cluster.
+        /// The requested cluster ID does not refer to an existing cluster.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidARNException">
         /// The requested Amazon Resource Name (ARN) does not refer to an existing resource.
@@ -2229,15 +2228,14 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// Modifies the settings for a cache cluster. You can use this operation to change one
-        /// or more cluster configuration parameters by specifying the parameters and the new
-        /// values.
+        /// Modifies the settings for a cluster. You can use this operation to change one or more
+        /// cluster configuration parameters by specifying the parameters and the new values.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyCacheCluster service method.</param>
         /// 
         /// <returns>The response from the ModifyCacheCluster service method, as returned by ElastiCache.</returns>
         /// <exception cref="Amazon.ElastiCache.Model.CacheClusterNotFoundException">
-        /// The requested cache cluster ID does not refer to an existing cache cluster.
+        /// The requested cluster ID does not refer to an existing cluster.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.CacheParameterGroupNotFoundException">
         /// The requested cache parameter group name does not refer to an existing cache parameter
@@ -2251,7 +2249,7 @@ namespace Amazon.ElastiCache
         /// The requested cache node type is not available in the specified Availability Zone.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
-        /// The requested cache cluster is not in the <code>available</code> state.
+        /// The requested cluster is not in the <code>available</code> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheSecurityGroupStateException">
         /// The current state of the cache security group does not allow deletion.
@@ -2267,7 +2265,7 @@ namespace Amazon.ElastiCache
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.NodeQuotaForClusterExceededException">
         /// The request cannot be processed because it would exceed the allowed number of cache
-        /// nodes in a single cache cluster.
+        /// nodes in a single cluster.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.NodeQuotaForCustomerExceededException">
         /// The request cannot be processed because it would exceed the allowed number of cache
@@ -2433,7 +2431,7 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>The response from the ModifyReplicationGroup service method, as returned by ElastiCache.</returns>
         /// <exception cref="Amazon.ElastiCache.Model.CacheClusterNotFoundException">
-        /// The requested cache cluster ID does not refer to an existing cache cluster.
+        /// The requested cluster ID does not refer to an existing cluster.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.CacheParameterGroupNotFoundException">
         /// The requested cache parameter group name does not refer to an existing cache parameter
@@ -2447,7 +2445,7 @@ namespace Amazon.ElastiCache
         /// The requested cache node type is not available in the specified Availability Zone.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
-        /// The requested cache cluster is not in the <code>available</code> state.
+        /// The requested cluster is not in the <code>available</code> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheSecurityGroupStateException">
         /// The current state of the cache security group does not allow deletion.
@@ -2466,7 +2464,7 @@ namespace Amazon.ElastiCache
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.NodeQuotaForClusterExceededException">
         /// The request cannot be processed because it would exceed the allowed number of cache
-        /// nodes in a single cache cluster.
+        /// nodes in a single cluster.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.NodeQuotaForCustomerExceededException">
         /// The request cannot be processed because it would exceed the allowed number of cache
@@ -2503,6 +2501,84 @@ namespace Amazon.ElastiCache
         /// <returns>Returns a  ModifyReplicationGroupResult from ElastiCache.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyReplicationGroup">REST API Reference for ModifyReplicationGroup Operation</seealso>
         ModifyReplicationGroupResponse EndModifyReplicationGroup(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ModifyReplicationGroupShardConfiguration
+
+
+        /// <summary>
+        /// Performs horizontal scaling on a Redis (cluster mode enabled) cluster with no downtime.
+        /// Requires Redis engine version 3.2.10 or newer. For information on upgrading your engine
+        /// to a newer version, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/VersionManagement.html">Upgrading
+        /// Engine Versions</a> in the Amazon ElastiCache User Guide.
+        /// 
+        ///  
+        /// <para>
+        /// For more information on ElastiCache for Redis online horizontal scaling, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/redis-cluster-resharding-online.html">ElastiCache
+        /// for Redis Horizontal Scaling</a> 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyReplicationGroupShardConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the ModifyReplicationGroupShardConfiguration service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.InsufficientCacheClusterCapacityException">
+        /// The requested cache node type is not available in the specified Availability Zone.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
+        /// The requested cluster is not in the <code>available</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
+        /// The requested replication group is not in the <code>available</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidVPCNetworkStateException">
+        /// The VPC network is in an invalid state.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.NodeGroupsPerReplicationGroupQuotaExceededException">
+        /// The request cannot be processed because it would exceed the maximum allowed number
+        /// of node groups (shards) in a single replication group. The default maximum is 15
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.NodeQuotaForCustomerExceededException">
+        /// The request cannot be processed because it would exceed the allowed number of cache
+        /// nodes per customer.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupNotFoundException">
+        /// The specified replication group does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyReplicationGroupShardConfiguration">REST API Reference for ModifyReplicationGroupShardConfiguration Operation</seealso>
+        ModifyReplicationGroupShardConfigurationResponse ModifyReplicationGroupShardConfiguration(ModifyReplicationGroupShardConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyReplicationGroupShardConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyReplicationGroupShardConfiguration operation on AmazonElastiCacheClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyReplicationGroupShardConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyReplicationGroupShardConfiguration">REST API Reference for ModifyReplicationGroupShardConfiguration Operation</seealso>
+        IAsyncResult BeginModifyReplicationGroupShardConfiguration(ModifyReplicationGroupShardConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyReplicationGroupShardConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyReplicationGroupShardConfiguration.</param>
+        /// 
+        /// <returns>Returns a  ModifyReplicationGroupShardConfigurationResult from ElastiCache.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyReplicationGroupShardConfiguration">REST API Reference for ModifyReplicationGroupShardConfiguration Operation</seealso>
+        ModifyReplicationGroupShardConfigurationResponse EndModifyReplicationGroupShardConfiguration(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2565,10 +2641,10 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// Reboots some, or all, of the cache nodes within a provisioned cache cluster. This
-        /// operation applies any modified cache parameter groups to the cache cluster. The reboot
-        /// operation takes place as soon as possible, and results in a momentary outage to the
-        /// cache cluster. During the reboot, the cache cluster status is set to REBOOTING.
+        /// Reboots some, or all, of the cache nodes within a provisioned cluster. This operation
+        /// applies any modified cache parameter groups to the cluster. The reboot operation takes
+        /// place as soon as possible, and results in a momentary outage to the cluster. During
+        /// the reboot, the cluster status is set to REBOOTING.
         /// 
         ///  
         /// <para>
@@ -2577,7 +2653,7 @@ namespace Amazon.ElastiCache
         /// </para>
         ///  
         /// <para>
-        /// When the reboot is complete, a cache cluster event is created.
+        /// When the reboot is complete, a cluster event is created.
         /// </para>
         ///  
         /// <para>
@@ -2595,10 +2671,10 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>The response from the RebootCacheCluster service method, as returned by ElastiCache.</returns>
         /// <exception cref="Amazon.ElastiCache.Model.CacheClusterNotFoundException">
-        /// The requested cache cluster ID does not refer to an existing cache cluster.
+        /// The requested cluster ID does not refer to an existing cluster.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
-        /// The requested cache cluster is not in the <code>available</code> state.
+        /// The requested cluster is not in the <code>available</code> state.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/RebootCacheCluster">REST API Reference for RebootCacheCluster Operation</seealso>
         RebootCacheClusterResponse RebootCacheCluster(RebootCacheClusterRequest request);
@@ -2641,7 +2717,7 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>The response from the RemoveTagsFromResource service method, as returned by ElastiCache.</returns>
         /// <exception cref="Amazon.ElastiCache.Model.CacheClusterNotFoundException">
-        /// The requested cache cluster ID does not refer to an existing cache cluster.
+        /// The requested cluster ID does not refer to an existing cluster.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidARNException">
         /// The requested Amazon Resource Name (ARN) does not refer to an existing resource.
@@ -2885,7 +2961,7 @@ namespace Amazon.ElastiCache
         /// The customer has exceeded the allowed rate of API calls.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
-        /// The requested cache cluster is not in the <code>available</code> state.
+        /// The requested cluster is not in the <code>available</code> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.

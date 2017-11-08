@@ -38,8 +38,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property CacheClusters. 
         /// <para>
-        /// A list of cache clusters. Each item in the list contains detailed information about
-        /// one cache cluster.
+        /// A list of clusters. Each item in the list contains detailed information about one
+        /// cluster.
         /// </para>
         /// </summary>
         public List<CacheCluster> CacheClusters

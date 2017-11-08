@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// Represents the allowed node types you can use to modify your cache cluster or replication
+    /// Represents the allowed node types you can use to modify your cluster or replication
     /// group.
     /// </summary>
     public partial class ListAllowedNodeTypeModificationsResponse : AmazonWebServiceResponse
@@ -39,7 +39,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property ScaleUpModifications. 
         /// <para>
         /// A string list, each element of which specifies a cache node type which you can use
-        /// to scale your cache cluster or replication group.
+        /// to scale your cluster or replication group.
         /// </para>
         ///  
         /// <para>

@@ -29,9 +29,9 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeSnapshots operation.
-    /// Returns information about cache cluster or replication group snapshots. By default,
-    /// <code>DescribeSnapshots</code> lists all of your snapshots; it can optionally describe
-    /// a single snapshot, or just the snapshots associated with a particular cache cluster.
+    /// Returns information about cluster or replication group snapshots. By default, <code>DescribeSnapshots</code>
+    /// lists all of your snapshots; it can optionally describe a single snapshot, or just
+    /// the snapshots associated with a particular cache cluster.
     /// 
     ///  <note> 
     /// <para>
@@ -53,7 +53,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property CacheClusterId. 
         /// <para>
         /// A user-supplied cluster identifier. If this parameter is specified, only snapshots
-        /// associated with that specific cache cluster are described.
+        /// associated with that specific cluster are described.
         /// </para>
         /// </summary>
         public string CacheClusterId

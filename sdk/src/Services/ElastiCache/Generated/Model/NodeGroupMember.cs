@@ -41,7 +41,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property CacheClusterId. 
         /// <para>
-        /// The ID of the cache cluster to which the node belongs.
+        /// The ID of the cluster to which the node belongs.
         /// </para>
         /// </summary>
         public string CacheClusterId
@@ -59,8 +59,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property CacheNodeId. 
         /// <para>
-        /// The ID of the node within its cache cluster. A node ID is a numeric identifier (0001,
-        /// 0002, etc.).
+        /// The ID of the node within its cluster. A node ID is a numeric identifier (0001, 0002,
+        /// etc.).
         /// </para>
         /// </summary>
         public string CacheNodeId

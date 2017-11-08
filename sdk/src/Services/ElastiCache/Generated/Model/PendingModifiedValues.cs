@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// A group of settings that are applied to the cache cluster in the future, or that are
-    /// currently being applied.
+    /// A group of settings that are applied to the cluster in the future, or that are currently
+    /// being applied.
     /// </summary>
     public partial class PendingModifiedValues
     {
@@ -46,8 +46,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property CacheNodeIdsToRemove. 
         /// <para>
-        /// A list of cache node IDs that are being removed (or will be removed) from the cache
-        /// cluster. A node ID is a numeric identifier (0001, 0002, etc.).
+        /// A list of cache node IDs that are being removed (or will be removed) from the cluster.
+        /// A node ID is a numeric identifier (0001, 0002, etc.).
         /// </para>
         /// </summary>
         public List<string> CacheNodeIdsToRemove
@@ -65,7 +65,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property CacheNodeType. 
         /// <para>
-        /// The cache node type that this cache cluster or replication group is scaled to.
+        /// The cache node type that this cluster or replication group is scaled to.
         /// </para>
         /// </summary>
         public string CacheNodeType
@@ -83,7 +83,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// The new cache engine version that the cache cluster runs.
+        /// The new cache engine version that the cluster runs.
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -101,7 +101,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property NumCacheNodes. 
         /// <para>
-        /// The new number of cache nodes for the cache cluster.
+        /// The new number of cache nodes for the cluster.
         /// </para>
         ///  
         /// <para>

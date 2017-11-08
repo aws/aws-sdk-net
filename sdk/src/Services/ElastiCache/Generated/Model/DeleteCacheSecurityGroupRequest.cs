@@ -33,7 +33,7 @@ namespace Amazon.ElastiCache.Model
     /// 
     ///  <note> 
     /// <para>
-    /// You cannot delete a cache security group if it is associated with any cache clusters.
+    /// You cannot delete a cache security group if it is associated with any clusters.
     /// </para>
     ///  </note>
     /// </summary>

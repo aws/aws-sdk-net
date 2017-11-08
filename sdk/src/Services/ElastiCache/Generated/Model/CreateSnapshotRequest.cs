@@ -29,8 +29,7 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateSnapshot operation.
-    /// Creates a copy of an entire cache cluster or replication group at a specific moment
-    /// in time.
+    /// Creates a copy of an entire cluster or replication group at a specific moment in time.
     /// 
     ///  <note> 
     /// <para>
@@ -47,8 +46,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property CacheClusterId. 
         /// <para>
-        /// The identifier of an existing cache cluster. The snapshot is created from this cache
-        /// cluster.
+        /// The identifier of an existing cluster. The snapshot is created from this cluster.
         /// </para>
         /// </summary>
         public string CacheClusterId

@@ -29,8 +29,8 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Represents a single occurrence of something interesting within the system. Some examples
-    /// of events are creating a cache cluster, adding or removing a cache node, or rebooting
-    /// a node.
+    /// of events are creating a cluster, adding or removing a cache node, or rebooting a
+    /// node.
     /// </summary>
     public partial class Event
     {
@@ -84,7 +84,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property SourceIdentifier. 
         /// <para>
         /// The identifier for the source of the event. For example, if the event occurred at
-        /// the cache cluster level, the identifier would be the name of the cache cluster.
+        /// the cluster level, the identifier would be the name of the cluster.
         /// </para>
         /// </summary>
         public string SourceIdentifier
@@ -102,8 +102,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property SourceType. 
         /// <para>
-        /// Specifies the origin of this event - a cache cluster, a parameter group, a security
-        /// group, etc.
+        /// Specifies the origin of this event - a cluster, a parameter group, a security group,
+        /// etc.
         /// </para>
         /// </summary>
         public SourceType SourceType

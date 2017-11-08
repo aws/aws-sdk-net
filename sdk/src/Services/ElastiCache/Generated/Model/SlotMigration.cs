@@ -28,39 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteCacheSubnetGroup operation.
-    /// Deletes a cache subnet group.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// You cannot delete a cache subnet group if it is associated with any clusters.
-    /// </para>
-    ///  </note>
+    /// Represents the progress of an online resharding operation.
     /// </summary>
-    public partial class DeleteCacheSubnetGroupRequest : AmazonElastiCacheRequest
+    public partial class SlotMigration
     {
-        private string _cacheSubnetGroupName;
+        private double? _progressPercentage;
 
         /// <summary>
-        /// Gets and sets the property CacheSubnetGroupName. 
+        /// Gets and sets the property ProgressPercentage. 
         /// <para>
-        /// The name of the cache subnet group to delete.
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints: Must contain no more than 255 alphanumeric characters or hyphens.
+        /// The percentage of the slot migration that is complete.
         /// </para>
         /// </summary>
-        public string CacheSubnetGroupName
+        public double ProgressPercentage
         {
-            get { return this._cacheSubnetGroupName; }
-            set { this._cacheSubnetGroupName = value; }
+            get { return this._progressPercentage.GetValueOrDefault(); }
+            set { this._progressPercentage = value; }
         }
 
-        // Check to see if CacheSubnetGroupName property is set
-        internal bool IsSetCacheSubnetGroupName()
+        // Check to see if ProgressPercentage property is set
+        internal bool IsSetProgressPercentage()
         {
-            return this._cacheSubnetGroupName != null;
+            return this._progressPercentage.HasValue; 
         }
 
     }

@@ -28,39 +28,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteCacheSubnetGroup operation.
-    /// Deletes a cache subnet group.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// You cannot delete a cache subnet group if it is associated with any clusters.
-    /// </para>
-    ///  </note>
+    /// This is the response object from the ModifyReplicationGroupShardConfiguration operation.
     /// </summary>
-    public partial class DeleteCacheSubnetGroupRequest : AmazonElastiCacheRequest
+    public partial class ModifyReplicationGroupShardConfigurationResponse : AmazonWebServiceResponse
     {
-        private string _cacheSubnetGroupName;
+        private ReplicationGroup _replicationGroup;
 
         /// <summary>
-        /// Gets and sets the property CacheSubnetGroupName. 
-        /// <para>
-        /// The name of the cache subnet group to delete.
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints: Must contain no more than 255 alphanumeric characters or hyphens.
-        /// </para>
+        /// Gets and sets the property ReplicationGroup.
         /// </summary>
-        public string CacheSubnetGroupName
+        public ReplicationGroup ReplicationGroup
         {
-            get { return this._cacheSubnetGroupName; }
-            set { this._cacheSubnetGroupName = value; }
+            get { return this._replicationGroup; }
+            set { this._replicationGroup = value; }
         }
 
-        // Check to see if CacheSubnetGroupName property is set
-        internal bool IsSetCacheSubnetGroupName()
+        // Check to see if ReplicationGroup property is set
+        internal bool IsSetReplicationGroup()
         {
-            return this._cacheSubnetGroupName != null;
+            return this._replicationGroup != null;
         }
 
     }

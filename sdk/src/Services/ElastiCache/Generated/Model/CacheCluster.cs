@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// Contains all of the attributes of a specific cache cluster.
+    /// Contains all of the attributes of a specific cluster.
     /// </summary>
     public partial class CacheCluster
     {
@@ -130,7 +130,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property CacheClusterCreateTime. 
         /// <para>
-        /// The date and time when the cache cluster was created.
+        /// The date and time when the cluster was created.
         /// </para>
         /// </summary>
         public DateTime CacheClusterCreateTime
@@ -148,8 +148,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property CacheClusterId. 
         /// <para>
-        /// The user-supplied identifier of the cache cluster. This identifier is a unique key
-        /// that identifies a cache cluster.
+        /// The user-supplied identifier of the cluster. This identifier is a unique key that
+        /// identifies a cluster.
         /// </para>
         /// </summary>
         public string CacheClusterId
@@ -167,9 +167,9 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property CacheClusterStatus. 
         /// <para>
-        /// The current state of this cache cluster, one of the following values: <code>available</code>,
+        /// The current state of this cluster, one of the following values: <code>available</code>,
         /// <code>creating</code>, <code>deleted</code>, <code>deleting</code>, <code>incompatible-network</code>,
-        /// <code>modifying</code>, <code>rebooting cache cluster nodes</code>, <code>restore-failed</code>,
+        /// <code>modifying</code>, <code>rebooting cluster nodes</code>, <code>restore-failed</code>,
         /// or <code>snapshotting</code>.
         /// </para>
         /// </summary>
@@ -188,7 +188,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property CacheNodes. 
         /// <para>
-        /// A list of cache nodes that are members of the cache cluster.
+        /// A list of cache nodes that are members of the cluster.
         /// </para>
         /// </summary>
         public List<CacheNode> CacheNodes
@@ -206,7 +206,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property CacheNodeType. 
         /// <para>
-        /// The name of the compute and memory capacity node type for the cache cluster.
+        /// The name of the compute and memory capacity node type for the cluster.
         /// </para>
         ///  
         /// <para>
@@ -309,11 +309,6 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Supported node types are available in all regions except as noted in the following
-        /// table.
-        /// </para>
-        ///  
-        /// <para>
         /// For a complete listing of node types and specifications, see <a href="http://aws.amazon.com/elasticache/details">Amazon
         /// ElastiCache Product Features and Details</a> and either <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
         /// Node Type-Specific Parameters for Memcached</a> or <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
@@ -371,7 +366,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property CacheSubnetGroupName. 
         /// <para>
-        /// The name of the cache subnet group associated with the cache cluster.
+        /// The name of the cache subnet group associated with the cluster.
         /// </para>
         /// </summary>
         public string CacheSubnetGroupName
@@ -432,7 +427,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property Engine. 
         /// <para>
         /// The name of the cache engine (<code>memcached</code> or <code>redis</code>) to be
-        /// used for this cache cluster.
+        /// used for this cluster.
         /// </para>
         /// </summary>
         public string Engine
@@ -450,7 +445,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// The version of the cache engine that is used in this cache cluster.
+        /// The version of the cache engine that is used in this cluster.
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -488,7 +483,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property NumCacheNodes. 
         /// <para>
-        /// The number of cache nodes in the cache cluster.
+        /// The number of cache nodes in the cluster.
         /// </para>
         ///  
         /// <para>
@@ -526,8 +521,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property PreferredAvailabilityZone. 
         /// <para>
-        /// The name of the Availability Zone in which the cache cluster is located or "Multiple"
-        /// if the cache nodes are located in different Availability Zones.
+        /// The name of the Availability Zone in which the cluster is located or "Multiple" if
+        /// the cache nodes are located in different Availability Zones.
         /// </para>
         /// </summary>
         public string PreferredAvailabilityZone
@@ -601,8 +596,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property ReplicationGroupId. 
         /// <para>
-        /// The replication group to which this cache cluster belongs. If this field is empty,
-        /// the cache cluster is not associated with any replication group.
+        /// The replication group to which this cluster belongs. If this field is empty, the cluster
+        /// is not associated with any replication group.
         /// </para>
         /// </summary>
         public string ReplicationGroupId
@@ -620,7 +615,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property SecurityGroups. 
         /// <para>
-        /// A list of VPC Security Groups associated with the cache cluster.
+        /// A list of VPC Security Groups associated with the cluster.
         /// </para>
         /// </summary>
         public List<SecurityGroupMembership> SecurityGroups
@@ -638,9 +633,9 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property SnapshotRetentionLimit. 
         /// <para>
-        /// The number of days for which ElastiCache retains automatic cache cluster snapshots
-        /// before deleting them. For example, if you set <code>SnapshotRetentionLimit</code>
-        /// to 5, a snapshot that was taken today is retained for 5 days before being deleted.
+        /// The number of days for which ElastiCache retains automatic cluster snapshots before
+        /// deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a
+        /// snapshot that was taken today is retained for 5 days before being deleted.
         /// </para>
         ///  <important> 
         /// <para>
@@ -664,7 +659,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property SnapshotWindow. 
         /// <para>
         /// The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot
-        /// of your cache cluster.
+        /// of your cluster.
         /// </para>
         ///  
         /// <para>

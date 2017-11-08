@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// Represents a copy of an entire Redis cache cluster as of the time when the snapshot
-    /// was taken.
+    /// Represents a copy of an entire Redis cluster as of the time when the snapshot was
+    /// taken.
     /// </summary>
     public partial class Snapshot
     {
@@ -115,7 +115,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property CacheClusterCreateTime. 
         /// <para>
-        /// The date and time when the source cache cluster was created.
+        /// The date and time when the source cluster was created.
         /// </para>
         /// </summary>
         public DateTime CacheClusterCreateTime
@@ -133,7 +133,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property CacheClusterId. 
         /// <para>
-        /// The user-supplied identifier of the source cache cluster.
+        /// The user-supplied identifier of the source cluster.
         /// </para>
         /// </summary>
         public string CacheClusterId
@@ -151,7 +151,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property CacheNodeType. 
         /// <para>
-        /// The name of the compute and memory capacity node type for the source cache cluster.
+        /// The name of the compute and memory capacity node type for the source cluster.
         /// </para>
         ///  
         /// <para>
@@ -254,11 +254,6 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Supported node types are available in all regions except as noted in the following
-        /// table.
-        /// </para>
-        ///  
-        /// <para>
         /// For a complete listing of node types and specifications, see <a href="http://aws.amazon.com/elasticache/details">Amazon
         /// ElastiCache Product Features and Details</a> and either <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
         /// Node Type-Specific Parameters for Memcached</a> or <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
@@ -280,7 +275,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property CacheParameterGroupName. 
         /// <para>
-        /// The cache parameter group that is associated with the source cache cluster.
+        /// The cache parameter group that is associated with the source cluster.
         /// </para>
         /// </summary>
         public string CacheParameterGroupName
@@ -298,7 +293,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property CacheSubnetGroupName. 
         /// <para>
-        /// The name of the cache subnet group associated with the source cache cluster.
+        /// The name of the cache subnet group associated with the source cluster.
         /// </para>
         /// </summary>
         public string CacheSubnetGroupName
@@ -317,7 +312,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property Engine. 
         /// <para>
         /// The name of the cache engine (<code>memcached</code> or <code>redis</code>) used by
-        /// the source cache cluster.
+        /// the source cluster.
         /// </para>
         /// </summary>
         public string Engine
@@ -335,7 +330,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// The version of the cache engine version that is used by the source cache cluster.
+        /// The version of the cache engine version that is used by the source cluster.
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -353,7 +348,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property NodeSnapshots. 
         /// <para>
-        /// A list of the cache nodes in the source cache cluster.
+        /// A list of the cache nodes in the source cluster.
         /// </para>
         /// </summary>
         public List<NodeSnapshot> NodeSnapshots
@@ -371,7 +366,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property NumCacheNodes. 
         /// <para>
-        /// The number of cache nodes in the source cache cluster.
+        /// The number of cache nodes in the source cluster.
         /// </para>
         ///  
         /// <para>
@@ -414,7 +409,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        /// The port number used by each cache nodes in the source cache cluster.
+        /// The port number used by each cache nodes in the source cluster.
         /// </para>
         /// </summary>
         public int Port
@@ -432,7 +427,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property PreferredAvailabilityZone. 
         /// <para>
-        /// The name of the Availability Zone in which the source cache cluster is located.
+        /// The name of the Availability Zone in which the source cluster is located.
         /// </para>
         /// </summary>
         public string PreferredAvailabilityZone
@@ -567,8 +562,8 @@ namespace Amazon.ElastiCache.Model
         ///  
         /// <para>
         /// For manual snapshots, this field reflects the <code>SnapshotRetentionLimit</code>
-        /// for the source cache cluster when the snapshot was created. This field is otherwise
-        /// ignored: Manual snapshots do not expire, and can only be deleted using the <code>DeleteSnapshot</code>
+        /// for the source cluster when the snapshot was created. This field is otherwise ignored:
+        /// Manual snapshots do not expire, and can only be deleted using the <code>DeleteSnapshot</code>
         /// operation. 
         /// </para>
         ///  
@@ -631,7 +626,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property SnapshotWindow. 
         /// <para>
         /// The daily time range during which ElastiCache takes daily snapshots of the source
-        /// cache cluster.
+        /// cluster.
         /// </para>
         /// </summary>
         public string SnapshotWindow
@@ -649,8 +644,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property TopicArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the topic used by the source cache cluster for
-        /// publishing notifications.
+        /// The Amazon Resource Name (ARN) for the topic used by the source cluster for publishing
+        /// notifications.
         /// </para>
         /// </summary>
         public string TopicArn
@@ -669,7 +664,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property VpcId. 
         /// <para>
         /// The Amazon Virtual Private Cloud identifier (VPC ID) of the cache subnet group for
-        /// the source cache cluster.
+        /// the source cluster.
         /// </para>
         /// </summary>
         public string VpcId

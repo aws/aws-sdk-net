@@ -31,7 +31,7 @@ namespace Amazon.ElastiCache.Model
     /// Container for the parameters to the CreateCacheParameterGroup operation.
     /// Creates a new Amazon ElastiCache cache parameter group. An ElastiCache cache parameter
     /// group is a collection of parameters and their values that are applied to all of the
-    /// nodes in any cache cluster or replication group using the CacheParameterGroup.
+    /// nodes in any cluster or replication group using the CacheParameterGroup.
     /// 
     ///  
     /// <para>

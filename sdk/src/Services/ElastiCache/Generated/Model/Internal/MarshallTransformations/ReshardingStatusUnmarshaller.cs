@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ReplicationGroupPendingModifiedValues Object
+    /// Response Unmarshaller for ReshardingStatus Object
     /// </summary>  
-    public class ReplicationGroupPendingModifiedValuesUnmarshaller : IUnmarshaller<ReplicationGroupPendingModifiedValues, XmlUnmarshallerContext>, IUnmarshaller<ReplicationGroupPendingModifiedValues, JsonUnmarshallerContext>
+    public class ReshardingStatusUnmarshaller : IUnmarshaller<ReshardingStatus, XmlUnmarshallerContext>, IUnmarshaller<ReshardingStatus, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ReplicationGroupPendingModifiedValues Unmarshall(XmlUnmarshallerContext context)
+        public ReshardingStatus Unmarshall(XmlUnmarshallerContext context)
         {
-            ReplicationGroupPendingModifiedValues unmarshalledObject = new ReplicationGroupPendingModifiedValues();
+            ReshardingStatus unmarshalledObject = new ReshardingStatus();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,22 +54,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("AutomaticFailoverStatus", targetDepth))
+                    if (context.TestExpression("SlotMigration", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.AutomaticFailoverStatus = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("PrimaryClusterId", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.PrimaryClusterId = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Resharding", targetDepth))
-                    {
-                        var unmarshaller = ReshardingStatusUnmarshaller.Instance;
-                        unmarshalledObject.Resharding = unmarshaller.Unmarshall(context);
+                        var unmarshaller = SlotMigrationUnmarshaller.Instance;
+                        unmarshalledObject.SlotMigration = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -87,18 +75,18 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ReplicationGroupPendingModifiedValues Unmarshall(JsonUnmarshallerContext context)
+        public ReshardingStatus Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static ReplicationGroupPendingModifiedValuesUnmarshaller _instance = new ReplicationGroupPendingModifiedValuesUnmarshaller();        
+        private static ReshardingStatusUnmarshaller _instance = new ReshardingStatusUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ReplicationGroupPendingModifiedValuesUnmarshaller Instance
+        public static ReshardingStatusUnmarshaller Instance
         {
             get
             {

@@ -181,7 +181,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property ConfigurationEndpoint. 
         /// <para>
-        /// The configuration endpoint for this replicaiton group. Use the configuration endpoint
+        /// The configuration endpoint for this replication group. Use the configuration endpoint
         /// to connect to this replication group.
         /// </para>
         /// </summary>
@@ -200,7 +200,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the replication group.
+        /// The user supplied description of the replication group.
         /// </para>
         /// </summary>
         public string Description
@@ -218,7 +218,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property MemberClusters. 
         /// <para>
-        /// The names of all the cache clusters that are part of this replication group.
+        /// The identifiers of all the nodes that are part of this replication group.
         /// </para>
         /// </summary>
         public List<string> MemberClusters
@@ -236,7 +236,9 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property NodeGroups. 
         /// <para>
-        /// A single element list with information about the nodes in the replication group.
+        /// A list of node groups in this replication group. For Redis (cluster mode disabled)
+        /// replication groups, this is a single-element list. For Redis (cluster mode enabled)
+        /// replication groups, the list contains an entry for each node group (shard).
         /// </para>
         /// </summary>
         public List<NodeGroup> NodeGroups
@@ -291,9 +293,9 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property SnapshotRetentionLimit. 
         /// <para>
-        /// The number of days for which ElastiCache retains automatic cache cluster snapshots
-        /// before deleting them. For example, if you set <code>SnapshotRetentionLimit</code>
-        /// to 5, a snapshot that was taken today is retained for 5 days before being deleted.
+        /// The number of days for which ElastiCache retains automatic cluster snapshots before
+        /// deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a
+        /// snapshot that was taken today is retained for 5 days before being deleted.
         /// </para>
         ///  <important> 
         /// <para>
@@ -317,8 +319,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property SnapshottingClusterId. 
         /// <para>
-        /// The cache cluster ID that is used as the daily snapshot source for the replication
-        /// group.
+        /// The cluster ID that is used as the daily snapshot source for the replication group.
         /// </para>
         /// </summary>
         public string SnapshottingClusterId

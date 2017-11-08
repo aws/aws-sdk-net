@@ -169,11 +169,6 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Supported node types are available in all regions except as noted in the following
-        /// table.
-        /// </para>
-        ///  
-        /// <para>
         /// For a complete listing of node types and specifications, see <a href="http://aws.amazon.com/elasticache/details">Amazon
         /// ElastiCache Product Features and Details</a> and either <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
         /// Node Type-Specific Parameters for Memcached</a> or <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache

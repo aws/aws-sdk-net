@@ -57,8 +57,8 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// The status of the cache security group membership. The status changes whenever a cache
-        /// security group is modified, or when the cache security groups assigned to a cache
-        /// cluster are modified.
+        /// security group is modified, or when the cache security groups assigned to a cluster
+        /// are modified.
         /// </para>
         /// </summary>
         public string Status

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// Represents a cache cluster's status within a particular cache security group.
+    /// Represents a cluster's status within a particular cache security group.
     /// </summary>
     public partial class CacheSecurityGroupMembership
     {
@@ -62,8 +62,8 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// The membership status in the cache security group. The status changes when a cache
-        /// security group is modified, or when the cache security groups assigned to a cache
-        /// cluster are modified.
+        /// security group is modified, or when the cache security groups assigned to a cluster
+        /// are modified.
         /// </para>
         /// </summary>
         public string Status

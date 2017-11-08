@@ -44,7 +44,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Instantiates DeleteCacheParameterGroupRequest with the parameterized properties
         /// </summary>
-        /// <param name="cacheParameterGroupName">The name of the cache parameter group to delete. <note> The specified cache security group must not be associated with any cache clusters. </note></param>
+        /// <param name="cacheParameterGroupName">The name of the cache parameter group to delete. <note> The specified cache security group must not be associated with any clusters. </note></param>
         public DeleteCacheParameterGroupRequest(string cacheParameterGroupName)
         {
             _cacheParameterGroupName = cacheParameterGroupName;
@@ -57,7 +57,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The specified cache security group must not be associated with any cache clusters.
+        /// The specified cache security group must not be associated with any clusters.
         /// </para>
         ///  </note>
         /// </summary>

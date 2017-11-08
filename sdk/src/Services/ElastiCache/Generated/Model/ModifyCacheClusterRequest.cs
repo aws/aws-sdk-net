@@ -29,9 +29,8 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyCacheCluster operation.
-    /// Modifies the settings for a cache cluster. You can use this operation to change one
-    /// or more cluster configuration parameters by specifying the parameters and the new
-    /// values.
+    /// Modifies the settings for a cluster. You can use this operation to change one or more
+    /// cluster configuration parameters by specifying the parameters and the new values.
     /// </summary>
     public partial class ModifyCacheClusterRequest : AmazonElastiCacheRequest
     {
@@ -61,7 +60,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Instantiates ModifyCacheClusterRequest with the parameterized properties
         /// </summary>
-        /// <param name="cacheClusterId">The cache cluster identifier. This value is stored as a lowercase string.</param>
+        /// <param name="cacheClusterId">The cluster identifier. This value is stored as a lowercase string.</param>
         public ModifyCacheClusterRequest(string cacheClusterId)
         {
             _cacheClusterId = cacheClusterId;
@@ -72,11 +71,11 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// If <code>true</code>, this parameter causes the modifications in this request and
         /// any pending modifications to be applied, asynchronously and as soon as possible, regardless
-        /// of the <code>PreferredMaintenanceWindow</code> setting for the cache cluster.
+        /// of the <code>PreferredMaintenanceWindow</code> setting for the cluster.
         /// </para>
         ///  
         /// <para>
-        /// If <code>false</code>, changes to the cache cluster are applied on the next maintenance
+        /// If <code>false</code>, changes to the cluster are applied on the next maintenance
         /// reboot, or the next failure reboot, whichever occurs first.
         /// </para>
         ///  <important> 
@@ -126,8 +125,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property AZMode. 
         /// <para>
-        /// Specifies whether the new nodes in this Memcached cache cluster are all created in
-        /// a single Availability Zone or created across multiple Availability Zones.
+        /// Specifies whether the new nodes in this Memcached cluster are all created in a single
+        /// Availability Zone or created across multiple Availability Zones.
         /// </para>
         ///  
         /// <para>
@@ -135,13 +134,13 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// This option is only supported for Memcached cache clusters.
+        /// This option is only supported for Memcached clusters.
         /// </para>
         ///  <note> 
         /// <para>
-        /// You cannot specify <code>single-az</code> if the Memcached cache cluster already has
-        /// cache nodes in different Availability Zones. If <code>cross-az</code> is specified,
-        /// existing Memcached nodes remain in their current Availability Zone.
+        /// You cannot specify <code>single-az</code> if the Memcached cluster already has cache
+        /// nodes in different Availability Zones. If <code>cross-az</code> is specified, existing
+        /// Memcached nodes remain in their current Availability Zone.
         /// </para>
         ///  
         /// <para>
@@ -167,7 +166,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property CacheClusterId. 
         /// <para>
-        /// The cache cluster identifier. This value is stored as a lowercase string.
+        /// The cluster identifier. This value is stored as a lowercase string.
         /// </para>
         /// </summary>
         public string CacheClusterId
@@ -214,7 +213,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property CacheNodeType. 
         /// <para>
-        /// A valid cache node type that you want to scale this cache cluster up to.
+        /// A valid cache node type that you want to scale this cluster up to.
         /// </para>
         /// </summary>
         public string CacheNodeType
@@ -232,8 +231,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property CacheParameterGroupName. 
         /// <para>
-        /// The name of the cache parameter group to apply to this cache cluster. This change
-        /// is asynchronously applied as soon as possible for parameters when the <code>ApplyImmediately</code>
+        /// The name of the cache parameter group to apply to this cluster. This change is asynchronously
+        /// applied as soon as possible for parameters when the <code>ApplyImmediately</code>
         /// parameter is specified as <code>true</code> for this request.
         /// </para>
         /// </summary>
@@ -252,8 +251,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property CacheSecurityGroupNames. 
         /// <para>
-        /// A list of cache security group names to authorize on this cache cluster. This change
-        /// is asynchronously applied as soon as possible.
+        /// A list of cache security group names to authorize on this cluster. This change is
+        /// asynchronously applied as soon as possible.
         /// </para>
         ///  
         /// <para>
@@ -286,7 +285,7 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         ///  <b>Important:</b> You can upgrade to a newer engine version (see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
         /// a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version.
-        /// If you want to use an earlier engine version, you must delete the existing cache cluster
+        /// If you want to use an earlier engine version, you must delete the existing cluster
         /// and create it anew with the earlier engine version. 
         /// </para>
         /// </summary>
@@ -448,7 +447,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The Amazon SNS topic owner must be same as the cache cluster owner.
+        /// The Amazon SNS topic owner must be same as the cluster owner.
         /// </para>
         ///  </note>
         /// </summary>
@@ -490,7 +489,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property NumCacheNodes. 
         /// <para>
-        /// The number of cache nodes that the cache cluster should have. If the value for <code>NumCacheNodes</code>
+        /// The number of cache nodes that the cluster should have. If the value for <code>NumCacheNodes</code>
         /// is greater than the sum of the number of current cache nodes and the number of cache
         /// nodes pending creation (which may be zero), more nodes are added. If the value is
         /// less than the number of existing cache nodes, nodes are removed. If the value is equal
@@ -526,7 +525,7 @@ namespace Amazon.ElastiCache.Model
         /// or explicitly cancel the pending request and retry the new request. To cancel pending
         /// operations to modify the number of cache nodes in a cluster, use the <code>ModifyCacheCluster</code>
         /// request and set <code>NumCacheNodes</code> equal to the number of cache nodes currently
-        /// in the cache cluster.
+        /// in the cluster.
         /// </para>
         ///  </note>
         /// </summary>
@@ -601,7 +600,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. 
         /// <para>
-        /// Specifies the VPC Security Groups associated with the cache cluster.
+        /// Specifies the VPC Security Groups associated with the cluster.
         /// </para>
         ///  
         /// <para>
@@ -624,9 +623,9 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property SnapshotRetentionLimit. 
         /// <para>
-        /// The number of days for which ElastiCache retains automatic cache cluster snapshots
-        /// before deleting them. For example, if you set <code>SnapshotRetentionLimit</code>
-        /// to 5, a snapshot that was taken today is retained for 5 days before being deleted.
+        /// The number of days for which ElastiCache retains automatic cluster snapshots before
+        /// deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a
+        /// snapshot that was taken today is retained for 5 days before being deleted.
         /// </para>
         ///  <note> 
         /// <para>
@@ -651,7 +650,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property SnapshotWindow. 
         /// <para>
         /// The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot
-        /// of your cache cluster. 
+        /// of your cluster. 
         /// </para>
         /// </summary>
         public string SnapshotWindow

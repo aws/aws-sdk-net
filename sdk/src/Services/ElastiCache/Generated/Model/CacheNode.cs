@@ -28,9 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// Represents an individual cache node within a cache cluster. Each cache node runs its
-    /// own instance of the cluster's protocol-compliant caching software - either Memcached
-    /// or Redis.
+    /// Represents an individual cache node within a cluster. Each cache node runs its own
+    /// instance of the cluster's protocol-compliant caching software - either Memcached or
+    /// Redis.
     /// 
     ///  
     /// <para>
@@ -132,11 +132,6 @@ namespace Amazon.ElastiCache.Model
     /// Redis Append-only files (AOF) functionality is not supported for T1 or T2 instances.
     /// </para>
     ///  </li> </ul> 
-    /// <para>
-    /// Supported node types are available in all regions except as noted in the following
-    /// table.
-    /// </para>
-    ///  
     /// <para>
     /// For a complete listing of node types and specifications, see <a href="http://aws.amazon.com/elasticache/details">Amazon
     /// ElastiCache Product Features and Details</a> and either <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
@@ -273,7 +268,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property SourceCacheNodeId. 
         /// <para>
         /// The ID of the primary node to which this read replica node is synchronized. If this
-        /// field is empty, this node is not associated with a primary cache cluster.
+        /// field is empty, this node is not associated with a primary cluster.
         /// </para>
         /// </summary>
         public string SourceCacheNodeId

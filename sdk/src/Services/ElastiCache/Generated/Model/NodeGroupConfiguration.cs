@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// node group (shard) configuration options. Each node group (shard) configuration has
+    /// Node group (shard) configuration options. Each node group (shard) configuration has
     /// the following: <code>Slots</code>, <code>PrimaryAvailabilityZone</code>, <code>ReplicaAvailabilityZones</code>,
     /// <code>ReplicaCount</code>.
     /// </summary>

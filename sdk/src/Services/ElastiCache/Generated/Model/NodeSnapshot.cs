@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// Represents an individual cache node in a snapshot of a cache cluster.
+    /// Represents an individual cache node in a snapshot of a cluster.
     /// </summary>
     public partial class NodeSnapshot
     {
@@ -43,7 +43,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property CacheClusterId. 
         /// <para>
-        /// A unique identifier for the source cache cluster.
+        /// A unique identifier for the source cluster.
         /// </para>
         /// </summary>
         public string CacheClusterId
@@ -61,7 +61,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property CacheNodeCreateTime. 
         /// <para>
-        /// The date and time when the cache node was created in the source cache cluster.
+        /// The date and time when the cache node was created in the source cluster.
         /// </para>
         /// </summary>
         public DateTime CacheNodeCreateTime
@@ -79,7 +79,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property CacheNodeId. 
         /// <para>
-        /// The cache node identifier for the node in the source cache cluster.
+        /// The cache node identifier for the node in the source cluster.
         /// </para>
         /// </summary>
         public string CacheNodeId

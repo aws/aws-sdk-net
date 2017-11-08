@@ -47,9 +47,9 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property CacheClusterId. 
         /// <para>
-        /// The name of the cache cluster you want to scale up to a larger node instanced type.
-        /// ElastiCache uses the cluster id to identify the current node type of this cluster
-        /// and from that to create a list of node types you can scale up to.
+        /// The name of the cluster you want to scale up to a larger node instanced type. ElastiCache
+        /// uses the cluster id to identify the current node type of this cluster and from that
+        /// to create a list of node types you can scale up to.
         /// </para>
         ///  <important> 
         /// <para>

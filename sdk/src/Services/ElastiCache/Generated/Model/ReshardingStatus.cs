@@ -28,39 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteCacheSubnetGroup operation.
-    /// Deletes a cache subnet group.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// You cannot delete a cache subnet group if it is associated with any clusters.
-    /// </para>
-    ///  </note>
+    /// The status of an online resharding operation.
     /// </summary>
-    public partial class DeleteCacheSubnetGroupRequest : AmazonElastiCacheRequest
+    public partial class ReshardingStatus
     {
-        private string _cacheSubnetGroupName;
+        private SlotMigration _slotMigration;
 
         /// <summary>
-        /// Gets and sets the property CacheSubnetGroupName. 
+        /// Gets and sets the property SlotMigration. 
         /// <para>
-        /// The name of the cache subnet group to delete.
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints: Must contain no more than 255 alphanumeric characters or hyphens.
+        /// Represents the progress of an online resharding operation.
         /// </para>
         /// </summary>
-        public string CacheSubnetGroupName
+        public SlotMigration SlotMigration
         {
-            get { return this._cacheSubnetGroupName; }
-            set { this._cacheSubnetGroupName = value; }
+            get { return this._slotMigration; }
+            set { this._slotMigration = value; }
         }
 
-        // Check to see if CacheSubnetGroupName property is set
-        internal bool IsSetCacheSubnetGroupName()
+        // Check to see if SlotMigration property is set
+        internal bool IsSetSlotMigration()
         {
-            return this._cacheSubnetGroupName != null;
+            return this._slotMigration != null;
         }
 
     }
