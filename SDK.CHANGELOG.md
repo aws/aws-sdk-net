@@ -1,3 +1,17 @@
+### 3.3.187.0 (2017-11-08 21:51 UTC)
+* ApplicationAutoScaling (3.3.5.0)
+	* Application Auto Scaling customers are now able to schedule adjustments to their MinCapacity and MaxCapacity, which makes it possible to pre-provision adequate capacity for anticipated demand and then reduce the provisioned capacity as demand lulls.
+* Batch (3.3.3.4)
+	* Documentation updates for AWS Batch.
+* EC2 (3.3.35.0)
+	* AWS PrivateLink for Amazon Services - Customers can now privately access Amazon services from their Amazon Virtual Private Cloud (VPC), without using public IPs, and without requiring the traffic to traverse across the Internet.
+* ElastiCache (3.3.5.0)
+	* This release adds online resharding for ElastiCache for Redis offering, providing the ability to add and remove shards from a running cluster. Developers can now dynamically scale-out or scale-in their Redis cluster workloads to adapt to changes in demand. ElastiCache will resize the cluster by adding or removing shards and redistribute hash slots uniformly across the new shard configuration, all while the cluster continues to stay online and serves requests.
+* Core 3.3.18.4
+	* Updates several S3 endpoints.
+
+
+
 ### 3.3.186.1 (2017-11-08 01:16 UTC)
 * WorkDocs (3.3.3.1)
 	* WorkDocs content manager bug fix: remove encryption header from shared http client once it is used
