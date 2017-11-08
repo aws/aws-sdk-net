@@ -92,6 +92,12 @@ namespace Amazon.Batch.Model
         /// <para>
         /// The environment variables to pass to a container.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Environment variables must not start with <code>AWS_BATCH</code>; this naming convention
+        /// is reserved for variables that are set by the AWS Batch service.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<KeyValuePair> Environment
         {
@@ -276,7 +282,8 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property TaskArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with the
-        /// container job.
+        /// container job. Each container attempt receives a task ARN when they reach the <code>STARTING</code>
+        /// status.
         /// </para>
         /// </summary>
         public string TaskArn

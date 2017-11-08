@@ -146,7 +146,11 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property InstanceTypes. 
         /// <para>
-        /// The instances types that may launched.
+        /// The instances types that may be launched. You can specify instance families to launch
+        /// any instance type within those families (for example, <code>c4</code> or <code>p3</code>),
+        /// or you can specify specific sizes within a family (such as <code>c4.8xlarge</code>).
+        /// You can also choose <code>optimal</code> to pick instance types (from the latest C,
+        /// M, and R instance families) on the fly that match the demand of your job queues.
         /// </para>
         /// </summary>
         public List<string> InstanceTypes

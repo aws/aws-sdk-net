@@ -68,7 +68,7 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property ComputeEnvironmentName. 
         /// <para>
         /// The name for your compute environment. Up to 128 letters (uppercase and lowercase),
-        /// numbers, and underscores are allowed.
+        /// numbers, hyphens, and underscores are allowed.
         /// </para>
         /// </summary>
         public string ComputeEnvironmentName

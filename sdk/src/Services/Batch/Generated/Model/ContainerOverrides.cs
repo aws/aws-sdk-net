@@ -63,6 +63,12 @@ namespace Amazon.Batch.Model
         /// which are added to the container at launch, or you can override the existing environment
         /// variables from the Docker image or the job definition.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Environment variables must not start with <code>AWS_BATCH</code>; this naming convention
+        /// is reserved for variables that are set by the AWS Batch service.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<KeyValuePair> Environment
         {

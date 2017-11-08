@@ -118,7 +118,8 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property TaskArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with the
-        /// job attempt.
+        /// job attempt. Each container attempt receives a task ARN when they reach the <code>STARTING</code>
+        /// status.
         /// </para>
         /// </summary>
         public string TaskArn

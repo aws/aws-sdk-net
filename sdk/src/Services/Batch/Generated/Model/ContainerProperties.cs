@@ -82,7 +82,12 @@ namespace Amazon.Batch.Model
         /// We do not recommend using plain text environment variables for sensitive information,
         /// such as credential data.
         /// </para>
-        ///  </important>
+        ///  </important> <note> 
+        /// <para>
+        /// Environment variables must not start with <code>AWS_BATCH</code>; this naming convention
+        /// is reserved for variables that are set by the AWS Batch service.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<KeyValuePair> Environment
         {
