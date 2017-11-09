@@ -87,29 +87,29 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>launch.block-device-mapping.delete-on-termination</code> - Indicates whether
-        /// the Amazon EBS volume is deleted on instance termination.
+        /// the EBS volume is deleted on instance termination.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>launch.block-device-mapping.device-name</code> - The device name for the Amazon
-        /// EBS volume (for example, <code>/dev/sdh</code>).
+        ///  <code>launch.block-device-mapping.device-name</code> - The device name for the volume
+        /// in the block device mapping (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>launch.block-device-mapping.snapshot-id</code> - The ID of the snapshot used
-        /// for the Amazon EBS volume.
+        ///  <code>launch.block-device-mapping.snapshot-id</code> - The ID of the snapshot for
+        /// the EBS volume.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>launch.block-device-mapping.volume-size</code> - The size of the Amazon EBS
-        /// volume, in GiB.
+        ///  <code>launch.block-device-mapping.volume-size</code> - The size of the EBS volume,
+        /// in GiB.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>launch.block-device-mapping.volume-type</code> - The type of the Amazon EBS
-        /// volume: <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned
-        /// IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code>for Cold
-        /// HDD, or <code>standard</code> for Magnetic.
+        ///  <code>launch.block-device-mapping.volume-type</code> - The type of EBS volume: <code>gp2</code>
+        /// for General Purpose SSD, <code>io1</code> for Provisioned IOPS SSD, <code>st1</code>
+        /// for Throughput Optimized HDD, <code>sc1</code>for Cold HDD, or <code>standard</code>
+        /// for Magnetic.
         /// </para>
         ///  </li> <li> 
         /// <para>

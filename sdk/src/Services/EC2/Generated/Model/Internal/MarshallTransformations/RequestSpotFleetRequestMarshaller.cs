@@ -341,6 +341,39 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             publicRequestSpotFleetRequestConfiglistValueIndex++;
                         }
                     }
+                    if(publicRequest.SpotFleetRequestConfig.IsSetLoadBalancersConfig())
+                    {
+                        if(publicRequest.SpotFleetRequestConfig.LoadBalancersConfig.IsSetClassicLoadBalancersConfig())
+                        {
+                            if(publicRequest.SpotFleetRequestConfig.LoadBalancersConfig.ClassicLoadBalancersConfig.IsSetClassicLoadBalancers())
+                            {
+                                int publicRequestSpotFleetRequestConfigLoadBalancersConfigClassicLoadBalancersConfiglistValueIndex = 1;
+                                foreach(var publicRequestSpotFleetRequestConfigLoadBalancersConfigClassicLoadBalancersConfiglistValue in publicRequest.SpotFleetRequestConfig.LoadBalancersConfig.ClassicLoadBalancersConfig.ClassicLoadBalancers)
+                                {
+                                    if(publicRequestSpotFleetRequestConfigLoadBalancersConfigClassicLoadBalancersConfiglistValue.IsSetName())
+                                    {
+                                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "LoadBalancersConfig" + "." + "ClassicLoadBalancersConfig" + "." + "ClassicLoadBalancers" + "." + publicRequestSpotFleetRequestConfigLoadBalancersConfigClassicLoadBalancersConfiglistValueIndex + "." + "Name", StringUtils.FromString(publicRequestSpotFleetRequestConfigLoadBalancersConfigClassicLoadBalancersConfiglistValue.Name));
+                                    }
+                                    publicRequestSpotFleetRequestConfigLoadBalancersConfigClassicLoadBalancersConfiglistValueIndex++;
+                                }
+                            }
+                        }
+                        if(publicRequest.SpotFleetRequestConfig.LoadBalancersConfig.IsSetTargetGroupsConfig())
+                        {
+                            if(publicRequest.SpotFleetRequestConfig.LoadBalancersConfig.TargetGroupsConfig.IsSetTargetGroups())
+                            {
+                                int publicRequestSpotFleetRequestConfigLoadBalancersConfigTargetGroupsConfiglistValueIndex = 1;
+                                foreach(var publicRequestSpotFleetRequestConfigLoadBalancersConfigTargetGroupsConfiglistValue in publicRequest.SpotFleetRequestConfig.LoadBalancersConfig.TargetGroupsConfig.TargetGroups)
+                                {
+                                    if(publicRequestSpotFleetRequestConfigLoadBalancersConfigTargetGroupsConfiglistValue.IsSetArn())
+                                    {
+                                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "LoadBalancersConfig" + "." + "TargetGroupsConfig" + "." + "TargetGroups" + "." + publicRequestSpotFleetRequestConfigLoadBalancersConfigTargetGroupsConfiglistValueIndex + "." + "Arn", StringUtils.FromString(publicRequestSpotFleetRequestConfigLoadBalancersConfigTargetGroupsConfiglistValue.Arn));
+                                    }
+                                    publicRequestSpotFleetRequestConfigLoadBalancersConfigTargetGroupsConfiglistValueIndex++;
+                                }
+                            }
+                        }
+                    }
                     if(publicRequest.SpotFleetRequestConfig.IsSetReplaceUnhealthyInstances())
                     {
                         request.Parameters.Add("SpotFleetRequestConfig" + "." + "ReplaceUnhealthyInstances", StringUtils.FromBool(publicRequest.SpotFleetRequestConfig.ReplaceUnhealthyInstances));

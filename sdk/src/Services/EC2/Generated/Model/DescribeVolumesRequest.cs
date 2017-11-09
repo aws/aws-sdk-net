@@ -83,7 +83,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>attachment.device</code> - The device name that is exposed to the instance
+        ///  <code>attachment.device</code> - The device name specified in the block device mapping
         /// (for example, <code>/dev/sda1</code>).
         /// </para>
         ///  </li> <li> 

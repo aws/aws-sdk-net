@@ -40,7 +40,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DeviceName. 
         /// <para>
-        /// The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+        /// The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
         /// </para>
         /// </summary>
         public string DeviceName

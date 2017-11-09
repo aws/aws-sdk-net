@@ -89,8 +89,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>block-device-mapping.device-name</code> - The device name for the EBS volume
-        /// (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+        ///  <code>block-device-mapping.device-name</code> - The device name specified in the
+        /// block device mapping (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -403,12 +403,12 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>root-device-name</code> - The name of the root device for the instance (for
-        /// example, <code>/dev/sda1</code> or <code>/dev/xvda</code>).
+        ///  <code>root-device-name</code> - The device name of the root device volume (for example,
+        /// <code>/dev/sda1</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>root-device-type</code> - The type of root device that the instance uses (<code>ebs</code>
+        ///  <code>root-device-type</code> - The type of the root device volume (<code>ebs</code>
         /// | <code>instance-store</code>).
         /// </para>
         ///  </li> <li> 

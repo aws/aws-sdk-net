@@ -2316,6 +2316,62 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateDefaultSubnet
+
+        /// <summary>
+        /// Creates a default subnet with a size <code>/20</code> IPv4 CIDR block in the specified
+        /// Availability Zone in your default VPC. You can have only one default subnet per Availability
+        /// Zone. For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/default-vpc.html#create-default-subnet">Creating
+        /// a Default Subnet</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDefaultSubnet service method.</param>
+        /// 
+        /// <returns>The response from the CreateDefaultSubnet service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateDefaultSubnet">REST API Reference for CreateDefaultSubnet Operation</seealso>
+        public virtual CreateDefaultSubnetResponse CreateDefaultSubnet(CreateDefaultSubnetRequest request)
+        {
+            var marshaller = new CreateDefaultSubnetRequestMarshaller();
+            var unmarshaller = CreateDefaultSubnetResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDefaultSubnetRequest,CreateDefaultSubnetResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDefaultSubnet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDefaultSubnet operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDefaultSubnet
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateDefaultSubnet">REST API Reference for CreateDefaultSubnet Operation</seealso>
+        public virtual IAsyncResult BeginCreateDefaultSubnet(CreateDefaultSubnetRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new CreateDefaultSubnetRequestMarshaller();
+            var unmarshaller = CreateDefaultSubnetResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateDefaultSubnetRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateDefaultSubnet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDefaultSubnet.</param>
+        /// 
+        /// <returns>Returns a  CreateDefaultSubnetResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateDefaultSubnet">REST API Reference for CreateDefaultSubnet Operation</seealso>
+        public virtual CreateDefaultSubnetResponse EndCreateDefaultSubnet(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateDefaultSubnetResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateDefaultVpc
 
         /// <summary>

@@ -28,47 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes a block device mapping.
+    /// Describes the Classic Load Balancers and target groups to attach to a Spot fleet request.
     /// </summary>
-    public partial class InstanceBlockDeviceMapping
+    public partial class LoadBalancersConfig
     {
-        private string _deviceName;
-        private EbsInstanceBlockDevice _ebs;
+        private ClassicLoadBalancersConfig _classicLoadBalancersConfig;
+        private TargetGroupsConfig _targetGroupsConfig;
 
         /// <summary>
-        /// Gets and sets the property DeviceName. 
+        /// Gets and sets the property ClassicLoadBalancersConfig. 
         /// <para>
-        /// The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+        /// The Classic Load Balancers.
         /// </para>
         /// </summary>
-        public string DeviceName
+        public ClassicLoadBalancersConfig ClassicLoadBalancersConfig
         {
-            get { return this._deviceName; }
-            set { this._deviceName = value; }
+            get { return this._classicLoadBalancersConfig; }
+            set { this._classicLoadBalancersConfig = value; }
         }
 
-        // Check to see if DeviceName property is set
-        internal bool IsSetDeviceName()
+        // Check to see if ClassicLoadBalancersConfig property is set
+        internal bool IsSetClassicLoadBalancersConfig()
         {
-            return this._deviceName != null;
+            return this._classicLoadBalancersConfig != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Ebs. 
+        /// Gets and sets the property TargetGroupsConfig. 
         /// <para>
-        /// Parameters used to automatically set up EBS volumes when the instance is launched.
+        /// The target groups.
         /// </para>
         /// </summary>
-        public EbsInstanceBlockDevice Ebs
+        public TargetGroupsConfig TargetGroupsConfig
         {
-            get { return this._ebs; }
-            set { this._ebs = value; }
+            get { return this._targetGroupsConfig; }
+            set { this._targetGroupsConfig = value; }
         }
 
-        // Check to see if Ebs property is set
-        internal bool IsSetEbs()
+        // Check to see if TargetGroupsConfig property is set
+        internal bool IsSetTargetGroupsConfig()
         {
-            return this._ebs != null;
+            return this._targetGroupsConfig != null;
         }
 
     }

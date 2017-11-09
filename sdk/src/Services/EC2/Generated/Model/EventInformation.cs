@@ -61,7 +61,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// The following are the <code>error</code> events.
+        /// The following are the <code>error</code> events:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -86,7 +86,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The following are the <code>fleetRequestChange</code> events.
+        /// The following are the <code>fleetRequestChange</code> events:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -136,7 +136,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The following are the <code>instanceChange</code> events.
+        /// The following are the <code>instanceChange</code> events:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -145,6 +145,21 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>terminated</code> - An instance was terminated by the user.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The following are the <code>Information</code> events:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>launchSpecUnusable</code> - The bid price of a launch specification is not
+        /// valid because it is below the market price or the market price is above the On-Demand
+        /// price.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>fleetProgressHalted</code> - The bid price of every launch specification is
+        /// not valid. A launch specification might become valid if the market price changes.
         /// </para>
         ///  </li> </ul>
         /// </summary>

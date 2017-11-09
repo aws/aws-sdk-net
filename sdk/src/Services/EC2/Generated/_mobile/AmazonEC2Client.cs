@@ -1307,6 +1307,38 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateDefaultSubnet
+
+        internal virtual CreateDefaultSubnetResponse CreateDefaultSubnet(CreateDefaultSubnetRequest request)
+        {
+            var marshaller = new CreateDefaultSubnetRequestMarshaller();
+            var unmarshaller = CreateDefaultSubnetResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDefaultSubnetRequest,CreateDefaultSubnetResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDefaultSubnet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDefaultSubnet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateDefaultSubnet">REST API Reference for CreateDefaultSubnet Operation</seealso>
+        public virtual Task<CreateDefaultSubnetResponse> CreateDefaultSubnetAsync(CreateDefaultSubnetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateDefaultSubnetRequestMarshaller();
+            var unmarshaller = CreateDefaultSubnetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateDefaultSubnetRequest,CreateDefaultSubnetResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateDefaultVpc
 
         internal virtual CreateDefaultVpcResponse CreateDefaultVpc(CreateDefaultVpcRequest request)

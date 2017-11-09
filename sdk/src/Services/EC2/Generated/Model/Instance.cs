@@ -557,7 +557,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property RootDeviceName. 
         /// <para>
-        /// The root device name (for example, <code>/dev/sda1</code> or <code>/dev/xvda</code>).
+        /// The device name of the root device volume (for example, <code>/dev/sda1</code>).
         /// </para>
         /// </summary>
         public string RootDeviceName

@@ -39,6 +39,7 @@ namespace Amazon.EC2.Model
         private string _iamFleetRole;
         private InstanceInterruptionBehavior _instanceInterruptionBehavior;
         private List<SpotFleetLaunchSpecification> _launchSpecifications = new List<SpotFleetLaunchSpecification>();
+        private LoadBalancersConfig _loadBalancersConfig;
         private bool? _replaceUnhealthyInstances;
         private string _spotPrice;
         private int? _targetCapacity;
@@ -177,6 +178,32 @@ namespace Amazon.EC2.Model
         internal bool IsSetLaunchSpecifications()
         {
             return this._launchSpecifications != null && this._launchSpecifications.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LoadBalancersConfig. 
+        /// <para>
+        /// One or more Classic Load Balancers and target groups to attach to the Spot fleet request.
+        /// Spot fleet registers the running Spot instances with the specified Classic Load Balancers
+        /// and target groups.
+        /// </para>
+        ///  
+        /// <para>
+        /// With Network Load Balancers, Spot fleet cannot register instances that have the following
+        /// instance types: C1, CC1, CC2, CG1, CG2, CR1, CS1, G1, G2, HI1, HS1, M1, M2, M3, and
+        /// T1.
+        /// </para>
+        /// </summary>
+        public LoadBalancersConfig LoadBalancersConfig
+        {
+            get { return this._loadBalancersConfig; }
+            set { this._loadBalancersConfig = value; }
+        }
+
+        // Check to see if LoadBalancersConfig property is set
+        internal bool IsSetLoadBalancersConfig()
+        {
+            return this._loadBalancersConfig != null;
         }
 
         /// <summary>
