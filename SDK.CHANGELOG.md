@@ -1,3 +1,7 @@
+### 3.3.188.0 (2017-11-09 21:38 UTC)
+* EC2 (3.3.36.0)
+	* Introduces the following features: 1. Create a default subnet in an Availability Zone if no default subnet exists. 2. Spot Fleet integrates with Elastic Load Balancing to enable you to attach one or more load balancers to a Spot Fleet request. When you attach the load balancer, it automatically registers the instance in the Spot Fleet to the load balancers which distributes incoming traffic across the instances. 
+
 ### 3.3.187.0 (2017-11-08 21:51 UTC)
 * ApplicationAutoScaling (3.3.5.0)
 	* Application Auto Scaling customers are now able to schedule adjustments to their MinCapacity and MaxCapacity, which makes it possible to pre-provision adequate capacity for anticipated demand and then reduce the provisioned capacity as demand lulls.
