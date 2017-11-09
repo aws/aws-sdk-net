@@ -160,7 +160,6 @@ namespace Amazon.S3
                                          bool aws4Signing)
         {
             IRequest request = new DefaultRequest(getPreSignedUrlRequest, "AmazonS3");
-
             request.HttpMethod = getPreSignedUrlRequest.Verb.ToString();
 
             var headers = getPreSignedUrlRequest.Headers;
@@ -178,6 +177,9 @@ namespace Amazon.S3
                 request.Headers.Add(HeaderKeys.XAmzSSECustomerAlgorithmHeader, getPreSignedUrlRequest.ServerSideEncryptionCustomerMethod);
             if (getPreSignedUrlRequest.IsSetServerSideEncryptionKeyManagementServiceKeyId())
                 request.Headers.Add(HeaderKeys.XAmzServerSideEncryptionAwsKmsKeyIdHeader, getPreSignedUrlRequest.ServerSideEncryptionKeyManagementServiceKeyId);
+
+            if (getPreSignedUrlRequest.IsSetRequestPayer() && getPreSignedUrlRequest.RequestPayer == RequestPayer.Requester)
+                request.Parameters.Add("x-amz-request-payer", RequestPayer.Requester.Value);
 
             var queryParameters = request.Parameters;
 

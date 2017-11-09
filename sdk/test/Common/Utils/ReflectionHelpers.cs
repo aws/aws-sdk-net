@@ -45,7 +45,7 @@ namespace AWSSDK_DotNet.CommonTest.Utils
         /// For properties and fields 0 parameters means get, and 1 parameter means set.
         /// For sets and void method calls, returns null.
         /// </summary>
-        /// <param name="obj"></param>
+        /// <param name="type"></param>
         /// <param name="memberName"></param>
         /// <param name="parameters"></param>
         /// <returns></returns>

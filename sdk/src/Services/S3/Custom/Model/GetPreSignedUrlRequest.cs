@@ -47,6 +47,7 @@ namespace Amazon.S3.Model
         HttpVerb verb;
         string versionId;
         ServerSideEncryptionMethod encryption;
+        RequestPayer requestPayer;
         private string serverSideEncryptionKeyManagementServiceKeyId;
         private HeadersCollection headersCollection = new HeadersCollection();
         private MetadataCollection metadataCollection = new MetadataCollection();
@@ -261,6 +262,26 @@ namespace Amazon.S3.Model
         internal bool IsSetServerSideEncryptionCustomerMethod()
         {
             return this.serverSideCustomerEncryption != null && this.serverSideCustomerEncryption != ServerSideEncryptionCustomerMethod.None;
+        }
+
+        #endregion
+
+        #region RequestPayer
+
+        /// <summary>
+        /// Confirms that the requester knows that she or he will be charged for the request.
+        /// Bucket owners need not specify this parameter in their requests.
+        /// </summary>
+        public RequestPayer RequestPayer
+        {
+            get { return this.requestPayer; }
+            set { this.requestPayer = value; }
+        }
+
+        // Check to see if RequestPayer property is set
+        internal bool IsSetRequestPayer()
+        {
+            return !System.String.IsNullOrEmpty(this.requestPayer);
         }
 
         #endregion
