@@ -18,10 +18,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Reflection;
 
+
 using Microsoft.Extensions.DependencyInjection;
 
 using Amazon.Runtime;
 using Amazon.Runtime.CredentialManagement;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 
 namespace Amazon.Extensions.NETCore.Setup
 {
@@ -54,8 +57,24 @@ namespace Amazon.Extensions.NETCore.Setup
         /// <returns>The AWS service client</returns>
         internal object CreateServiceClient(IServiceProvider provider)
         {
+            var loggerFactory = provider.GetService<Microsoft.Extensions.Logging.ILoggerFactory>();
+            var logger = loggerFactory?.CreateLogger("AWSSDK");
+
             var options = _awsOptions ?? provider.GetService<AWSOptions>();
-            return CreateServiceClient(_serviceInterfaceType, options);
+            if(options == null)
+            {
+                var configuration = provider.GetService<IConfiguration>();
+                if(configuration != null)
+                {
+                    options = configuration.GetAWSOptions();
+                    if (options != null)
+                        logger?.LogInformation("Found AWS options in IConfiguration");
+                }
+            }
+
+            var client = CreateServiceClient(logger, _serviceInterfaceType, options);
+
+            return client;
         }
 
         /// <summary>
@@ -64,12 +83,12 @@ namespace Amazon.Extensions.NETCore.Setup
         /// </summary>
         /// <param name="provider">The dependency injection provider.</param>
         /// <returns>The AWS service client</returns>
-        internal static object CreateServiceClient(Type serviceInterfaceType, AWSOptions options)
+        internal static IAmazonService CreateServiceClient(ILogger logger, Type serviceInterfaceType, AWSOptions options)
         {
-            var credentials = CreateCredentials(options);
+            var credentials = CreateCredentials(logger, options);
             var config = CreateConfig(serviceInterfaceType, options);
             var client = CreateClient(serviceInterfaceType, credentials, config);
-            return client;
+            return client as IAmazonService;
         }
 
         /// <summary>
@@ -103,12 +122,13 @@ namespace Amazon.Extensions.NETCore.Setup
         /// </summary>
         /// <param name="options"></param>
         /// <returns></returns>
-        private static AWSCredentials CreateCredentials(AWSOptions options)
+        private static AWSCredentials CreateCredentials(ILogger logger, AWSOptions options)
         {
             if (options != null)
             {
                 if (options.Credentials != null)
                 {
+                    logger?.LogInformation("Using AWS credentials specified with the AWSOptions.Credentials property");
                     return options.Credentials;
                 }
                 if (!string.IsNullOrEmpty(options.Profile))
@@ -117,12 +137,28 @@ namespace Amazon.Extensions.NETCore.Setup
                     AWSCredentials result;
                     if (chain.TryGetAWSCredentials(options.Profile, out result))
                     {
+                        logger?.LogInformation($"Found AWS credentials for the profile {options.Profile}");
                         return result;
+                    }
+                    else
+                    {
+                        logger?.LogInformation($"Failed to find AWS credentials for the profile {options.Profile}");
                     }
                 }
             }
 
-            return FallbackCredentialsFactory.GetCredentials();
+            var credentials = FallbackCredentialsFactory.GetCredentials();
+            if (credentials == null)
+            {
+                logger?.LogError("Last effort to find AWS Credentials with AWS SDK's default credential search failed");
+                throw new AmazonClientException("Failed to find AWS Credentials for constructing AWS service client");
+            }
+            else
+            {
+                logger?.LogInformation("Found credentials using the AWS SDK's default credential search");
+            }
+
+            return credentials;
         }
 
         /// <summary>
