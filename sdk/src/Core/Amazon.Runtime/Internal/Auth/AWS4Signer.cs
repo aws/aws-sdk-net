@@ -447,8 +447,9 @@ namespace Amazon.Runtime.Internal.Auth
                 }
             }
 
+
             // set the header if needed and return it
-            return (computedContentHash != null) ? SetPayloadSignatureHeader(request, computedContentHash) : null;
+            return SetPayloadSignatureHeader(request, computedContentHash ?? UnsignedPayload);
         }
 
         /// <summary>
