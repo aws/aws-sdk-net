@@ -456,6 +456,9 @@ namespace Amazon.Runtime
             );
 
             CustomizeRuntimePipeline(this.RuntimePipeline);
+
+            // Apply global pipeline customizations
+            RuntimePipelineCustomizerRegistry.Instance.ApplyCustomizations(this.RuntimePipeline);
         }
 
         public static Uri ComposeUrl(IRequest iRequest)
