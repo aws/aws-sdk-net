@@ -10,7 +10,7 @@ namespace Amazon.Runtime.Internal
     /// <summary>
     /// A registry of object that will manipulate the runtime pipeline used by service clients.
     /// </summary>
-    public class RuntimePipelineCustomizerRegistry
+    public class RuntimePipelineCustomizerRegistry : IDisposable
     {
         public static RuntimePipelineCustomizerRegistry Instance { get; } = new RuntimePipelineCustomizerRegistry();
         private RuntimePipelineCustomizerRegistry()
@@ -115,6 +115,29 @@ namespace Amazon.Runtime.Internal
                 _rwlock.ExitReadLock();
             }
         }
+
+        #region IDisposable Members
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                if (_rwlock != null)
+                {
+                    _rwlock.Dispose();
+                    _rwlock = null;
+                }
+            }
+        }
+
+
+        #endregion
     }
 
     /// <summary>
