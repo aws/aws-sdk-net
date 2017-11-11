@@ -13,6 +13,7 @@ using Amazon.Runtime.Internal.Util;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests
 {
+#if BCL45
     [TestClass]
     public class RuntimePipelineCustomizerTests
     {
@@ -67,4 +68,5 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             }
         }
     }
+#endif
 }
