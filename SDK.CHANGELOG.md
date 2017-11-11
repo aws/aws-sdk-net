@@ -2,8 +2,8 @@
 * S3 (3.3.12.1)
 	* Support RequestPayer parameter in AmazonS3Client::GeneratePreSignedURL
 * Core 3.3.19.0
-	* * Add hook for other AWS packages to customize globally how request are made
-* Fix issue with putting objects with streams that are not seekable.
+	* Add hook for other AWS packages to customize globally how request are made
+    * Fixed issue with putting objects with streams that are not seekable.
 	* All services packages updated to require new Core
 
 ### 3.3.188.0 (2017-11-09 21:38 UTC)
