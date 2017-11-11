@@ -1,3 +1,11 @@
+### 3.3.189.0 (2017-11-11 06:50 UTC)
+* S3 (3.3.12.1)
+	* Support RequestPayer parameter in AmazonS3Client::GeneratePreSignedURL
+* Core 3.3.19.0
+	* * Add hook for other AWS packages to customize globally how request are made
+* Fix issue with putting objects with streams that are not seekable.
+	* All services packages updated to require new Core
+
 ### 3.3.188.0 (2017-11-09 21:38 UTC)
 * EC2 (3.3.36.0)
 	* Introduces the following features: 1. Create a default subnet in an Availability Zone if no default subnet exists. 2. Spot Fleet integrates with Elastic Load Balancing to enable you to attach one or more load balancers to a Spot Fleet request. When you attach the load balancer, it automatically registers the instance in the Spot Fleet to the load balancers which distributes incoming traffic across the instances. 
