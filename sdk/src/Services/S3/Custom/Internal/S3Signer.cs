@@ -134,10 +134,9 @@ namespace Amazon.S3.Internal
             IDictionary<string, string> headersAndParameters = new Dictionary<string, string>(headers);
             foreach (var pair in parameters)
             {
-                if (headersAndParameters.ContainsKey(pair.Key))
-                    throw new ArgumentException("Unable to sign the request.  Key " + pair.Key + " cannot be used as both a header and a parameter.");
-
-                headersAndParameters.Add(pair.Key, pair.Value);
+                // If there's a key that's both a header and a parameter then the header will take precedence.
+                if (!headersAndParameters.ContainsKey(pair.Key))
+                    headersAndParameters.Add(pair.Key, pair.Value);
             }
             sb.Append("\n");
             sb.Append(BuildCanonicalizedHeaders(headersAndParameters));
