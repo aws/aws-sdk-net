@@ -141,6 +141,10 @@ namespace Amazon.Polly
         /// </summary>
         public static readonly LanguageCode JaJP = new LanguageCode("ja-JP");
         /// <summary>
+        /// Constant KoKR for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode KoKR = new LanguageCode("ko-KR");
+        /// <summary>
         /// Constant NbNO for LanguageCode
         /// </summary>
         public static readonly LanguageCode NbNO = new LanguageCode("nb-NO");
@@ -385,6 +389,10 @@ namespace Amazon.Polly
     {
 
         /// <summary>
+        /// Constant Aditi for VoiceId
+        /// </summary>
+        public static readonly VoiceId Aditi = new VoiceId("Aditi");
+        /// <summary>
         /// Constant Amy for VoiceId
         /// </summary>
         public static readonly VoiceId Amy = new VoiceId("Amy");
@@ -568,6 +576,10 @@ namespace Amazon.Polly
         /// Constant Salli for VoiceId
         /// </summary>
         public static readonly VoiceId Salli = new VoiceId("Salli");
+        /// <summary>
+        /// Constant Seoyeon for VoiceId
+        /// </summary>
+        public static readonly VoiceId Seoyeon = new VoiceId("Seoyeon");
         /// <summary>
         /// Constant Takumi for VoiceId
         /// </summary>
