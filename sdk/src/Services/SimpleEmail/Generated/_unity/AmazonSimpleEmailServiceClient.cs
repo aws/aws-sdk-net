@@ -794,6 +794,34 @@ namespace Amazon.SimpleEmail
 
         #endregion
         
+        #region  GetAccountSendingEnabled
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAccountSendingEnabled operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountSendingEnabled operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetAccountSendingEnabled">REST API Reference for GetAccountSendingEnabled Operation</seealso>
+        public virtual void GetAccountSendingEnabledAsync(GetAccountSendingEnabledRequest request, AmazonServiceCallback<GetAccountSendingEnabledRequest, GetAccountSendingEnabledResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new GetAccountSendingEnabledRequestMarshaller();
+            var unmarshaller = GetAccountSendingEnabledResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<GetAccountSendingEnabledRequest,GetAccountSendingEnabledResponse> responseObject 
+                            = new AmazonServiceResult<GetAccountSendingEnabledRequest,GetAccountSendingEnabledResponse>((GetAccountSendingEnabledRequest)req, (GetAccountSendingEnabledResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<GetAccountSendingEnabledRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
         #region  GetIdentityDkimAttributes
 
         /// <summary>
@@ -1725,6 +1753,34 @@ namespace Amazon.SimpleEmail
 
         #endregion
         
+        #region  UpdateAccountSendingEnabled
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAccountSendingEnabled operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAccountSendingEnabled operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateAccountSendingEnabled">REST API Reference for UpdateAccountSendingEnabled Operation</seealso>
+        public virtual void UpdateAccountSendingEnabledAsync(UpdateAccountSendingEnabledRequest request, AmazonServiceCallback<UpdateAccountSendingEnabledRequest, UpdateAccountSendingEnabledResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new UpdateAccountSendingEnabledRequestMarshaller();
+            var unmarshaller = UpdateAccountSendingEnabledResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<UpdateAccountSendingEnabledRequest,UpdateAccountSendingEnabledResponse> responseObject 
+                            = new AmazonServiceResult<UpdateAccountSendingEnabledRequest,UpdateAccountSendingEnabledResponse>((UpdateAccountSendingEnabledRequest)req, (UpdateAccountSendingEnabledResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<UpdateAccountSendingEnabledRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
         #region  UpdateConfigurationSetEventDestination
 
         /// <summary>
@@ -1749,6 +1805,62 @@ namespace Amazon.SimpleEmail
                         callback(responseObject); 
                 };
             BeginInvoke<UpdateConfigurationSetEventDestinationRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  UpdateConfigurationSetReputationMetricsEnabled
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateConfigurationSetReputationMetricsEnabled operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConfigurationSetReputationMetricsEnabled operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateConfigurationSetReputationMetricsEnabled">REST API Reference for UpdateConfigurationSetReputationMetricsEnabled Operation</seealso>
+        public virtual void UpdateConfigurationSetReputationMetricsEnabledAsync(UpdateConfigurationSetReputationMetricsEnabledRequest request, AmazonServiceCallback<UpdateConfigurationSetReputationMetricsEnabledRequest, UpdateConfigurationSetReputationMetricsEnabledResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new UpdateConfigurationSetReputationMetricsEnabledRequestMarshaller();
+            var unmarshaller = UpdateConfigurationSetReputationMetricsEnabledResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<UpdateConfigurationSetReputationMetricsEnabledRequest,UpdateConfigurationSetReputationMetricsEnabledResponse> responseObject 
+                            = new AmazonServiceResult<UpdateConfigurationSetReputationMetricsEnabledRequest,UpdateConfigurationSetReputationMetricsEnabledResponse>((UpdateConfigurationSetReputationMetricsEnabledRequest)req, (UpdateConfigurationSetReputationMetricsEnabledResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<UpdateConfigurationSetReputationMetricsEnabledRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  UpdateConfigurationSetSendingEnabled
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateConfigurationSetSendingEnabled operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConfigurationSetSendingEnabled operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateConfigurationSetSendingEnabled">REST API Reference for UpdateConfigurationSetSendingEnabled Operation</seealso>
+        public virtual void UpdateConfigurationSetSendingEnabledAsync(UpdateConfigurationSetSendingEnabledRequest request, AmazonServiceCallback<UpdateConfigurationSetSendingEnabledRequest, UpdateConfigurationSetSendingEnabledResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new UpdateConfigurationSetSendingEnabledRequestMarshaller();
+            var unmarshaller = UpdateConfigurationSetSendingEnabledResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<UpdateConfigurationSetSendingEnabledRequest,UpdateConfigurationSetSendingEnabledResponse> responseObject 
+                            = new AmazonServiceResult<UpdateConfigurationSetSendingEnabledRequest,UpdateConfigurationSetSendingEnabledResponse>((UpdateConfigurationSetSendingEnabledRequest)req, (UpdateConfigurationSetSendingEnabledResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<UpdateConfigurationSetSendingEnabledRequest>(request, marshaller, unmarshaller, options, callbackHelper);
         }
 
         #endregion

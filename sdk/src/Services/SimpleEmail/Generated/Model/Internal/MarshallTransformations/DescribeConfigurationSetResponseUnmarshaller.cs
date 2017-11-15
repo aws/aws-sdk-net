@@ -94,6 +94,12 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                         response.EventDestinations.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("ReputationOptions", targetDepth))
+                    {
+                        var unmarshaller = ReputationOptionsUnmarshaller.Instance;
+                        response.ReputationOptions = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("TrackingOptions", targetDepth))
                     {
                         var unmarshaller = TrackingOptionsUnmarshaller.Instance;

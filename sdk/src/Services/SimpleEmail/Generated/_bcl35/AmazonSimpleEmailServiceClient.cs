@@ -1783,6 +1783,64 @@ namespace Amazon.SimpleEmail
 
         #endregion
         
+        #region  GetAccountSendingEnabled
+
+        /// <summary>
+        /// Returns the email sending status of the Amazon SES account.
+        /// 
+        ///  
+        /// <para>
+        /// You can execute this operation no more than once per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountSendingEnabled service method.</param>
+        /// 
+        /// <returns>The response from the GetAccountSendingEnabled service method, as returned by SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetAccountSendingEnabled">REST API Reference for GetAccountSendingEnabled Operation</seealso>
+        public virtual GetAccountSendingEnabledResponse GetAccountSendingEnabled(GetAccountSendingEnabledRequest request)
+        {
+            var marshaller = new GetAccountSendingEnabledRequestMarshaller();
+            var unmarshaller = GetAccountSendingEnabledResponseUnmarshaller.Instance;
+
+            return Invoke<GetAccountSendingEnabledRequest,GetAccountSendingEnabledResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAccountSendingEnabled operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountSendingEnabled operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAccountSendingEnabled
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetAccountSendingEnabled">REST API Reference for GetAccountSendingEnabled Operation</seealso>
+        public virtual IAsyncResult BeginGetAccountSendingEnabled(GetAccountSendingEnabledRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetAccountSendingEnabledRequestMarshaller();
+            var unmarshaller = GetAccountSendingEnabledResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetAccountSendingEnabledRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAccountSendingEnabled operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAccountSendingEnabled.</param>
+        /// 
+        /// <returns>Returns a  GetAccountSendingEnabledResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetAccountSendingEnabled">REST API Reference for GetAccountSendingEnabled Operation</seealso>
+        public virtual GetAccountSendingEnabledResponse EndGetAccountSendingEnabled(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetAccountSendingEnabledResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetIdentityDkimAttributes
 
         /// <summary>
@@ -3092,8 +3150,24 @@ namespace Amazon.SimpleEmail
         /// <param name="request">Container for the necessary parameters to execute the SendBulkTemplatedEmail service method.</param>
         /// 
         /// <returns>The response from the SendBulkTemplatedEmail service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.AccountSendingPausedException">
+        /// Indicates that email sending is disabled for your entire Amazon SES account.
+        /// 
+        ///  
+        /// <para>
+        /// You can enable or disable email sending for your Amazon SES account using <a>UpdateAccountSendingEnabled</a>.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.ConfigurationSetDoesNotExistException">
         /// Indicates that the configuration set does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.ConfigurationSetSendingPausedException">
+        /// Indicates that email sending is disabled for the configuration set.
+        /// 
+        ///  
+        /// <para>
+        /// You can enable or disable email sending for a configuration set using <a>UpdateConfigurationSetSendingEnabled</a>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.MailFromDomainNotVerifiedException">
         /// Indicates that the message could not be sent because Amazon SES could not read the
@@ -3206,8 +3280,24 @@ namespace Amazon.SimpleEmail
         /// <param name="request">Container for the necessary parameters to execute the SendEmail service method.</param>
         /// 
         /// <returns>The response from the SendEmail service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.AccountSendingPausedException">
+        /// Indicates that email sending is disabled for your entire Amazon SES account.
+        /// 
+        ///  
+        /// <para>
+        /// You can enable or disable email sending for your Amazon SES account using <a>UpdateAccountSendingEnabled</a>.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.ConfigurationSetDoesNotExistException">
         /// Indicates that the configuration set does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.ConfigurationSetSendingPausedException">
+        /// Indicates that email sending is disabled for the configuration set.
+        /// 
+        ///  
+        /// <para>
+        /// You can enable or disable email sending for a configuration set using <a>UpdateConfigurationSetSendingEnabled</a>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.MailFromDomainNotVerifiedException">
         /// Indicates that the message could not be sent because Amazon SES could not read the
@@ -3370,8 +3460,24 @@ namespace Amazon.SimpleEmail
         /// <param name="request">Container for the necessary parameters to execute the SendRawEmail service method.</param>
         /// 
         /// <returns>The response from the SendRawEmail service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.AccountSendingPausedException">
+        /// Indicates that email sending is disabled for your entire Amazon SES account.
+        /// 
+        ///  
+        /// <para>
+        /// You can enable or disable email sending for your Amazon SES account using <a>UpdateAccountSendingEnabled</a>.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.ConfigurationSetDoesNotExistException">
         /// Indicates that the configuration set does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.ConfigurationSetSendingPausedException">
+        /// Indicates that email sending is disabled for the configuration set.
+        /// 
+        ///  
+        /// <para>
+        /// You can enable or disable email sending for a configuration set using <a>UpdateConfigurationSetSendingEnabled</a>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.MailFromDomainNotVerifiedException">
         /// Indicates that the message could not be sent because Amazon SES could not read the
@@ -3478,8 +3584,24 @@ namespace Amazon.SimpleEmail
         /// <param name="request">Container for the necessary parameters to execute the SendTemplatedEmail service method.</param>
         /// 
         /// <returns>The response from the SendTemplatedEmail service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.AccountSendingPausedException">
+        /// Indicates that email sending is disabled for your entire Amazon SES account.
+        /// 
+        ///  
+        /// <para>
+        /// You can enable or disable email sending for your Amazon SES account using <a>UpdateAccountSendingEnabled</a>.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.ConfigurationSetDoesNotExistException">
         /// Indicates that the configuration set does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.ConfigurationSetSendingPausedException">
+        /// Indicates that email sending is disabled for the configuration set.
+        /// 
+        ///  
+        /// <para>
+        /// You can enable or disable email sending for a configuration set using <a>UpdateConfigurationSetSendingEnabled</a>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.MailFromDomainNotVerifiedException">
         /// Indicates that the message could not be sent because Amazon SES could not read the
@@ -4106,6 +4228,67 @@ namespace Amazon.SimpleEmail
 
         #endregion
         
+        #region  UpdateAccountSendingEnabled
+
+        /// <summary>
+        /// Enables or disables email sending across your entire Amazon SES account. You can use
+        /// this operation in conjunction with Amazon CloudWatch alarms to temporarily pause email
+        /// sending across your Amazon SES account when reputation metrics (such as your bounce
+        /// on complaint rate) reach certain thresholds.
+        /// 
+        ///  
+        /// <para>
+        /// You can execute this operation no more than once per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAccountSendingEnabled service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAccountSendingEnabled service method, as returned by SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateAccountSendingEnabled">REST API Reference for UpdateAccountSendingEnabled Operation</seealso>
+        public virtual UpdateAccountSendingEnabledResponse UpdateAccountSendingEnabled(UpdateAccountSendingEnabledRequest request)
+        {
+            var marshaller = new UpdateAccountSendingEnabledRequestMarshaller();
+            var unmarshaller = UpdateAccountSendingEnabledResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAccountSendingEnabledRequest,UpdateAccountSendingEnabledResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAccountSendingEnabled operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAccountSendingEnabled operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAccountSendingEnabled
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateAccountSendingEnabled">REST API Reference for UpdateAccountSendingEnabled Operation</seealso>
+        public virtual IAsyncResult BeginUpdateAccountSendingEnabled(UpdateAccountSendingEnabledRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new UpdateAccountSendingEnabledRequestMarshaller();
+            var unmarshaller = UpdateAccountSendingEnabledResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateAccountSendingEnabledRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateAccountSendingEnabled operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAccountSendingEnabled.</param>
+        /// 
+        /// <returns>Returns a  UpdateAccountSendingEnabledResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateAccountSendingEnabled">REST API Reference for UpdateAccountSendingEnabled Operation</seealso>
+        public virtual UpdateAccountSendingEnabledResponse EndUpdateAccountSendingEnabled(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateAccountSendingEnabledResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateConfigurationSetEventDestination
 
         /// <summary>
@@ -4188,6 +4371,134 @@ namespace Amazon.SimpleEmail
         public virtual UpdateConfigurationSetEventDestinationResponse EndUpdateConfigurationSetEventDestination(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateConfigurationSetEventDestinationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateConfigurationSetReputationMetricsEnabled
+
+        /// <summary>
+        /// Enables or disables the publishing of reputation metrics for emails sent using a specific
+        /// configuration set. Reputation metrics include bounce and complaint rates. These metrics
+        /// are published to Amazon CloudWatch. By using Amazon CloudWatch, you can create alarms
+        /// when bounce or complaint rates exceed a certain threshold.
+        /// 
+        ///  
+        /// <para>
+        /// You can execute this operation no more than once per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConfigurationSetReputationMetricsEnabled service method.</param>
+        /// 
+        /// <returns>The response from the UpdateConfigurationSetReputationMetricsEnabled service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.ConfigurationSetDoesNotExistException">
+        /// Indicates that the configuration set does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateConfigurationSetReputationMetricsEnabled">REST API Reference for UpdateConfigurationSetReputationMetricsEnabled Operation</seealso>
+        public virtual UpdateConfigurationSetReputationMetricsEnabledResponse UpdateConfigurationSetReputationMetricsEnabled(UpdateConfigurationSetReputationMetricsEnabledRequest request)
+        {
+            var marshaller = new UpdateConfigurationSetReputationMetricsEnabledRequestMarshaller();
+            var unmarshaller = UpdateConfigurationSetReputationMetricsEnabledResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateConfigurationSetReputationMetricsEnabledRequest,UpdateConfigurationSetReputationMetricsEnabledResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateConfigurationSetReputationMetricsEnabled operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConfigurationSetReputationMetricsEnabled operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateConfigurationSetReputationMetricsEnabled
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateConfigurationSetReputationMetricsEnabled">REST API Reference for UpdateConfigurationSetReputationMetricsEnabled Operation</seealso>
+        public virtual IAsyncResult BeginUpdateConfigurationSetReputationMetricsEnabled(UpdateConfigurationSetReputationMetricsEnabledRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new UpdateConfigurationSetReputationMetricsEnabledRequestMarshaller();
+            var unmarshaller = UpdateConfigurationSetReputationMetricsEnabledResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateConfigurationSetReputationMetricsEnabledRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateConfigurationSetReputationMetricsEnabled operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateConfigurationSetReputationMetricsEnabled.</param>
+        /// 
+        /// <returns>Returns a  UpdateConfigurationSetReputationMetricsEnabledResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateConfigurationSetReputationMetricsEnabled">REST API Reference for UpdateConfigurationSetReputationMetricsEnabled Operation</seealso>
+        public virtual UpdateConfigurationSetReputationMetricsEnabledResponse EndUpdateConfigurationSetReputationMetricsEnabled(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateConfigurationSetReputationMetricsEnabledResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateConfigurationSetSendingEnabled
+
+        /// <summary>
+        /// Enables or disables email sending for messages sent using a specific configuration
+        /// set. You can use this operation in conjunction with Amazon CloudWatch alarms to temporarily
+        /// pause email sending for a configuration set when the reputation metrics for that configuration
+        /// set (such as your bounce on complaint rate) reach certain thresholds.
+        /// 
+        ///  
+        /// <para>
+        /// You can execute this operation no more than once per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConfigurationSetSendingEnabled service method.</param>
+        /// 
+        /// <returns>The response from the UpdateConfigurationSetSendingEnabled service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.ConfigurationSetDoesNotExistException">
+        /// Indicates that the configuration set does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateConfigurationSetSendingEnabled">REST API Reference for UpdateConfigurationSetSendingEnabled Operation</seealso>
+        public virtual UpdateConfigurationSetSendingEnabledResponse UpdateConfigurationSetSendingEnabled(UpdateConfigurationSetSendingEnabledRequest request)
+        {
+            var marshaller = new UpdateConfigurationSetSendingEnabledRequestMarshaller();
+            var unmarshaller = UpdateConfigurationSetSendingEnabledResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateConfigurationSetSendingEnabledRequest,UpdateConfigurationSetSendingEnabledResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateConfigurationSetSendingEnabled operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConfigurationSetSendingEnabled operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateConfigurationSetSendingEnabled
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateConfigurationSetSendingEnabled">REST API Reference for UpdateConfigurationSetSendingEnabled Operation</seealso>
+        public virtual IAsyncResult BeginUpdateConfigurationSetSendingEnabled(UpdateConfigurationSetSendingEnabledRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new UpdateConfigurationSetSendingEnabledRequestMarshaller();
+            var unmarshaller = UpdateConfigurationSetSendingEnabledResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateConfigurationSetSendingEnabledRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateConfigurationSetSendingEnabled operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateConfigurationSetSendingEnabled.</param>
+        /// 
+        /// <returns>Returns a  UpdateConfigurationSetSendingEnabledResult from SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateConfigurationSetSendingEnabled">REST API Reference for UpdateConfigurationSetSendingEnabled Operation</seealso>
+        public virtual UpdateConfigurationSetSendingEnabledResponse EndUpdateConfigurationSetSendingEnabled(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateConfigurationSetSendingEnabledResponse>(asyncResult);
         }
 
         #endregion

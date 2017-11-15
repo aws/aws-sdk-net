@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SendRawEmail operation
+    /// Response Unmarshaller for UpdateConfigurationSetSendingEnabled operation
     /// </summary>  
-    public class SendRawEmailResponseUnmarshaller : XmlResponseUnmarshaller
+    public class UpdateConfigurationSetSendingEnabledResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,7 +43,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            SendRawEmailResponse response = new SendRawEmailResponse();
+            UpdateConfigurationSetSendingEnabledResponse response = new UpdateConfigurationSetSendingEnabledResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -51,7 +51,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement)
                 {                    
-                    if(context.TestExpression("SendRawEmailResult", 2))
+                    if(context.TestExpression("UpdateConfigurationSetSendingEnabledResult", 2))
                     {
                         UnmarshallResult(context, response);                        
                         continue;
@@ -67,7 +67,8 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
             return response;
         }
 
-        private static void UnmarshallResult(XmlUnmarshallerContext context, SendRawEmailResponse response)
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", MessageId="response")]
+        private static void UnmarshallResult(XmlUnmarshallerContext context, UpdateConfigurationSetSendingEnabledResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -81,12 +82,6 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if (context.TestExpression("MessageId", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        response.MessageId = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
                 } 
            }
 
@@ -104,31 +99,15 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("AccountSendingPausedException"))
-            {
-                return new AccountSendingPausedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ConfigurationSetDoesNotExist"))
             {
                 return new ConfigurationSetDoesNotExistException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ConfigurationSetSendingPausedException"))
-            {
-                return new ConfigurationSetSendingPausedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("MailFromDomainNotVerifiedException"))
-            {
-                return new MailFromDomainNotVerifiedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("MessageRejected"))
-            {
-                return new MessageRejectedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             return new AmazonSimpleEmailServiceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        private static SendRawEmailResponseUnmarshaller _instance = new SendRawEmailResponseUnmarshaller();        
+        private static UpdateConfigurationSetSendingEnabledResponseUnmarshaller _instance = new UpdateConfigurationSetSendingEnabledResponseUnmarshaller();        
 
-        internal static SendRawEmailResponseUnmarshaller GetInstance()
+        internal static UpdateConfigurationSetSendingEnabledResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -136,7 +115,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SendRawEmailResponseUnmarshaller Instance
+        public static UpdateConfigurationSetSendingEnabledResponseUnmarshaller Instance
         {
             get
             {

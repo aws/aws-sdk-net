@@ -249,6 +249,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.GetAccountSendingEnabled(Amazon.SimpleEmail.Model.GetAccountSendingEnabledRequest)" />
+            <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.GetAccountSendingEnabled(Amazon.SimpleEmail.Model.GetAccountSendingEnabledRequest)" />
+            <member name="T:Amazon.SimpleEmail.Model.GetAccountSendingEnabledRequest" />
+            <member name="T:Amazon.SimpleEmail.Model.GetAccountSendingEnabledResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns if sending status for an account is enabled. (true / false):
+                </para>
+                <code
+                    title="GetAccountSendingEnabled"
+                    source=".\AWSSDKDocSamples\SimpleEmail\SimpleEmail.GeneratedSamples.cs"
+                    region="getaccountsendingenabled-1469047741333" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.GetIdentityDkimAttributes(Amazon.SimpleEmail.Model.GetIdentityDkimAttributesRequest)" />
             <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.GetIdentityDkimAttributes(Amazon.SimpleEmail.Model.GetIdentityDkimAttributesRequest)" />
             <member name="T:Amazon.SimpleEmail.Model.GetIdentityDkimAttributesRequest" />
@@ -681,6 +700,63 @@
                     title="SetReceiptRulePosition"
                     source=".\AWSSDKDocSamples\SimpleEmail\SimpleEmail.GeneratedSamples.cs"
                     region="setreceiptruleposition-1469058530550" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.UpdateAccountSendingEnabled(Amazon.SimpleEmail.Model.UpdateAccountSendingEnabledRequest)" />
+            <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.UpdateAccountSendingEnabled(Amazon.SimpleEmail.Model.UpdateAccountSendingEnabledRequest)" />
+            <member name="T:Amazon.SimpleEmail.Model.UpdateAccountSendingEnabledRequest" />
+            <member name="T:Amazon.SimpleEmail.Model.UpdateAccountSendingEnabledResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example updated the sending status for this account.
+                </para>
+                <code
+                    title="UpdateAccountSendingEnabled"
+                    source=".\AWSSDKDocSamples\SimpleEmail\SimpleEmail.GeneratedSamples.cs"
+                    region="updateaccountsendingenabled-1469047741333" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.UpdateConfigurationSetReputationMetricsEnabled(Amazon.SimpleEmail.Model.UpdateConfigurationSetReputationMetricsEnabledRequest)" />
+            <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.UpdateConfigurationSetReputationMetricsEnabled(Amazon.SimpleEmail.Model.UpdateConfigurationSetReputationMetricsEnabledRequest)" />
+            <member name="T:Amazon.SimpleEmail.Model.UpdateConfigurationSetReputationMetricsEnabledRequest" />
+            <member name="T:Amazon.SimpleEmail.Model.UpdateConfigurationSetReputationMetricsEnabledResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Set the reputationMetricsEnabled flag for a specific configuration set.
+                </para>
+                <code
+                    title="UpdateConfigurationSetReputationMetricsEnabled"
+                    source=".\AWSSDKDocSamples\SimpleEmail\SimpleEmail.GeneratedSamples.cs"
+                    region="updateconfigurationsetreputationmetricsenabled-2362747741333" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.UpdateConfigurationSetSendingEnabled(Amazon.SimpleEmail.Model.UpdateConfigurationSetSendingEnabledRequest)" />
+            <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.UpdateConfigurationSetSendingEnabled(Amazon.SimpleEmail.Model.UpdateConfigurationSetSendingEnabledRequest)" />
+            <member name="T:Amazon.SimpleEmail.Model.UpdateConfigurationSetSendingEnabledRequest" />
+            <member name="T:Amazon.SimpleEmail.Model.UpdateConfigurationSetSendingEnabledResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Set the sending enabled flag for a specific configuration set.
+                </para>
+                <code
+                    title="UpdateConfigurationSetReputationMetricsEnabled"
+                    source=".\AWSSDKDocSamples\SimpleEmail\SimpleEmail.GeneratedSamples.cs"
+                    region="updateconfigurationsetsendingenabled-2362747741333" />
             </example>
         </value>
     </doc>

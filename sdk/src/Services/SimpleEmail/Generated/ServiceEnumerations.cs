@@ -151,6 +151,10 @@ namespace Amazon.SimpleEmail
         /// </summary>
         public static readonly BulkEmailStatus AccountDailyQuotaExceeded = new BulkEmailStatus("AccountDailyQuotaExceeded");
         /// <summary>
+        /// Constant AccountSendingPaused for BulkEmailStatus
+        /// </summary>
+        public static readonly BulkEmailStatus AccountSendingPaused = new BulkEmailStatus("AccountSendingPaused");
+        /// <summary>
         /// Constant AccountSuspended for BulkEmailStatus
         /// </summary>
         public static readonly BulkEmailStatus AccountSuspended = new BulkEmailStatus("AccountSuspended");
@@ -162,6 +166,10 @@ namespace Amazon.SimpleEmail
         /// Constant ConfigurationSetDoesNotExist for BulkEmailStatus
         /// </summary>
         public static readonly BulkEmailStatus ConfigurationSetDoesNotExist = new BulkEmailStatus("ConfigurationSetDoesNotExist");
+        /// <summary>
+        /// Constant ConfigurationSetSendingPaused for BulkEmailStatus
+        /// </summary>
+        public static readonly BulkEmailStatus ConfigurationSetSendingPaused = new BulkEmailStatus("ConfigurationSetSendingPaused");
         /// <summary>
         /// Constant Failed for BulkEmailStatus
         /// </summary>
@@ -240,6 +248,10 @@ namespace Amazon.SimpleEmail
         /// Constant EventDestinations for ConfigurationSetAttribute
         /// </summary>
         public static readonly ConfigurationSetAttribute EventDestinations = new ConfigurationSetAttribute("eventDestinations");
+        /// <summary>
+        /// Constant ReputationOptions for ConfigurationSetAttribute
+        /// </summary>
+        public static readonly ConfigurationSetAttribute ReputationOptions = new ConfigurationSetAttribute("reputationOptions");
         /// <summary>
         /// Constant TrackingOptions for ConfigurationSetAttribute
         /// </summary>

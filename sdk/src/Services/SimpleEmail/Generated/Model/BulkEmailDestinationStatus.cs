@@ -129,6 +129,16 @@ namespace Amazon.SimpleEmail.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>AccountSendingPaused</code>: Email sending for the Amazon SES account was disabled
+        /// using the <a>UpdateAccountSendingEnabled</a> operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ConfigurationSetSendingPaused</code>: Email sending for this configuration
+        /// set was disabled using the <a>UpdateConfigurationSetSendingEnabled</a> operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>InvalidParameterValue</code>: One or more of the parameters you specified when
         /// calling this operation was invalid. See the error message for additional information.
         /// </para>

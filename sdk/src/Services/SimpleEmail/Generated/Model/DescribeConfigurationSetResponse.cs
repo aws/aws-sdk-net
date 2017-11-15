@@ -36,6 +36,7 @@ namespace Amazon.SimpleEmail.Model
     {
         private ConfigurationSet _configurationSet;
         private List<EventDestination> _eventDestinations = new List<EventDestination>();
+        private ReputationOptions _reputationOptions;
         private TrackingOptions _trackingOptions;
 
         /// <summary>
@@ -72,6 +73,24 @@ namespace Amazon.SimpleEmail.Model
         internal bool IsSetEventDestinations()
         {
             return this._eventDestinations != null && this._eventDestinations.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReputationOptions. 
+        /// <para>
+        /// An object that represents the reputation settings for the configuration set. 
+        /// </para>
+        /// </summary>
+        public ReputationOptions ReputationOptions
+        {
+            get { return this._reputationOptions; }
+            set { this._reputationOptions = value; }
+        }
+
+        // Check to see if ReputationOptions property is set
+        internal bool IsSetReputationOptions()
+        {
+            return this._reputationOptions != null;
         }
 
         /// <summary>

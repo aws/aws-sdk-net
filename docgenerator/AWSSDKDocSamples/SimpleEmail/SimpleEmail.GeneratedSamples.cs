@@ -208,6 +208,19 @@ namespace AWSSDKDocSamples.Amazon.SimpleEmail.Generated
             #endregion
         }
 
+        public void SimpleEmailServiceGetAccountSendingEnabled()
+        {
+            #region getaccountsendingenabled-1469047741333
+
+            var response = client.GetAccountSendingEnabled(new GetAccountSendingEnabledRequest 
+            {
+            });
+
+            bool enabled = response.Enabled;
+
+            #endregion
+        }
+
         public void SimpleEmailServiceGetIdentityDkimAttributes()
         {
             #region getidentitydkimattributes-1469050695628
@@ -586,6 +599,47 @@ namespace AWSSDKDocSamples.Amazon.SimpleEmail.Generated
                 After = "PutRuleAfterThisRule",
                 RuleName = "RuleToReposition",
                 RuleSetName = "MyRuleSet"
+            });
+
+
+            #endregion
+        }
+
+        public void SimpleEmailServiceUpdateAccountSendingEnabled()
+        {
+            #region updateaccountsendingenabled-1469047741333
+
+            var response = client.UpdateAccountSendingEnabled(new UpdateAccountSendingEnabledRequest 
+            {
+                Enabled = true
+            });
+
+
+            #endregion
+        }
+
+        public void SimpleEmailServiceUpdateConfigurationSetReputationMetricsEnabled()
+        {
+            #region updateconfigurationsetreputationmetricsenabled-2362747741333
+
+            var response = client.UpdateConfigurationSetReputationMetricsEnabled(new UpdateConfigurationSetReputationMetricsEnabledRequest 
+            {
+                ConfigurationSetName = "foo",
+                Enabled = true
+            });
+
+
+            #endregion
+        }
+
+        public void SimpleEmailServiceUpdateConfigurationSetSendingEnabled()
+        {
+            #region updateconfigurationsetsendingenabled-2362747741333
+
+            var response = client.UpdateConfigurationSetSendingEnabled(new UpdateConfigurationSetSendingEnabledRequest 
+            {
+                ConfigurationSetName = "foo",
+                Enabled = true
             });
 
 

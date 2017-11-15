@@ -567,6 +567,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("SimpleEmail")]
+        public void GetAccountSendingEnabledMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetAccountSendingEnabled");
+
+            var request = InstantiateClassGenerator.Execute<GetAccountSendingEnabledRequest>();
+            var marshaller = new GetAccountSendingEnabledRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = GetAccountSendingEnabledResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetAccountSendingEnabledResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleEmail")]
         public void GetIdentityDkimAttributesMarshallTest()
         {
             var operation = service_model.FindOperation("GetIdentityDkimAttributes");
@@ -1287,6 +1311,25 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("SimpleEmail")]
+        public void UpdateAccountSendingEnabledMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateAccountSendingEnabled");
+
+            var request = InstantiateClassGenerator.Execute<UpdateAccountSendingEnabledRequest>();
+            var marshaller = new UpdateAccountSendingEnabledRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleEmail")]
         public void UpdateConfigurationSetEventDestinationMarshallTest()
         {
             var operation = service_model.FindOperation("UpdateConfigurationSetEventDestination");
@@ -1303,6 +1346,44 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var response = UpdateConfigurationSetEventDestinationResponseUnmarshaller.Instance.Unmarshall(context)
                 as UpdateConfigurationSetEventDestinationResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleEmail")]
+        public void UpdateConfigurationSetReputationMetricsEnabledMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateConfigurationSetReputationMetricsEnabled");
+
+            var request = InstantiateClassGenerator.Execute<UpdateConfigurationSetReputationMetricsEnabledRequest>();
+            var marshaller = new UpdateConfigurationSetReputationMetricsEnabledRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleEmail")]
+        public void UpdateConfigurationSetSendingEnabledMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateConfigurationSetSendingEnabled");
+
+            var request = InstantiateClassGenerator.Execute<UpdateConfigurationSetSendingEnabledRequest>();
+            var marshaller = new UpdateConfigurationSetSendingEnabledRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
         }
 
         
