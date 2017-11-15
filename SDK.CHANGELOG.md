@@ -1,3 +1,13 @@
+### 3.3.191.0 (2017-11-15 19:03 UTC)
+* APIGateway (3.3.11.0)
+	* 1. Extended GetDocumentationParts operation to support retrieving documentation parts resources without contents.  2. Added hosted zone ID in the custom domain response.
+* Polly (3.3.4.0)
+	* Amazon Polly adds Korean language support with new female voice - "Seoyeon" and new Indian English female voice - "Aditi"
+* SimpleEmail (3.3.5.0)
+	* SES launches Configuration Set Reputation Metrics and Email Pausing Today, two features that build upon the capabilities of the reputation dashboard. The first is the ability to export reputation metrics for individual configuration sets. The second is the ability to temporarily pause email sending, either at the configuration set level, or across your entire Amazon SES account.
+* StepFunctions (3.3.2.0)
+	* You can now use the UpdateStateMachine API to update your state machine definition and role ARN. Existing executions will continue to use the previous definition and role ARN. You can use the DescribeStateMachineForExecution API to determine which state machine definition and role ARN is associated with an execution
+
 ### 3.3.190.0 (2017-11-15 00:20 UTC)
 * ECS (3.3.8.0)
 	* Added new mode for Task Networking in ECS, called awsvpc mode. Mode configuration parameters to be passed in via awsvpcConfiguration. Updated APIs now use/show this new mode - RegisterTaskDefinition, CreateService, UpdateService, RunTask, StartTask.

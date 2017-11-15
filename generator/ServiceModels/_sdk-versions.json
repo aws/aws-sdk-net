@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.190.0",
+    "ProductVersion" : "3.3.191.0",
     "CoreVersion"    : "3.3.19.0",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -337,7 +337,7 @@
             "InPreview"               : false
         },
         "SimpleEmail"          : {
-            "Version" : "3.3.4.2",
+            "Version" : "3.3.5.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
@@ -481,7 +481,7 @@
             "InPreview"               : false
         },
         "APIGateway"                      : {
-            "Version" : "3.3.10.1",
+            "Version" : "3.3.11.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
@@ -625,7 +625,7 @@
             "InPreview"               : false
         },
         "Polly"                           : {
-            "Version" : "3.3.3.2",
+            "Version" : "3.3.4.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
@@ -633,7 +633,7 @@
             "InPreview"               : false
         },
         "StepFunctions"                   : {
-            "Version" : "3.3.1.1",
+            "Version" : "3.3.2.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
