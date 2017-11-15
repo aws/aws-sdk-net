@@ -34,6 +34,7 @@ namespace Amazon.Lightsail.Model
     {
         private string _arn;
         private DateTime? _createdAt;
+        private List<Disk> _fromAttachedDisks = new List<Disk>();
         private string _fromBlueprintId;
         private string _fromBundleId;
         private string _fromInstanceArn;
@@ -49,7 +50,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the snapshot (e.g., <code>arn:aws:lightsail:us-east-1:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).
+        /// The Amazon Resource Name (ARN) of the snapshot (e.g., <code>arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).
         /// </para>
         /// </summary>
         public string Arn
@@ -80,6 +81,24 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetCreatedAt()
         {
             return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FromAttachedDisks. 
+        /// <para>
+        /// An array of disk objects containing information about all block storage disks.
+        /// </para>
+        /// </summary>
+        public List<Disk> FromAttachedDisks
+        {
+            get { return this._fromAttachedDisks; }
+            set { this._fromAttachedDisks = value; }
+        }
+
+        // Check to see if FromAttachedDisks property is set
+        internal bool IsSetFromAttachedDisks()
+        {
+            return this._fromAttachedDisks != null && this._fromAttachedDisks.Count > 0; 
         }
 
         /// <summary>
@@ -124,7 +143,7 @@ namespace Amazon.Lightsail.Model
         /// Gets and sets the property FromInstanceArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the instance from which the snapshot was created
-        /// (e.g., <code>arn:aws:lightsail:us-east-1:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).
+        /// (e.g., <code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).
         /// </para>
         /// </summary>
         public string FromInstanceArn

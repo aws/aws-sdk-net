@@ -67,6 +67,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetForce())
+                {
+                    context.Writer.WritePropertyName("force");
+                    context.Writer.Write(publicRequest.Force);
+                }
+
                 if(publicRequest.IsSetInstanceName())
                 {
                     context.Writer.WritePropertyName("instanceName");

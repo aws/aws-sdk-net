@@ -76,6 +76,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("fromAttachedDisks", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Disk, DiskUnmarshaller>(DiskUnmarshaller.Instance);
+                    unmarshalledObject.FromAttachedDisks = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("fromBlueprintId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

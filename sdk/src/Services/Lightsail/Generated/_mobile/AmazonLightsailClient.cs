@@ -279,6 +279,38 @@ namespace Amazon.Lightsail
 
         #endregion
         
+        #region  AttachDisk
+
+        internal virtual AttachDiskResponse AttachDisk(AttachDiskRequest request)
+        {
+            var marshaller = new AttachDiskRequestMarshaller();
+            var unmarshaller = AttachDiskResponseUnmarshaller.Instance;
+
+            return Invoke<AttachDiskRequest,AttachDiskResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AttachDisk operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AttachDisk operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachDisk">REST API Reference for AttachDisk Operation</seealso>
+        public virtual Task<AttachDiskResponse> AttachDiskAsync(AttachDiskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AttachDiskRequestMarshaller();
+            var unmarshaller = AttachDiskResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AttachDiskRequest,AttachDiskResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AttachStaticIp
 
         internal virtual AttachStaticIpResponse AttachStaticIp(AttachStaticIpRequest request)
@@ -338,6 +370,102 @@ namespace Amazon.Lightsail
             var unmarshaller = CloseInstancePublicPortsResponseUnmarshaller.Instance;
 
             return InvokeAsync<CloseInstancePublicPortsRequest,CloseInstancePublicPortsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateDisk
+
+        internal virtual CreateDiskResponse CreateDisk(CreateDiskRequest request)
+        {
+            var marshaller = new CreateDiskRequestMarshaller();
+            var unmarshaller = CreateDiskResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDiskRequest,CreateDiskResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDisk operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDisk operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDisk">REST API Reference for CreateDisk Operation</seealso>
+        public virtual Task<CreateDiskResponse> CreateDiskAsync(CreateDiskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateDiskRequestMarshaller();
+            var unmarshaller = CreateDiskResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateDiskRequest,CreateDiskResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateDiskFromSnapshot
+
+        internal virtual CreateDiskFromSnapshotResponse CreateDiskFromSnapshot(CreateDiskFromSnapshotRequest request)
+        {
+            var marshaller = new CreateDiskFromSnapshotRequestMarshaller();
+            var unmarshaller = CreateDiskFromSnapshotResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDiskFromSnapshotRequest,CreateDiskFromSnapshotResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDiskFromSnapshot operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDiskFromSnapshot operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDiskFromSnapshot">REST API Reference for CreateDiskFromSnapshot Operation</seealso>
+        public virtual Task<CreateDiskFromSnapshotResponse> CreateDiskFromSnapshotAsync(CreateDiskFromSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateDiskFromSnapshotRequestMarshaller();
+            var unmarshaller = CreateDiskFromSnapshotResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateDiskFromSnapshotRequest,CreateDiskFromSnapshotResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateDiskSnapshot
+
+        internal virtual CreateDiskSnapshotResponse CreateDiskSnapshot(CreateDiskSnapshotRequest request)
+        {
+            var marshaller = new CreateDiskSnapshotRequestMarshaller();
+            var unmarshaller = CreateDiskSnapshotResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDiskSnapshotRequest,CreateDiskSnapshotResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDiskSnapshot operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDiskSnapshot operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDiskSnapshot">REST API Reference for CreateDiskSnapshot Operation</seealso>
+        public virtual Task<CreateDiskSnapshotResponse> CreateDiskSnapshotAsync(CreateDiskSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateDiskSnapshotRequestMarshaller();
+            var unmarshaller = CreateDiskSnapshotResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateDiskSnapshotRequest,CreateDiskSnapshotResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -535,6 +663,70 @@ namespace Amazon.Lightsail
 
         #endregion
         
+        #region  DeleteDisk
+
+        internal virtual DeleteDiskResponse DeleteDisk(DeleteDiskRequest request)
+        {
+            var marshaller = new DeleteDiskRequestMarshaller();
+            var unmarshaller = DeleteDiskResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDiskRequest,DeleteDiskResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDisk operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDisk operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDisk">REST API Reference for DeleteDisk Operation</seealso>
+        public virtual Task<DeleteDiskResponse> DeleteDiskAsync(DeleteDiskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteDiskRequestMarshaller();
+            var unmarshaller = DeleteDiskResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteDiskRequest,DeleteDiskResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteDiskSnapshot
+
+        internal virtual DeleteDiskSnapshotResponse DeleteDiskSnapshot(DeleteDiskSnapshotRequest request)
+        {
+            var marshaller = new DeleteDiskSnapshotRequestMarshaller();
+            var unmarshaller = DeleteDiskSnapshotResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDiskSnapshotRequest,DeleteDiskSnapshotResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDiskSnapshot operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDiskSnapshot operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDiskSnapshot">REST API Reference for DeleteDiskSnapshot Operation</seealso>
+        public virtual Task<DeleteDiskSnapshotResponse> DeleteDiskSnapshotAsync(DeleteDiskSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteDiskSnapshotRequestMarshaller();
+            var unmarshaller = DeleteDiskSnapshotResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteDiskSnapshotRequest,DeleteDiskSnapshotResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteDomain
 
         internal virtual DeleteDomainResponse DeleteDomain(DeleteDomainRequest request)
@@ -695,6 +887,38 @@ namespace Amazon.Lightsail
 
         #endregion
         
+        #region  DetachDisk
+
+        internal virtual DetachDiskResponse DetachDisk(DetachDiskRequest request)
+        {
+            var marshaller = new DetachDiskRequestMarshaller();
+            var unmarshaller = DetachDiskResponseUnmarshaller.Instance;
+
+            return Invoke<DetachDiskRequest,DetachDiskResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DetachDisk operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DetachDisk operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DetachDisk">REST API Reference for DetachDisk Operation</seealso>
+        public virtual Task<DetachDiskResponse> DetachDiskAsync(DetachDiskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DetachDiskRequestMarshaller();
+            var unmarshaller = DetachDiskResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DetachDiskRequest,DetachDiskResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DetachStaticIp
 
         internal virtual DetachStaticIpResponse DetachStaticIp(DetachStaticIpRequest request)
@@ -850,6 +1074,134 @@ namespace Amazon.Lightsail
             var unmarshaller = GetBundlesResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetBundlesRequest,GetBundlesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetDisk
+
+        internal virtual GetDiskResponse GetDisk(GetDiskRequest request)
+        {
+            var marshaller = new GetDiskRequestMarshaller();
+            var unmarshaller = GetDiskResponseUnmarshaller.Instance;
+
+            return Invoke<GetDiskRequest,GetDiskResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDisk operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDisk operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDisk">REST API Reference for GetDisk Operation</seealso>
+        public virtual Task<GetDiskResponse> GetDiskAsync(GetDiskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetDiskRequestMarshaller();
+            var unmarshaller = GetDiskResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDiskRequest,GetDiskResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetDisks
+
+        internal virtual GetDisksResponse GetDisks(GetDisksRequest request)
+        {
+            var marshaller = new GetDisksRequestMarshaller();
+            var unmarshaller = GetDisksResponseUnmarshaller.Instance;
+
+            return Invoke<GetDisksRequest,GetDisksResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDisks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDisks operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDisks">REST API Reference for GetDisks Operation</seealso>
+        public virtual Task<GetDisksResponse> GetDisksAsync(GetDisksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetDisksRequestMarshaller();
+            var unmarshaller = GetDisksResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDisksRequest,GetDisksResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetDiskSnapshot
+
+        internal virtual GetDiskSnapshotResponse GetDiskSnapshot(GetDiskSnapshotRequest request)
+        {
+            var marshaller = new GetDiskSnapshotRequestMarshaller();
+            var unmarshaller = GetDiskSnapshotResponseUnmarshaller.Instance;
+
+            return Invoke<GetDiskSnapshotRequest,GetDiskSnapshotResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDiskSnapshot operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDiskSnapshot operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDiskSnapshot">REST API Reference for GetDiskSnapshot Operation</seealso>
+        public virtual Task<GetDiskSnapshotResponse> GetDiskSnapshotAsync(GetDiskSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetDiskSnapshotRequestMarshaller();
+            var unmarshaller = GetDiskSnapshotResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDiskSnapshotRequest,GetDiskSnapshotResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetDiskSnapshots
+
+        internal virtual GetDiskSnapshotsResponse GetDiskSnapshots(GetDiskSnapshotsRequest request)
+        {
+            var marshaller = new GetDiskSnapshotsRequestMarshaller();
+            var unmarshaller = GetDiskSnapshotsResponseUnmarshaller.Instance;
+
+            return Invoke<GetDiskSnapshotsRequest,GetDiskSnapshotsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDiskSnapshots operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDiskSnapshots operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDiskSnapshots">REST API Reference for GetDiskSnapshots Operation</seealso>
+        public virtual Task<GetDiskSnapshotsResponse> GetDiskSnapshotsAsync(GetDiskSnapshotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetDiskSnapshotsRequestMarshaller();
+            var unmarshaller = GetDiskSnapshotsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDiskSnapshotsRequest,GetDiskSnapshotsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

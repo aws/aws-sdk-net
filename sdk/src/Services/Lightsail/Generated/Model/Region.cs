@@ -41,7 +41,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZones. 
         /// <para>
-        /// The Availability Zones. Follows the format <code>us-east-1a</code> (case-sensitive).
+        /// The Availability Zones. Follows the format <code>us-east-2a</code> (case-sensitive).
         /// </para>
         /// </summary>
         public List<AvailabilityZone> AvailabilityZones
@@ -96,7 +96,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// The display name (e.g., <code>Virginia</code>).
+        /// The display name (e.g., <code>Ohio</code>).
         /// </para>
         /// </summary>
         public string DisplayName
@@ -114,7 +114,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The region name (e.g., <code>us-east-1</code>).
+        /// The region name (e.g., <code>us-east-2</code>).
         /// </para>
         /// </summary>
         public RegionName Name

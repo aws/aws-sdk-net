@@ -125,6 +125,126 @@ namespace Amazon.Lightsail
 
 
     /// <summary>
+    /// Constants used for properties of type DiskSnapshotState.
+    /// </summary>
+    public class DiskSnapshotState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Completed for DiskSnapshotState
+        /// </summary>
+        public static readonly DiskSnapshotState Completed = new DiskSnapshotState("completed");
+        /// <summary>
+        /// Constant Error for DiskSnapshotState
+        /// </summary>
+        public static readonly DiskSnapshotState Error = new DiskSnapshotState("error");
+        /// <summary>
+        /// Constant Pending for DiskSnapshotState
+        /// </summary>
+        public static readonly DiskSnapshotState Pending = new DiskSnapshotState("pending");
+        /// <summary>
+        /// Constant Unknown for DiskSnapshotState
+        /// </summary>
+        public static readonly DiskSnapshotState Unknown = new DiskSnapshotState("unknown");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DiskSnapshotState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DiskSnapshotState FindValue(string value)
+        {
+            return FindValue<DiskSnapshotState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DiskSnapshotState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DiskState.
+    /// </summary>
+    public class DiskState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Available for DiskState
+        /// </summary>
+        public static readonly DiskState Available = new DiskState("available");
+        /// <summary>
+        /// Constant Error for DiskState
+        /// </summary>
+        public static readonly DiskState Error = new DiskState("error");
+        /// <summary>
+        /// Constant InUse for DiskState
+        /// </summary>
+        public static readonly DiskState InUse = new DiskState("in-use");
+        /// <summary>
+        /// Constant Pending for DiskState
+        /// </summary>
+        public static readonly DiskState Pending = new DiskState("pending");
+        /// <summary>
+        /// Constant Unknown for DiskState
+        /// </summary>
+        public static readonly DiskState Unknown = new DiskState("unknown");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DiskState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DiskState FindValue(string value)
+        {
+            return FindValue<DiskState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DiskState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InstanceAccessProtocol.
     /// </summary>
     public class InstanceAccessProtocol : ConstantClass
@@ -679,6 +799,10 @@ namespace Amazon.Lightsail
         /// </summary>
         public static readonly OperationType AllocateStaticIp = new OperationType("AllocateStaticIp");
         /// <summary>
+        /// Constant AttachDisk for OperationType
+        /// </summary>
+        public static readonly OperationType AttachDisk = new OperationType("AttachDisk");
+        /// <summary>
         /// Constant AttachStaticIp for OperationType
         /// </summary>
         public static readonly OperationType AttachStaticIp = new OperationType("AttachStaticIp");
@@ -686,6 +810,18 @@ namespace Amazon.Lightsail
         /// Constant CloseInstancePublicPorts for OperationType
         /// </summary>
         public static readonly OperationType CloseInstancePublicPorts = new OperationType("CloseInstancePublicPorts");
+        /// <summary>
+        /// Constant CreateDisk for OperationType
+        /// </summary>
+        public static readonly OperationType CreateDisk = new OperationType("CreateDisk");
+        /// <summary>
+        /// Constant CreateDiskFromSnapshot for OperationType
+        /// </summary>
+        public static readonly OperationType CreateDiskFromSnapshot = new OperationType("CreateDiskFromSnapshot");
+        /// <summary>
+        /// Constant CreateDiskSnapshot for OperationType
+        /// </summary>
+        public static readonly OperationType CreateDiskSnapshot = new OperationType("CreateDiskSnapshot");
         /// <summary>
         /// Constant CreateDomain for OperationType
         /// </summary>
@@ -703,6 +839,14 @@ namespace Amazon.Lightsail
         /// </summary>
         public static readonly OperationType CreateInstanceSnapshot = new OperationType("CreateInstanceSnapshot");
         /// <summary>
+        /// Constant DeleteDisk for OperationType
+        /// </summary>
+        public static readonly OperationType DeleteDisk = new OperationType("DeleteDisk");
+        /// <summary>
+        /// Constant DeleteDiskSnapshot for OperationType
+        /// </summary>
+        public static readonly OperationType DeleteDiskSnapshot = new OperationType("DeleteDiskSnapshot");
+        /// <summary>
         /// Constant DeleteDomain for OperationType
         /// </summary>
         public static readonly OperationType DeleteDomain = new OperationType("DeleteDomain");
@@ -718,6 +862,10 @@ namespace Amazon.Lightsail
         /// Constant DeleteInstanceSnapshot for OperationType
         /// </summary>
         public static readonly OperationType DeleteInstanceSnapshot = new OperationType("DeleteInstanceSnapshot");
+        /// <summary>
+        /// Constant DetachDisk for OperationType
+        /// </summary>
+        public static readonly OperationType DetachDisk = new OperationType("DetachDisk");
         /// <summary>
         /// Constant DetachStaticIp for OperationType
         /// </summary>
@@ -978,6 +1126,14 @@ namespace Amazon.Lightsail
     public class ResourceType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant Disk for ResourceType
+        /// </summary>
+        public static readonly ResourceType Disk = new ResourceType("Disk");
+        /// <summary>
+        /// Constant DiskSnapshot for ResourceType
+        /// </summary>
+        public static readonly ResourceType DiskSnapshot = new ResourceType("DiskSnapshot");
         /// <summary>
         /// Constant Domain for ResourceType
         /// </summary>

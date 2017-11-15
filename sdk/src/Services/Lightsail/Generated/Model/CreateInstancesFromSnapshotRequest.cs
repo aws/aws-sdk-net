@@ -34,6 +34,7 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class CreateInstancesFromSnapshotRequest : AmazonLightsailRequest
     {
+        private Dictionary<string, List<DiskMap>> _attachedDiskMapping = new Dictionary<string, List<DiskMap>>();
         private string _availabilityZone;
         private string _bundleId;
         private List<string> _instanceNames = new List<string>();
@@ -42,10 +43,28 @@ namespace Amazon.Lightsail.Model
         private string _userData;
 
         /// <summary>
+        /// Gets and sets the property AttachedDiskMapping. 
+        /// <para>
+        /// An object containing information about one or more disk mappings.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, List<DiskMap>> AttachedDiskMapping
+        {
+            get { return this._attachedDiskMapping; }
+            set { this._attachedDiskMapping = value; }
+        }
+
+        // Check to see if AttachedDiskMapping property is set
+        internal bool IsSetAttachedDiskMapping()
+        {
+            return this._attachedDiskMapping != null && this._attachedDiskMapping.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
         /// The Availability Zone where you want to create your instances. Use the following formatting:
-        /// <code>us-east-1a</code> (case sensitive). You can get a list of availability zones
+        /// <code>us-east-2a</code> (case sensitive). You can get a list of availability zones
         /// by using the <a href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get
         /// regions</a> operation. Be sure to add the <code>include availability zones</code>
         /// parameter to your request.

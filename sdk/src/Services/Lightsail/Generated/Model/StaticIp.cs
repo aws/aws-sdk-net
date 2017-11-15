@@ -45,7 +45,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the static IP (e.g., <code>arn:aws:lightsail:us-east-1:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).
+        /// The Amazon Resource Name (ARN) of the static IP (e.g., <code>arn:aws:lightsail:us-east-2:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).
         /// </para>
         /// </summary>
         public string Arn
@@ -63,7 +63,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property AttachedTo. 
         /// <para>
-        /// The instance where the static IP is attached (e.g., <code>Amazon_Linux-1GB-Virginia-1</code>).
+        /// The instance where the static IP is attached (e.g., <code>Amazon_Linux-1GB-Ohio-1</code>).
         /// </para>
         /// </summary>
         public string AttachedTo
@@ -153,7 +153,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the static IP (e.g., <code>StaticIP-Virginia-EXAMPLE</code>).
+        /// The name of the static IP (e.g., <code>StaticIP-Ohio-EXAMPLE</code>).
         /// </para>
         /// </summary>
         public string Name

@@ -156,7 +156,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property OperationDetails. 
         /// <para>
-        /// Details about the operation (e.g., <code>Debian-1GB-Virginia-1</code>).
+        /// Details about the operation (e.g., <code>Debian-1GB-Ohio-1</code>).
         /// </para>
         /// </summary>
         public string OperationDetails

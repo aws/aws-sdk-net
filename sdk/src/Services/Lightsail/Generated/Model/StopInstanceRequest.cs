@@ -33,7 +33,34 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class StopInstanceRequest : AmazonLightsailRequest
     {
+        private bool? _force;
         private string _instanceName;
+
+        /// <summary>
+        /// Gets and sets the property Force. 
+        /// <para>
+        /// When set to <code>True</code>, forces a Lightsail instance that is stuck in a <code>stopping</code>
+        /// state to stop.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// Only use the <code>force</code> parameter if your instance is stuck in the <code>stopping</code>
+        /// state. In any other state, your instance should stop normally without adding this
+        /// parameter to your API request.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        public bool Force
+        {
+            get { return this._force.GetValueOrDefault(); }
+            set { this._force = value; }
+        }
+
+        // Check to see if Force property is set
+        internal bool IsSetForce()
+        {
+            return this._force.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property InstanceName. 

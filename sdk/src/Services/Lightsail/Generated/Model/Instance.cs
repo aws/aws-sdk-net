@@ -54,7 +54,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the instance (e.g., <code>arn:aws:lightsail:us-east-1:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).
+        /// The Amazon Resource Name (ARN) of the instance (e.g., <code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).
         /// </para>
         /// </summary>
         public string Arn
@@ -216,7 +216,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name the user gave the instance (e.g., <code>Amazon_Linux-1GB-Virginia-1</code>).
+        /// The name the user gave the instance (e.g., <code>Amazon_Linux-1GB-Ohio-1</code>).
         /// </para>
         /// </summary>
         public string Name

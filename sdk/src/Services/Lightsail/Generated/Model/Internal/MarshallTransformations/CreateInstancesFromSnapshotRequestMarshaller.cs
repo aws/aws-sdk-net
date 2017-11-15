@@ -67,6 +67,30 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAttachedDiskMapping())
+                {
+                    context.Writer.WritePropertyName("attachedDiskMapping");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestAttachedDiskMappingKvp in publicRequest.AttachedDiskMapping)
+                    {
+                        context.Writer.WritePropertyName(publicRequestAttachedDiskMappingKvp.Key);
+                        var publicRequestAttachedDiskMappingValue = publicRequestAttachedDiskMappingKvp.Value;
+
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAttachedDiskMappingValueListValue in publicRequestAttachedDiskMappingValue)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = DiskMapMarshaller.Instance;
+                            marshaller.Marshall(publicRequestAttachedDiskMappingValueListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetAvailabilityZone())
                 {
                     context.Writer.WritePropertyName("availabilityZone");

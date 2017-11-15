@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lightsail.Model
 {
     /// <summary>
-    /// Describes the hard disk (an SSD).
+    /// Describes a system disk or an block storage disk.
     /// </summary>
     public partial class Disk
     {
@@ -45,6 +45,7 @@ namespace Amazon.Lightsail.Model
         private string _path;
         private ResourceType _resourceType;
         private int? _sizeInGb;
+        private DiskState _state;
         private string _supportCode;
 
         /// <summary>
@@ -86,8 +87,15 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property AttachmentState. 
         /// <para>
-        /// The attachment state of the disk.
+        /// (Deprecated) The attachment state of the disk.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// In releases prior to November 9, 2017, this parameter returned <code>attached</code>
+        /// for system disks in the API response. It is now deprecated, but still included in
+        /// the response. Use <code>isAttached</code> instead.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string AttachmentState
         {
@@ -122,8 +130,14 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property GbInUse. 
         /// <para>
-        /// The number of GB in use by the disk.
+        /// (Deprecated) The number of GB in use by the disk.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// In releases prior to November 9, 2017, this parameter was not included in the API
+        /// response. It is now deprecated.
+        /// </para>
+        ///  </note>
         /// </summary>
         public int GbInUse
         {
@@ -195,7 +209,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        /// The region and Availability Zone where the disk is located.
+        /// The AWS Region and Availability Zone where the disk is located.
         /// </para>
         /// </summary>
         public ResourceLocation Location
@@ -213,7 +227,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the disk.
+        /// The unique name of the disk.
         /// </para>
         /// </summary>
         public string Name
@@ -249,7 +263,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The resource type of the disk. 
+        /// The Lightsail resource type (e.g., <code>Disk</code>).
         /// </para>
         /// </summary>
         public ResourceType ResourceType
@@ -280,6 +294,24 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetSizeInGb()
         {
             return this._sizeInGb.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property State. 
+        /// <para>
+        /// Describes the status of the disk.
+        /// </para>
+        /// </summary>
+        public DiskState State
+        {
+            get { return this._state; }
+            set { this._state = value; }
+        }
+
+        // Check to see if State property is set
+        internal bool IsSetState()
+        {
+            return this._state != null;
         }
 
         /// <summary>

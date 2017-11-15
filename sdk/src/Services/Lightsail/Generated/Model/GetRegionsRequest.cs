@@ -40,7 +40,7 @@ namespace Amazon.Lightsail.Model
         /// Gets and sets the property IncludeAvailabilityZones. 
         /// <para>
         /// A Boolean value indicating whether to also include Availability Zones in your get
-        /// regions request. Availability Zones are indicated with a letter: e.g., <code>us-east-1a</code>.
+        /// regions request. Availability Zones are indicated with a letter: e.g., <code>us-east-2a</code>.
         /// </para>
         /// </summary>
         public bool IncludeAvailabilityZones
