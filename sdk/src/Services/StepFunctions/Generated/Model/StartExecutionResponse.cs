@@ -56,7 +56,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property StartDate. 
         /// <para>
-        /// The date the execution was started.
+        /// The date the execution is started.
         /// </para>
         /// </summary>
         public DateTime StartDate

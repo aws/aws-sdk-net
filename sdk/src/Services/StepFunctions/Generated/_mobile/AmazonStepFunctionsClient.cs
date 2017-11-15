@@ -48,8 +48,8 @@ namespace Amazon.StepFunctions
     /// applications quickly. Step Functions provides a console that helps visualize the components
     /// of your application as a series of steps. Step Functions automatically triggers and
     /// tracks each step, and retries steps when there are errors, so your application executes
-    /// in order and as expected, every time. Step Functions logs the state of each step,
-    /// so you can diagnose and debug problems quickly.
+    /// predictably and in the right order every time. Step Functions logs the state of each
+    /// step, so you can quickly diagnose and debug any issues.
     /// </para>
     ///  
     /// <para>
@@ -477,6 +477,38 @@ namespace Amazon.StepFunctions
 
         #endregion
         
+        #region  DescribeStateMachineForExecution
+
+        internal virtual DescribeStateMachineForExecutionResponse DescribeStateMachineForExecution(DescribeStateMachineForExecutionRequest request)
+        {
+            var marshaller = new DescribeStateMachineForExecutionRequestMarshaller();
+            var unmarshaller = DescribeStateMachineForExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeStateMachineForExecutionRequest,DescribeStateMachineForExecutionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeStateMachineForExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStateMachineForExecution operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeStateMachineForExecution">REST API Reference for DescribeStateMachineForExecution Operation</seealso>
+        public virtual Task<DescribeStateMachineForExecutionResponse> DescribeStateMachineForExecutionAsync(DescribeStateMachineForExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeStateMachineForExecutionRequestMarshaller();
+            var unmarshaller = DescribeStateMachineForExecutionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeStateMachineForExecutionRequest,DescribeStateMachineForExecutionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetActivityTask
 
         internal virtual GetActivityTaskResponse GetActivityTask(GetActivityTaskRequest request)
@@ -792,6 +824,38 @@ namespace Amazon.StepFunctions
             var unmarshaller = StopExecutionResponseUnmarshaller.Instance;
 
             return InvokeAsync<StopExecutionRequest,StopExecutionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateStateMachine
+
+        internal virtual UpdateStateMachineResponse UpdateStateMachine(UpdateStateMachineRequest request)
+        {
+            var marshaller = new UpdateStateMachineRequestMarshaller();
+            var unmarshaller = UpdateStateMachineResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateStateMachineRequest,UpdateStateMachineResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateStateMachine operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateStateMachine operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/UpdateStateMachine">REST API Reference for UpdateStateMachine Operation</seealso>
+        public virtual Task<UpdateStateMachineResponse> UpdateStateMachineAsync(UpdateStateMachineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateStateMachineRequestMarshaller();
+            var unmarshaller = UpdateStateMachineResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateStateMachineRequest,UpdateStateMachineResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

@@ -28,29 +28,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StepFunctions.Model
 {
     /// <summary>
-    /// Contains details about the start of an activity during an execution.
+    /// Container for the parameters to the DescribeStateMachineForExecution operation.
+    /// Describes the state machine associated with a specific execution.
     /// </summary>
-    public partial class ActivityStartedEventDetails
+    public partial class DescribeStateMachineForExecutionRequest : AmazonStepFunctionsRequest
     {
-        private string _workerName;
+        private string _executionArn;
 
         /// <summary>
-        /// Gets and sets the property WorkerName. 
+        /// Gets and sets the property ExecutionArn. 
         /// <para>
-        /// The name of the worker that the task is assigned to. These names are provided by the
-        /// workers when calling <a>GetActivityTask</a>.
+        /// The Amazon Resource Name (ARN) of the execution you want state machine information
+        /// for.
         /// </para>
         /// </summary>
-        public string WorkerName
+        public string ExecutionArn
         {
-            get { return this._workerName; }
-            set { this._workerName = value; }
+            get { return this._executionArn; }
+            set { this._executionArn = value; }
         }
 
-        // Check to see if WorkerName property is set
-        internal bool IsSetWorkerName()
+        // Check to see if ExecutionArn property is set
+        internal bool IsSetExecutionArn()
         {
-            return this._workerName != null;
+            return this._executionArn != null;
         }
 
     }

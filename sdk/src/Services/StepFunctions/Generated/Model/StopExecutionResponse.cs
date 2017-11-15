@@ -37,7 +37,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property StopDate. 
         /// <para>
-        /// The date the execution was stopped.
+        /// The date the execution is stopped.
         /// </para>
         /// </summary>
         public DateTime StopDate

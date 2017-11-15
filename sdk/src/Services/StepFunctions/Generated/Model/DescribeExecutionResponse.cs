@@ -125,6 +125,12 @@ namespace Amazon.StepFunctions.Model
         /// <para>
         /// The JSON output data of the execution.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This field is set only if the execution succeeds. If the execution fails, this field
+        /// is null.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string Output
         {
@@ -141,7 +147,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property StartDate. 
         /// <para>
-        /// The date the execution was started.
+        /// The date the execution is started.
         /// </para>
         /// </summary>
         public DateTime StartDate

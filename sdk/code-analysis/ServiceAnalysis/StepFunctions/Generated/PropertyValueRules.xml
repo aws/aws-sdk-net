@@ -109,6 +109,31 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StepFunctions.Model.DescribeStateMachineForExecutionRequest.ExecutionArn</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.DescribeStateMachineForExecutionResponse.Definition</property>
+    <min>1</min>
+    <max>1048576</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.DescribeStateMachineForExecutionResponse.Name</property>
+    <min>1</min>
+    <max>80</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.DescribeStateMachineForExecutionResponse.RoleArn</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.DescribeStateMachineForExecutionResponse.StateMachineArn</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StepFunctions.Model.GetActivityTaskRequest.ActivityArn</property>
     <min>1</min>
     <max>256</max>
@@ -257,6 +282,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.StopExecutionRequest.ExecutionArn</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.UpdateStateMachineRequest.Definition</property>
+    <min>1</min>
+    <max>1048576</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.UpdateStateMachineRequest.RoleArn</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.UpdateStateMachineRequest.StateMachineArn</property>
     <min>1</min>
     <max>256</max>
   </property-value-rule>

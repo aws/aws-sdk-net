@@ -39,7 +39,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property CreationDate. 
         /// <para>
-        /// The date the state machine was created.
+        /// The date the state machine is created.
         /// </para>
         /// </summary>
         public DateTime CreationDate

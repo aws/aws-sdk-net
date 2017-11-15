@@ -31,9 +31,14 @@ namespace Amazon.StepFunctions.Model
     /// Container for the parameters to the GetExecutionHistory operation.
     /// Returns the history of the specified execution as a list of events. By default, the
     /// results are returned in ascending order of the <code>timeStamp</code> of the events.
-    /// Use the <code>reverseOrder</code> parameter to get the latest events first. The results
-    /// may be split into multiple pages. To retrieve subsequent pages, make the call again
-    /// using the <code>nextToken</code> returned by the previous call.
+    /// Use the <code>reverseOrder</code> parameter to get the latest events first.
+    /// 
+    ///  
+    /// <para>
+    /// If a <code>nextToken</code> is returned by a previous call, there are more results
+    /// available. To retrieve the next page of results, make the call again using the returned
+    /// token in <code>nextToken</code>. Keep all other arguments unchanged.
+    /// </para>
     /// </summary>
     public partial class GetExecutionHistoryRequest : AmazonStepFunctionsRequest
     {
@@ -63,14 +68,14 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results that will be returned per call. <code>nextToken</code>
-        /// can be used to obtain further pages of results. The default is 100 and the maximum
-        /// allowed page size is 100. A value of 0 means to use the default.
+        /// The maximum number of results that are returned per call. You can use <code>nextToken</code>
+        /// to obtain further pages of results. The default is 100 and the maximum allowed page
+        /// size is 100. A value of 0 uses the default.
         /// </para>
         ///  
         /// <para>
-        /// This is an upper limit only; the actual number of results returned per call may be
-        /// fewer than the specified maximum.
+        /// This is only an upper limit. The actual number of results returned per call might
+        /// be fewer than the specified maximum.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -88,7 +93,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If a <code>nextToken</code> was returned by a previous call, there are more results
+        /// If a <code>nextToken</code> is returned by a previous call, there are more results
         /// available. To retrieve the next page of results, make the call again using the returned
         /// token in <code>nextToken</code>. Keep all other arguments unchanged.
         /// </para>

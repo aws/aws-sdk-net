@@ -48,8 +48,8 @@ namespace Amazon.StepFunctions
     /// applications quickly. Step Functions provides a console that helps visualize the components
     /// of your application as a series of steps. Step Functions automatically triggers and
     /// tracks each step, and retries steps when there are errors, so your application executes
-    /// in order and as expected, every time. Step Functions logs the state of each step,
-    /// so you can diagnose and debug problems quickly.
+    /// predictably and in the right order every time. Step Functions logs the state of each
+    /// step, so you can quickly diagnose and debug any issues.
     /// </para>
     ///  
     /// <para>
@@ -252,11 +252,12 @@ namespace Amazon.StepFunctions
 
 
         /// <summary>
-        /// Creates an activity. An Activity is a task which you write, in any language and hosted
-        /// on any machine which has access to AWS Step Functions. Activities must poll Step Functions
-        /// using the <code>GetActivityTask</code> and respond using <code>SendTask*</code> API
-        /// calls. This function lets Step Functions know the existence of your activity and returns
-        /// an identifier for use in a state machine and when polling from the activity.
+        /// Creates an activity. An activity is a task which you write in any programming language
+        /// and host on any machine which has access to AWS Step Functions. Activities must poll
+        /// Step Functions using the <code>GetActivityTask</code> API action and respond using
+        /// <code>SendTask*</code> API actions. This function lets Step Functions know the existence
+        /// of your activity and returns an identifier for use in a state machine and when polling
+        /// from the activity.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateActivity service method.</param>
         /// 
@@ -303,7 +304,7 @@ namespace Amazon.StepFunctions
 
         /// <summary>
         /// Creates a state machine. A state machine consists of a collection of states that can
-        /// do work (<code>Task</code> states), determine which states to transition to next (<code>Choice</code>
+        /// do work (<code>Task</code> states), determine to which states to transition next (<code>Choice</code>
         /// states), stop an execution with an error (<code>Fail</code> states), and so on. State
         /// machines are specified using a JSON-based, structured language.
         /// </summary>
@@ -406,10 +407,15 @@ namespace Amazon.StepFunctions
 
 
         /// <summary>
-        /// Deletes a state machine. This is an asynchronous operation-- it sets the state machine's
-        /// status to "DELETING" and begins the delete process. Each state machine execution will
-        /// be deleted the next time it makes a state transition. After all executions have completed
-        /// or been deleted, the state machine itself will be deleted.
+        /// Deletes a state machine. This is an asynchronous operation: It sets the state machine's
+        /// status to <code>DELETING</code> and begins the deletion process. Each state machine
+        /// execution is deleted the next time it makes a state transition.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The state machine itself is deleted after all executions are completed or deleted.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteStateMachine service method.</param>
         /// 
@@ -582,6 +588,51 @@ namespace Amazon.StepFunctions
 
         #endregion
         
+        #region  DescribeStateMachineForExecution
+
+
+        /// <summary>
+        /// Describes the state machine associated with a specific execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStateMachineForExecution service method.</param>
+        /// 
+        /// <returns>The response from the DescribeStateMachineForExecution service method, as returned by StepFunctions.</returns>
+        /// <exception cref="Amazon.StepFunctions.Model.ExecutionDoesNotExistException">
+        /// The specified execution does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
+        /// The provided Amazon Resource Name (ARN) is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeStateMachineForExecution">REST API Reference for DescribeStateMachineForExecution Operation</seealso>
+        public virtual DescribeStateMachineForExecutionResponse DescribeStateMachineForExecution(DescribeStateMachineForExecutionRequest request)
+        {
+            var marshaller = new DescribeStateMachineForExecutionRequestMarshaller();
+            var unmarshaller = DescribeStateMachineForExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeStateMachineForExecutionRequest,DescribeStateMachineForExecutionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeStateMachineForExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStateMachineForExecution operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeStateMachineForExecution">REST API Reference for DescribeStateMachineForExecution Operation</seealso>
+        public virtual Task<DescribeStateMachineForExecutionResponse> DescribeStateMachineForExecutionAsync(DescribeStateMachineForExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeStateMachineForExecutionRequestMarshaller();
+            var unmarshaller = DescribeStateMachineForExecutionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeStateMachineForExecutionRequest,DescribeStateMachineForExecutionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetActivityTask
 
 
@@ -591,7 +642,7 @@ namespace Amazon.StepFunctions
         /// the service holds the HTTP connection open and responds as soon as a task becomes
         /// available (i.e. an execution of a task of this type is needed.) The maximum time the
         /// service holds on to the request before responding is 60 seconds. If no task is available
-        /// within 60 seconds, the poll will return a <code>taskToken</code> with a null string.
+        /// within 60 seconds, the poll returns a <code>taskToken</code> with a null string.
         /// 
         ///  <important> 
         /// <para>
@@ -648,9 +699,14 @@ namespace Amazon.StepFunctions
         /// <summary>
         /// Returns the history of the specified execution as a list of events. By default, the
         /// results are returned in ascending order of the <code>timeStamp</code> of the events.
-        /// Use the <code>reverseOrder</code> parameter to get the latest events first. The results
-        /// may be split into multiple pages. To retrieve subsequent pages, make the call again
-        /// using the <code>nextToken</code> returned by the previous call.
+        /// Use the <code>reverseOrder</code> parameter to get the latest events first.
+        /// 
+        ///  
+        /// <para>
+        /// If a <code>nextToken</code> is returned by a previous call, there are more results
+        /// available. To retrieve the next page of results, make the call again using the returned
+        /// token in <code>nextToken</code>. Keep all other arguments unchanged.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetExecutionHistory service method.</param>
         /// 
@@ -698,9 +754,14 @@ namespace Amazon.StepFunctions
 
 
         /// <summary>
-        /// Lists the existing activities. The results may be split into multiple pages. To retrieve
-        /// subsequent pages, make the call again using the <code>nextToken</code> returned by
-        /// the previous call.
+        /// Lists the existing activities.
+        /// 
+        ///  
+        /// <para>
+        /// If a <code>nextToken</code> is returned by a previous call, there are more results
+        /// available. To retrieve the next page of results, make the call again using the returned
+        /// token in <code>nextToken</code>. Keep all other arguments unchanged.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListActivities service method.</param>
         /// 
@@ -742,9 +803,14 @@ namespace Amazon.StepFunctions
 
 
         /// <summary>
-        /// Lists the executions of a state machine that meet the filtering criteria. The results
-        /// may be split into multiple pages. To retrieve subsequent pages, make the call again
-        /// using the <code>nextToken</code> returned by the previous call.
+        /// Lists the executions of a state machine that meet the filtering criteria.
+        /// 
+        ///  
+        /// <para>
+        /// If a <code>nextToken</code> is returned by a previous call, there are more results
+        /// available. To retrieve the next page of results, make the call again using the returned
+        /// token in <code>nextToken</code>. Keep all other arguments unchanged.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListExecutions service method.</param>
         /// 
@@ -792,9 +858,14 @@ namespace Amazon.StepFunctions
 
 
         /// <summary>
-        /// Lists the existing state machines. The results may be split into multiple pages. To
-        /// retrieve subsequent pages, make the call again using the <code>nextToken</code> returned
-        /// by the previous call.
+        /// Lists the existing state machines.
+        /// 
+        ///  
+        /// <para>
+        /// If a <code>nextToken</code> is returned by a previous call, there are more results
+        /// available. To retrieve the next page of results, make the call again using the returned
+        /// token in <code>nextToken</code>. Keep all other arguments unchanged.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListStateMachines service method.</param>
         /// 
@@ -888,7 +959,7 @@ namespace Amazon.StepFunctions
         /// <code>taskToken</code> is still making progress. This action resets the <code>Heartbeat</code>
         /// clock. The <code>Heartbeat</code> threshold is specified in the state machine's Amazon
         /// States Language definition. This action does not in itself create an event in the
-        /// execution history. However, if the task times out, the execution history will contain
+        /// execution history. However, if the task times out, the execution history contains
         /// an <code>ActivityTimedOut</code> event.
         /// 
         ///  <note> 
@@ -1106,6 +1177,73 @@ namespace Amazon.StepFunctions
             var unmarshaller = StopExecutionResponseUnmarshaller.Instance;
 
             return InvokeAsync<StopExecutionRequest,StopExecutionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateStateMachine
+
+
+        /// <summary>
+        /// Updates an existing state machine by modifying its <code>definition</code> and/or
+        /// <code>roleArn</code>. Running executions will continue to use the previous <code>definition</code>
+        /// and <code>roleArn</code>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// All <code>StartExecution</code> calls within a few seconds will use the updated <code>definition</code>
+        /// and <code>roleArn</code>. Executions started immediately after calling <code>UpdateStateMachine</code>
+        /// may use the previous state machine <code>definition</code> and <code>roleArn</code>.
+        /// You must include at least one of <code>definition</code> or <code>roleArn</code> or
+        /// you will receive a <code>MissingRequiredParameter</code> error.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateStateMachine service method.</param>
+        /// 
+        /// <returns>The response from the UpdateStateMachine service method, as returned by StepFunctions.</returns>
+        /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
+        /// The provided Amazon Resource Name (ARN) is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.InvalidDefinitionException">
+        /// The provided Amazon States Language definition is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.MissingRequiredParameterException">
+        /// Request is missing a required parameter. This error occurs if both <code>definition</code>
+        /// and <code>roleArn</code> are not specified.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.StateMachineDeletingException">
+        /// The specified state machine is being deleted.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.StateMachineDoesNotExistException">
+        /// The specified state machine does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/UpdateStateMachine">REST API Reference for UpdateStateMachine Operation</seealso>
+        public virtual UpdateStateMachineResponse UpdateStateMachine(UpdateStateMachineRequest request)
+        {
+            var marshaller = new UpdateStateMachineRequestMarshaller();
+            var unmarshaller = UpdateStateMachineResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateStateMachineRequest,UpdateStateMachineResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateStateMachine operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateStateMachine operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/UpdateStateMachine">REST API Reference for UpdateStateMachine Operation</seealso>
+        public virtual Task<UpdateStateMachineResponse> UpdateStateMachineAsync(UpdateStateMachineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateStateMachineRequestMarshaller();
+            var unmarshaller = UpdateStateMachineResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateStateMachineRequest,UpdateStateMachineResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

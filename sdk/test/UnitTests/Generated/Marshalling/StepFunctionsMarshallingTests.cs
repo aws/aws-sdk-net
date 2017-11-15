@@ -246,6 +246,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("StepFunctions")]
+        public void DescribeStateMachineForExecutionMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeStateMachineForExecutionRequest>();
+            var marshaller = new DescribeStateMachineForExecutionRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<DescribeStateMachineForExecutionRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeStateMachineForExecution").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = DescribeStateMachineForExecutionResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeStateMachineForExecutionResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("StepFunctions")]
         public void GetActivityTaskMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<GetActivityTaskRequest>();
@@ -528,6 +557,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = StopExecutionResponseUnmarshaller.Instance.Unmarshall(context)
                 as StopExecutionResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("StepFunctions")]
+        public void UpdateStateMachineMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<UpdateStateMachineRequest>();
+            var marshaller = new UpdateStateMachineRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<UpdateStateMachineRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateStateMachine").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = UpdateStateMachineResponseUnmarshaller.Instance.Unmarshall(context)
+                as UpdateStateMachineResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 

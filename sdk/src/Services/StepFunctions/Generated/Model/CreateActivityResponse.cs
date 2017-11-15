@@ -56,7 +56,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property CreationDate. 
         /// <para>
-        /// The date the activity was created.
+        /// The date the activity is created.
         /// </para>
         /// </summary>
         public DateTime CreationDate

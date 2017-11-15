@@ -56,9 +56,9 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If a <code>nextToken</code> is returned, there are more results available. To retrieve
-        /// the next page of results, make the call again using the returned token in <code>nextToken</code>.
-        /// Keep all other arguments unchanged.
+        /// If a <code>nextToken</code> is returned by a previous call, there are more results
+        /// available. To retrieve the next page of results, make the call again using the returned
+        /// token in <code>nextToken</code>. Keep all other arguments unchanged.
         /// </para>
         ///  
         /// <para>

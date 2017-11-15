@@ -28,29 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StepFunctions.Model
 {
     /// <summary>
-    /// Contains details about the start of an activity during an execution.
+    /// This is the response object from the UpdateStateMachine operation.
     /// </summary>
-    public partial class ActivityStartedEventDetails
+    public partial class UpdateStateMachineResponse : AmazonWebServiceResponse
     {
-        private string _workerName;
+        private DateTime? _updateDate;
 
         /// <summary>
-        /// Gets and sets the property WorkerName. 
+        /// Gets and sets the property UpdateDate. 
         /// <para>
-        /// The name of the worker that the task is assigned to. These names are provided by the
-        /// workers when calling <a>GetActivityTask</a>.
+        /// The date and time the state machine was updated.
         /// </para>
         /// </summary>
-        public string WorkerName
+        public DateTime UpdateDate
         {
-            get { return this._workerName; }
-            set { this._workerName = value; }
+            get { return this._updateDate.GetValueOrDefault(); }
+            set { this._updateDate = value; }
         }
 
-        // Check to see if WorkerName property is set
-        internal bool IsSetWorkerName()
+        // Check to see if UpdateDate property is set
+        internal bool IsSetUpdateDate()
         {
-            return this._workerName != null;
+            return this._updateDate.HasValue; 
         }
 
     }

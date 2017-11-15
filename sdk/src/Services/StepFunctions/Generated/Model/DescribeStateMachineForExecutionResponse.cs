@@ -28,17 +28,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StepFunctions.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateStateMachine operation.
-    /// Creates a state machine. A state machine consists of a collection of states that can
-    /// do work (<code>Task</code> states), determine to which states to transition next (<code>Choice</code>
-    /// states), stop an execution with an error (<code>Fail</code> states), and so on. State
-    /// machines are specified using a JSON-based, structured language.
+    /// This is the response object from the DescribeStateMachineForExecution operation.
     /// </summary>
-    public partial class CreateStateMachineRequest : AmazonStepFunctionsRequest
+    public partial class DescribeStateMachineForExecutionResponse : AmazonWebServiceResponse
     {
         private string _definition;
         private string _name;
         private string _roleArn;
+        private string _stateMachineArn;
+        private DateTime? _updateDate;
 
         /// <summary>
         /// Gets and sets the property Definition. 
@@ -61,36 +59,8 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the state machine. This name must be unique for your AWS account and region
-        /// for 90 days. For more information, see <a href="http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
-        /// Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer
-        /// Guide</i>.
+        /// The name of the state machine associated with the execution.
         /// </para>
-        ///  
-        /// <para>
-        /// A name must <i>not</i> contain:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// whitespace
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// brackets <code>&lt; &gt; { } [ ]</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// wildcard characters <code>? *</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public string Name
         {
@@ -107,7 +77,8 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the IAM role to use for this state machine.
+        /// The Amazon Resource Name (ARN) of the IAM role of the State Machine for the execution.
+        /// 
         /// </para>
         /// </summary>
         public string RoleArn
@@ -120,6 +91,43 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetRoleArn()
         {
             return this._roleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StateMachineArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the state machine associated with the execution.
+        /// </para>
+        /// </summary>
+        public string StateMachineArn
+        {
+            get { return this._stateMachineArn; }
+            set { this._stateMachineArn = value; }
+        }
+
+        // Check to see if StateMachineArn property is set
+        internal bool IsSetStateMachineArn()
+        {
+            return this._stateMachineArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdateDate. 
+        /// <para>
+        /// The date and time the state machine associated with an execution was updated. For
+        /// a newly created state machine, this is the creation date.
+        /// </para>
+        /// </summary>
+        public DateTime UpdateDate
+        {
+            get { return this._updateDate.GetValueOrDefault(); }
+            set { this._updateDate = value; }
+        }
+
+        // Check to see if UpdateDate property is set
+        internal bool IsSetUpdateDate()
+        {
+            return this._updateDate.HasValue; 
         }
 
     }
