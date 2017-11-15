@@ -67,6 +67,22 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAggregators())
+                {
+                    context.Writer.WritePropertyName("Aggregators");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAggregatorsListValue in publicRequest.Aggregators)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = InventoryAggregatorMarshaller.Instance;
+                        marshaller.Marshall(publicRequestAggregatorsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetFilters())
                 {
                     context.Writer.WritePropertyName("Filters");

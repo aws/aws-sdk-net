@@ -29,7 +29,11 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAssociation operation.
-    /// Describes the associations for the specified Systems Manager document or instance.
+    /// Describes the association for the specified target or instance. If you created the
+    /// association by using the <code>Targets</code> parameter, then you must retrieve the
+    /// association by using the association ID. If you created the association by specifying
+    /// an instance ID and a Systems Manager document, then you retrieve the association by
+    /// specifying the document name and the instance ID.
     /// </summary>
     public partial class DescribeAssociationRequest : AmazonSimpleSystemsManagementRequest
     {

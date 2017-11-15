@@ -34,6 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class InventoryItemSchema
     {
         private List<InventoryItemAttribute> _attributes = new List<InventoryItemAttribute>();
+        private string _displayName;
         private string _typeName;
         private string _version;
 
@@ -53,6 +54,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetAttributes()
         {
             return this._attributes != null && this._attributes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DisplayName. 
+        /// <para>
+        /// The alias name of the inventory type. The alias name is used for display purposes.
+        /// </para>
+        /// </summary>
+        public string DisplayName
+        {
+            get { return this._displayName; }
+            set { this._displayName = value; }
+        }
+
+        // Check to see if DisplayName property is set
+        internal bool IsSetDisplayName()
+        {
+            return this._displayName != null;
         }
 
         /// <summary>

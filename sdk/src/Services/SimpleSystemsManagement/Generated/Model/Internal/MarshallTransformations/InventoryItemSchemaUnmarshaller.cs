@@ -70,6 +70,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     unmarshalledObject.Attributes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DisplayName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DisplayName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TypeName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

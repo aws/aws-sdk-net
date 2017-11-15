@@ -64,7 +64,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// Information about the parameter that you want to add to the system
+        /// Information about the parameter that you want to add to the system.
         /// </para>
         /// </summary>
         public string Description
@@ -102,8 +102,17 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the parameter that you want to add to the system.
+        /// The fully qualified name of the parameter that you want to add to the system. The
+        /// fully qualified name includes the complete hierarchy of the parameter path and name.
+        /// For example: <code>/Dev/DBServer/MySQL/db-string13</code> 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The maximum length constraint listed below includes capacity for additional system
+        /// attributes that are not part of the name. The maximum length for the fully qualified
+        /// parameter name is 1011 characters. 
+        /// </para>
+        ///  </note>
         /// </summary>
         public string Name
         {

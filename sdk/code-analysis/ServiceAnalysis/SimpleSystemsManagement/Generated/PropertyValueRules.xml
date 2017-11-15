@@ -2013,6 +2013,11 @@
     <pattern>^(AWS|Custom):.*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.InventoryAggregator.Expression</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.InventoryFilter.Key</property>
     <min>1</min>
     <max>200</max>

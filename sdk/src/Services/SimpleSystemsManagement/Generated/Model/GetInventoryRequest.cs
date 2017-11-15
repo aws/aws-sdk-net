@@ -33,10 +33,32 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class GetInventoryRequest : AmazonSimpleSystemsManagementRequest
     {
+        private List<InventoryAggregator> _aggregators = new List<InventoryAggregator>();
         private List<InventoryFilter> _filters = new List<InventoryFilter>();
         private int? _maxResults;
         private string _nextToken;
         private List<ResultAttribute> _resultAttributes = new List<ResultAttribute>();
+
+        /// <summary>
+        /// Gets and sets the property Aggregators. 
+        /// <para>
+        /// Returns counts of inventory types based on one or more expressions. For example, if
+        /// you aggregate by using an expression that uses the <code>AWS:InstanceInformation.PlatformType</code>
+        /// type, you can see a count of how many Windows and Linux instances exist in your inventoried
+        /// fleet.
+        /// </para>
+        /// </summary>
+        public List<InventoryAggregator> Aggregators
+        {
+            get { return this._aggregators; }
+            set { this._aggregators = value; }
+        }
+
+        // Check to see if Aggregators property is set
+        internal bool IsSetAggregators()
+        {
+            return this._aggregators != null && this._aggregators.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Filters. 

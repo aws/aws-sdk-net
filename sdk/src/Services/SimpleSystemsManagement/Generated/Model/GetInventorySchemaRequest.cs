@@ -34,10 +34,32 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class GetInventorySchemaRequest : AmazonSimpleSystemsManagementRequest
     {
+        private bool? _aggregator;
         private int? _maxResults;
         private string _nextToken;
         private bool? _subType;
         private string _typeName;
+
+        /// <summary>
+        /// Gets and sets the property Aggregator. 
+        /// <para>
+        /// Returns inventory schemas that support aggregation. For example, this call returns
+        /// the <code>AWS:InstanceInformation</code> type, because it supports aggregation based
+        /// on the <code>PlatformName</code>, <code>PlatformType</code>, and <code>PlatformVersion</code>
+        /// attributes.
+        /// </para>
+        /// </summary>
+        public bool Aggregator
+        {
+            get { return this._aggregator.GetValueOrDefault(); }
+            set { this._aggregator = value; }
+        }
+
+        // Check to see if Aggregator property is set
+        internal bool IsSetAggregator()
+        {
+            return this._aggregator.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
