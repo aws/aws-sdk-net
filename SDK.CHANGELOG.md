@@ -1,3 +1,15 @@
+### 3.3.190.0 (2017-11-15 00:20 UTC)
+* ECS (3.3.8.0)
+	* Added new mode for Task Networking in ECS, called awsvpc mode. Mode configuration parameters to be passed in via awsvpcConfiguration. Updated APIs now use/show this new mode - RegisterTaskDefinition, CreateService, UpdateService, RunTask, StartTask.
+* Lightsail (3.3.4.0)
+	* Lightsail now supports attached block storage, which allows you to scale your applications and protect application data with additional SSD-backed storage disks. This feature allows Lightsail customers to attach secure storage disks to their Lightsail instances and manage their attached disks, including creating and deleting disks, attaching and detaching disks from instances, and backing up disks via snapshot.
+* Route53 (3.3.10.0)
+	* When a Route 53 health check or hosted zone is created by a linked AWS service, the object now includes information about the service that created it. Hosted zones or health checks that are created by a linked service can't be updated or deleted using Route 53.
+* S3 (3.3.13.0)
+	* Fix for issue where a key is used as both a header and a parameter.
+* SimpleSystemsManagement (3.3.14.0)
+	* EC2 Systems Manager GetInventory API adds support for aggregation.
+
 ### 3.3.189.0 (2017-11-11 06:50 UTC)
 * S3 (3.3.12.1)
 	* Support RequestPayer parameter in AmazonS3Client::GeneratePreSignedURL
