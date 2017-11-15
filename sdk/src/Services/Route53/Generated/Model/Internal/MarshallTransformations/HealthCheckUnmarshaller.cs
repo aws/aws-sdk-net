@@ -67,6 +67,12 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                         unmarshalledObject.CallerReference = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("LinkedService", targetDepth))
+                    {
+                        var unmarshaller = LinkedServiceUnmarshaller.Instance;
+                        unmarshalledObject.LinkedService = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("HealthCheckConfig", targetDepth))
                     {
                         var unmarshaller = HealthCheckConfigUnmarshaller.Instance;

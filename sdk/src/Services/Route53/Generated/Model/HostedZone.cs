@@ -37,6 +37,7 @@ namespace Amazon.Route53.Model
         private string _callerReference;
         private HostedZoneConfig _config;
         private long? _resourceRecordSetCount;
+        private LinkedService _linkedService;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -155,6 +156,26 @@ namespace Amazon.Route53.Model
         internal bool IsSetResourceRecordSetCount()
         {
             return this._resourceRecordSetCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LinkedService. 
+        /// <para>
+        /// If the hosted zone was created by another service, the service that created the hosted
+        /// zone. When a hosted zone is created by another service, you can't edit or delete it
+        /// using Amazon Route 53. 
+        /// </para>
+        /// </summary>
+        public LinkedService LinkedService
+        {
+            get { return this._linkedService; }
+            set { this._linkedService = value; }
+        }
+
+        // Check to see if LinkedService property is set
+        internal bool IsSetLinkedService()
+        {
+            return this._linkedService != null;
         }
 
     }

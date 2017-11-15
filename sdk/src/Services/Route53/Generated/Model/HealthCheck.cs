@@ -35,6 +35,7 @@ namespace Amazon.Route53.Model
     {
         private string _id;
         private string _callerReference;
+        private LinkedService _linkedService;
         private HealthCheckConfig _healthCheckConfig;
         private long? _healthCheckVersion;
         private CloudWatchAlarmConfiguration _cloudWatchAlarmConfiguration;
@@ -75,6 +76,26 @@ namespace Amazon.Route53.Model
         internal bool IsSetCallerReference()
         {
             return this._callerReference != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LinkedService. 
+        /// <para>
+        /// If the health check was created by another service, the service that created the health
+        /// check. When a health check is created by another service, you can't edit or delete
+        /// it using Amazon Route 53. 
+        /// </para>
+        /// </summary>
+        public LinkedService LinkedService
+        {
+            get { return this._linkedService; }
+            set { this._linkedService = value; }
+        }
+
+        // Check to see if LinkedService property is set
+        internal bool IsSetLinkedService()
+        {
+            return this._linkedService != null;
         }
 
         /// <summary>

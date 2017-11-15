@@ -33,18 +33,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Route53.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for HostedZone Object
+    /// Response Unmarshaller for LinkedService Object
     /// </summary>  
-    public class HostedZoneUnmarshaller : IUnmarshaller<HostedZone, XmlUnmarshallerContext>
+    public class LinkedServiceUnmarshaller : IUnmarshaller<LinkedService, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public HostedZone Unmarshall(XmlUnmarshallerContext context)
+        public LinkedService Unmarshall(XmlUnmarshallerContext context)
         {
-            HostedZone unmarshalledObject = new HostedZone();
+            LinkedService unmarshalledObject = new LinkedService();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -55,40 +55,16 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("Id", targetDepth))
+                    if (context.TestExpression("ServicePrincipal", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.ServicePrincipal = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("Name", targetDepth))
+                    if (context.TestExpression("Description", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("CallerReference", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.CallerReference = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Config", targetDepth))
-                    {
-                        var unmarshaller = HostedZoneConfigUnmarshaller.Instance;
-                        unmarshalledObject.Config = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("ResourceRecordSetCount", targetDepth))
-                    {
-                        var unmarshaller = LongUnmarshaller.Instance;
-                        unmarshalledObject.ResourceRecordSetCount = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("LinkedService", targetDepth))
-                    {
-                        var unmarshaller = LinkedServiceUnmarshaller.Instance;
-                        unmarshalledObject.LinkedService = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -100,12 +76,12 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        private static HostedZoneUnmarshaller _instance = new HostedZoneUnmarshaller();        
+        private static LinkedServiceUnmarshaller _instance = new LinkedServiceUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static HostedZoneUnmarshaller Instance
+        public static LinkedServiceUnmarshaller Instance
         {
             get
             {

@@ -755,6 +755,14 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53.Model.LinkedService.ServicePrincipal</property>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.LinkedService.Description</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53.Model.QueryLoggingConfig.Id</property>
     <min>1</min>
     <max>36</max>

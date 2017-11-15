@@ -590,8 +590,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property ResetElements. 
         /// <para>
-        /// A complex type that contains one <code>ResetElement</code> element for each element
-        /// that you want to reset to the default value. Valid values for <code>ResetElement</code>
+        /// A complex type that contains one <code>ResettableElementName</code> element for each
+        /// element that you want to reset to the default value. Valid values for <code>ResettableElementName</code>
         /// include the following:
         /// </para>
         ///  <ul> <li> 
