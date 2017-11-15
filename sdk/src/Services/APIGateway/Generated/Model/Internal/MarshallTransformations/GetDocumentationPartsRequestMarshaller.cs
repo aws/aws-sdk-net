@@ -65,6 +65,9 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetLimit())
                 request.Parameters.Add("limit", StringUtils.FromInt(publicRequest.Limit));
             
+            if (publicRequest.IsSetLocationStatus())
+                request.Parameters.Add("locationStatus", StringUtils.FromString(publicRequest.LocationStatus));
+            
             if (publicRequest.IsSetNameQuery())
                 request.Parameters.Add("name", StringUtils.FromString(publicRequest.NameQuery));
             

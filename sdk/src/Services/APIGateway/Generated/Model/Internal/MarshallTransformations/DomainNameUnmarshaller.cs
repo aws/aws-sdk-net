@@ -88,6 +88,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     unmarshalledObject.DistributionDomainName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("distributionHostedZoneId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DistributionHostedZoneId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("endpointConfiguration", targetDepth))
                 {
                     var unmarshaller = EndpointConfigurationUnmarshaller.Instance;
@@ -116,6 +122,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RegionalDomainName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("regionalHostedZoneId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RegionalHostedZoneId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

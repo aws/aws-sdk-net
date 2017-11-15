@@ -50,11 +50,13 @@ namespace Amazon.APIGateway.Model
         private string _certificateName;
         private DateTime? _certificateUploadDate;
         private string _distributionDomainName;
+        private string _distributionHostedZoneId;
         private EndpointConfiguration _endpointConfiguration;
         private string _name;
         private string _regionalCertificateArn;
         private string _regionalCertificateName;
         private string _regionalDomainName;
+        private string _regionalHostedZoneId;
 
         /// <summary>
         /// Gets and sets the property CertificateArn. 
@@ -133,6 +135,28 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetDistributionDomainName()
         {
             return this._distributionDomainName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DistributionHostedZoneId. 
+        /// <para>
+        /// The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint.
+        /// The valid value is <code>Z2FDTNDATAQYW2</code> for all the regions. For more information,
+        /// see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
+        /// up a Regional Custom Domain Name</a> and <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
+        /// Regions and Endpoints for API Gateway</a>. 
+        /// </para>
+        /// </summary>
+        public string DistributionHostedZoneId
+        {
+            get { return this._distributionHostedZoneId; }
+            set { this._distributionHostedZoneId = value; }
+        }
+
+        // Check to see if DistributionHostedZoneId property is set
+        internal bool IsSetDistributionHostedZoneId()
+        {
+            return this._distributionHostedZoneId != null;
         }
 
         /// <summary>
@@ -228,6 +252,27 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetRegionalDomainName()
         {
             return this._regionalDomainName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RegionalHostedZoneId. 
+        /// <para>
+        /// The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more
+        /// information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
+        /// up a Regional Custom Domain Name</a> and <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
+        /// Regions and Endpoints for API Gateway</a>. 
+        /// </para>
+        /// </summary>
+        public string RegionalHostedZoneId
+        {
+            get { return this._regionalHostedZoneId; }
+            set { this._regionalHostedZoneId = value; }
+        }
+
+        // Check to see if RegionalHostedZoneId property is set
+        internal bool IsSetRegionalHostedZoneId()
+        {
+            return this._regionalHostedZoneId != null;
         }
 
     }

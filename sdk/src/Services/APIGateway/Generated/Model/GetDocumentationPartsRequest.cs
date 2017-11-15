@@ -34,6 +34,7 @@ namespace Amazon.APIGateway.Model
     public partial class GetDocumentationPartsRequest : AmazonAPIGatewayRequest
     {
         private int? _limit;
+        private LocationStatusType _locationStatus;
         private string _nameQuery;
         private string _path;
         private string _position;
@@ -56,6 +57,26 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetLimit()
         {
             return this._limit.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LocationStatus. 
+        /// <para>
+        /// The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code>
+        /// for retrieving <a>DocumentationPart</a> resources with content and <code>UNDOCUMENTED</code>
+        /// for <a>DocumentationPart</a> resources without content.
+        /// </para>
+        /// </summary>
+        public LocationStatusType LocationStatus
+        {
+            get { return this._locationStatus; }
+            set { this._locationStatus = value; }
+        }
+
+        // Check to see if LocationStatus property is set
+        internal bool IsSetLocationStatus()
+        {
+            return this._locationStatus != null;
         }
 
         /// <summary>
