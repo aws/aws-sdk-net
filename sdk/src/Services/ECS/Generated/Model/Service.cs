@@ -39,6 +39,7 @@ namespace Amazon.ECS.Model
         private int? _desiredCount;
         private List<ServiceEvent> _events = new List<ServiceEvent>();
         private List<LoadBalancer> _loadBalancers = new List<LoadBalancer>();
+        private NetworkConfiguration _networkConfiguration;
         private int? _pendingCount;
         private List<PlacementConstraint> _placementConstraints = new List<PlacementConstraint>();
         private List<PlacementStrategy> _placementStrategy = new List<PlacementStrategy>();
@@ -178,6 +179,25 @@ namespace Amazon.ECS.Model
         internal bool IsSetLoadBalancers()
         {
             return this._loadBalancers != null && this._loadBalancers.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkConfiguration. 
+        /// <para>
+        /// The VPC subnet and security group configuration for tasks that receive their own Elastic
+        /// Network Interface by using the <code>awsvpc</code> networking mode.
+        /// </para>
+        /// </summary>
+        public NetworkConfiguration NetworkConfiguration
+        {
+            get { return this._networkConfiguration; }
+            set { this._networkConfiguration = value; }
+        }
+
+        // Check to see if NetworkConfiguration property is set
+        internal bool IsSetNetworkConfiguration()
+        {
+            return this._networkConfiguration != null;
         }
 
         /// <summary>

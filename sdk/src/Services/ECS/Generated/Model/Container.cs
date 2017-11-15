@@ -37,6 +37,7 @@ namespace Amazon.ECS.Model
         private string _lastStatus;
         private string _name;
         private List<NetworkBinding> _networkBindings = new List<NetworkBinding>();
+        private List<NetworkInterface> _networkInterfaces = new List<NetworkInterface>();
         private string _reason;
         private string _taskArn;
 
@@ -128,6 +129,24 @@ namespace Amazon.ECS.Model
         internal bool IsSetNetworkBindings()
         {
             return this._networkBindings != null && this._networkBindings.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkInterfaces. 
+        /// <para>
+        /// The network interfaces associated with the container.
+        /// </para>
+        /// </summary>
+        public List<NetworkInterface> NetworkInterfaces
+        {
+            get { return this._networkInterfaces; }
+            set { this._networkInterfaces = value; }
+        }
+
+        // Check to see if NetworkInterfaces property is set
+        internal bool IsSetNetworkInterfaces()
+        {
+            return this._networkInterfaces != null && this._networkInterfaces.Count > 0; 
         }
 
         /// <summary>

@@ -325,6 +325,10 @@ namespace Amazon.ECS
     {
 
         /// <summary>
+        /// Constant Awsvpc for NetworkMode
+        /// </summary>
+        public static readonly NetworkMode Awsvpc = new NetworkMode("awsvpc");
+        /// <summary>
         /// Constant Bridge for NetworkMode
         /// </summary>
         public static readonly NetworkMode Bridge = new NetworkMode("bridge");

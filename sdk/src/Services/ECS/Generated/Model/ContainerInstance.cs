@@ -35,6 +35,7 @@ namespace Amazon.ECS.Model
     {
         private bool? _agentConnected;
         private AgentUpdateStatus _agentUpdateStatus;
+        private List<Attachment> _attachments = new List<Attachment>();
         private List<Attribute> _attributes = new List<Attribute>();
         private string _containerInstanceArn;
         private string _ec2InstanceId;
@@ -84,6 +85,24 @@ namespace Amazon.ECS.Model
         internal bool IsSetAgentUpdateStatus()
         {
             return this._agentUpdateStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Attachments. 
+        /// <para>
+        /// The Elastic Network Interfaces associated with the container instance.
+        /// </para>
+        /// </summary>
+        public List<Attachment> Attachments
+        {
+            get { return this._attachments; }
+            set { this._attachments = value; }
+        }
+
+        // Check to see if Attachments property is set
+        internal bool IsSetAttachments()
+        {
+            return this._attachments != null && this._attachments.Count > 0; 
         }
 
         /// <summary>

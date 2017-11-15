@@ -35,6 +35,7 @@ namespace Amazon.ECS.Model
         private DateTime? _createdAt;
         private int? _desiredCount;
         private string _id;
+        private NetworkConfiguration _networkConfiguration;
         private int? _pendingCount;
         private int? _runningCount;
         private string _status;
@@ -94,6 +95,25 @@ namespace Amazon.ECS.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkConfiguration. 
+        /// <para>
+        /// The VPC subnet and security group configuration for tasks that receive their own Elastic
+        /// Network Interface by using the <code>awsvpc</code> networking mode.
+        /// </para>
+        /// </summary>
+        public NetworkConfiguration NetworkConfiguration
+        {
+            get { return this._networkConfiguration; }
+            set { this._networkConfiguration = value; }
+        }
+
+        // Check to see if NetworkConfiguration property is set
+        internal bool IsSetNetworkConfiguration()
+        {
+            return this._networkConfiguration != null;
         }
 
         /// <summary>

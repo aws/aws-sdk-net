@@ -49,6 +49,7 @@ namespace Amazon.ECS.Model
         private string _cluster;
         private int? _count;
         private string _group;
+        private NetworkConfiguration _networkConfiguration;
         private TaskOverride _overrides;
         private List<PlacementConstraint> _placementConstraints = new List<PlacementConstraint>();
         private List<PlacementStrategy> _placementStrategy = new List<PlacementStrategy>();
@@ -110,6 +111,28 @@ namespace Amazon.ECS.Model
         internal bool IsSetGroup()
         {
             return this._group != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkConfiguration. 
+        /// <para>
+        /// The network configuration for the task. This parameter is required for task definitions
+        /// that use the <code>awsvpc</code> network mode to receive their own Elastic Network
+        /// Interface, and it is not supported for other network modes. For more information,
+        /// see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
+        /// Networking</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public NetworkConfiguration NetworkConfiguration
+        {
+            get { return this._networkConfiguration; }
+            set { this._networkConfiguration = value; }
+        }
+
+        // Check to see if NetworkConfiguration property is set
+        internal bool IsSetNetworkConfiguration()
+        {
+            return this._networkConfiguration != null;
         }
 
         /// <summary>

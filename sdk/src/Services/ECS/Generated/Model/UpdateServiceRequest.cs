@@ -29,8 +29,8 @@ namespace Amazon.ECS.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateService operation.
-    /// Modifies the desired count, deployment configuration, or task definition used in a
-    /// service.
+    /// Modifies the desired count, deployment configuration, network configuration, or task
+    /// definition used in a service.
     /// 
     ///  
     /// <para>
@@ -130,6 +130,7 @@ namespace Amazon.ECS.Model
         private string _cluster;
         private DeploymentConfiguration _deploymentConfiguration;
         private int? _desiredCount;
+        private NetworkConfiguration _networkConfiguration;
         private string _service;
         private string _taskDefinition;
 
@@ -187,6 +188,36 @@ namespace Amazon.ECS.Model
         internal bool IsSetDesiredCount()
         {
             return this._desiredCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkConfiguration. 
+        /// <para>
+        /// The network configuration for the service. This parameter is required for task definitions
+        /// that use the <code>awsvpc</code> network mode to receive their own Elastic Network
+        /// Interface, and it is not supported for other network modes. For more information,
+        /// see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
+        /// Networking</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Updating a service to add a subnet to a list of existing subnets does not trigger
+        /// a service deployment. For example, if your network configuration change is to keep
+        /// the existing subnets and simply add another subnet to the network configuration, this
+        /// does not trigger a new service deployment.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public NetworkConfiguration NetworkConfiguration
+        {
+            get { return this._networkConfiguration; }
+            set { this._networkConfiguration = value; }
+        }
+
+        // Check to see if NetworkConfiguration property is set
+        internal bool IsSetNetworkConfiguration()
+        {
+            return this._networkConfiguration != null;
         }
 
         /// <summary>

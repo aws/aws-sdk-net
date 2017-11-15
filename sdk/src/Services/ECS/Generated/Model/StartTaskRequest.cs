@@ -44,6 +44,7 @@ namespace Amazon.ECS.Model
         private string _cluster;
         private List<string> _containerInstances = new List<string>();
         private string _group;
+        private NetworkConfiguration _networkConfiguration;
         private TaskOverride _overrides;
         private string _startedBy;
         private string _taskDefinition;
@@ -104,6 +105,25 @@ namespace Amazon.ECS.Model
         internal bool IsSetGroup()
         {
             return this._group != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkConfiguration. 
+        /// <para>
+        /// The VPC subnet and security group configuration for tasks that receive their own Elastic
+        /// Network Interface by using the <code>awsvpc</code> networking mode.
+        /// </para>
+        /// </summary>
+        public NetworkConfiguration NetworkConfiguration
+        {
+            get { return this._networkConfiguration; }
+            set { this._networkConfiguration = value; }
+        }
+
+        // Check to see if NetworkConfiguration property is set
+        internal bool IsSetNetworkConfiguration()
+        {
+            return this._networkConfiguration != null;
         }
 
         /// <summary>

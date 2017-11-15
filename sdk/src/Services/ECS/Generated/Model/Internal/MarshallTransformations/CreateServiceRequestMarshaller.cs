@@ -112,6 +112,17 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetNetworkConfiguration())
+                {
+                    context.Writer.WritePropertyName("networkConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = NetworkConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.NetworkConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetPlacementConstraints())
                 {
                     context.Writer.WritePropertyName("placementConstraints");

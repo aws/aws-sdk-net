@@ -113,6 +113,7 @@ namespace Amazon.ECS.Model
         private DeploymentConfiguration _deploymentConfiguration;
         private int? _desiredCount;
         private List<LoadBalancer> _loadBalancers = new List<LoadBalancer>();
+        private NetworkConfiguration _networkConfiguration;
         private List<PlacementConstraint> _placementConstraints = new List<PlacementConstraint>();
         private List<PlacementStrategy> _placementStrategy = new List<PlacementStrategy>();
         private string _role;
@@ -232,6 +233,28 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NetworkConfiguration. 
+        /// <para>
+        /// The network configuration for the service. This parameter is required for task definitions
+        /// that use the <code>awsvpc</code> network mode to receive their own Elastic Network
+        /// Interface, and it is not supported for other network modes. For more information,
+        /// see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
+        /// Networking</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public NetworkConfiguration NetworkConfiguration
+        {
+            get { return this._networkConfiguration; }
+            set { this._networkConfiguration = value; }
+        }
+
+        // Check to see if NetworkConfiguration property is set
+        internal bool IsSetNetworkConfiguration()
+        {
+            return this._networkConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PlacementConstraints. 
         /// <para>
         /// An array of placement constraint objects to use for tasks in your service. You can
@@ -274,12 +297,21 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Role. 
         /// <para>
         /// The name or full Amazon Resource Name (ARN) of the IAM role that allows Amazon ECS
-        /// to make calls to your load balancer on your behalf. This parameter is required if
-        /// you are using a load balancer with your service. If you specify the <code>role</code>
-        /// parameter, you must also specify a load balancer object with the <code>loadBalancers</code>
-        /// parameter.
+        /// to make calls to your load balancer on your behalf. This parameter is only permitted
+        /// if you are using a load balancer with your service and your task definition does not
+        /// use the <code>awsvpc</code> network mode. If you specify the <code>role</code> parameter,
+        /// you must also specify a load balancer object with the <code>loadBalancers</code> parameter.
         /// </para>
-        ///  
+        ///  <important> 
+        /// <para>
+        /// If your account has already created the Amazon ECS service-linked role, that role
+        /// is used by default for your service unless you specify a role here. The service-linked
+        /// role is required if your task definition uses the <code>awsvpc</code> network mode,
+        /// in which case you should not specify a role here. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideusing-service-linked-roles.html">Using
+        /// Service-Linked Roles for Amazon ECS</a> in the <i>Amazon EC2 Container Service Developer
+        /// Guide</i>.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// If your specified role has a path other than <code>/</code>, then you must either
         /// specify the full role ARN (this is recommended) or prefix the role name with the path.

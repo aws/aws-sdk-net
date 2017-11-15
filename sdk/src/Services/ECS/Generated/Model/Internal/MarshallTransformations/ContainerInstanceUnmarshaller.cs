@@ -76,6 +76,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.AgentUpdateStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("attachments", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Attachment, AttachmentUnmarshaller>(AttachmentUnmarshaller.Instance);
+                    unmarshalledObject.Attachments = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("attributes", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<Attribute, AttributeUnmarshaller>(AttributeUnmarshaller.Instance);

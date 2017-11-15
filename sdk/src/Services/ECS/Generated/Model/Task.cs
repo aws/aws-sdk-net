@@ -32,6 +32,7 @@ namespace Amazon.ECS.Model
     /// </summary>
     public partial class Task
     {
+        private List<Attachment> _attachments = new List<Attachment>();
         private string _clusterArn;
         private string _containerInstanceArn;
         private List<Container> _containers = new List<Container>();
@@ -47,6 +48,25 @@ namespace Amazon.ECS.Model
         private string _taskArn;
         private string _taskDefinitionArn;
         private long? _version;
+
+        /// <summary>
+        /// Gets and sets the property Attachments. 
+        /// <para>
+        /// The Elastic Network Adapter associated with the task if the task uses the <code>awsvpc</code>
+        /// network mode.
+        /// </para>
+        /// </summary>
+        public List<Attachment> Attachments
+        {
+            get { return this._attachments; }
+            set { this._attachments = value; }
+        }
+
+        // Check to see if Attachments property is set
+        internal bool IsSetAttachments()
+        {
+            return this._attachments != null && this._attachments.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property ClusterArn. 
