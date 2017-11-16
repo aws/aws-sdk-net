@@ -95,8 +95,18 @@
     <pattern>^(r-[0-9a-z]{4,32})|(\d{12})|(ou-[0-9a-z]{4,32}-[a-z0-9]{8,32})$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Organizations.Model.DisableAWSServiceAccessRequest.ServicePrincipal</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Organizations.Model.DisablePolicyTypeRequest.RootId</property>
     <pattern>^r-[0-9a-z]{4,32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Organizations.Model.EnableAWSServiceAccessRequest.ServicePrincipal</property>
+    <min>1</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.EnablePolicyTypeRequest.RootId</property>
@@ -119,6 +129,11 @@
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListAccountsForParentRequest.ParentId</property>
     <pattern>^(r-[0-9a-z]{4,32})|(ou-[0-9a-z]{4,32}-[a-z0-9]{8,32})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Organizations.Model.ListAWSServiceAccessForOrganizationRequest.MaxResults</property>
+    <min>1</min>
+    <max>20</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListChildrenRequest.MaxResults</property>
@@ -268,6 +283,11 @@
   <property-value-rule>
     <property>Amazon.Organizations.Model.CreateAccountStatus.Id</property>
     <pattern>^car-[a-z0-9]{8,32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Organizations.Model.EnabledServicePrincipal.ServicePrincipal</property>
+    <min>1</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.Handshake.Arn</property>

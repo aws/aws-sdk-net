@@ -333,6 +333,10 @@ namespace Amazon.Organizations
         /// </summary>
         public static readonly ConstraintViolationExceptionReason MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED = new ConstraintViolationExceptionReason("MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED");
         /// <summary>
+        /// Constant ORGANIZATION_NOT_IN_ALL_FEATURES_MODE for ConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly ConstraintViolationExceptionReason ORGANIZATION_NOT_IN_ALL_FEATURES_MODE = new ConstraintViolationExceptionReason("ORGANIZATION_NOT_IN_ALL_FEATURES_MODE");
+        /// <summary>
         /// Constant OU_DEPTH_LIMIT_EXCEEDED for ConstraintViolationExceptionReason
         /// </summary>
         public static readonly ConstraintViolationExceptionReason OU_DEPTH_LIMIT_EXCEEDED = new ConstraintViolationExceptionReason("OU_DEPTH_LIMIT_EXCEEDED");
@@ -892,6 +896,10 @@ namespace Amazon.Organizations
         /// Constant MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS for InvalidInputExceptionReason
         /// </summary>
         public static readonly InvalidInputExceptionReason MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS = new InvalidInputExceptionReason("MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS");
+        /// <summary>
+        /// Constant UNRECOGNIZED_SERVICE_PRINCIPAL for InvalidInputExceptionReason
+        /// </summary>
+        public static readonly InvalidInputExceptionReason UNRECOGNIZED_SERVICE_PRINCIPAL = new InvalidInputExceptionReason("UNRECOGNIZED_SERVICE_PRINCIPAL");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

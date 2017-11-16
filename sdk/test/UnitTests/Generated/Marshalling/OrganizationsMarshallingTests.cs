@@ -494,6 +494,22 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("Organizations")]
+        public void DisableAWSServiceAccessMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<DisableAWSServiceAccessRequest>();
+            var marshaller = new DisableAWSServiceAccessRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<DisableAWSServiceAccessRequest>(request,jsonRequest);
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Organizations")]
         public void DisablePolicyTypeMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<DisablePolicyTypeRequest>();
@@ -545,6 +561,22 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var response = EnableAllFeaturesResponseUnmarshaller.Instance.Unmarshall(context)
                 as EnableAllFeaturesResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Organizations")]
+        public void EnableAWSServiceAccessMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<EnableAWSServiceAccessRequest>();
+            var marshaller = new EnableAWSServiceAccessRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<EnableAWSServiceAccessRequest>(request,jsonRequest);
+
         }
 
         
@@ -673,6 +705,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListAccountsForParentResponseUnmarshaller.Instance.Unmarshall(context)
                 as ListAccountsForParentResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Organizations")]
+        public void ListAWSServiceAccessForOrganizationMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<ListAWSServiceAccessForOrganizationRequest>();
+            var marshaller = new ListAWSServiceAccessForOrganizationRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<ListAWSServiceAccessForOrganizationRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListAWSServiceAccessForOrganization").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = ListAWSServiceAccessForOrganizationResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListAWSServiceAccessForOrganizationResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 

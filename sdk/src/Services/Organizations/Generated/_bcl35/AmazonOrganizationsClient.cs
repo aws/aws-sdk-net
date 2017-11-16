@@ -117,11 +117,9 @@ namespace Amazon.Organizations
     ///  
     /// <para>
     /// We welcome your feedback. Send your comments to <a href="mailto:feedback-awsorganizations@amazon.com">feedback-awsorganizations@amazon.com</a>
-    /// or post your feedback and questions in our private <a href="http://forums.aws.amazon.com/forum.jspa?forumID=219">AWS
-    /// Organizations support forum</a>. If you don't have access to the forum, send a request
-    /// for access to the email address, along with your forum user ID. For more information
-    /// about the AWS support forums, see <a href="http://forums.aws.amazon.com/help.jspa">Forums
-    /// Help</a>.
+    /// or post your feedback and questions in the <a href="http://forums.aws.amazon.com/forum.jspa?forumID=219">AWS
+    /// Organizations support forum</a>. For more information about the AWS support forums,
+    /// see <a href="http://forums.aws.amazon.com/help.jspa">Forums Help</a>.
     /// </para>
     ///  
     /// <para>
@@ -456,7 +454,12 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.HandshakeConstraintViolationException">
         /// The requested operation would violate the constraint identified in the reason code.
         /// 
-        ///  <ul> <li> 
+        ///  <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation:
+        /// </para>
+        ///  </note> <ul> <li> 
         /// <para>
         /// ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of
         /// accounts in an organization. <b>Note</b>: deleted and closed accounts still count
@@ -523,7 +526,12 @@ namespace Amazon.Organizations
         /// of the request parameters. This exception includes a reason that contains additional
         /// information about the violated limit:
         /// 
-        ///  <ul> <li> 
+        ///  <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation:
+        /// </para>
+        ///  </note> <ul> <li> 
         /// <para>
         /// INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization,
         /// or email) as a party.
@@ -732,14 +740,14 @@ namespace Amazon.Organizations
         /// attempting to removing the last SCP from an OU or root, inviting or creating too many
         /// accounts to the organization, or attaching too many policies to an account, OU, or
         /// root. This exception includes a reason that contains additional information about
-        /// the violated limit.
+        /// the violated limit:
         /// 
-        ///  <note> 
+        ///   <note> 
         /// <para>
         /// Some of the reasons in the following list might not be applicable to this specific
         /// API or operation:
         /// </para>
-        ///  </note>  <ul> <li> 
+        ///  </note> <ul> <li> 
         /// <para>
         /// ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of
         /// accounts in an organization. If you need more accounts, contact AWS Support to request
@@ -856,7 +864,12 @@ namespace Amazon.Organizations
         /// of the request parameters. This exception includes a reason that contains additional
         /// information about the violated limit:
         /// 
-        ///  <ul> <li> 
+        ///  <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation:
+        /// </para>
+        ///  </note> <ul> <li> 
         /// <para>
         /// INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization,
         /// or email) as a party.
@@ -1047,7 +1060,12 @@ namespace Amazon.Organizations
         /// of the request parameters. This exception includes a reason that contains additional
         /// information about the violated limit:
         /// 
-        ///  <ul> <li> 
+        ///  <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation:
+        /// </para>
+        ///  </note> <ul> <li> 
         /// <para>
         /// INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization,
         /// or email) as a party.
@@ -1199,10 +1217,10 @@ namespace Amazon.Organizations
         /// <para>
         /// The user in the master account who calls this API must also have the <code>iam:CreateRole</code>
         /// permission because AWS Organizations preconfigures the new member account with a role
-        /// (named <code>OrganizationAccountAccessRole</code>) that grants users in the master
-        /// account administrator permissions in the new member account. Principals in the master
-        /// account can assume the role. AWS Organizations clones the company name and address
-        /// information for the new account from the organization's master account.
+        /// (named <code>OrganizationAccountAccessRole</code> by default) that grants users in
+        /// the master account administrator permissions in the new member account. Principals
+        /// in the master account can assume the role. AWS Organizations clones the company name
+        /// and address information for the new account from the organization's master account.
         /// </para>
         ///  
         /// <para>
@@ -1234,7 +1252,11 @@ namespace Amazon.Organizations
         /// for an account, see <a href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html">Granting
         /// Access to Your Billing Information and Tools</a>.
         /// </para>
-        ///  </note> <important> 
+        ///  </note> 
+        /// <para>
+        /// This operation can be called only from the organization's master account.
+        /// </para>
+        ///  <important> 
         /// <para>
         /// If you get an exception that indicates that you exceeded your account limits for the
         /// organization or that you can"t add an account because your organization is still initializing,
@@ -1265,14 +1287,14 @@ namespace Amazon.Organizations
         /// attempting to removing the last SCP from an OU or root, inviting or creating too many
         /// accounts to the organization, or attaching too many policies to an account, OU, or
         /// root. This exception includes a reason that contains additional information about
-        /// the violated limit.
+        /// the violated limit:
         /// 
-        ///  <note> 
+        ///   <note> 
         /// <para>
         /// Some of the reasons in the following list might not be applicable to this specific
         /// API or operation:
         /// </para>
-        ///  </note>  <ul> <li> 
+        ///  </note> <ul> <li> 
         /// <para>
         /// ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of
         /// accounts in an organization. If you need more accounts, contact AWS Support to request
@@ -1390,7 +1412,12 @@ namespace Amazon.Organizations
         /// of the request parameters. This exception includes a reason that contains additional
         /// information about the violated limit:
         /// 
-        ///  <ul> <li> 
+        ///  <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation:
+        /// </para>
+        ///  </note> <ul> <li> 
         /// <para>
         /// INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization,
         /// or email) as a party.
@@ -1570,14 +1597,14 @@ namespace Amazon.Organizations
         /// attempting to removing the last SCP from an OU or root, inviting or creating too many
         /// accounts to the organization, or attaching too many policies to an account, OU, or
         /// root. This exception includes a reason that contains additional information about
-        /// the violated limit.
+        /// the violated limit:
         /// 
-        ///  <note> 
+        ///   <note> 
         /// <para>
         /// Some of the reasons in the following list might not be applicable to this specific
         /// API or operation:
         /// </para>
-        ///  </note>  <ul> <li> 
+        ///  </note> <ul> <li> 
         /// <para>
         /// ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of
         /// accounts in an organization. If you need more accounts, contact AWS Support to request
@@ -1691,7 +1718,12 @@ namespace Amazon.Organizations
         /// of the request parameters. This exception includes a reason that contains additional
         /// information about the violated limit:
         /// 
-        ///  <ul> <li> 
+        ///  <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation:
+        /// </para>
+        ///  </note> <ul> <li> 
         /// <para>
         /// INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization,
         /// or email) as a party.
@@ -1862,14 +1894,14 @@ namespace Amazon.Organizations
         /// attempting to removing the last SCP from an OU or root, inviting or creating too many
         /// accounts to the organization, or attaching too many policies to an account, OU, or
         /// root. This exception includes a reason that contains additional information about
-        /// the violated limit.
+        /// the violated limit:
         /// 
-        ///  <note> 
+        ///   <note> 
         /// <para>
         /// Some of the reasons in the following list might not be applicable to this specific
         /// API or operation:
         /// </para>
-        ///  </note>  <ul> <li> 
+        ///  </note> <ul> <li> 
         /// <para>
         /// ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of
         /// accounts in an organization. If you need more accounts, contact AWS Support to request
@@ -1986,7 +2018,12 @@ namespace Amazon.Organizations
         /// of the request parameters. This exception includes a reason that contains additional
         /// information about the violated limit:
         /// 
-        ///  <ul> <li> 
+        ///  <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation:
+        /// </para>
+        ///  </note> <ul> <li> 
         /// <para>
         /// INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization,
         /// or email) as a party.
@@ -2157,14 +2194,14 @@ namespace Amazon.Organizations
         /// attempting to removing the last SCP from an OU or root, inviting or creating too many
         /// accounts to the organization, or attaching too many policies to an account, OU, or
         /// root. This exception includes a reason that contains additional information about
-        /// the violated limit.
+        /// the violated limit:
         /// 
-        ///  <note> 
+        ///   <note> 
         /// <para>
         /// Some of the reasons in the following list might not be applicable to this specific
         /// API or operation:
         /// </para>
-        ///  </note>  <ul> <li> 
+        ///  </note> <ul> <li> 
         /// <para>
         /// ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of
         /// accounts in an organization. If you need more accounts, contact AWS Support to request
@@ -2281,7 +2318,12 @@ namespace Amazon.Organizations
         /// of the request parameters. This exception includes a reason that contains additional
         /// information about the violated limit:
         /// 
-        ///  <ul> <li> 
+        ///  <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation:
+        /// </para>
+        ///  </note> <ul> <li> 
         /// <para>
         /// INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization,
         /// or email) as a party.
@@ -2472,7 +2514,12 @@ namespace Amazon.Organizations
         /// of the request parameters. This exception includes a reason that contains additional
         /// information about the violated limit:
         /// 
-        ///  <ul> <li> 
+        ///  <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation:
+        /// </para>
+        ///  </note> <ul> <li> 
         /// <para>
         /// INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization,
         /// or email) as a party.
@@ -2631,7 +2678,12 @@ namespace Amazon.Organizations
         /// of the request parameters. This exception includes a reason that contains additional
         /// information about the violated limit:
         /// 
-        ///  <ul> <li> 
+        ///  <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation:
+        /// </para>
+        ///  </note> <ul> <li> 
         /// <para>
         /// INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization,
         /// or email) as a party.
@@ -2799,7 +2851,12 @@ namespace Amazon.Organizations
         /// of the request parameters. This exception includes a reason that contains additional
         /// information about the violated limit:
         /// 
-        ///  <ul> <li> 
+        ///  <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation:
+        /// </para>
+        ///  </note> <ul> <li> 
         /// <para>
         /// INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization,
         /// or email) as a party.
@@ -2969,7 +3026,12 @@ namespace Amazon.Organizations
         /// of the request parameters. This exception includes a reason that contains additional
         /// information about the violated limit:
         /// 
-        ///  <ul> <li> 
+        ///  <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation:
+        /// </para>
+        ///  </note> <ul> <li> 
         /// <para>
         /// INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization,
         /// or email) as a party.
@@ -3138,7 +3200,12 @@ namespace Amazon.Organizations
         /// of the request parameters. This exception includes a reason that contains additional
         /// information about the violated limit:
         /// 
-        ///  <ul> <li> 
+        ///  <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation:
+        /// </para>
+        ///  </note> <ul> <li> 
         /// <para>
         /// INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization,
         /// or email) as a party.
@@ -3299,7 +3366,12 @@ namespace Amazon.Organizations
         /// of the request parameters. This exception includes a reason that contains additional
         /// information about the violated limit:
         /// 
-        ///  <ul> <li> 
+        ///  <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation:
+        /// </para>
+        ///  </note> <ul> <li> 
         /// <para>
         /// INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization,
         /// or email) as a party.
@@ -3467,7 +3539,12 @@ namespace Amazon.Organizations
         /// of the request parameters. This exception includes a reason that contains additional
         /// information about the violated limit:
         /// 
-        ///  <ul> <li> 
+        ///  <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation:
+        /// </para>
+        ///  </note> <ul> <li> 
         /// <para>
         /// INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization,
         /// or email) as a party.
@@ -3705,7 +3782,12 @@ namespace Amazon.Organizations
         /// of the request parameters. This exception includes a reason that contains additional
         /// information about the violated limit:
         /// 
-        ///  <ul> <li> 
+        ///  <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation:
+        /// </para>
+        ///  </note> <ul> <li> 
         /// <para>
         /// INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization,
         /// or email) as a party.
@@ -3866,7 +3948,12 @@ namespace Amazon.Organizations
         /// of the request parameters. This exception includes a reason that contains additional
         /// information about the violated limit:
         /// 
-        ///  <ul> <li> 
+        ///  <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation:
+        /// </para>
+        ///  </note> <ul> <li> 
         /// <para>
         /// INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization,
         /// or email) as a party.
@@ -4045,14 +4132,14 @@ namespace Amazon.Organizations
         /// attempting to removing the last SCP from an OU or root, inviting or creating too many
         /// accounts to the organization, or attaching too many policies to an account, OU, or
         /// root. This exception includes a reason that contains additional information about
-        /// the violated limit.
+        /// the violated limit:
         /// 
-        ///  <note> 
+        ///   <note> 
         /// <para>
         /// Some of the reasons in the following list might not be applicable to this specific
         /// API or operation:
         /// </para>
-        ///  </note>  <ul> <li> 
+        ///  </note> <ul> <li> 
         /// <para>
         /// ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of
         /// accounts in an organization. If you need more accounts, contact AWS Support to request
@@ -4166,7 +4253,12 @@ namespace Amazon.Organizations
         /// of the request parameters. This exception includes a reason that contains additional
         /// information about the violated limit:
         /// 
-        ///  <ul> <li> 
+        ///  <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation:
+        /// </para>
+        ///  </note> <ul> <li> 
         /// <para>
         /// INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization,
         /// or email) as a party.
@@ -4305,23 +4397,47 @@ namespace Amazon.Organizations
 
         #endregion
         
-        #region  DisablePolicyType
+        #region  DisableAWSServiceAccess
 
         /// <summary>
-        /// Disables an organizational control policy type in a root. A policy of a certain type
-        /// can be attached to entities in a root only if that type is enabled in the root. After
-        /// you perform this operation, you no longer can attach policies of the specified type
-        /// to that root or to any OU or account in that root. You can undo this by using the
-        /// <a>EnablePolicyType</a> operation.
+        /// Disables the integration of an AWS service (the service that is specified by <code>ServicePrincipal</code>)
+        /// with AWS Organizations. When you disable integration, the specified service no longer
+        /// can create a <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html">service-linked
+        /// role</a> in <i>new</i> accounts in your organization. This means the service can't
+        /// perform operations on your behalf on any new accounts in your organization. The service
+        /// can still perform operations in older accounts until the service completes its clean-up
+        /// from AWS Organizations.
         /// 
+        ///   <important> 
+        /// <para>
+        /// We recommend that you disable integration between AWS Organizations and the specified
+        /// AWS service by using the console or commands that are provided by the specified service.
+        /// Doing so ensures that the other service is aware that it can clean up any resources
+        /// that are required only for the integration. How the service cleans up its resources
+        /// in the organization's accounts depends on that service. For more information, see
+        /// the documentation for the other AWS service.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// After you perform the <code>DisableAWSServiceAccess</code> operation, the specified
+        /// service can no longer perform operations in your organization's accounts unless the
+        /// operations are explicitly permitted by the IAM policies that are attached to your
+        /// roles. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about integrating other services with AWS Organizations, including
+        /// the list of services that work with Organizations, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Integrating
+        /// AWS Organizations with Other AWS Services</a> in the <i>AWS Organizations User Guide</i>.
+        /// </para>
         ///  
         /// <para>
         /// This operation can be called only from the organization's master account.
         /// </para>
         /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DisablePolicyType service method.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DisableAWSServiceAccess service method.</param>
         /// 
-        /// <returns>The response from the DisablePolicyType service method, as returned by Organizations.</returns>
+        /// <returns>The response from the DisableAWSServiceAccess service method, as returned by Organizations.</returns>
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
@@ -4341,14 +4457,14 @@ namespace Amazon.Organizations
         /// attempting to removing the last SCP from an OU or root, inviting or creating too many
         /// accounts to the organization, or attaching too many policies to an account, OU, or
         /// root. This exception includes a reason that contains additional information about
-        /// the violated limit.
+        /// the violated limit:
         /// 
-        ///  <note> 
+        ///   <note> 
         /// <para>
         /// Some of the reasons in the following list might not be applicable to this specific
         /// API or operation:
         /// </para>
-        ///  </note>  <ul> <li> 
+        ///  </note> <ul> <li> 
         /// <para>
         /// ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of
         /// accounts in an organization. If you need more accounts, contact AWS Support to request
@@ -4462,7 +4578,304 @@ namespace Amazon.Organizations
         /// of the request parameters. This exception includes a reason that contains additional
         /// information about the violated limit:
         /// 
-        ///  <ul> <li> 
+        ///  <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation:
+        /// </para>
+        ///  </note> <ul> <li> 
+        /// <para>
+        /// INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization,
+        /// or email) as a party.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_SYNTAX_ORGANIZATION_ARN: You specified an invalid ARN for the organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_SYNTAX_POLICY_ID: You specified an invalid policy ID. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_ENUM: You specified a value that is not valid for that parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one
+        /// invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MAX_LENGTH_EXCEEDED: You provided a string parameter that is longer than allowed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MAX_VALUE_EXCEEDED: You provided a numeric parameter that has a larger value than
+        /// allowed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MIN_LENGTH_EXCEEDED: You provided a string parameter that is shorter than allowed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MIN_VALUE_EXCEEDED: You provided a numeric parameter that has a smaller value than
+        /// allowed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// IMMUTABLE_POLICY: You specified a policy that is managed by AWS and cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_PATTERN: You provided a value that doesn't match the required pattern.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_PATTERN_TARGET_ID: You specified a policy target ID that doesn't match the
+        /// required pattern.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INPUT_REQUIRED: You must include a value for all required parameters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_PAGINATION_TOKEN: Get the value for the NextToken parameter from the response
+        /// to a previous call of the operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MAX_FILTER_LIMIT_EXCEEDED: You can specify only one filter parameter for the operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
+        /// in the same root.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.Organizations.Model.ServiceException">
+        /// AWS Organizations can't complete your request because of an internal service error.
+        /// Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
+        /// You've sent too many requests in too short a period of time. The limit helps protect
+        /// against denial-of-service attacks. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DisableAWSServiceAccess">REST API Reference for DisableAWSServiceAccess Operation</seealso>
+        public virtual DisableAWSServiceAccessResponse DisableAWSServiceAccess(DisableAWSServiceAccessRequest request)
+        {
+            var marshaller = new DisableAWSServiceAccessRequestMarshaller();
+            var unmarshaller = DisableAWSServiceAccessResponseUnmarshaller.Instance;
+
+            return Invoke<DisableAWSServiceAccessRequest,DisableAWSServiceAccessResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisableAWSServiceAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisableAWSServiceAccess operation on AmazonOrganizationsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableAWSServiceAccess
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DisableAWSServiceAccess">REST API Reference for DisableAWSServiceAccess Operation</seealso>
+        public virtual IAsyncResult BeginDisableAWSServiceAccess(DisableAWSServiceAccessRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DisableAWSServiceAccessRequestMarshaller();
+            var unmarshaller = DisableAWSServiceAccessResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DisableAWSServiceAccessRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisableAWSServiceAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableAWSServiceAccess.</param>
+        /// 
+        /// <returns>Returns a  DisableAWSServiceAccessResult from Organizations.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DisableAWSServiceAccess">REST API Reference for DisableAWSServiceAccess Operation</seealso>
+        public virtual DisableAWSServiceAccessResponse EndDisableAWSServiceAccess(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisableAWSServiceAccessResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DisablePolicyType
+
+        /// <summary>
+        /// Disables an organizational control policy type in a root. A policy of a certain type
+        /// can be attached to entities in a root only if that type is enabled in the root. After
+        /// you perform this operation, you no longer can attach policies of the specified type
+        /// to that root or to any OU or account in that root. You can undo this by using the
+        /// <a>EnablePolicyType</a> operation.
+        /// 
+        ///  
+        /// <para>
+        /// This operation can be called only from the organization's master account.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisablePolicyType service method.</param>
+        /// 
+        /// <returns>The response from the DisablePolicyType service method, as returned by Organizations.</returns>
+        /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The user or role that
+        /// is making the request must have at least one IAM permissions policy attached that
+        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// Management</a> in the <i>IAM User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
+        /// Your account is not a member of an organization. To make this request, you must use
+        /// the credentials of an account that belongs to an organization.
+        /// </exception>
+        /// <exception cref="Amazon.Organizations.Model.ConcurrentModificationException">
+        /// The target of the operation is currently being modified by a different request. Try
+        /// again later.
+        /// </exception>
+        /// <exception cref="Amazon.Organizations.Model.ConstraintViolationException">
+        /// Performing this operation violates a minimum or maximum value limit. For example,
+        /// attempting to removing the last SCP from an OU or root, inviting or creating too many
+        /// accounts to the organization, or attaching too many policies to an account, OU, or
+        /// root. This exception includes a reason that contains additional information about
+        /// the violated limit:
+        /// 
+        ///   <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation:
+        /// </para>
+        ///  </note> <ul> <li> 
+        /// <para>
+        /// ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of
+        /// accounts in an organization. If you need more accounts, contact AWS Support to request
+        /// an increase in your limit. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Or, The number of invitations that you tried to send would cause you to exceed the
+        /// limit of accounts in your organization. Send fewer invitations, or contact AWS Support
+        /// to request an increase in the number of accounts.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Note</b>: deleted and closed accounts still count toward your limit.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// If you get an exception that indicates that you exceeded your account limits for the
+        /// organization or that you can"t add an account because your organization is still initializing,
+        /// please contact <a href="https://console.aws.amazon.com/support/home#/"> AWS Customer
+        /// Support</a>.
+        /// </para>
+        ///  </important> </li> <li> 
+        /// <para>
+        /// HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes you
+        /// can send in one day.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// OU_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of organizational units
+        /// you can have in an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an organizational unit tree that
+        /// is too many levels deep.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that
+        /// you can have in an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to exceed the number of policies
+        /// of a certain type that can be attached to an entity at one time.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to detach a policy from an
+        /// entity that would cause the entity to have fewer than the minimum number of policies
+        /// of a certain type required.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization
+        /// that does not yet have enough information to exist as a stand-alone account. This
+        /// account requires you to first agree to the AWS Customer Agreement. Follow the steps
+        /// at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account
+        /// from the organization that does not yet have enough information to exist as a stand-alone
+        /// account. This account requires you to first complete phone verification. Follow the
+        /// steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this account,
+        /// you first must associate a payment instrument, such as a credit card, with the account.
+        /// Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member
+        /// account, you first must associate a payment instrument, such as a credit card, with
+        /// the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of accounts
+        /// that you can create in one day.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization,
+        /// you first must migrate the organization's master account to the marketplace that corresponds
+        /// to the master account's address. For example, accounts with India addresses must be
+        /// associated with the AISPL marketplace. All accounts in an organization must be associated
+        /// with the same marketplace.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide
+        /// contact a valid address and phone number for the master account. Then try the operation
+        /// again.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.Organizations.Model.InvalidInputException">
+        /// The requested operation failed because you provided invalid values for one or more
+        /// of the request parameters. This exception includes a reason that contains additional
+        /// information about the violated limit:
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation:
+        /// </para>
+        ///  </note> <ul> <li> 
         /// <para>
         /// INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization,
         /// or email) as a party.
@@ -4659,7 +5072,12 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.HandshakeConstraintViolationException">
         /// The requested operation would violate the constraint identified in the reason code.
         /// 
-        ///  <ul> <li> 
+        ///  <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation:
+        /// </para>
+        ///  </note> <ul> <li> 
         /// <para>
         /// ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of
         /// accounts in an organization. <b>Note</b>: deleted and closed accounts still count
@@ -4718,7 +5136,12 @@ namespace Amazon.Organizations
         /// of the request parameters. This exception includes a reason that contains additional
         /// information about the violated limit:
         /// 
-        ///  <ul> <li> 
+        ///  <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation:
+        /// </para>
+        ///  </note> <ul> <li> 
         /// <para>
         /// INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization,
         /// or email) as a party.
@@ -4848,21 +5271,40 @@ namespace Amazon.Organizations
 
         #endregion
         
-        #region  EnablePolicyType
+        #region  EnableAWSServiceAccess
 
         /// <summary>
-        /// Enables a policy type in a root. After you enable a policy type in a root, you can
-        /// attach policies of that type to the root, any OU, or account in that root. You can
-        /// undo this by using the <a>DisablePolicyType</a> operation.
+        /// Enables the integration of an AWS service (the service that is specified by <code>ServicePrincipal</code>)
+        /// with AWS Organizations. When you enable integration, you allow the specified service
+        /// to create a <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html">service-linked
+        /// role</a> in all the accounts in your organization. This allows the service to perform
+        /// operations on your behalf in your organization and its accounts.
         /// 
+        ///  <important> 
+        /// <para>
+        /// We recommend that you enable integration between AWS Organizations and the specified
+        /// AWS service by using the console or commands that are provided by the specified service.
+        /// Doing so ensures that the service is aware that it can create the resources that are
+        /// required for the integration. How the service creates those resources in the organization's
+        /// accounts depends on that service. For more information, see the documentation for
+        /// the other AWS service.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// For more information about enabling services to integrate with AWS Organizations,
+        /// see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Integrating
+        /// AWS Organizations with Other AWS Services</a> in the <i>AWS Organizations User Guide</i>.
+        /// </para>
         ///  
         /// <para>
-        /// This operation can be called only from the organization's master account.
+        /// This operation can be called only from the organization's master account and only
+        /// if the organization has <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">enabled
+        /// all features</a>.
         /// </para>
         /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the EnablePolicyType service method.</param>
+        /// <param name="request">Container for the necessary parameters to execute the EnableAWSServiceAccess service method.</param>
         /// 
-        /// <returns>The response from the EnablePolicyType service method, as returned by Organizations.</returns>
+        /// <returns>The response from the EnableAWSServiceAccess service method, as returned by Organizations.</returns>
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
@@ -4882,14 +5324,14 @@ namespace Amazon.Organizations
         /// attempting to removing the last SCP from an OU or root, inviting or creating too many
         /// accounts to the organization, or attaching too many policies to an account, OU, or
         /// root. This exception includes a reason that contains additional information about
-        /// the violated limit.
+        /// the violated limit:
         /// 
-        ///  <note> 
+        ///   <note> 
         /// <para>
         /// Some of the reasons in the following list might not be applicable to this specific
         /// API or operation:
         /// </para>
-        ///  </note>  <ul> <li> 
+        ///  </note> <ul> <li> 
         /// <para>
         /// ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of
         /// accounts in an organization. If you need more accounts, contact AWS Support to request
@@ -5003,7 +5445,302 @@ namespace Amazon.Organizations
         /// of the request parameters. This exception includes a reason that contains additional
         /// information about the violated limit:
         /// 
-        ///  <ul> <li> 
+        ///  <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation:
+        /// </para>
+        ///  </note> <ul> <li> 
+        /// <para>
+        /// INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization,
+        /// or email) as a party.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_SYNTAX_ORGANIZATION_ARN: You specified an invalid ARN for the organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_SYNTAX_POLICY_ID: You specified an invalid policy ID. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_ENUM: You specified a value that is not valid for that parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one
+        /// invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MAX_LENGTH_EXCEEDED: You provided a string parameter that is longer than allowed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MAX_VALUE_EXCEEDED: You provided a numeric parameter that has a larger value than
+        /// allowed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MIN_LENGTH_EXCEEDED: You provided a string parameter that is shorter than allowed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MIN_VALUE_EXCEEDED: You provided a numeric parameter that has a smaller value than
+        /// allowed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// IMMUTABLE_POLICY: You specified a policy that is managed by AWS and cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_PATTERN: You provided a value that doesn't match the required pattern.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_PATTERN_TARGET_ID: You specified a policy target ID that doesn't match the
+        /// required pattern.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INPUT_REQUIRED: You must include a value for all required parameters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_PAGINATION_TOKEN: Get the value for the NextToken parameter from the response
+        /// to a previous call of the operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MAX_FILTER_LIMIT_EXCEEDED: You can specify only one filter parameter for the operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
+        /// in the same root.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.Organizations.Model.ServiceException">
+        /// AWS Organizations can't complete your request because of an internal service error.
+        /// Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
+        /// You've sent too many requests in too short a period of time. The limit helps protect
+        /// against denial-of-service attacks. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnableAWSServiceAccess">REST API Reference for EnableAWSServiceAccess Operation</seealso>
+        public virtual EnableAWSServiceAccessResponse EnableAWSServiceAccess(EnableAWSServiceAccessRequest request)
+        {
+            var marshaller = new EnableAWSServiceAccessRequestMarshaller();
+            var unmarshaller = EnableAWSServiceAccessResponseUnmarshaller.Instance;
+
+            return Invoke<EnableAWSServiceAccessRequest,EnableAWSServiceAccessResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableAWSServiceAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EnableAWSServiceAccess operation on AmazonOrganizationsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableAWSServiceAccess
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnableAWSServiceAccess">REST API Reference for EnableAWSServiceAccess Operation</seealso>
+        public virtual IAsyncResult BeginEnableAWSServiceAccess(EnableAWSServiceAccessRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new EnableAWSServiceAccessRequestMarshaller();
+            var unmarshaller = EnableAWSServiceAccessResponseUnmarshaller.Instance;
+
+            return BeginInvoke<EnableAWSServiceAccessRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  EnableAWSServiceAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableAWSServiceAccess.</param>
+        /// 
+        /// <returns>Returns a  EnableAWSServiceAccessResult from Organizations.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnableAWSServiceAccess">REST API Reference for EnableAWSServiceAccess Operation</seealso>
+        public virtual EnableAWSServiceAccessResponse EndEnableAWSServiceAccess(IAsyncResult asyncResult)
+        {
+            return EndInvoke<EnableAWSServiceAccessResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  EnablePolicyType
+
+        /// <summary>
+        /// Enables a policy type in a root. After you enable a policy type in a root, you can
+        /// attach policies of that type to the root, any OU, or account in that root. You can
+        /// undo this by using the <a>DisablePolicyType</a> operation.
+        /// 
+        ///  
+        /// <para>
+        /// This operation can be called only from the organization's master account.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnablePolicyType service method.</param>
+        /// 
+        /// <returns>The response from the EnablePolicyType service method, as returned by Organizations.</returns>
+        /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The user or role that
+        /// is making the request must have at least one IAM permissions policy attached that
+        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// Management</a> in the <i>IAM User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
+        /// Your account is not a member of an organization. To make this request, you must use
+        /// the credentials of an account that belongs to an organization.
+        /// </exception>
+        /// <exception cref="Amazon.Organizations.Model.ConcurrentModificationException">
+        /// The target of the operation is currently being modified by a different request. Try
+        /// again later.
+        /// </exception>
+        /// <exception cref="Amazon.Organizations.Model.ConstraintViolationException">
+        /// Performing this operation violates a minimum or maximum value limit. For example,
+        /// attempting to removing the last SCP from an OU or root, inviting or creating too many
+        /// accounts to the organization, or attaching too many policies to an account, OU, or
+        /// root. This exception includes a reason that contains additional information about
+        /// the violated limit:
+        /// 
+        ///   <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation:
+        /// </para>
+        ///  </note> <ul> <li> 
+        /// <para>
+        /// ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of
+        /// accounts in an organization. If you need more accounts, contact AWS Support to request
+        /// an increase in your limit. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Or, The number of invitations that you tried to send would cause you to exceed the
+        /// limit of accounts in your organization. Send fewer invitations, or contact AWS Support
+        /// to request an increase in the number of accounts.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Note</b>: deleted and closed accounts still count toward your limit.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// If you get an exception that indicates that you exceeded your account limits for the
+        /// organization or that you can"t add an account because your organization is still initializing,
+        /// please contact <a href="https://console.aws.amazon.com/support/home#/"> AWS Customer
+        /// Support</a>.
+        /// </para>
+        ///  </important> </li> <li> 
+        /// <para>
+        /// HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes you
+        /// can send in one day.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// OU_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of organizational units
+        /// you can have in an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an organizational unit tree that
+        /// is too many levels deep.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that
+        /// you can have in an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to exceed the number of policies
+        /// of a certain type that can be attached to an entity at one time.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to detach a policy from an
+        /// entity that would cause the entity to have fewer than the minimum number of policies
+        /// of a certain type required.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization
+        /// that does not yet have enough information to exist as a stand-alone account. This
+        /// account requires you to first agree to the AWS Customer Agreement. Follow the steps
+        /// at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account
+        /// from the organization that does not yet have enough information to exist as a stand-alone
+        /// account. This account requires you to first complete phone verification. Follow the
+        /// steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this account,
+        /// you first must associate a payment instrument, such as a credit card, with the account.
+        /// Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member
+        /// account, you first must associate a payment instrument, such as a credit card, with
+        /// the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of accounts
+        /// that you can create in one day.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization,
+        /// you first must migrate the organization's master account to the marketplace that corresponds
+        /// to the master account's address. For example, accounts with India addresses must be
+        /// associated with the AISPL marketplace. All accounts in an organization must be associated
+        /// with the same marketplace.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide
+        /// contact a valid address and phone number for the master account. Then try the operation
+        /// again.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.Organizations.Model.InvalidInputException">
+        /// The requested operation failed because you provided invalid values for one or more
+        /// of the request parameters. This exception includes a reason that contains additional
+        /// information about the violated limit:
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation:
+        /// </para>
+        ///  </note> <ul> <li> 
         /// <para>
         /// INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization,
         /// or email) as a party.
@@ -5206,7 +5943,12 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.HandshakeConstraintViolationException">
         /// The requested operation would violate the constraint identified in the reason code.
         /// 
-        ///  <ul> <li> 
+        ///  <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation:
+        /// </para>
+        ///  </note> <ul> <li> 
         /// <para>
         /// ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of
         /// accounts in an organization. <b>Note</b>: deleted and closed accounts still count
@@ -5265,7 +6007,12 @@ namespace Amazon.Organizations
         /// of the request parameters. This exception includes a reason that contains additional
         /// information about the violated limit:
         /// 
-        ///  <ul> <li> 
+        ///  <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation:
+        /// </para>
+        ///  </note> <ul> <li> 
         /// <para>
         /// INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization,
         /// or email) as a party.
@@ -5462,14 +6209,14 @@ namespace Amazon.Organizations
         /// attempting to removing the last SCP from an OU or root, inviting or creating too many
         /// accounts to the organization, or attaching too many policies to an account, OU, or
         /// root. This exception includes a reason that contains additional information about
-        /// the violated limit.
+        /// the violated limit:
         /// 
-        ///  <note> 
+        ///   <note> 
         /// <para>
         /// Some of the reasons in the following list might not be applicable to this specific
         /// API or operation:
         /// </para>
-        ///  </note>  <ul> <li> 
+        ///  </note> <ul> <li> 
         /// <para>
         /// ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of
         /// accounts in an organization. If you need more accounts, contact AWS Support to request
@@ -5583,7 +6330,12 @@ namespace Amazon.Organizations
         /// of the request parameters. This exception includes a reason that contains additional
         /// information about the violated limit:
         /// 
-        ///  <ul> <li> 
+        ///  <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation:
+        /// </para>
+        ///  </note> <ul> <li> 
         /// <para>
         /// INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization,
         /// or email) as a party.
@@ -5747,7 +6499,12 @@ namespace Amazon.Organizations
         /// of the request parameters. This exception includes a reason that contains additional
         /// information about the violated limit:
         /// 
-        ///  <ul> <li> 
+        ///  <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation:
+        /// </para>
+        ///  </note> <ul> <li> 
         /// <para>
         /// INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization,
         /// or email) as a party.
@@ -5909,7 +6666,12 @@ namespace Amazon.Organizations
         /// of the request parameters. This exception includes a reason that contains additional
         /// information about the violated limit:
         /// 
-        ///  <ul> <li> 
+        ///  <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation:
+        /// </para>
+        ///  </note> <ul> <li> 
         /// <para>
         /// INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization,
         /// or email) as a party.
@@ -6042,6 +6804,298 @@ namespace Amazon.Organizations
 
         #endregion
         
+        #region  ListAWSServiceAccessForOrganization
+
+        /// <summary>
+        /// Returns a list of the AWS services that you enabled to integrate with your organization.
+        /// After a service on this list creates the resources that it requires for the integration,
+        /// it can perform operations on your organization and its accounts.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about integrating other services with AWS Organizations, including
+        /// the list of services that currently work with Organizations, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Integrating
+        /// AWS Organizations with Other AWS Services</a> in the <i>AWS Organizations User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation can be called only from the organization's master account.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAWSServiceAccessForOrganization service method.</param>
+        /// 
+        /// <returns>The response from the ListAWSServiceAccessForOrganization service method, as returned by Organizations.</returns>
+        /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The user or role that
+        /// is making the request must have at least one IAM permissions policy attached that
+        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// Management</a> in the <i>IAM User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
+        /// Your account is not a member of an organization. To make this request, you must use
+        /// the credentials of an account that belongs to an organization.
+        /// </exception>
+        /// <exception cref="Amazon.Organizations.Model.ConstraintViolationException">
+        /// Performing this operation violates a minimum or maximum value limit. For example,
+        /// attempting to removing the last SCP from an OU or root, inviting or creating too many
+        /// accounts to the organization, or attaching too many policies to an account, OU, or
+        /// root. This exception includes a reason that contains additional information about
+        /// the violated limit:
+        /// 
+        ///   <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation:
+        /// </para>
+        ///  </note> <ul> <li> 
+        /// <para>
+        /// ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of
+        /// accounts in an organization. If you need more accounts, contact AWS Support to request
+        /// an increase in your limit. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Or, The number of invitations that you tried to send would cause you to exceed the
+        /// limit of accounts in your organization. Send fewer invitations, or contact AWS Support
+        /// to request an increase in the number of accounts.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Note</b>: deleted and closed accounts still count toward your limit.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// If you get an exception that indicates that you exceeded your account limits for the
+        /// organization or that you can"t add an account because your organization is still initializing,
+        /// please contact <a href="https://console.aws.amazon.com/support/home#/"> AWS Customer
+        /// Support</a>.
+        /// </para>
+        ///  </important> </li> <li> 
+        /// <para>
+        /// HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes you
+        /// can send in one day.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// OU_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of organizational units
+        /// you can have in an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an organizational unit tree that
+        /// is too many levels deep.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that
+        /// you can have in an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to exceed the number of policies
+        /// of a certain type that can be attached to an entity at one time.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to detach a policy from an
+        /// entity that would cause the entity to have fewer than the minimum number of policies
+        /// of a certain type required.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization
+        /// that does not yet have enough information to exist as a stand-alone account. This
+        /// account requires you to first agree to the AWS Customer Agreement. Follow the steps
+        /// at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account
+        /// from the organization that does not yet have enough information to exist as a stand-alone
+        /// account. This account requires you to first complete phone verification. Follow the
+        /// steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this account,
+        /// you first must associate a payment instrument, such as a credit card, with the account.
+        /// Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member
+        /// account, you first must associate a payment instrument, such as a credit card, with
+        /// the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of accounts
+        /// that you can create in one day.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization,
+        /// you first must migrate the organization's master account to the marketplace that corresponds
+        /// to the master account's address. For example, accounts with India addresses must be
+        /// associated with the AISPL marketplace. All accounts in an organization must be associated
+        /// with the same marketplace.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide
+        /// contact a valid address and phone number for the master account. Then try the operation
+        /// again.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.Organizations.Model.InvalidInputException">
+        /// The requested operation failed because you provided invalid values for one or more
+        /// of the request parameters. This exception includes a reason that contains additional
+        /// information about the violated limit:
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation:
+        /// </para>
+        ///  </note> <ul> <li> 
+        /// <para>
+        /// INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization,
+        /// or email) as a party.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_SYNTAX_ORGANIZATION_ARN: You specified an invalid ARN for the organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_SYNTAX_POLICY_ID: You specified an invalid policy ID. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_ENUM: You specified a value that is not valid for that parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one
+        /// invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MAX_LENGTH_EXCEEDED: You provided a string parameter that is longer than allowed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MAX_VALUE_EXCEEDED: You provided a numeric parameter that has a larger value than
+        /// allowed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MIN_LENGTH_EXCEEDED: You provided a string parameter that is shorter than allowed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MIN_VALUE_EXCEEDED: You provided a numeric parameter that has a smaller value than
+        /// allowed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// IMMUTABLE_POLICY: You specified a policy that is managed by AWS and cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_PATTERN: You provided a value that doesn't match the required pattern.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_PATTERN_TARGET_ID: You specified a policy target ID that doesn't match the
+        /// required pattern.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INPUT_REQUIRED: You must include a value for all required parameters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_PAGINATION_TOKEN: Get the value for the NextToken parameter from the response
+        /// to a previous call of the operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MAX_FILTER_LIMIT_EXCEEDED: You can specify only one filter parameter for the operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
+        /// in the same root.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.Organizations.Model.ServiceException">
+        /// AWS Organizations can't complete your request because of an internal service error.
+        /// Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
+        /// You've sent too many requests in too short a period of time. The limit helps protect
+        /// against denial-of-service attacks. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListAWSServiceAccessForOrganization">REST API Reference for ListAWSServiceAccessForOrganization Operation</seealso>
+        public virtual ListAWSServiceAccessForOrganizationResponse ListAWSServiceAccessForOrganization(ListAWSServiceAccessForOrganizationRequest request)
+        {
+            var marshaller = new ListAWSServiceAccessForOrganizationRequestMarshaller();
+            var unmarshaller = ListAWSServiceAccessForOrganizationResponseUnmarshaller.Instance;
+
+            return Invoke<ListAWSServiceAccessForOrganizationRequest,ListAWSServiceAccessForOrganizationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAWSServiceAccessForOrganization operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAWSServiceAccessForOrganization operation on AmazonOrganizationsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAWSServiceAccessForOrganization
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListAWSServiceAccessForOrganization">REST API Reference for ListAWSServiceAccessForOrganization Operation</seealso>
+        public virtual IAsyncResult BeginListAWSServiceAccessForOrganization(ListAWSServiceAccessForOrganizationRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListAWSServiceAccessForOrganizationRequestMarshaller();
+            var unmarshaller = ListAWSServiceAccessForOrganizationResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListAWSServiceAccessForOrganizationRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAWSServiceAccessForOrganization operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAWSServiceAccessForOrganization.</param>
+        /// 
+        /// <returns>Returns a  ListAWSServiceAccessForOrganizationResult from Organizations.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListAWSServiceAccessForOrganization">REST API Reference for ListAWSServiceAccessForOrganization Operation</seealso>
+        public virtual ListAWSServiceAccessForOrganizationResponse EndListAWSServiceAccessForOrganization(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAWSServiceAccessForOrganizationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListChildren
 
         /// <summary>
@@ -6072,7 +7126,12 @@ namespace Amazon.Organizations
         /// of the request parameters. This exception includes a reason that contains additional
         /// information about the violated limit:
         /// 
-        ///  <ul> <li> 
+        ///  <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation:
+        /// </para>
+        ///  </note> <ul> <li> 
         /// <para>
         /// INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization,
         /// or email) as a party.
@@ -6234,7 +7293,12 @@ namespace Amazon.Organizations
         /// of the request parameters. This exception includes a reason that contains additional
         /// information about the violated limit:
         /// 
-        ///  <ul> <li> 
+        ///  <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation:
+        /// </para>
+        ///  </note> <ul> <li> 
         /// <para>
         /// INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization,
         /// or email) as a party.
@@ -6399,7 +7463,12 @@ namespace Amazon.Organizations
         /// of the request parameters. This exception includes a reason that contains additional
         /// information about the violated limit:
         /// 
-        ///  <ul> <li> 
+        ///  <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation:
+        /// </para>
+        ///  </note> <ul> <li> 
         /// <para>
         /// INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization,
         /// or email) as a party.
@@ -6570,7 +7639,12 @@ namespace Amazon.Organizations
         /// of the request parameters. This exception includes a reason that contains additional
         /// information about the violated limit:
         /// 
-        ///  <ul> <li> 
+        ///  <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation:
+        /// </para>
+        ///  </note> <ul> <li> 
         /// <para>
         /// INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization,
         /// or email) as a party.
@@ -6728,7 +7802,12 @@ namespace Amazon.Organizations
         /// of the request parameters. This exception includes a reason that contains additional
         /// information about the violated limit:
         /// 
-        ///  <ul> <li> 
+        ///  <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation:
+        /// </para>
+        ///  </note> <ul> <li> 
         /// <para>
         /// INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization,
         /// or email) as a party.
@@ -6900,7 +7979,12 @@ namespace Amazon.Organizations
         /// of the request parameters. This exception includes a reason that contains additional
         /// information about the violated limit:
         /// 
-        ///  <ul> <li> 
+        ///  <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation:
+        /// </para>
+        ///  </note> <ul> <li> 
         /// <para>
         /// INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization,
         /// or email) as a party.
@@ -7058,7 +8142,12 @@ namespace Amazon.Organizations
         /// of the request parameters. This exception includes a reason that contains additional
         /// information about the violated limit:
         /// 
-        ///  <ul> <li> 
+        ///  <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation:
+        /// </para>
+        ///  </note> <ul> <li> 
         /// <para>
         /// INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization,
         /// or email) as a party.
@@ -7218,7 +8307,12 @@ namespace Amazon.Organizations
         /// of the request parameters. This exception includes a reason that contains additional
         /// information about the violated limit:
         /// 
-        ///  <ul> <li> 
+        ///  <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation:
+        /// </para>
+        ///  </note> <ul> <li> 
         /// <para>
         /// INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization,
         /// or email) as a party.
@@ -7379,7 +8473,12 @@ namespace Amazon.Organizations
         /// of the request parameters. This exception includes a reason that contains additional
         /// information about the violated limit:
         /// 
-        ///  <ul> <li> 
+        ///  <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation:
+        /// </para>
+        ///  </note> <ul> <li> 
         /// <para>
         /// INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization,
         /// or email) as a party.
@@ -7537,7 +8636,12 @@ namespace Amazon.Organizations
         /// of the request parameters. This exception includes a reason that contains additional
         /// information about the violated limit:
         /// 
-        ///  <ul> <li> 
+        ///  <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation:
+        /// </para>
+        ///  </note> <ul> <li> 
         /// <para>
         /// INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization,
         /// or email) as a party.
@@ -7714,7 +8818,12 @@ namespace Amazon.Organizations
         /// of the request parameters. This exception includes a reason that contains additional
         /// information about the violated limit:
         /// 
-        ///  <ul> <li> 
+        ///  <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation:
+        /// </para>
+        ///  </note> <ul> <li> 
         /// <para>
         /// INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization,
         /// or email) as a party.
@@ -7914,14 +9023,14 @@ namespace Amazon.Organizations
         /// attempting to removing the last SCP from an OU or root, inviting or creating too many
         /// accounts to the organization, or attaching too many policies to an account, OU, or
         /// root. This exception includes a reason that contains additional information about
-        /// the violated limit.
+        /// the violated limit:
         /// 
-        ///  <note> 
+        ///   <note> 
         /// <para>
         /// Some of the reasons in the following list might not be applicable to this specific
         /// API or operation:
         /// </para>
-        ///  </note>  <ul> <li> 
+        ///  </note> <ul> <li> 
         /// <para>
         /// ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of
         /// accounts in an organization. If you need more accounts, contact AWS Support to request
@@ -8035,7 +9144,12 @@ namespace Amazon.Organizations
         /// of the request parameters. This exception includes a reason that contains additional
         /// information about the violated limit:
         /// 
-        ///  <ul> <li> 
+        ///  <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation:
+        /// </para>
+        ///  </note> <ul> <li> 
         /// <para>
         /// INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization,
         /// or email) as a party.
@@ -8207,7 +9321,12 @@ namespace Amazon.Organizations
         /// of the request parameters. This exception includes a reason that contains additional
         /// information about the violated limit:
         /// 
-        ///  <ul> <li> 
+        ///  <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation:
+        /// </para>
+        ///  </note> <ul> <li> 
         /// <para>
         /// INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization,
         /// or email) as a party.
@@ -8374,14 +9493,14 @@ namespace Amazon.Organizations
         /// attempting to removing the last SCP from an OU or root, inviting or creating too many
         /// accounts to the organization, or attaching too many policies to an account, OU, or
         /// root. This exception includes a reason that contains additional information about
-        /// the violated limit.
+        /// the violated limit:
         /// 
-        ///  <note> 
+        ///   <note> 
         /// <para>
         /// Some of the reasons in the following list might not be applicable to this specific
         /// API or operation:
         /// </para>
-        ///  </note>  <ul> <li> 
+        ///  </note> <ul> <li> 
         /// <para>
         /// ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of
         /// accounts in an organization. If you need more accounts, contact AWS Support to request
@@ -8498,7 +9617,12 @@ namespace Amazon.Organizations
         /// of the request parameters. This exception includes a reason that contains additional
         /// information about the violated limit:
         /// 
-        ///  <ul> <li> 
+        ///  <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation:
+        /// </para>
+        ///  </note> <ul> <li> 
         /// <para>
         /// INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization,
         /// or email) as a party.

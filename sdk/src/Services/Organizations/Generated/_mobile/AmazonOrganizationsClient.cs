@@ -120,11 +120,9 @@ namespace Amazon.Organizations
     ///  
     /// <para>
     /// We welcome your feedback. Send your comments to <a href="mailto:feedback-awsorganizations@amazon.com">feedback-awsorganizations@amazon.com</a>
-    /// or post your feedback and questions in our private <a href="http://forums.aws.amazon.com/forum.jspa?forumID=219">AWS
-    /// Organizations support forum</a>. If you don't have access to the forum, send a request
-    /// for access to the email address, along with your forum user ID. For more information
-    /// about the AWS support forums, see <a href="http://forums.aws.amazon.com/help.jspa">Forums
-    /// Help</a>.
+    /// or post your feedback and questions in the <a href="http://forums.aws.amazon.com/forum.jspa?forumID=219">AWS
+    /// Organizations support forum</a>. For more information about the AWS support forums,
+    /// see <a href="http://forums.aws.amazon.com/help.jspa">Forums Help</a>.
     /// </para>
     ///  
     /// <para>
@@ -966,6 +964,38 @@ namespace Amazon.Organizations
 
         #endregion
         
+        #region  DisableAWSServiceAccess
+
+        internal virtual DisableAWSServiceAccessResponse DisableAWSServiceAccess(DisableAWSServiceAccessRequest request)
+        {
+            var marshaller = new DisableAWSServiceAccessRequestMarshaller();
+            var unmarshaller = DisableAWSServiceAccessResponseUnmarshaller.Instance;
+
+            return Invoke<DisableAWSServiceAccessRequest,DisableAWSServiceAccessResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisableAWSServiceAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisableAWSServiceAccess operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DisableAWSServiceAccess">REST API Reference for DisableAWSServiceAccess Operation</seealso>
+        public virtual Task<DisableAWSServiceAccessResponse> DisableAWSServiceAccessAsync(DisableAWSServiceAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DisableAWSServiceAccessRequestMarshaller();
+            var unmarshaller = DisableAWSServiceAccessResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisableAWSServiceAccessRequest,DisableAWSServiceAccessResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisablePolicyType
 
         internal virtual DisablePolicyTypeResponse DisablePolicyType(DisablePolicyTypeRequest request)
@@ -1025,6 +1055,38 @@ namespace Amazon.Organizations
             var unmarshaller = EnableAllFeaturesResponseUnmarshaller.Instance;
 
             return InvokeAsync<EnableAllFeaturesRequest,EnableAllFeaturesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  EnableAWSServiceAccess
+
+        internal virtual EnableAWSServiceAccessResponse EnableAWSServiceAccess(EnableAWSServiceAccessRequest request)
+        {
+            var marshaller = new EnableAWSServiceAccessRequestMarshaller();
+            var unmarshaller = EnableAWSServiceAccessResponseUnmarshaller.Instance;
+
+            return Invoke<EnableAWSServiceAccessRequest,EnableAWSServiceAccessResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableAWSServiceAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EnableAWSServiceAccess operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnableAWSServiceAccess">REST API Reference for EnableAWSServiceAccess Operation</seealso>
+        public virtual Task<EnableAWSServiceAccessResponse> EnableAWSServiceAccessAsync(EnableAWSServiceAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new EnableAWSServiceAccessRequestMarshaller();
+            var unmarshaller = EnableAWSServiceAccessResponseUnmarshaller.Instance;
+
+            return InvokeAsync<EnableAWSServiceAccessRequest,EnableAWSServiceAccessResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1185,6 +1247,38 @@ namespace Amazon.Organizations
             var unmarshaller = ListAccountsForParentResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListAccountsForParentRequest,ListAccountsForParentResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListAWSServiceAccessForOrganization
+
+        internal virtual ListAWSServiceAccessForOrganizationResponse ListAWSServiceAccessForOrganization(ListAWSServiceAccessForOrganizationRequest request)
+        {
+            var marshaller = new ListAWSServiceAccessForOrganizationRequestMarshaller();
+            var unmarshaller = ListAWSServiceAccessForOrganizationResponseUnmarshaller.Instance;
+
+            return Invoke<ListAWSServiceAccessForOrganizationRequest,ListAWSServiceAccessForOrganizationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAWSServiceAccessForOrganization operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAWSServiceAccessForOrganization operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListAWSServiceAccessForOrganization">REST API Reference for ListAWSServiceAccessForOrganization Operation</seealso>
+        public virtual Task<ListAWSServiceAccessForOrganizationResponse> ListAWSServiceAccessForOrganizationAsync(ListAWSServiceAccessForOrganizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListAWSServiceAccessForOrganizationRequestMarshaller();
+            var unmarshaller = ListAWSServiceAccessForOrganizationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListAWSServiceAccessForOrganizationRequest,ListAWSServiceAccessForOrganizationResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
