@@ -29,9 +29,30 @@ namespace Amazon.OpsWorksCM.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociateNode operation.
-    /// Associates a new node with the Chef server. This command is an alternative to <code>knife
-    /// bootstrap</code>. For more information about how to disassociate a node, see <a>DisassociateNode</a>.
+    /// Associates a new node with the server. For more information about how to disassociate
+    /// a node, see <a>DisassociateNode</a>.
     /// 
+    ///  
+    /// <para>
+    ///  On a Chef server: This command is an alternative to <code>knife bootstrap</code>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  Example (Chef): <code>aws opsworks-cm associate-node --server-name <i>MyServer</i>
+    /// --node-name <i>MyManagedNode</i> --engine-attributes "Name=<i>CHEF_ORGANIZATION</i>,Value=default"
+    /// "Name=<i>CHEF_NODE_PUBLIC_KEY</i>,Value=<i>public-key-pem</i>"</code> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  On a Puppet server, this command is an alternative to the <code>puppet cert sign</code>
+    /// command that signs a Puppet node CSR. 
+    /// </para>
+    ///  
+    /// <para>
+    ///  Example (Chef): <code>aws opsworks-cm associate-node --server-name <i>MyServer</i>
+    /// --node-name <i>MyManagedNode</i> --engine-attributes "Name=<i>PUPPET_NODE_CSR</i>,Value=<i>csr-pem</i>"</code>
+    /// 
+    /// </para>
     ///  
     /// <para>
     ///  A node can can only be associated with servers that are in a <code>HEALTHY</code>
@@ -40,12 +61,6 @@ namespace Amazon.OpsWorksCM.Model
     /// when parameters of the request are not valid. The AssociateNode API call can be integrated
     /// into Auto Scaling configurations, AWS Cloudformation templates, or the user data of
     /// a server's instance. 
-    /// </para>
-    ///  
-    /// <para>
-    ///  Example: <code>aws opsworks-cm associate-node --server-name <i>MyServer</i> --node-name
-    /// <i>MyManagedNode</i> --engine-attributes "Name=<i>MyOrganization</i>,Value=default"
-    /// "Name=<i>Chef_node_public_key</i>,Value=<i>Public_key_contents</i>"</code> 
     /// </para>
     /// </summary>
     public partial class AssociateNodeRequest : AmazonOpsWorksCMRequest
@@ -59,7 +74,8 @@ namespace Amazon.OpsWorksCM.Model
         /// <para>
         /// Engine attributes used for associating the node. 
         /// </para>
-        ///  <p class="title"> <b>Attributes accepted in a AssociateNode request:</b> 
+        ///  <p class="title"> <b>Attributes accepted in a AssociateNode request for Chef</b>
+        /// 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -70,6 +86,14 @@ namespace Amazon.OpsWorksCM.Model
         /// <para>
         ///  <code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required
         /// for the <code>chef-client</code> agent to access the Chef API. 
+        /// </para>
+        ///  </li> </ul> <p class="title"> <b>Attributes accepted in a AssociateNode request for
+        /// Puppet</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>PUPPET_NODE_CSR</code>: A PEM-formatted certificate-signing request (CSR) that
+        /// is created by the node. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -88,7 +112,7 @@ namespace Amazon.OpsWorksCM.Model
         /// <summary>
         /// Gets and sets the property NodeName. 
         /// <para>
-        /// The name of the Chef client node. 
+        /// The name of the node. 
         /// </para>
         /// </summary>
         public string NodeName

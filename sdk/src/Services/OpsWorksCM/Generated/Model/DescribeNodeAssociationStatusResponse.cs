@@ -38,7 +38,8 @@ namespace Amazon.OpsWorksCM.Model
         /// <summary>
         /// Gets and sets the property EngineAttributes. 
         /// <para>
-        /// Attributes specific to the node association. 
+        /// Attributes specific to the node association. In Puppet, the attibute PUPPET_NODE_CERT
+        /// contains the signed certificate (the result of the CSR). 
         /// </para>
         /// </summary>
         public List<EngineAttribute> EngineAttributes

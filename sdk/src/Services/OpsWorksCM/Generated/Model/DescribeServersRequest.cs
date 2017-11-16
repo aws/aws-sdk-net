@@ -30,8 +30,8 @@ namespace Amazon.OpsWorksCM.Model
     /// <summary>
     /// Container for the parameters to the DescribeServers operation.
     /// Lists all configuration management servers that are identified with your account.
-    /// Only the stored results from Amazon DynamoDB are returned. AWS OpsWorks for Chef Automate
-    /// does not query other services. 
+    /// Only the stored results from Amazon DynamoDB are returned. AWS OpsWorks CM does not
+    /// query other services. 
     /// 
     ///  
     /// <para>

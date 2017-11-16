@@ -169,8 +169,8 @@ namespace Amazon.OpsWorksCM.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// The engine type of the server. The valid value in this release is <code>Chef</code>.
-        /// 
+        /// The engine type of the server. Valid values in this release include <code>Chef</code>
+        /// and <code>Puppet</code>. 
         /// </para>
         /// </summary>
         public string Engine
@@ -189,10 +189,11 @@ namespace Amazon.OpsWorksCM.Model
         /// Gets and sets the property EngineAttributes. 
         /// <para>
         /// The response of a createServer() request returns the master credential to access the
-        /// server in EngineAttributes. These credentials are not stored by AWS OpsWorks for Chef
-        /// Automate; they are returned only as part of the result of createServer(). 
+        /// server in EngineAttributes. These credentials are not stored by AWS OpsWorks CM; they
+        /// are returned only as part of the result of createServer(). 
         /// </para>
-        ///  <p class="title"> <b>Attributes returned in a createServer response:</b> 
+        ///  <p class="title"> <b>Attributes returned in a createServer response for Chef</b>
+        /// 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -206,6 +207,20 @@ namespace Amazon.OpsWorksCM.Model
         /// Chef starter kit, which includes a README, a configuration file, and the required
         /// RSA private key. Save this file, unzip it, and then change to the directory where
         /// you've unzipped the file contents. From this directory, you can run Knife commands.
+        /// </para>
+        ///  </li> </ul> <p class="title"> <b>Attributes returned in a createServer response for
+        /// Puppet</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>PUPPET_STARTER_KIT</code>: A base64-encoded ZIP file. The ZIP file contains
+        /// a Puppet starter kit, including a README and a required private key. Save this file,
+        /// unzip it, and then change to the directory where you've unzipped the file contents.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>PUPPET_ADMIN_PASSWORD</code>: An administrator password that you can use to
+        /// sign in to the Puppet Enterprise console after the server is online.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -224,8 +239,8 @@ namespace Amazon.OpsWorksCM.Model
         /// <summary>
         /// Gets and sets the property EngineModel. 
         /// <para>
-        /// The engine model of the server. The valid value in this release is <code>Single</code>.
-        /// 
+        /// The engine model of the server. Valid values in this release include <code>Monolithic</code>
+        /// for Puppet and <code>Single</code> for Chef. 
         /// </para>
         /// </summary>
         public string EngineModel
@@ -243,8 +258,9 @@ namespace Amazon.OpsWorksCM.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// The engine version of the server. Because Chef is the engine available in this release,
-        /// the valid value for EngineVersion is <code>12</code>. 
+        /// The engine version of the server. For a Chef server, the valid value for EngineVersion
+        /// is currently <code>12</code>. For a Puppet server, the valid value is <code>2017</code>.
+        /// 
         /// </para>
         /// </summary>
         public string EngineVersion

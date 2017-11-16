@@ -29,10 +29,10 @@ namespace Amazon.OpsWorksCM.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociateNode operation.
-    /// Disassociates a node from a Chef server, and removes the node from the Chef server's
-    /// managed nodes. After a node is disassociated, the node key pair is no longer valid
-    /// for accessing the Chef API. For more information about how to associate a node, see
-    /// <a>AssociateNode</a>. 
+    /// Disassociates a node from an AWS OpsWorks CM server, and removes the node from the
+    /// server's managed nodes. After a node is disassociated, the node key pair is no longer
+    /// valid for accessing the configuration manager's API. For more information about how
+    /// to associate a node, see <a>AssociateNode</a>. 
     /// 
     ///  
     /// <para>
@@ -51,9 +51,11 @@ namespace Amazon.OpsWorksCM.Model
         /// <summary>
         /// Gets and sets the property EngineAttributes. 
         /// <para>
-        /// Engine attributes used for disassociating the node. 
+        /// Engine attributes that are used for disassociating the node. No attributes are required
+        /// for Puppet. 
         /// </para>
-        ///  <p class="title"> <b>Attributes accepted in a DisassociateNode request:</b> 
+        ///  <p class="title"> <b>Attributes required in a DisassociateNode request for Chef</b>
+        /// 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -77,7 +79,7 @@ namespace Amazon.OpsWorksCM.Model
         /// <summary>
         /// Gets and sets the property NodeName. 
         /// <para>
-        /// The name of the Chef client node. 
+        /// The name of the client node. 
         /// </para>
         /// </summary>
         public string NodeName

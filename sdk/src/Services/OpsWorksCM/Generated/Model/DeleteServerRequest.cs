@@ -29,7 +29,7 @@ namespace Amazon.OpsWorksCM.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteServer operation.
-    /// Deletes the server and the underlying AWS CloudFormation stack (including the server's
+    /// Deletes the server and the underlying AWS CloudFormation stacks (including the server's
     /// EC2 instance). When you run this command, the server state is updated to <code>DELETING</code>.
     /// After the server is deleted, it is no longer returned by <code>DescribeServer</code>
     /// requests. If the AWS CloudFormation stack cannot be deleted, the server cannot be

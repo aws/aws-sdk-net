@@ -466,8 +466,8 @@ namespace Amazon.OpsWorksCM.Model
         /// <summary>
         /// Gets and sets the property ToolsVersion. 
         /// <para>
-        ///  The version of AWS OpsWorks for Chef Automate-specific tools that is obtained from
-        /// the server when the backup is created. 
+        ///  The version of AWS OpsWorks CM-specific tools that is obtained from the server when
+        /// the backup is created. 
         /// </para>
         /// </summary>
         public string ToolsVersion

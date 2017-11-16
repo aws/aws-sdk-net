@@ -63,7 +63,14 @@ namespace Amazon.OpsWorksCM.Model
         /// <summary>
         /// Gets and sets the property Servers. 
         /// <para>
-        /// Contains the response to a <code>DescribeServers</code> request. 
+        /// Contains the response to a <code>DescribeServers</code> request.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <i>For Puppet Server:</i> <code>DescribeServersResponse$Servers$EngineAttributes</code>
+        /// contains PUPPET_API_CA_CERT. This is the PEM-encoded CA certificate that is used by
+        /// the Puppet API over TCP port number 8140. The CA certificate is also used to sign
+        /// node certificates.
         /// </para>
         /// </summary>
         public List<CMServer> Servers

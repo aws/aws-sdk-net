@@ -29,10 +29,10 @@ namespace Amazon.OpsWorksCM
     /// <summary>
     /// Interface for accessing OpsWorksCM
     ///
-    /// AWS OpsWorks for Chef Automate 
+    /// AWS OpsWorks CM 
     /// <para>
-    ///  AWS OpsWorks for Chef Automate is a service that runs and manages configuration management
-    /// servers. 
+    ///  AWS OpsWorks for configuration management (CM) is a service that runs and manages
+    /// configuration management servers. 
     /// </para>
     ///  
     /// <para>
@@ -41,36 +41,36 @@ namespace Amazon.OpsWorksCM
     ///  <ul> <li> 
     /// <para>
     ///  <b>Server</b>: A configuration management server that can be highly-available. The
-    /// configuration manager runs on your instances by using various AWS services, such as
-    /// Amazon Elastic Compute Cloud (EC2), and potentially Amazon Relational Database Service
-    /// (RDS). A server is a generic abstraction over the configuration manager that you want
-    /// to use, much like Amazon RDS. In AWS OpsWorks for Chef Automate, you do not start
-    /// or stop servers. After you create servers, they continue to run until they are deleted.
+    /// configuration management server runs on an Amazon Elastic Compute Cloud (EC2) instance,
+    /// and may use various other AWS services, such as Amazon Relational Database Service
+    /// (RDS) and Elastic Load Balancing. A server is a generic abstraction over the configuration
+    /// manager that you want to use, much like Amazon RDS. In AWS OpsWorks CM, you do not
+    /// start or stop servers. After you create servers, they continue to run until they are
+    /// deleted.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>Engine</b>: The specific configuration manager that you want to use (such as <code>Chef</code>)
-    /// is the engine.
+    ///  <b>Engine</b>: The engine is the specific configuration manager that you want to
+    /// use. Valid values in this release include <code>Chef</code> and <code>Puppet</code>.
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <b>Backup</b>: This is an application-level backup of the data that the configuration
-    /// manager stores. A backup creates a .tar.gz file that is stored in an Amazon Simple
-    /// Storage Service (S3) bucket in your account. AWS OpsWorks for Chef Automate creates
-    /// the S3 bucket when you launch the first instance. A backup maintains a snapshot of
-    /// all of a server's important attributes at the time of the backup.
+    /// manager stores. AWS OpsWorks CM creates an S3 bucket for backups when you launch the
+    /// first server. A backup maintains a snapshot of a server's configuration-related attributes
+    /// at the time the backup starts.
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <b>Events</b>: Events are always related to a server. Events are written during server
-    /// creation, when health checks run, when backups are created, etc. When you delete a
-    /// server, the server's events are also deleted.
+    /// creation, when health checks run, when backups are created, when system maintenance
+    /// is performed, etc. When you delete a server, the server's events are also deleted.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>AccountAttributes</b>: Every account has attributes that are assigned in the AWS
-    /// OpsWorks for Chef Automate database. These attributes store information about configuration
-    /// limits (servers, backups, etc.) and your customer account. 
+    ///  <b>Account attributes</b>: Every account has attributes that are assigned in the
+    /// AWS OpsWorks CM database. These attributes store information about configuration limits
+    /// (servers, backups, etc.) and your customer account. 
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -78,9 +78,9 @@ namespace Amazon.OpsWorksCM
     /// </para>
     ///  
     /// <para>
-    /// AWS OpsWorks for Chef Automate supports the following endpoints, all HTTPS. You must
-    /// connect to one of the following endpoints. Chef servers can only be accessed or managed
-    /// within the endpoint in which they are created.
+    /// AWS OpsWorks CM supports the following endpoints, all HTTPS. You must connect to one
+    /// of the following endpoints. Your servers can only be accessed or managed within the
+    /// endpoint in which they are created.
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -112,9 +112,30 @@ namespace Amazon.OpsWorksCM
 
 
         /// <summary>
-        /// Associates a new node with the Chef server. This command is an alternative to <code>knife
-        /// bootstrap</code>. For more information about how to disassociate a node, see <a>DisassociateNode</a>.
+        /// Associates a new node with the server. For more information about how to disassociate
+        /// a node, see <a>DisassociateNode</a>.
         /// 
+        ///  
+        /// <para>
+        ///  On a Chef server: This command is an alternative to <code>knife bootstrap</code>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  Example (Chef): <code>aws opsworks-cm associate-node --server-name <i>MyServer</i>
+        /// --node-name <i>MyManagedNode</i> --engine-attributes "Name=<i>CHEF_ORGANIZATION</i>,Value=default"
+        /// "Name=<i>CHEF_NODE_PUBLIC_KEY</i>,Value=<i>public-key-pem</i>"</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  On a Puppet server, this command is an alternative to the <code>puppet cert sign</code>
+        /// command that signs a Puppet node CSR. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Example (Chef): <code>aws opsworks-cm associate-node --server-name <i>MyServer</i>
+        /// --node-name <i>MyManagedNode</i> --engine-attributes "Name=<i>PUPPET_NODE_CSR</i>,Value=<i>csr-pem</i>"</code>
+        /// 
+        /// </para>
         ///  
         /// <para>
         ///  A node can can only be associated with servers that are in a <code>HEALTHY</code>
@@ -123,12 +144,6 @@ namespace Amazon.OpsWorksCM
         /// when parameters of the request are not valid. The AssociateNode API call can be integrated
         /// into Auto Scaling configurations, AWS Cloudformation templates, or the user data of
         /// a server's instance. 
-        /// </para>
-        ///  
-        /// <para>
-        ///  Example: <code>aws opsworks-cm associate-node --server-name <i>MyServer</i> --node-name
-        /// <i>MyManagedNode</i> --engine-attributes "Name=<i>MyOrganization</i>,Value=default"
-        /// "Name=<i>Chef_node_public_key</i>,Value=<i>Public_key_contents</i>"</code> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateNode service method.</param>
@@ -270,16 +285,26 @@ namespace Amazon.OpsWorksCM
         ///  
         /// <para>
         ///  If you do not specify a security group by adding the <code>SecurityGroupIds</code>
-        /// parameter, AWS OpsWorks creates a new security group. The default security group opens
-        /// the Chef server to the world on TCP port 443. If a KeyName is present, AWS OpsWorks
-        /// enables SSH access. SSH is also open to the world on TCP port 22. 
+        /// parameter, AWS OpsWorks creates a new security group. 
         /// </para>
         ///  
         /// <para>
-        /// By default, the Chef Server is accessible from any IP address. We recommend that you
-        /// update your security group rules to allow access from known IP addresses and address
-        /// ranges only. To edit security group rules, open Security Groups in the navigation
-        /// pane of the EC2 management console. 
+        ///  <i>Chef Automate:</i> The default security group opens the Chef server to the world
+        /// on TCP port 443. If a KeyName is present, AWS OpsWorks enables SSH access. SSH is
+        /// also open to the world on TCP port 22. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <i>Puppet Enterprise:</i> The default security group opens TCP ports 22, 443, 4433,
+        /// 8140, 8142, 8143, and 8170. If a KeyName is present, AWS OpsWorks enables SSH access.
+        /// SSH is also open to the world on TCP port 22. 
+        /// </para>
+        ///  
+        /// <para>
+        /// By default, your server is accessible from any IP address. We recommend that you update
+        /// your security group rules to allow access from known IP addresses and address ranges
+        /// only. To edit security group rules, open Security Groups in the navigation pane of
+        /// the EC2 management console. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateServer service method.</param>
@@ -390,7 +415,7 @@ namespace Amazon.OpsWorksCM
 
 
         /// <summary>
-        /// Deletes the server and the underlying AWS CloudFormation stack (including the server's
+        /// Deletes the server and the underlying AWS CloudFormation stacks (including the server's
         /// EC2 instance). When you run this command, the server state is updated to <code>DELETING</code>.
         /// After the server is deleted, it is no longer returned by <code>DescribeServer</code>
         /// requests. If the AWS CloudFormation stack cannot be deleted, the server cannot be
@@ -683,8 +708,8 @@ namespace Amazon.OpsWorksCM
 
         /// <summary>
         /// Lists all configuration management servers that are identified with your account.
-        /// Only the stored results from Amazon DynamoDB are returned. AWS OpsWorks for Chef Automate
-        /// does not query other services. 
+        /// Only the stored results from Amazon DynamoDB are returned. AWS OpsWorks CM does not
+        /// query other services. 
         /// 
         ///  
         /// <para>
@@ -744,10 +769,10 @@ namespace Amazon.OpsWorksCM
 
 
         /// <summary>
-        /// Disassociates a node from a Chef server, and removes the node from the Chef server's
-        /// managed nodes. After a node is disassociated, the node key pair is no longer valid
-        /// for accessing the Chef API. For more information about how to associate a node, see
-        /// <a>AssociateNode</a>. 
+        /// Disassociates a node from an AWS OpsWorks CM server, and removes the node from the
+        /// server's managed nodes. After a node is disassociated, the node key pair is no longer
+        /// valid for accessing the configuration manager's API. For more information about how
+        /// to associate a node, see <a>AssociateNode</a>. 
         /// 
         ///  
         /// <para>
@@ -985,8 +1010,9 @@ namespace Amazon.OpsWorksCM
         /// <summary>
         /// Updates engine-specific attributes on a specified server. The server enters the <code>MODIFYING</code>
         /// state when this operation is in progress. Only one update can occur at a time. You
-        /// can use this command to reset the Chef server's private key (<code>CHEF_PIVOTAL_KEY</code>).
-        /// 
+        /// can use this command to reset a Chef server's private key (<code>CHEF_PIVOTAL_KEY</code>),
+        /// a Chef server's admin password (<code>CHEF_DELIVERY_ADMIN_PASSWORD</code>), or a Puppet
+        /// server's admin password (<code>PUPPET_ADMIN_PASSWORD</code>). 
         /// 
         ///  
         /// <para>
