@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Specifies a JDBC target for a crawl.
+    /// Specifies a JDBC data store to crawl.
     /// </summary>
     public partial class JdbcTarget
     {
@@ -39,7 +39,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property ConnectionName. 
         /// <para>
-        /// The name of the connection to use for the JDBC target.
+        /// The name of the connection to use to connect to the JDBC target.
         /// </para>
         /// </summary>
         public string ConnectionName
@@ -57,7 +57,9 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Exclusions. 
         /// <para>
-        /// A list of items to exclude from the crawl.
+        /// A list of glob patterns used to exclude from the crawl. For more information, see
+        /// <a href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables
+        /// with a Crawler</a>.
         /// </para>
         /// </summary>
         public List<string> Exclusions

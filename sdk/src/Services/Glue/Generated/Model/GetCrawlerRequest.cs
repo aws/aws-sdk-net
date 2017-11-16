@@ -29,7 +29,7 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Container for the parameters to the GetCrawler operation.
-    /// Retrieves metadata for a specified <code>Crawler</code>.
+    /// Retrieves metadata for a specified crawler.
     /// </summary>
     public partial class GetCrawlerRequest : AmazonGlueRequest
     {
@@ -38,7 +38,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name of the <code>Crawler</code> to retrieve metadata for.
+        /// Name of the crawler to retrieve metadata for.
         /// </para>
         /// </summary>
         public string Name

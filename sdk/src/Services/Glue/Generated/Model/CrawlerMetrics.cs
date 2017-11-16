@@ -98,7 +98,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property StillEstimating. 
         /// <para>
-        /// True if the crawler is estimating its 
+        /// True if the crawler is still estimating how long it will take to complete this run.
         /// </para>
         /// </summary>
         public bool StillEstimating
@@ -116,7 +116,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property TablesCreated. 
         /// <para>
-        /// A list of the tables created by this crawler.
+        /// The number of tables created by this crawler.
         /// </para>
         /// </summary>
         public int TablesCreated
@@ -134,7 +134,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property TablesDeleted. 
         /// <para>
-        /// A list of the tables deleted by this crawler.
+        /// The number of tables deleted by this crawler.
         /// </para>
         /// </summary>
         public int TablesDeleted
@@ -152,7 +152,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property TablesUpdated. 
         /// <para>
-        /// A list of the tables created by this crawler.
+        /// The number of tables updated by this crawler.
         /// </para>
         /// </summary>
         public int TablesUpdated

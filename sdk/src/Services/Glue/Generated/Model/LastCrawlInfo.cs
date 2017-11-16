@@ -42,7 +42,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property ErrorMessage. 
         /// <para>
-        /// Error information about the last crawl, if an error occurred.
+        /// If an error occurred, the error information about the last crawl.
         /// </para>
         /// </summary>
         public string ErrorMessage

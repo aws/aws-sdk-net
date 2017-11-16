@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Specifies crawler targets.
+    /// Specifies data stores to crawl.
     /// </summary>
     public partial class CrawlerTargets
     {
@@ -56,7 +56,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property S3Targets. 
         /// <para>
-        /// Specifies targets in AWS S3.
+        /// Specifies Amazon S3 targets.
         /// </para>
         /// </summary>
         public List<S3Target> S3Targets

@@ -28,20 +28,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Specifies a grok classifier to update when passed to <code>UpdateClassifier</code>.
+    /// Specifies an XML classifier to be updated.
     /// </summary>
-    public partial class UpdateGrokClassifierRequest
+    public partial class UpdateXMLClassifierRequest
     {
         private string _classification;
-        private string _customPatterns;
-        private string _grokPattern;
         private string _name;
+        private string _rowTag;
 
         /// <summary>
         /// Gets and sets the property Classification. 
         /// <para>
-        /// An identifier of the data format that the classifier matches, such as Twitter, JSON,
-        /// Omniture logs, Amazon CloudWatch Logs, and so on.
+        /// An identifier of the data format that the classifier matches.
         /// </para>
         /// </summary>
         public string Classification
@@ -57,45 +55,9 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CustomPatterns. 
-        /// <para>
-        /// Optional custom grok patterns used by this classifier.
-        /// </para>
-        /// </summary>
-        public string CustomPatterns
-        {
-            get { return this._customPatterns; }
-            set { this._customPatterns = value; }
-        }
-
-        // Check to see if CustomPatterns property is set
-        internal bool IsSetCustomPatterns()
-        {
-            return this._customPatterns != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property GrokPattern. 
-        /// <para>
-        /// The grok pattern used by this classifier.
-        /// </para>
-        /// </summary>
-        public string GrokPattern
-        {
-            get { return this._grokPattern; }
-            set { this._grokPattern = value; }
-        }
-
-        // Check to see if GrokPattern property is set
-        internal bool IsSetGrokPattern()
-        {
-            return this._grokPattern != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the <code>GrokClassifier</code>.
+        /// The name of the classifier.
         /// </para>
         /// </summary>
         public string Name
@@ -108,6 +70,26 @@ namespace Amazon.Glue.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RowTag. 
+        /// <para>
+        /// The XML tag designating the element that contains each record in an XML document being
+        /// parsed. Note that this cannot be an empty element. It must contain child elements
+        /// representing fields in the record.
+        /// </para>
+        /// </summary>
+        public string RowTag
+        {
+            get { return this._rowTag; }
+            set { this._rowTag = value; }
+        }
+
+        // Check to see if RowTag property is set
+        internal bool IsSetRowTag()
+        {
+            return this._rowTag != null;
         }
 
     }

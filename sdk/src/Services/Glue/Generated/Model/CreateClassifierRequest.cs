@@ -29,16 +29,18 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateClassifier operation.
-    /// Creates a <code>Classifier</code> in the user's account.
+    /// Creates a classifier in the user's account. This may be either a <code>GrokClassifier</code>
+    /// or an <code>XMLClassifier</code>.
     /// </summary>
     public partial class CreateClassifierRequest : AmazonGlueRequest
     {
         private CreateGrokClassifierRequest _grokClassifier;
+        private CreateXMLClassifierRequest _xmlClassifier;
 
         /// <summary>
         /// Gets and sets the property GrokClassifier. 
         /// <para>
-        /// A grok classifier to create.
+        /// A <code>GrokClassifier</code> object specifying the classifier to create.
         /// </para>
         /// </summary>
         public CreateGrokClassifierRequest GrokClassifier
@@ -51,6 +53,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetGrokClassifier()
         {
             return this._grokClassifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property XMLClassifier. 
+        /// <para>
+        /// An <code>XMLClassifier</code> object specifying the classifier to create.
+        /// </para>
+        /// </summary>
+        public CreateXMLClassifierRequest XMLClassifier
+        {
+            get { return this._xmlClassifier; }
+            set { this._xmlClassifier = value; }
+        }
+
+        // Check to see if XMLClassifier property is set
+        internal bool IsSetXMLClassifier()
+        {
+            return this._xmlClassifier != null;
         }
 
     }

@@ -29,7 +29,7 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteClassifier operation.
-    /// Removes a <code>Classifier</code> from the metadata store.
+    /// Removes a classifier from the Data Catalog.
     /// </summary>
     public partial class DeleteClassifierRequest : AmazonGlueRequest
     {
@@ -38,7 +38,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name of the <code>Classifier</code> to remove.
+        /// Name of the classifier to remove.
         /// </para>
         /// </summary>
         public string Name

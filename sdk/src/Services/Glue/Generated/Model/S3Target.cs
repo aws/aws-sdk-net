@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Specifies a crawler target in AWS S3.
+    /// Specifies a data store in Amazon S3.
     /// </summary>
     public partial class S3Target
     {
@@ -38,7 +38,9 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Exclusions. 
         /// <para>
-        /// A list of S3 objects to exclude from the crawl.
+        /// A list of glob patterns used to exclude from the crawl. For more information, see
+        /// <a href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables
+        /// with a Crawler</a>.
         /// </para>
         /// </summary>
         public List<string> Exclusions
@@ -56,7 +58,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Path. 
         /// <para>
-        /// The path to the S3 target.
+        /// The path to the Amazon S3 target.
         /// </para>
         /// </summary>
         public string Path

@@ -70,6 +70,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.Classifiers = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Configuration", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Configuration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CrawlElapsedTime", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;

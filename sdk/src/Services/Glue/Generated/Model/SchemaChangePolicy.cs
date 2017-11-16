@@ -38,7 +38,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property DeleteBehavior. 
         /// <para>
-        /// The deletion behavior.
+        /// The deletion behavior when the crawler finds a deleted object.
         /// </para>
         /// </summary>
         public DeleteBehavior DeleteBehavior
@@ -56,7 +56,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property UpdateBehavior. 
         /// <para>
-        /// The update behavior.
+        /// The update behavior when the crawler finds a changed schema.
         /// </para>
         /// </summary>
         public UpdateBehavior UpdateBehavior

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Classifier Object
+    /// Response Unmarshaller for XMLClassifier Object
     /// </summary>  
-    public class ClassifierUnmarshaller : IUnmarshaller<Classifier, XmlUnmarshallerContext>, IUnmarshaller<Classifier, JsonUnmarshallerContext>
+    public class XMLClassifierUnmarshaller : IUnmarshaller<XMLClassifier, XmlUnmarshallerContext>, IUnmarshaller<XMLClassifier, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Classifier IUnmarshaller<Classifier, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        XMLClassifier IUnmarshaller<XMLClassifier, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,51 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Classifier Unmarshall(JsonUnmarshallerContext context)
+        public XMLClassifier Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Classifier unmarshalledObject = new Classifier();
+            XMLClassifier unmarshalledObject = new XMLClassifier();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("GrokClassifier", targetDepth))
+                if (context.TestExpression("Classification", targetDepth))
                 {
-                    var unmarshaller = GrokClassifierUnmarshaller.Instance;
-                    unmarshalledObject.GrokClassifier = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Classification = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("XMLClassifier", targetDepth))
+                if (context.TestExpression("CreationTime", targetDepth))
                 {
-                    var unmarshaller = XMLClassifierUnmarshaller.Instance;
-                    unmarshalledObject.XMLClassifier = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LastUpdated", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.LastUpdated = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Name", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RowTag", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RowTag = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Version", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.Version = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +106,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         }
 
 
-        private static ClassifierUnmarshaller _instance = new ClassifierUnmarshaller();        
+        private static XMLClassifierUnmarshaller _instance = new XMLClassifierUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ClassifierUnmarshaller Instance
+        public static XMLClassifierUnmarshaller Instance
         {
             get
             {

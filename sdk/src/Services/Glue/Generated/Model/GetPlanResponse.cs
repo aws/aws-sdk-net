@@ -37,7 +37,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property PythonScript. 
         /// <para>
-        /// A python script to perform the mapping.
+        /// A Python script to perform the mapping.
         /// </para>
         /// </summary>
         public string PythonScript

@@ -28,20 +28,27 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Classifiers are written in Python and triggered during a Crawl Task. You can write
-    /// your own Classifiers to best categorize your data sources and specify the appropriate
-    /// schemas to use for them. A Classifier first checks whether a given file is in a format
-    /// it can handle, and then, if so, creates a schema in the form of a <code>StructType</code>
+    /// Classifiers are written in Python and triggered during a crawl task. You can write
+    /// your own classifiers to best categorize your data sources and specify the appropriate
+    /// schemas to use for them. A classifier checks whether a given file is in a format it
+    /// can handle, and if it is, the classifier creates a schema in the form of a <code>StructType</code>
     /// object that matches that data format.
+    /// 
+    ///  
+    /// <para>
+    /// A classifier can be either a <code>grok</code> classifier or an XML classifier, specified
+    /// in one or the other field of the <code>Classifier</code> object.
+    /// </para>
     /// </summary>
     public partial class Classifier
     {
         private GrokClassifier _grokClassifier;
+        private XMLClassifier _xmlClassifier;
 
         /// <summary>
         /// Gets and sets the property GrokClassifier. 
         /// <para>
-        /// A GrokClassifier object.
+        /// A <code>GrokClassifier</code> object.
         /// </para>
         /// </summary>
         public GrokClassifier GrokClassifier
@@ -54,6 +61,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetGrokClassifier()
         {
             return this._grokClassifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property XMLClassifier. 
+        /// <para>
+        /// An <code>XMLClassifier</code> object.
+        /// </para>
+        /// </summary>
+        public XMLClassifier XMLClassifier
+        {
+            get { return this._xmlClassifier; }
+            set { this._xmlClassifier = value; }
+        }
+
+        // Check to see if XMLClassifier property is set
+        internal bool IsSetXMLClassifier()
+        {
+            return this._xmlClassifier != null;
         }
 
     }

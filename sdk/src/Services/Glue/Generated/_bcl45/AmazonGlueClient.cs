@@ -535,7 +535,8 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Creates a <code>Classifier</code> in the user's account.
+        /// Creates a classifier in the user's account. This may be either a <code>GrokClassifier</code>
+        /// or an <code>XMLClassifier</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateClassifier service method.</param>
         /// 
@@ -631,9 +632,9 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Creates a new <code>Crawler</code> with specified targets, role, configuration, and
-        /// optional schedule. At least one crawl target must be specified, in either the <i>s3Targets</i>
-        /// or the <i>jdbcTargets</i> field.
+        /// Creates a new crawler with specified targets, role, configuration, and optional schedule.
+        /// At least one crawl target must be specified, in either the <i>s3Targets</i> or the
+        /// <i>jdbcTargets</i> field.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCrawler service method.</param>
         /// 
@@ -1128,7 +1129,7 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Removes a <code>Classifier</code> from the metadata store.
+        /// Removes a classifier from the Data Catalog.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteClassifier service method.</param>
         /// 
@@ -1218,8 +1219,7 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Removes a specified <code>Crawler</code> from the metadata store, unless the <code>Crawler</code>
-        /// state is <code>RUNNING</code>.
+        /// Removes a specified crawler from the Data Catalog, unless the crawler state is <code>RUNNING</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCrawler service method.</param>
         /// 
@@ -1666,7 +1666,7 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Retrieve a <code>Classifier</code> by name.
+        /// Retrieve a classifier by name.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetClassifier service method.</param>
         /// 
@@ -1711,7 +1711,7 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Lists all Classifier objects in the metadata store.
+        /// Lists all classifier objects in the Data Catalog.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetClassifiers service method.</param>
         /// 
@@ -1843,7 +1843,7 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Retrieves metadata for a specified <code>Crawler</code>.
+        /// Retrieves metadata for a specified crawler.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCrawler service method.</param>
         /// 
@@ -1930,7 +1930,7 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Retrieves metadata for all <code>Crawlers</code> defined in the customer account.
+        /// Retrieves metadata for all crawlers defined in the customer account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCrawlers service method.</param>
         /// 
@@ -2430,6 +2430,9 @@ namespace Amazon.Glue
         /// <param name="request">Container for the necessary parameters to execute the GetMapping service method.</param>
         /// 
         /// <returns>The response from the GetMapping service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.InternalServiceException">
         /// An internal service error occurred.
         /// </exception>
@@ -3076,8 +3079,8 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Starts a crawl using the specified <code>Crawler</code>, regardless of what is scheduled.
-        /// If the <code>Crawler</code> is already running, does nothing.
+        /// Starts a crawl using the specified crawler, regardless of what is scheduled. If the
+        /// crawler is already running, does nothing.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartCrawler service method.</param>
         /// 
@@ -3294,7 +3297,7 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// If the specified <code>Crawler</code> is running, stops the crawl.
+        /// If the specified crawler is running, stops the crawl.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopCrawler service method.</param>
         /// 
@@ -3448,7 +3451,7 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Modifies an existing <code>Classifier</code>.
+        /// Modifies an existing classifier (either a <code>GrokClassifier</code> or an <code>XMLClassifier</code>).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateClassifier service method.</param>
         /// 
@@ -3547,8 +3550,8 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Updates a <code>Crawler</code>. If a <code>Crawler</code> is running, you must stop
-        /// it using <code>StopCrawler</code> before updating it.
+        /// Updates a crawler. If a crawler is running, you must stop it using <code>StopCrawler</code>
+        /// before updating it.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateCrawler service method.</param>
         /// 
@@ -3602,7 +3605,7 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Updates the schedule of a crawler using a Cron expression.
+        /// Updates the schedule of a crawler using a <code>cron</code> expression.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateCrawlerSchedule service method.</param>
         /// 

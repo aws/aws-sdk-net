@@ -29,7 +29,7 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Container for the parameters to the GetCrawlers operation.
-    /// Retrieves metadata for all <code>Crawlers</code> defined in the customer account.
+    /// Retrieves metadata for all crawlers defined in the customer account.
     /// </summary>
     public partial class GetCrawlersRequest : AmazonGlueRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The number of Crawlers to return on each call.
+        /// The number of crawlers to return on each call.
         /// </para>
         /// </summary>
         public int MaxResults

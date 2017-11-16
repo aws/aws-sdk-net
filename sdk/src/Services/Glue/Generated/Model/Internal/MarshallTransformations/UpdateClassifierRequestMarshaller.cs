@@ -78,6 +78,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetXMLClassifier())
+                {
+                    context.Writer.WritePropertyName("XMLClassifier");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = UpdateXMLClassifierRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.XMLClassifier, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

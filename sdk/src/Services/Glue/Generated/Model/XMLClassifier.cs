@@ -28,23 +28,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// A classifier that uses <code>grok</code> patterns.
+    /// A classifier for <code>XML</code> content.
     /// </summary>
-    public partial class GrokClassifier
+    public partial class XMLClassifier
     {
         private string _classification;
         private DateTime? _creationTime;
-        private string _customPatterns;
-        private string _grokPattern;
         private DateTime? _lastUpdated;
         private string _name;
+        private string _rowTag;
         private long? _version;
 
         /// <summary>
         /// Gets and sets the property Classification. 
         /// <para>
-        /// An identifier of the data format that the classifier matches, such as Twitter, JSON,
-        /// Omniture logs, and so on.
+        /// An identifier of the data format that the classifier matches.
         /// </para>
         /// </summary>
         public string Classification
@@ -75,46 +73,6 @@ namespace Amazon.Glue.Model
         internal bool IsSetCreationTime()
         {
             return this._creationTime.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property CustomPatterns. 
-        /// <para>
-        /// Optional custom grok patterns defined by this classifier. For more information, see
-        /// custom patterns in <a href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing
-        /// Custom Classifers</a>.
-        /// </para>
-        /// </summary>
-        public string CustomPatterns
-        {
-            get { return this._customPatterns; }
-            set { this._customPatterns = value; }
-        }
-
-        // Check to see if CustomPatterns property is set
-        internal bool IsSetCustomPatterns()
-        {
-            return this._customPatterns != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property GrokPattern. 
-        /// <para>
-        /// The grok pattern applied to a data store by this classifier. For more information,
-        /// see built-in patterns in <a href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing
-        /// Custom Classifers</a>.
-        /// </para>
-        /// </summary>
-        public string GrokPattern
-        {
-            get { return this._grokPattern; }
-            set { this._grokPattern = value; }
-        }
-
-        // Check to see if GrokPattern property is set
-        internal bool IsSetGrokPattern()
-        {
-            return this._grokPattern != null;
         }
 
         /// <summary>
@@ -151,6 +109,26 @@ namespace Amazon.Glue.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RowTag. 
+        /// <para>
+        /// The XML tag designating the element that contains each record in an XML document being
+        /// parsed. Note that this cannot be an empty element. It must contain child elements
+        /// representing fields in the record.
+        /// </para>
+        /// </summary>
+        public string RowTag
+        {
+            get { return this._rowTag; }
+            set { this._rowTag = value; }
+        }
+
+        // Check to see if RowTag property is set
+        internal bool IsSetRowTag()
+        {
+            return this._rowTag != null;
         }
 
         /// <summary>

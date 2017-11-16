@@ -38,7 +38,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Crawlers. 
         /// <para>
-        /// A list of <code>Crawler</code> metadata.
+        /// A list of crawler metadata.
         /// </para>
         /// </summary>
         public List<Crawler> Crawlers

@@ -29,8 +29,7 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteCrawler operation.
-    /// Removes a specified <code>Crawler</code> from the metadata store, unless the <code>Crawler</code>
-    /// state is <code>RUNNING</code>.
+    /// Removes a specified crawler from the Data Catalog, unless the crawler state is <code>RUNNING</code>.
     /// </summary>
     public partial class DeleteCrawlerRequest : AmazonGlueRequest
     {
@@ -39,7 +38,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name of the <code>Crawler</code> to remove.
+        /// Name of the crawler to remove.
         /// </para>
         /// </summary>
         public string Name

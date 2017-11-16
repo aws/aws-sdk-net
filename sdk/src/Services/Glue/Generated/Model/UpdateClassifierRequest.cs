@@ -29,11 +29,12 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateClassifier operation.
-    /// Modifies an existing <code>Classifier</code>.
+    /// Modifies an existing classifier (either a <code>GrokClassifier</code> or an <code>XMLClassifier</code>).
     /// </summary>
     public partial class UpdateClassifierRequest : AmazonGlueRequest
     {
         private UpdateGrokClassifierRequest _grokClassifier;
+        private UpdateXMLClassifierRequest _xmlClassifier;
 
         /// <summary>
         /// Gets and sets the property GrokClassifier. 
@@ -51,6 +52,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetGrokClassifier()
         {
             return this._grokClassifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property XMLClassifier. 
+        /// <para>
+        /// An <code>XMLClassifier</code> object with updated fields.
+        /// </para>
+        /// </summary>
+        public UpdateXMLClassifierRequest XMLClassifier
+        {
+            get { return this._xmlClassifier; }
+            set { this._xmlClassifier = value; }
+        }
+
+        // Check to see if XMLClassifier property is set
+        internal bool IsSetXMLClassifier()
+        {
+            return this._xmlClassifier != null;
         }
 
     }

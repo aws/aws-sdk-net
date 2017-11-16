@@ -29,7 +29,7 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Container for the parameters to the StopCrawler operation.
-    /// If the specified <code>Crawler</code> is running, stops the crawl.
+    /// If the specified crawler is running, stops the crawl.
     /// </summary>
     public partial class StopCrawlerRequest : AmazonGlueRequest
     {
@@ -38,7 +38,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name of the <code>Crawler</code> to stop.
+        /// Name of the crawler to stop.
         /// </para>
         /// </summary>
         public string Name

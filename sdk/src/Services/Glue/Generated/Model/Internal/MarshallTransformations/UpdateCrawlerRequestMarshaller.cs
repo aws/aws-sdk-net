@@ -78,6 +78,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetConfiguration())
+                {
+                    context.Writer.WritePropertyName("Configuration");
+                    context.Writer.Write(publicRequest.Configuration);
+                }
+
                 if(publicRequest.IsSetDatabaseName())
                 {
                     context.Writer.WritePropertyName("DatabaseName");

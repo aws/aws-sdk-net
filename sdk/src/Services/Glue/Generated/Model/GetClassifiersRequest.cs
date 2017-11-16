@@ -29,7 +29,7 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Container for the parameters to the GetClassifiers operation.
-    /// Lists all Classifier objects in the metadata store.
+    /// Lists all classifier objects in the Data Catalog.
     /// </summary>
     public partial class GetClassifiersRequest : AmazonGlueRequest
     {

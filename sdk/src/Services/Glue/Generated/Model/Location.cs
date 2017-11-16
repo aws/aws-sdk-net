@@ -56,7 +56,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property S3. 
         /// <para>
-        /// An AWS S3 location.
+        /// An Amazon S3 location.
         /// </para>
         /// </summary>
         public List<CodeGenNodeArg> S3

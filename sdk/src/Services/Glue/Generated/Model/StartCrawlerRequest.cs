@@ -29,8 +29,8 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Container for the parameters to the StartCrawler operation.
-    /// Starts a crawl using the specified <code>Crawler</code>, regardless of what is scheduled.
-    /// If the <code>Crawler</code> is already running, does nothing.
+    /// Starts a crawl using the specified crawler, regardless of what is scheduled. If the
+    /// crawler is already running, does nothing.
     /// </summary>
     public partial class StartCrawlerRequest : AmazonGlueRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name of the <code>Crawler</code> to start.
+        /// Name of the crawler to start.
         /// </para>
         /// </summary>
         public string Name

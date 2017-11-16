@@ -37,7 +37,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Classifier. 
         /// <para>
-        /// The requested <code>Classifier</code>.
+        /// The requested classifier.
         /// </para>
         /// </summary>
         public Classifier Classifier

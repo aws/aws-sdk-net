@@ -29,7 +29,7 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateCrawlerSchedule operation.
-    /// Updates the schedule of a crawler using a Cron expression.
+    /// Updates the schedule of a crawler using a <code>cron</code> expression.
     /// </summary>
     public partial class UpdateCrawlerScheduleRequest : AmazonGlueRequest
     {

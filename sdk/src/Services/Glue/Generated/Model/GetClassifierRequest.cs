@@ -29,7 +29,7 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Container for the parameters to the GetClassifier operation.
-    /// Retrieve a <code>Classifier</code> by name.
+    /// Retrieve a classifier by name.
     /// </summary>
     public partial class GetClassifierRequest : AmazonGlueRequest
     {
@@ -38,7 +38,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name of the <code>Classifier</code> to retrieve.
+        /// Name of the classifier to retrieve.
         /// </para>
         /// </summary>
         public string Name
