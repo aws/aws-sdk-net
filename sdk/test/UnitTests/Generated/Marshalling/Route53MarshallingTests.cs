@@ -640,6 +640,37 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Xml")]
         [TestCategory("Route53")]
+        public void GetAccountLimitMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetAccountLimit");
+
+            var request = InstantiateClassGenerator.Execute<GetAccountLimitRequest>();
+            var marshaller = new GetAccountLimitRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetAccountLimit", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetAccountLimitResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetAccountLimitResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
         public void GetChangeMarshallTest()
         {
             var operation = service_model.FindOperation("GetChange");
@@ -919,6 +950,37 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Xml")]
         [TestCategory("Route53")]
+        public void GetHostedZoneLimitMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetHostedZoneLimit");
+
+            var request = InstantiateClassGenerator.Execute<GetHostedZoneLimitRequest>();
+            var marshaller = new GetHostedZoneLimitRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetHostedZoneLimit", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetHostedZoneLimitResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetHostedZoneLimitResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
         public void GetQueryLoggingConfigMarshallTest()
         {
             var operation = service_model.FindOperation("GetQueryLoggingConfig");
@@ -973,6 +1035,37 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = GetReusableDelegationSetResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as GetReusableDelegationSetResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
+        public void GetReusableDelegationSetLimitMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetReusableDelegationSetLimit");
+
+            var request = InstantiateClassGenerator.Execute<GetReusableDelegationSetLimitRequest>();
+            var marshaller = new GetReusableDelegationSetLimitRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetReusableDelegationSetLimit", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetReusableDelegationSetLimitResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetReusableDelegationSetLimitResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

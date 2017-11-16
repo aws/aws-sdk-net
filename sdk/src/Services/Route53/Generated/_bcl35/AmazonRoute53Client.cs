@@ -285,7 +285,14 @@ namespace Amazon.Route53
         /// authorized to access this VPC.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.LimitsExceededException">
-        /// The limits specified for a resource have been exceeded.
+        /// This operation can't be completed either because the current account has reached the
+        /// limit on reusable delegation sets that it can create or because you've reached the
+        /// limit on the number of Amazon VPCs that you can associate with a private hosted zone.
+        /// To get the current limit on the number of reusable delegation sets, see <a>GetAccountLimit</a>.
+        /// To get the current limit on the number of Amazon VPCs that you can associate with
+        /// a private hosted zone, see <a>GetHostedZoneLimit</a>. To request a higher limit, <a
+        /// href="http://aws.amazon.com/route53-request">create a case</a> with the AWS Support
+        /// Center.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
         /// No hosted zone exists with the ID that you specified.
@@ -685,9 +692,26 @@ namespace Amazon.Route53
         /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.TooManyHealthChecksException">
-        /// You have reached the maximum number of active health checks for an AWS account. The
-        /// default limit is 100. To request a higher limit, <a href="http://aws.amazon.com/route53-request">create
+        /// This health check can't be created because the current account has reached the limit
+        /// on the number of active health checks.
+        /// 
+        ///  
+        /// <para>
+        /// For information about default limits, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
+        /// in the <i>Amazon Route 53 Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about how to get the current limit for an account, see <a>GetAccountLimit</a>.
+        /// To request a higher limit, <a href="http://aws.amazon.com/route53-request">create
         /// a case</a> with the AWS Support Center.
+        /// </para>
+        ///  
+        /// <para>
+        /// You have reached the maximum number of active health checks for an AWS account. To
+        /// request a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a>
+        /// with the AWS Support Center.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateHealthCheck">REST API Reference for CreateHealthCheck Operation</seealso>
         public virtual CreateHealthCheckResponse CreateHealthCheck(CreateHealthCheckRequest request)
@@ -841,9 +865,29 @@ namespace Amazon.Route53
         /// A reusable delegation set with the specified ID does not exist.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.TooManyHostedZonesException">
-        /// This hosted zone can't be created because the hosted zone limit is exceeded. To request
-        /// a limit increase, go to the Amazon Route 53 <a href="http://aws.amazon.com/route53-request/">Contact
-        /// Us</a> page.
+        /// This operation can't be completed either because the current account has reached the
+        /// limit on the number of hosted zones or because you've reached the limit on the number
+        /// of hosted zones that can be associated with a reusable delegation set.
+        /// 
+        ///  
+        /// <para>
+        /// For information about default limits, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
+        /// in the <i>Amazon Route 53 Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To get the current limit on hosted zones that can be created by an account, see <a>GetAccountLimit</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To get the current limit on hosted zones that can be associated with a reusable delegation
+        /// set, see <a>GetReusableDelegationSetLimit</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To request a higher limit, <a href="http://aws.amazon.com/route53-request">create
+        /// a case</a> with the AWS Support Center.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateHostedZone">REST API Reference for CreateHostedZone Operation</seealso>
         public virtual CreateHostedZoneResponse CreateHostedZone(CreateHostedZoneRequest request)
@@ -1166,7 +1210,14 @@ namespace Amazon.Route53
         /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.LimitsExceededException">
-        /// The limits specified for a resource have been exceeded.
+        /// This operation can't be completed either because the current account has reached the
+        /// limit on reusable delegation sets that it can create or because you've reached the
+        /// limit on the number of Amazon VPCs that you can associate with a private hosted zone.
+        /// To get the current limit on the number of reusable delegation sets, see <a>GetAccountLimit</a>.
+        /// To get the current limit on the number of Amazon VPCs that you can associate with
+        /// a private hosted zone, see <a>GetHostedZoneLimit</a>. To request a higher limit, <a
+        /// href="http://aws.amazon.com/route53-request">create a case</a> with the AWS Support
+        /// Center.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateReusableDelegationSet">REST API Reference for CreateReusableDelegationSet Operation</seealso>
         public virtual CreateReusableDelegationSetResponse CreateReusableDelegationSet(CreateReusableDelegationSetRequest request)
@@ -1230,9 +1281,23 @@ namespace Amazon.Route53
         /// element is invalid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.TooManyTrafficPoliciesException">
-        /// You've created the maximum number of traffic policies that can be created for the
-        /// current AWS account. You can request an increase to the limit on the <a href="http://aws.amazon.com/route53-request/">Contact
-        /// Us</a> page.
+        /// This traffic policy can't be created because the current account has reached the limit
+        /// on the number of traffic policies.
+        /// 
+        ///  
+        /// <para>
+        /// For information about default limits, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
+        /// in the <i>Amazon Route 53 Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To get the current limit for an account, see <a>GetAccountLimit</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To request a higher limit, <a href="http://aws.amazon.com/route53-request">create
+        /// a case</a> with the AWS Support Center.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.TrafficPolicyAlreadyExistsException">
         /// A traffic policy that has the same value for <code>Name</code> already exists.
@@ -1305,9 +1370,23 @@ namespace Amazon.Route53
         /// No traffic policy exists with the specified ID.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.TooManyTrafficPolicyInstancesException">
-        /// You've created the maximum number of traffic policy instances that can be created
-        /// for the current AWS account. You can request an increase to the limit on the <a href="http://aws.amazon.com/route53-request/">Contact
-        /// Us</a> page.
+        /// This traffic policy instance can't be created because the current account has reached
+        /// the limit on the number of traffic policy instances.
+        /// 
+        ///  
+        /// <para>
+        /// For information about default limits, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
+        /// in the <i>Amazon Route 53 Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about how to get the current limit for an account, see <a>GetAccountLimit</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To request a higher limit, <a href="http://aws.amazon.com/route53-request">create
+        /// a case</a> with the AWS Support Center.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.TrafficPolicyInstanceAlreadyExistsException">
         /// There is already a traffic policy instance with the specified ID.
@@ -2157,6 +2236,70 @@ namespace Amazon.Route53
 
         #endregion
         
+        #region  GetAccountLimit
+
+        /// <summary>
+        /// Gets the specified limit for the current account, for example, the maximum number
+        /// of health checks that you can create using the account.
+        /// 
+        ///  
+        /// <para>
+        /// For the default limit, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
+        /// in the <i>Amazon Route 53 Developer Guide</i>. To request a higher limit, <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-route53">open
+        /// a case</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountLimit service method.</param>
+        /// 
+        /// <returns>The response from the GetAccountLimit service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetAccountLimit">REST API Reference for GetAccountLimit Operation</seealso>
+        public virtual GetAccountLimitResponse GetAccountLimit(GetAccountLimitRequest request)
+        {
+            var marshaller = new GetAccountLimitRequestMarshaller();
+            var unmarshaller = GetAccountLimitResponseUnmarshaller.Instance;
+
+            return Invoke<GetAccountLimitRequest,GetAccountLimitResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAccountLimit operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountLimit operation on AmazonRoute53Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAccountLimit
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetAccountLimit">REST API Reference for GetAccountLimit Operation</seealso>
+        public virtual IAsyncResult BeginGetAccountLimit(GetAccountLimitRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetAccountLimitRequestMarshaller();
+            var unmarshaller = GetAccountLimitResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetAccountLimitRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAccountLimit operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAccountLimit.</param>
+        /// 
+        /// <returns>Returns a  GetAccountLimitResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetAccountLimit">REST API Reference for GetAccountLimit Operation</seealso>
+        public virtual GetAccountLimitResponse EndGetAccountLimit(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetAccountLimitResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetChange
 
         /// <summary>
@@ -2742,6 +2885,76 @@ namespace Amazon.Route53
 
         #endregion
         
+        #region  GetHostedZoneLimit
+
+        /// <summary>
+        /// Gets the specified limit for a specified hosted zone, for example, the maximum number
+        /// of records that you can create in the hosted zone. 
+        /// 
+        ///  
+        /// <para>
+        /// For the default limit, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
+        /// in the <i>Amazon Route 53 Developer Guide</i>. To request a higher limit, <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-route53">open
+        /// a case</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetHostedZoneLimit service method.</param>
+        /// 
+        /// <returns>The response from the GetHostedZoneLimit service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.HostedZoneNotPrivateException">
+        /// The specified hosted zone is a public hosted zone, not a private hosted zone.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
+        /// No hosted zone exists with the ID that you specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZoneLimit">REST API Reference for GetHostedZoneLimit Operation</seealso>
+        public virtual GetHostedZoneLimitResponse GetHostedZoneLimit(GetHostedZoneLimitRequest request)
+        {
+            var marshaller = new GetHostedZoneLimitRequestMarshaller();
+            var unmarshaller = GetHostedZoneLimitResponseUnmarshaller.Instance;
+
+            return Invoke<GetHostedZoneLimitRequest,GetHostedZoneLimitResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetHostedZoneLimit operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetHostedZoneLimit operation on AmazonRoute53Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetHostedZoneLimit
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZoneLimit">REST API Reference for GetHostedZoneLimit Operation</seealso>
+        public virtual IAsyncResult BeginGetHostedZoneLimit(GetHostedZoneLimitRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetHostedZoneLimitRequestMarshaller();
+            var unmarshaller = GetHostedZoneLimitResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetHostedZoneLimitRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetHostedZoneLimit operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetHostedZoneLimit.</param>
+        /// 
+        /// <returns>Returns a  GetHostedZoneLimitResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZoneLimit">REST API Reference for GetHostedZoneLimit Operation</seealso>
+        public virtual GetHostedZoneLimitResponse EndGetHostedZoneLimit(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetHostedZoneLimitResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetQueryLoggingConfig
 
         /// <summary>
@@ -2867,6 +3080,73 @@ namespace Amazon.Route53
         public virtual GetReusableDelegationSetResponse EndGetReusableDelegationSet(IAsyncResult asyncResult)
         {
             return EndInvoke<GetReusableDelegationSetResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetReusableDelegationSetLimit
+
+        /// <summary>
+        /// Gets the maximum number of hosted zones that you can associate with the specified
+        /// reusable delegation set.
+        /// 
+        ///  
+        /// <para>
+        /// For the default limit, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
+        /// in the <i>Amazon Route 53 Developer Guide</i>. To request a higher limit, <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-route53">open
+        /// a case</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetReusableDelegationSetLimit service method.</param>
+        /// 
+        /// <returns>The response from the GetReusableDelegationSetLimit service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchDelegationSetException">
+        /// A reusable delegation set with the specified ID does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetReusableDelegationSetLimit">REST API Reference for GetReusableDelegationSetLimit Operation</seealso>
+        public virtual GetReusableDelegationSetLimitResponse GetReusableDelegationSetLimit(GetReusableDelegationSetLimitRequest request)
+        {
+            var marshaller = new GetReusableDelegationSetLimitRequestMarshaller();
+            var unmarshaller = GetReusableDelegationSetLimitResponseUnmarshaller.Instance;
+
+            return Invoke<GetReusableDelegationSetLimitRequest,GetReusableDelegationSetLimitResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetReusableDelegationSetLimit operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetReusableDelegationSetLimit operation on AmazonRoute53Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetReusableDelegationSetLimit
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetReusableDelegationSetLimit">REST API Reference for GetReusableDelegationSetLimit Operation</seealso>
+        public virtual IAsyncResult BeginGetReusableDelegationSetLimit(GetReusableDelegationSetLimitRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetReusableDelegationSetLimitRequestMarshaller();
+            var unmarshaller = GetReusableDelegationSetLimitResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetReusableDelegationSetLimitRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetReusableDelegationSetLimit operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetReusableDelegationSetLimit.</param>
+        /// 
+        /// <returns>Returns a  GetReusableDelegationSetLimitResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetReusableDelegationSetLimit">REST API Reference for GetReusableDelegationSetLimit Operation</seealso>
+        public virtual GetReusableDelegationSetLimitResponse EndGetReusableDelegationSetLimit(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetReusableDelegationSetLimitResponse>(asyncResult);
         }
 
         #endregion

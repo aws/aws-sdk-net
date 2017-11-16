@@ -168,6 +168,10 @@
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53.Model.GetAccountLimitResponse.Count</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53.Model.GetChangeRequest.Id</property>
     <max>32</max>
   </property-value-rule>
@@ -203,6 +207,14 @@
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53.Model.GetHostedZoneLimitRequest.HostedZoneId</property>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.GetHostedZoneLimitResponse.Count</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53.Model.GetQueryLoggingConfigRequest.Id</property>
     <min>1</min>
     <max>36</max>
@@ -210,6 +222,14 @@
   <property-value-rule>
     <property>Amazon.Route53.Model.GetReusableDelegationSetRequest.Id</property>
     <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.GetReusableDelegationSetLimitRequest.DelegationSetId</property>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.GetReusableDelegationSetLimitResponse.Count</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.GetTrafficPolicyRequest.Id</property>
@@ -566,6 +586,10 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53.Model.AccountLimit.Value</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53.Model.AlarmIdentifier.Region</property>
     <min>1</min>
     <max>64</max>
@@ -755,6 +779,10 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53.Model.HostedZoneLimit.Value</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53.Model.LinkedService.ServicePrincipal</property>
     <max>128</max>
   </property-value-rule>
@@ -811,6 +839,10 @@
   <property-value-rule>
     <property>Amazon.Route53.Model.ResourceTagSet.ResourceId</property>
     <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ReusableDelegationSetLimit.Value</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.Tag.Key</property>

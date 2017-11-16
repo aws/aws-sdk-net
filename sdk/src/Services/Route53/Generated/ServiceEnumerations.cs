@@ -25,6 +25,68 @@ namespace Amazon.Route53
 {
 
     /// <summary>
+    /// Constants used for properties of type AccountLimitType.
+    /// </summary>
+    public class AccountLimitType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MAX_HEALTH_CHECKS_BY_OWNER for AccountLimitType
+        /// </summary>
+        public static readonly AccountLimitType MAX_HEALTH_CHECKS_BY_OWNER = new AccountLimitType("MAX_HEALTH_CHECKS_BY_OWNER");
+        /// <summary>
+        /// Constant MAX_HOSTED_ZONES_BY_OWNER for AccountLimitType
+        /// </summary>
+        public static readonly AccountLimitType MAX_HOSTED_ZONES_BY_OWNER = new AccountLimitType("MAX_HOSTED_ZONES_BY_OWNER");
+        /// <summary>
+        /// Constant MAX_REUSABLE_DELEGATION_SETS_BY_OWNER for AccountLimitType
+        /// </summary>
+        public static readonly AccountLimitType MAX_REUSABLE_DELEGATION_SETS_BY_OWNER = new AccountLimitType("MAX_REUSABLE_DELEGATION_SETS_BY_OWNER");
+        /// <summary>
+        /// Constant MAX_TRAFFIC_POLICIES_BY_OWNER for AccountLimitType
+        /// </summary>
+        public static readonly AccountLimitType MAX_TRAFFIC_POLICIES_BY_OWNER = new AccountLimitType("MAX_TRAFFIC_POLICIES_BY_OWNER");
+        /// <summary>
+        /// Constant MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER for AccountLimitType
+        /// </summary>
+        public static readonly AccountLimitType MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER = new AccountLimitType("MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AccountLimitType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AccountLimitType FindValue(string value)
+        {
+            return FindValue<AccountLimitType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AccountLimitType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ChangeAction.
     /// </summary>
     public class ChangeAction : ConstantClass
@@ -429,6 +491,56 @@ namespace Amazon.Route53
 
 
     /// <summary>
+    /// Constants used for properties of type HostedZoneLimitType.
+    /// </summary>
+    public class HostedZoneLimitType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MAX_RRSETS_BY_ZONE for HostedZoneLimitType
+        /// </summary>
+        public static readonly HostedZoneLimitType MAX_RRSETS_BY_ZONE = new HostedZoneLimitType("MAX_RRSETS_BY_ZONE");
+        /// <summary>
+        /// Constant MAX_VPCS_ASSOCIATED_BY_ZONE for HostedZoneLimitType
+        /// </summary>
+        public static readonly HostedZoneLimitType MAX_VPCS_ASSOCIATED_BY_ZONE = new HostedZoneLimitType("MAX_VPCS_ASSOCIATED_BY_ZONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HostedZoneLimitType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HostedZoneLimitType FindValue(string value)
+        {
+            return FindValue<HostedZoneLimitType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HostedZoneLimitType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InsufficientDataHealthStatus.
     /// </summary>
     public class InsufficientDataHealthStatus : ConstantClass
@@ -686,6 +798,52 @@ namespace Amazon.Route53
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ResourceRecordSetRegion(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ReusableDelegationSetLimitType.
+    /// </summary>
+    public class ReusableDelegationSetLimitType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MAX_ZONES_BY_REUSABLE_DELEGATION_SET for ReusableDelegationSetLimitType
+        /// </summary>
+        public static readonly ReusableDelegationSetLimitType MAX_ZONES_BY_REUSABLE_DELEGATION_SET = new ReusableDelegationSetLimitType("MAX_ZONES_BY_REUSABLE_DELEGATION_SET");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReusableDelegationSetLimitType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReusableDelegationSetLimitType FindValue(string value)
+        {
+            return FindValue<ReusableDelegationSetLimitType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReusableDelegationSetLimitType(string value)
         {
             return FindValue(value);
         }

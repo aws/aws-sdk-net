@@ -847,6 +847,38 @@ namespace Amazon.Route53
 
         #endregion
         
+        #region  GetAccountLimit
+
+        internal virtual GetAccountLimitResponse GetAccountLimit(GetAccountLimitRequest request)
+        {
+            var marshaller = new GetAccountLimitRequestMarshaller();
+            var unmarshaller = GetAccountLimitResponseUnmarshaller.Instance;
+
+            return Invoke<GetAccountLimitRequest,GetAccountLimitResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAccountLimit operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountLimit operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetAccountLimit">REST API Reference for GetAccountLimit Operation</seealso>
+        public virtual Task<GetAccountLimitResponse> GetAccountLimitAsync(GetAccountLimitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetAccountLimitRequestMarshaller();
+            var unmarshaller = GetAccountLimitResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetAccountLimitRequest,GetAccountLimitResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetChange
 
         internal virtual GetChangeResponse GetChange(GetChangeRequest request)
@@ -1157,6 +1189,38 @@ namespace Amazon.Route53
 
         #endregion
         
+        #region  GetHostedZoneLimit
+
+        internal virtual GetHostedZoneLimitResponse GetHostedZoneLimit(GetHostedZoneLimitRequest request)
+        {
+            var marshaller = new GetHostedZoneLimitRequestMarshaller();
+            var unmarshaller = GetHostedZoneLimitResponseUnmarshaller.Instance;
+
+            return Invoke<GetHostedZoneLimitRequest,GetHostedZoneLimitResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetHostedZoneLimit operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetHostedZoneLimit operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZoneLimit">REST API Reference for GetHostedZoneLimit Operation</seealso>
+        public virtual Task<GetHostedZoneLimitResponse> GetHostedZoneLimitAsync(GetHostedZoneLimitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetHostedZoneLimitRequestMarshaller();
+            var unmarshaller = GetHostedZoneLimitResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetHostedZoneLimitRequest,GetHostedZoneLimitResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetQueryLoggingConfig
 
         internal virtual GetQueryLoggingConfigResponse GetQueryLoggingConfig(GetQueryLoggingConfigRequest request)
@@ -1216,6 +1280,38 @@ namespace Amazon.Route53
             var unmarshaller = GetReusableDelegationSetResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetReusableDelegationSetRequest,GetReusableDelegationSetResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetReusableDelegationSetLimit
+
+        internal virtual GetReusableDelegationSetLimitResponse GetReusableDelegationSetLimit(GetReusableDelegationSetLimitRequest request)
+        {
+            var marshaller = new GetReusableDelegationSetLimitRequestMarshaller();
+            var unmarshaller = GetReusableDelegationSetLimitResponseUnmarshaller.Instance;
+
+            return Invoke<GetReusableDelegationSetLimitRequest,GetReusableDelegationSetLimitResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetReusableDelegationSetLimit operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetReusableDelegationSetLimit operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetReusableDelegationSetLimit">REST API Reference for GetReusableDelegationSetLimit Operation</seealso>
+        public virtual Task<GetReusableDelegationSetLimitResponse> GetReusableDelegationSetLimitAsync(GetReusableDelegationSetLimitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetReusableDelegationSetLimitRequestMarshaller();
+            var unmarshaller = GetReusableDelegationSetLimitResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetReusableDelegationSetLimitRequest,GetReusableDelegationSetLimitResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
