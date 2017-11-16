@@ -126,6 +126,11 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// DynamoDB global secondary index - The resource type is <code>index</code> and the
         /// unique identifier is the resource ID. Example: <code>table/my-table/index/my-table-index</code>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Aurora DB cluster - The resource type is <code>cluster</code> and the unique identifier
+        /// is the cluster name. Example: <code>cluster:my-db-cluster</code>.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public string ResourceId
@@ -144,8 +149,18 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// Gets and sets the property RoleARN. 
         /// <para>
         /// The ARN of an IAM role that allows Application Auto Scaling to modify the scalable
-        /// target on your behalf. This parameter is required when you register a scalable target
-        /// and optional when you update one.
+        /// target on your behalf.
+        /// </para>
+        ///  
+        /// <para>
+        /// With Amazon RDS resources, permissions are granted using a service-linked role. For
+        /// more information, see <a href="http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/application-autoscaling-service-linked-roles.html">Service-Linked
+        /// Roles for Application Auto Scaling</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For resources that are not supported using a service-linked role, this parameter is
+        /// required when you register a scalable target and optional when you update one.
         /// </para>
         /// </summary>
         public string RoleARN
@@ -204,6 +219,11 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <para>
         ///  <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for
         /// a DynamoDB global secondary index.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora
+        /// DB cluster. Available for Aurora MySQL-compatible edition.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -137,6 +137,11 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// DynamoDB global secondary index - The resource type is <code>index</code> and the
         /// unique identifier is the resource ID. Example: <code>table/my-table/index/my-table-index</code>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Aurora DB cluster - The resource type is <code>cluster</code> and the unique identifier
+        /// is the cluster name. Example: <code>cluster:my-db-cluster</code>.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public string ResourceId
@@ -195,6 +200,11 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <para>
         ///  <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for
         /// a DynamoDB global secondary index.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora
+        /// DB cluster. Available for Aurora MySQL-compatible edition.
         /// </para>
         ///  </li> </ul>
         /// </summary>
