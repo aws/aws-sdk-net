@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.191.0",
+    "ProductVersion" : "3.3.192.0",
     "CoreVersion"    : "3.3.19.0",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -151,7 +151,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.3.36.1",
+            "Version" : "3.3.37.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
@@ -297,7 +297,7 @@
             "InPreview"               : false
         },
         "Route53"              : {
-            "Version" : "3.3.10.0",
+            "Version" : "3.3.11.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
@@ -553,7 +553,7 @@
             "InPreview"               : false
         },
         "ApplicationAutoScaling"          : {
-            "Version" : "3.3.5.1",
+            "Version" : "3.3.6.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
@@ -649,7 +649,7 @@
             "InPreview"               : false
         },
         "OpsWorksCM"                      : {
-            "Version" : "3.3.4.2",
+            "Version" : "3.3.4.3",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
@@ -745,7 +745,7 @@
             "InPreview"               : false
         },
         "Organizations"                   : {
-            "Version" : "3.3.6.3",
+            "Version" : "3.3.7.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
@@ -825,7 +825,7 @@
             "InPreview"               : false
         },
         "Glue"                            : {
-            "Version" : "3.3.1.1",
+            "Version" : "3.3.2.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"

@@ -1,3 +1,17 @@
+### 3.3.192.0 (2017-11-16 23:30 UTC)
+* ApplicationAutoScaling (3.3.6.0)
+	* Application Auto Scaling now supports automatic scaling of Amazon Aurora replicas
+* EC2 (3.3.37.0)
+	* You are now able to create and launch EC2 x1e smaller instance sizes
+* Glue (3.3.2.0)
+	* API update for AWS Glue. New crawler configuration attribute enables customers to specify crawler behavior. New XML classifier enables classification of XML data.
+* OpsWorksCM (3.3.4.3)
+	* Documentation updates for OpsWorks-cm: a new feature, OpsWorks for Puppet Enterprise, that allows users to create and manage OpsWorks-hosted Puppet Enterprise servers.
+* Organizations (3.3.7.0)
+	* This release adds APIs that you can use to enable and disable integration with AWS services designed to work with AWS Organizations. This integration allows the AWS service to perform operations on your behalf on all of the accounts in your organization. Although you can use these APIs yourself, we recommend that you instead use the commands provided in the other AWS service to enable integration with AWS Organizations.
+* Route53 (3.3.11.0)
+	* You can use Route 53's GetAccountLimit/GetHostedZoneLimit/GetReusableDelegationSetLimit APIs to view your current limits (including custom set limits) on Route 53 resources such as hosted zones and health checks. These APIs also return the number of each resource you're currently using to enable comparison against your current limits.
+
 ### 3.3.191.0 (2017-11-15 19:03 UTC)
 * APIGateway (3.3.11.0)
 	* 1. Extended GetDocumentationParts operation to support retrieving documentation parts resources without contents.  2. Added hosted zone ID in the custom domain response.
