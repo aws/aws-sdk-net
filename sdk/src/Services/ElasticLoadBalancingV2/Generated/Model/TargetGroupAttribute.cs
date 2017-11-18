@@ -48,6 +48,11 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>proxy_protocol_v2.enabled</code> - [Network Load Balancers] Indicates whether
+        /// Proxy Protocol version 2 is enabled.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>stickiness.enabled</code> - [Application Load Balancers] Indicates whether
         /// sticky sessions are enabled. The value is <code>true</code> or <code>false</code>.
         /// </para>
