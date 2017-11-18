@@ -941,6 +941,11 @@ namespace Amazon.S3
         ///  CSV inventory format
         /// </summary>
         public static readonly InventoryFormat CSV = new InventoryFormat("CSV");
+        
+        /// <summary>
+        ///  CSV inventory format
+        /// </summary>
+        public static readonly InventoryFormat ORC = new InventoryFormat("ORC");
 
         /// <summary>
         /// Construct instance of InventoryFormat.
