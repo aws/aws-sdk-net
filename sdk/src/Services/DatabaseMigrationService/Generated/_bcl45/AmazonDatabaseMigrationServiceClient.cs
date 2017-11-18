@@ -1399,6 +1399,49 @@ namespace Amazon.DatabaseMigrationService
 
         #endregion
         
+        #region  DescribeReplicationTaskAssessmentResults
+
+
+        /// <summary>
+        /// Returns the task assessment results from Amazon S3. This action always returns the
+        /// latest results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReplicationTaskAssessmentResults service method.</param>
+        /// 
+        /// <returns>The response from the DescribeReplicationTaskAssessmentResults service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationTaskAssessmentResults">REST API Reference for DescribeReplicationTaskAssessmentResults Operation</seealso>
+        public virtual DescribeReplicationTaskAssessmentResultsResponse DescribeReplicationTaskAssessmentResults(DescribeReplicationTaskAssessmentResultsRequest request)
+        {
+            var marshaller = new DescribeReplicationTaskAssessmentResultsRequestMarshaller();
+            var unmarshaller = DescribeReplicationTaskAssessmentResultsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeReplicationTaskAssessmentResultsRequest,DescribeReplicationTaskAssessmentResultsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeReplicationTaskAssessmentResults operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReplicationTaskAssessmentResults operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationTaskAssessmentResults">REST API Reference for DescribeReplicationTaskAssessmentResults Operation</seealso>
+        public virtual Task<DescribeReplicationTaskAssessmentResultsResponse> DescribeReplicationTaskAssessmentResultsAsync(DescribeReplicationTaskAssessmentResultsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeReplicationTaskAssessmentResultsRequestMarshaller();
+            var unmarshaller = DescribeReplicationTaskAssessmentResultsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeReplicationTaskAssessmentResultsRequest,DescribeReplicationTaskAssessmentResultsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeReplicationTasks
 
 
@@ -2100,6 +2143,51 @@ namespace Amazon.DatabaseMigrationService
             var unmarshaller = StartReplicationTaskResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartReplicationTaskRequest,StartReplicationTaskResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartReplicationTaskAssessment
+
+
+        /// <summary>
+        /// Starts the replication task assessment for unsupported data types in the source database.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartReplicationTaskAssessment service method.</param>
+        /// 
+        /// <returns>The response from the StartReplicationTaskAssessment service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplicationTaskAssessment">REST API Reference for StartReplicationTaskAssessment Operation</seealso>
+        public virtual StartReplicationTaskAssessmentResponse StartReplicationTaskAssessment(StartReplicationTaskAssessmentRequest request)
+        {
+            var marshaller = new StartReplicationTaskAssessmentRequestMarshaller();
+            var unmarshaller = StartReplicationTaskAssessmentResponseUnmarshaller.Instance;
+
+            return Invoke<StartReplicationTaskAssessmentRequest,StartReplicationTaskAssessmentResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartReplicationTaskAssessment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartReplicationTaskAssessment operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplicationTaskAssessment">REST API Reference for StartReplicationTaskAssessment Operation</seealso>
+        public virtual Task<StartReplicationTaskAssessmentResponse> StartReplicationTaskAssessmentAsync(StartReplicationTaskAssessmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new StartReplicationTaskAssessmentRequestMarshaller();
+            var unmarshaller = StartReplicationTaskAssessmentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartReplicationTaskAssessmentRequest,StartReplicationTaskAssessmentResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

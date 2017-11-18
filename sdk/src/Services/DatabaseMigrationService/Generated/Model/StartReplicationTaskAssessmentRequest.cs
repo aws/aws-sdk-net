@@ -28,17 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
-    /// Container for the parameters to the StopReplicationTask operation.
-    /// Stops the replication task.
+    /// Container for the parameters to the StartReplicationTaskAssessment operation.
+    /// Starts the replication task assessment for unsupported data types in the source database.
     /// </summary>
-    public partial class StopReplicationTaskRequest : AmazonDatabaseMigrationServiceRequest
+    public partial class StartReplicationTaskAssessmentRequest : AmazonDatabaseMigrationServiceRequest
     {
         private string _replicationTaskArn;
 
         /// <summary>
         /// Gets and sets the property ReplicationTaskArn. 
         /// <para>
-        /// The Amazon Resource Name(ARN) of the replication task to be stopped.
+        ///  The Amazon Resource Name (ARN) of the replication task. 
         /// </para>
         /// </summary>
         public string ReplicationTaskArn

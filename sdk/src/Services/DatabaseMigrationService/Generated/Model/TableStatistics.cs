@@ -43,6 +43,10 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _tableName;
         private string _tableState;
         private long? _updates;
+        private long? _validationFailedRecords;
+        private long? _validationPendingRecords;
+        private string _validationState;
+        private long? _validationSuspendedRecords;
 
         /// <summary>
         /// Gets and sets the property Ddls. 
@@ -248,6 +252,117 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetUpdates()
         {
             return this._updates.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ValidationFailedRecords. 
+        /// <para>
+        /// The number of records that failed validation.
+        /// </para>
+        /// </summary>
+        public long ValidationFailedRecords
+        {
+            get { return this._validationFailedRecords.GetValueOrDefault(); }
+            set { this._validationFailedRecords = value; }
+        }
+
+        // Check to see if ValidationFailedRecords property is set
+        internal bool IsSetValidationFailedRecords()
+        {
+            return this._validationFailedRecords.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ValidationPendingRecords. 
+        /// <para>
+        /// The number of records that have yet to be validated.
+        /// </para>
+        /// </summary>
+        public long ValidationPendingRecords
+        {
+            get { return this._validationPendingRecords.GetValueOrDefault(); }
+            set { this._validationPendingRecords = value; }
+        }
+
+        // Check to see if ValidationPendingRecords property is set
+        internal bool IsSetValidationPendingRecords()
+        {
+            return this._validationPendingRecords.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ValidationState. 
+        /// <para>
+        /// The validation state of the table.
+        /// </para>
+        ///  
+        /// <para>
+        /// The parameter can have the following values
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Not enabled—Validation is not enabled for the table in the migration task.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Pending records—Some records in the table are waiting for validation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Mismatched records—Some records in the table do not match between the source and target.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Suspended records—Some records in the table could not be validated.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// No primary key—The table could not be validated because it had no primary key.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Table error—The table was not validated because it was in an error state and some
+        /// data was not migrated.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Validated—All rows in the table were validated. If the table is updated, the status
+        /// can change from Validated.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Error—The table could not be validated because of an unexpected error.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public string ValidationState
+        {
+            get { return this._validationState; }
+            set { this._validationState = value; }
+        }
+
+        // Check to see if ValidationState property is set
+        internal bool IsSetValidationState()
+        {
+            return this._validationState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ValidationSuspendedRecords. 
+        /// <para>
+        /// The number of records that could not be validated.
+        /// </para>
+        /// </summary>
+        public long ValidationSuspendedRecords
+        {
+            get { return this._validationSuspendedRecords.GetValueOrDefault(); }
+            set { this._validationSuspendedRecords = value; }
+        }
+
+        // Check to see if ValidationSuspendedRecords property is set
+        internal bool IsSetValidationSuspendedRecords()
+        {
+            return this._validationSuspendedRecords.HasValue; 
         }
 
     }

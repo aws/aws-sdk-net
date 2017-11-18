@@ -53,7 +53,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property CertificateArn. 
         /// <para>
-        /// The Amazon Resource Number (ARN) for the certificate.
+        /// The Amazon Resource Name (ARN) for the certificate.
         /// </para>
         /// </summary>
         public string CertificateArn

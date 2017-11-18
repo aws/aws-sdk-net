@@ -28,29 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
-    /// Container for the parameters to the StopReplicationTask operation.
-    /// Stops the replication task.
+    /// 
     /// </summary>
-    public partial class StopReplicationTaskRequest : AmazonDatabaseMigrationServiceRequest
+    public partial class StartReplicationTaskAssessmentResponse : AmazonWebServiceResponse
     {
-        private string _replicationTaskArn;
+        private ReplicationTask _replicationTask;
 
         /// <summary>
-        /// Gets and sets the property ReplicationTaskArn. 
+        /// Gets and sets the property ReplicationTask. 
         /// <para>
-        /// The Amazon Resource Name(ARN) of the replication task to be stopped.
+        ///  The assessed replication task. 
         /// </para>
         /// </summary>
-        public string ReplicationTaskArn
+        public ReplicationTask ReplicationTask
         {
-            get { return this._replicationTaskArn; }
-            set { this._replicationTaskArn = value; }
+            get { return this._replicationTask; }
+            set { this._replicationTask = value; }
         }
 
-        // Check to see if ReplicationTaskArn property is set
-        internal bool IsSetReplicationTaskArn()
+        // Check to see if ReplicationTask property is set
+        internal bool IsSetReplicationTask()
         {
-            return this._replicationTaskArn != null;
+            return this._replicationTask != null;
         }
 
     }
