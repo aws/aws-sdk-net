@@ -116,8 +116,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Default: A 30-minute window selected at random from an 8-hour block of time per AWS
-        /// Region. To see the time blocks available, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
+        ///  The default is a 30-minute window selected at random from an 8-hour block of time
+        /// for each AWS Region. To see the time blocks available, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
         /// Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
         /// 
         /// </para>
@@ -131,7 +131,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Times should be in Universal Coordinated Time (UTC).
+        /// Must be in Universal Coordinated Time (UTC).
         /// </para>
         ///  </li> <li> 
         /// <para>

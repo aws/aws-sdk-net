@@ -28,31 +28,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the result of a successful invocation of the following actions:
+    /// Contains the details of an Amazon RDS DB instance. 
     /// 
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>CreateDBInstance</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DeleteDBInstance</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>ModifyDBInstance</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>StopDBInstance</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>StartDBInstance</a> 
-    /// </para>
-    ///  </li> </ul> 
+    ///  
     /// <para>
     /// This data type is used as a response element in the <a>DescribeDBInstances</a> action.
+    /// 
     /// </para>
     /// </summary>
     public partial class DBInstance
@@ -350,8 +331,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DbiResourceId. 
         /// <para>
-        /// The region-unique, immutable identifier for the DB instance. This identifier is found
-        /// in AWS CloudTrail log entries whenever the KMS key for the DB instance is accessed.
+        /// The AWS Region-unique, immutable identifier for the DB instance. This identifier is
+        /// found in AWS CloudTrail log entries whenever the AWS KMS key for the DB instance is
+        /// accessed.
         /// </para>
         /// </summary>
         public string DbiResourceId
@@ -561,7 +543,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property IAMDatabaseAuthenticationEnabled. 
         /// <para>
         /// True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts
-        /// is enabled; otherwise false.
+        /// is enabled, and otherwise false.
         /// </para>
         ///  
         /// <para>
@@ -633,7 +615,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        ///  If <code>StorageEncrypted</code> is true, the KMS key identifier for the encrypted
+        ///  If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted
         /// DB instance. 
         /// </para>
         /// </summary>
@@ -725,8 +707,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MonitoringRoleArn. 
         /// <para>
-        /// The ARN for the IAM role that permits RDS to send Enhanced Monitoring metrics to CloudWatch
-        /// Logs.
+        /// The ARN for the IAM role that permits RDS to send Enhanced Monitoring metrics to Amazon
+        /// CloudWatch Logs.
         /// </para>
         /// </summary>
         public string MonitoringRoleArn
@@ -799,7 +781,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property PerformanceInsightsEnabled. 
         /// <para>
-        /// True if Performance Insights is enabled for the DB instance; otherwise false.
+        /// True if Performance Insights is enabled for the DB instance, and otherwise false.
         /// </para>
         /// </summary>
         public bool PerformanceInsightsEnabled
@@ -817,9 +799,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property PerformanceInsightsKMSKeyId. 
         /// <para>
-        /// The KMS key identifier for encryption of Performance Insights data. The KMS key ID
-        /// is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the
-        /// KMS encryption key.
+        /// The AWS KMS key identifier for encryption of Performance Insights data. The KMS key
+        /// ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for
+        /// the KMS encryption key.
         /// </para>
         /// </summary>
         public string PerformanceInsightsKMSKeyId

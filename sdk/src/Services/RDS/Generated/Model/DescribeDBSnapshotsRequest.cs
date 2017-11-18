@@ -51,7 +51,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DBInstanceIdentifier. 
         /// <para>
         /// The ID of the DB instance to retrieve the list of DB snapshots for. This parameter
-        /// cannot be used in conjunction with <code>DBSnapshotIdentifier</code>. This parameter
+        /// can't be used in conjunction with <code>DBSnapshotIdentifier</code>. This parameter
         /// is not case-sensitive. 
         /// </para>
         ///  
@@ -79,7 +79,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBSnapshotIdentifier. 
         /// <para>
-        ///  A specific DB snapshot identifier to describe. This parameter cannot be used in conjunction
+        ///  A specific DB snapshot identifier to describe. This parameter can't be used in conjunction
         /// with <code>DBInstanceIdentifier</code>. This value is stored as a lowercase string.
         /// 
         /// </para>
@@ -131,9 +131,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property IncludePublic. 
         /// <para>
-        /// Set this value to <code>true</code> to include manual DB snapshots that are public
-        /// and can be copied or restored by any AWS account, otherwise set this value to <code>false</code>.
-        /// The default is <code>false</code>.
+        /// True to include manual DB snapshots that are public and can be copied or restored
+        /// by any AWS account, and otherwise false. The default is false.
         /// </para>
         ///  
         /// <para>
@@ -156,9 +155,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property IncludeShared. 
         /// <para>
-        /// Set this value to <code>true</code> to include shared manual DB snapshots from other
-        /// AWS accounts that this AWS account has been given permission to copy or restore, otherwise
-        /// set this value to <code>false</code>. The default is <code>false</code>.
+        /// True to include shared manual DB snapshots from other AWS accounts that this AWS account
+        /// has been given permission to copy or restore, and otherwise false. The default is
+        /// <code>false</code>.
         /// </para>
         ///  
         /// <para>

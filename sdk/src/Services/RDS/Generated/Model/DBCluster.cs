@@ -28,35 +28,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the result of a successful invocation of the following actions:
+    /// Contains the details of an Amazon RDS DB cluster. 
     /// 
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>CreateDBCluster</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DeleteDBCluster</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>FailoverDBCluster</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>ModifyDBCluster</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>RestoreDBClusterFromSnapshot</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>RestoreDBClusterToPointInTime</a> 
-    /// </para>
-    ///  </li> </ul> 
+    ///  
     /// <para>
     /// This data type is used as a response element in the <a>DescribeDBClusters</a> action.
+    /// 
     /// </para>
     /// </summary>
     public partial class DBCluster
@@ -345,8 +322,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DbClusterResourceId. 
         /// <para>
-        /// The region-unique, immutable identifier for the DB cluster. This identifier is found
-        /// in AWS CloudTrail log entries whenever the KMS key for the DB cluster is accessed.
+        /// The AWS Region-unique, immutable identifier for the DB cluster. This identifier is
+        /// found in AWS CloudTrail log entries whenever the AWS KMS key for the DB cluster is
+        /// accessed.
         /// </para>
         /// </summary>
         public string DbClusterResourceId
@@ -475,7 +453,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property IAMDatabaseAuthenticationEnabled. 
         /// <para>
         /// True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts
-        /// is enabled; otherwise false.
+        /// is enabled, and otherwise false.
         /// </para>
         /// </summary>
         public bool IAMDatabaseAuthenticationEnabled
@@ -493,7 +471,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// If <code>StorageEncrypted</code> is true, the KMS key identifier for the encrypted
+        /// If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted
         /// DB cluster.
         /// </para>
         /// </summary>

@@ -29,7 +29,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyEventSubscription operation.
-    /// Modifies an existing RDS event notification subscription. Note that you cannot modify
+    /// Modifies an existing RDS event notification subscription. Note that you can't modify
     /// the source identifiers using this call; to change source identifiers for a subscription,
     /// use the <a>AddSourceIdentifierToSubscription</a> and <a>RemoveSourceIdentifierFromSubscription</a>
     /// calls.

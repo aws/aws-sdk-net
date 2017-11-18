@@ -84,7 +84,7 @@ namespace Amazon.RDS.Model
         /// <para>
         ///  <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon
         /// Resource Names (ARNs). The results list will only include information about the DB
-        /// instances associated with the DB Clusters identified by these ARNs.
+        /// instances associated with the DB clusters identified by these ARNs.
         /// </para>
         ///  </li> <li> 
         /// <para>

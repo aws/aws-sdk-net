@@ -30,8 +30,8 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Container for the parameters to the DeleteDBCluster operation.
     /// The DeleteDBCluster action deletes a previously provisioned DB cluster. When you delete
-    /// a DB cluster, all automated backups for that DB cluster are deleted and cannot be
-    /// recovered. Manual DB cluster snapshots of the specified DB cluster are not deleted.
+    /// a DB cluster, all automated backups for that DB cluster are deleted and can't be recovered.
+    /// Manual DB cluster snapshots of the specified DB cluster are not deleted.
     /// 
     ///   
     /// <para>

@@ -52,7 +52,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DBClusterIdentifier. 
         /// <para>
         /// The ID of the DB cluster to retrieve the list of DB cluster snapshots for. This parameter
-        /// cannot be used in conjunction with the <code>DBClusterSnapshotIdentifier</code> parameter.
+        /// can't be used in conjunction with the <code>DBClusterSnapshotIdentifier</code> parameter.
         /// This parameter is not case-sensitive. 
         /// </para>
         ///  
@@ -80,7 +80,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBClusterSnapshotIdentifier. 
         /// <para>
-        /// A specific DB cluster snapshot identifier to describe. This parameter cannot be used
+        /// A specific DB cluster snapshot identifier to describe. This parameter can't be used
         /// in conjunction with the <code>DBClusterIdentifier</code> parameter. This value is
         /// stored as a lowercase string. 
         /// </para>
@@ -132,9 +132,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property IncludePublic. 
         /// <para>
-        /// Set this value to <code>true</code> to include manual DB cluster snapshots that are
-        /// public and can be copied or restored by any AWS account, otherwise set this value
-        /// to <code>false</code>. The default is <code>false</code>. The default is false.
+        /// True to include manual DB cluster snapshots that are public and can be copied or restored
+        /// by any AWS account, and otherwise false. The default is <code>false</code>. The default
+        /// is false.
         /// </para>
         ///  
         /// <para>
@@ -157,9 +157,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property IncludeShared. 
         /// <para>
-        /// Set this value to <code>true</code> to include shared manual DB cluster snapshots
-        /// from other AWS accounts that this AWS account has been given permission to copy or
-        /// restore, otherwise set this value to <code>false</code>. The default is <code>false</code>.
+        /// True to include shared manual DB cluster snapshots from other AWS accounts that this
+        /// AWS account has been given permission to copy or restore, and otherwise false. The
+        /// default is <code>false</code>.
         /// </para>
         ///  
         /// <para>

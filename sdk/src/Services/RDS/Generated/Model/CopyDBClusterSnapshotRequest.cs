@@ -46,8 +46,9 @@ namespace Amazon.RDS.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>KmsKeyId</code> - The AWS Key Management System (KMS) key identifier for the
-    /// key to use to encrypt the copy of the DB cluster snapshot in the destination AWS Region.
+    ///  <code>KmsKeyId</code> - The AWS Key Management System (AWS KMS) key identifier for
+    /// the key to use to encrypt the copy of the DB cluster snapshot in the destination AWS
+    /// Region.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -78,8 +79,8 @@ namespace Amazon.RDS.Model
     ///  <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot identifier
     /// for the encrypted DB cluster snapshot to be copied. This identifier must be in the
     /// Amazon Resource Name (ARN) format for the source AWS Region. For example, if you are
-    /// copying an encrypted DB cluster snapshot from the us-west-2 region, then your <code>SourceDBClusterSnapshotIdentifier</code>
-    /// looks like the following example: <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:aurora-cluster1-snapshot-20161115</code>.
+    /// copying an encrypted DB cluster snapshot from the us-west-2 AWS Region, then your
+    /// <code>SourceDBClusterSnapshotIdentifier</code> looks like the following example: <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:aurora-cluster1-snapshot-20161115</code>.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -132,7 +133,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property CopyTags. 
         /// <para>
         /// True to copy all tags from the source DB cluster snapshot to the target DB cluster
-        /// snapshot; otherwise false. The default is false.
+        /// snapshot, and otherwise false. The default is false.
         /// </para>
         /// </summary>
         public bool CopyTags
@@ -150,8 +151,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The AWS KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is the Amazon
-        /// Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption
+        /// The AWS AWS KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is the
+        /// Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption
         /// key. 
         /// </para>
         ///  
@@ -177,7 +178,7 @@ namespace Amazon.RDS.Model
         /// To copy an encrypted DB cluster snapshot to another AWS Region, you must set <code>KmsKeyId</code>
         /// to the KMS key ID you want to use to encrypt the copy of the DB cluster snapshot in
         /// the destination AWS Region. KMS encryption keys are specific to the AWS Region that
-        /// they are created in, and you cannot use encryption keys from one AWS Region in another
+        /// they are created in, and you can't use encryption keys from one AWS Region in another
         /// AWS Region.
         /// </para>
         /// </summary>
@@ -210,10 +211,10 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>KmsKeyId</code> - The KMS key identifier for the key to use to encrypt the
-        /// copy of the DB cluster snapshot in the destination AWS Region. This is the same identifier
-        /// for both the <code>CopyDBClusterSnapshot</code> action that is called in the destination
-        /// AWS Region, and the action contained in the pre-signed URL.
+        ///  <code>KmsKeyId</code> - The AWS KMS key identifier for the key to use to encrypt
+        /// the copy of the DB cluster snapshot in the destination AWS Region. This is the same
+        /// identifier for both the <code>CopyDBClusterSnapshot</code> action that is called in
+        /// the destination AWS Region, and the action contained in the pre-signed URL.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -225,8 +226,8 @@ namespace Amazon.RDS.Model
         ///  <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot identifier
         /// for the encrypted DB cluster snapshot to be copied. This identifier must be in the
         /// Amazon Resource Name (ARN) format for the source AWS Region. For example, if you are
-        /// copying an encrypted DB cluster snapshot from the us-west-2 region, then your <code>SourceDBClusterSnapshotIdentifier</code>
-        /// looks like the following example: <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:aurora-cluster1-snapshot-20161115</code>.
+        /// copying an encrypted DB cluster snapshot from the us-west-2 AWS Region, then your
+        /// <code>SourceDBClusterSnapshotIdentifier</code> looks like the following example: <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:aurora-cluster1-snapshot-20161115</code>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -255,7 +256,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// You cannot copy an encrypted, shared DB cluster snapshot from one AWS Region to another.
+        /// You can't copy an encrypted, shared DB cluster snapshot from one AWS Region to another.
         /// </para>
         ///  
         /// <para>

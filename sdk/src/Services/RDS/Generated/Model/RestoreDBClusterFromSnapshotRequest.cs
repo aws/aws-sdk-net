@@ -169,8 +169,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EnableIAMDatabaseAuthentication. 
         /// <para>
-        /// A Boolean value that is true to enable mapping of AWS Identity and Access Management
-        /// (IAM) accounts to database accounts, and otherwise false.
+        /// True to enable mapping of AWS Identity and Access Management (IAM) accounts to database
+        /// accounts, and otherwise false.
         /// </para>
         ///  
         /// <para>
@@ -236,8 +236,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The KMS key identifier to use when restoring an encrypted DB cluster from a DB snapshot
-        /// or DB cluster snapshot.
+        /// The AWS KMS key identifier to use when restoring an encrypted DB cluster from a DB
+        /// snapshot or DB cluster snapshot.
         /// </para>
         ///  
         /// <para>

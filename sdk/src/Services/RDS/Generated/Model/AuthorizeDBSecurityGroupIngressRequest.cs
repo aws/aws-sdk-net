@@ -38,8 +38,8 @@ namespace Amazon.RDS.Model
     /// 
     ///  <note> 
     /// <para>
-    /// You cannot authorize ingress from an EC2 security group in one AWS Region to an Amazon
-    /// RDS DB instance in another. You cannot authorize ingress from a VPC security group
+    /// You can't authorize ingress from an EC2 security group in one AWS Region to an Amazon
+    /// RDS DB instance in another. You can't authorize ingress from a VPC security group
     /// in one VPC to an Amazon RDS DB instance in another.
     /// </para>
     ///  </note> 

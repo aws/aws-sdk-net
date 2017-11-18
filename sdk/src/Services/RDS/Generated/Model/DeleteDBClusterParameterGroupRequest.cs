@@ -30,7 +30,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Container for the parameters to the DeleteDBClusterParameterGroup operation.
     /// Deletes a specified DB cluster parameter group. The DB cluster parameter group to
-    /// be deleted cannot be associated with any DB clusters.
+    /// be deleted can't be associated with any DB clusters.
     /// 
     ///  
     /// <para>
@@ -57,7 +57,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You cannot delete a default DB cluster parameter group.
+        /// You can't delete a default DB cluster parameter group.
         /// </para>
         ///  </li> <li> 
         /// <para>

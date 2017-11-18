@@ -28,28 +28,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the result of a successful invocation of the following actions:
+    /// Contains the details of an Amazon RDS DB subnet group. 
     /// 
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>CreateDBSubnetGroup</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>ModifyDBSubnetGroup</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeDBSubnetGroups</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DeleteDBSubnetGroup</a> 
-    /// </para>
-    ///  </li> </ul> 
+    ///  
     /// <para>
     /// This data type is used as a response element in the <a>DescribeDBSubnetGroups</a>
-    /// action.
+    /// action. 
     /// </para>
     /// </summary>
     public partial class DBSubnetGroup

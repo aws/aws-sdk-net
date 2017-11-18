@@ -153,8 +153,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBClusterIdentifier. 
         /// <para>
-        /// The name of the DB cluster to create from the source data in the S3 bucket. This parameter
-        /// is isn't case-sensitive.
+        /// The name of the DB cluster to create from the source data in the Amazon S3 bucket.
+        /// This parameter is isn't case-sensitive.
         /// </para>
         ///  
         /// <para>
@@ -246,8 +246,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EnableIAMDatabaseAuthentication. 
         /// <para>
-        /// A Boolean value that is true to enable mapping of AWS Identity and Access Management
-        /// (IAM) accounts to database accounts, and otherwise false.
+        /// True to enable mapping of AWS Identity and Access Management (IAM) accounts to database
+        /// accounts, and otherwise false.
         /// </para>
         ///  
         /// <para>
@@ -273,7 +273,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>aurora</code> 
+        /// Valid Values: <code>aurora</code>, <code>aurora-postgresql</code> 
         /// </para>
         /// </summary>
         public string Engine
@@ -317,7 +317,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The KMS key identifier for an encrypted DB cluster.
+        /// The AWS KMS key identifier for an encrypted DB cluster.
         /// </para>
         ///  
         /// <para>
@@ -412,7 +412,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Permanent options cannot be removed from an option group. An option group cannot be
+        /// Permanent options can't be removed from an option group. An option group can't be
         /// removed from a DB cluster once it is associated with a DB cluster.
         /// </para>
         /// </summary>
@@ -458,8 +458,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: A 30-minute window selected at random from an 8-hour block of time per AWS
-        /// Region. To see the time blocks available, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
+        /// The default is a 30-minute window selected at random from an 8-hour block of time
+        /// for each AWS Region. To see the time blocks available, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
         /// Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
         /// 
         /// </para>
@@ -473,7 +473,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Times should be in Universal Coordinated Time (UTC).
+        /// Must be in Universal Coordinated Time (UTC).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -505,19 +505,19 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> 
+        /// Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> 
         /// </para>
         ///  
         /// <para>
-        /// Default: A 30-minute window selected at random from an 8-hour block of time per AWS
-        /// Region, occurring on a random day of the week. To see the time blocks available, see
-        /// <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
+        /// The default is a 30-minute window selected at random from an 8-hour block of time
+        /// for each AWS Region, occurring on a random day of the week. To see the time blocks
+        /// available, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
         /// Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
         /// 
         /// </para>
         ///  
         /// <para>
-        /// Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
+        /// Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
         /// </para>
         ///  
         /// <para>

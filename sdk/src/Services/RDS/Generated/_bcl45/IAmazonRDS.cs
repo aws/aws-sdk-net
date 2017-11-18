@@ -50,9 +50,9 @@ namespace Amazon.RDS
     /// the code, applications, and tools you already use today with your existing databases
     /// work with Amazon RDS without modification. Amazon RDS automatically backs up your
     /// database and maintains the database software that powers your DB instance. Amazon
-    /// RDS is flexible: you can scale your database instance's compute resources and storage
-    /// capacity to meet your application's demand. As with all Amazon Web Services, there
-    /// are no up-front investments, and you pay only for the resources you use.
+    /// RDS is flexible: you can scale your DB instance's compute resources and storage capacity
+    /// to meet your application's demand. As with all Amazon Web Services, there are no up-front
+    /// investments, and you pay only for the resources you use.
     /// </para>
     ///  
     /// <para>
@@ -271,8 +271,8 @@ namespace Amazon.RDS
         /// 
         ///  <note> 
         /// <para>
-        /// You cannot authorize ingress from an EC2 security group in one AWS Region to an Amazon
-        /// RDS DB instance in another. You cannot authorize ingress from a VPC security group
+        /// You can't authorize ingress from an EC2 security group in one AWS Region to an Amazon
+        /// RDS DB instance in another. You can't authorize ingress from a VPC security group
         /// in one VPC to an Amazon RDS DB instance in another.
         /// </para>
         ///  </note> 
@@ -372,8 +372,9 @@ namespace Amazon.RDS
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>KmsKeyId</code> - The AWS Key Management System (KMS) key identifier for the
-        /// key to use to encrypt the copy of the DB cluster snapshot in the destination AWS Region.
+        ///  <code>KmsKeyId</code> - The AWS Key Management System (AWS KMS) key identifier for
+        /// the key to use to encrypt the copy of the DB cluster snapshot in the destination AWS
+        /// Region.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -404,8 +405,8 @@ namespace Amazon.RDS
         ///  <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot identifier
         /// for the encrypted DB cluster snapshot to be copied. This identifier must be in the
         /// Amazon Resource Name (ARN) format for the source AWS Region. For example, if you are
-        /// copying an encrypted DB cluster snapshot from the us-west-2 region, then your <code>SourceDBClusterSnapshotIdentifier</code>
-        /// looks like the following example: <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:aurora-cluster1-snapshot-20161115</code>.
+        /// copying an encrypted DB cluster snapshot from the us-west-2 AWS Region, then your
+        /// <code>SourceDBClusterSnapshotIdentifier</code> looks like the following example: <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:aurora-cluster1-snapshot-20161115</code>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -535,7 +536,7 @@ namespace Amazon.RDS
         /// </para>
         ///  
         /// <para>
-        /// You cannot copy an encrypted, shared DB snapshot from one AWS Region to another.
+        /// You can't copy an encrypted, shared DB snapshot from one AWS Region to another.
         /// </para>
         ///  
         /// <para>
@@ -1306,8 +1307,8 @@ namespace Amazon.RDS
 
         /// <summary>
         /// The DeleteDBCluster action deletes a previously provisioned DB cluster. When you delete
-        /// a DB cluster, all automated backups for that DB cluster are deleted and cannot be
-        /// recovered. Manual DB cluster snapshots of the specified DB cluster are not deleted.
+        /// a DB cluster, all automated backups for that DB cluster are deleted and can't be recovered.
+        /// Manual DB cluster snapshots of the specified DB cluster are not deleted.
         /// 
         ///   
         /// <para>
@@ -1356,7 +1357,7 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Deletes a specified DB cluster parameter group. The DB cluster parameter group to
-        /// be deleted cannot be associated with any DB clusters.
+        /// be deleted can't be associated with any DB clusters.
         /// 
         ///  
         /// <para>
@@ -1442,7 +1443,7 @@ namespace Amazon.RDS
 
         /// <summary>
         /// The DeleteDBInstance action deletes a previously provisioned DB instance. When you
-        /// delete a DB instance, all automated backups for that instance are deleted and cannot
+        /// delete a DB instance, all automated backups for that instance are deleted and can't
         /// be recovered. Manual DB snapshots of the DB instance to be deleted by <code>DeleteDBInstance</code>
         /// are not deleted.
         /// 
@@ -1450,7 +1451,7 @@ namespace Amazon.RDS
         /// <para>
         ///  If you request a final DB snapshot the status of the Amazon RDS DB instance is <code>deleting</code>
         /// until the DB snapshot is created. The API action <code>DescribeDBInstance</code> is
-        /// used to monitor the status of this operation. The action cannot be canceled or reverted
+        /// used to monitor the status of this operation. The action can't be canceled or reverted
         /// once submitted. 
         /// </para>
         ///  
@@ -1461,7 +1462,7 @@ namespace Amazon.RDS
         /// </para>
         ///  
         /// <para>
-        /// If the specified DB instance is part of an Amazon Aurora DB cluster, you cannot delete
+        /// If the specified DB instance is part of an Amazon Aurora DB cluster, you can't delete
         /// the DB instance if both of the following conditions are true:
         /// </para>
         ///  <ul> <li> 
@@ -1520,7 +1521,7 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Deletes a specified DBParameterGroup. The DBParameterGroup to be deleted cannot be
+        /// Deletes a specified DBParameterGroup. The DBParameterGroup to be deleted can't be
         /// associated with any DB instances.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBParameterGroup service method.</param>
@@ -3021,7 +3022,7 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Returns a list of the source AWS regions where the current AWS Region can create a
+        /// Returns a list of the source AWS Regions where the current AWS Region can create a
         /// Read Replica or copy a DB snapshot from. This API action supports pagination.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSourceRegions service method.</param>
@@ -3684,7 +3685,7 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Modifies an existing RDS event notification subscription. Note that you cannot modify
+        /// Modifies an existing RDS event notification subscription. Note that you can't modify
         /// the source identifiers using this call; to change source identifiers for a subscription,
         /// use the <a>AddSourceIdentifierToSubscription</a> and <a>RemoveSourceIdentifierFromSubscription</a>
         /// calls.
@@ -4528,6 +4529,97 @@ namespace Amazon.RDS
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromDBSnapshot">REST API Reference for RestoreDBInstanceFromDBSnapshot Operation</seealso>
         Task<RestoreDBInstanceFromDBSnapshotResponse> RestoreDBInstanceFromDBSnapshotAsync(RestoreDBInstanceFromDBSnapshotRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  RestoreDBInstanceFromS3
+
+
+        /// <summary>
+        /// Amazon Relational Database Service (Amazon RDS) supports importing MySQL databases
+        /// by using backup files. You can create a backup of your on-premises database, store
+        /// it on Amazon Simple Storage Service (Amazon S3), and then restore the backup file
+        /// onto a new Amazon RDS DB instance running MySQL. For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html">Importing
+        /// Data into an Amazon RDS MySQL DB Instance</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreDBInstanceFromS3 service method.</param>
+        /// 
+        /// <returns>The response from the RestoreDBInstanceFromS3 service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.AuthorizationNotFoundException">
+        /// Specified CIDRIP or EC2 security group is not authorized for the specified DB security
+        /// group.
+        /// 
+        ///  
+        /// <para>
+        /// RDS may not also be authorized via IAM to perform necessary actions on your behalf.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBInstanceAlreadyExistsException">
+        /// User already has a DB instance with the given identifier.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBParameterGroupNotFoundException">
+        /// <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBSecurityGroupNotFoundException">
+        /// <i>DBSecurityGroupName</i> does not refer to an existing DB security group.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBSubnetGroupDoesNotCoverEnoughAZsException">
+        /// Subnets in the DB subnet group should cover at least two Availability Zones unless
+        /// there is only one Availability Zone.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
+        /// <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InstanceQuotaExceededException">
+        /// Request would result in user exceeding the allowed number of DB instances.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InsufficientDBInstanceCapacityException">
+        /// Specified DB instance class is not available in the specified Availability Zone.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidS3BucketException">
+        /// The specified Amazon S3 bucket name could not be found or Amazon RDS is not authorized
+        /// to access the specified Amazon S3 bucket. Verify the <b>SourceS3BucketName</b> and
+        /// <b>S3IngestionRoleArn</b> values and try again.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidSubnetException">
+        /// The requested subnet is invalid, or multiple subnets were requested that are not all
+        /// in a common VPC.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidVPCNetworkStateException">
+        /// DB subnet group does not cover all Availability Zones after it is created because
+        /// users' change.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
+        /// Error accessing KMS key.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
+        /// The specified option group could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.ProvisionedIopsNotAvailableInAZException">
+        /// Provisioned IOPS not available in the specified Availability Zone.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.StorageQuotaExceededException">
+        /// Request would result in user exceeding the allowed amount of storage available across
+        /// all DB instances.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
+        /// <i>StorageType</i> specified cannot be associated with the DB Instance.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromS3">REST API Reference for RestoreDBInstanceFromS3 Operation</seealso>
+        RestoreDBInstanceFromS3Response RestoreDBInstanceFromS3(RestoreDBInstanceFromS3Request request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RestoreDBInstanceFromS3 operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RestoreDBInstanceFromS3 operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromS3">REST API Reference for RestoreDBInstanceFromS3 Operation</seealso>
+        Task<RestoreDBInstanceFromS3Response> RestoreDBInstanceFromS3Async(RestoreDBInstanceFromS3Request request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

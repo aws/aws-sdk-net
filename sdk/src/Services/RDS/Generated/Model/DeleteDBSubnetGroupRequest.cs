@@ -48,7 +48,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// You cannot delete the default subnet group.
+        /// You can't delete the default subnet group.
         /// </para>
         ///  </note> 
         /// <para>

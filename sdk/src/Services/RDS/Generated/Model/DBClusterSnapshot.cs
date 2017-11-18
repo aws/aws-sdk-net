@@ -28,20 +28,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the result of a successful invocation of the following actions:
+    /// Contains the details for an Amazon RDS DB cluster snapshot 
     /// 
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>CreateDBClusterSnapshot</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DeleteDBClusterSnapshot</a> 
-    /// </para>
-    ///  </li> </ul> 
+    ///  
     /// <para>
     /// This data type is used as a response element in the <a>DescribeDBClusterSnapshots</a>
-    /// action.
+    /// action. 
     /// </para>
     /// </summary>
     public partial class DBClusterSnapshot
@@ -218,7 +210,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property IAMDatabaseAuthenticationEnabled. 
         /// <para>
         /// True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts
-        /// is enabled; otherwise false.
+        /// is enabled, and otherwise false.
         /// </para>
         /// </summary>
         public bool IAMDatabaseAuthenticationEnabled
@@ -236,7 +228,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// If <code>StorageEncrypted</code> is true, the KMS key identifier for the encrypted
+        /// If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted
         /// DB cluster snapshot.
         /// </para>
         /// </summary>
@@ -364,7 +356,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property SourceDBClusterSnapshotArn. 
         /// <para>
         /// If the DB cluster snapshot was copied from a source DB cluster snapshot, the Amazon
-        /// Resource Name (ARN) for the source DB cluster snapshot; otherwise, a null value.
+        /// Resource Name (ARN) for the source DB cluster snapshot, otherwise, a null value.
         /// </para>
         /// </summary>
         public string SourceDBClusterSnapshotArn

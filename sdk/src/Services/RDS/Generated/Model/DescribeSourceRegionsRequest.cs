@@ -29,7 +29,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeSourceRegions operation.
-    /// Returns a list of the source AWS regions where the current AWS Region can create a
+    /// Returns a list of the source AWS Regions where the current AWS Region can create a
     /// Read Replica or copy a DB snapshot from. This API action supports pagination.
     /// </summary>
     public partial class DescribeSourceRegionsRequest : AmazonRDSRequest
@@ -60,9 +60,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        ///  An optional pagination token provided by a previous <a>DescribeSourceRegions</a>
-        /// request. If this parameter is specified, the response includes only records beyond
-        /// the marker, up to the value specified by <code>MaxRecords</code>.
+        /// An optional pagination token provided by a previous <a>DescribeSourceRegions</a> request.
+        /// If this parameter is specified, the response includes only records beyond the marker,
+        /// up to the value specified by <code>MaxRecords</code>.
         /// </para>
         /// </summary>
         public string Marker

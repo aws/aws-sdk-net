@@ -2063,6 +2063,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void RestoreDBInstanceFromS3MarshallTest()
+        {
+            var operation = service_model.FindOperation("RestoreDBInstanceFromS3");
+
+            var request = InstantiateClassGenerator.Execute<RestoreDBInstanceFromS3Request>();
+            var marshaller = new RestoreDBInstanceFromS3RequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = RestoreDBInstanceFromS3ResponseUnmarshaller.Instance.Unmarshall(context)
+                as RestoreDBInstanceFromS3Response;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void RestoreDBInstanceToPointInTimeMarshallTest()
         {
             var operation = service_model.FindOperation("RestoreDBInstanceToPointInTime");

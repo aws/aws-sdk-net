@@ -50,9 +50,9 @@ namespace Amazon.RDS
     /// the code, applications, and tools you already use today with your existing databases
     /// work with Amazon RDS without modification. Amazon RDS automatically backs up your
     /// database and maintains the database software that powers your DB instance. Amazon
-    /// RDS is flexible: you can scale your database instance's compute resources and storage
-    /// capacity to meet your application's demand. As with all Amazon Web Services, there
-    /// are no up-front investments, and you pay only for the resources you use.
+    /// RDS is flexible: you can scale your DB instance's compute resources and storage capacity
+    /// to meet your application's demand. As with all Amazon Web Services, there are no up-front
+    /// investments, and you pay only for the resources you use.
     /// </para>
     ///  
     /// <para>
@@ -1782,6 +1782,23 @@ namespace Amazon.RDS
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromDBSnapshot">REST API Reference for RestoreDBInstanceFromDBSnapshot Operation</seealso>
         Task<RestoreDBInstanceFromDBSnapshotResponse> RestoreDBInstanceFromDBSnapshotAsync(RestoreDBInstanceFromDBSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  RestoreDBInstanceFromS3
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RestoreDBInstanceFromS3 operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RestoreDBInstanceFromS3 operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromS3">REST API Reference for RestoreDBInstanceFromS3 Operation</seealso>
+        Task<RestoreDBInstanceFromS3Response> RestoreDBInstanceFromS3Async(RestoreDBInstanceFromS3Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

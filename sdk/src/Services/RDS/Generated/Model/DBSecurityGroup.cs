@@ -28,28 +28,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the result of a successful invocation of the following actions:
+    /// Contains the details for an Amazon RDS DB security group. 
     /// 
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>DescribeDBSecurityGroups</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>AuthorizeDBSecurityGroupIngress</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>CreateDBSecurityGroup</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>RevokeDBSecurityGroupIngress</a> 
-    /// </para>
-    ///  </li> </ul> 
+    ///  
     /// <para>
     /// This data type is used as a response element in the <a>DescribeDBSecurityGroups</a>
-    /// action.
+    /// action. 
     /// </para>
     /// </summary>
     public partial class DBSecurityGroup

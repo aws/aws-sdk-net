@@ -30,7 +30,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Container for the parameters to the DeleteDBInstance operation.
     /// The DeleteDBInstance action deletes a previously provisioned DB instance. When you
-    /// delete a DB instance, all automated backups for that instance are deleted and cannot
+    /// delete a DB instance, all automated backups for that instance are deleted and can't
     /// be recovered. Manual DB snapshots of the DB instance to be deleted by <code>DeleteDBInstance</code>
     /// are not deleted.
     /// 
@@ -38,7 +38,7 @@ namespace Amazon.RDS.Model
     /// <para>
     ///  If you request a final DB snapshot the status of the Amazon RDS DB instance is <code>deleting</code>
     /// until the DB snapshot is created. The API action <code>DescribeDBInstance</code> is
-    /// used to monitor the status of this operation. The action cannot be canceled or reverted
+    /// used to monitor the status of this operation. The action can't be canceled or reverted
     /// once submitted. 
     /// </para>
     ///  
@@ -49,7 +49,7 @@ namespace Amazon.RDS.Model
     /// </para>
     ///  
     /// <para>
-    /// If the specified DB instance is part of an Amazon Aurora DB cluster, you cannot delete
+    /// If the specified DB instance is part of an Amazon Aurora DB cluster, you can't delete
     /// the DB instance if both of the following conditions are true:
     /// </para>
     ///  <ul> <li> 

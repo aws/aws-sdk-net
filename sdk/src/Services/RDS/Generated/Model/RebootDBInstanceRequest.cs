@@ -104,7 +104,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraint: You cannot specify <code>true</code> if the instance is not configured
+        /// Constraint: You can't specify <code>true</code> if the instance is not configured
         /// for MultiAZ.
         /// </para>
         /// </summary>

@@ -28,14 +28,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the result of a successful invocation of the <a>CreateDBClusterParameterGroup</a>
-    /// or <a>CopyDBClusterParameterGroup</a> action. 
+    /// Contains the details of an Amazon RDS DB cluster parameter group. 
     /// 
     ///  
     /// <para>
-    /// This data type is used as a request parameter in the <a>DeleteDBClusterParameterGroup</a>
-    /// action, and as a response element in the <a>DescribeDBClusterParameterGroups</a> action.
-    /// 
+    /// This data type is used as a response element in the <a>DescribeDBClusterParameterGroups</a>
+    /// action. 
     /// </para>
     /// </summary>
     public partial class DBClusterParameterGroup

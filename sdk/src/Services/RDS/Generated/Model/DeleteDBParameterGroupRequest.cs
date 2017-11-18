@@ -29,7 +29,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDBParameterGroup operation.
-    /// Deletes a specified DBParameterGroup. The DBParameterGroup to be deleted cannot be
+    /// Deletes a specified DBParameterGroup. The DBParameterGroup to be deleted can't be
     /// associated with any DB instances.
     /// </summary>
     public partial class DeleteDBParameterGroupRequest : AmazonRDSRequest
@@ -44,7 +44,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Instantiates DeleteDBParameterGroupRequest with the parameterized properties
         /// </summary>
-        /// <param name="dbParameterGroupName">The name of the DB parameter group. Constraints: <ul> <li> Must be the name of an existing DB parameter group </li> <li> You cannot delete a default DB parameter group </li> <li> Cannot be associated with any DB instances </li> </ul></param>
+        /// <param name="dbParameterGroupName">The name of the DB parameter group. Constraints: <ul> <li> Must be the name of an existing DB parameter group </li> <li> You can't delete a default DB parameter group </li> <li> Cannot be associated with any DB instances </li> </ul></param>
         public DeleteDBParameterGroupRequest(string dbParameterGroupName)
         {
             _dbParameterGroupName = dbParameterGroupName;
@@ -65,7 +65,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You cannot delete a default DB parameter group
+        /// You can't delete a default DB parameter group
         /// </para>
         ///  </li> <li> 
         /// <para>

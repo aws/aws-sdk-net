@@ -376,7 +376,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property CopyTagsToSnapshot. 
         /// <para>
-        /// True to copy all tags from the DB instance to snapshots of the DB instance; otherwise
+        /// True to copy all tags from the DB instance to snapshots of the DB instance, and otherwise
         /// false. The default is false.
         /// </para>
         /// </summary>
@@ -396,9 +396,9 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DBInstanceClass. 
         /// <para>
         /// The new compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>.
-        /// Not all DB instance classes are available in all regions, or for all database engines.
-        /// For the full list of DB instance classes, and availability for your engine, see <a
-        /// href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+        /// Not all DB instance classes are available in all AWS Regions, or for all database
+        /// engines. For the full list of DB instance classes, and availability for your engine,
+        /// see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
         /// Instance Class</a> in the Amazon RDS User Guide. 
         /// </para>
         ///  
@@ -695,11 +695,11 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property EnableIAMDatabaseAuthentication. 
         /// <para>
         /// True to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-        /// accounts; otherwise false.
+        /// accounts, and otherwise false.
         /// </para>
         ///  
         /// <para>
-        ///  You can enable IAM database authentication for the following database engines
+        /// You can enable IAM database authentication for the following database engines
         /// </para>
         ///  
         /// <para>
@@ -742,7 +742,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EnablePerformanceInsights. 
         /// <para>
-        /// True to enable Performance Insights for the DB instance; otherwise false.
+        /// True to enable Performance Insights for the DB instance, and otherwise false.
         /// </para>
         /// </summary>
         public bool EnablePerformanceInsights
@@ -874,8 +874,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MasterUserPassword. 
         /// <para>
-        /// The new password for the master user. Can be any printable ASCII character except
-        /// "/", """, or "@".
+        /// The new password for the master user. The password can include any printable ASCII
+        /// character except "/", """, or "@".
         /// </para>
         ///  
         /// <para>
@@ -989,9 +989,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MonitoringRoleArn. 
         /// <para>
-        /// The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to CloudWatch
-        /// Logs. For example, <code>arn:aws:iam:123456789012:role/emaccess</code>. For information
-        /// on creating a monitoring role, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
+        /// The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon
+        /// CloudWatch Logs. For example, <code>arn:aws:iam:123456789012:role/emaccess</code>.
+        /// For information on creating a monitoring role, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
         /// create an IAM role for Amazon RDS Enhanced Monitoring</a>.
         /// </para>
         ///  
@@ -1092,8 +1092,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot
-        /// be removed from an option group, and that option group cannot be removed from a DB
+        /// Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't
+        /// be removed from an option group, and that option group can't be removed from a DB
         /// instance once it is associated with a DB instance
         /// </para>
         /// </summary>
@@ -1112,9 +1112,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property PerformanceInsightsKMSKeyId. 
         /// <para>
-        /// The KMS key identifier for encryption of Performance Insights data. The KMS key ID
-        /// is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the
-        /// KMS encryption key.
+        /// The AWS KMS key identifier for encryption of Performance Insights data. The KMS key
+        /// ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for
+        /// the KMS encryption key.
         /// </para>
         /// </summary>
         public string PerformanceInsightsKMSKeyId
@@ -1156,7 +1156,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Times should be in Universal Time Coordinated (UTC)
+        /// Must be in Universal Time Coordinated (UTC)
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1302,7 +1302,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise
+        ///  Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise
         /// <code>standard</code> 
         /// </para>
         /// </summary>
@@ -1321,7 +1321,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property TdeCredentialArn. 
         /// <para>
-        /// The ARN from the Key Store with which to associate the instance for TDE encryption.
+        /// The ARN from the key store with which to associate the instance for TDE encryption.
         /// </para>
         /// </summary>
         public string TdeCredentialArn
@@ -1339,7 +1339,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property TdeCredentialPassword. 
         /// <para>
-        /// The password for the given ARN from the Key Store in order to access the device.
+        /// The password for the given ARN from the key store in order to access the device.
         /// </para>
         /// </summary>
         public string TdeCredentialPassword

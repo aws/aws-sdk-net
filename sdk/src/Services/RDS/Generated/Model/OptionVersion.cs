@@ -39,7 +39,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property IsDefault. 
         /// <para>
-        /// True if the version is the default version of the option; otherwise, false.
+        /// True if the version is the default version of the option, and otherwise false.
         /// </para>
         /// </summary>
         public bool IsDefault

@@ -73,7 +73,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property AvailabilityZones. 
         /// <para>
         /// A list of EC2 Availability Zones that instances in the DB cluster can be created in.
-        /// For information on regions and Availability Zones, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
+        /// For information on AWS Regions and Availability Zones, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
         /// and Availability Zones</a>. 
         /// </para>
         /// </summary>
@@ -254,8 +254,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EnableIAMDatabaseAuthentication. 
         /// <para>
-        /// A Boolean value that is true to enable mapping of AWS Identity and Access Management
-        /// (IAM) accounts to database accounts, and otherwise false.
+        /// True to enable mapping of AWS Identity and Access Management (IAM) accounts to database
+        /// accounts, and otherwise false.
         /// </para>
         ///  
         /// <para>
@@ -281,7 +281,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>aurora</code> 
+        /// Valid Values: <code>aurora</code>, <code>aurora-postgresql</code> 
         /// </para>
         /// </summary>
         public string Engine
@@ -325,7 +325,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The KMS key identifier for an encrypted DB cluster.
+        /// The AWS KMS key identifier for an encrypted DB cluster.
         /// </para>
         ///  
         /// <para>
@@ -439,8 +439,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Permanent options cannot be removed from an option group. The option group cannot
-        /// be removed from a DB cluster once it is associated with a DB cluster.
+        /// Permanent options can't be removed from an option group. The option group can't be
+        /// removed from a DB cluster once it is associated with a DB cluster.
         /// </para>
         /// </summary>
         public string OptionGroupName
@@ -485,8 +485,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: A 30-minute window selected at random from an 8-hour block of time per AWS
-        /// Region. To see the time blocks available, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
+        /// The default is a 30-minute window selected at random from an 8-hour block of time
+        /// for each AWS Region. To see the time blocks available, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
         /// Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
         /// 
         /// </para>
@@ -500,7 +500,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Times should be in Universal Coordinated Time (UTC).
+        /// Must be in Universal Coordinated Time (UTC).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -532,19 +532,19 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> 
+        /// Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> 
         /// </para>
         ///  
         /// <para>
-        /// Default: A 30-minute window selected at random from an 8-hour block of time per AWS
-        /// Region, occurring on a random day of the week. To see the time blocks available, see
-        /// <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
+        /// The default is a 30-minute window selected at random from an 8-hour block of time
+        /// for each AWS Region, occurring on a random day of the week. To see the time blocks
+        /// available, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
         /// Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
         /// 
         /// </para>
         ///  
         /// <para>
-        /// Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
+        /// Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
         /// </para>
         ///  
         /// <para>
@@ -583,10 +583,10 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>KmsKeyId</code> - The KMS key identifier for the key to use to encrypt the
-        /// copy of the DB cluster in the destination AWS Region. This should refer to the same
-        /// KMS key for both the <code>CreateDBCluster</code> action that is called in the destination
-        /// AWS Region, and the action contained in the pre-signed URL.
+        ///  <code>KmsKeyId</code> - The AWS KMS key identifier for the key to use to encrypt
+        /// the copy of the DB cluster in the destination AWS Region. This should refer to the
+        /// same KMS key for both the <code>CreateDBCluster</code> action that is called in the
+        /// destination AWS Region, and the action contained in the pre-signed URL.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -598,7 +598,7 @@ namespace Amazon.RDS.Model
         ///  <code>ReplicationSourceIdentifier</code> - The DB cluster identifier for the encrypted
         /// DB cluster to be copied. This identifier must be in the Amazon Resource Name (ARN)
         /// format for the source AWS Region. For example, if you are copying an encrypted DB
-        /// cluster from the us-west-2 region, then your <code>ReplicationSourceIdentifier</code>
+        /// cluster from the us-west-2 AWS Region, then your <code>ReplicationSourceIdentifier</code>
         /// would look like Example: <code>arn:aws:rds:us-west-2:123456789012:cluster:aurora-cluster1</code>.
         /// </para>
         ///  </li> </ul> 

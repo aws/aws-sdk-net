@@ -60,7 +60,7 @@ namespace Amazon.RDS.Model
         /// <para>
         ///  The IP range to revoke access from. Must be a valid CIDR range. If <code>CIDRIP</code>
         /// is specified, <code>EC2SecurityGroupName</code>, <code>EC2SecurityGroupId</code> and
-        /// <code>EC2SecurityGroupOwnerId</code> cannot be provided. 
+        /// <code>EC2SecurityGroupOwnerId</code> can't be provided. 
         /// </para>
         /// </summary>
         public string CIDRIP

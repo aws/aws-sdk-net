@@ -28,19 +28,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the result of a successful invocation of the following actions:
+    /// Contains the details of an Amazon RDS DB snapshot. 
     /// 
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>CreateDBSnapshot</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DeleteDBSnapshot</a> 
-    /// </para>
-    ///  </li> </ul> 
+    ///  
     /// <para>
     /// This data type is used as a response element in the <a>DescribeDBSnapshots</a> action.
+    /// 
     /// </para>
     /// </summary>
     public partial class DBSnapshot
@@ -222,7 +215,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property IAMDatabaseAuthenticationEnabled. 
         /// <para>
         /// True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts
-        /// is enabled; otherwise false.
+        /// is enabled, and otherwise false.
         /// </para>
         /// </summary>
         public bool IAMDatabaseAuthenticationEnabled
@@ -277,8 +270,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        ///  If <code>Encrypted</code> is true, the KMS key identifier for the encrypted DB snapshot.
-        /// 
+        ///  If <code>Encrypted</code> is true, the AWS KMS key identifier for the encrypted DB
+        /// snapshot. 
         /// </para>
         /// </summary>
         public string KmsKeyId

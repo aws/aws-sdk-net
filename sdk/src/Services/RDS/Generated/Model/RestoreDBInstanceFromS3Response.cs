@@ -28,34 +28,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteOptionGroup operation.
-    /// Deletes an existing option group.
+    /// This is the response object from the RestoreDBInstanceFromS3 operation.
     /// </summary>
-    public partial class DeleteOptionGroupRequest : AmazonRDSRequest
+    public partial class RestoreDBInstanceFromS3Response : AmazonWebServiceResponse
     {
-        private string _optionGroupName;
+        private DBInstance _dbInstance;
 
         /// <summary>
-        /// Gets and sets the property OptionGroupName. 
-        /// <para>
-        /// The name of the option group to be deleted.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// You can't delete default option groups.
-        /// </para>
-        ///  </note>
+        /// Gets and sets the property DBInstance.
         /// </summary>
-        public string OptionGroupName
+        public DBInstance DBInstance
         {
-            get { return this._optionGroupName; }
-            set { this._optionGroupName = value; }
+            get { return this._dbInstance; }
+            set { this._dbInstance = value; }
         }
 
-        // Check to see if OptionGroupName property is set
-        internal bool IsSetOptionGroupName()
+        // Check to see if DBInstance property is set
+        internal bool IsSetDBInstance()
         {
-            return this._optionGroupName != null;
+            return this._dbInstance != null;
         }
 
     }

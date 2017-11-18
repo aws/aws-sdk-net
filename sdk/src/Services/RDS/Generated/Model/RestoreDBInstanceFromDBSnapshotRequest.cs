@@ -115,7 +115,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        /// The EC2 Availability Zone that the database instance is created in.
+        /// The EC2 Availability Zone that the DB instance is created in.
         /// </para>
         ///  
         /// <para>
@@ -123,7 +123,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraint: You cannot specify the AvailabilityZone parameter if the MultiAZ parameter
+        /// Constraint: You can't specify the AvailabilityZone parameter if the MultiAZ parameter
         /// is set to <code>true</code>.
         /// </para>
         ///  
@@ -146,8 +146,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property CopyTagsToSnapshot. 
         /// <para>
-        /// True to copy all tags from the restored DB instance to snapshots of the DB instance;
-        /// otherwise false. The default is false.
+        /// True to copy all tags from the restored DB instance to snapshots of the DB instance,
+        /// and otherwise false. The default is false.
         /// </para>
         /// </summary>
         public bool CopyTagsToSnapshot
@@ -166,9 +166,9 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DBInstanceClass. 
         /// <para>
         /// The compute and memory capacity of the Amazon RDS DB instance, for example, <code>db.m4.large</code>.
-        /// Not all DB instance classes are available in all regions, or for all database engines.
-        /// For the full list of DB instance classes, and availability for your engine, see <a
-        /// href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+        /// Not all DB instance classes are available in all AWS Regions, or for all database
+        /// engines. For the full list of DB instance classes, and availability for your engine,
+        /// see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
         /// Instance Class</a> in the Amazon RDS User Guide. 
         /// </para>
         ///  
@@ -348,7 +348,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property EnableIAMDatabaseAuthentication. 
         /// <para>
         /// True to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-        /// accounts; otherwise false.
+        /// accounts, and otherwise false.
         /// </para>
         ///  
         /// <para>
@@ -404,6 +404,10 @@ namespace Amazon.RDS.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>aurora</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>aurora-postgresql</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -529,7 +533,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraint: You cannot specify the AvailabilityZone parameter if the MultiAZ parameter
+        /// Constraint: You can't specify the AvailabilityZone parameter if the MultiAZ parameter
         /// is set to <code>true</code>.
         /// </para>
         /// </summary>
@@ -552,8 +556,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot
-        /// be removed from an option group, and that option group cannot be removed from a DB
+        /// Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't
+        /// be removed from an option group, and that option group can't be removed from a DB
         /// instance once it is associated with a DB instance
         /// </para>
         /// </summary>
@@ -652,7 +656,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise
+        ///  Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise
         /// <code>standard</code> 
         /// </para>
         /// </summary>
@@ -686,7 +690,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property TdeCredentialArn. 
         /// <para>
-        /// The ARN from the Key Store with which to associate the instance for TDE encryption.
+        /// The ARN from the key store with which to associate the instance for TDE encryption.
         /// </para>
         /// </summary>
         public string TdeCredentialArn
@@ -704,7 +708,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property TdeCredentialPassword. 
         /// <para>
-        /// The password for the given ARN from the Key Store in order to access the device.
+        /// The password for the given ARN from the key store in order to access the device.
         /// </para>
         /// </summary>
         public string TdeCredentialPassword

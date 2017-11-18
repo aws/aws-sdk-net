@@ -63,7 +63,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property OptInType. 
         /// <para>
         /// A value that specifies the type of opt-in request, or undoes an opt-in request. An
-        /// opt-in request of type <code>immediate</code> cannot be undone.
+        /// opt-in request of type <code>immediate</code> can't be undone.
         /// </para>
         ///  
         /// <para>
