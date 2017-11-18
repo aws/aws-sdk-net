@@ -201,6 +201,10 @@ namespace Amazon.ApplicationAutoScaling
     {
 
         /// <summary>
+        /// Constant ALBRequestCountPerTarget for MetricType
+        /// </summary>
+        public static readonly MetricType ALBRequestCountPerTarget = new MetricType("ALBRequestCountPerTarget");
+        /// <summary>
         /// Constant DynamoDBReadCapacityUtilization for MetricType
         /// </summary>
         public static readonly MetricType DynamoDBReadCapacityUtilization = new MetricType("DynamoDBReadCapacityUtilization");
@@ -208,6 +212,18 @@ namespace Amazon.ApplicationAutoScaling
         /// Constant DynamoDBWriteCapacityUtilization for MetricType
         /// </summary>
         public static readonly MetricType DynamoDBWriteCapacityUtilization = new MetricType("DynamoDBWriteCapacityUtilization");
+        /// <summary>
+        /// Constant EC2SpotFleetRequestAverageCPUUtilization for MetricType
+        /// </summary>
+        public static readonly MetricType EC2SpotFleetRequestAverageCPUUtilization = new MetricType("EC2SpotFleetRequestAverageCPUUtilization");
+        /// <summary>
+        /// Constant EC2SpotFleetRequestAverageNetworkIn for MetricType
+        /// </summary>
+        public static readonly MetricType EC2SpotFleetRequestAverageNetworkIn = new MetricType("EC2SpotFleetRequestAverageNetworkIn");
+        /// <summary>
+        /// Constant EC2SpotFleetRequestAverageNetworkOut for MetricType
+        /// </summary>
+        public static readonly MetricType EC2SpotFleetRequestAverageNetworkOut = new MetricType("EC2SpotFleetRequestAverageNetworkOut");
         /// <summary>
         /// Constant RDSReaderAverageCPUUtilization for MetricType
         /// </summary>

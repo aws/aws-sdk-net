@@ -38,7 +38,8 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property PredefinedMetricType. 
         /// <para>
-        /// The metric type.
+        /// The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only
+        /// to Spot fleet requests.
         /// </para>
         /// </summary>
         public MetricType PredefinedMetricType
@@ -56,8 +57,26 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property ResourceLabel. 
         /// <para>
-        /// Reserved for future use.
+        /// Identifies the resource associated with the metric type. You can't specify a resource
+        /// label unless the metric type is <code>ALBRequestCountPerTarget</code> and there is
+        /// a target group attached to the Spot fleet request.
         /// </para>
+        ///  
+        /// <para>
+        /// The format is app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;,
+        /// where:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt; is the final portion of the
+        /// load balancer ARN
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final portion
+        /// of the target group ARN.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string ResourceLabel
         {
