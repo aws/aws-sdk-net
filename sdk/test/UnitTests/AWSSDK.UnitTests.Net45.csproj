@@ -60,6 +60,7 @@
     <ProjectReference Include="..\..\src\Services\CognitoSync\AWSSDK.CognitoSync.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\ConfigService\AWSSDK.ConfigService.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\CostAndUsageReport\AWSSDK.CostAndUsageReport.Net45.csproj"/>
+    <ProjectReference Include="..\..\src\Services\CostExplorer\AWSSDK.CostExplorer.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\DatabaseMigrationService\AWSSDK.DatabaseMigrationService.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\DataPipeline\AWSSDK.DataPipeline.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\DAX\AWSSDK.DAX.Net45.csproj"/>

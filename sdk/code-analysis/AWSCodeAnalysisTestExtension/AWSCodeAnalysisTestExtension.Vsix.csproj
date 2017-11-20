@@ -188,6 +188,10 @@
       <Project>{F03AF29A-5DE2-45C4-BB91-75713E672A10}</Project>
       <Name>AWSSDK.CostAndUsageReport.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/CostExplorer/AWSSDK.CostExplorer.CodeAnalysis.csproj">
+      <Project>{C19F00F3-7256-451C-9A95-BB51C0E27576}</Project>
+      <Name>AWSSDK.CostExplorer.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/DatabaseMigrationService/AWSSDK.DatabaseMigrationService.CodeAnalysis.csproj">
       <Project>{B0032676-356E-4ABA-A252-890237EAF9C3}</Project>
       <Name>AWSSDK.DatabaseMigrationService.CodeAnalysis</Name>
