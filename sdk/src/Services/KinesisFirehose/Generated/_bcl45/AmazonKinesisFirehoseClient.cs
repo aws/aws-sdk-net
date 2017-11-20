@@ -539,54 +539,6 @@ namespace Amazon.KinesisFirehose
 
         #endregion
         
-        #region  GetKinesisStream
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the GetKinesisStream service method.</param>
-        /// 
-        /// <returns>The response from the GetKinesisStream service method, as returned by KinesisFirehose.</returns>
-        /// <exception cref="Amazon.KinesisFirehose.Model.InvalidArgumentException">
-        /// The specified input parameter has a value that is not valid.
-        /// </exception>
-        /// <exception cref="Amazon.KinesisFirehose.Model.InvalidStreamTypeException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.KinesisFirehose.Model.ResourceNotFoundException">
-        /// The specified resource could not be found.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/GetKinesisStream">REST API Reference for GetKinesisStream Operation</seealso>
-        public virtual GetKinesisStreamResponse GetKinesisStream(GetKinesisStreamRequest request)
-        {
-            var marshaller = new GetKinesisStreamRequestMarshaller();
-            var unmarshaller = GetKinesisStreamResponseUnmarshaller.Instance;
-
-            return Invoke<GetKinesisStreamRequest,GetKinesisStreamResponse>(request, marshaller, unmarshaller);
-        }
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the GetKinesisStream operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetKinesisStream operation.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/GetKinesisStream">REST API Reference for GetKinesisStream Operation</seealso>
-        public virtual Task<GetKinesisStreamResponse> GetKinesisStreamAsync(GetKinesisStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var marshaller = new GetKinesisStreamRequestMarshaller();
-            var unmarshaller = GetKinesisStreamResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetKinesisStreamRequest,GetKinesisStreamResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
-        }
-
-        #endregion
-        
         #region  ListDeliveryStreams
 
 

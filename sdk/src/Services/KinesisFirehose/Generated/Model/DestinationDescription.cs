@@ -37,6 +37,7 @@ namespace Amazon.KinesisFirehose.Model
         private ExtendedS3DestinationDescription _extendedS3DestinationDescription;
         private RedshiftDestinationDescription _redshiftDestinationDescription;
         private S3DestinationDescription _s3DestinationDescription;
+        private SplunkDestinationDescription _splunkDestinationDescription;
 
         /// <summary>
         /// Gets and sets the property DestinationId. 
@@ -126,6 +127,24 @@ namespace Amazon.KinesisFirehose.Model
         internal bool IsSetS3DestinationDescription()
         {
             return this._s3DestinationDescription != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SplunkDestinationDescription. 
+        /// <para>
+        /// The destination in Splunk.
+        /// </para>
+        /// </summary>
+        public SplunkDestinationDescription SplunkDestinationDescription
+        {
+            get { return this._splunkDestinationDescription; }
+            set { this._splunkDestinationDescription = value; }
+        }
+
+        // Check to see if SplunkDestinationDescription property is set
+        internal bool IsSetSplunkDestinationDescription()
+        {
+            return this._splunkDestinationDescription != null;
         }
 
     }

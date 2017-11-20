@@ -101,7 +101,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// The maximum number of delivery streams to list.
+        /// The maximum number of delivery streams to list. The default value is 10.
         /// </para>
         /// </summary>
         public int Limit

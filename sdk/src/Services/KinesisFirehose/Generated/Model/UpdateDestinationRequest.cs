@@ -78,6 +78,7 @@ namespace Amazon.KinesisFirehose.Model
         private ExtendedS3DestinationUpdate _extendedS3DestinationUpdate;
         private RedshiftDestinationUpdate _redshiftDestinationUpdate;
         private S3DestinationUpdate _s3DestinationUpdate;
+        private SplunkDestinationUpdate _splunkDestinationUpdate;
 
         /// <summary>
         /// Gets and sets the property CurrentDeliveryStreamVersionId. 
@@ -207,6 +208,24 @@ namespace Amazon.KinesisFirehose.Model
         internal bool IsSetS3DestinationUpdate()
         {
             return this._s3DestinationUpdate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SplunkDestinationUpdate. 
+        /// <para>
+        /// Describes an update for a destination in Splunk.
+        /// </para>
+        /// </summary>
+        public SplunkDestinationUpdate SplunkDestinationUpdate
+        {
+            get { return this._splunkDestinationUpdate; }
+            set { this._splunkDestinationUpdate = value; }
+        }
+
+        // Check to see if SplunkDestinationUpdate property is set
+        internal bool IsSetSplunkDestinationUpdate()
+        {
+            return this._splunkDestinationUpdate != null;
         }
 
     }

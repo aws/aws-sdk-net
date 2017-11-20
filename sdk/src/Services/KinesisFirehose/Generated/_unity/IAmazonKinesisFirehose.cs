@@ -128,23 +128,6 @@ namespace Amazon.KinesisFirehose
 
         #endregion
         
-        #region  GetKinesisStream
-
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the GetKinesisStream operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetKinesisStream operation on AmazonKinesisFirehoseClient.</param>
-        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/GetKinesisStream">REST API Reference for GetKinesisStream Operation</seealso>
-        void GetKinesisStreamAsync(GetKinesisStreamRequest request, AmazonServiceCallback<GetKinesisStreamRequest, GetKinesisStreamResponse> callback, AsyncOptions options = null);
-
-
-        #endregion
-        
         #region  ListDeliveryStreams
 
 

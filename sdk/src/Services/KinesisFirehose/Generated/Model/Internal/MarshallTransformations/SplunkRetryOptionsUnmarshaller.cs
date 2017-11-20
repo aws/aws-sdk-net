@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SessionCredentials Object
+    /// Response Unmarshaller for SplunkRetryOptions Object
     /// </summary>  
-    public class SessionCredentialsUnmarshaller : IUnmarshaller<SessionCredentials, XmlUnmarshallerContext>, IUnmarshaller<SessionCredentials, JsonUnmarshallerContext>
+    public class SplunkRetryOptionsUnmarshaller : IUnmarshaller<SplunkRetryOptions, XmlUnmarshallerContext>, IUnmarshaller<SplunkRetryOptions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        SessionCredentials IUnmarshaller<SessionCredentials, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        SplunkRetryOptions IUnmarshaller<SplunkRetryOptions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,21 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public SessionCredentials Unmarshall(JsonUnmarshallerContext context)
+        public SplunkRetryOptions Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SessionCredentials unmarshalledObject = new SessionCredentials();
+            SplunkRetryOptions unmarshalledObject = new SplunkRetryOptions();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AccessKeyId", targetDepth))
+                if (context.TestExpression("DurationInSeconds", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AccessKeyId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Expiration", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.Expiration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SecretAccessKey", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SecretAccessKey = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SessionToken", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SessionToken = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.DurationInSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +76,12 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         }
 
 
-        private static SessionCredentialsUnmarshaller _instance = new SessionCredentialsUnmarshaller();        
+        private static SplunkRetryOptionsUnmarshaller _instance = new SplunkRetryOptionsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SessionCredentialsUnmarshaller Instance
+        public static SplunkRetryOptionsUnmarshaller Instance
         {
             get
             {

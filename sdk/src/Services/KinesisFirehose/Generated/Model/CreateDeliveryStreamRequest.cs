@@ -113,6 +113,7 @@ namespace Amazon.KinesisFirehose.Model
         private KinesisStreamSourceConfiguration _kinesisStreamSourceConfiguration;
         private RedshiftDestinationConfiguration _redshiftDestinationConfiguration;
         private S3DestinationConfiguration _s3DestinationConfiguration;
+        private SplunkDestinationConfiguration _splunkDestinationConfiguration;
 
         /// <summary>
         /// Gets and sets the property DeliveryStreamName. 
@@ -251,6 +252,24 @@ namespace Amazon.KinesisFirehose.Model
         internal bool IsSetS3DestinationConfiguration()
         {
             return this._s3DestinationConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SplunkDestinationConfiguration. 
+        /// <para>
+        /// The destination in Splunk. You can specify only one destination.
+        /// </para>
+        /// </summary>
+        public SplunkDestinationConfiguration SplunkDestinationConfiguration
+        {
+            get { return this._splunkDestinationConfiguration; }
+            set { this._splunkDestinationConfiguration = value; }
+        }
+
+        // Check to see if SplunkDestinationConfiguration property is set
+        internal bool IsSetSplunkDestinationConfiguration()
+        {
+            return this._splunkDestinationConfiguration != null;
         }
 
     }

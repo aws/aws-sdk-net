@@ -28,26 +28,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetKinesisStream operation.
-    /// 
+    /// Configures retry behavior in case Kinesis Firehose is unable to deliver documents
+    /// to Splunk or if it doesn't receive an acknowledgment from Splunk.
     /// </summary>
-    public partial class GetKinesisStreamRequest : AmazonKinesisFirehoseRequest
+    public partial class SplunkRetryOptions
     {
-        private string _deliveryStreamARN;
+        private int? _durationInSeconds;
 
         /// <summary>
-        /// Gets and sets the property DeliveryStreamARN.
+        /// Gets and sets the property DurationInSeconds. 
+        /// <para>
+        /// The total amount of time that Kinesis Firehose spends on retries. This duration starts
+        /// after the initial attempt to send data to Splunk fails and doesn't include the periods
+        /// during which Kinesis Firehose waits for acknowledgment from Splunk after each attempt.
+        /// </para>
         /// </summary>
-        public string DeliveryStreamARN
+        public int DurationInSeconds
         {
-            get { return this._deliveryStreamARN; }
-            set { this._deliveryStreamARN = value; }
+            get { return this._durationInSeconds.GetValueOrDefault(); }
+            set { this._durationInSeconds = value; }
         }
 
-        // Check to see if DeliveryStreamARN property is set
-        internal bool IsSetDeliveryStreamARN()
+        // Check to see if DurationInSeconds property is set
+        internal bool IsSetDurationInSeconds()
         {
-            return this._deliveryStreamARN != null;
+            return this._durationInSeconds.HasValue; 
         }
 
     }

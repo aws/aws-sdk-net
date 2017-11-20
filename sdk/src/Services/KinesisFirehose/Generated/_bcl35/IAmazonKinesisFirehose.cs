@@ -304,55 +304,6 @@ namespace Amazon.KinesisFirehose
 
         #endregion
         
-        #region  GetKinesisStream
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the GetKinesisStream service method.</param>
-        /// 
-        /// <returns>The response from the GetKinesisStream service method, as returned by KinesisFirehose.</returns>
-        /// <exception cref="Amazon.KinesisFirehose.Model.InvalidArgumentException">
-        /// The specified input parameter has a value that is not valid.
-        /// </exception>
-        /// <exception cref="Amazon.KinesisFirehose.Model.InvalidStreamTypeException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.KinesisFirehose.Model.ResourceNotFoundException">
-        /// The specified resource could not be found.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/GetKinesisStream">REST API Reference for GetKinesisStream Operation</seealso>
-        GetKinesisStreamResponse GetKinesisStream(GetKinesisStreamRequest request);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the GetKinesisStream operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetKinesisStream operation on AmazonKinesisFirehoseClient.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetKinesisStream
-        ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/GetKinesisStream">REST API Reference for GetKinesisStream Operation</seealso>
-        IAsyncResult BeginGetKinesisStream(GetKinesisStreamRequest request, AsyncCallback callback, object state);
-
-
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the  GetKinesisStream operation.
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetKinesisStream.</param>
-        /// 
-        /// <returns>Returns a  GetKinesisStreamResult from KinesisFirehose.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/GetKinesisStream">REST API Reference for GetKinesisStream Operation</seealso>
-        GetKinesisStreamResponse EndGetKinesisStream(IAsyncResult asyncResult);
-
-        #endregion
-        
         #region  ListDeliveryStreams
 
 

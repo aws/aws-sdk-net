@@ -134,6 +134,17 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetSplunkDestinationConfiguration())
+                {
+                    context.Writer.WritePropertyName("SplunkDestinationConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SplunkDestinationConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SplunkDestinationConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
