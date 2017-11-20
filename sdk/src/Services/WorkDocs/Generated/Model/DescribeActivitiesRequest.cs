@@ -44,7 +44,7 @@ namespace Amazon.WorkDocs.Model
         /// <summary>
         /// Gets and sets the property AuthenticationToken. 
         /// <para>
-        /// Amazon WorkDocs authentication token. This field should not be set when using administrative
+        /// Amazon WorkDocs authentication token. Do not set this field when using administrative
         /// API actions, as in accessing the API using AWS credentials.
         /// </para>
         /// </summary>
@@ -63,7 +63,7 @@ namespace Amazon.WorkDocs.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The timestamp that determines the end time of the activities; the response includes
+        /// The timestamp that determines the end time of the activities. The response includes
         /// the activities performed before the specified timestamp.
         /// </para>
         /// </summary>
@@ -100,8 +100,7 @@ namespace Amazon.WorkDocs.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// The marker for the next set of results. (You received this marker from a previous
-        /// call.)
+        /// The marker for the next set of results.
         /// </para>
         /// </summary>
         public string Marker
@@ -138,7 +137,7 @@ namespace Amazon.WorkDocs.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The timestamp that determines the starting time of the activities; the response includes
+        /// The timestamp that determines the starting time of the activities. The response includes
         /// the activities performed after the specified timestamp.
         /// </para>
         /// </summary>

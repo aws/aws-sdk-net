@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetDocument operation
+    /// Response Unmarshaller for DescribeGroups operation
     /// </summary>  
-    public class GetDocumentResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DescribeGroupsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,22 +45,22 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetDocumentResponse response = new GetDocumentResponse();
+            DescribeGroupsResponse response = new DescribeGroupsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CustomMetadata", targetDepth))
+                if (context.TestExpression("Groups", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    response.CustomMetadata = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<GroupMetadata, GroupMetadataUnmarshaller>(GroupMetadataUnmarshaller.Instance);
+                    response.Groups = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Metadata", targetDepth))
+                if (context.TestExpression("Marker", targetDepth))
                 {
-                    var unmarshaller = DocumentMetadataUnmarshaller.Instance;
-                    response.Metadata = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Marker = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -78,21 +78,9 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("EntityNotExistsException"))
-            {
-                return new EntityNotExistsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("FailedDependencyException"))
             {
                 return new FailedDependencyException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidArgumentException"))
-            {
-                return new InvalidArgumentException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidPasswordException"))
-            {
-                return new InvalidPasswordException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceUnavailableException"))
             {
@@ -109,9 +97,9 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             return new AmazonWorkDocsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static GetDocumentResponseUnmarshaller _instance = new GetDocumentResponseUnmarshaller();        
+        private static DescribeGroupsResponseUnmarshaller _instance = new DescribeGroupsResponseUnmarshaller();        
 
-        internal static GetDocumentResponseUnmarshaller GetInstance()
+        internal static DescribeGroupsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -119,7 +107,7 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetDocumentResponseUnmarshaller Instance
+        public static DescribeGroupsResponseUnmarshaller Instance
         {
             get
             {

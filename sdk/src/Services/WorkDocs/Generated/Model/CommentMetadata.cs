@@ -57,7 +57,10 @@ namespace Amazon.WorkDocs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CommentStatus.
+        /// Gets and sets the property CommentStatus. 
+        /// <para>
+        /// The status of the comment.
+        /// </para>
         /// </summary>
         public CommentStatusType CommentStatus
         {
@@ -90,7 +93,10 @@ namespace Amazon.WorkDocs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreatedTimestamp.
+        /// Gets and sets the property CreatedTimestamp. 
+        /// <para>
+        /// The timestamp that the comment was created.
+        /// </para>
         /// </summary>
         public DateTime CreatedTimestamp
         {

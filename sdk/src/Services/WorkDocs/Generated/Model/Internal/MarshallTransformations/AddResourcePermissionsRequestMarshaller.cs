@@ -68,6 +68,17 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetNotificationOptions())
+                {
+                    context.Writer.WritePropertyName("NotificationOptions");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = NotificationOptionsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.NotificationOptions, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetPrincipals())
                 {
                     context.Writer.WritePropertyName("Principals");

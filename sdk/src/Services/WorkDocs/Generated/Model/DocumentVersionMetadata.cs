@@ -49,7 +49,7 @@ namespace Amazon.WorkDocs.Model
         /// <summary>
         /// Gets and sets the property ContentCreatedTimestamp. 
         /// <para>
-        /// The time stamp when the content of the document was originally created.
+        /// The timestamp when the content of the document was originally created.
         /// </para>
         /// </summary>
         public DateTime ContentCreatedTimestamp
@@ -67,7 +67,7 @@ namespace Amazon.WorkDocs.Model
         /// <summary>
         /// Gets and sets the property ContentModifiedTimestamp. 
         /// <para>
-        /// The time stamp when the content of the document was modified.
+        /// The timestamp when the content of the document was modified.
         /// </para>
         /// </summary>
         public DateTime ContentModifiedTimestamp
@@ -103,7 +103,7 @@ namespace Amazon.WorkDocs.Model
         /// <summary>
         /// Gets and sets the property CreatedTimestamp. 
         /// <para>
-        /// The time stamp when the document was first uploaded.
+        /// The timestamp when the document was first uploaded.
         /// </para>
         /// </summary>
         public DateTime CreatedTimestamp
@@ -157,7 +157,7 @@ namespace Amazon.WorkDocs.Model
         /// <summary>
         /// Gets and sets the property ModifiedTimestamp. 
         /// <para>
-        /// The time stamp when the document was last uploaded.
+        /// The timestamp when the document was last uploaded.
         /// </para>
         /// </summary>
         public DateTime ModifiedTimestamp

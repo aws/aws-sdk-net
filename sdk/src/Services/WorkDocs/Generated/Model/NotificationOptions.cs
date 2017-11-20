@@ -28,49 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkDocs.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteDocument operation.
-    /// Permanently deletes the specified document and its associated metadata.
+    /// Set of options which defines notification preferences of given action.
     /// </summary>
-    public partial class DeleteDocumentRequest : AmazonWorkDocsRequest
+    public partial class NotificationOptions
     {
-        private string _authenticationToken;
-        private string _documentId;
+        private string _emailMessage;
+        private bool? _sendEmail;
 
         /// <summary>
-        /// Gets and sets the property AuthenticationToken. 
+        /// Gets and sets the property EmailMessage. 
         /// <para>
-        /// Amazon WorkDocs authentication token. Do not set this field when using administrative
-        /// API actions, as in accessing the API using AWS credentials.
+        /// Text value to be included in the email body.
         /// </para>
         /// </summary>
-        public string AuthenticationToken
+        public string EmailMessage
         {
-            get { return this._authenticationToken; }
-            set { this._authenticationToken = value; }
+            get { return this._emailMessage; }
+            set { this._emailMessage = value; }
         }
 
-        // Check to see if AuthenticationToken property is set
-        internal bool IsSetAuthenticationToken()
+        // Check to see if EmailMessage property is set
+        internal bool IsSetEmailMessage()
         {
-            return this._authenticationToken != null;
+            return this._emailMessage != null;
         }
 
         /// <summary>
-        /// Gets and sets the property DocumentId. 
+        /// Gets and sets the property SendEmail. 
         /// <para>
-        /// The ID of the document.
+        /// Boolean value to indicate an email notification should be sent to the receipients.
         /// </para>
         /// </summary>
-        public string DocumentId
+        public bool SendEmail
         {
-            get { return this._documentId; }
-            set { this._documentId = value; }
+            get { return this._sendEmail.GetValueOrDefault(); }
+            set { this._sendEmail = value; }
         }
 
-        // Check to see if DocumentId property is set
-        internal bool IsSetDocumentId()
+        // Check to see if SendEmail property is set
+        internal bool IsSetSendEmail()
         {
-            return this._documentId != null;
+            return this._sendEmail.HasValue; 
         }
 
     }

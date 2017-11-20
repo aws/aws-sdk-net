@@ -57,7 +57,7 @@ namespace Amazon.WorkDocs.Model
         /// <summary>
         /// Gets and sets the property AuthenticationToken. 
         /// <para>
-        /// Amazon WorkDocs authentication token. This field should not be set when using administrative
+        /// Amazon WorkDocs authentication token. Do not set this field when using administrative
         /// API actions, as in accessing the API using AWS credentials.
         /// </para>
         /// </summary>
@@ -76,7 +76,7 @@ namespace Amazon.WorkDocs.Model
         /// <summary>
         /// Gets and sets the property ContentCreatedTimestamp. 
         /// <para>
-        /// The time stamp when the content of the document was originally created.
+        /// The timestamp when the content of the document was originally created.
         /// </para>
         /// </summary>
         public DateTime ContentCreatedTimestamp
@@ -94,7 +94,7 @@ namespace Amazon.WorkDocs.Model
         /// <summary>
         /// Gets and sets the property ContentModifiedTimestamp. 
         /// <para>
-        /// The time stamp when the content of the document was modified.
+        /// The timestamp when the content of the document was modified.
         /// </para>
         /// </summary>
         public DateTime ContentModifiedTimestamp

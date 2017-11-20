@@ -35,13 +35,14 @@ namespace Amazon.WorkDocs.Model
     public partial class AddResourcePermissionsRequest : AmazonWorkDocsRequest
     {
         private string _authenticationToken;
+        private NotificationOptions _notificationOptions;
         private List<SharePrincipal> _principals = new List<SharePrincipal>();
         private string _resourceId;
 
         /// <summary>
         /// Gets and sets the property AuthenticationToken. 
         /// <para>
-        /// Amazon WorkDocs authentication token. This field should not be set when using administrative
+        /// Amazon WorkDocs authentication token. Do not set this field when using administrative
         /// API actions, as in accessing the API using AWS credentials.
         /// </para>
         /// </summary>
@@ -55,6 +56,24 @@ namespace Amazon.WorkDocs.Model
         internal bool IsSetAuthenticationToken()
         {
             return this._authenticationToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NotificationOptions. 
+        /// <para>
+        /// The notification options.
+        /// </para>
+        /// </summary>
+        public NotificationOptions NotificationOptions
+        {
+            get { return this._notificationOptions; }
+            set { this._notificationOptions = value; }
+        }
+
+        // Check to see if NotificationOptions property is set
+        internal bool IsSetNotificationOptions()
+        {
+            return this._notificationOptions != null;
         }
 
         /// <summary>

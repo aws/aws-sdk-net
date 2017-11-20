@@ -430,6 +430,39 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkDocs.Model.DescribeGroupsRequest.AuthenticationToken</property>
+    <min>1</min>
+    <max>8199</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.DescribeGroupsRequest.Limit</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.DescribeGroupsRequest.Marker</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[\u0000-\u00FF]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.DescribeGroupsRequest.OrganizationId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[&amp;\w+-.@]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.DescribeGroupsRequest.SearchQuery</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[\u0020-\uFFFF]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.DescribeGroupsResponse.Marker</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[\u0000-\u00FF]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkDocs.Model.DescribeNotificationSubscriptionsRequest.Limit</property>
     <min>1</min>
     <max>999</max>
@@ -464,6 +497,12 @@
     <property>Amazon.WorkDocs.Model.DescribeResourcePermissionsRequest.Marker</property>
     <min>1</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.DescribeResourcePermissionsRequest.PrincipalId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[&amp;\w+-.@]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkDocs.Model.DescribeResourcePermissionsRequest.ResourceId</property>
@@ -918,6 +957,11 @@
     <min>1</min>
     <max>256</max>
     <pattern>[&amp;\w+-.@]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.NotificationOptions.EmailMessage</property>
+    <min>0</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkDocs.Model.Principal.Id</property>

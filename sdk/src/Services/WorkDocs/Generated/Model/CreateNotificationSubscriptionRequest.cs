@@ -85,7 +85,7 @@ namespace Amazon.WorkDocs.Model
         /// <summary>
         /// Gets and sets the property Protocol. 
         /// <para>
-        /// The protocol to use. The supported value is https, which delivers JSON-encoded messasges
+        /// The protocol to use. The supported value is https, which delivers JSON-encoded messages
         /// using HTTPS POST.
         /// </para>
         /// </summary>

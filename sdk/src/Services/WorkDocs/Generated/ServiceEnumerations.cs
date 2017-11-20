@@ -191,6 +191,56 @@ namespace Amazon.WorkDocs
 
 
     /// <summary>
+    /// Constants used for properties of type BooleanEnumType.
+    /// </summary>
+    public class BooleanEnumType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FALSE for BooleanEnumType
+        /// </summary>
+        public static readonly BooleanEnumType FALSE = new BooleanEnumType("FALSE");
+        /// <summary>
+        /// Constant TRUE for BooleanEnumType
+        /// </summary>
+        public static readonly BooleanEnumType TRUE = new BooleanEnumType("TRUE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BooleanEnumType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BooleanEnumType FindValue(string value)
+        {
+            return FindValue<BooleanEnumType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BooleanEnumType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CommentStatusType.
     /// </summary>
     public class CommentStatusType : ConstantClass
@@ -1381,9 +1431,21 @@ namespace Amazon.WorkDocs
         /// </summary>
         public static readonly UserType ADMIN = new UserType("ADMIN");
         /// <summary>
+        /// Constant MINIMALUSER for UserType
+        /// </summary>
+        public static readonly UserType MINIMALUSER = new UserType("MINIMALUSER");
+        /// <summary>
+        /// Constant POWERUSER for UserType
+        /// </summary>
+        public static readonly UserType POWERUSER = new UserType("POWERUSER");
+        /// <summary>
         /// Constant USER for UserType
         /// </summary>
         public static readonly UserType USER = new UserType("USER");
+        /// <summary>
+        /// Constant WORKSPACESUSER for UserType
+        /// </summary>
+        public static readonly UserType WORKSPACESUSER = new UserType("WORKSPACESUSER");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

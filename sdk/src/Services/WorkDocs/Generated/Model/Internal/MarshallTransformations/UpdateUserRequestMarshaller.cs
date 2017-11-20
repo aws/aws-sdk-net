@@ -74,6 +74,12 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.GivenName);
                 }
 
+                if(publicRequest.IsSetGrantPoweruserPrivileges())
+                {
+                    context.Writer.WritePropertyName("GrantPoweruserPrivileges");
+                    context.Writer.Write(publicRequest.GrantPoweruserPrivileges);
+                }
+
                 if(publicRequest.IsSetLocale())
                 {
                     context.Writer.WritePropertyName("Locale");

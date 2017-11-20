@@ -36,12 +36,13 @@ namespace Amazon.WorkDocs.Model
         private string _authenticationToken;
         private int? _limit;
         private string _marker;
+        private string _principalId;
         private string _resourceId;
 
         /// <summary>
         /// Gets and sets the property AuthenticationToken. 
         /// <para>
-        /// Amazon WorkDocs authentication token. This field should not be set when using administrative
+        /// Amazon WorkDocs authentication token. Do not set this field when using administrative
         /// API actions, as in accessing the API using AWS credentials.
         /// </para>
         /// </summary>
@@ -92,6 +93,24 @@ namespace Amazon.WorkDocs.Model
         internal bool IsSetMarker()
         {
             return this._marker != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrincipalId. 
+        /// <para>
+        /// The ID of the principal to filter permissions by.
+        /// </para>
+        /// </summary>
+        public string PrincipalId
+        {
+            get { return this._principalId; }
+            set { this._principalId = value; }
+        }
+
+        // Check to see if PrincipalId property is set
+        internal bool IsSetPrincipalId()
+        {
+            return this._principalId != null;
         }
 
         /// <summary>

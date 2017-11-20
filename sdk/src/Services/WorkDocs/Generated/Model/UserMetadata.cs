@@ -113,7 +113,7 @@ namespace Amazon.WorkDocs.Model
         /// <summary>
         /// Gets and sets the property Username. 
         /// <para>
-        /// The username of the user.
+        /// The name of the user.
         /// </para>
         /// </summary>
         public string Username

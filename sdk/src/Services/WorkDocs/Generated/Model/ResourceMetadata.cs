@@ -79,7 +79,7 @@ namespace Amazon.WorkDocs.Model
         /// <summary>
         /// Gets and sets the property OriginalName. 
         /// <para>
-        /// The original name of the resource prior to a rename operation.
+        /// The original name of the resource before a rename operation.
         /// </para>
         /// </summary>
         public string OriginalName

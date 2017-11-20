@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkDocs.Model
 {
     /// <summary>
-    /// Describes the users and/or user groups.
+    /// Describes the users or user groups.
     /// </summary>
     public partial class Participants
     {

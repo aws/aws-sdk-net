@@ -28,16 +28,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkDocs.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateCustomMetadata operation.
-    /// Adds one or more custom properties to the specified resource (a folder, document,
-    /// or version).
+    /// Container for the parameters to the DescribeGroups operation.
+    /// Describes the groups specified by query.
     /// </summary>
-    public partial class CreateCustomMetadataRequest : AmazonWorkDocsRequest
+    public partial class DescribeGroupsRequest : AmazonWorkDocsRequest
     {
         private string _authenticationToken;
-        private Dictionary<string, string> _customMetadata = new Dictionary<string, string>();
-        private string _resourceId;
-        private string _versionId;
+        private int? _limit;
+        private string _marker;
+        private string _organizationId;
+        private string _searchQuery;
 
         /// <summary>
         /// Gets and sets the property AuthenticationToken. 
@@ -59,57 +59,76 @@ namespace Amazon.WorkDocs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CustomMetadata. 
+        /// Gets and sets the property Limit. 
         /// <para>
-        /// Custom metadata in the form of name-value pairs.
+        /// The maximum number of items to return with this call.
         /// </para>
         /// </summary>
-        public Dictionary<string, string> CustomMetadata
+        public int Limit
         {
-            get { return this._customMetadata; }
-            set { this._customMetadata = value; }
+            get { return this._limit.GetValueOrDefault(); }
+            set { this._limit = value; }
         }
 
-        // Check to see if CustomMetadata property is set
-        internal bool IsSetCustomMetadata()
+        // Check to see if Limit property is set
+        internal bool IsSetLimit()
         {
-            return this._customMetadata != null && this._customMetadata.Count > 0; 
+            return this._limit.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceId. 
+        /// Gets and sets the property Marker. 
         /// <para>
-        /// The ID of the resource.
+        /// The marker for the next set of results. (You received this marker from a previous
+        /// call.)
         /// </para>
         /// </summary>
-        public string ResourceId
+        public string Marker
         {
-            get { return this._resourceId; }
-            set { this._resourceId = value; }
+            get { return this._marker; }
+            set { this._marker = value; }
         }
 
-        // Check to see if ResourceId property is set
-        internal bool IsSetResourceId()
+        // Check to see if Marker property is set
+        internal bool IsSetMarker()
         {
-            return this._resourceId != null;
+            return this._marker != null;
         }
 
         /// <summary>
-        /// Gets and sets the property VersionId. 
+        /// Gets and sets the property OrganizationId. 
         /// <para>
-        /// The ID of the version, if the custom metadata is being added to a document version.
+        /// The ID of the organization.
         /// </para>
         /// </summary>
-        public string VersionId
+        public string OrganizationId
         {
-            get { return this._versionId; }
-            set { this._versionId = value; }
+            get { return this._organizationId; }
+            set { this._organizationId = value; }
         }
 
-        // Check to see if VersionId property is set
-        internal bool IsSetVersionId()
+        // Check to see if OrganizationId property is set
+        internal bool IsSetOrganizationId()
         {
-            return this._versionId != null;
+            return this._organizationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SearchQuery. 
+        /// <para>
+        /// A query to describe groups by group name.
+        /// </para>
+        /// </summary>
+        public string SearchQuery
+        {
+            get { return this._searchQuery; }
+            set { this._searchQuery = value; }
+        }
+
+        // Check to see if SearchQuery property is set
+        internal bool IsSetSearchQuery()
+        {
+            return this._searchQuery != null;
         }
 
     }

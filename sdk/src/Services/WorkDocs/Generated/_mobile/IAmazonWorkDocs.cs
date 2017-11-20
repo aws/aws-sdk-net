@@ -36,32 +36,32 @@ namespace Amazon.WorkDocs
     ///  <ul> <li> 
     /// <para>
     /// File Migration: File migration applications are supported for users who want to migrate
-    /// their files from an on-premise or off-premise file system or service. Users can insert
-    /// files into a user directory structure, as well as allow for basic metadata changes,
-    /// such as modifications to the permissions of files.
+    /// their files from an on-premises or off-premises file system or service. Users can
+    /// insert files into a user directory structure, as well as allow for basic metadata
+    /// changes, such as modifications to the permissions of files.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// Security: Support security applications are supported for users who have additional
-    /// security needs, such as anti-virus or data loss prevention. The APIs, in conjunction
-    /// with Amazon CloudTrail, allow these applications to detect when changes occur in Amazon
-    /// WorkDocs, so the application can take the necessary actions and replace the target
-    /// file. The application can also choose to email the user if the target file violates
-    /// the policy.
+    /// security needs, such as antivirus or data loss prevention. The API actions, along
+    /// with AWS CloudTrail, allow these applications to detect when changes occur in Amazon
+    /// WorkDocs. Then, the application can take the necessary actions and replace the target
+    /// file. If the target file violates the policy, the application can also choose to email
+    /// the user.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// eDiscovery/Analytics: General administrative applications are supported, such as eDiscovery
-    /// and analytics. These applications can choose to mimic and/or record the actions in
-    /// an Amazon WorkDocs site, in conjunction with Amazon CloudTrails, to replicate data
-    /// for eDiscovery, backup, or analytical applications.
+    /// and analytics. These applications can choose to mimic or record the actions in an
+    /// Amazon WorkDocs site, along with AWS CloudTrail, to replicate data for eDiscovery,
+    /// backup, or analytical applications.
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// All Amazon WorkDocs APIs are Amazon authenticated, certificate-signed APIs. They not
-    /// only require the use of the AWS SDK, but also allow for the exclusive use of IAM users
-    /// and roles to help facilitate access, trust, and permission policies. By creating a
-    /// role and allowing an IAM user to access the Amazon WorkDocs site, the IAM user gains
+    /// All Amazon WorkDocs API actions are Amazon authenticated and certificate-signed. They
+    /// not only require the use of the AWS SDK, but also allow for the exclusive use of IAM
+    /// users and roles to help facilitate access, trust, and permission policies. By creating
+    /// a role and allowing an IAM user to access the Amazon WorkDocs site, the IAM user gains
     /// full administrative visibility into the entire Amazon WorkDocs site (or as set in
     /// the IAM policy). This includes, but is not limited to, the ability to modify file
     /// permissions and upload any file to any user. This allows developers to perform the
@@ -443,6 +443,23 @@ namespace Amazon.WorkDocs
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeFolderContents">REST API Reference for DescribeFolderContents Operation</seealso>
         Task<DescribeFolderContentsResponse> DescribeFolderContentsAsync(DescribeFolderContentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeGroups
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeGroups operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeGroups">REST API Reference for DescribeGroups Operation</seealso>
+        Task<DescribeGroupsResponse> DescribeGroupsAsync(DescribeGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

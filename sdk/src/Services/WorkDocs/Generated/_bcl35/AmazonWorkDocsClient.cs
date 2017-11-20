@@ -38,32 +38,32 @@ namespace Amazon.WorkDocs
     ///  <ul> <li> 
     /// <para>
     /// File Migration: File migration applications are supported for users who want to migrate
-    /// their files from an on-premise or off-premise file system or service. Users can insert
-    /// files into a user directory structure, as well as allow for basic metadata changes,
-    /// such as modifications to the permissions of files.
+    /// their files from an on-premises or off-premises file system or service. Users can
+    /// insert files into a user directory structure, as well as allow for basic metadata
+    /// changes, such as modifications to the permissions of files.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// Security: Support security applications are supported for users who have additional
-    /// security needs, such as anti-virus or data loss prevention. The APIs, in conjunction
-    /// with Amazon CloudTrail, allow these applications to detect when changes occur in Amazon
-    /// WorkDocs, so the application can take the necessary actions and replace the target
-    /// file. The application can also choose to email the user if the target file violates
-    /// the policy.
+    /// security needs, such as antivirus or data loss prevention. The API actions, along
+    /// with AWS CloudTrail, allow these applications to detect when changes occur in Amazon
+    /// WorkDocs. Then, the application can take the necessary actions and replace the target
+    /// file. If the target file violates the policy, the application can also choose to email
+    /// the user.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// eDiscovery/Analytics: General administrative applications are supported, such as eDiscovery
-    /// and analytics. These applications can choose to mimic and/or record the actions in
-    /// an Amazon WorkDocs site, in conjunction with Amazon CloudTrails, to replicate data
-    /// for eDiscovery, backup, or analytical applications.
+    /// and analytics. These applications can choose to mimic or record the actions in an
+    /// Amazon WorkDocs site, along with AWS CloudTrail, to replicate data for eDiscovery,
+    /// backup, or analytical applications.
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// All Amazon WorkDocs APIs are Amazon authenticated, certificate-signed APIs. They not
-    /// only require the use of the AWS SDK, but also allow for the exclusive use of IAM users
-    /// and roles to help facilitate access, trust, and permission policies. By creating a
-    /// role and allowing an IAM user to access the Amazon WorkDocs site, the IAM user gains
+    /// All Amazon WorkDocs API actions are Amazon authenticated and certificate-signed. They
+    /// not only require the use of the AWS SDK, but also allow for the exclusive use of IAM
+    /// users and roles to help facilitate access, trust, and permission policies. By creating
+    /// a role and allowing an IAM user to access the Amazon WorkDocs site, the IAM user gains
     /// full administrative visibility into the entire Amazon WorkDocs site (or as set in
     /// the IAM policy). This includes, but is not limited to, the ability to modify file
     /// permissions and upload any file to any user. This allows developers to perform the
@@ -274,7 +274,7 @@ namespace Amazon.WorkDocs
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
         /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
-        /// the control of the organization is failing, such as a connected active directory.
+        /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
         /// The specified document version is not in the INITIALIZED state.
@@ -346,7 +346,7 @@ namespace Amazon.WorkDocs
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
         /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
-        /// the control of the organization is failing, such as a connected active directory.
+        /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
         /// One or more of the dependencies is unavailable.
@@ -413,7 +413,7 @@ namespace Amazon.WorkDocs
         /// <returns>The response from the AddResourcePermissions service method, as returned by WorkDocs.</returns>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
         /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
-        /// the control of the organization is failing, such as a connected active directory.
+        /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
         /// One or more of the dependencies is unavailable.
@@ -486,7 +486,7 @@ namespace Amazon.WorkDocs
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
         /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
-        /// the control of the organization is failing, such as a connected active directory.
+        /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
         /// The specified document version is not in the INITIALIZED state.
@@ -562,7 +562,7 @@ namespace Amazon.WorkDocs
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
         /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
-        /// the control of the organization is failing, such as a connected active directory.
+        /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
         /// The specified document version is not in the INITIALIZED state.
@@ -637,7 +637,7 @@ namespace Amazon.WorkDocs
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
         /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
-        /// the control of the organization is failing, such as a connected active directory.
+        /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.LimitExceededException">
         /// The maximum of 100,000 folders under the parent folder has been exceeded.
@@ -712,7 +712,7 @@ namespace Amazon.WorkDocs
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
         /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
-        /// the control of the organization is failing, such as a connected active directory.
+        /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
         /// One or more of the dependencies is unavailable.
@@ -854,7 +854,7 @@ namespace Amazon.WorkDocs
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
         /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
-        /// the control of the organization is failing, such as a connected active directory.
+        /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
         /// One or more of the dependencies is unavailable.
@@ -923,7 +923,7 @@ namespace Amazon.WorkDocs
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
         /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
-        /// the control of the organization is failing, such as a connected active directory.
+        /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
         /// One or more of the dependencies is unavailable.
@@ -996,7 +996,7 @@ namespace Amazon.WorkDocs
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
         /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
-        /// the control of the organization is failing, such as a connected active directory.
+        /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
         /// The specified document version is not in the INITIALIZED state.
@@ -1068,7 +1068,7 @@ namespace Amazon.WorkDocs
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
         /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
-        /// the control of the organization is failing, such as a connected active directory.
+        /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
         /// The specified document version is not in the INITIALIZED state.
@@ -1143,7 +1143,7 @@ namespace Amazon.WorkDocs
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
         /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
-        /// the control of the organization is failing, such as a connected active directory.
+        /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
         /// The specified document version is not in the INITIALIZED state.
@@ -1218,7 +1218,7 @@ namespace Amazon.WorkDocs
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
         /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
-        /// the control of the organization is failing, such as a connected active directory.
+        /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
         /// The specified document version is not in the INITIALIZED state.
@@ -1290,7 +1290,7 @@ namespace Amazon.WorkDocs
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
         /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
-        /// the control of the organization is failing, such as a connected active directory.
+        /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
         /// One or more of the dependencies is unavailable.
@@ -1359,7 +1359,7 @@ namespace Amazon.WorkDocs
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
         /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
-        /// the control of the organization is failing, such as a connected active directory.
+        /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
         /// One or more of the dependencies is unavailable.
@@ -1493,7 +1493,7 @@ namespace Amazon.WorkDocs
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
         /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
-        /// the control of the organization is failing, such as a connected active directory.
+        /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
         /// One or more of the dependencies is unavailable.
@@ -1559,10 +1559,10 @@ namespace Amazon.WorkDocs
         /// <returns>The response from the DescribeActivities service method, as returned by WorkDocs.</returns>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
         /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
-        /// the control of the organization is failing, such as a connected active directory.
+        /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.InvalidArgumentException">
-        /// The pagination marker and/or limit fields are not valid.
+        /// The pagination marker or limit fields are not valid.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
         /// One or more of the dependencies is unavailable.
@@ -1631,7 +1631,7 @@ namespace Amazon.WorkDocs
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
         /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
-        /// the control of the organization is failing, such as a connected active directory.
+        /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
         /// The specified document version is not in the INITIALIZED state.
@@ -1708,10 +1708,10 @@ namespace Amazon.WorkDocs
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
         /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
-        /// the control of the organization is failing, such as a connected active directory.
+        /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.InvalidArgumentException">
-        /// The pagination marker and/or limit fields are not valid.
+        /// The pagination marker or limit fields are not valid.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
         /// The specified document version is not in the INITIALIZED state.
@@ -1790,10 +1790,10 @@ namespace Amazon.WorkDocs
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
         /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
-        /// the control of the organization is failing, such as a connected active directory.
+        /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.InvalidArgumentException">
-        /// The pagination marker and/or limit fields are not valid.
+        /// The pagination marker or limit fields are not valid.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
         /// The specified document version is not in the INITIALIZED state.
@@ -1845,6 +1845,72 @@ namespace Amazon.WorkDocs
         public virtual DescribeFolderContentsResponse EndDescribeFolderContents(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeFolderContentsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeGroups
+
+        /// <summary>
+        /// Describes the groups specified by query.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeGroups service method.</param>
+        /// 
+        /// <returns>The response from the DescribeGroups service method, as returned by WorkDocs.</returns>
+        /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
+        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// the control of the organization is failing, such as a connected Active Directory.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
+        /// One or more of the dependencies is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.UnauthorizedOperationException">
+        /// The operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.UnauthorizedResourceAccessException">
+        /// The caller does not have access to perform the action on the resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeGroups">REST API Reference for DescribeGroups Operation</seealso>
+        public virtual DescribeGroupsResponse DescribeGroups(DescribeGroupsRequest request)
+        {
+            var marshaller = new DescribeGroupsRequestMarshaller();
+            var unmarshaller = DescribeGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeGroupsRequest,DescribeGroupsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeGroups operation on AmazonWorkDocsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeGroups
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeGroups">REST API Reference for DescribeGroups Operation</seealso>
+        public virtual IAsyncResult BeginDescribeGroups(DescribeGroupsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeGroupsRequestMarshaller();
+            var unmarshaller = DescribeGroupsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeGroupsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeGroups.</param>
+        /// 
+        /// <returns>Returns a  DescribeGroupsResult from WorkDocs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeGroups">REST API Reference for DescribeGroups Operation</seealso>
+        public virtual DescribeGroupsResponse EndDescribeGroups(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeGroupsResponse>(asyncResult);
         }
 
         #endregion
@@ -1921,7 +1987,7 @@ namespace Amazon.WorkDocs
         /// <returns>The response from the DescribeResourcePermissions service method, as returned by WorkDocs.</returns>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
         /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
-        /// the control of the organization is failing, such as a connected active directory.
+        /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
         /// One or more of the dependencies is unavailable.
@@ -1981,8 +2047,8 @@ namespace Amazon.WorkDocs
 
         /// <summary>
         /// Describes the current user's special folders; the <code>RootFolder</code> and the
-        /// <code>RecyleBin</code>. <code>RootFolder</code> is the root of user's files and folders
-        /// and <code>RecyleBin</code> is the root of recycled items. This is not a valid action
+        /// <code>RecycleBin</code>. <code>RootFolder</code> is the root of user's files and folders
+        /// and <code>RecycleBin</code> is the root of recycled items. This is not a valid action
         /// for SigV4 (administrative API) clients.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeRootFolders service method.</param>
@@ -1990,10 +2056,10 @@ namespace Amazon.WorkDocs
         /// <returns>The response from the DescribeRootFolders service method, as returned by WorkDocs.</returns>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
         /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
-        /// the control of the organization is failing, such as a connected active directory.
+        /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.InvalidArgumentException">
-        /// The pagination marker and/or limit fields are not valid.
+        /// The pagination marker or limit fields are not valid.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
         /// One or more of the dependencies is unavailable.
@@ -2067,10 +2133,10 @@ namespace Amazon.WorkDocs
         /// <returns>The response from the DescribeUsers service method, as returned by WorkDocs.</returns>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
         /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
-        /// the control of the organization is failing, such as a connected active directory.
+        /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.InvalidArgumentException">
-        /// The pagination marker and/or limit fields are not valid.
+        /// The pagination marker or limit fields are not valid.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
         /// One or more of the dependencies is unavailable.
@@ -2140,7 +2206,7 @@ namespace Amazon.WorkDocs
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
         /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
-        /// the control of the organization is failing, such as a connected active directory.
+        /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
         /// One or more of the dependencies is unavailable.
@@ -2209,10 +2275,13 @@ namespace Amazon.WorkDocs
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
         /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
-        /// the control of the organization is failing, such as a connected active directory.
+        /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.InvalidArgumentException">
-        /// The pagination marker and/or limit fields are not valid.
+        /// The pagination marker or limit fields are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.InvalidPasswordException">
+        /// The password is invalid.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
         /// One or more of the dependencies is unavailable.
@@ -2289,7 +2358,7 @@ namespace Amazon.WorkDocs
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
         /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
-        /// the control of the organization is failing, such as a connected active directory.
+        /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
         /// One or more of the dependencies is unavailable.
@@ -2358,7 +2427,10 @@ namespace Amazon.WorkDocs
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
         /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
-        /// the control of the organization is failing, such as a connected active directory.
+        /// the control of the organization is failing, such as a connected Active Directory.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.InvalidPasswordException">
+        /// The password is invalid.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
         /// The specified document version is not in the INITIALIZED state.
@@ -2430,10 +2502,10 @@ namespace Amazon.WorkDocs
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
         /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
-        /// the control of the organization is failing, such as a connected active directory.
+        /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.InvalidArgumentException">
-        /// The pagination marker and/or limit fields are not valid.
+        /// The pagination marker or limit fields are not valid.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
         /// The specified document version is not in the INITIALIZED state.
@@ -2513,7 +2585,7 @@ namespace Amazon.WorkDocs
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
         /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
-        /// the control of the organization is failing, such as a connected active directory.
+        /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
         /// One or more of the dependencies is unavailable.
@@ -2601,7 +2673,7 @@ namespace Amazon.WorkDocs
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
         /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
-        /// the control of the organization is failing, such as a connected active directory.
+        /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
         /// The specified document version is not in the INITIALIZED state.
@@ -2679,7 +2751,7 @@ namespace Amazon.WorkDocs
         /// <returns>The response from the RemoveAllResourcePermissions service method, as returned by WorkDocs.</returns>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
         /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
-        /// the control of the organization is failing, such as a connected active directory.
+        /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
         /// One or more of the dependencies is unavailable.
@@ -2745,7 +2817,7 @@ namespace Amazon.WorkDocs
         /// <returns>The response from the RemoveResourcePermission service method, as returned by WorkDocs.</returns>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
         /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
-        /// the control of the organization is failing, such as a connected active directory.
+        /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
         /// One or more of the dependencies is unavailable.
@@ -2821,7 +2893,7 @@ namespace Amazon.WorkDocs
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
         /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
-        /// the control of the organization is failing, such as a connected active directory.
+        /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.LimitExceededException">
         /// The maximum of 100,000 folders under the parent folder has been exceeded.
@@ -2906,7 +2978,7 @@ namespace Amazon.WorkDocs
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
         /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
-        /// the control of the organization is failing, such as a connected active directory.
+        /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.InvalidOperationException">
         /// The operation is invalid.
@@ -2988,7 +3060,7 @@ namespace Amazon.WorkDocs
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
         /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
-        /// the control of the organization is failing, such as a connected active directory.
+        /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.LimitExceededException">
         /// The maximum of 100,000 folders under the parent folder has been exceeded.
@@ -3067,10 +3139,13 @@ namespace Amazon.WorkDocs
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
         /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
-        /// the control of the organization is failing, such as a connected active directory.
+        /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.IllegalUserStateException">
         /// The user is undergoing transfer of ownership.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.InvalidArgumentException">
+        /// The pagination marker or limit fields are not valid.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
         /// One or more of the dependencies is unavailable.

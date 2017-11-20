@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DescribeResourcePermissions Request Marshaller
+    /// DescribeGroups Request Marshaller
     /// </summary>       
-    public class DescribeResourcePermissionsRequestMarshaller : IMarshaller<IRequest, DescribeResourcePermissionsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DescribeGroupsRequestMarshaller : IMarshaller<IRequest, DescribeGroupsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((DescribeResourcePermissionsRequest)input);
+            return this.Marshall((DescribeGroupsRequest)input);
         }
 
         /// <summary>
@@ -52,15 +52,12 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(DescribeResourcePermissionsRequest publicRequest)
+        public IRequest Marshall(DescribeGroupsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.WorkDocs");
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/api/v1/resources/{ResourceId}/permissions";
-            if (!publicRequest.IsSetResourceId())
-                throw new AmazonWorkDocsException("Request object does not have required field ResourceId set");
-            uriResourcePath = uriResourcePath.Replace("{ResourceId}", StringUtils.FromString(publicRequest.ResourceId));
+            string uriResourcePath = "/api/v1/groups";
             
             if (publicRequest.IsSetLimit())
                 request.Parameters.Add("limit", StringUtils.FromInt(publicRequest.Limit));
@@ -68,8 +65,11 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetMarker())
                 request.Parameters.Add("marker", StringUtils.FromString(publicRequest.Marker));
             
-            if (publicRequest.IsSetPrincipalId())
-                request.Parameters.Add("principalId", StringUtils.FromString(publicRequest.PrincipalId));
+            if (publicRequest.IsSetOrganizationId())
+                request.Parameters.Add("organizationId", StringUtils.FromString(publicRequest.OrganizationId));
+            
+            if (publicRequest.IsSetSearchQuery())
+                request.Parameters.Add("searchQuery", StringUtils.FromString(publicRequest.SearchQuery));
             request.ResourcePath = uriResourcePath;
         
             if(publicRequest.IsSetAuthenticationToken())

@@ -28,49 +28,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkDocs.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteDocument operation.
-    /// Permanently deletes the specified document and its associated metadata.
+    /// This is the response object from the DescribeGroups operation.
     /// </summary>
-    public partial class DeleteDocumentRequest : AmazonWorkDocsRequest
+    public partial class DescribeGroupsResponse : AmazonWebServiceResponse
     {
-        private string _authenticationToken;
-        private string _documentId;
+        private List<GroupMetadata> _groups = new List<GroupMetadata>();
+        private string _marker;
 
         /// <summary>
-        /// Gets and sets the property AuthenticationToken. 
+        /// Gets and sets the property Groups. 
         /// <para>
-        /// Amazon WorkDocs authentication token. Do not set this field when using administrative
-        /// API actions, as in accessing the API using AWS credentials.
+        /// The list of groups.
         /// </para>
         /// </summary>
-        public string AuthenticationToken
+        public List<GroupMetadata> Groups
         {
-            get { return this._authenticationToken; }
-            set { this._authenticationToken = value; }
+            get { return this._groups; }
+            set { this._groups = value; }
         }
 
-        // Check to see if AuthenticationToken property is set
-        internal bool IsSetAuthenticationToken()
+        // Check to see if Groups property is set
+        internal bool IsSetGroups()
         {
-            return this._authenticationToken != null;
+            return this._groups != null && this._groups.Count > 0; 
         }
 
         /// <summary>
-        /// Gets and sets the property DocumentId. 
+        /// Gets and sets the property Marker. 
         /// <para>
-        /// The ID of the document.
+        /// The marker to use when requesting the next set of results. If there are no additional
+        /// results, the string is empty.
         /// </para>
         /// </summary>
-        public string DocumentId
+        public string Marker
         {
-            get { return this._documentId; }
-            set { this._documentId = value; }
+            get { return this._marker; }
+            set { this._marker = value; }
         }
 
-        // Check to see if DocumentId property is set
-        internal bool IsSetDocumentId()
+        // Check to see if Marker property is set
+        internal bool IsSetMarker()
         {
-            return this._documentId != null;
+            return this._marker != null;
         }
 
     }

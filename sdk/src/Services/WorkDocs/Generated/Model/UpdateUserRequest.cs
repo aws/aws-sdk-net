@@ -36,6 +36,7 @@ namespace Amazon.WorkDocs.Model
     {
         private string _authenticationToken;
         private string _givenName;
+        private BooleanEnumType _grantPoweruserPrivileges;
         private LocaleType _locale;
         private StorageRuleType _storageRule;
         private string _surname;
@@ -46,7 +47,7 @@ namespace Amazon.WorkDocs.Model
         /// <summary>
         /// Gets and sets the property AuthenticationToken. 
         /// <para>
-        /// Amazon WorkDocs authentication token. This field should not be set when using administrative
+        /// Amazon WorkDocs authentication token. Do not set this field when using administrative
         /// API actions, as in accessing the API using AWS credentials.
         /// </para>
         /// </summary>
@@ -78,6 +79,24 @@ namespace Amazon.WorkDocs.Model
         internal bool IsSetGivenName()
         {
             return this._givenName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GrantPoweruserPrivileges. 
+        /// <para>
+        /// Boolean value to determine whether the user is granted Poweruser privileges.
+        /// </para>
+        /// </summary>
+        public BooleanEnumType GrantPoweruserPrivileges
+        {
+            get { return this._grantPoweruserPrivileges; }
+            set { this._grantPoweruserPrivileges = value; }
+        }
+
+        // Check to see if GrantPoweruserPrivileges property is set
+        internal bool IsSetGrantPoweruserPrivileges()
+        {
+            return this._grantPoweruserPrivileges != null;
         }
 
         /// <summary>

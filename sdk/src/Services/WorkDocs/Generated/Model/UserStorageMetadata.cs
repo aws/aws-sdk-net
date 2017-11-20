@@ -56,7 +56,7 @@ namespace Amazon.WorkDocs.Model
         /// <summary>
         /// Gets and sets the property StorageUtilizedInBytes. 
         /// <para>
-        /// The amount of storage utilized, in bytes.
+        /// The amount of storage used, in bytes.
         /// </para>
         /// </summary>
         public long StorageUtilizedInBytes

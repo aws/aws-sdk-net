@@ -30,8 +30,8 @@ namespace Amazon.WorkDocs.Model
     /// <summary>
     /// Container for the parameters to the DescribeRootFolders operation.
     /// Describes the current user's special folders; the <code>RootFolder</code> and the
-    /// <code>RecyleBin</code>. <code>RootFolder</code> is the root of user's files and folders
-    /// and <code>RecyleBin</code> is the root of recycled items. This is not a valid action
+    /// <code>RecycleBin</code>. <code>RootFolder</code> is the root of user's files and folders
+    /// and <code>RecycleBin</code> is the root of recycled items. This is not a valid action
     /// for SigV4 (administrative API) clients.
     /// </summary>
     public partial class DescribeRootFoldersRequest : AmazonWorkDocsRequest
@@ -43,7 +43,7 @@ namespace Amazon.WorkDocs.Model
         /// <summary>
         /// Gets and sets the property AuthenticationToken. 
         /// <para>
-        /// Amazon WorkDocs authentication token. This field should not be set when using administrative
+        /// Amazon WorkDocs authentication token. Do not set this field when using administrative
         /// API actions, as in accessing the API using AWS credentials.
         /// </para>
         /// </summary>
