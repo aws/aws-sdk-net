@@ -84,8 +84,8 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property SdkType. 
         /// <para>
         /// The language for the generated SDK. Currently <code>java</code>, <code>javascript</code>,
-        /// <code>android</code>, <code>objectivec</code> and <code>swift</code> (for iOS) are
-        /// supported.
+        /// <code>android</code>, <code>objectivec</code> (for iOS), <code>swift</code> (for iOS),
+        /// and <code>ruby</code> are supported.
         /// </para>
         /// </summary>
         public string SdkType
