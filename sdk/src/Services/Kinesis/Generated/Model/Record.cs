@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kinesis.Model
 {
     /// <summary>
-    /// The unit of data of the Amazon Kinesis stream, which is composed of a sequence number,
-    /// a partition key, and a data blob.
+    /// The unit of data of the Kinesis stream, which is composed of a sequence number, a
+    /// partition key, and a data blob.
     /// </summary>
     public partial class Record
     {
@@ -60,10 +60,10 @@ namespace Amazon.Kinesis.Model
         /// <summary>
         /// Gets and sets the property Data. 
         /// <para>
-        /// The data blob. The data in the blob is both opaque and immutable to the Amazon Kinesis
-        /// service, which does not inspect, interpret, or change the data in the blob in any
-        /// way. When the data blob (the payload before base64-encoding) is added to the partition
-        /// key size, the total size must not exceed the maximum record size (1 MB).
+        /// The data blob. The data in the blob is both opaque and immutable to Kinesis Streams,
+        /// which does not inspect, interpret, or change the data in the blob in any way. When
+        /// the data blob (the payload before base64-encoding) is added to the partition key size,
+        /// the total size must not exceed the maximum record size (1 MB).
         /// </para>
         /// </summary>
         public MemoryStream Data

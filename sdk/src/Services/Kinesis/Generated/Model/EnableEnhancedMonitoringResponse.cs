@@ -77,7 +77,7 @@ namespace Amazon.Kinesis.Model
         /// <summary>
         /// Gets and sets the property StreamName. 
         /// <para>
-        /// The name of the Amazon Kinesis stream.
+        /// The name of the Kinesis stream.
         /// </para>
         /// </summary>
         public string StreamName

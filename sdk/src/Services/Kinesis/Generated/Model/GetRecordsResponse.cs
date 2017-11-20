@@ -41,7 +41,8 @@ namespace Amazon.Kinesis.Model
         /// <para>
         /// The number of milliseconds the <a>GetRecords</a> response is from the tip of the stream,
         /// indicating how far behind current time the consumer is. A value of zero indicates
-        /// record processing is caught up, and there are no new records to process at this moment.
+        /// that record processing is caught up, and there are no new records to process at this
+        /// moment.
         /// </para>
         /// </summary>
         public long MillisBehindLatest
@@ -61,7 +62,7 @@ namespace Amazon.Kinesis.Model
         /// <para>
         /// The next position in the shard from which to start sequentially reading data records.
         /// If set to <code>null</code>, the shard has been closed and the requested iterator
-        /// will not return any more data. 
+        /// does not return any more data. 
         /// </para>
         /// </summary>
         public string NextShardIterator

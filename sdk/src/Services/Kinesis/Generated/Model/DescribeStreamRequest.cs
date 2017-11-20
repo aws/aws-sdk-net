@@ -29,7 +29,7 @@ namespace Amazon.Kinesis.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeStream operation.
-    /// Describes the specified Amazon Kinesis stream.
+    /// Describes the specified Kinesis stream.
     /// 
     ///  
     /// <para>

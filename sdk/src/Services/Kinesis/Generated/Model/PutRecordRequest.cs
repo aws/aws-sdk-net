@@ -46,10 +46,10 @@ namespace Amazon.Kinesis.Model
     /// </para>
     ///  
     /// <para>
-    /// The partition key is used by Amazon Kinesis to distribute data across shards. Amazon
-    /// Kinesis segregates the data records that belong to a stream into multiple shards,
-    /// using the partition key associated with each data record to determine which shard
-    /// a given data record belongs to.
+    /// The partition key is used by Kinesis Streams to distribute data across shards. Kinesis
+    /// Streams segregates the data records that belong to a stream into multiple shards,
+    /// using the partition key associated with each data record to determine the shard to
+    /// which a given data record belongs.
     /// </para>
     ///  
     /// <para>
@@ -164,7 +164,7 @@ namespace Amazon.Kinesis.Model
         /// Guarantees strictly increasing sequence numbers, for puts from the same client and
         /// to the same partition key. Usage: set the <code>SequenceNumberForOrdering</code> of
         /// record <i>n</i> to the sequence number of record <i>n-1</i> (as returned in the result
-        /// when putting record <i>n-1</i>). If this parameter is not set, records will be coarsely
+        /// when putting record <i>n-1</i>). If this parameter is not set, records are coarsely
         /// ordered based on arrival time.
         /// </para>
         /// </summary>

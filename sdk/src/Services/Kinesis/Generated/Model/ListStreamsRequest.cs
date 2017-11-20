@@ -29,13 +29,13 @@ namespace Amazon.Kinesis.Model
 {
     /// <summary>
     /// Container for the parameters to the ListStreams operation.
-    /// Lists your Amazon Kinesis streams.
+    /// Lists your Kinesis streams.
     /// 
     ///  
     /// <para>
     /// The number of streams may be too large to return from a single call to <code>ListStreams</code>.
     /// You can limit the number of returned streams using the <code>Limit</code> parameter.
-    /// If you do not specify a value for the <code>Limit</code> parameter, Amazon Kinesis
+    /// If you do not specify a value for the <code>Limit</code> parameter, Kinesis Streams
     /// uses the default limit, which is currently 10.
     /// </para>
     ///  

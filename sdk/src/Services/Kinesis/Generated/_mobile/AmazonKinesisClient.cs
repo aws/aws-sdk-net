@@ -310,9 +310,9 @@ namespace Amazon.Kinesis
 
 
         /// <summary>
-        /// Decreases the Amazon Kinesis stream's retention period, which is the length of time
-        /// data records are accessible after they are added to the stream. The minimum value
-        /// of a stream's retention period is 24 hours.
+        /// Decreases the Kinesis stream's retention period, which is the length of time data
+        /// records are accessible after they are added to the stream. The minimum value of a
+        /// stream's retention period is 24 hours.
         /// 
         ///  
         /// <para>
@@ -334,7 +334,7 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
-        /// needs to be in the <code>ACTIVE</code> state.
+        /// must be in the <code>ACTIVE</code> state.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
@@ -461,6 +461,38 @@ namespace Amazon.Kinesis
             var unmarshaller = DescribeStreamResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeStreamRequest,DescribeStreamResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeStreamSummary
+
+        internal virtual DescribeStreamSummaryResponse DescribeStreamSummary(DescribeStreamSummaryRequest request)
+        {
+            var marshaller = new DescribeStreamSummaryRequestMarshaller();
+            var unmarshaller = DescribeStreamSummaryResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeStreamSummaryRequest,DescribeStreamSummaryResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeStreamSummary operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStreamSummary operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeStreamSummary">REST API Reference for DescribeStreamSummary Operation</seealso>
+        public virtual Task<DescribeStreamSummaryResponse> DescribeStreamSummaryAsync(DescribeStreamSummaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeStreamSummaryRequestMarshaller();
+            var unmarshaller = DescribeStreamSummaryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeStreamSummaryRequest,DescribeStreamSummaryResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -612,12 +644,12 @@ namespace Amazon.Kinesis
         /// 
         ///  
         /// <para>
-        /// Upon choosing a longer stream retention period, this operation will increase the time
-        /// period records are accessible that have not yet expired. However, it will not make
-        /// previous data that has expired (older than the stream's previous retention period)
+        /// If you choose a longer stream retention period, this operation increases the time
+        /// period during which records that have not yet expired are accessible. However, it
+        /// does not make previous, expired data (older than the stream's previous retention period)
         /// accessible after the operation has been called. For example, if a stream's retention
         /// period is set to 24 hours and is increased to 168 hours, any data that is older than
-        /// 24 hours will remain inaccessible to consumer applications.
+        /// 24 hours remains inaccessible to consumer applications.
         /// </para>
         /// </summary>
         /// <param name="streamName">The name of the stream to modify.</param>
@@ -633,7 +665,7 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
-        /// needs to be in the <code>ACTIVE</code> state.
+        /// must be in the <code>ACTIVE</code> state.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
@@ -685,13 +717,13 @@ namespace Amazon.Kinesis
 
 
         /// <summary>
-        /// Lists your Amazon Kinesis streams.
+        /// Lists your Kinesis streams.
         /// 
         ///  
         /// <para>
         /// The number of streams may be too large to return from a single call to <code>ListStreams</code>.
         /// You can limit the number of returned streams using the <code>Limit</code> parameter.
-        /// If you do not specify a value for the <code>Limit</code> parameter, Amazon Kinesis
+        /// If you do not specify a value for the <code>Limit</code> parameter, Kinesis Streams
         /// uses the default limit, which is currently 10.
         /// </para>
         ///  
@@ -716,7 +748,7 @@ namespace Amazon.Kinesis
         /// <returns>The response from the ListStreams service method, as returned by Kinesis.</returns>
         /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
         /// The requested resource exceeds the maximum number allowed, or the number of concurrent
-        /// stream requests exceeds the maximum number allowed (5).
+        /// stream requests exceeds the maximum number allowed.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListStreams">REST API Reference for ListStreams Operation</seealso>
         public virtual Task<ListStreamsResponse> ListStreamsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))

@@ -100,7 +100,7 @@ namespace Amazon.Kinesis.Model
         /// <summary>
         /// Gets and sets the property StreamName. 
         /// <para>
-        /// The name of the Amazon Kinesis stream for which to disable enhanced monitoring.
+        /// The name of the Kinesis stream for which to disable enhanced monitoring.
         /// </para>
         /// </summary>
         public string StreamName

@@ -29,9 +29,9 @@ namespace Amazon.Kinesis.Model
 {
     /// <summary>
     /// Container for the parameters to the PutRecords operation.
-    /// Writes multiple data records into an Amazon Kinesis stream in a single call (also
-    /// referred to as a <code>PutRecords</code> request). Use this operation to send data
-    /// into the stream for data ingestion and processing. 
+    /// Writes multiple data records into a Kinesis stream in a single call (also referred
+    /// to as a <code>PutRecords</code> request). Use this operation to send data into the
+    /// stream for data ingestion and processing. 
     /// 
     ///  
     /// <para>
@@ -54,7 +54,7 @@ namespace Amazon.Kinesis.Model
     /// </para>
     ///  
     /// <para>
-    /// The partition key is used by Amazon Kinesis as input to a hash function that maps
+    /// The partition key is used by Kinesis Streams as input to a hash function that maps
     /// the partition key and associated data to a specific shard. An MD5 hash function is
     /// used to map partition keys to 128-bit integer values and to map associated data records
     /// to shards. As a result of this hashing mechanism, all data records with the same partition
@@ -85,14 +85,14 @@ namespace Amazon.Kinesis.Model
     /// </para>
     ///  
     /// <para>
-    /// A successfully-processed record includes <code>ShardId</code> and <code>SequenceNumber</code>
+    /// A successfully processed record includes <code>ShardId</code> and <code>SequenceNumber</code>
     /// values. The <code>ShardId</code> parameter identifies the shard in the stream where
     /// the record is stored. The <code>SequenceNumber</code> parameter is an identifier assigned
     /// to the put record, unique to all records in the stream.
     /// </para>
     ///  
     /// <para>
-    /// An unsuccessfully-processed record includes <code>ErrorCode</code> and <code>ErrorMessage</code>
+    /// An unsuccessfully processed record includes <code>ErrorCode</code> and <code>ErrorMessage</code>
     /// values. <code>ErrorCode</code> reflects the type of error and can be one of the following
     /// values: <code>ProvisionedThroughputExceededException</code> or <code>InternalFailure</code>.
     /// <code>ErrorMessage</code> provides more detailed information about the <code>ProvisionedThroughputExceededException</code>

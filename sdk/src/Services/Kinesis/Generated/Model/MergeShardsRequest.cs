@@ -29,14 +29,14 @@ namespace Amazon.Kinesis.Model
 {
     /// <summary>
     /// Container for the parameters to the MergeShards operation.
-    /// Merges two adjacent shards in an Amazon Kinesis stream and combines them into a single
-    /// shard to reduce the stream's capacity to ingest and transport data. Two shards are
-    /// considered adjacent if the union of the hash key ranges for the two shards form a
-    /// contiguous set with no gaps. For example, if you have two shards, one with a hash
-    /// key range of 276...381 and the other with a hash key range of 382...454, then you
-    /// could merge these two shards into a single shard that would have a hash key range
-    /// of 276...454. After the merge, the single child shard receives data for all hash key
-    /// values covered by the two parent shards.
+    /// Merges two adjacent shards in a Kinesis stream and combines them into a single shard
+    /// to reduce the stream's capacity to ingest and transport data. Two shards are considered
+    /// adjacent if the union of the hash key ranges for the two shards form a contiguous
+    /// set with no gaps. For example, if you have two shards, one with a hash key range of
+    /// 276...381 and the other with a hash key range of 382...454, then you could merge these
+    /// two shards into a single shard that would have a hash key range of 276...454. After
+    /// the merge, the single child shard receives data for all hash key values covered by
+    /// the two parent shards.
     /// 
     ///  
     /// <para>
@@ -80,7 +80,7 @@ namespace Amazon.Kinesis.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>MergeShards</code> has limit of 5 transactions per second per account.
+    ///  <code>MergeShards</code> has a limit of 5 transactions per second per account.
     /// </para>
     /// </summary>
     public partial class MergeShardsRequest : AmazonKinesisRequest

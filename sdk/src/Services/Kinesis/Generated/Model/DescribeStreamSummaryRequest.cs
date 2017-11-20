@@ -28,46 +28,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kinesis.Model
 {
     /// <summary>
-    /// Container for the parameters to the DecreaseStreamRetentionPeriod operation.
-    /// Decreases the Kinesis stream's retention period, which is the length of time data
-    /// records are accessible after they are added to the stream. The minimum value of a
-    /// stream's retention period is 24 hours.
+    /// Container for the parameters to the DescribeStreamSummary operation.
+    /// Provides a summarized description of the specified Kinesis stream without the shard
+    /// list.
     /// 
     ///  
     /// <para>
-    /// This operation may result in lost data. For example, if the stream's retention period
-    /// is 48 hours and is decreased to 24 hours, any data already in the stream that is older
-    /// than 24 hours is inaccessible.
+    /// The information returned includes the stream name, Amazon Resource Name (ARN), status,
+    /// record retention period, approximate creation time, monitoring, encryption details,
+    /// and open shard count. 
     /// </para>
     /// </summary>
-    public partial class DecreaseStreamRetentionPeriodRequest : AmazonKinesisRequest
+    public partial class DescribeStreamSummaryRequest : AmazonKinesisRequest
     {
-        private int? _retentionPeriodHours;
         private string _streamName;
-
-        /// <summary>
-        /// Gets and sets the property RetentionPeriodHours. 
-        /// <para>
-        /// The new retention period of the stream, in hours. Must be less than the current retention
-        /// period.
-        /// </para>
-        /// </summary>
-        public int RetentionPeriodHours
-        {
-            get { return this._retentionPeriodHours.GetValueOrDefault(); }
-            set { this._retentionPeriodHours = value; }
-        }
-
-        // Check to see if RetentionPeriodHours property is set
-        internal bool IsSetRetentionPeriodHours()
-        {
-            return this._retentionPeriodHours.HasValue; 
-        }
 
         /// <summary>
         /// Gets and sets the property StreamName. 
         /// <para>
-        /// The name of the stream to modify.
+        /// The name of the stream to describe.
         /// </para>
         /// </summary>
         public string StreamName

@@ -29,7 +29,7 @@ namespace Amazon.Kinesis.Model
 {
     /// <summary>
     /// Container for the parameters to the EnableEnhancedMonitoring operation.
-    /// Enables enhanced Amazon Kinesis stream monitoring for shard-level metrics.
+    /// Enables enhanced Kinesis stream monitoring for shard-level metrics.
     /// </summary>
     public partial class EnableEnhancedMonitoringRequest : AmazonKinesisRequest
     {

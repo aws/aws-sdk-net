@@ -228,9 +228,9 @@ namespace Amazon.Kinesis
         #region  DecreaseStreamRetentionPeriod
 
         /// <summary>
-        /// Decreases the Amazon Kinesis stream's retention period, which is the length of time
-        /// data records are accessible after they are added to the stream. The minimum value
-        /// of a stream's retention period is 24 hours.
+        /// Decreases the Kinesis stream's retention period, which is the length of time data
+        /// records are accessible after they are added to the stream. The minimum value of a
+        /// stream's retention period is 24 hours.
         /// 
         ///  
         /// <para>
@@ -254,7 +254,7 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
-        /// needs to be in the <code>ACTIVE</code> state.
+        /// must be in the <code>ACTIVE</code> state.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
@@ -375,6 +375,34 @@ namespace Amazon.Kinesis
                         callback(responseObject); 
                 };
             BeginInvoke<DescribeStreamRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  DescribeStreamSummary
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeStreamSummary operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStreamSummary operation on AmazonKinesisClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeStreamSummary">REST API Reference for DescribeStreamSummary Operation</seealso>
+        public virtual void DescribeStreamSummaryAsync(DescribeStreamSummaryRequest request, AmazonServiceCallback<DescribeStreamSummaryRequest, DescribeStreamSummaryResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new DescribeStreamSummaryRequestMarshaller();
+            var unmarshaller = DescribeStreamSummaryResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<DescribeStreamSummaryRequest,DescribeStreamSummaryResponse> responseObject 
+                            = new AmazonServiceResult<DescribeStreamSummaryRequest,DescribeStreamSummaryResponse>((DescribeStreamSummaryRequest)req, (DescribeStreamSummaryResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<DescribeStreamSummaryRequest>(request, marshaller, unmarshaller, options, callbackHelper);
         }
 
         #endregion
@@ -500,12 +528,12 @@ namespace Amazon.Kinesis
         /// 
         ///  
         /// <para>
-        /// Upon choosing a longer stream retention period, this operation will increase the time
-        /// period records are accessible that have not yet expired. However, it will not make
-        /// previous data that has expired (older than the stream's previous retention period)
+        /// If you choose a longer stream retention period, this operation increases the time
+        /// period during which records that have not yet expired are accessible. However, it
+        /// does not make previous, expired data (older than the stream's previous retention period)
         /// accessible after the operation has been called. For example, if a stream's retention
         /// period is set to 24 hours and is increased to 168 hours, any data that is older than
-        /// 24 hours will remain inaccessible to consumer applications.
+        /// 24 hours remains inaccessible to consumer applications.
         /// </para>
         /// </summary>
         /// <param name="streamName">The name of the stream to modify.</param>
@@ -523,7 +551,7 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
-        /// needs to be in the <code>ACTIVE</code> state.
+        /// must be in the <code>ACTIVE</code> state.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
@@ -567,13 +595,13 @@ namespace Amazon.Kinesis
         #region  ListStreams
 
         /// <summary>
-        /// Lists your Amazon Kinesis streams.
+        /// Lists your Kinesis streams.
         /// 
         ///  
         /// <para>
         /// The number of streams may be too large to return from a single call to <code>ListStreams</code>.
         /// You can limit the number of returned streams using the <code>Limit</code> parameter.
-        /// If you do not specify a value for the <code>Limit</code> parameter, Amazon Kinesis
+        /// If you do not specify a value for the <code>Limit</code> parameter, Kinesis Streams
         /// uses the default limit, which is currently 10.
         /// </para>
         ///  
@@ -601,7 +629,7 @@ namespace Amazon.Kinesis
         /// <returns>The response from the ListStreams service method, as returned by Kinesis.</returns>
         /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
         /// The requested resource exceeds the maximum number allowed, or the number of concurrent
-        /// stream requests exceeds the maximum number allowed (5).
+        /// stream requests exceeds the maximum number allowed.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListStreams">REST API Reference for ListStreams Operation</seealso>
         public virtual void ListStreamsAsync(AmazonServiceCallback<ListStreamsRequest, ListStreamsResponse> callback, AsyncOptions options = null)

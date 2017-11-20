@@ -28,16 +28,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kinesis.Model
 {
     /// <summary>
-    /// Represents the output for <a>DescribeStream</a>.
+    /// Represents the output for <a>DescribeStreamSummary</a>
     /// </summary>
-    public partial class StreamDescription
+    public partial class StreamDescriptionSummary
     {
         private EncryptionType _encryptionType;
         private List<EnhancedMetrics> _enhancedMonitoring = new List<EnhancedMetrics>();
-        private bool? _hasMoreShards;
         private string _keyId;
+        private int? _openShardCount;
         private int? _retentionPeriodHours;
-        private List<Shard> _shards = new List<Shard>();
         private string _streamARN;
         private DateTime? _streamCreationTimestamp;
         private string _streamName;
@@ -46,17 +45,15 @@ namespace Amazon.Kinesis.Model
         /// <summary>
         /// Gets and sets the property EncryptionType. 
         /// <para>
-        /// The server-side encryption type used on the stream. This parameter can be one of the
-        /// following values:
+        /// The encryption type used. This value is one of the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>NONE</code>: Do not encrypt the records in the stream.
+        ///  <code>KMS</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>KMS</code>: Use server-side encryption on the records in the stream using a
-        /// customer-managed KMS key.
+        ///  <code>NONE</code> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -91,24 +88,6 @@ namespace Amazon.Kinesis.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HasMoreShards. 
-        /// <para>
-        /// If set to <code>true</code>, more shards in the stream are available to describe.
-        /// </para>
-        /// </summary>
-        public bool HasMoreShards
-        {
-            get { return this._hasMoreShards.GetValueOrDefault(); }
-            set { this._hasMoreShards = value; }
-        }
-
-        // Check to see if HasMoreShards property is set
-        internal bool IsSetHasMoreShards()
-        {
-            return this._hasMoreShards.HasValue; 
-        }
-
-        /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
         /// The GUID for the customer-managed KMS key to use for encryption. This value can be
@@ -123,7 +102,7 @@ namespace Amazon.Kinesis.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Alias ARN example: <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code>
+        /// Alias ARN example: <code> arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code>
         /// 
         /// </para>
         ///  </li> <li> 
@@ -137,7 +116,7 @@ namespace Amazon.Kinesis.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Master key owned by Kinesis Streams: <code>alias/aws/kinesis</code> 
+        /// Master key owned by Kinesis: <code>alias/aws/kinesis</code> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -151,6 +130,24 @@ namespace Amazon.Kinesis.Model
         internal bool IsSetKeyId()
         {
             return this._keyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OpenShardCount. 
+        /// <para>
+        /// The number of open shards in the stream.
+        /// </para>
+        /// </summary>
+        public int OpenShardCount
+        {
+            get { return this._openShardCount.GetValueOrDefault(); }
+            set { this._openShardCount = value; }
+        }
+
+        // Check to see if OpenShardCount property is set
+        internal bool IsSetOpenShardCount()
+        {
+            return this._openShardCount.HasValue; 
         }
 
         /// <summary>
@@ -169,24 +166,6 @@ namespace Amazon.Kinesis.Model
         internal bool IsSetRetentionPeriodHours()
         {
             return this._retentionPeriodHours.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property Shards. 
-        /// <para>
-        /// The shards that comprise the stream.
-        /// </para>
-        /// </summary>
-        public List<Shard> Shards
-        {
-            get { return this._shards; }
-            set { this._shards = value; }
-        }
-
-        // Check to see if Shards property is set
-        internal bool IsSetShards()
-        {
-            return this._shards != null && this._shards.Count > 0; 
         }
 
         /// <summary>

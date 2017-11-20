@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kinesis.Model
 {
     /// <summary>
-    /// A uniquely identified group of data records in an Amazon Kinesis stream.
+    /// A uniquely identified group of data records in a Kinesis stream.
     /// </summary>
     public partial class Shard
     {

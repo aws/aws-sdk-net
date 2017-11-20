@@ -29,15 +29,15 @@ namespace Amazon.Kinesis.Model
 {
     /// <summary>
     /// Container for the parameters to the GetRecords operation.
-    /// Gets data records from an Amazon Kinesis stream's shard.
+    /// Gets data records from a Kinesis stream's shard.
     /// 
     ///  
     /// <para>
     /// Specify a shard iterator using the <code>ShardIterator</code> parameter. The shard
     /// iterator specifies the position in the shard from which you want to start reading
     /// data records sequentially. If there are no records available in the portion of the
-    /// shard that the iterator points to, <a>GetRecords</a> returns an empty list. Note that
-    /// it might take multiple calls to get to a portion of the shard that contains records.
+    /// shard that the iterator points to, <a>GetRecords</a> returns an empty list. It might
+    /// take multiple calls to get to a portion of the shard that contains records.
     /// </para>
     ///  
     /// <para>
@@ -49,11 +49,10 @@ namespace Amazon.Kinesis.Model
     /// to get the shard iterator to specify in the first <a>GetRecords</a> call. <a>GetRecords</a>
     /// returns a new shard iterator in <code>NextShardIterator</code>. Specify the shard
     /// iterator returned in <code>NextShardIterator</code> in subsequent calls to <a>GetRecords</a>.
-    /// Note that if the shard has been closed, the shard iterator can't return more data
-    /// and <a>GetRecords</a> returns <code>null</code> in <code>NextShardIterator</code>.
-    /// You can terminate the loop when the shard is closed, or when the shard iterator reaches
-    /// the record with the sequence number or other attribute that marks it as the last record
-    /// to process.
+    /// If the shard has been closed, the shard iterator can't return more data and <a>GetRecords</a>
+    /// returns <code>null</code> in <code>NextShardIterator</code>. You can terminate the
+    /// loop when the shard is closed, or when the shard iterator reaches the record with
+    /// the sequence number or other attribute that marks it as the last record to process.
     /// </para>
     ///  
     /// <para>
@@ -70,10 +69,10 @@ namespace Amazon.Kinesis.Model
     /// If a call returns this amount of data, subsequent calls made within the next 5 seconds
     /// throw <code>ProvisionedThroughputExceededException</code>. If there is insufficient
     /// provisioned throughput on the shard, subsequent calls made within the next 1 second
-    /// throw <code>ProvisionedThroughputExceededException</code>. Note that <a>GetRecords</a>
-    /// won't return any data when it throws an exception. For this reason, we recommend that
-    /// you wait one second between calls to <a>GetRecords</a>; however, it's possible that
-    /// the application will get exceptions for longer than 1 second.
+    /// throw <code>ProvisionedThroughputExceededException</code>. <a>GetRecords</a> won't
+    /// return any data when it throws an exception. For this reason, we recommend that you
+    /// wait one second between calls to <a>GetRecords</a>; however, it's possible that the
+    /// application will get exceptions for longer than 1 second.
     /// </para>
     ///  
     /// <para>
@@ -86,12 +85,12 @@ namespace Amazon.Kinesis.Model
     /// <para>
     /// Each Amazon Kinesis record includes a value, <code>ApproximateArrivalTimestamp</code>,
     /// that is set when a stream successfully receives and stores a record. This is commonly
-    /// referred to as a server-side timestamp, whereas a client-side timestamp is set when
+    /// referred to as a server-side time stamp, whereas a client-side time stamp is set when
     /// a data producer creates or sends the record to a stream (a data producer is any data
     /// source putting data records into a stream, for example with <a>PutRecords</a>). The
-    /// timestamp has millisecond precision. There are no guarantees about the timestamp accuracy,
-    /// or that the timestamp is always increasing. For example, records in a shard or across
-    /// a stream might have timestamps that are out of order.
+    /// time stamp has millisecond precision. There are no guarantees about the time stamp
+    /// accuracy, or that the time stamp is always increasing. For example, records in a shard
+    /// or across a stream might have time stamps that are out of order.
     /// </para>
     /// </summary>
     public partial class GetRecordsRequest : AmazonKinesisRequest
