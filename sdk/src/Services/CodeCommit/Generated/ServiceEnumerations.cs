@@ -79,6 +79,52 @@ namespace Amazon.CodeCommit
 
 
     /// <summary>
+    /// Constants used for properties of type MergeOptionTypeEnum.
+    /// </summary>
+    public class MergeOptionTypeEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAST_FORWARD_MERGE for MergeOptionTypeEnum
+        /// </summary>
+        public static readonly MergeOptionTypeEnum FAST_FORWARD_MERGE = new MergeOptionTypeEnum("FAST_FORWARD_MERGE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MergeOptionTypeEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MergeOptionTypeEnum FindValue(string value)
+        {
+            return FindValue<MergeOptionTypeEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MergeOptionTypeEnum(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type OrderEnum.
     /// </summary>
     public class OrderEnum : ConstantClass
@@ -122,6 +168,164 @@ namespace Amazon.CodeCommit
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator OrderEnum(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PullRequestEventType.
+    /// </summary>
+    public class PullRequestEventType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PULL_REQUEST_CREATED for PullRequestEventType
+        /// </summary>
+        public static readonly PullRequestEventType PULL_REQUEST_CREATED = new PullRequestEventType("PULL_REQUEST_CREATED");
+        /// <summary>
+        /// Constant PULL_REQUEST_MERGE_STATE_CHANGED for PullRequestEventType
+        /// </summary>
+        public static readonly PullRequestEventType PULL_REQUEST_MERGE_STATE_CHANGED = new PullRequestEventType("PULL_REQUEST_MERGE_STATE_CHANGED");
+        /// <summary>
+        /// Constant PULL_REQUEST_SOURCE_REFERENCE_UPDATED for PullRequestEventType
+        /// </summary>
+        public static readonly PullRequestEventType PULL_REQUEST_SOURCE_REFERENCE_UPDATED = new PullRequestEventType("PULL_REQUEST_SOURCE_REFERENCE_UPDATED");
+        /// <summary>
+        /// Constant PULL_REQUEST_STATUS_CHANGED for PullRequestEventType
+        /// </summary>
+        public static readonly PullRequestEventType PULL_REQUEST_STATUS_CHANGED = new PullRequestEventType("PULL_REQUEST_STATUS_CHANGED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PullRequestEventType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PullRequestEventType FindValue(string value)
+        {
+            return FindValue<PullRequestEventType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PullRequestEventType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PullRequestStatusEnum.
+    /// </summary>
+    public class PullRequestStatusEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLOSED for PullRequestStatusEnum
+        /// </summary>
+        public static readonly PullRequestStatusEnum CLOSED = new PullRequestStatusEnum("CLOSED");
+        /// <summary>
+        /// Constant OPEN for PullRequestStatusEnum
+        /// </summary>
+        public static readonly PullRequestStatusEnum OPEN = new PullRequestStatusEnum("OPEN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PullRequestStatusEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PullRequestStatusEnum FindValue(string value)
+        {
+            return FindValue<PullRequestStatusEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PullRequestStatusEnum(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RelativeFileVersionEnum.
+    /// </summary>
+    public class RelativeFileVersionEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AFTER for RelativeFileVersionEnum
+        /// </summary>
+        public static readonly RelativeFileVersionEnum AFTER = new RelativeFileVersionEnum("AFTER");
+        /// <summary>
+        /// Constant BEFORE for RelativeFileVersionEnum
+        /// </summary>
+        public static readonly RelativeFileVersionEnum BEFORE = new RelativeFileVersionEnum("BEFORE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RelativeFileVersionEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RelativeFileVersionEnum FindValue(string value)
+        {
+            return FindValue<RelativeFileVersionEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RelativeFileVersionEnum(string value)
         {
             return FindValue(value);
         }

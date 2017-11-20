@@ -47,29 +47,29 @@ namespace Amazon.CodeCommit
     ///  <ul> <li> 
     /// <para>
     ///  <a>BatchGetRepositories</a>, which returns information about one or more repositories
-    /// associated with your AWS account
+    /// associated with your AWS account.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>CreateRepository</a>, which creates an AWS CodeCommit repository
+    ///  <a>CreateRepository</a>, which creates an AWS CodeCommit repository.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DeleteRepository</a>, which deletes an AWS CodeCommit repository
+    ///  <a>DeleteRepository</a>, which deletes an AWS CodeCommit repository.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>GetRepository</a>, which returns information about a specified repository
+    ///  <a>GetRepository</a>, which returns information about a specified repository.
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <a>ListRepositories</a>, which lists all AWS CodeCommit repositories associated with
-    /// your AWS account
+    /// your AWS account.
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <a>UpdateRepositoryDescription</a>, which sets or updates the description of the
-    /// repository
+    /// repository.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -83,24 +83,24 @@ namespace Amazon.CodeCommit
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>CreateBranch</a>, which creates a new branch in a specified repository
+    ///  <a>CreateBranch</a>, which creates a new branch in a specified repository.
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <a>DeleteBranch</a>, which deletes the specified branch in a repository unless it
-    /// is the default branch
+    /// is the default branch.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>GetBranch</a>, which returns information about a specified branch
+    ///  <a>GetBranch</a>, which returns information about a specified branch.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>ListBranches</a>, which lists all branches for a specified repository
+    ///  <a>ListBranches</a>, which lists all branches for a specified repository.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>UpdateDefaultBranch</a>, which changes the default branch for a repository
+    ///  <a>UpdateDefaultBranch</a>, which changes the default branch for a repository.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -109,18 +109,103 @@ namespace Amazon.CodeCommit
     ///  <ul> <li> 
     /// <para>
     ///  <a>GetBlob</a>, which returns the base-64 encoded content of an individual Git blob
-    /// object within a repository
+    /// object within a repository.
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <a>GetCommit</a>, which returns information about a commit, including commit messages
-    /// and author and committer information
+    /// and author and committer information.
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <a>GetDifferences</a>, which returns information about the differences in a valid
     /// commit specifier (such as a branch, tag, HEAD, commit ID or other fully qualified
-    /// reference)
+    /// reference).
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// Pull requests, by calling the following:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreatePullRequest</a>, which creates a pull request in a specified repository.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribePullRequestEvents</a>, which returns information about one or more pull
+    /// request events.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GetCommentsForPullRequest</a>, which returns information about comments on a specified
+    /// pull request.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GetMergeConflicts</a>, which returns information about merge conflicts between
+    /// the source and destination branch in a pull request.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GetPullRequest</a>, which returns information about a specified pull request.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListPullRequests</a>, which lists all pull requests for a repository.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>MergePullRequestByFastForward</a>, which merges the source destination branch
+    /// of a pull request into the specified destination branch for that pull request using
+    /// the fast-forward merge option.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>PostCommentForPullRequest</a>, which posts a comment to a pull request at the
+    /// specified line, file, or request.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdatePullRequestDescription</a>, which updates the description of a pull request.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdatePullRequestStatus</a>, which updates the status of a pull request.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdatePullRequestTitle</a>, which updates the title of a pull request.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// Information about comments in a repository, by calling the following:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>DeleteCommentContent</a>, which deletes the content of a comment on a commit in
+    /// a repository.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GetComment</a>, which returns information about a comment on a commit.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GetCommentsForComparedCommit</a>, which returns information about comments on
+    /// the comparison between two commit specifiers in a repository.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>PostCommentForComparedCommit</a>, which creates a comment on the comparison between
+    /// two commit specifiers in a repository.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>PostCommentReply</a>, which creates a reply to a comment.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateComment</a>, which updates the content of a comment on a commit in a repository.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -129,17 +214,17 @@ namespace Amazon.CodeCommit
     ///  <ul> <li> 
     /// <para>
     ///  <a>GetRepositoryTriggers</a>, which returns information about triggers configured
-    /// for a repository
+    /// for a repository.
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <a>PutRepositoryTriggers</a>, which replaces all triggers for a repository and can
-    /// be used to create or delete triggers
+    /// be used to create or delete triggers.
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <a>TestRepositoryTriggers</a>, which tests the functionality of a repository trigger
-    /// by sending data to the trigger target
+    /// by sending data to the trigger target.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -184,6 +269,23 @@ namespace Amazon.CodeCommit
 
         #endregion
                 
+        #region  CreatePullRequest
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreatePullRequest operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreatePullRequest operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreatePullRequest">REST API Reference for CreatePullRequest Operation</seealso>
+        Task<CreatePullRequestResponse> CreatePullRequestAsync(CreatePullRequestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateRepository
 
 
@@ -218,6 +320,23 @@ namespace Amazon.CodeCommit
 
         #endregion
                 
+        #region  DeleteCommentContent
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteCommentContent operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCommentContent operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteCommentContent">REST API Reference for DeleteCommentContent Operation</seealso>
+        Task<DeleteCommentContentResponse> DeleteCommentContentAsync(DeleteCommentContentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteRepository
 
 
@@ -232,6 +351,23 @@ namespace Amazon.CodeCommit
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteRepository">REST API Reference for DeleteRepository Operation</seealso>
         Task<DeleteRepositoryResponse> DeleteRepositoryAsync(DeleteRepositoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribePullRequestEvents
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribePullRequestEvents operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribePullRequestEvents operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DescribePullRequestEvents">REST API Reference for DescribePullRequestEvents Operation</seealso>
+        Task<DescribePullRequestEventsResponse> DescribePullRequestEventsAsync(DescribePullRequestEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -269,6 +405,57 @@ namespace Amazon.CodeCommit
 
         #endregion
                 
+        #region  GetComment
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetComment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetComment operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetComment">REST API Reference for GetComment Operation</seealso>
+        Task<GetCommentResponse> GetCommentAsync(GetCommentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetCommentsForComparedCommit
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCommentsForComparedCommit operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCommentsForComparedCommit operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetCommentsForComparedCommit">REST API Reference for GetCommentsForComparedCommit Operation</seealso>
+        Task<GetCommentsForComparedCommitResponse> GetCommentsForComparedCommitAsync(GetCommentsForComparedCommitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetCommentsForPullRequest
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCommentsForPullRequest operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCommentsForPullRequest operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetCommentsForPullRequest">REST API Reference for GetCommentsForPullRequest Operation</seealso>
+        Task<GetCommentsForPullRequestResponse> GetCommentsForPullRequestAsync(GetCommentsForPullRequestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetCommit
 
 
@@ -300,6 +487,40 @@ namespace Amazon.CodeCommit
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetDifferences">REST API Reference for GetDifferences Operation</seealso>
         Task<GetDifferencesResponse> GetDifferencesAsync(GetDifferencesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetMergeConflicts
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMergeConflicts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMergeConflicts operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetMergeConflicts">REST API Reference for GetMergeConflicts Operation</seealso>
+        Task<GetMergeConflictsResponse> GetMergeConflictsAsync(GetMergeConflictsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetPullRequest
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPullRequest operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPullRequest operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetPullRequest">REST API Reference for GetPullRequest Operation</seealso>
+        Task<GetPullRequestResponse> GetPullRequestAsync(GetPullRequestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -354,6 +575,23 @@ namespace Amazon.CodeCommit
 
         #endregion
                 
+        #region  ListPullRequests
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPullRequests operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPullRequests operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListPullRequests">REST API Reference for ListPullRequests Operation</seealso>
+        Task<ListPullRequestsResponse> ListPullRequestsAsync(ListPullRequestsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListRepositories
 
 
@@ -368,6 +606,74 @@ namespace Amazon.CodeCommit
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListRepositories">REST API Reference for ListRepositories Operation</seealso>
         Task<ListRepositoriesResponse> ListRepositoriesAsync(ListRepositoriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  MergePullRequestByFastForward
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the MergePullRequestByFastForward operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the MergePullRequestByFastForward operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergePullRequestByFastForward">REST API Reference for MergePullRequestByFastForward Operation</seealso>
+        Task<MergePullRequestByFastForwardResponse> MergePullRequestByFastForwardAsync(MergePullRequestByFastForwardRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  PostCommentForComparedCommit
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PostCommentForComparedCommit operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PostCommentForComparedCommit operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PostCommentForComparedCommit">REST API Reference for PostCommentForComparedCommit Operation</seealso>
+        Task<PostCommentForComparedCommitResponse> PostCommentForComparedCommitAsync(PostCommentForComparedCommitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  PostCommentForPullRequest
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PostCommentForPullRequest operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PostCommentForPullRequest operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PostCommentForPullRequest">REST API Reference for PostCommentForPullRequest Operation</seealso>
+        Task<PostCommentForPullRequestResponse> PostCommentForPullRequestAsync(PostCommentForPullRequestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  PostCommentReply
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PostCommentReply operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PostCommentReply operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PostCommentReply">REST API Reference for PostCommentReply Operation</seealso>
+        Task<PostCommentReplyResponse> PostCommentReplyAsync(PostCommentReplyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -405,6 +711,23 @@ namespace Amazon.CodeCommit
 
         #endregion
                 
+        #region  UpdateComment
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateComment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateComment operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateComment">REST API Reference for UpdateComment Operation</seealso>
+        Task<UpdateCommentResponse> UpdateCommentAsync(UpdateCommentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  UpdateDefaultBranch
 
 
@@ -419,6 +742,57 @@ namespace Amazon.CodeCommit
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateDefaultBranch">REST API Reference for UpdateDefaultBranch Operation</seealso>
         Task<UpdateDefaultBranchResponse> UpdateDefaultBranchAsync(UpdateDefaultBranchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdatePullRequestDescription
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdatePullRequestDescription operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePullRequestDescription operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdatePullRequestDescription">REST API Reference for UpdatePullRequestDescription Operation</seealso>
+        Task<UpdatePullRequestDescriptionResponse> UpdatePullRequestDescriptionAsync(UpdatePullRequestDescriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdatePullRequestStatus
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdatePullRequestStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePullRequestStatus operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdatePullRequestStatus">REST API Reference for UpdatePullRequestStatus Operation</seealso>
+        Task<UpdatePullRequestStatusResponse> UpdatePullRequestStatusAsync(UpdatePullRequestStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdatePullRequestTitle
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdatePullRequestTitle operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePullRequestTitle operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdatePullRequestTitle">REST API Reference for UpdatePullRequestTitle Operation</seealso>
+        Task<UpdatePullRequestTitleResponse> UpdatePullRequestTitleAsync(UpdatePullRequestTitleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
