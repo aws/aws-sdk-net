@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.193.0",
+    "ProductVersion" : "3.3.194.0",
     "CoreVersion"    : "3.3.19.0",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -233,7 +233,7 @@
             "InPreview"               : false
         },
         "Kinesis"              : {
-            "Version" : "3.3.3.3",
+            "Version" : "3.3.4.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
@@ -409,7 +409,7 @@
             "InPreview"               : false
         },
         "CodeCommit"                : {
-            "Version" : "3.3.2.2",
+            "Version" : "3.3.3.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
@@ -441,7 +441,7 @@
             "InPreview"               : false
         },
         "KinesisFirehose"           : {
-            "Version" : "3.3.2.3",
+            "Version" : "3.3.3.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
@@ -481,7 +481,7 @@
             "InPreview"               : false
         },
         "APIGateway"                      : {
-            "Version" : "3.3.11.0",
+            "Version" : "3.3.11.1",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
@@ -753,7 +753,7 @@
             "InPreview"               : false
         },
         "WorkDocs"                        : {
-            "Version" : "3.3.3.2",
+            "Version" : "3.3.4.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
@@ -850,6 +850,14 @@
         },
         "Pricing"                         : {
             "Version" : "3.3.0.1",
+            "AssemblyVersionOverride" : null,
+            "Dependencies"            : {
+                "Core" : "3.3.19.0"
+            },
+            "InPreview"               : false
+        },
+        "CostExplorer"                    : {
+            "Version" : "3.3.0.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
