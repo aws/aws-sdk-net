@@ -34,6 +34,7 @@ namespace Amazon.Shield.Model
     {
         private List<SummarizedCounter> _attackCounters = new List<SummarizedCounter>();
         private string _attackId;
+        private List<AttackProperty> _attackProperties = new List<AttackProperty>();
         private DateTime? _endTime;
         private List<Mitigation> _mitigations = new List<Mitigation>();
         private string _resourceArn;
@@ -77,9 +78,27 @@ namespace Amazon.Shield.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AttackProperties. 
+        /// <para>
+        /// The array of <a>AttackProperty</a> objects.
+        /// </para>
+        /// </summary>
+        public List<AttackProperty> AttackProperties
+        {
+            get { return this._attackProperties; }
+            set { this._attackProperties = value; }
+        }
+
+        // Check to see if AttackProperties property is set
+        internal bool IsSetAttackProperties()
+        {
+            return this._attackProperties != null && this._attackProperties.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The time the attack ended, in the format 2016-12-16T13:50Z.
+        /// The time the attack ended, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -133,7 +152,8 @@ namespace Amazon.Shield.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The time the attack started, in the format 2016-12-16T13:50Z.
+        /// The time the attack started, in Unix time in seconds. For more information see <a
+        /// href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.
         /// </para>
         /// </summary>
         public DateTime StartTime

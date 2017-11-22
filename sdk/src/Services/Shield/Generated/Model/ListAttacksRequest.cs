@@ -42,7 +42,10 @@ namespace Amazon.Shield.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The end of the time period for the attacks.
+        /// The end of the time period for the attacks. This is a <code>timestamp</code> type.
+        /// The sample request above indicates a <code>number</code> type because the default
+        /// used by WAF is Unix time in seconds. However any valid <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp
+        /// format</a> is allowed. 
         /// </para>
         /// </summary>
         public TimeRange EndTime
@@ -117,7 +120,10 @@ namespace Amazon.Shield.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The time period for the attacks.
+        /// The start of the time period for the attacks. This is a <code>timestamp</code> type.
+        /// The sample request above indicates a <code>number</code> type because the default
+        /// used by WAF is Unix time in seconds. However any valid <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp
+        /// format</a> is allowed. 
         /// </para>
         /// </summary>
         public TimeRange StartTime

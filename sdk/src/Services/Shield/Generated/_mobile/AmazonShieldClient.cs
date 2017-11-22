@@ -462,6 +462,38 @@ namespace Amazon.Shield
 
         #endregion
         
+        #region  GetSubscriptionState
+
+        internal virtual GetSubscriptionStateResponse GetSubscriptionState(GetSubscriptionStateRequest request)
+        {
+            var marshaller = new GetSubscriptionStateRequestMarshaller();
+            var unmarshaller = GetSubscriptionStateResponseUnmarshaller.Instance;
+
+            return Invoke<GetSubscriptionStateRequest,GetSubscriptionStateResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSubscriptionState operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSubscriptionState operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/GetSubscriptionState">REST API Reference for GetSubscriptionState Operation</seealso>
+        public virtual Task<GetSubscriptionStateResponse> GetSubscriptionStateAsync(GetSubscriptionStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetSubscriptionStateRequestMarshaller();
+            var unmarshaller = GetSubscriptionStateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetSubscriptionStateRequest,GetSubscriptionStateResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListAttacks
 
         internal virtual ListAttacksResponse ListAttacks(ListAttacksRequest request)

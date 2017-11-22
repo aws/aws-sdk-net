@@ -28,13 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Shield.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteSubscription operation.
-    /// Removes AWS Shield Advanced from an account. AWS Shield Advanced requires a 1-year
-    /// subscription commitment. You cannot delete a subscription prior to the completion
-    /// of that commitment.
+    /// This is the response object from the GetSubscriptionState operation.
     /// </summary>
-    public partial class DeleteSubscriptionRequest : AmazonShieldRequest
+    public partial class GetSubscriptionStateResponse : AmazonWebServiceResponse
     {
+        private SubscriptionState _subscriptionState;
+
+        /// <summary>
+        /// Gets and sets the property SubscriptionState. 
+        /// <para>
+        /// The status of the subscription.
+        /// </para>
+        /// </summary>
+        public SubscriptionState SubscriptionState
+        {
+            get { return this._subscriptionState; }
+            set { this._subscriptionState = value; }
+        }
+
+        // Check to see if SubscriptionState property is set
+        internal bool IsSetSubscriptionState()
+        {
+            return this._subscriptionState != null;
+        }
 
     }
 }

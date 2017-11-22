@@ -76,6 +76,12 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
                     unmarshalledObject.AttackId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AttackProperties", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AttackProperty, AttackPropertyUnmarshaller>(AttackPropertyUnmarshaller.Instance);
+                    unmarshalledObject.AttackProperties = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EndTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

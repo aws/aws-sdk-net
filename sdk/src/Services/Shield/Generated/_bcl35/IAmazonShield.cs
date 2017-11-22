@@ -48,8 +48,8 @@ namespace Amazon.Shield
 
         /// <summary>
         /// Enables AWS Shield Advanced for a specific AWS resource. The resource can be an Amazon
-        /// CloudFront distribution, Elastic Load Balancing load balancer, or an Amazon Route
-        /// 53 hosted zone.
+        /// CloudFront distribution, Elastic Load Balancing load balancer, Elastic IP Address,
+        /// or an Amazon Route 53 hosted zone.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateProtection service method.</param>
         /// 
@@ -67,6 +67,15 @@ namespace Amazon.Shield
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.LimitsExceededException">
         /// Exception that indicates that the operation would exceed a limit.
+        /// 
+        ///  
+        /// <para>
+        ///  <code>Type</code> is the type of limit that would be exceeded.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>Limit</code> is the threshold that would be exceeded.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.OptimisticLockException">
         /// Exception that indicates that the protection state has been modified by another client.
@@ -211,7 +220,9 @@ namespace Amazon.Shield
 
 
         /// <summary>
-        /// Removes AWS Shield Advanced from an account.
+        /// Removes AWS Shield Advanced from an account. AWS Shield Advanced requires a 1-year
+        /// subscription commitment. You cannot delete a subscription prior to the completion
+        /// of that commitment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSubscription service method.</param>
         /// 
@@ -221,8 +232,8 @@ namespace Amazon.Shield
         /// You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.LockedSubscriptionException">
-        /// Exception that indicates that the subscription has been modified by another client.
-        /// You can retry the request.
+        /// Exception that indicates that the subscription you are trying to delete has not yet
+        /// completed the 1-year commitment. You cannot delete this subscription.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
         /// Exception indicating the specified resource does not exist.
@@ -396,6 +407,50 @@ namespace Amazon.Shield
         /// <returns>Returns a  DescribeSubscriptionResult from Shield.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeSubscription">REST API Reference for DescribeSubscription Operation</seealso>
         DescribeSubscriptionResponse EndDescribeSubscription(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetSubscriptionState
+
+
+        /// <summary>
+        /// Returns the <code>SubscriptionState</code>, either <code>Active</code> or <code>Inactive</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSubscriptionState service method.</param>
+        /// 
+        /// <returns>The response from the GetSubscriptionState service method, as returned by Shield.</returns>
+        /// <exception cref="Amazon.Shield.Model.InternalErrorException">
+        /// Exception that indicates that a problem occurred with the service infrastructure.
+        /// You can retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/GetSubscriptionState">REST API Reference for GetSubscriptionState Operation</seealso>
+        GetSubscriptionStateResponse GetSubscriptionState(GetSubscriptionStateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSubscriptionState operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSubscriptionState operation on AmazonShieldClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSubscriptionState
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/GetSubscriptionState">REST API Reference for GetSubscriptionState Operation</seealso>
+        IAsyncResult BeginGetSubscriptionState(GetSubscriptionStateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetSubscriptionState operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSubscriptionState.</param>
+        /// 
+        /// <returns>Returns a  GetSubscriptionStateResult from Shield.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/GetSubscriptionState">REST API Reference for GetSubscriptionState Operation</seealso>
+        GetSubscriptionStateResponse EndGetSubscriptionState(IAsyncResult asyncResult);
 
         #endregion
         

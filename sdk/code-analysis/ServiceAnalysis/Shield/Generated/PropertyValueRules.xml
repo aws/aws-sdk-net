@@ -37,7 +37,7 @@
   <property-value-rule>
     <property>Amazon.Shield.Model.ListAttacksRequest.MaxResults</property>
     <min>0</min>
-    <max>100</max>
+    <max>10000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Shield.Model.ListAttacksRequest.NextToken</property>
@@ -50,7 +50,7 @@
   <property-value-rule>
     <property>Amazon.Shield.Model.ListProtectionsRequest.MaxResults</property>
     <min>0</min>
-    <max>100</max>
+    <max>10000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Shield.Model.ListProtectionsRequest.NextToken</property>

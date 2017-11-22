@@ -37,8 +37,69 @@ namespace Amazon.Shield.Model
         /// <summary>
         /// Gets and sets the property VectorType. 
         /// <para>
-        /// The attack type, for example, SNMP reflection or SYN flood.
+        /// The attack type. Valid values:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// UDP_TRAFFIC
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UDP_FRAGMENT
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// GENERIC_UDP_REFLECTION
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DNS_REFLECTION
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NTP_REFLECTION
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CHARGEN_REFLECTION
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// SSDP_REFLECTION
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// PORT_MAPPER
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// RIP_REFLECTION
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// SNMP_REFLECTION
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MSSQL_REFLECTION
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NET_BIOS_REFLECTION
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// SYN_FLOOD
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACK_FLOOD
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// REQUEST_FLOOD
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string VectorType
         {
