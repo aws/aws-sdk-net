@@ -44,6 +44,7 @@ namespace Amazon.APIGateway.Model
         private Dictionary<string, string> _requestTemplates = new Dictionary<string, string>();
         private string _resourceId;
         private string _restApiId;
+        private int? _timeoutInMillis;
         private IntegrationType _type;
         private string _uri;
 
@@ -290,6 +291,25 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetRestApiId()
         {
             return this._restApiId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimeoutInMillis. 
+        /// <para>
+        /// Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds
+        /// or 29 seconds.
+        /// </para>
+        /// </summary>
+        public int TimeoutInMillis
+        {
+            get { return this._timeoutInMillis.GetValueOrDefault(); }
+            set { this._timeoutInMillis = value; }
+        }
+
+        // Check to see if TimeoutInMillis property is set
+        internal bool IsSetTimeoutInMillis()
+        {
+            return this._timeoutInMillis.HasValue; 
         }
 
         /// <summary>

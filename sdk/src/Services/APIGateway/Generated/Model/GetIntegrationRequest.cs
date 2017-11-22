@@ -29,7 +29,7 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the GetIntegration operation.
-    /// Represents a get integration.
+    /// Get the integration settings.
     /// </summary>
     public partial class GetIntegrationRequest : AmazonAPIGatewayRequest
     {

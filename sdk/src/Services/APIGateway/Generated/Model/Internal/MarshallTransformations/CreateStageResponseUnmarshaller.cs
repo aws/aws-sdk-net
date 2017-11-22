@@ -51,6 +51,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("accessLogSettings", targetDepth))
+                {
+                    var unmarshaller = AccessLogSettingsUnmarshaller.Instance;
+                    response.AccessLogSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("cacheClusterEnabled", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

@@ -2280,7 +2280,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Represents a get integration.
+        /// Get the integration settings.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetIntegration service method.</param>
         /// 

@@ -36,6 +36,7 @@ namespace Amazon.APIGateway.Model
     /// </summary>
     public partial class CreateStageResponse : AmazonWebServiceResponse
     {
+        private AccessLogSettings _accessLogSettings;
         private bool? _cacheClusterEnabled;
         private CacheClusterSize _cacheClusterSize;
         private CacheClusterStatus _cacheClusterStatus;
@@ -48,6 +49,24 @@ namespace Amazon.APIGateway.Model
         private Dictionary<string, MethodSetting> _methodSettings = new Dictionary<string, MethodSetting>();
         private string _stageName;
         private Dictionary<string, string> _variables = new Dictionary<string, string>();
+
+        /// <summary>
+        /// Gets and sets the property AccessLogSettings. 
+        /// <para>
+        /// The access log settings in this stage.
+        /// </para>
+        /// </summary>
+        public AccessLogSettings AccessLogSettings
+        {
+            get { return this._accessLogSettings; }
+            set { this._accessLogSettings = value; }
+        }
+
+        // Check to see if AccessLogSettings property is set
+        internal bool IsSetAccessLogSettings()
+        {
+            return this._accessLogSettings != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CacheClusterEnabled. 

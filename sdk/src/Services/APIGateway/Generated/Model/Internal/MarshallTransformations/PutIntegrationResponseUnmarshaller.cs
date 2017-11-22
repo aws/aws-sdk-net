@@ -105,6 +105,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     response.RequestTemplates = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("timeoutInMillis", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    response.TimeoutInMillis = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
