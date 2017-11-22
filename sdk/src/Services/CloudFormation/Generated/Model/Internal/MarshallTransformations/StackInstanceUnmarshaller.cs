@@ -60,6 +60,13 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         unmarshalledObject.Account = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ParameterOverrides/member", targetDepth))
+                    {
+                        var unmarshaller = ParameterUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.ParameterOverrides.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("Region", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

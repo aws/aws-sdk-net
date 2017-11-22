@@ -287,8 +287,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.GetTemplateSummaryRequest.StackSetName</property>
-    <min>1</min>
-    <pattern>[a-zA-Z][-a-zA-Z0-9]*</pattern>
+    <pattern>[a-zA-Z][-a-zA-Z0-9]*(?::[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12})?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.GetTemplateSummaryRequest.TemplateBody</property>
@@ -494,6 +493,18 @@
     <property>Amazon.CloudFormation.Model.UpdateStackRequest.TemplateURL</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.UpdateStackInstancesRequest.OperationId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9][-a-zA-Z0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.UpdateStackInstancesResponse.OperationId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9][-a-zA-Z0-9]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.UpdateStackSetRequest.Description</property>

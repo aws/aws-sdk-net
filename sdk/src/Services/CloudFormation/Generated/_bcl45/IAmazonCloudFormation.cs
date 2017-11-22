@@ -1522,6 +1522,78 @@ namespace Amazon.CloudFormation
 
         #endregion
         
+        #region  UpdateStackInstances
+
+
+        /// <summary>
+        /// Updates the parameter values for stack instances for the specified accounts, within
+        /// the specified regions. A stack instance refers to a stack in a specific account and
+        /// region. 
+        /// 
+        ///  
+        /// <para>
+        /// You can only update stack instances in regions and accounts where they already exist;
+        /// to create additional stack instances, use <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateStackInstances.html">CreateStackInstances</a>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// During stack set updates, any parameters overridden for a stack instance are not updated,
+        /// but retain their overridden value.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can only update the parameter <i>values</i> that are specified in the stack set;
+        /// to add or delete a parameter itself, use <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
+        /// to update the stack set template. If you add a parameter to a template, before you
+        /// can override the parameter value specified in the stack set you must first use <a
+        /// href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
+        /// to update all stack instances with the updated template and parameter value specified
+        /// in the stack set. Once a stack instance has been updated with the new parameter, you
+        /// can then override the parameter value using <code>UpdateStackInstances</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateStackInstances service method.</param>
+        /// 
+        /// <returns>The response from the UpdateStackInstances service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.InvalidOperationException">
+        /// The specified operation isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.OperationIdAlreadyExistsException">
+        /// The specified operation ID already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.OperationInProgressException">
+        /// Another operation is currently in progress for this stack set. Only one operation
+        /// can be performed for a stack set at a given time.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.StackInstanceNotFoundException">
+        /// The specified stack instance doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.StackSetNotFoundException">
+        /// The specified stack set doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.StaleRequestException">
+        /// Another operation has been performed on this stack set since the specified operation
+        /// was performed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateStackInstances">REST API Reference for UpdateStackInstances Operation</seealso>
+        UpdateStackInstancesResponse UpdateStackInstances(UpdateStackInstancesRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateStackInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateStackInstances operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateStackInstances">REST API Reference for UpdateStackInstances Operation</seealso>
+        Task<UpdateStackInstancesResponse> UpdateStackInstancesAsync(UpdateStackInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  UpdateStackSet
 
 

@@ -34,6 +34,7 @@ namespace Amazon.CloudFormation.Model
     {
         private string _parameterKey;
         private string _parameterValue;
+        private string _resolvedValue;
         private bool? _usePreviousValue;
 
         /// <summary>
@@ -59,7 +60,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property ParameterValue. 
         /// <para>
-        /// The value associated with the parameter.
+        /// The input value associated with the parameter.
         /// </para>
         /// </summary>
         public string ParameterValue
@@ -72,6 +73,26 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetParameterValue()
         {
             return this._parameterValue != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResolvedValue. 
+        /// <para>
+        /// Read-only. The value that corresponds to a Systems Manager parameter key. This field
+        /// is returned only for <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types">
+        /// <code>SSM</code> parameter types</a> in the template.
+        /// </para>
+        /// </summary>
+        public string ResolvedValue
+        {
+            get { return this._resolvedValue; }
+            set { this._resolvedValue = value; }
+        }
+
+        // Check to see if ResolvedValue property is set
+        internal bool IsSetResolvedValue()
+        {
+            return this._resolvedValue != null;
         }
 
         /// <summary>

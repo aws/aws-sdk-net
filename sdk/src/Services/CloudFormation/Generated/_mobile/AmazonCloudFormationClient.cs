@@ -1496,6 +1496,38 @@ namespace Amazon.CloudFormation
 
         #endregion
         
+        #region  UpdateStackInstances
+
+        internal virtual UpdateStackInstancesResponse UpdateStackInstances(UpdateStackInstancesRequest request)
+        {
+            var marshaller = new UpdateStackInstancesRequestMarshaller();
+            var unmarshaller = UpdateStackInstancesResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateStackInstancesRequest,UpdateStackInstancesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateStackInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateStackInstances operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateStackInstances">REST API Reference for UpdateStackInstances Operation</seealso>
+        public virtual Task<UpdateStackInstancesResponse> UpdateStackInstancesAsync(UpdateStackInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateStackInstancesRequestMarshaller();
+            var unmarshaller = UpdateStackInstancesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateStackInstancesRequest,UpdateStackInstancesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateStackSet
 
         internal virtual UpdateStackSetResponse UpdateStackSet(UpdateStackSetRequest request)

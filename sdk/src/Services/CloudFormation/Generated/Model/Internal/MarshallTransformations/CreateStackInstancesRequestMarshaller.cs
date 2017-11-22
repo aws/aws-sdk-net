@@ -103,6 +103,30 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         }
                     }
                 }
+                if(publicRequest.IsSetParameterOverrides())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.ParameterOverrides)
+                    {
+                        if(publicRequestlistValue.IsSetParameterKey())
+                        {
+                            request.Parameters.Add("ParameterOverrides" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ParameterKey", StringUtils.FromString(publicRequestlistValue.ParameterKey));
+                        }
+                        if(publicRequestlistValue.IsSetParameterValue())
+                        {
+                            request.Parameters.Add("ParameterOverrides" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ParameterValue", StringUtils.FromString(publicRequestlistValue.ParameterValue));
+                        }
+                        if(publicRequestlistValue.IsSetResolvedValue())
+                        {
+                            request.Parameters.Add("ParameterOverrides" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ResolvedValue", StringUtils.FromString(publicRequestlistValue.ResolvedValue));
+                        }
+                        if(publicRequestlistValue.IsSetUsePreviousValue())
+                        {
+                            request.Parameters.Add("ParameterOverrides" + "." + "member" + "." + publicRequestlistValueIndex + "." + "UsePreviousValue", StringUtils.FromBool(publicRequestlistValue.UsePreviousValue));
+                        }
+                        publicRequestlistValueIndex++;
+                    }
+                }
                 if(publicRequest.IsSetRegions())
                 {
                     int publicRequestlistValueIndex = 1;

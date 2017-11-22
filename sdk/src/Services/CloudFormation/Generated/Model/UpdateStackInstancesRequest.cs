@@ -28,13 +28,35 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateStackInstances operation.
-    /// Creates stack instances for the specified accounts, within the specified regions.
-    /// A stack instance refers to a stack in a specific account and region. <code>Accounts</code>
-    /// and <code>Regions</code> are required parameters—you must specify at least one account
-    /// and one region.
+    /// Container for the parameters to the UpdateStackInstances operation.
+    /// Updates the parameter values for stack instances for the specified accounts, within
+    /// the specified regions. A stack instance refers to a stack in a specific account and
+    /// region. 
+    /// 
+    ///  
+    /// <para>
+    /// You can only update stack instances in regions and accounts where they already exist;
+    /// to create additional stack instances, use <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateStackInstances.html">CreateStackInstances</a>.
+    /// 
+    /// </para>
+    ///  
+    /// <para>
+    /// During stack set updates, any parameters overridden for a stack instance are not updated,
+    /// but retain their overridden value.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can only update the parameter <i>values</i> that are specified in the stack set;
+    /// to add or delete a parameter itself, use <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
+    /// to update the stack set template. If you add a parameter to a template, before you
+    /// can override the parameter value specified in the stack set you must first use <a
+    /// href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
+    /// to update all stack instances with the updated template and parameter value specified
+    /// in the stack set. Once a stack instance has been updated with the new parameter, you
+    /// can then override the parameter value using <code>UpdateStackInstances</code>.
+    /// </para>
     /// </summary>
-    public partial class CreateStackInstancesRequest : AmazonCloudFormationRequest
+    public partial class UpdateStackInstancesRequest : AmazonCloudFormationRequest
     {
         private List<string> _accounts = new List<string>();
         private string _operationId;
@@ -46,8 +68,9 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Accounts. 
         /// <para>
-        /// The names of one or more AWS accounts that you want to create stack instances in the
-        /// specified region(s) for.
+        /// The names of one or more AWS accounts for which you want to update parameter values
+        /// for stack instances. The overridden parameter values will be applied to all stack
+        /// instances in the specified accounts and regions.
         /// </para>
         /// </summary>
         public List<string> Accounts
@@ -77,11 +100,6 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// If you don't specify an operation ID, the SDK generates one automatically. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Repeating this stack set operation with a new operation ID retries all stack instances
-        /// whose status is <code>OUTDATED</code>. 
         /// </para>
         /// </summary>
         public string OperationId
@@ -117,14 +135,14 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property ParameterOverrides. 
         /// <para>
-        /// A list of stack set parameters whose values you want to override in the selected stack
-        /// instances.
+        ///  A list of input parameters whose values you want to update for the specified stack
+        /// instances. 
         /// </para>
         ///  
         /// <para>
         /// Any overridden parameter values will be applied to all stack instances in the specified
         /// accounts and regions. When specifying parameters and their values, be aware of how
-        /// AWS CloudFormation sets parameter values during stack instance operations:
+        /// AWS CloudFormation sets parameter values during stack instance update operations:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -162,8 +180,12 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// You can only override the parameter <i>values</i> that are specified in the stack
-        /// set; to add or delete a parameter itself, use <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
-        /// to update the stack set template.
+        /// set; to add or delete a parameter itself, use <code>UpdateStackSet</code> to update
+        /// the stack set template. If you add a parameter to a template, before you can override
+        /// the parameter value specified in the stack set you must first use <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
+        /// to update all stack instances with the updated template and parameter value specified
+        /// in the stack set. Once a stack instance has been updated with the new parameter, you
+        /// can then override the parameter value using <code>UpdateStackInstances</code>.
         /// </para>
         /// </summary>
         public List<Parameter> ParameterOverrides
@@ -181,8 +203,9 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Regions. 
         /// <para>
-        /// The names of one or more regions where you want to create stack instances using the
-        /// specified AWS account(s). 
+        /// The names of one or more regions in which you want to update parameter values for
+        /// stack instances. The overridden parameter values will be applied to all stack instances
+        /// in the specified accounts and regions.
         /// </para>
         /// </summary>
         public List<string> Regions
@@ -200,7 +223,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackSetName. 
         /// <para>
-        /// The name or unique ID of the stack set that you want to create stack instances from.
+        /// The name or unique ID of the stack set associated with the stack instances.
         /// </para>
         /// </summary>
         public string StackSetName

@@ -31,9 +31,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateStackSet Request Marshaller
+    /// UpdateStackInstances Request Marshaller
     /// </summary>       
-    public class UpdateStackSetRequestMarshaller : IMarshaller<IRequest, UpdateStackSetRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateStackInstancesRequestMarshaller : IMarshaller<IRequest, UpdateStackInstancesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -42,7 +42,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((UpdateStackSetRequest)input);
+            return this.Marshall((UpdateStackInstancesRequest)input);
         }
     
         /// <summary>
@@ -50,26 +50,22 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(UpdateStackSetRequest publicRequest)
+        public IRequest Marshall(UpdateStackInstancesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudFormation");
-            request.Parameters.Add("Action", "UpdateStackSet");
+            request.Parameters.Add("Action", "UpdateStackInstances");
             request.Parameters.Add("Version", "2010-05-15");
 
             if(publicRequest != null)
             {
-                if(publicRequest.IsSetCapabilities())
+                if(publicRequest.IsSetAccounts())
                 {
                     int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.Capabilities)
+                    foreach(var publicRequestlistValue in publicRequest.Accounts)
                     {
-                        request.Parameters.Add("Capabilities" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        request.Parameters.Add("Accounts" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
                         publicRequestlistValueIndex++;
                     }
-                }
-                if(publicRequest.IsSetDescription())
-                {
-                    request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
                 }
                 if(publicRequest.IsSetOperationId())
                 {
@@ -107,61 +103,42 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         }
                     }
                 }
-                if(publicRequest.IsSetParameters())
+                if(publicRequest.IsSetParameterOverrides())
                 {
                     int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.Parameters)
+                    foreach(var publicRequestlistValue in publicRequest.ParameterOverrides)
                     {
                         if(publicRequestlistValue.IsSetParameterKey())
                         {
-                            request.Parameters.Add("Parameters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ParameterKey", StringUtils.FromString(publicRequestlistValue.ParameterKey));
+                            request.Parameters.Add("ParameterOverrides" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ParameterKey", StringUtils.FromString(publicRequestlistValue.ParameterKey));
                         }
                         if(publicRequestlistValue.IsSetParameterValue())
                         {
-                            request.Parameters.Add("Parameters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ParameterValue", StringUtils.FromString(publicRequestlistValue.ParameterValue));
+                            request.Parameters.Add("ParameterOverrides" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ParameterValue", StringUtils.FromString(publicRequestlistValue.ParameterValue));
                         }
                         if(publicRequestlistValue.IsSetResolvedValue())
                         {
-                            request.Parameters.Add("Parameters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ResolvedValue", StringUtils.FromString(publicRequestlistValue.ResolvedValue));
+                            request.Parameters.Add("ParameterOverrides" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ResolvedValue", StringUtils.FromString(publicRequestlistValue.ResolvedValue));
                         }
                         if(publicRequestlistValue.IsSetUsePreviousValue())
                         {
-                            request.Parameters.Add("Parameters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "UsePreviousValue", StringUtils.FromBool(publicRequestlistValue.UsePreviousValue));
+                            request.Parameters.Add("ParameterOverrides" + "." + "member" + "." + publicRequestlistValueIndex + "." + "UsePreviousValue", StringUtils.FromBool(publicRequestlistValue.UsePreviousValue));
                         }
+                        publicRequestlistValueIndex++;
+                    }
+                }
+                if(publicRequest.IsSetRegions())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Regions)
+                    {
+                        request.Parameters.Add("Regions" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
                         publicRequestlistValueIndex++;
                     }
                 }
                 if(publicRequest.IsSetStackSetName())
                 {
                     request.Parameters.Add("StackSetName", StringUtils.FromString(publicRequest.StackSetName));
-                }
-                if(publicRequest.IsSetTags())
-                {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.Tags)
-                    {
-                        if(publicRequestlistValue.IsSetKey())
-                        {
-                            request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
-                        }
-                        if(publicRequestlistValue.IsSetValue())
-                        {
-                            request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
-                        }
-                        publicRequestlistValueIndex++;
-                    }
-                }
-                if(publicRequest.IsSetTemplateBody())
-                {
-                    request.Parameters.Add("TemplateBody", StringUtils.FromString(publicRequest.TemplateBody));
-                }
-                if(publicRequest.IsSetTemplateURL())
-                {
-                    request.Parameters.Add("TemplateURL", StringUtils.FromString(publicRequest.TemplateURL));
-                }
-                if(publicRequest.IsSetUsePreviousTemplate())
-                {
-                    request.Parameters.Add("UsePreviousTemplate", StringUtils.FromBool(publicRequest.UsePreviousTemplate));
                 }
             }
             return request;

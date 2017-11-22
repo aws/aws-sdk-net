@@ -66,6 +66,12 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         unmarshalledObject.ParameterValue = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ResolvedValue", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ResolvedValue = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("UsePreviousValue", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;

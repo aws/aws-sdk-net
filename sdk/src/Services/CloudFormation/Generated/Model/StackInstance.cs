@@ -38,6 +38,7 @@ namespace Amazon.CloudFormation.Model
     public partial class StackInstance
     {
         private string _account;
+        private List<Parameter> _parameterOverrides = new List<Parameter>();
         private string _region;
         private string _stackId;
         private string _stackSetId;
@@ -60,6 +61,25 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetAccount()
         {
             return this._account != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParameterOverrides. 
+        /// <para>
+        /// A list of parameters from the stack set template whose values have been overridden
+        /// in this stack instance.
+        /// </para>
+        /// </summary>
+        public List<Parameter> ParameterOverrides
+        {
+            get { return this._parameterOverrides; }
+            set { this._parameterOverrides = value; }
+        }
+
+        // Check to see if ParameterOverrides property is set
+        internal bool IsSetParameterOverrides()
+        {
+            return this._parameterOverrides != null && this._parameterOverrides.Count > 0; 
         }
 
         /// <summary>
