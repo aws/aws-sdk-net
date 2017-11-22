@@ -88,6 +88,12 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
                     unmarshalledObject.DomainValidationOptions = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ExtendedKeyUsages", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ExtendedKeyUsage, ExtendedKeyUsageUnmarshaller>(ExtendedKeyUsageUnmarshaller.Instance);
+                    unmarshalledObject.ExtendedKeyUsages = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FailureReason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -122,6 +128,12 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.KeyAlgorithm = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("KeyUsages", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<KeyUsage, KeyUsageUnmarshaller>(KeyUsageUnmarshaller.Instance);
+                    unmarshalledObject.KeyUsages = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("NotAfter", targetDepth))

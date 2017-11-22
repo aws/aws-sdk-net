@@ -33,15 +33,17 @@ namespace Amazon.CertificateManager.Model
     public partial class DomainValidation
     {
         private string _domainName;
+        private ResourceRecord _resourceRecord;
         private string _validationDomain;
         private List<string> _validationEmails = new List<string>();
+        private ValidationMethod _validationMethod;
         private DomainStatus _validationStatus;
 
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
         /// A fully qualified domain name (FQDN) in the certificate. For example, <code>www.example.com</code>
-        /// or <code>example.com</code>.
+        /// or <code>example.com</code>. 
         /// </para>
         /// </summary>
         public string DomainName
@@ -54,6 +56,26 @@ namespace Amazon.CertificateManager.Model
         internal bool IsSetDomainName()
         {
             return this._domainName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceRecord. 
+        /// <para>
+        /// Contains the CNAME record that you add to your DNS database for domain validation.
+        /// For more information, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use
+        /// DNS to Validate Domain Ownership</a>.
+        /// </para>
+        /// </summary>
+        public ResourceRecord ResourceRecord
+        {
+            get { return this._resourceRecord; }
+            set { this._resourceRecord = value; }
+        }
+
+        // Check to see if ResourceRecord property is set
+        internal bool IsSetResourceRecord()
+        {
+            return this._resourceRecord != null;
         }
 
         /// <summary>
@@ -93,10 +115,41 @@ namespace Amazon.CertificateManager.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ValidationMethod. 
+        /// <para>
+        /// Specifies the domain validation method.
+        /// </para>
+        /// </summary>
+        public ValidationMethod ValidationMethod
+        {
+            get { return this._validationMethod; }
+            set { this._validationMethod = value; }
+        }
+
+        // Check to see if ValidationMethod property is set
+        internal bool IsSetValidationMethod()
+        {
+            return this._validationMethod != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ValidationStatus. 
         /// <para>
-        /// The validation status of the domain name.
+        /// The validation status of the domain name. This can be one of the following values:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>PENDING_VALIDATION</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code/>SUCCESS
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code/>FAILED
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public DomainStatus ValidationStatus
         {

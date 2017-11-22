@@ -52,11 +52,7 @@ namespace Amazon.CertificateManager.Model
         /// String that contains the ARN of the requested certificate. The certificate ARN is
         /// generated and returned by the <a>RequestCertificate</a> action as soon as the request
         /// is made. By default, using this parameter causes email to be sent to all top-level
-        /// domains you specified in the certificate request.
-        /// </para>
-        ///  
-        /// <para>
-        /// The ARN must be of the form:
+        /// domains you specified in the certificate request. The ARN must be of the form: 
         /// </para>
         ///  
         /// <para>

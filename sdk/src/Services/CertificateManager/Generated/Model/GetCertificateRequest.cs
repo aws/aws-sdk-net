@@ -29,11 +29,11 @@ namespace Amazon.CertificateManager.Model
 {
     /// <summary>
     /// Container for the parameters to the GetCertificate operation.
-    /// Retrieves an ACM Certificate and certificate chain for the certificate specified by
-    /// an ARN. The chain is an ordered list of certificates that contains the ACM Certificate,
-    /// intermediate certificates of subordinate CAs, and the root certificate in that order.
-    /// The certificate and certificate chain are base64 encoded. If you want to decode the
-    /// certificate chain to see the individual certificate fields, you can use OpenSSL.
+    /// Retrieves a certificate specified by an ARN and its certificate chain . The chain
+    /// is an ordered list of certificates that contains the end entity ertificate, intermediate
+    /// certificates of subordinate CAs, and the root certificate in that order. The certificate
+    /// and certificate chain are base64 encoded. If you want to decode the certificate to
+    /// see the individual fields, you can use OpenSSL.
     /// </summary>
     public partial class GetCertificateRequest : AmazonCertificateManagerRequest
     {

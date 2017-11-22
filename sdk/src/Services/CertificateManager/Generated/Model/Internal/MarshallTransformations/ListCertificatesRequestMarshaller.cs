@@ -78,6 +78,17 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetIncludes())
+                {
+                    context.Writer.WritePropertyName("Includes");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = FiltersMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Includes, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetMaxItems())
                 {
                     context.Writer.WritePropertyName("MaxItems");

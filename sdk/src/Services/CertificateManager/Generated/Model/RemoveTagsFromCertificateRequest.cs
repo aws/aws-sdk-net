@@ -32,13 +32,13 @@ namespace Amazon.CertificateManager.Model
     /// Remove one or more tags from an ACM Certificate. A tag consists of a key-value pair.
     /// If you do not specify the value portion of the tag when calling this function, the
     /// tag will be removed regardless of value. If you specify a value, the tag is removed
-    /// only if it is associated with the specified value.
+    /// only if it is associated with the specified value. 
     /// 
     ///  
     /// <para>
     /// To add tags to a certificate, use the <a>AddTagsToCertificate</a> action. To view
     /// all of the tags that have been applied to a specific ACM Certificate, use the <a>ListTagsForCertificate</a>
-    /// action.
+    /// action. 
     /// </para>
     /// </summary>
     public partial class RemoveTagsFromCertificateRequest : AmazonCertificateManagerRequest
@@ -60,7 +60,7 @@ namespace Amazon.CertificateManager.Model
         ///  
         /// <para>
         /// For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and AWS Service Namespaces</a>.
+        /// Resource Names (ARNs) and AWS Service Namespaces</a>. 
         /// </para>
         /// </summary>
         public string CertificateArn

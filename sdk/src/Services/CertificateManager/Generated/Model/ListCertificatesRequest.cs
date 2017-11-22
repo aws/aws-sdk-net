@@ -29,19 +29,21 @@ namespace Amazon.CertificateManager.Model
 {
     /// <summary>
     /// Container for the parameters to the ListCertificates operation.
-    /// Retrieves a list of ACM Certificates and the domain name for each. You can optionally
-    /// filter the list to return only the certificates that match the specified status.
+    /// Retrieves a list of certificate ARNs and domain names. You can request that only certificates
+    /// that match a specific status be listed. You can also filter by specific attributes
+    /// of the certificate.
     /// </summary>
     public partial class ListCertificatesRequest : AmazonCertificateManagerRequest
     {
         private List<string> _certificateStatuses = new List<string>();
+        private Filters _includes;
         private int? _maxItems;
         private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property CertificateStatuses. 
         /// <para>
-        /// The status or statuses on which to filter the list of ACM Certificates.
+        /// Filter the certificate list by status value.
         /// </para>
         /// </summary>
         public List<string> CertificateStatuses
@@ -54,6 +56,38 @@ namespace Amazon.CertificateManager.Model
         internal bool IsSetCertificateStatuses()
         {
             return this._certificateStatuses != null && this._certificateStatuses.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Includes. 
+        /// <para>
+        /// Filter the certificate list by one or more of the following values. For more information,
+        /// see the <a>Filters</a> structure.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// extendedKeyUsage
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// keyUsage
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// keyTypes
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public Filters Includes
+        {
+            get { return this._includes; }
+            set { this._includes = value; }
+        }
+
+        // Check to see if Includes property is set
+        internal bool IsSetIncludes()
+        {
+            return this._includes != null;
         }
 
         /// <summary>

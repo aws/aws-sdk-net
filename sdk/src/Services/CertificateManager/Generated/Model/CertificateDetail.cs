@@ -37,12 +37,14 @@ namespace Amazon.CertificateManager.Model
         private DateTime? _createdAt;
         private string _domainName;
         private List<DomainValidation> _domainValidationOptions = new List<DomainValidation>();
+        private List<ExtendedKeyUsage> _extendedKeyUsages = new List<ExtendedKeyUsage>();
         private FailureReason _failureReason;
         private DateTime? _importedAt;
         private List<string> _inUseBy = new List<string>();
         private DateTime? _issuedAt;
         private string _issuer;
         private KeyAlgorithm _keyAlgorithm;
+        private List<KeyUsage> _keyUsages = new List<KeyUsage>();
         private DateTime? _notAfter;
         private DateTime? _notBefore;
         private RenewalSummary _renewalSummary;
@@ -79,7 +81,7 @@ namespace Amazon.CertificateManager.Model
         /// Gets and sets the property CreatedAt. 
         /// <para>
         /// The time at which the certificate was requested. This value exists only when the certificate
-        /// type is <code>AMAZON_ISSUED</code>.
+        /// type is <code>AMAZON_ISSUED</code>. 
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -117,7 +119,7 @@ namespace Amazon.CertificateManager.Model
         /// <para>
         /// Contains information about the initial validation of each domain name that occurs
         /// as a result of the <a>RequestCertificate</a> request. This field exists only when
-        /// the certificate type is <code>AMAZON_ISSUED</code>.
+        /// the certificate type is <code>AMAZON_ISSUED</code>. 
         /// </para>
         /// </summary>
         public List<DomainValidation> DomainValidationOptions
@@ -133,11 +135,31 @@ namespace Amazon.CertificateManager.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ExtendedKeyUsages. 
+        /// <para>
+        /// Contains a list of Extended Key Usage X.509 v3 extension objects. Each object specifies
+        /// a purpose for which the certificate public key can be used and consists of a name
+        /// and an object identifier (OID). 
+        /// </para>
+        /// </summary>
+        public List<ExtendedKeyUsage> ExtendedKeyUsages
+        {
+            get { return this._extendedKeyUsages; }
+            set { this._extendedKeyUsages = value; }
+        }
+
+        // Check to see if ExtendedKeyUsages property is set
+        internal bool IsSetExtendedKeyUsages()
+        {
+            return this._extendedKeyUsages != null && this._extendedKeyUsages.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
         /// The reason the certificate request failed. This value exists only when the certificate
         /// status is <code>FAILED</code>. For more information, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
-        /// Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.
+        /// Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>. 
         /// </para>
         /// </summary>
         public FailureReason FailureReason
@@ -156,7 +178,7 @@ namespace Amazon.CertificateManager.Model
         /// Gets and sets the property ImportedAt. 
         /// <para>
         /// The date and time at which the certificate was imported. This value exists only when
-        /// the certificate type is <code>IMPORTED</code>.
+        /// the certificate type is <code>IMPORTED</code>. 
         /// </para>
         /// </summary>
         public DateTime ImportedAt
@@ -175,7 +197,7 @@ namespace Amazon.CertificateManager.Model
         /// Gets and sets the property InUseBy. 
         /// <para>
         /// A list of ARNs for the AWS resources that are using the certificate. A certificate
-        /// can be used by multiple AWS resources.
+        /// can be used by multiple AWS resources. 
         /// </para>
         /// </summary>
         public List<string> InUseBy
@@ -194,7 +216,7 @@ namespace Amazon.CertificateManager.Model
         /// Gets and sets the property IssuedAt. 
         /// <para>
         /// The time at which the certificate was issued. This value exists only when the certificate
-        /// type is <code>AMAZON_ISSUED</code>.
+        /// type is <code>AMAZON_ISSUED</code>. 
         /// </para>
         /// </summary>
         public DateTime IssuedAt
@@ -230,7 +252,7 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property KeyAlgorithm. 
         /// <para>
-        /// The algorithm that was used to generate the key pair (the public and private key).
+        /// The algorithm that was used to generate the public-private key pair.
         /// </para>
         /// </summary>
         public KeyAlgorithm KeyAlgorithm
@@ -243,6 +265,26 @@ namespace Amazon.CertificateManager.Model
         internal bool IsSetKeyAlgorithm()
         {
             return this._keyAlgorithm != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KeyUsages. 
+        /// <para>
+        /// A list of Key Usage X.509 v3 extension objects. Each object is a string value that
+        /// identifies the purpose of the public key contained in the certificate. Possible extension
+        /// values include DIGITAL_SIGNATURE, KEY_ENCHIPHERMENT, NON_REPUDIATION, and more.
+        /// </para>
+        /// </summary>
+        public List<KeyUsage> KeyUsages
+        {
+            get { return this._keyUsages; }
+            set { this._keyUsages = value; }
+        }
+
+        // Check to see if KeyUsages property is set
+        internal bool IsSetKeyUsages()
+        {
+            return this._keyUsages != null && this._keyUsages.Count > 0; 
         }
 
         /// <summary>
@@ -305,7 +347,7 @@ namespace Amazon.CertificateManager.Model
         /// Gets and sets the property RevocationReason. 
         /// <para>
         /// The reason the certificate was revoked. This value exists only when the certificate
-        /// status is <code>REVOKED</code>.
+        /// status is <code>REVOKED</code>. 
         /// </para>
         /// </summary>
         public RevocationReason RevocationReason
@@ -324,7 +366,7 @@ namespace Amazon.CertificateManager.Model
         /// Gets and sets the property RevokedAt. 
         /// <para>
         /// The time at which the certificate was revoked. This value exists only when the certificate
-        /// status is <code>REVOKED</code>.
+        /// status is <code>REVOKED</code>. 
         /// </para>
         /// </summary>
         public DateTime RevokedAt
@@ -418,7 +460,7 @@ namespace Amazon.CertificateManager.Model
         /// This list contains the domain names that are bound to the public key that is contained
         /// in the certificate. The subject alternative names include the canonical domain name
         /// (CN) of the certificate and additional domain names that can be used to connect to
-        /// the website.
+        /// the website. 
         /// </para>
         /// </summary>
         public List<string> SubjectAlternativeNames
@@ -441,7 +483,7 @@ namespace Amazon.CertificateManager.Model
         /// ACM does not provide <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
         /// renewal</a> for imported certificates. For more information about the differences
         /// between certificates that you import and those that ACM provides, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-        /// Certificates</a> in the <i>AWS Certificate Manager User Guide</i>.
+        /// Certificates</a> in the <i>AWS Certificate Manager User Guide</i>. 
         /// </para>
         /// </summary>
         public CertificateType Type

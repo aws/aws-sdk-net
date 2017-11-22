@@ -29,10 +29,10 @@ namespace Amazon.CertificateManager.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteCertificate operation.
-    /// Deletes an ACM Certificate and its associated private key. If this action succeeds,
-    /// the certificate no longer appears in the list of ACM Certificates that can be displayed
-    /// by calling the <a>ListCertificates</a> action or be retrieved by calling the <a>GetCertificate</a>
-    /// action. The certificate will not be available for use by other AWS services. 
+    /// Deletes a certificate and its associated private key. If this action succeeds, the
+    /// certificate no longer appears in the list that can be displayed by calling the <a>ListCertificates</a>
+    /// action or be retrieved by calling the <a>GetCertificate</a> action. The certificate
+    /// will not be available for use by AWS services integrated with ACM. 
     /// 
     ///  <note> 
     /// <para>

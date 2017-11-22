@@ -29,8 +29,9 @@ namespace Amazon.CertificateManager.Model
 {
     /// <summary>
     /// Container for the parameters to the ImportCertificate operation.
-    /// Imports an SSL/TLS certificate into AWS Certificate Manager (ACM) to use with <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-services.html">ACM's
-    /// integrated AWS services</a>.
+    /// Imports a certificate into AWS Certificate Manager (ACM) to use with services that
+    /// are integrated with ACM. For more information, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-services.html">Integrated
+    /// Services</a>. 
     /// 
     ///  <note> 
     /// <para>
@@ -40,35 +41,65 @@ namespace Amazon.CertificateManager.Model
     ///  </note> 
     /// <para>
     /// For more information about importing certificates into ACM, including the differences
-    /// between certificates that you import and those that ACM provides, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">
-    /// Importing Certificates</a> in the <i>AWS Certificate Manager User Guide</i>.
+    /// between certificates that you import and those that ACM provides, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
+    /// Certificates</a> in the <i>AWS Certificate Manager User Guide</i>. 
     /// </para>
     ///  
     /// <para>
-    /// To import a certificate, you must provide the certificate and the matching private
-    /// key. When the certificate is not self-signed, you must also provide a certificate
-    /// chain. You can omit the certificate chain when importing a self-signed certificate.
+    /// In general, you can import almost any valid certificate. However, services integrated
+    /// with ACM allow only certificate types they support to be associated with their resources.
+    /// The following guidelines are also important:
     /// </para>
-    ///  
+    ///  <ul> <li> 
     /// <para>
-    /// The certificate, private key, and certificate chain must be PEM-encoded. For more
-    /// information about converting these items to PEM format, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html#import-certificate-troubleshooting">Importing
-    /// Certificates Troubleshooting</a> in the <i>AWS Certificate Manager User Guide</i>.
+    /// You must enter the private key that matches the certificate you are importing.
     /// </para>
-    ///  
+    ///  </li> <li> 
+    /// <para>
+    /// The private key must be unencrypted. You cannot import a private key that is protected
+    /// by a password or a passphrase.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If the certificate you are importing is not self-signed, you must enter its certificate
+    /// chain.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If a certificate chain is included, the issuer must be the subject of one of the certificates
+    /// in the chain.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The certificate, private key, and certificate chain must be PEM-encoded.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The current time must be between the <code>Not Before</code> and <code>Not After</code>
+    /// certificate fields.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The <code>Issuer</code> field must not be empty.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The OCSP authority URL must not exceed 1000 characters.
+    /// </para>
+    ///  </li> <li> 
     /// <para>
     /// To import a new certificate, omit the <code>CertificateArn</code> field. Include this
     /// field only when you want to replace a previously imported certificate.
     /// </para>
-    ///  
+    ///  </li> <li> 
     /// <para>
     /// When you import a certificate by using the CLI or one of the SDKs, you must specify
-    /// the certificate, chain, and private key parameters as file names preceded by <code>file://</code>.
-    /// For example, you can specify a certificate saved in the <code>C:\temp</code> folder
-    /// as <code>C:\temp\certificate_to_import.pem</code>. If you are making an HTTP or HTTPS
-    /// Query request, include these parameters as BLOBs. 
+    /// the certificate, certificate chain, and private key parameters as file names preceded
+    /// by <code>file://</code>. For example, you can specify a certificate saved in the <code>C:\temp</code>
+    /// folder as <code>C:\temp\certificate_to_import.pem</code>. If you are making an HTTP
+    /// or HTTPS Query request, include these parameters as BLOBs. 
     /// </para>
-    ///  
+    ///  </li> </ul> 
     /// <para>
     /// This operation returns the <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
     /// Resource Name (ARN)</a> of the imported certificate.
@@ -84,23 +115,8 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property Certificate. 
         /// <para>
-        /// The certificate to import. It must meet the following requirements:
+        /// The certificate to import.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Must be PEM-encoded.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Must contain a 1024-bit or 2048-bit RSA public key.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Must be valid at the time of import. You cannot import a certificate before its validity
-        /// period begins (the certificate's <code>NotBefore</code> date) or after it expires
-        /// (the certificate's <code>NotAfter</code> date).
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public MemoryStream Certificate
         {
@@ -119,7 +135,7 @@ namespace Amazon.CertificateManager.Model
         /// <para>
         /// The <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
         /// Resource Name (ARN)</a> of an imported certificate to replace. To import a new certificate,
-        /// omit this field.
+        /// omit this field. 
         /// </para>
         /// </summary>
         public string CertificateArn
@@ -137,7 +153,7 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property CertificateChain. 
         /// <para>
-        /// The certificate chain. It must be PEM-encoded.
+        /// The PEM encoded certificate chain.
         /// </para>
         /// </summary>
         public MemoryStream CertificateChain
@@ -155,19 +171,8 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property PrivateKey. 
         /// <para>
-        /// The private key that matches the public key in the certificate. It must meet the following
-        /// requirements:
+        /// The private key that matches the public key in the certificate.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Must be PEM-encoded.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Must be unencrypted. You cannot import a private key that is protected by a password
-        /// or passphrase.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public MemoryStream PrivateKey
         {

@@ -199,6 +199,96 @@ namespace Amazon.CertificateManager
 
 
     /// <summary>
+    /// Constants used for properties of type ExtendedKeyUsageName.
+    /// </summary>
+    public class ExtendedKeyUsageName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ANY for ExtendedKeyUsageName
+        /// </summary>
+        public static readonly ExtendedKeyUsageName ANY = new ExtendedKeyUsageName("ANY");
+        /// <summary>
+        /// Constant CODE_SIGNING for ExtendedKeyUsageName
+        /// </summary>
+        public static readonly ExtendedKeyUsageName CODE_SIGNING = new ExtendedKeyUsageName("CODE_SIGNING");
+        /// <summary>
+        /// Constant CUSTOM for ExtendedKeyUsageName
+        /// </summary>
+        public static readonly ExtendedKeyUsageName CUSTOM = new ExtendedKeyUsageName("CUSTOM");
+        /// <summary>
+        /// Constant EMAIL_PROTECTION for ExtendedKeyUsageName
+        /// </summary>
+        public static readonly ExtendedKeyUsageName EMAIL_PROTECTION = new ExtendedKeyUsageName("EMAIL_PROTECTION");
+        /// <summary>
+        /// Constant IPSEC_END_SYSTEM for ExtendedKeyUsageName
+        /// </summary>
+        public static readonly ExtendedKeyUsageName IPSEC_END_SYSTEM = new ExtendedKeyUsageName("IPSEC_END_SYSTEM");
+        /// <summary>
+        /// Constant IPSEC_TUNNEL for ExtendedKeyUsageName
+        /// </summary>
+        public static readonly ExtendedKeyUsageName IPSEC_TUNNEL = new ExtendedKeyUsageName("IPSEC_TUNNEL");
+        /// <summary>
+        /// Constant IPSEC_USER for ExtendedKeyUsageName
+        /// </summary>
+        public static readonly ExtendedKeyUsageName IPSEC_USER = new ExtendedKeyUsageName("IPSEC_USER");
+        /// <summary>
+        /// Constant NONE for ExtendedKeyUsageName
+        /// </summary>
+        public static readonly ExtendedKeyUsageName NONE = new ExtendedKeyUsageName("NONE");
+        /// <summary>
+        /// Constant OCSP_SIGNING for ExtendedKeyUsageName
+        /// </summary>
+        public static readonly ExtendedKeyUsageName OCSP_SIGNING = new ExtendedKeyUsageName("OCSP_SIGNING");
+        /// <summary>
+        /// Constant TIME_STAMPING for ExtendedKeyUsageName
+        /// </summary>
+        public static readonly ExtendedKeyUsageName TIME_STAMPING = new ExtendedKeyUsageName("TIME_STAMPING");
+        /// <summary>
+        /// Constant TLS_WEB_CLIENT_AUTHENTICATION for ExtendedKeyUsageName
+        /// </summary>
+        public static readonly ExtendedKeyUsageName TLS_WEB_CLIENT_AUTHENTICATION = new ExtendedKeyUsageName("TLS_WEB_CLIENT_AUTHENTICATION");
+        /// <summary>
+        /// Constant TLS_WEB_SERVER_AUTHENTICATION for ExtendedKeyUsageName
+        /// </summary>
+        public static readonly ExtendedKeyUsageName TLS_WEB_SERVER_AUTHENTICATION = new ExtendedKeyUsageName("TLS_WEB_SERVER_AUTHENTICATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExtendedKeyUsageName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExtendedKeyUsageName FindValue(string value)
+        {
+            return FindValue<ExtendedKeyUsageName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExtendedKeyUsageName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FailureReason.
     /// </summary>
     public class FailureReason : ConstantClass
@@ -208,6 +298,10 @@ namespace Amazon.CertificateManager
         /// Constant ADDITIONAL_VERIFICATION_REQUIRED for FailureReason
         /// </summary>
         public static readonly FailureReason ADDITIONAL_VERIFICATION_REQUIRED = new FailureReason("ADDITIONAL_VERIFICATION_REQUIRED");
+        /// <summary>
+        /// Constant CAA_ERROR for FailureReason
+        /// </summary>
+        public static readonly FailureReason CAA_ERROR = new FailureReason("CAA_ERROR");
         /// <summary>
         /// Constant DOMAIN_NOT_ALLOWED for FailureReason
         /// </summary>
@@ -271,6 +365,14 @@ namespace Amazon.CertificateManager
         /// </summary>
         public static readonly KeyAlgorithm EC_prime256v1 = new KeyAlgorithm("EC_prime256v1");
         /// <summary>
+        /// Constant EC_secp384r1 for KeyAlgorithm
+        /// </summary>
+        public static readonly KeyAlgorithm EC_secp384r1 = new KeyAlgorithm("EC_secp384r1");
+        /// <summary>
+        /// Constant EC_secp521r1 for KeyAlgorithm
+        /// </summary>
+        public static readonly KeyAlgorithm EC_secp521r1 = new KeyAlgorithm("EC_secp521r1");
+        /// <summary>
         /// Constant RSA_1024 for KeyAlgorithm
         /// </summary>
         public static readonly KeyAlgorithm RSA_1024 = new KeyAlgorithm("RSA_1024");
@@ -278,6 +380,10 @@ namespace Amazon.CertificateManager
         /// Constant RSA_2048 for KeyAlgorithm
         /// </summary>
         public static readonly KeyAlgorithm RSA_2048 = new KeyAlgorithm("RSA_2048");
+        /// <summary>
+        /// Constant RSA_4096 for KeyAlgorithm
+        /// </summary>
+        public static readonly KeyAlgorithm RSA_4096 = new KeyAlgorithm("RSA_4096");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -308,6 +414,138 @@ namespace Amazon.CertificateManager
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator KeyAlgorithm(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type KeyUsageName.
+    /// </summary>
+    public class KeyUsageName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ANY for KeyUsageName
+        /// </summary>
+        public static readonly KeyUsageName ANY = new KeyUsageName("ANY");
+        /// <summary>
+        /// Constant CERTIFICATE_SIGNING for KeyUsageName
+        /// </summary>
+        public static readonly KeyUsageName CERTIFICATE_SIGNING = new KeyUsageName("CERTIFICATE_SIGNING");
+        /// <summary>
+        /// Constant CRL_SIGNING for KeyUsageName
+        /// </summary>
+        public static readonly KeyUsageName CRL_SIGNING = new KeyUsageName("CRL_SIGNING");
+        /// <summary>
+        /// Constant CUSTOM for KeyUsageName
+        /// </summary>
+        public static readonly KeyUsageName CUSTOM = new KeyUsageName("CUSTOM");
+        /// <summary>
+        /// Constant DATA_ENCIPHERMENT for KeyUsageName
+        /// </summary>
+        public static readonly KeyUsageName DATA_ENCIPHERMENT = new KeyUsageName("DATA_ENCIPHERMENT");
+        /// <summary>
+        /// Constant DECIPHER_ONLY for KeyUsageName
+        /// </summary>
+        public static readonly KeyUsageName DECIPHER_ONLY = new KeyUsageName("DECIPHER_ONLY");
+        /// <summary>
+        /// Constant DIGITAL_SIGNATURE for KeyUsageName
+        /// </summary>
+        public static readonly KeyUsageName DIGITAL_SIGNATURE = new KeyUsageName("DIGITAL_SIGNATURE");
+        /// <summary>
+        /// Constant ENCIPHER_ONLY for KeyUsageName
+        /// </summary>
+        public static readonly KeyUsageName ENCIPHER_ONLY = new KeyUsageName("ENCIPHER_ONLY");
+        /// <summary>
+        /// Constant KEY_AGREEMENT for KeyUsageName
+        /// </summary>
+        public static readonly KeyUsageName KEY_AGREEMENT = new KeyUsageName("KEY_AGREEMENT");
+        /// <summary>
+        /// Constant KEY_ENCIPHERMENT for KeyUsageName
+        /// </summary>
+        public static readonly KeyUsageName KEY_ENCIPHERMENT = new KeyUsageName("KEY_ENCIPHERMENT");
+        /// <summary>
+        /// Constant NON_REPUDIATION for KeyUsageName
+        /// </summary>
+        public static readonly KeyUsageName NON_REPUDIATION = new KeyUsageName("NON_REPUDIATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public KeyUsageName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static KeyUsageName FindValue(string value)
+        {
+            return FindValue<KeyUsageName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator KeyUsageName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RecordType.
+    /// </summary>
+    public class RecordType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CNAME for RecordType
+        /// </summary>
+        public static readonly RecordType CNAME = new RecordType("CNAME");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RecordType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RecordType FindValue(string value)
+        {
+            return FindValue<RecordType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RecordType(string value)
         {
             return FindValue(value);
         }
@@ -448,6 +686,56 @@ namespace Amazon.CertificateManager
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RevocationReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ValidationMethod.
+    /// </summary>
+    public class ValidationMethod : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DNS for ValidationMethod
+        /// </summary>
+        public static readonly ValidationMethod DNS = new ValidationMethod("DNS");
+        /// <summary>
+        /// Constant EMAIL for ValidationMethod
+        /// </summary>
+        public static readonly ValidationMethod EMAIL = new ValidationMethod("EMAIL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ValidationMethod(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ValidationMethod FindValue(string value)
+        {
+            return FindValue<ValidationMethod>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ValidationMethod(string value)
         {
             return FindValue(value);
         }

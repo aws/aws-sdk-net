@@ -47,7 +47,7 @@ namespace Amazon.CertificateManager.Model
     /// <para>
     /// After receiving approval from the domain owner, the ACM Certificate is issued. For
     /// more information, see the <a href="http://docs.aws.amazon.com/acm/latest/userguide/">AWS
-    /// Certificate Manager User Guide</a>.
+    /// Certificate Manager User Guide</a>. 
     /// </para>
     /// </summary>
     public partial class RequestCertificateRequest : AmazonCertificateManagerRequest
@@ -56,6 +56,7 @@ namespace Amazon.CertificateManager.Model
         private List<DomainValidationOption> _domainValidationOptions = new List<DomainValidationOption>();
         private string _idempotencyToken;
         private List<string> _subjectAlternativeNames = new List<string>();
+        private ValidationMethod _validationMethod;
 
         /// <summary>
         /// Gets and sets the property DomainName. 
@@ -67,25 +68,9 @@ namespace Amazon.CertificateManager.Model
         /// </para>
         ///  
         /// <para>
-        ///  The maximum length of a DNS name is 253 octets. The name is made up of multiple labels
-        /// separated by periods. No label can be longer than 63 octets. Consider the following
-        /// examples: 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>(63 octets).(63 octets).(63 octets).(61 octets)</code> is legal because the
-        /// total length is 253 octets (63+1+63+1+63+1+61) and no label exceeds 63 octets. 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>(64 octets).(63 octets).(63 octets).(61 octets)</code> is not legal because
-        /// the total length exceeds 253 octets (64+1+63+1+63+1+61) and the first label exceeds
-        /// 63 octets. 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>(63 octets).(63 octets).(63 octets).(62 octets)</code> is not legal because
-        /// the total length of the DNS name (63+1+63+1+63+1+62) exceeds 253 octets. 
+        ///  The first domain name you enter cannot exceed 63 octets, including periods. Each
+        /// subsequent Subject Alternative Name (SAN), however, can be up to 253 octets in length.
+        /// 
         /// </para>
         /// </summary>
         public string DomainName
@@ -103,8 +88,8 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property DomainValidationOptions. 
         /// <para>
-        /// The domain name that you want ACM to use to send you emails to validate your ownership
-        /// of the domain.
+        /// The domain name that you want ACM to use to send you emails so taht your can validate
+        /// domain ownership.
         /// </para>
         /// </summary>
         public List<DomainValidationOption> DomainValidationOptions
@@ -151,6 +136,29 @@ namespace Amazon.CertificateManager.Model
         /// Certificate is 100. However, the initial limit is 10 domain names. If you need more
         /// than 10 names, you must request a limit increase. For more information, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.
         /// </para>
+        ///  
+        /// <para>
+        ///  The maximum length of a SAN DNS name is 253 octets. The name is made up of multiple
+        /// labels separated by periods. No label can be longer than 63 octets. Consider the following
+        /// examples: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>(63 octets).(63 octets).(63 octets).(61 octets)</code> is legal because the
+        /// total length is 253 octets (63+1+63+1+63+1+61) and no label exceeds 63 octets.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>(64 octets).(63 octets).(63 octets).(61 octets)</code> is not legal because
+        /// the total length exceeds 253 octets (64+1+63+1+63+1+61) and the first label exceeds
+        /// 63 octets.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>(63 octets).(63 octets).(63 octets).(62 octets)</code> is not legal because
+        /// the total length of the DNS name (63+1+63+1+63+1+62) exceeds 253 octets.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<string> SubjectAlternativeNames
         {
@@ -162,6 +170,24 @@ namespace Amazon.CertificateManager.Model
         internal bool IsSetSubjectAlternativeNames()
         {
             return this._subjectAlternativeNames != null && this._subjectAlternativeNames.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ValidationMethod. 
+        /// <para>
+        /// The method you want to use to validate your domain.
+        /// </para>
+        /// </summary>
+        public ValidationMethod ValidationMethod
+        {
+            get { return this._validationMethod; }
+            set { this._validationMethod = value; }
+        }
+
+        // Check to see if ValidationMethod property is set
+        internal bool IsSetValidationMethod()
+        {
+            return this._validationMethod != null;
         }
 
     }

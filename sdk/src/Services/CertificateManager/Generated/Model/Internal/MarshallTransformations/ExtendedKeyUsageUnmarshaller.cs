@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DomainValidation Object
+    /// Response Unmarshaller for ExtendedKeyUsage Object
     /// </summary>  
-    public class DomainValidationUnmarshaller : IUnmarshaller<DomainValidation, XmlUnmarshallerContext>, IUnmarshaller<DomainValidation, JsonUnmarshallerContext>
+    public class ExtendedKeyUsageUnmarshaller : IUnmarshaller<ExtendedKeyUsage, XmlUnmarshallerContext>, IUnmarshaller<ExtendedKeyUsage, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DomainValidation IUnmarshaller<DomainValidation, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ExtendedKeyUsage IUnmarshaller<ExtendedKeyUsage, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,27 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DomainValidation Unmarshall(JsonUnmarshallerContext context)
+        public ExtendedKeyUsage Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DomainValidation unmarshalledObject = new DomainValidation();
+            ExtendedKeyUsage unmarshalledObject = new ExtendedKeyUsage();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("DomainName", targetDepth))
+                if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DomainName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ResourceRecord", targetDepth))
-                {
-                    var unmarshaller = ResourceRecordUnmarshaller.Instance;
-                    unmarshalledObject.ResourceRecord = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ValidationDomain", targetDepth))
+                if (context.TestExpression("OID", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ValidationDomain = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ValidationEmails", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.ValidationEmails = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ValidationMethod", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ValidationMethod = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ValidationStatus", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ValidationStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OID = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +82,12 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
         }
 
 
-        private static DomainValidationUnmarshaller _instance = new DomainValidationUnmarshaller();        
+        private static ExtendedKeyUsageUnmarshaller _instance = new ExtendedKeyUsageUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DomainValidationUnmarshaller Instance
+        public static ExtendedKeyUsageUnmarshaller Instance
         {
             get
             {

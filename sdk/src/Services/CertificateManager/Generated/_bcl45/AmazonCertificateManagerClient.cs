@@ -241,7 +241,7 @@ namespace Amazon.CertificateManager
         /// Adds one or more tags to an ACM Certificate. Tags are labels that you can use to identify
         /// and organize your AWS resources. Each tag consists of a <code>key</code> and an optional
         /// <code>value</code>. You specify the certificate on input by its Amazon Resource Name
-        /// (ARN). You specify the tag by using a key-value pair.
+        /// (ARN). You specify the tag by using a key-value pair. 
         /// 
         ///  
         /// <para>
@@ -252,13 +252,13 @@ namespace Amazon.CertificateManager
         /// among those resources. For example, you can add the same tag to an ACM Certificate
         /// and an Elastic Load Balancing load balancer to indicate that they are both used by
         /// the same website. For more information, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/tags.html">Tagging
-        /// ACM Certificates</a>.
+        /// ACM Certificates</a>. 
         /// </para>
         ///  
         /// <para>
         /// To remove one or more tags, use the <a>RemoveTagsFromCertificate</a> action. To view
         /// all of the tags that have been applied to the certificate, use the <a>ListTagsForCertificate</a>
-        /// action.
+        /// action. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddTagsToCertificate service method.</param>
@@ -312,10 +312,10 @@ namespace Amazon.CertificateManager
 
 
         /// <summary>
-        /// Deletes an ACM Certificate and its associated private key. If this action succeeds,
-        /// the certificate no longer appears in the list of ACM Certificates that can be displayed
-        /// by calling the <a>ListCertificates</a> action or be retrieved by calling the <a>GetCertificate</a>
-        /// action. The certificate will not be available for use by other AWS services. 
+        /// Deletes a certificate and its associated private key. If this action succeeds, the
+        /// certificate no longer appears in the list that can be displayed by calling the <a>ListCertificates</a>
+        /// action or be retrieved by calling the <a>GetCertificate</a> action. The certificate
+        /// will not be available for use by AWS services integrated with ACM. 
         /// 
         ///  <note> 
         /// <para>
@@ -348,10 +348,10 @@ namespace Amazon.CertificateManager
 
 
         /// <summary>
-        /// Deletes an ACM Certificate and its associated private key. If this action succeeds,
-        /// the certificate no longer appears in the list of ACM Certificates that can be displayed
-        /// by calling the <a>ListCertificates</a> action or be retrieved by calling the <a>GetCertificate</a>
-        /// action. The certificate will not be available for use by other AWS services. 
+        /// Deletes a certificate and its associated private key. If this action succeeds, the
+        /// certificate no longer appears in the list that can be displayed by calling the <a>ListCertificates</a>
+        /// action or be retrieved by calling the <a>GetCertificate</a> action. The certificate
+        /// will not be available for use by AWS services integrated with ACM. 
         /// 
         ///  <note> 
         /// <para>
@@ -385,10 +385,10 @@ namespace Amazon.CertificateManager
 
 
         /// <summary>
-        /// Deletes an ACM Certificate and its associated private key. If this action succeeds,
-        /// the certificate no longer appears in the list of ACM Certificates that can be displayed
-        /// by calling the <a>ListCertificates</a> action or be retrieved by calling the <a>GetCertificate</a>
-        /// action. The certificate will not be available for use by other AWS services. 
+        /// Deletes a certificate and its associated private key. If this action succeeds, the
+        /// certificate no longer appears in the list that can be displayed by calling the <a>ListCertificates</a>
+        /// action or be retrieved by calling the <a>GetCertificate</a> action. The certificate
+        /// will not be available for use by AWS services integrated with ACM. 
         /// 
         ///  <note> 
         /// <para>
@@ -540,11 +540,11 @@ namespace Amazon.CertificateManager
 
 
         /// <summary>
-        /// Retrieves an ACM Certificate and certificate chain for the certificate specified by
-        /// an ARN. The chain is an ordered list of certificates that contains the ACM Certificate,
-        /// intermediate certificates of subordinate CAs, and the root certificate in that order.
-        /// The certificate and certificate chain are base64 encoded. If you want to decode the
-        /// certificate chain to see the individual certificate fields, you can use OpenSSL.
+        /// Retrieves a certificate specified by an ARN and its certificate chain . The chain
+        /// is an ordered list of certificates that contains the end entity ertificate, intermediate
+        /// certificates of subordinate CAs, and the root certificate in that order. The certificate
+        /// and certificate chain are base64 encoded. If you want to decode the certificate to
+        /// see the individual fields, you can use OpenSSL.
         /// </summary>
         /// <param name="certificateArn">String that contains a certificate ARN in the following format:  <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>  For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</param>
         /// 
@@ -570,11 +570,11 @@ namespace Amazon.CertificateManager
 
 
         /// <summary>
-        /// Retrieves an ACM Certificate and certificate chain for the certificate specified by
-        /// an ARN. The chain is an ordered list of certificates that contains the ACM Certificate,
-        /// intermediate certificates of subordinate CAs, and the root certificate in that order.
-        /// The certificate and certificate chain are base64 encoded. If you want to decode the
-        /// certificate chain to see the individual certificate fields, you can use OpenSSL.
+        /// Retrieves a certificate specified by an ARN and its certificate chain . The chain
+        /// is an ordered list of certificates that contains the end entity ertificate, intermediate
+        /// certificates of subordinate CAs, and the root certificate in that order. The certificate
+        /// and certificate chain are base64 encoded. If you want to decode the certificate to
+        /// see the individual fields, you can use OpenSSL.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCertificate service method.</param>
         /// 
@@ -601,11 +601,11 @@ namespace Amazon.CertificateManager
 
 
         /// <summary>
-        /// Retrieves an ACM Certificate and certificate chain for the certificate specified by
-        /// an ARN. The chain is an ordered list of certificates that contains the ACM Certificate,
-        /// intermediate certificates of subordinate CAs, and the root certificate in that order.
-        /// The certificate and certificate chain are base64 encoded. If you want to decode the
-        /// certificate chain to see the individual certificate fields, you can use OpenSSL.
+        /// Retrieves a certificate specified by an ARN and its certificate chain . The chain
+        /// is an ordered list of certificates that contains the end entity ertificate, intermediate
+        /// certificates of subordinate CAs, and the root certificate in that order. The certificate
+        /// and certificate chain are base64 encoded. If you want to decode the certificate to
+        /// see the individual fields, you can use OpenSSL.
         /// </summary>
         /// <param name="certificateArn">String that contains a certificate ARN in the following format:  <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>  For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</param>
         /// <param name="cancellationToken">
@@ -657,8 +657,9 @@ namespace Amazon.CertificateManager
 
 
         /// <summary>
-        /// Imports an SSL/TLS certificate into AWS Certificate Manager (ACM) to use with <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-services.html">ACM's
-        /// integrated AWS services</a>.
+        /// Imports a certificate into AWS Certificate Manager (ACM) to use with services that
+        /// are integrated with ACM. For more information, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-services.html">Integrated
+        /// Services</a>. 
         /// 
         ///  <note> 
         /// <para>
@@ -668,35 +669,65 @@ namespace Amazon.CertificateManager
         ///  </note> 
         /// <para>
         /// For more information about importing certificates into ACM, including the differences
-        /// between certificates that you import and those that ACM provides, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">
-        /// Importing Certificates</a> in the <i>AWS Certificate Manager User Guide</i>.
+        /// between certificates that you import and those that ACM provides, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
+        /// Certificates</a> in the <i>AWS Certificate Manager User Guide</i>. 
         /// </para>
         ///  
         /// <para>
-        /// To import a certificate, you must provide the certificate and the matching private
-        /// key. When the certificate is not self-signed, you must also provide a certificate
-        /// chain. You can omit the certificate chain when importing a self-signed certificate.
+        /// In general, you can import almost any valid certificate. However, services integrated
+        /// with ACM allow only certificate types they support to be associated with their resources.
+        /// The following guidelines are also important:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// The certificate, private key, and certificate chain must be PEM-encoded. For more
-        /// information about converting these items to PEM format, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html#import-certificate-troubleshooting">Importing
-        /// Certificates Troubleshooting</a> in the <i>AWS Certificate Manager User Guide</i>.
+        /// You must enter the private key that matches the certificate you are importing.
         /// </para>
-        ///  
+        ///  </li> <li> 
+        /// <para>
+        /// The private key must be unencrypted. You cannot import a private key that is protected
+        /// by a password or a passphrase.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the certificate you are importing is not self-signed, you must enter its certificate
+        /// chain.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If a certificate chain is included, the issuer must be the subject of one of the certificates
+        /// in the chain.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The certificate, private key, and certificate chain must be PEM-encoded.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The current time must be between the <code>Not Before</code> and <code>Not After</code>
+        /// certificate fields.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <code>Issuer</code> field must not be empty.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The OCSP authority URL must not exceed 1000 characters.
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         /// To import a new certificate, omit the <code>CertificateArn</code> field. Include this
         /// field only when you want to replace a previously imported certificate.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
         /// When you import a certificate by using the CLI or one of the SDKs, you must specify
-        /// the certificate, chain, and private key parameters as file names preceded by <code>file://</code>.
-        /// For example, you can specify a certificate saved in the <code>C:\temp</code> folder
-        /// as <code>C:\temp\certificate_to_import.pem</code>. If you are making an HTTP or HTTPS
-        /// Query request, include these parameters as BLOBs. 
+        /// the certificate, certificate chain, and private key parameters as file names preceded
+        /// by <code>file://</code>. For example, you can specify a certificate saved in the <code>C:\temp</code>
+        /// folder as <code>C:\temp\certificate_to_import.pem</code>. If you are making an HTTP
+        /// or HTTPS Query request, include these parameters as BLOBs. 
         /// </para>
-        ///  
+        ///  </li> </ul> 
         /// <para>
         /// This operation returns the <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
         /// Resource Name (ARN)</a> of the imported certificate.
@@ -750,8 +781,9 @@ namespace Amazon.CertificateManager
 
 
         /// <summary>
-        /// Retrieves a list of ACM Certificates and the domain name for each. You can optionally
-        /// filter the list to return only the certificates that match the specified status.
+        /// Retrieves a list of certificate ARNs and domain names. You can request that only certificates
+        /// that match a specific status be listed. You can also filter by specific attributes
+        /// of the certificate.
         /// </summary>
         /// 
         /// <returns>The response from the ListCertificates service method, as returned by CertificateManager.</returns>
@@ -763,8 +795,9 @@ namespace Amazon.CertificateManager
 
 
         /// <summary>
-        /// Retrieves a list of ACM Certificates and the domain name for each. You can optionally
-        /// filter the list to return only the certificates that match the specified status.
+        /// Retrieves a list of certificate ARNs and domain names. You can request that only certificates
+        /// that match a specific status be listed. You can also filter by specific attributes
+        /// of the certificate.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCertificates service method.</param>
         /// 
@@ -780,8 +813,9 @@ namespace Amazon.CertificateManager
 
 
         /// <summary>
-        /// Retrieves a list of ACM Certificates and the domain name for each. You can optionally
-        /// filter the list to return only the certificates that match the specified status.
+        /// Retrieves a list of certificate ARNs and domain names. You can request that only certificates
+        /// that match a specific status be listed. You can also filter by specific attributes
+        /// of the certificate.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -870,13 +904,13 @@ namespace Amazon.CertificateManager
         /// Remove one or more tags from an ACM Certificate. A tag consists of a key-value pair.
         /// If you do not specify the value portion of the tag when calling this function, the
         /// tag will be removed regardless of value. If you specify a value, the tag is removed
-        /// only if it is associated with the specified value.
+        /// only if it is associated with the specified value. 
         /// 
         ///  
         /// <para>
         /// To add tags to a certificate, use the <a>AddTagsToCertificate</a> action. To view
         /// all of the tags that have been applied to a specific ACM Certificate, use the <a>ListTagsForCertificate</a>
-        /// action.
+        /// action. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveTagsFromCertificate service method.</param>
@@ -945,10 +979,10 @@ namespace Amazon.CertificateManager
         /// <para>
         /// After receiving approval from the domain owner, the ACM Certificate is issued. For
         /// more information, see the <a href="http://docs.aws.amazon.com/acm/latest/userguide/">AWS
-        /// Certificate Manager User Guide</a>.
+        /// Certificate Manager User Guide</a>. 
         /// </para>
         /// </summary>
-        /// <param name="domainName"> Fully qualified domain name (FQDN), such as www.example.com, of the site that you want to secure with an ACM Certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com.   The maximum length of a DNS name is 253 octets. The name is made up of multiple labels separated by periods. No label can be longer than 63 octets. Consider the following examples:   <code>(63 octets).(63 octets).(63 octets).(61 octets)</code> is legal because the total length is 253 octets (63+1+63+1+63+1+61) and no label exceeds 63 octets.   <code>(64 octets).(63 octets).(63 octets).(61 octets)</code> is not legal because the total length exceeds 253 octets (64+1+63+1+63+1+61) and the first label exceeds 63 octets.   <code>(63 octets).(63 octets).(63 octets).(62 octets)</code> is not legal because the total length of the DNS name (63+1+63+1+63+1+62) exceeds 253 octets. </param>
+        /// <param name="domainName"> Fully qualified domain name (FQDN), such as www.example.com, of the site that you want to secure with an ACM Certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com.   The first domain name you enter cannot exceed 63 octets, including periods. Each subsequent Subject Alternative Name (SAN), however, can be up to 253 octets in length. </param>
         /// 
         /// <returns>The response from the RequestCertificate service method, as returned by CertificateManager.</returns>
         /// <exception cref="Amazon.CertificateManager.Model.InvalidDomainValidationOptionsException">
@@ -989,7 +1023,7 @@ namespace Amazon.CertificateManager
         /// <para>
         /// After receiving approval from the domain owner, the ACM Certificate is issued. For
         /// more information, see the <a href="http://docs.aws.amazon.com/acm/latest/userguide/">AWS
-        /// Certificate Manager User Guide</a>.
+        /// Certificate Manager User Guide</a>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RequestCertificate service method.</param>
@@ -1034,10 +1068,10 @@ namespace Amazon.CertificateManager
         /// <para>
         /// After receiving approval from the domain owner, the ACM Certificate is issued. For
         /// more information, see the <a href="http://docs.aws.amazon.com/acm/latest/userguide/">AWS
-        /// Certificate Manager User Guide</a>.
+        /// Certificate Manager User Guide</a>. 
         /// </para>
         /// </summary>
-        /// <param name="domainName"> Fully qualified domain name (FQDN), such as www.example.com, of the site that you want to secure with an ACM Certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com.   The maximum length of a DNS name is 253 octets. The name is made up of multiple labels separated by periods. No label can be longer than 63 octets. Consider the following examples:   <code>(63 octets).(63 octets).(63 octets).(61 octets)</code> is legal because the total length is 253 octets (63+1+63+1+63+1+61) and no label exceeds 63 octets.   <code>(64 octets).(63 octets).(63 octets).(61 octets)</code> is not legal because the total length exceeds 253 octets (64+1+63+1+63+1+61) and the first label exceeds 63 octets.   <code>(63 octets).(63 octets).(63 octets).(62 octets)</code> is not legal because the total length of the DNS name (63+1+63+1+63+1+62) exceeds 253 octets. </param>
+        /// <param name="domainName"> Fully qualified domain name (FQDN), such as www.example.com, of the site that you want to secure with an ACM Certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com.   The first domain name you enter cannot exceed 63 octets, including periods. Each subsequent Subject Alternative Name (SAN), however, can be up to 253 octets in length. </param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>

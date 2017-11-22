@@ -29,7 +29,7 @@ namespace Amazon.CertificateManager.Model
 {
     /// <summary>
     /// Contains information about the domain names that you want ACM to use to send you emails
-    /// to validate your ownership of the domain.
+    /// that enable you to validate domain ownership.
     /// </summary>
     public partial class DomainValidationOption
     {

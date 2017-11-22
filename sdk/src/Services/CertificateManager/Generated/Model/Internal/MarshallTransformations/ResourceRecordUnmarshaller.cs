@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DomainValidation Object
+    /// Response Unmarshaller for ResourceRecord Object
     /// </summary>  
-    public class DomainValidationUnmarshaller : IUnmarshaller<DomainValidation, XmlUnmarshallerContext>, IUnmarshaller<DomainValidation, JsonUnmarshallerContext>
+    public class ResourceRecordUnmarshaller : IUnmarshaller<ResourceRecord, XmlUnmarshallerContext>, IUnmarshaller<ResourceRecord, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DomainValidation IUnmarshaller<DomainValidation, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ResourceRecord IUnmarshaller<ResourceRecord, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,33 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DomainValidation Unmarshall(JsonUnmarshallerContext context)
+        public ResourceRecord Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DomainValidation unmarshalledObject = new DomainValidation();
+            ResourceRecord unmarshalledObject = new ResourceRecord();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("DomainName", targetDepth))
+                if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DomainName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ResourceRecord", targetDepth))
-                {
-                    var unmarshaller = ResourceRecordUnmarshaller.Instance;
-                    unmarshalledObject.ResourceRecord = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ValidationDomain", targetDepth))
+                if (context.TestExpression("Type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ValidationDomain = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ValidationEmails", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.ValidationEmails = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ValidationMethod", targetDepth))
+                if (context.TestExpression("Value", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ValidationMethod = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ValidationStatus", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ValidationStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Value = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +88,12 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
         }
 
 
-        private static DomainValidationUnmarshaller _instance = new DomainValidationUnmarshaller();        
+        private static ResourceRecordUnmarshaller _instance = new ResourceRecordUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DomainValidationUnmarshaller Instance
+        public static ResourceRecordUnmarshaller Instance
         {
             get
             {

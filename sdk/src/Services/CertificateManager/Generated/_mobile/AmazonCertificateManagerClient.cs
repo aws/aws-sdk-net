@@ -283,10 +283,10 @@ namespace Amazon.CertificateManager
 
 
         /// <summary>
-        /// Deletes an ACM Certificate and its associated private key. If this action succeeds,
-        /// the certificate no longer appears in the list of ACM Certificates that can be displayed
-        /// by calling the <a>ListCertificates</a> action or be retrieved by calling the <a>GetCertificate</a>
-        /// action. The certificate will not be available for use by other AWS services. 
+        /// Deletes a certificate and its associated private key. If this action succeeds, the
+        /// certificate no longer appears in the list that can be displayed by calling the <a>ListCertificates</a>
+        /// action or be retrieved by calling the <a>GetCertificate</a> action. The certificate
+        /// will not be available for use by AWS services integrated with ACM. 
         /// 
         ///  <note> 
         /// <para>
@@ -411,11 +411,11 @@ namespace Amazon.CertificateManager
 
 
         /// <summary>
-        /// Retrieves an ACM Certificate and certificate chain for the certificate specified by
-        /// an ARN. The chain is an ordered list of certificates that contains the ACM Certificate,
-        /// intermediate certificates of subordinate CAs, and the root certificate in that order.
-        /// The certificate and certificate chain are base64 encoded. If you want to decode the
-        /// certificate chain to see the individual certificate fields, you can use OpenSSL.
+        /// Retrieves a certificate specified by an ARN and its certificate chain . The chain
+        /// is an ordered list of certificates that contains the end entity ertificate, intermediate
+        /// certificates of subordinate CAs, and the root certificate in that order. The certificate
+        /// and certificate chain are base64 encoded. If you want to decode the certificate to
+        /// see the individual fields, you can use OpenSSL.
         /// </summary>
         /// <param name="certificateArn">String that contains a certificate ARN in the following format:  <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>  For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</param>
         /// <param name="cancellationToken">
@@ -512,8 +512,9 @@ namespace Amazon.CertificateManager
 
 
         /// <summary>
-        /// Retrieves a list of ACM Certificates and the domain name for each. You can optionally
-        /// filter the list to return only the certificates that match the specified status.
+        /// Retrieves a list of certificate ARNs and domain names. You can request that only certificates
+        /// that match a specific status be listed. You can also filter by specific attributes
+        /// of the certificate.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -642,10 +643,10 @@ namespace Amazon.CertificateManager
         /// <para>
         /// After receiving approval from the domain owner, the ACM Certificate is issued. For
         /// more information, see the <a href="http://docs.aws.amazon.com/acm/latest/userguide/">AWS
-        /// Certificate Manager User Guide</a>.
+        /// Certificate Manager User Guide</a>. 
         /// </para>
         /// </summary>
-        /// <param name="domainName"> Fully qualified domain name (FQDN), such as www.example.com, of the site that you want to secure with an ACM Certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com.   The maximum length of a DNS name is 253 octets. The name is made up of multiple labels separated by periods. No label can be longer than 63 octets. Consider the following examples:   <code>(63 octets).(63 octets).(63 octets).(61 octets)</code> is legal because the total length is 253 octets (63+1+63+1+63+1+61) and no label exceeds 63 octets.   <code>(64 octets).(63 octets).(63 octets).(61 octets)</code> is not legal because the total length exceeds 253 octets (64+1+63+1+63+1+61) and the first label exceeds 63 octets.   <code>(63 octets).(63 octets).(63 octets).(62 octets)</code> is not legal because the total length of the DNS name (63+1+63+1+63+1+62) exceeds 253 octets. </param>
+        /// <param name="domainName"> Fully qualified domain name (FQDN), such as www.example.com, of the site that you want to secure with an ACM Certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com.   The first domain name you enter cannot exceed 63 octets, including periods. Each subsequent Subject Alternative Name (SAN), however, can be up to 253 octets in length. </param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
