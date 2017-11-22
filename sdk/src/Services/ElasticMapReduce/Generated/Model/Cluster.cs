@@ -41,6 +41,7 @@ namespace Amazon.ElasticMapReduce.Model
         private Ec2InstanceAttributes _ec2InstanceAttributes;
         private string _id;
         private InstanceCollectionType _instanceCollectionType;
+        private KerberosAttributes _kerberosAttributes;
         private string _logUri;
         private string _masterPublicDnsName;
         private string _name;
@@ -233,6 +234,26 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
+        /// Gets and sets the property KerberosAttributes. 
+        /// <para>
+        /// Attributes for Kerberos configuration when Kerberos authentication is enabled using
+        /// a security configuration. For more information see <a href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
+        /// Kerberos Authentication</a> in the <i>EMR Management Guide</i>.
+        /// </para>
+        /// </summary>
+        public KerberosAttributes KerberosAttributes
+        {
+            get { return this._kerberosAttributes; }
+            set { this._kerberosAttributes = value; }
+        }
+
+        // Check to see if KerberosAttributes property is set
+        internal bool IsSetKerberosAttributes()
+        {
+            return this._kerberosAttributes != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LogUri. 
         /// <para>
         /// The path to the Amazon S3 location where logs for this cluster are stored.
@@ -253,7 +274,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property MasterPublicDnsName. 
         /// <para>
-        /// The public DNS name of the master EC2 instance.
+        /// The DNS name of the master node. If the cluster is on a private subnet, this is the
+        /// private DNS name. On a public subnet, this is the public DNS name.
         /// </para>
         /// </summary>
         public string MasterPublicDnsName

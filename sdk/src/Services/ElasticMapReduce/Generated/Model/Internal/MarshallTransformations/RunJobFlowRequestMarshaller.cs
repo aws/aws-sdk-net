@@ -162,6 +162,17 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.JobFlowRole);
                 }
 
+                if(publicRequest.IsSetKerberosAttributes())
+                {
+                    context.Writer.WritePropertyName("KerberosAttributes");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = KerberosAttributesMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.KerberosAttributes, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetLogUri())
                 {
                     context.Writer.WritePropertyName("LogUri");

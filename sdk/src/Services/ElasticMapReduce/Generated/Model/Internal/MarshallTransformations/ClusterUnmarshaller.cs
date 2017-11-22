@@ -118,6 +118,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     unmarshalledObject.InstanceCollectionType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("KerberosAttributes", targetDepth))
+                {
+                    var unmarshaller = KerberosAttributesUnmarshaller.Instance;
+                    unmarshalledObject.KerberosAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LogUri", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -48,7 +48,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// decrements by <code>ScalingAdjustment</code>, which should be expressed as an integer.
         /// <code>PERCENT_CHANGE_IN_CAPACITY</code> indicates the instance count increments or
         /// decrements by the percentage specified by <code>ScalingAdjustment</code>, which should
-        /// be expressed as a decimal. For example, 0.20 indicates an increase in 20% increments
+        /// be expressed as an integer. For example, 20 indicates an increase in 20% increments
         /// of cluster capacity. <code>EXACT_CAPACITY</code> indicates the scaling activity results
         /// in an instance group with the number of EC2 instances specified by <code>ScalingAdjustment</code>,
         /// which should be expressed as a positive integer.
@@ -93,7 +93,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// number removes instances. If <code>AdjustmentType</code> is set to <code>EXACT_CAPACITY</code>,
         /// the number should only be a positive integer. If <code>AdjustmentType</code> is set
         /// to <code>PERCENT_CHANGE_IN_CAPACITY</code>, the value should express the percentage
-        /// as a decimal. For example, -0.20 indicates a decrease in 20% increments of cluster
+        /// as an integer. For example, -20 indicates a decrease in 20% increments of cluster
         /// capacity.
         /// </para>
         /// </summary>

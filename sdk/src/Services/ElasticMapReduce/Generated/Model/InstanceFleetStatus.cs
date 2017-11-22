@@ -48,6 +48,41 @@ namespace Amazon.ElasticMapReduce.Model
         /// <para>
         /// A code representing the instance fleet status.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>PROVISIONING</code>—The instance fleet is provisioning EC2 resources and is
+        /// not yet ready to run jobs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>BOOTSTRAPPING</code>—EC2 instances and other resources have been provisioned
+        /// and the bootstrap actions specified for the instances are underway.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>RUNNING</code>—EC2 instances and other resources are running. They are either
+        /// executing jobs or waiting to execute jobs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>RESIZING</code>—A resize operation is underway. EC2 instances are either being
+        /// added or removed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SUSPENDED</code>—A resize operation could not complete. Existing EC2 instances
+        /// are running, but instances can't be added or removed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TERMINATING</code>—The instance fleet is terminating EC2 instances.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TERMINATED</code>—The instance fleet is no longer active, and all EC2 instances
+        /// have been terminated.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public InstanceFleetState State
         {

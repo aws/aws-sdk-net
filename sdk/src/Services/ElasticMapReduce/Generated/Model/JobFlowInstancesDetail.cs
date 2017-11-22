@@ -214,7 +214,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property MasterPublicDnsName. 
         /// <para>
-        /// The DNS name of the master node.
+        /// The DNS name of the master node. If the cluster is on a private subnet, this is the
+        /// private DNS name. On a public subnet, this is the public DNS name.
         /// </para>
         /// </summary>
         public string MasterPublicDnsName
