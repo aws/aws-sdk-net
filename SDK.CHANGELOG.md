@@ -1,3 +1,19 @@
+### 3.3.195.0 (2017-11-22 02:27 UTC)
+* APIGateway (3.3.12.0)
+	* Add support for Access logs and customizable integration timeouts
+* CloudFormation (3.3.9.0)
+	* 1) Instance-level parameter overrides (CloudFormation-StackSet feature): This feature will allow the customers to override the template parameters on specific stackInstances. Customers will also have ability to update their existing instances with/without parameter-overrides using a new API "UpdateStackInstances"                                                                                                                                                                                                                                                         2) Add support for SSM parameters in CloudFormation - This feature will allow the customers to use Systems Manager parameters in CloudFormation templates. They will be able to see values for these parameters in Describe APIs.
+* CodeBuild (3.3.6.0)
+	* Adding support for accessing Amazon VPC resources from AWS CodeBuild, dependency caching and build badges.
+* ElasticMapReduce (3.3.5.0)
+	* Enable Kerberos on Amazon EMR. 
+* Rekognition (3.3.7.0)
+	* This release includes updates to Amazon Rekognition for the following APIs. The new DetectText API allows you to recognize and extract textual content from images. Face Model Versioning has been added to operations that deal with face detection.
+* Shield (3.3.1.0)
+	* The AWS Shield SDK has been updated in order to support Elastic IP address protections, the addition of AttackProperties objects in DescribeAttack responses, and a new GetSubscriptionState operation.
+* StorageGateway (3.3.6.0)
+	* AWS Storage Gateway now enables you to get notification when all your files written to your NFS file share have been uploaded to Amazon S3. Storage Gateway also enables guessing of the MIME type for uploaded objects based on file extensions.
+
 ### 3.3.194.0 (2017-11-20 23:33 UTC)
 * APIGateway (3.3.11.1)
 	* Documentation updates for Apigateway
