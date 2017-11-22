@@ -37,7 +37,8 @@ namespace Amazon.StorageGateway.Model
     /// API action enables you to delete a snapshot schedule for a volume. For more information,
     /// see <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/WorkingWithSnapshots.html">Working
     /// with Snapshots</a>. In the <code>DeleteSnapshotSchedule</code> request, you identify
-    /// the volume by providing its Amazon Resource Name (ARN). 
+    /// the volume by providing its Amazon Resource Name (ARN). This operation is only supported
+    /// in stored and cached volume gateway types.
     /// </para>
     ///  <note> 
     /// <para>

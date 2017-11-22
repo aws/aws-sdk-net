@@ -43,6 +43,7 @@ namespace Amazon.StorageGateway.Model
         private long? _volumeSizeInBytes;
         private string _volumeStatus;
         private string _volumeType;
+        private long? _volumeUsedInBytes;
 
         /// <summary>
         /// Gets and sets the property CreatedDate. 
@@ -251,6 +252,30 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetVolumeType()
         {
             return this._volumeType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VolumeUsedInBytes. 
+        /// <para>
+        /// The size of the data stored on the volume in bytes. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This value is not available for volumes created prior to May 13, 2015, until you store
+        /// data on the volume.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public long VolumeUsedInBytes
+        {
+            get { return this._volumeUsedInBytes.GetValueOrDefault(); }
+            set { this._volumeUsedInBytes = value; }
+        }
+
+        // Check to see if VolumeUsedInBytes property is set
+        internal bool IsSetVolumeUsedInBytes()
+        {
+            return this._volumeUsedInBytes.HasValue; 
         }
 
     }

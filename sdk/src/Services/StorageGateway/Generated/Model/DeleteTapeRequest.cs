@@ -30,7 +30,7 @@ namespace Amazon.StorageGateway.Model
     /// <summary>
     /// Container for the parameters to the DeleteTape operation.
     /// Deletes the specified virtual tape. This operation is only supported in the tape gateway
-    /// architecture.
+    /// type.
     /// </summary>
     public partial class DeleteTapeRequest : AmazonStorageGatewayRequest
     {

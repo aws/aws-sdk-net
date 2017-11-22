@@ -30,7 +30,7 @@ namespace Amazon.StorageGateway.Model
     /// <summary>
     /// Container for the parameters to the CreateSnapshotFromVolumeRecoveryPoint operation.
     /// Initiates a snapshot of a gateway from a volume recovery point. This operation is
-    /// only supported in the cached volume gateway architecture.
+    /// only supported in the cached volume gateway type.
     /// 
     ///  
     /// <para>

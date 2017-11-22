@@ -28,32 +28,41 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeSnapshotSchedule operation.
-    /// Describes the snapshot schedule for the specified gateway volume. The snapshot schedule
-    /// information includes intervals at which snapshots are automatically initiated on the
-    /// volume. This operation is only supported in the cached volume and stored volume types.
+    /// This is the response object from the NotifyWhenUploaded operation.
     /// </summary>
-    public partial class DescribeSnapshotScheduleRequest : AmazonStorageGatewayRequest
+    public partial class NotifyWhenUploadedResponse : AmazonWebServiceResponse
     {
-        private string _volumeARN;
+        private string _fileShareARN;
+        private string _notificationId;
 
         /// <summary>
-        /// Gets and sets the property VolumeARN. 
-        /// <para>
-        /// The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a> operation
-        /// to return a list of gateway volumes.
-        /// </para>
+        /// Gets and sets the property FileShareARN.
         /// </summary>
-        public string VolumeARN
+        public string FileShareARN
         {
-            get { return this._volumeARN; }
-            set { this._volumeARN = value; }
+            get { return this._fileShareARN; }
+            set { this._fileShareARN = value; }
         }
 
-        // Check to see if VolumeARN property is set
-        internal bool IsSetVolumeARN()
+        // Check to see if FileShareARN property is set
+        internal bool IsSetFileShareARN()
         {
-            return this._volumeARN != null;
+            return this._fileShareARN != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NotificationId.
+        /// </summary>
+        public string NotificationId
+        {
+            get { return this._notificationId; }
+            set { this._notificationId = value; }
+        }
+
+        // Check to see if NotificationId property is set
+        internal bool IsSetNotificationId()
+        {
+            return this._notificationId != null;
         }
 
     }

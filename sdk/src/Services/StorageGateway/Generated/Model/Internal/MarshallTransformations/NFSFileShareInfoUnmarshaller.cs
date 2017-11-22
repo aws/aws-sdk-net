@@ -100,6 +100,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     unmarshalledObject.GatewayARN = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("GuessMIMETypeEnabled", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.GuessMIMETypeEnabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("KMSEncrypted", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

@@ -30,7 +30,7 @@ namespace Amazon.StorageGateway.Model
     /// <summary>
     /// Container for the parameters to the RemoveTagsFromResource operation.
     /// Removes one or more tags from the specified resource. This operation is only supported
-    /// in the cached volume, stored volume and tape gateway architectures.
+    /// in the cached volume, stored volume and tape gateway types.
     /// </summary>
     public partial class RemoveTagsFromResourceRequest : AmazonStorageGatewayRequest
     {

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateNFSFileShare Request Marshaller
+    /// NotifyWhenUploaded Request Marshaller
     /// </summary>       
-    public class UpdateNFSFileShareRequestMarshaller : IMarshaller<IRequest, UpdateNFSFileShareRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class NotifyWhenUploadedRequestMarshaller : IMarshaller<IRequest, NotifyWhenUploadedRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((UpdateNFSFileShareRequest)input);
+            return this.Marshall((NotifyWhenUploadedRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(UpdateNFSFileShareRequest publicRequest)
+        public IRequest Marshall(NotifyWhenUploadedRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.StorageGateway");
-            string target = "StorageGateway_20130630.UpdateNFSFileShare";
+            string target = "StorageGateway_20130630.NotifyWhenUploaded";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -67,68 +67,10 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientList())
-                {
-                    context.Writer.WritePropertyName("ClientList");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestClientListListValue in publicRequest.ClientList)
-                    {
-                            context.Writer.Write(publicRequestClientListListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetDefaultStorageClass())
-                {
-                    context.Writer.WritePropertyName("DefaultStorageClass");
-                    context.Writer.Write(publicRequest.DefaultStorageClass);
-                }
-
                 if(publicRequest.IsSetFileShareARN())
                 {
                     context.Writer.WritePropertyName("FileShareARN");
                     context.Writer.Write(publicRequest.FileShareARN);
-                }
-
-                if(publicRequest.IsSetGuessMIMETypeEnabled())
-                {
-                    context.Writer.WritePropertyName("GuessMIMETypeEnabled");
-                    context.Writer.Write(publicRequest.GuessMIMETypeEnabled);
-                }
-
-                if(publicRequest.IsSetKMSEncrypted())
-                {
-                    context.Writer.WritePropertyName("KMSEncrypted");
-                    context.Writer.Write(publicRequest.KMSEncrypted);
-                }
-
-                if(publicRequest.IsSetKMSKey())
-                {
-                    context.Writer.WritePropertyName("KMSKey");
-                    context.Writer.Write(publicRequest.KMSKey);
-                }
-
-                if(publicRequest.IsSetNFSFileShareDefaults())
-                {
-                    context.Writer.WritePropertyName("NFSFileShareDefaults");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = NFSFileShareDefaultsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.NFSFileShareDefaults, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetReadOnly())
-                {
-                    context.Writer.WritePropertyName("ReadOnly");
-                    context.Writer.Write(publicRequest.ReadOnly);
-                }
-
-                if(publicRequest.IsSetSquash())
-                {
-                    context.Writer.WritePropertyName("Squash");
-                    context.Writer.Write(publicRequest.Squash);
                 }
 
         

@@ -1318,7 +1318,7 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Returns a description of specified virtual tapes in the virtual tape shelf (VTS).
-        /// This operation is only supported in the tape gateway architecture.
+        /// This operation is only supported in the tape gateway type.
         /// 
         ///  
         /// <para>
@@ -1856,6 +1856,38 @@ namespace Amazon.StorageGateway
 
         #endregion
         
+        #region  NotifyWhenUploaded
+
+        internal virtual NotifyWhenUploadedResponse NotifyWhenUploaded(NotifyWhenUploadedRequest request)
+        {
+            var marshaller = new NotifyWhenUploadedRequestMarshaller();
+            var unmarshaller = NotifyWhenUploadedResponseUnmarshaller.Instance;
+
+            return Invoke<NotifyWhenUploadedRequest,NotifyWhenUploadedResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the NotifyWhenUploaded operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the NotifyWhenUploaded operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/NotifyWhenUploaded">REST API Reference for NotifyWhenUploaded Operation</seealso>
+        public virtual Task<NotifyWhenUploadedResponse> NotifyWhenUploadedAsync(NotifyWhenUploadedRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new NotifyWhenUploadedRequestMarshaller();
+            var unmarshaller = NotifyWhenUploadedResponseUnmarshaller.Instance;
+
+            return InvokeAsync<NotifyWhenUploadedRequest,NotifyWhenUploadedResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  RefreshCache
 
         internal virtual RefreshCacheResponse RefreshCache(RefreshCacheRequest request)
@@ -1937,8 +1969,8 @@ namespace Amazon.StorageGateway
         /// prevents read and write operations on virtual tapes in the gateway. For example, an
         /// error can occur when a disk is corrupted or removed from the gateway. When a cache
         /// is reset, the gateway loses its cache storage. At this point you can reconfigure the
-        /// disks as cache disks. This operation is only supported in the cached volume,tape and
-        /// file gateway architectures.
+        /// disks as cache disks. This operation is only supported in the cached volume, tape
+        /// and file gateway types.
         /// 
         ///  <important> 
         /// <para>

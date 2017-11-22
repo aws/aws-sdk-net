@@ -30,7 +30,7 @@ namespace Amazon.StorageGateway.Model
     /// <summary>
     /// Container for the parameters to the DescribeTapeArchives operation.
     /// Returns a description of specified virtual tapes in the virtual tape shelf (VTS).
-    /// This operation is only supported in the tape gateway architecture.
+    /// This operation is only supported in the tape gateway type.
     /// 
     ///  
     /// <para>

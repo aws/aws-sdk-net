@@ -28,20 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteFileShare operation.
-    /// Deletes a file share from a file gateway. This operation is only supported in the
-    /// file gateway type.
+    /// Container for the parameters to the NotifyWhenUploaded operation.
+    /// Sends you notification when all file data written to the NFS file share has been uploaded
+    /// to Amazon S3.
+    /// 
+    ///  
+    /// <para>
+    /// AWS Storage Gateway can send a notification through Amazon CloudWatch Events when
+    /// all files written to your file share up to that point in time have been uploaded to
+    /// Amazon S3. These files include files written to the NFS file share up to the time
+    /// that you make a request for notification. When the upload is done, Storage Gateway
+    /// sends you notification through an Amazon CloudWatch event. You can configure CloudWatch
+    /// Events to sent the notification through event targets such as email, SNS or a Lambda
+    /// function. text or Lambda functions. This operation is only supported in the file gateway
+    /// type.
+    /// </para>
     /// </summary>
-    public partial class DeleteFileShareRequest : AmazonStorageGatewayRequest
+    public partial class NotifyWhenUploadedRequest : AmazonStorageGatewayRequest
     {
         private string _fileShareARN;
-        private bool? _forceDelete;
 
         /// <summary>
-        /// Gets and sets the property FileShareARN. 
-        /// <para>
-        /// The Amazon Resource Name (ARN) of the file share to be deleted. 
-        /// </para>
+        /// Gets and sets the property FileShareARN.
         /// </summary>
         public string FileShareARN
         {
@@ -53,27 +61,6 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetFileShareARN()
         {
             return this._fileShareARN != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ForceDelete. 
-        /// <para>
-        /// If this value is set to true, the operation deletes a file share immediately and aborts
-        /// all data uploads to AWS. Otherwise, the file share is not deleted until all data is
-        /// uploaded to AWS. This process aborts the data upload process, and the file share enters
-        /// the FORCE_DELETING status.
-        /// </para>
-        /// </summary>
-        public bool ForceDelete
-        {
-            get { return this._forceDelete.GetValueOrDefault(); }
-            set { this._forceDelete = value; }
-        }
-
-        // Check to see if ForceDelete property is set
-        internal bool IsSetForceDelete()
-        {
-            return this._forceDelete.HasValue; 
         }
 
     }

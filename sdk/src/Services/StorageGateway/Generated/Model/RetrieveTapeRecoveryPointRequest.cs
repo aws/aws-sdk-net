@@ -30,7 +30,7 @@ namespace Amazon.StorageGateway.Model
     /// <summary>
     /// Container for the parameters to the RetrieveTapeRecoveryPoint operation.
     /// Retrieves the recovery point for the specified virtual tape. This operation is only
-    /// supported in the tape gateway architecture.
+    /// supported in the tape gateway type.
     /// 
     ///  
     /// <para>

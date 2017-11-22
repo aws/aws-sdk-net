@@ -130,6 +130,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     unmarshalledObject.VolumeType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("VolumeUsedInBytes", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.VolumeUsedInBytes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

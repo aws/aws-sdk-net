@@ -30,7 +30,7 @@ namespace Amazon.StorageGateway.Model
     /// <summary>
     /// Container for the parameters to the DescribeNFSFileShares operation.
     /// Gets a description for one or more file shares from a file gateway. This operation
-    /// is only supported in file gateways.
+    /// is only supported in the file gateway type.
     /// </summary>
     public partial class DescribeNFSFileSharesRequest : AmazonStorageGatewayRequest
     {

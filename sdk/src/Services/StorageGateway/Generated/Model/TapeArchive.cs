@@ -177,7 +177,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property TapeUsedInBytes. 
         /// <para>
-        /// The size, in bytes, of data written to the virtual tape.
+        /// The size, in bytes, of data stored on the virtual tape.
         /// </para>
         ///  <note> 
         /// <para>

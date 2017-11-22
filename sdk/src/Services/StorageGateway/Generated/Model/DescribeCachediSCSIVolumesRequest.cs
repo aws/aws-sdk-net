@@ -30,7 +30,7 @@ namespace Amazon.StorageGateway.Model
     /// <summary>
     /// Container for the parameters to the DescribeCachediSCSIVolumes operation.
     /// Returns a description of the gateway volumes specified in the request. This operation
-    /// is only supported in the cached volume gateway architecture.
+    /// is only supported in the cached volume gateway types.
     /// 
     ///  
     /// <para>

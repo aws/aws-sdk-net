@@ -30,8 +30,8 @@ namespace Amazon.StorageGateway.Model
     /// <summary>
     /// Container for the parameters to the AddWorkingStorage operation.
     /// Configures one or more gateway local disks as working storage for a gateway. This
-    /// operation is only supported in the stored volume gateway architecture. This operation
-    /// is deprecated in cached volume API version 20120630. Use <a>AddUploadBuffer</a> instead.
+    /// operation is only supported in the stored volume gateway type. This operation is deprecated
+    /// in cached volume API version 20120630. Use <a>AddUploadBuffer</a> instead.
     /// 
     ///  <note> 
     /// <para>

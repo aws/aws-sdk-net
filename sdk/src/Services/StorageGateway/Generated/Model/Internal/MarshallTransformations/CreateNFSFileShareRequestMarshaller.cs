@@ -96,6 +96,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.GatewayARN);
                 }
 
+                if(publicRequest.IsSetGuessMIMETypeEnabled())
+                {
+                    context.Writer.WritePropertyName("GuessMIMETypeEnabled");
+                    context.Writer.Write(publicRequest.GuessMIMETypeEnabled);
+                }
+
                 if(publicRequest.IsSetKMSEncrypted())
                 {
                     context.Writer.WritePropertyName("KMSEncrypted");

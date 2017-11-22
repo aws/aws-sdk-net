@@ -29,7 +29,7 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateNFSFileShare operation.
-    /// Updates a file share. This operation is only supported in the file gateway architecture.
+    /// Updates a file share. This operation is only supported in the file gateway type.
     /// 
     ///  <note> 
     /// <para>
@@ -71,6 +71,7 @@ namespace Amazon.StorageGateway.Model
         private List<string> _clientList = new List<string>();
         private string _defaultStorageClass;
         private string _fileShareARN;
+        private bool? _guessMIMETypeEnabled;
         private bool? _kmsEncrypted;
         private string _kmsKey;
         private NFSFileShareDefaults _nfsFileShareDefaults;
@@ -132,6 +133,25 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetFileShareARN()
         {
             return this._fileShareARN != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GuessMIMETypeEnabled. 
+        /// <para>
+        /// Enables guessing of the MIME type for uploaded objects based on file extensions: "true"
+        /// to enable MIME type guessing, and otherwise "false".
+        /// </para>
+        /// </summary>
+        public bool GuessMIMETypeEnabled
+        {
+            get { return this._guessMIMETypeEnabled.GetValueOrDefault(); }
+            set { this._guessMIMETypeEnabled = value; }
+        }
+
+        // Check to see if GuessMIMETypeEnabled property is set
+        internal bool IsSetGuessMIMETypeEnabled()
+        {
+            return this._guessMIMETypeEnabled.HasValue; 
         }
 
         /// <summary>

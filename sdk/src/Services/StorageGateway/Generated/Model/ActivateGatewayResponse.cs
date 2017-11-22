@@ -35,8 +35,8 @@ namespace Amazon.StorageGateway.Model
     /// 
     ///  <note> 
     /// <para>
-    /// For gateways activated prior to September 02, 2015 the gateway ARN contains the gateway
-    /// name rather than the gateway id. Changing the name of the gateway has no effect on
+    /// For gateways activated prior to September 02, 2015, the gateway ARN contains the gateway
+    /// name rather than the gateway ID. Changing the name of the gateway has no effect on
     /// the gateway ARN.
     /// </para>
     ///  </note>

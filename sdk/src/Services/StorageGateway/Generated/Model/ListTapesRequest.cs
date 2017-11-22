@@ -41,7 +41,7 @@ namespace Amazon.StorageGateway.Model
     /// body to limit the number of tapes in the response. If the number of tapes returned
     /// in the response is truncated, the response includes a <code>Marker</code> element
     /// that you can use in your subsequent request to retrieve the next set of tapes. This
-    /// operation is only supported in the tape gateway architecture.
+    /// operation is only supported in the tape gateway type.
     /// </para>
     /// </summary>
     public partial class ListTapesRequest : AmazonStorageGatewayRequest

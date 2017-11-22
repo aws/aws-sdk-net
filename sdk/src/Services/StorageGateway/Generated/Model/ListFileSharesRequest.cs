@@ -31,7 +31,7 @@ namespace Amazon.StorageGateway.Model
     /// Container for the parameters to the ListFileShares operation.
     /// Gets a list of the file shares for a specific file gateway, or the list of file shares
     /// that belong to the calling user account. This operation is only supported in the file
-    /// gateway architecture.
+    /// gateway type.
     /// </summary>
     public partial class ListFileSharesRequest : AmazonStorageGatewayRequest
     {

@@ -36,7 +36,7 @@ namespace Amazon.StorageGateway.Model
     ///  
     /// <para>
     /// Use this operation for a tape gateway that is not reachable or not functioning. This
-    /// operation is only supported in the tape gateway architectures.
+    /// operation is only supported in the tape gateway type.
     /// </para>
     ///  <important> 
     /// <para>

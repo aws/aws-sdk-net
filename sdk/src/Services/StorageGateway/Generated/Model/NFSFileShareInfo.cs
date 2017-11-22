@@ -40,6 +40,7 @@ namespace Amazon.StorageGateway.Model
         private string _fileShareId;
         private string _fileShareStatus;
         private string _gatewayARN;
+        private bool? _guessMIMETypeEnabled;
         private bool? _kmsEncrypted;
         private string _kmsKey;
         private string _locationARN;
@@ -142,6 +143,25 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetGatewayARN()
         {
             return this._gatewayARN != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GuessMIMETypeEnabled. 
+        /// <para>
+        /// Enables guessing of the MIME type for uploaded objects based on file extensions: "true"
+        /// to enable MIME type guessing, and otherwise "false".
+        /// </para>
+        /// </summary>
+        public bool GuessMIMETypeEnabled
+        {
+            get { return this._guessMIMETypeEnabled.GetValueOrDefault(); }
+            set { this._guessMIMETypeEnabled = value; }
+        }
+
+        // Check to see if GuessMIMETypeEnabled property is set
+        internal bool IsSetGuessMIMETypeEnabled()
+        {
+            return this._guessMIMETypeEnabled.HasValue; 
         }
 
         /// <summary>

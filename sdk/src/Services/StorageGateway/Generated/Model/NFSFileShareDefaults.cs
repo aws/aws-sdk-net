@@ -32,7 +32,7 @@ namespace Amazon.StorageGateway.Model
     /// in S3 buckets don't, by default, have Unix file permissions assigned to them. Upon
     /// discovery in an S3 bucket by Storage Gateway, the S3 objects that represent files
     /// and folders are assigned these default Unix permissions. This operation is only supported
-    /// in the file gateway architecture.
+    /// in the file gateway type.
     /// </summary>
     public partial class NFSFileShareDefaults
     {

@@ -41,7 +41,7 @@ namespace Amazon.StorageGateway.Model
     /// body to limit the number of volumes in the response. If the number of volumes returned
     /// in the response is truncated, the response includes a Marker field. You can use this
     /// Marker value in your subsequent request to retrieve the next set of volumes. This
-    /// operation is only supported in the cached volume and stored volume gateway architectures.
+    /// operation is only supported in the cached volume and stored volume gateway types.
     /// </para>
     /// </summary>
     public partial class ListVolumesRequest : AmazonStorageGatewayRequest

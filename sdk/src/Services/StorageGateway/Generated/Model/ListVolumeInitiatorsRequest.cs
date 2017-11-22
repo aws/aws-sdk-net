@@ -31,7 +31,7 @@ namespace Amazon.StorageGateway.Model
     /// Container for the parameters to the ListVolumeInitiators operation.
     /// Lists iSCSI initiators that are connected to a volume. You can use this operation
     /// to determine whether a volume is being used or not. This operation is only supported
-    /// in the cached volume and stored volume gateway architecture.
+    /// in the cached volume and stored volume gateway types.
     /// </summary>
     public partial class ListVolumeInitiatorsRequest : AmazonStorageGatewayRequest
     {

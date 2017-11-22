@@ -32,7 +32,7 @@ namespace Amazon.StorageGateway.Model
     /// Returns a description of the specified Amazon Resource Name (ARN) of virtual tapes.
     /// If a <code>TapeARN</code> is not specified, returns a description of all virtual tapes
     /// associated with the specified gateway. This operation is only supported in the tape
-    /// gateway architecture.
+    /// gateway type.
     /// </summary>
     public partial class DescribeTapesRequest : AmazonStorageGatewayRequest
     {
