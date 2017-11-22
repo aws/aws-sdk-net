@@ -57,6 +57,12 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                     response.FaceMatches = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FaceModelVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.FaceModelVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SearchedFaceBoundingBox", targetDepth))
                 {
                     var unmarshaller = BoundingBoxUnmarshaller.Instance;

@@ -32,8 +32,27 @@ namespace Amazon.Rekognition.Model
     /// </summary>
     public partial class ListFacesResponse : AmazonWebServiceResponse
     {
+        private string _faceModelVersion;
         private List<Face> _faces = new List<Face>();
         private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property FaceModelVersion. 
+        /// <para>
+        /// Version number of the face detection model associated with the input collection (<code>CollectionId</code>).
+        /// </para>
+        /// </summary>
+        public string FaceModelVersion
+        {
+            get { return this._faceModelVersion; }
+            set { this._faceModelVersion = value; }
+        }
+
+        // Check to see if FaceModelVersion property is set
+        internal bool IsSetFaceModelVersion()
+        {
+            return this._faceModelVersion != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Faces. 

@@ -33,6 +33,7 @@ namespace Amazon.Rekognition.Model
     public partial class SearchFacesResponse : AmazonWebServiceResponse
     {
         private List<FaceMatch> _faceMatches = new List<FaceMatch>();
+        private string _faceModelVersion;
         private string _searchedFaceId;
 
         /// <summary>
@@ -51,6 +52,24 @@ namespace Amazon.Rekognition.Model
         internal bool IsSetFaceMatches()
         {
             return this._faceMatches != null && this._faceMatches.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FaceModelVersion. 
+        /// <para>
+        /// Version number of the face detection model associated with the input collection (<code>CollectionId</code>).
+        /// </para>
+        /// </summary>
+        public string FaceModelVersion
+        {
+            get { return this._faceModelVersion; }
+            set { this._faceModelVersion = value; }
+        }
+
+        // Check to see if FaceModelVersion property is set
+        internal bool IsSetFaceModelVersion()
+        {
+            return this._faceModelVersion != null;
         }
 
         /// <summary>

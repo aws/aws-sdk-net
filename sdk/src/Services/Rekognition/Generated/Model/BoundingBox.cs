@@ -28,10 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
-    /// Identifies the bounding box around the object or face. The <code>left</code> (x-coordinate)
-    /// and <code>top</code> (y-coordinate) are coordinates representing the top and left
-    /// sides of the bounding box. Note that the upper-left corner of the image is the origin
-    /// (0,0). 
+    /// Identifies the bounding box around the object, face or text. The <code>left</code>
+    /// (x-coordinate) and <code>top</code> (y-coordinate) are coordinates representing the
+    /// top and left sides of the bounding box. Note that the upper-left corner of the image
+    /// is the origin (0,0). 
     /// 
     ///  
     /// <para>
@@ -42,7 +42,7 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  
     /// <para>
-    ///  The <code>width</code> and <code>height</code> values represent the dimensions of
+    /// The <code>width</code> and <code>height</code> values represent the dimensions of
     /// the bounding box as a ratio of the overall image dimension. For example, if the input
     /// image is 700x200 pixels, and the bounding box width is 70 pixels, the width returned
     /// is 0.1. 

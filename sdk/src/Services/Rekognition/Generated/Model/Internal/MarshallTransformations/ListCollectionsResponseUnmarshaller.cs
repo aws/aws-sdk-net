@@ -57,6 +57,12 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                     response.CollectionIds = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FaceModelVersions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.FaceModelVersions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("NextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

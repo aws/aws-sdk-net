@@ -51,6 +51,12 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("FaceModelVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.FaceModelVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FaceRecords", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<FaceRecord, FaceRecordUnmarshaller>(FaceRecordUnmarshaller.Instance);

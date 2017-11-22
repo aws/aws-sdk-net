@@ -28,30 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
-    /// This is the response object from the DetectModerationLabels operation.
+    /// This is the response object from the DetectText operation.
     /// </summary>
-    public partial class DetectModerationLabelsResponse : AmazonWebServiceResponse
+    public partial class DetectTextResponse : AmazonWebServiceResponse
     {
-        private List<ModerationLabel> _moderationLabels = new List<ModerationLabel>();
+        private List<TextDetection> _textDetections = new List<TextDetection>();
 
         /// <summary>
-        /// Gets and sets the property ModerationLabels. 
+        /// Gets and sets the property TextDetections. 
         /// <para>
-        /// An array of labels for explicit or suggestive adult content found in the image. The
-        /// list includes the top-level label and each second-level label detected in the image.
-        /// This is useful for filtering specific categories of content. 
+        /// An array of text that was detected in the input image.
         /// </para>
         /// </summary>
-        public List<ModerationLabel> ModerationLabels
+        public List<TextDetection> TextDetections
         {
-            get { return this._moderationLabels; }
-            set { this._moderationLabels = value; }
+            get { return this._textDetections; }
+            set { this._textDetections = value; }
         }
 
-        // Check to see if ModerationLabels property is set
-        internal bool IsSetModerationLabels()
+        // Check to see if TextDetections property is set
+        internal bool IsSetTextDetections()
         {
-            return this._moderationLabels != null && this._moderationLabels.Count > 0; 
+            return this._textDetections != null && this._textDetections.Count > 0; 
         }
 
     }

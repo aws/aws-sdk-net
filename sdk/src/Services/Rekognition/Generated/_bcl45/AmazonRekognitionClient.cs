@@ -229,8 +229,8 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
-        /// Compares a face in the <i>source</i> input image with each face detected in the <i>target</i>
-        /// input image. 
+        /// Compares a face in the <i>source</i> input image with each of the 100 largest faces
+        /// detected in the <i>target</i> input image. 
         /// 
         ///  <note> 
         /// <para>
@@ -238,6 +238,13 @@ namespace Amazon.Rekognition
         /// and compares it with each face detected in the target image. 
         /// </para>
         ///  </note> 
+        /// <para>
+        /// You pass the input and target images either as base64-encoded image bytes or as a
+        /// references to images in an Amazon S3 bucket. If you use the Amazon CLI to call Amazon
+        /// Rekognition operations, passing image bytes is not supported. The image must be either
+        /// a PNG or JPEG formatted file. 
+        /// </para>
+        ///  
         /// <para>
         /// In response, the operation returns an array of face matches ordered by similarity
         /// score in descending order. For each face match, the response provides a bounding box
@@ -264,6 +271,11 @@ namespace Amazon.Rekognition
         /// If the image doesn't contain Exif metadata, <code>CompareFaces</code> returns orientation
         /// information for the source and target images. Use these values to display the images
         /// with the correct image orientation.
+        /// </para>
+        ///  
+        /// <para>
+        /// If no faces are detected in the source or target images, <code>CompareFaces</code>
+        /// returns an <code>InvalidParameterException</code> error. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -451,7 +463,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// Collection specified in the request is not found.
+        /// The collection specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -517,7 +529,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// Collection specified in the request is not found.
+        /// The collection specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -556,20 +568,28 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
-        /// Detects faces within an image (JPEG or PNG) that is provided as input.
+        /// Detects faces within an image that is provided as input.
         /// 
         ///  
         /// <para>
-        ///  For each face detected, the operation returns face details including a bounding box
-        /// of the face, a confidence value (that the bounding box contains a face), and a fixed
-        /// set of attributes such as facial landmarks (for example, coordinates of eye and mouth),
-        /// gender, presence of beard, sunglasses, etc. 
+        ///  <code>DetectFaces</code> detects the 100 largest faces in the image. For each face
+        /// detected, the operation returns face details including a bounding box of the face,
+        /// a confidence value (that the bounding box contains a face), and a fixed set of attributes
+        /// such as facial landmarks (for example, coordinates of eye and mouth), gender, presence
+        /// of beard, sunglasses, etc. 
         /// </para>
         ///  
         /// <para>
         /// The face-detection algorithm is most effective on frontal faces. For non-frontal or
         /// obscured faces, the algorithm may not detect the faces or might detect faces with
         /// lower confidence. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You pass the input image either as base64-encoded image bytes or as a reference to
+        /// an image in an Amazon S3 bucket. If you use the Amazon CLI to call Amazon Rekognition
+        /// operations, passing image bytes is not supported. The image must be either a PNG or
+        /// JPEG formatted file. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -655,6 +675,13 @@ namespace Amazon.Rekognition
         /// 
         ///  
         /// <para>
+        /// You pass the input image as base64-encoded image bytes or as a reference to an image
+        /// in an Amazon S3 bucket. If you use the Amazon CLI to call Amazon Rekognition operations,
+        /// passing image bytes is not supported. The image must be either a PNG or JPEG formatted
+        /// file. 
+        /// </para>
+        ///  
+        /// <para>
         ///  For each object, scene, and concept the API returns one or more labels. Each label
         /// provides the object name, and the level of confidence that the image contains the
         /// object. For example, suppose the input image has a lighthouse, the sea, and a rock.
@@ -698,11 +725,11 @@ namespace Amazon.Rekognition
         /// </para>
         ///  
         /// <para>
-        /// You can provide the input image as an S3 object or as base64-encoded bytes. In response,
-        /// the API returns an array of labels. In addition, the response also includes the orientation
-        /// correction. Optionally, you can specify <code>MinConfidence</code> to control the
-        /// confidence threshold for the labels returned. The default is 50%. You can also add
-        /// the <code>MaxLabels</code> parameter to limit the number of labels returned. 
+        /// In response, the API returns an array of labels. In addition, the response also includes
+        /// the orientation correction. Optionally, you can specify <code>MinConfidence</code>
+        /// to control the confidence threshold for the labels returned. The default is 50%. You
+        /// can also add the <code>MaxLabels</code> parameter to limit the number of labels returned.
+        /// 
         /// </para>
         ///  <note> 
         /// <para>
@@ -793,6 +820,13 @@ namespace Amazon.Rekognition
         /// determine which types of content are appropriate. For information about moderation
         /// labels, see <a>image-moderation</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// You pass the input image either as base64-encoded image bytes or as a reference to
+        /// an image in an Amazon S3 bucket. If you use the Amazon CLI to call Amazon Rekognition
+        /// operations, passing image bytes is not supported. The image must be either a PNG or
+        /// JPEG formatted file. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetectModerationLabels service method.</param>
         /// 
@@ -853,6 +887,114 @@ namespace Amazon.Rekognition
 
         #endregion
         
+        #region  DetectText
+
+
+        /// <summary>
+        /// Detects text in the input image and converts it into machine-readable text.
+        /// 
+        ///  
+        /// <para>
+        /// Pass the input image as base64-encoded image bytes or as a reference to an image in
+        /// an Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition operations,
+        /// you must pass it as a reference to an image in an Amazon S3 bucket. For the AWS CLI,
+        /// passing image bytes is not supported. The image must be either a .png or .jpeg formatted
+        /// file. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>DetectText</code> operation returns text in an array of elements, <code>TextDetections</code>.
+        /// Each <code>TextDetection</code> element provides information about a single word or
+        /// line of text that was detected in the image. 
+        /// </para>
+        ///  
+        /// <para>
+        /// A word is one or more ISO basic latin script characters that are not separated by
+        /// spaces. <code>DetectText</code> can detect up to 50 words in an image.
+        /// </para>
+        ///  
+        /// <para>
+        /// A line is a string of equally spaced words. A line isn't necessarily a complete sentence.
+        /// For example, a driver's license number is detected as a line. A line ends when there
+        /// is no aligned text after it. Also, a line ends when there is a large gap between words,
+        /// relative to the length of the words. This means, depending on the gap between words,
+        /// Amazon Rekognition may detect multiple lines in text aligned in the same direction.
+        /// Periods don't represent the end of a line. If a sentence spans multiple lines, the
+        /// <code>DetectText</code> operation returns multiple lines.
+        /// </para>
+        ///  
+        /// <para>
+        /// To determine whether a <code>TextDetection</code> element is a line of text or a word,
+        /// use the <code>TextDetection</code> object <code>Type</code> field. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To be detected, text must be within +/- 30 degrees orientation of the horizontal axis.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a>text-detection</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DetectText service method.</param>
+        /// 
+        /// <returns>The response from the DetectText service method, as returned by Rekognition.</returns>
+        /// <exception cref="Amazon.Rekognition.Model.AccessDeniedException">
+        /// You are not authorized to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ImageTooLargeException">
+        /// The input image size exceeds the allowed limit. For more information, see <a>limits</a>.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InternalServerErrorException">
+        /// Amazon Rekognition experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidImageFormatException">
+        /// The provided image format is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidParameterException">
+        /// Input parameter violated a constraint. Validate your parameter before calling the
+        /// API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidS3ObjectException">
+        /// Amazon Rekognition is unable to access the S3 object specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Rekognition.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
+        /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectText">REST API Reference for DetectText Operation</seealso>
+        public virtual DetectTextResponse DetectText(DetectTextRequest request)
+        {
+            var marshaller = new DetectTextRequestMarshaller();
+            var unmarshaller = DetectTextResponseUnmarshaller.Instance;
+
+            return Invoke<DetectTextRequest,DetectTextResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DetectText operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DetectText operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectText">REST API Reference for DetectText Operation</seealso>
+        public virtual Task<DetectTextResponse> DetectTextAsync(DetectTextRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DetectTextRequestMarshaller();
+            var unmarshaller = DetectTextResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DetectTextRequest,DetectTextResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetCelebrityInfo
 
 
@@ -885,7 +1027,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// Collection specified in the request is not found.
+        /// The collection specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -928,15 +1070,23 @@ namespace Amazon.Rekognition
         /// 
         ///  
         /// <para>
-        ///  Amazon Rekognition does not save the actual faces detected. Instead, the underlying
+        /// Amazon Rekognition does not save the actual faces detected. Instead, the underlying
         /// detection algorithm first detects the faces in the input image, and for each face
         /// extracts facial features into a feature vector, and stores it in the back-end database.
         /// Amazon Rekognition uses feature vectors when performing face match and search operations
-        /// using the and operations. 
+        /// using the and operations.
         /// </para>
         ///  
         /// <para>
-        /// If you provide the optional <code>externalImageID</code> for the input image you provided,
+        /// If you are using version 1.0 of the face detection model, <code>IndexFaces</code>
+        /// indexes the 15 largest faces in the input image. Later versions of the face detection
+        /// model index the 100 largest faces in the input image. To determine which version of
+        /// the model you are using, check the the value of <code>FaceModelVersion</code> in the
+        /// response from <code>IndexFaces</code>. For more information, see <a>face-detection-model</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you provide the optional <code>ExternalImageID</code> for the input image you provided,
         /// Amazon Rekognition associates this ID with all faces that it detects. When you call
         /// the operation, the response returns the external ID. You can use this external image
         /// ID to create a client-side index to associate the faces with each image. You can then
@@ -954,6 +1104,13 @@ namespace Amazon.Rekognition
         /// provide the same image, specify the same collection, and use the same external ID
         /// in the <code>IndexFaces</code> operation, Amazon Rekognition doesn't save duplicate
         /// face metadata. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The input image is passed either as base64-encoded image bytes or as a reference to
+        /// an image in an Amazon S3 bucket. If you use the Amazon CLI to call Amazon Rekognition
+        /// operations, passing image bytes is not supported. The image must be either a PNG or
+        /// JPEG formatted file. 
         /// </para>
         ///  
         /// <para>
@@ -992,7 +1149,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// Collection specified in the request is not found.
+        /// The collection specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -1066,7 +1223,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// Collection specified in the request is not found.
+        /// The collection specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -1136,7 +1293,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// Collection specified in the request is not found.
+        /// The collection specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -1175,24 +1332,23 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
-        /// Returns an array of celebrities recognized in the input image. The image is passed
-        /// either as base64-encoded image bytes or as a reference to an image in an Amazon S3
-        /// bucket. The image must be either a PNG or JPEG formatted file. For more information,
+        /// Returns an array of celebrities recognized in the input image. For more information,
         /// see <a>celebrity-recognition</a>. 
         /// 
         ///  
         /// <para>
-        ///  <code>RecognizeCelebrities</code> returns the 15 largest faces in the image. It lists
-        /// recognized celebrities in the <code>CelebrityFaces</code> list and unrecognized faces
-        /// in the <code>UnrecognizedFaces</code> list. The operation doesn't return celebrities
-        /// whose face sizes are smaller than the largest 15 faces in the image.
+        ///  <code>RecognizeCelebrities</code> returns the 100 largest faces in the image. It
+        /// lists recognized celebrities in the <code>CelebrityFaces</code> array and unrecognized
+        /// faces in the <code>UnrecognizedFaces</code> array. <code>RecognizeCelebrities</code>
+        /// doesn't return celebrities whose faces are not amongst the largest 100 faces in the
+        /// image.
         /// </para>
         ///  
         /// <para>
-        /// For each celebrity recognized, the API returns a <code>Celebrity</code> object. The
-        /// <code>Celebrity</code> object contains the celebrity name, ID, URL links to additional
-        /// information, match confidence, and a <code>ComparedFace</code> object that you can
-        /// use to locate the celebrity's face on the image.
+        /// For each celebrity recognized, the <code>RecognizeCelebrities</code> returns a <code>Celebrity</code>
+        /// object. The <code>Celebrity</code> object contains the celebrity name, ID, URL links
+        /// to additional information, match confidence, and a <code>ComparedFace</code> object
+        /// that you can use to locate the celebrity's face on the image.
         /// </para>
         ///  
         /// <para>
@@ -1201,6 +1357,13 @@ namespace Amazon.Rekognition
         /// ID property as a unique identifier for the celebrity. If you don't store the celebrity
         /// name or additional information URLs returned by <code>RecognizeCelebrities</code>,
         /// you will need the ID to identify the celebrity in a call to the operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// You pass the imput image either as base64-encoded image bytes or as a reference to
+        /// an image in an Amazon S3 bucket. If you use the Amazon CLI to call Amazon Rekognition
+        /// operations, passing image bytes is not supported. The image must be either a PNG or
+        /// JPEG formatted file. 
         /// </para>
         ///  
         /// <para>
@@ -1324,7 +1487,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// Collection specified in the request is not found.
+        /// The collection specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -1380,6 +1543,13 @@ namespace Amazon.Rekognition
         /// </para>
         ///  </note> 
         /// <para>
+        /// You pass the input image either as base64-encoded image bytes or as a reference to
+        /// an image in an Amazon S3 bucket. If you use the Amazon CLI to call Amazon Rekognition
+        /// operations, passing image bytes is not supported. The image must be either a PNG or
+        /// JPEG formatted file. 
+        /// </para>
+        ///  
+        /// <para>
         ///  The response returns an array of faces that match, ordered by similarity score with
         /// the highest similarity first. More specifically, it is an array of metadata for each
         /// face match found. Along with the metadata, the response also includes a <code>similarity</code>
@@ -1424,7 +1594,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// Collection specified in the request is not found.
+        /// The collection specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.

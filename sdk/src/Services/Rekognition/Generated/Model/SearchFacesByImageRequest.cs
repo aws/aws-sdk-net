@@ -46,6 +46,13 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  </note> 
     /// <para>
+    /// You pass the input image either as base64-encoded image bytes or as a reference to
+    /// an image in an Amazon S3 bucket. If you use the Amazon CLI to call Amazon Rekognition
+    /// operations, passing image bytes is not supported. The image must be either a PNG or
+    /// JPEG formatted file. 
+    /// </para>
+    ///  
+    /// <para>
     ///  The response returns an array of faces that match, ordered by similarity score with
     /// the highest similarity first. More specifically, it is an array of metadata for each
     /// face match found. Along with the metadata, the response also includes a <code>similarity</code>
@@ -110,7 +117,9 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property Image. 
         /// <para>
-        /// The input image as bytes or an S3 object.
+        /// The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to
+        /// call Amazon Rekognition operations, passing base64-encoded image bytes is not supported.
+        /// 
         /// </para>
         /// </summary>
         public Image Image

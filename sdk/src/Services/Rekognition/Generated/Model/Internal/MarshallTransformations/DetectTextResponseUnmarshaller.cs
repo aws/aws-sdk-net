@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SearchFaces operation
+    /// Response Unmarshaller for DetectText operation
     /// </summary>  
-    public class SearchFacesResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DetectTextResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,28 +45,16 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            SearchFacesResponse response = new SearchFacesResponse();
+            DetectTextResponse response = new DetectTextResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("FaceMatches", targetDepth))
+                if (context.TestExpression("TextDetections", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<FaceMatch, FaceMatchUnmarshaller>(FaceMatchUnmarshaller.Instance);
-                    response.FaceMatches = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("FaceModelVersion", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.FaceModelVersion = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SearchedFaceId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.SearchedFaceId = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<TextDetection, TextDetectionUnmarshaller>(TextDetectionUnmarshaller.Instance);
+                    response.TextDetections = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,21 +76,29 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             {
                 return new AccessDeniedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ImageTooLargeException"))
+            {
+                return new ImageTooLargeException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerError"))
             {
                 return new InternalServerErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidImageFormatException"))
+            {
+                return new InvalidImageFormatException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterException"))
             {
                 return new InvalidParameterException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidS3ObjectException"))
+            {
+                return new InvalidS3ObjectException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ProvisionedThroughputExceededException"))
             {
                 return new ProvisionedThroughputExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
-            {
-                return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
             {
@@ -111,9 +107,9 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             return new AmazonRekognitionException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static SearchFacesResponseUnmarshaller _instance = new SearchFacesResponseUnmarshaller();        
+        private static DetectTextResponseUnmarshaller _instance = new DetectTextResponseUnmarshaller();        
 
-        internal static SearchFacesResponseUnmarshaller GetInstance()
+        internal static DetectTextResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -121,7 +117,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SearchFacesResponseUnmarshaller Instance
+        public static DetectTextResponseUnmarshaller Instance
         {
             get
             {

@@ -32,8 +32,27 @@ namespace Amazon.Rekognition.Model
     /// </summary>
     public partial class IndexFacesResponse : AmazonWebServiceResponse
     {
+        private string _faceModelVersion;
         private List<FaceRecord> _faceRecords = new List<FaceRecord>();
         private OrientationCorrection _orientationCorrection;
+
+        /// <summary>
+        /// Gets and sets the property FaceModelVersion. 
+        /// <para>
+        /// Version number of the face detection model associated with the input collection (<code>CollectionId</code>).
+        /// </para>
+        /// </summary>
+        public string FaceModelVersion
+        {
+            get { return this._faceModelVersion; }
+            set { this._faceModelVersion = value; }
+        }
+
+        // Check to see if FaceModelVersion property is set
+        internal bool IsSetFaceModelVersion()
+        {
+            return this._faceModelVersion != null;
+        }
 
         /// <summary>
         /// Gets and sets the property FaceRecords. 

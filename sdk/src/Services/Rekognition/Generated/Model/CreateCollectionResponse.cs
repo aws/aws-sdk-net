@@ -33,6 +33,7 @@ namespace Amazon.Rekognition.Model
     public partial class CreateCollectionResponse : AmazonWebServiceResponse
     {
         private string _collectionArn;
+        private string _faceModelVersion;
         private int? _statusCode;
 
         /// <summary>
@@ -52,6 +53,25 @@ namespace Amazon.Rekognition.Model
         internal bool IsSetCollectionArn()
         {
             return this._collectionArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FaceModelVersion. 
+        /// <para>
+        /// Version number of the face detection model associated with the collection you are
+        /// creating.
+        /// </para>
+        /// </summary>
+        public string FaceModelVersion
+        {
+            get { return this._faceModelVersion; }
+            set { this._faceModelVersion = value; }
+        }
+
+        // Check to see if FaceModelVersion property is set
+        internal bool IsSetFaceModelVersion()
+        {
+            return this._faceModelVersion != null;
         }
 
         /// <summary>
