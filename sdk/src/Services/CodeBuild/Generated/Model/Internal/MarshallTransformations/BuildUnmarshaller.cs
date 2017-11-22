@@ -88,6 +88,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     unmarshalledObject.BuildStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("cache", targetDepth))
+                {
+                    var unmarshaller = ProjectCacheUnmarshaller.Instance;
+                    unmarshalledObject.Cache = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("currentPhase", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -124,6 +130,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     unmarshalledObject.Logs = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("networkInterface", targetDepth))
+                {
+                    var unmarshaller = NetworkInterfaceUnmarshaller.Instance;
+                    unmarshalledObject.NetworkInterface = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("phases", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<BuildPhase, BuildPhaseUnmarshaller>(BuildPhaseUnmarshaller.Instance);
@@ -158,6 +170,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.TimeoutInMinutes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("vpcConfig", targetDepth))
+                {
+                    var unmarshaller = VpcConfigUnmarshaller.Instance;
+                    unmarshalledObject.VpcConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

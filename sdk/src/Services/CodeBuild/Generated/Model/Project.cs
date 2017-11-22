@@ -34,6 +34,8 @@ namespace Amazon.CodeBuild.Model
     {
         private string _arn;
         private ProjectArtifacts _artifacts;
+        private ProjectBadge _badge;
+        private ProjectCache _cache;
         private DateTime? _created;
         private string _description;
         private string _encryptionKey;
@@ -44,6 +46,7 @@ namespace Amazon.CodeBuild.Model
         private ProjectSource _source;
         private List<Tag> _tags = new List<Tag>();
         private int? _timeoutInMinutes;
+        private VpcConfig _vpcConfig;
         private Webhook _webhook;
 
         /// <summary>
@@ -80,6 +83,42 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetArtifacts()
         {
             return this._artifacts != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Badge. 
+        /// <para>
+        /// Information about the build badge for the build project.
+        /// </para>
+        /// </summary>
+        public ProjectBadge Badge
+        {
+            get { return this._badge; }
+            set { this._badge = value; }
+        }
+
+        // Check to see if Badge property is set
+        internal bool IsSetBadge()
+        {
+            return this._badge != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Cache. 
+        /// <para>
+        /// Information about the cache for the build project.
+        /// </para>
+        /// </summary>
+        public ProjectCache Cache
+        {
+            get { return this._cache; }
+            set { this._cache = value; }
+        }
+
+        // Check to see if Cache property is set
+        internal bool IsSetCache()
+        {
+            return this._cache != null;
         }
 
         /// <summary>
@@ -273,6 +312,27 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetTimeoutInMinutes()
         {
             return this._timeoutInMinutes.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcConfig. 
+        /// <para>
+        /// If your AWS CodeBuild project accesses resources in an Amazon VPC, you provide this
+        /// parameter that identifies the VPC ID and the list of security group IDs and subnet
+        /// IDs. The security groups and subnets must belong to the same VPC. You must provide
+        /// at least one security group and one subnet ID.
+        /// </para>
+        /// </summary>
+        public VpcConfig VpcConfig
+        {
+            get { return this._vpcConfig; }
+            set { this._vpcConfig = value; }
+        }
+
+        // Check to see if VpcConfig property is set
+        internal bool IsSetVpcConfig()
+        {
+            return this._vpcConfig != null;
         }
 
         /// <summary>

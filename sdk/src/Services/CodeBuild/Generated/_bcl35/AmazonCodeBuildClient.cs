@@ -740,6 +740,65 @@ namespace Amazon.CodeBuild
 
         #endregion
         
+        #region  InvalidateProjectCache
+
+        /// <summary>
+        /// Resets the cache for a project.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the InvalidateProjectCache service method.</param>
+        /// 
+        /// <returns>The response from the InvalidateProjectCache service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified AWS resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/InvalidateProjectCache">REST API Reference for InvalidateProjectCache Operation</seealso>
+        public virtual InvalidateProjectCacheResponse InvalidateProjectCache(InvalidateProjectCacheRequest request)
+        {
+            var marshaller = new InvalidateProjectCacheRequestMarshaller();
+            var unmarshaller = InvalidateProjectCacheResponseUnmarshaller.Instance;
+
+            return Invoke<InvalidateProjectCacheRequest,InvalidateProjectCacheResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the InvalidateProjectCache operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the InvalidateProjectCache operation on AmazonCodeBuildClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndInvalidateProjectCache
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/InvalidateProjectCache">REST API Reference for InvalidateProjectCache Operation</seealso>
+        public virtual IAsyncResult BeginInvalidateProjectCache(InvalidateProjectCacheRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new InvalidateProjectCacheRequestMarshaller();
+            var unmarshaller = InvalidateProjectCacheResponseUnmarshaller.Instance;
+
+            return BeginInvoke<InvalidateProjectCacheRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  InvalidateProjectCache operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginInvalidateProjectCache.</param>
+        /// 
+        /// <returns>Returns a  InvalidateProjectCacheResult from CodeBuild.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/InvalidateProjectCache">REST API Reference for InvalidateProjectCache Operation</seealso>
+        public virtual InvalidateProjectCacheResponse EndInvalidateProjectCache(IAsyncResult asyncResult)
+        {
+            return EndInvoke<InvalidateProjectCacheResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListBuilds
 
         /// <summary>

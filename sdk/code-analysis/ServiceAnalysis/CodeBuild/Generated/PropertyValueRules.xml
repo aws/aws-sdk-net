@@ -41,6 +41,10 @@
     <pattern>[A-Za-z0-9][A-Za-z0-9\-_]{1,254}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeBuild.Model.InvalidateProjectCacheRequest.ProjectName</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeBuild.Model.ListBuildsForProjectRequest.ProjectName</property>
     <min>1</min>
   </property-value-rule>
@@ -108,6 +112,14 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeBuild.Model.NetworkInterface.NetworkInterfaceId</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.NetworkInterface.SubnetId</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeBuild.Model.Project.Description</property>
     <min>0</min>
     <max>255</max>
@@ -146,6 +158,10 @@
     <min>1</min>
     <max>255</max>
     <pattern>^([\\p{L}\\p{Z}\\p{N}_.:/=@+\\-]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.VpcConfig.VpcId</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.Webhook.Url</property>

@@ -34,6 +34,8 @@ namespace Amazon.CodeBuild.Model
     public partial class UpdateProjectRequest : AmazonCodeBuildRequest
     {
         private ProjectArtifacts _artifacts;
+        private bool? _badgeEnabled;
+        private ProjectCache _cache;
         private string _description;
         private string _encryptionKey;
         private ProjectEnvironment _environment;
@@ -42,6 +44,7 @@ namespace Amazon.CodeBuild.Model
         private ProjectSource _source;
         private List<Tag> _tags = new List<Tag>();
         private int? _timeoutInMinutes;
+        private VpcConfig _vpcConfig;
 
         /// <summary>
         /// Gets and sets the property Artifacts. 
@@ -59,6 +62,42 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetArtifacts()
         {
             return this._artifacts != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BadgeEnabled. 
+        /// <para>
+        /// Set this to true to generate a publicly-accessible URL for your project's build badge.
+        /// </para>
+        /// </summary>
+        public bool BadgeEnabled
+        {
+            get { return this._badgeEnabled.GetValueOrDefault(); }
+            set { this._badgeEnabled = value; }
+        }
+
+        // Check to see if BadgeEnabled property is set
+        internal bool IsSetBadgeEnabled()
+        {
+            return this._badgeEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Cache. 
+        /// <para>
+        /// Stores recently used information so that it can be quickly accessed at a later time.
+        /// </para>
+        /// </summary>
+        public ProjectCache Cache
+        {
+            get { return this._cache; }
+            set { this._cache = value; }
+        }
+
+        // Check to see if Cache property is set
+        internal bool IsSetCache()
+        {
+            return this._cache != null;
         }
 
         /// <summary>
@@ -221,6 +260,24 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetTimeoutInMinutes()
         {
             return this._timeoutInMinutes.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcConfig. 
+        /// <para>
+        /// VpcConfig enables AWS CodeBuild to access resources in an Amazon VPC.
+        /// </para>
+        /// </summary>
+        public VpcConfig VpcConfig
+        {
+            get { return this._vpcConfig; }
+            set { this._vpcConfig = value; }
+        }
+
+        // Check to see if VpcConfig property is set
+        internal bool IsSetVpcConfig()
+        {
+            return this._vpcConfig != null;
         }
 
     }

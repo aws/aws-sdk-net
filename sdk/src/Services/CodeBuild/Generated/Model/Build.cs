@@ -36,18 +36,21 @@ namespace Amazon.CodeBuild.Model
         private BuildArtifacts _artifacts;
         private bool? _buildComplete;
         private StatusType _buildStatus;
+        private ProjectCache _cache;
         private string _currentPhase;
         private DateTime? _endTime;
         private ProjectEnvironment _environment;
         private string _id;
         private string _initiator;
         private LogsLocation _logs;
+        private NetworkInterface _networkInterface;
         private List<BuildPhase> _phases = new List<BuildPhase>();
         private string _projectName;
         private ProjectSource _source;
         private string _sourceVersion;
         private DateTime? _startTime;
         private int? _timeoutInMinutes;
+        private VpcConfig _vpcConfig;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -144,6 +147,24 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetBuildStatus()
         {
             return this._buildStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Cache. 
+        /// <para>
+        /// Information about the cache for the build.
+        /// </para>
+        /// </summary>
+        public ProjectCache Cache
+        {
+            get { return this._cache; }
+            set { this._cache = value; }
+        }
+
+        // Check to see if Cache property is set
+        internal bool IsSetCache()
+        {
+            return this._cache != null;
         }
 
         /// <summary>
@@ -269,6 +290,24 @@ namespace Amazon.CodeBuild.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NetworkInterface. 
+        /// <para>
+        /// Describes a network interface.
+        /// </para>
+        /// </summary>
+        public NetworkInterface NetworkInterface
+        {
+            get { return this._networkInterface; }
+            set { this._networkInterface = value; }
+        }
+
+        // Check to see if NetworkInterface property is set
+        internal bool IsSetNetworkInterface()
+        {
+            return this._networkInterface != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Phases. 
         /// <para>
         /// Information about all previous build phases that are completed and information about
@@ -376,6 +415,27 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetTimeoutInMinutes()
         {
             return this._timeoutInMinutes.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcConfig. 
+        /// <para>
+        /// If your AWS CodeBuild project accesses resources in an Amazon VPC, you provide this
+        /// parameter that identifies the VPC ID and the list of security group IDs and subnet
+        /// IDs. The security groups and subnets must belong to the same VPC. You must provide
+        /// at least one security group and one subnet ID.
+        /// </para>
+        /// </summary>
+        public VpcConfig VpcConfig
+        {
+            get { return this._vpcConfig; }
+            set { this._vpcConfig = value; }
+        }
+
+        // Check to see if VpcConfig property is set
+        internal bool IsSetVpcConfig()
+        {
+            return this._vpcConfig != null;
         }
 
     }

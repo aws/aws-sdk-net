@@ -261,6 +261,56 @@ namespace Amazon.CodeBuild
 
 
     /// <summary>
+    /// Constants used for properties of type CacheType.
+    /// </summary>
+    public class CacheType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NO_CACHE for CacheType
+        /// </summary>
+        public static readonly CacheType NO_CACHE = new CacheType("NO_CACHE");
+        /// <summary>
+        /// Constant S3 for CacheType
+        /// </summary>
+        public static readonly CacheType S3 = new CacheType("S3");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CacheType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CacheType FindValue(string value)
+        {
+            return FindValue<CacheType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CacheType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ComputeType.
     /// </summary>
     public class ComputeType : ConstantClass

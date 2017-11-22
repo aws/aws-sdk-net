@@ -78,6 +78,23 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetBadgeEnabled())
+                {
+                    context.Writer.WritePropertyName("badgeEnabled");
+                    context.Writer.Write(publicRequest.BadgeEnabled);
+                }
+
+                if(publicRequest.IsSetCache())
+                {
+                    context.Writer.WritePropertyName("cache");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ProjectCacheMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Cache, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("description");
@@ -144,6 +161,17 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("timeoutInMinutes");
                     context.Writer.Write(publicRequest.TimeoutInMinutes);
+                }
+
+                if(publicRequest.IsSetVpcConfig())
+                {
+                    context.Writer.WritePropertyName("vpcConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = VpcConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.VpcConfig, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
         

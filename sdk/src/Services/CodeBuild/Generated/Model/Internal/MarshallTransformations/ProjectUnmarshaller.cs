@@ -76,6 +76,18 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     unmarshalledObject.Artifacts = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("badge", targetDepth))
+                {
+                    var unmarshaller = ProjectBadgeUnmarshaller.Instance;
+                    unmarshalledObject.Badge = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("cache", targetDepth))
+                {
+                    var unmarshaller = ProjectCacheUnmarshaller.Instance;
+                    unmarshalledObject.Cache = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("created", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -134,6 +146,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.TimeoutInMinutes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("vpcConfig", targetDepth))
+                {
+                    var unmarshaller = VpcConfigUnmarshaller.Instance;
+                    unmarshalledObject.VpcConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("webhook", targetDepth))
