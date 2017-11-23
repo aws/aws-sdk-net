@@ -1,3 +1,12 @@
+### 3.3.196.0 (2017-11-22 23:16 UTC)
+* CertificateManager (3.3.3.0)
+	* AWS Certificate Manager now supports the ability to import domainless certs and additional Key Types as well as an additional validation method for DNS.
+* Core 3.3.19.1
+	* Amazon Lex is now available in the EU (Ireland) region.
+Amazon Lex is now available in the EU (Ireland) region.
+
+
+
 ### 3.3.195.0 (2017-11-22 02:27 UTC)
 * APIGateway (3.3.12.0)
 	* Add support for Access logs and customizable integration timeouts

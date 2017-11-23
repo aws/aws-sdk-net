@@ -1,7 +1,7 @@
 
 {
-    "ProductVersion" : "3.3.195.0",
-    "CoreVersion"    : "3.3.19.0",
+    "ProductVersion" : "3.3.196.0",
+    "CoreVersion"    : "3.3.19.1",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
         "CloudHSM" : {
@@ -505,7 +505,7 @@
             "InPreview"               : false
         },
         "CertificateManager"              : {
-            "Version" : "3.3.2.18",
+            "Version" : "3.3.3.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
