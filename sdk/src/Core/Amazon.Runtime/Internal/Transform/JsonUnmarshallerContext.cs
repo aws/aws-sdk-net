@@ -95,6 +95,7 @@ namespace Amazon.Runtime.Internal.Transform
                 // Causing the SDK to attempt a CRC check over the gzipped response data with a CRC value for the uncompressed value. 
                 // The Content-Encoding check can be removed with the following github issue is shipped.
                 // https://github.com/dotnet/corefx/issues/6796
+
                 if (parsedContentLengthHeader && responseData.ContentLength.Equals(contentLength) &&
                     string.IsNullOrEmpty(responseData.GetHeaderValue("Content-Encoding")))
                 {

@@ -57,6 +57,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 			{
 				Headers = {
 <#
+
 if( operation.ResponseHeaderMembers.Count() > 0 )
 		{
 			foreach (var member in operation.ResponseHeaderMembers)
@@ -88,6 +89,12 @@ if( operation.ResponseHeaderMembers.Count() > 0 )
 					{"<#=member.MarshallLocationName#>",long.MaxValue.ToString(CultureInfo.InvariantCulture)},
 <#	
                 }
+				else if (member.Shape.IsDateTime)
+                {
+#>
+					{"<#=member.MarshallLocationName#>",Constants.DEFAULT_DATE.ToString("O")},
+<#	
+                }
 				else
 				{
 					throw new Exception("Member " + member.Shape.Name + " cannot be handled because it's type, " + member.Shape.Type + ", is not handled.  Please Update RestMarshallingTests.tt.");
@@ -114,9 +121,9 @@ if( operation.ResponseHeaderMembers.Count() > 0 )
 				else
 				{
 #>
-
-            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
-			webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+			
+			var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+			webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
 			ResponseUnmarshaller unmarshaller = <#=operation.Name#>ResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)

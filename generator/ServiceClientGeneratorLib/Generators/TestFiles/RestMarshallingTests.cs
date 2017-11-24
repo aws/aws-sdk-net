@@ -19,7 +19,7 @@ namespace ServiceClientGenerator.Generators.TestFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+    #line 1 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "14.0.0.0")]
     public partial class RestMarshallingTests : Generators.BaseGenerator
     {
@@ -30,7 +30,7 @@ namespace ServiceClientGenerator.Generators.TestFiles
         public override string TransformText()
         {
             
-            #line 7 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 7 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 
 	AddLicenseHeader();
 
@@ -40,21 +40,21 @@ namespace ServiceClientGenerator.Generators.TestFiles
             this.Write("\r\n\r\nusing System;\r\nusing System.Globalization;\r\nusing System.IO;\r\nusing System.Te" +
                     "xt;\r\nusing Microsoft.VisualStudio.TestTools.UnitTesting;\r\n\r\nusing ");
             
-            #line 18 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 18 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write(";\r\nusing ");
             
-            #line 19 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 19 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write(".Model;\r\nusing ");
             
-            #line 20 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 20 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
@@ -71,7 +71,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public partial class ");
             
-            #line 30 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 30 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
@@ -79,14 +79,14 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             this.Write("MarshallingTests\r\n    {\r\n        static readonly ServiceModel service_model = Uti" +
                     "ls.LoadServiceModel(\"");
             
-            #line 32 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 32 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceDirectoryName));
             
             #line default
             #line hidden
             this.Write("\");\r\n\t\t");
             
-            #line 33 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 33 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 
 		foreach(var operation in this.Config.ServiceModel.Operations)
 		{
@@ -96,42 +96,42 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             #line hidden
             this.Write("\r\n        [TestMethod]\r\n\t\t[TestCategory(\"UnitTest\")]\r\n\t\t[TestCategory(\"");
             
-            #line 40 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 40 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceModel.Type));
             
             #line default
             #line hidden
             this.Write("\")]\r\n\t\t[TestCategory(\"");
             
-            #line 41 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 41 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.TestCategory));
             
             #line default
             #line hidden
             this.Write("\")]\r\n        public void ");
             
-            #line 42 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 42 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("MarshallTest()\r\n        {\r\n\t\t\tvar operation = service_model.FindOperation(\"");
             
-            #line 44 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 44 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("\");\r\n\r\n            var request = InstantiateClassGenerator.Execute<");
             
-            #line 46 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 46 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Request>();\r\n            var marshaller = new ");
             
-            #line 47 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 47 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
@@ -139,14 +139,14 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             this.Write("RequestMarshaller();\r\n\r\n            var internalRequest = marshaller.Marshall(req" +
                     "uest);\r\n            TestTools.RequestValidator.Validate(\"");
             
-            #line 50 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 50 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("\", request, internalRequest, service_model);\t\t\t\r\n\r\n");
             
-            #line 52 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 52 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 
             if(operation.ResponseStructure != null)
             {
@@ -156,7 +156,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             #line hidden
             this.Write("\t\t\tvar webResponse = new WebResponseData\r\n\t\t\t{\r\n\t\t\t\tHeaders = {\r\n");
             
-            #line 59 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 59 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+
 
 if( operation.ResponseHeaderMembers.Count() > 0 )
 		{
@@ -172,21 +173,21 @@ if( operation.ResponseHeaderMembers.Count() > 0 )
             #line hidden
             this.Write("\t\t\t\t\t{\"");
             
-            #line 69 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 70 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
             
             #line default
             #line hidden
             this.Write("\",Convert.ToBase64String(Encoding.UTF8.GetBytes(\"");
             
-            #line 69 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 70 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
             
             #line default
             #line hidden
             this.Write("_Value\"))},\r\n");
             
-            #line 70 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 71 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 	
 					}
 					else
@@ -197,21 +198,21 @@ if( operation.ResponseHeaderMembers.Count() > 0 )
             #line hidden
             this.Write("\t\t\t\t\t{\"");
             
-            #line 75 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 76 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
             
             #line default
             #line hidden
             this.Write("\",\"");
             
-            #line 75 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 76 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
             
             #line default
             #line hidden
             this.Write("_Value\"},\r\n");
             
-            #line 76 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 77 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 	
 					}
 				}
@@ -223,16 +224,52 @@ if( operation.ResponseHeaderMembers.Count() > 0 )
             #line hidden
             this.Write("\t\t\t\t\t{\"");
             
-            #line 82 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 83 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
             
             #line default
             #line hidden
             this.Write("\",int.MaxValue.ToString(CultureInfo.InvariantCulture)},\r\n");
             
-            #line 83 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 84 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 	
 				}
+                else if (member.Shape.IsLong)
+                {
+
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\t\t\t{\"");
+            
+            #line 89 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
+            
+            #line default
+            #line hidden
+            this.Write("\",long.MaxValue.ToString(CultureInfo.InvariantCulture)},\r\n");
+            
+            #line 90 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+	
+                }
+				else if (member.Shape.IsDateTime)
+                {
+
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\t\t\t{\"");
+            
+            #line 95 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
+            
+            #line default
+            #line hidden
+            this.Write("\",Constants.DEFAULT_DATE.ToString(\"O\")},\r\n");
+            
+            #line 96 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+	
+                }
 				else
 				{
 					throw new Exception("Member " + member.Shape.Name + " cannot be handled because it's type, " + member.Shape.Type + ", is not handled.  Please Update RestMarshallingTests.tt.");
@@ -246,7 +283,7 @@ if( operation.ResponseHeaderMembers.Count() > 0 )
             this.Write("\t\t\t\t\t{\"x-amzn-RequestId\", Guid.NewGuid().ToString()},\r\n\t\t\t\t\t{\"x-amz-crc32\",\"0\"}\r\n" +
                     "\t\t\t\t}\r\n\t\t\t};\r\n");
             
-            #line 95 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 108 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 
 				if(this.Config.ServiceModel.Type == ServiceType.Rest_Xml)
 				{
@@ -259,7 +296,7 @@ if( operation.ResponseHeaderMembers.Count() > 0 )
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
 			ResponseUnmarshaller unmarshaller = ");
             
-            #line 102 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 115 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
@@ -267,7 +304,7 @@ if( operation.ResponseHeaderMembers.Count() > 0 )
             this.Write("ResponseUnmarshaller.Instance;\r\n            var response = unmarshaller.Unmarshal" +
                     "l(context)\r\n\t\t\t\tas ");
             
-            #line 104 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 117 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
@@ -275,7 +312,7 @@ if( operation.ResponseHeaderMembers.Count() > 0 )
             this.Write("Response;   \r\n            InstantiateClassGenerator.ValidateObjectFullyInstantiat" +
                     "ed(response);       \r\n");
             
-            #line 106 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 119 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 
 				}
 				else
@@ -284,13 +321,13 @@ if( operation.ResponseHeaderMembers.Count() > 0 )
             
             #line default
             #line hidden
-            this.Write(@"
-            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
-			webResponse.Headers.Add(""Content-Length"", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            this.Write(@"			
+			var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+			webResponse.Headers[""Content-Length""] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
 			ResponseUnmarshaller unmarshaller = ");
             
-            #line 115 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 128 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
@@ -298,7 +335,7 @@ if( operation.ResponseHeaderMembers.Count() > 0 )
             this.Write("ResponseUnmarshaller.Instance;\r\n            var response = unmarshaller.Unmarshal" +
                     "l(context)\r\n\t\t\t\tas ");
             
-            #line 117 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 130 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
@@ -306,7 +343,7 @@ if( operation.ResponseHeaderMembers.Count() > 0 )
             this.Write("Response;   \r\n            InstantiateClassGenerator.ValidateObjectFullyInstantiat" +
                     "ed(response);   \t\t\t\r\n");
             
-            #line 119 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 132 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 				
 				}
             }
@@ -316,7 +353,7 @@ if( operation.ResponseHeaderMembers.Count() > 0 )
             #line hidden
             this.Write("        }\r\n\r\n\t\t");
             
-            #line 125 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 138 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 
 		}
 		

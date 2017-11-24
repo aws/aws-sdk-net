@@ -152,6 +152,12 @@ using Amazon.Runtime.Internal.Util;
 				response.<#=member.PropertyName#> = long.Parse(context.ResponseData.GetHeaderValue("<#=member.MarshallLocationName#>"), CultureInfo.InvariantCulture);
 <#+
 				}
+				else if (member.Shape.IsDateTime)
+				{
+#>
+				response.<#=member.PropertyName#> = DateTime.Parse(context.ResponseData.GetHeaderValue("<#=member.MarshallLocationName#>"), CultureInfo.InvariantCulture);
+<#+
+				}
 				else
 				{
 					throw new Exception("Member " + member.Shape.Name + " cannot be handled because its type, " + member.Shape.Type + ", is not handled. Please update BaseResponseUnmarshaller.tt.");

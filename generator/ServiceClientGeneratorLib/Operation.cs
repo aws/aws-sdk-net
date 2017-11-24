@@ -615,11 +615,11 @@ namespace ServiceClientGenerator
         /// </summary>
         /// <param name="member"></param>
         /// <returns></returns>
-        public string GetUriResourcePathTarget(Member member)
+        public string GetUriResourcePathTarget(Member member,out bool isGreedy)
         {
             var greedyPathResourcePathIdentifier = "{" + member.MarshallLocationName + "+}";
             var simplePathResourcePathIdentifier = "{" + member.MarshallLocationName + "}";
-            var isGreedy = this.RequestUri.IndexOf(greedyPathResourcePathIdentifier, StringComparison.Ordinal) >= 0;
+            isGreedy = this.RequestUri.IndexOf(greedyPathResourcePathIdentifier, StringComparison.Ordinal) >= 0;
             var isSimple = this.RequestUri.IndexOf(simplePathResourcePathIdentifier, StringComparison.Ordinal) >= 0;
 
             if (isGreedy && isSimple)

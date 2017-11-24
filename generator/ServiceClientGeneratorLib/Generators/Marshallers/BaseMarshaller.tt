@@ -61,21 +61,43 @@ using Amazon.Runtime.Internal.Util;
 	{
 		foreach(var member in operation.RequestUriMembers)
 		{
-            var marshallLocationName = operation.GetUriResourcePathTarget(member);
+            bool isGreedy = false;
+            var marshallLocationName = operation.GetUriResourcePathTarget(member, out isGreedy);
 
             if (member.model.Customizations.SkipUriPropertyValidations.Contains(member.PropertyName))
             {
+				if(isGreedy)
+				{
+#>
+			uriResourcePath = uriResourcePath.Replace("<#=marshallLocationName#>", <#=variableName#>.IsSet<#=member.PropertyName#>() ? StringUtils.From<#=member.GetPrimitiveType()#>(<#=variableName#>.<#=member.PropertyName#>.TrimStart('/')) : string.Empty);
+<#+
+				}
+				else
+				{
 #>
 			uriResourcePath = uriResourcePath.Replace("<#=marshallLocationName#>", <#=variableName#>.IsSet<#=member.PropertyName#>() ? StringUtils.From<#=member.GetPrimitiveType()#>(<#=variableName#>.<#=member.PropertyName#>) : string.Empty);
 <#+
+				}
+
             }
             else
             {
 #>
             if (!<#=variableName#>.IsSet<#=member.PropertyName#>())
                 throw new <#=this.Config.BaseException#>("Request object does not have required field <#=member.PropertyName#> set");
+<#+
+			if(isGreedy)
+				{
+#>
+			uriResourcePath = uriResourcePath.Replace("<#=marshallLocationName#>", StringUtils.From<#=member.GetPrimitiveType()#>(<#=variableName#>.<#=member.PropertyName#>.TrimStart('/')));
+<#+
+				}
+				else
+				{
+#>
 			uriResourcePath = uriResourcePath.Replace("<#=marshallLocationName#>", StringUtils.From<#=member.GetPrimitiveType()#>(<#=variableName#>.<#=member.PropertyName#>));
-<#+			
+<#+
+				}
             }
 		}
 	}
