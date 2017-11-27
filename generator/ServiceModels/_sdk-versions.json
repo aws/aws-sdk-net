@@ -1,7 +1,7 @@
 
 {
-    "ProductVersion" : "3.3.196.0",
-    "CoreVersion"    : "3.3.19.1",
+    "ProductVersion" : "3.3.197.0",
+    "CoreVersion"    : "3.3.20.0",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
         "CloudHSM" : {
@@ -861,6 +861,46 @@
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
+            },
+            "InPreview"               : false
+        },
+        "MediaPackage"                    : {
+            "Version" : "3.3.0.0",
+            "AssemblyVersionOverride" : null,
+            "Dependencies"            : {
+                "Core" : "3.3.20.0"
+            },
+            "InPreview"               : false
+        },
+        "MediaLive"                       : {
+            "Version" : "3.3.0.0",
+            "AssemblyVersionOverride" : null,
+            "Dependencies"            : {
+                "Core" : "3.3.20.0"
+            },
+            "InPreview"               : false
+        },
+        "MediaStoreData"                  : {
+            "Version" : "3.3.0.0",
+            "AssemblyVersionOverride" : null,
+            "Dependencies"            : {
+                "Core" : "3.3.20.0"
+            },
+            "InPreview"               : false
+        },
+        "MediaStore"                      : {
+            "Version" : "3.3.0.0",
+            "AssemblyVersionOverride" : null,
+            "Dependencies"            : {
+                "Core" : "3.3.20.0"
+            },
+            "InPreview"               : false
+        },
+        "MediaConvert"                    : {
+            "Version" : "3.3.0.0",
+            "AssemblyVersionOverride" : null,
+            "Dependencies"            : {
+                "Core" : "3.3.20.0"
             },
             "InPreview"               : false
         }

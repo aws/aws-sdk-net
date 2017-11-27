@@ -99,7 +99,11 @@
     <ProjectReference Include="..\..\src\Services\Lightsail\AWSSDK.Lightsail.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\MachineLearning\AWSSDK.MachineLearning.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\MarketplaceEntitlementService\AWSSDK.MarketplaceEntitlementService.Net45.csproj"/>
+    <ProjectReference Include="..\..\src\Services\MediaConvert\AWSSDK.MediaConvert.Net45.csproj"/>
+    <ProjectReference Include="..\..\src\Services\MediaLive\AWSSDK.MediaLive.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\MediaPackage\AWSSDK.MediaPackage.Net45.csproj"/>
+    <ProjectReference Include="..\..\src\Services\MediaStore\AWSSDK.MediaStore.Net45.csproj"/>
+    <ProjectReference Include="..\..\src\Services\MediaStoreData\AWSSDK.MediaStoreData.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\MigrationHub\AWSSDK.MigrationHub.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\Mobile\AWSSDK.Mobile.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\MobileAnalytics\AWSSDK.MobileAnalytics.Net45.csproj"/>

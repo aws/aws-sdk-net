@@ -1,3 +1,17 @@
+### 3.3.197.0 (2017-11-27 09:02 UTC)
+* MediaConvert (3.3.0.0)
+	* AWS Elemental MediaConvert is a file-based video conversion service that transforms media into formats required for traditional broadcast and for internet streaming to multi-screen devices.
+* MediaLive (3.3.0.0)
+	* AWS Elemental MediaLive is a video service that lets you easily create live outputs for broadcast and streaming delivery.
+* MediaPackage (3.3.0.0)
+	* AWS Elemental MediaPackage is a just-in-time video packaging and origination service that lets you format highly secure and reliable live outputs for a variety of devices.
+* MediaStore (3.3.0.0)
+	* AWS Elemental MediaStore is an AWS storage service optimized for media. It gives you the performance, consistency, and low latency required to deliver live and on-demand video content. AWS Elemental MediaStore acts as the origin store in your video workflow.
+* MediaStoreData (3.3.0.0)
+	* AWS Elemental MediaStore is an AWS storage service optimized for media. It gives you the performance, consistency, and low latency required to deliver live and on-demand video content. AWS Elemental MediaStore acts as the origin store in your video workflow.
+* Core 3.3.20.0
+	* Added generator changes for Elemental Data Plane.
+
 ### 3.3.196.0 (2017-11-22 23:16 UTC)
 * CertificateManager (3.3.3.0)
 	* AWS Certificate Manager now supports the ability to import domainless certs and additional Key Types as well as an additional validation method for DNS.

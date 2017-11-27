@@ -219,8 +219,16 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Amazon Machine Learning is a service that makes it easy for developers of all skill levels to use machine learning technology.
 * [AWSSDK.MarketplaceEntitlementService](https://www.nuget.org/packages/AWSSDK.MarketplaceEntitlementService/)
 	* AWS Marketplace Entitlement Service enables AWS Marketplace sellers to determine the capacity purchased by their customers.
+* [AWSSDK.MediaConvert](https://www.nuget.org/packages/AWSSDK.MediaConvert/)
+	* AWS Elemental MediaConvert is a file-based video conversion service that transforms media into formats required for traditional broadcast and for internet streaming to multi-screen devices.
+* [AWSSDK.MediaLive](https://www.nuget.org/packages/AWSSDK.MediaLive/)
+	* AWS Elemental MediaLive is a video service that lets you easily create live outputs for broadcast and streaming delivery.
 * [AWSSDK.MediaPackage](https://www.nuget.org/packages/AWSSDK.MediaPackage/)
 	* AWS Elemental MediaPackage is a just-in-time video packaging and origination service that lets you format highly secure and reliable live outputs for a variety of devices.
+* [AWSSDK.MediaStore](https://www.nuget.org/packages/AWSSDK.MediaStore/)
+	* AWS Elemental MediaStore is an AWS storage service optimized for media. It gives you the performance, consistency, and low latency required to deliver live and on-demand video content. AWS Elemental MediaStore acts as the origin store in your video workflow.
+* [AWSSDK.MediaStoreData](https://www.nuget.org/packages/AWSSDK.MediaStoreData/)
+	* AWS Elemental MediaStore Data is an AWS storage service optimized for media. It gives you the performance, consistency, and low latency required to deliver live and on-demand video content. AWS Elemental MediaStore Data acts as the origin store in your video workflow.
 * [AWSSDK.MigrationHub](https://www.nuget.org/packages/AWSSDK.MigrationHub/)
 	* AWS Migration Hub provides a single location to track migrations across multiple AWS and partner solutions. Using Migration Hub allows you to choose the AWS and partner migration tools that best fit your needs, while providing visibility into the status of your entire migration portfolio. Migration Hub also provides key metrics and progress for individual applications, regardless of which tools are being used to migrate them. For example, you might use AWS Database Migration Service, AWS Server Migration Service, and partner migration tools to migrate an application comprised of a database, virtualized web servers, and a bare metal server. Using Migration Hub will provide you with a single screen that shows the migration progress of all the resources in the application. This allows you to quickly get progress updates across all of your migrations, easily identify and troubleshoot any issues, and reduce the overall time and effort spent on your migration projects. Migration Hub is available to all AWS customers at no additional charge. You only pay for the cost of the migration tools you use, and any resources being consumed on AWS. 
 * [AWSSDK.Mobile](https://www.nuget.org/packages/AWSSDK.Mobile/)

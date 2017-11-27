@@ -94,6 +94,11 @@
       <Directory>$(ProjectDir)/src/Services/lightsail/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/machinelearning/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/marketplaceentitlementservice/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/mediaconvert/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/medialive/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/mediapackage/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/mediastore/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/mediastoredata/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/migrationhub/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/mobile/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/mobileanalytics/bin/Release/net35/</Directory>
@@ -203,6 +208,11 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Lightsail.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.MachineLearning.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.MarketplaceEntitlementService.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.MediaConvert.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.MediaLive.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.MediaPackage.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.MediaStore.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.MediaStoreData.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.MigrationHub.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Mobile.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.MobileAnalytics.dll" Analyze="True" AnalyzeAllChildren="True" />

@@ -344,9 +344,25 @@
       <Project>{0FDE26C8-DEB7-4466-8A1F-6072943EFEB6}</Project>
       <Name>AWSSDK.MarketplaceEntitlementService.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/MediaConvert/AWSSDK.MediaConvert.CodeAnalysis.csproj">
+      <Project>{6CAF68E7-5102-4DA8-9908-E948F87C1EF9}</Project>
+      <Name>AWSSDK.MediaConvert.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/MediaLive/AWSSDK.MediaLive.CodeAnalysis.csproj">
+      <Project>{8B10D331-17A4-4E68-9723-8CD6F78D2CD9}</Project>
+      <Name>AWSSDK.MediaLive.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/MediaPackage/AWSSDK.MediaPackage.CodeAnalysis.csproj">
       <Project>{86608C3C-298D-4C85-9C7A-94EDA605878F}</Project>
       <Name>AWSSDK.MediaPackage.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/MediaStore/AWSSDK.MediaStore.CodeAnalysis.csproj">
+      <Project>{28DEC6BE-0B58-4B06-98CF-DDF9E13397AB}</Project>
+      <Name>AWSSDK.MediaStore.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/MediaStoreData/AWSSDK.MediaStoreData.CodeAnalysis.csproj">
+      <Project>{D5C026FC-D0A7-49D4-B820-F104DBE4369B}</Project>
+      <Name>AWSSDK.MediaStoreData.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/MigrationHub/AWSSDK.MigrationHub.CodeAnalysis.csproj">
       <Project>{60427D51-62F5-43D6-888E-D9E2281C7804}</Project>
