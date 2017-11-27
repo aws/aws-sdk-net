@@ -1,0 +1,117 @@
+/*
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the mediaconvert-2017-08-29.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+namespace Amazon.MediaConvert.Model
+{
+    /// <summary>
+    /// Contains settings used to acquire and adjust timecode information from inputs.
+    /// </summary>
+    public partial class TimecodeConfig
+    {
+        private string _anchor;
+        private TimecodeSource _source;
+        private string _start;
+        private string _timestampOffset;
+
+        /// <summary>
+        /// Gets and sets the property Anchor. If you use an editing platform that relies on an
+        /// anchor timecode, use Anchor Timecode (Anchor) to specify a timecode that will match
+        /// the input video frame to the output video frame. Use 24-hour format with frame number,
+        /// (HH:MM:SS:FF) or (HH:MM:SS;FF). This setting ignores framerate conversion. System
+        /// behavior for Anchor Timecode varies depending on your setting for Timecode source
+        /// (TimecodeSource). * If Timecode source (TimecodeSource) is set to Specified Start
+        /// (specifiedstart), the first input frame is the specified value in Start Timecode (Start).
+        /// Anchor Timecode (Anchor) and Start Timecode (Start) are used calculate output timecode.
+        /// * If Timecode source (TimecodeSource) is set to Start at 0 (zerobased)  the  first
+        /// frame is 00:00:00:00. * If Timecode source (TimecodeSource) is set to Embedded (embedded),
+        /// the  first frame is the timecode value on the first input frame of the input.
+        /// </summary>
+        public string Anchor
+        {
+            get { return this._anchor; }
+            set { this._anchor = value; }
+        }
+
+        // Check to see if Anchor property is set
+        internal bool IsSetAnchor()
+        {
+            return this._anchor != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Source.
+        /// </summary>
+        public TimecodeSource Source
+        {
+            get { return this._source; }
+            set { this._source = value; }
+        }
+
+        // Check to see if Source property is set
+        internal bool IsSetSource()
+        {
+            return this._source != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Start. Only use when you set Timecode Source (TimecodeSource)
+        /// to Specified Start (SPECIFIEDSTART). Use Start timecode (Start) to specify the timecode
+        /// for the initial frame. Use 24-hour format with frame number, (HH:MM:SS:FF) or (HH:MM:SS;FF).
+        /// </summary>
+        public string Start
+        {
+            get { return this._start; }
+            set { this._start = value; }
+        }
+
+        // Check to see if Start property is set
+        internal bool IsSetStart()
+        {
+            return this._start != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimestampOffset. Only applies to outputs that support program-date-time
+        /// stamp. Use Time  stamp offset (TimestampOffset) to overwrite the timecode date without
+        /// affecting the time and frame number. Provide the new date as a string in the format
+        /// "yyyy-mm-dd".  To use Time stamp offset, you must also enable Insert program-date-time
+        /// (InsertProgramDateTime) in the output settings.
+        /// </summary>
+        public string TimestampOffset
+        {
+            get { return this._timestampOffset; }
+            set { this._timestampOffset = value; }
+        }
+
+        // Check to see if TimestampOffset property is set
+        internal bool IsSetTimestampOffset()
+        {
+            return this._timestampOffset != null;
+        }
+
+    }
+}
