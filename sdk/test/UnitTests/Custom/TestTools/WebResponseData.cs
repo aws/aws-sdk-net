@@ -38,7 +38,10 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         public string GetHeaderValue(string headerName)
         {
-            return this.Headers[headerName];
+            if (this.Headers.ContainsKey(headerName))
+                return this.Headers[headerName];
+            else
+                return null;
         }
         
         public long ContentLength { get; set; }

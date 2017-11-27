@@ -305,7 +305,9 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                             var index = -1;
                             for (int i = 0; i < operationUriSegments.Length; i++)
                             {
-                                if (operationUriSegments[i] == string.Format("{{{0}}}", member.MarshallLocationName))
+                                // Determines if a given member should be treated as a greedy path, meaning
+                                // that the resource path contains {MEMBER_NAME+} instead of simply {MEMBER_NAME}.
+                                if ((operationUriSegments[i] == string.Format("{{{0}}}", member.MarshallLocationName))|| (operationUriSegments[i] == string.Format("{{{0}+}}", member.MarshallLocationName)))
                                 {
                                     index = i; break;
                                 }

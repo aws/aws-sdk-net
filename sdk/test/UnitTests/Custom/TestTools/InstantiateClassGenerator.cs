@@ -181,7 +181,8 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
                 if (owningObject.GetType() == typeof(Amazon.Glacier.Model.GetJobOutputResponse) ||
                     owningObject.GetType() == typeof(Amazon.Lambda.Model.InvokeAsyncResponse) ||
-                    owningObject.GetType() == typeof(Amazon.Lambda.Model.InvokeResponse)) 
+                    owningObject.GetType() == typeof(Amazon.Lambda.Model.InvokeResponse)||
+                    (owningObject.GetType()== typeof(Amazon.MediaStoreData.Model.GetObjectResponse))) 
                 {
                     if (info.Name == "Status" ||
                         info.Name == "StatusCode")

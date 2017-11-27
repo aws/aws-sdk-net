@@ -20,103 +20,104 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="**/35/**"/>
+    <Compile Remove="**/35/**" />
     <None Remove="**/35/**" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Core\AWSSDK.Core.Net45.csproj"/>
-    <ProjectReference Include="..\Common\AWSSDK.CommonTest.Net45.csproj"/>
+    <ProjectReference Include="..\..\src\Core\AWSSDK.Core.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\MediaStoreData\AWSSDK.MediaStoreData.Net45.csproj" />
+    <ProjectReference Include="..\Common\AWSSDK.CommonTest.Net45.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Services\APIGateway\AWSSDK.APIGateway.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\ApplicationDiscoveryService\AWSSDK.ApplicationDiscoveryService.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\AutoScaling\AWSSDK.AutoScaling.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\AWSMarketplaceCommerceAnalytics\AWSSDK.AWSMarketplaceCommerceAnalytics.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\AWSSupport\AWSSDK.AWSSupport.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\Batch\AWSSDK.Batch.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\CertificateManager\AWSSDK.CertificateManager.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\CloudDirectory\AWSSDK.CloudDirectory.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\CloudFormation\AWSSDK.CloudFormation.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\CloudFront\AWSSDK.CloudFront.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\CloudHSM\AWSSDK.CloudHSM.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\CloudSearch\AWSSDK.CloudSearch.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\CloudTrail\AWSSDK.CloudTrail.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\CloudWatch\AWSSDK.CloudWatch.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\CloudWatchEvents\AWSSDK.CloudWatchEvents.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\CloudWatchLogs\AWSSDK.CloudWatchLogs.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\CodeDeploy\AWSSDK.CodeDeploy.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\CognitoIdentity\AWSSDK.CognitoIdentity.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\CognitoSync\AWSSDK.CognitoSync.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\ConfigService\AWSSDK.ConfigService.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\DatabaseMigrationService\AWSSDK.DatabaseMigrationService.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\DataPipeline\AWSSDK.DataPipeline.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\DirectConnect\AWSSDK.DirectConnect.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\DirectoryService\AWSSDK.DirectoryService.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\DynamoDBv2\AWSSDK.DynamoDBv2.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\EC2\AWSSDK.EC2.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\ECR\AWSSDK.ECR.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\ECS\AWSSDK.ECS.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\ElasticLoadBalancing\AWSSDK.ElasticLoadBalancing.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\ElasticLoadBalancingV2\AWSSDK.ElasticLoadBalancingV2.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\ElastiCache\AWSSDK.ElastiCache.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\Elasticsearch\AWSSDK.Elasticsearch.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\ElasticTranscoder\AWSSDK.ElasticTranscoder.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\GameLift\AWSSDK.GameLift.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\Glacier\AWSSDK.Glacier.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\IdentityManagement\AWSSDK.IdentityManagement.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\ImportExport\AWSSDK.ImportExport.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\Inspector\AWSSDK.Inspector.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\IoT\AWSSDK.IoT.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\IotData\AWSSDK.IotData.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\KeyManagementService\AWSSDK.KeyManagementService.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\Kinesis\AWSSDK.Kinesis.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\KinesisFirehose\AWSSDK.KinesisFirehose.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\Lambda\AWSSDK.Lambda.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\Lightsail\AWSSDK.Lightsail.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\MachineLearning\AWSSDK.MachineLearning.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\OpsWorks\AWSSDK.OpsWorks.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\Pinpoint\AWSSDK.Pinpoint.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\Polly\AWSSDK.Polly.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\RDS\AWSSDK.RDS.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\Redshift\AWSSDK.Redshift.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\Route53\AWSSDK.Route53.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\Route53Domains\AWSSDK.Route53Domains.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\ElasticBeanstalk\AWSSDK.ElasticBeanstalk.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\S3\AWSSDK.S3.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\SecurityToken\AWSSDK.SecurityToken.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\ServerMigrationService\AWSSDK.ServerMigrationService.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\SimpleDB\AWSSDK.SimpleDB.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\SimpleEmail\AWSSDK.SimpleEmail.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\SimpleNotificationService\AWSSDK.SimpleNotificationService.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\SimpleSystemsManagement\AWSSDK.SimpleSystemsManagement.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\SimpleWorkflow\AWSSDK.SimpleWorkflow.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\Snowball\AWSSDK.Snowball.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\StorageGateway\AWSSDK.StorageGateway.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\SQS\AWSSDK.SQS.Net45.csproj"/>
-    <ProjectReference Include="..\..\src\Services\WAF\AWSSDK.WAF.Net45.csproj"/>
+    <ProjectReference Include="..\..\src\Services\APIGateway\AWSSDK.APIGateway.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\ApplicationDiscoveryService\AWSSDK.ApplicationDiscoveryService.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\AutoScaling\AWSSDK.AutoScaling.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\AWSMarketplaceCommerceAnalytics\AWSSDK.AWSMarketplaceCommerceAnalytics.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\AWSSupport\AWSSDK.AWSSupport.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\Batch\AWSSDK.Batch.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\CertificateManager\AWSSDK.CertificateManager.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\CloudDirectory\AWSSDK.CloudDirectory.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\CloudFormation\AWSSDK.CloudFormation.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\CloudFront\AWSSDK.CloudFront.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\CloudHSM\AWSSDK.CloudHSM.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\CloudSearch\AWSSDK.CloudSearch.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\CloudTrail\AWSSDK.CloudTrail.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\CloudWatch\AWSSDK.CloudWatch.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\CloudWatchEvents\AWSSDK.CloudWatchEvents.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\CloudWatchLogs\AWSSDK.CloudWatchLogs.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\CodeDeploy\AWSSDK.CodeDeploy.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\CognitoIdentity\AWSSDK.CognitoIdentity.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\CognitoSync\AWSSDK.CognitoSync.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\ConfigService\AWSSDK.ConfigService.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\DatabaseMigrationService\AWSSDK.DatabaseMigrationService.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\DataPipeline\AWSSDK.DataPipeline.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\DirectConnect\AWSSDK.DirectConnect.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\DirectoryService\AWSSDK.DirectoryService.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\DynamoDBv2\AWSSDK.DynamoDBv2.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\EC2\AWSSDK.EC2.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\ECR\AWSSDK.ECR.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\ECS\AWSSDK.ECS.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\ElasticLoadBalancing\AWSSDK.ElasticLoadBalancing.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\ElasticLoadBalancingV2\AWSSDK.ElasticLoadBalancingV2.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\ElastiCache\AWSSDK.ElastiCache.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\Elasticsearch\AWSSDK.Elasticsearch.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\ElasticTranscoder\AWSSDK.ElasticTranscoder.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\GameLift\AWSSDK.GameLift.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\Glacier\AWSSDK.Glacier.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\IdentityManagement\AWSSDK.IdentityManagement.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\ImportExport\AWSSDK.ImportExport.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\Inspector\AWSSDK.Inspector.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\IoT\AWSSDK.IoT.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\IotData\AWSSDK.IotData.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\KeyManagementService\AWSSDK.KeyManagementService.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\Kinesis\AWSSDK.Kinesis.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\KinesisFirehose\AWSSDK.KinesisFirehose.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\Lambda\AWSSDK.Lambda.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\Lightsail\AWSSDK.Lightsail.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\MachineLearning\AWSSDK.MachineLearning.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\OpsWorks\AWSSDK.OpsWorks.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\Pinpoint\AWSSDK.Pinpoint.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\Polly\AWSSDK.Polly.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\RDS\AWSSDK.RDS.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\Redshift\AWSSDK.Redshift.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\Route53\AWSSDK.Route53.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\Route53Domains\AWSSDK.Route53Domains.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\ElasticBeanstalk\AWSSDK.ElasticBeanstalk.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\S3\AWSSDK.S3.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\SecurityToken\AWSSDK.SecurityToken.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\ServerMigrationService\AWSSDK.ServerMigrationService.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\SimpleDB\AWSSDK.SimpleDB.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\SimpleEmail\AWSSDK.SimpleEmail.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\SimpleNotificationService\AWSSDK.SimpleNotificationService.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\SimpleSystemsManagement\AWSSDK.SimpleSystemsManagement.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\SimpleWorkflow\AWSSDK.SimpleWorkflow.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\Snowball\AWSSDK.Snowball.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\StorageGateway\AWSSDK.StorageGateway.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\SQS\AWSSDK.SQS.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\WAF\AWSSDK.WAF.Net45.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="MSTest.TestAdapter" Version="1.1.18"/>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.0.0"/>
-    <PackageReference Include="MSTest.TestFramework" Version="1.1.18"/>
+    <PackageReference Include="MSTest.TestAdapter" Version="1.1.18" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.0.0" />
+    <PackageReference Include="MSTest.TestFramework" Version="1.1.18" />
 
-    <PackageReference Include="System.Data.SQLite" Version="1.0.97"/>
-    <PackageReference Include="System.Data.SQLite.EF6" Version="1.0.97"/>
-    <PackageReference Include="System.Data.SQLite.Linq" Version="1.0.97"/>
+    <PackageReference Include="System.Data.SQLite" Version="1.0.97" />
+    <PackageReference Include="System.Data.SQLite.EF6" Version="1.0.97" />
+    <PackageReference Include="System.Data.SQLite.Linq" Version="1.0.97" />
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="System.Configuration"/>
-    <Reference Include="System.ComponentModel.DataAnnotations"/>
-    <Reference Include="System.IO.Compression"/>
-    <Reference Include="System.Web"/>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Web" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Tests\CloudTrailBucketPolicy.json"/>
-    <EmbeddedResource Include="Tests\ListObjectsResponse.xml"/>
+    <EmbeddedResource Include="Tests\CloudTrailBucketPolicy.json" />
+    <EmbeddedResource Include="Tests\ListObjectsResponse.xml" />
   </ItemGroup>
 </Project>
