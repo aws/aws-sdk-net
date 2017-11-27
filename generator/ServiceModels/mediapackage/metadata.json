@@ -1,0 +1,5 @@
+{
+  "active": true,
+  "synopsis": "AWS Elemental MediaPackage is a just-in-time video packaging and origination service that lets you format highly secure and reliable live outputs for a variety of devices.",
+  "generate-client-constructors": true
+}
