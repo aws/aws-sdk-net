@@ -79,6 +79,60 @@ namespace Amazon.DynamoDBv2
 
 
     /// <summary>
+    /// Constants used for properties of type BackupStatus.
+    /// </summary>
+    public class BackupStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVAILABLE for BackupStatus
+        /// </summary>
+        public static readonly BackupStatus AVAILABLE = new BackupStatus("AVAILABLE");
+        /// <summary>
+        /// Constant CREATING for BackupStatus
+        /// </summary>
+        public static readonly BackupStatus CREATING = new BackupStatus("CREATING");
+        /// <summary>
+        /// Constant DELETED for BackupStatus
+        /// </summary>
+        public static readonly BackupStatus DELETED = new BackupStatus("DELETED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BackupStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BackupStatus FindValue(string value)
+        {
+            return FindValue<BackupStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BackupStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ComparisonOperator.
     /// </summary>
     public class ComparisonOperator : ConstantClass
@@ -216,6 +270,114 @@ namespace Amazon.DynamoDBv2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ConditionalOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ContinuousBackupsStatus.
+    /// </summary>
+    public class ContinuousBackupsStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for ContinuousBackupsStatus
+        /// </summary>
+        public static readonly ContinuousBackupsStatus DISABLED = new ContinuousBackupsStatus("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for ContinuousBackupsStatus
+        /// </summary>
+        public static readonly ContinuousBackupsStatus ENABLED = new ContinuousBackupsStatus("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContinuousBackupsStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContinuousBackupsStatus FindValue(string value)
+        {
+            return FindValue<ContinuousBackupsStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContinuousBackupsStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GlobalTableStatus.
+    /// </summary>
+    public class GlobalTableStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for GlobalTableStatus
+        /// </summary>
+        public static readonly GlobalTableStatus ACTIVE = new GlobalTableStatus("ACTIVE");
+        /// <summary>
+        /// Constant CREATING for GlobalTableStatus
+        /// </summary>
+        public static readonly GlobalTableStatus CREATING = new GlobalTableStatus("CREATING");
+        /// <summary>
+        /// Constant DELETING for GlobalTableStatus
+        /// </summary>
+        public static readonly GlobalTableStatus DELETING = new GlobalTableStatus("DELETING");
+        /// <summary>
+        /// Constant UPDATING for GlobalTableStatus
+        /// </summary>
+        public static readonly GlobalTableStatus UPDATING = new GlobalTableStatus("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GlobalTableStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GlobalTableStatus FindValue(string value)
+        {
+            return FindValue<GlobalTableStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GlobalTableStatus(string value)
         {
             return FindValue(value);
         }

@@ -1201,6 +1201,218 @@ namespace Amazon.DynamoDBv2
 
         #endregion
         
+        #region  CreateBackup
+
+
+        /// <summary>
+        /// Creates a backup for an existing table.
+        /// 
+        ///  
+        /// <para>
+        ///  Each time you create an On-Demand Backup, the entire table data is backed up. There
+        /// is no limit to the number of on-demand backups that can be taken. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can call <code>CreateBackup</code> at a maximum rate of 50 times per second.
+        /// </para>
+        ///  
+        /// <para>
+        /// All backups in DynamoDB work without consuming any provisioned throughput on the table.
+        /// This results in a fast, low-cost, and scalable backup process. In general, the larger
+        /// the table, the more time it takes to back up. The backup is stored in an S3 data store
+        /// that is maintained and managed by DynamoDB.
+        /// </para>
+        ///  
+        /// <para>
+        /// Backups incorporate all writes (delete, put, update) that were completed within the
+        /// last minute before the backup request was initiated. Backups might include some writes
+        /// (delete, put, update) that were completed before the backup request was finished.
+        /// </para>
+        ///  
+        /// <para>
+        ///  For example, if you submit the backup request on 2018-12-14 at 14:25:00, the backup
+        /// is guaranteed to contain all data committed to the table up to 14:24:00, and data
+        /// committed after 14:26:00 will not be. The backup may or may not contain data modifications
+        /// made between 14:24:00 and 14:26:00. On-Demand Backup does not support causal consistency.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Along with data, the following are also included on the backups: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Global secondary indexes (GSIs)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Local secondary indexes (LSIs)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Streams
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Provisioned read and write capacity
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBackup service method.</param>
+        /// 
+        /// <returns>The response from the CreateBackup service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.BackupInUseException">
+        /// There is another ongoing conflicting backup control plane operation on the table.
+        /// The backups is either being created, deleted or restored to a table.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ContinuousBackupsUnavailableException">
+        /// Backups have not yet been enabled for this table.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
+        /// The number of concurrent table requests (cumulative number of tables in the <code>CREATING</code>,
+        /// <code>DELETING</code> or <code>UPDATING</code> state) exceeds the maximum allowed
+        /// of 10.
+        /// 
+        ///  
+        /// <para>
+        /// Also, for tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
+        /// state at any point in time. Do not attempt to create more than one such table simultaneously.
+        /// </para>
+        ///  
+        /// <para>
+        /// The total limit of tables in the <code>ACTIVE</code> state is 250.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.TableInUseException">
+        /// A table by that name is either being created or deleted.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.TableNotFoundException">
+        /// A table with the name <code>TableName</code> does not currently exist within the subscriber's
+        /// account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateBackup">REST API Reference for CreateBackup Operation</seealso>
+        public virtual CreateBackupResponse CreateBackup(CreateBackupRequest request)
+        {
+            var marshaller = new CreateBackupRequestMarshaller();
+            var unmarshaller = CreateBackupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateBackupRequest,CreateBackupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateBackup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateBackup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateBackup">REST API Reference for CreateBackup Operation</seealso>
+        public virtual Task<CreateBackupResponse> CreateBackupAsync(CreateBackupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateBackupRequestMarshaller();
+            var unmarshaller = CreateBackupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateBackupRequest,CreateBackupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateGlobalTable
+
+
+        /// <summary>
+        /// Creates a global table from an existing table. A global table creates a replication
+        /// relationship between two or more DynamoDB tables with the same table name in the provided
+        /// regions. 
+        /// 
+        ///  
+        /// <para>
+        ///  Tables can only be added as the replicas of a global table group under the following
+        /// conditions: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  The tables must have the same name. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  The tables must contain no items. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  The tables must have the same hash key and sort key (if present). 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  The tables must have DynamoDB Streams enabled (NEW_AND_OLD_IMAGES). 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateGlobalTable service method.</param>
+        /// 
+        /// <returns>The response from the CreateGlobalTable service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.GlobalTableAlreadyExistsException">
+        /// The specified global table already exists.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
+        /// The number of concurrent table requests (cumulative number of tables in the <code>CREATING</code>,
+        /// <code>DELETING</code> or <code>UPDATING</code> state) exceeds the maximum allowed
+        /// of 10.
+        /// 
+        ///  
+        /// <para>
+        /// Also, for tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
+        /// state at any point in time. Do not attempt to create more than one such table simultaneously.
+        /// </para>
+        ///  
+        /// <para>
+        /// The total limit of tables in the <code>ACTIVE</code> state is 250.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.TableNotFoundException">
+        /// A table with the name <code>TableName</code> does not currently exist within the subscriber's
+        /// account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateGlobalTable">REST API Reference for CreateGlobalTable Operation</seealso>
+        public virtual CreateGlobalTableResponse CreateGlobalTable(CreateGlobalTableRequest request)
+        {
+            var marshaller = new CreateGlobalTableRequestMarshaller();
+            var unmarshaller = CreateGlobalTableResponseUnmarshaller.Instance;
+
+            return Invoke<CreateGlobalTableRequest,CreateGlobalTableResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateGlobalTable operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateGlobalTable operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateGlobalTable">REST API Reference for CreateGlobalTable Operation</seealso>
+        public virtual Task<CreateGlobalTableResponse> CreateGlobalTableAsync(CreateGlobalTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateGlobalTableRequestMarshaller();
+            var unmarshaller = CreateGlobalTableResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateGlobalTableRequest,CreateGlobalTableResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateTable
 
 
@@ -1415,6 +1627,75 @@ namespace Amazon.DynamoDBv2
             var unmarshaller = CreateTableResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateTableRequest,CreateTableResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteBackup
+
+
+        /// <summary>
+        /// Deletes an existing backup of a table.
+        /// 
+        ///  
+        /// <para>
+        /// You can call <code>DeleteBackup</code> at a maximum rate of 10 times per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBackup service method.</param>
+        /// 
+        /// <returns>The response from the DeleteBackup service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.BackupInUseException">
+        /// There is another ongoing conflicting backup control plane operation on the table.
+        /// The backups is either being created, deleted or restored to a table.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.BackupNotFoundException">
+        /// Backup not found for the given BackupARN.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
+        /// The number of concurrent table requests (cumulative number of tables in the <code>CREATING</code>,
+        /// <code>DELETING</code> or <code>UPDATING</code> state) exceeds the maximum allowed
+        /// of 10.
+        /// 
+        ///  
+        /// <para>
+        /// Also, for tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
+        /// state at any point in time. Do not attempt to create more than one such table simultaneously.
+        /// </para>
+        ///  
+        /// <para>
+        /// The total limit of tables in the <code>ACTIVE</code> state is 250.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteBackup">REST API Reference for DeleteBackup Operation</seealso>
+        public virtual DeleteBackupResponse DeleteBackup(DeleteBackupRequest request)
+        {
+            var marshaller = new DeleteBackupRequestMarshaller();
+            var unmarshaller = DeleteBackupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteBackupRequest,DeleteBackupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBackup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBackup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteBackup">REST API Reference for DeleteBackup Operation</seealso>
+        public virtual Task<DeleteBackupResponse> DeleteBackupAsync(DeleteBackupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteBackupRequestMarshaller();
+            var unmarshaller = DeleteBackupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteBackupRequest,DeleteBackupResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1966,6 +2247,154 @@ namespace Amazon.DynamoDBv2
             var unmarshaller = DeleteTableResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteTableRequest,DeleteTableResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeBackup
+
+
+        /// <summary>
+        /// Describes an existing backup of a table.
+        /// 
+        ///  
+        /// <para>
+        /// You can call <code>DescribeBackup</code> at a maximum rate of 10 times per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBackup service method.</param>
+        /// 
+        /// <returns>The response from the DescribeBackup service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.BackupNotFoundException">
+        /// Backup not found for the given BackupARN.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeBackup">REST API Reference for DescribeBackup Operation</seealso>
+        public virtual DescribeBackupResponse DescribeBackup(DescribeBackupRequest request)
+        {
+            var marshaller = new DescribeBackupRequestMarshaller();
+            var unmarshaller = DescribeBackupResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeBackupRequest,DescribeBackupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeBackup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBackup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeBackup">REST API Reference for DescribeBackup Operation</seealso>
+        public virtual Task<DescribeBackupResponse> DescribeBackupAsync(DescribeBackupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeBackupRequestMarshaller();
+            var unmarshaller = DescribeBackupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeBackupRequest,DescribeBackupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeContinuousBackups
+
+
+        /// <summary>
+        /// Checks the status of the backup restore settings on the specified table. If backups
+        /// are enabled, <code>ContinuousBackupsStatus</code> will bet set to ENABLED.
+        /// 
+        ///  
+        /// <para>
+        /// You can call <code>DescribeContinuousBackups</code> at a maximum rate of 10 times
+        /// per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeContinuousBackups service method.</param>
+        /// 
+        /// <returns>The response from the DescribeContinuousBackups service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.TableNotFoundException">
+        /// A table with the name <code>TableName</code> does not currently exist within the subscriber's
+        /// account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeContinuousBackups">REST API Reference for DescribeContinuousBackups Operation</seealso>
+        public virtual DescribeContinuousBackupsResponse DescribeContinuousBackups(DescribeContinuousBackupsRequest request)
+        {
+            var marshaller = new DescribeContinuousBackupsRequestMarshaller();
+            var unmarshaller = DescribeContinuousBackupsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeContinuousBackupsRequest,DescribeContinuousBackupsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeContinuousBackups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeContinuousBackups operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeContinuousBackups">REST API Reference for DescribeContinuousBackups Operation</seealso>
+        public virtual Task<DescribeContinuousBackupsResponse> DescribeContinuousBackupsAsync(DescribeContinuousBackupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeContinuousBackupsRequestMarshaller();
+            var unmarshaller = DescribeContinuousBackupsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeContinuousBackupsRequest,DescribeContinuousBackupsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeGlobalTable
+
+
+        /// <summary>
+        /// Returns information about the global table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeGlobalTable service method.</param>
+        /// 
+        /// <returns>The response from the DescribeGlobalTable service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.GlobalTableNotFoundException">
+        /// The specified global table does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeGlobalTable">REST API Reference for DescribeGlobalTable Operation</seealso>
+        public virtual DescribeGlobalTableResponse DescribeGlobalTable(DescribeGlobalTableRequest request)
+        {
+            var marshaller = new DescribeGlobalTableRequestMarshaller();
+            var unmarshaller = DescribeGlobalTableResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeGlobalTableRequest,DescribeGlobalTableResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeGlobalTable operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeGlobalTable operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeGlobalTable">REST API Reference for DescribeGlobalTable Operation</seealso>
+        public virtual Task<DescribeGlobalTableResponse> DescribeGlobalTableAsync(DescribeGlobalTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeGlobalTableRequestMarshaller();
+            var unmarshaller = DescribeGlobalTableResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeGlobalTableRequest,DescribeGlobalTableResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2550,6 +2979,104 @@ namespace Amazon.DynamoDBv2
             var unmarshaller = GetItemResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetItemRequest,GetItemResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListBackups
+
+
+        /// <summary>
+        /// List backups associated with an AWS account. To list backups for a given table, specify
+        /// <code>TableName</code>. <code>ListBackups</code> returns a paginated list of results
+        /// with at most 1MB worth of items in a page. You can also specify a limit for the maximum
+        /// number of entries to be returned in a page. 
+        /// 
+        ///  
+        /// <para>
+        /// In the request, start time is inclusive but end time is exclusive. Note that these
+        /// limits are for the time at which the original backup was requested.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can call <code>ListBackups</code> a maximum of 5 times per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBackups service method.</param>
+        /// 
+        /// <returns>The response from the ListBackups service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListBackups">REST API Reference for ListBackups Operation</seealso>
+        public virtual ListBackupsResponse ListBackups(ListBackupsRequest request)
+        {
+            var marshaller = new ListBackupsRequestMarshaller();
+            var unmarshaller = ListBackupsResponseUnmarshaller.Instance;
+
+            return Invoke<ListBackupsRequest,ListBackupsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListBackups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListBackups operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListBackups">REST API Reference for ListBackups Operation</seealso>
+        public virtual Task<ListBackupsResponse> ListBackupsAsync(ListBackupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListBackupsRequestMarshaller();
+            var unmarshaller = ListBackupsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListBackupsRequest,ListBackupsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListGlobalTables
+
+
+        /// <summary>
+        /// Lists all the global tables. Only those global tables that have replicas in the region
+        /// specified as input are returned.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListGlobalTables service method.</param>
+        /// 
+        /// <returns>The response from the ListGlobalTables service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListGlobalTables">REST API Reference for ListGlobalTables Operation</seealso>
+        public virtual ListGlobalTablesResponse ListGlobalTables(ListGlobalTablesRequest request)
+        {
+            var marshaller = new ListGlobalTablesRequestMarshaller();
+            var unmarshaller = ListGlobalTablesResponseUnmarshaller.Instance;
+
+            return Invoke<ListGlobalTablesRequest,ListGlobalTablesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListGlobalTables operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListGlobalTables operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListGlobalTables">REST API Reference for ListGlobalTables Operation</seealso>
+        public virtual Task<ListGlobalTablesResponse> ListGlobalTablesAsync(ListGlobalTablesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListGlobalTablesRequestMarshaller();
+            var unmarshaller = ListGlobalTablesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListGlobalTablesRequest,ListGlobalTablesResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -3560,6 +4087,108 @@ namespace Amazon.DynamoDBv2
 
         #endregion
         
+        #region  RestoreTableFromBackup
+
+
+        /// <summary>
+        /// Creates a new table from an existing backup. Any number of users can execute up to
+        /// 10 concurrent restores in a given account. 
+        /// 
+        ///  
+        /// <para>
+        /// You can call <code>RestoreTableFromBackup</code> at a maximum rate of 10 times per
+        /// second.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must manually set up the following on the restored table:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Auto scaling policies
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// IAM policies
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cloudwatch metrics and alarms
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Tags
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Time to Live (TTL) settings
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreTableFromBackup service method.</param>
+        /// 
+        /// <returns>The response from the RestoreTableFromBackup service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.BackupInUseException">
+        /// There is another ongoing conflicting backup control plane operation on the table.
+        /// The backups is either being created, deleted or restored to a table.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.BackupNotFoundException">
+        /// Backup not found for the given BackupARN.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
+        /// The number of concurrent table requests (cumulative number of tables in the <code>CREATING</code>,
+        /// <code>DELETING</code> or <code>UPDATING</code> state) exceeds the maximum allowed
+        /// of 10.
+        /// 
+        ///  
+        /// <para>
+        /// Also, for tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
+        /// state at any point in time. Do not attempt to create more than one such table simultaneously.
+        /// </para>
+        ///  
+        /// <para>
+        /// The total limit of tables in the <code>ACTIVE</code> state is 250.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.TableAlreadyExistsException">
+        /// A table with the name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.TableInUseException">
+        /// A table by that name is either being created or deleted.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/RestoreTableFromBackup">REST API Reference for RestoreTableFromBackup Operation</seealso>
+        public virtual RestoreTableFromBackupResponse RestoreTableFromBackup(RestoreTableFromBackupRequest request)
+        {
+            var marshaller = new RestoreTableFromBackupRequestMarshaller();
+            var unmarshaller = RestoreTableFromBackupResponseUnmarshaller.Instance;
+
+            return Invoke<RestoreTableFromBackupRequest,RestoreTableFromBackupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RestoreTableFromBackup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RestoreTableFromBackup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/RestoreTableFromBackup">REST API Reference for RestoreTableFromBackup Operation</seealso>
+        public virtual Task<RestoreTableFromBackupResponse> RestoreTableFromBackupAsync(RestoreTableFromBackupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new RestoreTableFromBackupRequestMarshaller();
+            var unmarshaller = RestoreTableFromBackupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RestoreTableFromBackupRequest,RestoreTableFromBackupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  Scan
 
 
@@ -4207,6 +4836,63 @@ namespace Amazon.DynamoDBv2
             var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<UntagResourceRequest,UntagResourceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateGlobalTable
+
+
+        /// <summary>
+        /// Adds or removes replicas to the specified global table. The global table should already
+        /// exist to be able to use this operation. Currently, the replica to be added should
+        /// be empty.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGlobalTable service method.</param>
+        /// 
+        /// <returns>The response from the UpdateGlobalTable service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.GlobalTableNotFoundException">
+        /// The specified global table does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ReplicaAlreadyExistsException">
+        /// The specified replica is already part of the global table.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ReplicaNotFoundException">
+        /// The specified replica is no longer part of the global table.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.TableNotFoundException">
+        /// A table with the name <code>TableName</code> does not currently exist within the subscriber's
+        /// account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateGlobalTable">REST API Reference for UpdateGlobalTable Operation</seealso>
+        public virtual UpdateGlobalTableResponse UpdateGlobalTable(UpdateGlobalTableRequest request)
+        {
+            var marshaller = new UpdateGlobalTableRequestMarshaller();
+            var unmarshaller = UpdateGlobalTableResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateGlobalTableRequest,UpdateGlobalTableResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateGlobalTable operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGlobalTable operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateGlobalTable">REST API Reference for UpdateGlobalTable Operation</seealso>
+        public virtual Task<UpdateGlobalTableResponse> UpdateGlobalTableAsync(UpdateGlobalTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateGlobalTableRequestMarshaller();
+            var unmarshaller = UpdateGlobalTableResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateGlobalTableRequest,UpdateGlobalTableResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

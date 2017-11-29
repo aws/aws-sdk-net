@@ -663,6 +663,70 @@ namespace Amazon.DynamoDBv2
 
         #endregion
         
+        #region  CreateBackup
+
+        internal virtual CreateBackupResponse CreateBackup(CreateBackupRequest request)
+        {
+            var marshaller = new CreateBackupRequestMarshaller();
+            var unmarshaller = CreateBackupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateBackupRequest,CreateBackupResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateBackup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateBackup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateBackup">REST API Reference for CreateBackup Operation</seealso>
+        public virtual Task<CreateBackupResponse> CreateBackupAsync(CreateBackupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateBackupRequestMarshaller();
+            var unmarshaller = CreateBackupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateBackupRequest,CreateBackupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateGlobalTable
+
+        internal virtual CreateGlobalTableResponse CreateGlobalTable(CreateGlobalTableRequest request)
+        {
+            var marshaller = new CreateGlobalTableRequestMarshaller();
+            var unmarshaller = CreateGlobalTableResponseUnmarshaller.Instance;
+
+            return Invoke<CreateGlobalTableRequest,CreateGlobalTableResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateGlobalTable operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateGlobalTable operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateGlobalTable">REST API Reference for CreateGlobalTable Operation</seealso>
+        public virtual Task<CreateGlobalTableResponse> CreateGlobalTableAsync(CreateGlobalTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateGlobalTableRequestMarshaller();
+            var unmarshaller = CreateGlobalTableResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateGlobalTableRequest,CreateGlobalTableResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateTable
 
         internal virtual CreateTableResponse CreateTable(CreateTableRequest request)
@@ -759,6 +823,38 @@ namespace Amazon.DynamoDBv2
             var unmarshaller = CreateTableResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateTableRequest,CreateTableResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteBackup
+
+        internal virtual DeleteBackupResponse DeleteBackup(DeleteBackupRequest request)
+        {
+            var marshaller = new DeleteBackupRequestMarshaller();
+            var unmarshaller = DeleteBackupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteBackupRequest,DeleteBackupResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBackup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBackup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteBackup">REST API Reference for DeleteBackup Operation</seealso>
+        public virtual Task<DeleteBackupResponse> DeleteBackupAsync(DeleteBackupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteBackupRequestMarshaller();
+            var unmarshaller = DeleteBackupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteBackupRequest,DeleteBackupResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1017,6 +1113,102 @@ namespace Amazon.DynamoDBv2
             var unmarshaller = DeleteTableResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteTableRequest,DeleteTableResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeBackup
+
+        internal virtual DescribeBackupResponse DescribeBackup(DescribeBackupRequest request)
+        {
+            var marshaller = new DescribeBackupRequestMarshaller();
+            var unmarshaller = DescribeBackupResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeBackupRequest,DescribeBackupResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeBackup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBackup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeBackup">REST API Reference for DescribeBackup Operation</seealso>
+        public virtual Task<DescribeBackupResponse> DescribeBackupAsync(DescribeBackupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeBackupRequestMarshaller();
+            var unmarshaller = DescribeBackupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeBackupRequest,DescribeBackupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeContinuousBackups
+
+        internal virtual DescribeContinuousBackupsResponse DescribeContinuousBackups(DescribeContinuousBackupsRequest request)
+        {
+            var marshaller = new DescribeContinuousBackupsRequestMarshaller();
+            var unmarshaller = DescribeContinuousBackupsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeContinuousBackupsRequest,DescribeContinuousBackupsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeContinuousBackups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeContinuousBackups operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeContinuousBackups">REST API Reference for DescribeContinuousBackups Operation</seealso>
+        public virtual Task<DescribeContinuousBackupsResponse> DescribeContinuousBackupsAsync(DescribeContinuousBackupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeContinuousBackupsRequestMarshaller();
+            var unmarshaller = DescribeContinuousBackupsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeContinuousBackupsRequest,DescribeContinuousBackupsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeGlobalTable
+
+        internal virtual DescribeGlobalTableResponse DescribeGlobalTable(DescribeGlobalTableRequest request)
+        {
+            var marshaller = new DescribeGlobalTableRequestMarshaller();
+            var unmarshaller = DescribeGlobalTableResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeGlobalTableRequest,DescribeGlobalTableResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeGlobalTable operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeGlobalTable operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeGlobalTable">REST API Reference for DescribeGlobalTable Operation</seealso>
+        public virtual Task<DescribeGlobalTableResponse> DescribeGlobalTableAsync(DescribeGlobalTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeGlobalTableRequestMarshaller();
+            var unmarshaller = DescribeGlobalTableResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeGlobalTableRequest,DescribeGlobalTableResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1296,6 +1488,70 @@ namespace Amazon.DynamoDBv2
             var unmarshaller = GetItemResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetItemRequest,GetItemResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListBackups
+
+        internal virtual ListBackupsResponse ListBackups(ListBackupsRequest request)
+        {
+            var marshaller = new ListBackupsRequestMarshaller();
+            var unmarshaller = ListBackupsResponseUnmarshaller.Instance;
+
+            return Invoke<ListBackupsRequest,ListBackupsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListBackups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListBackups operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListBackups">REST API Reference for ListBackups Operation</seealso>
+        public virtual Task<ListBackupsResponse> ListBackupsAsync(ListBackupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListBackupsRequestMarshaller();
+            var unmarshaller = ListBackupsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListBackupsRequest,ListBackupsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListGlobalTables
+
+        internal virtual ListGlobalTablesResponse ListGlobalTables(ListGlobalTablesRequest request)
+        {
+            var marshaller = new ListGlobalTablesRequestMarshaller();
+            var unmarshaller = ListGlobalTablesResponseUnmarshaller.Instance;
+
+            return Invoke<ListGlobalTablesRequest,ListGlobalTablesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListGlobalTables operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListGlobalTables operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListGlobalTables">REST API Reference for ListGlobalTables Operation</seealso>
+        public virtual Task<ListGlobalTablesResponse> ListGlobalTablesAsync(ListGlobalTablesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListGlobalTablesRequestMarshaller();
+            var unmarshaller = ListGlobalTablesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListGlobalTablesRequest,ListGlobalTablesResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1768,6 +2024,38 @@ namespace Amazon.DynamoDBv2
 
         #endregion
         
+        #region  RestoreTableFromBackup
+
+        internal virtual RestoreTableFromBackupResponse RestoreTableFromBackup(RestoreTableFromBackupRequest request)
+        {
+            var marshaller = new RestoreTableFromBackupRequestMarshaller();
+            var unmarshaller = RestoreTableFromBackupResponseUnmarshaller.Instance;
+
+            return Invoke<RestoreTableFromBackupRequest,RestoreTableFromBackupResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RestoreTableFromBackup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RestoreTableFromBackup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/RestoreTableFromBackup">REST API Reference for RestoreTableFromBackup Operation</seealso>
+        public virtual Task<RestoreTableFromBackupResponse> RestoreTableFromBackupAsync(RestoreTableFromBackupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new RestoreTableFromBackupRequestMarshaller();
+            var unmarshaller = RestoreTableFromBackupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RestoreTableFromBackupRequest,RestoreTableFromBackupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  Scan
 
         internal virtual ScanResponse Scan(ScanRequest request)
@@ -2071,6 +2359,38 @@ namespace Amazon.DynamoDBv2
             var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<UntagResourceRequest,UntagResourceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateGlobalTable
+
+        internal virtual UpdateGlobalTableResponse UpdateGlobalTable(UpdateGlobalTableRequest request)
+        {
+            var marshaller = new UpdateGlobalTableRequestMarshaller();
+            var unmarshaller = UpdateGlobalTableResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateGlobalTableRequest,UpdateGlobalTableResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateGlobalTable operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGlobalTable operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateGlobalTable">REST API Reference for UpdateGlobalTable Operation</seealso>
+        public virtual Task<UpdateGlobalTableResponse> UpdateGlobalTableAsync(UpdateGlobalTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateGlobalTableRequestMarshaller();
+            var unmarshaller = UpdateGlobalTableResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateGlobalTableRequest,UpdateGlobalTableResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

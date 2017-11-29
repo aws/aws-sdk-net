@@ -416,6 +416,40 @@ namespace Amazon.DynamoDBv2
 
         #endregion
         
+        #region  CreateBackup
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateBackup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateBackup operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateBackup">REST API Reference for CreateBackup Operation</seealso>
+        void CreateBackupAsync(CreateBackupRequest request, AmazonServiceCallback<CreateBackupRequest, CreateBackupResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
+        #region  CreateGlobalTable
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateGlobalTable operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateGlobalTable operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateGlobalTable">REST API Reference for CreateGlobalTable Operation</seealso>
+        void CreateGlobalTableAsync(CreateGlobalTableRequest request, AmazonServiceCallback<CreateGlobalTableRequest, CreateGlobalTableResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
         #region  CreateTable
 
 
@@ -491,6 +525,23 @@ namespace Amazon.DynamoDBv2
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateTable">REST API Reference for CreateTable Operation</seealso>
         void CreateTableAsync(CreateTableRequest request, AmazonServiceCallback<CreateTableRequest, CreateTableResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
+        #region  DeleteBackup
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBackup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBackup operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteBackup">REST API Reference for DeleteBackup Operation</seealso>
+        void DeleteBackupAsync(DeleteBackupRequest request, AmazonServiceCallback<DeleteBackupRequest, DeleteBackupResponse> callback, AsyncOptions options = null);
 
 
         #endregion
@@ -708,6 +759,57 @@ namespace Amazon.DynamoDBv2
 
         #endregion
         
+        #region  DescribeBackup
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeBackup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBackup operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeBackup">REST API Reference for DescribeBackup Operation</seealso>
+        void DescribeBackupAsync(DescribeBackupRequest request, AmazonServiceCallback<DescribeBackupRequest, DescribeBackupResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
+        #region  DescribeContinuousBackups
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeContinuousBackups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeContinuousBackups operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeContinuousBackups">REST API Reference for DescribeContinuousBackups Operation</seealso>
+        void DescribeContinuousBackupsAsync(DescribeContinuousBackupsRequest request, AmazonServiceCallback<DescribeContinuousBackupsRequest, DescribeContinuousBackupsResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
+        #region  DescribeGlobalTable
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeGlobalTable operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeGlobalTable operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeGlobalTable">REST API Reference for DescribeGlobalTable Operation</seealso>
+        void DescribeGlobalTableAsync(DescribeGlobalTableRequest request, AmazonServiceCallback<DescribeGlobalTableRequest, DescribeGlobalTableResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
         #region  DescribeLimits
 
 
@@ -904,6 +1006,40 @@ namespace Amazon.DynamoDBv2
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/GetItem">REST API Reference for GetItem Operation</seealso>
         void GetItemAsync(GetItemRequest request, AmazonServiceCallback<GetItemRequest, GetItemResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
+        #region  ListBackups
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListBackups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListBackups operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListBackups">REST API Reference for ListBackups Operation</seealso>
+        void ListBackupsAsync(ListBackupsRequest request, AmazonServiceCallback<ListBackupsRequest, ListBackupsResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
+        #region  ListGlobalTables
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListGlobalTables operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListGlobalTables operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListGlobalTables">REST API Reference for ListGlobalTables Operation</seealso>
+        void ListGlobalTablesAsync(ListGlobalTablesRequest request, AmazonServiceCallback<ListGlobalTablesRequest, ListGlobalTablesResponse> callback, AsyncOptions options = null);
 
 
         #endregion
@@ -1267,6 +1403,23 @@ namespace Amazon.DynamoDBv2
 
         #endregion
         
+        #region  RestoreTableFromBackup
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RestoreTableFromBackup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RestoreTableFromBackup operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/RestoreTableFromBackup">REST API Reference for RestoreTableFromBackup Operation</seealso>
+        void RestoreTableFromBackupAsync(RestoreTableFromBackupRequest request, AmazonServiceCallback<RestoreTableFromBackupRequest, RestoreTableFromBackupResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
         #region  Scan
 
 
@@ -1510,6 +1663,23 @@ namespace Amazon.DynamoDBv2
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         void UntagResourceAsync(UntagResourceRequest request, AmazonServiceCallback<UntagResourceRequest, UntagResourceResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
+        #region  UpdateGlobalTable
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateGlobalTable operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGlobalTable operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateGlobalTable">REST API Reference for UpdateGlobalTable Operation</seealso>
+        void UpdateGlobalTableAsync(UpdateGlobalTableRequest request, AmazonServiceCallback<UpdateGlobalTableRequest, UpdateGlobalTableResponse> callback, AsyncOptions options = null);
 
 
         #endregion

@@ -610,6 +610,76 @@ namespace Amazon.DynamoDBv2
 
         #endregion
         
+        #region  CreateBackup
+        internal virtual CreateBackupResponse CreateBackup(CreateBackupRequest request)
+        {
+            var marshaller = new CreateBackupRequestMarshaller();
+            var unmarshaller = CreateBackupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateBackupRequest,CreateBackupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateBackup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateBackup operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateBackup">REST API Reference for CreateBackup Operation</seealso>
+        public virtual void CreateBackupAsync(CreateBackupRequest request, AmazonServiceCallback<CreateBackupRequest, CreateBackupResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new CreateBackupRequestMarshaller();
+            var unmarshaller = CreateBackupResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<CreateBackupRequest,CreateBackupResponse> responseObject 
+                            = new AmazonServiceResult<CreateBackupRequest,CreateBackupResponse>((CreateBackupRequest)req, (CreateBackupResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<CreateBackupRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  CreateGlobalTable
+        internal virtual CreateGlobalTableResponse CreateGlobalTable(CreateGlobalTableRequest request)
+        {
+            var marshaller = new CreateGlobalTableRequestMarshaller();
+            var unmarshaller = CreateGlobalTableResponseUnmarshaller.Instance;
+
+            return Invoke<CreateGlobalTableRequest,CreateGlobalTableResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateGlobalTable operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateGlobalTable operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateGlobalTable">REST API Reference for CreateGlobalTable Operation</seealso>
+        public virtual void CreateGlobalTableAsync(CreateGlobalTableRequest request, AmazonServiceCallback<CreateGlobalTableRequest, CreateGlobalTableResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new CreateGlobalTableRequestMarshaller();
+            var unmarshaller = CreateGlobalTableResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<CreateGlobalTableRequest,CreateGlobalTableResponse> responseObject 
+                            = new AmazonServiceResult<CreateGlobalTableRequest,CreateGlobalTableResponse>((CreateGlobalTableRequest)req, (CreateGlobalTableResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<CreateGlobalTableRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
         #region  CreateTable
         internal virtual CreateTableResponse CreateTable(CreateTableRequest request)
         {
@@ -712,6 +782,41 @@ namespace Amazon.DynamoDBv2
                         callback(responseObject); 
                 };
             BeginInvoke<CreateTableRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  DeleteBackup
+        internal virtual DeleteBackupResponse DeleteBackup(DeleteBackupRequest request)
+        {
+            var marshaller = new DeleteBackupRequestMarshaller();
+            var unmarshaller = DeleteBackupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteBackupRequest,DeleteBackupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBackup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBackup operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteBackup">REST API Reference for DeleteBackup Operation</seealso>
+        public virtual void DeleteBackupAsync(DeleteBackupRequest request, AmazonServiceCallback<DeleteBackupRequest, DeleteBackupResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new DeleteBackupRequestMarshaller();
+            var unmarshaller = DeleteBackupResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<DeleteBackupRequest,DeleteBackupResponse> responseObject 
+                            = new AmazonServiceResult<DeleteBackupRequest,DeleteBackupResponse>((DeleteBackupRequest)req, (DeleteBackupResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<DeleteBackupRequest>(request, marshaller, unmarshaller, options, callbackHelper);
         }
 
         #endregion
@@ -982,6 +1087,111 @@ namespace Amazon.DynamoDBv2
                         callback(responseObject); 
                 };
             BeginInvoke<DeleteTableRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  DescribeBackup
+        internal virtual DescribeBackupResponse DescribeBackup(DescribeBackupRequest request)
+        {
+            var marshaller = new DescribeBackupRequestMarshaller();
+            var unmarshaller = DescribeBackupResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeBackupRequest,DescribeBackupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeBackup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBackup operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeBackup">REST API Reference for DescribeBackup Operation</seealso>
+        public virtual void DescribeBackupAsync(DescribeBackupRequest request, AmazonServiceCallback<DescribeBackupRequest, DescribeBackupResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new DescribeBackupRequestMarshaller();
+            var unmarshaller = DescribeBackupResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<DescribeBackupRequest,DescribeBackupResponse> responseObject 
+                            = new AmazonServiceResult<DescribeBackupRequest,DescribeBackupResponse>((DescribeBackupRequest)req, (DescribeBackupResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<DescribeBackupRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  DescribeContinuousBackups
+        internal virtual DescribeContinuousBackupsResponse DescribeContinuousBackups(DescribeContinuousBackupsRequest request)
+        {
+            var marshaller = new DescribeContinuousBackupsRequestMarshaller();
+            var unmarshaller = DescribeContinuousBackupsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeContinuousBackupsRequest,DescribeContinuousBackupsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeContinuousBackups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeContinuousBackups operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeContinuousBackups">REST API Reference for DescribeContinuousBackups Operation</seealso>
+        public virtual void DescribeContinuousBackupsAsync(DescribeContinuousBackupsRequest request, AmazonServiceCallback<DescribeContinuousBackupsRequest, DescribeContinuousBackupsResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new DescribeContinuousBackupsRequestMarshaller();
+            var unmarshaller = DescribeContinuousBackupsResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<DescribeContinuousBackupsRequest,DescribeContinuousBackupsResponse> responseObject 
+                            = new AmazonServiceResult<DescribeContinuousBackupsRequest,DescribeContinuousBackupsResponse>((DescribeContinuousBackupsRequest)req, (DescribeContinuousBackupsResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<DescribeContinuousBackupsRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  DescribeGlobalTable
+        internal virtual DescribeGlobalTableResponse DescribeGlobalTable(DescribeGlobalTableRequest request)
+        {
+            var marshaller = new DescribeGlobalTableRequestMarshaller();
+            var unmarshaller = DescribeGlobalTableResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeGlobalTableRequest,DescribeGlobalTableResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeGlobalTable operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeGlobalTable operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeGlobalTable">REST API Reference for DescribeGlobalTable Operation</seealso>
+        public virtual void DescribeGlobalTableAsync(DescribeGlobalTableRequest request, AmazonServiceCallback<DescribeGlobalTableRequest, DescribeGlobalTableResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new DescribeGlobalTableRequestMarshaller();
+            var unmarshaller = DescribeGlobalTableResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<DescribeGlobalTableRequest,DescribeGlobalTableResponse> responseObject 
+                            = new AmazonServiceResult<DescribeGlobalTableRequest,DescribeGlobalTableResponse>((DescribeGlobalTableRequest)req, (DescribeGlobalTableResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<DescribeGlobalTableRequest>(request, marshaller, unmarshaller, options, callbackHelper);
         }
 
         #endregion
@@ -1281,6 +1491,76 @@ namespace Amazon.DynamoDBv2
                         callback(responseObject); 
                 };
             BeginInvoke<GetItemRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  ListBackups
+        internal virtual ListBackupsResponse ListBackups(ListBackupsRequest request)
+        {
+            var marshaller = new ListBackupsRequestMarshaller();
+            var unmarshaller = ListBackupsResponseUnmarshaller.Instance;
+
+            return Invoke<ListBackupsRequest,ListBackupsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListBackups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListBackups operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListBackups">REST API Reference for ListBackups Operation</seealso>
+        public virtual void ListBackupsAsync(ListBackupsRequest request, AmazonServiceCallback<ListBackupsRequest, ListBackupsResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new ListBackupsRequestMarshaller();
+            var unmarshaller = ListBackupsResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<ListBackupsRequest,ListBackupsResponse> responseObject 
+                            = new AmazonServiceResult<ListBackupsRequest,ListBackupsResponse>((ListBackupsRequest)req, (ListBackupsResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<ListBackupsRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  ListGlobalTables
+        internal virtual ListGlobalTablesResponse ListGlobalTables(ListGlobalTablesRequest request)
+        {
+            var marshaller = new ListGlobalTablesRequestMarshaller();
+            var unmarshaller = ListGlobalTablesResponseUnmarshaller.Instance;
+
+            return Invoke<ListGlobalTablesRequest,ListGlobalTablesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListGlobalTables operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListGlobalTables operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListGlobalTables">REST API Reference for ListGlobalTables Operation</seealso>
+        public virtual void ListGlobalTablesAsync(ListGlobalTablesRequest request, AmazonServiceCallback<ListGlobalTablesRequest, ListGlobalTablesResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new ListGlobalTablesRequestMarshaller();
+            var unmarshaller = ListGlobalTablesResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<ListGlobalTablesRequest,ListGlobalTablesResponse> responseObject 
+                            = new AmazonServiceResult<ListGlobalTablesRequest,ListGlobalTablesResponse>((ListGlobalTablesRequest)req, (ListGlobalTablesResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<ListGlobalTablesRequest>(request, marshaller, unmarshaller, options, callbackHelper);
         }
 
         #endregion
@@ -1789,6 +2069,41 @@ namespace Amazon.DynamoDBv2
 
         #endregion
         
+        #region  RestoreTableFromBackup
+        internal virtual RestoreTableFromBackupResponse RestoreTableFromBackup(RestoreTableFromBackupRequest request)
+        {
+            var marshaller = new RestoreTableFromBackupRequestMarshaller();
+            var unmarshaller = RestoreTableFromBackupResponseUnmarshaller.Instance;
+
+            return Invoke<RestoreTableFromBackupRequest,RestoreTableFromBackupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RestoreTableFromBackup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RestoreTableFromBackup operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/RestoreTableFromBackup">REST API Reference for RestoreTableFromBackup Operation</seealso>
+        public virtual void RestoreTableFromBackupAsync(RestoreTableFromBackupRequest request, AmazonServiceCallback<RestoreTableFromBackupRequest, RestoreTableFromBackupResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new RestoreTableFromBackupRequestMarshaller();
+            var unmarshaller = RestoreTableFromBackupResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<RestoreTableFromBackupRequest,RestoreTableFromBackupResponse> responseObject 
+                            = new AmazonServiceResult<RestoreTableFromBackupRequest,RestoreTableFromBackupResponse>((RestoreTableFromBackupRequest)req, (RestoreTableFromBackupResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<RestoreTableFromBackupRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
         #region  Scan
         internal virtual ScanResponse Scan(ScanRequest request)
         {
@@ -2108,6 +2423,41 @@ namespace Amazon.DynamoDBv2
                         callback(responseObject); 
                 };
             BeginInvoke<UntagResourceRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  UpdateGlobalTable
+        internal virtual UpdateGlobalTableResponse UpdateGlobalTable(UpdateGlobalTableRequest request)
+        {
+            var marshaller = new UpdateGlobalTableRequestMarshaller();
+            var unmarshaller = UpdateGlobalTableResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateGlobalTableRequest,UpdateGlobalTableResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateGlobalTable operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGlobalTable operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateGlobalTable">REST API Reference for UpdateGlobalTable Operation</seealso>
+        public virtual void UpdateGlobalTableAsync(UpdateGlobalTableRequest request, AmazonServiceCallback<UpdateGlobalTableRequest, UpdateGlobalTableResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new UpdateGlobalTableRequestMarshaller();
+            var unmarshaller = UpdateGlobalTableResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<UpdateGlobalTableRequest,UpdateGlobalTableResponse> responseObject 
+                            = new AmazonServiceResult<UpdateGlobalTableRequest,UpdateGlobalTableResponse>((UpdateGlobalTableRequest)req, (UpdateGlobalTableResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<UpdateGlobalTableRequest>(request, marshaller, unmarshaller, options, callbackHelper);
         }
 
         #endregion

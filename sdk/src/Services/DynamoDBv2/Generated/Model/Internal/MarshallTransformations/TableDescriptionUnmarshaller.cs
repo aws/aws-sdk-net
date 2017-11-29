@@ -118,6 +118,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     unmarshalledObject.ProvisionedThroughput = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RestoreSummary", targetDepth))
+                {
+                    var unmarshaller = RestoreSummaryUnmarshaller.Instance;
+                    unmarshalledObject.RestoreSummary = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("StreamSpecification", targetDepth))
                 {
                     var unmarshaller = StreamSpecificationUnmarshaller.Instance;
@@ -128,6 +134,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TableArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TableId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TableId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TableName", targetDepth))

@@ -647,6 +647,220 @@ namespace Amazon.DynamoDBv2
 
         #endregion
         
+        #region  CreateBackup
+
+
+        /// <summary>
+        /// Creates a backup for an existing table.
+        /// 
+        ///  
+        /// <para>
+        ///  Each time you create an On-Demand Backup, the entire table data is backed up. There
+        /// is no limit to the number of on-demand backups that can be taken. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can call <code>CreateBackup</code> at a maximum rate of 50 times per second.
+        /// </para>
+        ///  
+        /// <para>
+        /// All backups in DynamoDB work without consuming any provisioned throughput on the table.
+        /// This results in a fast, low-cost, and scalable backup process. In general, the larger
+        /// the table, the more time it takes to back up. The backup is stored in an S3 data store
+        /// that is maintained and managed by DynamoDB.
+        /// </para>
+        ///  
+        /// <para>
+        /// Backups incorporate all writes (delete, put, update) that were completed within the
+        /// last minute before the backup request was initiated. Backups might include some writes
+        /// (delete, put, update) that were completed before the backup request was finished.
+        /// </para>
+        ///  
+        /// <para>
+        ///  For example, if you submit the backup request on 2018-12-14 at 14:25:00, the backup
+        /// is guaranteed to contain all data committed to the table up to 14:24:00, and data
+        /// committed after 14:26:00 will not be. The backup may or may not contain data modifications
+        /// made between 14:24:00 and 14:26:00. On-Demand Backup does not support causal consistency.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Along with data, the following are also included on the backups: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Global secondary indexes (GSIs)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Local secondary indexes (LSIs)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Streams
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Provisioned read and write capacity
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBackup service method.</param>
+        /// 
+        /// <returns>The response from the CreateBackup service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.BackupInUseException">
+        /// There is another ongoing conflicting backup control plane operation on the table.
+        /// The backups is either being created, deleted or restored to a table.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ContinuousBackupsUnavailableException">
+        /// Backups have not yet been enabled for this table.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
+        /// The number of concurrent table requests (cumulative number of tables in the <code>CREATING</code>,
+        /// <code>DELETING</code> or <code>UPDATING</code> state) exceeds the maximum allowed
+        /// of 10.
+        /// 
+        ///  
+        /// <para>
+        /// Also, for tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
+        /// state at any point in time. Do not attempt to create more than one such table simultaneously.
+        /// </para>
+        ///  
+        /// <para>
+        /// The total limit of tables in the <code>ACTIVE</code> state is 250.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.TableInUseException">
+        /// A table by that name is either being created or deleted.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.TableNotFoundException">
+        /// A table with the name <code>TableName</code> does not currently exist within the subscriber's
+        /// account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateBackup">REST API Reference for CreateBackup Operation</seealso>
+        CreateBackupResponse CreateBackup(CreateBackupRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateBackup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateBackup operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateBackup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateBackup">REST API Reference for CreateBackup Operation</seealso>
+        IAsyncResult BeginCreateBackup(CreateBackupRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateBackup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateBackup.</param>
+        /// 
+        /// <returns>Returns a  CreateBackupResult from DynamoDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateBackup">REST API Reference for CreateBackup Operation</seealso>
+        CreateBackupResponse EndCreateBackup(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateGlobalTable
+
+
+        /// <summary>
+        /// Creates a global table from an existing table. A global table creates a replication
+        /// relationship between two or more DynamoDB tables with the same table name in the provided
+        /// regions. 
+        /// 
+        ///  
+        /// <para>
+        ///  Tables can only be added as the replicas of a global table group under the following
+        /// conditions: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  The tables must have the same name. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  The tables must contain no items. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  The tables must have the same hash key and sort key (if present). 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  The tables must have DynamoDB Streams enabled (NEW_AND_OLD_IMAGES). 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateGlobalTable service method.</param>
+        /// 
+        /// <returns>The response from the CreateGlobalTable service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.GlobalTableAlreadyExistsException">
+        /// The specified global table already exists.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
+        /// The number of concurrent table requests (cumulative number of tables in the <code>CREATING</code>,
+        /// <code>DELETING</code> or <code>UPDATING</code> state) exceeds the maximum allowed
+        /// of 10.
+        /// 
+        ///  
+        /// <para>
+        /// Also, for tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
+        /// state at any point in time. Do not attempt to create more than one such table simultaneously.
+        /// </para>
+        ///  
+        /// <para>
+        /// The total limit of tables in the <code>ACTIVE</code> state is 250.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.TableNotFoundException">
+        /// A table with the name <code>TableName</code> does not currently exist within the subscriber's
+        /// account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateGlobalTable">REST API Reference for CreateGlobalTable Operation</seealso>
+        CreateGlobalTableResponse CreateGlobalTable(CreateGlobalTableRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateGlobalTable operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateGlobalTable operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateGlobalTable
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateGlobalTable">REST API Reference for CreateGlobalTable Operation</seealso>
+        IAsyncResult BeginCreateGlobalTable(CreateGlobalTableRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateGlobalTable operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateGlobalTable.</param>
+        /// 
+        /// <returns>Returns a  CreateGlobalTableResult from DynamoDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateGlobalTable">REST API Reference for CreateGlobalTable Operation</seealso>
+        CreateGlobalTableResponse EndCreateGlobalTable(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateTable
 
 
@@ -786,6 +1000,76 @@ namespace Amazon.DynamoDBv2
         /// <returns>Returns a  CreateTableResult from DynamoDB.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateTable">REST API Reference for CreateTable Operation</seealso>
         CreateTableResponse EndCreateTable(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteBackup
+
+
+        /// <summary>
+        /// Deletes an existing backup of a table.
+        /// 
+        ///  
+        /// <para>
+        /// You can call <code>DeleteBackup</code> at a maximum rate of 10 times per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBackup service method.</param>
+        /// 
+        /// <returns>The response from the DeleteBackup service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.BackupInUseException">
+        /// There is another ongoing conflicting backup control plane operation on the table.
+        /// The backups is either being created, deleted or restored to a table.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.BackupNotFoundException">
+        /// Backup not found for the given BackupARN.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
+        /// The number of concurrent table requests (cumulative number of tables in the <code>CREATING</code>,
+        /// <code>DELETING</code> or <code>UPDATING</code> state) exceeds the maximum allowed
+        /// of 10.
+        /// 
+        ///  
+        /// <para>
+        /// Also, for tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
+        /// state at any point in time. Do not attempt to create more than one such table simultaneously.
+        /// </para>
+        ///  
+        /// <para>
+        /// The total limit of tables in the <code>ACTIVE</code> state is 250.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteBackup">REST API Reference for DeleteBackup Operation</seealso>
+        DeleteBackupResponse DeleteBackup(DeleteBackupRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBackup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBackup operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBackup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteBackup">REST API Reference for DeleteBackup Operation</seealso>
+        IAsyncResult BeginDeleteBackup(DeleteBackupRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteBackup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBackup.</param>
+        /// 
+        /// <returns>Returns a  DeleteBackupResult from DynamoDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteBackup">REST API Reference for DeleteBackup Operation</seealso>
+        DeleteBackupResponse EndDeleteBackup(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1124,6 +1408,157 @@ namespace Amazon.DynamoDBv2
         /// <returns>Returns a  DeleteTableResult from DynamoDB.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteTable">REST API Reference for DeleteTable Operation</seealso>
         DeleteTableResponse EndDeleteTable(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeBackup
+
+
+        /// <summary>
+        /// Describes an existing backup of a table.
+        /// 
+        ///  
+        /// <para>
+        /// You can call <code>DescribeBackup</code> at a maximum rate of 10 times per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBackup service method.</param>
+        /// 
+        /// <returns>The response from the DescribeBackup service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.BackupNotFoundException">
+        /// Backup not found for the given BackupARN.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeBackup">REST API Reference for DescribeBackup Operation</seealso>
+        DescribeBackupResponse DescribeBackup(DescribeBackupRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeBackup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBackup operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeBackup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeBackup">REST API Reference for DescribeBackup Operation</seealso>
+        IAsyncResult BeginDescribeBackup(DescribeBackupRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeBackup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeBackup.</param>
+        /// 
+        /// <returns>Returns a  DescribeBackupResult from DynamoDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeBackup">REST API Reference for DescribeBackup Operation</seealso>
+        DescribeBackupResponse EndDescribeBackup(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeContinuousBackups
+
+
+        /// <summary>
+        /// Checks the status of the backup restore settings on the specified table. If backups
+        /// are enabled, <code>ContinuousBackupsStatus</code> will bet set to ENABLED.
+        /// 
+        ///  
+        /// <para>
+        /// You can call <code>DescribeContinuousBackups</code> at a maximum rate of 10 times
+        /// per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeContinuousBackups service method.</param>
+        /// 
+        /// <returns>The response from the DescribeContinuousBackups service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.TableNotFoundException">
+        /// A table with the name <code>TableName</code> does not currently exist within the subscriber's
+        /// account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeContinuousBackups">REST API Reference for DescribeContinuousBackups Operation</seealso>
+        DescribeContinuousBackupsResponse DescribeContinuousBackups(DescribeContinuousBackupsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeContinuousBackups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeContinuousBackups operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeContinuousBackups
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeContinuousBackups">REST API Reference for DescribeContinuousBackups Operation</seealso>
+        IAsyncResult BeginDescribeContinuousBackups(DescribeContinuousBackupsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeContinuousBackups operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeContinuousBackups.</param>
+        /// 
+        /// <returns>Returns a  DescribeContinuousBackupsResult from DynamoDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeContinuousBackups">REST API Reference for DescribeContinuousBackups Operation</seealso>
+        DescribeContinuousBackupsResponse EndDescribeContinuousBackups(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeGlobalTable
+
+
+        /// <summary>
+        /// Returns information about the global table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeGlobalTable service method.</param>
+        /// 
+        /// <returns>The response from the DescribeGlobalTable service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.GlobalTableNotFoundException">
+        /// The specified global table does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeGlobalTable">REST API Reference for DescribeGlobalTable Operation</seealso>
+        DescribeGlobalTableResponse DescribeGlobalTable(DescribeGlobalTableRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeGlobalTable operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeGlobalTable operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeGlobalTable
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeGlobalTable">REST API Reference for DescribeGlobalTable Operation</seealso>
+        IAsyncResult BeginDescribeGlobalTable(DescribeGlobalTableRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeGlobalTable operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeGlobalTable.</param>
+        /// 
+        /// <returns>Returns a  DescribeGlobalTableResult from DynamoDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeGlobalTable">REST API Reference for DescribeGlobalTable Operation</seealso>
+        DescribeGlobalTableResponse EndDescribeGlobalTable(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1534,6 +1969,106 @@ namespace Amazon.DynamoDBv2
         /// <returns>Returns a  GetItemResult from DynamoDB.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/GetItem">REST API Reference for GetItem Operation</seealso>
         GetItemResponse EndGetItem(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListBackups
+
+
+        /// <summary>
+        /// List backups associated with an AWS account. To list backups for a given table, specify
+        /// <code>TableName</code>. <code>ListBackups</code> returns a paginated list of results
+        /// with at most 1MB worth of items in a page. You can also specify a limit for the maximum
+        /// number of entries to be returned in a page. 
+        /// 
+        ///  
+        /// <para>
+        /// In the request, start time is inclusive but end time is exclusive. Note that these
+        /// limits are for the time at which the original backup was requested.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can call <code>ListBackups</code> a maximum of 5 times per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBackups service method.</param>
+        /// 
+        /// <returns>The response from the ListBackups service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListBackups">REST API Reference for ListBackups Operation</seealso>
+        ListBackupsResponse ListBackups(ListBackupsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListBackups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListBackups operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListBackups
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListBackups">REST API Reference for ListBackups Operation</seealso>
+        IAsyncResult BeginListBackups(ListBackupsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListBackups operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListBackups.</param>
+        /// 
+        /// <returns>Returns a  ListBackupsResult from DynamoDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListBackups">REST API Reference for ListBackups Operation</seealso>
+        ListBackupsResponse EndListBackups(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListGlobalTables
+
+
+        /// <summary>
+        /// Lists all the global tables. Only those global tables that have replicas in the region
+        /// specified as input are returned.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListGlobalTables service method.</param>
+        /// 
+        /// <returns>The response from the ListGlobalTables service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListGlobalTables">REST API Reference for ListGlobalTables Operation</seealso>
+        ListGlobalTablesResponse ListGlobalTables(ListGlobalTablesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListGlobalTables operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListGlobalTables operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListGlobalTables
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListGlobalTables">REST API Reference for ListGlobalTables Operation</seealso>
+        IAsyncResult BeginListGlobalTables(ListGlobalTablesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListGlobalTables operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListGlobalTables.</param>
+        /// 
+        /// <returns>Returns a  ListGlobalTablesResult from DynamoDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListGlobalTables">REST API Reference for ListGlobalTables Operation</seealso>
+        ListGlobalTablesResponse EndListGlobalTables(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2174,6 +2709,109 @@ namespace Amazon.DynamoDBv2
 
         #endregion
         
+        #region  RestoreTableFromBackup
+
+
+        /// <summary>
+        /// Creates a new table from an existing backup. Any number of users can execute up to
+        /// 10 concurrent restores in a given account. 
+        /// 
+        ///  
+        /// <para>
+        /// You can call <code>RestoreTableFromBackup</code> at a maximum rate of 10 times per
+        /// second.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must manually set up the following on the restored table:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Auto scaling policies
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// IAM policies
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cloudwatch metrics and alarms
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Tags
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Time to Live (TTL) settings
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreTableFromBackup service method.</param>
+        /// 
+        /// <returns>The response from the RestoreTableFromBackup service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.BackupInUseException">
+        /// There is another ongoing conflicting backup control plane operation on the table.
+        /// The backups is either being created, deleted or restored to a table.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.BackupNotFoundException">
+        /// Backup not found for the given BackupARN.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
+        /// The number of concurrent table requests (cumulative number of tables in the <code>CREATING</code>,
+        /// <code>DELETING</code> or <code>UPDATING</code> state) exceeds the maximum allowed
+        /// of 10.
+        /// 
+        ///  
+        /// <para>
+        /// Also, for tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
+        /// state at any point in time. Do not attempt to create more than one such table simultaneously.
+        /// </para>
+        ///  
+        /// <para>
+        /// The total limit of tables in the <code>ACTIVE</code> state is 250.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.TableAlreadyExistsException">
+        /// A table with the name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.TableInUseException">
+        /// A table by that name is either being created or deleted.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/RestoreTableFromBackup">REST API Reference for RestoreTableFromBackup Operation</seealso>
+        RestoreTableFromBackupResponse RestoreTableFromBackup(RestoreTableFromBackupRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RestoreTableFromBackup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RestoreTableFromBackup operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRestoreTableFromBackup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/RestoreTableFromBackup">REST API Reference for RestoreTableFromBackup Operation</seealso>
+        IAsyncResult BeginRestoreTableFromBackup(RestoreTableFromBackupRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RestoreTableFromBackup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRestoreTableFromBackup.</param>
+        /// 
+        /// <returns>Returns a  RestoreTableFromBackupResult from DynamoDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/RestoreTableFromBackup">REST API Reference for RestoreTableFromBackup Operation</seealso>
+        RestoreTableFromBackupResponse EndRestoreTableFromBackup(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  Scan
 
 
@@ -2592,6 +3230,64 @@ namespace Amazon.DynamoDBv2
         /// <returns>Returns a  UntagResourceResult from DynamoDB.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse EndUntagResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateGlobalTable
+
+
+        /// <summary>
+        /// Adds or removes replicas to the specified global table. The global table should already
+        /// exist to be able to use this operation. Currently, the replica to be added should
+        /// be empty.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGlobalTable service method.</param>
+        /// 
+        /// <returns>The response from the UpdateGlobalTable service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.GlobalTableNotFoundException">
+        /// The specified global table does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ReplicaAlreadyExistsException">
+        /// The specified replica is already part of the global table.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ReplicaNotFoundException">
+        /// The specified replica is no longer part of the global table.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.TableNotFoundException">
+        /// A table with the name <code>TableName</code> does not currently exist within the subscriber's
+        /// account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateGlobalTable">REST API Reference for UpdateGlobalTable Operation</seealso>
+        UpdateGlobalTableResponse UpdateGlobalTable(UpdateGlobalTableRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateGlobalTable operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGlobalTable operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateGlobalTable
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateGlobalTable">REST API Reference for UpdateGlobalTable Operation</seealso>
+        IAsyncResult BeginUpdateGlobalTable(UpdateGlobalTableRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateGlobalTable operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateGlobalTable.</param>
+        /// 
+        /// <returns>Returns a  UpdateGlobalTableResult from DynamoDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateGlobalTable">REST API Reference for UpdateGlobalTable Operation</seealso>
+        UpdateGlobalTableResponse EndUpdateGlobalTable(IAsyncResult asyncResult);
 
         #endregion
         

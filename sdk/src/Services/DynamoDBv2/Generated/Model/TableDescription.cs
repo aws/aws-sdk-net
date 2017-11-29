@@ -41,8 +41,10 @@ namespace Amazon.DynamoDBv2.Model
         private string _latestStreamLabel;
         private List<LocalSecondaryIndexDescription> _localSecondaryIndexes = new List<LocalSecondaryIndexDescription>();
         private ProvisionedThroughputDescription _provisionedThroughput;
+        private RestoreSummary _restoreSummary;
         private StreamSpecification _streamSpecification;
         private string _tableArn;
+        private string _tableId;
         private string _tableName;
         private long? _tableSizeBytes;
         private TableStatus _tableStatus;
@@ -442,6 +444,24 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RestoreSummary. 
+        /// <para>
+        /// Contains details for the restore.
+        /// </para>
+        /// </summary>
+        public RestoreSummary RestoreSummary
+        {
+            get { return this._restoreSummary; }
+            set { this._restoreSummary = value; }
+        }
+
+        // Check to see if RestoreSummary property is set
+        internal bool IsSetRestoreSummary()
+        {
+            return this._restoreSummary != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property StreamSpecification. 
         /// <para>
         /// The current DynamoDB Streams configuration for the table.
@@ -475,6 +495,24 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetTableArn()
         {
             return this._tableArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TableId. 
+        /// <para>
+        /// Unique identifier for the table for which the backup was created. 
+        /// </para>
+        /// </summary>
+        public string TableId
+        {
+            get { return this._tableId; }
+            set { this._tableId = value; }
+        }
+
+        // Check to see if TableId property is set
+        internal bool IsSetTableId()
+        {
+            return this._tableId != null;
         }
 
         /// <summary>
