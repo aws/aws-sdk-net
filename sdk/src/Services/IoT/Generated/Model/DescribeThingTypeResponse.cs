@@ -32,9 +32,47 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class DescribeThingTypeResponse : AmazonWebServiceResponse
     {
+        private string _thingTypeArn;
+        private string _thingTypeId;
         private ThingTypeMetadata _thingTypeMetadata;
         private string _thingTypeName;
         private ThingTypeProperties _thingTypeProperties;
+
+        /// <summary>
+        /// Gets and sets the property ThingTypeArn. 
+        /// <para>
+        /// The thing type ARN.
+        /// </para>
+        /// </summary>
+        public string ThingTypeArn
+        {
+            get { return this._thingTypeArn; }
+            set { this._thingTypeArn = value; }
+        }
+
+        // Check to see if ThingTypeArn property is set
+        internal bool IsSetThingTypeArn()
+        {
+            return this._thingTypeArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ThingTypeId. 
+        /// <para>
+        /// The thing type ID.
+        /// </para>
+        /// </summary>
+        public string ThingTypeId
+        {
+            get { return this._thingTypeId; }
+            set { this._thingTypeId = value; }
+        }
+
+        // Check to see if ThingTypeId property is set
+        internal bool IsSetThingTypeId()
+        {
+            return this._thingTypeId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ThingTypeMetadata. 

@@ -77,6 +77,17 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.CaCertificate);
                 }
 
+                if(publicRequest.IsSetRegistrationConfig())
+                {
+                    context.Writer.WritePropertyName("registrationConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = RegistrationConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.RegistrationConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetVerificationCertificate())
                 {
                     context.Writer.WritePropertyName("verificationCertificate");

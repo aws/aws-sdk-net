@@ -30,6 +30,11 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Container for the parameters to the AttachPrincipalPolicy operation.
     /// Attaches the specified policy to the specified principal (certificate or other credential).
+    /// 
+    ///  
+    /// <para>
+    ///  <b>Note:</b> This API is deprecated. Please use <a>AttachPolicy</a> instead.
+    /// </para>
     /// </summary>
     public partial class AttachPrincipalPolicyRequest : AmazonIoTRequest
     {

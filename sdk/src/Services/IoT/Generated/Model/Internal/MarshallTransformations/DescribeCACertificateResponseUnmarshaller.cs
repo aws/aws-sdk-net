@@ -57,6 +57,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     response.CertificateDescription = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("registrationConfig", targetDepth))
+                {
+                    var unmarshaller = RegistrationConfigUnmarshaller.Instance;
+                    response.RegistrationConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

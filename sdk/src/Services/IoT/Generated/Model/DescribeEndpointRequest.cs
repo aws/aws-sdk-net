@@ -33,6 +33,25 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class DescribeEndpointRequest : AmazonIoTRequest
     {
+        private string _endpointType;
+
+        /// <summary>
+        /// Gets and sets the property EndpointType. 
+        /// <para>
+        /// The endpoint type.
+        /// </para>
+        /// </summary>
+        public string EndpointType
+        {
+            get { return this._endpointType; }
+            set { this._endpointType = value; }
+        }
+
+        // Check to see if EndpointType property is set
+        internal bool IsSetEndpointType()
+        {
+            return this._endpointType != null;
+        }
 
     }
 }

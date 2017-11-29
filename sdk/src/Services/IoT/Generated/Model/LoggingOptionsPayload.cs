@@ -38,7 +38,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property LogLevel. 
         /// <para>
-        /// The logging level.
+        /// The log level.
         /// </para>
         /// </summary>
         public LogLevel LogLevel

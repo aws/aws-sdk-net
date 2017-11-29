@@ -58,7 +58,11 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             string uriResourcePath = "/endpoint";
+            
+            if (publicRequest.IsSetEndpointType())
+                request.Parameters.Add("endpointType", StringUtils.FromString(publicRequest.EndpointType));
             request.ResourcePath = uriResourcePath;
+            request.UseQueryString = true;
 
             return request;
         }

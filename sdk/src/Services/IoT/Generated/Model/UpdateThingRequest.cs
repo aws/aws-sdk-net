@@ -88,7 +88,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property RemoveThingType. 
         /// <para>
-        /// Remove a thing type association. If <b>true</b>, the assocation is removed.
+        /// Remove a thing type association. If <b>true</b>, the association is removed.
         /// </para>
         /// </summary>
         public bool RemoveThingType

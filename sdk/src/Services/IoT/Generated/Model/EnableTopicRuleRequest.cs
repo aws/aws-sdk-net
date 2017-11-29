@@ -29,7 +29,7 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the EnableTopicRule operation.
-    /// Enables the specified rule.
+    /// Enables the rule.
     /// </summary>
     public partial class EnableTopicRuleRequest : AmazonIoTRequest
     {

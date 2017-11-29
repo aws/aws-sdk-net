@@ -51,6 +51,18 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("thingTypeArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ThingTypeArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("thingTypeId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ThingTypeId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("thingTypeMetadata", targetDepth))
                 {
                     var unmarshaller = ThingTypeMetadataUnmarshaller.Instance;

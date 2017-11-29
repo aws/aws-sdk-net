@@ -34,6 +34,7 @@ namespace Amazon.IoT.Model
     public partial class ThingAttribute
     {
         private Dictionary<string, string> _attributes = new Dictionary<string, string>();
+        private string _thingArn;
         private string _thingName;
         private string _thingTypeName;
         private long? _version;
@@ -54,6 +55,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetAttributes()
         {
             return this._attributes != null && this._attributes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ThingArn. 
+        /// <para>
+        /// The thing ARN.
+        /// </para>
+        /// </summary>
+        public string ThingArn
+        {
+            get { return this._thingArn; }
+            set { this._thingArn = value; }
+        }
+
+        // Check to see if ThingArn property is set
+        internal bool IsSetThingArn()
+        {
+            return this._thingArn != null;
         }
 
         /// <summary>

@@ -30,6 +30,11 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Container for the parameters to the DetachPrincipalPolicy operation.
     /// Removes the specified policy from the specified certificate.
+    /// 
+    ///  
+    /// <para>
+    ///  <b>Note:</b> This API is deprecated. Please use <a>DetachPolicy</a> instead.
+    /// </para>
     /// </summary>
     public partial class DetachPrincipalPolicyRequest : AmazonIoTRequest
     {

@@ -56,7 +56,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property OutgoingCertificates. 
         /// <para>
-        /// The certificates that are being transfered but not yet accepted.
+        /// The certificates that are being transferred but not yet accepted.
         /// </para>
         /// </summary>
         public List<OutgoingCertificate> OutgoingCertificates

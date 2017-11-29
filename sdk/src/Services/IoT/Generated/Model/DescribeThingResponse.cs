@@ -34,6 +34,8 @@ namespace Amazon.IoT.Model
     {
         private Dictionary<string, string> _attributes = new Dictionary<string, string>();
         private string _defaultClientId;
+        private string _thingArn;
+        private string _thingId;
         private string _thingName;
         private string _thingTypeName;
         private long? _version;
@@ -72,6 +74,42 @@ namespace Amazon.IoT.Model
         internal bool IsSetDefaultClientId()
         {
             return this._defaultClientId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ThingArn. 
+        /// <para>
+        /// The ARN of the thing to describe.
+        /// </para>
+        /// </summary>
+        public string ThingArn
+        {
+            get { return this._thingArn; }
+            set { this._thingArn = value; }
+        }
+
+        // Check to see if ThingArn property is set
+        internal bool IsSetThingArn()
+        {
+            return this._thingArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ThingId. 
+        /// <para>
+        /// The ID of the thing to describe.
+        /// </para>
+        /// </summary>
+        public string ThingId
+        {
+            get { return this._thingId; }
+            set { this._thingId = value; }
+        }
+
+        // Check to see if ThingId property is set
+        internal bool IsSetThingId()
+        {
+            return this._thingId != null;
         }
 
         /// <summary>

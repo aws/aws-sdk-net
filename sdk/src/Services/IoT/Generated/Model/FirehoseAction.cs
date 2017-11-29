@@ -57,7 +57,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The IAM role that grants access to the Amazon Kinesis Firehost stream.
+        /// The IAM role that grants access to the Amazon Kinesis Firehose stream.
         /// </para>
         /// </summary>
         public string RoleArn

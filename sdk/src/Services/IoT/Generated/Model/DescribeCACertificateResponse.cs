@@ -33,6 +33,7 @@ namespace Amazon.IoT.Model
     public partial class DescribeCACertificateResponse : AmazonWebServiceResponse
     {
         private CACertificateDescription _certificateDescription;
+        private RegistrationConfig _registrationConfig;
 
         /// <summary>
         /// Gets and sets the property CertificateDescription. 
@@ -50,6 +51,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetCertificateDescription()
         {
             return this._certificateDescription != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RegistrationConfig. 
+        /// <para>
+        /// Information about the registration configuration.
+        /// </para>
+        /// </summary>
+        public RegistrationConfig RegistrationConfig
+        {
+            get { return this._registrationConfig; }
+            set { this._registrationConfig = value; }
+        }
+
+        // Check to see if RegistrationConfig property is set
+        internal bool IsSetRegistrationConfig()
+        {
+            return this._registrationConfig != null;
         }
 
     }

@@ -281,5 +281,21 @@
 			}
 
 		}
-	}
+	},
+    "deprecatedOverrides": {
+    "operation": {
+      "AttachPrincipalPolicy": {
+        "message": "Deprecated in favor of AttachPolicy."
+      },
+      "DetachPrincipalPolicy":  { 
+        "message": "Deprecated in favor of DetachPolicy."
+      },
+      "ListPolicyPrincipals":{
+        "message": "Deprecated in favor of ListTargetsForPolicy."
+      },
+      "ListPrincipalPolicies": {
+        "message" : "Deprecated in favor of ListAttachedPolicies."
+      }
+    }
+  }
 }

@@ -40,6 +40,7 @@ namespace Amazon.IoT.Model
     {
         private bool? _allowAutoRegistration;
         private string _caCertificate;
+        private RegistrationConfig _registrationConfig;
         private bool? _setAsActive;
         private string _verificationCertificate;
 
@@ -77,6 +78,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetCaCertificate()
         {
             return this._caCertificate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RegistrationConfig. 
+        /// <para>
+        /// Information about the registration configuration.
+        /// </para>
+        /// </summary>
+        public RegistrationConfig RegistrationConfig
+        {
+            get { return this._registrationConfig; }
+            set { this._registrationConfig = value; }
+        }
+
+        // Check to see if RegistrationConfig property is set
+        internal bool IsSetRegistrationConfig()
+        {
+            return this._registrationConfig != null;
         }
 
         /// <summary>

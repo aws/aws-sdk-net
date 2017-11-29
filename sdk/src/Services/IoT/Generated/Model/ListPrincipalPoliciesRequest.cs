@@ -32,6 +32,11 @@ namespace Amazon.IoT.Model
     /// Lists the policies attached to the specified principal. If you use an Cognito identity,
     /// the ID must be in <a href="http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetCredentialsForIdentity.html#API_GetCredentialsForIdentity_RequestSyntax">AmazonCognito
     /// Identity format</a>.
+    /// 
+    ///  
+    /// <para>
+    ///  <b>Note:</b> This API is deprecated. Please use <a>ListAttachedPolicies</a> instead.
+    /// </para>
     /// </summary>
     public partial class ListPrincipalPoliciesRequest : AmazonIoTRequest
     {

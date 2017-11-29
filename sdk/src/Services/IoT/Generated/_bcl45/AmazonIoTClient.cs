@@ -304,11 +304,196 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  AddThingToThingGroup
+
+
+        /// <summary>
+        /// Adds a thing to a thing group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddThingToThingGroup service method.</param>
+        /// 
+        /// <returns>The response from the AddThingToThingGroup service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AddThingToThingGroup">REST API Reference for AddThingToThingGroup Operation</seealso>
+        public virtual AddThingToThingGroupResponse AddThingToThingGroup(AddThingToThingGroupRequest request)
+        {
+            var marshaller = new AddThingToThingGroupRequestMarshaller();
+            var unmarshaller = AddThingToThingGroupResponseUnmarshaller.Instance;
+
+            return Invoke<AddThingToThingGroupRequest,AddThingToThingGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddThingToThingGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddThingToThingGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AddThingToThingGroup">REST API Reference for AddThingToThingGroup Operation</seealso>
+        public virtual Task<AddThingToThingGroupResponse> AddThingToThingGroupAsync(AddThingToThingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AddThingToThingGroupRequestMarshaller();
+            var unmarshaller = AddThingToThingGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AddThingToThingGroupRequest,AddThingToThingGroupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AssociateTargetsWithJob
+
+
+        /// <summary>
+        /// Associates a group with a continuous job. The following criteria must be met: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The job must have been created with the <code>targetSelection</code> field set to
+        /// "CONTINUOUS".
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The job status must currently be "IN_PROGRESS".
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The total number of targets associated with a job must not exceed 100.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateTargetsWithJob service method.</param>
+        /// 
+        /// <returns>The response from the AssociateTargetsWithJob service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.LimitExceededException">
+        /// The number of attached entities exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AssociateTargetsWithJob">REST API Reference for AssociateTargetsWithJob Operation</seealso>
+        public virtual AssociateTargetsWithJobResponse AssociateTargetsWithJob(AssociateTargetsWithJobRequest request)
+        {
+            var marshaller = new AssociateTargetsWithJobRequestMarshaller();
+            var unmarshaller = AssociateTargetsWithJobResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateTargetsWithJobRequest,AssociateTargetsWithJobResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateTargetsWithJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateTargetsWithJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AssociateTargetsWithJob">REST API Reference for AssociateTargetsWithJob Operation</seealso>
+        public virtual Task<AssociateTargetsWithJobResponse> AssociateTargetsWithJobAsync(AssociateTargetsWithJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AssociateTargetsWithJobRequestMarshaller();
+            var unmarshaller = AssociateTargetsWithJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateTargetsWithJobRequest,AssociateTargetsWithJobResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AttachPolicy
+
+
+        /// <summary>
+        /// Attaches a policy to the specified target.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AttachPolicy service method.</param>
+        /// 
+        /// <returns>The response from the AttachPolicy service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.LimitExceededException">
+        /// The number of attached entities exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AttachPolicy">REST API Reference for AttachPolicy Operation</seealso>
+        public virtual AttachPolicyResponse AttachPolicy(AttachPolicyRequest request)
+        {
+            var marshaller = new AttachPolicyRequestMarshaller();
+            var unmarshaller = AttachPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<AttachPolicyRequest,AttachPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AttachPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AttachPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AttachPolicy">REST API Reference for AttachPolicy Operation</seealso>
+        public virtual Task<AttachPolicyResponse> AttachPolicyAsync(AttachPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AttachPolicyRequestMarshaller();
+            var unmarshaller = AttachPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AttachPolicyRequest,AttachPolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AttachPrincipalPolicy
 
 
         /// <summary>
         /// Attaches the specified policy to the specified principal (certificate or other credential).
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Note:</b> This API is deprecated. Please use <a>AttachPolicy</a> instead.
+        /// </para>
         /// </summary>
         /// <param name="policyName">The policy name.</param>
         /// <param name="principal">The principal, which can be a certificate ARN (as returned from the CreateCertificate operation) or an Amazon Cognito ID.</param>
@@ -336,6 +521,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AttachPrincipalPolicy">REST API Reference for AttachPrincipalPolicy Operation</seealso>
+        [Obsolete("Deprecated in favor of AttachPolicy.")]
         public virtual AttachPrincipalPolicyResponse AttachPrincipalPolicy(string policyName, string principal)
         {
             var request = new AttachPrincipalPolicyRequest();
@@ -347,6 +533,11 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Attaches the specified policy to the specified principal (certificate or other credential).
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Note:</b> This API is deprecated. Please use <a>AttachPolicy</a> instead.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachPrincipalPolicy service method.</param>
         /// 
@@ -373,6 +564,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AttachPrincipalPolicy">REST API Reference for AttachPrincipalPolicy Operation</seealso>
+        [Obsolete("Deprecated in favor of AttachPolicy.")]
         public virtual AttachPrincipalPolicyResponse AttachPrincipalPolicy(AttachPrincipalPolicyRequest request)
         {
             var marshaller = new AttachPrincipalPolicyRequestMarshaller();
@@ -384,6 +576,11 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Attaches the specified policy to the specified principal (certificate or other credential).
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Note:</b> This API is deprecated. Please use <a>AttachPolicy</a> instead.
+        /// </para>
         /// </summary>
         /// <param name="policyName">The policy name.</param>
         /// <param name="principal">The principal, which can be a certificate ARN (as returned from the CreateCertificate operation) or an Amazon Cognito ID.</param>
@@ -414,6 +611,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AttachPrincipalPolicy">REST API Reference for AttachPrincipalPolicy Operation</seealso>
+        [Obsolete("Deprecated in favor of AttachPolicy.")]
         public virtual Task<AttachPrincipalPolicyResponse> AttachPrincipalPolicyAsync(string policyName, string principal, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new AttachPrincipalPolicyRequest();
@@ -432,6 +630,7 @@ namespace Amazon.IoT
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AttachPrincipalPolicy">REST API Reference for AttachPrincipalPolicy Operation</seealso>
+        [Obsolete("Deprecated in favor of AttachPolicy.")]
         public virtual Task<AttachPrincipalPolicyResponse> AttachPrincipalPolicyAsync(AttachPrincipalPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AttachPrincipalPolicyRequestMarshaller();
@@ -742,6 +941,174 @@ namespace Amazon.IoT
             var unmarshaller = CancelCertificateTransferResponseUnmarshaller.Instance;
 
             return InvokeAsync<CancelCertificateTransferRequest,CancelCertificateTransferResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CancelJob
+
+
+        /// <summary>
+        /// Cancels a job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelJob service method.</param>
+        /// 
+        /// <returns>The response from the CancelJob service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelJob">REST API Reference for CancelJob Operation</seealso>
+        public virtual CancelJobResponse CancelJob(CancelJobRequest request)
+        {
+            var marshaller = new CancelJobRequestMarshaller();
+            var unmarshaller = CancelJobResponseUnmarshaller.Instance;
+
+            return Invoke<CancelJobRequest,CancelJobResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelJob">REST API Reference for CancelJob Operation</seealso>
+        public virtual Task<CancelJobResponse> CancelJobAsync(CancelJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CancelJobRequestMarshaller();
+            var unmarshaller = CancelJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CancelJobRequest,CancelJobResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ClearDefaultAuthorizer
+
+
+        /// <summary>
+        /// Clears the default authorizer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ClearDefaultAuthorizer service method.</param>
+        /// 
+        /// <returns>The response from the ClearDefaultAuthorizer service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ClearDefaultAuthorizer">REST API Reference for ClearDefaultAuthorizer Operation</seealso>
+        public virtual ClearDefaultAuthorizerResponse ClearDefaultAuthorizer(ClearDefaultAuthorizerRequest request)
+        {
+            var marshaller = new ClearDefaultAuthorizerRequestMarshaller();
+            var unmarshaller = ClearDefaultAuthorizerResponseUnmarshaller.Instance;
+
+            return Invoke<ClearDefaultAuthorizerRequest,ClearDefaultAuthorizerResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ClearDefaultAuthorizer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ClearDefaultAuthorizer operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ClearDefaultAuthorizer">REST API Reference for ClearDefaultAuthorizer Operation</seealso>
+        public virtual Task<ClearDefaultAuthorizerResponse> ClearDefaultAuthorizerAsync(ClearDefaultAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ClearDefaultAuthorizerRequestMarshaller();
+            var unmarshaller = ClearDefaultAuthorizerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ClearDefaultAuthorizerRequest,ClearDefaultAuthorizerResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateAuthorizer
+
+
+        /// <summary>
+        /// Creates an authorizer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAuthorizer service method.</param>
+        /// 
+        /// <returns>The response from the CreateAuthorizer service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.LimitExceededException">
+        /// The number of attached entities exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateAuthorizer">REST API Reference for CreateAuthorizer Operation</seealso>
+        public virtual CreateAuthorizerResponse CreateAuthorizer(CreateAuthorizerRequest request)
+        {
+            var marshaller = new CreateAuthorizerRequestMarshaller();
+            var unmarshaller = CreateAuthorizerResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAuthorizerRequest,CreateAuthorizerResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAuthorizer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateAuthorizer operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateAuthorizer">REST API Reference for CreateAuthorizer Operation</seealso>
+        public virtual Task<CreateAuthorizerResponse> CreateAuthorizerAsync(CreateAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateAuthorizerRequestMarshaller();
+            var unmarshaller = CreateAuthorizerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateAuthorizerRequest,CreateAuthorizerResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1266,6 +1633,63 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  CreateJob
+
+
+        /// <summary>
+        /// Creates a job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateJob service method.</param>
+        /// 
+        /// <returns>The response from the CreateJob service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.LimitExceededException">
+        /// The number of attached entities exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateJob">REST API Reference for CreateJob Operation</seealso>
+        public virtual CreateJobResponse CreateJob(CreateJobRequest request)
+        {
+            var marshaller = new CreateJobRequestMarshaller();
+            var unmarshaller = CreateJobResponseUnmarshaller.Instance;
+
+            return Invoke<CreateJobRequest,CreateJobResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateJob">REST API Reference for CreateJob Operation</seealso>
+        public virtual Task<CreateJobResponse> CreateJobAsync(CreateJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateJobRequestMarshaller();
+            var unmarshaller = CreateJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateJobRequest,CreateJobResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateKeysAndCertificate
 
 
@@ -1654,7 +2078,7 @@ namespace Amazon.IoT
         /// </para>
         /// </summary>
         /// <param name="policyName">The policy name.</param>
-        /// <param name="policyDocument">The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048, excluding whitespaces</param>
+        /// <param name="policyDocument">The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048, excluding whitespace.</param>
         /// 
         /// <returns>The response from the CreatePolicyVersion service method, as returned by IoT.</returns>
         /// <exception cref="Amazon.IoT.Model.InternalFailureException">
@@ -1705,7 +2129,7 @@ namespace Amazon.IoT
         /// </para>
         /// </summary>
         /// <param name="policyName">The policy name.</param>
-        /// <param name="policyDocument">The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048, excluding whitespaces</param>
+        /// <param name="policyDocument">The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048, excluding whitespace.</param>
         /// <param name="setAsDefault">Specifies whether the policy version is set as the default. When this parameter is true, the new policy version becomes the operative version (that is, the version that is in effect for the certificates to which the policy is attached).</param>
         /// 
         /// <returns>The response from the CreatePolicyVersion service method, as returned by IoT.</returns>
@@ -1808,7 +2232,7 @@ namespace Amazon.IoT
         /// </para>
         /// </summary>
         /// <param name="policyName">The policy name.</param>
-        /// <param name="policyDocument">The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048, excluding whitespaces</param>
+        /// <param name="policyDocument">The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048, excluding whitespace.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -1862,7 +2286,7 @@ namespace Amazon.IoT
         /// </para>
         /// </summary>
         /// <param name="policyName">The policy name.</param>
-        /// <param name="policyDocument">The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048, excluding whitespaces</param>
+        /// <param name="policyDocument">The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048, excluding whitespace.</param>
         /// <param name="setAsDefault">Specifies whether the policy version is set as the default. When this parameter is true, the new policy version becomes the operative version (that is, the version that is in effect for the certificates to which the policy is attached).</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1924,6 +2348,66 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  CreateRoleAlias
+
+
+        /// <summary>
+        /// Creates a role alias.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRoleAlias service method.</param>
+        /// 
+        /// <returns>The response from the CreateRoleAlias service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.LimitExceededException">
+        /// The number of attached entities exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateRoleAlias">REST API Reference for CreateRoleAlias Operation</seealso>
+        public virtual CreateRoleAliasResponse CreateRoleAlias(CreateRoleAliasRequest request)
+        {
+            var marshaller = new CreateRoleAliasRequestMarshaller();
+            var unmarshaller = CreateRoleAliasResponseUnmarshaller.Instance;
+
+            return Invoke<CreateRoleAliasRequest,CreateRoleAliasResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateRoleAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateRoleAlias operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateRoleAlias">REST API Reference for CreateRoleAlias Operation</seealso>
+        public virtual Task<CreateRoleAliasResponse> CreateRoleAliasAsync(CreateRoleAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateRoleAliasRequestMarshaller();
+            var unmarshaller = CreateRoleAliasResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateRoleAliasRequest,CreateRoleAliasResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateThing
 
 
@@ -1979,6 +2463,57 @@ namespace Amazon.IoT
             var unmarshaller = CreateThingResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateThingRequest,CreateThingResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateThingGroup
+
+
+        /// <summary>
+        /// Create a thing group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateThingGroup service method.</param>
+        /// 
+        /// <returns>The response from the CreateThingGroup service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThingGroup">REST API Reference for CreateThingGroup Operation</seealso>
+        public virtual CreateThingGroupResponse CreateThingGroup(CreateThingGroupRequest request)
+        {
+            var marshaller = new CreateThingGroupRequestMarshaller();
+            var unmarshaller = CreateThingGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateThingGroupRequest,CreateThingGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateThingGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateThingGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThingGroup">REST API Reference for CreateThingGroup Operation</seealso>
+        public virtual Task<CreateThingGroupResponse> CreateThingGroupAsync(CreateThingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateThingGroupRequestMarshaller();
+            var unmarshaller = CreateThingGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateThingGroupRequest,CreateThingGroupResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2091,6 +2626,66 @@ namespace Amazon.IoT
             var unmarshaller = CreateTopicRuleResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateTopicRuleRequest,CreateTopicRuleResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteAuthorizer
+
+
+        /// <summary>
+        /// Deletes an authorizer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAuthorizer service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAuthorizer service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.DeleteConflictException">
+        /// You can't delete the resource because it is attached to one or more resources.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteAuthorizer">REST API Reference for DeleteAuthorizer Operation</seealso>
+        public virtual DeleteAuthorizerResponse DeleteAuthorizer(DeleteAuthorizerRequest request)
+        {
+            var marshaller = new DeleteAuthorizerRequestMarshaller();
+            var unmarshaller = DeleteAuthorizerResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAuthorizerRequest,DeleteAuthorizerResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAuthorizer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAuthorizer operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteAuthorizer">REST API Reference for DeleteAuthorizer Operation</seealso>
+        public virtual Task<DeleteAuthorizerResponse> DeleteAuthorizerAsync(DeleteAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteAuthorizerRequestMarshaller();
+            var unmarshaller = DeleteAuthorizerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteAuthorizerRequest,DeleteAuthorizerResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2709,6 +3304,66 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  DeleteRoleAlias
+
+
+        /// <summary>
+        /// Deletes a role alias
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRoleAlias service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRoleAlias service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.DeleteConflictException">
+        /// You can't delete the resource because it is attached to one or more resources.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteRoleAlias">REST API Reference for DeleteRoleAlias Operation</seealso>
+        public virtual DeleteRoleAliasResponse DeleteRoleAlias(DeleteRoleAliasRequest request)
+        {
+            var marshaller = new DeleteRoleAliasRequestMarshaller();
+            var unmarshaller = DeleteRoleAliasResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRoleAliasRequest,DeleteRoleAliasResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteRoleAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRoleAlias operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteRoleAlias">REST API Reference for DeleteRoleAlias Operation</seealso>
+        public virtual Task<DeleteRoleAliasResponse> DeleteRoleAliasAsync(DeleteRoleAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteRoleAliasRequestMarshaller();
+            var unmarshaller = DeleteRoleAliasResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteRoleAliasRequest,DeleteRoleAliasResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteThing
 
 
@@ -2847,6 +3502,58 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  DeleteThingGroup
+
+
+        /// <summary>
+        /// Deletes a thing group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteThingGroup service method.</param>
+        /// 
+        /// <returns>The response from the DeleteThingGroup service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.VersionConflictException">
+        /// An exception thrown when the version of a thing passed to a command is different than
+        /// the version specified with the --version parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteThingGroup">REST API Reference for DeleteThingGroup Operation</seealso>
+        public virtual DeleteThingGroupResponse DeleteThingGroup(DeleteThingGroupRequest request)
+        {
+            var marshaller = new DeleteThingGroupRequestMarshaller();
+            var unmarshaller = DeleteThingGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteThingGroupRequest,DeleteThingGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteThingGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteThingGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteThingGroup">REST API Reference for DeleteThingGroup Operation</seealso>
+        public virtual Task<DeleteThingGroupResponse> DeleteThingGroupAsync(DeleteThingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteThingGroupRequestMarshaller();
+            var unmarshaller = DeleteThingGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteThingGroupRequest,DeleteThingGroupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteThingType
 
 
@@ -2912,7 +3619,7 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Deletes the specified rule.
+        /// Deletes the rule.
         /// </summary>
         /// <param name="ruleName">The name of the rule.</param>
         /// 
@@ -2939,7 +3646,7 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Deletes the specified rule.
+        /// Deletes the rule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTopicRule service method.</param>
         /// 
@@ -2967,7 +3674,7 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Deletes the specified rule.
+        /// Deletes the rule.
         /// </summary>
         /// <param name="ruleName">The name of the rule.</param>
         /// <param name="cancellationToken">
@@ -3011,6 +3718,54 @@ namespace Amazon.IoT
             var unmarshaller = DeleteTopicRuleResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteTopicRuleRequest,DeleteTopicRuleResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteV2LoggingLevel
+
+
+        /// <summary>
+        /// Deletes a logging level.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteV2LoggingLevel service method.</param>
+        /// 
+        /// <returns>The response from the DeleteV2LoggingLevel service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteV2LoggingLevel">REST API Reference for DeleteV2LoggingLevel Operation</seealso>
+        public virtual DeleteV2LoggingLevelResponse DeleteV2LoggingLevel(DeleteV2LoggingLevelRequest request)
+        {
+            var marshaller = new DeleteV2LoggingLevelRequestMarshaller();
+            var unmarshaller = DeleteV2LoggingLevelResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteV2LoggingLevelRequest,DeleteV2LoggingLevelResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteV2LoggingLevel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteV2LoggingLevel operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteV2LoggingLevel">REST API Reference for DeleteV2LoggingLevel Operation</seealso>
+        public virtual Task<DeleteV2LoggingLevelResponse> DeleteV2LoggingLevelAsync(DeleteV2LoggingLevelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteV2LoggingLevelRequestMarshaller();
+            var unmarshaller = DeleteV2LoggingLevelResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteV2LoggingLevelRequest,DeleteV2LoggingLevelResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -3068,6 +3823,63 @@ namespace Amazon.IoT
             var unmarshaller = DeprecateThingTypeResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeprecateThingTypeRequest,DeprecateThingTypeResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeAuthorizer
+
+
+        /// <summary>
+        /// Describes an authorizer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAuthorizer service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAuthorizer service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeAuthorizer">REST API Reference for DescribeAuthorizer Operation</seealso>
+        public virtual DescribeAuthorizerResponse DescribeAuthorizer(DescribeAuthorizerRequest request)
+        {
+            var marshaller = new DescribeAuthorizerRequestMarshaller();
+            var unmarshaller = DescribeAuthorizerResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAuthorizerRequest,DescribeAuthorizerResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAuthorizer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAuthorizer operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeAuthorizer">REST API Reference for DescribeAuthorizer Operation</seealso>
+        public virtual Task<DescribeAuthorizerResponse> DescribeAuthorizerAsync(DescribeAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeAuthorizerRequestMarshaller();
+            var unmarshaller = DescribeAuthorizerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeAuthorizerRequest,DescribeAuthorizerResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -3134,7 +3946,8 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Gets information about the specified certificate.
+        /// Gets information about the specified certificate. You may specify the certificate
+        /// using either its ID or PEM.
         /// </summary>
         /// <param name="certificateId">The ID of the certificate.</param>
         /// 
@@ -3167,7 +3980,8 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Gets information about the specified certificate.
+        /// Gets information about the specified certificate. You may specify the certificate
+        /// using either its ID or PEM.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCertificate service method.</param>
         /// 
@@ -3201,7 +4015,8 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Gets information about the specified certificate.
+        /// Gets information about the specified certificate. You may specify the certificate
+        /// using either its ID or PEM.
         /// </summary>
         /// <param name="certificateId">The ID of the certificate.</param>
         /// <param name="cancellationToken">
@@ -3256,6 +4071,63 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  DescribeDefaultAuthorizer
+
+
+        /// <summary>
+        /// Describes the default authorizer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDefaultAuthorizer service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDefaultAuthorizer service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeDefaultAuthorizer">REST API Reference for DescribeDefaultAuthorizer Operation</seealso>
+        public virtual DescribeDefaultAuthorizerResponse DescribeDefaultAuthorizer(DescribeDefaultAuthorizerRequest request)
+        {
+            var marshaller = new DescribeDefaultAuthorizerRequestMarshaller();
+            var unmarshaller = DescribeDefaultAuthorizerResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDefaultAuthorizerRequest,DescribeDefaultAuthorizerResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDefaultAuthorizer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDefaultAuthorizer operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeDefaultAuthorizer">REST API Reference for DescribeDefaultAuthorizer Operation</seealso>
+        public virtual Task<DescribeDefaultAuthorizerResponse> DescribeDefaultAuthorizerAsync(DescribeDefaultAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeDefaultAuthorizerRequestMarshaller();
+            var unmarshaller = DescribeDefaultAuthorizerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeDefaultAuthorizerRequest,DescribeDefaultAuthorizerResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeEndpoint
 
 
@@ -3266,6 +4138,9 @@ namespace Amazon.IoT
         /// <returns>The response from the DescribeEndpoint service method, as returned by IoT.</returns>
         /// <exception cref="Amazon.IoT.Model.InternalFailureException">
         /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ThrottlingException">
         /// The rate exceeds the limit.
@@ -3289,6 +4164,9 @@ namespace Amazon.IoT
         /// <returns>The response from the DescribeEndpoint service method, as returned by IoT.</returns>
         /// <exception cref="Amazon.IoT.Model.InternalFailureException">
         /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ThrottlingException">
         /// The rate exceeds the limit.
@@ -3316,6 +4194,9 @@ namespace Amazon.IoT
         /// <returns>The response from the DescribeEndpoint service method, as returned by IoT.</returns>
         /// <exception cref="Amazon.IoT.Model.InternalFailureException">
         /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ThrottlingException">
         /// The rate exceeds the limit.
@@ -3346,6 +4227,267 @@ namespace Amazon.IoT
             var unmarshaller = DescribeEndpointResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeEndpointRequest,DescribeEndpointResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeEventConfigurations
+
+
+        /// <summary>
+        /// Describes event configurations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEventConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeEventConfigurations service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeEventConfigurations">REST API Reference for DescribeEventConfigurations Operation</seealso>
+        public virtual DescribeEventConfigurationsResponse DescribeEventConfigurations(DescribeEventConfigurationsRequest request)
+        {
+            var marshaller = new DescribeEventConfigurationsRequestMarshaller();
+            var unmarshaller = DescribeEventConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeEventConfigurationsRequest,DescribeEventConfigurationsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEventConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEventConfigurations operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeEventConfigurations">REST API Reference for DescribeEventConfigurations Operation</seealso>
+        public virtual Task<DescribeEventConfigurationsResponse> DescribeEventConfigurationsAsync(DescribeEventConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeEventConfigurationsRequestMarshaller();
+            var unmarshaller = DescribeEventConfigurationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeEventConfigurationsRequest,DescribeEventConfigurationsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeIndex
+
+
+        /// <summary>
+        /// Describes a search index.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIndex service method.</param>
+        /// 
+        /// <returns>The response from the DescribeIndex service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeIndex">REST API Reference for DescribeIndex Operation</seealso>
+        public virtual DescribeIndexResponse DescribeIndex(DescribeIndexRequest request)
+        {
+            var marshaller = new DescribeIndexRequestMarshaller();
+            var unmarshaller = DescribeIndexResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeIndexRequest,DescribeIndexResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeIndex operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIndex operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeIndex">REST API Reference for DescribeIndex Operation</seealso>
+        public virtual Task<DescribeIndexResponse> DescribeIndexAsync(DescribeIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeIndexRequestMarshaller();
+            var unmarshaller = DescribeIndexResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeIndexRequest,DescribeIndexResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeJob
+
+
+        /// <summary>
+        /// Describes a job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeJob service method.</param>
+        /// 
+        /// <returns>The response from the DescribeJob service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeJob">REST API Reference for DescribeJob Operation</seealso>
+        public virtual DescribeJobResponse DescribeJob(DescribeJobRequest request)
+        {
+            var marshaller = new DescribeJobRequestMarshaller();
+            var unmarshaller = DescribeJobResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeJobRequest,DescribeJobResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeJob">REST API Reference for DescribeJob Operation</seealso>
+        public virtual Task<DescribeJobResponse> DescribeJobAsync(DescribeJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeJobRequestMarshaller();
+            var unmarshaller = DescribeJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeJobRequest,DescribeJobResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeJobExecution
+
+
+        /// <summary>
+        /// Describes a job execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeJobExecution service method.</param>
+        /// 
+        /// <returns>The response from the DescribeJobExecution service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeJobExecution">REST API Reference for DescribeJobExecution Operation</seealso>
+        public virtual DescribeJobExecutionResponse DescribeJobExecution(DescribeJobExecutionRequest request)
+        {
+            var marshaller = new DescribeJobExecutionRequestMarshaller();
+            var unmarshaller = DescribeJobExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeJobExecutionRequest,DescribeJobExecutionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeJobExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeJobExecution operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeJobExecution">REST API Reference for DescribeJobExecution Operation</seealso>
+        public virtual Task<DescribeJobExecutionResponse> DescribeJobExecutionAsync(DescribeJobExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeJobExecutionRequestMarshaller();
+            var unmarshaller = DescribeJobExecutionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeJobExecutionRequest,DescribeJobExecutionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeRoleAlias
+
+
+        /// <summary>
+        /// Describes a role alias.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRoleAlias service method.</param>
+        /// 
+        /// <returns>The response from the DescribeRoleAlias service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeRoleAlias">REST API Reference for DescribeRoleAlias Operation</seealso>
+        public virtual DescribeRoleAliasResponse DescribeRoleAlias(DescribeRoleAliasRequest request)
+        {
+            var marshaller = new DescribeRoleAliasRequestMarshaller();
+            var unmarshaller = DescribeRoleAliasResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeRoleAliasRequest,DescribeRoleAliasResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeRoleAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRoleAlias operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeRoleAlias">REST API Reference for DescribeRoleAlias Operation</seealso>
+        public virtual Task<DescribeRoleAliasResponse> DescribeRoleAliasAsync(DescribeRoleAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeRoleAliasRequestMarshaller();
+            var unmarshaller = DescribeRoleAliasResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeRoleAliasRequest,DescribeRoleAliasResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -3477,6 +4619,111 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  DescribeThingGroup
+
+
+        /// <summary>
+        /// Describe a thing group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeThingGroup service method.</param>
+        /// 
+        /// <returns>The response from the DescribeThingGroup service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeThingGroup">REST API Reference for DescribeThingGroup Operation</seealso>
+        public virtual DescribeThingGroupResponse DescribeThingGroup(DescribeThingGroupRequest request)
+        {
+            var marshaller = new DescribeThingGroupRequestMarshaller();
+            var unmarshaller = DescribeThingGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeThingGroupRequest,DescribeThingGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeThingGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeThingGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeThingGroup">REST API Reference for DescribeThingGroup Operation</seealso>
+        public virtual Task<DescribeThingGroupResponse> DescribeThingGroupAsync(DescribeThingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeThingGroupRequestMarshaller();
+            var unmarshaller = DescribeThingGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeThingGroupRequest,DescribeThingGroupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeThingRegistrationTask
+
+
+        /// <summary>
+        /// Describes a bulk thing provisioning task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeThingRegistrationTask service method.</param>
+        /// 
+        /// <returns>The response from the DescribeThingRegistrationTask service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeThingRegistrationTask">REST API Reference for DescribeThingRegistrationTask Operation</seealso>
+        public virtual DescribeThingRegistrationTaskResponse DescribeThingRegistrationTask(DescribeThingRegistrationTaskRequest request)
+        {
+            var marshaller = new DescribeThingRegistrationTaskRequestMarshaller();
+            var unmarshaller = DescribeThingRegistrationTaskResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeThingRegistrationTaskRequest,DescribeThingRegistrationTaskResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeThingRegistrationTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeThingRegistrationTask operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeThingRegistrationTask">REST API Reference for DescribeThingRegistrationTask Operation</seealso>
+        public virtual Task<DescribeThingRegistrationTaskResponse> DescribeThingRegistrationTaskAsync(DescribeThingRegistrationTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeThingRegistrationTaskRequestMarshaller();
+            var unmarshaller = DescribeThingRegistrationTaskResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeThingRegistrationTaskRequest,DescribeThingRegistrationTaskResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeThingType
 
 
@@ -3534,11 +4781,73 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  DetachPolicy
+
+
+        /// <summary>
+        /// Detaches a policy from the specified target.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DetachPolicy service method.</param>
+        /// 
+        /// <returns>The response from the DetachPolicy service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.LimitExceededException">
+        /// The number of attached entities exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DetachPolicy">REST API Reference for DetachPolicy Operation</seealso>
+        public virtual DetachPolicyResponse DetachPolicy(DetachPolicyRequest request)
+        {
+            var marshaller = new DetachPolicyRequestMarshaller();
+            var unmarshaller = DetachPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DetachPolicyRequest,DetachPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DetachPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DetachPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DetachPolicy">REST API Reference for DetachPolicy Operation</seealso>
+        public virtual Task<DetachPolicyResponse> DetachPolicyAsync(DetachPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DetachPolicyRequestMarshaller();
+            var unmarshaller = DetachPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DetachPolicyRequest,DetachPolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DetachPrincipalPolicy
 
 
         /// <summary>
         /// Removes the specified policy from the specified certificate.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Note:</b> This API is deprecated. Please use <a>DetachPolicy</a> instead.
+        /// </para>
         /// </summary>
         /// <param name="policyName">The name of the policy to detach.</param>
         /// <param name="principal">The principal. If the principal is a certificate, specify the certificate ARN. If the principal is an Amazon Cognito identity, specify the identity ID.</param>
@@ -3563,6 +4872,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DetachPrincipalPolicy">REST API Reference for DetachPrincipalPolicy Operation</seealso>
+        [Obsolete("Deprecated in favor of DetachPolicy.")]
         public virtual DetachPrincipalPolicyResponse DetachPrincipalPolicy(string policyName, string principal)
         {
             var request = new DetachPrincipalPolicyRequest();
@@ -3574,6 +4884,11 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Removes the specified policy from the specified certificate.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Note:</b> This API is deprecated. Please use <a>DetachPolicy</a> instead.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetachPrincipalPolicy service method.</param>
         /// 
@@ -3597,6 +4912,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DetachPrincipalPolicy">REST API Reference for DetachPrincipalPolicy Operation</seealso>
+        [Obsolete("Deprecated in favor of DetachPolicy.")]
         public virtual DetachPrincipalPolicyResponse DetachPrincipalPolicy(DetachPrincipalPolicyRequest request)
         {
             var marshaller = new DetachPrincipalPolicyRequestMarshaller();
@@ -3608,6 +4924,11 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Removes the specified policy from the specified certificate.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Note:</b> This API is deprecated. Please use <a>DetachPolicy</a> instead.
+        /// </para>
         /// </summary>
         /// <param name="policyName">The name of the policy to detach.</param>
         /// <param name="principal">The principal. If the principal is a certificate, specify the certificate ARN. If the principal is an Amazon Cognito identity, specify the identity ID.</param>
@@ -3635,6 +4956,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DetachPrincipalPolicy">REST API Reference for DetachPrincipalPolicy Operation</seealso>
+        [Obsolete("Deprecated in favor of DetachPolicy.")]
         public virtual Task<DetachPrincipalPolicyResponse> DetachPrincipalPolicyAsync(string policyName, string principal, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DetachPrincipalPolicyRequest();
@@ -3653,6 +4975,7 @@ namespace Amazon.IoT
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DetachPrincipalPolicy">REST API Reference for DetachPrincipalPolicy Operation</seealso>
+        [Obsolete("Deprecated in favor of DetachPolicy.")]
         public virtual Task<DetachPrincipalPolicyResponse> DetachPrincipalPolicyAsync(DetachPrincipalPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DetachPrincipalPolicyRequestMarshaller();
@@ -3798,7 +5121,7 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Disables the specified rule.
+        /// Disables the rule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableTopicRule service method.</param>
         /// 
@@ -3849,7 +5172,7 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Enables the specified rule.
+        /// Enables the rule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableTopicRule service method.</param>
         /// 
@@ -3891,6 +5214,171 @@ namespace Amazon.IoT
             var unmarshaller = EnableTopicRuleResponseUnmarshaller.Instance;
 
             return InvokeAsync<EnableTopicRuleRequest,EnableTopicRuleResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetEffectivePolicies
+
+
+        /// <summary>
+        /// Gets effective policies.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEffectivePolicies service method.</param>
+        /// 
+        /// <returns>The response from the GetEffectivePolicies service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.LimitExceededException">
+        /// The number of attached entities exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetEffectivePolicies">REST API Reference for GetEffectivePolicies Operation</seealso>
+        public virtual GetEffectivePoliciesResponse GetEffectivePolicies(GetEffectivePoliciesRequest request)
+        {
+            var marshaller = new GetEffectivePoliciesRequestMarshaller();
+            var unmarshaller = GetEffectivePoliciesResponseUnmarshaller.Instance;
+
+            return Invoke<GetEffectivePoliciesRequest,GetEffectivePoliciesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetEffectivePolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetEffectivePolicies operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetEffectivePolicies">REST API Reference for GetEffectivePolicies Operation</seealso>
+        public virtual Task<GetEffectivePoliciesResponse> GetEffectivePoliciesAsync(GetEffectivePoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetEffectivePoliciesRequestMarshaller();
+            var unmarshaller = GetEffectivePoliciesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetEffectivePoliciesRequest,GetEffectivePoliciesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetIndexingConfiguration
+
+
+        /// <summary>
+        /// Gets the search configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIndexingConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetIndexingConfiguration service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetIndexingConfiguration">REST API Reference for GetIndexingConfiguration Operation</seealso>
+        public virtual GetIndexingConfigurationResponse GetIndexingConfiguration(GetIndexingConfigurationRequest request)
+        {
+            var marshaller = new GetIndexingConfigurationRequestMarshaller();
+            var unmarshaller = GetIndexingConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetIndexingConfigurationRequest,GetIndexingConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetIndexingConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetIndexingConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetIndexingConfiguration">REST API Reference for GetIndexingConfiguration Operation</seealso>
+        public virtual Task<GetIndexingConfigurationResponse> GetIndexingConfigurationAsync(GetIndexingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetIndexingConfigurationRequestMarshaller();
+            var unmarshaller = GetIndexingConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetIndexingConfigurationRequest,GetIndexingConfigurationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetJobDocument
+
+
+        /// <summary>
+        /// Gets a job document.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetJobDocument service method.</param>
+        /// 
+        /// <returns>The response from the GetJobDocument service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetJobDocument">REST API Reference for GetJobDocument Operation</seealso>
+        public virtual GetJobDocumentResponse GetJobDocument(GetJobDocumentRequest request)
+        {
+            var marshaller = new GetJobDocumentRequestMarshaller();
+            var unmarshaller = GetJobDocumentResponseUnmarshaller.Instance;
+
+            return Invoke<GetJobDocumentRequest,GetJobDocumentResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetJobDocument operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetJobDocument operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetJobDocument">REST API Reference for GetJobDocument Operation</seealso>
+        public virtual Task<GetJobDocumentResponse> GetJobDocumentAsync(GetJobDocumentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetJobDocumentRequestMarshaller();
+            var unmarshaller = GetJobDocumentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetJobDocumentRequest,GetJobDocumentResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -4261,7 +5749,7 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Gets information about the specified rule.
+        /// Gets information about the rule.
         /// </summary>
         /// <param name="ruleName">The name of the rule.</param>
         /// 
@@ -4288,7 +5776,7 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Gets information about the specified rule.
+        /// Gets information about the rule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTopicRule service method.</param>
         /// 
@@ -4316,7 +5804,7 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Gets information about the specified rule.
+        /// Gets information about the rule.
         /// </summary>
         /// <param name="ruleName">The name of the rule.</param>
         /// <param name="cancellationToken">
@@ -4360,6 +5848,168 @@ namespace Amazon.IoT
             var unmarshaller = GetTopicRuleResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetTopicRuleRequest,GetTopicRuleResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetV2LoggingOptions
+
+
+        /// <summary>
+        /// Gets the fine grained logging options.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetV2LoggingOptions service method.</param>
+        /// 
+        /// <returns>The response from the GetV2LoggingOptions service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetV2LoggingOptions">REST API Reference for GetV2LoggingOptions Operation</seealso>
+        public virtual GetV2LoggingOptionsResponse GetV2LoggingOptions(GetV2LoggingOptionsRequest request)
+        {
+            var marshaller = new GetV2LoggingOptionsRequestMarshaller();
+            var unmarshaller = GetV2LoggingOptionsResponseUnmarshaller.Instance;
+
+            return Invoke<GetV2LoggingOptionsRequest,GetV2LoggingOptionsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetV2LoggingOptions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetV2LoggingOptions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetV2LoggingOptions">REST API Reference for GetV2LoggingOptions Operation</seealso>
+        public virtual Task<GetV2LoggingOptionsResponse> GetV2LoggingOptionsAsync(GetV2LoggingOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetV2LoggingOptionsRequestMarshaller();
+            var unmarshaller = GetV2LoggingOptionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetV2LoggingOptionsRequest,GetV2LoggingOptionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListAttachedPolicies
+
+
+        /// <summary>
+        /// Lists the policies attached to the specified thing group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAttachedPolicies service method.</param>
+        /// 
+        /// <returns>The response from the ListAttachedPolicies service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.LimitExceededException">
+        /// The number of attached entities exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListAttachedPolicies">REST API Reference for ListAttachedPolicies Operation</seealso>
+        public virtual ListAttachedPoliciesResponse ListAttachedPolicies(ListAttachedPoliciesRequest request)
+        {
+            var marshaller = new ListAttachedPoliciesRequestMarshaller();
+            var unmarshaller = ListAttachedPoliciesResponseUnmarshaller.Instance;
+
+            return Invoke<ListAttachedPoliciesRequest,ListAttachedPoliciesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAttachedPolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAttachedPolicies operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListAttachedPolicies">REST API Reference for ListAttachedPolicies Operation</seealso>
+        public virtual Task<ListAttachedPoliciesResponse> ListAttachedPoliciesAsync(ListAttachedPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListAttachedPoliciesRequestMarshaller();
+            var unmarshaller = ListAttachedPoliciesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListAttachedPoliciesRequest,ListAttachedPoliciesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListAuthorizers
+
+
+        /// <summary>
+        /// Lists the authorizers registered in your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAuthorizers service method.</param>
+        /// 
+        /// <returns>The response from the ListAuthorizers service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListAuthorizers">REST API Reference for ListAuthorizers Operation</seealso>
+        public virtual ListAuthorizersResponse ListAuthorizers(ListAuthorizersRequest request)
+        {
+            var marshaller = new ListAuthorizersRequestMarshaller();
+            var unmarshaller = ListAuthorizersResponseUnmarshaller.Instance;
+
+            return Invoke<ListAuthorizersRequest,ListAuthorizersResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAuthorizers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAuthorizers operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListAuthorizers">REST API Reference for ListAuthorizers Operation</seealso>
+        public virtual Task<ListAuthorizersResponse> ListAuthorizersAsync(ListAuthorizersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListAuthorizersRequestMarshaller();
+            var unmarshaller = ListAuthorizersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListAuthorizersRequest,ListAuthorizersResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -4610,11 +6260,218 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  ListIndices
+
+
+        /// <summary>
+        /// Lists the search indices.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIndices service method.</param>
+        /// 
+        /// <returns>The response from the ListIndices service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListIndices">REST API Reference for ListIndices Operation</seealso>
+        public virtual ListIndicesResponse ListIndices(ListIndicesRequest request)
+        {
+            var marshaller = new ListIndicesRequestMarshaller();
+            var unmarshaller = ListIndicesResponseUnmarshaller.Instance;
+
+            return Invoke<ListIndicesRequest,ListIndicesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListIndices operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListIndices operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListIndices">REST API Reference for ListIndices Operation</seealso>
+        public virtual Task<ListIndicesResponse> ListIndicesAsync(ListIndicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListIndicesRequestMarshaller();
+            var unmarshaller = ListIndicesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListIndicesRequest,ListIndicesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListJobExecutionsForJob
+
+
+        /// <summary>
+        /// Lists the job executions for a job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListJobExecutionsForJob service method.</param>
+        /// 
+        /// <returns>The response from the ListJobExecutionsForJob service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListJobExecutionsForJob">REST API Reference for ListJobExecutionsForJob Operation</seealso>
+        public virtual ListJobExecutionsForJobResponse ListJobExecutionsForJob(ListJobExecutionsForJobRequest request)
+        {
+            var marshaller = new ListJobExecutionsForJobRequestMarshaller();
+            var unmarshaller = ListJobExecutionsForJobResponseUnmarshaller.Instance;
+
+            return Invoke<ListJobExecutionsForJobRequest,ListJobExecutionsForJobResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListJobExecutionsForJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListJobExecutionsForJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListJobExecutionsForJob">REST API Reference for ListJobExecutionsForJob Operation</seealso>
+        public virtual Task<ListJobExecutionsForJobResponse> ListJobExecutionsForJobAsync(ListJobExecutionsForJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListJobExecutionsForJobRequestMarshaller();
+            var unmarshaller = ListJobExecutionsForJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListJobExecutionsForJobRequest,ListJobExecutionsForJobResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListJobExecutionsForThing
+
+
+        /// <summary>
+        /// Lists the job executions for the specified thing.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListJobExecutionsForThing service method.</param>
+        /// 
+        /// <returns>The response from the ListJobExecutionsForThing service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListJobExecutionsForThing">REST API Reference for ListJobExecutionsForThing Operation</seealso>
+        public virtual ListJobExecutionsForThingResponse ListJobExecutionsForThing(ListJobExecutionsForThingRequest request)
+        {
+            var marshaller = new ListJobExecutionsForThingRequestMarshaller();
+            var unmarshaller = ListJobExecutionsForThingResponseUnmarshaller.Instance;
+
+            return Invoke<ListJobExecutionsForThingRequest,ListJobExecutionsForThingResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListJobExecutionsForThing operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListJobExecutionsForThing operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListJobExecutionsForThing">REST API Reference for ListJobExecutionsForThing Operation</seealso>
+        public virtual Task<ListJobExecutionsForThingResponse> ListJobExecutionsForThingAsync(ListJobExecutionsForThingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListJobExecutionsForThingRequestMarshaller();
+            var unmarshaller = ListJobExecutionsForThingResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListJobExecutionsForThingRequest,ListJobExecutionsForThingResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListJobs
+
+
+        /// <summary>
+        /// Lists jobs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListJobs service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListJobs">REST API Reference for ListJobs Operation</seealso>
+        public virtual ListJobsResponse ListJobs(ListJobsRequest request)
+        {
+            var marshaller = new ListJobsRequestMarshaller();
+            var unmarshaller = ListJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListJobsRequest,ListJobsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListJobs operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListJobs">REST API Reference for ListJobs Operation</seealso>
+        public virtual Task<ListJobsResponse> ListJobsAsync(ListJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListJobsRequestMarshaller();
+            var unmarshaller = ListJobsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListJobsRequest,ListJobsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListOutgoingCertificates
 
 
         /// <summary>
-        /// Lists certificates that are being transfered but not yet accepted.
+        /// Lists certificates that are being transferred but not yet accepted.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOutgoingCertificates service method.</param>
         /// 
@@ -4782,6 +6639,11 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Lists the principals associated with the specified policy.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Note:</b> This API is deprecated. Please use <a>ListTargetsForPolicy</a> instead.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPolicyPrincipals service method.</param>
         /// 
@@ -4805,6 +6667,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPolicyPrincipals">REST API Reference for ListPolicyPrincipals Operation</seealso>
+        [Obsolete("Deprecated in favor of ListTargetsForPolicy.")]
         public virtual ListPolicyPrincipalsResponse ListPolicyPrincipals(ListPolicyPrincipalsRequest request)
         {
             var marshaller = new ListPolicyPrincipalsRequestMarshaller();
@@ -4823,6 +6686,7 @@ namespace Amazon.IoT
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPolicyPrincipals">REST API Reference for ListPolicyPrincipals Operation</seealso>
+        [Obsolete("Deprecated in favor of ListTargetsForPolicy.")]
         public virtual Task<ListPolicyPrincipalsResponse> ListPolicyPrincipalsAsync(ListPolicyPrincipalsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListPolicyPrincipalsRequestMarshaller();
@@ -4967,6 +6831,11 @@ namespace Amazon.IoT
         /// Lists the policies attached to the specified principal. If you use an Cognito identity,
         /// the ID must be in <a href="http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetCredentialsForIdentity.html#API_GetCredentialsForIdentity_RequestSyntax">AmazonCognito
         /// Identity format</a>.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Note:</b> This API is deprecated. Please use <a>ListAttachedPolicies</a> instead.
+        /// </para>
         /// </summary>
         /// <param name="principal">The principal.</param>
         /// 
@@ -4990,6 +6859,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPrincipalPolicies">REST API Reference for ListPrincipalPolicies Operation</seealso>
+        [Obsolete("Deprecated in favor of ListAttachedPolicies.")]
         public virtual ListPrincipalPoliciesResponse ListPrincipalPolicies(string principal)
         {
             var request = new ListPrincipalPoliciesRequest();
@@ -5002,6 +6872,11 @@ namespace Amazon.IoT
         /// Lists the policies attached to the specified principal. If you use an Cognito identity,
         /// the ID must be in <a href="http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetCredentialsForIdentity.html#API_GetCredentialsForIdentity_RequestSyntax">AmazonCognito
         /// Identity format</a>.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Note:</b> This API is deprecated. Please use <a>ListAttachedPolicies</a> instead.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPrincipalPolicies service method.</param>
         /// 
@@ -5025,6 +6900,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPrincipalPolicies">REST API Reference for ListPrincipalPolicies Operation</seealso>
+        [Obsolete("Deprecated in favor of ListAttachedPolicies.")]
         public virtual ListPrincipalPoliciesResponse ListPrincipalPolicies(ListPrincipalPoliciesRequest request)
         {
             var marshaller = new ListPrincipalPoliciesRequestMarshaller();
@@ -5038,6 +6914,11 @@ namespace Amazon.IoT
         /// Lists the policies attached to the specified principal. If you use an Cognito identity,
         /// the ID must be in <a href="http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetCredentialsForIdentity.html#API_GetCredentialsForIdentity_RequestSyntax">AmazonCognito
         /// Identity format</a>.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Note:</b> This API is deprecated. Please use <a>ListAttachedPolicies</a> instead.
+        /// </para>
         /// </summary>
         /// <param name="principal">The principal.</param>
         /// <param name="cancellationToken">
@@ -5064,6 +6945,7 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPrincipalPolicies">REST API Reference for ListPrincipalPolicies Operation</seealso>
+        [Obsolete("Deprecated in favor of ListAttachedPolicies.")]
         public virtual Task<ListPrincipalPoliciesResponse> ListPrincipalPoliciesAsync(string principal, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new ListPrincipalPoliciesRequest();
@@ -5081,6 +6963,7 @@ namespace Amazon.IoT
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPrincipalPolicies">REST API Reference for ListPrincipalPolicies Operation</seealso>
+        [Obsolete("Deprecated in favor of ListAttachedPolicies.")]
         public virtual Task<ListPrincipalPoliciesResponse> ListPrincipalPoliciesAsync(ListPrincipalPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListPrincipalPoliciesRequestMarshaller();
@@ -5218,6 +7101,216 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  ListRoleAliases
+
+
+        /// <summary>
+        /// Lists the role aliases registered in your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRoleAliases service method.</param>
+        /// 
+        /// <returns>The response from the ListRoleAliases service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListRoleAliases">REST API Reference for ListRoleAliases Operation</seealso>
+        public virtual ListRoleAliasesResponse ListRoleAliases(ListRoleAliasesRequest request)
+        {
+            var marshaller = new ListRoleAliasesRequestMarshaller();
+            var unmarshaller = ListRoleAliasesResponseUnmarshaller.Instance;
+
+            return Invoke<ListRoleAliasesRequest,ListRoleAliasesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListRoleAliases operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListRoleAliases operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListRoleAliases">REST API Reference for ListRoleAliases Operation</seealso>
+        public virtual Task<ListRoleAliasesResponse> ListRoleAliasesAsync(ListRoleAliasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListRoleAliasesRequestMarshaller();
+            var unmarshaller = ListRoleAliasesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListRoleAliasesRequest,ListRoleAliasesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListTargetsForPolicy
+
+
+        /// <summary>
+        /// List targets for the specified policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTargetsForPolicy service method.</param>
+        /// 
+        /// <returns>The response from the ListTargetsForPolicy service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.LimitExceededException">
+        /// The number of attached entities exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListTargetsForPolicy">REST API Reference for ListTargetsForPolicy Operation</seealso>
+        public virtual ListTargetsForPolicyResponse ListTargetsForPolicy(ListTargetsForPolicyRequest request)
+        {
+            var marshaller = new ListTargetsForPolicyRequestMarshaller();
+            var unmarshaller = ListTargetsForPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<ListTargetsForPolicyRequest,ListTargetsForPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTargetsForPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTargetsForPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListTargetsForPolicy">REST API Reference for ListTargetsForPolicy Operation</seealso>
+        public virtual Task<ListTargetsForPolicyResponse> ListTargetsForPolicyAsync(ListTargetsForPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListTargetsForPolicyRequestMarshaller();
+            var unmarshaller = ListTargetsForPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTargetsForPolicyRequest,ListTargetsForPolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListThingGroups
+
+
+        /// <summary>
+        /// List the thing groups in your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListThingGroups service method.</param>
+        /// 
+        /// <returns>The response from the ListThingGroups service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingGroups">REST API Reference for ListThingGroups Operation</seealso>
+        public virtual ListThingGroupsResponse ListThingGroups(ListThingGroupsRequest request)
+        {
+            var marshaller = new ListThingGroupsRequestMarshaller();
+            var unmarshaller = ListThingGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<ListThingGroupsRequest,ListThingGroupsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListThingGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListThingGroups operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingGroups">REST API Reference for ListThingGroups Operation</seealso>
+        public virtual Task<ListThingGroupsResponse> ListThingGroupsAsync(ListThingGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListThingGroupsRequestMarshaller();
+            var unmarshaller = ListThingGroupsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListThingGroupsRequest,ListThingGroupsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListThingGroupsForThing
+
+
+        /// <summary>
+        /// List the thing groups to which the specified thing belongs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListThingGroupsForThing service method.</param>
+        /// 
+        /// <returns>The response from the ListThingGroupsForThing service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingGroupsForThing">REST API Reference for ListThingGroupsForThing Operation</seealso>
+        public virtual ListThingGroupsForThingResponse ListThingGroupsForThing(ListThingGroupsForThingRequest request)
+        {
+            var marshaller = new ListThingGroupsForThingRequestMarshaller();
+            var unmarshaller = ListThingGroupsForThingResponseUnmarshaller.Instance;
+
+            return Invoke<ListThingGroupsForThingRequest,ListThingGroupsForThingResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListThingGroupsForThing operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListThingGroupsForThing operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingGroupsForThing">REST API Reference for ListThingGroupsForThing Operation</seealso>
+        public virtual Task<ListThingGroupsForThingResponse> ListThingGroupsForThingAsync(ListThingGroupsForThingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListThingGroupsForThingRequestMarshaller();
+            var unmarshaller = ListThingGroupsForThingResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListThingGroupsForThingRequest,ListThingGroupsForThingResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListThingPrincipals
 
 
@@ -5344,6 +7437,108 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  ListThingRegistrationTaskReports
+
+
+        /// <summary>
+        /// Information about the thing registration tasks.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListThingRegistrationTaskReports service method.</param>
+        /// 
+        /// <returns>The response from the ListThingRegistrationTaskReports service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingRegistrationTaskReports">REST API Reference for ListThingRegistrationTaskReports Operation</seealso>
+        public virtual ListThingRegistrationTaskReportsResponse ListThingRegistrationTaskReports(ListThingRegistrationTaskReportsRequest request)
+        {
+            var marshaller = new ListThingRegistrationTaskReportsRequestMarshaller();
+            var unmarshaller = ListThingRegistrationTaskReportsResponseUnmarshaller.Instance;
+
+            return Invoke<ListThingRegistrationTaskReportsRequest,ListThingRegistrationTaskReportsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListThingRegistrationTaskReports operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListThingRegistrationTaskReports operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingRegistrationTaskReports">REST API Reference for ListThingRegistrationTaskReports Operation</seealso>
+        public virtual Task<ListThingRegistrationTaskReportsResponse> ListThingRegistrationTaskReportsAsync(ListThingRegistrationTaskReportsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListThingRegistrationTaskReportsRequestMarshaller();
+            var unmarshaller = ListThingRegistrationTaskReportsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListThingRegistrationTaskReportsRequest,ListThingRegistrationTaskReportsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListThingRegistrationTasks
+
+
+        /// <summary>
+        /// List bulk thing provisioning tasks.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListThingRegistrationTasks service method.</param>
+        /// 
+        /// <returns>The response from the ListThingRegistrationTasks service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingRegistrationTasks">REST API Reference for ListThingRegistrationTasks Operation</seealso>
+        public virtual ListThingRegistrationTasksResponse ListThingRegistrationTasks(ListThingRegistrationTasksRequest request)
+        {
+            var marshaller = new ListThingRegistrationTasksRequestMarshaller();
+            var unmarshaller = ListThingRegistrationTasksResponseUnmarshaller.Instance;
+
+            return Invoke<ListThingRegistrationTasksRequest,ListThingRegistrationTasksResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListThingRegistrationTasks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListThingRegistrationTasks operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingRegistrationTasks">REST API Reference for ListThingRegistrationTasks Operation</seealso>
+        public virtual Task<ListThingRegistrationTasksResponse> ListThingRegistrationTasksAsync(ListThingRegistrationTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListThingRegistrationTasksRequestMarshaller();
+            var unmarshaller = ListThingRegistrationTasksResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListThingRegistrationTasksRequest,ListThingRegistrationTasksResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListThings
 
 
@@ -5461,6 +7656,54 @@ namespace Amazon.IoT
             var unmarshaller = ListThingsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListThingsRequest,ListThingsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListThingsInThingGroup
+
+
+        /// <summary>
+        /// Lists the things in the specified group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListThingsInThingGroup service method.</param>
+        /// 
+        /// <returns>The response from the ListThingsInThingGroup service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingsInThingGroup">REST API Reference for ListThingsInThingGroup Operation</seealso>
+        public virtual ListThingsInThingGroupResponse ListThingsInThingGroup(ListThingsInThingGroupRequest request)
+        {
+            var marshaller = new ListThingsInThingGroupRequestMarshaller();
+            var unmarshaller = ListThingsInThingGroupResponseUnmarshaller.Instance;
+
+            return Invoke<ListThingsInThingGroupRequest,ListThingsInThingGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListThingsInThingGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListThingsInThingGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingsInThingGroup">REST API Reference for ListThingsInThingGroup Operation</seealso>
+        public virtual Task<ListThingsInThingGroupResponse> ListThingsInThingGroupAsync(ListThingsInThingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListThingsInThingGroupRequestMarshaller();
+            var unmarshaller = ListThingsInThingGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListThingsInThingGroupRequest,ListThingsInThingGroupResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -5619,6 +7862,57 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  ListV2LoggingLevels
+
+
+        /// <summary>
+        /// Lists logging levels.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListV2LoggingLevels service method.</param>
+        /// 
+        /// <returns>The response from the ListV2LoggingLevels service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.NotConfiguredException">
+        /// The resource is not configured.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListV2LoggingLevels">REST API Reference for ListV2LoggingLevels Operation</seealso>
+        public virtual ListV2LoggingLevelsResponse ListV2LoggingLevels(ListV2LoggingLevelsRequest request)
+        {
+            var marshaller = new ListV2LoggingLevelsRequestMarshaller();
+            var unmarshaller = ListV2LoggingLevelsResponseUnmarshaller.Instance;
+
+            return Invoke<ListV2LoggingLevelsRequest,ListV2LoggingLevelsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListV2LoggingLevels operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListV2LoggingLevels operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListV2LoggingLevels">REST API Reference for ListV2LoggingLevels Operation</seealso>
+        public virtual Task<ListV2LoggingLevelsResponse> ListV2LoggingLevelsAsync(ListV2LoggingLevelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListV2LoggingLevelsRequestMarshaller();
+            var unmarshaller = ListV2LoggingLevelsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListV2LoggingLevelsRequest,ListV2LoggingLevelsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  RegisterCACertificate
 
 
@@ -5755,6 +8049,67 @@ namespace Amazon.IoT
             var unmarshaller = RegisterCertificateResponseUnmarshaller.Instance;
 
             return InvokeAsync<RegisterCertificateRequest,RegisterCertificateResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RegisterThing
+
+
+        /// <summary>
+        /// Provisions a thing.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterThing service method.</param>
+        /// 
+        /// <returns>The response from the RegisterThing service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.ConflictingResourceUpdateException">
+        /// A conflicting resource update exception. This exception is thrown when two pending
+        /// updates cause a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceRegistrationFailureException">
+        /// The resource registration failed.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RegisterThing">REST API Reference for RegisterThing Operation</seealso>
+        public virtual RegisterThingResponse RegisterThing(RegisterThingRequest request)
+        {
+            var marshaller = new RegisterThingRequestMarshaller();
+            var unmarshaller = RegisterThingResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterThingRequest,RegisterThingResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegisterThing operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RegisterThing operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RegisterThing">REST API Reference for RegisterThing Operation</seealso>
+        public virtual Task<RegisterThingResponse> RegisterThingAsync(RegisterThingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new RegisterThingRequestMarshaller();
+            var unmarshaller = RegisterThingResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RegisterThingRequest,RegisterThingResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -5931,13 +8286,64 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  RemoveThingFromThingGroup
+
+
+        /// <summary>
+        /// Remove the specified thing from the specified group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveThingFromThingGroup service method.</param>
+        /// 
+        /// <returns>The response from the RemoveThingFromThingGroup service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RemoveThingFromThingGroup">REST API Reference for RemoveThingFromThingGroup Operation</seealso>
+        public virtual RemoveThingFromThingGroupResponse RemoveThingFromThingGroup(RemoveThingFromThingGroupRequest request)
+        {
+            var marshaller = new RemoveThingFromThingGroupRequestMarshaller();
+            var unmarshaller = RemoveThingFromThingGroupResponseUnmarshaller.Instance;
+
+            return Invoke<RemoveThingFromThingGroupRequest,RemoveThingFromThingGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveThingFromThingGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveThingFromThingGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RemoveThingFromThingGroup">REST API Reference for RemoveThingFromThingGroup Operation</seealso>
+        public virtual Task<RemoveThingFromThingGroupResponse> RemoveThingFromThingGroupAsync(RemoveThingFromThingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new RemoveThingFromThingGroupRequestMarshaller();
+            var unmarshaller = RemoveThingFromThingGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RemoveThingFromThingGroupRequest,RemoveThingFromThingGroupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ReplaceTopicRule
 
 
         /// <summary>
-        /// Replaces the specified rule. You must specify all parameters for the new rule. Creating
-        /// rules is an administrator-level action. Any user who has permission to create rules
-        /// will be able to access data processed by the rule.
+        /// Replaces the rule. You must specify all parameters for the new rule. Creating rules
+        /// is an administrator-level action. Any user who has permission to create rules will
+        /// be able to access data processed by the rule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ReplaceTopicRule service method.</param>
         /// 
@@ -5982,6 +8388,127 @@ namespace Amazon.IoT
             var unmarshaller = ReplaceTopicRuleResponseUnmarshaller.Instance;
 
             return InvokeAsync<ReplaceTopicRuleRequest,ReplaceTopicRuleResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SearchIndex
+
+
+        /// <summary>
+        /// The query search index.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchIndex service method.</param>
+        /// 
+        /// <returns>The response from the SearchIndex service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.IndexNotReadyException">
+        /// The index is not ready.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidQueryException">
+        /// The query is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SearchIndex">REST API Reference for SearchIndex Operation</seealso>
+        public virtual SearchIndexResponse SearchIndex(SearchIndexRequest request)
+        {
+            var marshaller = new SearchIndexRequestMarshaller();
+            var unmarshaller = SearchIndexResponseUnmarshaller.Instance;
+
+            return Invoke<SearchIndexRequest,SearchIndexResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchIndex operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchIndex operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SearchIndex">REST API Reference for SearchIndex Operation</seealso>
+        public virtual Task<SearchIndexResponse> SearchIndexAsync(SearchIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new SearchIndexRequestMarshaller();
+            var unmarshaller = SearchIndexResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SearchIndexRequest,SearchIndexResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SetDefaultAuthorizer
+
+
+        /// <summary>
+        /// Sets the default authorizer. This will be used if a websocket connection is made without
+        /// specifying an authorizer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SetDefaultAuthorizer service method.</param>
+        /// 
+        /// <returns>The response from the SetDefaultAuthorizer service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SetDefaultAuthorizer">REST API Reference for SetDefaultAuthorizer Operation</seealso>
+        public virtual SetDefaultAuthorizerResponse SetDefaultAuthorizer(SetDefaultAuthorizerRequest request)
+        {
+            var marshaller = new SetDefaultAuthorizerRequestMarshaller();
+            var unmarshaller = SetDefaultAuthorizerResponseUnmarshaller.Instance;
+
+            return Invoke<SetDefaultAuthorizerRequest,SetDefaultAuthorizerResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetDefaultAuthorizer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetDefaultAuthorizer operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SetDefaultAuthorizer">REST API Reference for SetDefaultAuthorizer Operation</seealso>
+        public virtual Task<SetDefaultAuthorizerResponse> SetDefaultAuthorizerAsync(SetDefaultAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new SetDefaultAuthorizerRequestMarshaller();
+            var unmarshaller = SetDefaultAuthorizerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SetDefaultAuthorizerRequest,SetDefaultAuthorizerResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -6166,6 +8693,330 @@ namespace Amazon.IoT
             var unmarshaller = SetLoggingOptionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<SetLoggingOptionsRequest,SetLoggingOptionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SetV2LoggingLevel
+
+
+        /// <summary>
+        /// Sets the logging level.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SetV2LoggingLevel service method.</param>
+        /// 
+        /// <returns>The response from the SetV2LoggingLevel service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.NotConfiguredException">
+        /// The resource is not configured.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SetV2LoggingLevel">REST API Reference for SetV2LoggingLevel Operation</seealso>
+        public virtual SetV2LoggingLevelResponse SetV2LoggingLevel(SetV2LoggingLevelRequest request)
+        {
+            var marshaller = new SetV2LoggingLevelRequestMarshaller();
+            var unmarshaller = SetV2LoggingLevelResponseUnmarshaller.Instance;
+
+            return Invoke<SetV2LoggingLevelRequest,SetV2LoggingLevelResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetV2LoggingLevel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetV2LoggingLevel operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SetV2LoggingLevel">REST API Reference for SetV2LoggingLevel Operation</seealso>
+        public virtual Task<SetV2LoggingLevelResponse> SetV2LoggingLevelAsync(SetV2LoggingLevelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new SetV2LoggingLevelRequestMarshaller();
+            var unmarshaller = SetV2LoggingLevelResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SetV2LoggingLevelRequest,SetV2LoggingLevelResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SetV2LoggingOptions
+
+
+        /// <summary>
+        /// Sets the logging options for the V2 logging service.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SetV2LoggingOptions service method.</param>
+        /// 
+        /// <returns>The response from the SetV2LoggingOptions service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SetV2LoggingOptions">REST API Reference for SetV2LoggingOptions Operation</seealso>
+        public virtual SetV2LoggingOptionsResponse SetV2LoggingOptions(SetV2LoggingOptionsRequest request)
+        {
+            var marshaller = new SetV2LoggingOptionsRequestMarshaller();
+            var unmarshaller = SetV2LoggingOptionsResponseUnmarshaller.Instance;
+
+            return Invoke<SetV2LoggingOptionsRequest,SetV2LoggingOptionsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetV2LoggingOptions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetV2LoggingOptions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SetV2LoggingOptions">REST API Reference for SetV2LoggingOptions Operation</seealso>
+        public virtual Task<SetV2LoggingOptionsResponse> SetV2LoggingOptionsAsync(SetV2LoggingOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new SetV2LoggingOptionsRequestMarshaller();
+            var unmarshaller = SetV2LoggingOptionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SetV2LoggingOptionsRequest,SetV2LoggingOptionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartThingRegistrationTask
+
+
+        /// <summary>
+        /// Creates a bulk thing provisioning task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartThingRegistrationTask service method.</param>
+        /// 
+        /// <returns>The response from the StartThingRegistrationTask service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/StartThingRegistrationTask">REST API Reference for StartThingRegistrationTask Operation</seealso>
+        public virtual StartThingRegistrationTaskResponse StartThingRegistrationTask(StartThingRegistrationTaskRequest request)
+        {
+            var marshaller = new StartThingRegistrationTaskRequestMarshaller();
+            var unmarshaller = StartThingRegistrationTaskResponseUnmarshaller.Instance;
+
+            return Invoke<StartThingRegistrationTaskRequest,StartThingRegistrationTaskResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartThingRegistrationTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartThingRegistrationTask operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/StartThingRegistrationTask">REST API Reference for StartThingRegistrationTask Operation</seealso>
+        public virtual Task<StartThingRegistrationTaskResponse> StartThingRegistrationTaskAsync(StartThingRegistrationTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new StartThingRegistrationTaskRequestMarshaller();
+            var unmarshaller = StartThingRegistrationTaskResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartThingRegistrationTaskRequest,StartThingRegistrationTaskResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopThingRegistrationTask
+
+
+        /// <summary>
+        /// Cancels a bulk thing provisioning task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopThingRegistrationTask service method.</param>
+        /// 
+        /// <returns>The response from the StopThingRegistrationTask service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/StopThingRegistrationTask">REST API Reference for StopThingRegistrationTask Operation</seealso>
+        public virtual StopThingRegistrationTaskResponse StopThingRegistrationTask(StopThingRegistrationTaskRequest request)
+        {
+            var marshaller = new StopThingRegistrationTaskRequestMarshaller();
+            var unmarshaller = StopThingRegistrationTaskResponseUnmarshaller.Instance;
+
+            return Invoke<StopThingRegistrationTaskRequest,StopThingRegistrationTaskResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopThingRegistrationTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopThingRegistrationTask operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/StopThingRegistrationTask">REST API Reference for StopThingRegistrationTask Operation</seealso>
+        public virtual Task<StopThingRegistrationTaskResponse> StopThingRegistrationTaskAsync(StopThingRegistrationTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new StopThingRegistrationTaskRequestMarshaller();
+            var unmarshaller = StopThingRegistrationTaskResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopThingRegistrationTaskRequest,StopThingRegistrationTaskResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  TestAuthorization
+
+
+        /// <summary>
+        /// Test custom authorization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TestAuthorization service method.</param>
+        /// 
+        /// <returns>The response from the TestAuthorization service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.LimitExceededException">
+        /// The number of attached entities exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TestAuthorization">REST API Reference for TestAuthorization Operation</seealso>
+        public virtual TestAuthorizationResponse TestAuthorization(TestAuthorizationRequest request)
+        {
+            var marshaller = new TestAuthorizationRequestMarshaller();
+            var unmarshaller = TestAuthorizationResponseUnmarshaller.Instance;
+
+            return Invoke<TestAuthorizationRequest,TestAuthorizationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TestAuthorization operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TestAuthorization operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TestAuthorization">REST API Reference for TestAuthorization Operation</seealso>
+        public virtual Task<TestAuthorizationResponse> TestAuthorizationAsync(TestAuthorizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new TestAuthorizationRequestMarshaller();
+            var unmarshaller = TestAuthorizationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<TestAuthorizationRequest,TestAuthorizationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  TestInvokeAuthorizer
+
+
+        /// <summary>
+        /// Invoke the specified custom authorizer for testing purposes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TestInvokeAuthorizer service method.</param>
+        /// 
+        /// <returns>The response from the TestInvokeAuthorizer service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidResponseException">
+        /// The response is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TestInvokeAuthorizer">REST API Reference for TestInvokeAuthorizer Operation</seealso>
+        public virtual TestInvokeAuthorizerResponse TestInvokeAuthorizer(TestInvokeAuthorizerRequest request)
+        {
+            var marshaller = new TestInvokeAuthorizerRequestMarshaller();
+            var unmarshaller = TestInvokeAuthorizerResponseUnmarshaller.Instance;
+
+            return Invoke<TestInvokeAuthorizerRequest,TestInvokeAuthorizerResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TestInvokeAuthorizer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TestInvokeAuthorizer operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TestInvokeAuthorizer">REST API Reference for TestInvokeAuthorizer Operation</seealso>
+        public virtual Task<TestInvokeAuthorizerResponse> TestInvokeAuthorizerAsync(TestInvokeAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new TestInvokeAuthorizerRequestMarshaller();
+            var unmarshaller = TestInvokeAuthorizerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<TestInvokeAuthorizerRequest,TestInvokeAuthorizerResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -6374,6 +9225,66 @@ namespace Amazon.IoT
             var unmarshaller = TransferCertificateResponseUnmarshaller.Instance;
 
             return InvokeAsync<TransferCertificateRequest,TransferCertificateResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateAuthorizer
+
+
+        /// <summary>
+        /// Updates an authorizer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAuthorizer service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAuthorizer service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.LimitExceededException">
+        /// The number of attached entities exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateAuthorizer">REST API Reference for UpdateAuthorizer Operation</seealso>
+        public virtual UpdateAuthorizerResponse UpdateAuthorizer(UpdateAuthorizerRequest request)
+        {
+            var marshaller = new UpdateAuthorizerRequestMarshaller();
+            var unmarshaller = UpdateAuthorizerResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAuthorizerRequest,UpdateAuthorizerResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAuthorizer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAuthorizer operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateAuthorizer">REST API Reference for UpdateAuthorizer Operation</seealso>
+        public virtual Task<UpdateAuthorizerResponse> UpdateAuthorizerAsync(UpdateAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateAuthorizerRequestMarshaller();
+            var unmarshaller = UpdateAuthorizerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateAuthorizerRequest,UpdateAuthorizerResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -6608,6 +9519,165 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  UpdateEventConfigurations
+
+
+        /// <summary>
+        /// Updates the event configurations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEventConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the UpdateEventConfigurations service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateEventConfigurations">REST API Reference for UpdateEventConfigurations Operation</seealso>
+        public virtual UpdateEventConfigurationsResponse UpdateEventConfigurations(UpdateEventConfigurationsRequest request)
+        {
+            var marshaller = new UpdateEventConfigurationsRequestMarshaller();
+            var unmarshaller = UpdateEventConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateEventConfigurationsRequest,UpdateEventConfigurationsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateEventConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEventConfigurations operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateEventConfigurations">REST API Reference for UpdateEventConfigurations Operation</seealso>
+        public virtual Task<UpdateEventConfigurationsResponse> UpdateEventConfigurationsAsync(UpdateEventConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateEventConfigurationsRequestMarshaller();
+            var unmarshaller = UpdateEventConfigurationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateEventConfigurationsRequest,UpdateEventConfigurationsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateIndexingConfiguration
+
+
+        /// <summary>
+        /// Updates the search configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIndexingConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateIndexingConfiguration service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateIndexingConfiguration">REST API Reference for UpdateIndexingConfiguration Operation</seealso>
+        public virtual UpdateIndexingConfigurationResponse UpdateIndexingConfiguration(UpdateIndexingConfigurationRequest request)
+        {
+            var marshaller = new UpdateIndexingConfigurationRequestMarshaller();
+            var unmarshaller = UpdateIndexingConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateIndexingConfigurationRequest,UpdateIndexingConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateIndexingConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIndexingConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateIndexingConfiguration">REST API Reference for UpdateIndexingConfiguration Operation</seealso>
+        public virtual Task<UpdateIndexingConfigurationResponse> UpdateIndexingConfigurationAsync(UpdateIndexingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateIndexingConfigurationRequestMarshaller();
+            var unmarshaller = UpdateIndexingConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateIndexingConfigurationRequest,UpdateIndexingConfigurationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateRoleAlias
+
+
+        /// <summary>
+        /// Updates a role alias.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRoleAlias service method.</param>
+        /// 
+        /// <returns>The response from the UpdateRoleAlias service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateRoleAlias">REST API Reference for UpdateRoleAlias Operation</seealso>
+        public virtual UpdateRoleAliasResponse UpdateRoleAlias(UpdateRoleAliasRequest request)
+        {
+            var marshaller = new UpdateRoleAliasRequestMarshaller();
+            var unmarshaller = UpdateRoleAliasResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRoleAliasRequest,UpdateRoleAliasResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateRoleAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRoleAlias operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateRoleAlias">REST API Reference for UpdateRoleAlias Operation</seealso>
+        public virtual Task<UpdateRoleAliasResponse> UpdateRoleAliasAsync(UpdateRoleAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateRoleAliasRequestMarshaller();
+            var unmarshaller = UpdateRoleAliasResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateRoleAliasRequest,UpdateRoleAliasResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateThing
 
 
@@ -6664,6 +9734,112 @@ namespace Amazon.IoT
             var unmarshaller = UpdateThingResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateThingRequest,UpdateThingResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateThingGroup
+
+
+        /// <summary>
+        /// Update a thing group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateThingGroup service method.</param>
+        /// 
+        /// <returns>The response from the UpdateThingGroup service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.VersionConflictException">
+        /// An exception thrown when the version of a thing passed to a command is different than
+        /// the version specified with the --version parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateThingGroup">REST API Reference for UpdateThingGroup Operation</seealso>
+        public virtual UpdateThingGroupResponse UpdateThingGroup(UpdateThingGroupRequest request)
+        {
+            var marshaller = new UpdateThingGroupRequestMarshaller();
+            var unmarshaller = UpdateThingGroupResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateThingGroupRequest,UpdateThingGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateThingGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateThingGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateThingGroup">REST API Reference for UpdateThingGroup Operation</seealso>
+        public virtual Task<UpdateThingGroupResponse> UpdateThingGroupAsync(UpdateThingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateThingGroupRequestMarshaller();
+            var unmarshaller = UpdateThingGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateThingGroupRequest,UpdateThingGroupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateThingGroupsForThing
+
+
+        /// <summary>
+        /// Updates the groups to which the thing belongs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateThingGroupsForThing service method.</param>
+        /// 
+        /// <returns>The response from the UpdateThingGroupsForThing service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateThingGroupsForThing">REST API Reference for UpdateThingGroupsForThing Operation</seealso>
+        public virtual UpdateThingGroupsForThingResponse UpdateThingGroupsForThing(UpdateThingGroupsForThingRequest request)
+        {
+            var marshaller = new UpdateThingGroupsForThingRequestMarshaller();
+            var unmarshaller = UpdateThingGroupsForThingResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateThingGroupsForThingRequest,UpdateThingGroupsForThingResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateThingGroupsForThing operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateThingGroupsForThing operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateThingGroupsForThing">REST API Reference for UpdateThingGroupsForThing Operation</seealso>
+        public virtual Task<UpdateThingGroupsForThingResponse> UpdateThingGroupsForThingAsync(UpdateThingGroupsForThingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateThingGroupsForThingRequestMarshaller();
+            var unmarshaller = UpdateThingGroupsForThingResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateThingGroupsForThingRequest,UpdateThingGroupsForThingResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

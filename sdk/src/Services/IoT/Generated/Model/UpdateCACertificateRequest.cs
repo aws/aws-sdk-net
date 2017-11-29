@@ -36,6 +36,8 @@ namespace Amazon.IoT.Model
         private string _certificateId;
         private AutoRegistrationStatus _newAutoRegistrationStatus;
         private CACertificateStatus _newStatus;
+        private RegistrationConfig _registrationConfig;
+        private bool? _removeAutoRegistration;
 
         /// <summary>
         /// Gets and sets the property CertificateId. 
@@ -93,6 +95,42 @@ namespace Amazon.IoT.Model
         internal bool IsSetNewStatus()
         {
             return this._newStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RegistrationConfig. 
+        /// <para>
+        /// Information about the registration configuration.
+        /// </para>
+        /// </summary>
+        public RegistrationConfig RegistrationConfig
+        {
+            get { return this._registrationConfig; }
+            set { this._registrationConfig = value; }
+        }
+
+        // Check to see if RegistrationConfig property is set
+        internal bool IsSetRegistrationConfig()
+        {
+            return this._registrationConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RemoveAutoRegistration. 
+        /// <para>
+        /// If true, remove auto registration.
+        /// </para>
+        /// </summary>
+        public bool RemoveAutoRegistration
+        {
+            get { return this._removeAutoRegistration.GetValueOrDefault(); }
+            set { this._removeAutoRegistration = value; }
+        }
+
+        // Check to see if RemoveAutoRegistration property is set
+        internal bool IsSetRemoveAutoRegistration()
+        {
+            return this._removeAutoRegistration.HasValue; 
         }
 
     }

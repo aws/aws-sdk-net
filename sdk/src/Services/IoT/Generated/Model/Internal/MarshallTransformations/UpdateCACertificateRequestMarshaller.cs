@@ -69,6 +69,34 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNewStatus())
                 request.Parameters.Add("newStatus", StringUtils.FromString(publicRequest.NewStatus));
             request.ResourcePath = uriResourcePath;
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            {
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetRegistrationConfig())
+                {
+                    context.Writer.WritePropertyName("registrationConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = RegistrationConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.RegistrationConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetRemoveAutoRegistration())
+                {
+                    context.Writer.WritePropertyName("removeAutoRegistration");
+                    context.Writer.Write(publicRequest.RemoveAutoRegistration);
+                }
+
+        
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+            }
+
             request.UseQueryString = true;
 
             return request;

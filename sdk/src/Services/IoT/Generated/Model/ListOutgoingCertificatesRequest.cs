@@ -29,7 +29,7 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the ListOutgoingCertificates operation.
-    /// Lists certificates that are being transfered but not yet accepted.
+    /// Lists certificates that are being transferred but not yet accepted.
     /// </summary>
     public partial class ListOutgoingCertificatesRequest : AmazonIoTRequest
     {

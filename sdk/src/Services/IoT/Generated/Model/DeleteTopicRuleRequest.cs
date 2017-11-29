@@ -29,7 +29,7 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteTopicRule operation.
-    /// Deletes the specified rule.
+    /// Deletes the rule.
     /// </summary>
     public partial class DeleteTopicRuleRequest : AmazonIoTRequest
     {

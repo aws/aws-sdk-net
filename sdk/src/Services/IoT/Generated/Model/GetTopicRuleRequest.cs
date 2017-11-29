@@ -29,7 +29,7 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the GetTopicRule operation.
-    /// Gets information about the specified rule.
+    /// Gets information about the rule.
     /// </summary>
     public partial class GetTopicRuleRequest : AmazonIoTRequest
     {

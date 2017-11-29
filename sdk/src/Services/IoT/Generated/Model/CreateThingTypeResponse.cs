@@ -33,6 +33,7 @@ namespace Amazon.IoT.Model
     public partial class CreateThingTypeResponse : AmazonWebServiceResponse
     {
         private string _thingTypeArn;
+        private string _thingTypeId;
         private string _thingTypeName;
 
         /// <summary>
@@ -51,6 +52,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetThingTypeArn()
         {
             return this._thingTypeArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ThingTypeId. 
+        /// <para>
+        /// The thing type ID.
+        /// </para>
+        /// </summary>
+        public string ThingTypeId
+        {
+            get { return this._thingTypeId; }
+            set { this._thingTypeId = value; }
+        }
+
+        // Check to see if ThingTypeId property is set
+        internal bool IsSetThingTypeId()
+        {
+            return this._thingTypeId != null;
         }
 
         /// <summary>

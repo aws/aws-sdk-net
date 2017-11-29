@@ -30,6 +30,11 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Container for the parameters to the ListPolicyPrincipals operation.
     /// Lists the principals associated with the specified policy.
+    /// 
+    ///  
+    /// <para>
+    ///  <b>Note:</b> This API is deprecated. Please use <a>ListTargetsForPolicy</a> instead.
+    /// </para>
     /// </summary>
     public partial class ListPolicyPrincipalsRequest : AmazonIoTRequest
     {

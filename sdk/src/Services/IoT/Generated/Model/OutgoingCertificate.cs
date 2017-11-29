@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// A certificate that has been transfered but not yet accepted.
+    /// A certificate that has been transferred but not yet accepted.
     /// </summary>
     public partial class OutgoingCertificate
     {

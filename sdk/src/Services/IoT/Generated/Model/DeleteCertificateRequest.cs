@@ -42,6 +42,7 @@ namespace Amazon.IoT.Model
     public partial class DeleteCertificateRequest : AmazonIoTRequest
     {
         private string _certificateId;
+        private bool? _forceDelete;
 
         /// <summary>
         /// Gets and sets the property CertificateId. 
@@ -59,6 +60,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetCertificateId()
         {
             return this._certificateId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ForceDelete. 
+        /// <para>
+        /// Forces a certificate request to be deleted.
+        /// </para>
+        /// </summary>
+        public bool ForceDelete
+        {
+            get { return this._forceDelete.GetValueOrDefault(); }
+            set { this._forceDelete = value; }
+        }
+
+        // Check to see if ForceDelete property is set
+        internal bool IsSetForceDelete()
+        {
+            return this._forceDelete.HasValue; 
         }
 
     }
