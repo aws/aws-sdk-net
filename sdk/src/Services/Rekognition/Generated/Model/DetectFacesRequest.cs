@@ -58,7 +58,7 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// For an example, see <a>get-started-exercise-detect-faces</a>.
+    /// For an example, see <a>procedure-detecting-faces-in-images</a>.
     /// </para>
     ///  
     /// <para>

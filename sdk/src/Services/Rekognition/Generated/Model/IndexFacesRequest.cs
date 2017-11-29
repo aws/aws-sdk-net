@@ -77,10 +77,6 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  
     /// <para>
-    /// For an example, see <a>example2</a>.
-    /// </para>
-    ///  
-    /// <para>
     /// This operation requires permissions to perform the <code>rekognition:IndexFaces</code>
     /// action.
     /// </para>

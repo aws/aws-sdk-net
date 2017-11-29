@@ -31,7 +31,8 @@ namespace Amazon.Rekognition.Model
     /// Container for the parameters to the ListFaces operation.
     /// Returns metadata for faces in the specified collection. This metadata includes information
     /// such as the bounding box coordinates, the confidence (that the bounding box contains
-    /// a face), and face ID. For an example, see <a>example3</a>. 
+    /// a face), and face ID. For an example, see <a>list-faces-in-collection-procedure</a>.
+    /// 
     /// 
     ///  
     /// <para>

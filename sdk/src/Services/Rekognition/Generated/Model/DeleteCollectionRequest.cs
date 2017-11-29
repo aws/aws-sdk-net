@@ -30,7 +30,7 @@ namespace Amazon.Rekognition.Model
     /// <summary>
     /// Container for the parameters to the DeleteCollection operation.
     /// Deletes the specified collection. Note that this operation removes all faces in the
-    /// collection. For an example, see <a>example1</a>.
+    /// collection. For an example, see <a>delete-collection-procedure</a>.
     /// 
     ///  
     /// <para>

@@ -35,7 +35,7 @@ namespace Amazon.Rekognition.Model
     /// 
     ///  
     /// <para>
-    /// For an example, see <a>example1</a>.
+    /// For an example, see <a>list-collection-procedure</a>.
     /// </para>
     ///  
     /// <para>
@@ -51,7 +51,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Maximum number of collection IDs to return.
+        /// Maximum number of collection IDs to return. 
         /// </para>
         /// </summary>
         public int MaxResults

@@ -49,7 +49,7 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  
     /// <para>
-    /// For an example, see <a>example3</a>.
+    /// For an example, see <a>search-face-with-id-procedure</a>.
     /// </para>
     ///  
     /// <para>

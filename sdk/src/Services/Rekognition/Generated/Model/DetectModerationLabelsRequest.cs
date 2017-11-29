@@ -38,7 +38,7 @@ namespace Amazon.Rekognition.Model
     /// <para>
     /// To filter images, use the labels returned by <code>DetectModerationLabels</code> to
     /// determine which types of content are appropriate. For information about moderation
-    /// labels, see <a>image-moderation</a>.
+    /// labels, see <a>moderation</a>.
     /// </para>
     ///  
     /// <para>

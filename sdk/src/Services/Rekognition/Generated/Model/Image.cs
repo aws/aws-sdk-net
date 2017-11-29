@@ -37,7 +37,7 @@ namespace Amazon.Rekognition.Model
     /// loaded from a local file system. Image bytes passed by using the <code>Bytes</code>
     /// property must be base64-encoded. Your code may not need to encode image bytes if you
     /// are using an AWS SDK to call Rekognition API operations. For more information, see
-    /// <a>example4</a>.
+    /// <a>images-bytes</a>.
     /// </para>
     ///  
     /// <para>

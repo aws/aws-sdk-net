@@ -294,6 +294,38 @@ namespace Amazon.Rekognition
 
         #endregion
         
+        #region  CreateStreamProcessor
+
+        internal virtual CreateStreamProcessorResponse CreateStreamProcessor(CreateStreamProcessorRequest request)
+        {
+            var marshaller = new CreateStreamProcessorRequestMarshaller();
+            var unmarshaller = CreateStreamProcessorResponseUnmarshaller.Instance;
+
+            return Invoke<CreateStreamProcessorRequest,CreateStreamProcessorResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateStreamProcessor operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateStreamProcessor operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateStreamProcessor">REST API Reference for CreateStreamProcessor Operation</seealso>
+        public virtual Task<CreateStreamProcessorResponse> CreateStreamProcessorAsync(CreateStreamProcessorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateStreamProcessorRequestMarshaller();
+            var unmarshaller = CreateStreamProcessorResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateStreamProcessorRequest,CreateStreamProcessorResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteCollection
 
         internal virtual DeleteCollectionResponse DeleteCollection(DeleteCollectionRequest request)
@@ -353,6 +385,70 @@ namespace Amazon.Rekognition
             var unmarshaller = DeleteFacesResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteFacesRequest,DeleteFacesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteStreamProcessor
+
+        internal virtual DeleteStreamProcessorResponse DeleteStreamProcessor(DeleteStreamProcessorRequest request)
+        {
+            var marshaller = new DeleteStreamProcessorRequestMarshaller();
+            var unmarshaller = DeleteStreamProcessorResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteStreamProcessorRequest,DeleteStreamProcessorResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteStreamProcessor operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteStreamProcessor operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteStreamProcessor">REST API Reference for DeleteStreamProcessor Operation</seealso>
+        public virtual Task<DeleteStreamProcessorResponse> DeleteStreamProcessorAsync(DeleteStreamProcessorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteStreamProcessorRequestMarshaller();
+            var unmarshaller = DeleteStreamProcessorResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteStreamProcessorRequest,DeleteStreamProcessorResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeStreamProcessor
+
+        internal virtual DescribeStreamProcessorResponse DescribeStreamProcessor(DescribeStreamProcessorRequest request)
+        {
+            var marshaller = new DescribeStreamProcessorRequestMarshaller();
+            var unmarshaller = DescribeStreamProcessorResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeStreamProcessorRequest,DescribeStreamProcessorResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeStreamProcessor operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStreamProcessor operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DescribeStreamProcessor">REST API Reference for DescribeStreamProcessor Operation</seealso>
+        public virtual Task<DescribeStreamProcessorResponse> DescribeStreamProcessorAsync(DescribeStreamProcessorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeStreamProcessorRequestMarshaller();
+            var unmarshaller = DescribeStreamProcessorResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeStreamProcessorRequest,DescribeStreamProcessorResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -518,6 +614,198 @@ namespace Amazon.Rekognition
 
         #endregion
         
+        #region  GetCelebrityRecognition
+
+        internal virtual GetCelebrityRecognitionResponse GetCelebrityRecognition(GetCelebrityRecognitionRequest request)
+        {
+            var marshaller = new GetCelebrityRecognitionRequestMarshaller();
+            var unmarshaller = GetCelebrityRecognitionResponseUnmarshaller.Instance;
+
+            return Invoke<GetCelebrityRecognitionRequest,GetCelebrityRecognitionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCelebrityRecognition operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCelebrityRecognition operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetCelebrityRecognition">REST API Reference for GetCelebrityRecognition Operation</seealso>
+        public virtual Task<GetCelebrityRecognitionResponse> GetCelebrityRecognitionAsync(GetCelebrityRecognitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetCelebrityRecognitionRequestMarshaller();
+            var unmarshaller = GetCelebrityRecognitionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetCelebrityRecognitionRequest,GetCelebrityRecognitionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetContentModeration
+
+        internal virtual GetContentModerationResponse GetContentModeration(GetContentModerationRequest request)
+        {
+            var marshaller = new GetContentModerationRequestMarshaller();
+            var unmarshaller = GetContentModerationResponseUnmarshaller.Instance;
+
+            return Invoke<GetContentModerationRequest,GetContentModerationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetContentModeration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetContentModeration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetContentModeration">REST API Reference for GetContentModeration Operation</seealso>
+        public virtual Task<GetContentModerationResponse> GetContentModerationAsync(GetContentModerationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetContentModerationRequestMarshaller();
+            var unmarshaller = GetContentModerationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetContentModerationRequest,GetContentModerationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetFaceDetection
+
+        internal virtual GetFaceDetectionResponse GetFaceDetection(GetFaceDetectionRequest request)
+        {
+            var marshaller = new GetFaceDetectionRequestMarshaller();
+            var unmarshaller = GetFaceDetectionResponseUnmarshaller.Instance;
+
+            return Invoke<GetFaceDetectionRequest,GetFaceDetectionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetFaceDetection operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetFaceDetection operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetFaceDetection">REST API Reference for GetFaceDetection Operation</seealso>
+        public virtual Task<GetFaceDetectionResponse> GetFaceDetectionAsync(GetFaceDetectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetFaceDetectionRequestMarshaller();
+            var unmarshaller = GetFaceDetectionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetFaceDetectionRequest,GetFaceDetectionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetFaceSearch
+
+        internal virtual GetFaceSearchResponse GetFaceSearch(GetFaceSearchRequest request)
+        {
+            var marshaller = new GetFaceSearchRequestMarshaller();
+            var unmarshaller = GetFaceSearchResponseUnmarshaller.Instance;
+
+            return Invoke<GetFaceSearchRequest,GetFaceSearchResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetFaceSearch operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetFaceSearch operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetFaceSearch">REST API Reference for GetFaceSearch Operation</seealso>
+        public virtual Task<GetFaceSearchResponse> GetFaceSearchAsync(GetFaceSearchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetFaceSearchRequestMarshaller();
+            var unmarshaller = GetFaceSearchResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetFaceSearchRequest,GetFaceSearchResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetLabelDetection
+
+        internal virtual GetLabelDetectionResponse GetLabelDetection(GetLabelDetectionRequest request)
+        {
+            var marshaller = new GetLabelDetectionRequestMarshaller();
+            var unmarshaller = GetLabelDetectionResponseUnmarshaller.Instance;
+
+            return Invoke<GetLabelDetectionRequest,GetLabelDetectionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetLabelDetection operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetLabelDetection operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetLabelDetection">REST API Reference for GetLabelDetection Operation</seealso>
+        public virtual Task<GetLabelDetectionResponse> GetLabelDetectionAsync(GetLabelDetectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetLabelDetectionRequestMarshaller();
+            var unmarshaller = GetLabelDetectionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetLabelDetectionRequest,GetLabelDetectionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetPersonTracking
+
+        internal virtual GetPersonTrackingResponse GetPersonTracking(GetPersonTrackingRequest request)
+        {
+            var marshaller = new GetPersonTrackingRequestMarshaller();
+            var unmarshaller = GetPersonTrackingResponseUnmarshaller.Instance;
+
+            return Invoke<GetPersonTrackingRequest,GetPersonTrackingResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPersonTracking operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPersonTracking operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetPersonTracking">REST API Reference for GetPersonTracking Operation</seealso>
+        public virtual Task<GetPersonTrackingResponse> GetPersonTrackingAsync(GetPersonTrackingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetPersonTrackingRequestMarshaller();
+            var unmarshaller = GetPersonTrackingResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetPersonTrackingRequest,GetPersonTrackingResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  IndexFaces
 
         internal virtual IndexFacesResponse IndexFaces(IndexFacesRequest request)
@@ -614,6 +902,38 @@ namespace Amazon.Rekognition
 
         #endregion
         
+        #region  ListStreamProcessors
+
+        internal virtual ListStreamProcessorsResponse ListStreamProcessors(ListStreamProcessorsRequest request)
+        {
+            var marshaller = new ListStreamProcessorsRequestMarshaller();
+            var unmarshaller = ListStreamProcessorsResponseUnmarshaller.Instance;
+
+            return Invoke<ListStreamProcessorsRequest,ListStreamProcessorsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListStreamProcessors operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListStreamProcessors operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListStreamProcessors">REST API Reference for ListStreamProcessors Operation</seealso>
+        public virtual Task<ListStreamProcessorsResponse> ListStreamProcessorsAsync(ListStreamProcessorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListStreamProcessorsRequestMarshaller();
+            var unmarshaller = ListStreamProcessorsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListStreamProcessorsRequest,ListStreamProcessorsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  RecognizeCelebrities
 
         internal virtual RecognizeCelebritiesResponse RecognizeCelebrities(RecognizeCelebritiesRequest request)
@@ -705,6 +1025,262 @@ namespace Amazon.Rekognition
             var unmarshaller = SearchFacesByImageResponseUnmarshaller.Instance;
 
             return InvokeAsync<SearchFacesByImageRequest,SearchFacesByImageResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartCelebrityRecognition
+
+        internal virtual StartCelebrityRecognitionResponse StartCelebrityRecognition(StartCelebrityRecognitionRequest request)
+        {
+            var marshaller = new StartCelebrityRecognitionRequestMarshaller();
+            var unmarshaller = StartCelebrityRecognitionResponseUnmarshaller.Instance;
+
+            return Invoke<StartCelebrityRecognitionRequest,StartCelebrityRecognitionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartCelebrityRecognition operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartCelebrityRecognition operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartCelebrityRecognition">REST API Reference for StartCelebrityRecognition Operation</seealso>
+        public virtual Task<StartCelebrityRecognitionResponse> StartCelebrityRecognitionAsync(StartCelebrityRecognitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new StartCelebrityRecognitionRequestMarshaller();
+            var unmarshaller = StartCelebrityRecognitionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartCelebrityRecognitionRequest,StartCelebrityRecognitionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartContentModeration
+
+        internal virtual StartContentModerationResponse StartContentModeration(StartContentModerationRequest request)
+        {
+            var marshaller = new StartContentModerationRequestMarshaller();
+            var unmarshaller = StartContentModerationResponseUnmarshaller.Instance;
+
+            return Invoke<StartContentModerationRequest,StartContentModerationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartContentModeration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartContentModeration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartContentModeration">REST API Reference for StartContentModeration Operation</seealso>
+        public virtual Task<StartContentModerationResponse> StartContentModerationAsync(StartContentModerationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new StartContentModerationRequestMarshaller();
+            var unmarshaller = StartContentModerationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartContentModerationRequest,StartContentModerationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartFaceDetection
+
+        internal virtual StartFaceDetectionResponse StartFaceDetection(StartFaceDetectionRequest request)
+        {
+            var marshaller = new StartFaceDetectionRequestMarshaller();
+            var unmarshaller = StartFaceDetectionResponseUnmarshaller.Instance;
+
+            return Invoke<StartFaceDetectionRequest,StartFaceDetectionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartFaceDetection operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartFaceDetection operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartFaceDetection">REST API Reference for StartFaceDetection Operation</seealso>
+        public virtual Task<StartFaceDetectionResponse> StartFaceDetectionAsync(StartFaceDetectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new StartFaceDetectionRequestMarshaller();
+            var unmarshaller = StartFaceDetectionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartFaceDetectionRequest,StartFaceDetectionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartFaceSearch
+
+        internal virtual StartFaceSearchResponse StartFaceSearch(StartFaceSearchRequest request)
+        {
+            var marshaller = new StartFaceSearchRequestMarshaller();
+            var unmarshaller = StartFaceSearchResponseUnmarshaller.Instance;
+
+            return Invoke<StartFaceSearchRequest,StartFaceSearchResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartFaceSearch operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartFaceSearch operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartFaceSearch">REST API Reference for StartFaceSearch Operation</seealso>
+        public virtual Task<StartFaceSearchResponse> StartFaceSearchAsync(StartFaceSearchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new StartFaceSearchRequestMarshaller();
+            var unmarshaller = StartFaceSearchResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartFaceSearchRequest,StartFaceSearchResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartLabelDetection
+
+        internal virtual StartLabelDetectionResponse StartLabelDetection(StartLabelDetectionRequest request)
+        {
+            var marshaller = new StartLabelDetectionRequestMarshaller();
+            var unmarshaller = StartLabelDetectionResponseUnmarshaller.Instance;
+
+            return Invoke<StartLabelDetectionRequest,StartLabelDetectionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartLabelDetection operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartLabelDetection operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartLabelDetection">REST API Reference for StartLabelDetection Operation</seealso>
+        public virtual Task<StartLabelDetectionResponse> StartLabelDetectionAsync(StartLabelDetectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new StartLabelDetectionRequestMarshaller();
+            var unmarshaller = StartLabelDetectionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartLabelDetectionRequest,StartLabelDetectionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartPersonTracking
+
+        internal virtual StartPersonTrackingResponse StartPersonTracking(StartPersonTrackingRequest request)
+        {
+            var marshaller = new StartPersonTrackingRequestMarshaller();
+            var unmarshaller = StartPersonTrackingResponseUnmarshaller.Instance;
+
+            return Invoke<StartPersonTrackingRequest,StartPersonTrackingResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartPersonTracking operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartPersonTracking operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartPersonTracking">REST API Reference for StartPersonTracking Operation</seealso>
+        public virtual Task<StartPersonTrackingResponse> StartPersonTrackingAsync(StartPersonTrackingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new StartPersonTrackingRequestMarshaller();
+            var unmarshaller = StartPersonTrackingResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartPersonTrackingRequest,StartPersonTrackingResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartStreamProcessor
+
+        internal virtual StartStreamProcessorResponse StartStreamProcessor(StartStreamProcessorRequest request)
+        {
+            var marshaller = new StartStreamProcessorRequestMarshaller();
+            var unmarshaller = StartStreamProcessorResponseUnmarshaller.Instance;
+
+            return Invoke<StartStreamProcessorRequest,StartStreamProcessorResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartStreamProcessor operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartStreamProcessor operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartStreamProcessor">REST API Reference for StartStreamProcessor Operation</seealso>
+        public virtual Task<StartStreamProcessorResponse> StartStreamProcessorAsync(StartStreamProcessorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new StartStreamProcessorRequestMarshaller();
+            var unmarshaller = StartStreamProcessorResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartStreamProcessorRequest,StartStreamProcessorResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopStreamProcessor
+
+        internal virtual StopStreamProcessorResponse StopStreamProcessor(StopStreamProcessorRequest request)
+        {
+            var marshaller = new StopStreamProcessorRequestMarshaller();
+            var unmarshaller = StopStreamProcessorResponseUnmarshaller.Instance;
+
+            return Invoke<StopStreamProcessorRequest,StopStreamProcessorResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopStreamProcessor operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopStreamProcessor operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StopStreamProcessor">REST API Reference for StopStreamProcessor Operation</seealso>
+        public virtual Task<StopStreamProcessorResponse> StopStreamProcessorAsync(StopStreamProcessorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new StopStreamProcessorRequestMarshaller();
+            var unmarshaller = StopStreamProcessorResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopStreamProcessorRequest,StopStreamProcessorResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

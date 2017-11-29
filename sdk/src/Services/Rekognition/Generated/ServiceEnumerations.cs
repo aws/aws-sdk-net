@@ -75,6 +75,106 @@ namespace Amazon.Rekognition
 
 
     /// <summary>
+    /// Constants used for properties of type CelebrityRecognitionSortBy.
+    /// </summary>
+    public class CelebrityRecognitionSortBy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ID for CelebrityRecognitionSortBy
+        /// </summary>
+        public static readonly CelebrityRecognitionSortBy ID = new CelebrityRecognitionSortBy("ID");
+        /// <summary>
+        /// Constant TIMESTAMP for CelebrityRecognitionSortBy
+        /// </summary>
+        public static readonly CelebrityRecognitionSortBy TIMESTAMP = new CelebrityRecognitionSortBy("TIMESTAMP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CelebrityRecognitionSortBy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CelebrityRecognitionSortBy FindValue(string value)
+        {
+            return FindValue<CelebrityRecognitionSortBy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CelebrityRecognitionSortBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ContentModerationSortBy.
+    /// </summary>
+    public class ContentModerationSortBy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NAME for ContentModerationSortBy
+        /// </summary>
+        public static readonly ContentModerationSortBy NAME = new ContentModerationSortBy("NAME");
+        /// <summary>
+        /// Constant TIMESTAMP for ContentModerationSortBy
+        /// </summary>
+        public static readonly ContentModerationSortBy TIMESTAMP = new ContentModerationSortBy("TIMESTAMP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContentModerationSortBy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContentModerationSortBy FindValue(string value)
+        {
+            return FindValue<ContentModerationSortBy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContentModerationSortBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EmotionName.
     /// </summary>
     public class EmotionName : ConstantClass
@@ -149,6 +249,106 @@ namespace Amazon.Rekognition
 
 
     /// <summary>
+    /// Constants used for properties of type FaceAttributes.
+    /// </summary>
+    public class FaceAttributes : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for FaceAttributes
+        /// </summary>
+        public static readonly FaceAttributes ALL = new FaceAttributes("ALL");
+        /// <summary>
+        /// Constant DEFAULT for FaceAttributes
+        /// </summary>
+        public static readonly FaceAttributes DEFAULT = new FaceAttributes("DEFAULT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FaceAttributes(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FaceAttributes FindValue(string value)
+        {
+            return FindValue<FaceAttributes>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FaceAttributes(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FaceSearchSortBy.
+    /// </summary>
+    public class FaceSearchSortBy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INDEX for FaceSearchSortBy
+        /// </summary>
+        public static readonly FaceSearchSortBy INDEX = new FaceSearchSortBy("INDEX");
+        /// <summary>
+        /// Constant TIMESTAMP for FaceSearchSortBy
+        /// </summary>
+        public static readonly FaceSearchSortBy TIMESTAMP = new FaceSearchSortBy("TIMESTAMP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FaceSearchSortBy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FaceSearchSortBy FindValue(string value)
+        {
+            return FindValue<FaceSearchSortBy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FaceSearchSortBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type GenderType.
     /// </summary>
     public class GenderType : ConstantClass
@@ -192,6 +392,56 @@ namespace Amazon.Rekognition
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator GenderType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LabelDetectionSortBy.
+    /// </summary>
+    public class LabelDetectionSortBy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NAME for LabelDetectionSortBy
+        /// </summary>
+        public static readonly LabelDetectionSortBy NAME = new LabelDetectionSortBy("NAME");
+        /// <summary>
+        /// Constant TIMESTAMP for LabelDetectionSortBy
+        /// </summary>
+        public static readonly LabelDetectionSortBy TIMESTAMP = new LabelDetectionSortBy("TIMESTAMP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LabelDetectionSortBy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LabelDetectionSortBy FindValue(string value)
+        {
+            return FindValue<LabelDetectionSortBy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LabelDetectionSortBy(string value)
         {
             return FindValue(value);
         }
@@ -399,6 +649,118 @@ namespace Amazon.Rekognition
 
 
     /// <summary>
+    /// Constants used for properties of type PersonTrackingSortBy.
+    /// </summary>
+    public class PersonTrackingSortBy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INDEX for PersonTrackingSortBy
+        /// </summary>
+        public static readonly PersonTrackingSortBy INDEX = new PersonTrackingSortBy("INDEX");
+        /// <summary>
+        /// Constant TIMESTAMP for PersonTrackingSortBy
+        /// </summary>
+        public static readonly PersonTrackingSortBy TIMESTAMP = new PersonTrackingSortBy("TIMESTAMP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PersonTrackingSortBy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PersonTrackingSortBy FindValue(string value)
+        {
+            return FindValue<PersonTrackingSortBy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PersonTrackingSortBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StreamProcessorStatus.
+    /// </summary>
+    public class StreamProcessorStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for StreamProcessorStatus
+        /// </summary>
+        public static readonly StreamProcessorStatus FAILED = new StreamProcessorStatus("FAILED");
+        /// <summary>
+        /// Constant RUNNING for StreamProcessorStatus
+        /// </summary>
+        public static readonly StreamProcessorStatus RUNNING = new StreamProcessorStatus("RUNNING");
+        /// <summary>
+        /// Constant STARTING for StreamProcessorStatus
+        /// </summary>
+        public static readonly StreamProcessorStatus STARTING = new StreamProcessorStatus("STARTING");
+        /// <summary>
+        /// Constant STOPPED for StreamProcessorStatus
+        /// </summary>
+        public static readonly StreamProcessorStatus STOPPED = new StreamProcessorStatus("STOPPED");
+        /// <summary>
+        /// Constant STOPPING for StreamProcessorStatus
+        /// </summary>
+        public static readonly StreamProcessorStatus STOPPING = new StreamProcessorStatus("STOPPING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StreamProcessorStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StreamProcessorStatus FindValue(string value)
+        {
+            return FindValue<StreamProcessorStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StreamProcessorStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type TextTypes.
     /// </summary>
     public class TextTypes : ConstantClass
@@ -442,6 +804,60 @@ namespace Amazon.Rekognition
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TextTypes(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VideoJobStatus.
+    /// </summary>
+    public class VideoJobStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for VideoJobStatus
+        /// </summary>
+        public static readonly VideoJobStatus FAILED = new VideoJobStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for VideoJobStatus
+        /// </summary>
+        public static readonly VideoJobStatus IN_PROGRESS = new VideoJobStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant SUCCEEDED for VideoJobStatus
+        /// </summary>
+        public static readonly VideoJobStatus SUCCEEDED = new VideoJobStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VideoJobStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VideoJobStatus FindValue(string value)
+        {
+            return FindValue<VideoJobStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VideoJobStatus(string value)
         {
             return FindValue(value);
         }
