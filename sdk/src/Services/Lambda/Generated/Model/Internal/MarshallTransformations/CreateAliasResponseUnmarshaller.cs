@@ -75,6 +75,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     response.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RoutingConfig", targetDepth))
+                {
+                    var unmarshaller = AliasRoutingConfigurationUnmarshaller.Instance;
+                    response.RoutingConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

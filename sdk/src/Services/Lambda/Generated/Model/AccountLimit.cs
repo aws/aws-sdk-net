@@ -82,7 +82,7 @@ namespace Amazon.Lambda.Model
         /// <para>
         /// Number of simultaneous executions of your function per region. For more information
         /// or to request a limit increase for concurrent executions, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Lambda
-        /// Function Concurrent Executions</a>. The default limit is 100.
+        /// Function Concurrent Executions</a>. The default limit is 1000.
         /// </para>
         /// </summary>
         public int ConcurrentExecutions

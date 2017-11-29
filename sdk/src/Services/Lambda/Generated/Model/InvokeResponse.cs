@@ -32,10 +32,30 @@ namespace Amazon.Lambda.Model
     /// </summary>
     public partial class InvokeResponse : AmazonWebServiceResponse
     {
+        private string _executedVersion;
         private string _functionError;
         private string _logResult;
         private MemoryStream _payload;
         private int? _statusCode;
+
+        /// <summary>
+        /// Gets and sets the property ExecutedVersion. 
+        /// <para>
+        /// The function version that has been executed. This value is returned only if the invocation
+        /// type is <code>RequestResponse</code>.
+        /// </para>
+        /// </summary>
+        public string ExecutedVersion
+        {
+            get { return this._executedVersion; }
+            set { this._executedVersion = value; }
+        }
+
+        // Check to see if ExecutedVersion property is set
+        internal bool IsSetExecutedVersion()
+        {
+            return this._executedVersion != null;
+        }
 
         /// <summary>
         /// Gets and sets the property FunctionError. 

@@ -443,6 +443,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
+                    {"X-Amz-Executed-Version","X-Amz-Executed-Version_Value"},
                     {"X-Amz-Function-Error","X-Amz-Function-Error_Value"},
                     {"X-Amz-Log-Result","X-Amz-Log-Result_Value"},
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},

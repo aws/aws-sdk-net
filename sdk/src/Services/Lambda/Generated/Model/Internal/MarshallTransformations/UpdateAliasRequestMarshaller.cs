@@ -83,6 +83,17 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.FunctionVersion);
                 }
 
+                if(publicRequest.IsSetRoutingConfig())
+                {
+                    context.Writer.WritePropertyName("RoutingConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AliasRoutingConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.RoutingConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

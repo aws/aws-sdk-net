@@ -64,7 +64,7 @@ namespace Amazon.Lambda.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>ALL</code> _ Will return all versions, including <code>$LATEST</code> which
+        ///  <code>ALL</code>: Will return all versions, including <code>$LATEST</code> which
         /// will have fully qualified ARNs (Amazon Resource Names).
         /// </para>
         /// </summary>
@@ -116,7 +116,7 @@ namespace Amazon.Lambda.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>ALL</code> _ Will return all functions from any region. If specified, you also
+        ///  <code>ALL</code>: Will return all functions from any region. If specified, you also
         /// must specify a valid FunctionVersion parameter.
         /// </para>
         /// </summary>

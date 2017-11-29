@@ -51,6 +51,8 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             Amazon.Util.AWSSDKUtils.CopyStream(context.Stream, ms);
             ms.Seek(0, SeekOrigin.Begin);
             response.Payload = ms;
+            if (context.ResponseData.IsHeaderPresent("X-Amz-Executed-Version"))
+                response.ExecutedVersion = context.ResponseData.GetHeaderValue("X-Amz-Executed-Version");
             if (context.ResponseData.IsHeaderPresent("X-Amz-Function-Error"))
                 response.FunctionError = context.ResponseData.GetHeaderValue("X-Amz-Function-Error");
             if (context.ResponseData.IsHeaderPresent("X-Amz-Log-Result"))

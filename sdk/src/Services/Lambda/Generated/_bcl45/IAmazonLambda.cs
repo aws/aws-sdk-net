@@ -81,7 +81,8 @@ namespace Amazon.Lambda
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
         /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42.
+        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
+        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.PolicyLengthExceededException">
         /// Lambda function access policy is limited to 20 KB.
@@ -138,7 +139,8 @@ namespace Amazon.Lambda
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
         /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42.
+        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
+        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists.
@@ -220,7 +222,8 @@ namespace Amazon.Lambda
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
         /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42.
+        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
+        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists.
@@ -284,7 +287,8 @@ namespace Amazon.Lambda
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
         /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42.
+        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
+        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists.
@@ -336,7 +340,8 @@ namespace Amazon.Lambda
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
         /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42.
+        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
+        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The AWS Lambda service encountered an internal error.
@@ -382,7 +387,8 @@ namespace Amazon.Lambda
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
         /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42.
+        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
+        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
@@ -444,7 +450,8 @@ namespace Amazon.Lambda
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
         /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42.
+        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
+        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists.
@@ -491,7 +498,8 @@ namespace Amazon.Lambda
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
         /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42.
+        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
+        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists.
@@ -542,7 +550,8 @@ namespace Amazon.Lambda
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
         /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42.
+        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
+        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists.
@@ -635,7 +644,8 @@ namespace Amazon.Lambda
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
         /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42.
+        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
+        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
@@ -684,7 +694,8 @@ namespace Amazon.Lambda
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
         /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42.
+        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
+        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
@@ -743,7 +754,8 @@ namespace Amazon.Lambda
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
         /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42.
+        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
+        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
@@ -784,7 +796,8 @@ namespace Amazon.Lambda
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
         /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42.
+        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
+        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
@@ -829,7 +842,8 @@ namespace Amazon.Lambda
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
         /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42.
+        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
+        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
@@ -887,7 +901,8 @@ namespace Amazon.Lambda
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
         /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42.
+        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
+        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
@@ -928,7 +943,8 @@ namespace Amazon.Lambda
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
         /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42.
+        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
+        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
@@ -973,7 +989,8 @@ namespace Amazon.Lambda
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
         /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42.
+        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
+        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
@@ -1028,7 +1045,8 @@ namespace Amazon.Lambda
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
         /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42.
+        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
+        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
@@ -1104,7 +1122,8 @@ namespace Amazon.Lambda
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
         /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42.
+        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
+        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidRequestContentException">
         /// The request body could not be parsed as JSON.
@@ -1252,7 +1271,8 @@ namespace Amazon.Lambda
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
         /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42.
+        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
+        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
@@ -1314,7 +1334,8 @@ namespace Amazon.Lambda
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
         /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42.
+        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
+        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
@@ -1370,7 +1391,8 @@ namespace Amazon.Lambda
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
         /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42.
+        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
+        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The AWS Lambda service encountered an internal error.
@@ -1405,7 +1427,8 @@ namespace Amazon.Lambda
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
         /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42.
+        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
+        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The AWS Lambda service encountered an internal error.
@@ -1443,7 +1466,8 @@ namespace Amazon.Lambda
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
         /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42.
+        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
+        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The AWS Lambda service encountered an internal error.
@@ -1482,7 +1506,8 @@ namespace Amazon.Lambda
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
         /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42.
+        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
+        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
@@ -1527,7 +1552,8 @@ namespace Amazon.Lambda
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
         /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42.
+        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
+        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
@@ -1577,7 +1603,8 @@ namespace Amazon.Lambda
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
         /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42.
+        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
+        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
@@ -1639,7 +1666,8 @@ namespace Amazon.Lambda
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
         /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42.
+        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
+        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
@@ -1684,7 +1712,8 @@ namespace Amazon.Lambda
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
         /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42.
+        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
+        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
@@ -1727,7 +1756,8 @@ namespace Amazon.Lambda
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
         /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42.
+        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
+        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
@@ -1777,7 +1807,8 @@ namespace Amazon.Lambda
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
         /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42.
+        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
+        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
@@ -1843,7 +1874,8 @@ namespace Amazon.Lambda
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
         /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42.
+        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
+        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists.
@@ -1906,7 +1938,8 @@ namespace Amazon.Lambda
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
         /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42.
+        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
+        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
@@ -1965,7 +1998,8 @@ namespace Amazon.Lambda
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
         /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42.
+        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
+        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists.

@@ -371,6 +371,12 @@
     <pattern>(|[a-zA-Z0-9$_-]+)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lambda.Model.InvokeResponse.ExecutedVersion</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>(\$LATEST|[0-9]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lambda.Model.InvokeAsyncRequest.FunctionName</property>
     <min>1</min>
     <max>170</max>

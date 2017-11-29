@@ -45,6 +45,7 @@ namespace Amazon.Lambda.Model
         private string _functionName;
         private string _functionVersion;
         private string _name;
+        private AliasRoutingConfiguration _routingConfig;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -118,6 +119,25 @@ namespace Amazon.Lambda.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RoutingConfig. 
+        /// <para>
+        /// Specifies an additional version your alias can point to, allowing you to dictate what
+        /// percentage of traffic will invoke each version. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.
+        /// </para>
+        /// </summary>
+        public AliasRoutingConfiguration RoutingConfig
+        {
+            get { return this._routingConfig; }
+            set { this._routingConfig = value; }
+        }
+
+        // Check to see if RoutingConfig property is set
+        internal bool IsSetRoutingConfig()
+        {
+            return this._routingConfig != null;
         }
 
     }

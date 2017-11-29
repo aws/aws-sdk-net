@@ -68,7 +68,7 @@ namespace Amazon.Lambda.Model
         /// </para>
         ///  
         /// <para>
-        /// The ClientContext JSON must be base64-encoded.
+        /// The ClientContext JSON must be base64-encoded and has a maximum size of 3583 bytes.
         /// </para>
         /// </summary>
         public string ClientContextBase64

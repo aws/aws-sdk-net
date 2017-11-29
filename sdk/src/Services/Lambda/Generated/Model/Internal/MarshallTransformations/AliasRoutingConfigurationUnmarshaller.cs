@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AliasConfiguration Object
+    /// Response Unmarshaller for AliasRoutingConfiguration Object
     /// </summary>  
-    public class AliasConfigurationUnmarshaller : IUnmarshaller<AliasConfiguration, XmlUnmarshallerContext>, IUnmarshaller<AliasConfiguration, JsonUnmarshallerContext>
+    public class AliasRoutingConfigurationUnmarshaller : IUnmarshaller<AliasRoutingConfiguration, XmlUnmarshallerContext>, IUnmarshaller<AliasRoutingConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AliasConfiguration IUnmarshaller<AliasConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AliasRoutingConfiguration IUnmarshaller<AliasRoutingConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,21 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AliasConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public AliasRoutingConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AliasConfiguration unmarshalledObject = new AliasConfiguration();
+            AliasRoutingConfiguration unmarshalledObject = new AliasRoutingConfiguration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AliasArn", targetDepth))
+                if (context.TestExpression("AdditionalVersionWeights", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AliasArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Description", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("FunctionVersion", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FunctionVersion = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RoutingConfig", targetDepth))
-                {
-                    var unmarshaller = AliasRoutingConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.RoutingConfig = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new DictionaryUnmarshaller<string, double, StringUnmarshaller, DoubleUnmarshaller>(StringUnmarshaller.Instance, DoubleUnmarshaller.Instance);
+                    unmarshalledObject.AdditionalVersionWeights = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +76,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         }
 
 
-        private static AliasConfigurationUnmarshaller _instance = new AliasConfigurationUnmarshaller();        
+        private static AliasRoutingConfigurationUnmarshaller _instance = new AliasRoutingConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AliasConfigurationUnmarshaller Instance
+        public static AliasRoutingConfigurationUnmarshaller Instance
         {
             get
             {
