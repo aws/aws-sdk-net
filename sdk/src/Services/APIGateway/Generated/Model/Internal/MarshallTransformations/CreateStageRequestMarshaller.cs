@@ -80,6 +80,17 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.CacheClusterSize);
                 }
 
+                if(publicRequest.IsSetCanarySettings())
+                {
+                    context.Writer.WritePropertyName("canarySettings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CanarySettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CanarySettings, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDeploymentId())
                 {
                     context.Writer.WritePropertyName("deploymentId");

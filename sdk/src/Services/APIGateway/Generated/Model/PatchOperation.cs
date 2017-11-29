@@ -41,7 +41,12 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property From. 
         /// <para>
-        ///  Not supported.
+        /// The <code>copy</code> update operation's source as identified by a <code>JSON-Pointer</code>
+        /// value referencing the location within the targeted resource to copy the value from.
+        /// For example, to promote a canary deployment, you copy the canary deployment ID to
+        /// the affiliated deployment ID by calling a PATCH request on a <a>Stage</a> resource
+        /// with <code>"op":"copy"</code>, <code>"from":"/canarySettings/deploymentId"</code>
+        /// and <code>"path":"/deploymentId"</code>.
         /// </para>
         /// </summary>
         public string From
@@ -59,10 +64,11 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Op. 
         /// <para>
-        /// An update operation to be performed with this PATCH request. The valid value can be
-        /// "add", "remove", or "replace". Not all valid operations are supported for a given
-        /// resource. Support of the operations depends on specific operational contexts. Attempts
-        /// to apply an unsupported operation on a resource will return an error message.
+        ///  An update operation to be performed with this PATCH request. The valid value can
+        /// be <code>add</code>, <code>remove</code>, <code>replace</code> or <code>copy</code>.
+        /// Not all valid operations are supported for a given resource. Support of the operations
+        /// depends on specific operational contexts. Attempts to apply an unsupported operation
+        /// on a resource will return an error message.
         /// </para>
         /// </summary>
         public Op Op
@@ -106,9 +112,10 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The new target value of the update operation. When using AWS CLI to update a property
-        /// of a JSON value, enclose the JSON object with a pair of single quotes in a Linux shell,
-        /// e.g., '{"a": ...}'. In a Windows shell, see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+        /// The new target value of the update operation. It is applicable for the <code>add</code>
+        /// or <code>replace</code> operation. When using AWS CLI to update a property of a JSON
+        /// value, enclose the JSON object with a pair of single quotes in a Linux shell, e.g.,
+        /// '{"a": ...}'. In a Windows shell, see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
         /// JSON for Parameters</a>.
         /// </para>
         /// </summary>

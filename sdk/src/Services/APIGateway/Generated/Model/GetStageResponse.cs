@@ -40,6 +40,7 @@ namespace Amazon.APIGateway.Model
         private bool? _cacheClusterEnabled;
         private CacheClusterSize _cacheClusterSize;
         private CacheClusterStatus _cacheClusterStatus;
+        private CanarySettings _canarySettings;
         private string _clientCertificateId;
         private DateTime? _createdDate;
         private string _deploymentId;
@@ -53,7 +54,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property AccessLogSettings. 
         /// <para>
-        /// The access log settings in this stage.
+        /// Settings for logging access in this stage.
         /// </para>
         /// </summary>
         public AccessLogSettings AccessLogSettings
@@ -120,6 +121,24 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetCacheClusterStatus()
         {
             return this._cacheClusterStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CanarySettings. 
+        /// <para>
+        /// Settings for the canary deployment in this stage.
+        /// </para>
+        /// </summary>
+        public CanarySettings CanarySettings
+        {
+            get { return this._canarySettings; }
+            set { this._canarySettings = value; }
+        }
+
+        // Check to see if CanarySettings property is set
+        internal bool IsSetCanarySettings()
+        {
+            return this._canarySettings != null;
         }
 
         /// <summary>

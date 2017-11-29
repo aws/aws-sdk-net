@@ -88,6 +88,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     unmarshalledObject.CacheClusterStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("canarySettings", targetDepth))
+                {
+                    var unmarshaller = CanarySettingsUnmarshaller.Instance;
+                    unmarshalledObject.CanarySettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("clientCertificateId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

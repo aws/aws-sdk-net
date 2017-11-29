@@ -36,6 +36,7 @@ namespace Amazon.APIGateway.Model
     {
         private bool? _cacheClusterEnabled;
         private CacheClusterSize _cacheClusterSize;
+        private CanarySettings _canarySettings;
         private string _deploymentId;
         private string _description;
         private string _documentationVersion;
@@ -80,9 +81,27 @@ namespace Amazon.APIGateway.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CanarySettings. 
+        /// <para>
+        /// The canary deployment settings of this stage.
+        /// </para>
+        /// </summary>
+        public CanarySettings CanarySettings
+        {
+            get { return this._canarySettings; }
+            set { this._canarySettings = value; }
+        }
+
+        // Check to see if CanarySettings property is set
+        internal bool IsSetCanarySettings()
+        {
+            return this._canarySettings != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DeploymentId. 
         /// <para>
-        /// The identifier of the <a>Deployment</a> resource for the <a>Stage</a> resource.
+        /// [Required] The identifier of the <a>Deployment</a> resource for the <a>Stage</a> resource.
         /// </para>
         /// </summary>
         public string DeploymentId
@@ -154,7 +173,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property StageName. 
         /// <para>
-        /// The name for the <a>Stage</a> resource.
+        /// {Required] The name for the <a>Stage</a> resource.
         /// </para>
         /// </summary>
         public string StageName

@@ -36,6 +36,7 @@ namespace Amazon.APIGateway.Model
     {
         private bool? _cacheClusterEnabled;
         private CacheClusterSize _cacheClusterSize;
+        private DeploymentCanarySettings _canarySettings;
         private string _description;
         private string _restApiId;
         private string _stageDescription;
@@ -77,6 +78,25 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetCacheClusterSize()
         {
             return this._cacheClusterSize != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CanarySettings. 
+        /// <para>
+        /// The input configuration for the canary deployment when the deployment is a canary
+        /// release deployment. 
+        /// </para>
+        /// </summary>
+        public DeploymentCanarySettings CanarySettings
+        {
+            get { return this._canarySettings; }
+            set { this._canarySettings = value; }
+        }
+
+        // Check to see if CanarySettings property is set
+        internal bool IsSetCanarySettings()
+        {
+            return this._canarySettings != null;
         }
 
         /// <summary>
