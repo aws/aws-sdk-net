@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeVpcEndpointServices operation.
-    /// Describes all supported AWS services that can be specified when creating a VPC endpoint.
+    /// Describes available services to which you can create a VPC endpoint.
     /// </summary>
     public partial class DescribeVpcEndpointServicesRequest : AmazonEC2Request
     {

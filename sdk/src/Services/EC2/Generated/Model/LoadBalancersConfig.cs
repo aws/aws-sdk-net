@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes the Classic Load Balancers and target groups to attach to a Spot fleet request.
+    /// Describes the Classic Load Balancers and target groups to attach to a Spot Fleet request.
     /// </summary>
     public partial class LoadBalancersConfig
     {

@@ -57,7 +57,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SpotFleetRequestConfigs. 
         /// <para>
-        /// Information about the configuration of your Spot fleet.
+        /// Information about the configuration of your Spot Fleet.
         /// </para>
         /// </summary>
         public List<SpotFleetRequestConfig> SpotFleetRequestConfigs

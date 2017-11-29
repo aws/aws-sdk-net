@@ -177,7 +177,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ServiceName. 
         /// <para>
-        /// The name of the AWS service to which the endpoint is associated.
+        /// The name of the service to which the endpoint is associated.
         /// </para>
         /// </summary>
         public string ServiceName

@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
         private bool? _deleteOnTermination;
         private bool? _encrypted;
         private int? _iops;
+        private string _kmsKeyId;
         private string _snapshotId;
         private int? _volumeSize;
         private VolumeType _volumeType;
@@ -110,6 +111,31 @@ namespace Amazon.EC2.Model
         internal bool IsSetIops()
         {
             return this._iops.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// ID for a user-managed CMK under which the EBS volume is encrypted.
+        /// </para>
+        ///  
+        /// <para>
+        /// Note: This parameter is only supported on <code>BlockDeviceMapping</code> objects
+        /// called by <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>,
+        /// <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html">RequestSpotFleet</a>,
+        /// and <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html">RequestSpotInstances</a>.
+        /// </para>
+        /// </summary>
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
         }
 
         /// <summary>

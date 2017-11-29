@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the RequestSpotFleet operation.
-    /// Creates a Spot fleet request.
+    /// Creates a Spot Fleet request.
     /// 
     ///  
     /// <para>
@@ -38,16 +38,21 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// By default, the Spot fleet requests Spot instances in the Spot pool where the price
+    /// By default, the Spot Fleet requests Spot Instances in the Spot pool where the price
     /// per unit is the lowest. Each launch specification can include its own instance weighting
     /// that reflects the value of the instance type to your application workload.
     /// </para>
     ///  
     /// <para>
-    /// Alternatively, you can specify that the Spot fleet distribute the target capacity
+    /// Alternatively, you can specify that the Spot Fleet distribute the target capacity
     /// across the Spot pools included in its launch specifications. By ensuring that the
-    /// Spot instances in your Spot fleet are in different Spot pools, you can improve the
+    /// Spot Instances in your Spot Fleet are in different Spot pools, you can improve the
     /// availability of your fleet.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can specify tags for the Spot Instances. You cannot tag other resource types in
+    /// a Spot Fleet request; only the <code>instance</code> resource type is supported.
     /// </para>
     ///  
     /// <para>
@@ -62,7 +67,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SpotFleetRequestConfig. 
         /// <para>
-        /// The configuration for the Spot fleet request.
+        /// The configuration for the Spot Fleet request.
         /// </para>
         /// </summary>
         public SpotFleetRequestConfigData SpotFleetRequestConfig

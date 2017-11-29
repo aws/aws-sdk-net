@@ -76,7 +76,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ServiceNames. 
         /// <para>
-        /// A list of supported AWS services.
+        /// A list of supported services.
         /// </para>
         /// </summary>
         public List<string> ServiceNames

@@ -29,11 +29,11 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeSpotFleetRequestHistory operation.
-    /// Describes the events for the specified Spot fleet request during the specified time.
+    /// Describes the events for the specified Spot Fleet request during the specified time.
     /// 
     ///  
     /// <para>
-    /// Spot fleet events are delayed by up to 30 seconds before they can be described. This
+    /// Spot Fleet events are delayed by up to 30 seconds before they can be described. This
     /// ensures that you can query by the last evaluated time and not miss a recorded event.
     /// </para>
     /// </summary>
@@ -104,7 +104,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SpotFleetRequestId. 
         /// <para>
-        /// The ID of the Spot fleet request.
+        /// The ID of the Spot Fleet request.
         /// </para>
         /// </summary>
         public string SpotFleetRequestId

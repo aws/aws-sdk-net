@@ -136,8 +136,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceTypes. 
         /// <para>
-        /// Filters the results by the specified instance types. Note that T2 and HS1 instance
-        /// types are not supported.
+        /// Filters the results by the specified instance types.
         /// </para>
         /// </summary>
         public List<string> InstanceTypes

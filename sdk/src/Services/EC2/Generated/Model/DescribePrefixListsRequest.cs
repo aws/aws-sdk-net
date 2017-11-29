@@ -32,7 +32,7 @@ namespace Amazon.EC2.Model
     /// Describes available AWS services in a prefix list format, which includes the prefix
     /// list name and prefix list ID of the service and the IP address range for the service.
     /// A prefix list ID is required for creating an outbound security group rule that allows
-    /// traffic from a VPC to access an AWS service through a VPC endpoint.
+    /// traffic from a VPC to access an AWS service through a gateway VPC endpoint.
     /// </summary>
     public partial class DescribePrefixListsRequest : AmazonEC2Request
     {

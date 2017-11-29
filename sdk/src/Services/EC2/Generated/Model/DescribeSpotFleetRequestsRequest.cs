@@ -29,11 +29,11 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeSpotFleetRequests operation.
-    /// Describes your Spot fleet requests.
+    /// Describes your Spot Fleet requests.
     /// 
     ///  
     /// <para>
-    /// Spot fleet requests are deleted 48 hours after they are canceled and their instances
+    /// Spot Fleet requests are deleted 48 hours after they are canceled and their instances
     /// are terminated.
     /// </para>
     /// </summary>
@@ -84,7 +84,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SpotFleetRequestIds. 
         /// <para>
-        /// The IDs of the Spot fleet requests.
+        /// The IDs of the Spot Fleet requests.
         /// </para>
         /// </summary>
         public List<string> SpotFleetRequestIds

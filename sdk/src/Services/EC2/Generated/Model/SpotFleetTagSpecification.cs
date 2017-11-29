@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// The tags for a Spot fleet resource.
+    /// The tags for a Spot Fleet resource.
     /// </summary>
     public partial class SpotFleetTagSpecification
     {

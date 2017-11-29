@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeSpotFleetInstances operation.
-    /// Describes the running instances for the specified Spot fleet.
+    /// Describes the running instances for the specified Spot Fleet.
     /// </summary>
     public partial class DescribeSpotFleetInstancesRequest : AmazonEC2Request
     {
@@ -78,7 +78,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SpotFleetRequestId. 
         /// <para>
-        /// The ID of the Spot fleet request.
+        /// The ID of the Spot Fleet request.
         /// </para>
         /// </summary>
         public string SpotFleetRequestId

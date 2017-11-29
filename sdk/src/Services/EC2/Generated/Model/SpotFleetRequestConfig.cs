@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes a Spot fleet request.
+    /// Describes a Spot Fleet request.
     /// </summary>
     public partial class SpotFleetRequestConfig
     {
@@ -41,11 +41,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ActivityStatus. 
         /// <para>
-        /// The progress of the Spot fleet request. If there is an error, the status is <code>error</code>.
-        /// After all bids are placed, the status is <code>pending_fulfillment</code>. If the
-        /// size of the fleet is equal to or greater than its target capacity, the status is <code>fulfilled</code>.
-        /// If the size of the fleet is decreased, the status is <code>pending_termination</code>
-        /// while Spot instances are terminating.
+        /// The progress of the Spot Fleet request. If there is an error, the status is <code>error</code>.
+        /// After all requests are placed, the status is <code>pending_fulfillment</code>. If
+        /// the size of the fleet is equal to or greater than its target capacity, the status
+        /// is <code>fulfilled</code>. If the size of the fleet is decreased, the status is <code>pending_termination</code>
+        /// while Spot Instances are terminating.
         /// </para>
         /// </summary>
         public ActivityStatus ActivityStatus
@@ -63,7 +63,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ConfigData. 
         /// <para>
-        /// Information about the configuration of the Spot fleet request.
+        /// The configuration of the Spot Fleet request.
         /// </para>
         /// </summary>
         public SpotFleetRequestConfigData ConfigData
@@ -99,7 +99,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SpotFleetRequestId. 
         /// <para>
-        /// The ID of the Spot fleet request.
+        /// The ID of the Spot Fleet request.
         /// </para>
         /// </summary>
         public string SpotFleetRequestId
@@ -117,7 +117,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SpotFleetRequestState. 
         /// <para>
-        /// The state of the Spot fleet request.
+        /// The state of the Spot Fleet request.
         /// </para>
         /// </summary>
         public BatchState SpotFleetRequestState

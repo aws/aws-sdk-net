@@ -116,6 +116,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                         {
                                             request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "BlockDeviceMapping" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "Ebs" + "." + "Iops", StringUtils.FromInt(publicRequestSpotFleetRequestConfiglistValuelistValue.Ebs.Iops));
                                         }
+                                        if(publicRequestSpotFleetRequestConfiglistValuelistValue.Ebs.IsSetKmsKeyId())
+                                        {
+                                            request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "BlockDeviceMapping" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "Ebs" + "." + "KmsKeyId", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValuelistValue.Ebs.KmsKeyId));
+                                        }
                                         if(publicRequestSpotFleetRequestConfiglistValuelistValue.Ebs.IsSetSnapshotId())
                                         {
                                             request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "BlockDeviceMapping" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "Ebs" + "." + "SnapshotId", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValuelistValue.Ebs.SnapshotId));
@@ -337,6 +341,57 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             if(publicRequestSpotFleetRequestConfiglistValue.IsSetWeightedCapacity())
                             {
                                 request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "WeightedCapacity", StringUtils.FromDouble(publicRequestSpotFleetRequestConfiglistValue.WeightedCapacity));
+                            }
+                            publicRequestSpotFleetRequestConfiglistValueIndex++;
+                        }
+                    }
+                    if(publicRequest.SpotFleetRequestConfig.IsSetLaunchTemplateConfigs())
+                    {
+                        int publicRequestSpotFleetRequestConfiglistValueIndex = 1;
+                        foreach(var publicRequestSpotFleetRequestConfiglistValue in publicRequest.SpotFleetRequestConfig.LaunchTemplateConfigs)
+                        {
+                            if(publicRequestSpotFleetRequestConfiglistValue.IsSetLaunchTemplateSpecification())
+                            {
+                                if(publicRequestSpotFleetRequestConfiglistValue.LaunchTemplateSpecification.IsSetLaunchTemplateId())
+                                {
+                                    request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchTemplateConfigs" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "LaunchTemplateSpecification" + "." + "LaunchTemplateId", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValue.LaunchTemplateSpecification.LaunchTemplateId));
+                                }
+                                if(publicRequestSpotFleetRequestConfiglistValue.LaunchTemplateSpecification.IsSetLaunchTemplateName())
+                                {
+                                    request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchTemplateConfigs" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "LaunchTemplateSpecification" + "." + "LaunchTemplateName", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValue.LaunchTemplateSpecification.LaunchTemplateName));
+                                }
+                                if(publicRequestSpotFleetRequestConfiglistValue.LaunchTemplateSpecification.IsSetVersion())
+                                {
+                                    request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchTemplateConfigs" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "LaunchTemplateSpecification" + "." + "Version", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValue.LaunchTemplateSpecification.Version));
+                                }
+                            }
+                            if(publicRequestSpotFleetRequestConfiglistValue.IsSetOverrides())
+                            {
+                                int publicRequestSpotFleetRequestConfiglistValuelistValueIndex = 1;
+                                foreach(var publicRequestSpotFleetRequestConfiglistValuelistValue in publicRequestSpotFleetRequestConfiglistValue.Overrides)
+                                {
+                                    if(publicRequestSpotFleetRequestConfiglistValuelistValue.IsSetAvailabilityZone())
+                                    {
+                                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchTemplateConfigs" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "Overrides" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "AvailabilityZone", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValuelistValue.AvailabilityZone));
+                                    }
+                                    if(publicRequestSpotFleetRequestConfiglistValuelistValue.IsSetInstanceType())
+                                    {
+                                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchTemplateConfigs" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "Overrides" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "InstanceType", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceType));
+                                    }
+                                    if(publicRequestSpotFleetRequestConfiglistValuelistValue.IsSetSpotPrice())
+                                    {
+                                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchTemplateConfigs" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "Overrides" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "SpotPrice", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValuelistValue.SpotPrice));
+                                    }
+                                    if(publicRequestSpotFleetRequestConfiglistValuelistValue.IsSetSubnetId())
+                                    {
+                                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchTemplateConfigs" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "Overrides" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "SubnetId", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValuelistValue.SubnetId));
+                                    }
+                                    if(publicRequestSpotFleetRequestConfiglistValuelistValue.IsSetWeightedCapacity())
+                                    {
+                                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchTemplateConfigs" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "Overrides" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "WeightedCapacity", StringUtils.FromDouble(publicRequestSpotFleetRequestConfiglistValuelistValue.WeightedCapacity));
+                                    }
+                                    publicRequestSpotFleetRequestConfiglistValuelistValueIndex++;
+                                }
                             }
                             publicRequestSpotFleetRequestConfiglistValueIndex++;
                         }

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes a service.
+    /// Describes a VPC endpoint service.
     /// </summary>
     public partial class ServiceDetail
     {

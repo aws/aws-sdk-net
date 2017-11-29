@@ -77,6 +77,13 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
+    /// You can create a <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">launch
+    /// template</a>, which is a resource that contains the parameters to launch an instance.
+    /// When you launch an instance using <a>RunInstances</a>, you can specify the launch
+    /// template instead of specifying the launch parameters.
+    /// </para>
+    ///  
+    /// <para>
     /// To ensure faster instance launches, break up large requests into smaller batches.
     /// For example, create five separate launch requests for 100 instances each instead of
     /// one launch request for 500 instances.
@@ -114,11 +121,13 @@ namespace Amazon.EC2.Model
         private IamInstanceProfileSpecification _iamInstanceProfile;
         private string _imageId;
         private ShutdownBehavior _instanceInitiatedShutdownBehavior;
+        private InstanceMarketOptionsRequest _instanceMarketOptions;
         private InstanceType _instanceType;
         private int? _ipv6AddressCount;
         private List<InstanceIpv6Address> _ipv6Addresses = new List<InstanceIpv6Address>();
         private string _kernelId;
         private string _keyName;
+        private LaunchTemplateSpecification _launchTemplate;
         private int? _maxCount;
         private int? _minCount;
         private bool? _monitoring;
@@ -267,7 +276,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ElasticGpuSpecification. 
         /// <para>
-        /// An Elastic GPU to associate with the instance.
+        /// An elastic GPU to associate with the instance.
         /// </para>
         /// </summary>
         public List<ElasticGpuSpecification> ElasticGpuSpecification
@@ -339,6 +348,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetInstanceInitiatedShutdownBehavior()
         {
             return this._instanceInitiatedShutdownBehavior != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceMarketOptions. 
+        /// <para>
+        /// The market (purchasing) option for the instances.
+        /// </para>
+        /// </summary>
+        public InstanceMarketOptionsRequest InstanceMarketOptions
+        {
+            get { return this._instanceMarketOptions; }
+            set { this._instanceMarketOptions = value; }
+        }
+
+        // Check to see if InstanceMarketOptions property is set
+        internal bool IsSetInstanceMarketOptions()
+        {
+            return this._instanceMarketOptions != null;
         }
 
         /// <summary>
@@ -454,6 +481,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetKeyName()
         {
             return this._keyName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LaunchTemplate. 
+        /// <para>
+        /// The launch template to use to launch the instances. Any parameters that you specify
+        /// in <a>RunInstances</a> override the same parameters in the launch template.
+        /// </para>
+        /// </summary>
+        public LaunchTemplateSpecification LaunchTemplate
+        {
+            get { return this._launchTemplate; }
+            set { this._launchTemplate = value; }
+        }
+
+        // Check to see if LaunchTemplate property is set
+        internal bool IsSetLaunchTemplate()
+        {
+            return this._launchTemplate != null;
         }
 
         /// <summary>

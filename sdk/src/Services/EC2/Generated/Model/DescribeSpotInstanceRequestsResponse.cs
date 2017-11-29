@@ -37,7 +37,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SpotInstanceRequests. 
         /// <para>
-        /// One or more Spot instance requests.
+        /// One or more Spot Instance requests.
         /// </para>
         /// </summary>
         public List<SpotInstanceRequest> SpotInstanceRequests

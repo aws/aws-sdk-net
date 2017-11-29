@@ -97,6 +97,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.LaunchSpecifications.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("launchTemplateConfigs/item", targetDepth))
+                    {
+                        var unmarshaller = LaunchTemplateConfigUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.LaunchTemplateConfigs.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("loadBalancersConfig", targetDepth))
                     {
                         var unmarshaller = LoadBalancersConfigUnmarshaller.Instance;

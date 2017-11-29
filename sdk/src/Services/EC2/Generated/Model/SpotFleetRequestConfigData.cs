@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes the configuration of a Spot fleet request.
+    /// Describes the configuration of a Spot Fleet request.
     /// </summary>
     public partial class SpotFleetRequestConfigData
     {
@@ -39,6 +39,7 @@ namespace Amazon.EC2.Model
         private string _iamFleetRole;
         private InstanceInterruptionBehavior _instanceInterruptionBehavior;
         private List<SpotFleetLaunchSpecification> _launchSpecifications = new List<SpotFleetLaunchSpecification>();
+        private List<LaunchTemplateConfig> _launchTemplateConfigs = new List<LaunchTemplateConfig>();
         private LoadBalancersConfig _loadBalancersConfig;
         private bool? _replaceUnhealthyInstances;
         private string _spotPrice;
@@ -52,7 +53,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property AllocationStrategy. 
         /// <para>
         /// Indicates how to allocate the target capacity across the Spot pools specified by the
-        /// Spot fleet request. The default is <code>lowestPrice</code>.
+        /// Spot Fleet request. The default is <code>lowestPrice</code>.
         /// </para>
         /// </summary>
         public AllocationStrategy AllocationStrategy
@@ -90,8 +91,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ExcessCapacityTerminationPolicy. 
         /// <para>
-        /// Indicates whether running Spot instances should be terminated if the target capacity
-        /// of the Spot fleet request is decreased below the current size of the Spot fleet.
+        /// Indicates whether running Spot Instances should be terminated if the target capacity
+        /// of the Spot Fleet request is decreased below the current size of the Spot Fleet.
         /// </para>
         /// </summary>
         public ExcessCapacityTerminationPolicy ExcessCapacityTerminationPolicy
@@ -127,9 +128,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property IamFleetRole. 
         /// <para>
-        /// Grants the Spot fleet permission to terminate Spot instances on your behalf when you
-        /// cancel its Spot fleet request using <a>CancelSpotFleetRequests</a> or when the Spot
-        /// fleet request expires, if you set <code>terminateInstancesWithExpiration</code>.
+        /// Grants the Spot Fleet permission to terminate Spot Instances on your behalf when you
+        /// cancel its Spot Fleet request using <a>CancelSpotFleetRequests</a> or when the Spot
+        /// Fleet request expires, if you set <code>terminateInstancesWithExpiration</code>.
         /// </para>
         /// </summary>
         public string IamFleetRole
@@ -147,7 +148,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceInterruptionBehavior. 
         /// <para>
-        /// Indicates whether a Spot instance stops or terminates when it is interrupted.
+        /// The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.
         /// </para>
         /// </summary>
         public InstanceInterruptionBehavior InstanceInterruptionBehavior
@@ -165,7 +166,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property LaunchSpecifications. 
         /// <para>
-        /// Information about the launch specifications for the Spot fleet request.
+        /// The launch specifications for the Spot Fleet request.
         /// </para>
         /// </summary>
         public List<SpotFleetLaunchSpecification> LaunchSpecifications
@@ -181,15 +182,33 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LaunchTemplateConfigs. 
+        /// <para>
+        /// The launch template and overrides.
+        /// </para>
+        /// </summary>
+        public List<LaunchTemplateConfig> LaunchTemplateConfigs
+        {
+            get { return this._launchTemplateConfigs; }
+            set { this._launchTemplateConfigs = value; }
+        }
+
+        // Check to see if LaunchTemplateConfigs property is set
+        internal bool IsSetLaunchTemplateConfigs()
+        {
+            return this._launchTemplateConfigs != null && this._launchTemplateConfigs.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property LoadBalancersConfig. 
         /// <para>
-        /// One or more Classic Load Balancers and target groups to attach to the Spot fleet request.
-        /// Spot fleet registers the running Spot instances with the specified Classic Load Balancers
+        /// One or more Classic Load Balancers and target groups to attach to the Spot Fleet request.
+        /// Spot Fleet registers the running Spot Instances with the specified Classic Load Balancers
         /// and target groups.
         /// </para>
         ///  
         /// <para>
-        /// With Network Load Balancers, Spot fleet cannot register instances that have the following
+        /// With Network Load Balancers, Spot Fleet cannot register instances that have the following
         /// instance types: C1, CC1, CC2, CG1, CG2, CR1, CS1, G1, G2, HI1, HS1, M1, M2, M3, and
         /// T1.
         /// </para>
@@ -209,7 +228,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ReplaceUnhealthyInstances. 
         /// <para>
-        /// Indicates whether Spot fleet should replace unhealthy instances.
+        /// Indicates whether Spot Fleet should replace unhealthy instances.
         /// </para>
         /// </summary>
         public bool ReplaceUnhealthyInstances
@@ -227,7 +246,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SpotPrice. 
         /// <para>
-        /// The bid price per unit hour.
+        /// The maximum price per unit hour that you are willing to pay for a Spot Instance. The
+        /// default is the On-Demand price.
         /// </para>
         /// </summary>
         public string SpotPrice
@@ -247,7 +267,8 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The number of units to request. You can choose to set the target capacity in terms
         /// of instances or a performance characteristic that is important to your application
-        /// workload, such as vCPUs, memory, or I/O.
+        /// workload, such as vCPUs, memory, or I/O. If the request type is <code>maintain</code>,
+        /// you can specify a target capacity of 0 and add capacity later.
         /// </para>
         /// </summary>
         public int TargetCapacity
@@ -265,7 +286,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TerminateInstancesWithExpiration. 
         /// <para>
-        /// Indicates whether running Spot instances should be terminated when the Spot fleet
+        /// Indicates whether running Spot Instances should be terminated when the Spot Fleet
         /// request expires.
         /// </para>
         /// </summary>
@@ -286,12 +307,12 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The type of request. Indicates whether the fleet will only <code>request</code> the
         /// target capacity or also attempt to <code>maintain</code> it. When you <code>request</code>
-        /// a certain target capacity, the fleet will only place the required bids. It will not
-        /// attempt to replenish Spot instances if capacity is diminished, nor will it submit
-        /// bids in alternative Spot pools if capacity is not available. When you want to <code>maintain</code>
-        /// a certain target capacity, fleet will place the required bids to meet this target
-        /// capacity. It will also automatically replenish any interrupted instances. Default:
-        /// <code>maintain</code>.
+        /// a certain target capacity, the fleet will only place the required requests. It will
+        /// not attempt to replenish Spot Instances if capacity is diminished, nor will it submit
+        /// requests in alternative Spot pools if capacity is not available. When you want to
+        /// <code>maintain</code> a certain target capacity, fleet will place the required requests
+        /// to meet this target capacity. It will also automatically replenish any interrupted
+        /// instances. Default: <code>maintain</code>.
         /// </para>
         /// </summary>
         public FleetType Type
@@ -329,8 +350,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property ValidUntil. 
         /// <para>
         /// The end date and time of the request, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
-        /// At this point, no new Spot instance requests are placed or enabled to fulfill the
-        /// request.
+        /// At this point, no new Spot Instance requests are placed or able to fulfill the request.
+        /// The default end date is 7 days from the current date.
         /// </para>
         /// </summary>
         public DateTime ValidUntil

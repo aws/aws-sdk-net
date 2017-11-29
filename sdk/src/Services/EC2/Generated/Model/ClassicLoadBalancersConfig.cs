@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes the Classic Load Balancers to attach to a Spot fleet. Spot fleet registers
-    /// the running Spot instances with these Classic Load Balancers.
+    /// Describes the Classic Load Balancers to attach to a Spot Fleet. Spot Fleet registers
+    /// the running Spot Instances with these Classic Load Balancers.
     /// </summary>
     public partial class ClassicLoadBalancersConfig
     {

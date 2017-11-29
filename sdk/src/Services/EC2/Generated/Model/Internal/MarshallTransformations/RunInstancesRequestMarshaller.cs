@@ -85,6 +85,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             {
                                 request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "Iops", StringUtils.FromInt(publicRequestlistValue.Ebs.Iops));
                             }
+                            if(publicRequestlistValue.Ebs.IsSetKmsKeyId())
+                            {
+                                request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "KmsKeyId", StringUtils.FromString(publicRequestlistValue.Ebs.KmsKeyId));
+                            }
                             if(publicRequestlistValue.Ebs.IsSetSnapshotId())
                             {
                                 request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "SnapshotId", StringUtils.FromString(publicRequestlistValue.Ebs.SnapshotId));
@@ -152,6 +156,36 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("InstanceInitiatedShutdownBehavior", StringUtils.FromString(publicRequest.InstanceInitiatedShutdownBehavior));
                 }
+                if(publicRequest.IsSetInstanceMarketOptions())
+                {
+                    if(publicRequest.InstanceMarketOptions.IsSetMarketType())
+                    {
+                        request.Parameters.Add("InstanceMarketOptions" + "." + "MarketType", StringUtils.FromString(publicRequest.InstanceMarketOptions.MarketType));
+                    }
+                    if(publicRequest.InstanceMarketOptions.IsSetSpotOptions())
+                    {
+                        if(publicRequest.InstanceMarketOptions.SpotOptions.IsSetBlockDurationMinutes())
+                        {
+                            request.Parameters.Add("InstanceMarketOptions" + "." + "SpotOptions" + "." + "BlockDurationMinutes", StringUtils.FromInt(publicRequest.InstanceMarketOptions.SpotOptions.BlockDurationMinutes));
+                        }
+                        if(publicRequest.InstanceMarketOptions.SpotOptions.IsSetInstanceInterruptionBehavior())
+                        {
+                            request.Parameters.Add("InstanceMarketOptions" + "." + "SpotOptions" + "." + "InstanceInterruptionBehavior", StringUtils.FromString(publicRequest.InstanceMarketOptions.SpotOptions.InstanceInterruptionBehavior));
+                        }
+                        if(publicRequest.InstanceMarketOptions.SpotOptions.IsSetMaxPrice())
+                        {
+                            request.Parameters.Add("InstanceMarketOptions" + "." + "SpotOptions" + "." + "MaxPrice", StringUtils.FromString(publicRequest.InstanceMarketOptions.SpotOptions.MaxPrice));
+                        }
+                        if(publicRequest.InstanceMarketOptions.SpotOptions.IsSetSpotInstanceType())
+                        {
+                            request.Parameters.Add("InstanceMarketOptions" + "." + "SpotOptions" + "." + "SpotInstanceType", StringUtils.FromString(publicRequest.InstanceMarketOptions.SpotOptions.SpotInstanceType));
+                        }
+                        if(publicRequest.InstanceMarketOptions.SpotOptions.IsSetValidUntil())
+                        {
+                            request.Parameters.Add("InstanceMarketOptions" + "." + "SpotOptions" + "." + "ValidUntil", StringUtils.FromDateTime(publicRequest.InstanceMarketOptions.SpotOptions.ValidUntil));
+                        }
+                    }
+                }
                 if(publicRequest.IsSetInstanceType())
                 {
                     request.Parameters.Add("InstanceType", StringUtils.FromString(publicRequest.InstanceType));
@@ -179,6 +213,21 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetKeyName())
                 {
                     request.Parameters.Add("KeyName", StringUtils.FromString(publicRequest.KeyName));
+                }
+                if(publicRequest.IsSetLaunchTemplate())
+                {
+                    if(publicRequest.LaunchTemplate.IsSetLaunchTemplateId())
+                    {
+                        request.Parameters.Add("LaunchTemplate" + "." + "LaunchTemplateId", StringUtils.FromString(publicRequest.LaunchTemplate.LaunchTemplateId));
+                    }
+                    if(publicRequest.LaunchTemplate.IsSetLaunchTemplateName())
+                    {
+                        request.Parameters.Add("LaunchTemplate" + "." + "LaunchTemplateName", StringUtils.FromString(publicRequest.LaunchTemplate.LaunchTemplateName));
+                    }
+                    if(publicRequest.LaunchTemplate.IsSetVersion())
+                    {
+                        request.Parameters.Add("LaunchTemplate" + "." + "Version", StringUtils.FromString(publicRequest.LaunchTemplate.Version));
+                    }
                 }
                 if(publicRequest.IsSetMaxCount())
                 {

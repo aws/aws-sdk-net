@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateSpotDatafeedSubscription operation.
-    /// Creates a data feed for Spot instances, enabling you to view Spot instance usage logs.
+    /// Creates a data feed for Spot Instances, enabling you to view Spot Instance usage logs.
     /// You can create one data feed per AWS account. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
     /// Instance Data Feed</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </summary>
@@ -46,7 +46,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates CreateSpotDatafeedSubscriptionRequest with the parameterized properties
         /// </summary>
-        /// <param name="bucket">The Amazon S3 bucket in which to store the Spot instance data feed.</param>
+        /// <param name="bucket">The Amazon S3 bucket in which to store the Spot Instance data feed.</param>
         public CreateSpotDatafeedSubscriptionRequest(string bucket)
         {
             _bucket = bucket;
@@ -55,7 +55,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Bucket. 
         /// <para>
-        /// The Amazon S3 bucket in which to store the Spot instance data feed.
+        /// The Amazon S3 bucket in which to store the Spot Instance data feed.
         /// </para>
         /// </summary>
         public string Bucket

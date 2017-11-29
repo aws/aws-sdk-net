@@ -75,7 +75,7 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>Server.SpotInstanceTermination</code>: A Spot Instance was terminated due to
-        /// an increase in the market price.
+        /// an increase in the Spot price.
         /// </para>
         ///  </li> <li> 
         /// <para>

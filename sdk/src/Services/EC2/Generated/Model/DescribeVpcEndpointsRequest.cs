@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>service-name</code>: The name of the AWS service.
+        ///  <code>service-name</code>: The name of the service.
         /// </para>
         ///  </li> <li> 
         /// <para>

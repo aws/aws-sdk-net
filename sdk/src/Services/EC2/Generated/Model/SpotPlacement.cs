@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes Spot instance placement.
+    /// Describes Spot Instance placement.
     /// </summary>
     public partial class SpotPlacement
     {
@@ -44,7 +44,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates SpotPlacement with the parameterized properties
         /// </summary>
-        /// <param name="availabilityZone">The Availability Zone. [Spot fleet only] To specify multiple Availability Zones, separate them using commas; for example, "us-west-2a, us-west-2b".</param>
+        /// <param name="availabilityZone">The Availability Zone. [Spot Fleet only] To specify multiple Availability Zones, separate them using commas; for example, "us-west-2a, us-west-2b".</param>
         public SpotPlacement(string availabilityZone)
         {
             _availabilityZone = availabilityZone;
@@ -57,7 +57,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// [Spot fleet only] To specify multiple Availability Zones, separate them using commas;
+        /// [Spot Fleet only] To specify multiple Availability Zones, separate them using commas;
         /// for example, "us-west-2a, us-west-2b".
         /// </para>
         /// </summary>
@@ -96,7 +96,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The tenancy of the instance (if the instance is running in a VPC). An instance with
         /// a tenancy of <code>dedicated</code> runs on single-tenant hardware. The <code>host</code>
-        /// tenancy is not supported for Spot instances.
+        /// tenancy is not supported for Spot Instances.
         /// </para>
         /// </summary>
         public Tenancy Tenancy

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes a Spot fleet request that was successfully canceled.
+    /// Describes a Spot Fleet request that was successfully canceled.
     /// </summary>
     public partial class CancelSpotFleetRequestsSuccessItem
     {
@@ -39,7 +39,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CurrentSpotFleetRequestState. 
         /// <para>
-        /// The current state of the Spot fleet request.
+        /// The current state of the Spot Fleet request.
         /// </para>
         /// </summary>
         public BatchState CurrentSpotFleetRequestState
@@ -57,7 +57,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PreviousSpotFleetRequestState. 
         /// <para>
-        /// The previous state of the Spot fleet request.
+        /// The previous state of the Spot Fleet request.
         /// </para>
         /// </summary>
         public BatchState PreviousSpotFleetRequestState
@@ -75,7 +75,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SpotFleetRequestId. 
         /// <para>
-        /// The ID of the Spot fleet request.
+        /// The ID of the Spot Fleet request.
         /// </para>
         /// </summary>
         public string SpotFleetRequestId

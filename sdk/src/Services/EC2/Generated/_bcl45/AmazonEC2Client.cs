@@ -280,6 +280,46 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  AcceptVpcEndpointConnections
+
+
+        /// <summary>
+        /// Accepts one or more interface VPC endpoint connection requests to your VPC endpoint
+        /// service.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcceptVpcEndpointConnections service method.</param>
+        /// 
+        /// <returns>The response from the AcceptVpcEndpointConnections service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptVpcEndpointConnections">REST API Reference for AcceptVpcEndpointConnections Operation</seealso>
+        public virtual AcceptVpcEndpointConnectionsResponse AcceptVpcEndpointConnections(AcceptVpcEndpointConnectionsRequest request)
+        {
+            var marshaller = new AcceptVpcEndpointConnectionsRequestMarshaller();
+            var unmarshaller = AcceptVpcEndpointConnectionsResponseUnmarshaller.Instance;
+
+            return Invoke<AcceptVpcEndpointConnectionsRequest,AcceptVpcEndpointConnectionsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AcceptVpcEndpointConnections operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AcceptVpcEndpointConnections operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptVpcEndpointConnections">REST API Reference for AcceptVpcEndpointConnections Operation</seealso>
+        public virtual Task<AcceptVpcEndpointConnectionsResponse> AcceptVpcEndpointConnectionsAsync(AcceptVpcEndpointConnectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AcceptVpcEndpointConnectionsRequestMarshaller();
+            var unmarshaller = AcceptVpcEndpointConnectionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AcceptVpcEndpointConnectionsRequest,AcceptVpcEndpointConnectionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AcceptVpcPeeringConnection
 
 
@@ -1545,14 +1585,14 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Cancels the specified Spot fleet requests.
+        /// Cancels the specified Spot Fleet requests.
         /// 
         ///  
         /// <para>
-        /// After you cancel a Spot fleet request, the Spot fleet launches no new Spot instances.
-        /// You must specify whether the Spot fleet should also terminate its Spot instances.
-        /// If you terminate the instances, the Spot fleet request enters the <code>cancelled_terminating</code>
-        /// state. Otherwise, the Spot fleet request enters the <code>cancelled_running</code>
+        /// After you cancel a Spot Fleet request, the Spot Fleet launches no new Spot Instances.
+        /// You must specify whether the Spot Fleet should also terminate its Spot Instances.
+        /// If you terminate the instances, the Spot Fleet request enters the <code>cancelled_terminating</code>
+        /// state. Otherwise, the Spot Fleet request enters the <code>cancelled_running</code>
         /// state and the instances continue to run until they are interrupted or you terminate
         /// them manually.
         /// </para>
@@ -1594,15 +1634,14 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Cancels one or more Spot instance requests. Spot instances are instances that Amazon
-        /// EC2 starts on your behalf when the bid price that you specify exceeds the current
-        /// Spot price. Amazon EC2 periodically sets the Spot price based on available Spot instance
-        /// capacity and current Spot instance requests. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
+        /// Cancels one or more Spot Instance requests. Spot Instances are instances that Amazon
+        /// EC2 starts on your behalf when the maximum price that you specify exceeds the current
+        /// Spot price. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
         /// Instance Requests</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// 
         ///  <important> 
         /// <para>
-        /// Canceling a Spot instance request does not terminate running Spot instances associated
+        /// Canceling a Spot Instance request does not terminate running Spot Instances associated
         /// with the request.
         /// </para>
         ///  </important>
@@ -2427,7 +2466,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Creates a 2048-bit RSA key pair with the specified name. Amazon EC2 stores the public
         /// key and displays the private key for you to save to a file. The private key is returned
-        /// as an unencrypted PEM encoded PKCS#8 private key. If a key with the specified name
+        /// as an unencrypted PEM encoded PKCS#1 private key. If a key with the specified name
         /// already exists, Amazon EC2 returns an error.
         /// 
         ///  
@@ -2437,11 +2476,12 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// The key pair returned to you is available only in the region in which you create it.
-        /// To create a key pair that is available in all regions, use <a>ImportKeyPair</a>.
+        /// If you prefer, you can create your own key pair using a third-party tool and upload
+        /// it to any region using <a>ImportKeyPair</a>.
         /// </para>
         ///  
         /// <para>
-        /// For more information about key pairs, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
         /// Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -2473,6 +2513,93 @@ namespace Amazon.EC2
             var unmarshaller = CreateKeyPairResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateKeyPairRequest,CreateKeyPairResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateLaunchTemplate
+
+
+        /// <summary>
+        /// Creates a launch template. A launch template contains the parameters to launch an
+        /// instance. When you launch an instance using <a>RunInstances</a>, you can specify a
+        /// launch template instead of providing the launch parameters in the request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLaunchTemplate service method.</param>
+        /// 
+        /// <returns>The response from the CreateLaunchTemplate service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLaunchTemplate">REST API Reference for CreateLaunchTemplate Operation</seealso>
+        public virtual CreateLaunchTemplateResponse CreateLaunchTemplate(CreateLaunchTemplateRequest request)
+        {
+            var marshaller = new CreateLaunchTemplateRequestMarshaller();
+            var unmarshaller = CreateLaunchTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLaunchTemplateRequest,CreateLaunchTemplateResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateLaunchTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateLaunchTemplate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLaunchTemplate">REST API Reference for CreateLaunchTemplate Operation</seealso>
+        public virtual Task<CreateLaunchTemplateResponse> CreateLaunchTemplateAsync(CreateLaunchTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateLaunchTemplateRequestMarshaller();
+            var unmarshaller = CreateLaunchTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateLaunchTemplateRequest,CreateLaunchTemplateResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateLaunchTemplateVersion
+
+
+        /// <summary>
+        /// Creates a new version for a launch template. You can specify an existing version of
+        /// launch template from which to base the new version.
+        /// 
+        ///  
+        /// <para>
+        /// Launch template versions are numbered in the order in which they are created. You
+        /// cannot specify, change, or replace the numbering of launch template versions.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLaunchTemplateVersion service method.</param>
+        /// 
+        /// <returns>The response from the CreateLaunchTemplateVersion service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLaunchTemplateVersion">REST API Reference for CreateLaunchTemplateVersion Operation</seealso>
+        public virtual CreateLaunchTemplateVersionResponse CreateLaunchTemplateVersion(CreateLaunchTemplateVersionRequest request)
+        {
+            var marshaller = new CreateLaunchTemplateVersionRequestMarshaller();
+            var unmarshaller = CreateLaunchTemplateVersionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLaunchTemplateVersionRequest,CreateLaunchTemplateVersionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateLaunchTemplateVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateLaunchTemplateVersion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLaunchTemplateVersion">REST API Reference for CreateLaunchTemplateVersion Operation</seealso>
+        public virtual Task<CreateLaunchTemplateVersionResponse> CreateLaunchTemplateVersionAsync(CreateLaunchTemplateVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateLaunchTemplateVersionRequestMarshaller();
+            var unmarshaller = CreateLaunchTemplateVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateLaunchTemplateVersionRequest,CreateLaunchTemplateVersionResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -3108,7 +3235,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Creates a data feed for Spot instances, enabling you to view Spot instance usage logs.
+        /// Creates a data feed for Spot Instances, enabling you to view Spot Instance usage logs.
         /// You can create one data feed per AWS account. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
         /// Instance Data Feed</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </summary>
@@ -3406,23 +3533,29 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Creates a VPC endpoint for a specified AWS service. An endpoint enables you to create
-        /// a private connection between your VPC and another AWS service in your account. You
-        /// can create a gateway endpoint or an interface endpoint. 
+        /// Creates a VPC endpoint for a specified service. An endpoint enables you to create
+        /// a private connection between your VPC and the service. The service may be provided
+        /// by AWS, an AWS Marketplace partner, or another AWS account. For more information,
+        /// see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-endpoints.html">VPC
+        /// Endpoints</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// 
         ///  
         /// <para>
-        /// A gateway endpoint serves as a target for a route in your route table for traffic
-        /// destined for the AWS service. You can specify the VPC route tables that use the endpoint,
-        /// and you can optionally specify an endpoint policy to attach to the endpoint that will
-        /// control access to the service from your VPC.
+        /// A <code>gateway</code> endpoint serves as a target for a route in your route table
+        /// for traffic destined for the AWS service. You can specify an endpoint policy to attach
+        /// to the endpoint that will control access to the service from your VPC. You can also
+        /// specify the VPC route tables that use the endpoint.
         /// </para>
         ///  
         /// <para>
-        /// An interface endpoint is a network interface in your subnet with a private IP address
-        /// that serves as an entry point for traffic destined to the AWS service. You can specify
-        /// the subnets in which to create an endpoint, and the security groups to associate with
-        /// the network interface.
+        /// An <code>interface</code> endpoint is a network interface in your subnet that serves
+        /// as an endpoint for communicating with the specified service. You can specify the subnets
+        /// in which to create an endpoint, and the security groups to associate with the endpoint
+        /// network interface.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use <a>DescribeVpcEndpointServices</a> to get a list of supported services.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVpcEndpoint service method.</param>
@@ -3453,6 +3586,101 @@ namespace Amazon.EC2
             var unmarshaller = CreateVpcEndpointResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateVpcEndpointRequest,CreateVpcEndpointResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateVpcEndpointConnectionNotification
+
+
+        /// <summary>
+        /// Creates a connection notification for a specified VPC endpoint or VPC endpoint service.
+        /// A connection notification notifies you of specific endpoint events. You must create
+        /// an SNS topic to receive notifications. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Create
+        /// a Topic</a> in the <i>Amazon Simple Notification Service Developer Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// You can create a connection notification for interface endpoints only.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcEndpointConnectionNotification service method.</param>
+        /// 
+        /// <returns>The response from the CreateVpcEndpointConnectionNotification service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcEndpointConnectionNotification">REST API Reference for CreateVpcEndpointConnectionNotification Operation</seealso>
+        public virtual CreateVpcEndpointConnectionNotificationResponse CreateVpcEndpointConnectionNotification(CreateVpcEndpointConnectionNotificationRequest request)
+        {
+            var marshaller = new CreateVpcEndpointConnectionNotificationRequestMarshaller();
+            var unmarshaller = CreateVpcEndpointConnectionNotificationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateVpcEndpointConnectionNotificationRequest,CreateVpcEndpointConnectionNotificationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateVpcEndpointConnectionNotification operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcEndpointConnectionNotification operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcEndpointConnectionNotification">REST API Reference for CreateVpcEndpointConnectionNotification Operation</seealso>
+        public virtual Task<CreateVpcEndpointConnectionNotificationResponse> CreateVpcEndpointConnectionNotificationAsync(CreateVpcEndpointConnectionNotificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateVpcEndpointConnectionNotificationRequestMarshaller();
+            var unmarshaller = CreateVpcEndpointConnectionNotificationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateVpcEndpointConnectionNotificationRequest,CreateVpcEndpointConnectionNotificationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateVpcEndpointServiceConfiguration
+
+
+        /// <summary>
+        /// Creates a VPC endpoint service configuration to which service consumers (AWS accounts,
+        /// IAM users, and IAM roles) can connect. Service consumers can create an interface VPC
+        /// endpoint to connect to your service.
+        /// 
+        ///  
+        /// <para>
+        /// To create an endpoint service configuration, you must first create a Network Load
+        /// Balancer for your service. For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/endpoint-service.html">VPC
+        /// Endpoint Services</a> in the <i>Amazon Virtual Private Cloud User Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcEndpointServiceConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the CreateVpcEndpointServiceConfiguration service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcEndpointServiceConfiguration">REST API Reference for CreateVpcEndpointServiceConfiguration Operation</seealso>
+        public virtual CreateVpcEndpointServiceConfigurationResponse CreateVpcEndpointServiceConfiguration(CreateVpcEndpointServiceConfigurationRequest request)
+        {
+            var marshaller = new CreateVpcEndpointServiceConfigurationRequestMarshaller();
+            var unmarshaller = CreateVpcEndpointServiceConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateVpcEndpointServiceConfigurationRequest,CreateVpcEndpointServiceConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateVpcEndpointServiceConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcEndpointServiceConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcEndpointServiceConfiguration">REST API Reference for CreateVpcEndpointServiceConfiguration Operation</seealso>
+        public virtual Task<CreateVpcEndpointServiceConfigurationResponse> CreateVpcEndpointServiceConfigurationAsync(CreateVpcEndpointServiceConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateVpcEndpointServiceConfigurationRequestMarshaller();
+            var unmarshaller = CreateVpcEndpointServiceConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateVpcEndpointServiceConfigurationRequest,CreateVpcEndpointServiceConfigurationResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -3949,6 +4177,87 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DeleteLaunchTemplate
+
+
+        /// <summary>
+        /// Deletes a launch template. Deleting a launch template deletes all of its versions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLaunchTemplate service method.</param>
+        /// 
+        /// <returns>The response from the DeleteLaunchTemplate service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLaunchTemplate">REST API Reference for DeleteLaunchTemplate Operation</seealso>
+        public virtual DeleteLaunchTemplateResponse DeleteLaunchTemplate(DeleteLaunchTemplateRequest request)
+        {
+            var marshaller = new DeleteLaunchTemplateRequestMarshaller();
+            var unmarshaller = DeleteLaunchTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLaunchTemplateRequest,DeleteLaunchTemplateResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteLaunchTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLaunchTemplate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLaunchTemplate">REST API Reference for DeleteLaunchTemplate Operation</seealso>
+        public virtual Task<DeleteLaunchTemplateResponse> DeleteLaunchTemplateAsync(DeleteLaunchTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteLaunchTemplateRequestMarshaller();
+            var unmarshaller = DeleteLaunchTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteLaunchTemplateRequest,DeleteLaunchTemplateResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteLaunchTemplateVersions
+
+
+        /// <summary>
+        /// Deletes one or more versions of a launch template. You cannot delete the default version
+        /// of a launch template; you must first assign a different version as the default. If
+        /// the default version is the only version for the launch template, you must delete the
+        /// entire launch template using <a>DeleteLaunchTemplate</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLaunchTemplateVersions service method.</param>
+        /// 
+        /// <returns>The response from the DeleteLaunchTemplateVersions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLaunchTemplateVersions">REST API Reference for DeleteLaunchTemplateVersions Operation</seealso>
+        public virtual DeleteLaunchTemplateVersionsResponse DeleteLaunchTemplateVersions(DeleteLaunchTemplateVersionsRequest request)
+        {
+            var marshaller = new DeleteLaunchTemplateVersionsRequestMarshaller();
+            var unmarshaller = DeleteLaunchTemplateVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLaunchTemplateVersionsRequest,DeleteLaunchTemplateVersionsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteLaunchTemplateVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLaunchTemplateVersions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLaunchTemplateVersions">REST API Reference for DeleteLaunchTemplateVersions Operation</seealso>
+        public virtual Task<DeleteLaunchTemplateVersionsResponse> DeleteLaunchTemplateVersionsAsync(DeleteLaunchTemplateVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteLaunchTemplateVersionsRequestMarshaller();
+            var unmarshaller = DeleteLaunchTemplateVersionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteLaunchTemplateVersionsRequest,DeleteLaunchTemplateVersionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteNatGateway
 
 
@@ -4379,7 +4688,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Deletes the data feed for Spot instances.
+        /// Deletes the data feed for Spot Instances.
         /// </summary>
         /// 
         /// <returns>The response from the DeleteSpotDatafeedSubscription service method, as returned by EC2.</returns>
@@ -4391,7 +4700,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Deletes the data feed for Spot instances.
+        /// Deletes the data feed for Spot Instances.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSpotDatafeedSubscription service method.</param>
         /// 
@@ -4407,7 +4716,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Deletes the data feed for Spot instances.
+        /// Deletes the data feed for Spot Instances.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -4619,6 +4928,45 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DeleteVpcEndpointConnectionNotifications
+
+
+        /// <summary>
+        /// Deletes one or more VPC endpoint connection notifications.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpcEndpointConnectionNotifications service method.</param>
+        /// 
+        /// <returns>The response from the DeleteVpcEndpointConnectionNotifications service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcEndpointConnectionNotifications">REST API Reference for DeleteVpcEndpointConnectionNotifications Operation</seealso>
+        public virtual DeleteVpcEndpointConnectionNotificationsResponse DeleteVpcEndpointConnectionNotifications(DeleteVpcEndpointConnectionNotificationsRequest request)
+        {
+            var marshaller = new DeleteVpcEndpointConnectionNotificationsRequestMarshaller();
+            var unmarshaller = DeleteVpcEndpointConnectionNotificationsResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteVpcEndpointConnectionNotificationsRequest,DeleteVpcEndpointConnectionNotificationsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteVpcEndpointConnectionNotifications operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpcEndpointConnectionNotifications operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcEndpointConnectionNotifications">REST API Reference for DeleteVpcEndpointConnectionNotifications Operation</seealso>
+        public virtual Task<DeleteVpcEndpointConnectionNotificationsResponse> DeleteVpcEndpointConnectionNotificationsAsync(DeleteVpcEndpointConnectionNotificationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteVpcEndpointConnectionNotificationsRequestMarshaller();
+            var unmarshaller = DeleteVpcEndpointConnectionNotificationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteVpcEndpointConnectionNotificationsRequest,DeleteVpcEndpointConnectionNotificationsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteVpcEndpoints
 
 
@@ -4655,6 +5003,48 @@ namespace Amazon.EC2
             var unmarshaller = DeleteVpcEndpointsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteVpcEndpointsRequest,DeleteVpcEndpointsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteVpcEndpointServiceConfigurations
+
+
+        /// <summary>
+        /// Deletes one or more VPC endpoint service configurations in your account. Before you
+        /// delete the endpoint service configuration, you must reject any <code>Available</code>
+        /// or <code>PendingAcceptance</code> interface endpoint connections that are attached
+        /// to the service.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpcEndpointServiceConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the DeleteVpcEndpointServiceConfigurations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcEndpointServiceConfigurations">REST API Reference for DeleteVpcEndpointServiceConfigurations Operation</seealso>
+        public virtual DeleteVpcEndpointServiceConfigurationsResponse DeleteVpcEndpointServiceConfigurations(DeleteVpcEndpointServiceConfigurationsRequest request)
+        {
+            var marshaller = new DeleteVpcEndpointServiceConfigurationsRequestMarshaller();
+            var unmarshaller = DeleteVpcEndpointServiceConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteVpcEndpointServiceConfigurationsRequest,DeleteVpcEndpointServiceConfigurationsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteVpcEndpointServiceConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpcEndpointServiceConfigurations operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcEndpointServiceConfigurations">REST API Reference for DeleteVpcEndpointServiceConfigurations Operation</seealso>
+        public virtual Task<DeleteVpcEndpointServiceConfigurationsResponse> DeleteVpcEndpointServiceConfigurationsAsync(DeleteVpcEndpointServiceConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteVpcEndpointServiceConfigurationsRequestMarshaller();
+            var unmarshaller = DeleteVpcEndpointServiceConfigurationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteVpcEndpointServiceConfigurationsRequest,DeleteVpcEndpointServiceConfigurationsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -6841,6 +7231,85 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeLaunchTemplates
+
+
+        /// <summary>
+        /// Describes one or more launch templates.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLaunchTemplates service method.</param>
+        /// 
+        /// <returns>The response from the DescribeLaunchTemplates service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLaunchTemplates">REST API Reference for DescribeLaunchTemplates Operation</seealso>
+        public virtual DescribeLaunchTemplatesResponse DescribeLaunchTemplates(DescribeLaunchTemplatesRequest request)
+        {
+            var marshaller = new DescribeLaunchTemplatesRequestMarshaller();
+            var unmarshaller = DescribeLaunchTemplatesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeLaunchTemplatesRequest,DescribeLaunchTemplatesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeLaunchTemplates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLaunchTemplates operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLaunchTemplates">REST API Reference for DescribeLaunchTemplates Operation</seealso>
+        public virtual Task<DescribeLaunchTemplatesResponse> DescribeLaunchTemplatesAsync(DescribeLaunchTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeLaunchTemplatesRequestMarshaller();
+            var unmarshaller = DescribeLaunchTemplatesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeLaunchTemplatesRequest,DescribeLaunchTemplatesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeLaunchTemplateVersions
+
+
+        /// <summary>
+        /// Describes one or more versions of a specified launch template. You can describe all
+        /// versions, individual versions, or a range of versions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLaunchTemplateVersions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeLaunchTemplateVersions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLaunchTemplateVersions">REST API Reference for DescribeLaunchTemplateVersions Operation</seealso>
+        public virtual DescribeLaunchTemplateVersionsResponse DescribeLaunchTemplateVersions(DescribeLaunchTemplateVersionsRequest request)
+        {
+            var marshaller = new DescribeLaunchTemplateVersionsRequestMarshaller();
+            var unmarshaller = DescribeLaunchTemplateVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeLaunchTemplateVersionsRequest,DescribeLaunchTemplateVersionsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeLaunchTemplateVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLaunchTemplateVersions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLaunchTemplateVersions">REST API Reference for DescribeLaunchTemplateVersions Operation</seealso>
+        public virtual Task<DescribeLaunchTemplateVersionsResponse> DescribeLaunchTemplateVersionsAsync(DescribeLaunchTemplateVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeLaunchTemplateVersionsRequestMarshaller();
+            var unmarshaller = DescribeLaunchTemplateVersionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeLaunchTemplateVersionsRequest,DescribeLaunchTemplateVersionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeMovingAddresses
 
 
@@ -7225,7 +7694,7 @@ namespace Amazon.EC2
         /// Describes available AWS services in a prefix list format, which includes the prefix
         /// list name and prefix list ID of the service and the IP address range for the service.
         /// A prefix list ID is required for creating an outbound security group rule that allows
-        /// traffic from a VPC to access an AWS service through a VPC endpoint.
+        /// traffic from a VPC to access an AWS service through a gateway VPC endpoint.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePrefixLists service method.</param>
         /// 
@@ -8408,7 +8877,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the data feed for Spot instances. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
+        /// Describes the data feed for Spot Instances. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
         /// Instance Data Feed</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </summary>
         /// 
@@ -8421,7 +8890,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the data feed for Spot instances. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
+        /// Describes the data feed for Spot Instances. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
         /// Instance Data Feed</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSpotDatafeedSubscription service method.</param>
@@ -8438,7 +8907,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the data feed for Spot instances. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
+        /// Describes the data feed for Spot Instances. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
         /// Instance Data Feed</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </summary>
         /// <param name="cancellationToken">
@@ -8476,7 +8945,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the running instances for the specified Spot fleet.
+        /// Describes the running instances for the specified Spot Fleet.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSpotFleetInstances service method.</param>
         /// 
@@ -8515,11 +8984,11 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the events for the specified Spot fleet request during the specified time.
+        /// Describes the events for the specified Spot Fleet request during the specified time.
         /// 
         ///  
         /// <para>
-        /// Spot fleet events are delayed by up to 30 seconds before they can be described. This
+        /// Spot Fleet events are delayed by up to 30 seconds before they can be described. This
         /// ensures that you can query by the last evaluated time and not miss a recorded event.
         /// </para>
         /// </summary>
@@ -8560,11 +9029,11 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes your Spot fleet requests.
+        /// Describes your Spot Fleet requests.
         /// 
         ///  
         /// <para>
-        /// Spot fleet requests are deleted 48 hours after they are canceled and their instances
+        /// Spot Fleet requests are deleted 48 hours after they are canceled and their instances
         /// are terminated.
         /// </para>
         /// </summary>
@@ -8605,24 +9074,22 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the Spot instance requests that belong to your account. Spot instances are
-        /// instances that Amazon EC2 launches when the bid price that you specify exceeds the
-        /// current Spot price. Amazon EC2 periodically sets the Spot price based on available
-        /// Spot instance capacity and current Spot instance requests. For more information, see
-        /// <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
+        /// Describes the Spot Instance requests that belong to your account. Spot Instances are
+        /// instances that Amazon EC2 launches when the Spot price that you specify exceeds the
+        /// current Spot price. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
         /// Instance Requests</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// 
         ///  
         /// <para>
-        /// You can use <code>DescribeSpotInstanceRequests</code> to find a running Spot instance
-        /// by examining the response. If the status of the Spot instance is <code>fulfilled</code>,
+        /// You can use <code>DescribeSpotInstanceRequests</code> to find a running Spot Instance
+        /// by examining the response. If the status of the Spot Instance is <code>fulfilled</code>,
         /// the instance ID appears in the response and contains the identifier of the instance.
         /// Alternatively, you can use <a>DescribeInstances</a> with a filter to look for instances
         /// where the instance lifecycle is <code>spot</code>.
         /// </para>
         ///  
         /// <para>
-        /// Spot instance requests are deleted 4 hours after they are canceled and their instances
+        /// Spot Instance requests are deleted 4 hours after they are canceled and their instances
         /// are terminated.
         /// </para>
         /// </summary>
@@ -8636,24 +9103,22 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the Spot instance requests that belong to your account. Spot instances are
-        /// instances that Amazon EC2 launches when the bid price that you specify exceeds the
-        /// current Spot price. Amazon EC2 periodically sets the Spot price based on available
-        /// Spot instance capacity and current Spot instance requests. For more information, see
-        /// <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
+        /// Describes the Spot Instance requests that belong to your account. Spot Instances are
+        /// instances that Amazon EC2 launches when the Spot price that you specify exceeds the
+        /// current Spot price. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
         /// Instance Requests</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// 
         ///  
         /// <para>
-        /// You can use <code>DescribeSpotInstanceRequests</code> to find a running Spot instance
-        /// by examining the response. If the status of the Spot instance is <code>fulfilled</code>,
+        /// You can use <code>DescribeSpotInstanceRequests</code> to find a running Spot Instance
+        /// by examining the response. If the status of the Spot Instance is <code>fulfilled</code>,
         /// the instance ID appears in the response and contains the identifier of the instance.
         /// Alternatively, you can use <a>DescribeInstances</a> with a filter to look for instances
         /// where the instance lifecycle is <code>spot</code>.
         /// </para>
         ///  
         /// <para>
-        /// Spot instance requests are deleted 4 hours after they are canceled and their instances
+        /// Spot Instance requests are deleted 4 hours after they are canceled and their instances
         /// are terminated.
         /// </para>
         /// </summary>
@@ -8671,24 +9136,22 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the Spot instance requests that belong to your account. Spot instances are
-        /// instances that Amazon EC2 launches when the bid price that you specify exceeds the
-        /// current Spot price. Amazon EC2 periodically sets the Spot price based on available
-        /// Spot instance capacity and current Spot instance requests. For more information, see
-        /// <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
+        /// Describes the Spot Instance requests that belong to your account. Spot Instances are
+        /// instances that Amazon EC2 launches when the Spot price that you specify exceeds the
+        /// current Spot price. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
         /// Instance Requests</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// 
         ///  
         /// <para>
-        /// You can use <code>DescribeSpotInstanceRequests</code> to find a running Spot instance
-        /// by examining the response. If the status of the Spot instance is <code>fulfilled</code>,
+        /// You can use <code>DescribeSpotInstanceRequests</code> to find a running Spot Instance
+        /// by examining the response. If the status of the Spot Instance is <code>fulfilled</code>,
         /// the instance ID appears in the response and contains the identifier of the instance.
         /// Alternatively, you can use <a>DescribeInstances</a> with a filter to look for instances
         /// where the instance lifecycle is <code>spot</code>.
         /// </para>
         ///  
         /// <para>
-        /// Spot instance requests are deleted 4 hours after they are canceled and their instances
+        /// Spot Instance requests are deleted 4 hours after they are canceled and their instances
         /// are terminated.
         /// </para>
         /// </summary>
@@ -9558,6 +10021,85 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeVpcEndpointConnectionNotifications
+
+
+        /// <summary>
+        /// Describes the connection notifications for VPC endpoints and VPC endpoint services.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcEndpointConnectionNotifications service method.</param>
+        /// 
+        /// <returns>The response from the DescribeVpcEndpointConnectionNotifications service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointConnectionNotifications">REST API Reference for DescribeVpcEndpointConnectionNotifications Operation</seealso>
+        public virtual DescribeVpcEndpointConnectionNotificationsResponse DescribeVpcEndpointConnectionNotifications(DescribeVpcEndpointConnectionNotificationsRequest request)
+        {
+            var marshaller = new DescribeVpcEndpointConnectionNotificationsRequestMarshaller();
+            var unmarshaller = DescribeVpcEndpointConnectionNotificationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeVpcEndpointConnectionNotificationsRequest,DescribeVpcEndpointConnectionNotificationsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeVpcEndpointConnectionNotifications operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcEndpointConnectionNotifications operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointConnectionNotifications">REST API Reference for DescribeVpcEndpointConnectionNotifications Operation</seealso>
+        public virtual Task<DescribeVpcEndpointConnectionNotificationsResponse> DescribeVpcEndpointConnectionNotificationsAsync(DescribeVpcEndpointConnectionNotificationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeVpcEndpointConnectionNotificationsRequestMarshaller();
+            var unmarshaller = DescribeVpcEndpointConnectionNotificationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeVpcEndpointConnectionNotificationsRequest,DescribeVpcEndpointConnectionNotificationsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeVpcEndpointConnections
+
+
+        /// <summary>
+        /// Describes the VPC endpoint connections to your VPC endpoint services, including any
+        /// endpoints that are pending your acceptance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcEndpointConnections service method.</param>
+        /// 
+        /// <returns>The response from the DescribeVpcEndpointConnections service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointConnections">REST API Reference for DescribeVpcEndpointConnections Operation</seealso>
+        public virtual DescribeVpcEndpointConnectionsResponse DescribeVpcEndpointConnections(DescribeVpcEndpointConnectionsRequest request)
+        {
+            var marshaller = new DescribeVpcEndpointConnectionsRequestMarshaller();
+            var unmarshaller = DescribeVpcEndpointConnectionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeVpcEndpointConnectionsRequest,DescribeVpcEndpointConnectionsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeVpcEndpointConnections operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcEndpointConnections operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointConnections">REST API Reference for DescribeVpcEndpointConnections Operation</seealso>
+        public virtual Task<DescribeVpcEndpointConnectionsResponse> DescribeVpcEndpointConnectionsAsync(DescribeVpcEndpointConnectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeVpcEndpointConnectionsRequestMarshaller();
+            var unmarshaller = DescribeVpcEndpointConnectionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeVpcEndpointConnectionsRequest,DescribeVpcEndpointConnectionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeVpcEndpoints
 
 
@@ -9597,11 +10139,90 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeVpcEndpointServiceConfigurations
+
+
+        /// <summary>
+        /// Describes the VPC endpoint service configurations in your account (your services).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcEndpointServiceConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeVpcEndpointServiceConfigurations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointServiceConfigurations">REST API Reference for DescribeVpcEndpointServiceConfigurations Operation</seealso>
+        public virtual DescribeVpcEndpointServiceConfigurationsResponse DescribeVpcEndpointServiceConfigurations(DescribeVpcEndpointServiceConfigurationsRequest request)
+        {
+            var marshaller = new DescribeVpcEndpointServiceConfigurationsRequestMarshaller();
+            var unmarshaller = DescribeVpcEndpointServiceConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeVpcEndpointServiceConfigurationsRequest,DescribeVpcEndpointServiceConfigurationsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeVpcEndpointServiceConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcEndpointServiceConfigurations operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointServiceConfigurations">REST API Reference for DescribeVpcEndpointServiceConfigurations Operation</seealso>
+        public virtual Task<DescribeVpcEndpointServiceConfigurationsResponse> DescribeVpcEndpointServiceConfigurationsAsync(DescribeVpcEndpointServiceConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeVpcEndpointServiceConfigurationsRequestMarshaller();
+            var unmarshaller = DescribeVpcEndpointServiceConfigurationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeVpcEndpointServiceConfigurationsRequest,DescribeVpcEndpointServiceConfigurationsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeVpcEndpointServicePermissions
+
+
+        /// <summary>
+        /// Describes the principals (service consumers) that are permitted to discover your VPC
+        /// endpoint service.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcEndpointServicePermissions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeVpcEndpointServicePermissions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointServicePermissions">REST API Reference for DescribeVpcEndpointServicePermissions Operation</seealso>
+        public virtual DescribeVpcEndpointServicePermissionsResponse DescribeVpcEndpointServicePermissions(DescribeVpcEndpointServicePermissionsRequest request)
+        {
+            var marshaller = new DescribeVpcEndpointServicePermissionsRequestMarshaller();
+            var unmarshaller = DescribeVpcEndpointServicePermissionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeVpcEndpointServicePermissionsRequest,DescribeVpcEndpointServicePermissionsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeVpcEndpointServicePermissions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcEndpointServicePermissions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointServicePermissions">REST API Reference for DescribeVpcEndpointServicePermissions Operation</seealso>
+        public virtual Task<DescribeVpcEndpointServicePermissionsResponse> DescribeVpcEndpointServicePermissionsAsync(DescribeVpcEndpointServicePermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeVpcEndpointServicePermissionsRequestMarshaller();
+            var unmarshaller = DescribeVpcEndpointServicePermissionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeVpcEndpointServicePermissionsRequest,DescribeVpcEndpointServicePermissionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeVpcEndpointServices
 
 
         /// <summary>
-        /// Describes all supported AWS services that can be specified when creating a VPC endpoint.
+        /// Describes available services to which you can create a VPC endpoint.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVpcEndpointServices service method.</param>
         /// 
@@ -10835,6 +11456,46 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  GetLaunchTemplateData
+
+
+        /// <summary>
+        /// Retrieves the configuration data of the specified instance. You can use this data
+        /// to create a launch template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLaunchTemplateData service method.</param>
+        /// 
+        /// <returns>The response from the GetLaunchTemplateData service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetLaunchTemplateData">REST API Reference for GetLaunchTemplateData Operation</seealso>
+        public virtual GetLaunchTemplateDataResponse GetLaunchTemplateData(GetLaunchTemplateDataRequest request)
+        {
+            var marshaller = new GetLaunchTemplateDataRequestMarshaller();
+            var unmarshaller = GetLaunchTemplateDataResponseUnmarshaller.Instance;
+
+            return Invoke<GetLaunchTemplateDataRequest,GetLaunchTemplateDataResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetLaunchTemplateData operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetLaunchTemplateData operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetLaunchTemplateData">REST API Reference for GetLaunchTemplateData Operation</seealso>
+        public virtual Task<GetLaunchTemplateDataResponse> GetLaunchTemplateDataAsync(GetLaunchTemplateDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetLaunchTemplateDataRequestMarshaller();
+            var unmarshaller = GetLaunchTemplateDataResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetLaunchTemplateDataRequest,GetLaunchTemplateDataResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetPasswordData
 
 
@@ -11532,6 +12193,47 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ModifyLaunchTemplate
+
+
+        /// <summary>
+        /// Modifies a launch template. You can specify which version of the launch template to
+        /// set as the default version. When launching an instance, the default version applies
+        /// when a launch template version is not specified.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyLaunchTemplate service method.</param>
+        /// 
+        /// <returns>The response from the ModifyLaunchTemplate service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyLaunchTemplate">REST API Reference for ModifyLaunchTemplate Operation</seealso>
+        public virtual ModifyLaunchTemplateResponse ModifyLaunchTemplate(ModifyLaunchTemplateRequest request)
+        {
+            var marshaller = new ModifyLaunchTemplateRequestMarshaller();
+            var unmarshaller = ModifyLaunchTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyLaunchTemplateRequest,ModifyLaunchTemplateResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyLaunchTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyLaunchTemplate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyLaunchTemplate">REST API Reference for ModifyLaunchTemplate Operation</seealso>
+        public virtual Task<ModifyLaunchTemplateResponse> ModifyLaunchTemplateAsync(ModifyLaunchTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ModifyLaunchTemplateRequestMarshaller();
+            var unmarshaller = ModifyLaunchTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyLaunchTemplateRequest,ModifyLaunchTemplateResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ModifyNetworkInterfaceAttribute
 
 
@@ -11677,33 +12379,38 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Modifies the specified Spot fleet request.
+        /// Modifies the specified Spot Fleet request.
         /// 
         ///  
         /// <para>
-        /// While the Spot fleet request is being modified, it is in the <code>modifying</code>
+        /// While the Spot Fleet request is being modified, it is in the <code>modifying</code>
         /// state.
         /// </para>
         ///  
         /// <para>
-        /// To scale up your Spot fleet, increase its target capacity. The Spot fleet launches
-        /// the additional Spot instances according to the allocation strategy for the Spot fleet
-        /// request. If the allocation strategy is <code>lowestPrice</code>, the Spot fleet launches
+        /// To scale up your Spot Fleet, increase its target capacity. The Spot Fleet launches
+        /// the additional Spot Instances according to the allocation strategy for the Spot Fleet
+        /// request. If the allocation strategy is <code>lowestPrice</code>, the Spot Fleet launches
         /// instances using the Spot pool with the lowest price. If the allocation strategy is
-        /// <code>diversified</code>, the Spot fleet distributes the instances across the Spot
+        /// <code>diversified</code>, the Spot Fleet distributes the instances across the Spot
         /// pools.
         /// </para>
         ///  
         /// <para>
-        /// To scale down your Spot fleet, decrease its target capacity. First, the Spot fleet
-        /// cancels any open bids that exceed the new target capacity. You can request that the
-        /// Spot fleet terminate Spot instances until the size of the fleet no longer exceeds
+        /// To scale down your Spot Fleet, decrease its target capacity. First, the Spot Fleet
+        /// cancels any open requests that exceed the new target capacity. You can request that
+        /// the Spot Fleet terminate Spot Instances until the size of the fleet no longer exceeds
         /// the new target capacity. If the allocation strategy is <code>lowestPrice</code>, the
-        /// Spot fleet terminates the instances with the highest price per unit. If the allocation
-        /// strategy is <code>diversified</code>, the Spot fleet terminates instances across the
-        /// Spot pools. Alternatively, you can request that the Spot fleet keep the fleet at its
-        /// current size, but not replace any Spot instances that are interrupted or that you
+        /// Spot Fleet terminates the instances with the highest price per unit. If the allocation
+        /// strategy is <code>diversified</code>, the Spot Fleet terminates instances across the
+        /// Spot pools. Alternatively, you can request that the Spot Fleet keep the fleet at its
+        /// current size, but not replace any Spot Instances that are interrupted or that you
         /// terminate manually.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are finished with your Spot Fleet for now, but will use it again later, you
+        /// can set the target capacity to 0.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifySpotFleetRequest service method.</param>
@@ -11987,6 +12694,129 @@ namespace Amazon.EC2
             var unmarshaller = ModifyVpcEndpointResponseUnmarshaller.Instance;
 
             return InvokeAsync<ModifyVpcEndpointRequest,ModifyVpcEndpointResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyVpcEndpointConnectionNotification
+
+
+        /// <summary>
+        /// Modifies a connection notification for VPC endpoint or VPC endpoint service. You can
+        /// change the SNS topic for the notification, or the events for which to be notified.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVpcEndpointConnectionNotification service method.</param>
+        /// 
+        /// <returns>The response from the ModifyVpcEndpointConnectionNotification service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointConnectionNotification">REST API Reference for ModifyVpcEndpointConnectionNotification Operation</seealso>
+        public virtual ModifyVpcEndpointConnectionNotificationResponse ModifyVpcEndpointConnectionNotification(ModifyVpcEndpointConnectionNotificationRequest request)
+        {
+            var marshaller = new ModifyVpcEndpointConnectionNotificationRequestMarshaller();
+            var unmarshaller = ModifyVpcEndpointConnectionNotificationResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyVpcEndpointConnectionNotificationRequest,ModifyVpcEndpointConnectionNotificationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyVpcEndpointConnectionNotification operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVpcEndpointConnectionNotification operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointConnectionNotification">REST API Reference for ModifyVpcEndpointConnectionNotification Operation</seealso>
+        public virtual Task<ModifyVpcEndpointConnectionNotificationResponse> ModifyVpcEndpointConnectionNotificationAsync(ModifyVpcEndpointConnectionNotificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ModifyVpcEndpointConnectionNotificationRequestMarshaller();
+            var unmarshaller = ModifyVpcEndpointConnectionNotificationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyVpcEndpointConnectionNotificationRequest,ModifyVpcEndpointConnectionNotificationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyVpcEndpointServiceConfiguration
+
+
+        /// <summary>
+        /// Modifies the attributes of your VPC endpoint service configuration. You can change
+        /// the Network Load Balancers for your service, and you can specify whether acceptance
+        /// is required for requests to connect to your endpoint service through an interface
+        /// VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVpcEndpointServiceConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the ModifyVpcEndpointServiceConfiguration service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointServiceConfiguration">REST API Reference for ModifyVpcEndpointServiceConfiguration Operation</seealso>
+        public virtual ModifyVpcEndpointServiceConfigurationResponse ModifyVpcEndpointServiceConfiguration(ModifyVpcEndpointServiceConfigurationRequest request)
+        {
+            var marshaller = new ModifyVpcEndpointServiceConfigurationRequestMarshaller();
+            var unmarshaller = ModifyVpcEndpointServiceConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyVpcEndpointServiceConfigurationRequest,ModifyVpcEndpointServiceConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyVpcEndpointServiceConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVpcEndpointServiceConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointServiceConfiguration">REST API Reference for ModifyVpcEndpointServiceConfiguration Operation</seealso>
+        public virtual Task<ModifyVpcEndpointServiceConfigurationResponse> ModifyVpcEndpointServiceConfigurationAsync(ModifyVpcEndpointServiceConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ModifyVpcEndpointServiceConfigurationRequestMarshaller();
+            var unmarshaller = ModifyVpcEndpointServiceConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyVpcEndpointServiceConfigurationRequest,ModifyVpcEndpointServiceConfigurationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyVpcEndpointServicePermissions
+
+
+        /// <summary>
+        /// Modifies the permissions for your VPC endpoint service. You can add or remove permissions
+        /// for service consumers (IAM users, IAM roles, and AWS accounts) to discover your endpoint
+        /// service.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVpcEndpointServicePermissions service method.</param>
+        /// 
+        /// <returns>The response from the ModifyVpcEndpointServicePermissions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointServicePermissions">REST API Reference for ModifyVpcEndpointServicePermissions Operation</seealso>
+        public virtual ModifyVpcEndpointServicePermissionsResponse ModifyVpcEndpointServicePermissions(ModifyVpcEndpointServicePermissionsRequest request)
+        {
+            var marshaller = new ModifyVpcEndpointServicePermissionsRequestMarshaller();
+            var unmarshaller = ModifyVpcEndpointServicePermissionsResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyVpcEndpointServicePermissionsRequest,ModifyVpcEndpointServicePermissionsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyVpcEndpointServicePermissions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVpcEndpointServicePermissions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointServicePermissions">REST API Reference for ModifyVpcEndpointServicePermissions Operation</seealso>
+        public virtual Task<ModifyVpcEndpointServicePermissionsResponse> ModifyVpcEndpointServicePermissionsAsync(ModifyVpcEndpointServicePermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ModifyVpcEndpointServicePermissionsRequestMarshaller();
+            var unmarshaller = ModifyVpcEndpointServicePermissionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyVpcEndpointServicePermissionsRequest,ModifyVpcEndpointServicePermissionsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -12478,6 +13308,45 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  RejectVpcEndpointConnections
+
+
+        /// <summary>
+        /// Rejects one or more VPC endpoint connection requests to your VPC endpoint service.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RejectVpcEndpointConnections service method.</param>
+        /// 
+        /// <returns>The response from the RejectVpcEndpointConnections service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectVpcEndpointConnections">REST API Reference for RejectVpcEndpointConnections Operation</seealso>
+        public virtual RejectVpcEndpointConnectionsResponse RejectVpcEndpointConnections(RejectVpcEndpointConnectionsRequest request)
+        {
+            var marshaller = new RejectVpcEndpointConnectionsRequestMarshaller();
+            var unmarshaller = RejectVpcEndpointConnectionsResponseUnmarshaller.Instance;
+
+            return Invoke<RejectVpcEndpointConnectionsRequest,RejectVpcEndpointConnectionsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RejectVpcEndpointConnections operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RejectVpcEndpointConnections operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectVpcEndpointConnections">REST API Reference for RejectVpcEndpointConnections Operation</seealso>
+        public virtual Task<RejectVpcEndpointConnectionsResponse> RejectVpcEndpointConnectionsAsync(RejectVpcEndpointConnectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new RejectVpcEndpointConnectionsRequestMarshaller();
+            var unmarshaller = RejectVpcEndpointConnectionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RejectVpcEndpointConnectionsRequest,RejectVpcEndpointConnectionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  RejectVpcPeeringConnection
 
 
@@ -12916,7 +13785,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Creates a Spot fleet request.
+        /// Creates a Spot Fleet request.
         /// 
         ///  
         /// <para>
@@ -12925,16 +13794,21 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// By default, the Spot fleet requests Spot instances in the Spot pool where the price
+        /// By default, the Spot Fleet requests Spot Instances in the Spot pool where the price
         /// per unit is the lowest. Each launch specification can include its own instance weighting
         /// that reflects the value of the instance type to your application workload.
         /// </para>
         ///  
         /// <para>
-        /// Alternatively, you can specify that the Spot fleet distribute the target capacity
+        /// Alternatively, you can specify that the Spot Fleet distribute the target capacity
         /// across the Spot pools included in its launch specifications. By ensuring that the
-        /// Spot instances in your Spot fleet are in different Spot pools, you can improve the
+        /// Spot Instances in your Spot Fleet are in different Spot pools, you can improve the
         /// availability of your fleet.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify tags for the Spot Instances. You cannot tag other resource types in
+        /// a Spot Fleet request; only the <code>instance</code> resource type is supported.
         /// </para>
         ///  
         /// <para>
@@ -12979,10 +13853,9 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Creates a Spot instance request. Spot instances are instances that Amazon EC2 launches
-        /// when the bid price that you specify exceeds the current Spot price. Amazon EC2 periodically
-        /// sets the Spot price based on available Spot Instance capacity and current Spot instance
-        /// requests. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
+        /// Creates a Spot Instance request. Spot Instances are instances that Amazon EC2 launches
+        /// when the maximum price that you specify exceeds the current Spot price. For more information,
+        /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
         /// Instance Requests</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RequestSpotInstances service method.</param>
@@ -13446,6 +14319,13 @@ namespace Amazon.EC2
         /// the request fails.
         /// </para>
         ///  </li> </ul> 
+        /// <para>
+        /// You can create a <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">launch
+        /// template</a>, which is a resource that contains the parameters to launch an instance.
+        /// When you launch an instance using <a>RunInstances</a>, you can specify the launch
+        /// template instead of specifying the launch parameters.
+        /// </para>
+        ///  
         /// <para>
         /// To ensure faster instance launches, break up large requests into smaller batches.
         /// For example, create five separate launch requests for 100 instances each instead of

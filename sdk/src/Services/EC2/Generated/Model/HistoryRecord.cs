@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes an event in the history of the Spot fleet request.
+    /// Describes an event in the history of the Spot Fleet request.
     /// </summary>
     public partial class HistoryRecord
     {
@@ -61,12 +61,12 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>error</code> - An error with the Spot fleet request.
+        ///  <code>error</code> - An error with the Spot Fleet request.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>fleetRequestChange</code> - A change in the status or configuration of the
-        /// Spot fleet request.
+        /// Spot Fleet request.
         /// </para>
         ///  </li> <li> 
         /// <para>

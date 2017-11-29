@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes the status of a Spot instance request.
+    /// Describes the status of a Spot Instance request.
     /// </summary>
     public partial class SpotInstanceStatus
     {
@@ -40,7 +40,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Code. 
         /// <para>
         /// The status code. For a list of status codes, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand">Spot
-        /// Bid Status Codes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Status Codes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         public string Code

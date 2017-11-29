@@ -1,6 +1,38 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.EC2.Model.CreateLaunchTemplateRequest.LaunchTemplateName</property>
+    <min>3</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9\(\)\.-/_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.CreateLaunchTemplateRequest.VersionDescription</property>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.CreateLaunchTemplateVersionRequest.LaunchTemplateName</property>
+    <min>3</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9\(\)\.-/_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.CreateLaunchTemplateVersionRequest.VersionDescription</property>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DeleteLaunchTemplateRequest.LaunchTemplateName</property>
+    <min>3</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9\(\)\.-/_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DeleteLaunchTemplateVersionsRequest.LaunchTemplateName</property>
+    <min>3</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9\(\)\.-/_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.DescribeFpgaImagesRequest.MaxResults</property>
     <min>5</min>
     <max>255</max>
@@ -31,6 +63,12 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeLaunchTemplateVersionsRequest.LaunchTemplateName</property>
+    <min>3</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9\(\)\.-/_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.DescribeStaleSecurityGroupsRequest.MaxResults</property>
     <min>5</min>
     <max>255</max>
@@ -54,5 +92,33 @@
     <property>Amazon.EC2.Model.DescribeVpcClassicLinkDnsSupportResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.ModifyLaunchTemplateRequest.LaunchTemplateName</property>
+    <min>3</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9\(\)\.-/_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.FleetLaunchTemplateSpecification.LaunchTemplateName</property>
+    <min>3</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9\(\)\.-/_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.LaunchTemplate.LaunchTemplateName</property>
+    <min>3</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9\(\)\.-/_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.LaunchTemplateVersion.LaunchTemplateName</property>
+    <min>3</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9\(\)\.-/_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.LaunchTemplateVersion.VersionDescription</property>
+    <max>255</max>
   </property-value-rule>
 </property-value-rules>

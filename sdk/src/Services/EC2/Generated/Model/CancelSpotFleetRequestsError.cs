@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes a Spot fleet error.
+    /// Describes a Spot Fleet error.
     /// </summary>
     public partial class CancelSpotFleetRequestsError
     {

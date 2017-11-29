@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteSpotDatafeedSubscription operation.
-    /// Deletes the data feed for Spot instances.
+    /// Deletes the data feed for Spot Instances.
     /// </summary>
     public partial class DeleteSpotDatafeedSubscriptionRequest : AmazonEC2Request
     {

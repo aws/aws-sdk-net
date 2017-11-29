@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes a running instance in a Spot fleet.
+    /// Describes a running instance in a Spot Fleet.
     /// </summary>
     public partial class ActiveInstance
     {
@@ -96,7 +96,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SpotInstanceRequestId. 
         /// <para>
-        /// The ID of the Spot instance request.
+        /// The ID of the Spot Instance request.
         /// </para>
         /// </summary>
         public string SpotInstanceRequestId

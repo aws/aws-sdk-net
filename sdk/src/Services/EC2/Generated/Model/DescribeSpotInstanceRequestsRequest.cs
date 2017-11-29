@@ -29,24 +29,22 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeSpotInstanceRequests operation.
-    /// Describes the Spot instance requests that belong to your account. Spot instances are
-    /// instances that Amazon EC2 launches when the bid price that you specify exceeds the
-    /// current Spot price. Amazon EC2 periodically sets the Spot price based on available
-    /// Spot instance capacity and current Spot instance requests. For more information, see
-    /// <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
+    /// Describes the Spot Instance requests that belong to your account. Spot Instances are
+    /// instances that Amazon EC2 launches when the Spot price that you specify exceeds the
+    /// current Spot price. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
     /// Instance Requests</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// 
     ///  
     /// <para>
-    /// You can use <code>DescribeSpotInstanceRequests</code> to find a running Spot instance
-    /// by examining the response. If the status of the Spot instance is <code>fulfilled</code>,
+    /// You can use <code>DescribeSpotInstanceRequests</code> to find a running Spot Instance
+    /// by examining the response. If the status of the Spot Instance is <code>fulfilled</code>,
     /// the instance ID appears in the response and contains the identifier of the instance.
     /// Alternatively, you can use <a>DescribeInstances</a> with a filter to look for instances
     /// where the instance lifecycle is <code>spot</code>.
     /// </para>
     ///  
     /// <para>
-    /// Spot instance requests are deleted 4 hours after they are canceled and their instances
+    /// Spot Instance requests are deleted 4 hours after they are canceled and their instances
     /// are terminated.
     /// </para>
     /// </summary>
@@ -66,7 +64,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>create-time</code> - The time stamp when the Spot instance request was created.
+        ///  <code>create-time</code> - The time stamp when the Spot Instance request was created.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -82,7 +80,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>launch-group</code> - The Spot instance launch group.
+        ///  <code>launch-group</code> - The Spot Instance launch group.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -134,7 +132,7 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>launch.monitoring-enabled</code> - Whether detailed monitoring is enabled for
-        /// the Spot instance.
+        /// the Spot Instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -142,7 +140,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>launched-availability-zone</code> - The Availability Zone in which the bid
+        ///  <code>launched-availability-zone</code> - The Availability Zone in which the request
         /// is launched.
         /// </para>
         ///  </li> <li> 
@@ -189,29 +187,29 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>spot-instance-request-id</code> - The Spot instance request ID.
+        ///  <code>spot-instance-request-id</code> - The Spot Instance request ID.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>spot-price</code> - The maximum hourly price for any Spot instance launched
+        ///  <code>spot-price</code> - The maximum hourly price for any Spot Instance launched
         /// to fulfill the request.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>state</code> - The state of the Spot instance request (<code>open</code> |
+        ///  <code>state</code> - The state of the Spot Instance request (<code>open</code> |
         /// <code>active</code> | <code>closed</code> | <code>cancelled</code> | <code>failed</code>).
-        /// Spot bid status information can help you track your Amazon EC2 Spot instance requests.
+        /// Spot request status information can help you track your Amazon EC2 Spot Instance requests.
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-        /// Bid Status</a> in the Amazon Elastic Compute Cloud User Guide.
+        /// Request Status</a> in the Amazon Elastic Compute Cloud User Guide.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>status-code</code> - The short code describing the most recent evaluation of
-        /// your Spot instance request.
+        /// your Spot Instance request.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>status-message</code> - The message explaining the status of the Spot instance
+        ///  <code>status-message</code> - The message explaining the status of the Spot Instance
         /// request.
         /// </para>
         ///  </li> <li> 
@@ -237,7 +235,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>type</code> - The type of Spot instance request (<code>one-time</code> | <code>persistent</code>).
+        ///  <code>type</code> - The type of Spot Instance request (<code>one-time</code> | <code>persistent</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -264,7 +262,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SpotInstanceRequestIds. 
         /// <para>
-        /// One or more Spot instance request IDs.
+        /// One or more Spot Instance request IDs.
         /// </para>
         /// </summary>
         public List<string> SpotInstanceRequestIds

@@ -37,7 +37,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Unsuccessful. 
         /// <para>
-        /// Information about the endpoints that were not successfully deleted.
+        /// Information about the VPC endpoints that were not successfully deleted.
         /// </para>
         /// </summary>
         public List<UnsuccessfulItem> Unsuccessful

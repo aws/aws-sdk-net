@@ -41,7 +41,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property HistoryRecords. 
         /// <para>
-        /// Information about the events in the history of the Spot fleet request.
+        /// Information about the events in the history of the Spot Fleet request.
         /// </para>
         /// </summary>
         public List<HistoryRecord> HistoryRecords
@@ -102,7 +102,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SpotFleetRequestId. 
         /// <para>
-        /// The ID of the Spot fleet request.
+        /// The ID of the Spot Fleet request.
         /// </para>
         /// </summary>
         public string SpotFleetRequestId

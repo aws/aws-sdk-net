@@ -325,7 +325,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VirtualizationType. 
         /// <para>
-        /// The type of virtualization.
+        /// The type of virtualization (<code>hvm</code> | <code>paravirtual</code>).
         /// </para>
         ///  
         /// <para>

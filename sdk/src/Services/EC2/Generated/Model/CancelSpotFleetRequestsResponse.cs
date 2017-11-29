@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SuccessfulFleetRequests. 
         /// <para>
-        /// Information about the Spot fleet requests that are successfully canceled.
+        /// Information about the Spot Fleet requests that are successfully canceled.
         /// </para>
         /// </summary>
         public List<CancelSpotFleetRequestsSuccessItem> SuccessfulFleetRequests
@@ -56,7 +56,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property UnsuccessfulFleetRequests. 
         /// <para>
-        /// Information about the Spot fleet requests that are not successfully canceled.
+        /// Information about the Spot Fleet requests that are not successfully canceled.
         /// </para>
         /// </summary>
         public List<CancelSpotFleetRequestsErrorItem> UnsuccessfulFleetRequests

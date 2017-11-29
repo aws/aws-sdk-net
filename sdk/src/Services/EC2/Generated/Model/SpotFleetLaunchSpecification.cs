@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes the launch specification for one or more Spot instances.
+    /// Describes the launch specification for one or more Spot Instances.
     /// </summary>
     public partial class SpotFleetLaunchSpecification
     {
@@ -154,7 +154,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The instance type. Note that T2 and HS1 instance types are not supported.
+        /// The instance type.
         /// </para>
         /// </summary>
         public InstanceType InstanceType
@@ -301,9 +301,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SpotPrice. 
         /// <para>
-        /// The bid price per unit hour for the specified instance type. If this value is not
-        /// specified, the default is the Spot bid price specified for the fleet. To determine
-        /// the bid price per unit hour, divide the Spot bid price by the value of <code>WeightedCapacity</code>.
+        /// The maximum price per unit hour that you are willing to pay for a Spot Instance. If
+        /// this value is not specified, the default is the Spot price specified for the fleet.
+        /// To determine the Spot price per unit hour, divide the Spot price by the value of <code>WeightedCapacity</code>.
         /// </para>
         /// </summary>
         public string SpotPrice

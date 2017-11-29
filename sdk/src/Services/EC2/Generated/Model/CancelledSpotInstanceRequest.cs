@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes a request to cancel a Spot instance.
+    /// Describes a request to cancel a Spot Instance.
     /// </summary>
     public partial class CancelledSpotInstanceRequest
     {
@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SpotInstanceRequestId. 
         /// <para>
-        /// The ID of the Spot instance request.
+        /// The ID of the Spot Instance request.
         /// </para>
         /// </summary>
         public string SpotInstanceRequestId
@@ -56,7 +56,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The state of the Spot instance request.
+        /// The state of the Spot Instance request.
         /// </para>
         /// </summary>
         public CancelSpotInstanceRequestState State
