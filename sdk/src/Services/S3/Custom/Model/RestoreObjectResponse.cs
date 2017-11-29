@@ -28,6 +28,7 @@ namespace Amazon.S3.Model
     public partial class RestoreObjectResponse : AmazonWebServiceResponse
     {
         private RequestCharged requestCharged;
+        private string restoreOutputPath;
 
         /// <summary>
         /// If present, indicates that the requester was successfully charged for the request.
@@ -45,6 +46,20 @@ namespace Amazon.S3.Model
         internal bool IsSetRequestCharged()
         {
             return requestCharged != null;
+        }
+
+        /// <summary>
+        /// Indicates the path in the provided S3 output location where Select results will be restored to.
+        /// </summary>
+        public string RestoreOutputPath
+        {
+            get { return this.restoreOutputPath; }
+            set { this.restoreOutputPath = value; }
+        }
+
+        internal bool IsSetRestoreOutputPath()
+        {
+            return this.RestoreOutputPath != null;
         }
     }
 }

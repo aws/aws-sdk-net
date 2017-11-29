@@ -81,6 +81,9 @@ namespace Amazon.S3.Util
             AmzHeaderTaggingDirective       = "x-amz-tagging-directive",
             AmzHeaderTaggingCount           = "x-amz-tagging-count";
 
+        internal static string
+            AmzHeaderRestoreOutputPath      = "x-amz-restore-output-path";
+
         // Commonly used static strings
         //internal const string RequestParam = "request";
         internal const string EncryptionInstructionfileSuffix = "INSTRUCTION_SUFFIX";

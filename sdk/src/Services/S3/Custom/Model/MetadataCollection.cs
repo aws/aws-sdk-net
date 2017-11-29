@@ -14,10 +14,8 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
-using System.IO;
-using Amazon.Runtime;
+using System.Xml;
+using Amazon.S3.Model.Internal.MarshallTransformations;
 
 namespace Amazon.S3.Model
 {
@@ -26,7 +24,8 @@ namespace Amazon.S3.Model
     /// </summary>
     public sealed class MetadataCollection
     {
-        
+        internal const string MetaDataHeaderPrefix = "x-amz-meta-";
+            
         IDictionary<string, string> values = new Dictionary<string, string>();
 
         /// <summary>
@@ -39,8 +38,8 @@ namespace Amazon.S3.Model
         {
             get
             {
-                if (!name.StartsWith("x-amz-meta-", StringComparison.OrdinalIgnoreCase))
-                    name = "x-amz-meta-" + name;
+                if (!name.StartsWith(MetaDataHeaderPrefix, StringComparison.OrdinalIgnoreCase))
+                    name = MetaDataHeaderPrefix + name;
 
                 string value;
                 if (values.TryGetValue(name, out value))
@@ -50,8 +49,8 @@ namespace Amazon.S3.Model
             }
             set
             {
-                if (!name.StartsWith("x-amz-meta-", StringComparison.OrdinalIgnoreCase))
-                    name = "x-amz-meta-" + name;
+                if (!name.StartsWith(MetaDataHeaderPrefix, StringComparison.OrdinalIgnoreCase))
+                    name = MetaDataHeaderPrefix + name;
 
                 values[name] = value;
             }
@@ -81,6 +80,27 @@ namespace Amazon.S3.Model
         public ICollection<string> Keys
         {
             get { return values.Keys; }
+        }
+
+        internal void Marshall(string memberName, XmlWriter xmlWriter)
+        {
+            xmlWriter.WriteStartElement(memberName);
+            {
+                foreach(var t in values)
+                {
+                    xmlWriter.WriteStartElement("MetadataEntry");
+                    {
+                        // since this is not being marshalled into header, 
+                        // normalize it by stripping it of "x-amz-meta" prefix.
+                        var name = t.Key.Replace(MetaDataHeaderPrefix, "");
+
+                        xmlWriter.WriteElementString("Name", S3Transforms.ToXmlStringValue(name));
+                        xmlWriter.WriteElementString("Value", S3Transforms.ToXmlStringValue(t.Value));
+                    }
+                    xmlWriter.WriteEndElement();
+                }
+            }
+            xmlWriter.WriteEndElement();
         }
     }
 }

@@ -31,11 +31,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// Restore Object Request Marshaller
     /// </summary>       
     public class RestoreObjectRequestMarshaller : IMarshaller<IRequest, RestoreObjectRequest> ,IMarshaller<IRequest,Amazon.Runtime.AmazonWebServiceRequest>
-	{
-		public IRequest Marshall(Amazon.Runtime.AmazonWebServiceRequest input)
-		{
-			return this.Marshall((RestoreObjectRequest)input);
-		}
+    {
+        public IRequest Marshall(Amazon.Runtime.AmazonWebServiceRequest input)
+        {
+            return this.Marshall((RestoreObjectRequest)input);
+        }
 
         public IRequest Marshall(RestoreObjectRequest restoreObjectRequest)
         {
@@ -57,12 +57,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             var stringWriter = new StringWriter(System.Globalization.CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = Encoding.UTF8, OmitXmlDeclaration = true }))
             {
-                    xmlWriter.WriteStartElement("RestoreRequest", "");
-                    xmlWriter.WriteElementString("Days", "", S3Transforms.ToXmlStringValue(restoreObjectRequest.Days));
-                    xmlWriter.WriteStartElement("GlacierJobParameters", "");
-                    xmlWriter.WriteElementString("Tier", "", S3Transforms.ToXmlStringValue(restoreObjectRequest.Tier));
-                    xmlWriter.WriteEndElement();
-                    xmlWriter.WriteEndElement();
+                restoreObjectRequest.Marshall("RestoreRequest", xmlWriter);
             }
 
             try

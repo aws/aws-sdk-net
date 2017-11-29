@@ -1491,6 +1491,7 @@ namespace Amazon.S3
             return FindValue(value);
         }
     }
+
     /// <summary>
     /// The replication for KMS encrypted S3 objects is disabled if status is not Enabled.
     /// </summary>
@@ -1505,6 +1506,9 @@ namespace Amazon.S3
         /// </summary>
         public static readonly SseKmsEncryptedObjectsStatus Disabled = new SseKmsEncryptedObjectsStatus("Disabled");
         
+        /// <summary>
+        /// </summary>
+        /// <param name="value"></param>
         public SseKmsEncryptedObjectsStatus(string value)
             : base(value)
         {
@@ -1519,7 +1523,7 @@ namespace Amazon.S3
         }
 
         /// <summary>
-        ///  converts the string to SseKmsEncryptedObjectsStatus instance
+        /// Converts the string to SseKmsEncryptedObjectsStatus instance
         /// </summary>
         public static implicit operator SseKmsEncryptedObjectsStatus(string value)
         {
@@ -1527,5 +1531,149 @@ namespace Amazon.S3
         }
     }
 
+    /// <summary>
+    /// Specify how headers will be handled.
+    /// </summary>
+    public sealed class FileHeaderInfo : ConstantClass
+    {
+        /// <summary>
+        /// Headers will be usable in SELECT clause. 
+        /// </summary>
+        public static readonly FileHeaderInfo Use = new FileHeaderInfo("USE");
 
+        /// <summary>
+        /// Headers will be skipped
+        /// </summary>
+        public static readonly FileHeaderInfo Ignore = new FileHeaderInfo("IGNORE");
+
+        /// <summary>
+        /// No header is present.
+        /// </summary>
+        public static readonly FileHeaderInfo None = new FileHeaderInfo("NONE");
+
+        private FileHeaderInfo(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the FileHeaderInfo instance for the string value
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static FileHeaderInfo FindValue(string value)
+        {
+            return FindValue<FileHeaderInfo>(value);
+        }
+
+        /// <summary>
+        /// Converts the string to FileHeaderInfo instance
+        /// </summary>
+        public static implicit operator FileHeaderInfo(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Describes when fields in output should be surrounded with quotes.
+    /// </summary>
+    public sealed class QuoteFields : ConstantClass
+    {
+        /// <summary>
+        /// Specifies that fields in output should always be surrounded in quotes.
+        /// </summary>
+        public static readonly QuoteFields Always = new QuoteFields("ALWAYS");
+
+        /// <summary>
+        /// Specifies that fields in output should be surrounded in quotes as necessary.
+        /// </summary>
+        public static readonly QuoteFields AsNeeded = new QuoteFields("ASNEEDED");
+
+        private QuoteFields(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the QuoteFields instance for the string value
+        /// </summary>
+        /// <param name="value">string value that maps to QuoteFields enum</param>
+        /// <returns>QuoteFields enum</returns>
+        public static QuoteFields FindValue(string value)
+        {
+            return FindValue<QuoteFields>(value);
+        }
+
+        /// <summary>
+        /// Converts the string to QuoteFields instance
+        /// </summary>
+        public static implicit operator QuoteFields(string value)
+        {
+            return FindValue(value);
+        }
+    }
+    
+    /// <summary>
+    /// Type of the expression provided in the Expression member.
+    /// </summary>
+    public sealed class ExpressionType : ConstantClass
+    {
+        /// <summary>
+        /// SQL expression
+        /// </summary>
+        public static readonly ExpressionType SQL = new ExpressionType("SQL");
+
+        private ExpressionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the ExpressionType instance for the string value
+        /// </summary>
+        /// <param name="value">string value that maps to ExpressionType enum</param>
+        /// <returns>ExpressionType enum</returns>
+        public static ExpressionType FindValue(string value)
+        {
+            return FindValue<ExpressionType>(value);
+        }
+
+        /// <summary>
+        /// Converts the string to ExpressionType instance
+        /// </summary>
+        public static implicit operator ExpressionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Indicates what type of job is being initiated.
+    /// </summary>
+    public sealed class RestoreRequestType : ConstantClass
+    {
+        public static readonly RestoreRequestType SELECT = new RestoreRequestType("SELECT");
+
+        private RestoreRequestType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the RestoreRequestType instance for the string value
+        /// </summary>
+        public static RestoreRequestType FindValue(string value)
+        {
+            return FindValue<RestoreRequestType>(value);
+        }
+
+        /// <summary>
+        /// Converts the string to RestoreRequestType instance
+        /// </summary>
+        public static implicit operator RestoreRequestType(string value)
+        {
+            return FindValue(value);
+        }
+    }
 }

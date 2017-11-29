@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,14 +12,11 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
-using System.IO;
+using System.Xml;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
+using Amazon.S3.Model.Internal.MarshallTransformations;
 
 namespace Amazon.S3.Model
 {
@@ -35,6 +32,13 @@ namespace Amazon.S3.Model
         private string versionId;
 		private RequestPayer requestPayer;
 		private GlacierJobTier tier;
+        private GlacierJobTier retrievalTier;
+
+        private RestoreRequestType type;
+        private string description;
+        private SelectParameters selectParameters;
+        private OutputLocation outputLocation;
+
         /// <summary>
         /// Gets and sets the BucketName property.
         /// </summary>
@@ -67,7 +71,7 @@ namespace Amazon.S3.Model
 
         /// <summary>
         /// Lifetime of the active copy in days
-        ///  
+        /// ** Do not use with restores that specify OutputLocation **
         /// </summary>
         public int Days
         {
@@ -117,22 +121,122 @@ namespace Amazon.S3.Model
             return requestPayer != null;
         }
 
-		/// <summary>
+        /// <summary>
         /// Glacier retrieval tier at which the restore will be processed.
-        /// Glacier related prameters pertaining to this job.
+        /// ** Do not use with restores that specify OutputLocation **
         /// </summary>
         public GlacierJobTier Tier
         {
             get { return this.tier; }
             set { this.tier = value; }
         }
-
-
+        
         // Check to see if Tier property is set
         internal bool IsSetTier()
         {
             return this.tier != null;
-        } 
+        }
+
+        /// <summary>
+        /// Glacier retrieval tier at which the restore will be processed.
+        /// ** Only use with restores that require OutputLocation **
+        /// </summary>
+        public GlacierJobTier RetrievalTier
+        {
+            get { return this.retrievalTier; }
+            set { this.retrievalTier = value; }
+        }
+
+
+        internal bool IsSetRetrievalTier()
+        {
+            return this.retrievalTier != null;
+        }
+
+        /// <summary>
+        /// Type of restore request.
+        /// </summary>
+        public RestoreRequestType RestoreRequestType
+        {
+            get { return this.type; }
+            set { this.type = value; }
+        }
+
+        internal bool IsSetType()
+        {
+            return this.type != null;
+        }
+
+        /// <summary>
+        /// The optional description for the job.
+        /// </summary>
+        public string Description
+        {
+            get { return this.description; }
+            set { this.description = value; }
+        }
+
+        internal bool IsSetDescription()
+        {
+            return this.description != null;
+        }
+        
+        /// <summary>
+        /// Describes the parameters for Select job types.
+        /// </summary>
+        public SelectParameters SelectParameters
+        {
+            get { return this.selectParameters; }
+            set { this.selectParameters = value; }
+        }
+
+        internal bool IsSetSelectParameters()
+        {
+            return this.selectParameters != null;
+        }
+
+        /// <summary>
+        /// Describes the location where the restore job's output is stored.
+        /// </summary>
+        public OutputLocation OutputLocation
+        {
+            get { return this.outputLocation; }
+            set { this.outputLocation = value; }
+        }
+
+        internal bool IsSetOutputLocation()
+        {
+            return this.outputLocation != null;
+        }
+
+        internal void Marshall(string propertyName, XmlWriter xmlWriter)
+        {
+            xmlWriter.WriteStartElement(propertyName);
+            {
+                if (IsSetRetrievalTier())
+                    xmlWriter.WriteElementString("Tier", S3Transforms.ToXmlStringValue(RetrievalTier));
+
+                if (IsSetDays() || IsSetTier())
+                {
+                    xmlWriter.WriteStartElement("GlacierJobParameters");
+                    {
+                        xmlWriter.WriteElementString("Days", S3Transforms.ToXmlStringValue(Days));
+                        xmlWriter.WriteElementString("Tier", S3Transforms.ToXmlStringValue(Tier));
+                    }
+                    xmlWriter.WriteEndElement();
+                }
+
+                if (IsSetType())
+                    xmlWriter.WriteElementString("Type", S3Transforms.ToXmlStringValue(RestoreRequestType.Value));
+                if (IsSetDescription())
+                    xmlWriter.WriteElementString("Description", S3Transforms.ToXmlStringValue(Description));
+                if (IsSetSelectParameters())
+                    SelectParameters.Marshall("SelectParameters", xmlWriter);
+                if (IsSetOutputLocation())
+                    OutputLocation.Marshall("OutputLocation", xmlWriter);
+            }
+            xmlWriter.WriteEndElement();
+        }
     }
 }
     

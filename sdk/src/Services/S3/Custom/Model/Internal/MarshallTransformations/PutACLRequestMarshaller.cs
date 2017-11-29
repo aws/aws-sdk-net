@@ -72,63 +72,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     if (accessControlPolicyAccessControlPolicygrantsList != null &&
                         accessControlPolicyAccessControlPolicygrantsList.Count > 0)
                     {
-                        xmlWriter.WriteStartElement("AccessControlList", "");
-                        foreach (
-                            var accessControlPolicyAccessControlPolicygrantsListValue in
-                                accessControlPolicyAccessControlPolicygrantsList)
-                        {
-                            xmlWriter.WriteStartElement("Grant", "");
-                            if (accessControlPolicyAccessControlPolicygrantsListValue != null)
-                            {
-                                var granteeGrantee = accessControlPolicyAccessControlPolicygrantsListValue.Grantee;
-                                if (granteeGrantee != null)
-                                {
-                                    xmlWriter.WriteStartElement("Grantee", "");
-                                    if (granteeGrantee.IsSetType())
-                                    {
-                                        xmlWriter.WriteAttributeString("xsi", "type",
-                                                                       "http://www.w3.org/2001/XMLSchema-instance",
-                                                                       granteeGrantee.Type.ToString());
-                                    }
-                                    if (granteeGrantee.IsSetDisplayName())
-                                    {
-                                        xmlWriter.WriteElementString("DisplayName", "",
-                                                                     S3Transforms.ToXmlStringValue(
-                                                                         granteeGrantee.DisplayName));
-                                    }
-                                    if (granteeGrantee.IsSetEmailAddress())
-                                    {
-                                        xmlWriter.WriteElementString("EmailAddress", "",
-                                                                     S3Transforms.ToXmlStringValue(
-                                                                         granteeGrantee.EmailAddress));
-                                    }
-                                    if (granteeGrantee.IsSetCanonicalUser())
-                                    {
-                                        xmlWriter.WriteElementString("ID", "",
-                                                                     S3Transforms.ToXmlStringValue(
-                                                                         granteeGrantee.CanonicalUser));
-                                    }
-                                    if (granteeGrantee.IsSetURI())
-                                    {
-                                        xmlWriter.WriteElementString("URI", "",
-                                                                     S3Transforms.ToXmlStringValue(
-                                                                         granteeGrantee.URI));
-                                    }
-                                    xmlWriter.WriteEndElement();
-                                }
-
-                                if (accessControlPolicyAccessControlPolicygrantsListValue.IsSetPermission())
-                                {
-                                    xmlWriter.WriteElementString("Permission", "",
-                                                                 S3Transforms.ToXmlStringValue(
-                                                                     accessControlPolicyAccessControlPolicygrantsListValue
-                                                                         .Permission));
-                                }
-                            }
-                            xmlWriter.WriteEndElement();
-                        }
-
-                        xmlWriter.WriteEndElement();
+                        accessControlPolicyAccessControlPolicy.Marshall("AccessControlList", xmlWriter);
 
                         var ownerOwner = accessControlPolicyAccessControlPolicy.Owner;
                         if (ownerOwner != null)

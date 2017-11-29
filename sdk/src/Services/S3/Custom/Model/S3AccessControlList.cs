@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Xml;
 
 namespace Amazon.S3.Model
 {
@@ -174,5 +175,17 @@ namespace Amazon.S3.Model
             return (this.Grants.Count > 0);
         }
 
+        internal void Marshall(string memberName, XmlWriter xmlWriter)
+        {
+            xmlWriter.WriteStartElement(memberName);
+            foreach (var grant in grantList)
+            {
+                if (grant != null)
+                {
+                    grant.Marshall("Grant", xmlWriter);
+                }
+            }
+            xmlWriter.WriteEndElement();
+        }
     }
 }

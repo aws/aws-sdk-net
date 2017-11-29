@@ -32,10 +32,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {
             RestoreObjectResponse response = new RestoreObjectResponse();
-
             IWebResponseData responseData = context.ResponseData;
+
             if (responseData.IsHeaderPresent(S3Constants.AmzHeaderRequestCharged))
                 response.RequestCharged = RequestCharged.FindValue(responseData.GetHeaderValue(S3Constants.AmzHeaderRequestCharged));
+
+            if (responseData.IsHeaderPresent(S3Constants.AmzHeaderRestoreOutputPath))
+                response.RestoreOutputPath = responseData.GetHeaderValue(S3Constants.AmzHeaderRestoreOutputPath);
 
             return response;
         }

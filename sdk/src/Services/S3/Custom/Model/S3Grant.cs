@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,11 +12,8 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
-using System.IO;
+using System.Xml;
+using Amazon.S3.Model.Internal.MarshallTransformations;
 
 namespace Amazon.S3.Model
 {
@@ -57,6 +54,56 @@ namespace Amazon.S3.Model
         internal bool IsSetPermission()
         {
             return this.permission != null;
+        }
+
+        internal void Marshall(string memberName, XmlWriter xmlWriter)
+        {
+            xmlWriter.WriteStartElement(memberName);
+            {
+                if (Grantee != null)
+                {
+                    xmlWriter.WriteStartElement("Grantee");
+                    if (Grantee.IsSetType())
+                    {
+                        xmlWriter.WriteAttributeString("xsi", "type",
+                                                       "http://www.w3.org/2001/XMLSchema-instance",
+                                                       Grantee.Type.ToString());
+                    }
+                    if (Grantee.IsSetDisplayName())
+                    {
+                        xmlWriter.WriteElementString("DisplayName",
+                                                     S3Transforms.ToXmlStringValue(
+                                                         Grantee.DisplayName));
+                    }
+                    if (Grantee.IsSetEmailAddress())
+                    {
+                        xmlWriter.WriteElementString("EmailAddress",
+                                                     S3Transforms.ToXmlStringValue(
+                                                         Grantee.EmailAddress));
+                    }
+                    if (Grantee.IsSetCanonicalUser())
+                    {
+                        xmlWriter.WriteElementString("ID",
+                                                     S3Transforms.ToXmlStringValue(
+                                                         Grantee.CanonicalUser));
+                    }
+                    if (Grantee.IsSetURI())
+                    {
+                        xmlWriter.WriteElementString("URI",
+                                                     S3Transforms.ToXmlStringValue(
+                                                         Grantee.URI));
+                    }
+                    xmlWriter.WriteEndElement();
+                }
+
+                if (IsSetPermission())
+                {
+                    xmlWriter.WriteElementString("Permission",
+                                                 S3Transforms.ToXmlStringValue(
+                                                     Permission));
+                }
+            }
+            xmlWriter.WriteEndElement();
         }
     }
 }

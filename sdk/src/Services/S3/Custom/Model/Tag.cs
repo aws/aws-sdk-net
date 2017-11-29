@@ -12,7 +12,9 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System.Xml;
 using System.Collections.Generic;
+using Amazon.S3.Model.Internal.MarshallTransformations;
 
 namespace Amazon.S3.Model
 {
@@ -53,6 +55,16 @@ namespace Amazon.S3.Model
         {
             return this.value != null;
         }
+
+        internal void Marshall(string memberName, XmlWriter xmlWriter)
+        {
+            xmlWriter.WriteStartElement(memberName);
+            {
+                xmlWriter.WriteElementString("Key", S3Transforms.ToXmlStringValue(key));
+                xmlWriter.WriteElementString("Value", S3Transforms.ToXmlStringValue(key));
+            }
+            xmlWriter.WriteEndElement();
+        }
     }
 
     /// <summary>
@@ -67,7 +79,24 @@ namespace Amazon.S3.Model
         /// </summary>
         public List<Tag> TagSet
         {
-            get; set;
+            get { return this.tagSet; }
+            set { this.tagSet = value; }
+        }
+
+        internal void Marshall(string memberName, XmlWriter xmlWriter)
+        {
+            xmlWriter.WriteStartElement(memberName);
+            {
+                xmlWriter.WriteStartElement("TagSet");
+                {
+                    foreach (var tag in tagSet)
+                    {
+                        tag.Marshall("Tag", xmlWriter);
+                    }
+                }
+                xmlWriter.WriteEndElement();
+            }
+            xmlWriter.WriteEndElement();
         }
     }
 }
