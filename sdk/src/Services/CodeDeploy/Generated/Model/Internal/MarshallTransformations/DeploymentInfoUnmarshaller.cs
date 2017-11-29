@@ -94,6 +94,12 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                     unmarshalledObject.CompleteTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("computePlatform", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ComputePlatform = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("createTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -128,6 +134,12 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = DeploymentOverviewUnmarshaller.Instance;
                     unmarshalledObject.DeploymentOverview = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("deploymentStatusMessages", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.DeploymentStatusMessages = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("deploymentStyle", targetDepth))

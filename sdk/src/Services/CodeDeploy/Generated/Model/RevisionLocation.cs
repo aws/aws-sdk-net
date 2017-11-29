@@ -35,6 +35,7 @@ namespace Amazon.CodeDeploy.Model
         private GitHubLocation _gitHubLocation;
         private RevisionLocationType _revisionType;
         private S3Location _s3Location;
+        private RawString _string;
 
         /// <summary>
         /// Gets and sets the property GitHubLocation. 
@@ -65,7 +66,11 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// GitHub: An application revision stored in GitHub.
+        /// GitHub: An application revision stored in GitHub (EC2/On-premises deployments only)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// String: A YAML-formatted or JSON-formatted string (AWS Lambda deployments only)
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -84,7 +89,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property S3Location. 
         /// <para>
-        /// Information about the location of application artifacts stored in Amazon S3. 
+        /// Information about the location of a revision stored in Amazon S3. 
         /// </para>
         /// </summary>
         public S3Location S3Location
@@ -97,6 +102,24 @@ namespace Amazon.CodeDeploy.Model
         internal bool IsSetS3Location()
         {
             return this._s3Location != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property String. 
+        /// <para>
+        /// Information about the location of an AWS Lambda deployment revision stored as a RawString.
+        /// </para>
+        /// </summary>
+        public RawString String
+        {
+            get { return this._string; }
+            set { this._string = value; }
+        }
+
+        // Check to see if String property is set
+        internal bool IsSetString()
+        {
+            return this._string != null;
         }
 
     }

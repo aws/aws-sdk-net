@@ -108,6 +108,10 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             {
                 return new InvalidAutoRollbackConfigException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidAutoScalingGroupException"))
+            {
+                return new InvalidAutoScalingGroupException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDeploymentConfigNameException"))
             {
                 return new InvalidDeploymentConfigNameException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -120,6 +124,10 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             {
                 return new InvalidFileExistsBehaviorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidIgnoreApplicationStopFailuresValueException"))
+            {
+                return new InvalidIgnoreApplicationStopFailuresValueException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidLoadBalancerInfoException"))
             {
                 return new InvalidLoadBalancerInfoException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -128,9 +136,17 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             {
                 return new InvalidRevisionException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRoleException"))
+            {
+                return new InvalidRoleException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidTargetInstancesException"))
             {
                 return new InvalidTargetInstancesException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidUpdateOutdatedInstancesOnlyValueException"))
+            {
+                return new InvalidUpdateOutdatedInstancesOnlyValueException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("RevisionDoesNotExistException"))
             {
@@ -139,6 +155,10 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             if (errorResponse.Code != null && errorResponse.Code.Equals("RevisionRequiredException"))
             {
                 return new RevisionRequiredException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
+            {
+                return new ThrottlingException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             return new AmazonCodeDeployException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }

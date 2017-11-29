@@ -73,6 +73,12 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ApplicationName);
                 }
 
+                if(publicRequest.IsSetComputePlatform())
+                {
+                    context.Writer.WritePropertyName("computePlatform");
+                    context.Writer.Write(publicRequest.ComputePlatform);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

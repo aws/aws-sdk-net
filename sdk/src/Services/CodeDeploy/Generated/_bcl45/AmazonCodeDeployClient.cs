@@ -39,15 +39,16 @@ namespace Amazon.CodeDeploy
     /// AWS CodeDeploy 
     /// <para>
     /// AWS CodeDeploy is a deployment service that automates application deployments to Amazon
-    /// EC2 instances or on-premises instances running in your own facility.
+    /// EC2 instances, on-premises instances running in your own facility, or serverless AWS
+    /// Lambda functions.
     /// </para>
     ///  
     /// <para>
-    /// You can deploy a nearly unlimited variety of application content, such as code, web
-    /// and configuration files, executables, packages, scripts, multimedia files, and so
-    /// on. AWS CodeDeploy can deploy application content stored in Amazon S3 buckets, GitHub
-    /// repositories, or Bitbucket repositories. You do not need to make changes to your existing
-    /// code before you can use AWS CodeDeploy.
+    /// You can deploy a nearly unlimited variety of application content, such as an updated
+    /// Lambda function, code, web and configuration files, executables, packages, scripts,
+    /// multimedia files, and so on. AWS CodeDeploy can deploy application content stored
+    /// in Amazon S3 buckets, GitHub repositories, or Bitbucket repositories. You do not need
+    /// to make changes to your existing code before you can use AWS CodeDeploy.
     /// </para>
     ///  
     /// <para>
@@ -73,9 +74,10 @@ namespace Amazon.CodeDeploy
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>Deployment group</b>: A set of individual instances. A deployment group contains
-    /// individually tagged instances, Amazon EC2 instances in Auto Scaling groups, or both.
-    /// 
+    ///  <b>Deployment group</b>: A set of individual instances or CodeDeploy Lambda applications.
+    /// A Lambda deployment group contains a group of applications. An EC2/On-premises deployment
+    /// group contains individually tagged instances, Amazon EC2 instances in Auto Scaling
+    /// groups, or both. 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -84,22 +86,25 @@ namespace Amazon.CodeDeploy
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>Deployment</b>: The process, and the components involved in the process, of installing
-    /// content on one or more instances. 
+    ///  <b>Deployment</b>: The process, and the components involved in the process, of updating
+    /// a Lambda function or of installing content on one or more instances. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>Application revisions</b>: An archive file containing source content—source code,
-    /// web pages, executable files, and deployment scripts—along with an application specification
-    /// file (AppSpec file). Revisions are stored in Amazon S3 buckets or GitHub repositories.
-    /// For Amazon S3, a revision is uniquely identified by its Amazon S3 object key and its
-    /// ETag, version, or both. For GitHub, a revision is uniquely identified by its commit
-    /// ID.
+    ///  <b>Application revisions</b>: For an AWS Lambda deployment this is an AppSpec file
+    /// that specifies the Lambda function to update and one or more functions to validate
+    /// deployment lifecycle events. For an EC2/On-premises deployment, this is an archive
+    /// file containing source content—source code, web pages, executable files, and deployment
+    /// scripts—along with an application specification file (AppSpec file). Revisions are
+    /// stored in Amazon S3 buckets or GitHub repositories. For Amazon S3, a revision is uniquely
+    /// identified by its Amazon S3 object key and its ETag, version, or both. For GitHub,
+    /// a revision is uniquely identified by its commit ID.
     /// </para>
     ///  </li> </ul> 
     /// <para>
     /// This guide also contains information to help you get details about the instances in
-    /// your deployments and to make on-premises instances available for AWS CodeDeploy deployments.
+    /// your deployments, to make on-premises instances available for AWS CodeDeploy deployments,
+    /// and to get details about a Lambda function deployment.
     /// </para>
     ///  
     /// <para>
@@ -772,6 +777,10 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidApplicationNameException">
         /// The application name was specified in an invalid format.
         /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidComputePlatformException">
+        /// The computePlatform is invalid. The computePlatform should be <code>Lambda</code>
+        /// or <code>Server</code>.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         public virtual CreateApplicationResponse CreateApplication(CreateApplicationRequest request)
         {
@@ -840,6 +849,9 @@ namespace Amazon.CodeDeploy
         /// automatic rollback is enabled but an invalid triggering event type or no event types
         /// were listed.
         /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidAutoScalingGroupException">
+        /// The Auto Scaling group was specified in an invalid format or does not exist.
+        /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidDeploymentConfigNameException">
         /// The deployment configuration name was specified in an invalid format.
         /// </exception>
@@ -852,11 +864,21 @@ namespace Amazon.CodeDeploy
         /// weren't part of the previous successful deployment. Valid values include "DISALLOW",
         /// "OVERWRITE", and "RETAIN".
         /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidIgnoreApplicationStopFailuresValueException">
+        /// The IgnoreApplicationStopFailures value is invalid. For AWS Lambda deployments, <code>false</code>
+        /// is expected. For EC2/On-premises deployments, <code>true</code> or <code>false</code>
+        /// is expected.
+        /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidLoadBalancerInfoException">
         /// An invalid load balancer name, or no load balancer name, was specified.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidRevisionException">
         /// The revision was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidRoleException">
+        /// The service role ARN was specified in an invalid format. Or, if an Auto Scaling group
+        /// was specified, the specified service role does not grant the appropriate permissions
+        /// to Auto Scaling.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidTargetInstancesException">
         /// The target instance configuration is invalid. Possible causes include:
@@ -879,11 +901,19 @@ namespace Amazon.CodeDeploy
         /// </para>
         ///  </li> </ul>
         /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidUpdateOutdatedInstancesOnlyValueException">
+        /// The UpdateOutdatedInstancesOnly value is invalid. For AWS Lambda deployments, <code>false</code>
+        /// is expected. For EC2/On-premises deployments, <code>true</code> or <code>false</code>
+        /// is expected.
+        /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.RevisionDoesNotExistException">
         /// The named revision does not exist with the applicable IAM user or AWS account.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.RevisionRequiredException">
         /// The revision ID was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.ThrottlingException">
+        /// An API function was called too frequently.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeployment">REST API Reference for CreateDeployment Operation</seealso>
         public virtual CreateDeploymentResponse CreateDeployment(CreateDeploymentRequest request)
@@ -934,11 +964,18 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentConfigNameRequiredException">
         /// The deployment configuration name was not specified.
         /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidComputePlatformException">
+        /// The computePlatform is invalid. The computePlatform should be <code>Lambda</code>
+        /// or <code>Server</code>.
+        /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidDeploymentConfigNameException">
         /// The deployment configuration name was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidMinimumHealthyHostValueException">
         /// The minimum healthy instance value was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidTrafficRoutingConfigurationException">
+        /// The configuration that specifies how traffic routes during a deployment is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeploymentConfig">REST API Reference for CreateDeploymentConfig Operation</seealso>
         public virtual CreateDeploymentConfigResponse CreateDeploymentConfig(CreateDeploymentConfigRequest request)
@@ -1057,6 +1094,9 @@ namespace Amazon.CodeDeploy
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidEC2TagException">
         /// The tag was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidInputException">
+        /// The specified input was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidLoadBalancerInfoException">
         /// An invalid load balancer name, or no load balancer name, was specified.
@@ -2100,6 +2140,9 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidNextTokenException">
         /// The next token was specified in an invalid format.
         /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.OperationNotSupportedException">
+        /// The API used does not support the deployment.
+        /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.ResourceValidationException">
         /// The specified resource could not be validated.
         /// </exception>
@@ -2183,6 +2226,70 @@ namespace Amazon.CodeDeploy
             var unmarshaller = ListOnPremisesInstancesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListOnPremisesInstancesRequest,ListOnPremisesInstancesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutLifecycleEventHookExecutionStatus
+
+
+        /// <summary>
+        /// Sets the result of a Lambda validation function. The function validates one or both
+        /// lifecycle events (<code>BeforeAllowTraffic</code> and <code>AfterAllowTraffic</code>)
+        /// and returns <code>Succeeded</code> or <code>Failed</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutLifecycleEventHookExecutionStatus service method.</param>
+        /// 
+        /// <returns>The response from the PutLifecycleEventHookExecutionStatus service method, as returned by CodeDeploy.</returns>
+        /// <exception cref="Amazon.CodeDeploy.Model.DeploymentDoesNotExistException">
+        /// The deployment does not exist with the applicable IAM user or AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.DeploymentIdRequiredException">
+        /// At least one deployment ID must be specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidDeploymentIdException">
+        /// At least one of the deployment IDs was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidLifecycleEventHookExecutionIdException">
+        /// A lifecycle event hook is invalid. Review the <code>hooks</code> section in your AppSpec
+        /// file to ensure the lifecycle events and <code>hooks</code> functions are valide.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidLifecycleEventHookExecutionStatusException">
+        /// The result of a Lambda validation function that verifies a lifecycle event is invalid.
+        /// It should return <code>Succeeded</code> or <code>Failed</code>.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.LifecycleEventAlreadyCompletedException">
+        /// An attempt to return the status of a lifecycle event that already completed occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.UnsupportedActionForDeploymentTypeException">
+        /// A call was submitted that is not supported for the specified deployment type.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/PutLifecycleEventHookExecutionStatus">REST API Reference for PutLifecycleEventHookExecutionStatus Operation</seealso>
+        public virtual PutLifecycleEventHookExecutionStatusResponse PutLifecycleEventHookExecutionStatus(PutLifecycleEventHookExecutionStatusRequest request)
+        {
+            var marshaller = new PutLifecycleEventHookExecutionStatusRequestMarshaller();
+            var unmarshaller = PutLifecycleEventHookExecutionStatusResponseUnmarshaller.Instance;
+
+            return Invoke<PutLifecycleEventHookExecutionStatusRequest,PutLifecycleEventHookExecutionStatusResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutLifecycleEventHookExecutionStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutLifecycleEventHookExecutionStatus operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/PutLifecycleEventHookExecutionStatus">REST API Reference for PutLifecycleEventHookExecutionStatus Operation</seealso>
+        public virtual Task<PutLifecycleEventHookExecutionStatusResponse> PutLifecycleEventHookExecutionStatusAsync(PutLifecycleEventHookExecutionStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new PutLifecycleEventHookExecutionStatusRequestMarshaller();
+            var unmarshaller = PutLifecycleEventHookExecutionStatusResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutLifecycleEventHookExecutionStatusRequest,PutLifecycleEventHookExecutionStatusResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2629,6 +2736,9 @@ namespace Amazon.CodeDeploy
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidEC2TagException">
         /// The tag was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidInputException">
+        /// The specified input was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidLoadBalancerInfoException">
         /// An invalid load balancer name, or no load balancer name, was specified.

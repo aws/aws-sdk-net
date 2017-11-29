@@ -34,6 +34,7 @@ namespace Amazon.CodeDeploy.Model
     {
         private string _applicationId;
         private string _applicationName;
+        private ComputePlatform _computePlatform;
         private DateTime? _createTime;
         private string _gitHubAccountName;
         private bool? _linkedToGitHub;
@@ -72,6 +73,25 @@ namespace Amazon.CodeDeploy.Model
         internal bool IsSetApplicationName()
         {
             return this._applicationName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ComputePlatform. 
+        /// <para>
+        /// The destination platform type for deployment of the application (<code>Lambda</code>
+        /// or <code>Server</code>).
+        /// </para>
+        /// </summary>
+        public ComputePlatform ComputePlatform
+        {
+            get { return this._computePlatform; }
+            set { this._computePlatform = value; }
+        }
+
+        // Check to see if ComputePlatform property is set
+        internal bool IsSetComputePlatform()
+        {
+            return this._computePlatform != null;
         }
 
         /// <summary>

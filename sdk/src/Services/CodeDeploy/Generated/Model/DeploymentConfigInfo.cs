@@ -32,10 +32,30 @@ namespace Amazon.CodeDeploy.Model
     /// </summary>
     public partial class DeploymentConfigInfo
     {
+        private ComputePlatform _computePlatform;
         private DateTime? _createTime;
         private string _deploymentConfigId;
         private string _deploymentConfigName;
         private MinimumHealthyHosts _minimumHealthyHosts;
+        private TrafficRoutingConfig _trafficRoutingConfig;
+
+        /// <summary>
+        /// Gets and sets the property ComputePlatform. 
+        /// <para>
+        /// The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>).
+        /// </para>
+        /// </summary>
+        public ComputePlatform ComputePlatform
+        {
+            get { return this._computePlatform; }
+            set { this._computePlatform = value; }
+        }
+
+        // Check to see if ComputePlatform property is set
+        internal bool IsSetComputePlatform()
+        {
+            return this._computePlatform != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreateTime. 
@@ -107,6 +127,25 @@ namespace Amazon.CodeDeploy.Model
         internal bool IsSetMinimumHealthyHosts()
         {
             return this._minimumHealthyHosts != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrafficRoutingConfig. 
+        /// <para>
+        /// The configuration specifying how the deployment traffic will be routed. Only deployments
+        /// with a Lambda compute platform can specify this.
+        /// </para>
+        /// </summary>
+        public TrafficRoutingConfig TrafficRoutingConfig
+        {
+            get { return this._trafficRoutingConfig; }
+            set { this._trafficRoutingConfig = value; }
+        }
+
+        // Check to see if TrafficRoutingConfig property is set
+        internal bool IsSetTrafficRoutingConfig()
+        {
+            return this._trafficRoutingConfig != null;
         }
 
     }

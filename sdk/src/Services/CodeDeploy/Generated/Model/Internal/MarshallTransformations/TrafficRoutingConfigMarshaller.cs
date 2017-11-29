@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// RevisionLocation Marshaller
+    /// TrafficRoutingConfig Marshaller
     /// </summary>       
-    public class RevisionLocationMarshaller : IRequestMarshaller<RevisionLocation, JsonMarshallerContext> 
+    public class TrafficRoutingConfigMarshaller : IRequestMarshaller<TrafficRoutingConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,45 +43,34 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(RevisionLocation requestObject, JsonMarshallerContext context)
+        public void Marshall(TrafficRoutingConfig requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetGitHubLocation())
+            if(requestObject.IsSetTimeBasedCanary())
             {
-                context.Writer.WritePropertyName("gitHubLocation");
+                context.Writer.WritePropertyName("timeBasedCanary");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = GitHubLocationMarshaller.Instance;
-                marshaller.Marshall(requestObject.GitHubLocation, context);
+                var marshaller = TimeBasedCanaryMarshaller.Instance;
+                marshaller.Marshall(requestObject.TimeBasedCanary, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetRevisionType())
+            if(requestObject.IsSetTimeBasedLinear())
             {
-                context.Writer.WritePropertyName("revisionType");
-                context.Writer.Write(requestObject.RevisionType);
-            }
-
-            if(requestObject.IsSetS3Location())
-            {
-                context.Writer.WritePropertyName("s3Location");
+                context.Writer.WritePropertyName("timeBasedLinear");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = S3LocationMarshaller.Instance;
-                marshaller.Marshall(requestObject.S3Location, context);
+                var marshaller = TimeBasedLinearMarshaller.Instance;
+                marshaller.Marshall(requestObject.TimeBasedLinear, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetString())
+            if(requestObject.IsSetType())
             {
-                context.Writer.WritePropertyName("string");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = RawStringMarshaller.Instance;
-                marshaller.Marshall(requestObject.String, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("type");
+                context.Writer.Write(requestObject.Type);
             }
 
         }
@@ -89,7 +78,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static RevisionLocationMarshaller Instance = new RevisionLocationMarshaller();
+        public readonly static TrafficRoutingConfigMarshaller Instance = new TrafficRoutingConfigMarshaller();
 
     }
 }

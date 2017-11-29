@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RevisionLocation Object
+    /// Response Unmarshaller for RawString Object
     /// </summary>  
-    public class RevisionLocationUnmarshaller : IUnmarshaller<RevisionLocation, XmlUnmarshallerContext>, IUnmarshaller<RevisionLocation, JsonUnmarshallerContext>
+    public class RawStringUnmarshaller : IUnmarshaller<RawString, XmlUnmarshallerContext>, IUnmarshaller<RawString, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        RevisionLocation IUnmarshaller<RevisionLocation, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        RawString IUnmarshaller<RawString, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public RevisionLocation Unmarshall(JsonUnmarshallerContext context)
+        public RawString Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            RevisionLocation unmarshalledObject = new RevisionLocation();
+            RawString unmarshalledObject = new RawString();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("gitHubLocation", targetDepth))
-                {
-                    var unmarshaller = GitHubLocationUnmarshaller.Instance;
-                    unmarshalledObject.GitHubLocation = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("revisionType", targetDepth))
+                if (context.TestExpression("content", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RevisionType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Content = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("s3Location", targetDepth))
+                if (context.TestExpression("sha256", targetDepth))
                 {
-                    var unmarshaller = S3LocationUnmarshaller.Instance;
-                    unmarshalledObject.S3Location = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("string", targetDepth))
-                {
-                    var unmarshaller = RawStringUnmarshaller.Instance;
-                    unmarshalledObject.String = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Sha256 = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +82,12 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         }
 
 
-        private static RevisionLocationUnmarshaller _instance = new RevisionLocationUnmarshaller();        
+        private static RawStringUnmarshaller _instance = new RawStringUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RevisionLocationUnmarshaller Instance
+        public static RawStringUnmarshaller Instance
         {
             get
             {

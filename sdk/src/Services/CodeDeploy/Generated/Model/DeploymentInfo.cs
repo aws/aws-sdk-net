@@ -37,12 +37,14 @@ namespace Amazon.CodeDeploy.Model
         private AutoRollbackConfiguration _autoRollbackConfiguration;
         private BlueGreenDeploymentConfiguration _blueGreenDeploymentConfiguration;
         private DateTime? _completeTime;
+        private ComputePlatform _computePlatform;
         private DateTime? _createTime;
         private DeploymentCreator _creator;
         private string _deploymentConfigName;
         private string _deploymentGroupName;
         private string _deploymentId;
         private DeploymentOverview _deploymentOverview;
+        private List<string> _deploymentStatusMessages = new List<string>();
         private DeploymentStyle _deploymentStyle;
         private string _description;
         private ErrorInformation _errorInformation;
@@ -147,6 +149,24 @@ namespace Amazon.CodeDeploy.Model
         internal bool IsSetCompleteTime()
         {
             return this._completeTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ComputePlatform. 
+        /// <para>
+        /// The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>).
+        /// </para>
+        /// </summary>
+        public ComputePlatform ComputePlatform
+        {
+            get { return this._computePlatform; }
+            set { this._computePlatform = value; }
+        }
+
+        // Check to see if ComputePlatform property is set
+        internal bool IsSetComputePlatform()
+        {
+            return this._computePlatform != null;
         }
 
         /// <summary>
@@ -268,6 +288,24 @@ namespace Amazon.CodeDeploy.Model
         internal bool IsSetDeploymentOverview()
         {
             return this._deploymentOverview != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeploymentStatusMessages. 
+        /// <para>
+        /// Messages that contain information about the status of a deployment.
+        /// </para>
+        /// </summary>
+        public List<string> DeploymentStatusMessages
+        {
+            get { return this._deploymentStatusMessages; }
+            set { this._deploymentStatusMessages = value; }
+        }
+
+        // Check to see if DeploymentStatusMessages property is set
+        internal bool IsSetDeploymentStatusMessages()
+        {
+            return this._deploymentStatusMessages != null && this._deploymentStatusMessages.Count > 0; 
         }
 
         /// <summary>

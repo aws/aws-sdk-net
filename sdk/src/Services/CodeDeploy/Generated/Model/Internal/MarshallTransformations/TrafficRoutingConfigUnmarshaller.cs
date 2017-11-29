@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RevisionLocation Object
+    /// Response Unmarshaller for TrafficRoutingConfig Object
     /// </summary>  
-    public class RevisionLocationUnmarshaller : IUnmarshaller<RevisionLocation, XmlUnmarshallerContext>, IUnmarshaller<RevisionLocation, JsonUnmarshallerContext>
+    public class TrafficRoutingConfigUnmarshaller : IUnmarshaller<TrafficRoutingConfig, XmlUnmarshallerContext>, IUnmarshaller<TrafficRoutingConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        RevisionLocation IUnmarshaller<RevisionLocation, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        TrafficRoutingConfig IUnmarshaller<TrafficRoutingConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,33 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public RevisionLocation Unmarshall(JsonUnmarshallerContext context)
+        public TrafficRoutingConfig Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            RevisionLocation unmarshalledObject = new RevisionLocation();
+            TrafficRoutingConfig unmarshalledObject = new TrafficRoutingConfig();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("gitHubLocation", targetDepth))
+                if (context.TestExpression("timeBasedCanary", targetDepth))
                 {
-                    var unmarshaller = GitHubLocationUnmarshaller.Instance;
-                    unmarshalledObject.GitHubLocation = unmarshaller.Unmarshall(context);
+                    var unmarshaller = TimeBasedCanaryUnmarshaller.Instance;
+                    unmarshalledObject.TimeBasedCanary = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("revisionType", targetDepth))
+                if (context.TestExpression("timeBasedLinear", targetDepth))
+                {
+                    var unmarshaller = TimeBasedLinearUnmarshaller.Instance;
+                    unmarshalledObject.TimeBasedLinear = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RevisionType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("s3Location", targetDepth))
-                {
-                    var unmarshaller = S3LocationUnmarshaller.Instance;
-                    unmarshalledObject.S3Location = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("string", targetDepth))
-                {
-                    var unmarshaller = RawStringUnmarshaller.Instance;
-                    unmarshalledObject.String = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +88,12 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         }
 
 
-        private static RevisionLocationUnmarshaller _instance = new RevisionLocationUnmarshaller();        
+        private static TrafficRoutingConfigUnmarshaller _instance = new TrafficRoutingConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RevisionLocationUnmarshaller Instance
+        public static TrafficRoutingConfigUnmarshaller Instance
         {
             get
             {

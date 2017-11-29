@@ -34,15 +34,16 @@ namespace Amazon.CodeDeploy
     /// AWS CodeDeploy 
     /// <para>
     /// AWS CodeDeploy is a deployment service that automates application deployments to Amazon
-    /// EC2 instances or on-premises instances running in your own facility.
+    /// EC2 instances, on-premises instances running in your own facility, or serverless AWS
+    /// Lambda functions.
     /// </para>
     ///  
     /// <para>
-    /// You can deploy a nearly unlimited variety of application content, such as code, web
-    /// and configuration files, executables, packages, scripts, multimedia files, and so
-    /// on. AWS CodeDeploy can deploy application content stored in Amazon S3 buckets, GitHub
-    /// repositories, or Bitbucket repositories. You do not need to make changes to your existing
-    /// code before you can use AWS CodeDeploy.
+    /// You can deploy a nearly unlimited variety of application content, such as an updated
+    /// Lambda function, code, web and configuration files, executables, packages, scripts,
+    /// multimedia files, and so on. AWS CodeDeploy can deploy application content stored
+    /// in Amazon S3 buckets, GitHub repositories, or Bitbucket repositories. You do not need
+    /// to make changes to your existing code before you can use AWS CodeDeploy.
     /// </para>
     ///  
     /// <para>
@@ -68,9 +69,10 @@ namespace Amazon.CodeDeploy
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>Deployment group</b>: A set of individual instances. A deployment group contains
-    /// individually tagged instances, Amazon EC2 instances in Auto Scaling groups, or both.
-    /// 
+    ///  <b>Deployment group</b>: A set of individual instances or CodeDeploy Lambda applications.
+    /// A Lambda deployment group contains a group of applications. An EC2/On-premises deployment
+    /// group contains individually tagged instances, Amazon EC2 instances in Auto Scaling
+    /// groups, or both. 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -79,22 +81,25 @@ namespace Amazon.CodeDeploy
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>Deployment</b>: The process, and the components involved in the process, of installing
-    /// content on one or more instances. 
+    ///  <b>Deployment</b>: The process, and the components involved in the process, of updating
+    /// a Lambda function or of installing content on one or more instances. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>Application revisions</b>: An archive file containing source content—source code,
-    /// web pages, executable files, and deployment scripts—along with an application specification
-    /// file (AppSpec file). Revisions are stored in Amazon S3 buckets or GitHub repositories.
-    /// For Amazon S3, a revision is uniquely identified by its Amazon S3 object key and its
-    /// ETag, version, or both. For GitHub, a revision is uniquely identified by its commit
-    /// ID.
+    ///  <b>Application revisions</b>: For an AWS Lambda deployment this is an AppSpec file
+    /// that specifies the Lambda function to update and one or more functions to validate
+    /// deployment lifecycle events. For an EC2/On-premises deployment, this is an archive
+    /// file containing source content—source code, web pages, executable files, and deployment
+    /// scripts—along with an application specification file (AppSpec file). Revisions are
+    /// stored in Amazon S3 buckets or GitHub repositories. For Amazon S3, a revision is uniquely
+    /// identified by its Amazon S3 object key and its ETag, version, or both. For GitHub,
+    /// a revision is uniquely identified by its commit ID.
     /// </para>
     ///  </li> </ul> 
     /// <para>
     /// This guide also contains information to help you get details about the instances in
-    /// your deployments and to make on-premises instances available for AWS CodeDeploy deployments.
+    /// your deployments, to make on-premises instances available for AWS CodeDeploy deployments,
+    /// and to get details about a Lambda function deployment.
     /// </para>
     ///  
     /// <para>
@@ -679,6 +684,23 @@ namespace Amazon.CodeDeploy
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListOnPremisesInstances">REST API Reference for ListOnPremisesInstances Operation</seealso>
         Task<ListOnPremisesInstancesResponse> ListOnPremisesInstancesAsync(ListOnPremisesInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  PutLifecycleEventHookExecutionStatus
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutLifecycleEventHookExecutionStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutLifecycleEventHookExecutionStatus operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/PutLifecycleEventHookExecutionStatus">REST API Reference for PutLifecycleEventHookExecutionStatus Operation</seealso>
+        Task<PutLifecycleEventHookExecutionStatusResponse> PutLifecycleEventHookExecutionStatusAsync(PutLifecycleEventHookExecutionStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

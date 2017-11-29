@@ -64,6 +64,12 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("computePlatform", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ComputePlatform = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("createTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -86,6 +92,12 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = MinimumHealthyHostsUnmarshaller.Instance;
                     unmarshalledObject.MinimumHealthyHosts = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("trafficRoutingConfig", targetDepth))
+                {
+                    var unmarshaller = TrafficRoutingConfigUnmarshaller.Instance;
+                    unmarshalledObject.TrafficRoutingConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

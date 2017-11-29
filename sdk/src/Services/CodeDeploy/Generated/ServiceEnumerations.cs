@@ -139,6 +139,10 @@ namespace Amazon.CodeDeploy
     {
 
         /// <summary>
+        /// Constant JSON for BundleType
+        /// </summary>
+        public static readonly BundleType JSON = new BundleType("JSON");
+        /// <summary>
         /// Constant Tar for BundleType
         /// </summary>
         public static readonly BundleType Tar = new BundleType("tar");
@@ -146,6 +150,10 @@ namespace Amazon.CodeDeploy
         /// Constant Tgz for BundleType
         /// </summary>
         public static readonly BundleType Tgz = new BundleType("tgz");
+        /// <summary>
+        /// Constant YAML for BundleType
+        /// </summary>
+        public static readonly BundleType YAML = new BundleType("YAML");
         /// <summary>
         /// Constant Zip for BundleType
         /// </summary>
@@ -180,6 +188,56 @@ namespace Amazon.CodeDeploy
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator BundleType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ComputePlatform.
+    /// </summary>
+    public class ComputePlatform : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Lambda for ComputePlatform
+        /// </summary>
+        public static readonly ComputePlatform Lambda = new ComputePlatform("Lambda");
+        /// <summary>
+        /// Constant Server for ComputePlatform
+        /// </summary>
+        public static readonly ComputePlatform Server = new ComputePlatform("Server");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ComputePlatform(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ComputePlatform FindValue(string value)
+        {
+            return FindValue<ComputePlatform>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ComputePlatform(string value)
         {
             return FindValue(value);
         }
@@ -545,6 +603,14 @@ namespace Amazon.CodeDeploy
         /// </summary>
         public static readonly ErrorCode DEPLOYMENT_GROUP_MISSING = new ErrorCode("DEPLOYMENT_GROUP_MISSING");
         /// <summary>
+        /// Constant ELASTIC_LOAD_BALANCING_INVALID for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode ELASTIC_LOAD_BALANCING_INVALID = new ErrorCode("ELASTIC_LOAD_BALANCING_INVALID");
+        /// <summary>
+        /// Constant ELB_INVALID_INSTANCE for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode ELB_INVALID_INSTANCE = new ErrorCode("ELB_INVALID_INSTANCE");
+        /// <summary>
         /// Constant HEALTH_CONSTRAINTS for ErrorCode
         /// </summary>
         public static readonly ErrorCode HEALTH_CONSTRAINTS = new ErrorCode("HEALTH_CONSTRAINTS");
@@ -552,6 +618,10 @@ namespace Amazon.CodeDeploy
         /// Constant HEALTH_CONSTRAINTS_INVALID for ErrorCode
         /// </summary>
         public static readonly ErrorCode HEALTH_CONSTRAINTS_INVALID = new ErrorCode("HEALTH_CONSTRAINTS_INVALID");
+        /// <summary>
+        /// Constant HOOK_EXECUTION_FAILURE for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode HOOK_EXECUTION_FAILURE = new ErrorCode("HOOK_EXECUTION_FAILURE");
         /// <summary>
         /// Constant IAM_ROLE_MISSING for ErrorCode
         /// </summary>
@@ -565,9 +635,29 @@ namespace Amazon.CodeDeploy
         /// </summary>
         public static readonly ErrorCode INTERNAL_ERROR = new ErrorCode("INTERNAL_ERROR");
         /// <summary>
+        /// Constant INVALID_LAMBDA_CONFIGURATION for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode INVALID_LAMBDA_CONFIGURATION = new ErrorCode("INVALID_LAMBDA_CONFIGURATION");
+        /// <summary>
+        /// Constant INVALID_LAMBDA_FUNCTION for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode INVALID_LAMBDA_FUNCTION = new ErrorCode("INVALID_LAMBDA_FUNCTION");
+        /// <summary>
         /// Constant MANUAL_STOP for ErrorCode
         /// </summary>
         public static readonly ErrorCode MANUAL_STOP = new ErrorCode("MANUAL_STOP");
+        /// <summary>
+        /// Constant MISSING_BLUE_GREEN_DEPLOYMENT_CONFIGURATION for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode MISSING_BLUE_GREEN_DEPLOYMENT_CONFIGURATION = new ErrorCode("MISSING_BLUE_GREEN_DEPLOYMENT_CONFIGURATION");
+        /// <summary>
+        /// Constant MISSING_ELB_INFORMATION for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode MISSING_ELB_INFORMATION = new ErrorCode("MISSING_ELB_INFORMATION");
+        /// <summary>
+        /// Constant MISSING_GITHUB_TOKEN for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode MISSING_GITHUB_TOKEN = new ErrorCode("MISSING_GITHUB_TOKEN");
         /// <summary>
         /// Constant NO_EC2_SUBSCRIPTION for ErrorCode
         /// </summary>
@@ -1202,6 +1292,10 @@ namespace Amazon.CodeDeploy
         /// Constant S3 for RevisionLocationType
         /// </summary>
         public static readonly RevisionLocationType S3 = new RevisionLocationType("S3");
+        /// <summary>
+        /// Constant String for RevisionLocationType
+        /// </summary>
+        public static readonly RevisionLocationType String = new RevisionLocationType("String");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1386,6 +1480,60 @@ namespace Amazon.CodeDeploy
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TagFilterType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TrafficRoutingType.
+    /// </summary>
+    public class TrafficRoutingType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AllAtOnce for TrafficRoutingType
+        /// </summary>
+        public static readonly TrafficRoutingType AllAtOnce = new TrafficRoutingType("AllAtOnce");
+        /// <summary>
+        /// Constant TimeBasedCanary for TrafficRoutingType
+        /// </summary>
+        public static readonly TrafficRoutingType TimeBasedCanary = new TrafficRoutingType("TimeBasedCanary");
+        /// <summary>
+        /// Constant TimeBasedLinear for TrafficRoutingType
+        /// </summary>
+        public static readonly TrafficRoutingType TimeBasedLinear = new TrafficRoutingType("TimeBasedLinear");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TrafficRoutingType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TrafficRoutingType FindValue(string value)
+        {
+            return FindValue<TrafficRoutingType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TrafficRoutingType(string value)
         {
             return FindValue(value);
         }

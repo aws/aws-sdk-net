@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateDeploymentConfig operation
+    /// Response Unmarshaller for PutLifecycleEventHookExecutionStatus operation
     /// </summary>  
-    public class CreateDeploymentConfigResponseUnmarshaller : JsonResponseUnmarshaller
+    public class PutLifecycleEventHookExecutionStatusResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,16 +45,16 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateDeploymentConfigResponse response = new CreateDeploymentConfigResponse();
+            PutLifecycleEventHookExecutionStatusResponse response = new PutLifecycleEventHookExecutionStatusResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("deploymentConfigId", targetDepth))
+                if (context.TestExpression("lifecycleEventHookExecutionId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.DeploymentConfigId = unmarshaller.Unmarshall(context);
+                    response.LifecycleEventHookExecutionId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -72,40 +72,40 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("DeploymentConfigAlreadyExistsException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("DeploymentDoesNotExistException"))
             {
-                return new DeploymentConfigAlreadyExistsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new DeploymentDoesNotExistException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("DeploymentConfigLimitExceededException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("DeploymentIdRequiredException"))
             {
-                return new DeploymentConfigLimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new DeploymentIdRequiredException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("DeploymentConfigNameRequiredException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDeploymentIdException"))
             {
-                return new DeploymentConfigNameRequiredException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new InvalidDeploymentIdException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidComputePlatformException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidLifecycleEventHookExecutionIdException"))
             {
-                return new InvalidComputePlatformException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new InvalidLifecycleEventHookExecutionIdException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDeploymentConfigNameException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidLifecycleEventHookExecutionStatusException"))
             {
-                return new InvalidDeploymentConfigNameException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new InvalidLifecycleEventHookExecutionStatusException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidMinimumHealthyHostValueException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("LifecycleEventAlreadyCompletedException"))
             {
-                return new InvalidMinimumHealthyHostValueException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new LifecycleEventAlreadyCompletedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidTrafficRoutingConfigurationException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedActionForDeploymentTypeException"))
             {
-                return new InvalidTrafficRoutingConfigurationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new UnsupportedActionForDeploymentTypeException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             return new AmazonCodeDeployException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static CreateDeploymentConfigResponseUnmarshaller _instance = new CreateDeploymentConfigResponseUnmarshaller();        
+        private static PutLifecycleEventHookExecutionStatusResponseUnmarshaller _instance = new PutLifecycleEventHookExecutionStatusResponseUnmarshaller();        
 
-        internal static CreateDeploymentConfigResponseUnmarshaller GetInstance()
+        internal static PutLifecycleEventHookExecutionStatusResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -113,7 +113,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateDeploymentConfigResponseUnmarshaller Instance
+        public static PutLifecycleEventHookExecutionStatusResponseUnmarshaller Instance
         {
             get
             {

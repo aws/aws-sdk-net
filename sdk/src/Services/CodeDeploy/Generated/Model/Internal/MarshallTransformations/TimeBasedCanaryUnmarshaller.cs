@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RevisionLocation Object
+    /// Response Unmarshaller for TimeBasedCanary Object
     /// </summary>  
-    public class RevisionLocationUnmarshaller : IUnmarshaller<RevisionLocation, XmlUnmarshallerContext>, IUnmarshaller<RevisionLocation, JsonUnmarshallerContext>
+    public class TimeBasedCanaryUnmarshaller : IUnmarshaller<TimeBasedCanary, XmlUnmarshallerContext>, IUnmarshaller<TimeBasedCanary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        RevisionLocation IUnmarshaller<RevisionLocation, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        TimeBasedCanary IUnmarshaller<TimeBasedCanary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public RevisionLocation Unmarshall(JsonUnmarshallerContext context)
+        public TimeBasedCanary Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            RevisionLocation unmarshalledObject = new RevisionLocation();
+            TimeBasedCanary unmarshalledObject = new TimeBasedCanary();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("gitHubLocation", targetDepth))
+                if (context.TestExpression("canaryInterval", targetDepth))
                 {
-                    var unmarshaller = GitHubLocationUnmarshaller.Instance;
-                    unmarshalledObject.GitHubLocation = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.CanaryInterval = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("revisionType", targetDepth))
+                if (context.TestExpression("canaryPercentage", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RevisionType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("s3Location", targetDepth))
-                {
-                    var unmarshaller = S3LocationUnmarshaller.Instance;
-                    unmarshalledObject.S3Location = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("string", targetDepth))
-                {
-                    var unmarshaller = RawStringUnmarshaller.Instance;
-                    unmarshalledObject.String = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.CanaryPercentage = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +82,12 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         }
 
 
-        private static RevisionLocationUnmarshaller _instance = new RevisionLocationUnmarshaller();        
+        private static TimeBasedCanaryUnmarshaller _instance = new TimeBasedCanaryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RevisionLocationUnmarshaller Instance
+        public static TimeBasedCanaryUnmarshaller Instance
         {
             get
             {

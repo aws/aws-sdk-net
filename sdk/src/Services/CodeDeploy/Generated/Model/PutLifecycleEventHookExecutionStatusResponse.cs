@@ -28,34 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// Information about a load balancer in Elastic Load Balancing to use in a deployment.
-    /// Instances are registered directly with a load balancer, and traffic is routed to the
-    /// load balancer.
+    /// This is the response object from the PutLifecycleEventHookExecutionStatus operation.
     /// </summary>
-    public partial class ELBInfo
+    public partial class PutLifecycleEventHookExecutionStatusResponse : AmazonWebServiceResponse
     {
-        private string _name;
+        private string _lifecycleEventHookExecutionId;
 
         /// <summary>
-        /// Gets and sets the property Name. 
+        /// Gets and sets the property LifecycleEventHookExecutionId. 
         /// <para>
-        /// For blue/green deployments, the name of the load balancer that will be used to route
-        /// traffic from original instances to replacement instances in a blue/green deployment.
-        /// For in-place deployments, the name of the load balancer that instances are deregistered
-        /// from so they are not serving traffic during a deployment, and then re-registered with
-        /// after the deployment completes.
+        /// The execution ID of the lifecycle event hook. A hook is specified in the <code>hooks</code>
+        /// section of the deployment's AppSpec file.
         /// </para>
         /// </summary>
-        public string Name
+        public string LifecycleEventHookExecutionId
         {
-            get { return this._name; }
-            set { this._name = value; }
+            get { return this._lifecycleEventHookExecutionId; }
+            set { this._lifecycleEventHookExecutionId = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if LifecycleEventHookExecutionId property is set
+        internal bool IsSetLifecycleEventHookExecutionId()
         {
-            return this._name != null;
+            return this._lifecycleEventHookExecutionId != null;
         }
 
     }

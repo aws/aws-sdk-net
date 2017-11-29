@@ -94,6 +94,12 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                     unmarshalledObject.BlueGreenDeploymentConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("computePlatform", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ComputePlatform = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("deploymentConfigName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

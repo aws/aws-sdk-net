@@ -877,6 +877,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("CodeDeploy")]
+        public void PutLifecycleEventHookExecutionStatusMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<PutLifecycleEventHookExecutionStatusRequest>();
+            var marshaller = new PutLifecycleEventHookExecutionStatusRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<PutLifecycleEventHookExecutionStatusRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("PutLifecycleEventHookExecutionStatus").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = PutLifecycleEventHookExecutionStatusResponseUnmarshaller.Instance.Unmarshall(context)
+                as PutLifecycleEventHookExecutionStatusResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CodeDeploy")]
         public void RegisterApplicationRevisionMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<RegisterApplicationRevisionRequest>();

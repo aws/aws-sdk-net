@@ -37,6 +37,7 @@ namespace Amazon.CodeDeploy.Model
         private AutoRollbackConfiguration _autoRollbackConfiguration;
         private List<AutoScalingGroup> _autoScalingGroups = new List<AutoScalingGroup>();
         private BlueGreenDeploymentConfiguration _blueGreenDeploymentConfiguration;
+        private ComputePlatform _computePlatform;
         private string _deploymentConfigName;
         private string _deploymentGroupId;
         private string _deploymentGroupName;
@@ -141,6 +142,24 @@ namespace Amazon.CodeDeploy.Model
         internal bool IsSetBlueGreenDeploymentConfiguration()
         {
             return this._blueGreenDeploymentConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ComputePlatform. 
+        /// <para>
+        /// The destination platform type for the deployment group (<code>Lambda</code> or <code>Server</code>).
+        /// </para>
+        /// </summary>
+        public ComputePlatform ComputePlatform
+        {
+            get { return this._computePlatform; }
+            set { this._computePlatform = value; }
+        }
+
+        // Check to see if ComputePlatform property is set
+        internal bool IsSetComputePlatform()
+        {
+            return this._computePlatform != null;
         }
 
         /// <summary>

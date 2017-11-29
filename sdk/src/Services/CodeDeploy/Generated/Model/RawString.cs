@@ -28,49 +28,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateApplication operation.
-    /// Creates an application.
+    /// A revision for an AWS Lambda deployment that is a YAML-formatted or JSON-formatted
+    /// string. For AWS Lambda deployments, the revision is the same as the AppSpec file.
     /// </summary>
-    public partial class CreateApplicationRequest : AmazonCodeDeployRequest
+    public partial class RawString
     {
-        private string _applicationName;
-        private ComputePlatform _computePlatform;
+        private string _content;
+        private string _sha256;
 
         /// <summary>
-        /// Gets and sets the property ApplicationName. 
+        /// Gets and sets the property Content. 
         /// <para>
-        /// The name of the application. This name must be unique with the applicable IAM user
-        /// or AWS account.
+        /// The YAML-formatted or JSON-formatted revision string. It includes information about
+        /// what Lambda function to update and optional Lambda functions that validate deployment
+        /// lifecycle events.
         /// </para>
         /// </summary>
-        public string ApplicationName
+        public string Content
         {
-            get { return this._applicationName; }
-            set { this._applicationName = value; }
+            get { return this._content; }
+            set { this._content = value; }
         }
 
-        // Check to see if ApplicationName property is set
-        internal bool IsSetApplicationName()
+        // Check to see if Content property is set
+        internal bool IsSetContent()
         {
-            return this._applicationName != null;
+            return this._content != null;
         }
 
         /// <summary>
-        /// Gets and sets the property ComputePlatform. 
+        /// Gets and sets the property Sha256. 
         /// <para>
-        /// The destination platform type for the deployment <code>Lambda</code> or <code>Server</code>).
+        /// The SHA256 hash value of the revision that is specified as a RawString.
         /// </para>
         /// </summary>
-        public ComputePlatform ComputePlatform
+        public string Sha256
         {
-            get { return this._computePlatform; }
-            set { this._computePlatform = value; }
+            get { return this._sha256; }
+            set { this._sha256 = value; }
         }
 
-        // Check to see if ComputePlatform property is set
-        internal bool IsSetComputePlatform()
+        // Check to see if Sha256 property is set
+        internal bool IsSetSha256()
         {
-            return this._computePlatform != null;
+            return this._sha256 != null;
         }
 
     }

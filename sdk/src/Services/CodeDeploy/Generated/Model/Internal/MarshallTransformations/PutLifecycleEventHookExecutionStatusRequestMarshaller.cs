@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateDeploymentConfig Request Marshaller
+    /// PutLifecycleEventHookExecutionStatus Request Marshaller
     /// </summary>       
-    public class CreateDeploymentConfigRequestMarshaller : IMarshaller<IRequest, CreateDeploymentConfigRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class PutLifecycleEventHookExecutionStatusRequestMarshaller : IMarshaller<IRequest, PutLifecycleEventHookExecutionStatusRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateDeploymentConfigRequest)input);
+            return this.Marshall((PutLifecycleEventHookExecutionStatusRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateDeploymentConfigRequest publicRequest)
+        public IRequest Marshall(PutLifecycleEventHookExecutionStatusRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CodeDeploy");
-            string target = "CodeDeploy_20141006.CreateDeploymentConfig";
+            string target = "CodeDeploy_20141006.PutLifecycleEventHookExecutionStatus";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -67,38 +67,22 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetComputePlatform())
+                if(publicRequest.IsSetDeploymentId())
                 {
-                    context.Writer.WritePropertyName("computePlatform");
-                    context.Writer.Write(publicRequest.ComputePlatform);
+                    context.Writer.WritePropertyName("deploymentId");
+                    context.Writer.Write(publicRequest.DeploymentId);
                 }
 
-                if(publicRequest.IsSetDeploymentConfigName())
+                if(publicRequest.IsSetLifecycleEventHookExecutionId())
                 {
-                    context.Writer.WritePropertyName("deploymentConfigName");
-                    context.Writer.Write(publicRequest.DeploymentConfigName);
+                    context.Writer.WritePropertyName("lifecycleEventHookExecutionId");
+                    context.Writer.Write(publicRequest.LifecycleEventHookExecutionId);
                 }
 
-                if(publicRequest.IsSetMinimumHealthyHosts())
+                if(publicRequest.IsSetStatus())
                 {
-                    context.Writer.WritePropertyName("minimumHealthyHosts");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = MinimumHealthyHostsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.MinimumHealthyHosts, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTrafficRoutingConfig())
-                {
-                    context.Writer.WritePropertyName("trafficRoutingConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TrafficRoutingConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TrafficRoutingConfig, context);
-
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("status");
+                    context.Writer.Write(publicRequest.Status);
                 }
 
         
