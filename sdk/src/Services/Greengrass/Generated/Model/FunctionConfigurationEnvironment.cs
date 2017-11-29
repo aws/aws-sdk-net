@@ -32,7 +32,40 @@ namespace Amazon.Greengrass.Model
     /// </summary>
     public partial class FunctionConfigurationEnvironment
     {
+        private bool? _accessSysfs;
+        private List<ResourceAccessPolicy> _resourceAccessPolicies = new List<ResourceAccessPolicy>();
         private Dictionary<string, string> _variables = new Dictionary<string, string>();
+
+        /// <summary>
+        /// Gets and sets the property AccessSysfs. Flag to allow lambda access sys filesystem.
+        /// </summary>
+        public bool AccessSysfs
+        {
+            get { return this._accessSysfs.GetValueOrDefault(); }
+            set { this._accessSysfs = value; }
+        }
+
+        // Check to see if AccessSysfs property is set
+        internal bool IsSetAccessSysfs()
+        {
+            return this._accessSysfs.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceAccessPolicies. Policies for the function to access
+        /// resources.
+        /// </summary>
+        public List<ResourceAccessPolicy> ResourceAccessPolicies
+        {
+            get { return this._resourceAccessPolicies; }
+            set { this._resourceAccessPolicies = value; }
+        }
+
+        // Check to see if ResourceAccessPolicies property is set
+        internal bool IsSetResourceAccessPolicies()
+        {
+            return this._resourceAccessPolicies != null && this._resourceAccessPolicies.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Variables. Environment variables for the lambda function.

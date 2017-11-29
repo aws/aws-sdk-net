@@ -70,7 +70,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Definition. Information on the definition.
+        /// Gets and sets the property Definition. Information on the definition
         /// </summary>
         public FunctionDefinitionVersion Definition
         {

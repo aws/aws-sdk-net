@@ -88,6 +88,12 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
                     unmarshalledObject.LoggerDefinitionVersionArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ResourceDefinitionVersionArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ResourceDefinitionVersionArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SubscriptionDefinitionVersionArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

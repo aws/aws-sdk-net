@@ -45,6 +45,28 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FunctionConfigurationEnvironment requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAccessSysfs())
+            {
+                context.Writer.WritePropertyName("AccessSysfs");
+                context.Writer.Write(requestObject.AccessSysfs);
+            }
+
+            if(requestObject.IsSetResourceAccessPolicies())
+            {
+                context.Writer.WritePropertyName("ResourceAccessPolicies");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectResourceAccessPoliciesListValue in requestObject.ResourceAccessPolicies)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ResourceAccessPolicyMarshaller.Instance;
+                    marshaller.Marshall(requestObjectResourceAccessPoliciesListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetVariables())
             {
                 context.Writer.WritePropertyName("Variables");

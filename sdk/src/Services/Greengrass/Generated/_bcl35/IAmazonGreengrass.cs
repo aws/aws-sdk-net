@@ -664,6 +664,141 @@ namespace Amazon.Greengrass
 
         #endregion
         
+        #region  CreateResourceDefinition
+
+
+        /// <summary>
+        /// Creates a resource definition which contains a list of resources to be used in a group.
+        /// You can create an initial version of the definition by providing a list of resources
+        /// now, or use ``CreateResourceDefinitionVersion`` later.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateResourceDefinition service method.</param>
+        /// 
+        /// <returns>The response from the CreateResourceDefinition service method, as returned by Greengrass.</returns>
+        /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
+        /// General Error
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateResourceDefinition">REST API Reference for CreateResourceDefinition Operation</seealso>
+        CreateResourceDefinitionResponse CreateResourceDefinition(CreateResourceDefinitionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateResourceDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateResourceDefinition operation on AmazonGreengrassClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateResourceDefinition
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateResourceDefinition">REST API Reference for CreateResourceDefinition Operation</seealso>
+        IAsyncResult BeginCreateResourceDefinition(CreateResourceDefinitionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateResourceDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateResourceDefinition.</param>
+        /// 
+        /// <returns>Returns a  CreateResourceDefinitionResult from Greengrass.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateResourceDefinition">REST API Reference for CreateResourceDefinition Operation</seealso>
+        CreateResourceDefinitionResponse EndCreateResourceDefinition(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateResourceDefinitionVersion
+
+
+        /// <summary>
+        /// Create a version of a resource definition that has already been defined.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateResourceDefinitionVersion service method.</param>
+        /// 
+        /// <returns>The response from the CreateResourceDefinitionVersion service method, as returned by Greengrass.</returns>
+        /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
+        /// General Error
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateResourceDefinitionVersion">REST API Reference for CreateResourceDefinitionVersion Operation</seealso>
+        CreateResourceDefinitionVersionResponse CreateResourceDefinitionVersion(CreateResourceDefinitionVersionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateResourceDefinitionVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateResourceDefinitionVersion operation on AmazonGreengrassClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateResourceDefinitionVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateResourceDefinitionVersion">REST API Reference for CreateResourceDefinitionVersion Operation</seealso>
+        IAsyncResult BeginCreateResourceDefinitionVersion(CreateResourceDefinitionVersionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateResourceDefinitionVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateResourceDefinitionVersion.</param>
+        /// 
+        /// <returns>Returns a  CreateResourceDefinitionVersionResult from Greengrass.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateResourceDefinitionVersion">REST API Reference for CreateResourceDefinitionVersion Operation</seealso>
+        CreateResourceDefinitionVersionResponse EndCreateResourceDefinitionVersion(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateSoftwareUpdateJob
+
+
+        /// <summary>
+        /// Creates an Iot Job that will trigger your Greengrass Cores to update the software
+        /// they are running.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSoftwareUpdateJob service method.</param>
+        /// 
+        /// <returns>The response from the CreateSoftwareUpdateJob service method, as returned by Greengrass.</returns>
+        /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
+        /// General Error
+        /// </exception>
+        /// <exception cref="Amazon.Greengrass.Model.InternalServerErrorException">
+        /// General Error
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateSoftwareUpdateJob">REST API Reference for CreateSoftwareUpdateJob Operation</seealso>
+        CreateSoftwareUpdateJobResponse CreateSoftwareUpdateJob(CreateSoftwareUpdateJobRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateSoftwareUpdateJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateSoftwareUpdateJob operation on AmazonGreengrassClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSoftwareUpdateJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateSoftwareUpdateJob">REST API Reference for CreateSoftwareUpdateJob Operation</seealso>
+        IAsyncResult BeginCreateSoftwareUpdateJob(CreateSoftwareUpdateJobRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateSoftwareUpdateJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateSoftwareUpdateJob.</param>
+        /// 
+        /// <returns>Returns a  CreateSoftwareUpdateJobResult from Greengrass.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateSoftwareUpdateJob">REST API Reference for CreateSoftwareUpdateJob Operation</seealso>
+        CreateSoftwareUpdateJobResponse EndCreateSoftwareUpdateJob(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateSubscriptionDefinition
 
 
@@ -965,6 +1100,49 @@ namespace Amazon.Greengrass
         /// <returns>Returns a  DeleteLoggerDefinitionResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteLoggerDefinition">REST API Reference for DeleteLoggerDefinition Operation</seealso>
         DeleteLoggerDefinitionResponse EndDeleteLoggerDefinition(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteResourceDefinition
+
+
+        /// <summary>
+        /// Deletes a resource definition.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourceDefinition service method.</param>
+        /// 
+        /// <returns>The response from the DeleteResourceDefinition service method, as returned by Greengrass.</returns>
+        /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
+        /// General Error
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteResourceDefinition">REST API Reference for DeleteResourceDefinition Operation</seealso>
+        DeleteResourceDefinitionResponse DeleteResourceDefinition(DeleteResourceDefinitionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteResourceDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourceDefinition operation on AmazonGreengrassClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteResourceDefinition
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteResourceDefinition">REST API Reference for DeleteResourceDefinition Operation</seealso>
+        IAsyncResult BeginDeleteResourceDefinition(DeleteResourceDefinitionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteResourceDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteResourceDefinition.</param>
+        /// 
+        /// <returns>Returns a  DeleteResourceDefinitionResult from Greengrass.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteResourceDefinition">REST API Reference for DeleteResourceDefinition Operation</seealso>
+        DeleteResourceDefinitionResponse EndDeleteResourceDefinition(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1761,6 +1939,94 @@ namespace Amazon.Greengrass
 
         #endregion
         
+        #region  GetResourceDefinition
+
+
+        /// <summary>
+        /// Retrieves information about a resource definition, such as its creation time and latest
+        /// version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourceDefinition service method.</param>
+        /// 
+        /// <returns>The response from the GetResourceDefinition service method, as returned by Greengrass.</returns>
+        /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
+        /// General Error
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetResourceDefinition">REST API Reference for GetResourceDefinition Operation</seealso>
+        GetResourceDefinitionResponse GetResourceDefinition(GetResourceDefinitionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetResourceDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetResourceDefinition operation on AmazonGreengrassClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetResourceDefinition
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetResourceDefinition">REST API Reference for GetResourceDefinition Operation</seealso>
+        IAsyncResult BeginGetResourceDefinition(GetResourceDefinitionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetResourceDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetResourceDefinition.</param>
+        /// 
+        /// <returns>Returns a  GetResourceDefinitionResult from Greengrass.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetResourceDefinition">REST API Reference for GetResourceDefinition Operation</seealso>
+        GetResourceDefinitionResponse EndGetResourceDefinition(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetResourceDefinitionVersion
+
+
+        /// <summary>
+        /// Retrieves information about a resource definition version, such as which resources
+        /// are included in the version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourceDefinitionVersion service method.</param>
+        /// 
+        /// <returns>The response from the GetResourceDefinitionVersion service method, as returned by Greengrass.</returns>
+        /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
+        /// General Error
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetResourceDefinitionVersion">REST API Reference for GetResourceDefinitionVersion Operation</seealso>
+        GetResourceDefinitionVersionResponse GetResourceDefinitionVersion(GetResourceDefinitionVersionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetResourceDefinitionVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetResourceDefinitionVersion operation on AmazonGreengrassClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetResourceDefinitionVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetResourceDefinitionVersion">REST API Reference for GetResourceDefinitionVersion Operation</seealso>
+        IAsyncResult BeginGetResourceDefinitionVersion(GetResourceDefinitionVersionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetResourceDefinitionVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetResourceDefinitionVersion.</param>
+        /// 
+        /// <returns>Returns a  GetResourceDefinitionVersionResult from Greengrass.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetResourceDefinitionVersion">REST API Reference for GetResourceDefinitionVersion Operation</seealso>
+        GetResourceDefinitionVersionResponse EndGetResourceDefinitionVersion(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetServiceRoleForAccount
 
 
@@ -2394,6 +2660,89 @@ namespace Amazon.Greengrass
 
         #endregion
         
+        #region  ListResourceDefinitions
+
+
+        /// <summary>
+        /// Retrieves a list of resource definitions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceDefinitions service method.</param>
+        /// 
+        /// <returns>The response from the ListResourceDefinitions service method, as returned by Greengrass.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListResourceDefinitions">REST API Reference for ListResourceDefinitions Operation</seealso>
+        ListResourceDefinitionsResponse ListResourceDefinitions(ListResourceDefinitionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListResourceDefinitions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceDefinitions operation on AmazonGreengrassClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListResourceDefinitions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListResourceDefinitions">REST API Reference for ListResourceDefinitions Operation</seealso>
+        IAsyncResult BeginListResourceDefinitions(ListResourceDefinitionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListResourceDefinitions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListResourceDefinitions.</param>
+        /// 
+        /// <returns>Returns a  ListResourceDefinitionsResult from Greengrass.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListResourceDefinitions">REST API Reference for ListResourceDefinitions Operation</seealso>
+        ListResourceDefinitionsResponse EndListResourceDefinitions(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListResourceDefinitionVersions
+
+
+        /// <summary>
+        /// Lists the versions of a resource definition.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceDefinitionVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListResourceDefinitionVersions service method, as returned by Greengrass.</returns>
+        /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
+        /// General Error
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListResourceDefinitionVersions">REST API Reference for ListResourceDefinitionVersions Operation</seealso>
+        ListResourceDefinitionVersionsResponse ListResourceDefinitionVersions(ListResourceDefinitionVersionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListResourceDefinitionVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceDefinitionVersions operation on AmazonGreengrassClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListResourceDefinitionVersions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListResourceDefinitionVersions">REST API Reference for ListResourceDefinitionVersions Operation</seealso>
+        IAsyncResult BeginListResourceDefinitionVersions(ListResourceDefinitionVersionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListResourceDefinitionVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListResourceDefinitionVersions.</param>
+        /// 
+        /// <returns>Returns a  ListResourceDefinitionVersionsResult from Greengrass.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListResourceDefinitionVersions">REST API Reference for ListResourceDefinitionVersions Operation</seealso>
+        ListResourceDefinitionVersionsResponse EndListResourceDefinitionVersions(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListSubscriptionDefinitions
 
 
@@ -2826,6 +3175,49 @@ namespace Amazon.Greengrass
         /// <returns>Returns a  UpdateLoggerDefinitionResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateLoggerDefinition">REST API Reference for UpdateLoggerDefinition Operation</seealso>
         UpdateLoggerDefinitionResponse EndUpdateLoggerDefinition(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateResourceDefinition
+
+
+        /// <summary>
+        /// Updates a resource definition.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateResourceDefinition service method.</param>
+        /// 
+        /// <returns>The response from the UpdateResourceDefinition service method, as returned by Greengrass.</returns>
+        /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
+        /// General Error
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateResourceDefinition">REST API Reference for UpdateResourceDefinition Operation</seealso>
+        UpdateResourceDefinitionResponse UpdateResourceDefinition(UpdateResourceDefinitionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateResourceDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateResourceDefinition operation on AmazonGreengrassClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateResourceDefinition
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateResourceDefinition">REST API Reference for UpdateResourceDefinition Operation</seealso>
+        IAsyncResult BeginUpdateResourceDefinition(UpdateResourceDefinitionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateResourceDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateResourceDefinition.</param>
+        /// 
+        /// <returns>Returns a  UpdateResourceDefinitionResult from Greengrass.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateResourceDefinition">REST API Reference for UpdateResourceDefinition Operation</seealso>
+        UpdateResourceDefinitionResponse EndUpdateResourceDefinition(IAsyncResult asyncResult);
 
         #endregion
         

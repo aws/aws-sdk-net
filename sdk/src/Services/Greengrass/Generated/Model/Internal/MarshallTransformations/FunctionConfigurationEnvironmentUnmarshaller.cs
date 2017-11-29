@@ -64,6 +64,18 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AccessSysfs", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.AccessSysfs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ResourceAccessPolicies", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ResourceAccessPolicy, ResourceAccessPolicyUnmarshaller>(ResourceAccessPolicyUnmarshaller.Instance);
+                    unmarshalledObject.ResourceAccessPolicies = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Variables", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);

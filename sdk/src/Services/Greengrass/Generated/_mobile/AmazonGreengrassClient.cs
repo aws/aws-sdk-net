@@ -683,6 +683,102 @@ namespace Amazon.Greengrass
 
         #endregion
         
+        #region  CreateResourceDefinition
+
+        internal virtual CreateResourceDefinitionResponse CreateResourceDefinition(CreateResourceDefinitionRequest request)
+        {
+            var marshaller = new CreateResourceDefinitionRequestMarshaller();
+            var unmarshaller = CreateResourceDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateResourceDefinitionRequest,CreateResourceDefinitionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateResourceDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateResourceDefinition operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateResourceDefinition">REST API Reference for CreateResourceDefinition Operation</seealso>
+        public virtual Task<CreateResourceDefinitionResponse> CreateResourceDefinitionAsync(CreateResourceDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateResourceDefinitionRequestMarshaller();
+            var unmarshaller = CreateResourceDefinitionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateResourceDefinitionRequest,CreateResourceDefinitionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateResourceDefinitionVersion
+
+        internal virtual CreateResourceDefinitionVersionResponse CreateResourceDefinitionVersion(CreateResourceDefinitionVersionRequest request)
+        {
+            var marshaller = new CreateResourceDefinitionVersionRequestMarshaller();
+            var unmarshaller = CreateResourceDefinitionVersionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateResourceDefinitionVersionRequest,CreateResourceDefinitionVersionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateResourceDefinitionVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateResourceDefinitionVersion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateResourceDefinitionVersion">REST API Reference for CreateResourceDefinitionVersion Operation</seealso>
+        public virtual Task<CreateResourceDefinitionVersionResponse> CreateResourceDefinitionVersionAsync(CreateResourceDefinitionVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateResourceDefinitionVersionRequestMarshaller();
+            var unmarshaller = CreateResourceDefinitionVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateResourceDefinitionVersionRequest,CreateResourceDefinitionVersionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateSoftwareUpdateJob
+
+        internal virtual CreateSoftwareUpdateJobResponse CreateSoftwareUpdateJob(CreateSoftwareUpdateJobRequest request)
+        {
+            var marshaller = new CreateSoftwareUpdateJobRequestMarshaller();
+            var unmarshaller = CreateSoftwareUpdateJobResponseUnmarshaller.Instance;
+
+            return Invoke<CreateSoftwareUpdateJobRequest,CreateSoftwareUpdateJobResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateSoftwareUpdateJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateSoftwareUpdateJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateSoftwareUpdateJob">REST API Reference for CreateSoftwareUpdateJob Operation</seealso>
+        public virtual Task<CreateSoftwareUpdateJobResponse> CreateSoftwareUpdateJobAsync(CreateSoftwareUpdateJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateSoftwareUpdateJobRequestMarshaller();
+            var unmarshaller = CreateSoftwareUpdateJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateSoftwareUpdateJobRequest,CreateSoftwareUpdateJobResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateSubscriptionDefinition
 
         internal virtual CreateSubscriptionDefinitionResponse CreateSubscriptionDefinition(CreateSubscriptionDefinitionRequest request)
@@ -902,6 +998,38 @@ namespace Amazon.Greengrass
             var unmarshaller = DeleteLoggerDefinitionResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteLoggerDefinitionRequest,DeleteLoggerDefinitionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteResourceDefinition
+
+        internal virtual DeleteResourceDefinitionResponse DeleteResourceDefinition(DeleteResourceDefinitionRequest request)
+        {
+            var marshaller = new DeleteResourceDefinitionRequestMarshaller();
+            var unmarshaller = DeleteResourceDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteResourceDefinitionRequest,DeleteResourceDefinitionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteResourceDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourceDefinition operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteResourceDefinition">REST API Reference for DeleteResourceDefinition Operation</seealso>
+        public virtual Task<DeleteResourceDefinitionResponse> DeleteResourceDefinitionAsync(DeleteResourceDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteResourceDefinitionRequestMarshaller();
+            var unmarshaller = DeleteResourceDefinitionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteResourceDefinitionRequest,DeleteResourceDefinitionResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1483,6 +1611,70 @@ namespace Amazon.Greengrass
 
         #endregion
         
+        #region  GetResourceDefinition
+
+        internal virtual GetResourceDefinitionResponse GetResourceDefinition(GetResourceDefinitionRequest request)
+        {
+            var marshaller = new GetResourceDefinitionRequestMarshaller();
+            var unmarshaller = GetResourceDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<GetResourceDefinitionRequest,GetResourceDefinitionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetResourceDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetResourceDefinition operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetResourceDefinition">REST API Reference for GetResourceDefinition Operation</seealso>
+        public virtual Task<GetResourceDefinitionResponse> GetResourceDefinitionAsync(GetResourceDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetResourceDefinitionRequestMarshaller();
+            var unmarshaller = GetResourceDefinitionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetResourceDefinitionRequest,GetResourceDefinitionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetResourceDefinitionVersion
+
+        internal virtual GetResourceDefinitionVersionResponse GetResourceDefinitionVersion(GetResourceDefinitionVersionRequest request)
+        {
+            var marshaller = new GetResourceDefinitionVersionRequestMarshaller();
+            var unmarshaller = GetResourceDefinitionVersionResponseUnmarshaller.Instance;
+
+            return Invoke<GetResourceDefinitionVersionRequest,GetResourceDefinitionVersionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetResourceDefinitionVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetResourceDefinitionVersion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetResourceDefinitionVersion">REST API Reference for GetResourceDefinitionVersion Operation</seealso>
+        public virtual Task<GetResourceDefinitionVersionResponse> GetResourceDefinitionVersionAsync(GetResourceDefinitionVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetResourceDefinitionVersionRequestMarshaller();
+            var unmarshaller = GetResourceDefinitionVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetResourceDefinitionVersionRequest,GetResourceDefinitionVersionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetServiceRoleForAccount
 
         internal virtual GetServiceRoleForAccountResponse GetServiceRoleForAccount(GetServiceRoleForAccountRequest request)
@@ -1963,6 +2155,70 @@ namespace Amazon.Greengrass
 
         #endregion
         
+        #region  ListResourceDefinitions
+
+        internal virtual ListResourceDefinitionsResponse ListResourceDefinitions(ListResourceDefinitionsRequest request)
+        {
+            var marshaller = new ListResourceDefinitionsRequestMarshaller();
+            var unmarshaller = ListResourceDefinitionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListResourceDefinitionsRequest,ListResourceDefinitionsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListResourceDefinitions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceDefinitions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListResourceDefinitions">REST API Reference for ListResourceDefinitions Operation</seealso>
+        public virtual Task<ListResourceDefinitionsResponse> ListResourceDefinitionsAsync(ListResourceDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListResourceDefinitionsRequestMarshaller();
+            var unmarshaller = ListResourceDefinitionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListResourceDefinitionsRequest,ListResourceDefinitionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListResourceDefinitionVersions
+
+        internal virtual ListResourceDefinitionVersionsResponse ListResourceDefinitionVersions(ListResourceDefinitionVersionsRequest request)
+        {
+            var marshaller = new ListResourceDefinitionVersionsRequestMarshaller();
+            var unmarshaller = ListResourceDefinitionVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListResourceDefinitionVersionsRequest,ListResourceDefinitionVersionsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListResourceDefinitionVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceDefinitionVersions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListResourceDefinitionVersions">REST API Reference for ListResourceDefinitionVersions Operation</seealso>
+        public virtual Task<ListResourceDefinitionVersionsResponse> ListResourceDefinitionVersionsAsync(ListResourceDefinitionVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListResourceDefinitionVersionsRequestMarshaller();
+            var unmarshaller = ListResourceDefinitionVersionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListResourceDefinitionVersionsRequest,ListResourceDefinitionVersionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListSubscriptionDefinitions
 
         internal virtual ListSubscriptionDefinitionsResponse ListSubscriptionDefinitions(ListSubscriptionDefinitionsRequest request)
@@ -2278,6 +2534,38 @@ namespace Amazon.Greengrass
             var unmarshaller = UpdateLoggerDefinitionResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateLoggerDefinitionRequest,UpdateLoggerDefinitionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateResourceDefinition
+
+        internal virtual UpdateResourceDefinitionResponse UpdateResourceDefinition(UpdateResourceDefinitionRequest request)
+        {
+            var marshaller = new UpdateResourceDefinitionRequestMarshaller();
+            var unmarshaller = UpdateResourceDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateResourceDefinitionRequest,UpdateResourceDefinitionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateResourceDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateResourceDefinition operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateResourceDefinition">REST API Reference for UpdateResourceDefinition Operation</seealso>
+        public virtual Task<UpdateResourceDefinitionResponse> UpdateResourceDefinitionAsync(UpdateResourceDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateResourceDefinitionRequestMarshaller();
+            var unmarshaller = UpdateResourceDefinitionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateResourceDefinitionRequest,UpdateResourceDefinitionResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

@@ -36,6 +36,7 @@ namespace Amazon.Greengrass.Model
         private string _deviceDefinitionVersionArn;
         private string _functionDefinitionVersionArn;
         private string _loggerDefinitionVersionArn;
+        private string _resourceDefinitionVersionArn;
         private string _subscriptionDefinitionVersionArn;
 
         /// <summary>
@@ -87,7 +88,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LoggerDefinitionVersionArn. Logger definitionv ersion arn
+        /// Gets and sets the property LoggerDefinitionVersionArn. Logger definition version arn
         /// for this group.
         /// </summary>
         public string LoggerDefinitionVersionArn
@@ -100,6 +101,22 @@ namespace Amazon.Greengrass.Model
         internal bool IsSetLoggerDefinitionVersionArn()
         {
             return this._loggerDefinitionVersionArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceDefinitionVersionArn. Resource definition version
+        /// arn for this group.
+        /// </summary>
+        public string ResourceDefinitionVersionArn
+        {
+            get { return this._resourceDefinitionVersionArn; }
+            set { this._resourceDefinitionVersionArn = value; }
+        }
+
+        // Check to see if ResourceDefinitionVersionArn property is set
+        internal bool IsSetResourceDefinitionVersionArn()
+        {
+            return this._resourceDefinitionVersionArn != null;
         }
 
         /// <summary>

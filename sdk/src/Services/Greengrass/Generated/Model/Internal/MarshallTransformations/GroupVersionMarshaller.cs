@@ -69,6 +69,12 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.LoggerDefinitionVersionArn);
             }
 
+            if(requestObject.IsSetResourceDefinitionVersionArn())
+            {
+                context.Writer.WritePropertyName("ResourceDefinitionVersionArn");
+                context.Writer.Write(requestObject.ResourceDefinitionVersionArn);
+            }
+
             if(requestObject.IsSetSubscriptionDefinitionVersionArn())
             {
                 context.Writer.WritePropertyName("SubscriptionDefinitionVersionArn");
