@@ -28,47 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// An object representing an AWS Batch job dependency.
+    /// An object representing an AWS Batch array job.
     /// </summary>
-    public partial class JobDependency
+    public partial class ArrayProperties
     {
-        private string _jobId;
-        private ArrayJobDependency _type;
+        private int? _size;
 
         /// <summary>
-        /// Gets and sets the property JobId. 
+        /// Gets and sets the property Size. 
         /// <para>
-        /// The job ID of the AWS Batch job associated with this dependency.
+        /// The size of the array job.
         /// </para>
         /// </summary>
-        public string JobId
+        public int Size
         {
-            get { return this._jobId; }
-            set { this._jobId = value; }
+            get { return this._size.GetValueOrDefault(); }
+            set { this._size = value; }
         }
 
-        // Check to see if JobId property is set
-        internal bool IsSetJobId()
+        // Check to see if Size property is set
+        internal bool IsSetSize()
         {
-            return this._jobId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Type. 
-        /// <para>
-        /// The type of the job dependency.
-        /// </para>
-        /// </summary>
-        public ArrayJobDependency Type
-        {
-            get { return this._type; }
-            set { this._type = value; }
-        }
-
-        // Check to see if Type property is set
-        internal bool IsSetType()
-        {
-            return this._type != null;
+            return this._size.HasValue; 
         }
 
     }

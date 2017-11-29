@@ -65,6 +65,17 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetArrayProperties())
+                {
+                    context.Writer.WritePropertyName("arrayProperties");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ArrayPropertiesMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ArrayProperties, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetContainerOverrides())
                 {
                     context.Writer.WritePropertyName("containerOverrides");

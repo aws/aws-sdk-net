@@ -35,10 +35,30 @@ namespace Amazon.Batch.Model
     /// </summary>
     public partial class ListJobsRequest : AmazonBatchRequest
     {
+        private string _arrayJobId;
         private string _jobQueue;
         private JobStatus _jobStatus;
         private int? _maxResults;
         private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property ArrayJobId. 
+        /// <para>
+        /// The job ID for an array job. Specifying an array job ID with this parameter lists
+        /// all child jobs from within the specified array.
+        /// </para>
+        /// </summary>
+        public string ArrayJobId
+        {
+            get { return this._arrayJobId; }
+            set { this._arrayJobId = value; }
+        }
+
+        // Check to see if ArrayJobId property is set
+        internal bool IsSetArrayJobId()
+        {
+            return this._arrayJobId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property JobQueue. 

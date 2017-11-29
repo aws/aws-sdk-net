@@ -34,6 +34,7 @@ namespace Amazon.Batch.Model
     /// </summary>
     public partial class SubmitJobRequest : AmazonBatchRequest
     {
+        private ArrayProperties _arrayProperties;
         private ContainerOverrides _containerOverrides;
         private List<JobDependency> _dependsOn = new List<JobDependency>();
         private string _jobDefinition;
@@ -41,6 +42,27 @@ namespace Amazon.Batch.Model
         private string _jobQueue;
         private Dictionary<string, string> _parameters = new Dictionary<string, string>();
         private RetryStrategy _retryStrategy;
+
+        /// <summary>
+        /// Gets and sets the property ArrayProperties. 
+        /// <para>
+        /// The array properties for the submitted job, such as the size of the array. The array
+        /// size can be between 2 and 10,000. If you specify array properties for a job, it becomes
+        /// an array job. For more information, see <a href="http://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array
+        /// Jobs</a> in the <i>AWS Batch User Guide</i>.
+        /// </para>
+        /// </summary>
+        public ArrayProperties ArrayProperties
+        {
+            get { return this._arrayProperties; }
+            set { this._arrayProperties = value; }
+        }
+
+        // Check to see if ArrayProperties property is set
+        internal bool IsSetArrayProperties()
+        {
+            return this._arrayProperties != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ContainerOverrides. 
@@ -69,8 +91,12 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property DependsOn. 
         /// <para>
-        /// A list of job IDs on which this job depends. A job can depend upon a maximum of 20
-        /// jobs. 
+        /// A list of dependencies for the job. A job can depend upon a maximum of 20 jobs. You
+        /// can specify a <code>SEQUENTIAL</code> type dependency without specifying a job ID
+        /// for array jobs so that each child array job completes sequentially, starting at index
+        /// 0. You can also specify an <code>N_TO_N</code> type dependency with a job ID for array
+        /// jobs so that each index child of this job must wait for the corresponding index child
+        /// of each dependency to complete before it can begin.
         /// </para>
         /// </summary>
         public List<JobDependency> DependsOn
@@ -126,8 +152,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property JobQueue. 
         /// <para>
-        /// The job queue into which the job will be submitted. You can specify either the name
-        /// or the Amazon Resource Name (ARN) of the queue. 
+        /// The job queue into which the job is submitted. You can specify either the name or
+        /// the Amazon Resource Name (ARN) of the queue. 
         /// </para>
         /// </summary>
         public string JobQueue

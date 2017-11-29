@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for JobDependency Object
+    /// Response Unmarshaller for ContainerSummary Object
     /// </summary>  
-    public class JobDependencyUnmarshaller : IUnmarshaller<JobDependency, XmlUnmarshallerContext>, IUnmarshaller<JobDependency, JsonUnmarshallerContext>
+    public class ContainerSummaryUnmarshaller : IUnmarshaller<ContainerSummary, XmlUnmarshallerContext>, IUnmarshaller<ContainerSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        JobDependency IUnmarshaller<JobDependency, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ContainerSummary IUnmarshaller<ContainerSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,27 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public JobDependency Unmarshall(JsonUnmarshallerContext context)
+        public ContainerSummary Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            JobDependency unmarshalledObject = new JobDependency();
+            ContainerSummary unmarshalledObject = new ContainerSummary();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("jobId", targetDepth))
+                if (context.TestExpression("exitCode", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.JobId = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.ExitCode = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("type", targetDepth))
+                if (context.TestExpression("reason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Reason = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +82,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         }
 
 
-        private static JobDependencyUnmarshaller _instance = new JobDependencyUnmarshaller();        
+        private static ContainerSummaryUnmarshaller _instance = new ContainerSummaryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static JobDependencyUnmarshaller Instance
+        public static ContainerSummaryUnmarshaller Instance
         {
             get
             {

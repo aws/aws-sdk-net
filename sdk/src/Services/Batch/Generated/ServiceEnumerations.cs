@@ -25,6 +25,56 @@ namespace Amazon.Batch
 {
 
     /// <summary>
+    /// Constants used for properties of type ArrayJobDependency.
+    /// </summary>
+    public class ArrayJobDependency : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant N_TO_N for ArrayJobDependency
+        /// </summary>
+        public static readonly ArrayJobDependency N_TO_N = new ArrayJobDependency("N_TO_N");
+        /// <summary>
+        /// Constant SEQUENTIAL for ArrayJobDependency
+        /// </summary>
+        public static readonly ArrayJobDependency SEQUENTIAL = new ArrayJobDependency("SEQUENTIAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ArrayJobDependency(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ArrayJobDependency FindValue(string value)
+        {
+            return FindValue<ArrayJobDependency>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ArrayJobDependency(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CEState.
     /// </summary>
     public class CEState : ConstantClass

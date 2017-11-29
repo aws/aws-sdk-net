@@ -28,47 +28,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// An object representing an AWS Batch job dependency.
+    /// An object representing the array properties of a job.
     /// </summary>
-    public partial class JobDependency
+    public partial class ArrayPropertiesSummary
     {
-        private string _jobId;
-        private ArrayJobDependency _type;
+        private int? _index;
+        private int? _size;
 
         /// <summary>
-        /// Gets and sets the property JobId. 
+        /// Gets and sets the property Index. 
         /// <para>
-        /// The job ID of the AWS Batch job associated with this dependency.
+        /// The job index within the array that is associated with this job. This parameter is
+        /// returned for children of array jobs.
         /// </para>
         /// </summary>
-        public string JobId
+        public int Index
         {
-            get { return this._jobId; }
-            set { this._jobId = value; }
+            get { return this._index.GetValueOrDefault(); }
+            set { this._index = value; }
         }
 
-        // Check to see if JobId property is set
-        internal bool IsSetJobId()
+        // Check to see if Index property is set
+        internal bool IsSetIndex()
         {
-            return this._jobId != null;
+            return this._index.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property Type. 
+        /// Gets and sets the property Size. 
         /// <para>
-        /// The type of the job dependency.
+        /// The size of the array job. This parameter is returned for parent array jobs.
         /// </para>
         /// </summary>
-        public ArrayJobDependency Type
+        public int Size
         {
-            get { return this._type; }
-            set { this._type = value; }
+            get { return this._size.GetValueOrDefault(); }
+            set { this._size = value; }
         }
 
-        // Check to see if Type property is set
-        internal bool IsSetType()
+        // Check to see if Size property is set
+        internal bool IsSetSize()
         {
-            return this._type != null;
+            return this._size.HasValue; 
         }
 
     }

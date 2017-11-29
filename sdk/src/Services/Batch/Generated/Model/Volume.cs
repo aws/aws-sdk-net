@@ -40,8 +40,9 @@ namespace Amazon.Batch.Model
         /// <para>
         /// The contents of the <code>host</code> parameter determine whether your data volume
         /// persists on the host container instance and where it is stored. If the host parameter
-        /// is empty, then the Docker daemon assigns a host path for your data volume, but the
-        /// data is not guaranteed to persist after the containers associated with it stop running.
+        /// is empty, then the Docker daemon assigns a host path for your data volume. However,
+        /// the data is not guaranteed to persist after the containers associated with it stop
+        /// running.
         /// </para>
         /// </summary>
         public Host Host

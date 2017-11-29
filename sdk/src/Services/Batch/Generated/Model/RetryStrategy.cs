@@ -38,8 +38,9 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property Attempts. 
         /// <para>
         /// The number of times to move a job to the <code>RUNNABLE</code> status. You may specify
-        /// between 1 and 10 attempts. If <code>attempts</code> is greater than one, the job is
-        /// retried if it fails until it has moved to <code>RUNNABLE</code> that many times.
+        /// between 1 and 10 attempts. If the value of <code>attempts</code> is greater than one,
+        /// the job is retried if it fails until it has moved to <code>RUNNABLE</code> that many
+        /// times.
         /// </para>
         /// </summary>
         public int Attempts

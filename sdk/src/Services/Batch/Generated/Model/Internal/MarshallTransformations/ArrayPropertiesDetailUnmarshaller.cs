@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for JobDependency Object
+    /// Response Unmarshaller for ArrayPropertiesDetail Object
     /// </summary>  
-    public class JobDependencyUnmarshaller : IUnmarshaller<JobDependency, XmlUnmarshallerContext>, IUnmarshaller<JobDependency, JsonUnmarshallerContext>
+    public class ArrayPropertiesDetailUnmarshaller : IUnmarshaller<ArrayPropertiesDetail, XmlUnmarshallerContext>, IUnmarshaller<ArrayPropertiesDetail, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        JobDependency IUnmarshaller<JobDependency, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ArrayPropertiesDetail IUnmarshaller<ArrayPropertiesDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,33 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public JobDependency Unmarshall(JsonUnmarshallerContext context)
+        public ArrayPropertiesDetail Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            JobDependency unmarshalledObject = new JobDependency();
+            ArrayPropertiesDetail unmarshalledObject = new ArrayPropertiesDetail();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("jobId", targetDepth))
+                if (context.TestExpression("index", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.JobId = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Index = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("type", targetDepth))
+                if (context.TestExpression("size", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Size = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("statusSummary", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, int, StringUnmarshaller, IntUnmarshaller>(StringUnmarshaller.Instance, IntUnmarshaller.Instance);
+                    unmarshalledObject.StatusSummary = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +88,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         }
 
 
-        private static JobDependencyUnmarshaller _instance = new JobDependencyUnmarshaller();        
+        private static ArrayPropertiesDetailUnmarshaller _instance = new ArrayPropertiesDetailUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static JobDependencyUnmarshaller Instance
+        public static ArrayPropertiesDetailUnmarshaller Instance
         {
             get
             {

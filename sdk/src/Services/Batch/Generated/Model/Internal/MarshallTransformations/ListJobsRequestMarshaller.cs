@@ -65,6 +65,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetArrayJobId())
+                {
+                    context.Writer.WritePropertyName("arrayJobId");
+                    context.Writer.Write(publicRequest.ArrayJobId);
+                }
+
                 if(publicRequest.IsSetJobQueue())
                 {
                     context.Writer.WritePropertyName("jobQueue");

@@ -58,8 +58,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property StartedAt. 
         /// <para>
-        /// The Unix timestamp for when the attempt was started (when the task transitioned from
-        /// the <code>PENDING</code> state to the <code>RUNNING</code> state).
+        /// The Unix time stamp for when the attempt was started (when the attempt transitioned
+        /// from the <code>STARTING</code> state to the <code>RUNNING</code> state).
         /// </para>
         /// </summary>
         public long StartedAt
@@ -96,8 +96,9 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property StoppedAt. 
         /// <para>
-        /// The Unix timestamp for when the attempt was stopped (when the task transitioned from
-        /// the <code>RUNNING</code> state to the <code>STOPPED</code> state).
+        /// The Unix time stamp for when the attempt was stopped (when the attempt transitioned
+        /// from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code>
+        /// or <code>FAILED</code>).
         /// </para>
         /// </summary>
         public long StoppedAt

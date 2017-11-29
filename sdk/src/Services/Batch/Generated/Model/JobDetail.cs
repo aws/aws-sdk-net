@@ -32,6 +32,7 @@ namespace Amazon.Batch.Model
     /// </summary>
     public partial class JobDetail
     {
+        private ArrayPropertiesDetail _arrayProperties;
         private List<AttemptDetail> _attempts = new List<AttemptDetail>();
         private ContainerDetail _container;
         private long? _createdAt;
@@ -46,6 +47,24 @@ namespace Amazon.Batch.Model
         private JobStatus _status;
         private string _statusReason;
         private long? _stoppedAt;
+
+        /// <summary>
+        /// Gets and sets the property ArrayProperties. 
+        /// <para>
+        /// The array properties of the job, if it is an array job.
+        /// </para>
+        /// </summary>
+        public ArrayPropertiesDetail ArrayProperties
+        {
+            get { return this._arrayProperties; }
+            set { this._arrayProperties = value; }
+        }
+
+        // Check to see if ArrayProperties property is set
+        internal bool IsSetArrayProperties()
+        {
+            return this._arrayProperties != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Attempts. 
@@ -86,8 +105,10 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The Unix timestamp for when the job was created (when the task entered the <code>PENDING</code>
-        /// state). 
+        /// The Unix time stamp for when the job was created. For non-array jobs and parent array
+        /// jobs, this is when the job entered the <code>SUBMITTED</code> state (at the time <a>SubmitJob</a>
+        /// was called). For array child jobs, this is when the child job was spawned by its parent
+        /// and entered the <code>PENDING</code> state.
         /// </para>
         /// </summary>
         public long CreatedAt
@@ -232,8 +253,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property StartedAt. 
         /// <para>
-        /// The Unix timestamp for when the job was started (when the task transitioned from the
-        /// <code>PENDING</code> state to the <code>RUNNING</code> state). 
+        /// The Unix time stamp for when the job was started (when the job transitioned from the
+        /// <code>STARTING</code> state to the <code>RUNNING</code> state).
         /// </para>
         /// </summary>
         public long StartedAt
@@ -288,8 +309,9 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property StoppedAt. 
         /// <para>
-        /// The Unix timestamp for when the job was stopped (when the task transitioned from the
-        /// <code>RUNNING</code> state to the <code>STOPPED</code> state).
+        /// The Unix time stamp for when the job was stopped (when the job transitioned from the
+        /// <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or
+        /// <code>FAILED</code>).
         /// </para>
         /// </summary>
         public long StoppedAt

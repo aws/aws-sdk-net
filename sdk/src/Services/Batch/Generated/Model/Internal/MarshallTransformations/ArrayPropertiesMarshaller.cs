@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// JobDependency Marshaller
+    /// ArrayProperties Marshaller
     /// </summary>       
-    public class JobDependencyMarshaller : IRequestMarshaller<JobDependency, JsonMarshallerContext> 
+    public class ArrayPropertiesMarshaller : IRequestMarshaller<ArrayProperties, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,18 +43,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(JobDependency requestObject, JsonMarshallerContext context)
+        public void Marshall(ArrayProperties requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetJobId())
+            if(requestObject.IsSetSize())
             {
-                context.Writer.WritePropertyName("jobId");
-                context.Writer.Write(requestObject.JobId);
-            }
-
-            if(requestObject.IsSetType())
-            {
-                context.Writer.WritePropertyName("type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WritePropertyName("size");
+                context.Writer.Write(requestObject.Size);
             }
 
         }
@@ -62,7 +56,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static JobDependencyMarshaller Instance = new JobDependencyMarshaller();
+        public readonly static ArrayPropertiesMarshaller Instance = new ArrayPropertiesMarshaller();
 
     }
 }

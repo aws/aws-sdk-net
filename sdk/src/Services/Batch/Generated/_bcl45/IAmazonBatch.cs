@@ -70,7 +70,7 @@ namespace Amazon.Batch
         /// <returns>The response from the CancelJob service method, as returned by Batch.</returns>
         /// <exception cref="Amazon.Batch.Model.ClientException">
         /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permission to use the action or resource, or
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
         /// specifying an identifier that is not valid.
         /// </exception>
         /// <exception cref="Amazon.Batch.Model.ServerException">
@@ -106,8 +106,8 @@ namespace Amazon.Batch
         /// In a managed compute environment, AWS Batch manages the compute resources within the
         /// environment, based on the compute resources that you specify. Instances launched into
         /// a managed compute environment use a recent, approved version of the Amazon ECS-optimized
-        /// AMI. You can choose to use Amazon EC2 On-Demand instances in your managed compute
-        /// environment, or you can use Amazon EC2 Spot instances that only launch when the Spot
+        /// AMI. You can choose to use Amazon EC2 On-Demand Instances in your managed compute
+        /// environment, or you can use Amazon EC2 Spot Instances that only launch when the Spot
         /// bid price is below a specified percentage of the On-Demand price.
         /// </para>
         ///  
@@ -116,12 +116,12 @@ namespace Amazon.Batch
         /// provides more compute resource configuration options, such as using a custom AMI,
         /// but you must ensure that your AMI meets the Amazon ECS container instance AMI specification.
         /// For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/container_instance_AMIs.html">Container
-        /// Instance AMIs</a> in the <i>Amazon EC2 Container Service Developer Guide</i>. After
-        /// you have created your unmanaged compute environment, you can use the <a>DescribeComputeEnvironments</a>
+        /// Instance AMIs</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// After you have created your unmanaged compute environment, you can use the <a>DescribeComputeEnvironments</a>
         /// operation to find the Amazon ECS cluster that is associated with it and then manually
         /// launch your container instances into that Amazon ECS cluster. For more information,
         /// see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_container_instance.html">Launching
-        /// an Amazon ECS Container Instance</a> in the <i>Amazon EC2 Container Service Developer
+        /// an Amazon ECS Container Instance</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>.
         /// </para>
         /// </summary>
@@ -130,7 +130,7 @@ namespace Amazon.Batch
         /// <returns>The response from the CreateComputeEnvironment service method, as returned by Batch.</returns>
         /// <exception cref="Amazon.Batch.Model.ClientException">
         /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permission to use the action or resource, or
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
         /// specifying an identifier that is not valid.
         /// </exception>
         /// <exception cref="Amazon.Batch.Model.ServerException">
@@ -175,7 +175,7 @@ namespace Amazon.Batch
         /// <returns>The response from the CreateJobQueue service method, as returned by Batch.</returns>
         /// <exception cref="Amazon.Batch.Model.ClientException">
         /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permission to use the action or resource, or
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
         /// specifying an identifier that is not valid.
         /// </exception>
         /// <exception cref="Amazon.Batch.Model.ServerException">
@@ -217,7 +217,7 @@ namespace Amazon.Batch
         /// <returns>The response from the DeleteComputeEnvironment service method, as returned by Batch.</returns>
         /// <exception cref="Amazon.Batch.Model.ClientException">
         /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permission to use the action or resource, or
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
         /// specifying an identifier that is not valid.
         /// </exception>
         /// <exception cref="Amazon.Batch.Model.ServerException">
@@ -260,7 +260,7 @@ namespace Amazon.Batch
         /// <returns>The response from the DeleteJobQueue service method, as returned by Batch.</returns>
         /// <exception cref="Amazon.Batch.Model.ClientException">
         /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permission to use the action or resource, or
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
         /// specifying an identifier that is not valid.
         /// </exception>
         /// <exception cref="Amazon.Batch.Model.ServerException">
@@ -295,7 +295,7 @@ namespace Amazon.Batch
         /// <returns>The response from the DeregisterJobDefinition service method, as returned by Batch.</returns>
         /// <exception cref="Amazon.Batch.Model.ClientException">
         /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permission to use the action or resource, or
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
         /// specifying an identifier that is not valid.
         /// </exception>
         /// <exception cref="Amazon.Batch.Model.ServerException">
@@ -337,7 +337,7 @@ namespace Amazon.Batch
         /// <returns>The response from the DescribeComputeEnvironments service method, as returned by Batch.</returns>
         /// <exception cref="Amazon.Batch.Model.ClientException">
         /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permission to use the action or resource, or
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
         /// specifying an identifier that is not valid.
         /// </exception>
         /// <exception cref="Amazon.Batch.Model.ServerException">
@@ -373,7 +373,7 @@ namespace Amazon.Batch
         /// <returns>The response from the DescribeJobDefinitions service method, as returned by Batch.</returns>
         /// <exception cref="Amazon.Batch.Model.ClientException">
         /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permission to use the action or resource, or
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
         /// specifying an identifier that is not valid.
         /// </exception>
         /// <exception cref="Amazon.Batch.Model.ServerException">
@@ -408,7 +408,7 @@ namespace Amazon.Batch
         /// <returns>The response from the DescribeJobQueues service method, as returned by Batch.</returns>
         /// <exception cref="Amazon.Batch.Model.ClientException">
         /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permission to use the action or resource, or
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
         /// specifying an identifier that is not valid.
         /// </exception>
         /// <exception cref="Amazon.Batch.Model.ServerException">
@@ -443,7 +443,7 @@ namespace Amazon.Batch
         /// <returns>The response from the DescribeJobs service method, as returned by Batch.</returns>
         /// <exception cref="Amazon.Batch.Model.ClientException">
         /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permission to use the action or resource, or
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
         /// specifying an identifier that is not valid.
         /// </exception>
         /// <exception cref="Amazon.Batch.Model.ServerException">
@@ -480,7 +480,7 @@ namespace Amazon.Batch
         /// <returns>The response from the ListJobs service method, as returned by Batch.</returns>
         /// <exception cref="Amazon.Batch.Model.ClientException">
         /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permission to use the action or resource, or
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
         /// specifying an identifier that is not valid.
         /// </exception>
         /// <exception cref="Amazon.Batch.Model.ServerException">
@@ -515,7 +515,7 @@ namespace Amazon.Batch
         /// <returns>The response from the RegisterJobDefinition service method, as returned by Batch.</returns>
         /// <exception cref="Amazon.Batch.Model.ClientException">
         /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permission to use the action or resource, or
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
         /// specifying an identifier that is not valid.
         /// </exception>
         /// <exception cref="Amazon.Batch.Model.ServerException">
@@ -551,7 +551,7 @@ namespace Amazon.Batch
         /// <returns>The response from the SubmitJob service method, as returned by Batch.</returns>
         /// <exception cref="Amazon.Batch.Model.ClientException">
         /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permission to use the action or resource, or
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
         /// specifying an identifier that is not valid.
         /// </exception>
         /// <exception cref="Amazon.Batch.Model.ServerException">
@@ -588,7 +588,7 @@ namespace Amazon.Batch
         /// <returns>The response from the TerminateJob service method, as returned by Batch.</returns>
         /// <exception cref="Amazon.Batch.Model.ClientException">
         /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permission to use the action or resource, or
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
         /// specifying an identifier that is not valid.
         /// </exception>
         /// <exception cref="Amazon.Batch.Model.ServerException">
@@ -623,7 +623,7 @@ namespace Amazon.Batch
         /// <returns>The response from the UpdateComputeEnvironment service method, as returned by Batch.</returns>
         /// <exception cref="Amazon.Batch.Model.ClientException">
         /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permission to use the action or resource, or
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
         /// specifying an identifier that is not valid.
         /// </exception>
         /// <exception cref="Amazon.Batch.Model.ServerException">
@@ -658,7 +658,7 @@ namespace Amazon.Batch
         /// <returns>The response from the UpdateJobQueue service method, as returned by Batch.</returns>
         /// <exception cref="Amazon.Batch.Model.ClientException">
         /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permission to use the action or resource, or
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
         /// specifying an identifier that is not valid.
         /// </exception>
         /// <exception cref="Amazon.Batch.Model.ServerException">

@@ -28,40 +28,36 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// Container for the parameters to the TerminateJob operation.
-    /// Terminates a job in a job queue. Jobs that are in the <code>STARTING</code> or <code>RUNNING</code>
-    /// state are terminated, which causes them to transition to <code>FAILED</code>. Jobs
-    /// that have not progressed to the <code>STARTING</code> state are cancelled.
+    /// An object representing summary details of a container within a job.
     /// </summary>
-    public partial class TerminateJobRequest : AmazonBatchRequest
+    public partial class ContainerSummary
     {
-        private string _jobId;
+        private int? _exitCode;
         private string _reason;
 
         /// <summary>
-        /// Gets and sets the property JobId. 
+        /// Gets and sets the property ExitCode. 
         /// <para>
-        /// The AWS Batch job ID of the job to terminate.
+        /// The exit code to return upon completion.
         /// </para>
         /// </summary>
-        public string JobId
+        public int ExitCode
         {
-            get { return this._jobId; }
-            set { this._jobId = value; }
+            get { return this._exitCode.GetValueOrDefault(); }
+            set { this._exitCode = value; }
         }
 
-        // Check to see if JobId property is set
-        internal bool IsSetJobId()
+        // Check to see if ExitCode property is set
+        internal bool IsSetExitCode()
         {
-            return this._jobId != null;
+            return this._exitCode.HasValue; 
         }
 
         /// <summary>
         /// Gets and sets the property Reason. 
         /// <para>
-        /// A message to attach to the job that explains the reason for canceling it. This message
-        /// is returned by future <a>DescribeJobs</a> operations on the job. This message is also
-        /// recorded in the AWS Batch activity logs. 
+        /// A short (255 max characters) human-readable string to provide additional details about
+        /// a running or stopped container.
         /// </para>
         /// </summary>
         public string Reason

@@ -38,7 +38,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the key value pair. For environment variables, this is the name of the
+        /// The name of the key-value pair. For environment variables, this is the name of the
         /// environment variable.
         /// </para>
         /// </summary>
@@ -57,7 +57,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value of the key value pair. For environment variables, this is the value of the
+        /// The value of the key-value pair. For environment variables, this is the value of the
         /// environment variable.
         /// </para>
         /// </summary>

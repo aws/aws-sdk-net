@@ -64,6 +64,24 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("arrayProperties", targetDepth))
+                {
+                    var unmarshaller = ArrayPropertiesSummaryUnmarshaller.Instance;
+                    unmarshalledObject.ArrayProperties = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("container", targetDepth))
+                {
+                    var unmarshaller = ContainerSummaryUnmarshaller.Instance;
+                    unmarshalledObject.Container = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("createdAt", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("jobId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -74,6 +92,30 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.JobName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("startedAt", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.StartedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("status", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("statusReason", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StatusReason = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("stoppedAt", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.StoppedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
