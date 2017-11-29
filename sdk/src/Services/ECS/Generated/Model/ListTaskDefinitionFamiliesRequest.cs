@@ -97,8 +97,7 @@ namespace Amazon.ECS.Model
         /// The <code>nextToken</code> value returned from a previous paginated <code>ListTaskDefinitionFamilies</code>
         /// request where <code>maxResults</code> was used and the results exceeded the value
         /// of that parameter. Pagination continues from the end of the previous results that
-        /// returned the <code>nextToken</code> value. This value is <code>null</code> when there
-        /// are no more results to return.
+        /// returned the <code>nextToken</code> value.
         /// </para>
         ///  <note> 
         /// <para>

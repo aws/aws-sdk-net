@@ -33,7 +33,7 @@ namespace Amazon.ECS.Model
     /// exist, it is created. If the attribute exists, its value is replaced with the specified
     /// value. To delete an attribute, use <a>DeleteAttributes</a>. For more information,
     /// see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a>
-    /// in the <i>Amazon EC2 Container Service Developer Guide</i>.
+    /// in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </summary>
     public partial class PutAttributesRequest : AmazonECSRequest
     {

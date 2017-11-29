@@ -36,7 +36,7 @@ namespace Amazon.ECS.Model
     /// You can allow Amazon ECS to place tasks for you, or you can customize how Amazon ECS
     /// places tasks using placement constraints and placement strategies. For more information,
     /// see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
-    /// Tasks</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+    /// Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -49,10 +49,12 @@ namespace Amazon.ECS.Model
         private string _cluster;
         private int? _count;
         private string _group;
+        private LaunchType _launchType;
         private NetworkConfiguration _networkConfiguration;
         private TaskOverride _overrides;
         private List<PlacementConstraint> _placementConstraints = new List<PlacementConstraint>();
         private List<PlacementStrategy> _placementStrategy = new List<PlacementStrategy>();
+        private string _platformVersion;
         private string _startedBy;
         private string _taskDefinition;
 
@@ -114,13 +116,31 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LaunchType. 
+        /// <para>
+        /// The launch type on which to run your task.
+        /// </para>
+        /// </summary>
+        public LaunchType LaunchType
+        {
+            get { return this._launchType; }
+            set { this._launchType = value; }
+        }
+
+        // Check to see if LaunchType property is set
+        internal bool IsSetLaunchType()
+        {
+            return this._launchType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property NetworkConfiguration. 
         /// <para>
         /// The network configuration for the task. This parameter is required for task definitions
         /// that use the <code>awsvpc</code> network mode to receive their own Elastic Network
         /// Interface, and it is not supported for other network modes. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
-        /// Networking</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+        /// see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+        /// Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public NetworkConfiguration NetworkConfiguration
@@ -187,7 +207,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property PlacementStrategy. 
         /// <para>
-        /// The placement strategy objects to use for the task. You can specify a maximum of 5
+        /// The placement strategy objects to use for the task. You can specify a maximum of five
         /// strategy rules per task.
         /// </para>
         /// </summary>
@@ -201,6 +221,25 @@ namespace Amazon.ECS.Model
         internal bool IsSetPlacementStrategy()
         {
             return this._placementStrategy != null && this._placementStrategy.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlatformVersion. 
+        /// <para>
+        /// The platform version on which to run your task. If one is not specified, the latest
+        /// version is used by default.
+        /// </para>
+        /// </summary>
+        public string PlatformVersion
+        {
+            get { return this._platformVersion; }
+            set { this._platformVersion = value; }
+        }
+
+        // Check to see if PlatformVersion property is set
+        internal bool IsSetPlatformVersion()
+        {
+            return this._platformVersion != null;
         }
 
         /// <summary>
@@ -235,8 +274,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property TaskDefinition. 
         /// <para>
         /// The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or
-        /// full Amazon Resource Name (ARN) of the task definition to run. If a <code>revision</code>
-        /// is not specified, the latest <code>ACTIVE</code> revision is used.
+        /// full ARN of the task definition to run. If a <code>revision</code> is not specified,
+        /// the latest <code>ACTIVE</code> revision is used.
         /// </para>
         /// </summary>
         public string TaskDefinition

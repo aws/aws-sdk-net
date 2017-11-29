@@ -86,9 +86,16 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Cpu. 
         /// <para>
-        /// The number of <code>cpu</code> units reserved for the container. A container instance
-        /// has 1,024 <code>cpu</code> units for every CPU core. This parameter specifies the
-        /// minimum amount of CPU to reserve for a container, and containers share unallocated
+        /// The number of <code>cpu</code> units reserved for the container. If your containers
+        /// will be part of a task using the Fargate launch type, this field is optional and the
+        /// only requirement is that the total amount of CPU reserved for all containers within
+        /// a task be lower than the task <code>cpu</code> value.
+        /// </para>
+        ///  
+        /// <para>
+        /// For containers that will be part of a task using the EC2 launch type, a container
+        /// instance has 1,024 <code>cpu</code> units for every CPU core. This parameter specifies
+        /// the minimum amount of CPU to reserve for a container, and containers share unallocated
         /// CPU units with other containers on the instance with the same ratio as their allocated
         /// amount. This parameter maps to <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
@@ -220,7 +227,7 @@ namespace Amazon.ECS.Model
         /// Remote API</a> and the <code>--label</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>. This parameter requires version 1.18 of the Docker Remote API or greater
         /// on your container instance. To check the Docker Remote API version on your container
-        /// instance, log into your container instance and run the following command: <code>sudo
+        /// instance, log in to your container instance and run the following command: <code>sudo
         /// docker version | grep "Server API version"</code> 
         /// </para>
         /// </summary>
@@ -240,7 +247,12 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property DockerSecurityOptions. 
         /// <para>
         /// A list of strings to provide custom labels for SELinux and AppArmor multi-level security
-        /// systems. This parameter maps to <code>SecurityOpt</code> in the <a href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
+        /// systems. This field is not valid for containers in tasks using the Fargate launch
+        /// type.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter maps to <code>SecurityOpt</code> in the <a href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
         /// Remote API</a> and the <code>--security-opt</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>.
@@ -251,7 +263,7 @@ namespace Amazon.ECS.Model
         /// the <code>ECS_SELINUX_CAPABLE=true</code> or <code>ECS_APPARMOR_CAPABLE=true</code>
         /// environment variables before containers placed on that instance can use these security
         /// options. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
-        /// ECS Container Agent Configuration</a> in the <i>Amazon EC2 Container Service Developer
+        /// ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>.
         /// </para>
         ///  </note>
@@ -307,7 +319,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// We do not recommend using plain text environment variables for sensitive information,
+        /// We do not recommend using plaintext environment variables for sensitive information,
         /// such as credential data.
         /// </para>
         ///  </important>
@@ -339,7 +351,7 @@ namespace Amazon.ECS.Model
         /// is composed of multiple containers, you should group containers that are used for
         /// a common purpose into components, and separate the different components into multiple
         /// task definitions. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/application_architecture.html">Application
-        /// Architecture</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+        /// Architecture</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public bool Essential
@@ -358,7 +370,9 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property ExtraHosts. 
         /// <para>
         /// A list of hostnames and IP address mappings to append to the <code>/etc/hosts</code>
-        /// file on the container. This parameter maps to <code>ExtraHosts</code> in the <a href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
+        /// file on the container. If using the Fargate launch type, this may be used to list
+        /// non-Fargate hosts you want the container to talk to. This parameter maps to <code>ExtraHosts</code>
+        /// in the <a href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
         /// Remote API</a> and the <code>--add-host</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>.
@@ -454,9 +468,10 @@ namespace Amazon.ECS.Model
         /// The <code>link</code> parameter allows containers to communicate with each other without
         /// the need for port mappings, using the <code>name</code> parameter and optionally,
         /// an <code>alias</code> for the link. This construct is analogous to <code>name:alias</code>
-        /// in Docker links. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and
-        /// underscores are allowed for each <code>name</code> and <code>alias</code>. For more
-        /// information on linking Docker containers, see <a href="https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/">https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/</a>.
+        /// in Docker links. This field is not valid for containers in tasks using the Fargate
+        /// launch type. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores
+        /// are allowed for each <code>name</code> and <code>alias</code>. For more information
+        /// on linking Docker containers, see <a href="https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/">https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/</a>.
         /// This parameter maps to <code>Links</code> in the <a href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
         /// Remote API</a> and the <code>--link</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
@@ -486,6 +501,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property LinuxParameters. 
         /// <para>
         /// Linux-specific modifications that are applied to the container, such as Linux <a>KernelCapabilities</a>.
+        /// This field is not valid for containers in tasks using the Fargate launch type.
         /// </para>
         /// </summary>
         public LinuxParameters LinuxParameters
@@ -503,8 +519,15 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property LogConfiguration. 
         /// <para>
-        /// The log configuration specification for the container. This parameter maps to <code>LogConfig</code>
-        /// in the <a href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
+        /// The log configuration specification for the container.
+        /// </para>
+        ///  
+        /// <para>
+        /// If using the Fargate launch type, the only supported value is <code>awslogs</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter maps to <code>LogConfig</code> in the <a href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
         /// Remote API</a> and the <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>. By default, containers use the same logging driver that the Docker daemon
@@ -524,9 +547,9 @@ namespace Amazon.ECS.Model
         ///  </note> 
         /// <para>
         /// This parameter requires version 1.18 of the Docker Remote API or greater on your container
-        /// instance. To check the Docker Remote API version on your container instance, log into
-        /// your container instance and run the following command: <code>sudo docker version |
-        /// grep "Server API version"</code> 
+        /// instance. To check the Docker Remote API version on your container instance, log in
+        /// to your container instance and run the following command: <code>sudo docker version
+        /// | grep "Server API version"</code> 
         /// </para>
         ///  <note> 
         /// <para>
@@ -534,7 +557,7 @@ namespace Amazon.ECS.Model
         /// drivers available on that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code>
         /// environment variable before containers placed on that instance can use these log configuration
         /// options. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
-        /// ECS Container Agent Configuration</a> in the <i>Amazon EC2 Container Service Developer
+        /// ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>.
         /// </para>
         ///  </note>
@@ -563,7 +586,14 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// You must specify a non-zero integer for one or both of <code>memory</code> or <code>memoryReservation</code>
+        /// If your containers will be part of a task using the Fargate launch type, this field
+        /// is optional and the only requirement is that the total amount of memory reserved for
+        /// all containers within a task be lower than the task <code>memory</code> value.
+        /// </para>
+        ///  
+        /// <para>
+        /// For containers that will be part of a task using the EC2 launch type, you must specify
+        /// a non-zero integer for one or both of <code>memory</code> or <code>memoryReservation</code>
         /// in container definitions. If you specify both, <code>memory</code> must be greater
         /// than <code>memoryReservation</code>. If you specify <code>memoryReservation</code>,
         /// then that value is subtracted from the available memory resources for the container
@@ -635,8 +665,15 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property MountPoints. 
         /// <para>
-        /// The mount points for data volumes in your container. This parameter maps to <code>Volumes</code>
-        /// in the <a href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
+        /// The mount points for data volumes in your container.
+        /// </para>
+        ///  
+        /// <para>
+        /// If using the Fargate launch type, the <code>sourceVolume</code> parameter is not supported.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter maps to <code>Volumes</code> in the <a href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
         /// Remote API</a> and the <code>--volume</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>.
@@ -683,20 +720,29 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property PortMappings. 
         /// <para>
         /// The list of port mappings for the container. Port mappings allow containers to access
-        /// ports on the host container instance to send or receive traffic. This parameter maps
-        /// to <code>PortBindings</code> in the <a href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
+        /// ports on the host container instance to send or receive traffic.
+        /// </para>
+        ///  
+        /// <para>
+        /// If using containers in a task with the Fargate, exposed ports should be specified
+        /// using <code>containerPort</code>. The <code>hostPort</code> can be left blank or it
+        /// must be the same value as the <code>containerPort</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter maps to <code>PortBindings</code> in the <a href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
         /// Remote API</a> and the <code>--publish</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>. If the network mode of a task definition is set to <code>none</code>, then
-        /// you cannot specify port mappings. If the network mode of a task definition is set
-        /// to <code>host</code>, then host ports must either be undefined or they must match
-        /// the container port in the port mapping.
+        /// you can't specify port mappings. If the network mode of a task definition is set to
+        /// <code>host</code>, then host ports must either be undefined or they must match the
+        /// container port in the port mapping.
         /// </para>
         ///  <note> 
         /// <para>
         /// After a task reaches the <code>RUNNING</code> status, manual and automatic host and
         /// container port assignments are visible in the <b>Network Bindings</b> section of a
-        /// container description of a selected task in the Amazon ECS console, or the <code>networkBindings</code>
+        /// container description for a selected task in the Amazon ECS console, or the <code>networkBindings</code>
         /// section <a>DescribeTasks</a> responses.
         /// </para>
         ///  </note>
@@ -766,9 +812,9 @@ namespace Amazon.ECS.Model
         /// Remote API</a> and the <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>. Valid naming values are displayed in the <a>Ulimit</a> data type. This parameter
         /// requires version 1.18 of the Docker Remote API or greater on your container instance.
-        /// To check the Docker Remote API version on your container instance, log into your container
-        /// instance and run the following command: <code>sudo docker version | grep "Server API
-        /// version"</code> 
+        /// To check the Docker Remote API version on your container instance, log in to your
+        /// container instance and run the following command: <code>sudo docker version | grep
+        /// "Server API version"</code> 
         /// </para>
         /// </summary>
         public List<Ulimit> Ulimits

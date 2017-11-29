@@ -171,7 +171,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property TaskArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the task.
+        /// The ARN of the task.
         /// </para>
         /// </summary>
         public string TaskArn

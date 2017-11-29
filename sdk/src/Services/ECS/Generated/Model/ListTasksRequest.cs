@@ -36,7 +36,7 @@ namespace Amazon.ECS.Model
     /// 
     ///  
     /// <para>
-    /// Recently-stopped tasks might appear in the returned results. Currently, stopped tasks
+    /// Recently stopped tasks might appear in the returned results. Currently, stopped tasks
     /// appear in the returned results for at least one hour. 
     /// </para>
     /// </summary>
@@ -46,6 +46,7 @@ namespace Amazon.ECS.Model
         private string _containerInstance;
         private DesiredStatus _desiredStatus;
         private string _family;
+        private LaunchType _launchType;
         private int? _maxResults;
         private string _nextToken;
         private string _serviceName;
@@ -73,9 +74,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ContainerInstance. 
         /// <para>
-        /// The container instance ID or full Amazon Resource Name (ARN) of the container instance
-        /// with which to filter the <code>ListTasks</code> results. Specifying a <code>containerInstance</code>
-        /// limits the results to tasks that belong to that container instance.
+        /// The container instance ID or full ARN of the container instance with which to filter
+        /// the <code>ListTasks</code> results. Specifying a <code>containerInstance</code> limits
+        /// the results to tasks that belong to that container instance.
         /// </para>
         /// </summary>
         public string ContainerInstance
@@ -95,16 +96,17 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The task desired status with which to filter the <code>ListTasks</code> results. Specifying
         /// a <code>desiredStatus</code> of <code>STOPPED</code> limits the results to tasks that
-        /// ECS has set the desired status to <code>STOPPED</code>, which can be useful for debugging
-        /// tasks that are not starting properly or have died or finished. The default status
-        /// filter is <code>RUNNING</code>, which shows tasks that ECS has set the desired status
-        /// to <code>RUNNING</code>.
+        /// Amazon ECS has set the desired status to <code>STOPPED</code>, which can be useful
+        /// for debugging tasks that are not starting properly or have died or finished. The default
+        /// status filter is <code>RUNNING</code>, which shows tasks that Amazon ECS has set the
+        /// desired status to <code>RUNNING</code>.
         /// </para>
         ///  <note> 
         /// <para>
         /// Although you can filter results based on a desired status of <code>PENDING</code>,
-        /// this will not return any results because ECS never sets the desired status of a task
-        /// to that value (only a task's <code>lastStatus</code> may have a value of <code>PENDING</code>).
+        /// this does not return any results because Amazon ECS never sets the desired status
+        /// of a task to that value (only a task's <code>lastStatus</code> may have a value of
+        /// <code>PENDING</code>).
         /// </para>
         ///  </note>
         /// </summary>
@@ -140,6 +142,24 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LaunchType. 
+        /// <para>
+        /// The launch type for services you want to list.
+        /// </para>
+        /// </summary>
+        public LaunchType LaunchType
+        {
+            get { return this._launchType; }
+            set { this._launchType = value; }
+        }
+
+        // Check to see if LaunchType property is set
+        internal bool IsSetLaunchType()
+        {
+            return this._launchType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of task results returned by <code>ListTasks</code> in paginated
@@ -169,8 +189,7 @@ namespace Amazon.ECS.Model
         /// The <code>nextToken</code> value returned from a previous paginated <code>ListTasks</code>
         /// request where <code>maxResults</code> was used and the results exceeded the value
         /// of that parameter. Pagination continues from the end of the previous results that
-        /// returned the <code>nextToken</code> value. This value is <code>null</code> when there
-        /// are no more results to return.
+        /// returned the <code>nextToken</code> value.
         /// </para>
         ///  <note> 
         /// <para>

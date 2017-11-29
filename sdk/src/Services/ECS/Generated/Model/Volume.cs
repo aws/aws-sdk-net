@@ -43,6 +43,10 @@ namespace Amazon.ECS.Model
         /// is empty, then the Docker daemon assigns a host path for your data volume, but the
         /// data is not guaranteed to persist after the containers associated with it stop running.
         /// </para>
+        ///  
+        /// <para>
+        /// If you are using the Fargate launch type, the <code>host</code> parameter is not supported.
+        /// </para>
         /// </summary>
         public HostVolumeProperties Host
         {

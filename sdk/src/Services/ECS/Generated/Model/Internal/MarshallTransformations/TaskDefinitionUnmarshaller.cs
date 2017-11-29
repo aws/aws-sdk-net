@@ -64,16 +64,40 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("compatibilities", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Compatibilities = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("containerDefinitions", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<ContainerDefinition, ContainerDefinitionUnmarshaller>(ContainerDefinitionUnmarshaller.Instance);
                     unmarshalledObject.ContainerDefinitions = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("cpu", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Cpu = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("executionRoleArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ExecutionRoleArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("family", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Family = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("memory", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Memory = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("networkMode", targetDepth))
@@ -92,6 +116,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<Attribute, AttributeUnmarshaller>(AttributeUnmarshaller.Instance);
                     unmarshalledObject.RequiresAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("requiresCompatibilities", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.RequiresCompatibilities = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("revision", targetDepth))

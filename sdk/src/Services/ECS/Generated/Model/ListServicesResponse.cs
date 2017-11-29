@@ -59,8 +59,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ServiceArns. 
         /// <para>
-        /// The list of full Amazon Resource Name (ARN) entries for each service associated with
-        /// the specified cluster.
+        /// The list of full ARN entries for each service associated with the specified cluster.
         /// </para>
         /// </summary>
         public List<string> ServiceArns

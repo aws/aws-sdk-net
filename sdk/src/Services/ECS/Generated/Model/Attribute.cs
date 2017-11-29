@@ -31,7 +31,7 @@ namespace Amazon.ECS.Model
     /// An attribute is a name-value pair associated with an Amazon ECS object. Attributes
     /// enable you to extend the Amazon ECS data model by adding custom metadata to your resources.
     /// For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a>
-    /// in the <i>Amazon EC2 Container Service Developer Guide</i>.
+    /// in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </summary>
     public partial class Attribute
     {
@@ -82,8 +82,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property TargetType. 
         /// <para>
         /// The type of the target with which to attach the attribute. This parameter is required
-        /// if you use the short form ID for a resource instead of the full Amazon Resource Name
-        /// (ARN).
+        /// if you use the short form ID for a resource instead of the full ARN.
         /// </para>
         /// </summary>
         public TargetType TargetType

@@ -45,6 +45,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsVpcConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAssignPublicIp())
+            {
+                context.Writer.WritePropertyName("assignPublicIp");
+                context.Writer.Write(requestObject.AssignPublicIp);
+            }
+
             if(requestObject.IsSetSecurityGroups())
             {
                 context.Writer.WritePropertyName("securityGroups");

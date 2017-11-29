@@ -35,8 +35,8 @@ namespace Amazon.ECS.Model
     ///  
     /// <para>
     /// If you intend to use the container instance for some other purpose after deregistration,
-    /// you should stop all of the tasks running on the container instance before deregistration
-    /// to avoid any orphaned tasks from consuming resources.
+    /// you should stop all of the tasks running on the container instance before deregistration.
+    /// That prevents any orphaned tasks from consuming resources.
     /// </para>
     ///  
     /// <para>
@@ -80,11 +80,10 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ContainerInstance. 
         /// <para>
-        /// The container instance ID or full Amazon Resource Name (ARN) of the container instance
-        /// to deregister. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by
-        /// the region of the container instance, the AWS account ID of the container instance
-        /// owner, the <code>container-instance</code> namespace, and then the container instance
-        /// ID. For example, <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>
+        /// The container instance ID or full ARN of the container instance to deregister. The
+        /// ARN contains the <code>arn:aws:ecs</code> namespace, followed by the region of the
+        /// container instance, the AWS account ID of the container instance owner, the <code>container-instance</code>
+        /// namespace, and then the container instance ID. For example, <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>
         /// </code>.
         /// </para>
         /// </summary>
@@ -114,8 +113,8 @@ namespace Amazon.ECS.Model
         ///  
         /// <para>
         /// Any containers in orphaned service tasks that are registered with a Classic Load Balancer
-        /// or an Application Load Balancer target group are deregistered, and they will begin
-        /// connection draining according to the settings on the load balancer or target group.
+        /// or an Application Load Balancer target group are deregistered. They begin connection
+        /// draining according to the settings on the load balancer or target group.
         /// </para>
         /// </summary>
         public bool Force

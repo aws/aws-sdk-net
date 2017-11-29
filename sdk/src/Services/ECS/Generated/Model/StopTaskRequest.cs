@@ -45,7 +45,7 @@ namespace Amazon.ECS.Model
     /// The default 30-second timeout can be configured on the Amazon ECS container agent
     /// with the <code>ECS_CONTAINER_STOP_TIMEOUT</code> variable. For more information, see
     /// <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
-    /// ECS Container Agent Configuration</a> in the <i>Amazon EC2 Container Service Developer
+    /// ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer
     /// Guide</i>.
     /// </para>
     ///  </note>
@@ -80,8 +80,8 @@ namespace Amazon.ECS.Model
         /// <para>
         /// An optional message specified when a task is stopped. For example, if you are using
         /// a custom scheduler, you can use this parameter to specify the reason for stopping
-        /// the task here, and the message will appear in subsequent <a>DescribeTasks</a> API
-        /// operations on this task. Up to 255 characters are allowed in this message.
+        /// the task here, and the message appears in subsequent <a>DescribeTasks</a> API operations
+        /// on this task. Up to 255 characters are allowed in this message.
         /// </para>
         /// </summary>
         public string Reason
@@ -99,7 +99,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Task. 
         /// <para>
-        /// The task ID or full Amazon Resource Name (ARN) entry of the task to stop.
+        /// The task ID or full ARN entry of the task to stop.
         /// </para>
         /// </summary>
         public string Task

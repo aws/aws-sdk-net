@@ -130,7 +130,9 @@ namespace Amazon.ECS.Model
         private string _cluster;
         private DeploymentConfiguration _deploymentConfiguration;
         private int? _desiredCount;
+        private bool? _forceNewDeployment;
         private NetworkConfiguration _networkConfiguration;
+        private string _platformVersion;
         private string _service;
         private string _taskDefinition;
 
@@ -191,13 +193,31 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ForceNewDeployment. 
+        /// <para>
+        /// Whether or not to force a new deployment of the service.
+        /// </para>
+        /// </summary>
+        public bool ForceNewDeployment
+        {
+            get { return this._forceNewDeployment.GetValueOrDefault(); }
+            set { this._forceNewDeployment = value; }
+        }
+
+        // Check to see if ForceNewDeployment property is set
+        internal bool IsSetForceNewDeployment()
+        {
+            return this._forceNewDeployment.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property NetworkConfiguration. 
         /// <para>
         /// The network configuration for the service. This parameter is required for task definitions
         /// that use the <code>awsvpc</code> network mode to receive their own Elastic Network
         /// Interface, and it is not supported for other network modes. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
-        /// Networking</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+        /// see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+        /// Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -218,6 +238,24 @@ namespace Amazon.ECS.Model
         internal bool IsSetNetworkConfiguration()
         {
             return this._networkConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlatformVersion. 
+        /// <para>
+        /// The platform version you want to update your service to run.
+        /// </para>
+        /// </summary>
+        public string PlatformVersion
+        {
+            get { return this._platformVersion; }
+            set { this._platformVersion = value; }
+        }
+
+        // Check to see if PlatformVersion property is set
+        internal bool IsSetPlatformVersion()
+        {
+            return this._platformVersion != null;
         }
 
         /// <summary>
@@ -242,11 +280,11 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property TaskDefinition. 
         /// <para>
         /// The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or
-        /// full Amazon Resource Name (ARN) of the task definition to run in your service. If
-        /// a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
-        /// is used. If you modify the task definition with <code>UpdateService</code>, Amazon
-        /// ECS spawns a task with the new version of the task definition and then stops an old
-        /// task after the new version is running.
+        /// full ARN of the task definition to run in your service. If a <code>revision</code>
+        /// is not specified, the latest <code>ACTIVE</code> revision is used. If you modify the
+        /// task definition with <code>UpdateService</code>, Amazon ECS spawns a task with the
+        /// new version of the task definition and then stops an old task after the new version
+        /// is running.
         /// </para>
         /// </summary>
         public string TaskDefinition

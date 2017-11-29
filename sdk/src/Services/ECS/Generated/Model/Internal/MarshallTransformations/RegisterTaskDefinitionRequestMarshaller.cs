@@ -83,10 +83,28 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetCpu())
+                {
+                    context.Writer.WritePropertyName("cpu");
+                    context.Writer.Write(publicRequest.Cpu);
+                }
+
+                if(publicRequest.IsSetExecutionRoleArn())
+                {
+                    context.Writer.WritePropertyName("executionRoleArn");
+                    context.Writer.Write(publicRequest.ExecutionRoleArn);
+                }
+
                 if(publicRequest.IsSetFamily())
                 {
                     context.Writer.WritePropertyName("family");
                     context.Writer.Write(publicRequest.Family);
+                }
+
+                if(publicRequest.IsSetMemory())
+                {
+                    context.Writer.WritePropertyName("memory");
+                    context.Writer.Write(publicRequest.Memory);
                 }
 
                 if(publicRequest.IsSetNetworkMode())
@@ -107,6 +125,17 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                         marshaller.Marshall(publicRequestPlacementConstraintsListValue, context);
 
                         context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetRequiresCompatibilities())
+                {
+                    context.Writer.WritePropertyName("requiresCompatibilities");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestRequiresCompatibilitiesListValue in publicRequest.RequiresCompatibilities)
+                    {
+                            context.Writer.Write(publicRequestRequiresCompatibilitiesListValue);
                     }
                     context.Writer.WriteArrayEnd();
                 }

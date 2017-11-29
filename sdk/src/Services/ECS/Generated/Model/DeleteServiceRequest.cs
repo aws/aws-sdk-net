@@ -41,10 +41,10 @@ namespace Amazon.ECS.Model
     /// service is no longer visible in the console or in <a>ListServices</a> API operations.
     /// After the tasks have stopped, then the service status moves from <code>DRAINING</code>
     /// to <code>INACTIVE</code>. Services in the <code>DRAINING</code> or <code>INACTIVE</code>
-    /// status can still be viewed with <a>DescribeServices</a> API operations; however, in
+    /// status can still be viewed with <a>DescribeServices</a> API operations. However, in
     /// the future, <code>INACTIVE</code> services may be cleaned up and purged from Amazon
-    /// ECS record keeping, and <a>DescribeServices</a> API operations on those services will
-    /// return a <code>ServiceNotFoundException</code> error.
+    /// ECS record keeping, and <a>DescribeServices</a> API operations on those services return
+    /// a <code>ServiceNotFoundException</code> error.
     /// </para>
     ///  </note>
     /// </summary>

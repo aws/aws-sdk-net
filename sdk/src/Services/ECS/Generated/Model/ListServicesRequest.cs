@@ -34,6 +34,7 @@ namespace Amazon.ECS.Model
     public partial class ListServicesRequest : AmazonECSRequest
     {
         private string _cluster;
+        private LaunchType _launchType;
         private int? _maxResults;
         private string _nextToken;
 
@@ -54,6 +55,24 @@ namespace Amazon.ECS.Model
         internal bool IsSetCluster()
         {
             return this._cluster != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LaunchType. 
+        /// <para>
+        /// The launch type for services you want to list.
+        /// </para>
+        /// </summary>
+        public LaunchType LaunchType
+        {
+            get { return this._launchType; }
+            set { this._launchType = value; }
+        }
+
+        // Check to see if LaunchType property is set
+        internal bool IsSetLaunchType()
+        {
+            return this._launchType != null;
         }
 
         /// <summary>
@@ -86,8 +105,7 @@ namespace Amazon.ECS.Model
         /// The <code>nextToken</code> value returned from a previous paginated <code>ListServices</code>
         /// request where <code>maxResults</code> was used and the results exceeded the value
         /// of that parameter. Pagination continues from the end of the previous results that
-        /// returned the <code>nextToken</code> value. This value is <code>null</code> when there
-        /// are no more results to return.
+        /// returned the <code>nextToken</code> value.
         /// </para>
         ///  <note> 
         /// <para>

@@ -70,6 +70,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.ContainerOverrides = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("executionRoleArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ExecutionRoleArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("taskRoleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -84,6 +84,10 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             {
                 return new ClusterContainsServicesException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ClusterContainsTasksException"))
+            {
+                return new ClusterContainsTasksException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ClusterNotFoundException"))
             {
                 return new ClusterNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

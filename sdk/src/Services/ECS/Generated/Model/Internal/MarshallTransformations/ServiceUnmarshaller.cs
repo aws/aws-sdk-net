@@ -100,6 +100,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Events = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("launchType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LaunchType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("loadBalancers", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<LoadBalancer, LoadBalancerUnmarshaller>(LoadBalancerUnmarshaller.Instance);
@@ -128,6 +134,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<PlacementStrategy, PlacementStrategyUnmarshaller>(PlacementStrategyUnmarshaller.Instance);
                     unmarshalledObject.PlacementStrategy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("platformVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PlatformVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("roleArn", targetDepth))

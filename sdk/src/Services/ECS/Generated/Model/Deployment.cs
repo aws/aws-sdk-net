@@ -35,8 +35,10 @@ namespace Amazon.ECS.Model
         private DateTime? _createdAt;
         private int? _desiredCount;
         private string _id;
+        private LaunchType _launchType;
         private NetworkConfiguration _networkConfiguration;
         private int? _pendingCount;
+        private string _platformVersion;
         private int? _runningCount;
         private string _status;
         private string _taskDefinition;
@@ -45,7 +47,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The Unix timestamp for when the service was created.
+        /// The Unix time stamp for when the service was created.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -98,6 +100,24 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LaunchType. 
+        /// <para>
+        /// The launch type on which your service is running.
+        /// </para>
+        /// </summary>
+        public LaunchType LaunchType
+        {
+            get { return this._launchType; }
+            set { this._launchType = value; }
+        }
+
+        // Check to see if LaunchType property is set
+        internal bool IsSetLaunchType()
+        {
+            return this._launchType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property NetworkConfiguration. 
         /// <para>
         /// The VPC subnet and security group configuration for tasks that receive their own Elastic
@@ -132,6 +152,24 @@ namespace Amazon.ECS.Model
         internal bool IsSetPendingCount()
         {
             return this._pendingCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlatformVersion. 
+        /// <para>
+        /// The platform version on which your service is running.
+        /// </para>
+        /// </summary>
+        public string PlatformVersion
+        {
+            get { return this._platformVersion; }
+            set { this._platformVersion = value; }
+        }
+
+        // Check to see if PlatformVersion property is set
+        internal bool IsSetPlatformVersion()
+        {
+            return this._platformVersion != null;
         }
 
         /// <summary>
@@ -194,7 +232,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The Unix timestamp for when the service was last updated.
+        /// The Unix time stamp for when the service was last updated.
         /// </para>
         /// </summary>
         public DateTime UpdatedAt

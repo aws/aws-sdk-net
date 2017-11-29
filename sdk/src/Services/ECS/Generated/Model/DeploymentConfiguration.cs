@@ -63,9 +63,9 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The lower limit (as a percentage of the service's <code>desiredCount</code>) of the
         /// number of running tasks that must remain in the <code>RUNNING</code> state in a service
-        /// during a deployment. The minimum healthy tasks during a deployment is the <code>desiredCount</code>
-        /// multiplied by <code>minimumHealthyPercent</code>/100, rounded up to the nearest integer
-        /// value.
+        /// during a deployment. The minimum number of healthy tasks during a deployment is the
+        /// <code>desiredCount</code> multiplied by <code>minimumHealthyPercent</code>/100, rounded
+        /// up to the nearest integer value.
         /// </para>
         /// </summary>
         public int MinimumHealthyPercent

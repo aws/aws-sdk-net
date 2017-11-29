@@ -28,12 +28,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// An object representing the subnets and security groups for a task or service.
+    /// An object representing the networking details for a task or service.
     /// </summary>
     public partial class AwsVpcConfiguration
     {
+        private AssignPublicIp _assignPublicIp;
         private List<string> _securityGroups = new List<string>();
         private List<string> _subnets = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property AssignPublicIp. 
+        /// <para>
+        /// Specifies whether or not the task's elastic network interface receives a public IP
+        /// address.
+        /// </para>
+        /// </summary>
+        public AssignPublicIp AssignPublicIp
+        {
+            get { return this._assignPublicIp; }
+            set { this._assignPublicIp = value; }
+        }
+
+        // Check to see if AssignPublicIp property is set
+        internal bool IsSetAssignPublicIp()
+        {
+            return this._assignPublicIp != null;
+        }
 
         /// <summary>
         /// Gets and sets the property SecurityGroups. 

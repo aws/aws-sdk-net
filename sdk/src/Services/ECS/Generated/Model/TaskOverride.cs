@@ -33,6 +33,7 @@ namespace Amazon.ECS.Model
     public partial class TaskOverride
     {
         private List<ContainerOverride> _containerOverrides = new List<ContainerOverride>();
+        private string _executionRoleArn;
         private string _taskRoleArn;
 
         /// <summary>
@@ -51,6 +52,25 @@ namespace Amazon.ECS.Model
         internal bool IsSetContainerOverrides()
         {
             return this._containerOverrides != null && this._containerOverrides.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExecutionRoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container
+        /// agent and the Docker daemon can assume.
+        /// </para>
+        /// </summary>
+        public string ExecutionRoleArn
+        {
+            get { return this._executionRoleArn; }
+            set { this._executionRoleArn = value; }
+        }
+
+        // Check to see if ExecutionRoleArn property is set
+        internal bool IsSetExecutionRoleArn()
+        {
+            return this._executionRoleArn != null;
         }
 
         /// <summary>

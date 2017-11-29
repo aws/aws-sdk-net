@@ -48,9 +48,9 @@ namespace Amazon.ECS.Model
     ///  
     /// <para>
     /// Service tasks on the container instance that are in the <code>RUNNING</code> state
-    /// are stopped and replaced according the service's deployment configuration parameters,
-    /// <code>minimumHealthyPercent</code> and <code>maximumPercent</code>. Note that you
-    /// can change the deployment configuration of your service using <a>UpdateService</a>.
+    /// are stopped and replaced according to the service's deployment configuration parameters,
+    /// <code>minimumHealthyPercent</code> and <code>maximumPercent</code>. You can change
+    /// the deployment configuration of your service using <a>UpdateService</a>.
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -117,7 +117,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ContainerInstances. 
         /// <para>
-        /// A list of container instance IDs or full Amazon Resource Name (ARN) entries.
+        /// A list of container instance IDs or full ARN entries.
         /// </para>
         /// </summary>
         public List<string> ContainerInstances

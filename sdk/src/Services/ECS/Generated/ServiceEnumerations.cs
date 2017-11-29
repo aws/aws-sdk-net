@@ -91,6 +91,202 @@ namespace Amazon.ECS
 
 
     /// <summary>
+    /// Constants used for properties of type AssignPublicIp.
+    /// </summary>
+    public class AssignPublicIp : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for AssignPublicIp
+        /// </summary>
+        public static readonly AssignPublicIp DISABLED = new AssignPublicIp("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for AssignPublicIp
+        /// </summary>
+        public static readonly AssignPublicIp ENABLED = new AssignPublicIp("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AssignPublicIp(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AssignPublicIp FindValue(string value)
+        {
+            return FindValue<AssignPublicIp>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AssignPublicIp(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ClusterField.
+    /// </summary>
+    public class ClusterField : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant STATISTICS for ClusterField
+        /// </summary>
+        public static readonly ClusterField STATISTICS = new ClusterField("STATISTICS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ClusterField(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClusterField FindValue(string value)
+        {
+            return FindValue<ClusterField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClusterField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Compatibility.
+    /// </summary>
+    public class Compatibility : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EC2 for Compatibility
+        /// </summary>
+        public static readonly Compatibility EC2 = new Compatibility("EC2");
+        /// <summary>
+        /// Constant FARGATE for Compatibility
+        /// </summary>
+        public static readonly Compatibility FARGATE = new Compatibility("FARGATE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Compatibility(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Compatibility FindValue(string value)
+        {
+            return FindValue<Compatibility>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Compatibility(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Connectivity.
+    /// </summary>
+    public class Connectivity : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONNECTED for Connectivity
+        /// </summary>
+        public static readonly Connectivity CONNECTED = new Connectivity("CONNECTED");
+        /// <summary>
+        /// Constant DISCONNECTED for Connectivity
+        /// </summary>
+        public static readonly Connectivity DISCONNECTED = new Connectivity("DISCONNECTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Connectivity(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Connectivity FindValue(string value)
+        {
+            return FindValue<Connectivity>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Connectivity(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ContainerInstanceStatus.
     /// </summary>
     public class ContainerInstanceStatus : ConstantClass
@@ -242,6 +438,56 @@ namespace Amazon.ECS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DeviceCgroupPermission(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LaunchType.
+    /// </summary>
+    public class LaunchType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EC2 for LaunchType
+        /// </summary>
+        public static readonly LaunchType EC2 = new LaunchType("EC2");
+        /// <summary>
+        /// Constant FARGATE for LaunchType
+        /// </summary>
+        public static readonly LaunchType FARGATE = new LaunchType("FARGATE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LaunchType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LaunchType FindValue(string value)
+        {
+            return FindValue<LaunchType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LaunchType(string value)
         {
             return FindValue(value);
         }

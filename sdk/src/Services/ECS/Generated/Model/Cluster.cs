@@ -41,6 +41,7 @@ namespace Amazon.ECS.Model
         private int? _pendingTasksCount;
         private int? _registeredContainerInstancesCount;
         private int? _runningTasksCount;
+        private List<KeyValuePair> _statistics = new List<KeyValuePair>();
         private string _status;
 
         /// <summary>
@@ -153,6 +154,57 @@ namespace Amazon.ECS.Model
         internal bool IsSetRunningTasksCount()
         {
             return this._runningTasksCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Statistics. 
+        /// <para>
+        /// Additional information about your clusters that are separated by launch type, including:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// runningEC2TasksCount
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// RunningFargateTasksCount
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// pendingEC2TasksCount
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// pendingFargateTasksCount
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// activeEC2ServiceCount
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// activeFargateServiceCount
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// drainingEC2ServiceCount
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// drainingFargateServiceCount
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public List<KeyValuePair> Statistics
+        {
+            get { return this._statistics; }
+            set { this._statistics = value; }
+        }
+
+        // Check to see if Statistics property is set
+        internal bool IsSetStatistics()
+        {
+            return this._statistics != null && this._statistics.Count > 0; 
         }
 
         /// <summary>

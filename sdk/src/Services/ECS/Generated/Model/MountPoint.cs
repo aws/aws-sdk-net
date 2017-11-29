@@ -77,7 +77,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property SourceVolume. 
         /// <para>
-        /// The name of the volume to mount.
+        /// The name of the volume to mount. If using the Fargate launch type, the <code>sourceVolume</code>
+        /// parameter is not supported.
         /// </para>
         /// </summary>
         public string SourceVolume

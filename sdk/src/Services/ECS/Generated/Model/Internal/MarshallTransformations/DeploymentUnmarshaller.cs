@@ -82,6 +82,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("launchType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LaunchType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("networkConfiguration", targetDepth))
                 {
                     var unmarshaller = NetworkConfigurationUnmarshaller.Instance;
@@ -92,6 +98,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.PendingCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("platformVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PlatformVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("runningCount", targetDepth))

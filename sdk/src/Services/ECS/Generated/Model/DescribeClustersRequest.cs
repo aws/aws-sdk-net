@@ -34,6 +34,7 @@ namespace Amazon.ECS.Model
     public partial class DescribeClustersRequest : AmazonECSRequest
     {
         private List<string> _clusters = new List<string>();
+        private List<string> _include = new List<string>();
 
         /// <summary>
         /// Gets and sets the property Clusters. 
@@ -52,6 +53,57 @@ namespace Amazon.ECS.Model
         internal bool IsSetClusters()
         {
             return this._clusters != null && this._clusters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Include. 
+        /// <para>
+        /// Additional information about your clusters to be separated by launch type, including:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// runningEC2TasksCount
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// RunningFargateTasksCount
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// pendingEC2TasksCount
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// pendingFargateTasksCount
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// activeEC2ServiceCount
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// activeFargateServiceCount
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// drainingEC2ServiceCount
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// drainingFargateServiceCount
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public List<string> Include
+        {
+            get { return this._include; }
+            set { this._include = value; }
+        }
+
+        // Check to see if Include property is set
+        internal bool IsSetInclude()
+        {
+            return this._include != null && this._include.Count > 0; 
         }
 
     }

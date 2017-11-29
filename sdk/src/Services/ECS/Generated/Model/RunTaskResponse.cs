@@ -56,7 +56,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Tasks. 
         /// <para>
-        /// A full description of the tasks that were run. Each task that was successfully placed
+        /// A full description of the tasks that were run. The tasks that were successfully placed
         /// on your cluster are described here.
         /// </para>
         /// </summary>

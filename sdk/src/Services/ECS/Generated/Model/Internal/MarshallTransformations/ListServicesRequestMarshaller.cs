@@ -73,6 +73,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Cluster);
                 }
 
+                if(publicRequest.IsSetLaunchType())
+                {
+                    context.Writer.WritePropertyName("launchType");
+                    context.Writer.Write(publicRequest.LaunchType);
+                }
+
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("maxResults");

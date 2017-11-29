@@ -57,7 +57,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Tasks. 
         /// <para>
         /// A full description of the tasks that were started. Each task that was successfully
-        /// placed on your container instances are described here.
+        /// placed on your container instances is described.
         /// </para>
         /// </summary>
         public List<Task> Tasks

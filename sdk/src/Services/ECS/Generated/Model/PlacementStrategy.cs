@@ -29,7 +29,7 @@ namespace Amazon.ECS.Model
 {
     /// <summary>
     /// The task placement strategy for a task or service. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-strategies.html">Task
-    /// Placement Strategies</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+    /// Placement Strategies</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </summary>
     public partial class PlacementStrategy
     {

@@ -32,7 +32,7 @@ namespace Amazon.ECS.Model
     /// Returns a list of container instances in a specified cluster. You can filter the results
     /// of a <code>ListContainerInstances</code> operation with cluster query language statements
     /// inside the <code>filter</code> parameter. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
-    /// Query Language</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+    /// Query Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </summary>
     public partial class ListContainerInstancesRequest : AmazonECSRequest
     {
@@ -66,7 +66,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// You can filter the results of a <code>ListContainerInstances</code> operation with
         /// cluster query language statements. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
-        /// Query Language</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+        /// Query Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public string Filter
@@ -111,8 +111,7 @@ namespace Amazon.ECS.Model
         /// The <code>nextToken</code> value returned from a previous paginated <code>ListContainerInstances</code>
         /// request where <code>maxResults</code> was used and the results exceeded the value
         /// of that parameter. Pagination continues from the end of the previous results that
-        /// returned the <code>nextToken</code> value. This value is <code>null</code> when there
-        /// are no more results to return.
+        /// returned the <code>nextToken</code> value.
         /// </para>
         ///  <note> 
         /// <para>

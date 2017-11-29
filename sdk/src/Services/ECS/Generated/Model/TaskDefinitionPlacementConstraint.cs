@@ -28,9 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// An object representing a constraint on task placement in the task definition. For
-    /// more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html">Task
-    /// Placement Constraints</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+    /// An object representing a constraint on task placement in the task definition.
+    /// 
+    ///  
+    /// <para>
+    /// If you are using the Fargate launch type, task placement contraints are not supported.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html">Task
+    /// Placement Constraints</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class TaskDefinitionPlacementConstraint
     {
@@ -42,7 +50,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// A cluster query language expression to apply to the constraint. For more information,
         /// see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
-        /// Query Language</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+        /// Query Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public string Expression

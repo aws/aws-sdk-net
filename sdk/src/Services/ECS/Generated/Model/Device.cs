@@ -76,8 +76,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Permissions. 
         /// <para>
         /// The explicit permissions to provide to the container for the device. By default, the
-        /// container will be able to <code>read</code>, <code>write</code>, and <code>mknod</code>
-        /// the device.
+        /// container has permissions for <code>read</code>, <code>write</code>, and <code>mknod</code>
+        /// for the device.
         /// </para>
         /// </summary>
         public List<string> Permissions

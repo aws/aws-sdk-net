@@ -90,6 +90,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DesiredCount);
                 }
 
+                if(publicRequest.IsSetForceNewDeployment())
+                {
+                    context.Writer.WritePropertyName("forceNewDeployment");
+                    context.Writer.Write(publicRequest.ForceNewDeployment);
+                }
+
                 if(publicRequest.IsSetNetworkConfiguration())
                 {
                     context.Writer.WritePropertyName("networkConfiguration");
@@ -99,6 +105,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     marshaller.Marshall(publicRequest.NetworkConfiguration, context);
 
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetPlatformVersion())
+                {
+                    context.Writer.WritePropertyName("platformVersion");
+                    context.Writer.Write(publicRequest.PlatformVersion);
                 }
 
                 if(publicRequest.IsSetService())

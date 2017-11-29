@@ -30,7 +30,7 @@ namespace Amazon.ECS.Model
     /// <summary>
     /// An object representing a constraint on task placement. For more information, see <a
     /// href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html">Task
-    /// Placement Constraints</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+    /// Placement Constraints</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </summary>
     public partial class PlacementConstraint
     {
@@ -43,7 +43,7 @@ namespace Amazon.ECS.Model
         /// A cluster query language expression to apply to the constraint. Note you cannot specify
         /// an expression if the constraint type is <code>distinctInstance</code>. For more information,
         /// see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
-        /// Query Language</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+        /// Query Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public string Expression
@@ -63,7 +63,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The type of constraint. Use <code>distinctInstance</code> to ensure that each task
         /// in a particular group is running on a different container instance. Use <code>memberOf</code>
-        /// to restrict selection to a group of valid candidates. Note that <code>distinctInstance</code>
+        /// to restrict the selection to a group of valid candidates. The value <code>distinctInstance</code>
         /// is not supported in task definitions.
         /// </para>
         /// </summary>

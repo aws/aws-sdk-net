@@ -38,11 +38,13 @@ namespace Amazon.ECS.Model
         private List<Deployment> _deployments = new List<Deployment>();
         private int? _desiredCount;
         private List<ServiceEvent> _events = new List<ServiceEvent>();
+        private LaunchType _launchType;
         private List<LoadBalancer> _loadBalancers = new List<LoadBalancer>();
         private NetworkConfiguration _networkConfiguration;
         private int? _pendingCount;
         private List<PlacementConstraint> _placementConstraints = new List<PlacementConstraint>();
         private List<PlacementStrategy> _placementStrategy = new List<PlacementStrategy>();
+        private string _platformVersion;
         private string _roleArn;
         private int? _runningCount;
         private string _serviceArn;
@@ -71,7 +73,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The Unix timestamp for when the service was created.
+        /// The Unix time stamp for when the service was created.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -159,6 +161,24 @@ namespace Amazon.ECS.Model
         internal bool IsSetEvents()
         {
             return this._events != null && this._events.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LaunchType. 
+        /// <para>
+        /// The launch type on which your service is running.
+        /// </para>
+        /// </summary>
+        public LaunchType LaunchType
+        {
+            get { return this._launchType; }
+            set { this._launchType = value; }
+        }
+
+        // Check to see if LaunchType property is set
+        internal bool IsSetLaunchType()
+        {
+            return this._launchType != null;
         }
 
         /// <summary>
@@ -255,11 +275,30 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PlatformVersion. 
+        /// <para>
+        /// The platform version on which your task is running. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+        /// Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        public string PlatformVersion
+        {
+            get { return this._platformVersion; }
+            set { this._platformVersion = value; }
+        }
+
+        // Check to see if PlatformVersion property is set
+        internal bool IsSetPlatformVersion()
+        {
+            return this._platformVersion != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the IAM role associated with the service that allows
-        /// the Amazon ECS container agent to register container instances with an Elastic Load
-        /// Balancing load balancer.
+        /// The ARN of the IAM role associated with the service that allows the Amazon ECS container
+        /// agent to register container instances with an Elastic Load Balancing load balancer.
         /// </para>
         /// </summary>
         public string RoleArn
@@ -295,7 +334,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ServiceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that identifies the service. The ARN contains the <code>arn:aws:ecs</code>
+        /// The ARN that identifies the service. The ARN contains the <code>arn:aws:ecs</code>
         /// namespace, followed by the region of the service, the AWS account ID of the service
         /// owner, the <code>service</code> namespace, and then the service name. For example,
         /// <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i> </code>.

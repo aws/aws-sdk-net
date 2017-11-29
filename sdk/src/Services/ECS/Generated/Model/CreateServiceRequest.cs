@@ -39,14 +39,15 @@ namespace Amazon.ECS.Model
     /// In addition to maintaining the desired count of tasks in your service, you can optionally
     /// run your service behind a load balancer. The load balancer distributes traffic across
     /// the tasks that are associated with the service. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
-    /// Load Balancing</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+    /// Load Balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
-    /// You can optionally specify a deployment configuration for your service. During a deployment
-    /// (which is triggered by changing the task definition or the desired count of a service
-    /// with an <a>UpdateService</a> operation), the service scheduler uses the <code>minimumHealthyPercent</code>
-    /// and <code>maximumPercent</code> parameters to determine the deployment strategy.
+    /// You can optionally specify a deployment configuration for your service. During a deployment,
+    /// the service scheduler uses the <code>minimumHealthyPercent</code> and <code>maximumPercent</code>
+    /// parameters to determine the deployment strategy. The deployment is triggered by changing
+    /// the task definition or the desired count of a service with an <a>UpdateService</a>
+    /// operation.
     /// </para>
     ///  
     /// <para>
@@ -112,10 +113,12 @@ namespace Amazon.ECS.Model
         private string _cluster;
         private DeploymentConfiguration _deploymentConfiguration;
         private int? _desiredCount;
+        private LaunchType _launchType;
         private List<LoadBalancer> _loadBalancers = new List<LoadBalancer>();
         private NetworkConfiguration _networkConfiguration;
         private List<PlacementConstraint> _placementConstraints = new List<PlacementConstraint>();
         private List<PlacementStrategy> _placementStrategy = new List<PlacementStrategy>();
+        private string _platformVersion;
         private string _role;
         private string _serviceName;
         private string _taskDefinition;
@@ -197,6 +200,24 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LaunchType. 
+        /// <para>
+        /// The launch type on which to run your service.
+        /// </para>
+        /// </summary>
+        public LaunchType LaunchType
+        {
+            get { return this._launchType; }
+            set { this._launchType = value; }
+        }
+
+        // Check to see if LaunchType property is set
+        internal bool IsSetLaunchType()
+        {
+            return this._launchType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LoadBalancers. 
         /// <para>
         /// A load balancer object representing the load balancer to use with your service. Currently,
@@ -238,8 +259,8 @@ namespace Amazon.ECS.Model
         /// The network configuration for the service. This parameter is required for task definitions
         /// that use the <code>awsvpc</code> network mode to receive their own Elastic Network
         /// Interface, and it is not supported for other network modes. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
-        /// Networking</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+        /// see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+        /// Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public NetworkConfiguration NetworkConfiguration
@@ -278,7 +299,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property PlacementStrategy. 
         /// <para>
         /// The placement strategy objects to use for tasks in your service. You can specify a
-        /// maximum of 5 strategy rules per service.
+        /// maximum of five strategy rules per service.
         /// </para>
         /// </summary>
         public List<PlacementStrategy> PlacementStrategy
@@ -291,6 +312,25 @@ namespace Amazon.ECS.Model
         internal bool IsSetPlacementStrategy()
         {
             return this._placementStrategy != null && this._placementStrategy.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlatformVersion. 
+        /// <para>
+        /// The platform version on which to run your service. If one is not specified, the latest
+        /// version is used by default.
+        /// </para>
+        /// </summary>
+        public string PlatformVersion
+        {
+            get { return this._platformVersion; }
+            set { this._platformVersion = value; }
+        }
+
+        // Check to see if PlatformVersion property is set
+        internal bool IsSetPlatformVersion()
+        {
+            return this._platformVersion != null;
         }
 
         /// <summary>
@@ -307,9 +347,9 @@ namespace Amazon.ECS.Model
         /// If your account has already created the Amazon ECS service-linked role, that role
         /// is used by default for your service unless you specify a role here. The service-linked
         /// role is required if your task definition uses the <code>awsvpc</code> network mode,
-        /// in which case you should not specify a role here. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideusing-service-linked-roles.html">Using
-        /// Service-Linked Roles for Amazon ECS</a> in the <i>Amazon EC2 Container Service Developer
-        /// Guide</i>.
+        /// in which case you should not specify a role here. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+        /// Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service
+        /// Developer Guide</i>.
         /// </para>
         ///  </important> 
         /// <para>
@@ -358,9 +398,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property TaskDefinition. 
         /// <para>
         /// The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or
-        /// full Amazon Resource Name (ARN) of the task definition to run in your service. If
-        /// a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
-        /// is used.
+        /// full ARN of the task definition to run in your service. If a <code>revision</code>
+        /// is not specified, the latest <code>ACTIVE</code> revision is used.
         /// </para>
         /// </summary>
         public string TaskDefinition
