@@ -55,6 +55,7 @@
       <Directory>$(ProjectDir)/src/Services/cognitoidentity/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/cognitoidentityprovider/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/cognitosync/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/comprehend/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/configservice/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/costandusagereport/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/costexplorer/bin/Release/net45/</Directory>
@@ -86,10 +87,14 @@
       <Directory>$(ProjectDir)/src/Services/inspector/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/iot/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/iotdata/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/iotjobsdataplane/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/keymanagementservice/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/kinesis/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/kinesisanalytics/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/kinesisfirehose/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/kinesisvideo/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/kinesisvideoarchivedmedia/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/kinesisvideomedia/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/lambda/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/lex/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/lexmodelbuildingservice/bin/Release/net45/</Directory>
@@ -119,6 +124,8 @@
       <Directory>$(ProjectDir)/src/Services/route53/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/route53domains/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/s3/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/sagemaker/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/sagemakerruntime/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/securitytoken/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/servermigrationservice/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/servicecatalog/bin/Release/net45/</Directory>
@@ -132,6 +139,7 @@
       <Directory>$(ProjectDir)/src/Services/sqs/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/stepfunctions/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/storagegateway/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/translate/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/waf/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/wafregional/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/workdocs/bin/Release/net45/</Directory>
@@ -172,6 +180,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.CognitoIdentity.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.CognitoIdentityProvider.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.CognitoSync.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Comprehend.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ConfigService.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.CostAndUsageReport.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.CostExplorer.dll" Analyze="True" AnalyzeAllChildren="True" />
@@ -203,10 +212,14 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Inspector.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.IoT.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.IotData.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.IoTJobsDataPlane.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.KeyManagementService.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Kinesis.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.KinesisAnalytics.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.KinesisFirehose.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.KinesisVideo.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.KinesisVideoArchivedMedia.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.KinesisVideoMedia.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Lambda.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Lex.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.LexModelBuildingService.dll" Analyze="True" AnalyzeAllChildren="True" />
@@ -236,6 +249,8 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Route53.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Route53Domains.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.S3.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.SageMaker.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.SageMakerRuntime.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.SecurityToken.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ServerMigrationService.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ServiceCatalog.dll" Analyze="True" AnalyzeAllChildren="True" />
@@ -249,6 +264,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.SQS.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.StepFunctions.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.StorageGateway.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Translate.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.WAF.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.WAFRegional.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.WorkDocs.dll" Analyze="True" AnalyzeAllChildren="True" />

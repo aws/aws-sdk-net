@@ -184,6 +184,10 @@
       <Project>{EBE2D008-5A2B-4314-B243-BA043BAFF60A}</Project>
       <Name>AWSSDK.CognitoSync.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/Comprehend/AWSSDK.Comprehend.CodeAnalysis.csproj">
+      <Project>{CD65991E-5593-4585-BD41-FF7CCA4B955E}</Project>
+      <Name>AWSSDK.Comprehend.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/ConfigService/AWSSDK.ConfigService.CodeAnalysis.csproj">
       <Project>{2F79A9E2-BE9C-43DB-876A-A7F16A5B64AC}</Project>
       <Name>AWSSDK.ConfigService.CodeAnalysis</Name>
@@ -332,6 +336,18 @@
       <Project>{7C69A0B1-C32D-4F12-9CA1-33242BDB4A4A}</Project>
       <Name>AWSSDK.KinesisFirehose.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/KinesisVideo/AWSSDK.KinesisVideo.CodeAnalysis.csproj">
+      <Project>{7DB74FFD-8773-46C0-A5A9-5650563D975E}</Project>
+      <Name>AWSSDK.KinesisVideo.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/KinesisVideoArchivedMedia/AWSSDK.KinesisVideoArchivedMedia.CodeAnalysis.csproj">
+      <Project>{C35B1E36-FFDC-4E82-AC08-6FFC61772E10}</Project>
+      <Name>AWSSDK.KinesisVideoArchivedMedia.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/KinesisVideoMedia/AWSSDK.KinesisVideoMedia.CodeAnalysis.csproj">
+      <Project>{A0EA3790-C2AB-4E1C-818F-AE0E138035EE}</Project>
+      <Name>AWSSDK.KinesisVideoMedia.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Lambda/AWSSDK.Lambda.CodeAnalysis.csproj">
       <Project>{942679C5-C064-4B55-B264-97A00B6F9CD6}</Project>
       <Name>AWSSDK.Lambda.CodeAnalysis</Name>
@@ -448,6 +464,14 @@
       <Project>{0C220F39-8A25-4CB2-A379-BCDF01AB0D81}</Project>
       <Name>AWSSDK.S3.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/SageMaker/AWSSDK.SageMaker.CodeAnalysis.csproj">
+      <Project>{E8EDED5F-2A50-4A47-AD39-0EF0A996327E}</Project>
+      <Name>AWSSDK.SageMaker.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/SageMakerRuntime/AWSSDK.SageMakerRuntime.CodeAnalysis.csproj">
+      <Project>{7ECDC6EC-0C8C-4484-A75A-3D048D267B3C}</Project>
+      <Name>AWSSDK.SageMakerRuntime.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/SecurityToken/AWSSDK.SecurityToken.CodeAnalysis.csproj">
       <Project>{89D04592-47DB-4292-8BEA-78BA2F33954F}</Project>
       <Name>AWSSDK.SecurityToken.CodeAnalysis</Name>
@@ -499,6 +523,10 @@
     <ProjectReference Include="../ServiceAnalysis/StorageGateway/AWSSDK.StorageGateway.CodeAnalysis.csproj">
       <Project>{ECF2D7A1-D543-4290-B0CE-1EAF4E5E64A7}</Project>
       <Name>AWSSDK.StorageGateway.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/Translate/AWSSDK.Translate.CodeAnalysis.csproj">
+      <Project>{6FF17F31-ED67-4AFF-830D-EC37A05E0BD4}</Project>
+      <Name>AWSSDK.Translate.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/WAF/AWSSDK.WAF.CodeAnalysis.csproj">
       <Project>{89B0280A-9EDF-46EC-9592-500B710D305D}</Project>

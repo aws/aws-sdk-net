@@ -141,6 +141,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* You can create a user pool in Amazon Cognito Identity to manage directories and users. You can authenticate a user to obtain tokens related to user identity and access policies. This API reference provides information about user pools in Amazon Cognito Identity, which is a new capability that is available as a beta.
 * [AWSSDK.CognitoSync](https://www.nuget.org/packages/AWSSDK.CognitoSync/)
 	* Amazon Cognito is a service that makes it easy to save user data, such as app preferences or game state, in the AWS Cloud without writing any backend code or managing any infrastructure. With Amazon Cognito, you can focus on creating great app experiences instead of having to worry about building and managing a backend solution to handle identity management, network state, storage, and sync.
+* [AWSSDK.Comprehend](https://www.nuget.org/packages/AWSSDK.Comprehend/)
+	* Amazon Comprehend is an AWS service for gaining insight into the content of text and documents. It can be used to determine the topics contained in your documents, the topics they discuss, the  predominant sentiment expressed in them, the predominant language used, and more. For more information, go to the Amazon Comprehend product page. To get started, see the Amazon Comprehend Developer Guide.
 * [AWSSDK.ConfigService](https://www.nuget.org/packages/AWSSDK.ConfigService/)
 	* AWS Config is a fully managed service that provides you with an AWS resource inventory, configuration history, and configuration change notifications to enable security and governance.
 * [AWSSDK.CostAndUsageReport](https://www.nuget.org/packages/AWSSDK.CostAndUsageReport/)
@@ -213,6 +215,12 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Amazon Kinesis Analytics is a fully managed service for continuously querying streaming data using standard SQL.
 * [AWSSDK.KinesisFirehose](https://www.nuget.org/packages/AWSSDK.KinesisFirehose/)
 	* Amazon Kinesis Firehose is a fully managed service for ingesting data streams directly into AWS data services such as Amazon S3 and Amazon Redshift.
+* [AWSSDK.KinesisVideo](https://www.nuget.org/packages/AWSSDK.KinesisVideo/)
+	* Announcing Amazon Kinesis Video Streams, a fully managed video ingestion and storage service. Kinesis Video Streams makes it easy to securely stream video from connected devices to AWS for machine learning, analytics, and processing. You can also stream other time-encoded data like RADAR and LIDAR signals using Kinesis Video Streams.
+* [AWSSDK.KinesisVideoArchivedMedia](https://www.nuget.org/packages/AWSSDK.KinesisVideoArchivedMedia/)
+	* Announcing Amazon Kinesis Video Streams, a fully managed video ingestion and storage service. Kinesis Video Streams makes it easy to securely stream video from connected devices to AWS for machine learning, analytics, and processing. You can also stream other time-encoded data like RADAR and LIDAR signals using Kinesis Video Streams.
+* [AWSSDK.KinesisVideoMedia](https://www.nuget.org/packages/AWSSDK.KinesisVideoMedia/)
+	* Announcing Amazon Kinesis Video Streams, a fully managed video ingestion and storage service. Kinesis Video Streams makes it easy to securely stream video from connected devices to AWS for machine learning, analytics, and processing. You can also stream other time-encoded data like RADAR and LIDAR signals using Kinesis Video Streams.
 * [AWSSDK.Lambda](https://www.nuget.org/packages/AWSSDK.Lambda/)
 	* AWS Lambda is a compute service that runs your code in response to events and automatically manages the compute resources for you, making it easy to build applications that respond quickly to new information.
 * [AWSSDK.Lex](https://www.nuget.org/packages/AWSSDK.Lex/)
@@ -271,6 +279,10 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service.
 * [AWSSDK.S3](https://www.nuget.org/packages/AWSSDK.S3/)
 	* Amazon Simple Storage Service (Amazon S3), provides developers and IT teams with secure, durable, highly-scalable object storage.
+* [AWSSDK.SageMaker](https://www.nuget.org/packages/AWSSDK.SageMaker/)
+	* Amazon SageMaker is a fully-managed service that enables data scientists and developers to quickly and easily build, train, and deploy machine learning models, at scale.
+* [AWSSDK.SageMakerRuntime](https://www.nuget.org/packages/AWSSDK.SageMakerRuntime/)
+	* Amazon SageMaker is a fully-managed service that enables data scientists and developers to quickly and easily build, train, and deploy machine learning models, at scale.
 * [AWSSDK.SecurityToken](https://www.nuget.org/packages/AWSSDK.SecurityToken/)
 	* The AWS Security Token Service (AWS STS) enables you to provide trusted users with temporary credentials that provide controlled access to your AWS resources.
 * [AWSSDK.ServerMigrationService](https://www.nuget.org/packages/AWSSDK.ServerMigrationService/)
@@ -297,6 +309,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* AWS Step Functions is a web service that enables you to coordinate a network of computing resources across distributed components using state machines.
 * [AWSSDK.StorageGateway](https://www.nuget.org/packages/AWSSDK.StorageGateway/)
 	* The AWS Storage Gateway is a service connecting an on-premises software appliance with cloud-based storage to provide seamless and secure integration between an organization's on-premises IT environment and AWS's storage infrastructure.
+* [AWSSDK.Translate](https://www.nuget.org/packages/AWSSDK.Translate/)
+	* Public preview release of Amazon Translate and the Amazon Translate Developer Guide. For more information, see the Amazon Translate Developer Guide.
 * [AWSSDK.WAF](https://www.nuget.org/packages/AWSSDK.WAF/)
 	* AWS WAF (Web Application Firewall) protects web applications from attack by allowing customers to block bad actors and provides filters against common web exploits like SQL injection.
 * [AWSSDK.WAFRegional](https://www.nuget.org/packages/AWSSDK.WAFRegional/)

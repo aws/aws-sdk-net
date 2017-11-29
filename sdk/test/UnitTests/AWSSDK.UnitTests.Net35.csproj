@@ -62,6 +62,7 @@
     <ProjectReference Include="..\..\src\Services\CognitoIdentity\AWSSDK.CognitoIdentity.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\CognitoIdentityProvider\AWSSDK.CognitoIdentityProvider.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\CognitoSync\AWSSDK.CognitoSync.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\Comprehend\AWSSDK.Comprehend.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\ConfigService\AWSSDK.ConfigService.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\CostAndUsageReport\AWSSDK.CostAndUsageReport.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\CostExplorer\AWSSDK.CostExplorer.Net35.csproj"/>
@@ -99,6 +100,9 @@
     <ProjectReference Include="..\..\src\Services\Kinesis\AWSSDK.Kinesis.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\KinesisAnalytics\AWSSDK.KinesisAnalytics.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\KinesisFirehose\AWSSDK.KinesisFirehose.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\KinesisVideo\AWSSDK.KinesisVideo.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\KinesisVideoArchivedMedia\AWSSDK.KinesisVideoArchivedMedia.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\KinesisVideoMedia\AWSSDK.KinesisVideoMedia.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\Lambda\AWSSDK.Lambda.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\Lex\AWSSDK.Lex.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\LexModelBuildingService\AWSSDK.LexModelBuildingService.Net35.csproj"/>
@@ -128,6 +132,8 @@
     <ProjectReference Include="..\..\src\Services\Route53\AWSSDK.Route53.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\Route53Domains\AWSSDK.Route53Domains.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\S3\AWSSDK.S3.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\SageMaker\AWSSDK.SageMaker.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\SageMakerRuntime\AWSSDK.SageMakerRuntime.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\SecurityToken\AWSSDK.SecurityToken.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\ServerMigrationService\AWSSDK.ServerMigrationService.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\ServiceCatalog\AWSSDK.ServiceCatalog.Net35.csproj"/>
@@ -141,6 +147,7 @@
     <ProjectReference Include="..\..\src\Services\SQS\AWSSDK.SQS.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\StepFunctions\AWSSDK.StepFunctions.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\StorageGateway\AWSSDK.StorageGateway.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\Translate\AWSSDK.Translate.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\WAF\AWSSDK.WAF.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\WAFRegional\AWSSDK.WAFRegional.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\WorkDocs\AWSSDK.WorkDocs.Net35.csproj"/>
