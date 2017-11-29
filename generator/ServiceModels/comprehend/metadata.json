@@ -1,0 +1,5 @@
+{
+  "active": true,
+  "synopsis": "Amazon Comprehend is an AWS service for gaining insight into the content of text and documents. It can be used to determine the topics contained in your documents, the topics they discuss, the  predominant sentiment expressed in them, the predominant language used, and more. For more information, go to the Amazon Comprehend product page. To get started, see the Amazon Comprehend Developer Guide.",
+  "generate-client-constructors": true
+}
