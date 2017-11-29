@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glacier.Model
 {
     /// <summary>
-    /// Describes an Amazon Glacier job.
+    /// Contains the description of an Amazon Glacier job.
     /// </summary>
     public partial class DescribeJobResponse : AmazonWebServiceResponse
     {
@@ -43,7 +43,10 @@ namespace Amazon.Glacier.Model
         private long? _inventorySizeInBytes;
         private string _jobDescription;
         private string _jobId;
+        private string _jobOutputPath;
+        private OutputLocation _outputLocation;
         private string _retrievalByteRange;
+        private SelectParameters _selectParameters;
         private string _sha256TreeHash;
         private string _snsTopic;
         private StatusCode _statusCode;
@@ -54,7 +57,8 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property Action. 
         /// <para>
-        /// The job type. It is either ArchiveRetrieval or InventoryRetrieval.
+        /// The job type. This value is either <code>ArchiveRetrieval</code>, <code>InventoryRetrieval</code>,
+        /// or <code>Select</code>. 
         /// </para>
         /// </summary>
         public ActionCode Action
@@ -72,8 +76,8 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property ArchiveId. 
         /// <para>
-        /// For an ArchiveRetrieval job, this is the archive ID requested for download. Otherwise,
-        /// this field is null.
+        /// The archive ID requested for a select job or archive retrieval. Otherwise, this field
+        /// is null.
         /// </para>
         /// </summary>
         public string ArchiveId
@@ -92,7 +96,7 @@ namespace Amazon.Glacier.Model
         /// Gets and sets the property ArchiveSHA256TreeHash. 
         /// <para>
         /// The SHA256 tree hash of the entire archive for an archive retrieval. For inventory
-        /// retrieval jobs, this field is null.
+        /// retrieval or select jobs, this field is null.
         /// </para>
         /// </summary>
         public string ArchiveSHA256TreeHash
@@ -110,8 +114,8 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property ArchiveSizeInBytes. 
         /// <para>
-        /// For an ArchiveRetrieval job, this is the size in bytes of the archive being requested
-        /// for download. For the InventoryRetrieval job, the value is null.
+        /// For an archive retrieval job, this value is the size in bytes of the archive being
+        /// requested for download. For an inventory retrieval or select job, this value is null.
         /// </para>
         /// </summary>
         public long ArchiveSizeInBytes
@@ -129,7 +133,8 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property Completed. 
         /// <para>
-        /// The job status. When a job is completed, you get the job's output.
+        /// The job status. When a job is completed, you get the job's output using Get Job Output
+        /// (GET output).
         /// </para>
         /// </summary>
         public bool Completed
@@ -147,8 +152,8 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property CompletionDate. 
         /// <para>
-        /// The UTC time that the archive retrieval request completed. While the job is in progress,
-        /// the value will be null.
+        /// The UTC time that the job request completed. While the job is in progress, the value
+        /// is null.
         /// </para>
         /// </summary>
         public DateTime CompletionDate
@@ -166,8 +171,8 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property CreationDate. 
         /// <para>
-        /// The UTC date when the job was created. A string representation of ISO 8601 date format,
-        /// for example, "2012-03-20T17:03:43.221Z".
+        /// The UTC date when the job was created. This value is a string representation of ISO
+        /// 8601 date format, for example <code>"2012-03-20T17:03:43.221Z"</code>.
         /// </para>
         /// </summary>
         public DateTime CreationDate
@@ -203,8 +208,8 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property InventorySizeInBytes. 
         /// <para>
-        /// For an InventoryRetrieval job, this is the size in bytes of the inventory requested
-        /// for download. For the ArchiveRetrieval job, the value is null.
+        /// For an inventory retrieval job, this value is the size in bytes of the inventory requested
+        /// for download. For an archive retrieval or select job, this value is null.
         /// </para>
         /// </summary>
         public long InventorySizeInBytes
@@ -222,7 +227,7 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property JobDescription. 
         /// <para>
-        /// The job description you provided when you initiated the job.
+        /// The job description provided when initiating the job.
         /// </para>
         /// </summary>
         public string JobDescription
@@ -256,12 +261,49 @@ namespace Amazon.Glacier.Model
         }
 
         /// <summary>
+        /// Gets and sets the property JobOutputPath. 
+        /// <para>
+        /// Contains the job output location.
+        /// </para>
+        /// </summary>
+        public string JobOutputPath
+        {
+            get { return this._jobOutputPath; }
+            set { this._jobOutputPath = value; }
+        }
+
+        // Check to see if JobOutputPath property is set
+        internal bool IsSetJobOutputPath()
+        {
+            return this._jobOutputPath != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutputLocation. 
+        /// <para>
+        /// Contains the location where the data from the select job is stored.
+        /// </para>
+        /// </summary>
+        public OutputLocation OutputLocation
+        {
+            get { return this._outputLocation; }
+            set { this._outputLocation = value; }
+        }
+
+        // Check to see if OutputLocation property is set
+        internal bool IsSetOutputLocation()
+        {
+            return this._outputLocation != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RetrievalByteRange. 
         /// <para>
-        /// The retrieved byte range for archive retrieval jobs in the form "<i>StartByteValue</i>-<i>EndByteValue</i>"
-        /// If no range was specified in the archive retrieval, then the whole archive is retrieved
-        /// and <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals the size of the
-        /// archive minus 1. For inventory retrieval jobs this field is null. 
+        /// The retrieved byte range for archive retrieval jobs in the form <i>StartByteValue</i>-<i>EndByteValue</i>.
+        /// If no range was specified in the archive retrieval, then the whole archive is retrieved.
+        /// In this case, <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals the size
+        /// of the archive minus 1. For inventory retrieval or select jobs, this field is null.
+        /// 
         /// </para>
         /// </summary>
         public string RetrievalByteRange
@@ -277,38 +319,60 @@ namespace Amazon.Glacier.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SelectParameters. 
+        /// <para>
+        /// Contains the parameters that define a select job.
+        /// </para>
+        /// </summary>
+        public SelectParameters SelectParameters
+        {
+            get { return this._selectParameters; }
+            set { this._selectParameters = value; }
+        }
+
+        // Check to see if SelectParameters property is set
+        internal bool IsSetSelectParameters()
+        {
+            return this._selectParameters != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SHA256TreeHash. 
         /// <para>
-        /// For an ArchiveRetrieval job, it is the checksum of the archive. Otherwise, the value
-        /// is null.
+        /// For an archive retrieval job, this value is the checksum of the archive. Otherwise,
+        /// this value is null.
         /// </para>
         ///  
         /// <para>
-        /// The SHA256 tree hash value for the requested range of an archive. If the Initiate
-        /// a Job request for an archive specified a tree-hash aligned range, then this field
-        /// returns a value.
+        /// The SHA256 tree hash value for the requested range of an archive. If the <b>InitiateJob</b>
+        /// request for an archive specified a tree-hash aligned range, then this field returns
+        /// a value.
         /// </para>
         ///  
         /// <para>
-        /// For the specific case when the whole archive is retrieved, this value is the same
-        /// as the ArchiveSHA256TreeHash value.
+        /// If the whole archive is retrieved, this value is the same as the ArchiveSHA256TreeHash
+        /// value.
         /// </para>
         ///  
         /// <para>
-        /// This field is null in the following situations:
+        /// This field is null for the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Archive retrieval jobs that specify a range that is not tree-hash aligned.
+        /// Archive retrieval jobs that specify a range that is not tree-hash aligned
         /// </para>
         ///  </li> </ul> <ul> <li> 
         /// <para>
-        /// Archival jobs that specify a range that is equal to the whole archive and the job
-        /// status is InProgress.
+        /// Archival jobs that specify a range that is equal to the whole archive, when the job
+        /// status is <code>InProgress</code> 
         /// </para>
         ///  </li> </ul> <ul> <li> 
         /// <para>
-        /// Inventory jobs.
+        /// Inventory jobs
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Select jobs
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -327,7 +391,7 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property SNSTopic. 
         /// <para>
-        /// An Amazon Simple Notification Service (Amazon SNS) topic that receives notification.
+        /// An Amazon SNS topic that receives notification.
         /// </para>
         /// </summary>
         public string SNSTopic
@@ -345,8 +409,8 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property StatusCode. 
         /// <para>
-        /// The status code can be InProgress, Succeeded, or Failed, and indicates the status
-        /// of the job.
+        /// The status code can be <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>,
+        /// and indicates the status of the job.
         /// </para>
         /// </summary>
         public StatusCode StatusCode
@@ -401,7 +465,7 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property VaultARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the vault from which the archive retrieval was requested.
+        /// The Amazon Resource Name (ARN) of the vault from which an archive retrieval was requested.
         /// </para>
         /// </summary>
         public string VaultARN

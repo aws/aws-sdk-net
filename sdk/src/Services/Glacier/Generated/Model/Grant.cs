@@ -28,32 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glacier.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListProvisionedCapacity operation.
-    /// This operation lists the provisioned capacity units for the specified AWS account.
+    /// Contains information about a grant.
     /// </summary>
-    public partial class ListProvisionedCapacityRequest : AmazonGlacierRequest
+    public partial class Grant
     {
-        private string _accountId;
+        private Grantee _grantee;
+        private Permission _permission;
 
         /// <summary>
-        /// Gets and sets the property AccountId. 
+        /// Gets and sets the property Grantee. 
         /// <para>
-        /// The AWS account ID of the account that owns the vault. You can either specify an AWS
-        /// account ID or optionally a single '-' (hyphen), in which case Amazon Glacier uses
-        /// the AWS account ID associated with the credentials used to sign the request. If you
-        /// use an account ID, don't include any hyphens ('-') in the ID. 
+        /// The grantee.
         /// </para>
         /// </summary>
-        public string AccountId
+        public Grantee Grantee
         {
-            get { return this._accountId; }
-            set { this._accountId = value; }
+            get { return this._grantee; }
+            set { this._grantee = value; }
         }
 
-        // Check to see if AccountId property is set
-        internal bool IsSetAccountId()
+        // Check to see if Grantee property is set
+        internal bool IsSetGrantee()
         {
-            return this._accountId != null;
+            return this._grantee != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Permission. 
+        /// <para>
+        /// Specifies the permission given to the grantee. 
+        /// </para>
+        /// </summary>
+        public Permission Permission
+        {
+            get { return this._permission; }
+            set { this._permission = value; }
+        }
+
+        // Check to see if Permission property is set
+        internal bool IsSetPermission()
+        {
+            return this._permission != null;
         }
 
     }

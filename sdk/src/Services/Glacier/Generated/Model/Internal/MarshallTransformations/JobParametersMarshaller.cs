@@ -74,10 +74,32 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetOutputLocation())
+            {
+                context.Writer.WritePropertyName("OutputLocation");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = OutputLocationMarshaller.Instance;
+                marshaller.Marshall(requestObject.OutputLocation, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetRetrievalByteRange())
             {
                 context.Writer.WritePropertyName("RetrievalByteRange");
                 context.Writer.Write(requestObject.RetrievalByteRange);
+            }
+
+            if(requestObject.IsSetSelectParameters())
+            {
+                context.Writer.WritePropertyName("SelectParameters");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SelectParametersMarshaller.Instance;
+                marshaller.Marshall(requestObject.SelectParameters, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetSNSTopic())

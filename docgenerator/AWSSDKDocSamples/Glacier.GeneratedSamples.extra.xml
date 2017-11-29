@@ -1,0 +1,630 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.Glacier.IAmazonGlacier.AbortMultipartUpload(Amazon.Glacier.Model.AbortMultipartUploadRequest)" />
+            <member name="M:Amazon.Glacier.AmazonGlacierClient.AbortMultipartUpload(Amazon.Glacier.Model.AbortMultipartUploadRequest)" />
+            <member name="T:Amazon.Glacier.Model.AbortMultipartUploadRequest" />
+            <member name="T:Amazon.Glacier.Model.AbortMultipartUploadResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The example deletes an in-progress multipart upload to a vault named my-vault:
+                </para>
+                <code
+                    title="To abort a multipart upload identified by the upload ID"
+                    source=".\AWSSDKDocSamples\Glacier\Glacier.GeneratedSamples.cs"
+                    region="f3d907f6-e71c-420c-8f71-502346a2c48a" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Glacier.IAmazonGlacier.AbortVaultLock(Amazon.Glacier.Model.AbortVaultLockRequest)" />
+            <member name="M:Amazon.Glacier.AmazonGlacierClient.AbortVaultLock(Amazon.Glacier.Model.AbortVaultLockRequest)" />
+            <member name="T:Amazon.Glacier.Model.AbortVaultLockRequest" />
+            <member name="T:Amazon.Glacier.Model.AbortVaultLockResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The example aborts the vault locking process if the vault lock is not in the Locked state for the vault named examplevault.
+                </para>
+                <code
+                    title="To abort a vault lock"
+                    source=".\AWSSDKDocSamples\Glacier\Glacier.GeneratedSamples.cs"
+                    region="to-abort-a-vault-lock-1481839357947" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Glacier.IAmazonGlacier.AddTagsToVault(Amazon.Glacier.Model.AddTagsToVaultRequest)" />
+            <member name="M:Amazon.Glacier.AmazonGlacierClient.AddTagsToVault(Amazon.Glacier.Model.AddTagsToVaultRequest)" />
+            <member name="T:Amazon.Glacier.Model.AddTagsToVaultRequest" />
+            <member name="T:Amazon.Glacier.Model.AddTagsToVaultResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The example adds two tags to a my-vault.
+                </para>
+                <code
+                    title="To add tags to a vault"
+                    source=".\AWSSDKDocSamples\Glacier\Glacier.GeneratedSamples.cs"
+                    region="add-tags-to-vault-post-tags-add-1481663457694" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Glacier.IAmazonGlacier.CompleteMultipartUpload(Amazon.Glacier.Model.CompleteMultipartUploadRequest)" />
+            <member name="M:Amazon.Glacier.AmazonGlacierClient.CompleteMultipartUpload(Amazon.Glacier.Model.CompleteMultipartUploadRequest)" />
+            <member name="T:Amazon.Glacier.Model.CompleteMultipartUploadRequest" />
+            <member name="T:Amazon.Glacier.Model.CompleteMultipartUploadResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The example completes a multipart upload for a 3 MiB archive.
+                </para>
+                <code
+                    title="To complete a multipart upload"
+                    source=".\AWSSDKDocSamples\Glacier\Glacier.GeneratedSamples.cs"
+                    region="272aa0b8-e44c-4a64-add2-ad905a37984d" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Glacier.IAmazonGlacier.CompleteVaultLock(Amazon.Glacier.Model.CompleteVaultLockRequest)" />
+            <member name="M:Amazon.Glacier.AmazonGlacierClient.CompleteVaultLock(Amazon.Glacier.Model.CompleteVaultLockRequest)" />
+            <member name="T:Amazon.Glacier.Model.CompleteVaultLockRequest" />
+            <member name="T:Amazon.Glacier.Model.CompleteVaultLockResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The example completes the vault locking process by transitioning the vault lock from the InProgress state to the Locked state.
+                </para>
+                <code
+                    title="To complete a vault lock"
+                    source=".\AWSSDKDocSamples\Glacier\Glacier.GeneratedSamples.cs"
+                    region="to-complete-a-vault-lock-1481839721312" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Glacier.IAmazonGlacier.CreateVault(Amazon.Glacier.Model.CreateVaultRequest)" />
+            <member name="M:Amazon.Glacier.AmazonGlacierClient.CreateVault(Amazon.Glacier.Model.CreateVaultRequest)" />
+            <member name="T:Amazon.Glacier.Model.CreateVaultRequest" />
+            <member name="T:Amazon.Glacier.Model.CreateVaultResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a new vault named my-vault.
+                </para>
+                <code
+                    title="To create a new vault"
+                    source=".\AWSSDKDocSamples\Glacier\Glacier.GeneratedSamples.cs"
+                    region="1dc0313d-ace1-4e6c-9d13-1ec7813b14b7" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Glacier.IAmazonGlacier.DeleteArchive(Amazon.Glacier.Model.DeleteArchiveRequest)" />
+            <member name="M:Amazon.Glacier.AmazonGlacierClient.DeleteArchive(Amazon.Glacier.Model.DeleteArchiveRequest)" />
+            <member name="T:Amazon.Glacier.Model.DeleteArchiveRequest" />
+            <member name="T:Amazon.Glacier.Model.DeleteArchiveResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The example deletes the archive specified by the archive ID.
+                </para>
+                <code
+                    title="To delete an archive"
+                    source=".\AWSSDKDocSamples\Glacier\Glacier.GeneratedSamples.cs"
+                    region="delete-archive-1481667809463" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Glacier.IAmazonGlacier.DeleteVault(Amazon.Glacier.Model.DeleteVaultRequest)" />
+            <member name="M:Amazon.Glacier.AmazonGlacierClient.DeleteVault(Amazon.Glacier.Model.DeleteVaultRequest)" />
+            <member name="T:Amazon.Glacier.Model.DeleteVaultRequest" />
+            <member name="T:Amazon.Glacier.Model.DeleteVaultResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The example deletes a vault named my-vault:
+                </para>
+                <code
+                    title="To delete a vault"
+                    source=".\AWSSDKDocSamples\Glacier\Glacier.GeneratedSamples.cs"
+                    region="7f7f000b-4bdb-40d2-91e6-7c902f60f60f" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Glacier.IAmazonGlacier.DeleteVaultAccessPolicy(Amazon.Glacier.Model.DeleteVaultAccessPolicyRequest)" />
+            <member name="M:Amazon.Glacier.AmazonGlacierClient.DeleteVaultAccessPolicy(Amazon.Glacier.Model.DeleteVaultAccessPolicyRequest)" />
+            <member name="T:Amazon.Glacier.Model.DeleteVaultAccessPolicyRequest" />
+            <member name="T:Amazon.Glacier.Model.DeleteVaultAccessPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The example deletes the access policy associated with the vault named examplevault.
+                </para>
+                <code
+                    title="To delete the vault access policy"
+                    source=".\AWSSDKDocSamples\Glacier\Glacier.GeneratedSamples.cs"
+                    region="to-delete-the-vault-access-policy-1481840424677" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Glacier.IAmazonGlacier.DeleteVaultNotifications(Amazon.Glacier.Model.DeleteVaultNotificationsRequest)" />
+            <member name="M:Amazon.Glacier.AmazonGlacierClient.DeleteVaultNotifications(Amazon.Glacier.Model.DeleteVaultNotificationsRequest)" />
+            <member name="T:Amazon.Glacier.Model.DeleteVaultNotificationsRequest" />
+            <member name="T:Amazon.Glacier.Model.DeleteVaultNotificationsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The example deletes the notification configuration set for the vault named examplevault.
+                </para>
+                <code
+                    title="To delete the notification configuration set for a vault"
+                    source=".\AWSSDKDocSamples\Glacier\Glacier.GeneratedSamples.cs"
+                    region="to-delete-the-notification-configuration-set-for-a-vault-1481840646090" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Glacier.IAmazonGlacier.DescribeJob(Amazon.Glacier.Model.DescribeJobRequest)" />
+            <member name="M:Amazon.Glacier.AmazonGlacierClient.DescribeJob(Amazon.Glacier.Model.DescribeJobRequest)" />
+            <member name="T:Amazon.Glacier.Model.DescribeJobRequest" />
+            <member name="T:Amazon.Glacier.Model.DescribeJobResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The example returns information about the previously initiated job specified by the job ID.
+                </para>
+                <code
+                    title="To get information about a previously initiated job"
+                    source=".\AWSSDKDocSamples\Glacier\Glacier.GeneratedSamples.cs"
+                    region="to-get-information-about-a-job-you-previously-initiated-1481840928592" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Glacier.IAmazonGlacier.DescribeVault(Amazon.Glacier.Model.DescribeVaultRequest)" />
+            <member name="M:Amazon.Glacier.AmazonGlacierClient.DescribeVault(Amazon.Glacier.Model.DescribeVaultRequest)" />
+            <member name="T:Amazon.Glacier.Model.DescribeVaultRequest" />
+            <member name="T:Amazon.Glacier.Model.DescribeVaultResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The example retrieves data about a vault named my-vault.
+                </para>
+                <code
+                    title="To retrieve information about a vault"
+                    source=".\AWSSDKDocSamples\Glacier\Glacier.GeneratedSamples.cs"
+                    region="3c1c6e9d-f5a2-427a-aa6a-f439eacfc05f" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Glacier.IAmazonGlacier.GetDataRetrievalPolicy(Amazon.Glacier.Model.GetDataRetrievalPolicyRequest)" />
+            <member name="M:Amazon.Glacier.AmazonGlacierClient.GetDataRetrievalPolicy(Amazon.Glacier.Model.GetDataRetrievalPolicyRequest)" />
+            <member name="T:Amazon.Glacier.Model.GetDataRetrievalPolicyRequest" />
+            <member name="T:Amazon.Glacier.Model.GetDataRetrievalPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The example returns the current data retrieval policy for the account.
+                </para>
+                <code
+                    title="To get the current data retrieval policy for an account"
+                    source=".\AWSSDKDocSamples\Glacier\Glacier.GeneratedSamples.cs"
+                    region="to-get-the-current-data-retrieval-policy-for-the-account-1481851580439" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Glacier.IAmazonGlacier.GetJobOutput(Amazon.Glacier.Model.GetJobOutputRequest)" />
+            <member name="M:Amazon.Glacier.AmazonGlacierClient.GetJobOutput(Amazon.Glacier.Model.GetJobOutputRequest)" />
+            <member name="T:Amazon.Glacier.Model.GetJobOutputRequest" />
+            <member name="T:Amazon.Glacier.Model.GetJobOutputResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The example downloads the output of a previously initiated inventory retrieval job that is identified by the job ID.
+                </para>
+                <code
+                    title="To get the output of a previously initiated job"
+                    source=".\AWSSDKDocSamples\Glacier\Glacier.GeneratedSamples.cs"
+                    region="to-get-the-output-of-a-previously-initiated-job-1481848550859" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Glacier.IAmazonGlacier.GetVaultAccessPolicy(Amazon.Glacier.Model.GetVaultAccessPolicyRequest)" />
+            <member name="M:Amazon.Glacier.AmazonGlacierClient.GetVaultAccessPolicy(Amazon.Glacier.Model.GetVaultAccessPolicyRequest)" />
+            <member name="T:Amazon.Glacier.Model.GetVaultAccessPolicyRequest" />
+            <member name="T:Amazon.Glacier.Model.GetVaultAccessPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The example retrieves the access-policy set on the vault named example-vault.
+                </para>
+                <code
+                    title="To  get the access-policy set on the vault"
+                    source=".\AWSSDKDocSamples\Glacier\Glacier.GeneratedSamples.cs"
+                    region="to--get-the-access-policy-set-on-the-vault-1481936004590" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Glacier.IAmazonGlacier.GetVaultLock(Amazon.Glacier.Model.GetVaultLockRequest)" />
+            <member name="M:Amazon.Glacier.AmazonGlacierClient.GetVaultLock(Amazon.Glacier.Model.GetVaultLockRequest)" />
+            <member name="T:Amazon.Glacier.Model.GetVaultLockRequest" />
+            <member name="T:Amazon.Glacier.Model.GetVaultLockResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The example retrieves the attributes from the lock-policy subresource set on the vault named examplevault.
+                </para>
+                <code
+                    title="To retrieve vault lock-policy related attributes that are set on a vault"
+                    source=".\AWSSDKDocSamples\Glacier\Glacier.GeneratedSamples.cs"
+                    region="to-retrieve-vault-lock-policy-related-attributes-that-are-set-on-a-vault-1481851363097" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Glacier.IAmazonGlacier.GetVaultNotifications(Amazon.Glacier.Model.GetVaultNotificationsRequest)" />
+            <member name="M:Amazon.Glacier.AmazonGlacierClient.GetVaultNotifications(Amazon.Glacier.Model.GetVaultNotificationsRequest)" />
+            <member name="T:Amazon.Glacier.Model.GetVaultNotificationsRequest" />
+            <member name="T:Amazon.Glacier.Model.GetVaultNotificationsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The example retrieves the notification-configuration for the vault named my-vault.
+                </para>
+                <code
+                    title="To get the notification-configuration for the specified vault"
+                    source=".\AWSSDKDocSamples\Glacier\Glacier.GeneratedSamples.cs"
+                    region="to-get-the-notification-configuration-for-the-specified-vault-1481918746677" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Glacier.IAmazonGlacier.InitiateJob(Amazon.Glacier.Model.InitiateJobRequest)" />
+            <member name="M:Amazon.Glacier.AmazonGlacierClient.InitiateJob(Amazon.Glacier.Model.InitiateJobRequest)" />
+            <member name="T:Amazon.Glacier.Model.InitiateJobRequest" />
+            <member name="T:Amazon.Glacier.Model.InitiateJobResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The example initiates an inventory-retrieval job for the vault named examplevault.
+                </para>
+                <code
+                    title="To initiate an inventory-retrieval job"
+                    source=".\AWSSDKDocSamples\Glacier\Glacier.GeneratedSamples.cs"
+                    region="to-initiate-an-inventory-retrieval-job-1482186883826" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Glacier.IAmazonGlacier.InitiateMultipartUpload(Amazon.Glacier.Model.InitiateMultipartUploadRequest)" />
+            <member name="M:Amazon.Glacier.AmazonGlacierClient.InitiateMultipartUpload(Amazon.Glacier.Model.InitiateMultipartUploadRequest)" />
+            <member name="T:Amazon.Glacier.Model.InitiateMultipartUploadRequest" />
+            <member name="T:Amazon.Glacier.Model.InitiateMultipartUploadResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The example initiates a multipart upload to a vault named my-vault with a part size of 1 MiB (1024 x 1024 bytes) per file.
+                </para>
+                <code
+                    title="To initiate a multipart upload"
+                    source=".\AWSSDKDocSamples\Glacier\Glacier.GeneratedSamples.cs"
+                    region="72f2db19-3d93-4c74-b2ed-38703baacf49" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Glacier.IAmazonGlacier.InitiateVaultLock(Amazon.Glacier.Model.InitiateVaultLockRequest)" />
+            <member name="M:Amazon.Glacier.AmazonGlacierClient.InitiateVaultLock(Amazon.Glacier.Model.InitiateVaultLockRequest)" />
+            <member name="T:Amazon.Glacier.Model.InitiateVaultLockRequest" />
+            <member name="T:Amazon.Glacier.Model.InitiateVaultLockResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The example initiates the vault locking process for the vault named my-vault.
+                </para>
+                <code
+                    title="To initiate the vault locking process"
+                    source=".\AWSSDKDocSamples\Glacier\Glacier.GeneratedSamples.cs"
+                    region="to-initiate-the-vault-locking-process-1481919693394" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Glacier.IAmazonGlacier.ListJobs(Amazon.Glacier.Model.ListJobsRequest)" />
+            <member name="M:Amazon.Glacier.AmazonGlacierClient.ListJobs(Amazon.Glacier.Model.ListJobsRequest)" />
+            <member name="T:Amazon.Glacier.Model.ListJobsRequest" />
+            <member name="T:Amazon.Glacier.Model.ListJobsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The example lists jobs for the vault named my-vault.
+                </para>
+                <code
+                    title="To list jobs for a vault"
+                    source=".\AWSSDKDocSamples\Glacier\Glacier.GeneratedSamples.cs"
+                    region="to-list-jobs-for-a-vault-1481920530537" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Glacier.IAmazonGlacier.ListMultipartUploads(Amazon.Glacier.Model.ListMultipartUploadsRequest)" />
+            <member name="M:Amazon.Glacier.AmazonGlacierClient.ListMultipartUploads(Amazon.Glacier.Model.ListMultipartUploadsRequest)" />
+            <member name="T:Amazon.Glacier.Model.ListMultipartUploadsRequest" />
+            <member name="T:Amazon.Glacier.Model.ListMultipartUploadsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The example lists all the in-progress multipart uploads for the vault named examplevault.
+                </para>
+                <code
+                    title="To list all the in-progress multipart uploads for a vault"
+                    source=".\AWSSDKDocSamples\Glacier\Glacier.GeneratedSamples.cs"
+                    region="to-list-all-the-in-progress-multipart-uploads-for-a-vault-1481935250590" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Glacier.IAmazonGlacier.ListParts(Amazon.Glacier.Model.ListPartsRequest)" />
+            <member name="M:Amazon.Glacier.AmazonGlacierClient.ListParts(Amazon.Glacier.Model.ListPartsRequest)" />
+            <member name="T:Amazon.Glacier.Model.ListPartsRequest" />
+            <member name="T:Amazon.Glacier.Model.ListPartsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The example lists all the parts of a multipart upload.
+                </para>
+                <code
+                    title="To list the parts of an archive that have been uploaded in a multipart upload"
+                    source=".\AWSSDKDocSamples\Glacier\Glacier.GeneratedSamples.cs"
+                    region="to-list-the-parts-of-an-archive-that-have-been-uploaded-in-a-multipart-upload-1481921767590" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Glacier.IAmazonGlacier.ListProvisionedCapacity(Amazon.Glacier.Model.ListProvisionedCapacityRequest)" />
+            <member name="M:Amazon.Glacier.AmazonGlacierClient.ListProvisionedCapacity(Amazon.Glacier.Model.ListProvisionedCapacityRequest)" />
+            <member name="T:Amazon.Glacier.Model.ListProvisionedCapacityRequest" />
+            <member name="T:Amazon.Glacier.Model.ListProvisionedCapacityResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The example lists the provisioned capacity units for an account.
+                </para>
+                <code
+                    title="To list the provisioned capacity units for an account"
+                    source=".\AWSSDKDocSamples\Glacier\Glacier.GeneratedSamples.cs"
+                    region="to-list-the-provisioned-capacity-units-for-an-account-1481923656130" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Glacier.IAmazonGlacier.ListTagsForVault(Amazon.Glacier.Model.ListTagsForVaultRequest)" />
+            <member name="M:Amazon.Glacier.AmazonGlacierClient.ListTagsForVault(Amazon.Glacier.Model.ListTagsForVaultRequest)" />
+            <member name="T:Amazon.Glacier.Model.ListTagsForVaultRequest" />
+            <member name="T:Amazon.Glacier.Model.ListTagsForVaultResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The example lists all the tags attached to the vault examplevault.
+                </para>
+                <code
+                    title="To list the tags for a vault"
+                    source=".\AWSSDKDocSamples\Glacier\Glacier.GeneratedSamples.cs"
+                    region="list-tags-for-vault-1481755839720" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Glacier.IAmazonGlacier.ListVaults(Amazon.Glacier.Model.ListVaultsRequest)" />
+            <member name="M:Amazon.Glacier.AmazonGlacierClient.ListVaults(Amazon.Glacier.Model.ListVaultsRequest)" />
+            <member name="T:Amazon.Glacier.Model.ListVaultsRequest" />
+            <member name="T:Amazon.Glacier.Model.ListVaultsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The example lists all vaults owned by the specified AWS account.
+                </para>
+                <code
+                    title="To list all vaults owned by the calling user's account"
+                    source=".\AWSSDKDocSamples\Glacier\Glacier.GeneratedSamples.cs"
+                    region="list-vaults-1481753006990" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Glacier.IAmazonGlacier.PurchaseProvisionedCapacity(Amazon.Glacier.Model.PurchaseProvisionedCapacityRequest)" />
+            <member name="M:Amazon.Glacier.AmazonGlacierClient.PurchaseProvisionedCapacity(Amazon.Glacier.Model.PurchaseProvisionedCapacityRequest)" />
+            <member name="T:Amazon.Glacier.Model.PurchaseProvisionedCapacityRequest" />
+            <member name="T:Amazon.Glacier.Model.PurchaseProvisionedCapacityResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The example purchases provisioned capacity unit for an AWS account.
+                </para>
+                <code
+                    title="To purchases a provisioned capacity unit for an AWS account"
+                    source=".\AWSSDKDocSamples\Glacier\Glacier.GeneratedSamples.cs"
+                    region="to-purchases-a-provisioned-capacity-unit-for-an-aws-account-1481927446662" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Glacier.IAmazonGlacier.RemoveTagsFromVault(Amazon.Glacier.Model.RemoveTagsFromVaultRequest)" />
+            <member name="M:Amazon.Glacier.AmazonGlacierClient.RemoveTagsFromVault(Amazon.Glacier.Model.RemoveTagsFromVaultRequest)" />
+            <member name="T:Amazon.Glacier.Model.RemoveTagsFromVaultRequest" />
+            <member name="T:Amazon.Glacier.Model.RemoveTagsFromVaultResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The example removes two tags from the vault named examplevault.
+                </para>
+                <code
+                    title="To remove tags from a vault"
+                    source=".\AWSSDKDocSamples\Glacier\Glacier.GeneratedSamples.cs"
+                    region="remove-tags-from-vault-1481754998801" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Glacier.IAmazonGlacier.SetDataRetrievalPolicy(Amazon.Glacier.Model.SetDataRetrievalPolicyRequest)" />
+            <member name="M:Amazon.Glacier.AmazonGlacierClient.SetDataRetrievalPolicy(Amazon.Glacier.Model.SetDataRetrievalPolicyRequest)" />
+            <member name="T:Amazon.Glacier.Model.SetDataRetrievalPolicyRequest" />
+            <member name="T:Amazon.Glacier.Model.SetDataRetrievalPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The example sets and then enacts a data retrieval policy.
+                </para>
+                <code
+                    title="To set and then enact a data retrieval policy "
+                    source=".\AWSSDKDocSamples\Glacier\Glacier.GeneratedSamples.cs"
+                    region="to-set-and-then-enact-a-data-retrieval-policy--1481928352408" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Glacier.IAmazonGlacier.SetVaultAccessPolicy(Amazon.Glacier.Model.SetVaultAccessPolicyRequest)" />
+            <member name="M:Amazon.Glacier.AmazonGlacierClient.SetVaultAccessPolicy(Amazon.Glacier.Model.SetVaultAccessPolicyRequest)" />
+            <member name="T:Amazon.Glacier.Model.SetVaultAccessPolicyRequest" />
+            <member name="T:Amazon.Glacier.Model.SetVaultAccessPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The example configures an access policy for the vault named examplevault.
+                </para>
+                <code
+                    title="To set the access-policy on a vault"
+                    source=".\AWSSDKDocSamples\Glacier\Glacier.GeneratedSamples.cs"
+                    region="to--set-the-access-policy-on-a-vault-1482185872517" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Glacier.IAmazonGlacier.SetVaultNotifications(Amazon.Glacier.Model.SetVaultNotificationsRequest)" />
+            <member name="M:Amazon.Glacier.AmazonGlacierClient.SetVaultNotifications(Amazon.Glacier.Model.SetVaultNotificationsRequest)" />
+            <member name="T:Amazon.Glacier.Model.SetVaultNotificationsRequest" />
+            <member name="T:Amazon.Glacier.Model.SetVaultNotificationsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The example sets the examplevault notification configuration.
+                </para>
+                <code
+                    title="To configure a vault to post a message to an Amazon SNS topic when jobs complete"
+                    source=".\AWSSDKDocSamples\Glacier\Glacier.GeneratedSamples.cs"
+                    region="to-configure-a-vault-to-post-a-message-to-an-amazon-simple-notification-service-amazon-sns-topic-when-jobs-complete-1482186397475" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Glacier.IAmazonGlacier.UploadArchive(Amazon.Glacier.Model.UploadArchiveRequest)" />
+            <member name="M:Amazon.Glacier.AmazonGlacierClient.UploadArchive(Amazon.Glacier.Model.UploadArchiveRequest)" />
+            <member name="T:Amazon.Glacier.Model.UploadArchiveRequest" />
+            <member name="T:Amazon.Glacier.Model.UploadArchiveResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The example adds an archive to a vault.
+                </para>
+                <code
+                    title="To upload an archive"
+                    source=".\AWSSDKDocSamples\Glacier\Glacier.GeneratedSamples.cs"
+                    region="upload-archive-1481668510494" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Glacier.IAmazonGlacier.UploadMultipartPart(Amazon.Glacier.Model.UploadMultipartPartRequest)" />
+            <member name="M:Amazon.Glacier.AmazonGlacierClient.UploadMultipartPart(Amazon.Glacier.Model.UploadMultipartPartRequest)" />
+            <member name="T:Amazon.Glacier.Model.UploadMultipartPartRequest" />
+            <member name="T:Amazon.Glacier.Model.UploadMultipartPartResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The example uploads the first 1 MiB (1024 x 1024 bytes) part of an archive.
+                </para>
+                <code
+                    title="To upload the first part of an archive"
+                    source=".\AWSSDKDocSamples\Glacier\Glacier.GeneratedSamples.cs"
+                    region="to-upload-the-first-part-of-an-archive-1481835899519" />
+            </example>
+        </value>
+    </doc>
+</docs>

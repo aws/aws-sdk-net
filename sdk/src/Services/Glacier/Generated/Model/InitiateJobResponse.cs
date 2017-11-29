@@ -33,6 +33,7 @@ namespace Amazon.Glacier.Model
     public partial class InitiateJobResponse : AmazonWebServiceResponse
     {
         private string _jobId;
+        private string _jobOutputPath;
         private string _location;
 
         /// <summary>
@@ -51,6 +52,24 @@ namespace Amazon.Glacier.Model
         internal bool IsSetJobId()
         {
             return this._jobId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobOutputPath. 
+        /// <para>
+        /// The path to the location of where the select results are stored.
+        /// </para>
+        /// </summary>
+        public string JobOutputPath
+        {
+            get { return this._jobOutputPath; }
+            set { this._jobOutputPath = value; }
+        }
+
+        // Check to see if JobOutputPath property is set
+        internal bool IsSetJobOutputPath()
+        {
+            return this._jobOutputPath != null;
         }
 
         /// <summary>

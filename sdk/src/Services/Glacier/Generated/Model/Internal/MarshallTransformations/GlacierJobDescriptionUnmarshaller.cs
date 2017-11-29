@@ -130,10 +130,28 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
                     unmarshalledObject.JobId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("JobOutputPath", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.JobOutputPath = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("OutputLocation", targetDepth))
+                {
+                    var unmarshaller = OutputLocationUnmarshaller.Instance;
+                    unmarshalledObject.OutputLocation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RetrievalByteRange", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RetrievalByteRange = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SelectParameters", targetDepth))
+                {
+                    var unmarshaller = SelectParametersUnmarshaller.Instance;
+                    unmarshalledObject.SelectParameters = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SHA256TreeHash", targetDepth))

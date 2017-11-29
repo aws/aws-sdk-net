@@ -28,32 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glacier.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListProvisionedCapacity operation.
-    /// This operation lists the provisioned capacity units for the specified AWS account.
+    /// Describes how the archive is serialized.
     /// </summary>
-    public partial class ListProvisionedCapacityRequest : AmazonGlacierRequest
+    public partial class InputSerialization
     {
-        private string _accountId;
+        private CSVInput _csv;
 
         /// <summary>
-        /// Gets and sets the property AccountId. 
+        /// Gets and sets the property Csv. 
         /// <para>
-        /// The AWS account ID of the account that owns the vault. You can either specify an AWS
-        /// account ID or optionally a single '-' (hyphen), in which case Amazon Glacier uses
-        /// the AWS account ID associated with the credentials used to sign the request. If you
-        /// use an account ID, don't include any hyphens ('-') in the ID. 
+        /// Describes the serialization of a CSV-encoded object.
         /// </para>
         /// </summary>
-        public string AccountId
+        public CSVInput Csv
         {
-            get { return this._accountId; }
-            set { this._accountId = value; }
+            get { return this._csv; }
+            set { this._csv = value; }
         }
 
-        // Check to see if AccountId property is set
-        internal bool IsSetAccountId()
+        // Check to see if Csv property is set
+        internal bool IsSetCsv()
         {
-            return this._accountId != null;
+            return this._csv != null;
         }
 
     }

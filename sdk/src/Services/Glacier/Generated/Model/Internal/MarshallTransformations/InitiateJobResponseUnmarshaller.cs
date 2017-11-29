@@ -49,6 +49,8 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 
             if (context.ResponseData.IsHeaderPresent("x-amz-job-id"))
                 response.JobId = context.ResponseData.GetHeaderValue("x-amz-job-id");
+            if (context.ResponseData.IsHeaderPresent("x-amz-job-output-path"))
+                response.JobOutputPath = context.ResponseData.GetHeaderValue("x-amz-job-output-path");
             if (context.ResponseData.IsHeaderPresent("Location"))
                 response.Location = context.ResponseData.GetHeaderValue("Location");
 

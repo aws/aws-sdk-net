@@ -55,9 +55,9 @@ namespace Amazon.Glacier.Model
     /// </para>
     ///  
     /// <para>
-    ///  For information about the underlying REST API, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-describe-job-get.html">Working
-    /// with Archives in Amazon Glacier</a> in the <i>Amazon Glacier Developer Guide</i>.
-    /// 
+    ///  For more information about using this operation, see the documentation for the underlying
+    /// REST API <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-describe-job-get.html">Describe
+    /// Job</a> in the <i>Amazon Glacier Developer Guide</i>. 
     /// </para>
     /// </summary>
     public partial class DescribeJobRequest : AmazonGlacierRequest

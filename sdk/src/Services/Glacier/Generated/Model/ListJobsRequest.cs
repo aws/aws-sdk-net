@@ -30,7 +30,8 @@ namespace Amazon.Glacier.Model
     /// <summary>
     /// Container for the parameters to the ListJobs operation.
     /// This operation lists jobs for a vault, including jobs that are in-progress and jobs
-    /// that have recently finished.
+    /// that have recently finished. The List Job operation returns a list of these jobs sorted
+    /// by job initiation time.
     /// 
     ///  <note> 
     /// <para>
@@ -44,14 +45,6 @@ namespace Amazon.Glacier.Model
     /// the archive while the job exists.
     /// </para>
     ///  </note> 
-    /// <para>
-    /// To retrieve an archive or retrieve a vault inventory from Amazon Glacier, you first
-    /// initiate a job, and after the job completes, you download the data. For an archive
-    /// retrieval, the output is the archive data. For an inventory retrieval, it is the inventory
-    /// list. The List Job operation returns a list of these jobs sorted by job initiation
-    /// time.
-    /// </para>
-    ///  
     /// <para>
     /// The List Jobs operation supports pagination. You should always check the response
     /// <code>Marker</code> field. If there are no more jobs to list, the <code>Marker</code>
@@ -79,7 +72,8 @@ namespace Amazon.Glacier.Model
     /// </para>
     ///  
     /// <para>
-    /// For the underlying REST API, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-jobs-get.html">List
+    /// For more information about using this operation, see the documentation for the underlying
+    /// REST API <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-jobs-get.html">List
     /// Jobs</a>. 
     /// </para>
     /// </summary>

@@ -28,32 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glacier.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListProvisionedCapacity operation.
-    /// This operation lists the provisioned capacity units for the specified AWS account.
+    /// Contains information about the location where the select job results are stored.
     /// </summary>
-    public partial class ListProvisionedCapacityRequest : AmazonGlacierRequest
+    public partial class OutputLocation
     {
-        private string _accountId;
+        private S3Location _s3;
 
         /// <summary>
-        /// Gets and sets the property AccountId. 
+        /// Gets and sets the property S3. 
         /// <para>
-        /// The AWS account ID of the account that owns the vault. You can either specify an AWS
-        /// account ID or optionally a single '-' (hyphen), in which case Amazon Glacier uses
-        /// the AWS account ID associated with the credentials used to sign the request. If you
-        /// use an account ID, don't include any hyphens ('-') in the ID. 
+        /// Describes an S3 location that will receive the results of the restore request.
         /// </para>
         /// </summary>
-        public string AccountId
+        public S3Location S3
         {
-            get { return this._accountId; }
-            set { this._accountId = value; }
+            get { return this._s3; }
+            set { this._s3 = value; }
         }
 
-        // Check to see if AccountId property is set
-        internal bool IsSetAccountId()
+        // Check to see if S3 property is set
+        internal bool IsSetS3()
         {
-            return this._accountId != null;
+            return this._s3 != null;
         }
 
     }
