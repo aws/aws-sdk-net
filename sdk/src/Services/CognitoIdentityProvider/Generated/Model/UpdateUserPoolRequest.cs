@@ -45,6 +45,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         private string _smsAuthenticationMessage;
         private SmsConfigurationType _smsConfiguration;
         private string _smsVerificationMessage;
+        private UserPoolAddOnsType _userPoolAddOns;
         private string _userPoolId;
         private Dictionary<string, string> _userPoolTags = new Dictionary<string, string>();
         private VerificationMessageTemplateType _verificationMessageTemplate;
@@ -279,6 +280,25 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetSmsVerificationMessage()
         {
             return this._smsVerificationMessage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserPoolAddOns. 
+        /// <para>
+        /// Used to enable advanced security risk detection. Set the key <code>AdvancedSecurityMode</code>
+        /// to the value "AUDIT".
+        /// </para>
+        /// </summary>
+        public UserPoolAddOnsType UserPoolAddOns
+        {
+            get { return this._userPoolAddOns; }
+            set { this._userPoolAddOns = value; }
+        }
+
+        // Check to see if UserPoolAddOns property is set
+        internal bool IsSetUserPoolAddOns()
+        {
+            return this._userPoolAddOns != null;
         }
 
         /// <summary>

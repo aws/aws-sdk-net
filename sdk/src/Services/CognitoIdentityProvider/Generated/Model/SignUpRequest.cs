@@ -35,12 +35,33 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// </summary>
     public partial class SignUpRequest : AmazonCognitoIdentityProviderRequest
     {
+        private AnalyticsMetadataType _analyticsMetadata;
         private string _clientId;
         private string _password;
         private string _secretHash;
         private List<AttributeType> _userAttributes = new List<AttributeType>();
+        private UserContextDataType _userContextData;
         private string _username;
         private List<AttributeType> _validationData = new List<AttributeType>();
+
+        /// <summary>
+        /// Gets and sets the property AnalyticsMetadata. 
+        /// <para>
+        /// The Amazon Pinpoint analytics metadata for collecting metrics for <code>SignUp</code>
+        /// calls.
+        /// </para>
+        /// </summary>
+        public AnalyticsMetadataType AnalyticsMetadata
+        {
+            get { return this._analyticsMetadata; }
+            set { this._analyticsMetadata = value; }
+        }
+
+        // Check to see if AnalyticsMetadata property is set
+        internal bool IsSetAnalyticsMetadata()
+        {
+            return this._analyticsMetadata != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ClientId. 
@@ -118,6 +139,25 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetUserAttributes()
         {
             return this._userAttributes != null && this._userAttributes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserContextData. 
+        /// <para>
+        /// Contextual data such as the user's device fingerprint, IP address, or location used
+        /// for evaluating the risk of an unexpected event by Amazon Cognito advanced security.
+        /// </para>
+        /// </summary>
+        public UserContextDataType UserContextData
+        {
+            get { return this._userContextData; }
+            set { this._userContextData = value; }
+        }
+
+        // Check to see if UserContextData property is set
+        internal bool IsSetUserContextData()
+        {
+            return this._userContextData != null;
         }
 
         /// <summary>

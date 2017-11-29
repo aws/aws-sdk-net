@@ -95,6 +95,17 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetAnalyticsConfiguration())
+                {
+                    context.Writer.WritePropertyName("AnalyticsConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AnalyticsConfigurationTypeMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AnalyticsConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetCallbackURLs())
                 {
                     context.Writer.WritePropertyName("CallbackURLs");

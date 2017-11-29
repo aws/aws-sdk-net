@@ -38,11 +38,32 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// </summary>
     public partial class AdminInitiateAuthRequest : AmazonCognitoIdentityProviderRequest
     {
+        private AnalyticsMetadataType _analyticsMetadata;
         private AuthFlowType _authFlow;
         private Dictionary<string, string> _authParameters = new Dictionary<string, string>();
         private string _clientId;
         private Dictionary<string, string> _clientMetadata = new Dictionary<string, string>();
+        private ContextDataType _contextData;
         private string _userPoolId;
+
+        /// <summary>
+        /// Gets and sets the property AnalyticsMetadata. 
+        /// <para>
+        /// The analytics metadata for collecting Amazon Pinpoint metrics for <code>AdminInitiateAuth</code>
+        /// calls.
+        /// </para>
+        /// </summary>
+        public AnalyticsMetadataType AnalyticsMetadata
+        {
+            get { return this._analyticsMetadata; }
+            set { this._analyticsMetadata = value; }
+        }
+
+        // Check to see if AnalyticsMetadata property is set
+        internal bool IsSetAnalyticsMetadata()
+        {
+            return this._analyticsMetadata != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AuthFlow. 
@@ -176,6 +197,25 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetClientMetadata()
         {
             return this._clientMetadata != null && this._clientMetadata.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContextData. 
+        /// <para>
+        /// Contextual data such as the user's device fingerprint, IP address, or location used
+        /// for evaluating the risk of an unexpected event by Amazon Cognito advanced security.
+        /// </para>
+        /// </summary>
+        public ContextDataType ContextData
+        {
+            get { return this._contextData; }
+            set { this._contextData = value; }
+        }
+
+        // Check to see if ContextData property is set
+        internal bool IsSetContextData()
+        {
+            return this._contextData != null;
         }
 
         /// <summary>

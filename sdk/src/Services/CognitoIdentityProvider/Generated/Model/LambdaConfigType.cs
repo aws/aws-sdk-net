@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// Specifies the type of configuration for AWS Lambda triggers.
+    /// Specifies the configuration for AWS Lambda triggers.
     /// </summary>
     public partial class LambdaConfigType
     {
@@ -39,6 +39,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         private string _postConfirmation;
         private string _preAuthentication;
         private string _preSignUp;
+        private string _preTokenGeneration;
         private string _verifyAuthChallengeResponse;
 
         /// <summary>
@@ -165,6 +166,24 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetPreSignUp()
         {
             return this._preSignUp != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreTokenGeneration. 
+        /// <para>
+        /// A Lambda trigger that is invoked before token generation.
+        /// </para>
+        /// </summary>
+        public string PreTokenGeneration
+        {
+            get { return this._preTokenGeneration; }
+            set { this._preTokenGeneration = value; }
+        }
+
+        // Check to see if PreTokenGeneration property is set
+        internal bool IsSetPreTokenGeneration()
+        {
+            return this._preTokenGeneration != null;
         }
 
         /// <summary>

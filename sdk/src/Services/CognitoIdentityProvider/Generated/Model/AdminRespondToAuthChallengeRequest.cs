@@ -38,16 +38,37 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// </summary>
     public partial class AdminRespondToAuthChallengeRequest : AmazonCognitoIdentityProviderRequest
     {
+        private AnalyticsMetadataType _analyticsMetadata;
         private ChallengeNameType _challengeName;
         private Dictionary<string, string> _challengeResponses = new Dictionary<string, string>();
         private string _clientId;
+        private ContextDataType _contextData;
         private string _session;
         private string _userPoolId;
 
         /// <summary>
+        /// Gets and sets the property AnalyticsMetadata. 
+        /// <para>
+        /// The analytics metadata for collecting Amazon Pinpoint metrics for <code>AdminRespondToAuthChallenge</code>
+        /// calls.
+        /// </para>
+        /// </summary>
+        public AnalyticsMetadataType AnalyticsMetadata
+        {
+            get { return this._analyticsMetadata; }
+            set { this._analyticsMetadata = value; }
+        }
+
+        // Check to see if AnalyticsMetadata property is set
+        internal bool IsSetAnalyticsMetadata()
+        {
+            return this._analyticsMetadata != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ChallengeName. 
         /// <para>
-        /// The challenge name. For more information, see <a href="API_AdminInitiateAuth.html">AdminInitiateAuth</a>.
+        /// The challenge name. For more information, see .
         /// </para>
         /// </summary>
         public ChallengeNameType ChallengeName
@@ -126,6 +147,25 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetClientId()
         {
             return this._clientId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContextData. 
+        /// <para>
+        /// Contextual data such as the user's device fingerprint, IP address, or location used
+        /// for evaluating the risk of an unexpected event by Amazon Cognito advanced security.
+        /// </para>
+        /// </summary>
+        public ContextDataType ContextData
+        {
+            get { return this._contextData; }
+            set { this._contextData = value; }
+        }
+
+        // Check to see if ContextData property is set
+        internal bool IsSetContextData()
+        {
+            return this._contextData != null;
         }
 
         /// <summary>

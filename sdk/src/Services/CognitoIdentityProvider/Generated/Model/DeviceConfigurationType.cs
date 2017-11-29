@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The type of configuration for the user pool's device tracking.
+    /// The configuration for the user pool's device tracking.
     /// </summary>
     public partial class DeviceConfigurationType
     {

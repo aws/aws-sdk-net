@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The type of configuration for creating a new user profile.
+    /// The configuration for creating a new user profile.
     /// </summary>
     public partial class AdminCreateUserConfigType
     {
@@ -59,6 +59,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property InviteMessageTemplate. 
         /// <para>
         /// The message template to be used for the welcome message to new users.
+        /// </para>
+        ///  
+        /// <para>
+        /// See also <a href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-message-customizations.html#cognito-user-pool-settings-user-invitation-message-customization">Customizing
+        /// User Invitation Messages</a>.
         /// </para>
         /// </summary>
         public MessageTemplateType InviteMessageTemplate

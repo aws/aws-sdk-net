@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The type of policy in a user pool.
+    /// The policy associated with a user pool.
     /// </summary>
     public partial class UserPoolPolicyType
     {
@@ -37,7 +37,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property PasswordPolicy. 
         /// <para>
-        /// A container for information about the user pool password policy.
+        /// The password policy.
         /// </para>
         /// </summary>
         public PasswordPolicyType PasswordPolicy

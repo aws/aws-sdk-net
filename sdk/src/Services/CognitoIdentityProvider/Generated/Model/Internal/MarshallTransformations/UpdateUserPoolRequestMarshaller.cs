@@ -174,6 +174,17 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.SmsVerificationMessage);
                 }
 
+                if(publicRequest.IsSetUserPoolAddOns())
+                {
+                    context.Writer.WritePropertyName("UserPoolAddOns");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = UserPoolAddOnsTypeMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.UserPoolAddOns, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetUserPoolId())
                 {
                     context.Writer.WritePropertyName("UserPoolId");

@@ -33,15 +33,36 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// </summary>
     public partial class RespondToAuthChallengeRequest : AmazonCognitoIdentityProviderRequest
     {
+        private AnalyticsMetadataType _analyticsMetadata;
         private ChallengeNameType _challengeName;
         private Dictionary<string, string> _challengeResponses = new Dictionary<string, string>();
         private string _clientId;
         private string _session;
+        private UserContextDataType _userContextData;
+
+        /// <summary>
+        /// Gets and sets the property AnalyticsMetadata. 
+        /// <para>
+        /// The Amazon Pinpoint analytics metadata for collecting metrics for <code>RespondToAuthChallenge</code>
+        /// calls.
+        /// </para>
+        /// </summary>
+        public AnalyticsMetadataType AnalyticsMetadata
+        {
+            get { return this._analyticsMetadata; }
+            set { this._analyticsMetadata = value; }
+        }
+
+        // Check to see if AnalyticsMetadata property is set
+        internal bool IsSetAnalyticsMetadata()
+        {
+            return this._analyticsMetadata != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ChallengeName. 
         /// <para>
-        /// The challenge name. For more information, see <a href="API_InitiateAuth.html">InitiateAuth</a>.
+        /// The challenge name. For more information, see .
         /// </para>
         ///  
         /// <para>
@@ -135,6 +156,25 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetSession()
         {
             return this._session != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserContextData. 
+        /// <para>
+        /// Contextual data such as the user's device fingerprint, IP address, or location used
+        /// for evaluating the risk of an unexpected event by Amazon Cognito advanced security.
+        /// </para>
+        /// </summary>
+        public UserContextDataType UserContextData
+        {
+            get { return this._userContextData; }
+            set { this._userContextData = value; }
+        }
+
+        // Check to see if UserContextData property is set
+        internal bool IsSetUserContextData()
+        {
+            return this._userContextData != null;
         }
 
     }

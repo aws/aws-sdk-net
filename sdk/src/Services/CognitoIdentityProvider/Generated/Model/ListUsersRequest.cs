@@ -43,7 +43,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property AttributesToGet. 
         /// <para>
         /// An array of strings, where each string is the name of a user attribute to be returned
-        /// for each user in the search results. If the array is empty, all attributes are returned.
+        /// for each user in the search results. If the array is null, all attributes are returned.
         /// </para>
         /// </summary>
         public List<string> AttributesToGet
@@ -124,6 +124,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>status</code> (case-insensitive)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>sub</code> 
         /// </para>
         ///  </li> </ul> 
         /// <para>

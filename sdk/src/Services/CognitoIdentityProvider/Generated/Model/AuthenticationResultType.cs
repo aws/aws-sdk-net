@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The result type of the authentication result.
+    /// The authentication result.
     /// </summary>
     public partial class AuthenticationResultType
     {
@@ -42,7 +42,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AccessToken. 
         /// <para>
-        /// The access token of the authentication result.
+        /// The access token.
         /// </para>
         /// </summary>
         public string AccessToken
@@ -78,7 +78,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property IdToken. 
         /// <para>
-        /// The ID token of the authentication result.
+        /// The ID token.
         /// </para>
         /// </summary>
         public string IdToken
@@ -114,7 +114,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property RefreshToken. 
         /// <para>
-        /// The refresh token of the authentication result.
+        /// The refresh token.
         /// </para>
         /// </summary>
         public string RefreshToken
@@ -132,7 +132,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property TokenType. 
         /// <para>
-        /// The token type of the authentication result.
+        /// The token type.
         /// </para>
         /// </summary>
         public string TokenType

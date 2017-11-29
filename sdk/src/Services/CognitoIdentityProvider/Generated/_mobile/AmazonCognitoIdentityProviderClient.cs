@@ -753,6 +753,38 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  AdminListUserAuthEvents
+
+        internal virtual AdminListUserAuthEventsResponse AdminListUserAuthEvents(AdminListUserAuthEventsRequest request)
+        {
+            var marshaller = new AdminListUserAuthEventsRequestMarshaller();
+            var unmarshaller = AdminListUserAuthEventsResponseUnmarshaller.Instance;
+
+            return Invoke<AdminListUserAuthEventsRequest,AdminListUserAuthEventsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AdminListUserAuthEvents operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AdminListUserAuthEvents operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminListUserAuthEvents">REST API Reference for AdminListUserAuthEvents Operation</seealso>
+        public virtual Task<AdminListUserAuthEventsResponse> AdminListUserAuthEventsAsync(AdminListUserAuthEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AdminListUserAuthEventsRequestMarshaller();
+            var unmarshaller = AdminListUserAuthEventsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AdminListUserAuthEventsRequest,AdminListUserAuthEventsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AdminRemoveUserFromGroup
 
         internal virtual AdminRemoveUserFromGroupResponse AdminRemoveUserFromGroup(AdminRemoveUserFromGroupRequest request)
@@ -849,6 +881,38 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  AdminSetUserMFAPreference
+
+        internal virtual AdminSetUserMFAPreferenceResponse AdminSetUserMFAPreference(AdminSetUserMFAPreferenceRequest request)
+        {
+            var marshaller = new AdminSetUserMFAPreferenceRequestMarshaller();
+            var unmarshaller = AdminSetUserMFAPreferenceResponseUnmarshaller.Instance;
+
+            return Invoke<AdminSetUserMFAPreferenceRequest,AdminSetUserMFAPreferenceResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AdminSetUserMFAPreference operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AdminSetUserMFAPreference operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminSetUserMFAPreference">REST API Reference for AdminSetUserMFAPreference Operation</seealso>
+        public virtual Task<AdminSetUserMFAPreferenceResponse> AdminSetUserMFAPreferenceAsync(AdminSetUserMFAPreferenceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AdminSetUserMFAPreferenceRequestMarshaller();
+            var unmarshaller = AdminSetUserMFAPreferenceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AdminSetUserMFAPreferenceRequest,AdminSetUserMFAPreferenceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AdminSetUserSettings
 
         internal virtual AdminSetUserSettingsResponse AdminSetUserSettings(AdminSetUserSettingsRequest request)
@@ -876,6 +940,38 @@ namespace Amazon.CognitoIdentityProvider
             var unmarshaller = AdminSetUserSettingsResponseUnmarshaller.Instance;
 
             return InvokeAsync<AdminSetUserSettingsRequest,AdminSetUserSettingsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AdminUpdateAuthEventFeedback
+
+        internal virtual AdminUpdateAuthEventFeedbackResponse AdminUpdateAuthEventFeedback(AdminUpdateAuthEventFeedbackRequest request)
+        {
+            var marshaller = new AdminUpdateAuthEventFeedbackRequestMarshaller();
+            var unmarshaller = AdminUpdateAuthEventFeedbackResponseUnmarshaller.Instance;
+
+            return Invoke<AdminUpdateAuthEventFeedbackRequest,AdminUpdateAuthEventFeedbackResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AdminUpdateAuthEventFeedback operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AdminUpdateAuthEventFeedback operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUpdateAuthEventFeedback">REST API Reference for AdminUpdateAuthEventFeedback Operation</seealso>
+        public virtual Task<AdminUpdateAuthEventFeedbackResponse> AdminUpdateAuthEventFeedbackAsync(AdminUpdateAuthEventFeedbackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AdminUpdateAuthEventFeedbackRequestMarshaller();
+            var unmarshaller = AdminUpdateAuthEventFeedbackResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AdminUpdateAuthEventFeedbackRequest,AdminUpdateAuthEventFeedbackResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -972,6 +1068,38 @@ namespace Amazon.CognitoIdentityProvider
             var unmarshaller = AdminUserGlobalSignOutResponseUnmarshaller.Instance;
 
             return InvokeAsync<AdminUserGlobalSignOutRequest,AdminUserGlobalSignOutResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AssociateSoftwareToken
+
+        internal virtual AssociateSoftwareTokenResponse AssociateSoftwareToken(AssociateSoftwareTokenRequest request)
+        {
+            var marshaller = new AssociateSoftwareTokenRequestMarshaller();
+            var unmarshaller = AssociateSoftwareTokenResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateSoftwareTokenRequest,AssociateSoftwareTokenResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateSoftwareToken operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateSoftwareToken operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AssociateSoftwareToken">REST API Reference for AssociateSoftwareToken Operation</seealso>
+        public virtual Task<AssociateSoftwareTokenResponse> AssociateSoftwareTokenAsync(AssociateSoftwareTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AssociateSoftwareTokenRequestMarshaller();
+            var unmarshaller = AssociateSoftwareTokenResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateSoftwareTokenRequest,AssociateSoftwareTokenResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1649,6 +1777,38 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  DescribeRiskConfiguration
+
+        internal virtual DescribeRiskConfigurationResponse DescribeRiskConfiguration(DescribeRiskConfigurationRequest request)
+        {
+            var marshaller = new DescribeRiskConfigurationRequestMarshaller();
+            var unmarshaller = DescribeRiskConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeRiskConfigurationRequest,DescribeRiskConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeRiskConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRiskConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeRiskConfiguration">REST API Reference for DescribeRiskConfiguration Operation</seealso>
+        public virtual Task<DescribeRiskConfigurationResponse> DescribeRiskConfigurationAsync(DescribeRiskConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeRiskConfigurationRequestMarshaller();
+            var unmarshaller = DescribeRiskConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeRiskConfigurationRequest,DescribeRiskConfigurationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeUserImportJob
 
         internal virtual DescribeUserImportJobResponse DescribeUserImportJob(DescribeUserImportJobRequest request)
@@ -2060,6 +2220,38 @@ namespace Amazon.CognitoIdentityProvider
             var unmarshaller = GetUserAttributeVerificationCodeResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetUserAttributeVerificationCodeRequest,GetUserAttributeVerificationCodeResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetUserPoolMfaConfig
+
+        internal virtual GetUserPoolMfaConfigResponse GetUserPoolMfaConfig(GetUserPoolMfaConfigRequest request)
+        {
+            var marshaller = new GetUserPoolMfaConfigRequestMarshaller();
+            var unmarshaller = GetUserPoolMfaConfigResponseUnmarshaller.Instance;
+
+            return Invoke<GetUserPoolMfaConfigRequest,GetUserPoolMfaConfigResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetUserPoolMfaConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetUserPoolMfaConfig operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetUserPoolMfaConfig">REST API Reference for GetUserPoolMfaConfig Operation</seealso>
+        public virtual Task<GetUserPoolMfaConfigResponse> GetUserPoolMfaConfigAsync(GetUserPoolMfaConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetUserPoolMfaConfigRequestMarshaller();
+            var unmarshaller = GetUserPoolMfaConfigResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetUserPoolMfaConfigRequest,GetUserPoolMfaConfigResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2481,6 +2673,38 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  SetRiskConfiguration
+
+        internal virtual SetRiskConfigurationResponse SetRiskConfiguration(SetRiskConfigurationRequest request)
+        {
+            var marshaller = new SetRiskConfigurationRequestMarshaller();
+            var unmarshaller = SetRiskConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<SetRiskConfigurationRequest,SetRiskConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetRiskConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetRiskConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetRiskConfiguration">REST API Reference for SetRiskConfiguration Operation</seealso>
+        public virtual Task<SetRiskConfigurationResponse> SetRiskConfigurationAsync(SetRiskConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new SetRiskConfigurationRequestMarshaller();
+            var unmarshaller = SetRiskConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SetRiskConfigurationRequest,SetRiskConfigurationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  SetUICustomization
 
         internal virtual SetUICustomizationResponse SetUICustomization(SetUICustomizationRequest request)
@@ -2508,6 +2732,70 @@ namespace Amazon.CognitoIdentityProvider
             var unmarshaller = SetUICustomizationResponseUnmarshaller.Instance;
 
             return InvokeAsync<SetUICustomizationRequest,SetUICustomizationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SetUserMFAPreference
+
+        internal virtual SetUserMFAPreferenceResponse SetUserMFAPreference(SetUserMFAPreferenceRequest request)
+        {
+            var marshaller = new SetUserMFAPreferenceRequestMarshaller();
+            var unmarshaller = SetUserMFAPreferenceResponseUnmarshaller.Instance;
+
+            return Invoke<SetUserMFAPreferenceRequest,SetUserMFAPreferenceResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetUserMFAPreference operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetUserMFAPreference operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserMFAPreference">REST API Reference for SetUserMFAPreference Operation</seealso>
+        public virtual Task<SetUserMFAPreferenceResponse> SetUserMFAPreferenceAsync(SetUserMFAPreferenceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new SetUserMFAPreferenceRequestMarshaller();
+            var unmarshaller = SetUserMFAPreferenceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SetUserMFAPreferenceRequest,SetUserMFAPreferenceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SetUserPoolMfaConfig
+
+        internal virtual SetUserPoolMfaConfigResponse SetUserPoolMfaConfig(SetUserPoolMfaConfigRequest request)
+        {
+            var marshaller = new SetUserPoolMfaConfigRequestMarshaller();
+            var unmarshaller = SetUserPoolMfaConfigResponseUnmarshaller.Instance;
+
+            return Invoke<SetUserPoolMfaConfigRequest,SetUserPoolMfaConfigResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetUserPoolMfaConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetUserPoolMfaConfig operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserPoolMfaConfig">REST API Reference for SetUserPoolMfaConfig Operation</seealso>
+        public virtual Task<SetUserPoolMfaConfigResponse> SetUserPoolMfaConfigAsync(SetUserPoolMfaConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new SetUserPoolMfaConfigRequestMarshaller();
+            var unmarshaller = SetUserPoolMfaConfigResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SetUserPoolMfaConfigRequest,SetUserPoolMfaConfigResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2636,6 +2924,38 @@ namespace Amazon.CognitoIdentityProvider
             var unmarshaller = StopUserImportJobResponseUnmarshaller.Instance;
 
             return InvokeAsync<StopUserImportJobRequest,StopUserImportJobResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateAuthEventFeedback
+
+        internal virtual UpdateAuthEventFeedbackResponse UpdateAuthEventFeedback(UpdateAuthEventFeedbackRequest request)
+        {
+            var marshaller = new UpdateAuthEventFeedbackRequestMarshaller();
+            var unmarshaller = UpdateAuthEventFeedbackResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAuthEventFeedbackRequest,UpdateAuthEventFeedbackResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAuthEventFeedback operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAuthEventFeedback operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateAuthEventFeedback">REST API Reference for UpdateAuthEventFeedback Operation</seealso>
+        public virtual Task<UpdateAuthEventFeedbackResponse> UpdateAuthEventFeedbackAsync(UpdateAuthEventFeedbackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateAuthEventFeedbackRequestMarshaller();
+            var unmarshaller = UpdateAuthEventFeedbackResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateAuthEventFeedbackRequest,UpdateAuthEventFeedbackResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2860,6 +3180,38 @@ namespace Amazon.CognitoIdentityProvider
             var unmarshaller = UpdateUserPoolClientResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateUserPoolClientRequest,UpdateUserPoolClientResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  VerifySoftwareToken
+
+        internal virtual VerifySoftwareTokenResponse VerifySoftwareToken(VerifySoftwareTokenRequest request)
+        {
+            var marshaller = new VerifySoftwareTokenRequestMarshaller();
+            var unmarshaller = VerifySoftwareTokenResponseUnmarshaller.Instance;
+
+            return Invoke<VerifySoftwareTokenRequest,VerifySoftwareTokenResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the VerifySoftwareToken operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the VerifySoftwareToken operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/VerifySoftwareToken">REST API Reference for VerifySoftwareToken Operation</seealso>
+        public virtual Task<VerifySoftwareTokenResponse> VerifySoftwareTokenAsync(VerifySoftwareTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new VerifySoftwareTokenRequestMarshaller();
+            var unmarshaller = VerifySoftwareTokenResponseUnmarshaller.Instance;
+
+            return InvokeAsync<VerifySoftwareTokenRequest,VerifySoftwareTokenResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

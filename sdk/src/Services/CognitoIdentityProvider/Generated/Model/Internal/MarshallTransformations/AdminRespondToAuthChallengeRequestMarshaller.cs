@@ -67,6 +67,17 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAnalyticsMetadata())
+                {
+                    context.Writer.WritePropertyName("AnalyticsMetadata");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AnalyticsMetadataTypeMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AnalyticsMetadata, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetChallengeName())
                 {
                     context.Writer.WritePropertyName("ChallengeName");
@@ -91,6 +102,17 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("ClientId");
                     context.Writer.Write(publicRequest.ClientId);
+                }
+
+                if(publicRequest.IsSetContextData())
+                {
+                    context.Writer.WritePropertyName("ContextData");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ContextDataTypeMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ContextData, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetSession())

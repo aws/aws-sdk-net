@@ -35,6 +35,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         private List<string> _allowedOAuthFlows = new List<string>();
         private bool? _allowedOAuthFlowsUserPoolClient;
         private List<string> _allowedOAuthScopes = new List<string>();
+        private AnalyticsConfigurationType _analyticsConfiguration;
         private List<string> _callbackURLs = new List<string>();
         private string _clientId;
         private string _clientName;
@@ -111,6 +112,24 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetAllowedOAuthScopes()
         {
             return this._allowedOAuthScopes != null && this._allowedOAuthScopes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AnalyticsConfiguration. 
+        /// <para>
+        /// The Amazon Pinpoint analytics configuration for the user pool client.
+        /// </para>
+        /// </summary>
+        public AnalyticsConfigurationType AnalyticsConfiguration
+        {
+            get { return this._analyticsConfiguration; }
+            set { this._analyticsConfiguration = value; }
+        }
+
+        // Check to see if AnalyticsConfiguration property is set
+        internal bool IsSetAnalyticsConfiguration()
+        {
+            return this._analyticsConfiguration != null;
         }
 
         /// <summary>

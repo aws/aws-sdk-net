@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The type of constraints associated with an attribute of the string type.
+    /// The constraints associated with a string attribute.
     /// </summary>
     public partial class StringAttributeConstraintsType
     {
@@ -38,7 +38,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property MaxLength. 
         /// <para>
-        /// The maximum length of an attribute value of the string type.
+        /// The maximum length.
         /// </para>
         /// </summary>
         public string MaxLength
@@ -56,7 +56,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property MinLength. 
         /// <para>
-        /// The minimum length of an attribute value of the string type.
+        /// The minimum length.
         /// </para>
         /// </summary>
         public string MinLength

@@ -57,10 +57,22 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     response.MFAOptions = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PreferredMfaSetting", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.PreferredMfaSetting = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("UserAttributes", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<AttributeType, AttributeTypeUnmarshaller>(AttributeTypeUnmarshaller.Instance);
                     response.UserAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("UserMFASettingList", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.UserMFASettingList = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Username", targetDepth))

@@ -87,6 +87,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.PreSignUp);
             }
 
+            if(requestObject.IsSetPreTokenGeneration())
+            {
+                context.Writer.WritePropertyName("PreTokenGeneration");
+                context.Writer.Write(requestObject.PreTokenGeneration);
+            }
+
             if(requestObject.IsSetVerifyAuthChallengeResponse())
             {
                 context.Writer.WritePropertyName("VerifyAuthChallengeResponse");

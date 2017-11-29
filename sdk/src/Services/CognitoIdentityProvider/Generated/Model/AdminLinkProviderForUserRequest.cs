@@ -51,7 +51,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// </para>
     ///  </important> 
     /// <para>
-    /// See also <a href="API_AdminDisableProviderForUser.html">AdminDisableProviderForUser</a>.
+    /// See also .
     /// </para>
     ///  
     /// <para>
@@ -75,9 +75,18 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  
         /// <para>
-        /// The <code>ProviderAttributeValue</code> for the <code>DestinationUser</code> must
-        /// match the username for the user in the user pool. The <code>ProviderAttributeName</code>
-        /// will always be ignored.
+        /// For a native username + password user, the <code>ProviderAttributeValue</code> for
+        /// the <code>DestinationUser</code> should be the username in the user pool. For a federated
+        /// user, it should be the provider-specific <code>user_id</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>ProviderAttributeName</code> of the <code>DestinationUser</code> is ignored.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>ProviderName</code> should be set to <code>Cognito</code> for users in Cognito
+        /// user pools.
         /// </para>
         /// </summary>
         public ProviderUserIdentifierType DestinationUser

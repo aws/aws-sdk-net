@@ -202,6 +202,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     unmarshalledObject.UsernameAttributes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("UserPoolAddOns", targetDepth))
+                {
+                    var unmarshaller = UserPoolAddOnsTypeUnmarshaller.Instance;
+                    unmarshalledObject.UserPoolAddOns = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("UserPoolTags", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);

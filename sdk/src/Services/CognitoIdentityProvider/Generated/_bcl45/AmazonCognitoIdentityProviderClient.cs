@@ -445,15 +445,32 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// Creates a new user in the specified user pool and sends a welcome message via email
-        /// or phone (SMS). This message is based on a template that you configured in your call
-        /// to <a href="API_CreateUserPool.html">CreateUserPool</a> or <a href="API_UpdateUserPool.html">UpdateUserPool</a>.
-        /// This template includes your custom sign-up instructions and placeholders for user
-        /// name and temporary password.
+        /// Creates a new user in the specified user pool.
         /// 
         ///  
         /// <para>
-        /// Requires developer credentials.
+        /// If <code>MessageAction</code> is not set, the default is to send a welcome message
+        /// via email or phone (SMS).
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This message is based on a template that you configured in your call to or . This
+        /// template includes your custom sign-up instructions and placeholders for user name
+        /// and temporary password.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Alternatively, you can call AdminCreateUser with “SUPPRESS” for the <code>MessageAction</code>
+        /// parameter, and Amazon Cognito will not send any email. 
+        /// </para>
+        ///  
+        /// <para>
+        /// In either case, the user will be in the <code>FORCE_CHANGE_PASSWORD</code> state until
+        /// they sign in and change their password.
+        /// </para>
+        ///  
+        /// <para>
+        /// AdminCreateUser requires developer credentials.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminCreateUser service method.</param>
@@ -681,8 +698,7 @@ namespace Amazon.CognitoIdentityProvider
         /// user, they are not permitted to use their password to sign-in. If the user to disable
         /// is a linked external IdP user, any link between that user and an existing user is
         /// removed. The next time the external user (no longer attached to the previously linked
-        /// <code>DestinationUser</code>) signs in, they must create a new user account. See <a
-        /// href="API_AdminLinkProviderForUser.html">AdminLinkProviderForUser</a>.
+        /// <code>DestinationUser</code>) signs in, they must create a new user account. See .
         /// 
         ///  
         /// <para>
@@ -712,11 +728,10 @@ namespace Amazon.CognitoIdentityProvider
         /// For de-linking a SAML identity, there are two scenarios. If the linked identity has
         /// not yet been used to sign-in, the <code>ProviderAttributeName</code> and <code>ProviderAttributeValue</code>
         /// must be the same values that were used for the <code>SourceUser</code> when the identities
-        /// were originally linked in the <a href="API_AdminLinkProviderForUser.html">AdminLinkProviderForUser</a>
-        /// call. (If the linking was done with <code>ProviderAttributeName</code> set to <code>Cognito_Subject</code>,
-        /// the same applies here). However, if the user has already signed in, the <code>ProviderAttributeName</code>
-        /// must be <code>Cognito_Subject</code> and <code>ProviderAttributeValue</code> must
-        /// be the subject of the SAML assertion.
+        /// were originally linked in the call. (If the linking was done with <code>ProviderAttributeName</code>
+        /// set to <code>Cognito_Subject</code>, the same applies here). However, if the user
+        /// has already signed in, the <code>ProviderAttributeName</code> must be <code>Cognito_Subject</code>
+        /// and <code>ProviderAttributeValue</code> must be the subject of the SAML assertion.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminDisableProviderForUser service method.</param>
@@ -1219,7 +1234,7 @@ namespace Amazon.CognitoIdentityProvider
         /// </para>
         ///  </important> 
         /// <para>
-        /// See also <a href="API_AdminDisableProviderForUser.html">AdminDisableProviderForUser</a>.
+        /// See also .
         /// </para>
         ///  
         /// <para>
@@ -1404,6 +1419,68 @@ namespace Amazon.CognitoIdentityProvider
             var unmarshaller = AdminListGroupsForUserResponseUnmarshaller.Instance;
 
             return InvokeAsync<AdminListGroupsForUserRequest,AdminListGroupsForUserResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AdminListUserAuthEvents
+
+
+        /// <summary>
+        /// Lists a history of user activity and any risks detected as part of Amazon Cognito
+        /// advanced security.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AdminListUserAuthEvents service method.</param>
+        /// 
+        /// <returns>The response from the AdminListUserAuthEvents service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user is not found.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserPoolAddOnNotEnabledException">
+        /// This exception is thrown when user pool add-ons are not enabled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminListUserAuthEvents">REST API Reference for AdminListUserAuthEvents Operation</seealso>
+        public virtual AdminListUserAuthEventsResponse AdminListUserAuthEvents(AdminListUserAuthEventsRequest request)
+        {
+            var marshaller = new AdminListUserAuthEventsRequestMarshaller();
+            var unmarshaller = AdminListUserAuthEventsResponseUnmarshaller.Instance;
+
+            return Invoke<AdminListUserAuthEventsRequest,AdminListUserAuthEventsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AdminListUserAuthEvents operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AdminListUserAuthEvents operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminListUserAuthEvents">REST API Reference for AdminListUserAuthEvents Operation</seealso>
+        public virtual Task<AdminListUserAuthEventsResponse> AdminListUserAuthEventsAsync(AdminListUserAuthEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AdminListUserAuthEventsRequestMarshaller();
+            var unmarshaller = AdminListUserAuthEventsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AdminListUserAuthEventsRequest,AdminListUserAuthEventsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1640,6 +1717,10 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.SoftwareTokenMFANotFoundException">
+        /// This exception is thrown when the software token TOTP multi-factor authentication
+        /// (MFA) is not enabled for the user pool.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
@@ -1682,6 +1763,67 @@ namespace Amazon.CognitoIdentityProvider
             var unmarshaller = AdminRespondToAuthChallengeResponseUnmarshaller.Instance;
 
             return InvokeAsync<AdminRespondToAuthChallengeRequest,AdminRespondToAuthChallengeResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AdminSetUserMFAPreference
+
+
+        /// <summary>
+        /// Sets the user's multi-factor authentication (MFA) preference.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AdminSetUserMFAPreference service method.</param>
+        /// 
+        /// <returns>The response from the AdminSetUserMFAPreference service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
+        /// This exception is thrown when a password reset is required.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
+        /// This exception is thrown when a user is not confirmed successfully.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminSetUserMFAPreference">REST API Reference for AdminSetUserMFAPreference Operation</seealso>
+        public virtual AdminSetUserMFAPreferenceResponse AdminSetUserMFAPreference(AdminSetUserMFAPreferenceRequest request)
+        {
+            var marshaller = new AdminSetUserMFAPreferenceRequestMarshaller();
+            var unmarshaller = AdminSetUserMFAPreferenceResponseUnmarshaller.Instance;
+
+            return Invoke<AdminSetUserMFAPreferenceRequest,AdminSetUserMFAPreferenceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AdminSetUserMFAPreference operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AdminSetUserMFAPreference operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminSetUserMFAPreference">REST API Reference for AdminSetUserMFAPreference Operation</seealso>
+        public virtual Task<AdminSetUserMFAPreferenceResponse> AdminSetUserMFAPreferenceAsync(AdminSetUserMFAPreferenceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AdminSetUserMFAPreferenceRequestMarshaller();
+            var unmarshaller = AdminSetUserMFAPreferenceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AdminSetUserMFAPreferenceRequest,AdminSetUserMFAPreferenceResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1742,6 +1884,69 @@ namespace Amazon.CognitoIdentityProvider
             var unmarshaller = AdminSetUserSettingsResponseUnmarshaller.Instance;
 
             return InvokeAsync<AdminSetUserSettingsRequest,AdminSetUserSettingsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AdminUpdateAuthEventFeedback
+
+
+        /// <summary>
+        /// Provides feedback for an authentication event as to whether it was from a valid user.
+        /// This feedback is used for improving the risk evaluation decision for the user pool
+        /// as part of Amazon Cognito advanced security.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AdminUpdateAuthEventFeedback service method.</param>
+        /// 
+        /// <returns>The response from the AdminUpdateAuthEventFeedback service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user is not found.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserPoolAddOnNotEnabledException">
+        /// This exception is thrown when user pool add-ons are not enabled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUpdateAuthEventFeedback">REST API Reference for AdminUpdateAuthEventFeedback Operation</seealso>
+        public virtual AdminUpdateAuthEventFeedbackResponse AdminUpdateAuthEventFeedback(AdminUpdateAuthEventFeedbackRequest request)
+        {
+            var marshaller = new AdminUpdateAuthEventFeedbackRequestMarshaller();
+            var unmarshaller = AdminUpdateAuthEventFeedbackResponseUnmarshaller.Instance;
+
+            return Invoke<AdminUpdateAuthEventFeedbackRequest,AdminUpdateAuthEventFeedbackResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AdminUpdateAuthEventFeedback operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AdminUpdateAuthEventFeedback operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUpdateAuthEventFeedback">REST API Reference for AdminUpdateAuthEventFeedback Operation</seealso>
+        public virtual Task<AdminUpdateAuthEventFeedbackResponse> AdminUpdateAuthEventFeedbackAsync(AdminUpdateAuthEventFeedbackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AdminUpdateAuthEventFeedbackRequestMarshaller();
+            var unmarshaller = AdminUpdateAuthEventFeedbackResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AdminUpdateAuthEventFeedbackRequest,AdminUpdateAuthEventFeedbackResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1962,6 +2167,63 @@ namespace Amazon.CognitoIdentityProvider
             var unmarshaller = AdminUserGlobalSignOutResponseUnmarshaller.Instance;
 
             return InvokeAsync<AdminUserGlobalSignOutRequest,AdminUserGlobalSignOutResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AssociateSoftwareToken
+
+
+        /// <summary>
+        /// Returns a unique generated shared secret key code for the user account. The request
+        /// takes an access token or a session string, but not both.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateSoftwareToken service method.</param>
+        /// 
+        /// <returns>The response from the AssociateSoftwareToken service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.SoftwareTokenMFANotFoundException">
+        /// This exception is thrown when the software token TOTP multi-factor authentication
+        /// (MFA) is not enabled for the user pool.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AssociateSoftwareToken">REST API Reference for AssociateSoftwareToken Operation</seealso>
+        public virtual AssociateSoftwareTokenResponse AssociateSoftwareToken(AssociateSoftwareTokenRequest request)
+        {
+            var marshaller = new AssociateSoftwareTokenRequestMarshaller();
+            var unmarshaller = AssociateSoftwareTokenResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateSoftwareTokenRequest,AssociateSoftwareTokenResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateSoftwareToken operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateSoftwareToken operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AssociateSoftwareToken">REST API Reference for AssociateSoftwareToken Operation</seealso>
+        public virtual Task<AssociateSoftwareTokenResponse> AssociateSoftwareTokenAsync(AssociateSoftwareTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AssociateSoftwareTokenRequestMarshaller();
+            var unmarshaller = AssociateSoftwareTokenResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateSoftwareTokenRequest,AssociateSoftwareTokenResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -3303,6 +3565,64 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  DescribeRiskConfiguration
+
+
+        /// <summary>
+        /// Describes the risk configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRiskConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DescribeRiskConfiguration service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserPoolAddOnNotEnabledException">
+        /// This exception is thrown when user pool add-ons are not enabled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeRiskConfiguration">REST API Reference for DescribeRiskConfiguration Operation</seealso>
+        public virtual DescribeRiskConfigurationResponse DescribeRiskConfiguration(DescribeRiskConfigurationRequest request)
+        {
+            var marshaller = new DescribeRiskConfigurationRequestMarshaller();
+            var unmarshaller = DescribeRiskConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeRiskConfigurationRequest,DescribeRiskConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeRiskConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRiskConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeRiskConfiguration">REST API Reference for DescribeRiskConfiguration Operation</seealso>
+        public virtual Task<DescribeRiskConfigurationResponse> DescribeRiskConfigurationAsync(DescribeRiskConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeRiskConfigurationRequestMarshaller();
+            var unmarshaller = DescribeRiskConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeRiskConfigurationRequest,DescribeRiskConfigurationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeUserImportJob
 
 
@@ -3601,7 +3921,7 @@ namespace Amazon.CognitoIdentityProvider
         /// user, the confirmation code is sent to the phone number. Otherwise, if a verified
         /// email exists, the confirmation code is sent to the email. If neither a verified phone
         /// number nor a verified email exists, <code>InvalidParameterException</code> is thrown.
-        /// To use the confirmation code for resetting the password, call <a href="API_ConfirmForgotPassword.html">ConfirmForgotPassword</a>.
+        /// To use the confirmation code for resetting the password, call .
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ForgotPassword service method.</param>
         /// 
@@ -4141,6 +4461,61 @@ namespace Amazon.CognitoIdentityProvider
             var unmarshaller = GetUserAttributeVerificationCodeResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetUserAttributeVerificationCodeRequest,GetUserAttributeVerificationCodeResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetUserPoolMfaConfig
+
+
+        /// <summary>
+        /// Gets the user pool multi-factor authentication (MFA) configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetUserPoolMfaConfig service method.</param>
+        /// 
+        /// <returns>The response from the GetUserPoolMfaConfig service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetUserPoolMfaConfig">REST API Reference for GetUserPoolMfaConfig Operation</seealso>
+        public virtual GetUserPoolMfaConfigResponse GetUserPoolMfaConfig(GetUserPoolMfaConfigRequest request)
+        {
+            var marshaller = new GetUserPoolMfaConfigRequestMarshaller();
+            var unmarshaller = GetUserPoolMfaConfigResponseUnmarshaller.Instance;
+
+            return Invoke<GetUserPoolMfaConfigRequest,GetUserPoolMfaConfigResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetUserPoolMfaConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetUserPoolMfaConfig operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetUserPoolMfaConfig">REST API Reference for GetUserPoolMfaConfig Operation</seealso>
+        public virtual Task<GetUserPoolMfaConfigResponse> GetUserPoolMfaConfigAsync(GetUserPoolMfaConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetUserPoolMfaConfigRequestMarshaller();
+            var unmarshaller = GetUserPoolMfaConfigResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetUserPoolMfaConfigRequest,GetUserPoolMfaConfigResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -4950,6 +5325,10 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.SoftwareTokenMFANotFoundException">
+        /// This exception is thrown when the software token TOTP multi-factor authentication
+        /// (MFA) is not enabled for the user pool.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
@@ -4992,6 +5371,82 @@ namespace Amazon.CognitoIdentityProvider
             var unmarshaller = RespondToAuthChallengeResponseUnmarshaller.Instance;
 
             return InvokeAsync<RespondToAuthChallengeRequest,RespondToAuthChallengeResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SetRiskConfiguration
+
+
+        /// <summary>
+        /// Configures actions on detected risks. To delete the risk configuration for <code>UserPoolId</code>
+        /// or <code>ClientId</code>, pass null values for all four configuration types.
+        /// 
+        ///  
+        /// <para>
+        /// To enable Amazon Cognito advanced security features, update the user pool to include
+        /// the <code>UserPoolAddOns</code> key<code>AdvancedSecurityMode</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// See .
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SetRiskConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the SetRiskConfiguration service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.CodeDeliveryFailureException">
+        /// This exception is thrown when a verification code fails to deliver successfully.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidEmailRoleAccessPolicyException">
+        /// This exception is thrown when Amazon Cognito is not allowed to use your email identity.
+        /// HTTP status code: 400.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserPoolAddOnNotEnabledException">
+        /// This exception is thrown when user pool add-ons are not enabled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetRiskConfiguration">REST API Reference for SetRiskConfiguration Operation</seealso>
+        public virtual SetRiskConfigurationResponse SetRiskConfiguration(SetRiskConfigurationRequest request)
+        {
+            var marshaller = new SetRiskConfigurationRequestMarshaller();
+            var unmarshaller = SetRiskConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<SetRiskConfigurationRequest,SetRiskConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetRiskConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetRiskConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetRiskConfiguration">REST API Reference for SetRiskConfiguration Operation</seealso>
+        public virtual Task<SetRiskConfigurationResponse> SetRiskConfigurationAsync(SetRiskConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new SetRiskConfigurationRequestMarshaller();
+            var unmarshaller = SetRiskConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SetRiskConfigurationRequest,SetRiskConfigurationResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -5063,6 +5518,132 @@ namespace Amazon.CognitoIdentityProvider
             var unmarshaller = SetUICustomizationResponseUnmarshaller.Instance;
 
             return InvokeAsync<SetUICustomizationRequest,SetUICustomizationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SetUserMFAPreference
+
+
+        /// <summary>
+        /// Set the user's multi-factor authentication (MFA) method preference.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SetUserMFAPreference service method.</param>
+        /// 
+        /// <returns>The response from the SetUserMFAPreference service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
+        /// This exception is thrown when a password reset is required.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
+        /// This exception is thrown when a user is not confirmed successfully.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserMFAPreference">REST API Reference for SetUserMFAPreference Operation</seealso>
+        public virtual SetUserMFAPreferenceResponse SetUserMFAPreference(SetUserMFAPreferenceRequest request)
+        {
+            var marshaller = new SetUserMFAPreferenceRequestMarshaller();
+            var unmarshaller = SetUserMFAPreferenceResponseUnmarshaller.Instance;
+
+            return Invoke<SetUserMFAPreferenceRequest,SetUserMFAPreferenceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetUserMFAPreference operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetUserMFAPreference operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserMFAPreference">REST API Reference for SetUserMFAPreference Operation</seealso>
+        public virtual Task<SetUserMFAPreferenceResponse> SetUserMFAPreferenceAsync(SetUserMFAPreferenceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new SetUserMFAPreferenceRequestMarshaller();
+            var unmarshaller = SetUserMFAPreferenceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SetUserMFAPreferenceRequest,SetUserMFAPreferenceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SetUserPoolMfaConfig
+
+
+        /// <summary>
+        /// Set the user pool MFA configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SetUserPoolMfaConfig service method.</param>
+        /// 
+        /// <returns>The response from the SetUserPoolMfaConfig service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleAccessPolicyException">
+        /// This exception is returned when the role provided for SMS configuration does not have
+        /// permission to publish using Amazon SNS.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
+        /// This exception is thrown when the trust relationship is invalid for the role provided
+        /// for SMS configuration. This can happen if you do not trust <b>cognito-idp.amazonaws.com</b>
+        /// or the external ID provided in the role does not match what is provided in the SMS
+        /// configuration for the user pool.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserPoolMfaConfig">REST API Reference for SetUserPoolMfaConfig Operation</seealso>
+        public virtual SetUserPoolMfaConfigResponse SetUserPoolMfaConfig(SetUserPoolMfaConfigRequest request)
+        {
+            var marshaller = new SetUserPoolMfaConfigRequestMarshaller();
+            var unmarshaller = SetUserPoolMfaConfigResponseUnmarshaller.Instance;
+
+            return Invoke<SetUserPoolMfaConfigRequest,SetUserPoolMfaConfigResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetUserPoolMfaConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetUserPoolMfaConfig operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserPoolMfaConfig">REST API Reference for SetUserPoolMfaConfig Operation</seealso>
+        public virtual Task<SetUserPoolMfaConfigResponse> SetUserPoolMfaConfigAsync(SetUserPoolMfaConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new SetUserPoolMfaConfigRequestMarshaller();
+            var unmarshaller = SetUserPoolMfaConfigResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SetUserPoolMfaConfigRequest,SetUserPoolMfaConfigResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -5334,6 +5915,69 @@ namespace Amazon.CognitoIdentityProvider
             var unmarshaller = StopUserImportJobResponseUnmarshaller.Instance;
 
             return InvokeAsync<StopUserImportJobRequest,StopUserImportJobResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateAuthEventFeedback
+
+
+        /// <summary>
+        /// Provides the feedback for an authentication event whether it was from a valid user
+        /// or not. This feedback is used for improving the risk evaluation decision for the user
+        /// pool as part of Amazon Cognito advanced security.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAuthEventFeedback service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAuthEventFeedback service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user is not found.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserPoolAddOnNotEnabledException">
+        /// This exception is thrown when user pool add-ons are not enabled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateAuthEventFeedback">REST API Reference for UpdateAuthEventFeedback Operation</seealso>
+        public virtual UpdateAuthEventFeedbackResponse UpdateAuthEventFeedback(UpdateAuthEventFeedbackRequest request)
+        {
+            var marshaller = new UpdateAuthEventFeedbackRequestMarshaller();
+            var unmarshaller = UpdateAuthEventFeedbackResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAuthEventFeedbackRequest,UpdateAuthEventFeedbackResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAuthEventFeedback operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAuthEventFeedback operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateAuthEventFeedback">REST API Reference for UpdateAuthEventFeedback Operation</seealso>
+        public virtual Task<UpdateAuthEventFeedbackResponse> UpdateAuthEventFeedbackAsync(UpdateAuthEventFeedbackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateAuthEventFeedbackRequestMarshaller();
+            var unmarshaller = UpdateAuthEventFeedbackResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateAuthEventFeedbackRequest,UpdateAuthEventFeedbackResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -5771,6 +6415,9 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="request">Container for the necessary parameters to execute the UpdateUserPoolClient service method.</param>
         /// 
         /// <returns>The response from the UpdateUserPoolClient service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ConcurrentModificationException">
+        /// This exception is thrown if two or more modifications are happening concurrently.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
@@ -5818,6 +6465,88 @@ namespace Amazon.CognitoIdentityProvider
             var unmarshaller = UpdateUserPoolClientResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateUserPoolClientRequest,UpdateUserPoolClientResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  VerifySoftwareToken
+
+
+        /// <summary>
+        /// Use this API to register a user's entered TOTP code and mark the user's software token
+        /// MFA status as "verified" if successful,
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the VerifySoftwareToken service method.</param>
+        /// 
+        /// <returns>The response from the VerifySoftwareToken service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.CodeMismatchException">
+        /// This exception is thrown if the provided code does not match what the server was expecting.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.EnableSoftwareTokenMFAException">
+        /// This exception is thrown when there is a code mismatch and the service fails to configure
+        /// the software token TOTP multi-factor authentication (MFA).
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidUserPoolConfigurationException">
+        /// This exception is thrown when the user pool configuration is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
+        /// This exception is thrown when a password reset is required.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.SoftwareTokenMFANotFoundException">
+        /// This exception is thrown when the software token TOTP multi-factor authentication
+        /// (MFA) is not enabled for the user pool.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
+        /// This exception is thrown when a user is not confirmed successfully.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/VerifySoftwareToken">REST API Reference for VerifySoftwareToken Operation</seealso>
+        public virtual VerifySoftwareTokenResponse VerifySoftwareToken(VerifySoftwareTokenRequest request)
+        {
+            var marshaller = new VerifySoftwareTokenRequestMarshaller();
+            var unmarshaller = VerifySoftwareTokenResponseUnmarshaller.Instance;
+
+            return Invoke<VerifySoftwareTokenRequest,VerifySoftwareTokenResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the VerifySoftwareToken operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the VerifySoftwareToken operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/VerifySoftwareToken">REST API Reference for VerifySoftwareToken Operation</seealso>
+        public virtual Task<VerifySoftwareTokenResponse> VerifySoftwareTokenAsync(VerifySoftwareTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new VerifySoftwareTokenRequestMarshaller();
+            var unmarshaller = VerifySoftwareTokenResponseUnmarshaller.Instance;
+
+            return InvokeAsync<VerifySoftwareTokenRequest,VerifySoftwareTokenResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

@@ -82,6 +82,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     unmarshalledObject.AllowedOAuthScopes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AnalyticsConfiguration", targetDepth))
+                {
+                    var unmarshaller = AnalyticsConfigurationTypeUnmarshaller.Instance;
+                    unmarshalledObject.AnalyticsConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CallbackURLs", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

@@ -35,9 +35,11 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
         private bool? _enabled;
         private List<MFAOptionType> _mfaOptions = new List<MFAOptionType>();
+        private string _preferredMfaSetting;
         private List<AttributeType> _userAttributes = new List<AttributeType>();
         private DateTime? _userCreateDate;
         private DateTime? _userLastModifiedDate;
+        private List<string> _userMFASettingList = new List<string>();
         private string _username;
         private UserStatusType _userStatus;
 
@@ -75,6 +77,21 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetMFAOptions()
         {
             return this._mfaOptions != null && this._mfaOptions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreferredMfaSetting.
+        /// </summary>
+        public string PreferredMfaSetting
+        {
+            get { return this._preferredMfaSetting; }
+            set { this._preferredMfaSetting = value; }
+        }
+
+        // Check to see if PreferredMfaSetting property is set
+        internal bool IsSetPreferredMfaSetting()
+        {
+            return this._preferredMfaSetting != null;
         }
 
         /// <summary>
@@ -129,6 +146,21 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetUserLastModifiedDate()
         {
             return this._userLastModifiedDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserMFASettingList.
+        /// </summary>
+        public List<string> UserMFASettingList
+        {
+            get { return this._userMFASettingList; }
+            set { this._userMFASettingList = value; }
+        }
+
+        // Check to see if UserMFASettingList property is set
+        internal bool IsSetUserMFASettingList()
+        {
+            return this._userMFASettingList != null && this._userMFASettingList.Count > 0; 
         }
 
         /// <summary>

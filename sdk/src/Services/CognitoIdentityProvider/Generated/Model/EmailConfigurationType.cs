@@ -38,7 +38,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ReplyToEmailAddress. 
         /// <para>
-        /// The REPLY-TO email address.
+        /// The destination to which the receiver of the email should reply to.
         /// </para>
         /// </summary>
         public string ReplyToEmailAddress

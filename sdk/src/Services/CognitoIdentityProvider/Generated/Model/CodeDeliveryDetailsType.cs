@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The type of code delivery details being returned from the server.
+    /// The code delivery details being returned from the server.
     /// </summary>
     public partial class CodeDeliveryDetailsType
     {
@@ -39,7 +39,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AttributeName. 
         /// <para>
-        /// The name of the attribute in the code delivery details type.
+        /// The attribute name.
         /// </para>
         /// </summary>
         public string AttributeName

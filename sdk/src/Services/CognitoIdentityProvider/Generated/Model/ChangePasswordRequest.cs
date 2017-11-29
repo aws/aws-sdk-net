@@ -41,7 +41,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AccessToken. 
         /// <para>
-        /// The access token in the change password request.
+        /// The access token.
         /// </para>
         /// </summary>
         public string AccessToken
@@ -59,7 +59,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property PreviousPassword. 
         /// <para>
-        /// The old password in the change password request.
+        /// The old password.
         /// </para>
         /// </summary>
         public string PreviousPassword
@@ -77,7 +77,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ProposedPassword. 
         /// <para>
-        /// The new password in the change password request.
+        /// The new password.
         /// </para>
         /// </summary>
         public string ProposedPassword
