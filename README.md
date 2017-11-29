@@ -203,6 +203,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* AWS IoT allows you to leverage AWS to build your Internet of Things.
 * [AWSSDK.IotData](https://www.nuget.org/packages/AWSSDK.IotData/)
 	* AWS IoT-Data enables secure, bi-directional communication between Internet-connected things (such as sensors, actuators, embedded devices, or smart appliances) and the AWS cloud. It implements a broker for applications and things to publish messages over HTTP (Publish) and retrieve, update, and delete thing shadows. A thing shadow is a persistent representation of your things and their state in the AWS cloud.
+* [AWSSDK.IoTJobsDataPlane](https://www.nuget.org/packages/AWSSDK.IoTJobsDataPlane/)
+	* This release adds support for new the service called Iot Jobs. This client is built for the device SDK to use Iot Jobs Device specific APIs.
 * [AWSSDK.KeyManagementService](https://www.nuget.org/packages/AWSSDK.KeyManagementService/)
 	* AWS Key Management Service (KMS) is a managed service that makes it easy for you to create and control the encryption keys used to encrypt your data, and uses Hardware Security Modules (HSMs) to protect the security of your keys.
 * [AWSSDK.Kinesis](https://www.nuget.org/packages/AWSSDK.Kinesis/)
