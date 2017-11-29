@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-16"?>
+<property-value-rules>
+  <property-value-rule>
+    <property>Amazon.KinesisVideoArchivedMedia.Model.GetMediaForFragmentListRequest.StreamName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisVideoArchivedMedia.Model.GetMediaForFragmentListResponse.ContentType</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_\.\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisVideoArchivedMedia.Model.ListFragmentsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisVideoArchivedMedia.Model.ListFragmentsRequest.NextToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisVideoArchivedMedia.Model.ListFragmentsRequest.StreamName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisVideoArchivedMedia.Model.ListFragmentsResponse.NextToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisVideoArchivedMedia.Model.Fragment.FragmentNumber</property>
+    <min>1</min>
+  </property-value-rule>
+</property-value-rules>
