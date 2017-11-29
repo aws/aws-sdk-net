@@ -1,0 +1,5 @@
+{
+  "active": true,
+  "synopsis": "This is the initial SDK release for Amazon MQ. Amazon MQ is a managed message broker service for Apache ActiveMQ that makes it easy to set up and operate message brokers in the cloud.",
+  "generate-client-constructors": true
+}

@@ -107,6 +107,7 @@
     <ProjectReference Include="..\..\src\Services\MigrationHub\AWSSDK.MigrationHub.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\Mobile\AWSSDK.Mobile.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\MobileAnalytics\AWSSDK.MobileAnalytics.Net45.csproj"/>
+    <ProjectReference Include="..\..\src\Services\MQ\AWSSDK.MQ.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\MTurk\AWSSDK.MTurk.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\OpsWorks\AWSSDK.OpsWorks.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\OpsWorksCM\AWSSDK.OpsWorksCM.Net45.csproj"/>

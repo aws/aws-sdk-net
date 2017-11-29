@@ -376,6 +376,10 @@
       <Project>{C2F1BD96-3D53-4927-B608-17B154666D00}</Project>
       <Name>AWSSDK.MobileAnalytics.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/MQ/AWSSDK.MQ.CodeAnalysis.csproj">
+      <Project>{5C00E664-6590-461B-A670-30D351216C81}</Project>
+      <Name>AWSSDK.MQ.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/MTurk/AWSSDK.MTurk.CodeAnalysis.csproj">
       <Project>{5D23F36C-79A1-4F2A-BDCE-E43E1AAF4C88}</Project>
       <Name>AWSSDK.MTurk.CodeAnalysis</Name>

@@ -110,6 +110,7 @@
     <ProjectReference Include="..\..\src\Services\MigrationHub\AWSSDK.MigrationHub.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\Mobile\AWSSDK.Mobile.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\MobileAnalytics\AWSSDK.MobileAnalytics.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\MQ\AWSSDK.MQ.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\MTurk\AWSSDK.MTurk.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\OpsWorks\AWSSDK.OpsWorks.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\OpsWorksCM\AWSSDK.OpsWorksCM.Net35.csproj"/>
