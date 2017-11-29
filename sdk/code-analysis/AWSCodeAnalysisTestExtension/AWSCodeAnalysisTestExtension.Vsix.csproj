@@ -68,6 +68,10 @@
       <Project>{C8E84B00-7398-4F52-A7CA-B64E5EF6339F}</Project>
       <Name>AWSSDK.AppStream.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/AppSync/AWSSDK.AppSync.CodeAnalysis.csproj">
+      <Project>{7FF632A3-92B7-4DEC-9B9E-BC3168FB19DF}</Project>
+      <Name>AWSSDK.AppSync.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Athena/AWSSDK.Athena.CodeAnalysis.csproj">
       <Project>{C759B78F-82AA-4460-9E39-2C8A695A76B6}</Project>
       <Name>AWSSDK.Athena.CodeAnalysis</Name>
@@ -283,6 +287,10 @@
     <ProjectReference Include="../ServiceAnalysis/Greengrass/AWSSDK.Greengrass.CodeAnalysis.csproj">
       <Project>{0DE2217F-CCB8-4ADA-8B6A-561E5DB270F1}</Project>
       <Name>AWSSDK.Greengrass.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/GuardDuty/AWSSDK.GuardDuty.CodeAnalysis.csproj">
+      <Project>{951ED9A4-88BD-43A6-BA7F-BCD77FD9D4DA}</Project>
+      <Name>AWSSDK.GuardDuty.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/IdentityManagement/AWSSDK.IdentityManagement.CodeAnalysis.csproj">
       <Project>{B20D0577-6579-4191-8C47-16AD07B1D34C}</Project>

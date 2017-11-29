@@ -26,6 +26,7 @@
       <Directory>$(ProjectDir)/src/Services/applicationautoscaling/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/applicationdiscoveryservice/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/appstream/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/appsync/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/athena/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/autoscaling/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/awshealth/bin/Release/net35/</Directory>
@@ -79,6 +80,7 @@
       <Directory>$(ProjectDir)/src/Services/glacier/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/glue/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/greengrass/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/guardduty/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/identitymanagement/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/importexport/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/inspector/bin/Release/net35/</Directory>
@@ -102,6 +104,7 @@
       <Directory>$(ProjectDir)/src/Services/migrationhub/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/mobile/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/mobileanalytics/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/mq/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/mturk/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/opsworks/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/opsworkscm/bin/Release/net35/</Directory>
@@ -140,6 +143,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ApplicationAutoScaling.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ApplicationDiscoveryService.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.AppStream.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.AppSync.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Athena.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.AutoScaling.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.AWSHealth.dll" Analyze="True" AnalyzeAllChildren="True" />
@@ -193,6 +197,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Glacier.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Glue.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Greengrass.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.GuardDuty.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.IdentityManagement.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ImportExport.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Inspector.dll" Analyze="True" AnalyzeAllChildren="True" />
@@ -216,6 +221,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.MigrationHub.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Mobile.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.MobileAnalytics.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.MQ.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.MTurk.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.OpsWorks.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.OpsWorksCM.dll" Analyze="True" AnalyzeAllChildren="True" />

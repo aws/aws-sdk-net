@@ -33,6 +33,7 @@
     <ProjectReference Include="..\..\src\Services\ApplicationAutoScaling\AWSSDK.ApplicationAutoScaling.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\ApplicationDiscoveryService\AWSSDK.ApplicationDiscoveryService.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\AppStream\AWSSDK.AppStream.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\AppSync\AWSSDK.AppSync.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\Athena\AWSSDK.Athena.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\AutoScaling\AWSSDK.AutoScaling.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\AWSHealth\AWSSDK.AWSHealth.Net35.csproj"/>
@@ -87,6 +88,7 @@
     <ProjectReference Include="..\..\src\Services\Glacier\AWSSDK.Glacier.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\Glue\AWSSDK.Glue.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\Greengrass\AWSSDK.Greengrass.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\GuardDuty\AWSSDK.GuardDuty.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\IdentityManagement\AWSSDK.IdentityManagement.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\ImportExport\AWSSDK.ImportExport.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\Inspector\AWSSDK.Inspector.Net35.csproj"/>
