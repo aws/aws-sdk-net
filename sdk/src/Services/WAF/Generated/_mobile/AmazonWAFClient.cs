@@ -856,6 +856,38 @@ namespace Amazon.WAF
 
         #endregion
         
+        #region  CreateRuleGroup
+
+        internal virtual CreateRuleGroupResponse CreateRuleGroup(CreateRuleGroupRequest request)
+        {
+            var marshaller = new CreateRuleGroupRequestMarshaller();
+            var unmarshaller = CreateRuleGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateRuleGroupRequest,CreateRuleGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateRuleGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateRuleGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRuleGroup">REST API Reference for CreateRuleGroup Operation</seealso>
+        public virtual Task<CreateRuleGroupResponse> CreateRuleGroupAsync(CreateRuleGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateRuleGroupRequestMarshaller();
+            var unmarshaller = CreateRuleGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateRuleGroupRequest,CreateRuleGroupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateSizeConstraintSet
 
         internal virtual CreateSizeConstraintSetResponse CreateSizeConstraintSet(CreateSizeConstraintSetRequest request)
@@ -1622,6 +1654,38 @@ namespace Amazon.WAF
             var unmarshaller = DeleteRuleResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteRuleRequest,DeleteRuleResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteRuleGroup
+
+        internal virtual DeleteRuleGroupResponse DeleteRuleGroup(DeleteRuleGroupRequest request)
+        {
+            var marshaller = new DeleteRuleGroupRequestMarshaller();
+            var unmarshaller = DeleteRuleGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRuleGroupRequest,DeleteRuleGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteRuleGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRuleGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteRuleGroup">REST API Reference for DeleteRuleGroup Operation</seealso>
+        public virtual Task<DeleteRuleGroupResponse> DeleteRuleGroupAsync(DeleteRuleGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteRuleGroupRequestMarshaller();
+            var unmarshaller = DeleteRuleGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteRuleGroupRequest,DeleteRuleGroupResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2440,6 +2504,38 @@ namespace Amazon.WAF
 
         #endregion
         
+        #region  GetRuleGroup
+
+        internal virtual GetRuleGroupResponse GetRuleGroup(GetRuleGroupRequest request)
+        {
+            var marshaller = new GetRuleGroupRequestMarshaller();
+            var unmarshaller = GetRuleGroupResponseUnmarshaller.Instance;
+
+            return Invoke<GetRuleGroupRequest,GetRuleGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRuleGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRuleGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetRuleGroup">REST API Reference for GetRuleGroup Operation</seealso>
+        public virtual Task<GetRuleGroupResponse> GetRuleGroupAsync(GetRuleGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetRuleGroupRequestMarshaller();
+            var unmarshaller = GetRuleGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetRuleGroupRequest,GetRuleGroupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetSampledRequests
 
         internal virtual GetSampledRequestsResponse GetSampledRequests(GetSampledRequestsRequest request)
@@ -2658,6 +2754,38 @@ namespace Amazon.WAF
 
         #endregion
         
+        #region  ListActivatedRulesInRuleGroup
+
+        internal virtual ListActivatedRulesInRuleGroupResponse ListActivatedRulesInRuleGroup(ListActivatedRulesInRuleGroupRequest request)
+        {
+            var marshaller = new ListActivatedRulesInRuleGroupRequestMarshaller();
+            var unmarshaller = ListActivatedRulesInRuleGroupResponseUnmarshaller.Instance;
+
+            return Invoke<ListActivatedRulesInRuleGroupRequest,ListActivatedRulesInRuleGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListActivatedRulesInRuleGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListActivatedRulesInRuleGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListActivatedRulesInRuleGroup">REST API Reference for ListActivatedRulesInRuleGroup Operation</seealso>
+        public virtual Task<ListActivatedRulesInRuleGroupResponse> ListActivatedRulesInRuleGroupAsync(ListActivatedRulesInRuleGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListActivatedRulesInRuleGroupRequestMarshaller();
+            var unmarshaller = ListActivatedRulesInRuleGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListActivatedRulesInRuleGroupRequest,ListActivatedRulesInRuleGroupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListByteMatchSets
 
         internal virtual ListByteMatchSetsResponse ListByteMatchSets(ListByteMatchSetsRequest request)
@@ -2850,6 +2978,38 @@ namespace Amazon.WAF
 
         #endregion
         
+        #region  ListRuleGroups
+
+        internal virtual ListRuleGroupsResponse ListRuleGroups(ListRuleGroupsRequest request)
+        {
+            var marshaller = new ListRuleGroupsRequestMarshaller();
+            var unmarshaller = ListRuleGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<ListRuleGroupsRequest,ListRuleGroupsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListRuleGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListRuleGroups operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListRuleGroups">REST API Reference for ListRuleGroups Operation</seealso>
+        public virtual Task<ListRuleGroupsResponse> ListRuleGroupsAsync(ListRuleGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListRuleGroupsRequestMarshaller();
+            var unmarshaller = ListRuleGroupsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListRuleGroupsRequest,ListRuleGroupsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListRules
 
         internal virtual ListRulesResponse ListRules(ListRulesRequest request)
@@ -2941,6 +3101,38 @@ namespace Amazon.WAF
             var unmarshaller = ListSqlInjectionMatchSetsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListSqlInjectionMatchSetsRequest,ListSqlInjectionMatchSetsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListSubscribedRuleGroups
+
+        internal virtual ListSubscribedRuleGroupsResponse ListSubscribedRuleGroups(ListSubscribedRuleGroupsRequest request)
+        {
+            var marshaller = new ListSubscribedRuleGroupsRequestMarshaller();
+            var unmarshaller = ListSubscribedRuleGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<ListSubscribedRuleGroupsRequest,ListSubscribedRuleGroupsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSubscribedRuleGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSubscribedRuleGroups operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListSubscribedRuleGroups">REST API Reference for ListSubscribedRuleGroups Operation</seealso>
+        public virtual Task<ListSubscribedRuleGroupsResponse> ListSubscribedRuleGroupsAsync(ListSubscribedRuleGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListSubscribedRuleGroupsRequestMarshaller();
+            var unmarshaller = ListSubscribedRuleGroupsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListSubscribedRuleGroupsRequest,ListSubscribedRuleGroupsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -3912,6 +4104,38 @@ namespace Amazon.WAF
             var unmarshaller = UpdateRuleResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateRuleRequest,UpdateRuleResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateRuleGroup
+
+        internal virtual UpdateRuleGroupResponse UpdateRuleGroup(UpdateRuleGroupRequest request)
+        {
+            var marshaller = new UpdateRuleGroupRequestMarshaller();
+            var unmarshaller = UpdateRuleGroupResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRuleGroupRequest,UpdateRuleGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateRuleGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRuleGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateRuleGroup">REST API Reference for UpdateRuleGroup Operation</seealso>
+        public virtual Task<UpdateRuleGroupResponse> UpdateRuleGroupAsync(UpdateRuleGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateRuleGroupRequestMarshaller();
+            var unmarshaller = UpdateRuleGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateRuleGroupRequest,UpdateRuleGroupResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

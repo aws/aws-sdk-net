@@ -96,6 +96,19 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAF.Model.CreateRuleGroupRequest.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.CreateRuleGroupRequest.Name</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.CreateRuleGroupResponse.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAF.Model.CreateSizeConstraintSetRequest.ChangeToken</property>
     <min>1</min>
   </property-value-rule>
@@ -239,6 +252,19 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAF.Model.DeleteRuleGroupRequest.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.DeleteRuleGroupRequest.RuleGroupId</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.DeleteRuleGroupResponse.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAF.Model.DeleteSizeConstraintSetRequest.ChangeToken</property>
     <min>1</min>
   </property-value-rule>
@@ -347,6 +373,11 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAF.Model.GetRuleGroupRequest.RuleGroupId</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAF.Model.GetSampledRequestsRequest.MaxItems</property>
     <min>1</min>
     <max>500</max>
@@ -380,6 +411,24 @@
     <property>Amazon.WAF.Model.GetXssMatchSetRequest.XssMatchSetId</property>
     <min>1</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.ListActivatedRulesInRuleGroupRequest.Limit</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.ListActivatedRulesInRuleGroupRequest.NextMarker</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.ListActivatedRulesInRuleGroupRequest.RuleGroupId</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.ListActivatedRulesInRuleGroupResponse.NextMarker</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAF.Model.ListByteMatchSetsRequest.Limit</property>
@@ -460,6 +509,19 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAF.Model.ListRuleGroupsRequest.Limit</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.ListRuleGroupsRequest.NextMarker</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.ListRuleGroupsResponse.NextMarker</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAF.Model.ListRulesRequest.Limit</property>
     <min>0</min>
     <max>100</max>
@@ -496,6 +558,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAF.Model.ListSqlInjectionMatchSetsResponse.NextMarker</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.ListSubscribedRuleGroupsRequest.Limit</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.ListSubscribedRuleGroupsRequest.NextMarker</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.ListSubscribedRuleGroupsResponse.NextMarker</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
@@ -617,6 +692,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAF.Model.UpdateRuleResponse.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.UpdateRuleGroupRequest.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.UpdateRuleGroupRequest.RuleGroupId</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.UpdateRuleGroupResponse.ChangeToken</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
@@ -815,12 +903,37 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAF.Model.RuleGroup.Name</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.RuleGroup.RuleGroupId</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.RuleGroupSummary.Name</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.RuleGroupSummary.RuleGroupId</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAF.Model.RuleSummary.Name</property>
     <min>1</min>
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAF.Model.RuleSummary.RuleId</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.SampledHTTPRequest.RuleWithinRuleGroup</property>
     <min>1</min>
     <max>128</max>
   </property-value-rule>
@@ -870,6 +983,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAF.Model.SqlInjectionMatchSetSummary.SqlInjectionMatchSetId</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.SubscribedRuleGroupSummary.Name</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.SubscribedRuleGroupSummary.RuleGroupId</property>
     <min>1</min>
     <max>128</max>
   </property-value-rule>

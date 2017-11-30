@@ -70,6 +70,12 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
                     unmarshalledObject.Action = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("OverrideAction", targetDepth))
+                {
+                    var unmarshaller = WafOverrideActionUnmarshaller.Instance;
+                    unmarshalledObject.OverrideAction = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Priority", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

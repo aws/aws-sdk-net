@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WAF.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UpdateWebACL operation
+    /// Response Unmarshaller for GetRuleGroup operation
     /// </summary>  
-    public class UpdateWebACLResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GetRuleGroupResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,16 +45,16 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            UpdateWebACLResponse response = new UpdateWebACLResponse();
+            GetRuleGroupResponse response = new GetRuleGroupResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ChangeToken", targetDepth))
+                if (context.TestExpression("RuleGroup", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ChangeToken = unmarshaller.Unmarshall(context);
+                    var unmarshaller = RuleGroupUnmarshaller.Instance;
+                    response.RuleGroup = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -76,48 +76,16 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
             {
                 return new WAFInternalErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("WAFInvalidAccountException"))
-            {
-                return new WAFInvalidAccountException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("WAFInvalidOperationException"))
-            {
-                return new WAFInvalidOperationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("WAFInvalidParameterException"))
-            {
-                return new WAFInvalidParameterException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("WAFLimitsExceededException"))
-            {
-                return new WAFLimitsExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("WAFNonexistentContainerException"))
-            {
-                return new WAFNonexistentContainerException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("WAFNonexistentItemException"))
             {
                 return new WAFNonexistentItemException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("WAFReferencedItemException"))
-            {
-                return new WAFReferencedItemException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("WAFStaleDataException"))
-            {
-                return new WAFStaleDataException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("WAFSubscriptionNotFoundException"))
-            {
-                return new WAFSubscriptionNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             return new AmazonWAFException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static UpdateWebACLResponseUnmarshaller _instance = new UpdateWebACLResponseUnmarshaller();        
+        private static GetRuleGroupResponseUnmarshaller _instance = new GetRuleGroupResponseUnmarshaller();        
 
-        internal static UpdateWebACLResponseUnmarshaller GetInstance()
+        internal static GetRuleGroupResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -125,7 +93,7 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateWebACLResponseUnmarshaller Instance
+        public static GetRuleGroupResponseUnmarshaller Instance
         {
             get
             {

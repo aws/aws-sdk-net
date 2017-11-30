@@ -43,6 +43,7 @@ namespace Amazon.WAF.Model
     public partial class ActivatedRule
     {
         private WafAction _action;
+        private WafOverrideAction _overrideAction;
         private int? _priority;
         private string _ruleId;
         private WafRuleType _type;
@@ -68,7 +69,12 @@ namespace Amazon.WAF.Model
         /// in the rule and then continues to inspect the web request based on the remaining rules
         /// in the web ACL. 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// The <code>Action</code> data type within <code>ActivatedRule</code> is used only when
+        /// submitting an <code>UpdateWebACL</code> request. <code>ActivatedRule|Action</code>
+        /// is not applicable and therefore not available for <code>UpdateRuleGroup</code>.
+        /// </para>
         /// </summary>
         public WafAction Action
         {
@@ -80,6 +86,41 @@ namespace Amazon.WAF.Model
         internal bool IsSetAction()
         {
             return this._action != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OverrideAction. 
+        /// <para>
+        /// Use the <code>OverrideAction</code> to test your <code>RuleGroup</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Any rule in a <code>RuleGroup</code> can potentially block a request. If you set the
+        /// <code>OverrideAction</code> to <code>None</code>, the <code>RuleGroup</code> will
+        /// block a request if any individual rule in the <code>RuleGroup</code> matches the request
+        /// and is configured to block that request. However if you first want to test the <code>RuleGroup</code>,
+        /// set the <code>OverrideAction</code> to <code>Count</code>. The <code>RuleGroup</code>
+        /// will then override any block action specified by individual rules contained within
+        /// the group. Instead of blocking matching requests, those requests will be counted.
+        /// You can view a record of counted requests using <a>GetSampledRequests</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>OverrideAction</code> data type within <code>ActivatedRule</code> is used
+        /// only when submitting an <code>UpdateRuleGroup</code> request. <code>ActivatedRule|OverrideAction</code>
+        /// is not applicable and therefore not available for <code>UpdateWebACL</code>.
+        /// </para>
+        /// </summary>
+        public WafOverrideAction OverrideAction
+        {
+            get { return this._overrideAction; }
+            set { this._overrideAction = value; }
+        }
+
+        // Check to see if OverrideAction property is set
+        internal bool IsSetOverrideAction()
+        {
+            return this._overrideAction != null;
         }
 
         /// <summary>
@@ -132,11 +173,12 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The rule type, either <code>REGULAR</code>, as defined by <a>Rule</a>, or <code>RATE_BASED</code>,
-        /// as defined by <a>RateBasedRule</a>. The default is REGULAR. Although this field is
-        /// optional, be aware that if you try to add a RATE_BASED rule to a web ACL without setting
-        /// the type, the <a>UpdateWebACL</a> request will fail because the request tries to add
-        /// a REGULAR rule with the specified ID, which does not exist. 
+        /// The rule type, either <code>REGULAR</code>, as defined by <a>Rule</a>, <code>RATE_BASED</code>,
+        /// as defined by <a>RateBasedRule</a>, or <code>GROUP</code>, as defined by <a>RuleGroup</a>.
+        /// The default is REGULAR. Although this field is optional, be aware that if you try
+        /// to add a RATE_BASED rule to a web ACL without setting the type, the <a>UpdateWebACL</a>
+        /// request will fail because the request tries to add a REGULAR rule with the specified
+        /// ID, which does not exist. 
         /// </para>
         /// </summary>
         public WafRuleType Type

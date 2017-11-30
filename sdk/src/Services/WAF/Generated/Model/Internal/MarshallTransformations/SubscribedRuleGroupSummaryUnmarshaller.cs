@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WAF.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SampledHTTPRequest Object
+    /// Response Unmarshaller for SubscribedRuleGroupSummary Object
     /// </summary>  
-    public class SampledHTTPRequestUnmarshaller : IUnmarshaller<SampledHTTPRequest, XmlUnmarshallerContext>, IUnmarshaller<SampledHTTPRequest, JsonUnmarshallerContext>
+    public class SubscribedRuleGroupSummaryUnmarshaller : IUnmarshaller<SubscribedRuleGroupSummary, XmlUnmarshallerContext>, IUnmarshaller<SubscribedRuleGroupSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        SampledHTTPRequest IUnmarshaller<SampledHTTPRequest, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        SubscribedRuleGroupSummary IUnmarshaller<SubscribedRuleGroupSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,33 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public SampledHTTPRequest Unmarshall(JsonUnmarshallerContext context)
+        public SubscribedRuleGroupSummary Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SampledHTTPRequest unmarshalledObject = new SampledHTTPRequest();
+            SubscribedRuleGroupSummary unmarshalledObject = new SubscribedRuleGroupSummary();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Action", targetDepth))
+                if (context.TestExpression("MetricName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Action = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MetricName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Request", targetDepth))
-                {
-                    var unmarshaller = HTTPRequestUnmarshaller.Instance;
-                    unmarshalledObject.Request = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RuleWithinRuleGroup", targetDepth))
+                if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RuleWithinRuleGroup = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Timestamp", targetDepth))
+                if (context.TestExpression("RuleGroupId", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.Timestamp = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Weight", targetDepth))
-                {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.Weight = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RuleGroupId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +88,12 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
         }
 
 
-        private static SampledHTTPRequestUnmarshaller _instance = new SampledHTTPRequestUnmarshaller();        
+        private static SubscribedRuleGroupSummaryUnmarshaller _instance = new SubscribedRuleGroupSummaryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SampledHTTPRequestUnmarshaller Instance
+        public static SubscribedRuleGroupSummaryUnmarshaller Instance
         {
             get
             {

@@ -28,71 +28,57 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAF.Model
 {
     /// <summary>
-    /// Container for the parameters to the UpdateRegexPatternSet operation.
-    /// Inserts or deletes <code>RegexPatternString</code> objects in a <a>RegexPatternSet</a>.
-    /// For each <code>RegexPatternString</code> object, you specify the following values:
+    /// Container for the parameters to the UpdateRuleGroup operation.
+    /// Inserts or deletes <a>ActivatedRule</a> objects in a <code>RuleGroup</code>.
     /// 
-    /// 
-    ///  <ul> <li> 
+    ///  
     /// <para>
-    /// Whether to insert or delete the <code>RegexPatternString</code>.
+    /// You can only insert <code>REGULAR</code> rules into a rule group.
     /// </para>
-    ///  </li> <li> 
+    ///  
     /// <para>
-    /// The regular expression pattern that you want to insert or delete. For more information,
-    /// see <a>RegexPatternSet</a>. 
+    /// You can have a maximum of ten rules per rule group.
     /// </para>
-    ///  </li> </ul> 
+    ///  
     /// <para>
-    ///  For example, you can create a <code>RegexPatternString</code> such as <code>B[a@]dB[o0]t</code>.
-    /// AWS WAF will match this <code>RegexPatternString</code> to:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// BadBot
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// BadB0t
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// B@dBot
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// B@dB0t
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// To create and configure a <code>RegexPatternSet</code>, perform the following steps:
+    /// To create and configure a <code>RuleGroup</code>, perform the following steps:
     /// </para>
     ///  <ol> <li> 
     /// <para>
-    /// Create a <code>RegexPatternSet.</code> For more information, see <a>CreateRegexPatternSet</a>.
+    /// Create and update the <code>Rules</code> that you want to include in the <code>RuleGroup</code>.
+    /// See <a>CreateRule</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
-    /// parameter of an <code>UpdateRegexPatternSet</code> request.
+    /// Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+    /// parameter of an <a>UpdateRuleGroup</a> request.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Submit an <code>UpdateRegexPatternSet</code> request to specify the regular expression
-    /// pattern that you want AWS WAF to watch for.
+    /// Submit an <code>UpdateRuleGroup</code> request to add <code>Rules</code> to the <code>RuleGroup</code>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Create and update a <code>WebACL</code> that contains the <code>RuleGroup</code>.
+    /// See <a>CreateWebACL</a>.
     /// </para>
     ///  </li> </ol> 
+    /// <para>
+    /// If you want to replace one <code>Rule</code> with another, you delete the existing
+    /// one and add the new one.
+    /// </para>
+    ///  
     /// <para>
     /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
     /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
     /// Guide</a>.
     /// </para>
     /// </summary>
-    public partial class UpdateRegexPatternSetRequest : AmazonWAFRequest
+    public partial class UpdateRuleGroupRequest : AmazonWAFRequest
     {
         private string _changeToken;
-        private string _regexPatternSetId;
-        private List<RegexPatternSetUpdate> _updates = new List<RegexPatternSetUpdate>();
+        private string _ruleGroupId;
+        private List<RuleGroupUpdate> _updates = new List<RuleGroupUpdate>();
 
         /// <summary>
         /// Gets and sets the property ChangeToken. 
@@ -113,33 +99,42 @@ namespace Amazon.WAF.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RegexPatternSetId. 
+        /// Gets and sets the property RuleGroupId. 
         /// <para>
-        /// The <code>RegexPatternSetId</code> of the <a>RegexPatternSet</a> that you want to
-        /// update. <code>RegexPatternSetId</code> is returned by <a>CreateRegexPatternSet</a>
-        /// and by <a>ListRegexPatternSets</a>.
+        /// The <code>RuleGroupId</code> of the <a>RuleGroup</a> that you want to update. <code>RuleGroupId</code>
+        /// is returned by <a>CreateRuleGroup</a> and by <a>ListRuleGroups</a>.
         /// </para>
         /// </summary>
-        public string RegexPatternSetId
+        public string RuleGroupId
         {
-            get { return this._regexPatternSetId; }
-            set { this._regexPatternSetId = value; }
+            get { return this._ruleGroupId; }
+            set { this._ruleGroupId = value; }
         }
 
-        // Check to see if RegexPatternSetId property is set
-        internal bool IsSetRegexPatternSetId()
+        // Check to see if RuleGroupId property is set
+        internal bool IsSetRuleGroupId()
         {
-            return this._regexPatternSetId != null;
+            return this._ruleGroupId != null;
         }
 
         /// <summary>
         /// Gets and sets the property Updates. 
         /// <para>
-        /// An array of <code>RegexPatternSetUpdate</code> objects that you want to insert into
-        /// or delete from a <a>RegexPatternSet</a>.
+        /// An array of <code>RuleGroupUpdate</code> objects that you want to insert into or delete
+        /// from a <a>RuleGroup</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can only insert <code>REGULAR</code> rules into a rule group.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>Action</code> data type within <code>ActivatedRule</code> is used only when
+        /// submitting an <code>UpdateWebACL</code> request. <code>ActivatedRule|Action</code>
+        /// is not applicable and therefore not available for <code>UpdateRuleGroup</code>.
         /// </para>
         /// </summary>
-        public List<RegexPatternSetUpdate> Updates
+        public List<RuleGroupUpdate> Updates
         {
             get { return this._updates; }
             set { this._updates = value; }

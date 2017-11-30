@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WAF.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UpdateWebACL operation
+    /// Response Unmarshaller for DeleteRuleGroup operation
     /// </summary>  
-    public class UpdateWebACLResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DeleteRuleGroupResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,7 +45,7 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            UpdateWebACLResponse response = new UpdateWebACLResponse();
+            DeleteRuleGroupResponse response = new DeleteRuleGroupResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -76,25 +76,9 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
             {
                 return new WAFInternalErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("WAFInvalidAccountException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("WAFNonEmptyEntityException"))
             {
-                return new WAFInvalidAccountException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("WAFInvalidOperationException"))
-            {
-                return new WAFInvalidOperationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("WAFInvalidParameterException"))
-            {
-                return new WAFInvalidParameterException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("WAFLimitsExceededException"))
-            {
-                return new WAFLimitsExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("WAFNonexistentContainerException"))
-            {
-                return new WAFNonexistentContainerException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new WAFNonEmptyEntityException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("WAFNonexistentItemException"))
             {
@@ -108,16 +92,12 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
             {
                 return new WAFStaleDataException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("WAFSubscriptionNotFoundException"))
-            {
-                return new WAFSubscriptionNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             return new AmazonWAFException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static UpdateWebACLResponseUnmarshaller _instance = new UpdateWebACLResponseUnmarshaller();        
+        private static DeleteRuleGroupResponseUnmarshaller _instance = new DeleteRuleGroupResponseUnmarshaller();        
 
-        internal static UpdateWebACLResponseUnmarshaller GetInstance()
+        internal static DeleteRuleGroupResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -125,7 +105,7 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateWebACLResponseUnmarshaller Instance
+        public static DeleteRuleGroupResponseUnmarshaller Instance
         {
             get
             {

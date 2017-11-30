@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WAF.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UpdateRegexPatternSet operation
+    /// Response Unmarshaller for ListRuleGroups operation
     /// </summary>  
-    public class UpdateRegexPatternSetResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListRuleGroupsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,16 +45,22 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            UpdateRegexPatternSetResponse response = new UpdateRegexPatternSetResponse();
+            ListRuleGroupsResponse response = new ListRuleGroupsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ChangeToken", targetDepth))
+                if (context.TestExpression("NextMarker", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ChangeToken = unmarshaller.Unmarshall(context);
+                    response.NextMarker = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RuleGroups", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<RuleGroupSummary, RuleGroupSummaryUnmarshaller>(RuleGroupSummaryUnmarshaller.Instance);
+                    response.RuleGroups = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -76,40 +82,12 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
             {
                 return new WAFInternalErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("WAFInvalidAccountException"))
-            {
-                return new WAFInvalidAccountException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("WAFInvalidOperationException"))
-            {
-                return new WAFInvalidOperationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("WAFInvalidRegexPatternException"))
-            {
-                return new WAFInvalidRegexPatternException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("WAFLimitsExceededException"))
-            {
-                return new WAFLimitsExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("WAFNonexistentContainerException"))
-            {
-                return new WAFNonexistentContainerException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("WAFNonexistentItemException"))
-            {
-                return new WAFNonexistentItemException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("WAFStaleDataException"))
-            {
-                return new WAFStaleDataException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             return new AmazonWAFException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static UpdateRegexPatternSetResponseUnmarshaller _instance = new UpdateRegexPatternSetResponseUnmarshaller();        
+        private static ListRuleGroupsResponseUnmarshaller _instance = new ListRuleGroupsResponseUnmarshaller();        
 
-        internal static UpdateRegexPatternSetResponseUnmarshaller GetInstance()
+        internal static ListRuleGroupsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -117,7 +95,7 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateRegexPatternSetResponseUnmarshaller Instance
+        public static ListRuleGroupsResponseUnmarshaller Instance
         {
             get
             {

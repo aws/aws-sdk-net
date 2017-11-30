@@ -1452,6 +1452,10 @@ namespace Amazon.WAF
         /// Constant WAF_ACTION for ParameterExceptionField
         /// </summary>
         public static readonly ParameterExceptionField WAF_ACTION = new ParameterExceptionField("WAF_ACTION");
+        /// <summary>
+        /// Constant WAF_OVERRIDE_ACTION for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField WAF_OVERRIDE_ACTION = new ParameterExceptionField("WAF_OVERRIDE_ACTION");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1837,11 +1841,65 @@ namespace Amazon.WAF
 
 
     /// <summary>
+    /// Constants used for properties of type WafOverrideActionType.
+    /// </summary>
+    public class WafOverrideActionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COUNT for WafOverrideActionType
+        /// </summary>
+        public static readonly WafOverrideActionType COUNT = new WafOverrideActionType("COUNT");
+        /// <summary>
+        /// Constant NONE for WafOverrideActionType
+        /// </summary>
+        public static readonly WafOverrideActionType NONE = new WafOverrideActionType("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WafOverrideActionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WafOverrideActionType FindValue(string value)
+        {
+            return FindValue<WafOverrideActionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WafOverrideActionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type WafRuleType.
     /// </summary>
     public class WafRuleType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant GROUP for WafRuleType
+        /// </summary>
+        public static readonly WafRuleType GROUP = new WafRuleType("GROUP");
         /// <summary>
         /// Constant RATE_BASED for WafRuleType
         /// </summary>
