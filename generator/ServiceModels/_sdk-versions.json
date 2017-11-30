@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.199.0",
+    "ProductVersion" : "3.3.200.0",
     "CoreVersion"    : "3.3.20.0",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -13,7 +13,7 @@
             "InPreview"               : false
         },
         "AutoScaling" : {
-            "Version" : "3.3.2.3",
+            "Version" : "3.3.3.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
@@ -151,7 +151,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.3.38.0",
+            "Version" : "3.3.39.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
@@ -369,7 +369,7 @@
             "InPreview"               : false
         },
         "SimpleSystemsManagement"   : {
-            "Version" : "3.3.14.0",
+            "Version" : "3.3.15.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
@@ -433,7 +433,7 @@
             "InPreview"               : false
         },
         "WAF"                       : {
-            "Version" : "3.3.3.2",
+            "Version" : "3.3.4.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
@@ -617,7 +617,7 @@
             "InPreview"               : false
         },
         "Lightsail"                       : {
-            "Version" : "3.3.4.0",
+            "Version" : "3.3.5.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
@@ -697,7 +697,7 @@
             "InPreview"               : false
         },
         "WAFRegional"                     : {
-            "Version" : "3.3.2.2",
+            "Version" : "3.3.3.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
@@ -985,6 +985,14 @@
             "InPreview"               : false
         },
         "KinesisVideoArchivedMedia"       : {
+            "Version" : "3.3.0.0",
+            "AssemblyVersionOverride" : null,
+            "Dependencies"            : {
+                "Core" : "3.3.20.0"
+            },
+            "InPreview"               : false
+        },
+        "ResourceGroups"                  : {
             "Version" : "3.3.0.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {

@@ -120,6 +120,7 @@
       <Directory>$(ProjectDir)/src/Services/rds/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/redshift/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/rekognition/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/resourcegroups/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/resourcegroupstaggingapi/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/route53/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/route53domains/bin/Release/net45/</Directory>
@@ -245,6 +246,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.RDS.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Redshift.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Rekognition.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ResourceGroups.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ResourceGroupsTaggingAPI.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Route53.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Route53Domains.dll" Analyze="True" AnalyzeAllChildren="True" />
