@@ -8,7 +8,7 @@
 * EC2 (3.3.40.0)
 	* Adds the following updates: 1. Spread Placement ensures that instances are placed on distinct hardware in order to reduce correlated failures. 2. Inter-region VPC Peering allows customers to peer VPCs across different AWS regions without requiring additional gateways, VPN connections or physical hardware 
 * Lambda (3.3.10.0)
-	* AWS Lambda now supports the ability to set the concurrency limits for individual functions, and increasing memory to 3008 GB.
+	* AWS Lambda now supports the ability to set the concurrency limits for individual functions, and increasing memory to 3008 MB.
 * ServerlessApplicationRepository (3.3.0.0)
 	* First release of the AWS Serverless Application Repository SDK
 
