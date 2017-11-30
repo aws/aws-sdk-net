@@ -167,7 +167,9 @@ namespace Amazon.WAFRegional.Model
         ///  </li> <li> 
         /// <para>
         ///  <a>ActivatedRule</a>: Contains <code>Action</code>, <code>Priority</code>, <code>RuleId</code>,
-        /// and <code>Type</code> 
+        /// and <code>Type</code>. The <code>OverrideAction</code> data type within <code>ActivatedRule</code>
+        /// is used only when submitting an <code>UpdateRuleGroup</code> request. <code>ActivatedRule|OverrideAction</code>
+        /// is not applicable and therefore not available for <code>UpdateWebACL</code>. 
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -74,12 +74,13 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property RuleId. 
         /// <para>
-        ///  <code>RuleId</code> is one of two values:
+        ///  <code>RuleId</code> is one of three values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The <code>RuleId</code> of the <code>Rule</code> for which you want <code>GetSampledRequests</code>
-        /// to return a sample of requests.
+        /// The <code>RuleId</code> of the <code>Rule</code> or the <code>RuleGroupId</code> of
+        /// the <code>RuleGroup</code> for which you want <code>GetSampledRequests</code> to return
+        /// a sample of requests.
         /// </para>
         ///  </li> <li> 
         /// <para>

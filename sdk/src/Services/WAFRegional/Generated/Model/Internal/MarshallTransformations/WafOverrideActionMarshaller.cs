@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ActivatedRule Marshaller
+    /// WafOverrideAction Marshaller
     /// </summary>       
-    public class ActivatedRuleMarshaller : IRequestMarshaller<ActivatedRule, JsonMarshallerContext> 
+    public class WafOverrideActionMarshaller : IRequestMarshaller<WafOverrideAction, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,42 +43,8 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ActivatedRule requestObject, JsonMarshallerContext context)
+        public void Marshall(WafOverrideAction requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetAction())
-            {
-                context.Writer.WritePropertyName("Action");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = WafActionMarshaller.Instance;
-                marshaller.Marshall(requestObject.Action, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetOverrideAction())
-            {
-                context.Writer.WritePropertyName("OverrideAction");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = WafOverrideActionMarshaller.Instance;
-                marshaller.Marshall(requestObject.OverrideAction, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetPriority())
-            {
-                context.Writer.WritePropertyName("Priority");
-                context.Writer.Write(requestObject.Priority);
-            }
-
-            if(requestObject.IsSetRuleId())
-            {
-                context.Writer.WritePropertyName("RuleId");
-                context.Writer.Write(requestObject.RuleId);
-            }
-
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("Type");
@@ -90,7 +56,7 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static ActivatedRuleMarshaller Instance = new ActivatedRuleMarshaller();
+        public readonly static WafOverrideActionMarshaller Instance = new WafOverrideActionMarshaller();
 
     }
 }

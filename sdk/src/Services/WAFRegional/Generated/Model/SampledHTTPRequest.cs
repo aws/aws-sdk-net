@@ -37,6 +37,7 @@ namespace Amazon.WAFRegional.Model
     {
         private string _action;
         private HTTPRequest _request;
+        private string _ruleWithinRuleGroup;
         private DateTime? _timestamp;
         private long? _weight;
 
@@ -75,6 +76,27 @@ namespace Amazon.WAFRegional.Model
         internal bool IsSetRequest()
         {
             return this._request != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RuleWithinRuleGroup. 
+        /// <para>
+        /// This value is returned if the <code>GetSampledRequests</code> request specifies the
+        /// ID of a <code>RuleGroup</code> rather than the ID of an individual rule. <code>RuleWithinRuleGroup</code>
+        /// is the rule within the specified <code>RuleGroup</code> that matched the request listed
+        /// in the response.
+        /// </para>
+        /// </summary>
+        public string RuleWithinRuleGroup
+        {
+            get { return this._ruleWithinRuleGroup; }
+            set { this._ruleWithinRuleGroup = value; }
+        }
+
+        // Check to see if RuleWithinRuleGroup property is set
+        internal bool IsSetRuleWithinRuleGroup()
+        {
+            return this._ruleWithinRuleGroup != null;
         }
 
         /// <summary>

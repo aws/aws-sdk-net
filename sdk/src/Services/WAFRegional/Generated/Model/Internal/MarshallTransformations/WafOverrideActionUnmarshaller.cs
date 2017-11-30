@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ActivatedRule Object
+    /// Response Unmarshaller for WafOverrideAction Object
     /// </summary>  
-    public class ActivatedRuleUnmarshaller : IUnmarshaller<ActivatedRule, XmlUnmarshallerContext>, IUnmarshaller<ActivatedRule, JsonUnmarshallerContext>
+    public class WafOverrideActionUnmarshaller : IUnmarshaller<WafOverrideAction, XmlUnmarshallerContext>, IUnmarshaller<WafOverrideAction, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ActivatedRule IUnmarshaller<ActivatedRule, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        WafOverrideAction IUnmarshaller<WafOverrideAction, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,41 +53,17 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ActivatedRule Unmarshall(JsonUnmarshallerContext context)
+        public WafOverrideAction Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ActivatedRule unmarshalledObject = new ActivatedRule();
+            WafOverrideAction unmarshalledObject = new WafOverrideAction();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Action", targetDepth))
-                {
-                    var unmarshaller = WafActionUnmarshaller.Instance;
-                    unmarshalledObject.Action = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("OverrideAction", targetDepth))
-                {
-                    var unmarshaller = WafOverrideActionUnmarshaller.Instance;
-                    unmarshalledObject.OverrideAction = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Priority", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Priority = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RuleId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RuleId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("Type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -100,12 +76,12 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
         }
 
 
-        private static ActivatedRuleUnmarshaller _instance = new ActivatedRuleUnmarshaller();        
+        private static WafOverrideActionUnmarshaller _instance = new WafOverrideActionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ActivatedRuleUnmarshaller Instance
+        public static WafOverrideActionUnmarshaller Instance
         {
             get
             {

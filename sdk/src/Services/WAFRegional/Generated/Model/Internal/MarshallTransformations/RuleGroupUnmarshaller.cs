@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ActivatedRule Object
+    /// Response Unmarshaller for RuleGroup Object
     /// </summary>  
-    public class ActivatedRuleUnmarshaller : IUnmarshaller<ActivatedRule, XmlUnmarshallerContext>, IUnmarshaller<ActivatedRule, JsonUnmarshallerContext>
+    public class RuleGroupUnmarshaller : IUnmarshaller<RuleGroup, XmlUnmarshallerContext>, IUnmarshaller<RuleGroup, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ActivatedRule IUnmarshaller<ActivatedRule, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        RuleGroup IUnmarshaller<RuleGroup, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,33 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ActivatedRule Unmarshall(JsonUnmarshallerContext context)
+        public RuleGroup Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ActivatedRule unmarshalledObject = new ActivatedRule();
+            RuleGroup unmarshalledObject = new RuleGroup();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Action", targetDepth))
-                {
-                    var unmarshaller = WafActionUnmarshaller.Instance;
-                    unmarshalledObject.Action = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("OverrideAction", targetDepth))
-                {
-                    var unmarshaller = WafOverrideActionUnmarshaller.Instance;
-                    unmarshalledObject.OverrideAction = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Priority", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Priority = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RuleId", targetDepth))
+                if (context.TestExpression("MetricName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RuleId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MetricName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Type", targetDepth))
+                if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RuleGroupId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RuleGroupId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +88,12 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
         }
 
 
-        private static ActivatedRuleUnmarshaller _instance = new ActivatedRuleUnmarshaller();        
+        private static RuleGroupUnmarshaller _instance = new RuleGroupUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ActivatedRuleUnmarshaller Instance
+        public static RuleGroupUnmarshaller Instance
         {
             get
             {

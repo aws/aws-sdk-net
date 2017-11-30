@@ -76,6 +76,12 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
                     unmarshalledObject.Request = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RuleWithinRuleGroup", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RuleWithinRuleGroup = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Timestamp", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
