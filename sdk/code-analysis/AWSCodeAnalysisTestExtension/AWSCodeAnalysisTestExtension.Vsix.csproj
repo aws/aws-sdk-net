@@ -52,6 +52,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="../ServiceAnalysis/AlexaForBusiness/AWSSDK.AlexaForBusiness.CodeAnalysis.csproj">
+      <Project>{7EE289B8-FE3B-4BB9-B670-8B131271EF36}</Project>
+      <Name>AWSSDK.AlexaForBusiness.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/APIGateway/AWSSDK.APIGateway.CodeAnalysis.csproj">
       <Project>{EB2C1C17-AE9B-423E-B67C-23085200E6F5}</Project>
       <Name>AWSSDK.APIGateway.CodeAnalysis</Name>

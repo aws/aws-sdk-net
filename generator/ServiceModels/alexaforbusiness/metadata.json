@@ -1,0 +1,5 @@
+{
+  "active": true,
+  "synopsis": "Alexa for Business is now generally available for production use. Alexa for Business makes it easy for you to use Alexa in your organization. The Alexa for Business SDK gives you APIs to manage Alexa devices, enroll users, and assign skills at scale. For more information about Alexa for Business, go to https://aws.amazon.com/alexaforbusiness",
+  "generate-client-constructors": true
+}
