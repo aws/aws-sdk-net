@@ -33,6 +33,7 @@ namespace Amazon.Lightsail.Model
     public partial class DomainEntry
     {
         private string _id;
+        private bool? _isAlias;
         private string _name;
         private Dictionary<string, string> _options = new Dictionary<string, string>();
         private string _target;
@@ -57,6 +58,25 @@ namespace Amazon.Lightsail.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IsAlias. 
+        /// <para>
+        /// When <code>true</code>, specifies whether the domain entry is an alias used by the
+        /// Lightsail load balancer.
+        /// </para>
+        /// </summary>
+        public bool IsAlias
+        {
+            get { return this._isAlias.GetValueOrDefault(); }
+            set { this._isAlias = value; }
+        }
+
+        // Check to see if IsAlias property is set
+        internal bool IsSetIsAlias()
+        {
+            return this._isAlias.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the domain.
@@ -77,8 +97,14 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Options. 
         /// <para>
-        /// The options for the domain entry.
+        /// (Deprecated) The options for the domain entry.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// In releases prior to November 29, 2017, this parameter was not included in the API
+        /// response. It is now deprecated.
+        /// </para>
+        ///  </note>
         /// </summary>
         public Dictionary<string, string> Options
         {

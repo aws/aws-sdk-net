@@ -91,7 +91,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// In releases prior to November 9, 2017, this parameter returned <code>attached</code>
+        /// In releases prior to November 14, 2017, this parameter returned <code>attached</code>
         /// for system disks in the API response. It is now deprecated, but still included in
         /// the response. Use <code>isAttached</code> instead.
         /// </para>
@@ -134,7 +134,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// In releases prior to November 9, 2017, this parameter was not included in the API
+        /// In releases prior to November 14, 2017, this parameter was not included in the API
         /// response. It is now deprecated.
         /// </para>
         ///  </note>

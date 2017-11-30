@@ -295,6 +295,158 @@ namespace Amazon.Lightsail
 
 
     /// <summary>
+    /// Constants used for properties of type InstanceHealthReason.
+    /// </summary>
+    public class InstanceHealthReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant InstanceDeregistrationInProgress for InstanceHealthReason
+        /// </summary>
+        public static readonly InstanceHealthReason InstanceDeregistrationInProgress = new InstanceHealthReason("Instance.DeregistrationInProgress");
+        /// <summary>
+        /// Constant InstanceFailedHealthChecks for InstanceHealthReason
+        /// </summary>
+        public static readonly InstanceHealthReason InstanceFailedHealthChecks = new InstanceHealthReason("Instance.FailedHealthChecks");
+        /// <summary>
+        /// Constant InstanceInvalidState for InstanceHealthReason
+        /// </summary>
+        public static readonly InstanceHealthReason InstanceInvalidState = new InstanceHealthReason("Instance.InvalidState");
+        /// <summary>
+        /// Constant InstanceIpUnusable for InstanceHealthReason
+        /// </summary>
+        public static readonly InstanceHealthReason InstanceIpUnusable = new InstanceHealthReason("Instance.IpUnusable");
+        /// <summary>
+        /// Constant InstanceNotInUse for InstanceHealthReason
+        /// </summary>
+        public static readonly InstanceHealthReason InstanceNotInUse = new InstanceHealthReason("Instance.NotInUse");
+        /// <summary>
+        /// Constant InstanceNotRegistered for InstanceHealthReason
+        /// </summary>
+        public static readonly InstanceHealthReason InstanceNotRegistered = new InstanceHealthReason("Instance.NotRegistered");
+        /// <summary>
+        /// Constant InstanceResponseCodeMismatch for InstanceHealthReason
+        /// </summary>
+        public static readonly InstanceHealthReason InstanceResponseCodeMismatch = new InstanceHealthReason("Instance.ResponseCodeMismatch");
+        /// <summary>
+        /// Constant InstanceTimeout for InstanceHealthReason
+        /// </summary>
+        public static readonly InstanceHealthReason InstanceTimeout = new InstanceHealthReason("Instance.Timeout");
+        /// <summary>
+        /// Constant LbInitialHealthChecking for InstanceHealthReason
+        /// </summary>
+        public static readonly InstanceHealthReason LbInitialHealthChecking = new InstanceHealthReason("Lb.InitialHealthChecking");
+        /// <summary>
+        /// Constant LbInternalError for InstanceHealthReason
+        /// </summary>
+        public static readonly InstanceHealthReason LbInternalError = new InstanceHealthReason("Lb.InternalError");
+        /// <summary>
+        /// Constant LbRegistrationInProgress for InstanceHealthReason
+        /// </summary>
+        public static readonly InstanceHealthReason LbRegistrationInProgress = new InstanceHealthReason("Lb.RegistrationInProgress");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InstanceHealthReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstanceHealthReason FindValue(string value)
+        {
+            return FindValue<InstanceHealthReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstanceHealthReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InstanceHealthState.
+    /// </summary>
+    public class InstanceHealthState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Draining for InstanceHealthState
+        /// </summary>
+        public static readonly InstanceHealthState Draining = new InstanceHealthState("draining");
+        /// <summary>
+        /// Constant Healthy for InstanceHealthState
+        /// </summary>
+        public static readonly InstanceHealthState Healthy = new InstanceHealthState("healthy");
+        /// <summary>
+        /// Constant Initial for InstanceHealthState
+        /// </summary>
+        public static readonly InstanceHealthState Initial = new InstanceHealthState("initial");
+        /// <summary>
+        /// Constant Unavailable for InstanceHealthState
+        /// </summary>
+        public static readonly InstanceHealthState Unavailable = new InstanceHealthState("unavailable");
+        /// <summary>
+        /// Constant Unhealthy for InstanceHealthState
+        /// </summary>
+        public static readonly InstanceHealthState Unhealthy = new InstanceHealthState("unhealthy");
+        /// <summary>
+        /// Constant Unused for InstanceHealthState
+        /// </summary>
+        public static readonly InstanceHealthState Unused = new InstanceHealthState("unused");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InstanceHealthState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstanceHealthState FindValue(string value)
+        {
+            return FindValue<InstanceHealthState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstanceHealthState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InstanceMetricName.
     /// </summary>
     public class InstanceMetricName : ConstantClass
@@ -458,6 +610,592 @@ namespace Amazon.Lightsail
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator InstanceSnapshotState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LoadBalancerAttributeName.
+    /// </summary>
+    public class LoadBalancerAttributeName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HealthCheckPath for LoadBalancerAttributeName
+        /// </summary>
+        public static readonly LoadBalancerAttributeName HealthCheckPath = new LoadBalancerAttributeName("HealthCheckPath");
+        /// <summary>
+        /// Constant SessionStickiness_LB_CookieDurationSeconds for LoadBalancerAttributeName
+        /// </summary>
+        public static readonly LoadBalancerAttributeName SessionStickiness_LB_CookieDurationSeconds = new LoadBalancerAttributeName("SessionStickiness_LB_CookieDurationSeconds");
+        /// <summary>
+        /// Constant SessionStickinessEnabled for LoadBalancerAttributeName
+        /// </summary>
+        public static readonly LoadBalancerAttributeName SessionStickinessEnabled = new LoadBalancerAttributeName("SessionStickinessEnabled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LoadBalancerAttributeName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LoadBalancerAttributeName FindValue(string value)
+        {
+            return FindValue<LoadBalancerAttributeName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LoadBalancerAttributeName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LoadBalancerMetricName.
+    /// </summary>
+    public class LoadBalancerMetricName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ClientTLSNegotiationErrorCount for LoadBalancerMetricName
+        /// </summary>
+        public static readonly LoadBalancerMetricName ClientTLSNegotiationErrorCount = new LoadBalancerMetricName("ClientTLSNegotiationErrorCount");
+        /// <summary>
+        /// Constant HealthyHostCount for LoadBalancerMetricName
+        /// </summary>
+        public static readonly LoadBalancerMetricName HealthyHostCount = new LoadBalancerMetricName("HealthyHostCount");
+        /// <summary>
+        /// Constant HTTPCode_Instance_2XX_Count for LoadBalancerMetricName
+        /// </summary>
+        public static readonly LoadBalancerMetricName HTTPCode_Instance_2XX_Count = new LoadBalancerMetricName("HTTPCode_Instance_2XX_Count");
+        /// <summary>
+        /// Constant HTTPCode_Instance_3XX_Count for LoadBalancerMetricName
+        /// </summary>
+        public static readonly LoadBalancerMetricName HTTPCode_Instance_3XX_Count = new LoadBalancerMetricName("HTTPCode_Instance_3XX_Count");
+        /// <summary>
+        /// Constant HTTPCode_Instance_4XX_Count for LoadBalancerMetricName
+        /// </summary>
+        public static readonly LoadBalancerMetricName HTTPCode_Instance_4XX_Count = new LoadBalancerMetricName("HTTPCode_Instance_4XX_Count");
+        /// <summary>
+        /// Constant HTTPCode_Instance_5XX_Count for LoadBalancerMetricName
+        /// </summary>
+        public static readonly LoadBalancerMetricName HTTPCode_Instance_5XX_Count = new LoadBalancerMetricName("HTTPCode_Instance_5XX_Count");
+        /// <summary>
+        /// Constant HTTPCode_LB_4XX_Count for LoadBalancerMetricName
+        /// </summary>
+        public static readonly LoadBalancerMetricName HTTPCode_LB_4XX_Count = new LoadBalancerMetricName("HTTPCode_LB_4XX_Count");
+        /// <summary>
+        /// Constant HTTPCode_LB_5XX_Count for LoadBalancerMetricName
+        /// </summary>
+        public static readonly LoadBalancerMetricName HTTPCode_LB_5XX_Count = new LoadBalancerMetricName("HTTPCode_LB_5XX_Count");
+        /// <summary>
+        /// Constant InstanceResponseTime for LoadBalancerMetricName
+        /// </summary>
+        public static readonly LoadBalancerMetricName InstanceResponseTime = new LoadBalancerMetricName("InstanceResponseTime");
+        /// <summary>
+        /// Constant RejectedConnectionCount for LoadBalancerMetricName
+        /// </summary>
+        public static readonly LoadBalancerMetricName RejectedConnectionCount = new LoadBalancerMetricName("RejectedConnectionCount");
+        /// <summary>
+        /// Constant RequestCount for LoadBalancerMetricName
+        /// </summary>
+        public static readonly LoadBalancerMetricName RequestCount = new LoadBalancerMetricName("RequestCount");
+        /// <summary>
+        /// Constant UnhealthyHostCount for LoadBalancerMetricName
+        /// </summary>
+        public static readonly LoadBalancerMetricName UnhealthyHostCount = new LoadBalancerMetricName("UnhealthyHostCount");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LoadBalancerMetricName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LoadBalancerMetricName FindValue(string value)
+        {
+            return FindValue<LoadBalancerMetricName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LoadBalancerMetricName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LoadBalancerProtocol.
+    /// </summary>
+    public class LoadBalancerProtocol : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HTTP for LoadBalancerProtocol
+        /// </summary>
+        public static readonly LoadBalancerProtocol HTTP = new LoadBalancerProtocol("HTTP");
+        /// <summary>
+        /// Constant HTTP_HTTPS for LoadBalancerProtocol
+        /// </summary>
+        public static readonly LoadBalancerProtocol HTTP_HTTPS = new LoadBalancerProtocol("HTTP_HTTPS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LoadBalancerProtocol(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LoadBalancerProtocol FindValue(string value)
+        {
+            return FindValue<LoadBalancerProtocol>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LoadBalancerProtocol(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LoadBalancerState.
+    /// </summary>
+    public class LoadBalancerState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Active for LoadBalancerState
+        /// </summary>
+        public static readonly LoadBalancerState Active = new LoadBalancerState("active");
+        /// <summary>
+        /// Constant Active_impaired for LoadBalancerState
+        /// </summary>
+        public static readonly LoadBalancerState Active_impaired = new LoadBalancerState("active_impaired");
+        /// <summary>
+        /// Constant Failed for LoadBalancerState
+        /// </summary>
+        public static readonly LoadBalancerState Failed = new LoadBalancerState("failed");
+        /// <summary>
+        /// Constant Provisioning for LoadBalancerState
+        /// </summary>
+        public static readonly LoadBalancerState Provisioning = new LoadBalancerState("provisioning");
+        /// <summary>
+        /// Constant Unknown for LoadBalancerState
+        /// </summary>
+        public static readonly LoadBalancerState Unknown = new LoadBalancerState("unknown");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LoadBalancerState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LoadBalancerState FindValue(string value)
+        {
+            return FindValue<LoadBalancerState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LoadBalancerState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LoadBalancerTlsCertificateDomainStatus.
+    /// </summary>
+    public class LoadBalancerTlsCertificateDomainStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for LoadBalancerTlsCertificateDomainStatus
+        /// </summary>
+        public static readonly LoadBalancerTlsCertificateDomainStatus FAILED = new LoadBalancerTlsCertificateDomainStatus("FAILED");
+        /// <summary>
+        /// Constant PENDING_VALIDATION for LoadBalancerTlsCertificateDomainStatus
+        /// </summary>
+        public static readonly LoadBalancerTlsCertificateDomainStatus PENDING_VALIDATION = new LoadBalancerTlsCertificateDomainStatus("PENDING_VALIDATION");
+        /// <summary>
+        /// Constant SUCCESS for LoadBalancerTlsCertificateDomainStatus
+        /// </summary>
+        public static readonly LoadBalancerTlsCertificateDomainStatus SUCCESS = new LoadBalancerTlsCertificateDomainStatus("SUCCESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LoadBalancerTlsCertificateDomainStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LoadBalancerTlsCertificateDomainStatus FindValue(string value)
+        {
+            return FindValue<LoadBalancerTlsCertificateDomainStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LoadBalancerTlsCertificateDomainStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LoadBalancerTlsCertificateFailureReason.
+    /// </summary>
+    public class LoadBalancerTlsCertificateFailureReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ADDITIONAL_VERIFICATION_REQUIRED for LoadBalancerTlsCertificateFailureReason
+        /// </summary>
+        public static readonly LoadBalancerTlsCertificateFailureReason ADDITIONAL_VERIFICATION_REQUIRED = new LoadBalancerTlsCertificateFailureReason("ADDITIONAL_VERIFICATION_REQUIRED");
+        /// <summary>
+        /// Constant DOMAIN_NOT_ALLOWED for LoadBalancerTlsCertificateFailureReason
+        /// </summary>
+        public static readonly LoadBalancerTlsCertificateFailureReason DOMAIN_NOT_ALLOWED = new LoadBalancerTlsCertificateFailureReason("DOMAIN_NOT_ALLOWED");
+        /// <summary>
+        /// Constant INVALID_PUBLIC_DOMAIN for LoadBalancerTlsCertificateFailureReason
+        /// </summary>
+        public static readonly LoadBalancerTlsCertificateFailureReason INVALID_PUBLIC_DOMAIN = new LoadBalancerTlsCertificateFailureReason("INVALID_PUBLIC_DOMAIN");
+        /// <summary>
+        /// Constant NO_AVAILABLE_CONTACTS for LoadBalancerTlsCertificateFailureReason
+        /// </summary>
+        public static readonly LoadBalancerTlsCertificateFailureReason NO_AVAILABLE_CONTACTS = new LoadBalancerTlsCertificateFailureReason("NO_AVAILABLE_CONTACTS");
+        /// <summary>
+        /// Constant OTHER for LoadBalancerTlsCertificateFailureReason
+        /// </summary>
+        public static readonly LoadBalancerTlsCertificateFailureReason OTHER = new LoadBalancerTlsCertificateFailureReason("OTHER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LoadBalancerTlsCertificateFailureReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LoadBalancerTlsCertificateFailureReason FindValue(string value)
+        {
+            return FindValue<LoadBalancerTlsCertificateFailureReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LoadBalancerTlsCertificateFailureReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LoadBalancerTlsCertificateRenewalStatus.
+    /// </summary>
+    public class LoadBalancerTlsCertificateRenewalStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for LoadBalancerTlsCertificateRenewalStatus
+        /// </summary>
+        public static readonly LoadBalancerTlsCertificateRenewalStatus FAILED = new LoadBalancerTlsCertificateRenewalStatus("FAILED");
+        /// <summary>
+        /// Constant PENDING_AUTO_RENEWAL for LoadBalancerTlsCertificateRenewalStatus
+        /// </summary>
+        public static readonly LoadBalancerTlsCertificateRenewalStatus PENDING_AUTO_RENEWAL = new LoadBalancerTlsCertificateRenewalStatus("PENDING_AUTO_RENEWAL");
+        /// <summary>
+        /// Constant PENDING_VALIDATION for LoadBalancerTlsCertificateRenewalStatus
+        /// </summary>
+        public static readonly LoadBalancerTlsCertificateRenewalStatus PENDING_VALIDATION = new LoadBalancerTlsCertificateRenewalStatus("PENDING_VALIDATION");
+        /// <summary>
+        /// Constant SUCCESS for LoadBalancerTlsCertificateRenewalStatus
+        /// </summary>
+        public static readonly LoadBalancerTlsCertificateRenewalStatus SUCCESS = new LoadBalancerTlsCertificateRenewalStatus("SUCCESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LoadBalancerTlsCertificateRenewalStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LoadBalancerTlsCertificateRenewalStatus FindValue(string value)
+        {
+            return FindValue<LoadBalancerTlsCertificateRenewalStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LoadBalancerTlsCertificateRenewalStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LoadBalancerTlsCertificateRevocationReason.
+    /// </summary>
+    public class LoadBalancerTlsCertificateRevocationReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant A_A_COMPROMISE for LoadBalancerTlsCertificateRevocationReason
+        /// </summary>
+        public static readonly LoadBalancerTlsCertificateRevocationReason A_A_COMPROMISE = new LoadBalancerTlsCertificateRevocationReason("A_A_COMPROMISE");
+        /// <summary>
+        /// Constant AFFILIATION_CHANGED for LoadBalancerTlsCertificateRevocationReason
+        /// </summary>
+        public static readonly LoadBalancerTlsCertificateRevocationReason AFFILIATION_CHANGED = new LoadBalancerTlsCertificateRevocationReason("AFFILIATION_CHANGED");
+        /// <summary>
+        /// Constant CA_COMPROMISE for LoadBalancerTlsCertificateRevocationReason
+        /// </summary>
+        public static readonly LoadBalancerTlsCertificateRevocationReason CA_COMPROMISE = new LoadBalancerTlsCertificateRevocationReason("CA_COMPROMISE");
+        /// <summary>
+        /// Constant CERTIFICATE_HOLD for LoadBalancerTlsCertificateRevocationReason
+        /// </summary>
+        public static readonly LoadBalancerTlsCertificateRevocationReason CERTIFICATE_HOLD = new LoadBalancerTlsCertificateRevocationReason("CERTIFICATE_HOLD");
+        /// <summary>
+        /// Constant CESSATION_OF_OPERATION for LoadBalancerTlsCertificateRevocationReason
+        /// </summary>
+        public static readonly LoadBalancerTlsCertificateRevocationReason CESSATION_OF_OPERATION = new LoadBalancerTlsCertificateRevocationReason("CESSATION_OF_OPERATION");
+        /// <summary>
+        /// Constant KEY_COMPROMISE for LoadBalancerTlsCertificateRevocationReason
+        /// </summary>
+        public static readonly LoadBalancerTlsCertificateRevocationReason KEY_COMPROMISE = new LoadBalancerTlsCertificateRevocationReason("KEY_COMPROMISE");
+        /// <summary>
+        /// Constant PRIVILEGE_WITHDRAWN for LoadBalancerTlsCertificateRevocationReason
+        /// </summary>
+        public static readonly LoadBalancerTlsCertificateRevocationReason PRIVILEGE_WITHDRAWN = new LoadBalancerTlsCertificateRevocationReason("PRIVILEGE_WITHDRAWN");
+        /// <summary>
+        /// Constant REMOVE_FROM_CRL for LoadBalancerTlsCertificateRevocationReason
+        /// </summary>
+        public static readonly LoadBalancerTlsCertificateRevocationReason REMOVE_FROM_CRL = new LoadBalancerTlsCertificateRevocationReason("REMOVE_FROM_CRL");
+        /// <summary>
+        /// Constant SUPERCEDED for LoadBalancerTlsCertificateRevocationReason
+        /// </summary>
+        public static readonly LoadBalancerTlsCertificateRevocationReason SUPERCEDED = new LoadBalancerTlsCertificateRevocationReason("SUPERCEDED");
+        /// <summary>
+        /// Constant UNSPECIFIED for LoadBalancerTlsCertificateRevocationReason
+        /// </summary>
+        public static readonly LoadBalancerTlsCertificateRevocationReason UNSPECIFIED = new LoadBalancerTlsCertificateRevocationReason("UNSPECIFIED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LoadBalancerTlsCertificateRevocationReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LoadBalancerTlsCertificateRevocationReason FindValue(string value)
+        {
+            return FindValue<LoadBalancerTlsCertificateRevocationReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LoadBalancerTlsCertificateRevocationReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LoadBalancerTlsCertificateStatus.
+    /// </summary>
+    public class LoadBalancerTlsCertificateStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EXPIRED for LoadBalancerTlsCertificateStatus
+        /// </summary>
+        public static readonly LoadBalancerTlsCertificateStatus EXPIRED = new LoadBalancerTlsCertificateStatus("EXPIRED");
+        /// <summary>
+        /// Constant FAILED for LoadBalancerTlsCertificateStatus
+        /// </summary>
+        public static readonly LoadBalancerTlsCertificateStatus FAILED = new LoadBalancerTlsCertificateStatus("FAILED");
+        /// <summary>
+        /// Constant INACTIVE for LoadBalancerTlsCertificateStatus
+        /// </summary>
+        public static readonly LoadBalancerTlsCertificateStatus INACTIVE = new LoadBalancerTlsCertificateStatus("INACTIVE");
+        /// <summary>
+        /// Constant ISSUED for LoadBalancerTlsCertificateStatus
+        /// </summary>
+        public static readonly LoadBalancerTlsCertificateStatus ISSUED = new LoadBalancerTlsCertificateStatus("ISSUED");
+        /// <summary>
+        /// Constant PENDING_VALIDATION for LoadBalancerTlsCertificateStatus
+        /// </summary>
+        public static readonly LoadBalancerTlsCertificateStatus PENDING_VALIDATION = new LoadBalancerTlsCertificateStatus("PENDING_VALIDATION");
+        /// <summary>
+        /// Constant REVOKED for LoadBalancerTlsCertificateStatus
+        /// </summary>
+        public static readonly LoadBalancerTlsCertificateStatus REVOKED = new LoadBalancerTlsCertificateStatus("REVOKED");
+        /// <summary>
+        /// Constant UNKNOWN for LoadBalancerTlsCertificateStatus
+        /// </summary>
+        public static readonly LoadBalancerTlsCertificateStatus UNKNOWN = new LoadBalancerTlsCertificateStatus("UNKNOWN");
+        /// <summary>
+        /// Constant VALIDATION_TIMED_OUT for LoadBalancerTlsCertificateStatus
+        /// </summary>
+        public static readonly LoadBalancerTlsCertificateStatus VALIDATION_TIMED_OUT = new LoadBalancerTlsCertificateStatus("VALIDATION_TIMED_OUT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LoadBalancerTlsCertificateStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LoadBalancerTlsCertificateStatus FindValue(string value)
+        {
+            return FindValue<LoadBalancerTlsCertificateStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LoadBalancerTlsCertificateStatus(string value)
         {
             return FindValue(value);
         }
@@ -803,6 +1541,14 @@ namespace Amazon.Lightsail
         /// </summary>
         public static readonly OperationType AttachDisk = new OperationType("AttachDisk");
         /// <summary>
+        /// Constant AttachInstancesToLoadBalancer for OperationType
+        /// </summary>
+        public static readonly OperationType AttachInstancesToLoadBalancer = new OperationType("AttachInstancesToLoadBalancer");
+        /// <summary>
+        /// Constant AttachLoadBalancerTlsCertificate for OperationType
+        /// </summary>
+        public static readonly OperationType AttachLoadBalancerTlsCertificate = new OperationType("AttachLoadBalancerTlsCertificate");
+        /// <summary>
         /// Constant AttachStaticIp for OperationType
         /// </summary>
         public static readonly OperationType AttachStaticIp = new OperationType("AttachStaticIp");
@@ -839,6 +1585,14 @@ namespace Amazon.Lightsail
         /// </summary>
         public static readonly OperationType CreateInstanceSnapshot = new OperationType("CreateInstanceSnapshot");
         /// <summary>
+        /// Constant CreateLoadBalancer for OperationType
+        /// </summary>
+        public static readonly OperationType CreateLoadBalancer = new OperationType("CreateLoadBalancer");
+        /// <summary>
+        /// Constant CreateLoadBalancerTlsCertificate for OperationType
+        /// </summary>
+        public static readonly OperationType CreateLoadBalancerTlsCertificate = new OperationType("CreateLoadBalancerTlsCertificate");
+        /// <summary>
         /// Constant DeleteDisk for OperationType
         /// </summary>
         public static readonly OperationType DeleteDisk = new OperationType("DeleteDisk");
@@ -863,9 +1617,21 @@ namespace Amazon.Lightsail
         /// </summary>
         public static readonly OperationType DeleteInstanceSnapshot = new OperationType("DeleteInstanceSnapshot");
         /// <summary>
+        /// Constant DeleteLoadBalancer for OperationType
+        /// </summary>
+        public static readonly OperationType DeleteLoadBalancer = new OperationType("DeleteLoadBalancer");
+        /// <summary>
+        /// Constant DeleteLoadBalancerTlsCertificate for OperationType
+        /// </summary>
+        public static readonly OperationType DeleteLoadBalancerTlsCertificate = new OperationType("DeleteLoadBalancerTlsCertificate");
+        /// <summary>
         /// Constant DetachDisk for OperationType
         /// </summary>
         public static readonly OperationType DetachDisk = new OperationType("DetachDisk");
+        /// <summary>
+        /// Constant DetachInstancesFromLoadBalancer for OperationType
+        /// </summary>
+        public static readonly OperationType DetachInstancesFromLoadBalancer = new OperationType("DetachInstancesFromLoadBalancer");
         /// <summary>
         /// Constant DetachStaticIp for OperationType
         /// </summary>
@@ -898,6 +1664,10 @@ namespace Amazon.Lightsail
         /// Constant UpdateDomainEntry for OperationType
         /// </summary>
         public static readonly OperationType UpdateDomainEntry = new OperationType("UpdateDomainEntry");
+        /// <summary>
+        /// Constant UpdateLoadBalancerAttribute for OperationType
+        /// </summary>
+        public static readonly OperationType UpdateLoadBalancerAttribute = new OperationType("UpdateLoadBalancerAttribute");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1150,6 +1920,14 @@ namespace Amazon.Lightsail
         /// Constant KeyPair for ResourceType
         /// </summary>
         public static readonly ResourceType KeyPair = new ResourceType("KeyPair");
+        /// <summary>
+        /// Constant LoadBalancer for ResourceType
+        /// </summary>
+        public static readonly ResourceType LoadBalancer = new ResourceType("LoadBalancer");
+        /// <summary>
+        /// Constant LoadBalancerTlsCertificate for ResourceType
+        /// </summary>
+        public static readonly ResourceType LoadBalancerTlsCertificate = new ResourceType("LoadBalancerTlsCertificate");
         /// <summary>
         /// Constant PeeredVpc for ResourceType
         /// </summary>

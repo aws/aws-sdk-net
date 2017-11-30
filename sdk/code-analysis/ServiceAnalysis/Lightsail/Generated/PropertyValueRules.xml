@@ -17,6 +17,18 @@
     <pattern>\w[\w\-]*\w</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lightsail.Model.AttachInstancesToLoadBalancerRequest.LoadBalancerName</property>
+    <pattern>\w[\w\-]*\w</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.AttachLoadBalancerTlsCertificateRequest.CertificateName</property>
+    <pattern>\w[\w\-]*\w</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.AttachLoadBalancerTlsCertificateRequest.LoadBalancerName</property>
+    <pattern>\w[\w\-]*\w</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lightsail.Model.AttachStaticIpRequest.InstanceName</property>
     <pattern>\w[\w\-]*\w</pattern>
   </property-value-rule>
@@ -97,6 +109,27 @@
     <pattern>\w[\w\-]*\w</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lightsail.Model.CreateLoadBalancerRequest.CertificateName</property>
+    <pattern>\w[\w\-]*\w</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.CreateLoadBalancerRequest.InstancePort</property>
+    <min>0</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.CreateLoadBalancerRequest.LoadBalancerName</property>
+    <pattern>\w[\w\-]*\w</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.CreateLoadBalancerTlsCertificateRequest.CertificateName</property>
+    <pattern>\w[\w\-]*\w</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.CreateLoadBalancerTlsCertificateRequest.LoadBalancerName</property>
+    <pattern>\w[\w\-]*\w</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lightsail.Model.DeleteDiskRequest.DiskName</property>
     <pattern>\w[\w\-]*\w</pattern>
   </property-value-rule>
@@ -117,7 +150,23 @@
     <pattern>\w[\w\-]*\w</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lightsail.Model.DeleteLoadBalancerRequest.LoadBalancerName</property>
+    <pattern>\w[\w\-]*\w</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.DeleteLoadBalancerTlsCertificateRequest.CertificateName</property>
+    <pattern>\w[\w\-]*\w</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.DeleteLoadBalancerTlsCertificateRequest.LoadBalancerName</property>
+    <pattern>\w[\w\-]*\w</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lightsail.Model.DetachDiskRequest.DiskName</property>
+    <pattern>\w[\w\-]*\w</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.DetachInstancesFromLoadBalancerRequest.LoadBalancerName</property>
     <pattern>\w[\w\-]*\w</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -166,6 +215,23 @@
     <pattern>\w[\w\-]*\w</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lightsail.Model.GetLoadBalancerRequest.LoadBalancerName</property>
+    <pattern>\w[\w\-]*\w</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.GetLoadBalancerMetricDataRequest.LoadBalancerName</property>
+    <pattern>\w[\w\-]*\w</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.GetLoadBalancerMetricDataRequest.Period</property>
+    <min>60</min>
+    <max>86400</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.GetLoadBalancerTlsCertificatesRequest.LoadBalancerName</property>
+    <pattern>\w[\w\-]*\w</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lightsail.Model.GetOperationRequest.OperationId</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
@@ -203,6 +269,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.StopInstanceRequest.InstanceName</property>
+    <pattern>\w[\w\-]*\w</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.UpdateLoadBalancerAttributeRequest.AttributeValue</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.UpdateLoadBalancerAttributeRequest.LoadBalancerName</property>
     <pattern>\w[\w\-]*\w</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -326,6 +401,10 @@
     <pattern>([0-9]{1,3}\.){3}[0-9]{1,3}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lightsail.Model.InstanceHealthSummary.InstanceName</property>
+    <pattern>\w[\w\-]*\w</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lightsail.Model.InstancePortInfo.FromPort</property>
     <min>0</min>
     <max>65535</max>
@@ -367,6 +446,70 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.KeyPair.Name</property>
+    <pattern>\w[\w\-]*\w</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.LoadBalancer.Arn</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.LoadBalancer.DnsName</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.LoadBalancer.HealthCheckPath</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.LoadBalancer.Name</property>
+    <pattern>\w[\w\-]*\w</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.LoadBalancerTlsCertificate.Arn</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.LoadBalancerTlsCertificate.Issuer</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.LoadBalancerTlsCertificate.KeyAlgorithm</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.LoadBalancerTlsCertificate.LoadBalancerName</property>
+    <pattern>\w[\w\-]*\w</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.LoadBalancerTlsCertificate.Name</property>
+    <pattern>\w[\w\-]*\w</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.LoadBalancerTlsCertificate.Serial</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.LoadBalancerTlsCertificate.SignatureAlgorithm</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.LoadBalancerTlsCertificate.Subject</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.LoadBalancerTlsCertificateDomainValidationRecord.Name</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.LoadBalancerTlsCertificateDomainValidationRecord.Type</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.LoadBalancerTlsCertificateDomainValidationRecord.Value</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.LoadBalancerTlsCertificateSummary.Name</property>
     <pattern>\w[\w\-]*\w</pattern>
   </property-value-rule>
   <property-value-rule>

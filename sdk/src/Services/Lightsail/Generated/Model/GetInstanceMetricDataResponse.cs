@@ -57,7 +57,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property MetricName. 
         /// <para>
-        /// The metric name to return data for. 
+        /// The metric name to return data for.
         /// </para>
         /// </summary>
         public InstanceMetricName MetricName

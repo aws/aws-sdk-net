@@ -70,6 +70,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("isAlias", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IsAlias = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -171,6 +171,127 @@ namespace Amazon.Lightsail
 
         #endregion
         
+        #region  AttachInstancesToLoadBalancer
+
+
+        /// <summary>
+        /// Attaches one or more Lightsail instances to a load balancer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AttachInstancesToLoadBalancer service method.</param>
+        /// 
+        /// <returns>The response from the AttachInstancesToLoadBalancer service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.AccountSetupInProgressException">
+        /// Lightsail throws this exception when an account is still in the setup in progress
+        /// state.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
+        /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
+        /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachInstancesToLoadBalancer">REST API Reference for AttachInstancesToLoadBalancer Operation</seealso>
+        AttachInstancesToLoadBalancerResponse AttachInstancesToLoadBalancer(AttachInstancesToLoadBalancerRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AttachInstancesToLoadBalancer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AttachInstancesToLoadBalancer operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachInstancesToLoadBalancer">REST API Reference for AttachInstancesToLoadBalancer Operation</seealso>
+        Task<AttachInstancesToLoadBalancerResponse> AttachInstancesToLoadBalancerAsync(AttachInstancesToLoadBalancerRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  AttachLoadBalancerTlsCertificate
+
+
+        /// <summary>
+        /// Attaches a Transport Layer Security (TLS) certificate to your load balancer.
+        /// 
+        ///  
+        /// <para>
+        /// TLS is just an updated, more secure version of Secure Socket Layer (SSL).
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AttachLoadBalancerTlsCertificate service method.</param>
+        /// 
+        /// <returns>The response from the AttachLoadBalancerTlsCertificate service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.AccountSetupInProgressException">
+        /// Lightsail throws this exception when an account is still in the setup in progress
+        /// state.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
+        /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
+        /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachLoadBalancerTlsCertificate">REST API Reference for AttachLoadBalancerTlsCertificate Operation</seealso>
+        AttachLoadBalancerTlsCertificateResponse AttachLoadBalancerTlsCertificate(AttachLoadBalancerTlsCertificateRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AttachLoadBalancerTlsCertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AttachLoadBalancerTlsCertificate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachLoadBalancerTlsCertificate">REST API Reference for AttachLoadBalancerTlsCertificate Operation</seealso>
+        Task<AttachLoadBalancerTlsCertificateResponse> AttachLoadBalancerTlsCertificateAsync(AttachLoadBalancerTlsCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  AttachStaticIp
 
 
@@ -833,6 +954,133 @@ namespace Amazon.Lightsail
 
         #endregion
         
+        #region  CreateLoadBalancer
+
+
+        /// <summary>
+        /// Creates a Lightsail load balancer.
+        /// 
+        ///  
+        /// <para>
+        /// When you create a load balancer, you can specify certificates and port settings. You
+        /// can create up to 5 load balancers per AWS Region in your account.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLoadBalancer service method.</param>
+        /// 
+        /// <returns>The response from the CreateLoadBalancer service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.AccountSetupInProgressException">
+        /// Lightsail throws this exception when an account is still in the setup in progress
+        /// state.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
+        /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
+        /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateLoadBalancer">REST API Reference for CreateLoadBalancer Operation</seealso>
+        CreateLoadBalancerResponse CreateLoadBalancer(CreateLoadBalancerRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateLoadBalancer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateLoadBalancer operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateLoadBalancer">REST API Reference for CreateLoadBalancer Operation</seealso>
+        Task<CreateLoadBalancerResponse> CreateLoadBalancerAsync(CreateLoadBalancerRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateLoadBalancerTlsCertificate
+
+
+        /// <summary>
+        /// Creates a Lightsail load balancer TLS certificate.
+        /// 
+        ///  
+        /// <para>
+        /// TLS is just an updated, more secure version of Secure Socket Layer (SSL).
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLoadBalancerTlsCertificate service method.</param>
+        /// 
+        /// <returns>The response from the CreateLoadBalancerTlsCertificate service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.AccountSetupInProgressException">
+        /// Lightsail throws this exception when an account is still in the setup in progress
+        /// state.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
+        /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
+        /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateLoadBalancerTlsCertificate">REST API Reference for CreateLoadBalancerTlsCertificate Operation</seealso>
+        CreateLoadBalancerTlsCertificateResponse CreateLoadBalancerTlsCertificate(CreateLoadBalancerTlsCertificateRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateLoadBalancerTlsCertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateLoadBalancerTlsCertificate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateLoadBalancerTlsCertificate">REST API Reference for CreateLoadBalancerTlsCertificate Operation</seealso>
+        Task<CreateLoadBalancerTlsCertificateResponse> CreateLoadBalancerTlsCertificateAsync(CreateLoadBalancerTlsCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteDisk
 
 
@@ -1255,6 +1503,122 @@ namespace Amazon.Lightsail
 
         #endregion
         
+        #region  DeleteLoadBalancer
+
+
+        /// <summary>
+        /// Deletes a Lightsail load balancer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLoadBalancer service method.</param>
+        /// 
+        /// <returns>The response from the DeleteLoadBalancer service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.AccountSetupInProgressException">
+        /// Lightsail throws this exception when an account is still in the setup in progress
+        /// state.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
+        /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
+        /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteLoadBalancer">REST API Reference for DeleteLoadBalancer Operation</seealso>
+        DeleteLoadBalancerResponse DeleteLoadBalancer(DeleteLoadBalancerRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteLoadBalancer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLoadBalancer operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteLoadBalancer">REST API Reference for DeleteLoadBalancer Operation</seealso>
+        Task<DeleteLoadBalancerResponse> DeleteLoadBalancerAsync(DeleteLoadBalancerRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteLoadBalancerTlsCertificate
+
+
+        /// <summary>
+        /// Deletes a TLS/SSL certificate associated with a Lightsail load balancer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLoadBalancerTlsCertificate service method.</param>
+        /// 
+        /// <returns>The response from the DeleteLoadBalancerTlsCertificate service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.AccountSetupInProgressException">
+        /// Lightsail throws this exception when an account is still in the setup in progress
+        /// state.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
+        /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
+        /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteLoadBalancerTlsCertificate">REST API Reference for DeleteLoadBalancerTlsCertificate Operation</seealso>
+        DeleteLoadBalancerTlsCertificateResponse DeleteLoadBalancerTlsCertificate(DeleteLoadBalancerTlsCertificateRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteLoadBalancerTlsCertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLoadBalancerTlsCertificate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteLoadBalancerTlsCertificate">REST API Reference for DeleteLoadBalancerTlsCertificate Operation</seealso>
+        Task<DeleteLoadBalancerTlsCertificateResponse> DeleteLoadBalancerTlsCertificateAsync(DeleteLoadBalancerTlsCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DetachDisk
 
 
@@ -1312,6 +1676,64 @@ namespace Amazon.Lightsail
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DetachDisk">REST API Reference for DetachDisk Operation</seealso>
         Task<DetachDiskResponse> DetachDiskAsync(DetachDiskRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DetachInstancesFromLoadBalancer
+
+
+        /// <summary>
+        /// Detaches the specified instances from a Lightsail load balancer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DetachInstancesFromLoadBalancer service method.</param>
+        /// 
+        /// <returns>The response from the DetachInstancesFromLoadBalancer service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.AccountSetupInProgressException">
+        /// Lightsail throws this exception when an account is still in the setup in progress
+        /// state.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
+        /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
+        /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DetachInstancesFromLoadBalancer">REST API Reference for DetachInstancesFromLoadBalancer Operation</seealso>
+        DetachInstancesFromLoadBalancerResponse DetachInstancesFromLoadBalancer(DetachInstancesFromLoadBalancerRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DetachInstancesFromLoadBalancer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DetachInstancesFromLoadBalancer operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DetachInstancesFromLoadBalancer">REST API Reference for DetachInstancesFromLoadBalancer Operation</seealso>
+        Task<DetachInstancesFromLoadBalancerResponse> DetachInstancesFromLoadBalancerAsync(DetachInstancesFromLoadBalancerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2555,6 +2977,251 @@ namespace Amazon.Lightsail
 
         #endregion
         
+        #region  GetLoadBalancer
+
+
+        /// <summary>
+        /// Returns information about the specified Lightsail load balancer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLoadBalancer service method.</param>
+        /// 
+        /// <returns>The response from the GetLoadBalancer service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.AccountSetupInProgressException">
+        /// Lightsail throws this exception when an account is still in the setup in progress
+        /// state.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
+        /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
+        /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetLoadBalancer">REST API Reference for GetLoadBalancer Operation</seealso>
+        GetLoadBalancerResponse GetLoadBalancer(GetLoadBalancerRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetLoadBalancer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetLoadBalancer operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetLoadBalancer">REST API Reference for GetLoadBalancer Operation</seealso>
+        Task<GetLoadBalancerResponse> GetLoadBalancerAsync(GetLoadBalancerRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetLoadBalancerMetricData
+
+
+        /// <summary>
+        /// Returns information about health metrics for your Lightsail load balancer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLoadBalancerMetricData service method.</param>
+        /// 
+        /// <returns>The response from the GetLoadBalancerMetricData service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.AccountSetupInProgressException">
+        /// Lightsail throws this exception when an account is still in the setup in progress
+        /// state.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
+        /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
+        /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetLoadBalancerMetricData">REST API Reference for GetLoadBalancerMetricData Operation</seealso>
+        GetLoadBalancerMetricDataResponse GetLoadBalancerMetricData(GetLoadBalancerMetricDataRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetLoadBalancerMetricData operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetLoadBalancerMetricData operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetLoadBalancerMetricData">REST API Reference for GetLoadBalancerMetricData Operation</seealso>
+        Task<GetLoadBalancerMetricDataResponse> GetLoadBalancerMetricDataAsync(GetLoadBalancerMetricDataRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetLoadBalancers
+
+
+        /// <summary>
+        /// Returns information about all load balancers in an account.
+        /// 
+        ///  
+        /// <para>
+        /// If you are describing a long list of load balancers, you can paginate the output to
+        /// make the list more manageable. You can use the pageToken and nextPageToken values
+        /// to retrieve the next items in the list.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLoadBalancers service method.</param>
+        /// 
+        /// <returns>The response from the GetLoadBalancers service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.AccountSetupInProgressException">
+        /// Lightsail throws this exception when an account is still in the setup in progress
+        /// state.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
+        /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
+        /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetLoadBalancers">REST API Reference for GetLoadBalancers Operation</seealso>
+        GetLoadBalancersResponse GetLoadBalancers(GetLoadBalancersRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetLoadBalancers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetLoadBalancers operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetLoadBalancers">REST API Reference for GetLoadBalancers Operation</seealso>
+        Task<GetLoadBalancersResponse> GetLoadBalancersAsync(GetLoadBalancersRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetLoadBalancerTlsCertificates
+
+
+        /// <summary>
+        /// Returns information about the TLS certificates that are associated with the specified
+        /// Lightsail load balancer.
+        /// 
+        ///  
+        /// <para>
+        /// TLS is just an updated, more secure version of Secure Socket Layer (SSL).
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLoadBalancerTlsCertificates service method.</param>
+        /// 
+        /// <returns>The response from the GetLoadBalancerTlsCertificates service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.AccountSetupInProgressException">
+        /// Lightsail throws this exception when an account is still in the setup in progress
+        /// state.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
+        /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
+        /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetLoadBalancerTlsCertificates">REST API Reference for GetLoadBalancerTlsCertificates Operation</seealso>
+        GetLoadBalancerTlsCertificatesResponse GetLoadBalancerTlsCertificates(GetLoadBalancerTlsCertificatesRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetLoadBalancerTlsCertificates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetLoadBalancerTlsCertificates operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetLoadBalancerTlsCertificates">REST API Reference for GetLoadBalancerTlsCertificates Operation</seealso>
+        Task<GetLoadBalancerTlsCertificatesResponse> GetLoadBalancerTlsCertificatesAsync(GetLoadBalancerTlsCertificatesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetOperation
 
 
@@ -3551,6 +4218,64 @@ namespace Amazon.Lightsail
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateDomainEntry">REST API Reference for UpdateDomainEntry Operation</seealso>
         Task<UpdateDomainEntryResponse> UpdateDomainEntryAsync(UpdateDomainEntryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateLoadBalancerAttribute
+
+
+        /// <summary>
+        /// Updates the specified attribute for a load balancer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLoadBalancerAttribute service method.</param>
+        /// 
+        /// <returns>The response from the UpdateLoadBalancerAttribute service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.AccountSetupInProgressException">
+        /// Lightsail throws this exception when an account is still in the setup in progress
+        /// state.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
+        /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
+        /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateLoadBalancerAttribute">REST API Reference for UpdateLoadBalancerAttribute Operation</seealso>
+        UpdateLoadBalancerAttributeResponse UpdateLoadBalancerAttribute(UpdateLoadBalancerAttributeRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateLoadBalancerAttribute operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLoadBalancerAttribute operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateLoadBalancerAttribute">REST API Reference for UpdateLoadBalancerAttribute Operation</seealso>
+        Task<UpdateLoadBalancerAttributeResponse> UpdateLoadBalancerAttributeAsync(UpdateLoadBalancerAttributeRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

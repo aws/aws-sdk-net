@@ -168,7 +168,7 @@ namespace Amazon.Lightsail.Model
         /// Gets and sets the property UserData. 
         /// <para>
         /// A launch script you can create that configures a server with additional user data.
-        /// For example, you might want to run <code>apt-get –y update</code>.
+        /// For example, you might want to run <code>apt-get -y update</code>.
         /// </para>
         ///  <note> 
         /// <para>
