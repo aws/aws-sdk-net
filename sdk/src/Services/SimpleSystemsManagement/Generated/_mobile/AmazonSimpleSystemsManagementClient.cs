@@ -36,20 +36,20 @@ namespace Amazon.SimpleSystemsManagement
     /// <summary>
     /// Implementation for accessing SimpleSystemsManagement
     ///
-    /// Amazon EC2 Systems Manager 
+    /// AWS Systems Manager 
     /// <para>
-    /// Amazon EC2 Systems Manager is a collection of capabilities that helps you automate
-    /// management tasks such as collecting system inventory, applying operating system (OS)
-    /// patches, automating the creation of Amazon Machine Images (AMIs), and configuring
-    /// operating systems (OSs) and applications at scale. Systems Manager lets you remotely
-    /// and securely manage the configuration of your managed instances. A <i>managed instance</i>
-    /// is any Amazon EC2 instance or on-premises machine in your hybrid environment that
-    /// has been configured for Systems Manager.
+    /// AWS Systems Manager is a collection of capabilities that helps you automate management
+    /// tasks such as collecting system inventory, applying operating system (OS) patches,
+    /// automating the creation of Amazon Machine Images (AMIs), and configuring operating
+    /// systems (OSs) and applications at scale. Systems Manager lets you remotely and securely
+    /// manage the configuration of your managed instances. A <i>managed instance</i> is any
+    /// Amazon EC2 instance or on-premises machine in your hybrid environment that has been
+    /// configured for Systems Manager.
     /// </para>
     ///  
     /// <para>
-    /// This reference is intended to be used with the <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/">Amazon
-    /// EC2 Systems Manager User Guide</a>.
+    /// This reference is intended to be used with the <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/">AWS
+    /// Systems Manager User Guide</a>.
     /// </para>
     ///  
     /// <para>
@@ -633,7 +633,7 @@ namespace Amazon.SimpleSystemsManagement
         /// or more running instances.
         /// </para>
         /// </summary>
-        /// <param name="content">A valid JSON string.</param>
+        /// <param name="content">A valid JSON or YAML string.</param>
         /// <param name="name">A name for the Systems Manager document.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1423,6 +1423,38 @@ namespace Amazon.SimpleSystemsManagement
             var unmarshaller = DescribeAutomationExecutionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeAutomationExecutionsRequest,DescribeAutomationExecutionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeAutomationStepExecutions
+
+        internal virtual DescribeAutomationStepExecutionsResponse DescribeAutomationStepExecutions(DescribeAutomationStepExecutionsRequest request)
+        {
+            var marshaller = new DescribeAutomationStepExecutionsRequestMarshaller();
+            var unmarshaller = DescribeAutomationStepExecutionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAutomationStepExecutionsRequest,DescribeAutomationStepExecutionsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAutomationStepExecutions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAutomationStepExecutions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAutomationStepExecutions">REST API Reference for DescribeAutomationStepExecutions Operation</seealso>
+        public virtual Task<DescribeAutomationStepExecutionsResponse> DescribeAutomationStepExecutionsAsync(DescribeAutomationStepExecutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeAutomationStepExecutionsRequestMarshaller();
+            var unmarshaller = DescribeAutomationStepExecutionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeAutomationStepExecutionsRequest,DescribeAutomationStepExecutionsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -3785,8 +3817,7 @@ namespace Amazon.SimpleSystemsManagement
         /// The role name can't contain invalid characters. Also verify that you specified an
         /// IAM role for notifications that includes the required trust policy. For information
         /// about configuring the IAM role for Run Command notifications, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/rc-sns-notifications.html">Configuring
-        /// Amazon SNS Notifications for Run Command</a> in the <i>Amazon EC2 Systems Manager
-        /// User Guide</i>.
+        /// Amazon SNS Notifications for Run Command</a> in the <i>AWS Systems Manager User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.MaxDocumentSizeExceededException">
         /// The size limit of a document is 64 KB.

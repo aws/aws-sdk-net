@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DocumentVersionInfo Object
+    /// Response Unmarshaller for ResolvedTargets Object
     /// </summary>  
-    public class DocumentVersionInfoUnmarshaller : IUnmarshaller<DocumentVersionInfo, XmlUnmarshallerContext>, IUnmarshaller<DocumentVersionInfo, JsonUnmarshallerContext>
+    public class ResolvedTargetsUnmarshaller : IUnmarshaller<ResolvedTargets, XmlUnmarshallerContext>, IUnmarshaller<ResolvedTargets, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DocumentVersionInfo IUnmarshaller<DocumentVersionInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ResolvedTargets IUnmarshaller<ResolvedTargets, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,27 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DocumentVersionInfo Unmarshall(JsonUnmarshallerContext context)
+        public ResolvedTargets Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DocumentVersionInfo unmarshalledObject = new DocumentVersionInfo();
+            ResolvedTargets unmarshalledObject = new ResolvedTargets();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CreatedDate", targetDepth))
+                if (context.TestExpression("ParameterValues", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreatedDate = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.ParameterValues = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("DocumentFormat", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DocumentFormat = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DocumentVersion", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DocumentVersion = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("IsDefaultVersion", targetDepth))
+                if (context.TestExpression("Truncated", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.IsDefaultVersion = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Truncated = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +82,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         }
 
 
-        private static DocumentVersionInfoUnmarshaller _instance = new DocumentVersionInfoUnmarshaller();        
+        private static ResolvedTargetsUnmarshaller _instance = new ResolvedTargetsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DocumentVersionInfoUnmarshaller Instance
+        public static ResolvedTargetsUnmarshaller Instance
         {
             get
             {

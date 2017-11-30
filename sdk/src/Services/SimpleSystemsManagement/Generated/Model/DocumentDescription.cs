@@ -35,6 +35,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private DateTime? _createdDate;
         private string _defaultVersion;
         private string _description;
+        private DocumentFormat _documentFormat;
         private DocumentType _documentType;
         private string _documentVersion;
         private string _hash;
@@ -48,6 +49,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _sha1;
         private DocumentStatus _status;
         private List<Tag> _tags = new List<Tag>();
+        private string _targetType;
 
         /// <summary>
         /// Gets and sets the property CreatedDate. 
@@ -101,6 +103,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DocumentFormat. 
+        /// <para>
+        /// The document format, either JSON or YAML.
+        /// </para>
+        /// </summary>
+        public DocumentFormat DocumentFormat
+        {
+            get { return this._documentFormat; }
+            set { this._documentFormat = value; }
+        }
+
+        // Check to see if DocumentFormat property is set
+        internal bool IsSetDocumentFormat()
+        {
+            return this._documentFormat != null;
         }
 
         /// <summary>
@@ -345,6 +365,26 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetType. 
+        /// <para>
+        /// The target type which defines the kinds of resources the document can run on. For
+        /// example, /AWS::EC2::Instance. For a list of valid resource types, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+        /// Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. 
+        /// </para>
+        /// </summary>
+        public string TargetType
+        {
+            get { return this._targetType; }
+            set { this._targetType = value; }
+        }
+
+        // Check to see if TargetType property is set
+        internal bool IsSetTargetType()
+        {
+            return this._targetType != null;
         }
 
     }

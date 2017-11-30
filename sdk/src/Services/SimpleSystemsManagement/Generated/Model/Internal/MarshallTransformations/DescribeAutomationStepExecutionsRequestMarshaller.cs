@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateDocument Request Marshaller
+    /// DescribeAutomationStepExecutions Request Marshaller
     /// </summary>       
-    public class UpdateDocumentRequestMarshaller : IMarshaller<IRequest, UpdateDocumentRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DescribeAutomationStepExecutionsRequestMarshaller : IMarshaller<IRequest, DescribeAutomationStepExecutionsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((UpdateDocumentRequest)input);
+            return this.Marshall((DescribeAutomationStepExecutionsRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(UpdateDocumentRequest publicRequest)
+        public IRequest Marshall(DescribeAutomationStepExecutionsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleSystemsManagement");
-            string target = "AmazonSSM.UpdateDocument";
+            string target = "AmazonSSM.DescribeAutomationStepExecutions";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -67,34 +67,44 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetContent())
+                if(publicRequest.IsSetAutomationExecutionId())
                 {
-                    context.Writer.WritePropertyName("Content");
-                    context.Writer.Write(publicRequest.Content);
+                    context.Writer.WritePropertyName("AutomationExecutionId");
+                    context.Writer.Write(publicRequest.AutomationExecutionId);
                 }
 
-                if(publicRequest.IsSetDocumentFormat())
+                if(publicRequest.IsSetFilters())
                 {
-                    context.Writer.WritePropertyName("DocumentFormat");
-                    context.Writer.Write(publicRequest.DocumentFormat);
+                    context.Writer.WritePropertyName("Filters");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestFiltersListValue in publicRequest.Filters)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = StepExecutionFilterMarshaller.Instance;
+                        marshaller.Marshall(publicRequestFiltersListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
-                if(publicRequest.IsSetDocumentVersion())
+                if(publicRequest.IsSetMaxResults())
                 {
-                    context.Writer.WritePropertyName("DocumentVersion");
-                    context.Writer.Write(publicRequest.DocumentVersion);
+                    context.Writer.WritePropertyName("MaxResults");
+                    context.Writer.Write(publicRequest.MaxResults);
                 }
 
-                if(publicRequest.IsSetName())
+                if(publicRequest.IsSetNextToken())
                 {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
+                    context.Writer.WritePropertyName("NextToken");
+                    context.Writer.Write(publicRequest.NextToken);
                 }
 
-                if(publicRequest.IsSetTargetType())
+                if(publicRequest.IsSetReverseOrder())
                 {
-                    context.Writer.WritePropertyName("TargetType");
-                    context.Writer.Write(publicRequest.TargetType);
+                    context.Writer.WritePropertyName("ReverseOrder");
+                    context.Writer.Write(publicRequest.ReverseOrder);
                 }
 
         

@@ -100,10 +100,28 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     unmarshalledObject.Inputs = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MaxAttempts", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MaxAttempts = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("OnFailure", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OnFailure = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Outputs", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, List<string>, StringUnmarshaller, ListUnmarshaller<string, StringUnmarshaller>>(StringUnmarshaller.Instance, new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance));
                     unmarshalledObject.Outputs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("OverriddenParameters", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, List<string>, StringUnmarshaller, ListUnmarshaller<string, StringUnmarshaller>>(StringUnmarshaller.Instance, new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance));
+                    unmarshalledObject.OverriddenParameters = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Response", targetDepth))
@@ -118,6 +136,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     unmarshalledObject.ResponseCode = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("StepExecutionId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StepExecutionId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("StepName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -128,6 +152,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StepStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TimeoutSeconds", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.TimeoutSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

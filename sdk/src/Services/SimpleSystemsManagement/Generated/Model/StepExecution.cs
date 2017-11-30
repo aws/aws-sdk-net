@@ -38,11 +38,16 @@ namespace Amazon.SimpleSystemsManagement.Model
         private FailureDetails _failureDetails;
         private string _failureMessage;
         private Dictionary<string, string> _inputs = new Dictionary<string, string>();
+        private int? _maxAttempts;
+        private string _onFailure;
         private Dictionary<string, List<string>> _outputs = new Dictionary<string, List<string>>();
+        private Dictionary<string, List<string>> _overriddenParameters = new Dictionary<string, List<string>>();
         private string _response;
         private string _responseCode;
+        private string _stepExecutionId;
         private string _stepName;
         private AutomationExecutionStatus _stepStatus;
+        private long? _timeoutSeconds;
 
         /// <summary>
         /// Gets and sets the property Action. 
@@ -155,6 +160,42 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MaxAttempts. 
+        /// <para>
+        /// The maximum number of tries to run the action of the step. The default value is 1.
+        /// </para>
+        /// </summary>
+        public int MaxAttempts
+        {
+            get { return this._maxAttempts.GetValueOrDefault(); }
+            set { this._maxAttempts = value; }
+        }
+
+        // Check to see if MaxAttempts property is set
+        internal bool IsSetMaxAttempts()
+        {
+            return this._maxAttempts.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OnFailure. 
+        /// <para>
+        /// The action to take if the step fails. The default value is Abort.
+        /// </para>
+        /// </summary>
+        public string OnFailure
+        {
+            get { return this._onFailure; }
+            set { this._onFailure = value; }
+        }
+
+        // Check to see if OnFailure property is set
+        internal bool IsSetOnFailure()
+        {
+            return this._onFailure != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Outputs. 
         /// <para>
         /// Returned values from the execution of the step.
@@ -170,6 +211,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetOutputs()
         {
             return this._outputs != null && this._outputs.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OverriddenParameters. 
+        /// <para>
+        /// A user-specified list of parameters to override when executing a step.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, List<string>> OverriddenParameters
+        {
+            get { return this._overriddenParameters; }
+            set { this._overriddenParameters = value; }
+        }
+
+        // Check to see if OverriddenParameters property is set
+        internal bool IsSetOverriddenParameters()
+        {
+            return this._overriddenParameters != null && this._overriddenParameters.Count > 0; 
         }
 
         /// <summary>
@@ -209,6 +268,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StepExecutionId. 
+        /// <para>
+        /// The unique ID of a step execution.
+        /// </para>
+        /// </summary>
+        public string StepExecutionId
+        {
+            get { return this._stepExecutionId; }
+            set { this._stepExecutionId = value; }
+        }
+
+        // Check to see if StepExecutionId property is set
+        internal bool IsSetStepExecutionId()
+        {
+            return this._stepExecutionId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property StepName. 
         /// <para>
         /// The name of this execution step.
@@ -243,6 +320,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetStepStatus()
         {
             return this._stepStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimeoutSeconds. 
+        /// <para>
+        /// The timeout seconds of the step.
+        /// </para>
+        /// </summary>
+        public long TimeoutSeconds
+        {
+            get { return this._timeoutSeconds.GetValueOrDefault(); }
+            set { this._timeoutSeconds = value; }
+        }
+
+        // Check to see if TimeoutSeconds property is set
+        internal bool IsSetTimeoutSeconds()
+        {
+            return this._timeoutSeconds.HasValue; 
         }
 
     }

@@ -34,8 +34,10 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class UpdateDocumentRequest : AmazonSimpleSystemsManagementRequest
     {
         private string _content;
+        private DocumentFormat _documentFormat;
         private string _documentVersion;
         private string _name;
+        private string _targetType;
 
         /// <summary>
         /// Gets and sets the property Content. 
@@ -53,6 +55,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetContent()
         {
             return this._content != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DocumentFormat. 
+        /// <para>
+        /// Specify the document format for the new document version. Systems Manager supports
+        /// JSON and YAML documents. JSON is the default format.
+        /// </para>
+        /// </summary>
+        public DocumentFormat DocumentFormat
+        {
+            get { return this._documentFormat; }
+            set { this._documentFormat = value; }
+        }
+
+        // Check to see if DocumentFormat property is set
+        internal bool IsSetDocumentFormat()
+        {
+            return this._documentFormat != null;
         }
 
         /// <summary>
@@ -89,6 +110,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetType. 
+        /// <para>
+        /// Specify a new target type for the document.
+        /// </para>
+        /// </summary>
+        public string TargetType
+        {
+            get { return this._targetType; }
+            set { this._targetType = value; }
+        }
+
+        // Check to see if TargetType property is set
+        internal bool IsSetTargetType()
+        {
+            return this._targetType != null;
         }
 
     }

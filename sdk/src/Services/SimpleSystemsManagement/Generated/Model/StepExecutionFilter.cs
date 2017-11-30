@@ -28,49 +28,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Inventory query results.
+    /// A filter to limit the amount of step execution information returned by the call.
     /// </summary>
-    public partial class InventoryResultEntity
+    public partial class StepExecutionFilter
     {
-        private Dictionary<string, InventoryResultItem> _data = new Dictionary<string, InventoryResultItem>();
-        private string _id;
+        private StepExecutionFilterKey _key;
+        private List<string> _values = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property Data. 
+        /// Gets and sets the property Key. 
         /// <para>
-        /// The data section in the inventory result entity JSON.
+        /// One or more keys to limit the results. Valid filter keys include the following: StepName,
+        /// Action, StepExecutionId, StepExecutionStatus, StartTimeBefore, StartTimeAfter.
         /// </para>
         /// </summary>
-        public Dictionary<string, InventoryResultItem> Data
+        public StepExecutionFilterKey Key
         {
-            get { return this._data; }
-            set { this._data = value; }
+            get { return this._key; }
+            set { this._key = value; }
         }
 
-        // Check to see if Data property is set
-        internal bool IsSetData()
+        // Check to see if Key property is set
+        internal bool IsSetKey()
         {
-            return this._data != null && this._data.Count > 0; 
+            return this._key != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Id. 
+        /// Gets and sets the property Values. 
         /// <para>
-        /// ID of the inventory result entity. For example, for managed instance inventory the
-        /// result will be the managed instance ID. For EC2 instance inventory, the result will
-        /// be the instance ID. 
+        /// The values of the filter key.
         /// </para>
         /// </summary>
-        public string Id
+        public List<string> Values
         {
-            get { return this._id; }
-            set { this._id = value; }
+            get { return this._values; }
+            set { this._values = value; }
         }
 
-        // Check to see if Id property is set
-        internal bool IsSetId()
+        // Check to see if Values property is set
+        internal bool IsSetValues()
         {
-            return this._id != null;
+            return this._values != null && this._values.Count > 0; 
         }
 
     }

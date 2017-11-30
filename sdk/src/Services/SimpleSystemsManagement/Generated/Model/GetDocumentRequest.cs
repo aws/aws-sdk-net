@@ -33,6 +33,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class GetDocumentRequest : AmazonSimpleSystemsManagementRequest
     {
+        private DocumentFormat _documentFormat;
         private string _documentVersion;
         private string _name;
 
@@ -48,6 +49,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         public GetDocumentRequest(string name)
         {
             _name = name;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DocumentFormat. 
+        /// <para>
+        /// Returns the document in the specified format. The document format can be either JSON
+        /// or YAML. JSON is the default format.
+        /// </para>
+        /// </summary>
+        public DocumentFormat DocumentFormat
+        {
+            get { return this._documentFormat; }
+            set { this._documentFormat = value; }
+        }
+
+        // Check to see if DocumentFormat property is set
+        internal bool IsSetDocumentFormat()
+        {
+            return this._documentFormat != null;
         }
 
         /// <summary>

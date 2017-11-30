@@ -28,49 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Inventory query results.
+    /// Information about targets that resolved during the Automation execution.
     /// </summary>
-    public partial class InventoryResultEntity
+    public partial class ResolvedTargets
     {
-        private Dictionary<string, InventoryResultItem> _data = new Dictionary<string, InventoryResultItem>();
-        private string _id;
+        private List<string> _parameterValues = new List<string>();
+        private bool? _truncated;
 
         /// <summary>
-        /// Gets and sets the property Data. 
+        /// Gets and sets the property ParameterValues. 
         /// <para>
-        /// The data section in the inventory result entity JSON.
+        /// A list of parameter values sent to targets that resolved during the Automation execution.
         /// </para>
         /// </summary>
-        public Dictionary<string, InventoryResultItem> Data
+        public List<string> ParameterValues
         {
-            get { return this._data; }
-            set { this._data = value; }
+            get { return this._parameterValues; }
+            set { this._parameterValues = value; }
         }
 
-        // Check to see if Data property is set
-        internal bool IsSetData()
+        // Check to see if ParameterValues property is set
+        internal bool IsSetParameterValues()
         {
-            return this._data != null && this._data.Count > 0; 
+            return this._parameterValues != null && this._parameterValues.Count > 0; 
         }
 
         /// <summary>
-        /// Gets and sets the property Id. 
+        /// Gets and sets the property Truncated. 
         /// <para>
-        /// ID of the inventory result entity. For example, for managed instance inventory the
-        /// result will be the managed instance ID. For EC2 instance inventory, the result will
-        /// be the instance ID. 
+        /// A boolean value indicating whether the resolved target list is truncated.
         /// </para>
         /// </summary>
-        public string Id
+        public bool Truncated
         {
-            get { return this._id; }
-            set { this._id = value; }
+            get { return this._truncated.GetValueOrDefault(); }
+            set { this._truncated = value; }
         }
 
-        // Check to see if Id property is set
-        internal bool IsSetId()
+        // Check to see if Truncated property is set
+        internal bool IsSetTruncated()
         {
-            return this._id != null;
+            return this._truncated.HasValue; 
         }
 
     }

@@ -73,6 +73,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AutomationExecutionId);
                 }
 
+                if(publicRequest.IsSetType())
+                {
+                    context.Writer.WritePropertyName("Type");
+                    context.Writer.Write(publicRequest.Type);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

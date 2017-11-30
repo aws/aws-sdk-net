@@ -155,13 +155,33 @@ namespace Amazon.SimpleSystemsManagement
     {
 
         /// <summary>
+        /// Constant CurrentAction for AutomationExecutionFilterKey
+        /// </summary>
+        public static readonly AutomationExecutionFilterKey CurrentAction = new AutomationExecutionFilterKey("CurrentAction");
+        /// <summary>
         /// Constant DocumentNamePrefix for AutomationExecutionFilterKey
         /// </summary>
         public static readonly AutomationExecutionFilterKey DocumentNamePrefix = new AutomationExecutionFilterKey("DocumentNamePrefix");
         /// <summary>
+        /// Constant ExecutionId for AutomationExecutionFilterKey
+        /// </summary>
+        public static readonly AutomationExecutionFilterKey ExecutionId = new AutomationExecutionFilterKey("ExecutionId");
+        /// <summary>
         /// Constant ExecutionStatus for AutomationExecutionFilterKey
         /// </summary>
         public static readonly AutomationExecutionFilterKey ExecutionStatus = new AutomationExecutionFilterKey("ExecutionStatus");
+        /// <summary>
+        /// Constant ParentExecutionId for AutomationExecutionFilterKey
+        /// </summary>
+        public static readonly AutomationExecutionFilterKey ParentExecutionId = new AutomationExecutionFilterKey("ParentExecutionId");
+        /// <summary>
+        /// Constant StartTimeAfter for AutomationExecutionFilterKey
+        /// </summary>
+        public static readonly AutomationExecutionFilterKey StartTimeAfter = new AutomationExecutionFilterKey("StartTimeAfter");
+        /// <summary>
+        /// Constant StartTimeBefore for AutomationExecutionFilterKey
+        /// </summary>
+        public static readonly AutomationExecutionFilterKey StartTimeBefore = new AutomationExecutionFilterKey("StartTimeBefore");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -208,6 +228,10 @@ namespace Amazon.SimpleSystemsManagement
         /// Constant Cancelled for AutomationExecutionStatus
         /// </summary>
         public static readonly AutomationExecutionStatus Cancelled = new AutomationExecutionStatus("Cancelled");
+        /// <summary>
+        /// Constant Cancelling for AutomationExecutionStatus
+        /// </summary>
+        public static readonly AutomationExecutionStatus Cancelling = new AutomationExecutionStatus("Cancelling");
         /// <summary>
         /// Constant Failed for AutomationExecutionStatus
         /// </summary>
@@ -823,6 +847,56 @@ namespace Amazon.SimpleSystemsManagement
 
 
     /// <summary>
+    /// Constants used for properties of type DocumentFormat.
+    /// </summary>
+    public class DocumentFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant JSON for DocumentFormat
+        /// </summary>
+        public static readonly DocumentFormat JSON = new DocumentFormat("JSON");
+        /// <summary>
+        /// Constant YAML for DocumentFormat
+        /// </summary>
+        public static readonly DocumentFormat YAML = new DocumentFormat("YAML");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DocumentFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DocumentFormat FindValue(string value)
+        {
+            return FindValue<DocumentFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DocumentFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DocumentHashType.
     /// </summary>
     public class DocumentHashType : ConstantClass
@@ -1074,6 +1148,56 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DocumentType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ExecutionMode.
+    /// </summary>
+    public class ExecutionMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Auto for ExecutionMode
+        /// </summary>
+        public static readonly ExecutionMode Auto = new ExecutionMode("Auto");
+        /// <summary>
+        /// Constant Interactive for ExecutionMode
+        /// </summary>
+        public static readonly ExecutionMode Interactive = new ExecutionMode("Interactive");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExecutionMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExecutionMode FindValue(string value)
+        {
+            return FindValue<ExecutionMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExecutionMode(string value)
         {
             return FindValue(value);
         }
@@ -2478,6 +2602,18 @@ namespace Amazon.SimpleSystemsManagement
         /// Constant Reject for SignalType
         /// </summary>
         public static readonly SignalType Reject = new SignalType("Reject");
+        /// <summary>
+        /// Constant Resume for SignalType
+        /// </summary>
+        public static readonly SignalType Resume = new SignalType("Resume");
+        /// <summary>
+        /// Constant StartStep for SignalType
+        /// </summary>
+        public static readonly SignalType StartStep = new SignalType("StartStep");
+        /// <summary>
+        /// Constant StopStep for SignalType
+        /// </summary>
+        public static readonly SignalType StopStep = new SignalType("StopStep");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2508,6 +2644,122 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SignalType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StepExecutionFilterKey.
+    /// </summary>
+    public class StepExecutionFilterKey : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Action for StepExecutionFilterKey
+        /// </summary>
+        public static readonly StepExecutionFilterKey Action = new StepExecutionFilterKey("Action");
+        /// <summary>
+        /// Constant StartTimeAfter for StepExecutionFilterKey
+        /// </summary>
+        public static readonly StepExecutionFilterKey StartTimeAfter = new StepExecutionFilterKey("StartTimeAfter");
+        /// <summary>
+        /// Constant StartTimeBefore for StepExecutionFilterKey
+        /// </summary>
+        public static readonly StepExecutionFilterKey StartTimeBefore = new StepExecutionFilterKey("StartTimeBefore");
+        /// <summary>
+        /// Constant StepExecutionId for StepExecutionFilterKey
+        /// </summary>
+        public static readonly StepExecutionFilterKey StepExecutionId = new StepExecutionFilterKey("StepExecutionId");
+        /// <summary>
+        /// Constant StepExecutionStatus for StepExecutionFilterKey
+        /// </summary>
+        public static readonly StepExecutionFilterKey StepExecutionStatus = new StepExecutionFilterKey("StepExecutionStatus");
+        /// <summary>
+        /// Constant StepName for StepExecutionFilterKey
+        /// </summary>
+        public static readonly StepExecutionFilterKey StepName = new StepExecutionFilterKey("StepName");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StepExecutionFilterKey(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StepExecutionFilterKey FindValue(string value)
+        {
+            return FindValue<StepExecutionFilterKey>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StepExecutionFilterKey(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StopType.
+    /// </summary>
+    public class StopType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Cancel for StopType
+        /// </summary>
+        public static readonly StopType Cancel = new StopType("Cancel");
+        /// <summary>
+        /// Constant Complete for StopType
+        /// </summary>
+        public static readonly StopType Complete = new StopType("Complete");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StopType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StopType FindValue(string value)
+        {
+            return FindValue<StopType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StopType(string value)
         {
             return FindValue(value);
         }

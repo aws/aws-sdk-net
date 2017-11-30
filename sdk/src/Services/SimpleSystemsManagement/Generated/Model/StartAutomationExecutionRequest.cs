@@ -36,7 +36,12 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _clientToken;
         private string _documentName;
         private string _documentVersion;
+        private string _maxConcurrency;
+        private string _maxErrors;
+        private ExecutionMode _mode;
         private Dictionary<string, List<string>> _parameters = new Dictionary<string, List<string>>();
+        private string _targetParameterName;
+        private List<Target> _targets = new List<Target>();
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -94,6 +99,76 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MaxConcurrency. 
+        /// <para>
+        /// The maximum number of targets allowed to run this task in parallel. You can specify
+        /// a number, such as 10, or a percentage, such as 10%. The default value is 10.
+        /// </para>
+        /// </summary>
+        public string MaxConcurrency
+        {
+            get { return this._maxConcurrency; }
+            set { this._maxConcurrency = value; }
+        }
+
+        // Check to see if MaxConcurrency property is set
+        internal bool IsSetMaxConcurrency()
+        {
+            return this._maxConcurrency != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxErrors. 
+        /// <para>
+        /// The number of errors that are allowed before the system stops running the automation
+        /// on additional targets. You can specify either an absolute number of errors, for example
+        /// 10, or a percentage of the target set, for example 10%. If you specify 3, for example,
+        /// the system stops running the automation when the fourth error is received. If you
+        /// specify 0, then the system stops running the automation on additional targets after
+        /// the first error result is returned. If you run an automation on 50 resources and set
+        /// max-errors to 10%, then the system stops running the automation on additional targets
+        /// when the sixth error is received.
+        /// </para>
+        ///  
+        /// <para>
+        /// Executions that are already running an automation when max-errors is reached are allowed
+        /// to complete, but some of these executions may fail as well. If you need to ensure
+        /// that there won't be more than max-errors failed executions, set max-concurrency to
+        /// 1 so the executions proceed one at a time.
+        /// </para>
+        /// </summary>
+        public string MaxErrors
+        {
+            get { return this._maxErrors; }
+            set { this._maxErrors = value; }
+        }
+
+        // Check to see if MaxErrors property is set
+        internal bool IsSetMaxErrors()
+        {
+            return this._maxErrors != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Mode. 
+        /// <para>
+        /// The execution mode of the automation. Valid modes include the following: Auto and
+        /// Interactive. The default mode is Auto.
+        /// </para>
+        /// </summary>
+        public ExecutionMode Mode
+        {
+            get { return this._mode; }
+            set { this._mode = value; }
+        }
+
+        // Check to see if Mode property is set
+        internal bool IsSetMode()
+        {
+            return this._mode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
         /// A key-value map of execution parameters, which match the declared parameters in the
@@ -110,6 +185,43 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetParameters()
         {
             return this._parameters != null && this._parameters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetParameterName. 
+        /// <para>
+        /// The name of the parameter used as the target resource for the rate-controlled execution.
+        /// Required if you specify Targets.
+        /// </para>
+        /// </summary>
+        public string TargetParameterName
+        {
+            get { return this._targetParameterName; }
+            set { this._targetParameterName = value; }
+        }
+
+        // Check to see if TargetParameterName property is set
+        internal bool IsSetTargetParameterName()
+        {
+            return this._targetParameterName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Targets. 
+        /// <para>
+        /// A key-value mapping to target resources. Required if you specify TargetParameterName.
+        /// </para>
+        /// </summary>
+        public List<Target> Targets
+        {
+            get { return this._targets; }
+            set { this._targets = value; }
+        }
+
+        // Check to see if Targets property is set
+        internal bool IsSetTargets()
+        {
+            return this._targets != null && this._targets.Count > 0; 
         }
 
     }

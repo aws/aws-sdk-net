@@ -39,7 +39,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The aspect of the Automation execution information that should be limited.
+        /// One or more keys to limit the results. Valid filter keys include the following: DocumentNamePrefix,
+        /// ExecutionStatus, ExecutionId, ParentExecutionId, CurrentAction, StartTimeBefore, StartTimeAfter.
         /// </para>
         /// </summary>
         public AutomationExecutionFilterKey Key

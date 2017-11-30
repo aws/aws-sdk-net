@@ -34,13 +34,24 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
         private string _automationExecutionId;
         private AutomationExecutionStatus _automationExecutionStatus;
+        private string _currentAction;
+        private string _currentStepName;
         private string _documentName;
         private string _documentVersion;
         private string _executedBy;
         private DateTime? _executionEndTime;
         private DateTime? _executionStartTime;
+        private string _failureMessage;
         private string _logFile;
+        private string _maxConcurrency;
+        private string _maxErrors;
+        private ExecutionMode _mode;
         private Dictionary<string, List<string>> _outputs = new Dictionary<string, List<string>>();
+        private string _parentAutomationExecutionId;
+        private ResolvedTargets _resolvedTargets;
+        private string _target;
+        private string _targetParameterName;
+        private List<Target> _targets = new List<Target>();
 
         /// <summary>
         /// Gets and sets the property AutomationExecutionId. 
@@ -77,6 +88,42 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetAutomationExecutionStatus()
         {
             return this._automationExecutionStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CurrentAction. 
+        /// <para>
+        /// The action of the currently executing step.
+        /// </para>
+        /// </summary>
+        public string CurrentAction
+        {
+            get { return this._currentAction; }
+            set { this._currentAction = value; }
+        }
+
+        // Check to see if CurrentAction property is set
+        internal bool IsSetCurrentAction()
+        {
+            return this._currentAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CurrentStepName. 
+        /// <para>
+        /// The name of the currently executing step.
+        /// </para>
+        /// </summary>
+        public string CurrentStepName
+        {
+            get { return this._currentStepName; }
+            set { this._currentStepName = value; }
+        }
+
+        // Check to see if CurrentStepName property is set
+        internal bool IsSetCurrentStepName()
+        {
+            return this._currentStepName != null;
         }
 
         /// <summary>
@@ -171,6 +218,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FailureMessage. 
+        /// <para>
+        /// The list of execution outputs as defined in the Automation document.
+        /// </para>
+        /// </summary>
+        public string FailureMessage
+        {
+            get { return this._failureMessage; }
+            set { this._failureMessage = value; }
+        }
+
+        // Check to see if FailureMessage property is set
+        internal bool IsSetFailureMessage()
+        {
+            return this._failureMessage != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LogFile. 
         /// <para>
         /// An Amazon S3 bucket where execution information is stored.
@@ -189,6 +254,60 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MaxConcurrency. 
+        /// <para>
+        /// The MaxConcurrency value specified by the user when starting the Automation.
+        /// </para>
+        /// </summary>
+        public string MaxConcurrency
+        {
+            get { return this._maxConcurrency; }
+            set { this._maxConcurrency = value; }
+        }
+
+        // Check to see if MaxConcurrency property is set
+        internal bool IsSetMaxConcurrency()
+        {
+            return this._maxConcurrency != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxErrors. 
+        /// <para>
+        /// The MaxErrors value specified by the user when starting the Automation.
+        /// </para>
+        /// </summary>
+        public string MaxErrors
+        {
+            get { return this._maxErrors; }
+            set { this._maxErrors = value; }
+        }
+
+        // Check to see if MaxErrors property is set
+        internal bool IsSetMaxErrors()
+        {
+            return this._maxErrors != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Mode. 
+        /// <para>
+        /// The Automation execution mode.
+        /// </para>
+        /// </summary>
+        public ExecutionMode Mode
+        {
+            get { return this._mode; }
+            set { this._mode = value; }
+        }
+
+        // Check to see if Mode property is set
+        internal bool IsSetMode()
+        {
+            return this._mode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Outputs. 
         /// <para>
         /// The list of execution outputs as defined in the Automation document.
@@ -204,6 +323,96 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetOutputs()
         {
             return this._outputs != null && this._outputs.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParentAutomationExecutionId. 
+        /// <para>
+        /// The ExecutionId of the parent Automation.
+        /// </para>
+        /// </summary>
+        public string ParentAutomationExecutionId
+        {
+            get { return this._parentAutomationExecutionId; }
+            set { this._parentAutomationExecutionId = value; }
+        }
+
+        // Check to see if ParentAutomationExecutionId property is set
+        internal bool IsSetParentAutomationExecutionId()
+        {
+            return this._parentAutomationExecutionId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResolvedTargets. 
+        /// <para>
+        /// A list of targets that resolved during the execution.
+        /// </para>
+        /// </summary>
+        public ResolvedTargets ResolvedTargets
+        {
+            get { return this._resolvedTargets; }
+            set { this._resolvedTargets = value; }
+        }
+
+        // Check to see if ResolvedTargets property is set
+        internal bool IsSetResolvedTargets()
+        {
+            return this._resolvedTargets != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Target. 
+        /// <para>
+        /// The list of execution outputs as defined in the Automation document.
+        /// </para>
+        /// </summary>
+        public string Target
+        {
+            get { return this._target; }
+            set { this._target = value; }
+        }
+
+        // Check to see if Target property is set
+        internal bool IsSetTarget()
+        {
+            return this._target != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetParameterName. 
+        /// <para>
+        /// The list of execution outputs as defined in the Automation document.
+        /// </para>
+        /// </summary>
+        public string TargetParameterName
+        {
+            get { return this._targetParameterName; }
+            set { this._targetParameterName = value; }
+        }
+
+        // Check to see if TargetParameterName property is set
+        internal bool IsSetTargetParameterName()
+        {
+            return this._targetParameterName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Targets. 
+        /// <para>
+        /// The targets defined by the user when starting the Automation.
+        /// </para>
+        /// </summary>
+        public List<Target> Targets
+        {
+            get { return this._targets; }
+            set { this._targets = value; }
+        }
+
+        // Check to see if Targets property is set
+        internal bool IsSetTargets()
+        {
+            return this._targets != null && this._targets.Count > 0; 
         }
 
     }

@@ -64,6 +64,11 @@
     <pattern>^[a-zA-Z0-9_\-.]{3,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CreateDocumentRequest.TargetType</property>
+    <max>200</max>
+    <pattern>^\/[\w\.\-\:\/]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.CreateMaintenanceWindowRequest.ClientToken</property>
     <min>1</min>
     <max>64</max>
@@ -280,6 +285,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.DescribeAutomationExecutionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DescribeAutomationStepExecutionsRequest.AutomationExecutionId</property>
+    <min>36</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DescribeAutomationStepExecutionsRequest.MaxResults</property>
     <min>1</min>
     <max>50</max>
   </property-value-rule>
@@ -1192,6 +1207,23 @@
     <pattern>([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.StartAutomationExecutionRequest.MaxConcurrency</property>
+    <min>1</min>
+    <max>7</max>
+    <pattern>^([1-9][0-9]*|[1-9][0-9]%|[1-9]%|100%)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.StartAutomationExecutionRequest.MaxErrors</property>
+    <min>1</min>
+    <max>7</max>
+    <pattern>^([1-9][0-9]*|[0]|[1-9][0-9]%|[0-9]%|100%)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.StartAutomationExecutionRequest.TargetParameterName</property>
+    <min>1</min>
+    <max>30</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.StartAutomationExecutionResponse.AutomationExecutionId</property>
     <min>36</min>
     <max>36</max>
@@ -1245,6 +1277,11 @@
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.UpdateDocumentRequest.Name</property>
     <pattern>^[a-zA-Z0-9_\-.]{3,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.UpdateDocumentRequest.TargetType</property>
+    <max>200</max>
+    <pattern>^\/[\w\.\-\:\/]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.UpdateDocumentDefaultVersionRequest.DocumentVersion</property>
@@ -1643,6 +1680,28 @@
     <pattern>([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.AutomationExecution.MaxConcurrency</property>
+    <min>1</min>
+    <max>7</max>
+    <pattern>^([1-9][0-9]*|[1-9][0-9]%|[1-9]%|100%)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.AutomationExecution.MaxErrors</property>
+    <min>1</min>
+    <max>7</max>
+    <pattern>^([1-9][0-9]*|[0]|[1-9][0-9]%|[0-9]%|100%)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.AutomationExecution.ParentAutomationExecutionId</property>
+    <min>36</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.AutomationExecution.TargetParameterName</property>
+    <min>1</min>
+    <max>30</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.AutomationExecutionMetadata.AutomationExecutionId</property>
     <min>36</min>
     <max>36</max>
@@ -1654,6 +1713,28 @@
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.AutomationExecutionMetadata.DocumentVersion</property>
     <pattern>([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.AutomationExecutionMetadata.MaxConcurrency</property>
+    <min>1</min>
+    <max>7</max>
+    <pattern>^([1-9][0-9]*|[1-9][0-9]%|[1-9]%|100%)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.AutomationExecutionMetadata.MaxErrors</property>
+    <min>1</min>
+    <max>7</max>
+    <pattern>^([1-9][0-9]*|[0]|[1-9][0-9]%|[0-9]%|100%)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.AutomationExecutionMetadata.ParentAutomationExecutionId</property>
+    <min>36</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.AutomationExecutionMetadata.TargetParameterName</property>
+    <min>1</min>
+    <max>30</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.Command.CommandId</property>
@@ -1867,6 +1948,11 @@
     <pattern>([0-9]+)\.([0-9]+)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DocumentDescription.TargetType</property>
+    <max>200</max>
+    <pattern>^\/[\w\.\-\:\/]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.DocumentFilter.Value</property>
     <min>1</min>
   </property-value-rule>
@@ -1881,6 +1967,11 @@
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.DocumentIdentifier.SchemaVersion</property>
     <pattern>([0-9]+)\.([0-9]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DocumentIdentifier.TargetType</property>
+    <max>200</max>
+    <pattern>^\/[\w\.\-\:\/]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.DocumentKeyValuesFilter.Key</property>

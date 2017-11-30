@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetDocument operation
+    /// Response Unmarshaller for DescribeAutomationStepExecutions operation
     /// </summary>  
-    public class GetDocumentResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DescribeAutomationStepExecutionsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,40 +45,22 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetDocumentResponse response = new GetDocumentResponse();
+            DescribeAutomationStepExecutionsResponse response = new DescribeAutomationStepExecutionsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Content", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Content = unmarshaller.Unmarshall(context);
+                    response.NextToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("DocumentFormat", targetDepth))
+                if (context.TestExpression("StepExecutions", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.DocumentFormat = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DocumentType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.DocumentType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DocumentVersion", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.DocumentVersion = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Name = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<StepExecution, StepExecutionUnmarshaller>(StepExecutionUnmarshaller.Instance);
+                    response.StepExecutions = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -96,24 +78,32 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            if (errorResponse.Code != null && errorResponse.Code.Equals("AutomationExecutionNotFoundException"))
+            {
+                return new AutomationExecutionNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerError"))
             {
                 return new InternalServerErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDocument"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidFilterKey"))
             {
-                return new InvalidDocumentException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new InvalidFilterKeyException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDocumentVersion"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidFilterValue"))
             {
-                return new InvalidDocumentVersionException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new InvalidFilterValueException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidNextToken"))
+            {
+                return new InvalidNextTokenException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             return new AmazonSimpleSystemsManagementException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static GetDocumentResponseUnmarshaller _instance = new GetDocumentResponseUnmarshaller();        
+        private static DescribeAutomationStepExecutionsResponseUnmarshaller _instance = new DescribeAutomationStepExecutionsResponseUnmarshaller();        
 
-        internal static GetDocumentResponseUnmarshaller GetInstance()
+        internal static DescribeAutomationStepExecutionsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -121,7 +111,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetDocumentResponseUnmarshaller Instance
+        public static DescribeAutomationStepExecutionsResponseUnmarshaller Instance
         {
             get
             {

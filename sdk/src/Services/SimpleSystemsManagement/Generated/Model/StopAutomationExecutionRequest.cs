@@ -34,6 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class StopAutomationExecutionRequest : AmazonSimpleSystemsManagementRequest
     {
         private string _automationExecutionId;
+        private StopType _type;
 
         /// <summary>
         /// Gets and sets the property AutomationExecutionId. 
@@ -51,6 +52,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetAutomationExecutionId()
         {
             return this._automationExecutionId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The stop request type. Valid types include the following: Cancel and Complete. The
+        /// default type is Cancel.
+        /// </para>
+        /// </summary>
+        public StopType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }

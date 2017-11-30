@@ -33,6 +33,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class GetDocumentResponse : AmazonWebServiceResponse
     {
         private string _content;
+        private DocumentFormat _documentFormat;
         private DocumentType _documentType;
         private string _documentVersion;
         private string _name;
@@ -53,6 +54,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetContent()
         {
             return this._content != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DocumentFormat. 
+        /// <para>
+        /// The document format, either JSON or YAML.
+        /// </para>
+        /// </summary>
+        public DocumentFormat DocumentFormat
+        {
+            get { return this._documentFormat; }
+            set { this._documentFormat = value; }
+        }
+
+        // Check to see if DocumentFormat property is set
+        internal bool IsSetDocumentFormat()
+        {
+            return this._documentFormat != null;
         }
 
         /// <summary>

@@ -32,6 +32,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class DocumentIdentifier
     {
+        private DocumentFormat _documentFormat;
         private DocumentType _documentType;
         private string _documentVersion;
         private string _name;
@@ -39,6 +40,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private List<string> _platformTypes = new List<string>();
         private string _schemaVersion;
         private List<Tag> _tags = new List<Tag>();
+        private string _targetType;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -52,6 +54,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         public DocumentIdentifier(string name)
         {
             _name = name;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DocumentFormat. 
+        /// <para>
+        /// The document format, either JSON or YAML.
+        /// </para>
+        /// </summary>
+        public DocumentFormat DocumentFormat
+        {
+            get { return this._documentFormat; }
+            set { this._documentFormat = value; }
+        }
+
+        // Check to see if DocumentFormat property is set
+        internal bool IsSetDocumentFormat()
+        {
+            return this._documentFormat != null;
         }
 
         /// <summary>
@@ -178,6 +198,26 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetType. 
+        /// <para>
+        /// The target type which defines the kinds of resources the document can run on. For
+        /// example, /AWS::EC2::Instance. For a list of valid resource types, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+        /// Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. 
+        /// </para>
+        /// </summary>
+        public string TargetType
+        {
+            get { return this._targetType; }
+            set { this._targetType = value; }
+        }
+
+        // Check to see if TargetType property is set
+        internal bool IsSetTargetType()
+        {
+            return this._targetType != null;
         }
 
     }

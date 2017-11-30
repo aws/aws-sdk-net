@@ -40,8 +40,10 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class CreateDocumentRequest : AmazonSimpleSystemsManagementRequest
     {
         private string _content;
+        private DocumentFormat _documentFormat;
         private DocumentType _documentType;
         private string _name;
+        private string _targetType;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -52,7 +54,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Instantiates CreateDocumentRequest with the parameterized properties
         /// </summary>
         /// <param name="name">A name for the Systems Manager document.</param>
-        /// <param name="content">A valid JSON string.</param>
+        /// <param name="content">A valid JSON or YAML string.</param>
         public CreateDocumentRequest(string name, string content)
         {
             _name = name;
@@ -62,7 +64,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Content. 
         /// <para>
-        /// A valid JSON string.
+        /// A valid JSON or YAML string.
         /// </para>
         /// </summary>
         public string Content
@@ -75,6 +77,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetContent()
         {
             return this._content != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DocumentFormat. 
+        /// <para>
+        /// Specify the document format for the request. The document format can be either JSON
+        /// or YAML. JSON is the default format.
+        /// </para>
+        /// </summary>
+        public DocumentFormat DocumentFormat
+        {
+            get { return this._documentFormat; }
+            set { this._documentFormat = value; }
+        }
+
+        // Check to see if DocumentFormat property is set
+        internal bool IsSetDocumentFormat()
+        {
+            return this._documentFormat != null;
         }
 
         /// <summary>
@@ -112,6 +133,29 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetType. 
+        /// <para>
+        /// Specify a target type to define the kinds of resources the document can run on. For
+        /// example, to run a document on EC2 instances, specify the following value: /AWS::EC2::Instance.
+        /// If you specify a value of '/' the document can run on all types of resources. If you
+        /// don't specify a value, the document can't run on any resources. For a list of valid
+        /// resource types, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+        /// Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. 
+        /// </para>
+        /// </summary>
+        public string TargetType
+        {
+            get { return this._targetType; }
+            set { this._targetType = value; }
+        }
+
+        // Check to see if TargetType property is set
+        internal bool IsSetTargetType()
+        {
+            return this._targetType != null;
         }
 
     }

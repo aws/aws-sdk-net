@@ -76,6 +76,18 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     unmarshalledObject.AutomationExecutionStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CurrentAction", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CurrentAction = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CurrentStepName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CurrentStepName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DocumentName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -106,16 +118,70 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExecutionStartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FailureMessage", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FailureMessage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LogFile", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LogFile = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MaxConcurrency", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MaxConcurrency = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MaxErrors", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MaxErrors = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Mode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Mode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Outputs", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, List<string>, StringUnmarshaller, ListUnmarshaller<string, StringUnmarshaller>>(StringUnmarshaller.Instance, new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance));
                     unmarshalledObject.Outputs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ParentAutomationExecutionId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ParentAutomationExecutionId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ResolvedTargets", targetDepth))
+                {
+                    var unmarshaller = ResolvedTargetsUnmarshaller.Instance;
+                    unmarshalledObject.ResolvedTargets = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Target", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Target = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TargetParameterName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TargetParameterName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Targets", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Target, TargetUnmarshaller>(TargetUnmarshaller.Instance);
+                    unmarshalledObject.Targets = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

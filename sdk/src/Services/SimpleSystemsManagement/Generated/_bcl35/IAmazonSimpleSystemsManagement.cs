@@ -29,20 +29,20 @@ namespace Amazon.SimpleSystemsManagement
     /// <summary>
     /// Interface for accessing SimpleSystemsManagement
     ///
-    /// Amazon EC2 Systems Manager 
+    /// AWS Systems Manager 
     /// <para>
-    /// Amazon EC2 Systems Manager is a collection of capabilities that helps you automate
-    /// management tasks such as collecting system inventory, applying operating system (OS)
-    /// patches, automating the creation of Amazon Machine Images (AMIs), and configuring
-    /// operating systems (OSs) and applications at scale. Systems Manager lets you remotely
-    /// and securely manage the configuration of your managed instances. A <i>managed instance</i>
-    /// is any Amazon EC2 instance or on-premises machine in your hybrid environment that
-    /// has been configured for Systems Manager.
+    /// AWS Systems Manager is a collection of capabilities that helps you automate management
+    /// tasks such as collecting system inventory, applying operating system (OS) patches,
+    /// automating the creation of Amazon Machine Images (AMIs), and configuring operating
+    /// systems (OSs) and applications at scale. Systems Manager lets you remotely and securely
+    /// manage the configuration of your managed instances. A <i>managed instance</i> is any
+    /// Amazon EC2 instance or on-premises machine in your hybrid environment that has been
+    /// configured for Systems Manager.
     /// </para>
     ///  
     /// <para>
-    /// This reference is intended to be used with the <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/">Amazon
-    /// EC2 Systems Manager User Guide</a>.
+    /// This reference is intended to be used with the <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/">AWS
+    /// Systems Manager User Guide</a>.
     /// </para>
     ///  
     /// <para>
@@ -661,7 +661,7 @@ namespace Amazon.SimpleSystemsManagement
         /// or more running instances.
         /// </para>
         /// </summary>
-        /// <param name="content">A valid JSON string.</param>
+        /// <param name="content">A valid JSON or YAML string.</param>
         /// <param name="name">A name for the Systems Manager document.</param>
         /// 
         /// <returns>The response from the CreateDocument service method, as returned by SimpleSystemsManagement.</returns>
@@ -1835,6 +1835,12 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
+        /// The specified key is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterValueException">
+        /// The filter value is not valid. Verify the value and try again.
+        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
         /// </exception>
@@ -1866,6 +1872,62 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>Returns a  DescribeAutomationExecutionsResult from SimpleSystemsManagement.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAutomationExecutions">REST API Reference for DescribeAutomationExecutions Operation</seealso>
         DescribeAutomationExecutionsResponse EndDescribeAutomationExecutions(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeAutomationStepExecutions
+
+
+        /// <summary>
+        /// Information about all active and terminated step executions in an Automation workflow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAutomationStepExecutions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAutomationStepExecutions service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.AutomationExecutionNotFoundException">
+        /// There is no automation execution information for the requested automation execution
+        /// ID.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
+        /// The specified key is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterValueException">
+        /// The filter value is not valid. Verify the value and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAutomationStepExecutions">REST API Reference for DescribeAutomationStepExecutions Operation</seealso>
+        DescribeAutomationStepExecutionsResponse DescribeAutomationStepExecutions(DescribeAutomationStepExecutionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAutomationStepExecutions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAutomationStepExecutions operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAutomationStepExecutions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAutomationStepExecutions">REST API Reference for DescribeAutomationStepExecutions Operation</seealso>
+        IAsyncResult BeginDescribeAutomationStepExecutions(DescribeAutomationStepExecutionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeAutomationStepExecutions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAutomationStepExecutions.</param>
+        /// 
+        /// <returns>Returns a  DescribeAutomationStepExecutionsResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAutomationStepExecutions">REST API Reference for DescribeAutomationStepExecutions Operation</seealso>
+        DescribeAutomationStepExecutionsResponse EndDescribeAutomationStepExecutions(IAsyncResult asyncResult);
 
         #endregion
         
@@ -5442,6 +5504,10 @@ namespace Amazon.SimpleSystemsManagement
         /// There is no automation execution information for the requested automation execution
         /// ID.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.AutomationStepNotFoundException">
+        /// The specified step name and execution ID don't exist. Verify the information and try
+        /// again.
+        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
@@ -5537,8 +5603,7 @@ namespace Amazon.SimpleSystemsManagement
         /// The role name can't contain invalid characters. Also verify that you specified an
         /// IAM role for notifications that includes the required trust policy. For information
         /// about configuring the IAM role for Run Command notifications, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/rc-sns-notifications.html">Configuring
-        /// Amazon SNS Notifications for Run Command</a> in the <i>Amazon EC2 Systems Manager
-        /// User Guide</i>.
+        /// Amazon SNS Notifications for Run Command</a> in the <i>AWS Systems Manager User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.MaxDocumentSizeExceededException">
         /// The size limit of a document is 64 KB.
@@ -5604,8 +5669,7 @@ namespace Amazon.SimpleSystemsManagement
         /// The role name can't contain invalid characters. Also verify that you specified an
         /// IAM role for notifications that includes the required trust policy. For information
         /// about configuring the IAM role for Run Command notifications, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/rc-sns-notifications.html">Configuring
-        /// Amazon SNS Notifications for Run Command</a> in the <i>Amazon EC2 Systems Manager
-        /// User Guide</i>.
+        /// Amazon SNS Notifications for Run Command</a> in the <i>AWS Systems Manager User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.MaxDocumentSizeExceededException">
         /// The size limit of a document is 64 KB.
@@ -5676,6 +5740,10 @@ namespace Amazon.SimpleSystemsManagement
         /// For example, they may not match the set of parameters permitted for the specified
         /// Automation document.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTargetException">
+        /// The target is not valid or does not exist. It might not be configured for EC2 Systems
+        /// Manager or you might not have permission to perform the operation.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartAutomationExecution">REST API Reference for StartAutomationExecution Operation</seealso>
         StartAutomationExecutionResponse StartAutomationExecution(StartAutomationExecutionRequest request);
 
@@ -5722,6 +5790,9 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidAutomationStatusUpdateException">
+        /// The specified update status operation is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StopAutomationExecution">REST API Reference for StopAutomationExecution Operation</seealso>
         StopAutomationExecutionResponse StopAutomationExecution(StopAutomationExecutionRequest request);

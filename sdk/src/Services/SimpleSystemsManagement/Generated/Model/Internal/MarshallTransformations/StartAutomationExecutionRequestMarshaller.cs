@@ -85,6 +85,24 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DocumentVersion);
                 }
 
+                if(publicRequest.IsSetMaxConcurrency())
+                {
+                    context.Writer.WritePropertyName("MaxConcurrency");
+                    context.Writer.Write(publicRequest.MaxConcurrency);
+                }
+
+                if(publicRequest.IsSetMaxErrors())
+                {
+                    context.Writer.WritePropertyName("MaxErrors");
+                    context.Writer.Write(publicRequest.MaxErrors);
+                }
+
+                if(publicRequest.IsSetMode())
+                {
+                    context.Writer.WritePropertyName("Mode");
+                    context.Writer.Write(publicRequest.Mode);
+                }
+
                 if(publicRequest.IsSetParameters())
                 {
                     context.Writer.WritePropertyName("Parameters");
@@ -102,6 +120,28 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                         context.Writer.WriteArrayEnd();
                     }
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetTargetParameterName())
+                {
+                    context.Writer.WritePropertyName("TargetParameterName");
+                    context.Writer.Write(publicRequest.TargetParameterName);
+                }
+
+                if(publicRequest.IsSetTargets())
+                {
+                    context.Writer.WritePropertyName("Targets");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTargetsListValue in publicRequest.Targets)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TargetMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTargetsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
         
