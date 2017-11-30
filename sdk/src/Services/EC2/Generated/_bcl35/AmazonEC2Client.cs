@@ -8263,6 +8263,85 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeInstanceCreditSpecifications
+
+        /// <summary>
+        /// Describes the credit option for CPU usage of one or more of your T2 instances. The
+        /// credit options are <code>standard</code> and <code>unlimited</code>.
+        /// 
+        ///  
+        /// <para>
+        /// If you do not specify an instance ID, Amazon EC2 returns only the T2 instances with
+        /// the <code>unlimited</code> credit option. If you specify one or more instance IDs,
+        /// Amazon EC2 returns the credit option (<code>standard</code> or <code>unlimited</code>)
+        /// of those instances. If you specify an instance ID that is not valid, such as an instance
+        /// that is not a T2 instance, an error is returned.
+        /// </para>
+        ///  
+        /// <para>
+        /// Recently terminated instances might appear in the returned results. This interval
+        /// is usually less than one hour.
+        /// </para>
+        ///  
+        /// <para>
+        /// If an Availability Zone is experiencing a service disruption and you specify instance
+        /// IDs in the affected zone, or do not specify any instance IDs at all, the call fails.
+        /// If you specify only instance IDs in an unaffected zone, the call works normally.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2
+        /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceCreditSpecifications service method.</param>
+        /// 
+        /// <returns>The response from the DescribeInstanceCreditSpecifications service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceCreditSpecifications">REST API Reference for DescribeInstanceCreditSpecifications Operation</seealso>
+        public virtual DescribeInstanceCreditSpecificationsResponse DescribeInstanceCreditSpecifications(DescribeInstanceCreditSpecificationsRequest request)
+        {
+            var marshaller = new DescribeInstanceCreditSpecificationsRequestMarshaller();
+            var unmarshaller = DescribeInstanceCreditSpecificationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeInstanceCreditSpecificationsRequest,DescribeInstanceCreditSpecificationsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeInstanceCreditSpecifications operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceCreditSpecifications operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeInstanceCreditSpecifications
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceCreditSpecifications">REST API Reference for DescribeInstanceCreditSpecifications Operation</seealso>
+        public virtual IAsyncResult BeginDescribeInstanceCreditSpecifications(DescribeInstanceCreditSpecificationsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeInstanceCreditSpecificationsRequestMarshaller();
+            var unmarshaller = DescribeInstanceCreditSpecificationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeInstanceCreditSpecificationsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeInstanceCreditSpecifications operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeInstanceCreditSpecifications.</param>
+        /// 
+        /// <returns>Returns a  DescribeInstanceCreditSpecificationsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceCreditSpecifications">REST API Reference for DescribeInstanceCreditSpecifications Operation</seealso>
+        public virtual DescribeInstanceCreditSpecificationsResponse EndDescribeInstanceCreditSpecifications(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeInstanceCreditSpecificationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeInstances
 
         /// <summary>
@@ -14073,6 +14152,66 @@ namespace Amazon.EC2
         public virtual ModifyInstanceAttributeResponse EndModifyInstanceAttribute(IAsyncResult asyncResult)
         {
             return EndInvoke<ModifyInstanceAttributeResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ModifyInstanceCreditSpecification
+
+        /// <summary>
+        /// Modifies the credit option for CPU usage on a running or stopped T2 instance. The
+        /// credit options are <code>standard</code> and <code>unlimited</code>.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2
+        /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceCreditSpecification service method.</param>
+        /// 
+        /// <returns>The response from the ModifyInstanceCreditSpecification service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceCreditSpecification">REST API Reference for ModifyInstanceCreditSpecification Operation</seealso>
+        public virtual ModifyInstanceCreditSpecificationResponse ModifyInstanceCreditSpecification(ModifyInstanceCreditSpecificationRequest request)
+        {
+            var marshaller = new ModifyInstanceCreditSpecificationRequestMarshaller();
+            var unmarshaller = ModifyInstanceCreditSpecificationResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyInstanceCreditSpecificationRequest,ModifyInstanceCreditSpecificationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyInstanceCreditSpecification operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceCreditSpecification operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyInstanceCreditSpecification
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceCreditSpecification">REST API Reference for ModifyInstanceCreditSpecification Operation</seealso>
+        public virtual IAsyncResult BeginModifyInstanceCreditSpecification(ModifyInstanceCreditSpecificationRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ModifyInstanceCreditSpecificationRequestMarshaller();
+            var unmarshaller = ModifyInstanceCreditSpecificationResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ModifyInstanceCreditSpecificationRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyInstanceCreditSpecification operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyInstanceCreditSpecification.</param>
+        /// 
+        /// <returns>Returns a  ModifyInstanceCreditSpecificationResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceCreditSpecification">REST API Reference for ModifyInstanceCreditSpecification Operation</seealso>
+        public virtual ModifyInstanceCreditSpecificationResponse EndModifyInstanceCreditSpecification(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ModifyInstanceCreditSpecificationResponse>(asyncResult);
         }
 
         #endregion

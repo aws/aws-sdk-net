@@ -115,6 +115,7 @@ namespace Amazon.EC2.Model
         private string _additionalInfo;
         private List<BlockDeviceMapping> _blockDeviceMappings = new List<BlockDeviceMapping>();
         private string _clientToken;
+        private CreditSpecificationRequest _creditSpecification;
         private bool? _disableApiTermination;
         private bool? _ebsOptimized;
         private List<ElasticGpuSpecification> _elasticGpuSpecification = new List<ElasticGpuSpecification>();
@@ -220,6 +221,31 @@ namespace Amazon.EC2.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreditSpecification. 
+        /// <para>
+        /// The credit option for CPU usage of the instance. Valid values are <code>standard</code>
+        /// and <code>unlimited</code>. To change this attribute after launch, use <a>ModifyInstanceCreditSpecification</a>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2
+        /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>standard</code> 
+        /// </para>
+        /// </summary>
+        public CreditSpecificationRequest CreditSpecification
+        {
+            get { return this._creditSpecification; }
+            set { this._creditSpecification = value; }
+        }
+
+        // Check to see if CreditSpecification property is set
+        internal bool IsSetCreditSpecification()
+        {
+            return this._creditSpecification != null;
         }
 
         /// <summary>

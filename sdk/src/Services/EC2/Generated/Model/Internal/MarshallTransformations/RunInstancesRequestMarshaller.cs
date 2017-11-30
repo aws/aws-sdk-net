@@ -117,6 +117,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClientToken", StringUtils.FromString(publicRequest.ClientToken));
                 }
+                if(publicRequest.IsSetCreditSpecification())
+                {
+                    if(publicRequest.CreditSpecification.IsSetCpuCredits())
+                    {
+                        request.Parameters.Add("CreditSpecification" + "." + "CpuCredits", StringUtils.FromString(publicRequest.CreditSpecification.CpuCredits));
+                    }
+                }
                 if(publicRequest.IsSetDisableApiTermination())
                 {
                     request.Parameters.Add("DisableApiTermination", StringUtils.FromBool(publicRequest.DisableApiTermination));

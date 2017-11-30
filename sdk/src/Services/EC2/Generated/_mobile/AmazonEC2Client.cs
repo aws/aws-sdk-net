@@ -4584,6 +4584,38 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeInstanceCreditSpecifications
+
+        internal virtual DescribeInstanceCreditSpecificationsResponse DescribeInstanceCreditSpecifications(DescribeInstanceCreditSpecificationsRequest request)
+        {
+            var marshaller = new DescribeInstanceCreditSpecificationsRequestMarshaller();
+            var unmarshaller = DescribeInstanceCreditSpecificationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeInstanceCreditSpecificationsRequest,DescribeInstanceCreditSpecificationsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeInstanceCreditSpecifications operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceCreditSpecifications operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceCreditSpecifications">REST API Reference for DescribeInstanceCreditSpecifications Operation</seealso>
+        public virtual Task<DescribeInstanceCreditSpecificationsResponse> DescribeInstanceCreditSpecificationsAsync(DescribeInstanceCreditSpecificationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeInstanceCreditSpecificationsRequestMarshaller();
+            var unmarshaller = DescribeInstanceCreditSpecificationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeInstanceCreditSpecificationsRequest,DescribeInstanceCreditSpecificationsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeInstances
 
         internal virtual DescribeInstancesResponse DescribeInstances()
@@ -8148,6 +8180,38 @@ namespace Amazon.EC2
             var unmarshaller = ModifyInstanceAttributeResponseUnmarshaller.Instance;
 
             return InvokeAsync<ModifyInstanceAttributeRequest,ModifyInstanceAttributeResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyInstanceCreditSpecification
+
+        internal virtual ModifyInstanceCreditSpecificationResponse ModifyInstanceCreditSpecification(ModifyInstanceCreditSpecificationRequest request)
+        {
+            var marshaller = new ModifyInstanceCreditSpecificationRequestMarshaller();
+            var unmarshaller = ModifyInstanceCreditSpecificationResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyInstanceCreditSpecificationRequest,ModifyInstanceCreditSpecificationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyInstanceCreditSpecification operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceCreditSpecification operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceCreditSpecification">REST API Reference for ModifyInstanceCreditSpecification Operation</seealso>
+        public virtual Task<ModifyInstanceCreditSpecificationResponse> ModifyInstanceCreditSpecificationAsync(ModifyInstanceCreditSpecificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ModifyInstanceCreditSpecificationRequestMarshaller();
+            var unmarshaller = ModifyInstanceCreditSpecificationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyInstanceCreditSpecificationRequest,ModifyInstanceCreditSpecificationResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

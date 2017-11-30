@@ -2885,6 +2885,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void DescribeInstanceCreditSpecificationsMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeInstanceCreditSpecifications");
+
+            var request = InstantiateClassGenerator.Execute<DescribeInstanceCreditSpecificationsRequest>();
+            var marshaller = new DescribeInstanceCreditSpecificationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DescribeInstanceCreditSpecificationsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeInstanceCreditSpecificationsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void DescribeInstancesMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeInstances");
@@ -4881,6 +4905,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
 
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void ModifyInstanceCreditSpecificationMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyInstanceCreditSpecification");
+
+            var request = InstantiateClassGenerator.Execute<ModifyInstanceCreditSpecificationRequest>();
+            var marshaller = new ModifyInstanceCreditSpecificationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = ModifyInstanceCreditSpecificationResponseUnmarshaller.Instance.Unmarshall(context)
+                as ModifyInstanceCreditSpecificationResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
         

@@ -2669,6 +2669,22 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType G38xlarge = new InstanceType("g3.8xlarge");
         /// <summary>
+        /// Constant H116xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType H116xlarge = new InstanceType("h1.16xlarge");
+        /// <summary>
+        /// Constant H12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType H12xlarge = new InstanceType("h1.2xlarge");
+        /// <summary>
+        /// Constant H14xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType H14xlarge = new InstanceType("h1.4xlarge");
+        /// <summary>
+        /// Constant H18xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType H18xlarge = new InstanceType("h1.8xlarge");
+        /// <summary>
         /// Constant Hi14xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType Hi14xlarge = new InstanceType("hi1.4xlarge");
@@ -2784,6 +2800,30 @@ namespace Amazon.EC2
         /// Constant M4Xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType M4Xlarge = new InstanceType("m4.xlarge");
+        /// <summary>
+        /// Constant M512xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M512xlarge = new InstanceType("m5.12xlarge");
+        /// <summary>
+        /// Constant M524xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M524xlarge = new InstanceType("m5.24xlarge");
+        /// <summary>
+        /// Constant M52xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M52xlarge = new InstanceType("m5.2xlarge");
+        /// <summary>
+        /// Constant M54xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M54xlarge = new InstanceType("m5.4xlarge");
+        /// <summary>
+        /// Constant M5Large for InstanceType
+        /// </summary>
+        public static readonly InstanceType M5Large = new InstanceType("m5.large");
+        /// <summary>
+        /// Constant M5Xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M5Xlarge = new InstanceType("m5.xlarge");
         /// <summary>
         /// Constant P216xlarge for InstanceType
         /// </summary>
@@ -5850,6 +5890,64 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TrafficType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UnsuccessfulInstanceCreditSpecificationErrorCode.
+    /// </summary>
+    public class UnsuccessfulInstanceCreditSpecificationErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IncorrectInstanceState for UnsuccessfulInstanceCreditSpecificationErrorCode
+        /// </summary>
+        public static readonly UnsuccessfulInstanceCreditSpecificationErrorCode IncorrectInstanceState = new UnsuccessfulInstanceCreditSpecificationErrorCode("IncorrectInstanceState");
+        /// <summary>
+        /// Constant InstanceCreditSpecificationNotSupported for UnsuccessfulInstanceCreditSpecificationErrorCode
+        /// </summary>
+        public static readonly UnsuccessfulInstanceCreditSpecificationErrorCode InstanceCreditSpecificationNotSupported = new UnsuccessfulInstanceCreditSpecificationErrorCode("InstanceCreditSpecification.NotSupported");
+        /// <summary>
+        /// Constant InvalidInstanceIDMalformed for UnsuccessfulInstanceCreditSpecificationErrorCode
+        /// </summary>
+        public static readonly UnsuccessfulInstanceCreditSpecificationErrorCode InvalidInstanceIDMalformed = new UnsuccessfulInstanceCreditSpecificationErrorCode("InvalidInstanceID.Malformed");
+        /// <summary>
+        /// Constant InvalidInstanceIDNotFound for UnsuccessfulInstanceCreditSpecificationErrorCode
+        /// </summary>
+        public static readonly UnsuccessfulInstanceCreditSpecificationErrorCode InvalidInstanceIDNotFound = new UnsuccessfulInstanceCreditSpecificationErrorCode("InvalidInstanceID.NotFound");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UnsuccessfulInstanceCreditSpecificationErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UnsuccessfulInstanceCreditSpecificationErrorCode FindValue(string value)
+        {
+            return FindValue<UnsuccessfulInstanceCreditSpecificationErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UnsuccessfulInstanceCreditSpecificationErrorCode(string value)
         {
             return FindValue(value);
         }
