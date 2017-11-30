@@ -448,6 +448,10 @@
       <Project>{D9D10ED3-F14F-4133-ABF9-60BC06101CA6}</Project>
       <Name>AWSSDK.Rekognition.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/ResourceGroups/AWSSDK.ResourceGroups.CodeAnalysis.csproj">
+      <Project>{AE2914C5-FBB0-4BBE-B658-7BF087787A44}</Project>
+      <Name>AWSSDK.ResourceGroups.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/ResourceGroupsTaggingAPI/AWSSDK.ResourceGroupsTaggingAPI.CodeAnalysis.csproj">
       <Project>{15035CAA-5072-4251-9C59-C58A9CBD2D8F}</Project>
       <Name>AWSSDK.ResourceGroupsTaggingAPI.CodeAnalysis</Name>

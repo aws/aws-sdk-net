@@ -128,6 +128,7 @@
     <ProjectReference Include="..\..\src\Services\RDS\AWSSDK.RDS.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\Redshift\AWSSDK.Redshift.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\Rekognition\AWSSDK.Rekognition.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\ResourceGroups\AWSSDK.ResourceGroups.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\ResourceGroupsTaggingAPI\AWSSDK.ResourceGroupsTaggingAPI.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\Route53\AWSSDK.Route53.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\Route53Domains\AWSSDK.Route53Domains.Net35.csproj"/>
