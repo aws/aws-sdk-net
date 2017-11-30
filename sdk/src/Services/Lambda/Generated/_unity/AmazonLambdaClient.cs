@@ -389,9 +389,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
-        /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
-        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
+        /// API, that AWS Lambda is unable to assume you will get this exception.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists.
@@ -404,7 +402,14 @@ namespace Amazon.Lambda
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// 
+        /// You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code>
+        /// is returned if you have no functions with reserved-concurrency and have exceeded your
+        /// account concurrent limit or if a function without reserved concurrency exceeds the
+        /// account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code>
+        /// is returned when a function with reserved concurrency exceeds its configured concurrent
+        /// limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is
+        /// exceeded and you have not reserved concurrency on any function. For more information,
+        /// see <a>concurrent-executions</a>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunction">REST API Reference for DeleteFunction Operation</seealso>
         public virtual void DeleteFunctionAsync(string functionName,  AmazonServiceCallback<DeleteFunctionRequest, DeleteFunctionResponse> callback, AsyncOptions options = null)
@@ -442,6 +447,39 @@ namespace Amazon.Lambda
                         callback(responseObject); 
                 };
             BeginInvoke<DeleteFunctionRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  DeleteFunctionConcurrency
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteFunctionConcurrency operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFunctionConcurrency operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionConcurrency">REST API Reference for DeleteFunctionConcurrency Operation</seealso>
+        public virtual void DeleteFunctionConcurrencyAsync(DeleteFunctionConcurrencyRequest request, AmazonServiceCallback<DeleteFunctionConcurrencyRequest, DeleteFunctionConcurrencyResponse> callback, AsyncOptions options = null)
+        {
+            if (AWSConfigs.HttpClient == AWSConfigs.HttpClientOption.UnityWWW)
+            {
+                throw new InvalidOperationException("DeleteFunctionConcurrency is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
+            }
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new DeleteFunctionConcurrencyRequestMarshaller();
+            var unmarshaller = DeleteFunctionConcurrencyResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<DeleteFunctionConcurrencyRequest,DeleteFunctionConcurrencyResponse> responseObject 
+                            = new AmazonServiceResult<DeleteFunctionConcurrencyRequest,DeleteFunctionConcurrencyResponse>((DeleteFunctionConcurrencyRequest)req, (DeleteFunctionConcurrencyResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<DeleteFunctionConcurrencyRequest>(request, marshaller, unmarshaller, options, callbackHelper);
         }
 
         #endregion
@@ -562,9 +600,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
-        /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
-        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
+        /// API, that AWS Lambda is unable to assume you will get this exception.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
@@ -574,7 +610,14 @@ namespace Amazon.Lambda
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// 
+        /// You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code>
+        /// is returned if you have no functions with reserved-concurrency and have exceeded your
+        /// account concurrent limit or if a function without reserved concurrency exceeds the
+        /// account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code>
+        /// is returned when a function with reserved concurrency exceeds its configured concurrent
+        /// limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is
+        /// exceeded and you have not reserved concurrency on any function. For more information,
+        /// see <a>concurrent-executions</a>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunction">REST API Reference for GetFunction Operation</seealso>
         public virtual void GetFunctionAsync(string functionName,  AmazonServiceCallback<GetFunctionRequest, GetFunctionResponse> callback, AsyncOptions options = null)
@@ -643,9 +686,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
-        /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
-        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
+        /// API, that AWS Lambda is unable to assume you will get this exception.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
@@ -655,7 +696,14 @@ namespace Amazon.Lambda
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// 
+        /// You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code>
+        /// is returned if you have no functions with reserved-concurrency and have exceeded your
+        /// account concurrent limit or if a function without reserved concurrency exceeds the
+        /// account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code>
+        /// is returned when a function with reserved concurrency exceeds its configured concurrent
+        /// limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is
+        /// exceeded and you have not reserved concurrency on any function. For more information,
+        /// see <a>concurrent-executions</a>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConfiguration">REST API Reference for GetFunctionConfiguration Operation</seealso>
         public virtual void GetFunctionConfigurationAsync(string functionName,  AmazonServiceCallback<GetFunctionConfigurationRequest, GetFunctionConfigurationResponse> callback, AsyncOptions options = null)
@@ -862,15 +910,20 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
-        /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
-        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
+        /// API, that AWS Lambda is unable to assume you will get this exception.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// 
+        /// You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code>
+        /// is returned if you have no functions with reserved-concurrency and have exceeded your
+        /// account concurrent limit or if a function without reserved concurrency exceeds the
+        /// account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code>
+        /// is returned when a function with reserved concurrency exceeds its configured concurrent
+        /// limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is
+        /// exceeded and you have not reserved concurrency on any function. For more information,
+        /// see <a>concurrent-executions</a>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctions">REST API Reference for ListFunctions Operation</seealso>
         public virtual void ListFunctionsAsync( AmazonServiceCallback<ListFunctionsRequest, ListFunctionsResponse> callback, AsyncOptions options = null)
@@ -986,6 +1039,39 @@ namespace Amazon.Lambda
                         callback(responseObject); 
                 };
             BeginInvoke<PublishVersionRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  PutFunctionConcurrency
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutFunctionConcurrency operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutFunctionConcurrency operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionConcurrency">REST API Reference for PutFunctionConcurrency Operation</seealso>
+        public virtual void PutFunctionConcurrencyAsync(PutFunctionConcurrencyRequest request, AmazonServiceCallback<PutFunctionConcurrencyRequest, PutFunctionConcurrencyResponse> callback, AsyncOptions options = null)
+        {
+            if (AWSConfigs.HttpClient == AWSConfigs.HttpClientOption.UnityWWW)
+            {
+                throw new InvalidOperationException("PutFunctionConcurrency is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
+            }
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new PutFunctionConcurrencyRequestMarshaller();
+            var unmarshaller = PutFunctionConcurrencyResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<PutFunctionConcurrencyRequest,PutFunctionConcurrencyResponse> responseObject 
+                            = new AmazonServiceResult<PutFunctionConcurrencyRequest,PutFunctionConcurrencyResponse>((PutFunctionConcurrencyRequest)req, (PutFunctionConcurrencyResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<PutFunctionConcurrencyRequest>(request, marshaller, unmarshaller, options, callbackHelper);
         }
 
         #endregion

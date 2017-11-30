@@ -182,9 +182,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
-        /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
-        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
+        /// API, that AWS Lambda is unable to assume you will get this exception.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists.
@@ -197,7 +195,14 @@ namespace Amazon.Lambda
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// 
+        /// You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code>
+        /// is returned if you have no functions with reserved-concurrency and have exceeded your
+        /// account concurrent limit or if a function without reserved concurrency exceeds the
+        /// account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code>
+        /// is returned when a function with reserved concurrency exceeds its configured concurrent
+        /// limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is
+        /// exceeded and you have not reserved concurrency on any function. For more information,
+        /// see <a>concurrent-executions</a>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunction">REST API Reference for DeleteFunction Operation</seealso>
         Task<DeleteFunctionResponse> DeleteFunctionAsync(string functionName, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -213,6 +218,23 @@ namespace Amazon.Lambda
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunction">REST API Reference for DeleteFunction Operation</seealso>
         Task<DeleteFunctionResponse> DeleteFunctionAsync(DeleteFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteFunctionConcurrency
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteFunctionConcurrency operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFunctionConcurrency operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionConcurrency">REST API Reference for DeleteFunctionConcurrency Operation</seealso>
+        Task<DeleteFunctionConcurrencyResponse> DeleteFunctionConcurrencyAsync(DeleteFunctionConcurrencyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -298,9 +320,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
-        /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
-        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
+        /// API, that AWS Lambda is unable to assume you will get this exception.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
@@ -310,7 +330,14 @@ namespace Amazon.Lambda
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// 
+        /// You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code>
+        /// is returned if you have no functions with reserved-concurrency and have exceeded your
+        /// account concurrent limit or if a function without reserved concurrency exceeds the
+        /// account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code>
+        /// is returned when a function with reserved concurrency exceeds its configured concurrent
+        /// limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is
+        /// exceeded and you have not reserved concurrency on any function. For more information,
+        /// see <a>concurrent-executions</a>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunction">REST API Reference for GetFunction Operation</seealso>
         Task<GetFunctionResponse> GetFunctionAsync(string functionName, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -360,9 +387,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
-        /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
-        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
+        /// API, that AWS Lambda is unable to assume you will get this exception.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
@@ -372,7 +397,14 @@ namespace Amazon.Lambda
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// 
+        /// You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code>
+        /// is returned if you have no functions with reserved-concurrency and have exceeded your
+        /// account concurrent limit or if a function without reserved concurrency exceeds the
+        /// account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code>
+        /// is returned when a function with reserved concurrency exceeds its configured concurrent
+        /// limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is
+        /// exceeded and you have not reserved concurrency on any function. For more information,
+        /// see <a>concurrent-executions</a>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConfiguration">REST API Reference for GetFunctionConfiguration Operation</seealso>
         Task<GetFunctionConfigurationResponse> GetFunctionConfigurationAsync(string functionName, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -505,15 +537,20 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
-        /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
-        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
+        /// API, that AWS Lambda is unable to assume you will get this exception.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// 
+        /// You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code>
+        /// is returned if you have no functions with reserved-concurrency and have exceeded your
+        /// account concurrent limit or if a function without reserved concurrency exceeds the
+        /// account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code>
+        /// is returned when a function with reserved concurrency exceeds its configured concurrent
+        /// limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is
+        /// exceeded and you have not reserved concurrency on any function. For more information,
+        /// see <a>concurrent-executions</a>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctions">REST API Reference for ListFunctions Operation</seealso>
         Task<ListFunctionsResponse> ListFunctionsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -580,6 +617,23 @@ namespace Amazon.Lambda
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PublishVersion">REST API Reference for PublishVersion Operation</seealso>
         Task<PublishVersionResponse> PublishVersionAsync(PublishVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  PutFunctionConcurrency
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutFunctionConcurrency operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutFunctionConcurrency operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionConcurrency">REST API Reference for PutFunctionConcurrency Operation</seealso>
+        Task<PutFunctionConcurrencyResponse> PutFunctionConcurrencyAsync(PutFunctionConcurrencyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

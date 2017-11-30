@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AccountLimit Object
+    /// Response Unmarshaller for Concurrency Object
     /// </summary>  
-    public class AccountLimitUnmarshaller : IUnmarshaller<AccountLimit, XmlUnmarshallerContext>, IUnmarshaller<AccountLimit, JsonUnmarshallerContext>
+    public class ConcurrencyUnmarshaller : IUnmarshaller<Concurrency, XmlUnmarshallerContext>, IUnmarshaller<Concurrency, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AccountLimit IUnmarshaller<AccountLimit, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Concurrency IUnmarshaller<Concurrency, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,21 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AccountLimit Unmarshall(JsonUnmarshallerContext context)
+        public Concurrency Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AccountLimit unmarshalledObject = new AccountLimit();
+            Concurrency unmarshalledObject = new Concurrency();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CodeSizeUnzipped", targetDepth))
-                {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.CodeSizeUnzipped = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("CodeSizeZipped", targetDepth))
-                {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.CodeSizeZipped = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ConcurrentExecutions", targetDepth))
+                if (context.TestExpression("ReservedConcurrentExecutions", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.ConcurrentExecutions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TotalCodeSize", targetDepth))
-                {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.TotalCodeSize = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("UnreservedConcurrentExecutions", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.UnreservedConcurrentExecutions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ReservedConcurrentExecutions = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +76,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         }
 
 
-        private static AccountLimitUnmarshaller _instance = new AccountLimitUnmarshaller();        
+        private static ConcurrencyUnmarshaller _instance = new ConcurrencyUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AccountLimitUnmarshaller Instance
+        public static ConcurrencyUnmarshaller Instance
         {
             get
             {

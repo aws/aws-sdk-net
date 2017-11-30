@@ -320,6 +320,14 @@ namespace Amazon.Lambda
         /// Constant FunctionInvocationRateLimitExceeded for ThrottleReason
         /// </summary>
         public static readonly ThrottleReason FunctionInvocationRateLimitExceeded = new ThrottleReason("FunctionInvocationRateLimitExceeded");
+        /// <summary>
+        /// Constant ReservedFunctionConcurrentInvocationLimitExceeded for ThrottleReason
+        /// </summary>
+        public static readonly ThrottleReason ReservedFunctionConcurrentInvocationLimitExceeded = new ThrottleReason("ReservedFunctionConcurrentInvocationLimitExceeded");
+        /// <summary>
+        /// Constant ReservedFunctionInvocationRateLimitExceeded for ThrottleReason
+        /// </summary>
+        public static readonly ThrottleReason ReservedFunctionInvocationRateLimitExceeded = new ThrottleReason("ReservedFunctionInvocationRateLimitExceeded");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

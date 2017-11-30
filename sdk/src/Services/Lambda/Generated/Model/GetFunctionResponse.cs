@@ -33,6 +33,7 @@ namespace Amazon.Lambda.Model
     public partial class GetFunctionResponse : AmazonWebServiceResponse
     {
         private FunctionCodeLocation _code;
+        private Concurrency _concurrency;
         private FunctionConfiguration _configuration;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
@@ -49,6 +50,24 @@ namespace Amazon.Lambda.Model
         internal bool IsSetCode()
         {
             return this._code != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Concurrency. 
+        /// <para>
+        /// The concurrent execution limit set for this function.
+        /// </para>
+        /// </summary>
+        public Concurrency Concurrency
+        {
+            get { return this._concurrency; }
+            set { this._concurrency = value; }
+        }
+
+        // Check to see if Concurrency property is set
+        internal bool IsSetConcurrency()
+        {
+            return this._concurrency != null;
         }
 
         /// <summary>

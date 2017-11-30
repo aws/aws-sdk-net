@@ -37,6 +37,7 @@ namespace Amazon.Lambda.Model
         private long? _codeSizeZipped;
         private int? _concurrentExecutions;
         private long? _totalCodeSize;
+        private int? _unreservedConcurrentExecutions;
 
         /// <summary>
         /// Gets and sets the property CodeSizeUnzipped. 
@@ -114,6 +115,25 @@ namespace Amazon.Lambda.Model
         internal bool IsSetTotalCodeSize()
         {
             return this._totalCodeSize.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UnreservedConcurrentExecutions. 
+        /// <para>
+        /// The number of concurrent executions available to functions that do not have concurrency
+        /// limits set.
+        /// </para>
+        /// </summary>
+        public int UnreservedConcurrentExecutions
+        {
+            get { return this._unreservedConcurrentExecutions.GetValueOrDefault(); }
+            set { this._unreservedConcurrentExecutions = value; }
+        }
+
+        // Check to see if UnreservedConcurrentExecutions property is set
+        internal bool IsSetUnreservedConcurrentExecutions()
+        {
+            return this._unreservedConcurrentExecutions.HasValue; 
         }
 
     }

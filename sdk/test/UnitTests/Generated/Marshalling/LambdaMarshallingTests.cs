@@ -238,6 +238,23 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Lambda")]
+        public void DeleteFunctionConcurrencyMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteFunctionConcurrency");
+
+            var request = InstantiateClassGenerator.Execute<DeleteFunctionConcurrencyRequest>();
+            var marshaller = new DeleteFunctionConcurrencyRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteFunctionConcurrency", request, internalRequest, service_model);            
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lambda")]
         public void GetAccountSettingsMarshallTest()
         {
             var operation = service_model.FindOperation("GetAccountSettings");
@@ -681,6 +698,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = PublishVersionResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as PublishVersionResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lambda")]
+        public void PutFunctionConcurrencyMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutFunctionConcurrency");
+
+            var request = InstantiateClassGenerator.Execute<PutFunctionConcurrencyRequest>();
+            var marshaller = new PutFunctionConcurrencyRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("PutFunctionConcurrency", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = PutFunctionConcurrencyResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as PutFunctionConcurrencyResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 

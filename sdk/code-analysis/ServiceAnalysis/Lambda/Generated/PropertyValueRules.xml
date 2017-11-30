@@ -135,7 +135,7 @@
   <property-value-rule>
     <property>Amazon.Lambda.Model.CreateFunctionRequest.MemorySize</property>
     <min>128</min>
-    <max>1536</max>
+    <max>3008</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.CreateFunctionRequest.Role</property>
@@ -176,7 +176,7 @@
   <property-value-rule>
     <property>Amazon.Lambda.Model.CreateFunctionResponse.MemorySize</property>
     <min>128</min>
-    <max>1536</max>
+    <max>3008</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.CreateFunctionResponse.Role</property>
@@ -228,6 +228,12 @@
     <min>1</min>
     <max>128</max>
     <pattern>(|[a-zA-Z0-9$_-]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.DeleteFunctionConcurrencyRequest.FunctionName</property>
+    <min>1</min>
+    <max>140</max>
+    <pattern>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetAliasRequest.FunctionName</property>
@@ -330,7 +336,7 @@
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetFunctionConfigurationResponse.MemorySize</property>
     <min>128</min>
-    <max>1536</max>
+    <max>3008</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetFunctionConfigurationResponse.Role</property>
@@ -480,7 +486,7 @@
   <property-value-rule>
     <property>Amazon.Lambda.Model.PublishVersionResponse.MemorySize</property>
     <min>128</min>
-    <max>1536</max>
+    <max>3008</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.PublishVersionResponse.Role</property>
@@ -495,6 +501,20 @@
     <min>1</min>
     <max>1024</max>
     <pattern>(\$LATEST|[0-9]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.PutFunctionConcurrencyRequest.FunctionName</property>
+    <min>1</min>
+    <max>140</max>
+    <pattern>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.PutFunctionConcurrencyRequest.ReservedConcurrentExecutions</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.PutFunctionConcurrencyResponse.ReservedConcurrentExecutions</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.RemovePermissionRequest.FunctionName</property>
@@ -643,7 +663,7 @@
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateFunctionCodeResponse.MemorySize</property>
     <min>128</min>
-    <max>1536</max>
+    <max>3008</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateFunctionCodeResponse.Role</property>
@@ -682,7 +702,7 @@
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateFunctionConfigurationRequest.MemorySize</property>
     <min>128</min>
-    <max>1536</max>
+    <max>3008</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateFunctionConfigurationRequest.Role</property>
@@ -723,7 +743,7 @@
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateFunctionConfigurationResponse.MemorySize</property>
     <min>128</min>
-    <max>1536</max>
+    <max>3008</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateFunctionConfigurationResponse.Role</property>
@@ -738,6 +758,10 @@
     <min>1</min>
     <max>1024</max>
     <pattern>(\$LATEST|[0-9]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.AccountLimit.UnreservedConcurrentExecutions</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.DeadLetterConfig.TargetArn</property>

@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetFunction operation
+    /// Response Unmarshaller for PutFunctionConcurrency operation
     /// </summary>  
-    public class GetFunctionResponseUnmarshaller : JsonResponseUnmarshaller
+    public class PutFunctionConcurrencyResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,34 +45,16 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetFunctionResponse response = new GetFunctionResponse();
+            PutFunctionConcurrencyResponse response = new PutFunctionConcurrencyResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Code", targetDepth))
+                if (context.TestExpression("ReservedConcurrentExecutions", targetDepth))
                 {
-                    var unmarshaller = FunctionCodeLocationUnmarshaller.Instance;
-                    response.Code = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Concurrency", targetDepth))
-                {
-                    var unmarshaller = ConcurrencyUnmarshaller.Instance;
-                    response.Concurrency = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Configuration", targetDepth))
-                {
-                    var unmarshaller = FunctionConfigurationUnmarshaller.Instance;
-                    response.Configuration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Tags", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    response.Tags = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    response.ReservedConcurrentExecutions = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -109,9 +91,9 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             return new AmazonLambdaException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static GetFunctionResponseUnmarshaller _instance = new GetFunctionResponseUnmarshaller();        
+        private static PutFunctionConcurrencyResponseUnmarshaller _instance = new PutFunctionConcurrencyResponseUnmarshaller();        
 
-        internal static GetFunctionResponseUnmarshaller GetInstance()
+        internal static PutFunctionConcurrencyResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -119,7 +101,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetFunctionResponseUnmarshaller Instance
+        public static PutFunctionConcurrencyResponseUnmarshaller Instance
         {
             get
             {

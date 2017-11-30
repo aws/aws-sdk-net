@@ -78,9 +78,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
-        /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
-        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
+        /// API, that AWS Lambda is unable to assume you will get this exception.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.PolicyLengthExceededException">
         /// Lambda function access policy is limited to 20 KB.
@@ -96,7 +94,14 @@ namespace Amazon.Lambda
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// 
+        /// You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code>
+        /// is returned if you have no functions with reserved-concurrency and have exceeded your
+        /// account concurrent limit or if a function without reserved concurrency exceeds the
+        /// account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code>
+        /// is returned when a function with reserved concurrency exceeds its configured concurrent
+        /// limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is
+        /// exceeded and you have not reserved concurrency on any function. For more information,
+        /// see <a>concurrent-executions</a>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddPermission">REST API Reference for AddPermission Operation</seealso>
         AddPermissionResponse AddPermission(AddPermissionRequest request);
@@ -149,9 +154,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
-        /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
-        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
+        /// API, that AWS Lambda is unable to assume you will get this exception.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists.
@@ -164,7 +167,14 @@ namespace Amazon.Lambda
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// 
+        /// You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code>
+        /// is returned if you have no functions with reserved-concurrency and have exceeded your
+        /// account concurrent limit or if a function without reserved concurrency exceeds the
+        /// account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code>
+        /// is returned when a function with reserved concurrency exceeds its configured concurrent
+        /// limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is
+        /// exceeded and you have not reserved concurrency on any function. For more information,
+        /// see <a>concurrent-executions</a>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
         CreateAliasResponse CreateAlias(CreateAliasRequest request);
@@ -245,9 +255,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
-        /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
-        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
+        /// API, that AWS Lambda is unable to assume you will get this exception.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists.
@@ -260,7 +268,14 @@ namespace Amazon.Lambda
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// 
+        /// You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code>
+        /// is returned if you have no functions with reserved-concurrency and have exceeded your
+        /// account concurrent limit or if a function without reserved concurrency exceeds the
+        /// account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code>
+        /// is returned when a function with reserved concurrency exceeds its configured concurrent
+        /// limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is
+        /// exceeded and you have not reserved concurrency on any function. For more information,
+        /// see <a>concurrent-executions</a>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateEventSourceMapping">REST API Reference for CreateEventSourceMapping Operation</seealso>
         CreateEventSourceMappingResponse CreateEventSourceMapping(CreateEventSourceMappingRequest request);
@@ -323,9 +338,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
-        /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
-        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
+        /// API, that AWS Lambda is unable to assume you will get this exception.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists.
@@ -338,7 +351,14 @@ namespace Amazon.Lambda
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// 
+        /// You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code>
+        /// is returned if you have no functions with reserved-concurrency and have exceeded your
+        /// account concurrent limit or if a function without reserved concurrency exceeds the
+        /// account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code>
+        /// is returned when a function with reserved concurrency exceeds its configured concurrent
+        /// limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is
+        /// exceeded and you have not reserved concurrency on any function. For more information,
+        /// see <a>concurrent-executions</a>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateFunction">REST API Reference for CreateFunction Operation</seealso>
         CreateFunctionResponse CreateFunction(CreateFunctionRequest request);
@@ -389,15 +409,20 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
-        /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
-        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
+        /// API, that AWS Lambda is unable to assume you will get this exception.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// 
+        /// You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code>
+        /// is returned if you have no functions with reserved-concurrency and have exceeded your
+        /// account concurrent limit or if a function without reserved concurrency exceeds the
+        /// account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code>
+        /// is returned when a function with reserved concurrency exceeds its configured concurrent
+        /// limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is
+        /// exceeded and you have not reserved concurrency on any function. For more information,
+        /// see <a>concurrent-executions</a>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
         DeleteAliasResponse DeleteAlias(DeleteAliasRequest request);
@@ -449,9 +474,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
-        /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
-        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
+        /// API, that AWS Lambda is unable to assume you will get this exception.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
@@ -461,7 +484,14 @@ namespace Amazon.Lambda
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// 
+        /// You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code>
+        /// is returned if you have no functions with reserved-concurrency and have exceeded your
+        /// account concurrent limit or if a function without reserved concurrency exceeds the
+        /// account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code>
+        /// is returned when a function with reserved concurrency exceeds its configured concurrent
+        /// limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is
+        /// exceeded and you have not reserved concurrency on any function. For more information,
+        /// see <a>concurrent-executions</a>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteEventSourceMapping">REST API Reference for DeleteEventSourceMapping Operation</seealso>
         DeleteEventSourceMappingResponse DeleteEventSourceMapping(DeleteEventSourceMappingRequest request);
@@ -525,9 +555,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
-        /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
-        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
+        /// API, that AWS Lambda is unable to assume you will get this exception.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists.
@@ -540,7 +568,14 @@ namespace Amazon.Lambda
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// 
+        /// You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code>
+        /// is returned if you have no functions with reserved-concurrency and have exceeded your
+        /// account concurrent limit or if a function without reserved concurrency exceeds the
+        /// account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code>
+        /// is returned when a function with reserved concurrency exceeds its configured concurrent
+        /// limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is
+        /// exceeded and you have not reserved concurrency on any function. For more information,
+        /// see <a>concurrent-executions</a>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunction">REST API Reference for DeleteFunction Operation</seealso>
         DeleteFunctionResponse DeleteFunction(string functionName);
@@ -573,9 +608,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
-        /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
-        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
+        /// API, that AWS Lambda is unable to assume you will get this exception.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists.
@@ -588,7 +621,14 @@ namespace Amazon.Lambda
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// 
+        /// You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code>
+        /// is returned if you have no functions with reserved-concurrency and have exceeded your
+        /// account concurrent limit or if a function without reserved concurrency exceeds the
+        /// account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code>
+        /// is returned when a function with reserved concurrency exceeds its configured concurrent
+        /// limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is
+        /// exceeded and you have not reserved concurrency on any function. For more information,
+        /// see <a>concurrent-executions</a>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunction">REST API Reference for DeleteFunction Operation</seealso>
         DeleteFunctionResponse DeleteFunction(DeleteFunctionRequest request);
@@ -621,6 +661,68 @@ namespace Amazon.Lambda
 
         #endregion
         
+        #region  DeleteFunctionConcurrency
+
+
+        /// <summary>
+        /// Removes concurrent execution limits from this function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFunctionConcurrency service method.</param>
+        /// 
+        /// <returns>The response from the DeleteFunctionConcurrency service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid. For example, if you provided an IAM
+        /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
+        /// API, that AWS Lambda is unable to assume you will get this exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource (for example, a Lambda function or access policy statement) specified
+        /// in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code>
+        /// is returned if you have no functions with reserved-concurrency and have exceeded your
+        /// account concurrent limit or if a function without reserved concurrency exceeds the
+        /// account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code>
+        /// is returned when a function with reserved concurrency exceeds its configured concurrent
+        /// limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is
+        /// exceeded and you have not reserved concurrency on any function. For more information,
+        /// see <a>concurrent-executions</a>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionConcurrency">REST API Reference for DeleteFunctionConcurrency Operation</seealso>
+        DeleteFunctionConcurrencyResponse DeleteFunctionConcurrency(DeleteFunctionConcurrencyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteFunctionConcurrency operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFunctionConcurrency operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteFunctionConcurrency
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionConcurrency">REST API Reference for DeleteFunctionConcurrency Operation</seealso>
+        IAsyncResult BeginDeleteFunctionConcurrency(DeleteFunctionConcurrencyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteFunctionConcurrency operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteFunctionConcurrency.</param>
+        /// 
+        /// <returns>Returns a  DeleteFunctionConcurrencyResult from Lambda.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionConcurrency">REST API Reference for DeleteFunctionConcurrency Operation</seealso>
+        DeleteFunctionConcurrencyResponse EndDeleteFunctionConcurrency(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetAccountSettings
 
 
@@ -642,7 +744,14 @@ namespace Amazon.Lambda
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// 
+        /// You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code>
+        /// is returned if you have no functions with reserved-concurrency and have exceeded your
+        /// account concurrent limit or if a function without reserved concurrency exceeds the
+        /// account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code>
+        /// is returned when a function with reserved concurrency exceeds its configured concurrent
+        /// limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is
+        /// exceeded and you have not reserved concurrency on any function. For more information,
+        /// see <a>concurrent-executions</a>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAccountSettings">REST API Reference for GetAccountSettings Operation</seealso>
         GetAccountSettingsResponse GetAccountSettings(GetAccountSettingsRequest request);
@@ -694,9 +803,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
-        /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
-        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
+        /// API, that AWS Lambda is unable to assume you will get this exception.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
@@ -706,7 +813,14 @@ namespace Amazon.Lambda
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// 
+        /// You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code>
+        /// is returned if you have no functions with reserved-concurrency and have exceeded your
+        /// account concurrent limit or if a function without reserved concurrency exceeds the
+        /// account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code>
+        /// is returned when a function with reserved concurrency exceeds its configured concurrent
+        /// limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is
+        /// exceeded and you have not reserved concurrency on any function. For more information,
+        /// see <a>concurrent-executions</a>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAlias">REST API Reference for GetAlias Operation</seealso>
         GetAliasResponse GetAlias(GetAliasRequest request);
@@ -757,9 +871,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
-        /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
-        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
+        /// API, that AWS Lambda is unable to assume you will get this exception.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
@@ -769,7 +881,14 @@ namespace Amazon.Lambda
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// 
+        /// You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code>
+        /// is returned if you have no functions with reserved-concurrency and have exceeded your
+        /// account concurrent limit or if a function without reserved concurrency exceeds the
+        /// account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code>
+        /// is returned when a function with reserved concurrency exceeds its configured concurrent
+        /// limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is
+        /// exceeded and you have not reserved concurrency on any function. For more information,
+        /// see <a>concurrent-executions</a>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetEventSourceMapping">REST API Reference for GetEventSourceMapping Operation</seealso>
         GetEventSourceMappingResponse GetEventSourceMapping(GetEventSourceMappingRequest request);
@@ -830,9 +949,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
-        /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
-        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
+        /// API, that AWS Lambda is unable to assume you will get this exception.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
@@ -842,7 +959,14 @@ namespace Amazon.Lambda
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// 
+        /// You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code>
+        /// is returned if you have no functions with reserved-concurrency and have exceeded your
+        /// account concurrent limit or if a function without reserved concurrency exceeds the
+        /// account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code>
+        /// is returned when a function with reserved concurrency exceeds its configured concurrent
+        /// limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is
+        /// exceeded and you have not reserved concurrency on any function. For more information,
+        /// see <a>concurrent-executions</a>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunction">REST API Reference for GetFunction Operation</seealso>
         GetFunctionResponse GetFunction(string functionName);
@@ -872,9 +996,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
-        /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
-        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
+        /// API, that AWS Lambda is unable to assume you will get this exception.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
@@ -884,7 +1006,14 @@ namespace Amazon.Lambda
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// 
+        /// You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code>
+        /// is returned if you have no functions with reserved-concurrency and have exceeded your
+        /// account concurrent limit or if a function without reserved concurrency exceeds the
+        /// account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code>
+        /// is returned when a function with reserved concurrency exceeds its configured concurrent
+        /// limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is
+        /// exceeded and you have not reserved concurrency on any function. For more information,
+        /// see <a>concurrent-executions</a>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunction">REST API Reference for GetFunction Operation</seealso>
         GetFunctionResponse GetFunction(GetFunctionRequest request);
@@ -945,9 +1074,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
-        /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
-        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
+        /// API, that AWS Lambda is unable to assume you will get this exception.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
@@ -957,7 +1084,14 @@ namespace Amazon.Lambda
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// 
+        /// You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code>
+        /// is returned if you have no functions with reserved-concurrency and have exceeded your
+        /// account concurrent limit or if a function without reserved concurrency exceeds the
+        /// account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code>
+        /// is returned when a function with reserved concurrency exceeds its configured concurrent
+        /// limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is
+        /// exceeded and you have not reserved concurrency on any function. For more information,
+        /// see <a>concurrent-executions</a>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConfiguration">REST API Reference for GetFunctionConfiguration Operation</seealso>
         GetFunctionConfigurationResponse GetFunctionConfiguration(string functionName);
@@ -987,9 +1121,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
-        /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
-        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
+        /// API, that AWS Lambda is unable to assume you will get this exception.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
@@ -999,7 +1131,14 @@ namespace Amazon.Lambda
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// 
+        /// You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code>
+        /// is returned if you have no functions with reserved-concurrency and have exceeded your
+        /// account concurrent limit or if a function without reserved concurrency exceeds the
+        /// account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code>
+        /// is returned when a function with reserved concurrency exceeds its configured concurrent
+        /// limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is
+        /// exceeded and you have not reserved concurrency on any function. For more information,
+        /// see <a>concurrent-executions</a>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConfiguration">REST API Reference for GetFunctionConfiguration Operation</seealso>
         GetFunctionConfigurationResponse GetFunctionConfiguration(GetFunctionConfigurationRequest request);
@@ -1057,9 +1196,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
-        /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
-        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
+        /// API, that AWS Lambda is unable to assume you will get this exception.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
@@ -1069,7 +1206,14 @@ namespace Amazon.Lambda
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// 
+        /// You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code>
+        /// is returned if you have no functions with reserved-concurrency and have exceeded your
+        /// account concurrent limit or if a function without reserved concurrency exceeds the
+        /// account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code>
+        /// is returned when a function with reserved concurrency exceeds its configured concurrent
+        /// limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is
+        /// exceeded and you have not reserved concurrency on any function. For more information,
+        /// see <a>concurrent-executions</a>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
         GetPolicyResponse GetPolicy(GetPolicyRequest request);
@@ -1147,9 +1291,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
-        /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
-        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
+        /// API, that AWS Lambda is unable to assume you will get this exception.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidRequestContentException">
         /// The request body could not be parsed as JSON.
@@ -1198,7 +1340,14 @@ namespace Amazon.Lambda
         /// more configured subnets has no available IP addresses.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// 
+        /// You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code>
+        /// is returned if you have no functions with reserved-concurrency and have exceeded your
+        /// account concurrent limit or if a function without reserved concurrency exceeds the
+        /// account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code>
+        /// is returned when a function with reserved concurrency exceeds its configured concurrent
+        /// limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is
+        /// exceeded and you have not reserved concurrency on any function. For more information,
+        /// see <a>concurrent-executions</a>
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.UnsupportedMediaTypeException">
         /// The content type of the <code>Invoke</code> request body is not JSON.
@@ -1323,9 +1472,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
-        /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
-        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
+        /// API, that AWS Lambda is unable to assume you will get this exception.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
@@ -1335,7 +1482,14 @@ namespace Amazon.Lambda
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// 
+        /// You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code>
+        /// is returned if you have no functions with reserved-concurrency and have exceeded your
+        /// account concurrent limit or if a function without reserved concurrency exceeds the
+        /// account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code>
+        /// is returned when a function with reserved concurrency exceeds its configured concurrent
+        /// limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is
+        /// exceeded and you have not reserved concurrency on any function. For more information,
+        /// see <a>concurrent-executions</a>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListAliases">REST API Reference for ListAliases Operation</seealso>
         ListAliasesResponse ListAliases(ListAliasesRequest request);
@@ -1399,9 +1553,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
-        /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
-        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
+        /// API, that AWS Lambda is unable to assume you will get this exception.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
@@ -1411,7 +1563,14 @@ namespace Amazon.Lambda
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// 
+        /// You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code>
+        /// is returned if you have no functions with reserved-concurrency and have exceeded your
+        /// account concurrent limit or if a function without reserved concurrency exceeds the
+        /// account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code>
+        /// is returned when a function with reserved concurrency exceeds its configured concurrent
+        /// limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is
+        /// exceeded and you have not reserved concurrency on any function. For more information,
+        /// see <a>concurrent-executions</a>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListEventSourceMappings">REST API Reference for ListEventSourceMappings Operation</seealso>
         ListEventSourceMappingsResponse ListEventSourceMappings(ListEventSourceMappingsRequest request);
@@ -1469,15 +1628,20 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
-        /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
-        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
+        /// API, that AWS Lambda is unable to assume you will get this exception.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// 
+        /// You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code>
+        /// is returned if you have no functions with reserved-concurrency and have exceeded your
+        /// account concurrent limit or if a function without reserved concurrency exceeds the
+        /// account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code>
+        /// is returned when a function with reserved concurrency exceeds its configured concurrent
+        /// limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is
+        /// exceeded and you have not reserved concurrency on any function. For more information,
+        /// see <a>concurrent-executions</a>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctions">REST API Reference for ListFunctions Operation</seealso>
         ListFunctionsResponse ListFunctions();
@@ -1505,15 +1669,20 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
-        /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
-        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
+        /// API, that AWS Lambda is unable to assume you will get this exception.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// 
+        /// You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code>
+        /// is returned if you have no functions with reserved-concurrency and have exceeded your
+        /// account concurrent limit or if a function without reserved concurrency exceeds the
+        /// account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code>
+        /// is returned when a function with reserved concurrency exceeds its configured concurrent
+        /// limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is
+        /// exceeded and you have not reserved concurrency on any function. For more information,
+        /// see <a>concurrent-executions</a>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctions">REST API Reference for ListFunctions Operation</seealso>
         ListFunctionsResponse ListFunctions(ListFunctionsRequest request);
@@ -1559,9 +1728,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
-        /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
-        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
+        /// API, that AWS Lambda is unable to assume you will get this exception.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
@@ -1571,7 +1738,14 @@ namespace Amazon.Lambda
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// 
+        /// You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code>
+        /// is returned if you have no functions with reserved-concurrency and have exceeded your
+        /// account concurrent limit or if a function without reserved concurrency exceeds the
+        /// account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code>
+        /// is returned when a function with reserved concurrency exceeds its configured concurrent
+        /// limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is
+        /// exceeded and you have not reserved concurrency on any function. For more information,
+        /// see <a>concurrent-executions</a>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListTags">REST API Reference for ListTags Operation</seealso>
         ListTagsResponse ListTags(ListTagsRequest request);
@@ -1618,9 +1792,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
-        /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
-        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
+        /// API, that AWS Lambda is unable to assume you will get this exception.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
@@ -1630,7 +1802,14 @@ namespace Amazon.Lambda
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// 
+        /// You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code>
+        /// is returned if you have no functions with reserved-concurrency and have exceeded your
+        /// account concurrent limit or if a function without reserved concurrency exceeds the
+        /// account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code>
+        /// is returned when a function with reserved concurrency exceeds its configured concurrent
+        /// limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is
+        /// exceeded and you have not reserved concurrency on any function. For more information,
+        /// see <a>concurrent-executions</a>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListVersionsByFunction">REST API Reference for ListVersionsByFunction Operation</seealso>
         ListVersionsByFunctionResponse ListVersionsByFunction(ListVersionsByFunctionRequest request);
@@ -1682,9 +1861,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
-        /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
-        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
+        /// API, that AWS Lambda is unable to assume you will get this exception.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
@@ -1694,7 +1871,14 @@ namespace Amazon.Lambda
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// 
+        /// You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code>
+        /// is returned if you have no functions with reserved-concurrency and have exceeded your
+        /// account concurrent limit or if a function without reserved concurrency exceeds the
+        /// account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code>
+        /// is returned when a function with reserved concurrency exceeds its configured concurrent
+        /// limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is
+        /// exceeded and you have not reserved concurrency on any function. For more information,
+        /// see <a>concurrent-executions</a>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PublishVersion">REST API Reference for PublishVersion Operation</seealso>
         PublishVersionResponse PublishVersion(PublishVersionRequest request);
@@ -1724,6 +1908,72 @@ namespace Amazon.Lambda
         /// <returns>Returns a  PublishVersionResult from Lambda.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PublishVersion">REST API Reference for PublishVersion Operation</seealso>
         PublishVersionResponse EndPublishVersion(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PutFunctionConcurrency
+
+
+        /// <summary>
+        /// Sets a limit on the number of concurrent executions available to this function. It
+        /// is a subset of your account's total concurrent execution limit per region. Note that
+        /// Lambda automatically reserves a buffer of 100 concurrent executions for functions
+        /// without any reserved concurrency limit. This means if your account limit is 1000,
+        /// you have a total of 900 available to allocate to individual functions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutFunctionConcurrency service method.</param>
+        /// 
+        /// <returns>The response from the PutFunctionConcurrency service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid. For example, if you provided an IAM
+        /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
+        /// API, that AWS Lambda is unable to assume you will get this exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource (for example, a Lambda function or access policy statement) specified
+        /// in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code>
+        /// is returned if you have no functions with reserved-concurrency and have exceeded your
+        /// account concurrent limit or if a function without reserved concurrency exceeds the
+        /// account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code>
+        /// is returned when a function with reserved concurrency exceeds its configured concurrent
+        /// limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is
+        /// exceeded and you have not reserved concurrency on any function. For more information,
+        /// see <a>concurrent-executions</a>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionConcurrency">REST API Reference for PutFunctionConcurrency Operation</seealso>
+        PutFunctionConcurrencyResponse PutFunctionConcurrency(PutFunctionConcurrencyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutFunctionConcurrency operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutFunctionConcurrency operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutFunctionConcurrency
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionConcurrency">REST API Reference for PutFunctionConcurrency Operation</seealso>
+        IAsyncResult BeginPutFunctionConcurrency(PutFunctionConcurrencyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutFunctionConcurrency operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutFunctionConcurrency.</param>
+        /// 
+        /// <returns>Returns a  PutFunctionConcurrencyResult from Lambda.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionConcurrency">REST API Reference for PutFunctionConcurrency Operation</seealso>
+        PutFunctionConcurrencyResponse EndPutFunctionConcurrency(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1758,9 +2008,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
-        /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
-        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
+        /// API, that AWS Lambda is unable to assume you will get this exception.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
@@ -1770,7 +2018,14 @@ namespace Amazon.Lambda
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// 
+        /// You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code>
+        /// is returned if you have no functions with reserved-concurrency and have exceeded your
+        /// account concurrent limit or if a function without reserved concurrency exceeds the
+        /// account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code>
+        /// is returned when a function with reserved concurrency exceeds its configured concurrent
+        /// limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is
+        /// exceeded and you have not reserved concurrency on any function. For more information,
+        /// see <a>concurrent-executions</a>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
         RemovePermissionResponse RemovePermission(RemovePermissionRequest request);
@@ -1817,9 +2072,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
-        /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
-        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
+        /// API, that AWS Lambda is unable to assume you will get this exception.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
@@ -1829,7 +2082,14 @@ namespace Amazon.Lambda
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// 
+        /// You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code>
+        /// is returned if you have no functions with reserved-concurrency and have exceeded your
+        /// account concurrent limit or if a function without reserved concurrency exceeds the
+        /// account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code>
+        /// is returned when a function with reserved concurrency exceeds its configured concurrent
+        /// limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is
+        /// exceeded and you have not reserved concurrency on any function. For more information,
+        /// see <a>concurrent-executions</a>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/TagResource">REST API Reference for TagResource Operation</seealso>
         TagResourceResponse TagResource(TagResourceRequest request);
@@ -1874,9 +2134,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
-        /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
-        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
+        /// API, that AWS Lambda is unable to assume you will get this exception.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
@@ -1886,7 +2144,14 @@ namespace Amazon.Lambda
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// 
+        /// You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code>
+        /// is returned if you have no functions with reserved-concurrency and have exceeded your
+        /// account concurrent limit or if a function without reserved concurrency exceeds the
+        /// account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code>
+        /// is returned when a function with reserved concurrency exceeds its configured concurrent
+        /// limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is
+        /// exceeded and you have not reserved concurrency on any function. For more information,
+        /// see <a>concurrent-executions</a>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse UntagResource(UntagResourceRequest request);
@@ -1938,9 +2203,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
-        /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
-        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
+        /// API, that AWS Lambda is unable to assume you will get this exception.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
@@ -1950,7 +2213,14 @@ namespace Amazon.Lambda
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// 
+        /// You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code>
+        /// is returned if you have no functions with reserved-concurrency and have exceeded your
+        /// account concurrent limit or if a function without reserved concurrency exceeds the
+        /// account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code>
+        /// is returned when a function with reserved concurrency exceeds its configured concurrent
+        /// limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is
+        /// exceeded and you have not reserved concurrency on any function. For more information,
+        /// see <a>concurrent-executions</a>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateAlias">REST API Reference for UpdateAlias Operation</seealso>
         UpdateAliasResponse UpdateAlias(UpdateAliasRequest request);
@@ -2018,9 +2288,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
-        /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
-        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
+        /// API, that AWS Lambda is unable to assume you will get this exception.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists.
@@ -2033,7 +2301,14 @@ namespace Amazon.Lambda
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// 
+        /// You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code>
+        /// is returned if you have no functions with reserved-concurrency and have exceeded your
+        /// account concurrent limit or if a function without reserved concurrency exceeds the
+        /// account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code>
+        /// is returned when a function with reserved concurrency exceeds its configured concurrent
+        /// limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is
+        /// exceeded and you have not reserved concurrency on any function. For more information,
+        /// see <a>concurrent-executions</a>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateEventSourceMapping">REST API Reference for UpdateEventSourceMapping Operation</seealso>
         UpdateEventSourceMappingResponse UpdateEventSourceMapping(UpdateEventSourceMappingRequest request);
@@ -2095,9 +2370,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
-        /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
-        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
+        /// API, that AWS Lambda is unable to assume you will get this exception.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
@@ -2107,7 +2380,14 @@ namespace Amazon.Lambda
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// 
+        /// You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code>
+        /// is returned if you have no functions with reserved-concurrency and have exceeded your
+        /// account concurrent limit or if a function without reserved concurrency exceeds the
+        /// account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code>
+        /// is returned when a function with reserved concurrency exceeds its configured concurrent
+        /// limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is
+        /// exceeded and you have not reserved concurrency on any function. For more information,
+        /// see <a>concurrent-executions</a>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionCode">REST API Reference for UpdateFunctionCode Operation</seealso>
         UpdateFunctionCodeResponse UpdateFunctionCode(UpdateFunctionCodeRequest request);
@@ -2168,9 +2448,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
-        /// API, that AWS Lambda is unable to assume you will get this exception. You will also
-        /// get this exception if you have selected a deprecated runtime, such as Node v0.10.42
-        /// or if you point to an additional version when the version specified is <code>$LATEST</code>.
+        /// API, that AWS Lambda is unable to assume you will get this exception.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists.
@@ -2183,7 +2461,14 @@ namespace Amazon.Lambda
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// 
+        /// You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code>
+        /// is returned if you have no functions with reserved-concurrency and have exceeded your
+        /// account concurrent limit or if a function without reserved concurrency exceeds the
+        /// account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code>
+        /// is returned when a function with reserved concurrency exceeds its configured concurrent
+        /// limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is
+        /// exceeded and you have not reserved concurrency on any function. For more information,
+        /// see <a>concurrent-executions</a>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionConfiguration">REST API Reference for UpdateFunctionConfiguration Operation</seealso>
         UpdateFunctionConfigurationResponse UpdateFunctionConfiguration(UpdateFunctionConfigurationRequest request);
