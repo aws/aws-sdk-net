@@ -261,6 +261,56 @@ namespace Amazon.APIGateway
 
 
     /// <summary>
+    /// Constants used for properties of type ConnectionType.
+    /// </summary>
+    public class ConnectionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INTERNET for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType INTERNET = new ConnectionType("INTERNET");
+        /// <summary>
+        /// Constant VPC_LINK for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType VPC_LINK = new ConnectionType("VPC_LINK");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConnectionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConnectionType FindValue(string value)
+        {
+            return FindValue<ConnectionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConnectionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ContentHandlingStrategy.
     /// </summary>
     public class ContentHandlingStrategy : ConstantClass
@@ -902,6 +952,64 @@ namespace Amazon.APIGateway
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator UnauthorizedCacheControlHeaderStrategy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VpcLinkStatus.
+    /// </summary>
+    public class VpcLinkStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVAILABLE for VpcLinkStatus
+        /// </summary>
+        public static readonly VpcLinkStatus AVAILABLE = new VpcLinkStatus("AVAILABLE");
+        /// <summary>
+        /// Constant DELETING for VpcLinkStatus
+        /// </summary>
+        public static readonly VpcLinkStatus DELETING = new VpcLinkStatus("DELETING");
+        /// <summary>
+        /// Constant FAILED for VpcLinkStatus
+        /// </summary>
+        public static readonly VpcLinkStatus FAILED = new VpcLinkStatus("FAILED");
+        /// <summary>
+        /// Constant PENDING for VpcLinkStatus
+        /// </summary>
+        public static readonly VpcLinkStatus PENDING = new VpcLinkStatus("PENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VpcLinkStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VpcLinkStatus FindValue(string value)
+        {
+            return FindValue<VpcLinkStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VpcLinkStatus(string value)
         {
             return FindValue(value);
         }

@@ -32,8 +32,8 @@ namespace Amazon.APIGateway.Model
     /// 
     ///  <div class="Remarks"> 
     /// <para>
-    /// When you deploy an API, Amazon API Gateway creates a default host name for the API.
-    /// This default API host name is of the <code>{restapi-id}.execute-api.{region}.amazonaws.com</code>
+    /// When you deploy an API, API Gateway creates a default host name for the API. This
+    /// default API host name is of the <code>{restapi-id}.execute-api.{region}.amazonaws.com</code>
     /// format. With the default host name, you can access the API's root resource with the
     /// URL of <code>https://{restapi-id}.execute-api.{region}.amazonaws.com/{stage}/</code>.
     /// When you set up a custom domain name of <code>apis.example.com</code> for this API,
@@ -238,7 +238,7 @@ namespace Amazon.APIGateway.Model
         /// <para>
         /// The domain name associated with the regional endpoint for this custom domain name.
         /// You set up this association by adding a DNS record that points the custom domain name
-        /// to this regional domain name. The regional domain name is returned by Amazon API Gateway
+        /// to this regional domain name. The regional domain name is returned by API Gateway
         /// when you create a regional endpoint.
         /// </para>
         /// </summary>

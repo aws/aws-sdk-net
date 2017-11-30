@@ -492,6 +492,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("APIGateway")]
+        public void CreateVpcLinkMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateVpcLink");
+
+            var request = InstantiateClassGenerator.Execute<CreateVpcLinkRequest>();
+            var marshaller = new CreateVpcLinkRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("CreateVpcLink", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = CreateVpcLinkResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as CreateVpcLinkResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("APIGateway")]
         public void DeleteApiKeyMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteApiKey");
@@ -824,6 +856,23 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             var internalRequest = marshaller.Marshall(request);
             TestTools.RequestValidator.Validate("DeleteUsagePlanKey", request, internalRequest, service_model);            
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("APIGateway")]
+        public void DeleteVpcLinkMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteVpcLink");
+
+            var request = InstantiateClassGenerator.Execute<DeleteVpcLinkRequest>();
+            var marshaller = new DeleteVpcLinkRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteVpcLink", request, internalRequest, service_model);            
 
         }
 
@@ -2278,6 +2327,70 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("APIGateway")]
+        public void GetVpcLinkMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetVpcLink");
+
+            var request = InstantiateClassGenerator.Execute<GetVpcLinkRequest>();
+            var marshaller = new GetVpcLinkRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetVpcLink", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetVpcLinkResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetVpcLinkResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("APIGateway")]
+        public void GetVpcLinksMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetVpcLinks");
+
+            var request = InstantiateClassGenerator.Execute<GetVpcLinksRequest>();
+            var marshaller = new GetVpcLinksRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetVpcLinks", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetVpcLinksResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetVpcLinksResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("APIGateway")]
         public void ImportApiKeysMarshallTest()
         {
             var operation = service_model.FindOperation("ImportApiKeys");
@@ -3294,6 +3407,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = UpdateUsagePlanResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as UpdateUsagePlanResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("APIGateway")]
+        public void UpdateVpcLinkMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateVpcLink");
+
+            var request = InstantiateClassGenerator.Execute<UpdateVpcLinkRequest>();
+            var marshaller = new UpdateVpcLinkRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("UpdateVpcLink", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = UpdateVpcLinkResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as UpdateVpcLinkResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 

@@ -31,8 +31,8 @@ namespace Amazon.APIGateway.Model
     /// Container for the parameters to the GetGatewayResponses operation.
     /// Gets the <a>GatewayResponses</a> collection on the given <a>RestApi</a>. If an API
     /// developer has not added any definitions for gateway responses, the result will be
-    /// the Amazon API Gateway-generated default <a>GatewayResponses</a> collection for the
-    /// supported response types.
+    /// the API Gateway-generated default <a>GatewayResponses</a> collection for the supported
+    /// response types.
     /// </summary>
     public partial class GetGatewayResponsesRequest : AmazonAPIGatewayRequest
     {

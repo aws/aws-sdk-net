@@ -115,7 +115,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Log. 
         /// <para>
-        /// The Amazon API Gateway execution log for the test authorizer request.
+        /// The API Gateway execution log for the test authorizer request.
         /// </para>
         /// </summary>
         public string Log

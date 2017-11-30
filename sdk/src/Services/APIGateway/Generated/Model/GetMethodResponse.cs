@@ -325,13 +325,13 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property RequestParameters. 
         /// <para>
         /// A key-value map defining required or optional method request parameters that can be
-        /// accepted by Amazon API Gateway. A key is a method request parameter name matching
-        /// the pattern of <code>method.request.{location}.{name}</code>, where <code>location</code>
-        /// is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code>
-        /// is a valid and unique parameter name. The value associated with the key is a Boolean
-        /// flag indicating whether the parameter is required (<code>true</code>) or optional
-        /// (<code>false</code>). The method request parameter names defined here are available
-        /// in <a>Integration</a> to be mapped to integration request parameters or templates.
+        /// accepted by API Gateway. A key is a method request parameter name matching the pattern
+        /// of <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>,
+        /// <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique
+        /// parameter name. The value associated with the key is a Boolean flag indicating whether
+        /// the parameter is required (<code>true</code>) or optional (<code>false</code>). The
+        /// method request parameter names defined here are available in <a>Integration</a> to
+        /// be mapped to integration request parameters or templates.
         /// </para>
         /// </summary>
         public Dictionary<string, bool> RequestParameters

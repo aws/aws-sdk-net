@@ -274,7 +274,7 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property StageName. 
         /// <para>
         /// The name of the stage is the first path segment in the Uniform Resource Identifier
-        /// (URI) of a call to Amazon API Gateway.
+        /// (URI) of a call to API Gateway.
         /// </para>
         /// </summary>
         public string StageName

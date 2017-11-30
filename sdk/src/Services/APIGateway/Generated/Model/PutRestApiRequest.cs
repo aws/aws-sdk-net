@@ -29,9 +29,9 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the PutRestApi operation.
-    /// A feature of the Amazon API Gateway control service for updating an existing API with
-    /// an input of external API definitions. The update can take the form of merging the
-    /// supplied definition into the existing API or overwriting the existing API.
+    /// A feature of the API Gateway control service for updating an existing API with an
+    /// input of external API definitions. The update can take the form of merging the supplied
+    /// definition into the existing API or overwriting the existing API.
     /// </summary>
     public partial class PutRestApiRequest : AmazonAPIGatewayRequest
     {

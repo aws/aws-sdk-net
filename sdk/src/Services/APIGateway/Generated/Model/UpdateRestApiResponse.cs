@@ -121,8 +121,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The API's identifier. This identifier is unique across all of your APIs in Amazon
-        /// API Gateway.
+        /// The API's identifier. This identifier is unique across all of your APIs in API Gateway.
         /// </para>
         /// </summary>
         public string Id

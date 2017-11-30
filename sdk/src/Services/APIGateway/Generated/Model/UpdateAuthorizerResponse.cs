@@ -50,10 +50,9 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property AuthorizerCredentials. 
         /// <para>
-        /// Specifies the required credentials as an IAM role for Amazon API Gateway to invoke
-        /// the authorizer. To specify an IAM role for Amazon API Gateway to assume, use the role's
-        /// Amazon Resource Name (ARN). To use resource-based permissions on the Lambda function,
-        /// specify null.
+        /// Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer.
+        /// To specify an IAM role for API Gateway to assume, use the role's Amazon Resource Name
+        /// (ARN). To use resource-based permissions on the Lambda function, specify null.
         /// </para>
         /// </summary>
         public string AuthorizerCredentials
@@ -189,8 +188,8 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property IdentityValidationExpression. 
         /// <para>
         /// A validation expression for the incoming identity token. For <code>TOKEN</code> authorizers,
-        /// this value is a regular expression. Amazon API Gateway will match the incoming token
-        /// from the client against the specified regular expression. It will invoke the authorizer's
+        /// this value is a regular expression. API Gateway will match the incoming token from
+        /// the client against the specified regular expression. It will invoke the authorizer's
         /// Lambda function there is a match. Otherwise, it will return a 401 Unauthorized response
         /// without calling the Lambda function. The validation expression does not apply to the
         /// <code>REQUEST</code> authorizer.

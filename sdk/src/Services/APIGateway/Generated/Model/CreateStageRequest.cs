@@ -173,7 +173,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property StageName. 
         /// <para>
-        /// {Required] The name for the <a>Stage</a> resource.
+        /// [Required] The name for the <a>Stage</a> resource.
         /// </para>
         /// </summary>
         public string StageName

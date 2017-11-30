@@ -29,8 +29,8 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the ImportRestApi operation.
-    /// A feature of the Amazon API Gateway control service for creating a new API from an
-    /// external API definition file.
+    /// A feature of the API Gateway control service for creating a new API from an external
+    /// API definition file.
     /// </summary>
     public partial class ImportRestApiRequest : AmazonAPIGatewayRequest
     {

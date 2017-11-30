@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
-    /// Represents an AWS account that is associated with Amazon API Gateway.
+    /// Represents an AWS account that is associated with API Gateway.
     /// 
     ///  <div class="remarks"> 
     /// <para>

@@ -36,8 +36,8 @@ namespace Amazon.APIGateway
     /// Amazon API Gateway 
     /// <para>
     /// Amazon API Gateway helps developers deliver robust, secure, and scalable mobile and
-    /// web application back ends. Amazon API Gateway allows developers to securely connect
-    /// mobile and web applications to APIs that run on AWS Lambda, Amazon EC2, or other publicly
+    /// web application back ends. API Gateway allows developers to securely connect mobile
+    /// and web applications to APIs that run on AWS Lambda, Amazon EC2, or other publicly
     /// addressable web services that are hosted outside of AWS.
     /// </para>
     /// </summary>
@@ -1188,6 +1188,68 @@ namespace Amazon.APIGateway
         public virtual CreateUsagePlanKeyResponse EndCreateUsagePlanKey(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateUsagePlanKeyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateVpcLink
+
+        /// <summary>
+        /// Creates a VPC link, under the caller's account in a selected region, in an asynchronous
+        /// operation that typically takes 2-4 minutes to complete and become operational. The
+        /// caller must have permissions to create and update VPC Endpoint services.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcLink service method.</param>
+        /// 
+        /// <returns>The response from the CreateVpcLink service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
+        public virtual CreateVpcLinkResponse CreateVpcLink(CreateVpcLinkRequest request)
+        {
+            var marshaller = new CreateVpcLinkRequestMarshaller();
+            var unmarshaller = CreateVpcLinkResponseUnmarshaller.Instance;
+
+            return Invoke<CreateVpcLinkRequest,CreateVpcLinkResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateVpcLink operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcLink operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateVpcLink
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginCreateVpcLink(CreateVpcLinkRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new CreateVpcLinkRequestMarshaller();
+            var unmarshaller = CreateVpcLinkResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateVpcLinkRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateVpcLink operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateVpcLink.</param>
+        /// 
+        /// <returns>Returns a  CreateVpcLinkResult from APIGateway.</returns>
+        public virtual CreateVpcLinkResponse EndCreateVpcLink(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateVpcLinkResponse>(asyncResult);
         }
 
         #endregion
@@ -2477,6 +2539,69 @@ namespace Amazon.APIGateway
         public virtual DeleteUsagePlanKeyResponse EndDeleteUsagePlanKey(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteUsagePlanKeyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteVpcLink
+
+        /// <summary>
+        /// Deletes an existing <a>VpcLink</a> of a specified identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpcLink service method.</param>
+        /// 
+        /// <returns>The response from the DeleteVpcLink service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
+        public virtual DeleteVpcLinkResponse DeleteVpcLink(DeleteVpcLinkRequest request)
+        {
+            var marshaller = new DeleteVpcLinkRequestMarshaller();
+            var unmarshaller = DeleteVpcLinkResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteVpcLinkRequest,DeleteVpcLinkResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteVpcLink operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpcLink operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteVpcLink
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginDeleteVpcLink(DeleteVpcLinkRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteVpcLinkRequestMarshaller();
+            var unmarshaller = DeleteVpcLinkResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteVpcLinkRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteVpcLink operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVpcLink.</param>
+        /// 
+        /// <returns>Returns a  DeleteVpcLinkResult from APIGateway.</returns>
+        public virtual DeleteVpcLinkResponse EndDeleteVpcLink(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteVpcLinkResponse>(asyncResult);
         }
 
         #endregion
@@ -3834,8 +3959,8 @@ namespace Amazon.APIGateway
         /// <summary>
         /// Gets the <a>GatewayResponses</a> collection on the given <a>RestApi</a>. If an API
         /// developer has not added any definitions for gateway responses, the result will be
-        /// the Amazon API Gateway-generated default <a>GatewayResponses</a> collection for the
-        /// supported response types.
+        /// the API Gateway-generated default <a>GatewayResponses</a> collection for the supported
+        /// response types.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetGatewayResponses service method.</param>
         /// 
@@ -5298,6 +5423,125 @@ namespace Amazon.APIGateway
 
         #endregion
         
+        #region  GetVpcLink
+
+        /// <summary>
+        /// Gets a specified VPC link under the caller's account in a region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVpcLink service method.</param>
+        /// 
+        /// <returns>The response from the GetVpcLink service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
+        public virtual GetVpcLinkResponse GetVpcLink(GetVpcLinkRequest request)
+        {
+            var marshaller = new GetVpcLinkRequestMarshaller();
+            var unmarshaller = GetVpcLinkResponseUnmarshaller.Instance;
+
+            return Invoke<GetVpcLinkRequest,GetVpcLinkResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetVpcLink operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetVpcLink operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetVpcLink
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginGetVpcLink(GetVpcLinkRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetVpcLinkRequestMarshaller();
+            var unmarshaller = GetVpcLinkResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetVpcLinkRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetVpcLink operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetVpcLink.</param>
+        /// 
+        /// <returns>Returns a  GetVpcLinkResult from APIGateway.</returns>
+        public virtual GetVpcLinkResponse EndGetVpcLink(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetVpcLinkResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetVpcLinks
+
+        /// <summary>
+        /// Gets the <a>VpcLinks</a> collection under the caller's account in a selected region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVpcLinks service method.</param>
+        /// 
+        /// <returns>The response from the GetVpcLinks service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
+        public virtual GetVpcLinksResponse GetVpcLinks(GetVpcLinksRequest request)
+        {
+            var marshaller = new GetVpcLinksRequestMarshaller();
+            var unmarshaller = GetVpcLinksResponseUnmarshaller.Instance;
+
+            return Invoke<GetVpcLinksRequest,GetVpcLinksResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetVpcLinks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetVpcLinks operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetVpcLinks
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginGetVpcLinks(GetVpcLinksRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetVpcLinksRequestMarshaller();
+            var unmarshaller = GetVpcLinksResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetVpcLinksRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetVpcLinks operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetVpcLinks.</param>
+        /// 
+        /// <returns>Returns a  GetVpcLinksResult from APIGateway.</returns>
+        public virtual GetVpcLinksResponse EndGetVpcLinks(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetVpcLinksResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ImportApiKeys
 
         /// <summary>
@@ -5436,8 +5680,8 @@ namespace Amazon.APIGateway
         #region  ImportRestApi
 
         /// <summary>
-        /// A feature of the Amazon API Gateway control service for creating a new API from an
-        /// external API definition file.
+        /// A feature of the API Gateway control service for creating a new API from an external
+        /// API definition file.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportRestApi service method.</param>
         /// 
@@ -5843,9 +6087,9 @@ namespace Amazon.APIGateway
         #region  PutRestApi
 
         /// <summary>
-        /// A feature of the Amazon API Gateway control service for updating an existing API with
-        /// an input of external API definitions. The update can take the form of merging the
-        /// supplied definition into the existing API or overwriting the existing API.
+        /// A feature of the API Gateway control service for updating an existing API with an
+        /// input of external API definitions. The update can take the form of merging the supplied
+        /// definition into the existing API or overwriting the existing API.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutRestApi service method.</param>
         /// 
@@ -7417,6 +7661,72 @@ namespace Amazon.APIGateway
         public virtual UpdateUsagePlanResponse EndUpdateUsagePlan(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateUsagePlanResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateVpcLink
+
+        /// <summary>
+        /// Updates an existing <a>VpcLink</a> of a specified identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVpcLink service method.</param>
+        /// 
+        /// <returns>The response from the UpdateVpcLink service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
+        public virtual UpdateVpcLinkResponse UpdateVpcLink(UpdateVpcLinkRequest request)
+        {
+            var marshaller = new UpdateVpcLinkRequestMarshaller();
+            var unmarshaller = UpdateVpcLinkResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateVpcLinkRequest,UpdateVpcLinkResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateVpcLink operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVpcLink operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateVpcLink
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginUpdateVpcLink(UpdateVpcLinkRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new UpdateVpcLinkRequestMarshaller();
+            var unmarshaller = UpdateVpcLinkResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateVpcLinkRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateVpcLink operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateVpcLink.</param>
+        /// 
+        /// <returns>Returns a  UpdateVpcLinkResult from APIGateway.</returns>
+        public virtual UpdateVpcLinkResponse EndUpdateVpcLink(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateVpcLinkResponse>(asyncResult);
         }
 
         #endregion
