@@ -78,7 +78,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
         /// <para>
-        /// The name of the Auto Scaling group for the hook.
+        /// The name of the Auto Scaling group.
         /// </para>
         /// </summary>
         public string AutoScalingGroupName

@@ -87,7 +87,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
         /// <para>
-        /// The name or ARN of the group.
+        /// The name of the Auto Scaling group.
         /// </para>
         /// </summary>
         public string AutoScalingGroupName

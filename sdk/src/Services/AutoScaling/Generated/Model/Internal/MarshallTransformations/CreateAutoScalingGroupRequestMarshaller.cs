@@ -95,6 +95,21 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("LaunchConfigurationName", StringUtils.FromString(publicRequest.LaunchConfigurationName));
                 }
+                if(publicRequest.IsSetLaunchTemplate())
+                {
+                    if(publicRequest.LaunchTemplate.IsSetLaunchTemplateId())
+                    {
+                        request.Parameters.Add("LaunchTemplate" + "." + "LaunchTemplateId", StringUtils.FromString(publicRequest.LaunchTemplate.LaunchTemplateId));
+                    }
+                    if(publicRequest.LaunchTemplate.IsSetLaunchTemplateName())
+                    {
+                        request.Parameters.Add("LaunchTemplate" + "." + "LaunchTemplateName", StringUtils.FromString(publicRequest.LaunchTemplate.LaunchTemplateName));
+                    }
+                    if(publicRequest.LaunchTemplate.IsSetVersion())
+                    {
+                        request.Parameters.Add("LaunchTemplate" + "." + "Version", StringUtils.FromString(publicRequest.LaunchTemplate.Version));
+                    }
+                }
                 if(publicRequest.IsSetLifecycleHookSpecificationList())
                 {
                     int publicRequestlistValueIndex = 1;

@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Instance Object
+    /// Response Unmarshaller for LaunchTemplateSpecification Object
     /// </summary>  
-    public class InstanceUnmarshaller : IUnmarshaller<Instance, XmlUnmarshallerContext>, IUnmarshaller<Instance, JsonUnmarshallerContext>
+    public class LaunchTemplateSpecificationUnmarshaller : IUnmarshaller<LaunchTemplateSpecification, XmlUnmarshallerContext>, IUnmarshaller<LaunchTemplateSpecification, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Instance Unmarshall(XmlUnmarshallerContext context)
+        public LaunchTemplateSpecification Unmarshall(XmlUnmarshallerContext context)
         {
-            Instance unmarshalledObject = new Instance();
+            LaunchTemplateSpecification unmarshalledObject = new LaunchTemplateSpecification();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,46 +54,22 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("AvailabilityZone", targetDepth))
+                    if (context.TestExpression("LaunchTemplateId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.LaunchTemplateId = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("HealthStatus", targetDepth))
+                    if (context.TestExpression("LaunchTemplateName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.HealthStatus = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.LaunchTemplateName = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("InstanceId", targetDepth))
+                    if (context.TestExpression("Version", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.InstanceId = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("LaunchConfigurationName", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.LaunchConfigurationName = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("LaunchTemplate", targetDepth))
-                    {
-                        var unmarshaller = LaunchTemplateSpecificationUnmarshaller.Instance;
-                        unmarshalledObject.LaunchTemplate = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("LifecycleState", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.LifecycleState = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("ProtectedFromScaleIn", targetDepth))
-                    {
-                        var unmarshaller = BoolUnmarshaller.Instance;
-                        unmarshalledObject.ProtectedFromScaleIn = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Version = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -111,18 +87,18 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Instance Unmarshall(JsonUnmarshallerContext context)
+        public LaunchTemplateSpecification Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static InstanceUnmarshaller _instance = new InstanceUnmarshaller();        
+        private static LaunchTemplateSpecificationUnmarshaller _instance = new LaunchTemplateSpecificationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static InstanceUnmarshaller Instance
+        public static LaunchTemplateSpecificationUnmarshaller Instance
         {
             get
             {

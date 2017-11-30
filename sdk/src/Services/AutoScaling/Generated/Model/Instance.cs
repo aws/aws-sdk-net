@@ -36,6 +36,7 @@ namespace Amazon.AutoScaling.Model
         private string _healthStatus;
         private string _instanceId;
         private string _launchConfigurationName;
+        private LaunchTemplateSpecification _launchTemplate;
         private LifecycleState _lifecycleState;
         private bool? _protectedFromScaleIn;
 
@@ -111,6 +112,24 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetLaunchConfigurationName()
         {
             return this._launchConfigurationName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LaunchTemplate. 
+        /// <para>
+        /// The launch template for the instance.
+        /// </para>
+        /// </summary>
+        public LaunchTemplateSpecification LaunchTemplate
+        {
+            get { return this._launchTemplate; }
+            set { this._launchTemplate = value; }
+        }
+
+        // Check to see if LaunchTemplate property is set
+        internal bool IsSetLaunchTemplate()
+        {
+            return this._launchTemplate != null;
         }
 
         /// <summary>

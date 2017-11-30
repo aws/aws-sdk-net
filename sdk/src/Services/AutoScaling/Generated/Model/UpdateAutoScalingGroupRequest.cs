@@ -76,6 +76,7 @@ namespace Amazon.AutoScaling.Model
         private int? _healthCheckGracePeriod;
         private string _healthCheckType;
         private string _launchConfigurationName;
+        private LaunchTemplateSpecification _launchTemplate;
         private int? _maxSize;
         private int? _minSize;
         private bool? _newInstancesProtectedFromScaleIn;
@@ -209,7 +210,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LaunchConfigurationName. 
         /// <para>
-        /// The name of the launch configuration.
+        /// The name of the launch configuration. You must specify either a launch configuration
+        /// or a launch template.
         /// </para>
         /// </summary>
         public string LaunchConfigurationName
@@ -222,6 +224,25 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetLaunchConfigurationName()
         {
             return this._launchConfigurationName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LaunchTemplate. 
+        /// <para>
+        /// The launch template to use to specify the updates. You must specify a launch configuration
+        /// or a launch template.
+        /// </para>
+        /// </summary>
+        public LaunchTemplateSpecification LaunchTemplate
+        {
+            get { return this._launchTemplate; }
+            set { this._launchTemplate = value; }
+        }
+
+        // Check to see if LaunchTemplate property is set
+        internal bool IsSetLaunchTemplate()
+        {
+            return this._launchTemplate != null;
         }
 
         /// <summary>

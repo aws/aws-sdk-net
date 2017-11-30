@@ -84,6 +84,12 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         unmarshalledObject.LaunchConfigurationName = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("LaunchTemplate", targetDepth))
+                    {
+                        var unmarshaller = LaunchTemplateSpecificationUnmarshaller.Instance;
+                        unmarshalledObject.LaunchTemplate = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("LifecycleState", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

@@ -43,6 +43,7 @@ namespace Amazon.AutoScaling.Model
         private string _healthCheckType;
         private List<Instance> _instances = new List<Instance>();
         private string _launchConfigurationName;
+        private LaunchTemplateSpecification _launchTemplate;
         private List<string> _loadBalancerNames = new List<string>();
         private int? _maxSize;
         private int? _minSize;
@@ -58,7 +59,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AutoScalingGroupARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the group.
+        /// The Amazon Resource Name (ARN) of the Auto Scaling group.
         /// </para>
         /// </summary>
         public string AutoScalingGroupARN
@@ -76,7 +77,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
         /// <para>
-        /// The name of the group.
+        /// The name of the Auto Scaling group.
         /// </para>
         /// </summary>
         public string AutoScalingGroupName
@@ -254,6 +255,24 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetLaunchConfigurationName()
         {
             return this._launchConfigurationName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LaunchTemplate. 
+        /// <para>
+        /// The launch template for the group.
+        /// </para>
+        /// </summary>
+        public LaunchTemplateSpecification LaunchTemplate
+        {
+            get { return this._launchTemplate; }
+            set { this._launchTemplate = value; }
+        }
+
+        // Check to see if LaunchTemplate property is set
+        internal bool IsSetLaunchTemplate()
+        {
+            return this._launchTemplate != null;
         }
 
         /// <summary>

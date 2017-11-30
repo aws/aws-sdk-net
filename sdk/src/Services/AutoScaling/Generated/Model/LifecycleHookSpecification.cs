@@ -52,7 +52,7 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// Defines the action the Auto Scaling group should take when the lifecycle hook timeout
         /// elapses or if an unexpected failure occurs. The valid values are <code>CONTINUE</code>
-        /// and <code>ABANDON</code>. The default value is <code>CONTINUE</code>.
+        /// and <code>ABANDON</code>.
         /// </para>
         /// </summary>
         public string DefaultResult

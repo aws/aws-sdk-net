@@ -81,7 +81,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For predefined metric types <code>ASGAverageCPUUtilization</code>, <code>ASGAverageNetworkIn</code>
+        /// For predefined metric types <code>ASGAverageCPUUtilization</code>, <code>ASGAverageNetworkIn</code>,
         /// and <code>ASGAverageNetworkOut</code>, the parameter must not be specified as the
         /// resource associated with the metric type is the Auto Scaling group. For predefined
         /// metric type <code>ALBRequestCountPerTarget</code>, the parameter must be specified

@@ -42,7 +42,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
         /// <para>
-        /// The name of the group.
+        /// The name of the Auto Scaling group.
         /// </para>
         /// </summary>
         public string AutoScalingGroupName
@@ -98,10 +98,10 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property PolicyNames. 
         /// <para>
-        /// One or more policy names or policy ARNs to be described. If you omit this parameter,
-        /// all policy names are described. If an group name is provided, the results are limited
-        /// to that group. This list is limited to 50 items. If you specify an unknown policy
-        /// name, it is ignored with no error.
+        /// The names of one or more policies. If you omit this parameter, all policies are described.
+        /// If an group name is provided, the results are limited to that group. This list is
+        /// limited to 50 items. If you specify an unknown policy name, it is ignored with no
+        /// error.
         /// </para>
         /// </summary>
         public List<string> PolicyNames
