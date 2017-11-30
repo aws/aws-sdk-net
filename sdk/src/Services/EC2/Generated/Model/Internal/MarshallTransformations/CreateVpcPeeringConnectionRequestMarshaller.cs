@@ -62,6 +62,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("PeerOwnerId", StringUtils.FromString(publicRequest.PeerOwnerId));
                 }
+                if(publicRequest.IsSetPeerRegion())
+                {
+                    request.Parameters.Add("PeerRegion", StringUtils.FromString(publicRequest.PeerRegion));
+                }
                 if(publicRequest.IsSetPeerVpcId())
                 {
                     request.Parameters.Add("PeerVpcId", StringUtils.FromString(publicRequest.PeerVpcId));

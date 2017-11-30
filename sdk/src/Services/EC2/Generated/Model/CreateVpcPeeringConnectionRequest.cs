@@ -30,31 +30,33 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the CreateVpcPeeringConnection operation.
     /// Requests a VPC peering connection between two VPCs: a requester VPC that you own and
-    /// a peer VPC with which to create the connection. The peer VPC can belong to another
-    /// AWS account. The requester VPC and peer VPC cannot have overlapping CIDR blocks.
+    /// an accepter VPC with which to create the connection. The accepter VPC can belong to
+    /// another AWS account and can be in a different region to the requester VPC. The requester
+    /// VPC and accepter VPC cannot have overlapping CIDR blocks.
     /// 
     ///  
     /// <para>
-    /// The owner of the peer VPC must accept the peering request to activate the peering
+    /// The owner of the accepter VPC must accept the peering request to activate the peering
     /// connection. The VPC peering connection request expires after 7 days, after which it
     /// cannot be accepted or rejected.
     /// </para>
     ///  
     /// <para>
-    /// If you try to create a VPC peering connection between VPCs that have overlapping CIDR
-    /// blocks, the VPC peering connection status goes to <code>failed</code>.
+    /// If you create a VPC peering connection request between VPCs with overlapping CIDR
+    /// blocks, the VPC peering connection has a status of <code>failed</code>.
     /// </para>
     /// </summary>
     public partial class CreateVpcPeeringConnectionRequest : AmazonEC2Request
     {
         private string _peerOwnerId;
+        private string _peerRegion;
         private string _peerVpcId;
         private string _vpcId;
 
         /// <summary>
         /// Gets and sets the property PeerOwnerId. 
         /// <para>
-        /// The AWS account ID of the owner of the peer VPC.
+        /// The AWS account ID of the owner of the accepter VPC.
         /// </para>
         ///  
         /// <para>
@@ -74,9 +76,33 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PeerRegion. 
+        /// <para>
+        /// The region code for the accepter VPC, if the accepter VPC is located in a region other
+        /// than the region in which you make the request.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: The region in which you make the request.
+        /// </para>
+        /// </summary>
+        public string PeerRegion
+        {
+            get { return this._peerRegion; }
+            set { this._peerRegion = value; }
+        }
+
+        // Check to see if PeerRegion property is set
+        internal bool IsSetPeerRegion()
+        {
+            return this._peerRegion != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PeerVpcId. 
         /// <para>
-        /// The ID of the VPC with which you are creating the VPC peering connection.
+        /// The ID of the VPC with which you are creating the VPC peering connection. You must
+        /// specify this parameter in the request.
         /// </para>
         /// </summary>
         public string PeerVpcId
@@ -94,7 +120,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VpcId. 
         /// <para>
-        /// The ID of the requester VPC.
+        /// The ID of the requester VPC. You must specify this parameter in the request.
         /// </para>
         /// </summary>
         public string VpcId

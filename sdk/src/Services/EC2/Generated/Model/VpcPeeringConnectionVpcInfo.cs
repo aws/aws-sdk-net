@@ -37,6 +37,7 @@ namespace Amazon.EC2.Model
         private List<Ipv6CidrBlock> _ipv6CidrBlockSet = new List<Ipv6CidrBlock>();
         private string _ownerId;
         private VpcPeeringConnectionOptionsDescription _peeringOptions;
+        private string _region;
         private string _vpcId;
 
         /// <summary>
@@ -128,6 +129,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetPeeringOptions()
         {
             return this._peeringOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Region. 
+        /// <para>
+        /// The region in which the VPC is located.
+        /// </para>
+        /// </summary>
+        public string Region
+        {
+            get { return this._region; }
+            set { this._region = value; }
+        }
+
+        // Check to see if Region property is set
+        internal bool IsSetRegion()
+        {
+            return this._region != null;
         }
 
         /// <summary>

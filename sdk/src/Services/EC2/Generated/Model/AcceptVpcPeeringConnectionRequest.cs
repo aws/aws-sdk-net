@@ -33,6 +33,12 @@ namespace Amazon.EC2.Model
     /// must be in the <code>pending-acceptance</code> state, and you must be the owner of
     /// the peer VPC. Use <a>DescribeVpcPeeringConnections</a> to view your outstanding VPC
     /// peering connection requests.
+    /// 
+    ///  
+    /// <para>
+    /// For an inter-region VPC peering connection request, you must accept the VPC peering
+    /// connection in the region of the accepter VPC.
+    /// </para>
     /// </summary>
     public partial class AcceptVpcPeeringConnectionRequest : AmazonEC2Request
     {
@@ -41,7 +47,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VpcPeeringConnectionId. 
         /// <para>
-        /// The ID of the VPC peering connection.
+        /// The ID of the VPC peering connection. You must specify this parameter in the request.
         /// </para>
         /// </summary>
         public string VpcPeeringConnectionId

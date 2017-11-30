@@ -3998,6 +3998,10 @@ namespace Amazon.EC2
         /// Constant Cluster for PlacementStrategy
         /// </summary>
         public static readonly PlacementStrategy Cluster = new PlacementStrategy("cluster");
+        /// <summary>
+        /// Constant Spread for PlacementStrategy
+        /// </summary>
+        public static readonly PlacementStrategy Spread = new PlacementStrategy("spread");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

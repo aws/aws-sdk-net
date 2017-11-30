@@ -76,7 +76,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property GroupName. 
         /// <para>
-        /// The name of the placement group (for cluster instances).
+        /// The name of the placement group.
         /// </para>
         /// </summary>
         public string GroupName

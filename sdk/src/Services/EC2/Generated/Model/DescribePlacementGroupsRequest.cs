@@ -29,9 +29,8 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribePlacementGroups operation.
-    /// Describes one or more of your placement groups. For more information about placement
-    /// groups and cluster instances, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">Cluster
-    /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// Describes one or more of your placement groups. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+    /// Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </summary>
     public partial class DescribePlacementGroupsRequest : AmazonEC2Request
     {
@@ -54,7 +53,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>strategy</code> - The strategy of the placement group (<code>cluster</code>).
+        ///  <code>strategy</code> - The strategy of the placement group (<code>cluster</code>
+        /// | <code>spread</code>).
         /// </para>
         ///  </li> </ul>
         /// </summary>

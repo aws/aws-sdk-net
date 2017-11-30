@@ -29,13 +29,19 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreatePlacementGroup operation.
-    /// Creates a placement group that you launch cluster instances into. Give the group a
-    /// name that's unique within the scope of your account.
+    /// Creates a placement group in which to launch instances. The strategy of the placement
+    /// group determines how the instances are organized within the group. 
     /// 
     ///  
     /// <para>
-    /// For more information about placement groups and cluster instances, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">Cluster
-    /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// A <code>cluster</code> placement group is a logical grouping of instances within a
+    /// single Availability Zone that benefit from low network latency, high network throughput.
+    /// A <code>spread</code> placement group places instances on distinct hardware.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+    /// Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreatePlacementGroupRequest : AmazonEC2Request
@@ -51,7 +57,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates CreatePlacementGroupRequest with the parameterized properties
         /// </summary>
-        /// <param name="groupName">A name for the placement group. Constraints: Up to 255 ASCII characters</param>
+        /// <param name="groupName">A name for the placement group. Must be unique within the scope of your account for the region. Constraints: Up to 255 ASCII characters</param>
         /// <param name="strategy">The placement strategy.</param>
         public CreatePlacementGroupRequest(string groupName, PlacementStrategy strategy)
         {
@@ -62,7 +68,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property GroupName. 
         /// <para>
-        /// A name for the placement group.
+        /// A name for the placement group. Must be unique within the scope of your account for
+        /// the region.
         /// </para>
         ///  
         /// <para>

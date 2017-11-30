@@ -43,16 +43,16 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the peer VPC.
+        ///  <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the accepter VPC.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>accepter-vpc-info.owner-id</code> - The AWS account ID of the owner of the
-        /// peer VPC.
+        /// accepter VPC.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>accepter-vpc-info.vpc-id</code> - The ID of the peer VPC.
+        ///  <code>accepter-vpc-info.vpc-id</code> - The ID of the accepter VPC.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -76,7 +76,7 @@ namespace Amazon.EC2.Model
         /// <para>
         ///  <code>status-code</code> - The status of the VPC peering connection (<code>pending-acceptance</code>
         /// | <code>failed</code> | <code>expired</code> | <code>provisioning</code> | <code>active</code>
-        /// | <code>deleted</code> | <code>rejected</code>).
+        /// | <code>deleting</code> | <code>deleted</code> | <code>rejected</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
