@@ -1,3 +1,17 @@
+### 3.3.201.0 (2017-11-30 18:22 UTC)
+* AlexaForBusiness (3.3.0.0)
+	* Alexa for Business is now generally available for production use. Alexa for Business makes it easy for you to use Alexa in your organization. The Alexa for Business SDK gives you APIs to manage Alexa devices, enroll users, and assign skills at scale. For more information about Alexa for Business, go to https://aws.amazon.com/alexaforbusiness 
+* APIGateway (3.3.14.0)
+	* Added support Private Integration and VPC Link features in API Gateway. This allows to create an API with the API Gateway private integration, thus providing clients access to HTTP/HTTPS resources in an Amazon VPC from outside of the VPC through a VpcLink resource.
+* Cloud9 (3.3.0.0)
+	* Adds support for creating and managing AWS Cloud9 development environments. AWS Cloud9 is a cloud-based integrated development environment (IDE) that you use to write, run, and debug code.
+* EC2 (3.3.40.0)
+	* Adds the following updates: 1. Spread Placement ensures that instances are placed on distinct hardware in order to reduce correlated failures. 2. Inter-region VPC Peering allows customers to peer VPCs across different AWS regions without requiring additional gateways, VPN connections or physical hardware 
+* Lambda (3.3.10.0)
+	* AWS Lambda now supports the ability to set the concurrency limits for individual functions, and increasing memory to 3008 GB.
+* ServerlessApplicationRepository (3.3.0.0)
+	* First release of the AWS Serverless Application Repository SDK
+
 ### 3.3.200.0 (2017-11-30 03:52 UTC)
 * AutoScaling (3.3.3.0)
 	* You can now use Auto Scaling with EC2 Launch Templates via the CreateAutoScalingGroup and UpdateAutoScalingGroup APIs.

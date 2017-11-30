@@ -112,6 +112,10 @@
       <Project>{0AB37C0F-A819-4054-9853-F5645C120F8D}</Project>
       <Name>AWSSDK.CertificateManager.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/Cloud9/AWSSDK.Cloud9.CodeAnalysis.csproj">
+      <Project>{835FF2CC-F121-4743-815D-9B6E2BB0353D}</Project>
+      <Name>AWSSDK.Cloud9.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/CloudDirectory/AWSSDK.CloudDirectory.CodeAnalysis.csproj">
       <Project>{FA41A1BB-18F7-413A-BCA8-DBAB9D6B28E8}</Project>
       <Name>AWSSDK.CloudDirectory.CodeAnalysis</Name>
@@ -483,6 +487,10 @@
     <ProjectReference Include="../ServiceAnalysis/SecurityToken/AWSSDK.SecurityToken.CodeAnalysis.csproj">
       <Project>{89D04592-47DB-4292-8BEA-78BA2F33954F}</Project>
       <Name>AWSSDK.SecurityToken.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/ServerlessApplicationRepository/AWSSDK.ServerlessApplicationRepository.CodeAnalysis.csproj">
+      <Project>{A63E13E8-72CD-4FD4-B775-FA44467B1E12}</Project>
+      <Name>AWSSDK.ServerlessApplicationRepository.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/ServerMigrationService/AWSSDK.ServerMigrationService.CodeAnalysis.csproj">
       <Project>{15ED5FE8-DBEF-4494-A378-786840CF198B}</Project>

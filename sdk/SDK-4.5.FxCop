@@ -22,6 +22,7 @@
   </ProjectOptions>
   <Targets>
     <AssemblyReferenceDirectories>
+      <Directory>$(ProjectDir)/src/Services/alexaforbusiness/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/apigateway/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/applicationautoscaling/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/applicationdiscoveryservice/bin/Release/net45/</Directory>
@@ -36,6 +37,7 @@
       <Directory>$(ProjectDir)/src/Services/batch/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/budgets/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/certificatemanager/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/cloud9/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/clouddirectory/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/cloudformation/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/cloudfront/bin/Release/net45/</Directory>
@@ -128,6 +130,7 @@
       <Directory>$(ProjectDir)/src/Services/sagemaker/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/sagemakerruntime/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/securitytoken/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/serverlessapplicationrepository/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/servermigrationservice/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/servicecatalog/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/shield/bin/Release/net45/</Directory>
@@ -148,6 +151,7 @@
       <Directory>$(ProjectDir)/src/Services/xray/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Core/bin/Release/net45/</Directory>
     </AssemblyReferenceDirectories>
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.AlexaForBusiness.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.APIGateway.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ApplicationAutoScaling.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ApplicationDiscoveryService.dll" Analyze="True" AnalyzeAllChildren="True" />
@@ -162,6 +166,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Batch.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Budgets.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.CertificateManager.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Cloud9.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.CloudDirectory.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.CloudFormation.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.CloudFront.dll" Analyze="True" AnalyzeAllChildren="True" />
@@ -254,6 +259,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.SageMaker.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.SageMakerRuntime.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.SecurityToken.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ServerlessApplicationRepository.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ServerMigrationService.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ServiceCatalog.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Shield.dll" Analyze="True" AnalyzeAllChildren="True" />

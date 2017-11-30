@@ -41,6 +41,7 @@
     <ProjectReference Include="..\..\src\Services\Batch\AWSSDK.Batch.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\Budgets\AWSSDK.Budgets.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\CertificateManager\AWSSDK.CertificateManager.Net45.csproj"/>
+    <ProjectReference Include="..\..\src\Services\Cloud9\AWSSDK.Cloud9.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\CloudDirectory\AWSSDK.CloudDirectory.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\CloudFormation\AWSSDK.CloudFormation.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\CloudFront\AWSSDK.CloudFront.Net45.csproj"/>
@@ -134,6 +135,7 @@
     <ProjectReference Include="..\..\src\Services\SageMaker\AWSSDK.SageMaker.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\SageMakerRuntime\AWSSDK.SageMakerRuntime.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\SecurityToken\AWSSDK.SecurityToken.Net45.csproj"/>
+    <ProjectReference Include="..\..\src\Services\ServerlessApplicationRepository\AWSSDK.ServerlessApplicationRepository.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\ServerMigrationService\AWSSDK.ServerMigrationService.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\ServiceCatalog\AWSSDK.ServiceCatalog.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\Shield\AWSSDK.Shield.Net45.csproj"/>

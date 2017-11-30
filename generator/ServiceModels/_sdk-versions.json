@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.200.0",
+    "ProductVersion" : "3.3.201.0",
     "CoreVersion"    : "3.3.20.0",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -151,7 +151,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.3.39.0",
+            "Version" : "3.3.40.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
@@ -241,7 +241,7 @@
             "InPreview"               : false
         },
         "Lambda"               : {
-            "Version" : "3.3.9.0",
+            "Version" : "3.3.10.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
@@ -481,7 +481,7 @@
             "InPreview"               : false
         },
         "APIGateway"                      : {
-            "Version" : "3.3.13.0",
+            "Version" : "3.3.14.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
@@ -993,6 +993,30 @@
             "InPreview"               : false
         },
         "ResourceGroups"                  : {
+            "Version" : "3.3.0.0",
+            "AssemblyVersionOverride" : null,
+            "Dependencies"            : {
+                "Core" : "3.3.20.0"
+            },
+            "InPreview"               : false
+        },
+        "AlexaForBusiness"                : {
+            "Version" : "3.3.0.0",
+            "AssemblyVersionOverride" : null,
+            "Dependencies"            : {
+                "Core" : "3.3.20.0"
+            },
+            "InPreview"               : false
+        },
+        "ServerlessApplicationRepository" : {
+            "Version" : "3.3.0.0",
+            "AssemblyVersionOverride" : null,
+            "Dependencies"            : {
+                "Core" : "3.3.20.0"
+            },
+            "InPreview"               : false
+        },
+        "Cloud9"                          : {
             "Version" : "3.3.0.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {

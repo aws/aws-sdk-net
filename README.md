@@ -105,6 +105,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* AWS Budget service will provide create/get/list/update/delete budgets for cost management. 
 * [AWSSDK.CertificateManager](https://www.nuget.org/packages/AWSSDK.CertificateManager/)
 	* AWS Certificate Manager (ACM) is an AWS service that makes it easier for you to deploy secure SSL based websites and applications on the AWS platform.
+* [AWSSDK.Cloud9](https://www.nuget.org/packages/AWSSDK.Cloud9/)
+	* Adds support for creating and managing AWS Cloud9 development environments. AWS Cloud9 is a cloud-based integrated development environment (IDE) that you use to write, run, and debug code.
 * [AWSSDK.CloudDirectory](https://www.nuget.org/packages/AWSSDK.CloudDirectory/)
 	* Cloud Directory (CD) is a multi-tenant, hierarchical data store for use by other AWS services to store directory data for AWS resources, including both metadata about resources and policy data governing resources.
 * [AWSSDK.CloudFormation](https://www.nuget.org/packages/AWSSDK.CloudFormation/)
@@ -289,6 +291,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Amazon SageMaker is a fully-managed service that enables data scientists and developers to quickly and easily build, train, and deploy machine learning models, at scale.
 * [AWSSDK.SecurityToken](https://www.nuget.org/packages/AWSSDK.SecurityToken/)
 	* The AWS Security Token Service (AWS STS) enables you to provide trusted users with temporary credentials that provide controlled access to your AWS resources.
+* [AWSSDK.ServerlessApplicationRepository](https://www.nuget.org/packages/AWSSDK.ServerlessApplicationRepository/)
+	* First release of the AWS Serverless Application Repository SDK.
 * [AWSSDK.ServerMigrationService](https://www.nuget.org/packages/AWSSDK.ServerMigrationService/)
 	* AWS Server Migration Service (SMS) is an agentless service which makes it easier and faster for you to migrate thousands of on-premises workloads to AWS.
 * [AWSSDK.ServiceCatalog](https://www.nuget.org/packages/AWSSDK.ServiceCatalog/)

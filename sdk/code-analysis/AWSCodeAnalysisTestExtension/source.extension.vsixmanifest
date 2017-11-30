@@ -45,6 +45,8 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.Budgets.CodeAnalysis" Path="|AWSSDK.Budgets.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.CertificateManager.CodeAnalysis" Path="|AWSSDK.CertificateManager.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.CertificateManager.CodeAnalysis" Path="|AWSSDK.CertificateManager.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.Cloud9.CodeAnalysis" Path="|AWSSDK.Cloud9.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.Cloud9.CodeAnalysis" Path="|AWSSDK.Cloud9.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.CloudDirectory.CodeAnalysis" Path="|AWSSDK.CloudDirectory.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.CloudDirectory.CodeAnalysis" Path="|AWSSDK.CloudDirectory.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.CloudFormation.CodeAnalysis" Path="|AWSSDK.CloudFormation.CodeAnalysis|"/>
@@ -231,6 +233,8 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.SageMakerRuntime.CodeAnalysis" Path="|AWSSDK.SageMakerRuntime.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.SecurityToken.CodeAnalysis" Path="|AWSSDK.SecurityToken.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.SecurityToken.CodeAnalysis" Path="|AWSSDK.SecurityToken.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.ServerlessApplicationRepository.CodeAnalysis" Path="|AWSSDK.ServerlessApplicationRepository.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.ServerlessApplicationRepository.CodeAnalysis" Path="|AWSSDK.ServerlessApplicationRepository.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.ServerMigrationService.CodeAnalysis" Path="|AWSSDK.ServerMigrationService.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.ServerMigrationService.CodeAnalysis" Path="|AWSSDK.ServerMigrationService.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.ServiceCatalog.CodeAnalysis" Path="|AWSSDK.ServiceCatalog.CodeAnalysis|"/>
