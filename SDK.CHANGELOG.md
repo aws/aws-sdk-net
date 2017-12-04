@@ -1,3 +1,9 @@
+### 3.3.202.0 (2017-12-04 20:28 UTC)
+* Budgets (3.3.5.0)
+	* Add additional costTypes to support finer control for different charges included in a cost budget.
+* ECS (3.3.9.1)
+	* Documentation updates for ecs
+
 ### 3.3.201.0 (2017-11-30 18:22 UTC)
 * AlexaForBusiness (3.3.0.0)
 	* Alexa for Business is now generally available for production use. Alexa for Business makes it easy for you to use Alexa in your organization. The Alexa for Business SDK gives you APIs to manage Alexa devices, enroll users, and assign skills at scale. For more information about Alexa for Business, go to https://aws.amazon.com/alexaforbusiness 
