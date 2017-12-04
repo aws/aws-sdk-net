@@ -1,6 +1,6 @@
 language: csharp
 mono: none
-dotnet: 1.0.1
+dotnet: 2.0.0
 dist: trusty
 branches:
   only:
