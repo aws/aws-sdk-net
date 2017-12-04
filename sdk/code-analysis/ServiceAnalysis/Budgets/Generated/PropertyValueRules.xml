@@ -147,4 +147,8 @@
     <property>Amazon.Budgets.Model.Spend.Unit</property>
     <min>1</min>
   </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.Subscriber.Address</property>
+    <min>1</min>
+  </property-value-rule>
 </property-value-rules>

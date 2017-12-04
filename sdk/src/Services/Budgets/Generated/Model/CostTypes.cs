@@ -32,12 +32,83 @@ namespace Amazon.Budgets.Model
     /// </summary>
     public partial class CostTypes
     {
+        private bool? _includeCredit;
+        private bool? _includeOtherSubscription;
+        private bool? _includeRecurring;
+        private bool? _includeRefund;
         private bool? _includeSubscription;
+        private bool? _includeSupport;
         private bool? _includeTax;
+        private bool? _includeUpfront;
         private bool? _useBlended;
 
         /// <summary>
-        /// Gets and sets the property IncludeSubscription.
+        /// Gets and sets the property IncludeCredit. A boolean value whether to include credits
+        /// in the cost budget.
+        /// </summary>
+        public bool IncludeCredit
+        {
+            get { return this._includeCredit.GetValueOrDefault(); }
+            set { this._includeCredit = value; }
+        }
+
+        // Check to see if IncludeCredit property is set
+        internal bool IsSetIncludeCredit()
+        {
+            return this._includeCredit.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeOtherSubscription. A boolean value whether to include
+        /// other subscription costs in the cost budget.
+        /// </summary>
+        public bool IncludeOtherSubscription
+        {
+            get { return this._includeOtherSubscription.GetValueOrDefault(); }
+            set { this._includeOtherSubscription = value; }
+        }
+
+        // Check to see if IncludeOtherSubscription property is set
+        internal bool IsSetIncludeOtherSubscription()
+        {
+            return this._includeOtherSubscription.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeRecurring. A boolean value whether to include recurring
+        /// costs in the cost budget.
+        /// </summary>
+        public bool IncludeRecurring
+        {
+            get { return this._includeRecurring.GetValueOrDefault(); }
+            set { this._includeRecurring = value; }
+        }
+
+        // Check to see if IncludeRecurring property is set
+        internal bool IsSetIncludeRecurring()
+        {
+            return this._includeRecurring.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeRefund. A boolean value whether to include refunds
+        /// in the cost budget.
+        /// </summary>
+        public bool IncludeRefund
+        {
+            get { return this._includeRefund.GetValueOrDefault(); }
+            set { this._includeRefund = value; }
+        }
+
+        // Check to see if IncludeRefund property is set
+        internal bool IsSetIncludeRefund()
+        {
+            return this._includeRefund.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeSubscription. A boolean value whether to include
+        /// subscriptions in the cost budget.
         /// </summary>
         public bool IncludeSubscription
         {
@@ -52,7 +123,24 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IncludeTax.
+        /// Gets and sets the property IncludeSupport. A boolean value whether to include support
+        /// costs in the cost budget.
+        /// </summary>
+        public bool IncludeSupport
+        {
+            get { return this._includeSupport.GetValueOrDefault(); }
+            set { this._includeSupport = value; }
+        }
+
+        // Check to see if IncludeSupport property is set
+        internal bool IsSetIncludeSupport()
+        {
+            return this._includeSupport.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeTax. A boolean value whether to include tax in the
+        /// cost budget.
         /// </summary>
         public bool IncludeTax
         {
@@ -67,7 +155,24 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UseBlended.
+        /// Gets and sets the property IncludeUpfront. A boolean value whether to include upfront
+        /// costs in the cost budget.
+        /// </summary>
+        public bool IncludeUpfront
+        {
+            get { return this._includeUpfront.GetValueOrDefault(); }
+            set { this._includeUpfront = value; }
+        }
+
+        // Check to see if IncludeUpfront property is set
+        internal bool IsSetIncludeUpfront()
+        {
+            return this._includeUpfront.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseBlended. A boolean value whether to use blended costs
+        /// in the cost budget.
         /// </summary>
         public bool UseBlended
         {

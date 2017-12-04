@@ -45,16 +45,52 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CostTypes requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetIncludeCredit())
+            {
+                context.Writer.WritePropertyName("IncludeCredit");
+                context.Writer.Write(requestObject.IncludeCredit);
+            }
+
+            if(requestObject.IsSetIncludeOtherSubscription())
+            {
+                context.Writer.WritePropertyName("IncludeOtherSubscription");
+                context.Writer.Write(requestObject.IncludeOtherSubscription);
+            }
+
+            if(requestObject.IsSetIncludeRecurring())
+            {
+                context.Writer.WritePropertyName("IncludeRecurring");
+                context.Writer.Write(requestObject.IncludeRecurring);
+            }
+
+            if(requestObject.IsSetIncludeRefund())
+            {
+                context.Writer.WritePropertyName("IncludeRefund");
+                context.Writer.Write(requestObject.IncludeRefund);
+            }
+
             if(requestObject.IsSetIncludeSubscription())
             {
                 context.Writer.WritePropertyName("IncludeSubscription");
                 context.Writer.Write(requestObject.IncludeSubscription);
             }
 
+            if(requestObject.IsSetIncludeSupport())
+            {
+                context.Writer.WritePropertyName("IncludeSupport");
+                context.Writer.Write(requestObject.IncludeSupport);
+            }
+
             if(requestObject.IsSetIncludeTax())
             {
                 context.Writer.WritePropertyName("IncludeTax");
                 context.Writer.Write(requestObject.IncludeTax);
+            }
+
+            if(requestObject.IsSetIncludeUpfront())
+            {
+                context.Writer.WritePropertyName("IncludeUpfront");
+                context.Writer.Write(requestObject.IncludeUpfront);
             }
 
             if(requestObject.IsSetUseBlended())
