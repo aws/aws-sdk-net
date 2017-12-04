@@ -73,6 +73,26 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(MAX_RETRIES + 1, Tester.CallCount);
         }
 
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void RetryForWebExceptionTimeout()
+        {
+            Tester.Reset();
+            Tester.Action = (int callCount) =>
+            {
+                throw new AmazonServiceException(new WebException("WebException", WebExceptionStatus.Timeout));
+            };
+
+            Utils.AssertExceptionExpected(() =>
+                {
+                    var request = CreateTestContext();
+                    RuntimePipeline.InvokeSync(request);
+                },
+                typeof(AmazonServiceException));
+            Assert.AreEqual(MAX_RETRIES + 1, Tester.CallCount);
+        }
+
         [TestMethod][TestCategory("UnitTest")]
         [TestCategory("Runtime")]
         public void RetryForHttpStatus500()
@@ -225,6 +245,27 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(MAX_RETRIES + 1, Tester.CallCount);
         }
 
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        [TestCategory(@"Runtime\Async45")]
+        public async Task RetryForWebExceptionTimeoutAsync()
+        {
+            Tester.Reset();
+            Tester.Action = (int callCount) =>
+            {
+                throw new AmazonServiceException(new WebException("WebException", WebExceptionStatus.Timeout));
+            };
+
+            await Utils.AssertExceptionExpectedAsync(() =>
+                {
+                    var request = CreateTestContext();
+                    return RuntimePipeline.InvokeAsync<AmazonWebServiceResponse>(request);
+                },
+                typeof(AmazonServiceException));
+            Assert.AreEqual(MAX_RETRIES + 1, Tester.CallCount);
+        }
+
         [TestMethod][TestCategory("UnitTest")]
         [TestCategory("Runtime")]
         [TestCategory(@"Runtime\Async45")]
@@ -275,6 +316,25 @@ namespace AWSSDK.UnitTests
             Tester.Action = (int callCount) =>
             {
                 throw new AmazonServiceException(new WebException("WebException", WebExceptionStatus.ConnectFailure));
+            };
+
+            var request = CreateAsyncTestContext();
+            var asyncResult = RuntimePipeline.InvokeAsync(request);
+            asyncResult.AsyncWaitHandle.WaitOne();
+
+            Assert.IsTrue(((RuntimeAsyncResult)asyncResult).Exception is AmazonServiceException);
+            Assert.AreEqual(MAX_RETRIES + 1, Tester.CallCount);
+        }
+
+        [TestMethod][TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        [TestCategory(@"Runtime\Async35")]
+        public void RetryForWebExceptionTimeoutAsync()
+        {
+            Tester.Reset();
+            Tester.Action = (int callCount) =>
+            {
+                throw new AmazonServiceException(new WebException("WebException", WebExceptionStatus.Timeout));
             };
 
             var request = CreateAsyncTestContext();
