@@ -141,6 +141,7 @@
     <ProjectReference Include="..\..\src\Services\ServerlessApplicationRepository\AWSSDK.ServerlessApplicationRepository.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\ServerMigrationService\AWSSDK.ServerMigrationService.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\ServiceCatalog\AWSSDK.ServiceCatalog.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\ServiceDiscovery\AWSSDK.ServiceDiscovery.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\Shield\AWSSDK.Shield.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\SimpleDB\AWSSDK.SimpleDB.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\SimpleEmail\AWSSDK.SimpleEmail.Net35.csproj"/>
